@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros1:PackageSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ros1="http://www.example.org/ros1">
+  <package xsi:type="ros1:CatkinPackage" name="joint_state_publisher">
+    <artifact name="joint_state_publisher">
+      <node name="joint_state_publisher">
+        <publisher name="joint_states" message="//@package.1/@spec.0">
+          <namespace xsi:type="ros1:RelativeNamespace"/>
+        </publisher>
+        <parameter name="publish_rate">
+          <namespace xsi:type="ros1:PrivateNamespace"/>
+          <type xsi:type="ros1:ParameterDoubleType">
+            <default value="50.0"/>
+          </type>
+        </parameter>
+        <parameter name="joints_blacklist">
+          <namespace xsi:type="ros1:PrivateNamespace"/>
+          <type xsi:type="ros1:ParameterArrayType">
+            <type xsi:type="ros1:ParameterStringType"/>
+            <default>
+              <value xsi:type="ros1:ParameterString" value="bad_joint1"/>
+              <value xsi:type="ros1:ParameterString" value="bad_joint2"/>
+            </default>
+          </type>
+        </parameter>
+      </node>
+    </artifact>
+  </package>
+  <package name="sensor_msgs">
+    <spec xsi:type="ros1:TopicSpec" name="JointState"/>
+  </package>
+</ros1:PackageSet>
