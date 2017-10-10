@@ -5,7 +5,6 @@ package ros1;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -270,22 +269,22 @@ public interface Ros1Package extends EPackage {
 	int SPEC_BASE__PACKAGE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPEC_BASE__FULLNAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Spec Base</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPEC_BASE_FEATURE_COUNT = 2;
-
-	/**
-	 * The operation id for the '<em>Get Full Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE___GET_FULL_NAME = 0;
+	int SPEC_BASE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Spec Base</em>' class.
@@ -294,7 +293,7 @@ public interface Ros1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPEC_BASE_OPERATION_COUNT = 1;
+	int SPEC_BASE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ros1.impl.ServiceSpecImpl <em>Service Spec</em>}' class.
@@ -325,6 +324,15 @@ public interface Ros1Package extends EPackage {
 	int SERVICE_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
 
 	/**
+	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
+
+	/**
 	 * The feature id for the '<em><b>Request</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -350,15 +358,6 @@ public interface Ros1Package extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get Full Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC___GET_FULL_NAME = SPEC_BASE___GET_FULL_NAME;
 
 	/**
 	 * The number of operations of the '<em>Service Spec</em>' class.
@@ -499,6 +498,15 @@ public interface Ros1Package extends EPackage {
 	int TOPIC_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
 
 	/**
+	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOPIC_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
+
+	/**
 	 * The feature id for the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,15 +523,6 @@ public interface Ros1Package extends EPackage {
 	 * @ordered
 	 */
 	int TOPIC_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Full Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC___GET_FULL_NAME = SPEC_BASE___GET_FULL_NAME;
 
 	/**
 	 * The number of operations of the '<em>Topic Spec</em>' class.
@@ -949,6 +948,15 @@ public interface Ros1Package extends EPackage {
 	int ACTION_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
 
 	/**
+	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
+
+	/**
 	 * The feature id for the '<em><b>Goal</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -983,15 +991,6 @@ public interface Ros1Package extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get Full Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC___GET_FULL_NAME = SPEC_BASE___GET_FULL_NAME;
 
 	/**
 	 * The number of operations of the '<em>Action Spec</em>' class.
@@ -2606,14 +2605,15 @@ public interface Ros1Package extends EPackage {
 	EReference getSpecBase_Package();
 
 	/**
-	 * Returns the meta object for the '{@link ros1.SpecBase#getFullName() <em>Get Full Name</em>}' operation.
+	 * Returns the meta object for the attribute '{@link ros1.SpecBase#getFullname <em>Fullname</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Full Name</em>' operation.
-	 * @see ros1.SpecBase#getFullName()
+	 * @return the meta object for the attribute '<em>Fullname</em>'.
+	 * @see ros1.SpecBase#getFullname()
+	 * @see #getSpecBase()
 	 * @generated
 	 */
-	EOperation getSpecBase__GetFullName();
+	EAttribute getSpecBase_Fullname();
 
 	/**
 	 * Returns the meta object for class '{@link ros1.Subscriber <em>Subscriber</em>}'.
@@ -3732,12 +3732,12 @@ public interface Ros1Package extends EPackage {
 		EReference SPEC_BASE__PACKAGE = eINSTANCE.getSpecBase_Package();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Full Name</b></em>' operation.
+		 * The meta object literal for the '<em><b>Fullname</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation SPEC_BASE___GET_FULL_NAME = eINSTANCE.getSpecBase__GetFullName();
+		EAttribute SPEC_BASE__FULLNAME = eINSTANCE.getSpecBase_Fullname();
 
 		/**
 		 * The meta object literal for the '{@link ros1.impl.SubscriberImpl <em>Subscriber</em>}' class.

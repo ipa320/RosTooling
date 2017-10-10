@@ -19,7 +19,8 @@
         eType="#//Parameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Package">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spec" upperBound="-1" eType="#//SpecBase"
         containment="true" eOpposite="#//SpecBase/package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
@@ -61,10 +62,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecBase" abstract="true">
-    <eOperations name="getFullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
         eType="#//Package" eOpposite="#//Package/spec"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" defaultValueLiteral="" unsettable="true" iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subscriber" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"

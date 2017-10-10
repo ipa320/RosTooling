@@ -2,13 +2,8 @@
  */
 package ros1.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -30,6 +25,7 @@ import ros1.SpecBase;
  * <ul>
  *   <li>{@link ros1.impl.SpecBaseImpl#getName <em>Name</em>}</li>
  *   <li>{@link ros1.impl.SpecBaseImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link ros1.impl.SpecBaseImpl#getFullname <em>Fullname</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,7 +39,7 @@ public abstract class SpecBaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -54,6 +50,16 @@ public abstract class SpecBaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFullname() <em>Fullname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFullname()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FULLNAME_EDEFAULT = "";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,12 +145,19 @@ public abstract class SpecBaseImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getFullName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getFullname() {
+		return String.format("%s/%s", getPackage().getName(), getName());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isSetFullname() {
+		return getPackage() != null;
 	}
 
 	/**
@@ -203,6 +216,8 @@ public abstract class SpecBaseImpl extends MinimalEObjectImpl.Container implemen
 				return getName();
 			case Ros1Package.SPEC_BASE__PACKAGE:
 				return getPackage();
+			case Ros1Package.SPEC_BASE__FULLNAME:
+				return getFullname();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,22 +270,10 @@ public abstract class SpecBaseImpl extends MinimalEObjectImpl.Container implemen
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Ros1Package.SPEC_BASE__PACKAGE:
 				return getPackage() != null;
+			case Ros1Package.SPEC_BASE__FULLNAME:
+				return isSetFullname();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case Ros1Package.SPEC_BASE___GET_FULL_NAME:
-				return getFullName();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

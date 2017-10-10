@@ -5,7 +5,6 @@ package ros1.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -796,8 +795,8 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getSpecBase__GetFullName() {
-		return specBaseEClass.getEOperations().get(0);
+	public EAttribute getSpecBase_Fullname() {
+		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1549,7 +1548,7 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 		specBaseEClass = createEClass(SPEC_BASE);
 		createEAttribute(specBaseEClass, SPEC_BASE__NAME);
 		createEReference(specBaseEClass, SPEC_BASE__PACKAGE);
-		createEOperation(specBaseEClass, SPEC_BASE___GET_FULL_NAME);
+		createEAttribute(specBaseEClass, SPEC_BASE__FULLNAME);
 
 		subscriberEClass = createEClass(SUBSCRIBER);
 		createEReference(subscriberEClass, SUBSCRIBER__MESSAGE);
@@ -1744,7 +1743,7 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 		initEReference(getNode_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageEClass, ros1.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros1.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros1.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, ros1.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, ros1.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1777,10 +1776,9 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 		initEReference(getArtifact_Node(), this.getNode(), null, "node", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specBaseEClass, SpecBase.class, "SpecBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", "", 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecBase_Package(), this.getPackage(), this.getPackage_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getSpecBase__GetFullName(), ecorePackage.getEString(), "getFullName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getSpecBase_Fullname(), ecorePackage.getEString(), "fullname", "", 1, 1, SpecBase.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subscriberEClass, Subscriber.class, "Subscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSubscriber_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

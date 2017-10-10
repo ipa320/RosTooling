@@ -3,7 +3,7 @@
   <package xsi:type="ros1:CatkinPackage" name="joint_state_publisher">
     <artifact name="joint_state_publisher">
       <node name="joint_state_publisher">
-        <publisher name="joint_states" message="//@package.1/@spec.0">
+        <publisher name="joint_states" message="sensor_msgs/JointState">
           <namespace xsi:type="ros1:RelativeNamespace"/>
         </publisher>
         <parameter name="publish_rate">
@@ -26,6 +26,9 @@
     </artifact>
   </package>
   <package name="sensor_msgs">
+    <spec xsi:type="ros1:TopicSpec" name="JointState"/>
+  </package>
+  <package name="other">
     <spec xsi:type="ros1:TopicSpec" name="JointState"/>
   </package>
 </ros1:PackageSet>

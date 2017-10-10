@@ -51,7 +51,7 @@
     <genClasses image="false" ecoreClass="ros1.ecore#//SpecBase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros1.ecore#//SpecBase/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros1.ecore#//SpecBase/package"/>
-      <genOperations ecoreOperation="ros1.ecore#//SpecBase/getFullName"/>
+      <genFeatures property="None" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute ros1.ecore#//SpecBase/fullname"/>
     </genClasses>
     <genClasses ecoreClass="ros1.ecore#//Subscriber">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros1.ecore#//Subscriber/message"/>

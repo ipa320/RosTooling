@@ -36,7 +36,7 @@ public interface Package extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see ros1.Ros1Package#getPackage_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

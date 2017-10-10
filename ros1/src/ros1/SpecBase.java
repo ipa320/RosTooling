@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ros1.SpecBase#getName <em>Name</em>}</li>
  *   <li>{@link ros1.SpecBase#getPackage <em>Package</em>}</li>
+ *   <li>{@link ros1.SpecBase#getFullname <em>Fullname</em>}</li>
  * </ul>
  *
  * @see ros1.Ros1Package#getSpecBase()
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface SpecBase extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
@@ -33,7 +35,7 @@ public interface SpecBase extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see ros1.Ros1Package#getSpecBase_Name()
-	 * @model required="true"
+	 * @model default="" unique="false" required="true"
 	 * @generated
 	 */
 	String getName();
@@ -77,11 +79,30 @@ public interface SpecBase extends EObject {
 	void setPackage(ros1.Package value);
 
 	/**
+	 * Returns the value of the '<em><b>Fullname</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fullname</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Fullname</em>' attribute.
+	 * @see #isSetFullname()
+	 * @see ros1.Ros1Package#getSpecBase_Fullname()
+	 * @model default="" unsettable="true" id="true" required="true" changeable="false" volatile="true"
 	 * @generated
 	 */
-	String getFullName();
+	String getFullname();
+
+	/**
+	 * Returns whether the value of the '{@link ros1.SpecBase#getFullname <em>Fullname</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Fullname</em>' attribute is set.
+	 * @see #getFullname()
+	 * @generated
+	 */
+	boolean isSetFullname();
 
 } // SpecBase
