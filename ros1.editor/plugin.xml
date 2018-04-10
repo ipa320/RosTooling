@@ -34,4 +34,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ros1 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="PackageFormat2.presentation.PackageFormat2ModelWizardID"
+            name="%_UI_PackageFormat2ModelWizard_label"
+            class="PackageFormat2.presentation.PackageFormat2ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PackageFormat2ModelFile.gif">
+         <description>%_UI_PackageFormat2ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ros1 -->
+      <editor
+            id="PackageFormat2.presentation.PackageFormat2EditorID"
+            name="%_UI_PackageFormat2Editor_label"
+            icon="icons/full/obj16/PackageFormat2ModelFile.gif"
+            extensions="packageformat2"
+            class="PackageFormat2.presentation.PackageFormat2Editor"
+            contributorClass="PackageFormat2.presentation.PackageFormat2ActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

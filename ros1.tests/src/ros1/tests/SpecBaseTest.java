@@ -11,9 +11,9 @@ import ros1.SpecBase;
  * A test case for the model object '<em><b>Spec Base</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following operations are tested:
+ * The following features are tested:
  * <ul>
- *   <li>{@link ros1.SpecBase#getFullName() <em>Get Full Name</em>}</li>
+ *   <li>{@link ros1.SpecBase#getFullname() <em>Fullname</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -59,14 +59,27 @@ public abstract class SpecBaseTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link ros1.SpecBase#getFullName() <em>Get Full Name</em>}' operation.
+	 * Tests the '{@link ros1.SpecBase#getFullname() <em>Fullname</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ros1.SpecBase#getFullName()
+	 * @see ros1.SpecBase#getFullname()
 	 * @generated
 	 */
-	public void testGetFullName() {
-		// TODO: implement this operation test method
+	public void testGetFullname() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link ros1.SpecBase#isSetFullname() <em>isSetFullname()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros1.SpecBase#isSetFullname()
+	 * @generated
+	 */
+	public void testIsSetFullname() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

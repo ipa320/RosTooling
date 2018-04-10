@@ -138,6 +138,7 @@ public class SpecBaseItemProvider
 
 		switch (notification.getFeatureID(SpecBase.class)) {
 			case Ros1Package.SPEC_BASE__NAME:
+			case Ros1Package.SPEC_BASE__FULLNAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

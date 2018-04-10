@@ -9,54 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import ros1.ActionClient;
-import ros1.ActionServer;
-import ros1.ActionSpec;
-import ros1.Artifact;
-import ros1.CatkinPackage;
-import ros1.Dependency;
-import ros1.ExternalDependency;
-import ros1.GlobalNamespace;
-import ros1.MessageDefinition;
-import ros1.Namespace;
-import ros1.NamespacedElement;
-import ros1.Node;
-import ros1.PackageDependency;
-import ros1.PackageSet;
-import ros1.Parameter;
-import ros1.ParameterAny;
-import ros1.ParameterAnyType;
-import ros1.ParameterArrayType;
-import ros1.ParameterBase64;
-import ros1.ParameterBase64Type;
-import ros1.ParameterBoolean;
-import ros1.ParameterBooleanType;
-import ros1.ParameterDate;
-import ros1.ParameterDateType;
-import ros1.ParameterDouble;
-import ros1.ParameterDoubleType;
-import ros1.ParameterInteger;
-import ros1.ParameterIntegerType;
-import ros1.ParameterListType;
-import ros1.ParameterSequence;
-import ros1.ParameterString;
-import ros1.ParameterStringType;
-import ros1.ParameterStruct;
-import ros1.ParameterStructMember;
-import ros1.ParameterStructType;
-import ros1.ParameterStructTypeMember;
-import ros1.ParameterType;
-import ros1.ParameterValue;
-import ros1.PrivateNamespace;
-import ros1.Publisher;
-import ros1.RelativeNamespace;
-import ros1.Ros1Package;
-import ros1.ServiceClient;
-import ros1.ServiceServer;
-import ros1.ServiceSpec;
-import ros1.SpecBase;
-import ros1.Subscriber;
-import ros1.TopicSpec;
+import ros1.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,12 +72,8 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 				return createNodeAdapter();
 			}
 			@Override
-			public Adapter casePackage(ros1.Package object) {
-				return createPackageAdapter();
-			}
-			@Override
-			public Adapter caseDependency(Dependency object) {
-				return createDependencyAdapter();
+			public Adapter caseModel(Model object) {
+				return createModelAdapter();
 			}
 			@Override
 			public Adapter caseServiceSpec(ServiceSpec object) {
@@ -141,18 +90,6 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePublisher(Publisher object) {
 				return createPublisherAdapter();
-			}
-			@Override
-			public Adapter casePackageDependency(PackageDependency object) {
-				return createPackageDependencyAdapter();
-			}
-			@Override
-			public Adapter caseExternalDependency(ExternalDependency object) {
-				return createExternalDependencyAdapter();
-			}
-			@Override
-			public Adapter caseCatkinPackage(CatkinPackage object) {
-				return createCatkinPackageAdapter();
 			}
 			@Override
 			public Adapter caseArtifact(Artifact object) {
@@ -341,30 +278,16 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ros1.Package <em>Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link ros1.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ros1.Package
+	 * @see ros1.Model
 	 * @generated
 	 */
-	public Adapter createPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros1.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros1.Dependency
-	 * @generated
-	 */
-	public Adapter createDependencyAdapter() {
+	public Adapter createModelAdapter() {
 		return null;
 	}
 
@@ -421,48 +344,6 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPublisherAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros1.PackageDependency <em>Package Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros1.PackageDependency
-	 * @generated
-	 */
-	public Adapter createPackageDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros1.ExternalDependency <em>External Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros1.ExternalDependency
-	 * @generated
-	 */
-	public Adapter createExternalDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros1.CatkinPackage <em>Catkin Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros1.CatkinPackage
-	 * @generated
-	 */
-	public Adapter createCatkinPackageAdapter() {
 		return null;
 	}
 

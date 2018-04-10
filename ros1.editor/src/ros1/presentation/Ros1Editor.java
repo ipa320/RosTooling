@@ -156,6 +156,8 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import ros1.provider.Ros1ItemProviderAdapterFactory;
 
+import PackageFormat2.provider.PackageFormat2ItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -702,6 +704,7 @@ public class Ros1Editor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Ros1ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PackageFormat2ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

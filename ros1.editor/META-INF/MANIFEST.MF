@@ -8,7 +8,8 @@ Bundle-Activator: ros1.presentation.Ros1EditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ros1.presentation
+Export-Package: PackageFormat2.presentation,
+ ros1.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  ros1.edit;visibility:=reexport,

@@ -31,13 +31,13 @@ public interface Ros1Factory extends EFactory {
 	Node createNode();
 
 	/**
-	 * Returns a new object of class '<em>Package</em>'.
+	 * Returns a new object of class '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
+	 * @return a new object of class '<em>Model</em>'.
 	 * @generated
 	 */
-	Package createPackage();
+	Model createModel();
 
 	/**
 	 * Returns a new object of class '<em>Service Spec</em>'.
@@ -74,33 +74,6 @@ public interface Ros1Factory extends EFactory {
 	 * @generated
 	 */
 	Publisher createPublisher();
-
-	/**
-	 * Returns a new object of class '<em>Package Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package Dependency</em>'.
-	 * @generated
-	 */
-	PackageDependency createPackageDependency();
-
-	/**
-	 * Returns a new object of class '<em>External Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>External Dependency</em>'.
-	 * @generated
-	 */
-	ExternalDependency createExternalDependency();
-
-	/**
-	 * Returns a new object of class '<em>Catkin Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Catkin Package</em>'.
-	 * @generated
-	 */
-	CatkinPackage createCatkinPackage();
 
 	/**
 	 * Returns a new object of class '<em>Artifact</em>'.

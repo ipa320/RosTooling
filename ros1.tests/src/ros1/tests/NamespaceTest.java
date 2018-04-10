@@ -3,6 +3,7 @@
 package ros1.tests;
 
 import junit.framework.TestCase;
+
 import ros1.Namespace;
 
 /**

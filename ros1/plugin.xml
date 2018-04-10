@@ -7,6 +7,21 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated package_format2 -->
+      <package
+            uri="file:/home/mdl/Downloads/package_format2.xsd"
+            class="PackageFormat2.PackageFormat2Package"
+            genModel="model/ros1.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ros1 -->
+      <parser
+            type="packageformat2"
+            class="PackageFormat2.util.PackageFormat2ResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ros1 -->
       <package
             uri="http://www.example.org/ros1"

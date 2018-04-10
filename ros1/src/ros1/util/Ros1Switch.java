@@ -7,54 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import ros1.ActionClient;
-import ros1.ActionServer;
-import ros1.ActionSpec;
-import ros1.Artifact;
-import ros1.CatkinPackage;
-import ros1.Dependency;
-import ros1.ExternalDependency;
-import ros1.GlobalNamespace;
-import ros1.MessageDefinition;
-import ros1.Namespace;
-import ros1.NamespacedElement;
-import ros1.Node;
-import ros1.PackageDependency;
-import ros1.PackageSet;
-import ros1.Parameter;
-import ros1.ParameterAny;
-import ros1.ParameterAnyType;
-import ros1.ParameterArrayType;
-import ros1.ParameterBase64;
-import ros1.ParameterBase64Type;
-import ros1.ParameterBoolean;
-import ros1.ParameterBooleanType;
-import ros1.ParameterDate;
-import ros1.ParameterDateType;
-import ros1.ParameterDouble;
-import ros1.ParameterDoubleType;
-import ros1.ParameterInteger;
-import ros1.ParameterIntegerType;
-import ros1.ParameterListType;
-import ros1.ParameterSequence;
-import ros1.ParameterString;
-import ros1.ParameterStringType;
-import ros1.ParameterStruct;
-import ros1.ParameterStructMember;
-import ros1.ParameterStructType;
-import ros1.ParameterStructTypeMember;
-import ros1.ParameterType;
-import ros1.ParameterValue;
-import ros1.PrivateNamespace;
-import ros1.Publisher;
-import ros1.RelativeNamespace;
-import ros1.Ros1Package;
-import ros1.ServiceClient;
-import ros1.ServiceServer;
-import ros1.ServiceSpec;
-import ros1.SpecBase;
-import ros1.Subscriber;
-import ros1.TopicSpec;
+import ros1.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,15 +72,9 @@ public class Ros1Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PACKAGE: {
-				ros1.Package package_ = (ros1.Package)theEObject;
-				T result = casePackage(package_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Ros1Package.DEPENDENCY: {
-				Dependency dependency = (Dependency)theEObject;
-				T result = caseDependency(dependency);
+			case Ros1Package.MODEL: {
+				Model model = (Model)theEObject;
+				T result = caseModel(model);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,27 +103,6 @@ public class Ros1Switch<T> extends Switch<T> {
 				Publisher publisher = (Publisher)theEObject;
 				T result = casePublisher(publisher);
 				if (result == null) result = caseNamespacedElement(publisher);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Ros1Package.PACKAGE_DEPENDENCY: {
-				PackageDependency packageDependency = (PackageDependency)theEObject;
-				T result = casePackageDependency(packageDependency);
-				if (result == null) result = caseDependency(packageDependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Ros1Package.EXTERNAL_DEPENDENCY: {
-				ExternalDependency externalDependency = (ExternalDependency)theEObject;
-				T result = caseExternalDependency(externalDependency);
-				if (result == null) result = caseDependency(externalDependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Ros1Package.CATKIN_PACKAGE: {
-				CatkinPackage catkinPackage = (CatkinPackage)theEObject;
-				T result = caseCatkinPackage(catkinPackage);
-				if (result == null) result = casePackage(catkinPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -457,32 +383,17 @@ public class Ros1Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackage(ros1.Package object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDependency(Dependency object) {
+	public T caseModel(Model object) {
 		return null;
 	}
 
@@ -543,51 +454,6 @@ public class Ros1Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePublisher(Publisher object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackageDependency(PackageDependency object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>External Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>External Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExternalDependency(ExternalDependency object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Catkin Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Catkin Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCatkinPackage(CatkinPackage object) {
 		return null;
 	}
 

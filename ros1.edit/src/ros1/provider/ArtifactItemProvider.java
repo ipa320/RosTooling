@@ -3,6 +3,8 @@
 package ros1.provider;
 
 
+import PackageFormat2.PackageFormat2Factory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -125,6 +128,8 @@ public class ArtifactItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Ros1Package.Literals.ARTIFACT__NODE);
+			childrenFeatures.add(Ros1Package.Literals.ARTIFACT__BUILD_DEPEND);
+			childrenFeatures.add(Ros1Package.Literals.ARTIFACT__EXEC_DEPEND);
 		}
 		return childrenFeatures;
 	}
@@ -184,6 +189,8 @@ public class ArtifactItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Ros1Package.ARTIFACT__NODE:
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -205,6 +212,39 @@ public class ArtifactItemProvider
 			(createChildParameter
 				(Ros1Package.Literals.ARTIFACT__NODE,
 				 Ros1Factory.eINSTANCE.createNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Ros1Package.Literals.ARTIFACT__BUILD_DEPEND,
+				 PackageFormat2Factory.eINSTANCE.createDependencyType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Ros1Package.Literals.ARTIFACT__EXEC_DEPEND,
+				 PackageFormat2Factory.eINSTANCE.createDependencyType()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == Ros1Package.Literals.ARTIFACT__BUILD_DEPEND ||
+			childFeature == Ros1Package.Literals.ARTIFACT__EXEC_DEPEND;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

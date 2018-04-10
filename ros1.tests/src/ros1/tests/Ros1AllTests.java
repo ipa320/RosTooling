@@ -2,6 +2,8 @@
  */
 package ros1.tests;
 
+import PackageFormat2.tests.PackageFormat2Tests;
+
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
@@ -32,6 +34,7 @@ public class Ros1AllTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new Ros1AllTests("Ros1 Tests");
 		suite.addTest(Ros1Tests.suite());
+		suite.addTest(PackageFormat2Tests.suite());
 		return suite;
 	}
 

@@ -2,14 +2,23 @@
  */
 package ros1.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import PackageFormat2.DependencyType;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros1.Artifact;
 import ros1.Node;
@@ -25,6 +34,8 @@ import ros1.Ros1Package;
  * <ul>
  *   <li>{@link ros1.impl.ArtifactImpl#getName <em>Name</em>}</li>
  *   <li>{@link ros1.impl.ArtifactImpl#getNode <em>Node</em>}</li>
+ *   <li>{@link ros1.impl.ArtifactImpl#getBuild_depend <em>Build depend</em>}</li>
+ *   <li>{@link ros1.impl.ArtifactImpl#getExec_depend <em>Exec depend</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +70,26 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * @ordered
 	 */
 	protected Node node;
+
+	/**
+	 * The cached value of the '{@link #getBuild_depend() <em>Build depend</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBuild_depend()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DependencyType> build_depend;
+
+	/**
+	 * The cached value of the '{@link #getExec_depend() <em>Exec depend</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExec_depend()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DependencyType> exec_depend;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,11 +179,39 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<DependencyType> getBuild_depend() {
+		if (build_depend == null) {
+			build_depend = new EObjectContainmentEList<DependencyType>(DependencyType.class, this, Ros1Package.ARTIFACT__BUILD_DEPEND);
+		}
+		return build_depend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<DependencyType> getExec_depend() {
+		if (exec_depend == null) {
+			exec_depend = new EObjectContainmentEList<DependencyType>(DependencyType.class, this, Ros1Package.ARTIFACT__EXEC_DEPEND);
+		}
+		return exec_depend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Ros1Package.ARTIFACT__NODE:
 				return basicSetNode(null, msgs);
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+				return ((InternalEList<?>)getBuild_depend()).basicRemove(otherEnd, msgs);
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
+				return ((InternalEList<?>)getExec_depend()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,6 +228,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return getName();
 			case Ros1Package.ARTIFACT__NODE:
 				return getNode();
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+				return getBuild_depend();
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
+				return getExec_depend();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,6 +241,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -186,6 +250,14 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return;
 			case Ros1Package.ARTIFACT__NODE:
 				setNode((Node)newValue);
+				return;
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+				getBuild_depend().clear();
+				getBuild_depend().addAll((Collection<? extends DependencyType>)newValue);
+				return;
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
+				getExec_depend().clear();
+				getExec_depend().addAll((Collection<? extends DependencyType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,6 +277,12 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Ros1Package.ARTIFACT__NODE:
 				setNode((Node)null);
 				return;
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+				getBuild_depend().clear();
+				return;
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
+				getExec_depend().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,6 +299,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Ros1Package.ARTIFACT__NODE:
 				return node != null;
+			case Ros1Package.ARTIFACT__BUILD_DEPEND:
+				return build_depend != null && !build_depend.isEmpty();
+			case Ros1Package.ARTIFACT__EXEC_DEPEND:
+				return exec_depend != null && !exec_depend.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
