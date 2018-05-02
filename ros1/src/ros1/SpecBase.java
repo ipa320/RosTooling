@@ -90,7 +90,7 @@ public interface SpecBase extends EObject {
 	 * @return the value of the '<em>Fullname</em>' attribute.
 	 * @see #isSetFullname()
 	 * @see ros1.Ros1Package#getSpecBase_Fullname()
-	 * @model default="" unsettable="true" id="true" required="true" changeable="false" volatile="true"
+	 * @model default="" unsettable="true" id="true" required="true" transient="true" changeable="false" volatile="true"
 	 * @generated
 	 */
 	String getFullname();
