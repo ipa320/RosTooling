@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: ros1.editor;singleton:=true
+Bundle-SymbolicName: de.fraunhofer.ipa.ros.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: ros1.presentation.Ros1EditorPlugin$Implementation
@@ -11,7 +11,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ros1.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- ros1.edit;visibility:=reexport,
+ de.fraunhofer.ipa.ros.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
