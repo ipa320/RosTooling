@@ -20,16 +20,16 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import ros.Node;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>ros1</b></em>' package.
+ * A sample utility for the '<em><b>ros</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1Example {
+public class RosExample {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
@@ -51,16 +51,16 @@ public class Ros1Example {
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(Ros1Package.eNS_URI, 
-			 Ros1Package.eINSTANCE);
+			(RosPackage.eNS_URI, 
+			 RosPackage.eINSTANCE);
         
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.ros1"));
-				Node root = Ros1Factory.eINSTANCE.createNode();
+				Resource resource = resourceSet.createResource(URI.createURI("http:///My.ros"));
+				Node root = RosFactory.eINSTANCE.createNode();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}
@@ -118,4 +118,4 @@ public class Ros1Example {
 		}
 	}
 
-} //Ros1Example
+} //RosExample

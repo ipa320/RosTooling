@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.Artifact#getNode <em>Node</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getArtifact()
+ * @see ros.RosPackage#getArtifact()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Artifact extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getArtifact_Name()
+	 * @see ros.RosPackage#getArtifact_Name()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -52,13 +52,13 @@ public interface Artifact extends EObject {
 	 * Returns the value of the '<em><b>Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Node</em>' reference isn't clear,
+	 * If the meaning of the '<em>Node</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node</em>' containment reference.
 	 * @see #setNode(Node)
-	 * @see ros.Ros1Package#getArtifact_Node()
+	 * @see ros.RosPackage#getArtifact_Node()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

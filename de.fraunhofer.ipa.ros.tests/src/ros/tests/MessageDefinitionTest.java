@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 import ros.MessageDefinition;
-import ros.Ros1Factory;
+import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class MessageDefinitionTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createMessageDefinition());
+		setFixture(RosFactory.eINSTANCE.createMessageDefinition());
 	}
 
 	/**

@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ros.CatkinPackage#getDependency <em>Dependency</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getCatkinPackage()
+ * @see ros.RosPackage#getCatkinPackage()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface CatkinPackage extends ros.Package {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dependency</em>' containment reference list.
-	 * @see ros.Ros1Package#getCatkinPackage_Dependency()
+	 * @see ros.RosPackage#getCatkinPackage_Dependency()
 	 * @model containment="true"
 	 * @generated
 	 */

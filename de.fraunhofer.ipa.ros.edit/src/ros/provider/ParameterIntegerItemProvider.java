@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterInteger;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterInteger} object.
@@ -63,7 +63,7 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterInteger_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterInteger_value_feature", "_UI_ParameterInteger_type"),
-				 Ros1Package.Literals.PARAMETER_INTEGER__VALUE,
+				 RosPackage.Literals.PARAMETER_INTEGER__VALUE,
 				 true,
 				 false,
 				 false,
@@ -108,7 +108,7 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterInteger.class)) {
-			case Ros1Package.PARAMETER_INTEGER__VALUE:
+			case RosPackage.PARAMETER_INTEGER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

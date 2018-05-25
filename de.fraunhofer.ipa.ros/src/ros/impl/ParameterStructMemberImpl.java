@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.ParameterStructMember;
 import ros.ParameterValue;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_STRUCT_MEMBER;
+		return RosPackage.Literals.PARAMETER_STRUCT_MEMBER;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_STRUCT_MEMBER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_STRUCT_MEMBER__NAME, oldName, name));
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 		ParameterValue oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE, oldValue, newValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_STRUCT_MEMBER__VALUE, oldValue, newValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -133,14 +133,14 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE, null, msgs);
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_STRUCT_MEMBER__VALUE, null, msgs);
 			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE, null, msgs);
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_STRUCT_MEMBER__VALUE, null, msgs);
 			msgs = basicSetValue(newValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE, newValue, newValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_STRUCT_MEMBER__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				return basicSetValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -165,9 +165,9 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__NAME:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__NAME:
 				return getName();
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -181,10 +181,10 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__NAME:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__NAME:
 				setName((String)newValue);
 				return;
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				setValue((ParameterValue)newValue);
 				return;
 		}
@@ -199,10 +199,10 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__NAME:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				setValue((ParameterValue)null);
 				return;
 		}
@@ -217,9 +217,9 @@ public class ParameterStructMemberImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__NAME:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				return value != null;
 		}
 		return super.eIsSet(featureID);

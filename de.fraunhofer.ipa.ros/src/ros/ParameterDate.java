@@ -16,7 +16,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link ros.ParameterDate#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterDate()
+ * @see ros.RosPackage#getParameterDate()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ParameterDate extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(XMLGregorianCalendar)
-	 * @see ros.Ros1Package#getParameterDate_Value()
+	 * @see ros.RosPackage#getParameterDate_Value()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.DateTime" required="true"
 	 * @generated
 	 */

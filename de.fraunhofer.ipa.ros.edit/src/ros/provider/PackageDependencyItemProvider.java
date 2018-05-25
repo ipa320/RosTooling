@@ -12,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.PackageDependency} object.
@@ -60,7 +60,7 @@ public class PackageDependencyItemProvider extends DependencyItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_PackageDependency_package_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PackageDependency_package_feature", "_UI_PackageDependency_type"),
-				 Ros1Package.Literals.PACKAGE_DEPENDENCY__PACKAGE,
+				 RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE,
 				 true,
 				 false,
 				 true,

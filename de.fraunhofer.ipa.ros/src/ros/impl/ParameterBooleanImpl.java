@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ParameterBoolean;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_BOOLEAN;
+		return RosPackage.Literals.PARAMETER_BOOLEAN;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 		boolean oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_BOOLEAN__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_BOOLEAN__VALUE, oldValue, value));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BOOLEAN__VALUE:
+			case RosPackage.PARAMETER_BOOLEAN__VALUE:
 				return isValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BOOLEAN__VALUE:
+			case RosPackage.PARAMETER_BOOLEAN__VALUE:
 				setValue((Boolean)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BOOLEAN__VALUE:
+			case RosPackage.PARAMETER_BOOLEAN__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BOOLEAN__VALUE:
+			case RosPackage.PARAMETER_BOOLEAN__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

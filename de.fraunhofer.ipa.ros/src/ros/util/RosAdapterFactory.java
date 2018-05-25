@@ -50,7 +50,7 @@ import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
 import ros.RelativeNamespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.ServiceSpec;
@@ -63,17 +63,17 @@ import ros.TopicSpec;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see ros.Ros1Package
+ * @see ros.RosPackage
  * @generated
  */
-public class Ros1AdapterFactory extends AdapterFactoryImpl {
+public class RosAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static Ros1Package modelPackage;
+	protected static RosPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -81,9 +81,9 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1AdapterFactory() {
+	public RosAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = Ros1Package.eINSTANCE;
+			modelPackage = RosPackage.eINSTANCE;
 		}
 	}
 
@@ -112,8 +112,8 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Ros1Switch<Adapter> modelSwitch =
-		new Ros1Switch<Adapter>() {
+	protected RosSwitch<Adapter> modelSwitch =
+		new RosSwitch<Adapter>() {
 			@Override
 			public Adapter caseNode(Node object) {
 				return createNodeAdapter();
@@ -1010,4 +1010,4 @@ public class Ros1AdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //Ros1AdapterFactory
+} //RosAdapterFactory

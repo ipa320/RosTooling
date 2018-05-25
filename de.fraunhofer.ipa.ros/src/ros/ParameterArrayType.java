@@ -16,7 +16,7 @@ package ros;
  *   <li>{@link ros.ParameterArrayType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterArrayType()
+ * @see ros.RosPackage#getParameterArrayType()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ParameterArrayType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(ParameterType)
-	 * @see ros.Ros1Package#getParameterArrayType_Type()
+	 * @see ros.RosPackage#getParameterArrayType_Type()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface ParameterArrayType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterSequence)
-	 * @see ros.Ros1Package#getParameterArrayType_Default()
+	 * @see ros.RosPackage#getParameterArrayType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

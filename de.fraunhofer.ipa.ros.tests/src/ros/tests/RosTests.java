@@ -9,11 +9,11 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>ros1</b></em>' package.
+ * A test suite for the '<em><b>ros</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1Tests extends TestSuite {
+public class RosTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class Ros1Tests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new Ros1Tests("ros Tests");
+		TestSuite suite = new RosTests("ros Tests");
 		suite.addTestSuite(ServiceSpecTest.class);
 		suite.addTestSuite(TopicSpecTest.class);
 		suite.addTestSuite(ActionSpecTest.class);
@@ -42,8 +42,8 @@ public class Ros1Tests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1Tests(String name) {
+	public RosTests(String name) {
 		super(name);
 	}
 
-} //Ros1Tests
+} //RosTests

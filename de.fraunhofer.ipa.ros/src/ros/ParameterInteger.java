@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterInteger#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterInteger()
+ * @see ros.RosPackage#getParameterInteger()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterInteger extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
-	 * @see ros.Ros1Package#getParameterInteger_Value()
+	 * @see ros.RosPackage#getParameterInteger_Value()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int" required="true"
 	 * @generated
 	 */

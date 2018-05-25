@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 import ros.provider.RosEditPlugin;
 import org.eclipse.core.runtime.Path;
 
@@ -89,7 +89,7 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1ModelWizard extends Wizard implements INewWizard {
+public class RosModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -97,7 +97,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(RosEditorPlugin.INSTANCE.getString("_UI_Ros1EditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -106,7 +106,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		RosEditorPlugin.INSTANCE.getString("_UI_Ros1EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -114,7 +114,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Ros1Package ros1Package = Ros1Package.eINSTANCE;
+	protected RosPackage rosPackage = RosPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -122,7 +122,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Ros1Factory ros1Factory = ros1Package.getRos1Factory();
+	protected RosFactory rosFactory = rosPackage.getRosFactory();
 
 	/**
 	 * This is the file creation page.
@@ -130,7 +130,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Ros1ModelWizardNewFileCreationPage newFileCreationPage;
+	protected RosModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -138,7 +138,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Ros1ModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected RosModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -174,7 +174,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(RosEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RosEditorPlugin.INSTANCE.getImage("full/wizban/NewRos1")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RosEditorPlugin.INSTANCE.getImage("full/wizban/NewRos")));
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : ros1Package.getEClassifiers()) {
+			for (EClassifier eClassifier : rosPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -206,8 +206,8 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)ros1Package.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = ros1Factory.create(eClass);
+		EClass eClass = (EClass)rosPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = rosFactory.create(eClass);
 		return rootObject;
 	}
 
@@ -308,14 +308,14 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class Ros1ModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class RosModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Ros1ModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public RosModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -355,7 +355,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class Ros1ModelWizardInitialObjectCreationPage extends WizardPage {
+	public class RosModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -383,7 +383,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Ros1ModelWizardInitialObjectCreationPage(String pageId) {
+		public RosModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -567,10 +567,10 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new Ros1ModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(RosEditorPlugin.INSTANCE.getString("_UI_Ros1ModelWizard_label"));
-		newFileCreationPage.setDescription(RosEditorPlugin.INSTANCE.getString("_UI_Ros1ModelWizard_description"));
-		newFileCreationPage.setFileName(RosEditorPlugin.INSTANCE.getString("_UI_Ros1EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new RosModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(RosEditorPlugin.INSTANCE.getString("_UI_RosModelWizard_label"));
+		newFileCreationPage.setDescription(RosEditorPlugin.INSTANCE.getString("_UI_RosModelWizard_description"));
+		newFileCreationPage.setFileName(RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -596,7 +596,7 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = RosEditorPlugin.INSTANCE.getString("_UI_Ros1EditorFilenameDefaultBase");
+					String defaultModelBaseFilename = RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -606,8 +606,8 @@ public class Ros1ModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new Ros1ModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(RosEditorPlugin.INSTANCE.getString("_UI_Ros1ModelWizard_label"));
+		initialObjectCreationPage = new RosModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(RosEditorPlugin.INSTANCE.getString("_UI_RosModelWizard_label"));
 		initialObjectCreationPage.setDescription(RosEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}

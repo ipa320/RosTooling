@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterDateType;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterDateType} object.
@@ -62,7 +62,7 @@ public class ParameterDateTypeItemProvider extends ParameterTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_DATE_TYPE__DEFAULT);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_DATE_TYPE__DEFAULT);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +115,7 @@ public class ParameterDateTypeItemProvider extends ParameterTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterDateType.class)) {
-			case Ros1Package.PARAMETER_DATE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DATE_TYPE__DEFAULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -135,8 +135,8 @@ public class ParameterDateTypeItemProvider extends ParameterTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_DATE_TYPE__DEFAULT,
-				 Ros1Factory.eINSTANCE.createParameterDate()));
+				(RosPackage.Literals.PARAMETER_DATE_TYPE__DEFAULT,
+				 RosFactory.eINSTANCE.createParameterDate()));
 	}
 
 }

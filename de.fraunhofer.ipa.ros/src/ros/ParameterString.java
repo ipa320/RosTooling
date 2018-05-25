@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterString#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterString()
+ * @see ros.RosPackage#getParameterString()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterString extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see ros.Ros1Package#getParameterString_Value()
+	 * @see ros.RosPackage#getParameterString_Value()
 	 * @model required="true"
 	 * @generated
 	 */

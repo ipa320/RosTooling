@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ActionServer#getAction <em>Action</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getActionServer()
+ * @see ros.RosPackage#getActionServer()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ActionServer extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action</em>' reference.
 	 * @see #setAction(ActionSpec)
-	 * @see ros.Ros1Package#getActionServer_Action()
+	 * @see ros.RosPackage#getActionServer_Action()
 	 * @model required="true"
 	 * @generated
 	 */

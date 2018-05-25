@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.TopicSpec#getMessage <em>Message</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getTopicSpec()
+ * @see ros.RosPackage#getTopicSpec()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface TopicSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' containment reference.
 	 * @see #setMessage(MessageDefinition)
-	 * @see ros.Ros1Package#getTopicSpec_Message()
+	 * @see ros.RosPackage#getTopicSpec_Message()
 	 * @model containment="true"
 	 * @generated
 	 */

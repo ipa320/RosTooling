@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ros.ParameterListType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterListType()
+ * @see ros.RosPackage#getParameterListType()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface ParameterListType extends ParameterType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sequence</em>' containment reference list.
-	 * @see ros.Ros1Package#getParameterListType_Sequence()
+	 * @see ros.RosPackage#getParameterListType_Sequence()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface ParameterListType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterSequence)
-	 * @see ros.Ros1Package#getParameterListType_Default()
+	 * @see ros.RosPackage#getParameterListType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

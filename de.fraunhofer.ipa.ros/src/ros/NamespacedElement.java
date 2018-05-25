@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.NamespacedElement#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getNamespacedElement()
+ * @see ros.RosPackage#getNamespacedElement()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface NamespacedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Namespace</em>' containment reference.
 	 * @see #setNamespace(Namespace)
-	 * @see ros.Ros1Package#getNamespacedElement_Namespace()
+	 * @see ros.RosPackage#getNamespacedElement_Namespace()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface NamespacedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getNamespacedElement_Name()
+	 * @see ros.RosPackage#getNamespacedElement_Name()
 	 * @model dataType="ros.GraphName" required="true"
 	 * @generated
 	 */

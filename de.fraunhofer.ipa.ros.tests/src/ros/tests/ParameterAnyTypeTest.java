@@ -4,7 +4,7 @@ package ros.tests;
 
 import junit.textui.TestRunner;
 import ros.ParameterAnyType;
-import ros.Ros1Factory;
+import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class ParameterAnyTypeTest extends ParameterTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createParameterAnyType());
+		setFixture(RosFactory.eINSTANCE.createParameterAnyType());
 	}
 
 	/**

@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterBase64#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterBase64()
+ * @see ros.RosPackage#getParameterBase64()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterBase64 extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(byte[])
-	 * @see ros.Ros1Package#getParameterBase64_Value()
+	 * @see ros.RosPackage#getParameterBase64_Value()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Base64Binary" required="true"
 	 * @generated
 	 */

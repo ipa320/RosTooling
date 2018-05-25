@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.Package} object.
@@ -80,7 +80,7 @@ public class PackageItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Package_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Package_name_feature", "_UI_Package_type"),
-				 Ros1Package.Literals.PACKAGE__NAME,
+				 RosPackage.Literals.PACKAGE__NAME,
 				 true,
 				 false,
 				 false,
@@ -101,8 +101,8 @@ public class PackageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PACKAGE__SPEC);
-			childrenFeatures.add(Ros1Package.Literals.PACKAGE__ARTIFACT);
+			childrenFeatures.add(RosPackage.Literals.PACKAGE__SPEC);
+			childrenFeatures.add(RosPackage.Literals.PACKAGE__ARTIFACT);
 		}
 		return childrenFeatures;
 	}
@@ -158,11 +158,11 @@ public class PackageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ros.Package.class)) {
-			case Ros1Package.PACKAGE__NAME:
+			case RosPackage.PACKAGE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Ros1Package.PACKAGE__SPEC:
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__ARTIFACT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -182,23 +182,23 @@ public class PackageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PACKAGE__SPEC,
-				 Ros1Factory.eINSTANCE.createServiceSpec()));
+				(RosPackage.Literals.PACKAGE__SPEC,
+				 RosFactory.eINSTANCE.createServiceSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PACKAGE__SPEC,
-				 Ros1Factory.eINSTANCE.createTopicSpec()));
+				(RosPackage.Literals.PACKAGE__SPEC,
+				 RosFactory.eINSTANCE.createTopicSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PACKAGE__SPEC,
-				 Ros1Factory.eINSTANCE.createActionSpec()));
+				(RosPackage.Literals.PACKAGE__SPEC,
+				 RosFactory.eINSTANCE.createActionSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PACKAGE__ARTIFACT,
-				 Ros1Factory.eINSTANCE.createArtifact()));
+				(RosPackage.Literals.PACKAGE__ARTIFACT,
+				 RosFactory.eINSTANCE.createArtifact()));
 	}
 
 	/**

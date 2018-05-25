@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterBase64;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterBase64} object.
@@ -63,7 +63,7 @@ public class ParameterBase64ItemProvider extends ParameterValueItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterBase64_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBase64_value_feature", "_UI_ParameterBase64_type"),
-				 Ros1Package.Literals.PARAMETER_BASE64__VALUE,
+				 RosPackage.Literals.PARAMETER_BASE64__VALUE,
 				 true,
 				 false,
 				 false,
@@ -111,7 +111,7 @@ public class ParameterBase64ItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterBase64.class)) {
-			case Ros1Package.PARAMETER_BASE64__VALUE:
+			case RosPackage.PARAMETER_BASE64__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

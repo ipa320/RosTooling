@@ -40,12 +40,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the Ros1 model editor.
+ * This is the action bar contributor for the Ros model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1ActionBarContributor
+public class RosActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -148,7 +148,7 @@ public class Ros1ActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1ActionBarContributor() {
+	public RosActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -163,8 +163,8 @@ public class Ros1ActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
-		toolBarManager.add(new Separator("ros1-settings"));
-		toolBarManager.add(new Separator("ros1-additions"));
+		toolBarManager.add(new Separator("ros-settings"));
+		toolBarManager.add(new Separator("ros-additions"));
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class Ros1ActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(RosEditorPlugin.INSTANCE.getString("_UI_Ros1Editor_menu"), "rosMenuID");
+		IMenuManager submenuManager = new MenuManager(RosEditorPlugin.INSTANCE.getString("_UI_RosEditor_menu"), "rosMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

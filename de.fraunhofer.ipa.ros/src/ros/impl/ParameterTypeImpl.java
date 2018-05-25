@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.ParameterType;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public abstract class ParameterTypeImpl extends MinimalEObjectImpl.Container imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_TYPE;
+		return RosPackage.Literals.PARAMETER_TYPE;
 	}
 
 } //ParameterTypeImpl

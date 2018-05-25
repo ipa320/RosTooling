@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 import ros.TopicSpec;
 
 /**
@@ -62,7 +62,7 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.TOPIC_SPEC__MESSAGE);
+			childrenFeatures.add(RosPackage.Literals.TOPIC_SPEC__MESSAGE);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TopicSpec.class)) {
-			case Ros1Package.TOPIC_SPEC__MESSAGE:
+			case RosPackage.TOPIC_SPEC__MESSAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,8 +138,8 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.TOPIC_SPEC__MESSAGE,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.TOPIC_SPEC__MESSAGE,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 	}
 
 }

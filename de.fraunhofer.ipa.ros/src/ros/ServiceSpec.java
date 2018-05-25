@@ -16,7 +16,7 @@ package ros;
  *   <li>{@link ros.ServiceSpec#getResponse <em>Response</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getServiceSpec()
+ * @see ros.RosPackage#getServiceSpec()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ServiceSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Request</em>' containment reference.
 	 * @see #setRequest(MessageDefinition)
-	 * @see ros.Ros1Package#getServiceSpec_Request()
+	 * @see ros.RosPackage#getServiceSpec_Request()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface ServiceSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Response</em>' containment reference.
 	 * @see #setResponse(MessageDefinition)
-	 * @see ros.Ros1Package#getServiceSpec_Response()
+	 * @see ros.RosPackage#getServiceSpec_Response()
 	 * @model containment="true"
 	 * @generated
 	 */

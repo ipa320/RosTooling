@@ -5,7 +5,7 @@ package ros.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import ros.RelativeNamespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class RelativeNamespaceImpl extends NamespaceImpl implements RelativeName
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.RELATIVE_NAMESPACE;
+		return RosPackage.Literals.RELATIVE_NAMESPACE;
 	}
 
 } //RelativeNamespaceImpl

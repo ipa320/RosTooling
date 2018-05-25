@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterStringType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterStringType()
+ * @see ros.RosPackage#getParameterStringType()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterStringType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterString)
-	 * @see ros.Ros1Package#getParameterStringType_Default()
+	 * @see ros.RosPackage#getParameterStringType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

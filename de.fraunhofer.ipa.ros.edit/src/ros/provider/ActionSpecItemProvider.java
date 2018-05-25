@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ActionSpec;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ActionSpec} object.
@@ -62,9 +62,9 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.ACTION_SPEC__GOAL);
-			childrenFeatures.add(Ros1Package.Literals.ACTION_SPEC__RESULT);
-			childrenFeatures.add(Ros1Package.Literals.ACTION_SPEC__FEEDBACK);
+			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__GOAL);
+			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__RESULT);
+			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__FEEDBACK);
 		}
 		return childrenFeatures;
 	}
@@ -120,9 +120,9 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActionSpec.class)) {
-			case Ros1Package.ACTION_SPEC__GOAL:
-			case Ros1Package.ACTION_SPEC__RESULT:
-			case Ros1Package.ACTION_SPEC__FEEDBACK:
+			case RosPackage.ACTION_SPEC__GOAL:
+			case RosPackage.ACTION_SPEC__RESULT:
+			case RosPackage.ACTION_SPEC__FEEDBACK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,18 +142,18 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.ACTION_SPEC__GOAL,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.ACTION_SPEC__GOAL,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.ACTION_SPEC__RESULT,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.ACTION_SPEC__RESULT,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.ACTION_SPEC__FEEDBACK,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.ACTION_SPEC__FEEDBACK,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 	}
 
 	/**
@@ -168,9 +168,9 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == Ros1Package.Literals.ACTION_SPEC__GOAL ||
-			childFeature == Ros1Package.Literals.ACTION_SPEC__RESULT ||
-			childFeature == Ros1Package.Literals.ACTION_SPEC__FEEDBACK;
+			childFeature == RosPackage.Literals.ACTION_SPEC__GOAL ||
+			childFeature == RosPackage.Literals.ACTION_SPEC__RESULT ||
+			childFeature == RosPackage.Literals.ACTION_SPEC__FEEDBACK;
 
 		if (qualify) {
 			return getString

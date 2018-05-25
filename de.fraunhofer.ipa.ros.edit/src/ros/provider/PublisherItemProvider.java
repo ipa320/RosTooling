@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import ros.Publisher;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.Publisher} object.
@@ -61,7 +61,7 @@ public class PublisherItemProvider extends NamespacedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Publisher_message_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Publisher_message_feature", "_UI_Publisher_type"),
-				 Ros1Package.Literals.PUBLISHER__MESSAGE,
+				 RosPackage.Literals.PUBLISHER__MESSAGE,
 				 true,
 				 false,
 				 true,

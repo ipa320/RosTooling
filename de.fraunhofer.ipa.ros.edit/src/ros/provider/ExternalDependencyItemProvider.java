@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ExternalDependency;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ExternalDependency} object.
@@ -63,7 +63,7 @@ public class ExternalDependencyItemProvider extends DependencyItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ExternalDependency_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalDependency_name_feature", "_UI_ExternalDependency_type"),
-				 Ros1Package.Literals.EXTERNAL_DEPENDENCY__NAME,
+				 RosPackage.Literals.EXTERNAL_DEPENDENCY__NAME,
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class ExternalDependencyItemProvider extends DependencyItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExternalDependency.class)) {
-			case Ros1Package.EXTERNAL_DEPENDENCY__NAME:
+			case RosPackage.EXTERNAL_DEPENDENCY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

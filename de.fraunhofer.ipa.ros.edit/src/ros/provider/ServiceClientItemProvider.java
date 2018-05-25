@@ -12,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.ServiceClient;
 
 /**
@@ -61,7 +61,7 @@ public class ServiceClientItemProvider extends NamespacedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ServiceClient_service_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceClient_service_feature", "_UI_ServiceClient_type"),
-				 Ros1Package.Literals.SERVICE_CLIENT__SERVICE,
+				 RosPackage.Literals.SERVICE_CLIENT__SERVICE,
 				 true,
 				 false,
 				 true,

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ParameterInteger;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_INTEGER;
+		return RosPackage.Literals.PARAMETER_INTEGER;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 		int oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_INTEGER__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_INTEGER__VALUE, oldValue, value));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_INTEGER__VALUE:
+			case RosPackage.PARAMETER_INTEGER__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_INTEGER__VALUE:
+			case RosPackage.PARAMETER_INTEGER__VALUE:
 				setValue((Integer)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_INTEGER__VALUE:
+			case RosPackage.PARAMETER_INTEGER__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_INTEGER__VALUE:
+			case RosPackage.PARAMETER_INTEGER__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.PackageDependency;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PACKAGE_DEPENDENCY;
+		return RosPackage.Literals.PACKAGE_DEPENDENCY;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 			package_ = (ros.Package)eResolveProxy(oldPackage);
 			if (package_ != oldPackage) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Ros1Package.PACKAGE_DEPENDENCY__PACKAGE, oldPackage, package_));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.PACKAGE_DEPENDENCY__PACKAGE, oldPackage, package_));
 			}
 		}
 		return package_;
@@ -90,7 +90,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 		ros.Package oldPackage = package_;
 		package_ = newPackage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PACKAGE_DEPENDENCY__PACKAGE, oldPackage, package_));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PACKAGE_DEPENDENCY__PACKAGE, oldPackage, package_));
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE_DEPENDENCY__PACKAGE:
+			case RosPackage.PACKAGE_DEPENDENCY__PACKAGE:
 				if (resolve) return getPackage();
 				return basicGetPackage();
 		}
@@ -116,7 +116,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE_DEPENDENCY__PACKAGE:
+			case RosPackage.PACKAGE_DEPENDENCY__PACKAGE:
 				setPackage((ros.Package)newValue);
 				return;
 		}
@@ -131,7 +131,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE_DEPENDENCY__PACKAGE:
+			case RosPackage.PACKAGE_DEPENDENCY__PACKAGE:
 				setPackage((ros.Package)null);
 				return;
 		}
@@ -146,7 +146,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE_DEPENDENCY__PACKAGE:
+			case RosPackage.PACKAGE_DEPENDENCY__PACKAGE:
 				return package_ != null;
 		}
 		return super.eIsSet(featureID);

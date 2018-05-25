@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterIntegerType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterIntegerType()
+ * @see ros.RosPackage#getParameterIntegerType()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterIntegerType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterInteger)
-	 * @see ros.Ros1Package#getParameterIntegerType_Default()
+	 * @see ros.RosPackage#getParameterIntegerType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

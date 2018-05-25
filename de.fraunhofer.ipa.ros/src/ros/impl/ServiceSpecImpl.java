@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.MessageDefinition;
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.ServiceSpec;
 
 /**
@@ -65,7 +65,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.SERVICE_SPEC;
+		return RosPackage.Literals.SERVICE_SPEC;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 		MessageDefinition oldRequest = request;
 		request = newRequest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.SERVICE_SPEC__REQUEST, oldRequest, newRequest);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_SPEC__REQUEST, oldRequest, newRequest);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -101,14 +101,14 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 		if (newRequest != request) {
 			NotificationChain msgs = null;
 			if (request != null)
-				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.SERVICE_SPEC__REQUEST, null, msgs);
+				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.SERVICE_SPEC__REQUEST, null, msgs);
 			if (newRequest != null)
-				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.SERVICE_SPEC__REQUEST, null, msgs);
+				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.SERVICE_SPEC__REQUEST, null, msgs);
 			msgs = basicSetRequest(newRequest, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.SERVICE_SPEC__REQUEST, newRequest, newRequest));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_SPEC__REQUEST, newRequest, newRequest));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 		MessageDefinition oldResponse = response;
 		response = newResponse;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.SERVICE_SPEC__RESPONSE, oldResponse, newResponse);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_SPEC__RESPONSE, oldResponse, newResponse);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -144,14 +144,14 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 		if (newResponse != response) {
 			NotificationChain msgs = null;
 			if (response != null)
-				msgs = ((InternalEObject)response).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.SERVICE_SPEC__RESPONSE, null, msgs);
+				msgs = ((InternalEObject)response).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.SERVICE_SPEC__RESPONSE, null, msgs);
 			if (newResponse != null)
-				msgs = ((InternalEObject)newResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.SERVICE_SPEC__RESPONSE, null, msgs);
+				msgs = ((InternalEObject)newResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.SERVICE_SPEC__RESPONSE, null, msgs);
 			msgs = basicSetResponse(newResponse, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.SERVICE_SPEC__RESPONSE, newResponse, newResponse));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_SPEC__RESPONSE, newResponse, newResponse));
 	}
 
 	/**
@@ -162,9 +162,9 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__REQUEST:
 				return basicSetRequest(null, msgs);
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				return basicSetResponse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -178,9 +178,9 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__REQUEST:
 				return getRequest();
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				return getResponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -194,10 +194,10 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__REQUEST:
 				setRequest((MessageDefinition)newValue);
 				return;
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				setResponse((MessageDefinition)newValue);
 				return;
 		}
@@ -212,10 +212,10 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__REQUEST:
 				setRequest((MessageDefinition)null);
 				return;
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				setResponse((MessageDefinition)null);
 				return;
 		}
@@ -230,9 +230,9 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__REQUEST:
 				return request != null;
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				return response != null;
 		}
 		return super.eIsSet(featureID);

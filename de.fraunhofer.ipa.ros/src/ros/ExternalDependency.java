@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ExternalDependency#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getExternalDependency()
+ * @see ros.RosPackage#getExternalDependency()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ExternalDependency extends Dependency {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getExternalDependency_Name()
+	 * @see ros.RosPackage#getExternalDependency_Name()
 	 * @model required="true"
 	 * @generated
 	 */

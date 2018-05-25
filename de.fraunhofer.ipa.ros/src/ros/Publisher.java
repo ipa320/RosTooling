@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.Publisher#getMessage <em>Message</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getPublisher()
+ * @see ros.RosPackage#getPublisher()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface Publisher extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' reference.
 	 * @see #setMessage(TopicSpec)
-	 * @see ros.Ros1Package#getPublisher_Message()
+	 * @see ros.RosPackage#getPublisher_Message()
 	 * @model required="true"
 	 * @generated
 	 */

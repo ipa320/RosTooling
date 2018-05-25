@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import ros.ActionServer;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ActionServer} object.
@@ -61,7 +61,7 @@ public class ActionServerItemProvider extends NamespacedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ActionServer_action_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionServer_action_feature", "_UI_ActionServer_type"),
-				 Ros1Package.Literals.ACTION_SERVER__ACTION,
+				 RosPackage.Literals.ACTION_SERVER__ACTION,
 				 true,
 				 false,
 				 true,

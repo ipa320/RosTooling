@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ServiceClient#getService <em>Service</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getServiceClient()
+ * @see ros.RosPackage#getServiceClient()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ServiceClient extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service</em>' reference.
 	 * @see #setService(ServiceSpec)
-	 * @see ros.Ros1Package#getServiceClient_Service()
+	 * @see ros.RosPackage#getServiceClient_Service()
 	 * @model required="true"
 	 * @generated
 	 */

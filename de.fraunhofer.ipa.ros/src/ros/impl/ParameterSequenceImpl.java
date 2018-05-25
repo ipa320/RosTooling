@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.ParameterSequence;
 import ros.ParameterValue;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_SEQUENCE;
+		return RosPackage.Literals.PARAMETER_SEQUENCE;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	 */
 	public EList<ParameterValue> getValue() {
 		if (value == null) {
-			value = new EObjectContainmentEList<ParameterValue>(ParameterValue.class, this, Ros1Package.PARAMETER_SEQUENCE__VALUE);
+			value = new EObjectContainmentEList<ParameterValue>(ParameterValue.class, this, RosPackage.PARAMETER_SEQUENCE__VALUE);
 		}
 		return value;
 	}
@@ -81,7 +81,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -95,7 +95,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				getValue().clear();
 				getValue().addAll((Collection<? extends ParameterValue>)newValue);
 				return;
@@ -126,7 +126,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				getValue().clear();
 				return;
 		}
@@ -141,7 +141,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);

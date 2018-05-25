@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.SpecBase#getFullname <em>Fullname</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getSpecBase()
+ * @see ros.RosPackage#getSpecBase()
  * @model abstract="true"
  * @generated
  */
@@ -34,7 +34,7 @@ public interface SpecBase extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getSpecBase_Name()
+	 * @see ros.RosPackage#getSpecBase_Name()
 	 * @model default="" unique="false" required="true"
 	 * @generated
 	 */
@@ -61,7 +61,7 @@ public interface SpecBase extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package</em>' container reference.
 	 * @see #setPackage(ros.Package)
-	 * @see ros.Ros1Package#getSpecBase_Package()
+	 * @see ros.RosPackage#getSpecBase_Package()
 	 * @see ros.Package#getSpec
 	 * @model opposite="spec" required="true" transient="false"
 	 * @generated
@@ -89,7 +89,7 @@ public interface SpecBase extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fullname</em>' attribute.
 	 * @see #isSetFullname()
-	 * @see ros.Ros1Package#getSpecBase_Fullname()
+	 * @see ros.RosPackage#getSpecBase_Fullname()
 	 * @model default="" unsettable="true" id="true" required="true" changeable="false" volatile="true"
 	 * @generated
 	 */

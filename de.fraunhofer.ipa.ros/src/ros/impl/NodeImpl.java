@@ -23,7 +23,7 @@ import ros.ActionServer;
 import ros.Node;
 import ros.Parameter;
 import ros.Publisher;
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.Subscriber;
@@ -155,7 +155,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.NODE;
+		return RosPackage.Literals.NODE;
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<ServiceServer> getServiceserver() {
 		if (serviceserver == null) {
-			serviceserver = new EObjectContainmentEList<ServiceServer>(ServiceServer.class, this, Ros1Package.NODE__SERVICESERVER);
+			serviceserver = new EObjectContainmentEList<ServiceServer>(ServiceServer.class, this, RosPackage.NODE__SERVICESERVER);
 		}
 		return serviceserver;
 	}
@@ -177,7 +177,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<Publisher> getPublisher() {
 		if (publisher == null) {
-			publisher = new EObjectContainmentEList<Publisher>(Publisher.class, this, Ros1Package.NODE__PUBLISHER);
+			publisher = new EObjectContainmentEList<Publisher>(Publisher.class, this, RosPackage.NODE__PUBLISHER);
 		}
 		return publisher;
 	}
@@ -189,7 +189,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<Subscriber> getSubscriber() {
 		if (subscriber == null) {
-			subscriber = new EObjectContainmentEList<Subscriber>(Subscriber.class, this, Ros1Package.NODE__SUBSCRIBER);
+			subscriber = new EObjectContainmentEList<Subscriber>(Subscriber.class, this, RosPackage.NODE__SUBSCRIBER);
 		}
 		return subscriber;
 	}
@@ -201,7 +201,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<ServiceClient> getServiceclient() {
 		if (serviceclient == null) {
-			serviceclient = new EObjectContainmentEList<ServiceClient>(ServiceClient.class, this, Ros1Package.NODE__SERVICECLIENT);
+			serviceclient = new EObjectContainmentEList<ServiceClient>(ServiceClient.class, this, RosPackage.NODE__SERVICECLIENT);
 		}
 		return serviceclient;
 	}
@@ -213,7 +213,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<ActionServer> getActionserver() {
 		if (actionserver == null) {
-			actionserver = new EObjectContainmentEList<ActionServer>(ActionServer.class, this, Ros1Package.NODE__ACTIONSERVER);
+			actionserver = new EObjectContainmentEList<ActionServer>(ActionServer.class, this, RosPackage.NODE__ACTIONSERVER);
 		}
 		return actionserver;
 	}
@@ -225,7 +225,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<ActionClient> getActionclient() {
 		if (actionclient == null) {
-			actionclient = new EObjectContainmentEList<ActionClient>(ActionClient.class, this, Ros1Package.NODE__ACTIONCLIENT);
+			actionclient = new EObjectContainmentEList<ActionClient>(ActionClient.class, this, RosPackage.NODE__ACTIONCLIENT);
 		}
 		return actionclient;
 	}
@@ -248,7 +248,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.NODE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.NODE__NAME, oldName, name));
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public EList<Parameter> getParameter() {
 		if (parameter == null) {
-			parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this, Ros1Package.NODE__PARAMETER);
+			parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this, RosPackage.NODE__PARAMETER);
 		}
 		return parameter;
 	}
@@ -271,19 +271,19 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.NODE__SERVICESERVER:
+			case RosPackage.NODE__SERVICESERVER:
 				return ((InternalEList<?>)getServiceserver()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__PUBLISHER:
+			case RosPackage.NODE__PUBLISHER:
 				return ((InternalEList<?>)getPublisher()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SUBSCRIBER:
 				return ((InternalEList<?>)getSubscriber()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__SERVICECLIENT:
+			case RosPackage.NODE__SERVICECLIENT:
 				return ((InternalEList<?>)getServiceclient()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONSERVER:
 				return ((InternalEList<?>)getActionserver()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__ACTIONCLIENT:
 				return ((InternalEList<?>)getActionclient()).basicRemove(otherEnd, msgs);
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__PARAMETER:
 				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -297,21 +297,21 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.NODE__SERVICESERVER:
+			case RosPackage.NODE__SERVICESERVER:
 				return getServiceserver();
-			case Ros1Package.NODE__PUBLISHER:
+			case RosPackage.NODE__PUBLISHER:
 				return getPublisher();
-			case Ros1Package.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SUBSCRIBER:
 				return getSubscriber();
-			case Ros1Package.NODE__SERVICECLIENT:
+			case RosPackage.NODE__SERVICECLIENT:
 				return getServiceclient();
-			case Ros1Package.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONSERVER:
 				return getActionserver();
-			case Ros1Package.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__ACTIONCLIENT:
 				return getActionclient();
-			case Ros1Package.NODE__NAME:
+			case RosPackage.NODE__NAME:
 				return getName();
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__PARAMETER:
 				return getParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -326,34 +326,34 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.NODE__SERVICESERVER:
+			case RosPackage.NODE__SERVICESERVER:
 				getServiceserver().clear();
 				getServiceserver().addAll((Collection<? extends ServiceServer>)newValue);
 				return;
-			case Ros1Package.NODE__PUBLISHER:
+			case RosPackage.NODE__PUBLISHER:
 				getPublisher().clear();
 				getPublisher().addAll((Collection<? extends Publisher>)newValue);
 				return;
-			case Ros1Package.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SUBSCRIBER:
 				getSubscriber().clear();
 				getSubscriber().addAll((Collection<? extends Subscriber>)newValue);
 				return;
-			case Ros1Package.NODE__SERVICECLIENT:
+			case RosPackage.NODE__SERVICECLIENT:
 				getServiceclient().clear();
 				getServiceclient().addAll((Collection<? extends ServiceClient>)newValue);
 				return;
-			case Ros1Package.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONSERVER:
 				getActionserver().clear();
 				getActionserver().addAll((Collection<? extends ActionServer>)newValue);
 				return;
-			case Ros1Package.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__ACTIONCLIENT:
 				getActionclient().clear();
 				getActionclient().addAll((Collection<? extends ActionClient>)newValue);
 				return;
-			case Ros1Package.NODE__NAME:
+			case RosPackage.NODE__NAME:
 				setName((String)newValue);
 				return;
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__PARAMETER:
 				getParameter().clear();
 				getParameter().addAll((Collection<? extends Parameter>)newValue);
 				return;
@@ -369,28 +369,28 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.NODE__SERVICESERVER:
+			case RosPackage.NODE__SERVICESERVER:
 				getServiceserver().clear();
 				return;
-			case Ros1Package.NODE__PUBLISHER:
+			case RosPackage.NODE__PUBLISHER:
 				getPublisher().clear();
 				return;
-			case Ros1Package.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SUBSCRIBER:
 				getSubscriber().clear();
 				return;
-			case Ros1Package.NODE__SERVICECLIENT:
+			case RosPackage.NODE__SERVICECLIENT:
 				getServiceclient().clear();
 				return;
-			case Ros1Package.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONSERVER:
 				getActionserver().clear();
 				return;
-			case Ros1Package.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__ACTIONCLIENT:
 				getActionclient().clear();
 				return;
-			case Ros1Package.NODE__NAME:
+			case RosPackage.NODE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__PARAMETER:
 				getParameter().clear();
 				return;
 		}
@@ -405,21 +405,21 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.NODE__SERVICESERVER:
+			case RosPackage.NODE__SERVICESERVER:
 				return serviceserver != null && !serviceserver.isEmpty();
-			case Ros1Package.NODE__PUBLISHER:
+			case RosPackage.NODE__PUBLISHER:
 				return publisher != null && !publisher.isEmpty();
-			case Ros1Package.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SUBSCRIBER:
 				return subscriber != null && !subscriber.isEmpty();
-			case Ros1Package.NODE__SERVICECLIENT:
+			case RosPackage.NODE__SERVICECLIENT:
 				return serviceclient != null && !serviceclient.isEmpty();
-			case Ros1Package.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONSERVER:
 				return actionserver != null && !actionserver.isEmpty();
-			case Ros1Package.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__ACTIONCLIENT:
 				return actionclient != null && !actionclient.isEmpty();
-			case Ros1Package.NODE__NAME:
+			case RosPackage.NODE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__PARAMETER:
 				return parameter != null && !parameter.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import ros.Namespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +55,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.NAMESPACE;
+		return RosPackage.Literals.NAMESPACE;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<String> getParts() {
 		if (parts == null) {
-			parts = new EDataTypeEList<String>(String.class, this, Ros1Package.NAMESPACE__PARTS);
+			parts = new EDataTypeEList<String>(String.class, this, RosPackage.NAMESPACE__PARTS);
 		}
 		return parts;
 	}
@@ -78,7 +78,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.NAMESPACE__PARTS:
+			case RosPackage.NAMESPACE__PARTS:
 				return getParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -93,7 +93,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.NAMESPACE__PARTS:
+			case RosPackage.NAMESPACE__PARTS:
 				getParts().clear();
 				getParts().addAll((Collection<? extends String>)newValue);
 				return;
@@ -109,7 +109,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.NAMESPACE__PARTS:
+			case RosPackage.NAMESPACE__PARTS:
 				getParts().clear();
 				return;
 		}
@@ -124,7 +124,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.NAMESPACE__PARTS:
+			case RosPackage.NAMESPACE__PARTS:
 				return parts != null && !parts.isEmpty();
 		}
 		return super.eIsSet(featureID);

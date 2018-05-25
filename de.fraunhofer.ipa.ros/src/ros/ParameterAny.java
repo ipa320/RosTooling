@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterAny#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterAny()
+ * @see ros.RosPackage#getParameterAny()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterAny extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see ros.Ros1Package#getParameterAny_Value()
+	 * @see ros.RosPackage#getParameterAny_Value()
 	 * @model
 	 * @generated
 	 */

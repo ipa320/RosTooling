@@ -9,7 +9,7 @@ package ros;
  * <!-- end-user-doc -->
  *
  *
- * @see ros.Ros1Package#getRelativeNamespace()
+ * @see ros.RosPackage#getRelativeNamespace()
  * @model
  * @generated
  */

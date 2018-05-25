@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.Subscriber;
 import ros.TopicSpec;
 
@@ -53,7 +53,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.SUBSCRIBER;
+		return RosPackage.Literals.SUBSCRIBER;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 			message = (TopicSpec)eResolveProxy(oldMessage);
 			if (message != oldMessage) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Ros1Package.SUBSCRIBER__MESSAGE, oldMessage, message));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.SUBSCRIBER__MESSAGE, oldMessage, message));
 			}
 		}
 		return message;
@@ -91,7 +91,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 		TopicSpec oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.SUBSCRIBER__MESSAGE, oldMessage, message));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SUBSCRIBER__MESSAGE, oldMessage, message));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.SUBSCRIBER__MESSAGE:
+			case RosPackage.SUBSCRIBER__MESSAGE:
 				if (resolve) return getMessage();
 				return basicGetMessage();
 		}
@@ -117,7 +117,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.SUBSCRIBER__MESSAGE:
+			case RosPackage.SUBSCRIBER__MESSAGE:
 				setMessage((TopicSpec)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.SUBSCRIBER__MESSAGE:
+			case RosPackage.SUBSCRIBER__MESSAGE:
 				setMessage((TopicSpec)null);
 				return;
 		}
@@ -147,7 +147,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.SUBSCRIBER__MESSAGE:
+			case RosPackage.SUBSCRIBER__MESSAGE:
 				return message != null;
 		}
 		return super.eIsSet(featureID);

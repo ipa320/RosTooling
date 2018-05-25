@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterStructType;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterStructType} object.
@@ -62,7 +62,7 @@ public class ParameterStructTypeItemProvider extends ParameterTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +115,7 @@ public class ParameterStructTypeItemProvider extends ParameterTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterStructType.class)) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -135,8 +135,8 @@ public class ParameterStructTypeItemProvider extends ParameterTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER,
-				 Ros1Factory.eINSTANCE.createParameterStructTypeMember()));
+				(RosPackage.Literals.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER,
+				 RosFactory.eINSTANCE.createParameterStructTypeMember()));
 	}
 
 }

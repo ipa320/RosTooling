@@ -31,7 +31,7 @@ public class RosAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new RosAllTests("Ros Tests");
-		suite.addTest(Ros1Tests.suite());
+		suite.addTest(RosTests.suite());
 		return suite;
 	}
 

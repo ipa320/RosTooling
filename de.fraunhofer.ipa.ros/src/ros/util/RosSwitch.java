@@ -48,7 +48,7 @@ import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
 import ros.RelativeNamespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.ServiceSpec;
@@ -66,17 +66,17 @@ import ros.TopicSpec;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see ros.Ros1Package
+ * @see ros.RosPackage
  * @generated
  */
-public class Ros1Switch<T> extends Switch<T> {
+public class RosSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static Ros1Package modelPackage;
+	protected static RosPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -84,9 +84,9 @@ public class Ros1Switch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1Switch() {
+	public RosSwitch() {
 		if (modelPackage == null) {
-			modelPackage = Ros1Package.eINSTANCE;
+			modelPackage = RosPackage.eINSTANCE;
 		}
 	}
 
@@ -113,153 +113,153 @@ public class Ros1Switch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case Ros1Package.NODE: {
+			case RosPackage.NODE: {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PACKAGE: {
+			case RosPackage.PACKAGE: {
 				ros.Package package_ = (ros.Package)theEObject;
 				T result = casePackage(package_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.DEPENDENCY: {
+			case RosPackage.DEPENDENCY: {
 				Dependency dependency = (Dependency)theEObject;
 				T result = caseDependency(dependency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.SERVICE_SPEC: {
+			case RosPackage.SERVICE_SPEC: {
 				ServiceSpec serviceSpec = (ServiceSpec)theEObject;
 				T result = caseServiceSpec(serviceSpec);
 				if (result == null) result = caseSpecBase(serviceSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.SERVICE_SERVER: {
+			case RosPackage.SERVICE_SERVER: {
 				ServiceServer serviceServer = (ServiceServer)theEObject;
 				T result = caseServiceServer(serviceServer);
 				if (result == null) result = caseNamespacedElement(serviceServer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.TOPIC_SPEC: {
+			case RosPackage.TOPIC_SPEC: {
 				TopicSpec topicSpec = (TopicSpec)theEObject;
 				T result = caseTopicSpec(topicSpec);
 				if (result == null) result = caseSpecBase(topicSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PUBLISHER: {
+			case RosPackage.PUBLISHER: {
 				Publisher publisher = (Publisher)theEObject;
 				T result = casePublisher(publisher);
 				if (result == null) result = caseNamespacedElement(publisher);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PACKAGE_DEPENDENCY: {
+			case RosPackage.PACKAGE_DEPENDENCY: {
 				PackageDependency packageDependency = (PackageDependency)theEObject;
 				T result = casePackageDependency(packageDependency);
 				if (result == null) result = caseDependency(packageDependency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.EXTERNAL_DEPENDENCY: {
+			case RosPackage.EXTERNAL_DEPENDENCY: {
 				ExternalDependency externalDependency = (ExternalDependency)theEObject;
 				T result = caseExternalDependency(externalDependency);
 				if (result == null) result = caseDependency(externalDependency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.CATKIN_PACKAGE: {
+			case RosPackage.CATKIN_PACKAGE: {
 				CatkinPackage catkinPackage = (CatkinPackage)theEObject;
 				T result = caseCatkinPackage(catkinPackage);
 				if (result == null) result = casePackage(catkinPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.ARTIFACT: {
+			case RosPackage.ARTIFACT: {
 				Artifact artifact = (Artifact)theEObject;
 				T result = caseArtifact(artifact);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.SPEC_BASE: {
+			case RosPackage.SPEC_BASE: {
 				SpecBase specBase = (SpecBase)theEObject;
 				T result = caseSpecBase(specBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.SUBSCRIBER: {
+			case RosPackage.SUBSCRIBER: {
 				Subscriber subscriber = (Subscriber)theEObject;
 				T result = caseSubscriber(subscriber);
 				if (result == null) result = caseNamespacedElement(subscriber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.SERVICE_CLIENT: {
+			case RosPackage.SERVICE_CLIENT: {
 				ServiceClient serviceClient = (ServiceClient)theEObject;
 				T result = caseServiceClient(serviceClient);
 				if (result == null) result = caseNamespacedElement(serviceClient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PACKAGE_SET: {
+			case RosPackage.PACKAGE_SET: {
 				PackageSet packageSet = (PackageSet)theEObject;
 				T result = casePackageSet(packageSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.ACTION_SPEC: {
+			case RosPackage.ACTION_SPEC: {
 				ActionSpec actionSpec = (ActionSpec)theEObject;
 				T result = caseActionSpec(actionSpec);
 				if (result == null) result = caseSpecBase(actionSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.ACTION_SERVER: {
+			case RosPackage.ACTION_SERVER: {
 				ActionServer actionServer = (ActionServer)theEObject;
 				T result = caseActionServer(actionServer);
 				if (result == null) result = caseNamespacedElement(actionServer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.ACTION_CLIENT: {
+			case RosPackage.ACTION_CLIENT: {
 				ActionClient actionClient = (ActionClient)theEObject;
 				T result = caseActionClient(actionClient);
 				if (result == null) result = caseNamespacedElement(actionClient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.MESSAGE_DEFINITION: {
+			case RosPackage.MESSAGE_DEFINITION: {
 				MessageDefinition messageDefinition = (MessageDefinition)theEObject;
 				T result = caseMessageDefinition(messageDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.NAMESPACE: {
+			case RosPackage.NAMESPACE: {
 				Namespace namespace = (Namespace)theEObject;
 				T result = caseNamespace(namespace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.GLOBAL_NAMESPACE: {
+			case RosPackage.GLOBAL_NAMESPACE: {
 				GlobalNamespace globalNamespace = (GlobalNamespace)theEObject;
 				T result = caseGlobalNamespace(globalNamespace);
 				if (result == null) result = caseNamespace(globalNamespace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.RELATIVE_NAMESPACE: {
+			case RosPackage.RELATIVE_NAMESPACE: {
 				RelativeNamespace relativeNamespace = (RelativeNamespace)theEObject;
 				T result = caseRelativeNamespace(relativeNamespace);
 				if (result == null) result = caseNamespace(relativeNamespace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PRIVATE_NAMESPACE: {
+			case RosPackage.PRIVATE_NAMESPACE: {
 				PrivateNamespace privateNamespace = (PrivateNamespace)theEObject;
 				T result = casePrivateNamespace(privateNamespace);
 				if (result == null) result = caseRelativeNamespace(privateNamespace);
@@ -267,170 +267,170 @@ public class Ros1Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.NAMESPACED_ELEMENT: {
+			case RosPackage.NAMESPACED_ELEMENT: {
 				NamespacedElement namespacedElement = (NamespacedElement)theEObject;
 				T result = caseNamespacedElement(namespacedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_TYPE: {
+			case RosPackage.PARAMETER_TYPE: {
 				ParameterType parameterType = (ParameterType)theEObject;
 				T result = caseParameterType(parameterType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_LIST_TYPE: {
+			case RosPackage.PARAMETER_LIST_TYPE: {
 				ParameterListType parameterListType = (ParameterListType)theEObject;
 				T result = caseParameterListType(parameterListType);
 				if (result == null) result = caseParameterType(parameterListType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRUCT_TYPE: {
+			case RosPackage.PARAMETER_STRUCT_TYPE: {
 				ParameterStructType parameterStructType = (ParameterStructType)theEObject;
 				T result = caseParameterStructType(parameterStructType);
 				if (result == null) result = caseParameterType(parameterStructType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_INTEGER_TYPE: {
+			case RosPackage.PARAMETER_INTEGER_TYPE: {
 				ParameterIntegerType parameterIntegerType = (ParameterIntegerType)theEObject;
 				T result = caseParameterIntegerType(parameterIntegerType);
 				if (result == null) result = caseParameterType(parameterIntegerType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRING_TYPE: {
+			case RosPackage.PARAMETER_STRING_TYPE: {
 				ParameterStringType parameterStringType = (ParameterStringType)theEObject;
 				T result = caseParameterStringType(parameterStringType);
 				if (result == null) result = caseParameterType(parameterStringType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_DOUBLE_TYPE: {
+			case RosPackage.PARAMETER_DOUBLE_TYPE: {
 				ParameterDoubleType parameterDoubleType = (ParameterDoubleType)theEObject;
 				T result = caseParameterDoubleType(parameterDoubleType);
 				if (result == null) result = caseParameterType(parameterDoubleType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER: {
+			case RosPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
 				if (result == null) result = caseNamespacedElement(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_DATE_TYPE: {
+			case RosPackage.PARAMETER_DATE_TYPE: {
 				ParameterDateType parameterDateType = (ParameterDateType)theEObject;
 				T result = caseParameterDateType(parameterDateType);
 				if (result == null) result = caseParameterType(parameterDateType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_BOOLEAN_TYPE: {
+			case RosPackage.PARAMETER_BOOLEAN_TYPE: {
 				ParameterBooleanType parameterBooleanType = (ParameterBooleanType)theEObject;
 				T result = caseParameterBooleanType(parameterBooleanType);
 				if (result == null) result = caseParameterType(parameterBooleanType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_BASE64_TYPE: {
+			case RosPackage.PARAMETER_BASE64_TYPE: {
 				ParameterBase64Type parameterBase64Type = (ParameterBase64Type)theEObject;
 				T result = caseParameterBase64Type(parameterBase64Type);
 				if (result == null) result = caseParameterType(parameterBase64Type);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_ANY_TYPE: {
+			case RosPackage.PARAMETER_ANY_TYPE: {
 				ParameterAnyType parameterAnyType = (ParameterAnyType)theEObject;
 				T result = caseParameterAnyType(parameterAnyType);
 				if (result == null) result = caseParameterType(parameterAnyType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRUCT_TYPE_MEMBER: {
+			case RosPackage.PARAMETER_STRUCT_TYPE_MEMBER: {
 				ParameterStructTypeMember parameterStructTypeMember = (ParameterStructTypeMember)theEObject;
 				T result = caseParameterStructTypeMember(parameterStructTypeMember);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_ARRAY_TYPE: {
+			case RosPackage.PARAMETER_ARRAY_TYPE: {
 				ParameterArrayType parameterArrayType = (ParameterArrayType)theEObject;
 				T result = caseParameterArrayType(parameterArrayType);
 				if (result == null) result = caseParameterType(parameterArrayType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_VALUE: {
+			case RosPackage.PARAMETER_VALUE: {
 				ParameterValue parameterValue = (ParameterValue)theEObject;
 				T result = caseParameterValue(parameterValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_ANY: {
+			case RosPackage.PARAMETER_ANY: {
 				ParameterAny parameterAny = (ParameterAny)theEObject;
 				T result = caseParameterAny(parameterAny);
 				if (result == null) result = caseParameterValue(parameterAny);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRING: {
+			case RosPackage.PARAMETER_STRING: {
 				ParameterString parameterString = (ParameterString)theEObject;
 				T result = caseParameterString(parameterString);
 				if (result == null) result = caseParameterValue(parameterString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_BASE64: {
+			case RosPackage.PARAMETER_BASE64: {
 				ParameterBase64 parameterBase64 = (ParameterBase64)theEObject;
 				T result = caseParameterBase64(parameterBase64);
 				if (result == null) result = caseParameterValue(parameterBase64);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_INTEGER: {
+			case RosPackage.PARAMETER_INTEGER: {
 				ParameterInteger parameterInteger = (ParameterInteger)theEObject;
 				T result = caseParameterInteger(parameterInteger);
 				if (result == null) result = caseParameterValue(parameterInteger);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_DOUBLE: {
+			case RosPackage.PARAMETER_DOUBLE: {
 				ParameterDouble parameterDouble = (ParameterDouble)theEObject;
 				T result = caseParameterDouble(parameterDouble);
 				if (result == null) result = caseParameterValue(parameterDouble);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_BOOLEAN: {
+			case RosPackage.PARAMETER_BOOLEAN: {
 				ParameterBoolean parameterBoolean = (ParameterBoolean)theEObject;
 				T result = caseParameterBoolean(parameterBoolean);
 				if (result == null) result = caseParameterValue(parameterBoolean);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_SEQUENCE: {
+			case RosPackage.PARAMETER_SEQUENCE: {
 				ParameterSequence parameterSequence = (ParameterSequence)theEObject;
 				T result = caseParameterSequence(parameterSequence);
 				if (result == null) result = caseParameterValue(parameterSequence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRUCT: {
+			case RosPackage.PARAMETER_STRUCT: {
 				ParameterStruct parameterStruct = (ParameterStruct)theEObject;
 				T result = caseParameterStruct(parameterStruct);
 				if (result == null) result = caseParameterValue(parameterStruct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_STRUCT_MEMBER: {
+			case RosPackage.PARAMETER_STRUCT_MEMBER: {
 				ParameterStructMember parameterStructMember = (ParameterStructMember)theEObject;
 				T result = caseParameterStructMember(parameterStructMember);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Ros1Package.PARAMETER_DATE: {
+			case RosPackage.PARAMETER_DATE: {
 				ParameterDate parameterDate = (ParameterDate)theEObject;
 				T result = caseParameterDate(parameterDate);
 				if (result == null) result = caseParameterValue(parameterDate);
@@ -1177,4 +1177,4 @@ public class Ros1Switch<T> extends Switch<T> {
 		return null;
 	}
 
-} //Ros1Switch
+} //RosSwitch

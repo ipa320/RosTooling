@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.Node#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getNode()
+ * @see ros.RosPackage#getNode()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serviceserver</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Serviceserver()
+	 * @see ros.RosPackage#getNode_Serviceserver()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -56,7 +56,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Publisher</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Publisher()
+	 * @see ros.RosPackage#getNode_Publisher()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -72,7 +72,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscriber</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Subscriber()
+	 * @see ros.RosPackage#getNode_Subscriber()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serviceclient</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Serviceclient()
+	 * @see ros.RosPackage#getNode_Serviceclient()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -104,7 +104,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actionserver</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Actionserver()
+	 * @see ros.RosPackage#getNode_Actionserver()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actionclient</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Actionclient()
+	 * @see ros.RosPackage#getNode_Actionclient()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -136,7 +136,7 @@ public interface Node extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getNode_Name()
+	 * @see ros.RosPackage#getNode_Name()
 	 * @model dataType="ros.GraphName" required="true"
 	 * @generated
 	 */
@@ -162,7 +162,7 @@ public interface Node extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' containment reference list.
-	 * @see ros.Ros1Package#getNode_Parameter()
+	 * @see ros.RosPackage#getNode_Parameter()
 	 * @model containment="true"
 	 * @generated
 	 */

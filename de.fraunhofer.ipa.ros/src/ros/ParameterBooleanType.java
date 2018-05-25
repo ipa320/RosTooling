@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterBooleanType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterBooleanType()
+ * @see ros.RosPackage#getParameterBooleanType()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterBooleanType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterBoolean)
-	 * @see ros.Ros1Package#getParameterBooleanType_Default()
+	 * @see ros.RosPackage#getParameterBooleanType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

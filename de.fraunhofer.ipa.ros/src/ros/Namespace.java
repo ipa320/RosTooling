@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.Namespace#getParts <em>Parts</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getNamespace()
+ * @see ros.RosPackage#getNamespace()
  * @model abstract="true"
  * @generated
  */
@@ -33,7 +33,7 @@ public interface Namespace extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parts</em>' attribute list.
-	 * @see ros.Ros1Package#getNamespace_Parts()
+	 * @see ros.RosPackage#getNamespace_Parts()
 	 * @model unique="false" dataType="ros.GraphName"
 	 * @generated
 	 */

@@ -101,7 +101,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
-import ros.provider.Ros1ItemProviderAdapterFactory;
+import ros.provider.RosItemProviderAdapterFactory;
 
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
@@ -159,12 +159,12 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
 /**
- * This is an example of a Ros1 model editor.
+ * This is an example of a Ros model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1Editor
+public class RosEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -326,18 +326,18 @@ public class Ros1Editor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(Ros1Editor.this);
+						getActionBarContributor().setActiveEditor(RosEditor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(Ros1Editor.this);
+						getActionBarContributor().setActiveEditor(RosEditor.this);
 						handleActivate();
 					}
 				}
-				else if (p == Ros1Editor.this) {
+				else if (p == RosEditor.this) {
 					handleActivate();
 				}
 			}
@@ -510,7 +510,7 @@ public class Ros1Editor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(Ros1Editor.this, false);
+										 getSite().getPage().closeEditor(RosEditor.this, false);
 									 }
 								 }
 							 });
@@ -521,7 +521,7 @@ public class Ros1Editor
 							(new Runnable() {
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == Ros1Editor.this) {
+									 if (getSite().getPage().getActiveEditor() == RosEditor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -553,7 +553,7 @@ public class Ros1Editor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(Ros1Editor.this, false);
+				getSite().getPage().closeEditor(RosEditor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -680,7 +680,7 @@ public class Ros1Editor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1Editor() {
+	public RosEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -697,7 +697,7 @@ public class Ros1Editor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Ros1ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RosItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1018,7 +1018,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1053,7 +1053,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1082,7 +1082,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1107,7 +1107,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1134,7 +1134,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1177,7 +1177,7 @@ public class Ros1Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), Ros1Editor.this) {
+					new ViewerPane(getSite().getPage(), RosEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1398,8 +1398,8 @@ public class Ros1Editor
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					Ros1Editor.this.setSelectionToViewer(selection);
-					Ros1Editor.this.setFocus();
+					RosEditor.this.setSelectionToViewer(selection);
+					RosEditor.this.setFocus();
 				}
 
 				@Override

@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.MessageDefinition;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public class MessageDefinitionImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.MESSAGE_DEFINITION;
+		return RosPackage.Literals.MESSAGE_DEFINITION;
 	}
 
 } //MessageDefinitionImpl

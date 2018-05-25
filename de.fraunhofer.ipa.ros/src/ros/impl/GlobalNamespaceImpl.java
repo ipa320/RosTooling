@@ -5,7 +5,7 @@ package ros.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import ros.GlobalNamespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class GlobalNamespaceImpl extends NamespaceImpl implements GlobalNamespac
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.GLOBAL_NAMESPACE;
+		return RosPackage.Literals.GLOBAL_NAMESPACE;
 	}
 
 } //GlobalNamespaceImpl

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ParameterBase64;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_BASE64;
+		return RosPackage.Literals.PARAMETER_BASE64;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 		byte[] oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_BASE64__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_BASE64__VALUE, oldValue, value));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BASE64__VALUE:
+			case RosPackage.PARAMETER_BASE64__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BASE64__VALUE:
+			case RosPackage.PARAMETER_BASE64__VALUE:
 				setValue((byte[])newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BASE64__VALUE:
+			case RosPackage.PARAMETER_BASE64__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_BASE64__VALUE:
+			case RosPackage.PARAMETER_BASE64__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

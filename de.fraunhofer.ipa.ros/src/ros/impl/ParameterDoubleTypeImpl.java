@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ParameterDouble;
 import ros.ParameterDoubleType;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_DOUBLE_TYPE;
+		return RosPackage.Literals.PARAMETER_DOUBLE_TYPE;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 		ParameterDouble oldDefault = default_;
 		default_ = newDefault;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT, oldDefault, newDefault);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT, oldDefault, newDefault);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -90,14 +90,14 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 		if (newDefault != default_) {
 			NotificationChain msgs = null;
 			if (default_ != null)
-				msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT, null, msgs);
+				msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT, null, msgs);
 			if (newDefault != null)
-				msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT, null, msgs);
+				msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT, null, msgs);
 			msgs = basicSetDefault(newDefault, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT, newDefault, newDefault));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT, newDefault, newDefault));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT:
 				return basicSetDefault(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -122,7 +122,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT:
 				return getDefault();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -136,7 +136,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT:
 				setDefault((ParameterDouble)newValue);
 				return;
 		}
@@ -151,7 +151,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT:
 				setDefault((ParameterDouble)null);
 				return;
 		}
@@ -166,7 +166,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DOUBLE_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_DOUBLE_TYPE__DEFAULT:
 				return default_ != null;
 		}
 		return super.eIsSet(featureID);

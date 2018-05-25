@@ -53,8 +53,8 @@ import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
 import ros.RelativeNamespace;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.ServiceSpec;
@@ -68,7 +68,7 @@ import ros.TopicSpec;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
+public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,12 +423,12 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see ros.Ros1Package#eNS_URI
+	 * @see ros.RosPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private Ros1PackageImpl() {
-		super(eNS_URI, Ros1Factory.eINSTANCE);
+	private RosPackageImpl() {
+		super(eNS_URI, RosFactory.eINSTANCE);
 	}
 
 	/**
@@ -441,7 +441,7 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link Ros1Package#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link RosPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,11 +450,11 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static Ros1Package init() {
-		if (isInited) return (Ros1Package)EPackage.Registry.INSTANCE.getEPackage(Ros1Package.eNS_URI);
+	public static RosPackage init() {
+		if (isInited) return (RosPackage)EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Ros1PackageImpl theRos1Package = (Ros1PackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Ros1PackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Ros1PackageImpl());
+		RosPackageImpl theRosPackage = (RosPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RosPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RosPackageImpl());
 
 		isInited = true;
 
@@ -462,18 +462,18 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theRos1Package.createPackageContents();
+		theRosPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theRos1Package.initializePackageContents();
+		theRosPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theRos1Package.freeze();
+		theRosPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(Ros1Package.eNS_URI, theRos1Package);
-		return theRos1Package;
+		EPackage.Registry.INSTANCE.put(RosPackage.eNS_URI, theRosPackage);
+		return theRosPackage;
 	}
 
 	/**
@@ -1480,8 +1480,8 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1Factory getRos1Factory() {
-		return (Ros1Factory)getEFactoryInstance();
+	public RosFactory getRosFactory() {
+		return (RosFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -1898,4 +1898,4 @@ public class Ros1PackageImpl extends EPackageImpl implements Ros1Package {
 		createResource(eNS_URI);
 	}
 
-} //Ros1PackageImpl
+} //RosPackageImpl

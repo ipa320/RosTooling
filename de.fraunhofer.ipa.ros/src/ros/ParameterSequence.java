@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ros.ParameterSequence#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterSequence()
+ * @see ros.RosPackage#getParameterSequence()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ParameterSequence extends ParameterValue {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference list.
-	 * @see ros.Ros1Package#getParameterSequence_Value()
+	 * @see ros.RosPackage#getParameterSequence_Value()
 	 * @model containment="true"
 	 * @generated
 	 */

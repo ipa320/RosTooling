@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.Artifact;
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.SpecBase;
 
 /**
@@ -95,7 +95,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PACKAGE;
+		return RosPackage.Literals.PACKAGE;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PACKAGE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PACKAGE__NAME, oldName, name));
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 */
 	public EList<SpecBase> getSpec() {
 		if (spec == null) {
-			spec = new EObjectContainmentWithInverseEList<SpecBase>(SpecBase.class, this, Ros1Package.PACKAGE__SPEC, Ros1Package.SPEC_BASE__PACKAGE);
+			spec = new EObjectContainmentWithInverseEList<SpecBase>(SpecBase.class, this, RosPackage.PACKAGE__SPEC, RosPackage.SPEC_BASE__PACKAGE);
 		}
 		return spec;
 	}
@@ -138,7 +138,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 */
 	public EList<Artifact> getArtifact() {
 		if (artifact == null) {
-			artifact = new EObjectContainmentEList<Artifact>(Artifact.class, this, Ros1Package.PACKAGE__ARTIFACT);
+			artifact = new EObjectContainmentEList<Artifact>(Artifact.class, this, RosPackage.PACKAGE__ARTIFACT);
 		}
 		return artifact;
 	}
@@ -152,7 +152,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpec()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -166,9 +166,9 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				return ((InternalEList<?>)getSpec()).basicRemove(otherEnd, msgs);
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__ARTIFACT:
 				return ((InternalEList<?>)getArtifact()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -182,11 +182,11 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__NAME:
+			case RosPackage.PACKAGE__NAME:
 				return getName();
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				return getSpec();
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__ARTIFACT:
 				return getArtifact();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -201,14 +201,14 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__NAME:
+			case RosPackage.PACKAGE__NAME:
 				setName((String)newValue);
 				return;
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				getSpec().clear();
 				getSpec().addAll((Collection<? extends SpecBase>)newValue);
 				return;
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__ARTIFACT:
 				getArtifact().clear();
 				getArtifact().addAll((Collection<? extends Artifact>)newValue);
 				return;
@@ -224,13 +224,13 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__NAME:
+			case RosPackage.PACKAGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				getSpec().clear();
 				return;
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__ARTIFACT:
 				getArtifact().clear();
 				return;
 		}
@@ -245,11 +245,11 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PACKAGE__NAME:
+			case RosPackage.PACKAGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Ros1Package.PACKAGE__SPEC:
+			case RosPackage.PACKAGE__SPEC:
 				return spec != null && !spec.isEmpty();
-			case Ros1Package.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__ARTIFACT:
 				return artifact != null && !artifact.isEmpty();
 		}
 		return super.eIsSet(featureID);

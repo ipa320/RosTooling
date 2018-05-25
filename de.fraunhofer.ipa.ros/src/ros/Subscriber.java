@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.Subscriber#getMessage <em>Message</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getSubscriber()
+ * @see ros.RosPackage#getSubscriber()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface Subscriber extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' reference.
 	 * @see #setMessage(TopicSpec)
-	 * @see ros.Ros1Package#getSubscriber_Message()
+	 * @see ros.RosPackage#getSubscriber_Message()
 	 * @model required="true"
 	 * @generated
 	 */

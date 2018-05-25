@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ActionClient;
 import ros.ActionSpec;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.ACTION_CLIENT;
+		return RosPackage.Literals.ACTION_CLIENT;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 			action = (ActionSpec)eResolveProxy(oldAction);
 			if (action != oldAction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Ros1Package.ACTION_CLIENT__ACTION, oldAction, action));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.ACTION_CLIENT__ACTION, oldAction, action));
 			}
 		}
 		return action;
@@ -91,7 +91,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 		ActionSpec oldAction = action;
 		action = newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.ACTION_CLIENT__ACTION, oldAction, action));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_CLIENT__ACTION, oldAction, action));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.ACTION_CLIENT__ACTION:
+			case RosPackage.ACTION_CLIENT__ACTION:
 				if (resolve) return getAction();
 				return basicGetAction();
 		}
@@ -117,7 +117,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.ACTION_CLIENT__ACTION:
+			case RosPackage.ACTION_CLIENT__ACTION:
 				setAction((ActionSpec)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ACTION_CLIENT__ACTION:
+			case RosPackage.ACTION_CLIENT__ACTION:
 				setAction((ActionSpec)null);
 				return;
 		}
@@ -147,7 +147,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ACTION_CLIENT__ACTION:
+			case RosPackage.ACTION_CLIENT__ACTION:
 				return action != null;
 		}
 		return super.eIsSet(featureID);

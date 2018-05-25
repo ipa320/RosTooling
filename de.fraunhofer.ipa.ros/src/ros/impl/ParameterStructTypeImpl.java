@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.ParameterStructType;
 import ros.ParameterStructTypeMember;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_STRUCT_TYPE;
+		return RosPackage.Literals.PARAMETER_STRUCT_TYPE;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	 */
 	public EList<ParameterStructTypeMember> getParameterstructypetmember() {
 		if (parameterstructypetmember == null) {
-			parameterstructypetmember = new EObjectContainmentEList<ParameterStructTypeMember>(ParameterStructTypeMember.class, this, Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER);
+			parameterstructypetmember = new EObjectContainmentEList<ParameterStructTypeMember>(ParameterStructTypeMember.class, this, RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER);
 		}
 		return parameterstructypetmember;
 	}
@@ -81,7 +81,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				return ((InternalEList<?>)getParameterstructypetmember()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -95,7 +95,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				return getParameterstructypetmember();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				getParameterstructypetmember().clear();
 				getParameterstructypetmember().addAll((Collection<? extends ParameterStructTypeMember>)newValue);
 				return;
@@ -126,7 +126,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				getParameterstructypetmember().clear();
 				return;
 		}
@@ -141,7 +141,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
+			case RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER:
 				return parameterstructypetmember != null && !parameterstructypetmember.isEmpty();
 		}
 		return super.eIsSet(featureID);

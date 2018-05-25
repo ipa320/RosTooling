@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see ros.Ros1Package#getParameterType()
+ * @see ros.RosPackage#getParameterType()
  * @model abstract="true"
  * @generated
  */

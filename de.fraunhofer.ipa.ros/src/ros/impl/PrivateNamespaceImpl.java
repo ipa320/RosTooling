@@ -5,7 +5,7 @@ package ros.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import ros.PrivateNamespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class PrivateNamespaceImpl extends RelativeNamespaceImpl implements Priva
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PRIVATE_NAMESPACE;
+		return RosPackage.Literals.PRIVATE_NAMESPACE;
 	}
 
 } //PrivateNamespaceImpl

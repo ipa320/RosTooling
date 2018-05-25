@@ -48,8 +48,8 @@ import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
 import ros.Publisher;
 import ros.RelativeNamespace;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.ServiceSpec;
@@ -62,24 +62,24 @@ import ros.TopicSpec;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
+public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static Ros1Factory init() {
+	public static RosFactory init() {
 		try {
-			Ros1Factory theRos1Factory = (Ros1Factory)EPackage.Registry.INSTANCE.getEFactory(Ros1Package.eNS_URI);
-			if (theRos1Factory != null) {
-				return theRos1Factory;
+			RosFactory theRosFactory = (RosFactory)EPackage.Registry.INSTANCE.getEFactory(RosPackage.eNS_URI);
+			if (theRosFactory != null) {
+				return theRosFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new Ros1FactoryImpl();
+		return new RosFactoryImpl();
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1FactoryImpl() {
+	public RosFactoryImpl() {
 		super();
 	}
 
@@ -100,49 +100,49 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Ros1Package.NODE: return createNode();
-			case Ros1Package.PACKAGE: return createPackage();
-			case Ros1Package.SERVICE_SPEC: return createServiceSpec();
-			case Ros1Package.SERVICE_SERVER: return createServiceServer();
-			case Ros1Package.TOPIC_SPEC: return createTopicSpec();
-			case Ros1Package.PUBLISHER: return createPublisher();
-			case Ros1Package.PACKAGE_DEPENDENCY: return createPackageDependency();
-			case Ros1Package.EXTERNAL_DEPENDENCY: return createExternalDependency();
-			case Ros1Package.CATKIN_PACKAGE: return createCatkinPackage();
-			case Ros1Package.ARTIFACT: return createArtifact();
-			case Ros1Package.SUBSCRIBER: return createSubscriber();
-			case Ros1Package.SERVICE_CLIENT: return createServiceClient();
-			case Ros1Package.PACKAGE_SET: return createPackageSet();
-			case Ros1Package.ACTION_SPEC: return createActionSpec();
-			case Ros1Package.ACTION_SERVER: return createActionServer();
-			case Ros1Package.ACTION_CLIENT: return createActionClient();
-			case Ros1Package.MESSAGE_DEFINITION: return createMessageDefinition();
-			case Ros1Package.GLOBAL_NAMESPACE: return createGlobalNamespace();
-			case Ros1Package.RELATIVE_NAMESPACE: return createRelativeNamespace();
-			case Ros1Package.PRIVATE_NAMESPACE: return createPrivateNamespace();
-			case Ros1Package.NAMESPACED_ELEMENT: return createNamespacedElement();
-			case Ros1Package.PARAMETER_LIST_TYPE: return createParameterListType();
-			case Ros1Package.PARAMETER_STRUCT_TYPE: return createParameterStructType();
-			case Ros1Package.PARAMETER_INTEGER_TYPE: return createParameterIntegerType();
-			case Ros1Package.PARAMETER_STRING_TYPE: return createParameterStringType();
-			case Ros1Package.PARAMETER_DOUBLE_TYPE: return createParameterDoubleType();
-			case Ros1Package.PARAMETER: return createParameter();
-			case Ros1Package.PARAMETER_DATE_TYPE: return createParameterDateType();
-			case Ros1Package.PARAMETER_BOOLEAN_TYPE: return createParameterBooleanType();
-			case Ros1Package.PARAMETER_BASE64_TYPE: return createParameterBase64Type();
-			case Ros1Package.PARAMETER_ANY_TYPE: return createParameterAnyType();
-			case Ros1Package.PARAMETER_STRUCT_TYPE_MEMBER: return createParameterStructTypeMember();
-			case Ros1Package.PARAMETER_ARRAY_TYPE: return createParameterArrayType();
-			case Ros1Package.PARAMETER_ANY: return createParameterAny();
-			case Ros1Package.PARAMETER_STRING: return createParameterString();
-			case Ros1Package.PARAMETER_BASE64: return createParameterBase64();
-			case Ros1Package.PARAMETER_INTEGER: return createParameterInteger();
-			case Ros1Package.PARAMETER_DOUBLE: return createParameterDouble();
-			case Ros1Package.PARAMETER_BOOLEAN: return createParameterBoolean();
-			case Ros1Package.PARAMETER_SEQUENCE: return createParameterSequence();
-			case Ros1Package.PARAMETER_STRUCT: return createParameterStruct();
-			case Ros1Package.PARAMETER_STRUCT_MEMBER: return createParameterStructMember();
-			case Ros1Package.PARAMETER_DATE: return createParameterDate();
+			case RosPackage.NODE: return createNode();
+			case RosPackage.PACKAGE: return createPackage();
+			case RosPackage.SERVICE_SPEC: return createServiceSpec();
+			case RosPackage.SERVICE_SERVER: return createServiceServer();
+			case RosPackage.TOPIC_SPEC: return createTopicSpec();
+			case RosPackage.PUBLISHER: return createPublisher();
+			case RosPackage.PACKAGE_DEPENDENCY: return createPackageDependency();
+			case RosPackage.EXTERNAL_DEPENDENCY: return createExternalDependency();
+			case RosPackage.CATKIN_PACKAGE: return createCatkinPackage();
+			case RosPackage.ARTIFACT: return createArtifact();
+			case RosPackage.SUBSCRIBER: return createSubscriber();
+			case RosPackage.SERVICE_CLIENT: return createServiceClient();
+			case RosPackage.PACKAGE_SET: return createPackageSet();
+			case RosPackage.ACTION_SPEC: return createActionSpec();
+			case RosPackage.ACTION_SERVER: return createActionServer();
+			case RosPackage.ACTION_CLIENT: return createActionClient();
+			case RosPackage.MESSAGE_DEFINITION: return createMessageDefinition();
+			case RosPackage.GLOBAL_NAMESPACE: return createGlobalNamespace();
+			case RosPackage.RELATIVE_NAMESPACE: return createRelativeNamespace();
+			case RosPackage.PRIVATE_NAMESPACE: return createPrivateNamespace();
+			case RosPackage.NAMESPACED_ELEMENT: return createNamespacedElement();
+			case RosPackage.PARAMETER_LIST_TYPE: return createParameterListType();
+			case RosPackage.PARAMETER_STRUCT_TYPE: return createParameterStructType();
+			case RosPackage.PARAMETER_INTEGER_TYPE: return createParameterIntegerType();
+			case RosPackage.PARAMETER_STRING_TYPE: return createParameterStringType();
+			case RosPackage.PARAMETER_DOUBLE_TYPE: return createParameterDoubleType();
+			case RosPackage.PARAMETER: return createParameter();
+			case RosPackage.PARAMETER_DATE_TYPE: return createParameterDateType();
+			case RosPackage.PARAMETER_BOOLEAN_TYPE: return createParameterBooleanType();
+			case RosPackage.PARAMETER_BASE64_TYPE: return createParameterBase64Type();
+			case RosPackage.PARAMETER_ANY_TYPE: return createParameterAnyType();
+			case RosPackage.PARAMETER_STRUCT_TYPE_MEMBER: return createParameterStructTypeMember();
+			case RosPackage.PARAMETER_ARRAY_TYPE: return createParameterArrayType();
+			case RosPackage.PARAMETER_ANY: return createParameterAny();
+			case RosPackage.PARAMETER_STRING: return createParameterString();
+			case RosPackage.PARAMETER_BASE64: return createParameterBase64();
+			case RosPackage.PARAMETER_INTEGER: return createParameterInteger();
+			case RosPackage.PARAMETER_DOUBLE: return createParameterDouble();
+			case RosPackage.PARAMETER_BOOLEAN: return createParameterBoolean();
+			case RosPackage.PARAMETER_SEQUENCE: return createParameterSequence();
+			case RosPackage.PARAMETER_STRUCT: return createParameterStruct();
+			case RosPackage.PARAMETER_STRUCT_MEMBER: return createParameterStructMember();
+			case RosPackage.PARAMETER_DATE: return createParameterDate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -156,7 +156,7 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case Ros1Package.GRAPH_NAME:
+			case RosPackage.GRAPH_NAME:
 				return createGraphNameFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -171,7 +171,7 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case Ros1Package.GRAPH_NAME:
+			case RosPackage.GRAPH_NAME:
 				return convertGraphNameToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -631,8 +631,8 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ros1Package getRos1Package() {
-		return (Ros1Package)getEPackage();
+	public RosPackage getRosPackage() {
+		return (RosPackage)getEPackage();
 	}
 
 	/**
@@ -642,8 +642,8 @@ public class Ros1FactoryImpl extends EFactoryImpl implements Ros1Factory {
 	 * @generated
 	 */
 	@Deprecated
-	public static Ros1Package getPackage() {
-		return Ros1Package.eINSTANCE;
+	public static RosPackage getPackage() {
+		return RosPackage.eINSTANCE;
 	}
 
-} //Ros1FactoryImpl
+} //RosFactoryImpl

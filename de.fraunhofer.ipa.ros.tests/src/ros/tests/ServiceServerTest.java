@@ -3,7 +3,7 @@
 package ros.tests;
 
 import junit.textui.TestRunner;
-import ros.Ros1Factory;
+import ros.RosFactory;
 import ros.ServiceServer;
 
 /**
@@ -52,7 +52,7 @@ public class ServiceServerTest extends NamespacedElementTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createServiceServer());
+		setFixture(RosFactory.eINSTANCE.createServiceServer());
 	}
 
 	/**

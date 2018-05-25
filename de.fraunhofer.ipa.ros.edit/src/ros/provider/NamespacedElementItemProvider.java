@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.NamespacedElement;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.NamespacedElement} object.
@@ -81,7 +81,7 @@ public class NamespacedElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_NamespacedElement_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamespacedElement_name_feature", "_UI_NamespacedElement_type"),
-				 Ros1Package.Literals.NAMESPACED_ELEMENT__NAME,
+				 RosPackage.Literals.NAMESPACED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -102,7 +102,7 @@ public class NamespacedElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.NAMESPACED_ELEMENT__NAMESPACE);
+			childrenFeatures.add(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE);
 		}
 		return childrenFeatures;
 	}
@@ -158,10 +158,10 @@ public class NamespacedElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NamespacedElement.class)) {
-			case Ros1Package.NAMESPACED_ELEMENT__NAME:
+			case RosPackage.NAMESPACED_ELEMENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Ros1Package.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,18 +181,18 @@ public class NamespacedElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NAMESPACED_ELEMENT__NAMESPACE,
-				 Ros1Factory.eINSTANCE.createGlobalNamespace()));
+				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				 RosFactory.eINSTANCE.createGlobalNamespace()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NAMESPACED_ELEMENT__NAMESPACE,
-				 Ros1Factory.eINSTANCE.createRelativeNamespace()));
+				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				 RosFactory.eINSTANCE.createRelativeNamespace()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NAMESPACED_ELEMENT__NAMESPACE,
-				 Ros1Factory.eINSTANCE.createPrivateNamespace()));
+				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				 RosFactory.eINSTANCE.createPrivateNamespace()));
 	}
 
 	/**

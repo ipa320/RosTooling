@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 import ros.PackageSet;
-import ros.Ros1Factory;
+import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class PackageSetTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createPackageSet());
+		setFixture(RosFactory.eINSTANCE.createPackageSet());
 	}
 
 	/**

@@ -4,7 +4,7 @@ package ros.tests;
 
 import junit.textui.TestRunner;
 import ros.ParameterBooleanType;
-import ros.Ros1Factory;
+import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class ParameterBooleanTypeTest extends ParameterTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createParameterBooleanType());
+		setFixture(RosFactory.eINSTANCE.createParameterBooleanType());
 	}
 
 	/**

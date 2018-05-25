@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.ParameterStructMember#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterStructMember()
+ * @see ros.RosPackage#getParameterStructMember()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface ParameterStructMember extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getParameterStructMember_Name()
+	 * @see ros.RosPackage#getParameterStructMember_Name()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface ParameterStructMember extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(ParameterValue)
-	 * @see ros.Ros1Package#getParameterStructMember_Value()
+	 * @see ros.RosPackage#getParameterStructMember_Value()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

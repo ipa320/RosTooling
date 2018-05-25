@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.SpecBase;
 
 /**
@@ -79,7 +79,7 @@ public class SpecBaseItemProvider
 				 getResourceLocator(),
 				 getString("_UI_SpecBase_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_name_feature", "_UI_SpecBase_type"),
-				 Ros1Package.Literals.SPEC_BASE__NAME,
+				 RosPackage.Literals.SPEC_BASE__NAME,
 				 true,
 				 false,
 				 false,
@@ -101,7 +101,7 @@ public class SpecBaseItemProvider
 				 getResourceLocator(),
 				 getString("_UI_SpecBase_fullname_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_fullname_feature", "_UI_SpecBase_type"),
-				 Ros1Package.Literals.SPEC_BASE__FULLNAME,
+				 RosPackage.Literals.SPEC_BASE__FULLNAME,
 				 false,
 				 false,
 				 false,
@@ -137,8 +137,8 @@ public class SpecBaseItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SpecBase.class)) {
-			case Ros1Package.SPEC_BASE__NAME:
-			case Ros1Package.SPEC_BASE__FULLNAME:
+			case RosPackage.SPEC_BASE__NAME:
+			case RosPackage.SPEC_BASE__FULLNAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

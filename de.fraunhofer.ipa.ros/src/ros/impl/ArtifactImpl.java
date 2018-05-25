@@ -3,8 +3,8 @@
 package ros.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.Artifact;
 import ros.Node;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.ARTIFACT;
+		return RosPackage.Literals.ARTIFACT;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.ARTIFACT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ARTIFACT__NAME, oldName, name));
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		Node oldNode = node;
 		node = newNode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.ARTIFACT__NODE, oldNode, newNode);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.ARTIFACT__NODE, oldNode, newNode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -133,14 +133,14 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		if (newNode != node) {
 			NotificationChain msgs = null;
 			if (node != null)
-				msgs = ((InternalEObject)node).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.ARTIFACT__NODE, null, msgs);
+				msgs = ((InternalEObject)node).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.ARTIFACT__NODE, null, msgs);
 			if (newNode != null)
-				msgs = ((InternalEObject)newNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.ARTIFACT__NODE, null, msgs);
+				msgs = ((InternalEObject)newNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.ARTIFACT__NODE, null, msgs);
 			msgs = basicSetNode(newNode, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.ARTIFACT__NODE, newNode, newNode));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ARTIFACT__NODE, newNode, newNode));
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				return basicSetNode(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -165,9 +165,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.ARTIFACT__NAME:
+			case RosPackage.ARTIFACT__NAME:
 				return getName();
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				return getNode();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -181,10 +181,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.ARTIFACT__NAME:
+			case RosPackage.ARTIFACT__NAME:
 				setName((String)newValue);
 				return;
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				setNode((Node)newValue);
 				return;
 		}
@@ -199,10 +199,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ARTIFACT__NAME:
+			case RosPackage.ARTIFACT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				setNode((Node)null);
 				return;
 		}
@@ -217,9 +217,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ARTIFACT__NAME:
+			case RosPackage.ARTIFACT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				return node != null;
 		}
 		return super.eIsSet(featureID);

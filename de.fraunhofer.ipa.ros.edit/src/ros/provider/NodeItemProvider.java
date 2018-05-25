@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.Node;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.Node} object.
@@ -81,7 +81,7 @@ public class NodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Node_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Node_name_feature", "_UI_Node_type"),
-				 Ros1Package.Literals.NODE__NAME,
+				 RosPackage.Literals.NODE__NAME,
 				 true,
 				 false,
 				 false,
@@ -102,13 +102,13 @@ public class NodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.NODE__SERVICESERVER);
-			childrenFeatures.add(Ros1Package.Literals.NODE__PUBLISHER);
-			childrenFeatures.add(Ros1Package.Literals.NODE__SUBSCRIBER);
-			childrenFeatures.add(Ros1Package.Literals.NODE__SERVICECLIENT);
-			childrenFeatures.add(Ros1Package.Literals.NODE__ACTIONSERVER);
-			childrenFeatures.add(Ros1Package.Literals.NODE__ACTIONCLIENT);
-			childrenFeatures.add(Ros1Package.Literals.NODE__PARAMETER);
+			childrenFeatures.add(RosPackage.Literals.NODE__SERVICESERVER);
+			childrenFeatures.add(RosPackage.Literals.NODE__PUBLISHER);
+			childrenFeatures.add(RosPackage.Literals.NODE__SUBSCRIBER);
+			childrenFeatures.add(RosPackage.Literals.NODE__SERVICECLIENT);
+			childrenFeatures.add(RosPackage.Literals.NODE__ACTIONSERVER);
+			childrenFeatures.add(RosPackage.Literals.NODE__ACTIONCLIENT);
+			childrenFeatures.add(RosPackage.Literals.NODE__PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -164,16 +164,16 @@ public class NodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Node.class)) {
-			case Ros1Package.NODE__NAME:
+			case RosPackage.NODE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Ros1Package.NODE__SERVICESERVER:
-			case Ros1Package.NODE__PUBLISHER:
-			case Ros1Package.NODE__SUBSCRIBER:
-			case Ros1Package.NODE__SERVICECLIENT:
-			case Ros1Package.NODE__ACTIONSERVER:
-			case Ros1Package.NODE__ACTIONCLIENT:
-			case Ros1Package.NODE__PARAMETER:
+			case RosPackage.NODE__SERVICESERVER:
+			case RosPackage.NODE__PUBLISHER:
+			case RosPackage.NODE__SUBSCRIBER:
+			case RosPackage.NODE__SERVICECLIENT:
+			case RosPackage.NODE__ACTIONSERVER:
+			case RosPackage.NODE__ACTIONCLIENT:
+			case RosPackage.NODE__PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,38 +193,38 @@ public class NodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__SERVICESERVER,
-				 Ros1Factory.eINSTANCE.createServiceServer()));
+				(RosPackage.Literals.NODE__SERVICESERVER,
+				 RosFactory.eINSTANCE.createServiceServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__PUBLISHER,
-				 Ros1Factory.eINSTANCE.createPublisher()));
+				(RosPackage.Literals.NODE__PUBLISHER,
+				 RosFactory.eINSTANCE.createPublisher()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__SUBSCRIBER,
-				 Ros1Factory.eINSTANCE.createSubscriber()));
+				(RosPackage.Literals.NODE__SUBSCRIBER,
+				 RosFactory.eINSTANCE.createSubscriber()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__SERVICECLIENT,
-				 Ros1Factory.eINSTANCE.createServiceClient()));
+				(RosPackage.Literals.NODE__SERVICECLIENT,
+				 RosFactory.eINSTANCE.createServiceClient()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__ACTIONSERVER,
-				 Ros1Factory.eINSTANCE.createActionServer()));
+				(RosPackage.Literals.NODE__ACTIONSERVER,
+				 RosFactory.eINSTANCE.createActionServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__ACTIONCLIENT,
-				 Ros1Factory.eINSTANCE.createActionClient()));
+				(RosPackage.Literals.NODE__ACTIONCLIENT,
+				 RosFactory.eINSTANCE.createActionClient()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.NODE__PARAMETER,
-				 Ros1Factory.eINSTANCE.createParameter()));
+				(RosPackage.Literals.NODE__PARAMETER,
+				 RosFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

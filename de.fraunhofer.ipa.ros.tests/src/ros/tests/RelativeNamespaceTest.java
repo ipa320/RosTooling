@@ -4,7 +4,7 @@ package ros.tests;
 
 import junit.textui.TestRunner;
 import ros.RelativeNamespace;
-import ros.Ros1Factory;
+import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class RelativeNamespaceTest extends NamespaceTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createRelativeNamespace());
+		setFixture(RosFactory.eINSTANCE.createRelativeNamespace());
 	}
 
 	/**

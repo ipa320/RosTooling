@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ActionServer;
 import ros.ActionSpec;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.ACTION_SERVER;
+		return RosPackage.Literals.ACTION_SERVER;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 			action = (ActionSpec)eResolveProxy(oldAction);
 			if (action != oldAction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Ros1Package.ACTION_SERVER__ACTION, oldAction, action));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.ACTION_SERVER__ACTION, oldAction, action));
 			}
 		}
 		return action;
@@ -91,7 +91,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 		ActionSpec oldAction = action;
 		action = newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.ACTION_SERVER__ACTION, oldAction, action));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SERVER__ACTION, oldAction, action));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.ACTION_SERVER__ACTION:
+			case RosPackage.ACTION_SERVER__ACTION:
 				if (resolve) return getAction();
 				return basicGetAction();
 		}
@@ -117,7 +117,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.ACTION_SERVER__ACTION:
+			case RosPackage.ACTION_SERVER__ACTION:
 				setAction((ActionSpec)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ACTION_SERVER__ACTION:
+			case RosPackage.ACTION_SERVER__ACTION:
 				setAction((ActionSpec)null);
 				return;
 		}
@@ -147,7 +147,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.ACTION_SERVER__ACTION:
+			case RosPackage.ACTION_SERVER__ACTION:
 				return action != null;
 		}
 		return super.eIsSet(featureID);

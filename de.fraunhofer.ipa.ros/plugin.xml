@@ -7,10 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated ros1 -->
+      <!-- @generated ros -->
       <package
-            uri="http://www.example.org/ros1"
-            class="ros.Ros1Package"
+            uri="http://www.example.org/ros"
+            class="ros.RosPackage"
             genModel="model/ros.genmodel"/>
    </extension>
 

@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterDate;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterDate} object.
@@ -65,7 +65,7 @@ public class ParameterDateItemProvider extends ParameterValueItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterDate_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterDate_value_feature", "_UI_ParameterDate_type"),
-				 Ros1Package.Literals.PARAMETER_DATE__VALUE,
+				 RosPackage.Literals.PARAMETER_DATE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -113,7 +113,7 @@ public class ParameterDateItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterDate.class)) {
-			case Ros1Package.PARAMETER_DATE__VALUE:
+			case RosPackage.PARAMETER_DATE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

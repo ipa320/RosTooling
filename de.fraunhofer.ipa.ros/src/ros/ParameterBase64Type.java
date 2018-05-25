@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterBase64Type#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterBase64Type()
+ * @see ros.RosPackage#getParameterBase64Type()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterBase64Type extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterBase64)
-	 * @see ros.Ros1Package#getParameterBase64Type_Default()
+	 * @see ros.RosPackage#getParameterBase64Type_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

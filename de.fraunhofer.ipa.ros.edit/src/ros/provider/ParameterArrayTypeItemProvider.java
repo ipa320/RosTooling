@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterArrayType;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterArrayType} object.
@@ -62,8 +62,8 @@ public class ParameterArrayTypeItemProvider extends ParameterTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__DEFAULT);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_ARRAY_TYPE__DEFAULT);
 		}
 		return childrenFeatures;
 	}
@@ -116,8 +116,8 @@ public class ParameterArrayTypeItemProvider extends ParameterTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterArrayType.class)) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -137,58 +137,58 @@ public class ParameterArrayTypeItemProvider extends ParameterTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterListType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterListType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterStructType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterStructType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterIntegerType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterIntegerType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterStringType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterStringType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterDoubleType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterDoubleType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterDateType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterDateType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterBooleanType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterBooleanType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterBase64Type()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterBase64Type()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterAnyType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterAnyType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__TYPE,
-				 Ros1Factory.eINSTANCE.createParameterArrayType()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__TYPE,
+				 RosFactory.eINSTANCE.createParameterArrayType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_ARRAY_TYPE__DEFAULT,
-				 Ros1Factory.eINSTANCE.createParameterSequence()));
+				(RosPackage.Literals.PARAMETER_ARRAY_TYPE__DEFAULT,
+				 RosFactory.eINSTANCE.createParameterSequence()));
 	}
 
 }

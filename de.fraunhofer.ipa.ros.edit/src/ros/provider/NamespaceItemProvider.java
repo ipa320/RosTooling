@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.Namespace;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.Namespace} object.
@@ -78,7 +78,7 @@ public class NamespaceItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Namespace_parts_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Namespace_parts_feature", "_UI_Namespace_type"),
-				 Ros1Package.Literals.NAMESPACE__PARTS,
+				 RosPackage.Literals.NAMESPACE__PARTS,
 				 true,
 				 false,
 				 false,
@@ -111,7 +111,7 @@ public class NamespaceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Namespace.class)) {
-			case Ros1Package.NAMESPACE__PARTS:
+			case RosPackage.NAMESPACE__PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.ros/src" editDirectory="/de.fraunhofer.ipa.ros.edit/src"
-    editorDirectory="/de.fraunhofer.ipa.ros.editor/src" modelPluginID="de.fraunhofer.ipa.ros"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.ros/src" modelPluginID="de.fraunhofer.ipa.ros"
     modelName="Ros" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="/de.fraunhofer.ipa.ros.tests/src" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" editPluginID="de.fraunhofer.ipa.ros.edit"
-    editorPluginID="de.fraunhofer.ipa.ros.editor" testsPluginID="de.fraunhofer.ipa.ros.tests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ros.ecore</foreignModel>
-  <genPackages prefix="Ros1" disposableProviderFactory="true" ecorePackage="ros.ecore#/">
+  <genPackages prefix="Ros" disposableProviderFactory="true" ecorePackage="ros.ecore#/">
     <genDataTypes ecoreDataType="ros.ecore#//GraphName"/>
     <genClasses ecoreClass="ros.ecore#//Node">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/serviceserver"/>

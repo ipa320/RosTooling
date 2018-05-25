@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.PackageDependency#getPackage <em>Package</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getPackageDependency()
+ * @see ros.RosPackage#getPackageDependency()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface PackageDependency extends Dependency {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package</em>' reference.
 	 * @see #setPackage(ros.Package)
-	 * @see ros.Ros1Package#getPackageDependency_Package()
+	 * @see ros.RosPackage#getPackageDependency_Package()
 	 * @model required="true"
 	 * @generated
 	 */

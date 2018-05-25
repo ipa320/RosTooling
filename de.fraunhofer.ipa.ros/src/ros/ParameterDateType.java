@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterDateType#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterDateType()
+ * @see ros.RosPackage#getParameterDateType()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterDateType extends ParameterType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterDate)
-	 * @see ros.Ros1Package#getParameterDateType_Default()
+	 * @see ros.RosPackage#getParameterDateType_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

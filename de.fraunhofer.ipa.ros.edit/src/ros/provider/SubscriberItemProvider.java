@@ -12,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import ros.Ros1Package;
+import ros.RosPackage;
 import ros.Subscriber;
 
 /**
@@ -61,7 +61,7 @@ public class SubscriberItemProvider extends NamespacedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Subscriber_message_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Subscriber_message_feature", "_UI_Subscriber_type"),
-				 Ros1Package.Literals.SUBSCRIBER__MESSAGE,
+				 RosPackage.Literals.SUBSCRIBER__MESSAGE,
 				 true,
 				 false,
 				 true,

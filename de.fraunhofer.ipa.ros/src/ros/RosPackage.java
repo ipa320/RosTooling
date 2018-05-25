@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see ros.Ros1Factory
+ * @see ros.RosFactory
  * @model kind="package"
  * @generated
  */
-public interface Ros1Package extends EPackage {
+public interface RosPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -55,14 +55,14 @@ public interface Ros1Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	Ros1Package eINSTANCE = ros.impl.Ros1PackageImpl.init();
+	RosPackage eINSTANCE = ros.impl.RosPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link ros.impl.NodeImpl <em>Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.NodeImpl
-	 * @see ros.impl.Ros1PackageImpl#getNode()
+	 * @see ros.impl.RosPackageImpl#getNode()
 	 * @generated
 	 */
 	int NODE = 0;
@@ -162,7 +162,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.PackageImpl
-	 * @see ros.impl.Ros1PackageImpl#getPackage()
+	 * @see ros.impl.RosPackageImpl#getPackage()
 	 * @generated
 	 */
 	int PACKAGE = 1;
@@ -217,7 +217,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.DependencyImpl
-	 * @see ros.impl.Ros1PackageImpl#getDependency()
+	 * @see ros.impl.RosPackageImpl#getDependency()
 	 * @generated
 	 */
 	int DEPENDENCY = 2;
@@ -245,7 +245,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.SpecBaseImpl
-	 * @see ros.impl.Ros1PackageImpl#getSpecBase()
+	 * @see ros.impl.RosPackageImpl#getSpecBase()
 	 * @generated
 	 */
 	int SPEC_BASE = 11;
@@ -300,7 +300,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ServiceSpecImpl
-	 * @see ros.impl.Ros1PackageImpl#getServiceSpec()
+	 * @see ros.impl.RosPackageImpl#getServiceSpec()
 	 * @generated
 	 */
 	int SERVICE_SPEC = 3;
@@ -373,7 +373,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.NamespacedElementImpl
-	 * @see ros.impl.Ros1PackageImpl#getNamespacedElement()
+	 * @see ros.impl.RosPackageImpl#getNamespacedElement()
 	 * @generated
 	 */
 	int NAMESPACED_ELEMENT = 23;
@@ -419,7 +419,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ServiceServerImpl
-	 * @see ros.impl.Ros1PackageImpl#getServiceServer()
+	 * @see ros.impl.RosPackageImpl#getServiceServer()
 	 * @generated
 	 */
 	int SERVICE_SERVER = 4;
@@ -474,7 +474,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.TopicSpecImpl
-	 * @see ros.impl.Ros1PackageImpl#getTopicSpec()
+	 * @see ros.impl.RosPackageImpl#getTopicSpec()
 	 * @generated
 	 */
 	int TOPIC_SPEC = 5;
@@ -538,7 +538,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.PublisherImpl
-	 * @see ros.impl.Ros1PackageImpl#getPublisher()
+	 * @see ros.impl.RosPackageImpl#getPublisher()
 	 * @generated
 	 */
 	int PUBLISHER = 6;
@@ -593,7 +593,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.PackageDependencyImpl
-	 * @see ros.impl.Ros1PackageImpl#getPackageDependency()
+	 * @see ros.impl.RosPackageImpl#getPackageDependency()
 	 * @generated
 	 */
 	int PACKAGE_DEPENDENCY = 7;
@@ -630,7 +630,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ExternalDependencyImpl
-	 * @see ros.impl.Ros1PackageImpl#getExternalDependency()
+	 * @see ros.impl.RosPackageImpl#getExternalDependency()
 	 * @generated
 	 */
 	int EXTERNAL_DEPENDENCY = 8;
@@ -667,7 +667,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.CatkinPackageImpl
-	 * @see ros.impl.Ros1PackageImpl#getCatkinPackage()
+	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
 	 * @generated
 	 */
 	int CATKIN_PACKAGE = 9;
@@ -731,7 +731,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ArtifactImpl
-	 * @see ros.impl.Ros1PackageImpl#getArtifact()
+	 * @see ros.impl.RosPackageImpl#getArtifact()
 	 * @generated
 	 */
 	int ARTIFACT = 10;
@@ -777,7 +777,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.SubscriberImpl
-	 * @see ros.impl.Ros1PackageImpl#getSubscriber()
+	 * @see ros.impl.RosPackageImpl#getSubscriber()
 	 * @generated
 	 */
 	int SUBSCRIBER = 12;
@@ -832,7 +832,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ServiceClientImpl
-	 * @see ros.impl.Ros1PackageImpl#getServiceClient()
+	 * @see ros.impl.RosPackageImpl#getServiceClient()
 	 * @generated
 	 */
 	int SERVICE_CLIENT = 13;
@@ -887,7 +887,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.PackageSetImpl
-	 * @see ros.impl.Ros1PackageImpl#getPackageSet()
+	 * @see ros.impl.RosPackageImpl#getPackageSet()
 	 * @generated
 	 */
 	int PACKAGE_SET = 14;
@@ -924,7 +924,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ActionSpecImpl
-	 * @see ros.impl.Ros1PackageImpl#getActionSpec()
+	 * @see ros.impl.RosPackageImpl#getActionSpec()
 	 * @generated
 	 */
 	int ACTION_SPEC = 15;
@@ -1006,7 +1006,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ActionServerImpl
-	 * @see ros.impl.Ros1PackageImpl#getActionServer()
+	 * @see ros.impl.RosPackageImpl#getActionServer()
 	 * @generated
 	 */
 	int ACTION_SERVER = 16;
@@ -1061,7 +1061,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ActionClientImpl
-	 * @see ros.impl.Ros1PackageImpl#getActionClient()
+	 * @see ros.impl.RosPackageImpl#getActionClient()
 	 * @generated
 	 */
 	int ACTION_CLIENT = 17;
@@ -1116,7 +1116,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.MessageDefinitionImpl
-	 * @see ros.impl.Ros1PackageImpl#getMessageDefinition()
+	 * @see ros.impl.RosPackageImpl#getMessageDefinition()
 	 * @generated
 	 */
 	int MESSAGE_DEFINITION = 18;
@@ -1144,7 +1144,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.NamespaceImpl
-	 * @see ros.impl.Ros1PackageImpl#getNamespace()
+	 * @see ros.impl.RosPackageImpl#getNamespace()
 	 * @generated
 	 */
 	int NAMESPACE = 19;
@@ -1181,7 +1181,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.GlobalNamespaceImpl
-	 * @see ros.impl.Ros1PackageImpl#getGlobalNamespace()
+	 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
 	 * @generated
 	 */
 	int GLOBAL_NAMESPACE = 20;
@@ -1218,7 +1218,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.RelativeNamespaceImpl
-	 * @see ros.impl.Ros1PackageImpl#getRelativeNamespace()
+	 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
 	 * @generated
 	 */
 	int RELATIVE_NAMESPACE = 21;
@@ -1255,7 +1255,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.PrivateNamespaceImpl
-	 * @see ros.impl.Ros1PackageImpl#getPrivateNamespace()
+	 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
 	 * @generated
 	 */
 	int PRIVATE_NAMESPACE = 22;
@@ -1292,7 +1292,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterType()
+	 * @see ros.impl.RosPackageImpl#getParameterType()
 	 * @generated
 	 */
 	int PARAMETER_TYPE = 24;
@@ -1320,7 +1320,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterListTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterListType()
+	 * @see ros.impl.RosPackageImpl#getParameterListType()
 	 * @generated
 	 */
 	int PARAMETER_LIST_TYPE = 25;
@@ -1366,7 +1366,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStructTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterStructType()
+	 * @see ros.impl.RosPackageImpl#getParameterStructType()
 	 * @generated
 	 */
 	int PARAMETER_STRUCT_TYPE = 26;
@@ -1403,7 +1403,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterIntegerTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterIntegerType()
+	 * @see ros.impl.RosPackageImpl#getParameterIntegerType()
 	 * @generated
 	 */
 	int PARAMETER_INTEGER_TYPE = 27;
@@ -1440,7 +1440,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStringTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterStringType()
+	 * @see ros.impl.RosPackageImpl#getParameterStringType()
 	 * @generated
 	 */
 	int PARAMETER_STRING_TYPE = 28;
@@ -1477,7 +1477,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterDoubleTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterDoubleType()
+	 * @see ros.impl.RosPackageImpl#getParameterDoubleType()
 	 * @generated
 	 */
 	int PARAMETER_DOUBLE_TYPE = 29;
@@ -1514,7 +1514,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameter()
+	 * @see ros.impl.RosPackageImpl#getParameter()
 	 * @generated
 	 */
 	int PARAMETER = 30;
@@ -1569,7 +1569,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterDateTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterDateType()
+	 * @see ros.impl.RosPackageImpl#getParameterDateType()
 	 * @generated
 	 */
 	int PARAMETER_DATE_TYPE = 31;
@@ -1606,7 +1606,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterBooleanTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterBooleanType()
+	 * @see ros.impl.RosPackageImpl#getParameterBooleanType()
 	 * @generated
 	 */
 	int PARAMETER_BOOLEAN_TYPE = 32;
@@ -1643,7 +1643,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterBase64TypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterBase64Type()
+	 * @see ros.impl.RosPackageImpl#getParameterBase64Type()
 	 * @generated
 	 */
 	int PARAMETER_BASE64_TYPE = 33;
@@ -1680,7 +1680,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterAnyTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterAnyType()
+	 * @see ros.impl.RosPackageImpl#getParameterAnyType()
 	 * @generated
 	 */
 	int PARAMETER_ANY_TYPE = 34;
@@ -1717,7 +1717,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStructTypeMemberImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterStructTypeMember()
+	 * @see ros.impl.RosPackageImpl#getParameterStructTypeMember()
 	 * @generated
 	 */
 	int PARAMETER_STRUCT_TYPE_MEMBER = 35;
@@ -1772,7 +1772,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterArrayTypeImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterArrayType()
+	 * @see ros.impl.RosPackageImpl#getParameterArrayType()
 	 * @generated
 	 */
 	int PARAMETER_ARRAY_TYPE = 36;
@@ -1818,7 +1818,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterValueImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterValue()
+	 * @see ros.impl.RosPackageImpl#getParameterValue()
 	 * @generated
 	 */
 	int PARAMETER_VALUE = 37;
@@ -1846,7 +1846,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterAnyImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterAny()
+	 * @see ros.impl.RosPackageImpl#getParameterAny()
 	 * @generated
 	 */
 	int PARAMETER_ANY = 38;
@@ -1883,7 +1883,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStringImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterString()
+	 * @see ros.impl.RosPackageImpl#getParameterString()
 	 * @generated
 	 */
 	int PARAMETER_STRING = 39;
@@ -1920,7 +1920,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterBase64Impl
-	 * @see ros.impl.Ros1PackageImpl#getParameterBase64()
+	 * @see ros.impl.RosPackageImpl#getParameterBase64()
 	 * @generated
 	 */
 	int PARAMETER_BASE64 = 40;
@@ -1957,7 +1957,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterIntegerImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterInteger()
+	 * @see ros.impl.RosPackageImpl#getParameterInteger()
 	 * @generated
 	 */
 	int PARAMETER_INTEGER = 41;
@@ -1994,7 +1994,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterDoubleImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterDouble()
+	 * @see ros.impl.RosPackageImpl#getParameterDouble()
 	 * @generated
 	 */
 	int PARAMETER_DOUBLE = 42;
@@ -2031,7 +2031,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterBooleanImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterBoolean()
+	 * @see ros.impl.RosPackageImpl#getParameterBoolean()
 	 * @generated
 	 */
 	int PARAMETER_BOOLEAN = 43;
@@ -2068,7 +2068,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterSequenceImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterSequence()
+	 * @see ros.impl.RosPackageImpl#getParameterSequence()
 	 * @generated
 	 */
 	int PARAMETER_SEQUENCE = 44;
@@ -2105,7 +2105,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStructImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterStruct()
+	 * @see ros.impl.RosPackageImpl#getParameterStruct()
 	 * @generated
 	 */
 	int PARAMETER_STRUCT = 45;
@@ -2142,7 +2142,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterStructMemberImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterStructMember()
+	 * @see ros.impl.RosPackageImpl#getParameterStructMember()
 	 * @generated
 	 */
 	int PARAMETER_STRUCT_MEMBER = 46;
@@ -2188,7 +2188,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see ros.impl.ParameterDateImpl
-	 * @see ros.impl.Ros1PackageImpl#getParameterDate()
+	 * @see ros.impl.RosPackageImpl#getParameterDate()
 	 * @generated
 	 */
 	int PARAMETER_DATE = 47;
@@ -2225,7 +2225,7 @@ public interface Ros1Package extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see ros.impl.Ros1PackageImpl#getGraphName()
+	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
 	int GRAPH_NAME = 48;
@@ -3411,7 +3411,7 @@ public interface Ros1Package extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	Ros1Factory getRos1Factory();
+	RosFactory getRosFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3432,7 +3432,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.NodeImpl
-		 * @see ros.impl.Ros1PackageImpl#getNode()
+		 * @see ros.impl.RosPackageImpl#getNode()
 		 * @generated
 		 */
 		EClass NODE = eINSTANCE.getNode();
@@ -3506,7 +3506,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.PackageImpl
-		 * @see ros.impl.Ros1PackageImpl#getPackage()
+		 * @see ros.impl.RosPackageImpl#getPackage()
 		 * @generated
 		 */
 		EClass PACKAGE = eINSTANCE.getPackage();
@@ -3540,7 +3540,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.DependencyImpl
-		 * @see ros.impl.Ros1PackageImpl#getDependency()
+		 * @see ros.impl.RosPackageImpl#getDependency()
 		 * @generated
 		 */
 		EClass DEPENDENCY = eINSTANCE.getDependency();
@@ -3550,7 +3550,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ServiceSpecImpl
-		 * @see ros.impl.Ros1PackageImpl#getServiceSpec()
+		 * @see ros.impl.RosPackageImpl#getServiceSpec()
 		 * @generated
 		 */
 		EClass SERVICE_SPEC = eINSTANCE.getServiceSpec();
@@ -3576,7 +3576,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ServiceServerImpl
-		 * @see ros.impl.Ros1PackageImpl#getServiceServer()
+		 * @see ros.impl.RosPackageImpl#getServiceServer()
 		 * @generated
 		 */
 		EClass SERVICE_SERVER = eINSTANCE.getServiceServer();
@@ -3594,7 +3594,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.TopicSpecImpl
-		 * @see ros.impl.Ros1PackageImpl#getTopicSpec()
+		 * @see ros.impl.RosPackageImpl#getTopicSpec()
 		 * @generated
 		 */
 		EClass TOPIC_SPEC = eINSTANCE.getTopicSpec();
@@ -3612,7 +3612,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.PublisherImpl
-		 * @see ros.impl.Ros1PackageImpl#getPublisher()
+		 * @see ros.impl.RosPackageImpl#getPublisher()
 		 * @generated
 		 */
 		EClass PUBLISHER = eINSTANCE.getPublisher();
@@ -3630,7 +3630,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.PackageDependencyImpl
-		 * @see ros.impl.Ros1PackageImpl#getPackageDependency()
+		 * @see ros.impl.RosPackageImpl#getPackageDependency()
 		 * @generated
 		 */
 		EClass PACKAGE_DEPENDENCY = eINSTANCE.getPackageDependency();
@@ -3648,7 +3648,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ExternalDependencyImpl
-		 * @see ros.impl.Ros1PackageImpl#getExternalDependency()
+		 * @see ros.impl.RosPackageImpl#getExternalDependency()
 		 * @generated
 		 */
 		EClass EXTERNAL_DEPENDENCY = eINSTANCE.getExternalDependency();
@@ -3666,7 +3666,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.CatkinPackageImpl
-		 * @see ros.impl.Ros1PackageImpl#getCatkinPackage()
+		 * @see ros.impl.RosPackageImpl#getCatkinPackage()
 		 * @generated
 		 */
 		EClass CATKIN_PACKAGE = eINSTANCE.getCatkinPackage();
@@ -3684,7 +3684,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ArtifactImpl
-		 * @see ros.impl.Ros1PackageImpl#getArtifact()
+		 * @see ros.impl.RosPackageImpl#getArtifact()
 		 * @generated
 		 */
 		EClass ARTIFACT = eINSTANCE.getArtifact();
@@ -3710,7 +3710,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.SpecBaseImpl
-		 * @see ros.impl.Ros1PackageImpl#getSpecBase()
+		 * @see ros.impl.RosPackageImpl#getSpecBase()
 		 * @generated
 		 */
 		EClass SPEC_BASE = eINSTANCE.getSpecBase();
@@ -3744,7 +3744,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.SubscriberImpl
-		 * @see ros.impl.Ros1PackageImpl#getSubscriber()
+		 * @see ros.impl.RosPackageImpl#getSubscriber()
 		 * @generated
 		 */
 		EClass SUBSCRIBER = eINSTANCE.getSubscriber();
@@ -3762,7 +3762,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ServiceClientImpl
-		 * @see ros.impl.Ros1PackageImpl#getServiceClient()
+		 * @see ros.impl.RosPackageImpl#getServiceClient()
 		 * @generated
 		 */
 		EClass SERVICE_CLIENT = eINSTANCE.getServiceClient();
@@ -3780,7 +3780,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.PackageSetImpl
-		 * @see ros.impl.Ros1PackageImpl#getPackageSet()
+		 * @see ros.impl.RosPackageImpl#getPackageSet()
 		 * @generated
 		 */
 		EClass PACKAGE_SET = eINSTANCE.getPackageSet();
@@ -3798,7 +3798,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ActionSpecImpl
-		 * @see ros.impl.Ros1PackageImpl#getActionSpec()
+		 * @see ros.impl.RosPackageImpl#getActionSpec()
 		 * @generated
 		 */
 		EClass ACTION_SPEC = eINSTANCE.getActionSpec();
@@ -3832,7 +3832,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ActionServerImpl
-		 * @see ros.impl.Ros1PackageImpl#getActionServer()
+		 * @see ros.impl.RosPackageImpl#getActionServer()
 		 * @generated
 		 */
 		EClass ACTION_SERVER = eINSTANCE.getActionServer();
@@ -3850,7 +3850,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ActionClientImpl
-		 * @see ros.impl.Ros1PackageImpl#getActionClient()
+		 * @see ros.impl.RosPackageImpl#getActionClient()
 		 * @generated
 		 */
 		EClass ACTION_CLIENT = eINSTANCE.getActionClient();
@@ -3868,7 +3868,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.MessageDefinitionImpl
-		 * @see ros.impl.Ros1PackageImpl#getMessageDefinition()
+		 * @see ros.impl.RosPackageImpl#getMessageDefinition()
 		 * @generated
 		 */
 		EClass MESSAGE_DEFINITION = eINSTANCE.getMessageDefinition();
@@ -3878,7 +3878,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.NamespaceImpl
-		 * @see ros.impl.Ros1PackageImpl#getNamespace()
+		 * @see ros.impl.RosPackageImpl#getNamespace()
 		 * @generated
 		 */
 		EClass NAMESPACE = eINSTANCE.getNamespace();
@@ -3896,7 +3896,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.GlobalNamespaceImpl
-		 * @see ros.impl.Ros1PackageImpl#getGlobalNamespace()
+		 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
 		 * @generated
 		 */
 		EClass GLOBAL_NAMESPACE = eINSTANCE.getGlobalNamespace();
@@ -3906,7 +3906,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.RelativeNamespaceImpl
-		 * @see ros.impl.Ros1PackageImpl#getRelativeNamespace()
+		 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
 		 * @generated
 		 */
 		EClass RELATIVE_NAMESPACE = eINSTANCE.getRelativeNamespace();
@@ -3916,7 +3916,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.PrivateNamespaceImpl
-		 * @see ros.impl.Ros1PackageImpl#getPrivateNamespace()
+		 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
 		 * @generated
 		 */
 		EClass PRIVATE_NAMESPACE = eINSTANCE.getPrivateNamespace();
@@ -3926,7 +3926,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.NamespacedElementImpl
-		 * @see ros.impl.Ros1PackageImpl#getNamespacedElement()
+		 * @see ros.impl.RosPackageImpl#getNamespacedElement()
 		 * @generated
 		 */
 		EClass NAMESPACED_ELEMENT = eINSTANCE.getNamespacedElement();
@@ -3952,7 +3952,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterType()
+		 * @see ros.impl.RosPackageImpl#getParameterType()
 		 * @generated
 		 */
 		EClass PARAMETER_TYPE = eINSTANCE.getParameterType();
@@ -3962,7 +3962,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterListTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterListType()
+		 * @see ros.impl.RosPackageImpl#getParameterListType()
 		 * @generated
 		 */
 		EClass PARAMETER_LIST_TYPE = eINSTANCE.getParameterListType();
@@ -3988,7 +3988,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStructTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterStructType()
+		 * @see ros.impl.RosPackageImpl#getParameterStructType()
 		 * @generated
 		 */
 		EClass PARAMETER_STRUCT_TYPE = eINSTANCE.getParameterStructType();
@@ -4006,7 +4006,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterIntegerTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterIntegerType()
+		 * @see ros.impl.RosPackageImpl#getParameterIntegerType()
 		 * @generated
 		 */
 		EClass PARAMETER_INTEGER_TYPE = eINSTANCE.getParameterIntegerType();
@@ -4024,7 +4024,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStringTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterStringType()
+		 * @see ros.impl.RosPackageImpl#getParameterStringType()
 		 * @generated
 		 */
 		EClass PARAMETER_STRING_TYPE = eINSTANCE.getParameterStringType();
@@ -4042,7 +4042,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterDoubleTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterDoubleType()
+		 * @see ros.impl.RosPackageImpl#getParameterDoubleType()
 		 * @generated
 		 */
 		EClass PARAMETER_DOUBLE_TYPE = eINSTANCE.getParameterDoubleType();
@@ -4060,7 +4060,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameter()
+		 * @see ros.impl.RosPackageImpl#getParameter()
 		 * @generated
 		 */
 		EClass PARAMETER = eINSTANCE.getParameter();
@@ -4078,7 +4078,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterDateTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterDateType()
+		 * @see ros.impl.RosPackageImpl#getParameterDateType()
 		 * @generated
 		 */
 		EClass PARAMETER_DATE_TYPE = eINSTANCE.getParameterDateType();
@@ -4096,7 +4096,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterBooleanTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterBooleanType()
+		 * @see ros.impl.RosPackageImpl#getParameterBooleanType()
 		 * @generated
 		 */
 		EClass PARAMETER_BOOLEAN_TYPE = eINSTANCE.getParameterBooleanType();
@@ -4114,7 +4114,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterBase64TypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterBase64Type()
+		 * @see ros.impl.RosPackageImpl#getParameterBase64Type()
 		 * @generated
 		 */
 		EClass PARAMETER_BASE64_TYPE = eINSTANCE.getParameterBase64Type();
@@ -4132,7 +4132,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterAnyTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterAnyType()
+		 * @see ros.impl.RosPackageImpl#getParameterAnyType()
 		 * @generated
 		 */
 		EClass PARAMETER_ANY_TYPE = eINSTANCE.getParameterAnyType();
@@ -4150,7 +4150,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStructTypeMemberImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterStructTypeMember()
+		 * @see ros.impl.RosPackageImpl#getParameterStructTypeMember()
 		 * @generated
 		 */
 		EClass PARAMETER_STRUCT_TYPE_MEMBER = eINSTANCE.getParameterStructTypeMember();
@@ -4184,7 +4184,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterArrayTypeImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterArrayType()
+		 * @see ros.impl.RosPackageImpl#getParameterArrayType()
 		 * @generated
 		 */
 		EClass PARAMETER_ARRAY_TYPE = eINSTANCE.getParameterArrayType();
@@ -4210,7 +4210,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterValueImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterValue()
+		 * @see ros.impl.RosPackageImpl#getParameterValue()
 		 * @generated
 		 */
 		EClass PARAMETER_VALUE = eINSTANCE.getParameterValue();
@@ -4220,7 +4220,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterAnyImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterAny()
+		 * @see ros.impl.RosPackageImpl#getParameterAny()
 		 * @generated
 		 */
 		EClass PARAMETER_ANY = eINSTANCE.getParameterAny();
@@ -4238,7 +4238,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStringImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterString()
+		 * @see ros.impl.RosPackageImpl#getParameterString()
 		 * @generated
 		 */
 		EClass PARAMETER_STRING = eINSTANCE.getParameterString();
@@ -4256,7 +4256,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterBase64Impl
-		 * @see ros.impl.Ros1PackageImpl#getParameterBase64()
+		 * @see ros.impl.RosPackageImpl#getParameterBase64()
 		 * @generated
 		 */
 		EClass PARAMETER_BASE64 = eINSTANCE.getParameterBase64();
@@ -4274,7 +4274,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterIntegerImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterInteger()
+		 * @see ros.impl.RosPackageImpl#getParameterInteger()
 		 * @generated
 		 */
 		EClass PARAMETER_INTEGER = eINSTANCE.getParameterInteger();
@@ -4292,7 +4292,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterDoubleImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterDouble()
+		 * @see ros.impl.RosPackageImpl#getParameterDouble()
 		 * @generated
 		 */
 		EClass PARAMETER_DOUBLE = eINSTANCE.getParameterDouble();
@@ -4310,7 +4310,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterBooleanImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterBoolean()
+		 * @see ros.impl.RosPackageImpl#getParameterBoolean()
 		 * @generated
 		 */
 		EClass PARAMETER_BOOLEAN = eINSTANCE.getParameterBoolean();
@@ -4328,7 +4328,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterSequenceImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterSequence()
+		 * @see ros.impl.RosPackageImpl#getParameterSequence()
 		 * @generated
 		 */
 		EClass PARAMETER_SEQUENCE = eINSTANCE.getParameterSequence();
@@ -4346,7 +4346,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStructImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterStruct()
+		 * @see ros.impl.RosPackageImpl#getParameterStruct()
 		 * @generated
 		 */
 		EClass PARAMETER_STRUCT = eINSTANCE.getParameterStruct();
@@ -4364,7 +4364,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterStructMemberImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterStructMember()
+		 * @see ros.impl.RosPackageImpl#getParameterStructMember()
 		 * @generated
 		 */
 		EClass PARAMETER_STRUCT_MEMBER = eINSTANCE.getParameterStructMember();
@@ -4390,7 +4390,7 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see ros.impl.ParameterDateImpl
-		 * @see ros.impl.Ros1PackageImpl#getParameterDate()
+		 * @see ros.impl.RosPackageImpl#getParameterDate()
 		 * @generated
 		 */
 		EClass PARAMETER_DATE = eINSTANCE.getParameterDate();
@@ -4408,11 +4408,11 @@ public interface Ros1Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see ros.impl.Ros1PackageImpl#getGraphName()
+		 * @see ros.impl.RosPackageImpl#getGraphName()
 		 * @generated
 		 */
 		EDataType GRAPH_NAME = eINSTANCE.getGraphName();
 
 	}
 
-} //Ros1Package
+} //RosPackage

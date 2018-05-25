@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterBoolean#isValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterBoolean()
+ * @see ros.RosPackage#getParameterBoolean()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterBoolean extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(boolean)
-	 * @see ros.Ros1Package#getParameterBoolean_Value()
+	 * @see ros.RosPackage#getParameterBoolean_Value()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */

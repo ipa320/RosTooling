@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see ros.Ros1Package#getDependency()
+ * @see ros.RosPackage#getDependency()
  * @model abstract="true"
  * @generated
  */

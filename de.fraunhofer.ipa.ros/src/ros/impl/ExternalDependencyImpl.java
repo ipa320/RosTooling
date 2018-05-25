@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ExternalDependency;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.EXTERNAL_DEPENDENCY;
+		return RosPackage.Literals.EXTERNAL_DEPENDENCY;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.EXTERNAL_DEPENDENCY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.EXTERNAL_DEPENDENCY__NAME, oldName, name));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.EXTERNAL_DEPENDENCY__NAME:
+			case RosPackage.EXTERNAL_DEPENDENCY__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.EXTERNAL_DEPENDENCY__NAME:
+			case RosPackage.EXTERNAL_DEPENDENCY__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.EXTERNAL_DEPENDENCY__NAME:
+			case RosPackage.EXTERNAL_DEPENDENCY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.EXTERNAL_DEPENDENCY__NAME:
+			case RosPackage.EXTERNAL_DEPENDENCY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);

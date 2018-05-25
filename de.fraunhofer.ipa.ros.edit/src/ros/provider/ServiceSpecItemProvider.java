@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 import ros.ServiceSpec;
 
 /**
@@ -62,8 +62,8 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.SERVICE_SPEC__REQUEST);
-			childrenFeatures.add(Ros1Package.Literals.SERVICE_SPEC__RESPONSE);
+			childrenFeatures.add(RosPackage.Literals.SERVICE_SPEC__REQUEST);
+			childrenFeatures.add(RosPackage.Literals.SERVICE_SPEC__RESPONSE);
 		}
 		return childrenFeatures;
 	}
@@ -119,8 +119,8 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceSpec.class)) {
-			case Ros1Package.SERVICE_SPEC__REQUEST:
-			case Ros1Package.SERVICE_SPEC__RESPONSE:
+			case RosPackage.SERVICE_SPEC__REQUEST:
+			case RosPackage.SERVICE_SPEC__RESPONSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -140,13 +140,13 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.SERVICE_SPEC__REQUEST,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.SERVICE_SPEC__REQUEST,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.SERVICE_SPEC__RESPONSE,
-				 Ros1Factory.eINSTANCE.createMessageDefinition()));
+				(RosPackage.Literals.SERVICE_SPEC__RESPONSE,
+				 RosFactory.eINSTANCE.createMessageDefinition()));
 	}
 
 	/**
@@ -161,8 +161,8 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == Ros1Package.Literals.SERVICE_SPEC__REQUEST ||
-			childFeature == Ros1Package.Literals.SERVICE_SPEC__RESPONSE;
+			childFeature == RosPackage.Literals.SERVICE_SPEC__REQUEST ||
+			childFeature == RosPackage.Literals.SERVICE_SPEC__RESPONSE;
 
 		if (qualify) {
 			return getString

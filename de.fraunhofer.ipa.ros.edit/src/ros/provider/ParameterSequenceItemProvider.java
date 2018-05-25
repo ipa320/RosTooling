@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterSequence;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterSequence} object.
@@ -62,7 +62,7 @@ public class ParameterSequenceItemProvider extends ParameterValueItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +115,7 @@ public class ParameterSequenceItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterSequence.class)) {
-			case Ros1Package.PARAMETER_SEQUENCE__VALUE:
+			case RosPackage.PARAMETER_SEQUENCE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -135,48 +135,48 @@ public class ParameterSequenceItemProvider extends ParameterValueItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterAny()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterAny()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterString()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterString()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterBase64()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterBase64()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterInteger()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterInteger()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterDouble()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterDouble()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterBoolean()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterBoolean()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterSequence()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterSequence()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterStruct()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterStruct()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_SEQUENCE__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterDate()));
+				(RosPackage.Literals.PARAMETER_SEQUENCE__VALUE,
+				 RosFactory.eINSTANCE.createParameterDate()));
 	}
 
 }

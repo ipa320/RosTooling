@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.Package#getArtifact <em>Artifact</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getPackage()
+ * @see ros.RosPackage#getPackage()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface Package extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getPackage_Name()
+	 * @see ros.RosPackage#getPackage_Name()
 	 * @model id="true" required="true"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface Package extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Spec</em>' containment reference list.
-	 * @see ros.Ros1Package#getPackage_Spec()
+	 * @see ros.RosPackage#getPackage_Spec()
 	 * @see ros.SpecBase#getPackage
 	 * @model opposite="package" containment="true"
 	 * @generated
@@ -79,7 +79,7 @@ public interface Package extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Artifact</em>' containment reference list.
-	 * @see ros.Ros1Package#getPackage_Artifact()
+	 * @see ros.RosPackage#getPackage_Artifact()
 	 * @model containment="true"
 	 * @generated
 	 */

@@ -3,7 +3,7 @@
 package ros.tests;
 
 import junit.textui.TestRunner;
-import ros.Ros1Factory;
+import ros.RosFactory;
 import ros.TopicSpec;
 
 /**
@@ -52,7 +52,7 @@ public class TopicSpecTest extends SpecBaseTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createTopicSpec());
+		setFixture(RosFactory.eINSTANCE.createTopicSpec());
 	}
 
 	/**

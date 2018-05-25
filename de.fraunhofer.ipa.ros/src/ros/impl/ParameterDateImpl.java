@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.ParameterDate;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_DATE;
+		return RosPackage.Literals.PARAMETER_DATE;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 		XMLGregorianCalendar oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_DATE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_DATE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DATE__VALUE:
+			case RosPackage.PARAMETER_DATE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +109,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DATE__VALUE:
+			case RosPackage.PARAMETER_DATE__VALUE:
 				setValue((XMLGregorianCalendar)newValue);
 				return;
 		}
@@ -124,7 +124,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DATE__VALUE:
+			case RosPackage.PARAMETER_DATE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -139,7 +139,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_DATE__VALUE:
+			case RosPackage.PARAMETER_DATE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

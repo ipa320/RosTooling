@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.Artifact;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.Artifact} object.
@@ -80,7 +80,7 @@ public class ArtifactItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Artifact_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Artifact_name_feature", "_UI_Artifact_type"),
-				 Ros1Package.Literals.ARTIFACT__NAME,
+				 RosPackage.Literals.ARTIFACT__NAME,
 				 true,
 				 false,
 				 false,
@@ -101,7 +101,7 @@ public class ArtifactItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.ARTIFACT__NODE);
+			childrenFeatures.add(RosPackage.Literals.ARTIFACT__NODE);
 		}
 		return childrenFeatures;
 	}
@@ -157,10 +157,10 @@ public class ArtifactItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Artifact.class)) {
-			case Ros1Package.ARTIFACT__NAME:
+			case RosPackage.ARTIFACT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Ros1Package.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__NODE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -180,8 +180,8 @@ public class ArtifactItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.ARTIFACT__NODE,
-				 Ros1Factory.eINSTANCE.createNode()));
+				(RosPackage.Literals.ARTIFACT__NODE,
+				 RosFactory.eINSTANCE.createNode()));
 	}
 
 	/**

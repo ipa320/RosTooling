@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterAny;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterAny} object.
@@ -63,7 +63,7 @@ public class ParameterAnyItemProvider extends ParameterValueItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterAny_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterAny_value_feature", "_UI_ParameterAny_type"),
-				 Ros1Package.Literals.PARAMETER_ANY__VALUE,
+				 RosPackage.Literals.PARAMETER_ANY__VALUE,
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class ParameterAnyItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterAny.class)) {
-			case Ros1Package.PARAMETER_ANY__VALUE:
+			case RosPackage.PARAMETER_ANY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

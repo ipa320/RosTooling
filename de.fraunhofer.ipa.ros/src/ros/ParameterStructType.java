@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ros.ParameterStructType#getParameterstructypetmember <em>Parameterstructypetmember</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterStructType()
+ * @see ros.RosPackage#getParameterStructType()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ParameterStructType extends ParameterType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameterstructypetmember</em>' containment reference list.
-	 * @see ros.Ros1Package#getParameterStructType_Parameterstructypetmember()
+	 * @see ros.RosPackage#getParameterStructType_Parameterstructypetmember()
 	 * @model containment="true"
 	 * @generated
 	 */

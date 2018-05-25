@@ -3,7 +3,7 @@
 package ros.tests;
 
 import junit.textui.TestRunner;
-import ros.Ros1Factory;
+import ros.RosFactory;
 import ros.ServiceSpec;
 
 /**
@@ -52,7 +52,7 @@ public class ServiceSpecTest extends SpecBaseTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Ros1Factory.eINSTANCE.createServiceSpec());
+		setFixture(RosFactory.eINSTANCE.createServiceSpec());
 	}
 
 	/**

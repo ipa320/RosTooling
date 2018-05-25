@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.Parameter;
 import ros.ParameterType;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER;
+		return RosPackage.Literals.PARAMETER;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 		ParameterType oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER__TYPE, oldType, newType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER__TYPE, oldType, newType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -90,14 +90,14 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER__TYPE, null, msgs);
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER__TYPE, null, msgs);
 			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER__TYPE, null, msgs);
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER__TYPE, null, msgs);
 			msgs = basicSetType(newType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER__TYPE, newType, newType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER__TYPE, newType, newType));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER__TYPE:
+			case RosPackage.PARAMETER__TYPE:
 				return basicSetType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -122,7 +122,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER__TYPE:
+			case RosPackage.PARAMETER__TYPE:
 				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -136,7 +136,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER__TYPE:
+			case RosPackage.PARAMETER__TYPE:
 				setType((ParameterType)newValue);
 				return;
 		}
@@ -151,7 +151,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER__TYPE:
+			case RosPackage.PARAMETER__TYPE:
 				setType((ParameterType)null);
 				return;
 		}
@@ -166,7 +166,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER__TYPE:
+			case RosPackage.PARAMETER__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);

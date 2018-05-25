@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ParameterDouble#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterDouble()
+ * @see ros.RosPackage#getParameterDouble()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ParameterDouble extends ParameterValue {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(double)
-	 * @see ros.Ros1Package#getParameterDouble_Value()
+	 * @see ros.RosPackage#getParameterDouble_Value()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Double" required="true"
 	 * @generated
 	 */

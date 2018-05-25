@@ -17,7 +17,7 @@ package ros;
  *   <li>{@link ros.ActionSpec#getFeedback <em>Feedback</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getActionSpec()
+ * @see ros.RosPackage#getActionSpec()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface ActionSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goal</em>' containment reference.
 	 * @see #setGoal(MessageDefinition)
-	 * @see ros.Ros1Package#getActionSpec_Goal()
+	 * @see ros.RosPackage#getActionSpec_Goal()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface ActionSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Result</em>' containment reference.
 	 * @see #setResult(MessageDefinition)
-	 * @see ros.Ros1Package#getActionSpec_Result()
+	 * @see ros.RosPackage#getActionSpec_Result()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface ActionSpec extends SpecBase {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feedback</em>' containment reference.
 	 * @see #setFeedback(MessageDefinition)
-	 * @see ros.Ros1Package#getActionSpec_Feedback()
+	 * @see ros.RosPackage#getActionSpec_Feedback()
 	 * @model containment="true"
 	 * @generated
 	 */

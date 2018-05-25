@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.CatkinPackage;
 import ros.Dependency;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.CATKIN_PACKAGE;
+		return RosPackage.Literals.CATKIN_PACKAGE;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	 */
 	public EList<Dependency> getDependency() {
 		if (dependency == null) {
-			dependency = new EObjectContainmentEList<Dependency>(Dependency.class, this, Ros1Package.CATKIN_PACKAGE__DEPENDENCY);
+			dependency = new EObjectContainmentEList<Dependency>(Dependency.class, this, RosPackage.CATKIN_PACKAGE__DEPENDENCY);
 		}
 		return dependency;
 	}
@@ -81,7 +81,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				return ((InternalEList<?>)getDependency()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -95,7 +95,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				return getDependency();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				getDependency().clear();
 				getDependency().addAll((Collection<? extends Dependency>)newValue);
 				return;
@@ -126,7 +126,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				getDependency().clear();
 				return;
 		}
@@ -141,7 +141,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				return dependency != null && !dependency.isEmpty();
 		}
 		return super.eIsSet(featureID);

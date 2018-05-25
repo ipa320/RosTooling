@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.CatkinPackage;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.CatkinPackage} object.
@@ -62,7 +62,7 @@ public class CatkinPackageItemProvider extends PackageItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.CATKIN_PACKAGE__DEPENDENCY);
+			childrenFeatures.add(RosPackage.Literals.CATKIN_PACKAGE__DEPENDENCY);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class CatkinPackageItemProvider extends PackageItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CatkinPackage.class)) {
-			case Ros1Package.CATKIN_PACKAGE__DEPENDENCY:
+			case RosPackage.CATKIN_PACKAGE__DEPENDENCY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,13 +138,13 @@ public class CatkinPackageItemProvider extends PackageItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.CATKIN_PACKAGE__DEPENDENCY,
-				 Ros1Factory.eINSTANCE.createPackageDependency()));
+				(RosPackage.Literals.CATKIN_PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createPackageDependency()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.CATKIN_PACKAGE__DEPENDENCY,
-				 Ros1Factory.eINSTANCE.createExternalDependency()));
+				(RosPackage.Literals.CATKIN_PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createExternalDependency()));
 	}
 
 }

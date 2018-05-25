@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.ActionClient#getAction <em>Action</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getActionClient()
+ * @see ros.RosPackage#getActionClient()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ActionClient extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action</em>' reference.
 	 * @see #setAction(ActionSpec)
-	 * @see ros.Ros1Package#getActionClient_Action()
+	 * @see ros.RosPackage#getActionClient_Action()
 	 * @model required="true"
 	 * @generated
 	 */

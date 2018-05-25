@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.PackageSet#getPackage <em>Package</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getPackageSet()
+ * @see ros.RosPackage#getPackageSet()
  * @model
  * @generated
  */
@@ -33,7 +33,7 @@ public interface PackageSet extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package</em>' containment reference list.
-	 * @see ros.Ros1Package#getPackageSet_Package()
+	 * @see ros.RosPackage#getPackageSet_Package()
 	 * @model containment="true"
 	 * @generated
 	 */

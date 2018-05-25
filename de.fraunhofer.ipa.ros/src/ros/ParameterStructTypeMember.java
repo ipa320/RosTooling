@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.ParameterStructTypeMember#getDefault <em>Default</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameterStructTypeMember()
+ * @see ros.RosPackage#getParameterStructTypeMember()
  * @model
  * @generated
  */
@@ -33,7 +33,7 @@ public interface ParameterStructTypeMember extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.Ros1Package#getParameterStructTypeMember_Name()
+	 * @see ros.RosPackage#getParameterStructTypeMember_Name()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -59,7 +59,7 @@ public interface ParameterStructTypeMember extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(ParameterType)
-	 * @see ros.Ros1Package#getParameterStructTypeMember_Type()
+	 * @see ros.RosPackage#getParameterStructTypeMember_Type()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -85,7 +85,7 @@ public interface ParameterStructTypeMember extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(ParameterStruct)
-	 * @see ros.Ros1Package#getParameterStructTypeMember_Default()
+	 * @see ros.RosPackage#getParameterStructTypeMember_Default()
 	 * @model containment="true"
 	 * @generated
 	 */

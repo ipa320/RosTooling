@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterStructMember;
-import ros.Ros1Factory;
-import ros.Ros1Package;
+import ros.RosFactory;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterStructMember} object.
@@ -81,7 +81,7 @@ public class ParameterStructMemberItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ParameterStructMember_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterStructMember_name_feature", "_UI_ParameterStructMember_type"),
-				 Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__NAME,
+				 RosPackage.Literals.PARAMETER_STRUCT_MEMBER__NAME,
 				 true,
 				 false,
 				 false,
@@ -102,7 +102,7 @@ public class ParameterStructMemberItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE);
+			childrenFeatures.add(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -158,10 +158,10 @@ public class ParameterStructMemberItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterStructMember.class)) {
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__NAME:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Ros1Package.PARAMETER_STRUCT_MEMBER__VALUE:
+			case RosPackage.PARAMETER_STRUCT_MEMBER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,48 +181,48 @@ public class ParameterStructMemberItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterAny()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterAny()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterString()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterString()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterBase64()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterBase64()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterInteger()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterInteger()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterDouble()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterDouble()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterBoolean()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterBoolean()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterSequence()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterSequence()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterStruct()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterStruct()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Ros1Package.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
-				 Ros1Factory.eINSTANCE.createParameterDate()));
+				(RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE,
+				 RosFactory.eINSTANCE.createParameterDate()));
 	}
 
 	/**

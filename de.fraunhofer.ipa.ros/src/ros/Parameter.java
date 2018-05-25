@@ -15,7 +15,7 @@ package ros;
  *   <li>{@link ros.Parameter#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see ros.Ros1Package#getParameter()
+ * @see ros.RosPackage#getParameter()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface Parameter extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(ParameterType)
-	 * @see ros.Ros1Package#getParameter_Type()
+	 * @see ros.RosPackage#getParameter_Type()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

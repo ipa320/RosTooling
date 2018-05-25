@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import ros.ParameterArrayType;
 import ros.ParameterSequence;
 import ros.ParameterType;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Ros1Package.Literals.PARAMETER_ARRAY_TYPE;
+		return RosPackage.Literals.PARAMETER_ARRAY_TYPE;
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 		ParameterType oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_ARRAY_TYPE__TYPE, oldType, newType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_ARRAY_TYPE__TYPE, oldType, newType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -102,14 +102,14 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_ARRAY_TYPE__TYPE, null, msgs);
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_ARRAY_TYPE__TYPE, null, msgs);
 			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_ARRAY_TYPE__TYPE, null, msgs);
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_ARRAY_TYPE__TYPE, null, msgs);
 			msgs = basicSetType(newType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_ARRAY_TYPE__TYPE, newType, newType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_ARRAY_TYPE__TYPE, newType, newType));
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 		ParameterSequence oldDefault = default_;
 		default_ = newDefault;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT, oldDefault, newDefault);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT, oldDefault, newDefault);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -145,14 +145,14 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 		if (newDefault != default_) {
 			NotificationChain msgs = null;
 			if (default_ != null)
-				msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT, null, msgs);
+				msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT, null, msgs);
 			if (newDefault != null)
-				msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT, null, msgs);
+				msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT, null, msgs);
 			msgs = basicSetDefault(newDefault, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT, newDefault, newDefault));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT, newDefault, newDefault));
 	}
 
 	/**
@@ -163,9 +163,9 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
 				return basicSetType(null, msgs);
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				return basicSetDefault(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -179,9 +179,9 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
 				return getType();
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				return getDefault();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -195,10 +195,10 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
 				setType((ParameterType)newValue);
 				return;
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				setDefault((ParameterSequence)newValue);
 				return;
 		}
@@ -213,10 +213,10 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
 				setType((ParameterType)null);
 				return;
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				setDefault((ParameterSequence)null);
 				return;
 		}
@@ -231,9 +231,9 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Ros1Package.PARAMETER_ARRAY_TYPE__TYPE:
+			case RosPackage.PARAMETER_ARRAY_TYPE__TYPE:
 				return type != null;
-			case Ros1Package.PARAMETER_ARRAY_TYPE__DEFAULT:
+			case RosPackage.PARAMETER_ARRAY_TYPE__DEFAULT:
 				return default_ != null;
 		}
 		return super.eIsSet(featureID);

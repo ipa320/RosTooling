@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.ParameterBoolean;
-import ros.Ros1Package;
+import ros.RosPackage;
 
 /**
  * This is the item provider adapter for a {@link ros.ParameterBoolean} object.
@@ -63,7 +63,7 @@ public class ParameterBooleanItemProvider extends ParameterValueItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterBoolean_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBoolean_value_feature", "_UI_ParameterBoolean_type"),
-				 Ros1Package.Literals.PARAMETER_BOOLEAN__VALUE,
+				 RosPackage.Literals.PARAMETER_BOOLEAN__VALUE,
 				 true,
 				 false,
 				 false,
@@ -108,7 +108,7 @@ public class ParameterBooleanItemProvider extends ParameterValueItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterBoolean.class)) {
-			case Ros1Package.PARAMETER_BOOLEAN__VALUE:
+			case RosPackage.PARAMETER_BOOLEAN__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
