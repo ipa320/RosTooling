@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.ros/src" editDirectory="/de.fraunhofer.ipa.ros.edit/src"
+    editorDirectory="/de.fraunhofer.ipa.ros.editor/src" modelPluginID="de.fraunhofer.ipa.ros"
+    modelName="Ros" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/de.fraunhofer.ipa.ros.tests/src" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.fraunhofer.ipa.ros.edit"
+    editorPluginID="de.fraunhofer.ipa.ros.editor" testsPluginID="de.fraunhofer.ipa.ros.tests"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ros.ecore</foreignModel>
+  <genPackages prefix="Ros1" disposableProviderFactory="true" ecorePackage="ros.ecore#/">
+    <genDataTypes ecoreDataType="ros.ecore#//GraphName"/>
+    <genClasses ecoreClass="ros.ecore#//Node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/serviceserver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/publisher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/subscriber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/serviceclient"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/actionserver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/actionclient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Node/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Package/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Package/spec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Package/artifact"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ros.ecore#//Dependency"/>
+    <genClasses ecoreClass="ros.ecore#//ServiceSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ServiceSpec/request"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ServiceSpec/response"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ServiceServer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ServiceServer/service"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//TopicSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//TopicSpec/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Publisher">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Publisher/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//PackageDependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//PackageDependency/package"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ExternalDependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ExternalDependency/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//CatkinPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//CatkinPackage/dependency"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Artifact/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Artifact/node"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ros.ecore#//SpecBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//SpecBase/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ros.ecore#//SpecBase/package"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//SpecBase/fullname"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Subscriber">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Subscriber/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ServiceClient">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ServiceClient/service"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//PackageSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//PackageSet/package"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ActionSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ActionSpec/goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ActionSpec/result"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ActionSpec/feedback"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ActionServer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ActionServer/action"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ActionClient">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ActionClient/action"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//MessageDefinition"/>
+    <genClasses image="false" ecoreClass="ros.ecore#//Namespace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Namespace/parts"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//GlobalNamespace"/>
+    <genClasses ecoreClass="ros.ecore#//RelativeNamespace"/>
+    <genClasses ecoreClass="ros.ecore#//PrivateNamespace"/>
+    <genClasses ecoreClass="ros.ecore#//NamespacedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//NamespacedElement/namespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//NamespacedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ros.ecore#//ParameterType"/>
+    <genClasses ecoreClass="ros.ecore#//ParameterListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterListType/sequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterListType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterStructType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStructType/parameterstructypetmember"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterIntegerType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterIntegerType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterStringType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStringType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterDoubleType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterDoubleType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterDateType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterDateType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterBooleanType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterBooleanType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterBase64Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterBase64Type/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterAnyType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterAnyType/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterStructTypeMember">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterStructTypeMember/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStructTypeMember/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStructTypeMember/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterArrayType/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterArrayType/default"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ros.ecore#//ParameterValue"/>
+    <genClasses ecoreClass="ros.ecore#//ParameterAny">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterAny/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterBase64">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterBase64/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterInteger/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterDouble">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDouble/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterBoolean/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterSequence/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterStruct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStruct/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterStructMember">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterStructMember/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterStructMember/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//ParameterDate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDate/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
