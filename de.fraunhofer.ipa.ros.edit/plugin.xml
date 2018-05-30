@@ -7,10 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated ros1 -->
+      <!-- @generated ros -->
       <factory
-            uri="http://www.example.org/ros1"
-            class="ros1.provider.Ros1ItemProviderAdapterFactory"
+            uri="http://www.example.org/ros"
+            class="ros.provider.RosItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -18,5 +18,4 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
-
 </plugin>
