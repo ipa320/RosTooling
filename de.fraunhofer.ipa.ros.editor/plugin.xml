@@ -7,30 +7,30 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated ros1 -->
+      <!-- @generated ros -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="ros1.presentation.Ros1ModelWizardID"
-            name="%_UI_Ros1ModelWizard_label"
-            class="ros1.presentation.Ros1ModelWizard"
+            id="ros.presentation.RosModelWizardID"
+            name="%_UI_RosModelWizard_label"
+            class="ros.presentation.RosModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/Ros1ModelFile.gif">
-         <description>%_UI_Ros1ModelWizard_description</description>
+            icon="icons/full/obj16/RosModelFile.gif">
+         <description>%_UI_RosModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated ros1 -->
+      <!-- @generated ros -->
       <editor
-            id="ros1.presentation.Ros1EditorID"
-            name="%_UI_Ros1Editor_label"
-            icon="icons/full/obj16/Ros1ModelFile.gif"
-            extensions="ros1"
-            class="ros1.presentation.Ros1Editor"
-            contributorClass="ros1.presentation.Ros1ActionBarContributor">
+            id="ros.presentation.RosEditorID"
+            name="%_UI_RosEditor_label"
+            icon="icons/full/obj16/RosModelFile.gif"
+            extensions="ros"
+            class="ros.presentation.RosEditor"
+            contributorClass="ros.presentation.RosActionBarContributor">
       </editor>
    </extension>
 
