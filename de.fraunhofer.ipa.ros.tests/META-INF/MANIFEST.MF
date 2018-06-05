@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ros1.tests
+Export-Package: ros.tests
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.ros;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
