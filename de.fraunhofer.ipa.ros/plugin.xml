@@ -14,4 +14,19 @@
             genModel="model/ros.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ros -->
+      <package
+            uri="http://example.org/PackageFormat2"
+            class="PackageFormat2.PackageFormat2Package"
+            genModel="model/ros.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ros -->
+      <parser
+            type="packageformat2"
+            class="PackageFormat2.util.PackageFormat2ResourceFactoryImpl"/>
+   </extension>
+
 </plugin>

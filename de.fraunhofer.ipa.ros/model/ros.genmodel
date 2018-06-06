@@ -159,4 +159,73 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDate/value"/>
     </genClasses>
   </genPackages>
+  <genPackages prefix="PackageFormat2" resource="XML" contentTypeIdentifier="" ecorePackage="PackageFormat2.ecore#/"
+      publicationLocation="">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PackageFormat2.ecore#//UrlTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="PackageFormat2.ecore#//UrlTypeEnum/website"/>
+      <genEnumLiterals ecoreEnumLiteral="PackageFormat2.ecore#//UrlTypeEnum/bugtracker"/>
+      <genEnumLiterals ecoreEnumLiteral="PackageFormat2.ecore#//UrlTypeEnum/repository"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="PackageFormat2.ecore#//EmailType"/>
+    <genDataTypes ecoreDataType="PackageFormat2.ecore#//NameType"/>
+    <genDataTypes ecoreDataType="PackageFormat2.ecore#//UrlTypeEnumObject"/>
+    <genDataTypes ecoreDataType="PackageFormat2.ecore#//VersionLimitType"/>
+    <genDataTypes ecoreDataType="PackageFormat2.ecore#//VersionType"/>
+    <genClasses ecoreClass="PackageFormat2.ecore#//DependencyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/versionLt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/versionLte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/versionEq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/versionGte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DependencyType/versionGt"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//DescriptionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DescriptionType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DescriptionType/any"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//DocumentRoot/package"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//ExportType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//ExportType/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//ExportType/model"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//PackageType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PackageType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PackageType/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/maintainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PackageType/license"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/author"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PackageType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/buildDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/buildExportDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/buildtoolDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/buildtoolExportDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/execDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/depend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/docDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/testDepend"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/conflict"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/replace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PackageFormat2.ecore#//PackageType/export"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PackageType/format"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//PersonWithEmailType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PersonWithEmailType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PersonWithEmailType/email"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//PersonWithOptionalEmailType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PersonWithOptionalEmailType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//PersonWithOptionalEmailType/email"/>
+    </genClasses>
+    <genClasses ecoreClass="PackageFormat2.ecore#//UrlType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//UrlType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PackageFormat2.ecore#//UrlType/type"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

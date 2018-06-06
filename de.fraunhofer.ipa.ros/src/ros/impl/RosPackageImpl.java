@@ -2,6 +2,8 @@
  */
 package ros.impl;
 
+import PackageFormat2.PackageFormat2Package;
+import PackageFormat2.impl.PackageFormat2PackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -461,11 +463,16 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Initialize simple dependencies
 		XMLTypePackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		PackageFormat2PackageImpl thePackageFormat2Package = (PackageFormat2PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PackageFormat2Package.eNS_URI) instanceof PackageFormat2PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PackageFormat2Package.eNS_URI) : PackageFormat2Package.eINSTANCE);
+
 		// Create package meta-data objects
 		theRosPackage.createPackageContents();
+		thePackageFormat2Package.createPackageContents();
 
 		// Initialize created meta-data
 		theRosPackage.initializePackageContents();
+		thePackageFormat2Package.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRosPackage.freeze();
