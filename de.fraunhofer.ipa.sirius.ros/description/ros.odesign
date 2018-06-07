@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ros" version="12.0.0.2017041100">
+  <ownedViewpoints name="component" modelFileExtension="ros" icon="/de.fraunhofer.ipa.sirius.ros/icons/component.gif">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Artifact diagram" domainClass="ros::Artifact" enablePopupBars="true">
+      <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="Node" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Node">
+          <borderedNodeMappings name="RosPublisher" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Publisher">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.sirius.ros/icons/output_right.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosSubscriber" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Subscriber">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.sirius.ros/icons/input_left.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosServiceServer" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ServiceServer">
+            <style xsi:type="style:WorkspaceImageDescription" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.sirius.ros/icons/outprov_right.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosServiceClient" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ServiceClient">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.sirius.ros/icons/inprov_left.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" domainClass="ros::Parameter">
+            <style xsi:type="style:WorkspaceImageDescription" tooltipExpression="ComponentParameters" sizeComputationExpression="5" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.sirius.ros/icons/component-params.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="ComponentDefinition">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="ROS Component" icon="/de.fraunhofer.ipa.sirius.ros/icons/tools.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="NewNode" label="Node" forceRefresh="true" containerMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']">
+            <filters/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Node" referenceName="node">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewNode"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS publisher topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosPublisher']" iconPath="/de.fraunhofer.ipa.sirius.ros/icons/output_right.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Publisher" referenceName="publisher">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewPub"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS subscriber topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosSubscriber']" iconPath="/de.fraunhofer.ipa.sirius.ros/icons/input_left.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Subscriber" referenceName="subscriber">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewSub"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceServer']" iconPath="/de.fraunhofer.ipa.sirius.ros/icons/outprov_right.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ServiceServer" referenceName="serviceserver">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewServer"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service client" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceClient']" iconPath="/de.fraunhofer.ipa.sirius.ros/icons/inprov_left.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ServiceClient" referenceName="serviceclient">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewClient"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.sirius.ros/icons/component-params.svg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Parameter" referenceName="parameter">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewParameter"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
