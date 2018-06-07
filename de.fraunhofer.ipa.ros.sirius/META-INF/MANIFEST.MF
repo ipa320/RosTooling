@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.fraunhofer.ipa.sirius.ros;singleton:=true
+Bundle-SymbolicName: de.fraunhofer.ipa.ros.sirius;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.fraunhofer.ipa.sirius.ros.Activator
+Bundle-Activator: de.fraunhofer.ipa.ros.sirius.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -14,4 +14,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
-Automatic-Module-Name: de.fraunhofer.ipa.sirius.ros
+Automatic-Module-Name: de.fraunhofer.ipa.ros.sirius
