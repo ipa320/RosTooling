@@ -18,7 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//Parameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spec" upperBound="-1" eType="#//SpecBase"
@@ -26,7 +26,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
         eType="#//Artifact" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceSpec" eSuperTypes="#//SpecBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="request" eType="#//MessageDefinition"
         containment="true"/>
@@ -45,27 +44,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//TopicSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageDependency" eSuperTypes="#//Dependency">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
-        eType="#//Package"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalDependency" eSuperTypes="#//Dependency">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CatkinPackage" eSuperTypes="#//Package">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" upperBound="-1"
-        eType="#//Dependency" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="#//Node"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="build_depend" upperBound="-1"
+        eType="ecore:EClass PackageFormat2.ecore#//DependencyType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exec_depend" upperBound="-1"
+        eType="ecore:EClass PackageFormat2.ecore#//DependencyType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecBase" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
-        eType="#//Package" eOpposite="#//Package/spec"/>
+        eType="#//Model" eOpposite="#//Model/spec"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" defaultValueLiteral="" unsettable="true" iD="true"/>
@@ -79,8 +71,8 @@
         eType="#//ServiceSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageSet">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="package" upperBound="-1"
-        eType="#//Package" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" upperBound="-1"
+        eType="#//Model" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionSpec" eSuperTypes="#//SpecBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//MessageDefinition"

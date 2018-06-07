@@ -11,50 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import ros.ActionClient;
-import ros.ActionServer;
-import ros.ActionSpec;
-import ros.Artifact;
-import ros.CatkinPackage;
-import ros.ExternalDependency;
-import ros.GlobalNamespace;
-import ros.MessageDefinition;
-import ros.NamespacedElement;
-import ros.Node;
-import ros.PackageDependency;
-import ros.PackageSet;
-import ros.Parameter;
-import ros.ParameterAny;
-import ros.ParameterAnyType;
-import ros.ParameterArrayType;
-import ros.ParameterBase64;
-import ros.ParameterBase64Type;
-import ros.ParameterBoolean;
-import ros.ParameterBooleanType;
-import ros.ParameterDate;
-import ros.ParameterDateType;
-import ros.ParameterDouble;
-import ros.ParameterDoubleType;
-import ros.ParameterInteger;
-import ros.ParameterIntegerType;
-import ros.ParameterListType;
-import ros.ParameterSequence;
-import ros.ParameterString;
-import ros.ParameterStringType;
-import ros.ParameterStruct;
-import ros.ParameterStructMember;
-import ros.ParameterStructType;
-import ros.ParameterStructTypeMember;
-import ros.PrivateNamespace;
-import ros.Publisher;
-import ros.RelativeNamespace;
-import ros.RosFactory;
-import ros.RosPackage;
-import ros.ServiceClient;
-import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.Subscriber;
-import ros.TopicSpec;
+import ros.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,14 +58,11 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RosPackage.NODE: return createNode();
-			case RosPackage.PACKAGE: return createPackage();
+			case RosPackage.MODEL: return createModel();
 			case RosPackage.SERVICE_SPEC: return createServiceSpec();
 			case RosPackage.SERVICE_SERVER: return createServiceServer();
 			case RosPackage.TOPIC_SPEC: return createTopicSpec();
 			case RosPackage.PUBLISHER: return createPublisher();
-			case RosPackage.PACKAGE_DEPENDENCY: return createPackageDependency();
-			case RosPackage.EXTERNAL_DEPENDENCY: return createExternalDependency();
-			case RosPackage.CATKIN_PACKAGE: return createCatkinPackage();
 			case RosPackage.ARTIFACT: return createArtifact();
 			case RosPackage.SUBSCRIBER: return createSubscriber();
 			case RosPackage.SERVICE_CLIENT: return createServiceClient();
@@ -193,9 +147,9 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ros.Package createPackage() {
-		PackageImpl package_ = new PackageImpl();
-		return package_;
+	public Model createModel() {
+		ModelImpl model = new ModelImpl();
+		return model;
 	}
 
 	/**
@@ -236,36 +190,6 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public Publisher createPublisher() {
 		PublisherImpl publisher = new PublisherImpl();
 		return publisher;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PackageDependency createPackageDependency() {
-		PackageDependencyImpl packageDependency = new PackageDependencyImpl();
-		return packageDependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExternalDependency createExternalDependency() {
-		ExternalDependencyImpl externalDependency = new ExternalDependencyImpl();
-		return externalDependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CatkinPackage createCatkinPackage() {
-		CatkinPackageImpl catkinPackage = new CatkinPackageImpl();
-		return catkinPackage;
 	}
 
 	/**

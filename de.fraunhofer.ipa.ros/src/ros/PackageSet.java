@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ros.PackageSet#getPackage <em>Package</em>}</li>
+ *   <li>{@link ros.PackageSet#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getPackageSet()
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface PackageSet extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Package</b></em>' containment reference list.
-	 * The list contents are of type {@link ros.Package}.
+	 * Returns the value of the '<em><b>Model</b></em>' containment reference list.
+	 * The list contents are of type {@link ros.Model}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Package</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Model</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Package</em>' containment reference list.
-	 * @see ros.RosPackage#getPackageSet_Package()
+	 * @return the value of the '<em>Model</em>' containment reference list.
+	 * @see ros.RosPackage#getPackageSet_Model()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ros.Package> getPackage();
+	EList<Model> getModel();
 
 } // PackageSet

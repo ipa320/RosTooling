@@ -7,19 +7,16 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import ros.*;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.Artifact;
-import ros.CatkinPackage;
-import ros.Dependency;
-import ros.ExternalDependency;
 import ros.GlobalNamespace;
 import ros.MessageDefinition;
 import ros.Namespace;
 import ros.NamespacedElement;
 import ros.Node;
-import ros.PackageDependency;
 import ros.PackageSet;
 import ros.Parameter;
 import ros.ParameterAny;
@@ -119,15 +116,9 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RosPackage.PACKAGE: {
-				ros.Package package_ = (ros.Package)theEObject;
-				T result = casePackage(package_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.DEPENDENCY: {
-				Dependency dependency = (Dependency)theEObject;
-				T result = caseDependency(dependency);
+			case RosPackage.MODEL: {
+				Model model = (Model)theEObject;
+				T result = caseModel(model);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,27 +147,6 @@ public class RosSwitch<T> extends Switch<T> {
 				Publisher publisher = (Publisher)theEObject;
 				T result = casePublisher(publisher);
 				if (result == null) result = caseNamespacedElement(publisher);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.PACKAGE_DEPENDENCY: {
-				PackageDependency packageDependency = (PackageDependency)theEObject;
-				T result = casePackageDependency(packageDependency);
-				if (result == null) result = caseDependency(packageDependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.EXTERNAL_DEPENDENCY: {
-				ExternalDependency externalDependency = (ExternalDependency)theEObject;
-				T result = caseExternalDependency(externalDependency);
-				if (result == null) result = caseDependency(externalDependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.CATKIN_PACKAGE: {
-				CatkinPackage catkinPackage = (CatkinPackage)theEObject;
-				T result = caseCatkinPackage(catkinPackage);
-				if (result == null) result = casePackage(catkinPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -457,32 +427,17 @@ public class RosSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackage(ros.Package object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDependency(Dependency object) {
+	public T caseModel(Model object) {
 		return null;
 	}
 
@@ -543,51 +498,6 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePublisher(Publisher object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackageDependency(PackageDependency object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>External Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>External Dependency</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExternalDependency(ExternalDependency object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Catkin Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Catkin Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCatkinPackage(CatkinPackage object) {
 		return null;
 	}
 

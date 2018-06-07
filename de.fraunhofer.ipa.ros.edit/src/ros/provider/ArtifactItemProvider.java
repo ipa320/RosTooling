@@ -3,6 +3,7 @@
 package ros.provider;
 
 
+import PackageFormat2.PackageFormat2Factory;
 import java.util.Collection;
 import java.util.List;
 
@@ -103,6 +104,8 @@ public class ArtifactItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RosPackage.Literals.ARTIFACT__NODE);
+			childrenFeatures.add(RosPackage.Literals.ARTIFACT__BUILD_DEPEND);
+			childrenFeatures.add(RosPackage.Literals.ARTIFACT__EXEC_DEPEND);
 		}
 		return childrenFeatures;
 	}
@@ -162,6 +165,8 @@ public class ArtifactItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RosPackage.ARTIFACT__NODE:
+			case RosPackage.ARTIFACT__BUILD_DEPEND:
+			case RosPackage.ARTIFACT__EXEC_DEPEND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,6 +188,39 @@ public class ArtifactItemProvider
 			(createChildParameter
 				(RosPackage.Literals.ARTIFACT__NODE,
 				 RosFactory.eINSTANCE.createNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RosPackage.Literals.ARTIFACT__BUILD_DEPEND,
+				 PackageFormat2Factory.eINSTANCE.createDependencyType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RosPackage.Literals.ARTIFACT__EXEC_DEPEND,
+				 PackageFormat2Factory.eINSTANCE.createDependencyType()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == RosPackage.Literals.ARTIFACT__BUILD_DEPEND ||
+			childFeature == RosPackage.Literals.ARTIFACT__EXEC_DEPEND;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

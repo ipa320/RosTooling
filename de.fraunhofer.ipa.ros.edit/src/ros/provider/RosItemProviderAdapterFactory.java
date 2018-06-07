@@ -95,26 +95,26 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ros.Package} instances.
+	 * This keeps track of the one adapter used for all {@link ros.Model} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PackageItemProvider packageItemProvider;
+	protected ModelItemProvider modelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ros.Package}.
+	 * This creates an adapter for a {@link ros.Model}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPackageAdapter() {
-		if (packageItemProvider == null) {
-			packageItemProvider = new PackageItemProvider(this);
+	public Adapter createModelAdapter() {
+		if (modelItemProvider == null) {
+			modelItemProvider = new ModelItemProvider(this);
 		}
 
-		return packageItemProvider;
+		return modelItemProvider;
 	}
 
 	/**
@@ -207,75 +207,6 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		}
 
 		return publisherItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ros.PackageDependency} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PackageDependencyItemProvider packageDependencyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.PackageDependency}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPackageDependencyAdapter() {
-		if (packageDependencyItemProvider == null) {
-			packageDependencyItemProvider = new PackageDependencyItemProvider(this);
-		}
-
-		return packageDependencyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ros.ExternalDependency} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExternalDependencyItemProvider externalDependencyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.ExternalDependency}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createExternalDependencyAdapter() {
-		if (externalDependencyItemProvider == null) {
-			externalDependencyItemProvider = new ExternalDependencyItemProvider(this);
-		}
-
-		return externalDependencyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ros.CatkinPackage} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CatkinPackageItemProvider catkinPackageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.CatkinPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCatkinPackageAdapter() {
-		if (catkinPackageItemProvider == null) {
-			catkinPackageItemProvider = new CatkinPackageItemProvider(this);
-		}
-
-		return catkinPackageItemProvider;
 	}
 
 	/**
@@ -1160,14 +1091,11 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (nodeItemProvider != null) nodeItemProvider.dispose();
-		if (packageItemProvider != null) packageItemProvider.dispose();
+		if (modelItemProvider != null) modelItemProvider.dispose();
 		if (serviceSpecItemProvider != null) serviceSpecItemProvider.dispose();
 		if (serviceServerItemProvider != null) serviceServerItemProvider.dispose();
 		if (topicSpecItemProvider != null) topicSpecItemProvider.dispose();
 		if (publisherItemProvider != null) publisherItemProvider.dispose();
-		if (packageDependencyItemProvider != null) packageDependencyItemProvider.dispose();
-		if (externalDependencyItemProvider != null) externalDependencyItemProvider.dispose();
-		if (catkinPackageItemProvider != null) catkinPackageItemProvider.dispose();
 		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (subscriberItemProvider != null) subscriberItemProvider.dispose();
 		if (serviceClientItemProvider != null) serviceClientItemProvider.dispose();

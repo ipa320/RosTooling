@@ -9,19 +9,16 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import ros.*;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.Artifact;
-import ros.CatkinPackage;
-import ros.Dependency;
-import ros.ExternalDependency;
 import ros.GlobalNamespace;
 import ros.MessageDefinition;
 import ros.Namespace;
 import ros.NamespacedElement;
 import ros.Node;
-import ros.PackageDependency;
 import ros.PackageSet;
 import ros.Parameter;
 import ros.ParameterAny;
@@ -119,12 +116,8 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createNodeAdapter();
 			}
 			@Override
-			public Adapter casePackage(ros.Package object) {
-				return createPackageAdapter();
-			}
-			@Override
-			public Adapter caseDependency(Dependency object) {
-				return createDependencyAdapter();
+			public Adapter caseModel(Model object) {
+				return createModelAdapter();
 			}
 			@Override
 			public Adapter caseServiceSpec(ServiceSpec object) {
@@ -141,18 +134,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePublisher(Publisher object) {
 				return createPublisherAdapter();
-			}
-			@Override
-			public Adapter casePackageDependency(PackageDependency object) {
-				return createPackageDependencyAdapter();
-			}
-			@Override
-			public Adapter caseExternalDependency(ExternalDependency object) {
-				return createExternalDependencyAdapter();
-			}
-			@Override
-			public Adapter caseCatkinPackage(CatkinPackage object) {
-				return createCatkinPackageAdapter();
 			}
 			@Override
 			public Adapter caseArtifact(Artifact object) {
@@ -341,30 +322,16 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ros.Package <em>Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link ros.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ros.Package
+	 * @see ros.Model
 	 * @generated
 	 */
-	public Adapter createPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.Dependency
-	 * @generated
-	 */
-	public Adapter createDependencyAdapter() {
+	public Adapter createModelAdapter() {
 		return null;
 	}
 
@@ -421,48 +388,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPublisherAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.PackageDependency <em>Package Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.PackageDependency
-	 * @generated
-	 */
-	public Adapter createPackageDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.ExternalDependency <em>External Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.ExternalDependency
-	 * @generated
-	 */
-	public Adapter createExternalDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.CatkinPackage <em>Catkin Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.CatkinPackage
-	 * @generated
-	 */
-	public Adapter createCatkinPackageAdapter() {
 		return null;
 	}
 

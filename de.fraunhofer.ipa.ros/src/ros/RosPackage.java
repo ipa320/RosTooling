@@ -158,14 +158,14 @@ public interface RosPackage extends EPackage {
 	int NODE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.PackageImpl <em>Package</em>}' class.
+	 * The meta object id for the '{@link ros.impl.ModelImpl <em>Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ros.impl.PackageImpl
-	 * @see ros.impl.RosPackageImpl#getPackage()
+	 * @see ros.impl.ModelImpl
+	 * @see ros.impl.RosPackageImpl#getModel()
 	 * @generated
 	 */
-	int PACKAGE = 1;
+	int MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -174,7 +174,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__NAME = 0;
+	int MODEL__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Spec</b></em>' containment reference list.
@@ -183,7 +183,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__SPEC = 1;
+	int MODEL__SPEC = 1;
 
 	/**
 	 * The feature id for the '<em><b>Artifact</b></em>' containment reference list.
@@ -192,53 +192,25 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ARTIFACT = 2;
+	int MODEL__ARTIFACT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Package</em>' class.
+	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = 3;
+	int MODEL_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Package</em>' class.
+	 * The number of operations of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.DependencyImpl <em>Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.DependencyImpl
-	 * @see ros.impl.RosPackageImpl#getDependency()
-	 * @generated
-	 */
-	int DEPENDENCY = 2;
-
-	/**
-	 * The number of structural features of the '<em>Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_OPERATION_COUNT = 0;
+	int MODEL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.SpecBaseImpl <em>Spec Base</em>}' class.
@@ -248,7 +220,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getSpecBase()
 	 * @generated
 	 */
-	int SPEC_BASE = 11;
+	int SPEC_BASE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -303,7 +275,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getServiceSpec()
 	 * @generated
 	 */
-	int SERVICE_SPEC = 3;
+	int SERVICE_SPEC = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -376,7 +348,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getNamespacedElement()
 	 * @generated
 	 */
-	int NAMESPACED_ELEMENT = 23;
+	int NAMESPACED_ELEMENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -422,7 +394,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getServiceServer()
 	 * @generated
 	 */
-	int SERVICE_SERVER = 4;
+	int SERVICE_SERVER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -477,7 +449,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getTopicSpec()
 	 * @generated
 	 */
-	int TOPIC_SPEC = 5;
+	int TOPIC_SPEC = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -541,7 +513,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPublisher()
 	 * @generated
 	 */
-	int PUBLISHER = 6;
+	int PUBLISHER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -589,144 +561,6 @@ public interface RosPackage extends EPackage {
 	int PUBLISHER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.PackageDependencyImpl <em>Package Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.PackageDependencyImpl
-	 * @see ros.impl.RosPackageImpl#getPackageDependency()
-	 * @generated
-	 */
-	int PACKAGE_DEPENDENCY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PACKAGE_DEPENDENCY__PACKAGE = DEPENDENCY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Package Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PACKAGE_DEPENDENCY_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Package Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PACKAGE_DEPENDENCY_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.ExternalDependencyImpl <em>External Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ExternalDependencyImpl
-	 * @see ros.impl.RosPackageImpl#getExternalDependency()
-	 * @generated
-	 */
-	int EXTERNAL_DEPENDENCY = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_DEPENDENCY__NAME = DEPENDENCY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>External Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_DEPENDENCY_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>External Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_DEPENDENCY_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.CatkinPackageImpl <em>Catkin Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.CatkinPackageImpl
-	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
-	 * @generated
-	 */
-	int CATKIN_PACKAGE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE__NAME = PACKAGE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Spec</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE__SPEC = PACKAGE__SPEC;
-
-	/**
-	 * The feature id for the '<em><b>Artifact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE__ARTIFACT = PACKAGE__ARTIFACT;
-
-	/**
-	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE__DEPENDENCY = PACKAGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Catkin Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Catkin Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATKIN_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -734,7 +568,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getArtifact()
 	 * @generated
 	 */
-	int ARTIFACT = 10;
+	int ARTIFACT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -755,13 +589,31 @@ public interface RosPackage extends EPackage {
 	int ARTIFACT__NODE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Build depend</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__BUILD_DEPEND = 2;
+
+	/**
+	 * The feature id for the '<em><b>Exec depend</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__EXEC_DEPEND = 3;
+
+	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 2;
+	int ARTIFACT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -780,7 +632,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getSubscriber()
 	 * @generated
 	 */
-	int SUBSCRIBER = 12;
+	int SUBSCRIBER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -835,7 +687,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getServiceClient()
 	 * @generated
 	 */
-	int SERVICE_CLIENT = 13;
+	int SERVICE_CLIENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -890,16 +742,16 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPackageSet()
 	 * @generated
 	 */
-	int PACKAGE_SET = 14;
+	int PACKAGE_SET = 10;
 
 	/**
-	 * The feature id for the '<em><b>Package</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Model</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_SET__PACKAGE = 0;
+	int PACKAGE_SET__MODEL = 0;
 
 	/**
 	 * The number of structural features of the '<em>Package Set</em>' class.
@@ -927,7 +779,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getActionSpec()
 	 * @generated
 	 */
-	int ACTION_SPEC = 15;
+	int ACTION_SPEC = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1009,7 +861,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getActionServer()
 	 * @generated
 	 */
-	int ACTION_SERVER = 16;
+	int ACTION_SERVER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1064,7 +916,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getActionClient()
 	 * @generated
 	 */
-	int ACTION_CLIENT = 17;
+	int ACTION_CLIENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1119,7 +971,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getMessageDefinition()
 	 * @generated
 	 */
-	int MESSAGE_DEFINITION = 18;
+	int MESSAGE_DEFINITION = 14;
 
 	/**
 	 * The number of structural features of the '<em>Message Definition</em>' class.
@@ -1147,7 +999,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getNamespace()
 	 * @generated
 	 */
-	int NAMESPACE = 19;
+	int NAMESPACE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1184,7 +1036,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
 	 * @generated
 	 */
-	int GLOBAL_NAMESPACE = 20;
+	int GLOBAL_NAMESPACE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1221,7 +1073,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
 	 * @generated
 	 */
-	int RELATIVE_NAMESPACE = 21;
+	int RELATIVE_NAMESPACE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1258,7 +1110,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
 	 * @generated
 	 */
-	int PRIVATE_NAMESPACE = 22;
+	int PRIVATE_NAMESPACE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1295,7 +1147,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterType()
 	 * @generated
 	 */
-	int PARAMETER_TYPE = 24;
+	int PARAMETER_TYPE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Type</em>' class.
@@ -1323,7 +1175,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterListType()
 	 * @generated
 	 */
-	int PARAMETER_LIST_TYPE = 25;
+	int PARAMETER_LIST_TYPE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Sequence</b></em>' containment reference list.
@@ -1369,7 +1221,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructType()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_TYPE = 26;
+	int PARAMETER_STRUCT_TYPE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Parameterstructypetmember</b></em>' containment reference list.
@@ -1406,7 +1258,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterIntegerType()
 	 * @generated
 	 */
-	int PARAMETER_INTEGER_TYPE = 27;
+	int PARAMETER_INTEGER_TYPE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1443,7 +1295,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStringType()
 	 * @generated
 	 */
-	int PARAMETER_STRING_TYPE = 28;
+	int PARAMETER_STRING_TYPE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1480,7 +1332,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDoubleType()
 	 * @generated
 	 */
-	int PARAMETER_DOUBLE_TYPE = 29;
+	int PARAMETER_DOUBLE_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1517,7 +1369,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 30;
+	int PARAMETER = 26;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1572,7 +1424,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDateType()
 	 * @generated
 	 */
-	int PARAMETER_DATE_TYPE = 31;
+	int PARAMETER_DATE_TYPE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1609,7 +1461,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBooleanType()
 	 * @generated
 	 */
-	int PARAMETER_BOOLEAN_TYPE = 32;
+	int PARAMETER_BOOLEAN_TYPE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1646,7 +1498,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBase64Type()
 	 * @generated
 	 */
-	int PARAMETER_BASE64_TYPE = 33;
+	int PARAMETER_BASE64_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1683,7 +1535,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterAnyType()
 	 * @generated
 	 */
-	int PARAMETER_ANY_TYPE = 34;
+	int PARAMETER_ANY_TYPE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1720,7 +1572,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructTypeMember()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_TYPE_MEMBER = 35;
+	int PARAMETER_STRUCT_TYPE_MEMBER = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1775,7 +1627,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterArrayType()
 	 * @generated
 	 */
-	int PARAMETER_ARRAY_TYPE = 36;
+	int PARAMETER_ARRAY_TYPE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1821,7 +1673,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterValue()
 	 * @generated
 	 */
-	int PARAMETER_VALUE = 37;
+	int PARAMETER_VALUE = 33;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Value</em>' class.
@@ -1849,7 +1701,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterAny()
 	 * @generated
 	 */
-	int PARAMETER_ANY = 38;
+	int PARAMETER_ANY = 34;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1886,7 +1738,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterString()
 	 * @generated
 	 */
-	int PARAMETER_STRING = 39;
+	int PARAMETER_STRING = 35;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1923,7 +1775,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBase64()
 	 * @generated
 	 */
-	int PARAMETER_BASE64 = 40;
+	int PARAMETER_BASE64 = 36;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1960,7 +1812,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterInteger()
 	 * @generated
 	 */
-	int PARAMETER_INTEGER = 41;
+	int PARAMETER_INTEGER = 37;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1997,7 +1849,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDouble()
 	 * @generated
 	 */
-	int PARAMETER_DOUBLE = 42;
+	int PARAMETER_DOUBLE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2034,7 +1886,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBoolean()
 	 * @generated
 	 */
-	int PARAMETER_BOOLEAN = 43;
+	int PARAMETER_BOOLEAN = 39;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2071,7 +1923,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterSequence()
 	 * @generated
 	 */
-	int PARAMETER_SEQUENCE = 44;
+	int PARAMETER_SEQUENCE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -2108,7 +1960,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStruct()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT = 45;
+	int PARAMETER_STRUCT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -2145,7 +1997,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructMember()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_MEMBER = 46;
+	int PARAMETER_STRUCT_MEMBER = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2191,7 +2043,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDate()
 	 * @generated
 	 */
-	int PARAMETER_DATE = 47;
+	int PARAMETER_DATE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2228,7 +2080,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
-	int GRAPH_NAME = 48;
+	int GRAPH_NAME = 44;
 
 
 	/**
@@ -2330,57 +2182,47 @@ public interface RosPackage extends EPackage {
 	EReference getNode_Parameter();
 
 	/**
-	 * Returns the meta object for class '{@link ros.Package <em>Package</em>}'.
+	 * Returns the meta object for class '{@link ros.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Package</em>'.
-	 * @see ros.Package
+	 * @return the meta object for class '<em>Model</em>'.
+	 * @see ros.Model
 	 * @generated
 	 */
-	EClass getPackage();
+	EClass getModel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ros.Package#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ros.Model#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ros.Package#getName()
-	 * @see #getPackage()
+	 * @see ros.Model#getName()
+	 * @see #getModel()
 	 * @generated
 	 */
-	EAttribute getPackage_Name();
+	EAttribute getModel_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ros.Package#getSpec <em>Spec</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ros.Model#getSpec <em>Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Spec</em>'.
-	 * @see ros.Package#getSpec()
-	 * @see #getPackage()
+	 * @see ros.Model#getSpec()
+	 * @see #getModel()
 	 * @generated
 	 */
-	EReference getPackage_Spec();
+	EReference getModel_Spec();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ros.Package#getArtifact <em>Artifact</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ros.Model#getArtifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Artifact</em>'.
-	 * @see ros.Package#getArtifact()
-	 * @see #getPackage()
+	 * @see ros.Model#getArtifact()
+	 * @see #getModel()
 	 * @generated
 	 */
-	EReference getPackage_Artifact();
-
-	/**
-	 * Returns the meta object for class '{@link ros.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dependency</em>'.
-	 * @see ros.Dependency
-	 * @generated
-	 */
-	EClass getDependency();
+	EReference getModel_Artifact();
 
 	/**
 	 * Returns the meta object for class '{@link ros.ServiceSpec <em>Service Spec</em>}'.
@@ -2478,69 +2320,6 @@ public interface RosPackage extends EPackage {
 	EReference getPublisher_Message();
 
 	/**
-	 * Returns the meta object for class '{@link ros.PackageDependency <em>Package Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Package Dependency</em>'.
-	 * @see ros.PackageDependency
-	 * @generated
-	 */
-	EClass getPackageDependency();
-
-	/**
-	 * Returns the meta object for the reference '{@link ros.PackageDependency#getPackage <em>Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Package</em>'.
-	 * @see ros.PackageDependency#getPackage()
-	 * @see #getPackageDependency()
-	 * @generated
-	 */
-	EReference getPackageDependency_Package();
-
-	/**
-	 * Returns the meta object for class '{@link ros.ExternalDependency <em>External Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>External Dependency</em>'.
-	 * @see ros.ExternalDependency
-	 * @generated
-	 */
-	EClass getExternalDependency();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ros.ExternalDependency#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ros.ExternalDependency#getName()
-	 * @see #getExternalDependency()
-	 * @generated
-	 */
-	EAttribute getExternalDependency_Name();
-
-	/**
-	 * Returns the meta object for class '{@link ros.CatkinPackage <em>Catkin Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Catkin Package</em>'.
-	 * @see ros.CatkinPackage
-	 * @generated
-	 */
-	EClass getCatkinPackage();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ros.CatkinPackage#getDependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
-	 * @see ros.CatkinPackage#getDependency()
-	 * @see #getCatkinPackage()
-	 * @generated
-	 */
-	EReference getCatkinPackage_Dependency();
-
-	/**
 	 * Returns the meta object for class '{@link ros.Artifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2571,6 +2350,28 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getArtifact_Node();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ros.Artifact#getBuild_depend <em>Build depend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Build depend</em>'.
+	 * @see ros.Artifact#getBuild_depend()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_Build_depend();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ros.Artifact#getExec_depend <em>Exec depend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Exec depend</em>'.
+	 * @see ros.Artifact#getExec_depend()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_Exec_depend();
 
 	/**
 	 * Returns the meta object for class '{@link ros.SpecBase <em>Spec Base</em>}'.
@@ -2668,15 +2469,15 @@ public interface RosPackage extends EPackage {
 	EClass getPackageSet();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ros.PackageSet#getPackage <em>Package</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ros.PackageSet#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Package</em>'.
-	 * @see ros.PackageSet#getPackage()
+	 * @return the meta object for the containment reference list '<em>Model</em>'.
+	 * @see ros.PackageSet#getModel()
 	 * @see #getPackageSet()
 	 * @generated
 	 */
-	EReference getPackageSet_Package();
+	EReference getPackageSet_Model();
 
 	/**
 	 * Returns the meta object for class '{@link ros.ActionSpec <em>Action Spec</em>}'.
@@ -3502,14 +3303,14 @@ public interface RosPackage extends EPackage {
 		EReference NODE__PARAMETER = eINSTANCE.getNode_Parameter();
 
 		/**
-		 * The meta object literal for the '{@link ros.impl.PackageImpl <em>Package</em>}' class.
+		 * The meta object literal for the '{@link ros.impl.ModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ros.impl.PackageImpl
-		 * @see ros.impl.RosPackageImpl#getPackage()
+		 * @see ros.impl.ModelImpl
+		 * @see ros.impl.RosPackageImpl#getModel()
 		 * @generated
 		 */
-		EClass PACKAGE = eINSTANCE.getPackage();
+		EClass MODEL = eINSTANCE.getModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3517,7 +3318,7 @@ public interface RosPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PACKAGE__NAME = eINSTANCE.getPackage_Name();
+		EAttribute MODEL__NAME = eINSTANCE.getModel_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Spec</b></em>' containment reference list feature.
@@ -3525,7 +3326,7 @@ public interface RosPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE__SPEC = eINSTANCE.getPackage_Spec();
+		EReference MODEL__SPEC = eINSTANCE.getModel_Spec();
 
 		/**
 		 * The meta object literal for the '<em><b>Artifact</b></em>' containment reference list feature.
@@ -3533,17 +3334,7 @@ public interface RosPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE__ARTIFACT = eINSTANCE.getPackage_Artifact();
-
-		/**
-		 * The meta object literal for the '{@link ros.impl.DependencyImpl <em>Dependency</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.DependencyImpl
-		 * @see ros.impl.RosPackageImpl#getDependency()
-		 * @generated
-		 */
-		EClass DEPENDENCY = eINSTANCE.getDependency();
+		EReference MODEL__ARTIFACT = eINSTANCE.getModel_Artifact();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ServiceSpecImpl <em>Service Spec</em>}' class.
@@ -3626,60 +3417,6 @@ public interface RosPackage extends EPackage {
 		EReference PUBLISHER__MESSAGE = eINSTANCE.getPublisher_Message();
 
 		/**
-		 * The meta object literal for the '{@link ros.impl.PackageDependencyImpl <em>Package Dependency</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.PackageDependencyImpl
-		 * @see ros.impl.RosPackageImpl#getPackageDependency()
-		 * @generated
-		 */
-		EClass PACKAGE_DEPENDENCY = eINSTANCE.getPackageDependency();
-
-		/**
-		 * The meta object literal for the '<em><b>Package</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PACKAGE_DEPENDENCY__PACKAGE = eINSTANCE.getPackageDependency_Package();
-
-		/**
-		 * The meta object literal for the '{@link ros.impl.ExternalDependencyImpl <em>External Dependency</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.ExternalDependencyImpl
-		 * @see ros.impl.RosPackageImpl#getExternalDependency()
-		 * @generated
-		 */
-		EClass EXTERNAL_DEPENDENCY = eINSTANCE.getExternalDependency();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXTERNAL_DEPENDENCY__NAME = eINSTANCE.getExternalDependency_Name();
-
-		/**
-		 * The meta object literal for the '{@link ros.impl.CatkinPackageImpl <em>Catkin Package</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.CatkinPackageImpl
-		 * @see ros.impl.RosPackageImpl#getCatkinPackage()
-		 * @generated
-		 */
-		EClass CATKIN_PACKAGE = eINSTANCE.getCatkinPackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependency</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CATKIN_PACKAGE__DEPENDENCY = eINSTANCE.getCatkinPackage_Dependency();
-
-		/**
 		 * The meta object literal for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3704,6 +3441,22 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARTIFACT__NODE = eINSTANCE.getArtifact_Node();
+
+		/**
+		 * The meta object literal for the '<em><b>Build depend</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__BUILD_DEPEND = eINSTANCE.getArtifact_Build_depend();
+
+		/**
+		 * The meta object literal for the '<em><b>Exec depend</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__EXEC_DEPEND = eINSTANCE.getArtifact_Exec_depend();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.SpecBaseImpl <em>Spec Base</em>}' class.
@@ -3786,12 +3539,12 @@ public interface RosPackage extends EPackage {
 		EClass PACKAGE_SET = eINSTANCE.getPackageSet();
 
 		/**
-		 * The meta object literal for the '<em><b>Package</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE_SET__PACKAGE = eINSTANCE.getPackageSet_Package();
+		EReference PACKAGE_SET__MODEL = eINSTANCE.getPackageSet_Model();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ActionSpecImpl <em>Action Spec</em>}' class.
@@ -4412,6 +4165,10 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType GRAPH_NAME = eINSTANCE.getGraphName();
+
+		EClass CATKIN_PACKAGE = null;
+
+		EClass DEPENDENCY = null;
 
 	}
 

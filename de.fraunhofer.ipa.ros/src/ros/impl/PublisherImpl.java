@@ -6,9 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import ros.Publisher;
 import ros.RosPackage;
 import ros.TopicSpec;
@@ -36,7 +34,6 @@ public class PublisherImpl extends NamespacedElementImpl implements Publisher {
 	 * @ordered
 	 */
 	protected TopicSpec message;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

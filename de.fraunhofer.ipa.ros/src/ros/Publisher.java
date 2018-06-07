@@ -2,7 +2,6 @@
  */
 package ros;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Publisher</b></em>'.

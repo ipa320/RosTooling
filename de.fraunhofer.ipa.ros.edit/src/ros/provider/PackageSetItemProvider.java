@@ -77,7 +77,7 @@ public class PackageSetItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE_SET__PACKAGE);
+			childrenFeatures.add(RosPackage.Literals.PACKAGE_SET__MODEL);
 		}
 		return childrenFeatures;
 	}
@@ -130,7 +130,7 @@ public class PackageSetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PackageSet.class)) {
-			case RosPackage.PACKAGE_SET__PACKAGE:
+			case RosPackage.PACKAGE_SET__MODEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,13 +150,8 @@ public class PackageSetItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
-				 RosFactory.eINSTANCE.createPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
-				 RosFactory.eINSTANCE.createCatkinPackage()));
+				(RosPackage.Literals.PACKAGE_SET__MODEL,
+				 RosFactory.eINSTANCE.createModel()));
 	}
 
 	/**

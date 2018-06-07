@@ -2,18 +2,28 @@
  */
 package ros.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
-import ros.PackageDependency;
+import ros.Model;
 import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Package Dependency</b></em>'.
+ * A test case for the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageDependencyTest extends DependencyTest {
+public class ModelTest extends TestCase {
+
+	/**
+	 * The fixture for this Model test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Model fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +31,37 @@ public class PackageDependencyTest extends DependencyTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PackageDependencyTest.class);
+		TestRunner.run(ModelTest.class);
 	}
 
 	/**
-	 * Constructs a new Package Dependency test case with the given name.
+	 * Constructs a new Model test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageDependencyTest(String name) {
+	public ModelTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Package Dependency test case.
+	 * Sets the fixture for this Model test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected PackageDependency getFixture() {
-		return (PackageDependency)fixture;
+	protected void setFixture(Model fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Model test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Model getFixture() {
+		return fixture;
 	}
 
 	/**
@@ -53,7 +72,7 @@ public class PackageDependencyTest extends DependencyTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createPackageDependency());
+		setFixture(RosFactory.eINSTANCE.createModel());
 	}
 
 	/**
@@ -67,4 +86,4 @@ public class PackageDependencyTest extends DependencyTest {
 		setFixture(null);
 	}
 
-} //PackageDependencyTest
+} //ModelTest

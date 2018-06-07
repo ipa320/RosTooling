@@ -52,7 +52,7 @@ public interface SpecBase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Package</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link ros.Package#getSpec <em>Spec</em>}'.
+	 * It is bidirectional and its opposite is '{@link ros.Model#getSpec <em>Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Package</em>' container reference isn't clear,
@@ -60,13 +60,13 @@ public interface SpecBase extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package</em>' container reference.
-	 * @see #setPackage(ros.Package)
+	 * @see #setPackage(Model)
 	 * @see ros.RosPackage#getSpecBase_Package()
-	 * @see ros.Package#getSpec
+	 * @see ros.Model#getSpec
 	 * @model opposite="spec" required="true" transient="false"
 	 * @generated
 	 */
-	ros.Package getPackage();
+	Model getPackage();
 
 	/**
 	 * Sets the value of the '{@link ros.SpecBase#getPackage <em>Package</em>}' container reference.
@@ -76,7 +76,7 @@ public interface SpecBase extends EObject {
 	 * @see #getPackage()
 	 * @generated
 	 */
-	void setPackage(ros.Package value);
+	void setPackage(Model value);
 
 	/**
 	 * Returns the value of the '<em><b>Fullname</b></em>' attribute.

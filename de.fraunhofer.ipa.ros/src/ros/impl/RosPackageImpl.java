@@ -18,15 +18,12 @@ import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.Artifact;
-import ros.CatkinPackage;
-import ros.Dependency;
-import ros.ExternalDependency;
 import ros.GlobalNamespace;
 import ros.MessageDefinition;
+import ros.Model;
 import ros.Namespace;
 import ros.NamespacedElement;
 import ros.Node;
-import ros.PackageDependency;
 import ros.PackageSet;
 import ros.Parameter;
 import ros.ParameterAny;
@@ -83,14 +80,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass packageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dependencyEClass = null;
+	private EClass modelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,27 +109,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	private EClass publisherEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass packageDependencyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass externalDependencyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass catkinPackageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -569,8 +538,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackage() {
-		return packageEClass;
+	public EClass getModel() {
+		return modelEClass;
 	}
 
 	/**
@@ -578,8 +547,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPackage_Name() {
-		return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
+	public EAttribute getModel_Name() {
+		return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -587,8 +556,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackage_Spec() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(1);
+	public EReference getModel_Spec() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -596,17 +565,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackage_Artifact() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDependency() {
-		return dependencyEClass;
+	public EReference getModel_Artifact() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -695,60 +655,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackageDependency() {
-		return packageDependencyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPackageDependency_Package() {
-		return (EReference)packageDependencyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getExternalDependency() {
-		return externalDependencyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getExternalDependency_Name() {
-		return (EAttribute)externalDependencyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCatkinPackage() {
-		return catkinPackageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCatkinPackage_Dependency() {
-		return (EReference)catkinPackageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getArtifact() {
 		return artifactEClass;
 	}
@@ -769,6 +675,24 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 */
 	public EReference getArtifact_Node() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArtifact_Build_depend() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArtifact_Exec_depend() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -857,7 +781,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackageSet_Package() {
+	public EReference getPackageSet_Model() {
 		return (EReference)packageSetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1520,12 +1444,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(nodeEClass, NODE__NAME);
 		createEReference(nodeEClass, NODE__PARAMETER);
 
-		packageEClass = createEClass(PACKAGE);
-		createEAttribute(packageEClass, PACKAGE__NAME);
-		createEReference(packageEClass, PACKAGE__SPEC);
-		createEReference(packageEClass, PACKAGE__ARTIFACT);
-
-		dependencyEClass = createEClass(DEPENDENCY);
+		modelEClass = createEClass(MODEL);
+		createEAttribute(modelEClass, MODEL__NAME);
+		createEReference(modelEClass, MODEL__SPEC);
+		createEReference(modelEClass, MODEL__ARTIFACT);
 
 		serviceSpecEClass = createEClass(SERVICE_SPEC);
 		createEReference(serviceSpecEClass, SERVICE_SPEC__REQUEST);
@@ -1540,18 +1462,11 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		publisherEClass = createEClass(PUBLISHER);
 		createEReference(publisherEClass, PUBLISHER__MESSAGE);
 
-		packageDependencyEClass = createEClass(PACKAGE_DEPENDENCY);
-		createEReference(packageDependencyEClass, PACKAGE_DEPENDENCY__PACKAGE);
-
-		externalDependencyEClass = createEClass(EXTERNAL_DEPENDENCY);
-		createEAttribute(externalDependencyEClass, EXTERNAL_DEPENDENCY__NAME);
-
-		catkinPackageEClass = createEClass(CATKIN_PACKAGE);
-		createEReference(catkinPackageEClass, CATKIN_PACKAGE__DEPENDENCY);
-
 		artifactEClass = createEClass(ARTIFACT);
 		createEAttribute(artifactEClass, ARTIFACT__NAME);
 		createEReference(artifactEClass, ARTIFACT__NODE);
+		createEReference(artifactEClass, ARTIFACT__BUILD_DEPEND);
+		createEReference(artifactEClass, ARTIFACT__EXEC_DEPEND);
 
 		specBaseEClass = createEClass(SPEC_BASE);
 		createEAttribute(specBaseEClass, SPEC_BASE__NAME);
@@ -1565,7 +1480,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEReference(serviceClientEClass, SERVICE_CLIENT__SERVICE);
 
 		packageSetEClass = createEClass(PACKAGE_SET);
-		createEReference(packageSetEClass, PACKAGE_SET__PACKAGE);
+		createEReference(packageSetEClass, PACKAGE_SET__MODEL);
 
 		actionSpecEClass = createEClass(ACTION_SPEC);
 		createEReference(actionSpecEClass, ACTION_SPEC__GOAL);
@@ -1696,6 +1611,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PackageFormat2Package thePackageFormat2Package = (PackageFormat2Package)EPackage.Registry.INSTANCE.getEPackage(PackageFormat2Package.eNS_URI);
 		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
@@ -1707,9 +1623,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		serviceServerEClass.getESuperTypes().add(this.getNamespacedElement());
 		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
 		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
-		packageDependencyEClass.getESuperTypes().add(this.getDependency());
-		externalDependencyEClass.getESuperTypes().add(this.getDependency());
-		catkinPackageEClass.getESuperTypes().add(this.getPackage());
 		subscriberEClass.getESuperTypes().add(this.getNamespacedElement());
 		serviceClientEClass.getESuperTypes().add(this.getNamespacedElement());
 		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
@@ -1750,12 +1663,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getNode_Name(), this.getGraphName(), "name", null, 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNode_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(packageEClass, ros.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dependencyEClass, Dependency.class, "Dependency", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceSpecEClass, ServiceSpec.class, "ServiceSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceSpec_Request(), this.getMessageDefinition(), null, "request", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1770,22 +1681,15 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(packageDependencyEClass, PackageDependency.class, "PackageDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackageDependency_Package(), this.getPackage(), null, "package", null, 1, 1, PackageDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(externalDependencyEClass, ExternalDependency.class, "ExternalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExternalDependency_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExternalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(catkinPackageEClass, CatkinPackage.class, "CatkinPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCatkinPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, CatkinPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Node(), this.getNode(), null, "node", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_Build_depend(), thePackageFormat2Package.getDependencyType(), null, "build_depend", null, 0, -1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_Exec_depend(), thePackageFormat2Package.getDependencyType(), null, "exec_depend", null, 0, -1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specBaseEClass, SpecBase.class, "SpecBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", "", 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecBase_Package(), this.getPackage(), this.getPackage_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecBase_Package(), this.getModel(), this.getModel_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecBase_Fullname(), ecorePackage.getEString(), "fullname", "", 1, 1, SpecBase.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subscriberEClass, Subscriber.class, "Subscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1795,7 +1699,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEReference(getServiceClient_Service(), this.getServiceSpec(), null, "service", null, 1, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageSetEClass, PackageSet.class, "PackageSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackageSet_Package(), this.getPackage(), null, "package", null, 0, -1, PackageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackageSet_Model(), this.getModel(), null, "model", null, 0, -1, PackageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionSpecEClass, ActionSpec.class, "ActionSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionSpec_Goal(), this.getMessageDefinition(), null, "goal", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
