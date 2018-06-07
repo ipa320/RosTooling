@@ -1,4 +1,4 @@
-package de.fraunhofer.ipa.sirius.ros;
+package de.fraunhofer.ipa.ros.sirius;
 
 import org.eclipse.emf.ecore.EObject;
 

@@ -1,4 +1,4 @@
-package de.fraunhofer.ipa.sirius.ros;
+package de.fraunhofer.ipa.ros.sirius;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +13,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
     // The plug-in ID
-    public static final String PLUGIN_ID = "de.fraunhofer.ipa.sirius.ros";
+    public static final String PLUGIN_ID = "de.fraunhofer.ipa.ros.sirius";
 
     // The shared instance
     private static Activator plugin;
