@@ -60,7 +60,8 @@
         eType="#//Model" eOpposite="#//Model/spec"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
-        volatile="true" defaultValueLiteral="" unsettable="true" iD="true"/>
+        volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subscriber" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
