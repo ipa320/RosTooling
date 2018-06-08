@@ -41,7 +41,7 @@ public interface PackageFormat2Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://example.org/PackageFormat2";
+	String eNS_URI = "http://download.ros.org/schema/package_format2.xsd";
 
 	/**
 	 * The package namespace name.

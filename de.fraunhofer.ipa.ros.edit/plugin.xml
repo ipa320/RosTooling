@@ -22,7 +22,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated ros -->
       <factory
-            uri="http://example.org/PackageFormat2"
+            uri="http://download.ros.org/schema/package_format2.xsd"
             class="PackageFormat2.provider.PackageFormat2ItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
