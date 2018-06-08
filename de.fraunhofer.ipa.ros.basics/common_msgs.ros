@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:PackageSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ros="http://www.example.org/ros">
+  <model name="geometry_msgs">
+    <spec xsi:type="ros:TopicSpec" name="Accel"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Inertia"/>
+    <spec xsi:type="ros:TopicSpec" name="InertiaStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Point"/>
+    <spec xsi:type="ros:TopicSpec" name="Point32"/>
+    <spec xsi:type="ros:TopicSpec" name="PointStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Polygon"/>
+    <spec xsi:type="ros:TopicSpec" name="PolygonStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose2D"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseArray"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Quaternion"/>
+    <spec xsi:type="ros:TopicSpec" name="QuaternionStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Transform"/>
+    <spec xsi:type="ros:TopicSpec" name="TransformStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Twist"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3Stamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Wrench"/>
+    <spec xsi:type="ros:TopicSpec" name="WrenchStamped"/>
+  </model>
+</ros:PackageSet>
