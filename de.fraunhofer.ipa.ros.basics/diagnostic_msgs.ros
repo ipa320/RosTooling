@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="diagnostic_msgs">
+  <message name="DiagnosticArray"/>
+  <message name="DiagnosticStatus"/>
+  <message name="KeyValue"/>
+  <service name="AddDiagnostics"/>
+  <service name="SelfTest"/>
+</ros:Package>

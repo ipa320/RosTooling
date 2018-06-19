@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="nav_msgs">
+  <message name="GetMapAction"/>
+  <message name="GetMapActionFeedback"/>
+  <message name="GetMapActionGoal"/>
+  <message name="GetMapActionResult"/>
+  <message name="GetMapFeedback"/>
+  <message name="GetMapGoal"/>
+  <message name="GetMapResult"/>
+  <message name="GridCells"/>
+  <message name="MapMetaData"/>
+  <message name="OccupancyGrid"/>
+  <message name="Odometry"/>
+  <message name="Path"/>
+  <service name="GetMap"/>
+  <service name="GetPlan"/>
+  <service name="SetMap"/>
+</ros:Package>

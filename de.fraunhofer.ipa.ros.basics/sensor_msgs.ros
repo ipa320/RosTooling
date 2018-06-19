@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="sensor_msgs">
+  <message name="BatteryState"/>
+  <message name="CameraInfo"/>
+  <message name="ChannelFloat32"/>
+  <message name="CompressedImage"/>
+  <message name="FluidPressure"/>
+  <message name="Illuminance"/>
+  <message name="Image"/>
+  <message name="Imu"/>
+  <message name="JointState"/>
+  <message name="Joy"/>
+  <message name="JoyFeedback"/>
+  <message name="JoyFeedbackArray"/>
+  <message name="LaserEcho"/>
+  <message name="LaserScan"/>
+  <message name="MagneticField"/>
+  <message name="MultiDOFJointState"/>
+  <message name="MultiEchoLaserScan"/>
+  <message name="NavSatFix"/>
+  <message name="NavSatStatus"/>
+  <message name="PointCloud"/>
+  <message name="PointCloud2"/>
+  <message name="PointField"/>
+  <message name="Range"/>
+  <message name="RegionOfInterest"/>
+  <message name="RelativeHumidity"/>
+  <message name="Temperature"/>
+  <message name="TimeReference"/>
+  <service name="SetCameraInfo"/>
+</ros:Package>

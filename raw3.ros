@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="raw3.launch">
+  <node name="raw3">
+    <publisher name="diagnostics">
+      <message href="../de.fraunhofer.ipa.ros.basics/diagnostic_msgs.ros#//@message.1"/>
+    </publisher>
+    <publisher name="odometry">
+      <message href="../de.fraunhofer.ipa.ros.basics/nav_msgs.ros#//@message.10"/>
+    </publisher>
+    <subscriber name="command_vel">
+      <message href="../de.fraunhofer.ipa.ros.basics/geometry_msgs.ros#//@message.21"/>
+    </subscriber>
+    <serviceclient name="init">
+      <service href="../de.fraunhofer.ipa.ros.basics/std_srvs.ros#//@service.2"/>
+    </serviceclient>
+    <serviceclient name="stop">
+      <service href="../de.fraunhofer.ipa.ros.basics/std_srvs.ros#//@service.2"/>
+    </serviceclient>
+    <parameter name="MaxVel"/>
+  </node>
+</ros:Artifact>

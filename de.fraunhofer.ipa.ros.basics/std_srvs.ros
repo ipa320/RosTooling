@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="std_srvs">
+  <service name="Empty"/>
+  <service name="SetBool"/>
+  <service name="Trigger"/>
+</ros:Package>

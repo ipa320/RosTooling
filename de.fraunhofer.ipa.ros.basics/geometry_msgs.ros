@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="geometry_msgs">
+  <message name="Accel"/>
+  <message name="AccelStamped"/>
+  <message name="AccelWithCovariance"/>
+  <message name="AccelWithCovarianceStamped"/>
+  <message name="Inertia"/>
+  <message name="InertiaStamped"/>
+  <message name="Point"/>
+  <message name="Point32"/>
+  <message name="PointStamped"/>
+  <message name="Polygon"/>
+  <message name="PolygonStamped"/>
+  <message name="Pose"/>
+  <message name="Pose2D"/>
+  <message name="PoseArray"/>
+  <message name="PoseStamped"/>
+  <message name="PoseWithCovariance"/>
+  <message name="PoseWithCovarianceStamped"/>
+  <message name="Quaternion"/>
+  <message name="QuaternionStamped"/>
+  <message name="Transform"/>
+  <message name="TransformStamped"/>
+  <message name="Twist"/>
+  <message name="TwistStamped"/>
+  <message name="TwistWithCovariance"/>
+  <message name="TwistWithCovarianceStamped"/>
+  <message name="Vector3"/>
+  <message name="Vector3Stamped"/>
+  <message name="Wrench"/>
+  <message name="WrenchStamped"/>
+</ros:Package>

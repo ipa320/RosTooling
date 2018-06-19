@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://www.example.org/ros" name="std_msgs">
+  <message name="Bool"/>
+  <message name="Byte"/>
+  <message name="ByteMultiArray"/>
+  <message name="Char"/>
+  <message name="ColorRGBA"/>
+  <message name="Duration"/>
+  <message name="Empty"/>
+  <message name="Float32"/>
+  <message name="Float32MultiArray"/>
+  <message name="Float64"/>
+  <message name="Float64MultiArray"/>
+  <message name="Header"/>
+  <message name="Int16"/>
+  <message name="Int16MultiArray"/>
+  <message name="Int32"/>
+  <message name="Int32MultiArray"/>
+  <message name="Int64"/>
+  <message name="Int64MultiArray"/>
+  <message name="Int8"/>
+  <message name="Int8MultiArray"/>
+  <message name="MultiArrayDimension"/>
+  <message name="MultiArrayLayout"/>
+  <message name="String"/>
+  <message name="Time"/>
+  <message name="UInt16"/>
+  <message name="UInt16MultiArray"/>
+  <message name="UInt32"/>
+  <message name="UInt32MultiArray"/>
+  <message name="UInt64"/>
+  <message name="UInt64MultiArray"/>
+  <message name="UInt8"/>
+  <message name="UInt8MultiArray"/>
+</ros:Package>
