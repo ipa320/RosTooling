@@ -5,44 +5,52 @@ package ros.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import ros.ActionClient;
-import ros.ActionDefinition;
 import ros.RosPackage;
+import ros.ServiceDefinition;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Action Client</b></em>'.
+ * An implementation of the model object '<em><b>Service Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ros.impl.ActionClientImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link ros.impl.ServiceDefinitionImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActionClientImpl extends NamespacedElementImpl implements ActionClient {
+public class ServiceDefinitionImpl extends MinimalEObjectImpl.Container implements ServiceDefinition {
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionDefinition action;
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionClientImpl() {
+	protected ServiceDefinitionImpl() {
 		super();
 	}
 
@@ -53,7 +61,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RosPackage.Literals.ACTION_CLIENT;
+		return RosPackage.Literals.SERVICE_DEFINITION;
 	}
 
 	/**
@@ -61,16 +69,8 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionDefinition getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (ActionDefinition)eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.ACTION_CLIENT__ACTION, oldAction, action));
-			}
-		}
-		return action;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -78,20 +78,11 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionDefinition basicGetAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAction(ActionDefinition newAction) {
-		ActionDefinition oldAction = action;
-		action = newAction;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_CLIENT__ACTION, oldAction, action));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_DEFINITION__NAME, oldName, name));
 	}
 
 	/**
@@ -102,9 +93,8 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RosPackage.ACTION_CLIENT__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
+			case RosPackage.SERVICE_DEFINITION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +107,8 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RosPackage.ACTION_CLIENT__ACTION:
-				setAction((ActionDefinition)newValue);
+			case RosPackage.SERVICE_DEFINITION__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +122,8 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RosPackage.ACTION_CLIENT__ACTION:
-				setAction((ActionDefinition)null);
+			case RosPackage.SERVICE_DEFINITION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,10 +137,26 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RosPackage.ACTION_CLIENT__ACTION:
-				return action != null;
+			case RosPackage.SERVICE_DEFINITION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ActionClientImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ServiceDefinitionImpl

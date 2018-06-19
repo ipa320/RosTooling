@@ -29,12 +29,12 @@ public interface Publisher extends NamespacedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' reference.
-	 * @see #setMessage(TopicSpec)
+	 * @see #setMessage(MessageDefinition)
 	 * @see ros.RosPackage#getPublisher_Message()
 	 * @model required="true"
 	 * @generated
 	 */
-	TopicSpec getMessage();
+	MessageDefinition getMessage();
 
 	/**
 	 * Sets the value of the '{@link ros.Publisher#getMessage <em>Message</em>}' reference.
@@ -44,6 +44,6 @@ public interface Publisher extends NamespacedElement {
 	 * @see #getMessage()
 	 * @generated
 	 */
-	void setMessage(TopicSpec value);
+	void setMessage(MessageDefinition value);
 
 } // Publisher

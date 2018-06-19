@@ -6,22 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Message Definition</b></em>'.
+ * A representation of the model object '<em><b>Action Definition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ros.MessageDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link ros.ActionDefinition#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see ros.RosPackage#getMessageDefinition()
+ * @see ros.RosPackage#getActionDefinition()
  * @model
  * @generated
  */
-public interface MessageDefinition extends EObject {
-
+public interface ActionDefinition extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +31,14 @@ public interface MessageDefinition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see ros.RosPackage#getMessageDefinition_Name()
+	 * @see ros.RosPackage#getActionDefinition_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link ros.MessageDefinition#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link ros.ActionDefinition#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -47,4 +46,5 @@ public interface MessageDefinition extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-} // MessageDefinition
+
+} // ActionDefinition

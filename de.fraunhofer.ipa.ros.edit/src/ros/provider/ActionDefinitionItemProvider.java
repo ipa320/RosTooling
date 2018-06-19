@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,16 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.RosFactory;
+import ros.ActionDefinition;
 import ros.RosPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.Package} object.
+ * This is the item provider adapter for a {@link ros.ActionDefinition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider 
+public class ActionDefinitionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +45,7 @@ public class PackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public ActionDefinitionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,9 +76,9 @@ public class PackageItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Package_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Package_name_feature", "_UI_Package_type"),
-				 RosPackage.Literals.PACKAGE__NAME,
+				 getString("_UI_ActionDefinition_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionDefinition_name_feature", "_UI_ActionDefinition_type"),
+				 RosPackage.Literals.ACTION_DEFINITION__NAME,
 				 true,
 				 false,
 				 false,
@@ -90,47 +88,14 @@ public class PackageItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE__MESSAGE);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE__ARTIFACT);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE__SERVICE);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE__ACTION);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Package.gif.
+	 * This returns ActionDefinition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionDefinition"));
 	}
 
 	/**
@@ -141,10 +106,10 @@ public class PackageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ros.Package)object).getName();
+		String label = ((ActionDefinition)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+			getString("_UI_ActionDefinition_type") :
+			getString("_UI_ActionDefinition_type") + " " + label;
 	}
 	
 
@@ -159,15 +124,9 @@ public class PackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ros.Package.class)) {
-			case RosPackage.PACKAGE__NAME:
+		switch (notification.getFeatureID(ActionDefinition.class)) {
+			case RosPackage.ACTION_DEFINITION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RosPackage.PACKAGE__MESSAGE:
-			case RosPackage.PACKAGE__ARTIFACT:
-			case RosPackage.PACKAGE__SERVICE:
-			case RosPackage.PACKAGE__ACTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -183,26 +142,6 @@ public class PackageItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE__MESSAGE,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE__ARTIFACT,
-				 RosFactory.eINSTANCE.createArtifact()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE__SERVICE,
-				 RosFactory.eINSTANCE.createServiceDefinition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE__ACTION,
-				 RosFactory.eINSTANCE.createActionDefinition()));
 	}
 
 	/**

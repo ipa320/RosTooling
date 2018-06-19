@@ -16,12 +16,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import ros.ActionDefinition;
 import ros.Artifact;
+import ros.MessageDefinition;
 import ros.RosPackage;
-import ros.SpecBase;
+import ros.ServiceDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,8 +33,10 @@ import ros.SpecBase;
  * </p>
  * <ul>
  *   <li>{@link ros.impl.PackageImpl#getName <em>Name</em>}</li>
- *   <li>{@link ros.impl.PackageImpl#getSpec <em>Spec</em>}</li>
+ *   <li>{@link ros.impl.PackageImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link ros.impl.PackageImpl#getArtifact <em>Artifact</em>}</li>
+ *   <li>{@link ros.impl.PackageImpl#getService <em>Service</em>}</li>
+ *   <li>{@link ros.impl.PackageImpl#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +63,14 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference list.
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpec()
+	 * @see #getMessage()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SpecBase> spec;
+	protected EList<MessageDefinition> message;
 
 	/**
 	 * The cached value of the '{@link #getArtifact() <em>Artifact</em>}' containment reference list.
@@ -78,6 +81,26 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * @ordered
 	 */
 	protected EList<Artifact> artifact;
+
+	/**
+	 * The cached value of the '{@link #getService() <em>Service</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getService()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ServiceDefinition> service;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ActionDefinition> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +147,11 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SpecBase> getSpec() {
-		if (spec == null) {
-			spec = new EObjectContainmentWithInverseEList<SpecBase>(SpecBase.class, this, RosPackage.PACKAGE__SPEC, RosPackage.SPEC_BASE__PACKAGE);
+	public EList<MessageDefinition> getMessage() {
+		if (message == null) {
+			message = new EObjectContainmentEList<MessageDefinition>(MessageDefinition.class, this, RosPackage.PACKAGE__MESSAGE);
 		}
-		return spec;
+		return message;
 	}
 
 	/**
@@ -148,14 +171,23 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RosPackage.PACKAGE__SPEC:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpec()).basicAdd(otherEnd, msgs);
+	public EList<ServiceDefinition> getService() {
+		if (service == null) {
+			service = new EObjectContainmentEList<ServiceDefinition>(ServiceDefinition.class, this, RosPackage.PACKAGE__SERVICE);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ActionDefinition> getAction() {
+		if (action == null) {
+			action = new EObjectContainmentEList<ActionDefinition>(ActionDefinition.class, this, RosPackage.PACKAGE__ACTION);
+		}
+		return action;
 	}
 
 	/**
@@ -166,10 +198,14 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RosPackage.PACKAGE__SPEC:
-				return ((InternalEList<?>)getSpec()).basicRemove(otherEnd, msgs);
+			case RosPackage.PACKAGE__MESSAGE:
+				return ((InternalEList<?>)getMessage()).basicRemove(otherEnd, msgs);
 			case RosPackage.PACKAGE__ARTIFACT:
 				return ((InternalEList<?>)getArtifact()).basicRemove(otherEnd, msgs);
+			case RosPackage.PACKAGE__SERVICE:
+				return ((InternalEList<?>)getService()).basicRemove(otherEnd, msgs);
+			case RosPackage.PACKAGE__ACTION:
+				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -184,10 +220,14 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 		switch (featureID) {
 			case RosPackage.PACKAGE__NAME:
 				return getName();
-			case RosPackage.PACKAGE__SPEC:
-				return getSpec();
+			case RosPackage.PACKAGE__MESSAGE:
+				return getMessage();
 			case RosPackage.PACKAGE__ARTIFACT:
 				return getArtifact();
+			case RosPackage.PACKAGE__SERVICE:
+				return getService();
+			case RosPackage.PACKAGE__ACTION:
+				return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,13 +244,21 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 			case RosPackage.PACKAGE__NAME:
 				setName((String)newValue);
 				return;
-			case RosPackage.PACKAGE__SPEC:
-				getSpec().clear();
-				getSpec().addAll((Collection<? extends SpecBase>)newValue);
+			case RosPackage.PACKAGE__MESSAGE:
+				getMessage().clear();
+				getMessage().addAll((Collection<? extends MessageDefinition>)newValue);
 				return;
 			case RosPackage.PACKAGE__ARTIFACT:
 				getArtifact().clear();
 				getArtifact().addAll((Collection<? extends Artifact>)newValue);
+				return;
+			case RosPackage.PACKAGE__SERVICE:
+				getService().clear();
+				getService().addAll((Collection<? extends ServiceDefinition>)newValue);
+				return;
+			case RosPackage.PACKAGE__ACTION:
+				getAction().clear();
+				getAction().addAll((Collection<? extends ActionDefinition>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,11 +275,17 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 			case RosPackage.PACKAGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case RosPackage.PACKAGE__SPEC:
-				getSpec().clear();
+			case RosPackage.PACKAGE__MESSAGE:
+				getMessage().clear();
 				return;
 			case RosPackage.PACKAGE__ARTIFACT:
 				getArtifact().clear();
+				return;
+			case RosPackage.PACKAGE__SERVICE:
+				getService().clear();
+				return;
+			case RosPackage.PACKAGE__ACTION:
+				getAction().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,10 +301,14 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 		switch (featureID) {
 			case RosPackage.PACKAGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RosPackage.PACKAGE__SPEC:
-				return spec != null && !spec.isEmpty();
+			case RosPackage.PACKAGE__MESSAGE:
+				return message != null && !message.isEmpty();
 			case RosPackage.PACKAGE__ARTIFACT:
 				return artifact != null && !artifact.isEmpty();
+			case RosPackage.PACKAGE__SERVICE:
+				return service != null && !service.isEmpty();
+			case RosPackage.PACKAGE__ACTION:
+				return action != null && !action.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

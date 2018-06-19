@@ -2,9 +2,8 @@
  */
 package ros.tests;
 
-import junit.textui.TestRunner;
+import junit.framework.TestCase;
 
-import ros.RosFactory;
 import ros.TopicSpec;
 
 /**
@@ -13,16 +12,15 @@ import ros.TopicSpec;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TopicSpecTest extends SpecBaseTest {
+public abstract class TopicSpecTest extends TestCase {
 
 	/**
+	 * The fixture for this Topic Spec test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
-		TestRunner.run(TopicSpecTest.class);
-	}
+	protected TopicSpec fixture = null;
 
 	/**
 	 * Constructs a new Topic Spec test case with the given name.
@@ -35,36 +33,23 @@ public class TopicSpecTest extends SpecBaseTest {
 	}
 
 	/**
+	 * Sets the fixture for this Topic Spec test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(TopicSpec fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Topic Spec test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected TopicSpec getFixture() {
-		return (TopicSpec)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createTopicSpec());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
+		return fixture;
 	}
 
 } //TopicSpecTest

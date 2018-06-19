@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.RosPackage;
-import ros.SpecBase;
+import ros.ServiceDefinition;
 
 /**
- * This is the item provider adapter for a {@link ros.SpecBase} object.
+ * This is the item provider adapter for a {@link ros.ServiceDefinition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpecBaseItemProvider 
+public class ServiceDefinitionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class SpecBaseItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecBaseItemProvider(AdapterFactory adapterFactory) {
+	public ServiceDefinitionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,6 @@ public class SpecBaseItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addFullnamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,9 +76,9 @@ public class SpecBaseItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SpecBase_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_name_feature", "_UI_SpecBase_type"),
-				 RosPackage.Literals.SPEC_BASE__NAME,
+				 getString("_UI_ServiceDefinition_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceDefinition_name_feature", "_UI_ServiceDefinition_type"),
+				 RosPackage.Literals.SERVICE_DEFINITION__NAME,
 				 true,
 				 false,
 				 false,
@@ -89,25 +88,14 @@ public class SpecBaseItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Fullname feature.
+	 * This returns ServiceDefinition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFullnamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SpecBase_fullname_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_fullname_feature", "_UI_SpecBase_type"),
-				 RosPackage.Literals.SPEC_BASE__FULLNAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceDefinition"));
 	}
 
 	/**
@@ -118,10 +106,10 @@ public class SpecBaseItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SpecBase)object).getName();
+		String label = ((ServiceDefinition)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SpecBase_type") :
-			getString("_UI_SpecBase_type") + " " + label;
+			getString("_UI_ServiceDefinition_type") :
+			getString("_UI_ServiceDefinition_type") + " " + label;
 	}
 	
 
@@ -136,9 +124,8 @@ public class SpecBaseItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SpecBase.class)) {
-			case RosPackage.SPEC_BASE__NAME:
-			case RosPackage.SPEC_BASE__FULLNAME:
+		switch (notification.getFeatureID(ServiceDefinition.class)) {
+			case RosPackage.SERVICE_DEFINITION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

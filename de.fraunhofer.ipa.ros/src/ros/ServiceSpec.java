@@ -2,6 +2,8 @@
  */
 package ros;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,65 +14,65 @@ package ros;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ros.ServiceSpec#getRequest <em>Request</em>}</li>
- *   <li>{@link ros.ServiceSpec#getResponse <em>Response</em>}</li>
+ *   <li>{@link ros.ServiceSpec#getService <em>Service</em>}</li>
+ *   <li>{@link ros.ServiceSpec#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getServiceSpec()
  * @model
  * @generated
  */
-public interface ServiceSpec extends SpecBase {
+public interface ServiceSpec extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Request</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Request</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Service</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Request</em>' containment reference.
-	 * @see #setRequest(MessageDefinition)
-	 * @see ros.RosPackage#getServiceSpec_Request()
-	 * @model containment="true"
+	 * @return the value of the '<em>Service</em>' reference.
+	 * @see #setService(ServiceDefinition)
+	 * @see ros.RosPackage#getServiceSpec_Service()
+	 * @model required="true"
 	 * @generated
 	 */
-	MessageDefinition getRequest();
+	ServiceDefinition getService();
 
 	/**
-	 * Sets the value of the '{@link ros.ServiceSpec#getRequest <em>Request</em>}' containment reference.
+	 * Sets the value of the '{@link ros.ServiceSpec#getService <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Request</em>' containment reference.
-	 * @see #getRequest()
+	 * @param value the new value of the '<em>Service</em>' reference.
+	 * @see #getService()
 	 * @generated
 	 */
-	void setRequest(MessageDefinition value);
+	void setService(ServiceDefinition value);
 
 	/**
-	 * Returns the value of the '<em><b>Response</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Response</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Response</em>' containment reference.
-	 * @see #setResponse(MessageDefinition)
-	 * @see ros.RosPackage#getServiceSpec_Response()
-	 * @model containment="true"
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see ros.RosPackage#getServiceSpec_Name()
+	 * @model required="true"
 	 * @generated
 	 */
-	MessageDefinition getResponse();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link ros.ServiceSpec#getResponse <em>Response</em>}' containment reference.
+	 * Sets the value of the '{@link ros.ServiceSpec#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Response</em>' containment reference.
-	 * @see #getResponse()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setResponse(MessageDefinition value);
+	void setName(String value);
 
 } // ServiceSpec

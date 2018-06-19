@@ -2,6 +2,8 @@
  */
 package ros;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,13 +15,14 @@ package ros;
  * </p>
  * <ul>
  *   <li>{@link ros.TopicSpec#getMessage <em>Message</em>}</li>
+ *   <li>{@link ros.TopicSpec#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getTopicSpec()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface TopicSpec extends SpecBase {
+public interface TopicSpec extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -45,5 +48,31 @@ public interface TopicSpec extends SpecBase {
 	 * @generated
 	 */
 	void setMessage(MessageDefinition value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see ros.RosPackage#getTopicSpec_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link ros.TopicSpec#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // TopicSpec

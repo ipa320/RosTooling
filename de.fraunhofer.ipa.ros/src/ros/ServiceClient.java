@@ -29,12 +29,12 @@ public interface ServiceClient extends NamespacedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service</em>' reference.
-	 * @see #setService(ServiceSpec)
+	 * @see #setService(ServiceDefinition)
 	 * @see ros.RosPackage#getServiceClient_Service()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceSpec getService();
+	ServiceDefinition getService();
 
 	/**
 	 * Sets the value of the '{@link ros.ServiceClient#getService <em>Service</em>}' reference.
@@ -44,6 +44,6 @@ public interface ServiceClient extends NamespacedElement {
 	 * @see #getService()
 	 * @generated
 	 */
-	void setService(ServiceSpec value);
+	void setService(ServiceDefinition value);
 
 } // ServiceClient

@@ -177,13 +177,13 @@ public interface RosPackage extends EPackage {
 	int PACKAGE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Message</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__SPEC = 1;
+	int PACKAGE__MESSAGE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Artifact</b></em>' containment reference list.
@@ -195,13 +195,31 @@ public interface RosPackage extends EPackage {
 	int PACKAGE__ARTIFACT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Service</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__SERVICE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__ACTION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = 3;
+	int PACKAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -241,134 +259,6 @@ public interface RosPackage extends EPackage {
 	int DEPENDENCY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.SpecBaseImpl <em>Spec Base</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.SpecBaseImpl
-	 * @see ros.impl.RosPackageImpl#getSpecBase()
-	 * @generated
-	 */
-	int SPEC_BASE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE__PACKAGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE__FULLNAME = 2;
-
-	/**
-	 * The number of structural features of the '<em>Spec Base</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Spec Base</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_BASE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.ServiceSpecImpl <em>Service Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ServiceSpecImpl
-	 * @see ros.impl.RosPackageImpl#getServiceSpec()
-	 * @generated
-	 */
-	int SERVICE_SPEC = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC__NAME = SPEC_BASE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
-
-	/**
-	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
-
-	/**
-	 * The feature id for the '<em><b>Request</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC__REQUEST = SPEC_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Response</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC__RESPONSE = SPEC_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Service Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link ros.impl.NamespacedElementImpl <em>Namespaced Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,7 +266,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getNamespacedElement()
 	 * @generated
 	 */
-	int NAMESPACED_ELEMENT = 23;
+	int NAMESPACED_ELEMENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -422,7 +312,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getServiceServer()
 	 * @generated
 	 */
-	int SERVICE_SERVER = 4;
+	int SERVICE_SERVER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -470,70 +360,6 @@ public interface RosPackage extends EPackage {
 	int SERVICE_SERVER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.TopicSpecImpl <em>Topic Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.TopicSpecImpl
-	 * @see ros.impl.RosPackageImpl#getTopicSpec()
-	 * @generated
-	 */
-	int TOPIC_SPEC = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC__NAME = SPEC_BASE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
-
-	/**
-	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
-
-	/**
-	 * The feature id for the '<em><b>Message</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC__MESSAGE = SPEC_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Topic Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Topic Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link ros.impl.PublisherImpl <em>Publisher</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,7 +367,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPublisher()
 	 * @generated
 	 */
-	int PUBLISHER = 6;
+	int PUBLISHER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -596,7 +422,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPackageDependency()
 	 * @generated
 	 */
-	int PACKAGE_DEPENDENCY = 7;
+	int PACKAGE_DEPENDENCY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -633,7 +459,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getExternalDependency()
 	 * @generated
 	 */
-	int EXTERNAL_DEPENDENCY = 8;
+	int EXTERNAL_DEPENDENCY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -670,7 +496,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
 	 * @generated
 	 */
-	int CATKIN_PACKAGE = 9;
+	int CATKIN_PACKAGE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -682,13 +508,13 @@ public interface RosPackage extends EPackage {
 	int CATKIN_PACKAGE__NAME = PACKAGE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Spec</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Message</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATKIN_PACKAGE__SPEC = PACKAGE__SPEC;
+	int CATKIN_PACKAGE__MESSAGE = PACKAGE__MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Artifact</b></em>' containment reference list.
@@ -698,6 +524,24 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int CATKIN_PACKAGE__ARTIFACT = PACKAGE__ARTIFACT;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATKIN_PACKAGE__SERVICE = PACKAGE__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATKIN_PACKAGE__ACTION = PACKAGE__ACTION;
 
 	/**
 	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
@@ -734,7 +578,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getArtifact()
 	 * @generated
 	 */
-	int ARTIFACT = 10;
+	int ARTIFACT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -780,7 +624,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getSubscriber()
 	 * @generated
 	 */
-	int SUBSCRIBER = 12;
+	int SUBSCRIBER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -835,7 +679,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getServiceClient()
 	 * @generated
 	 */
-	int SERVICE_CLIENT = 13;
+	int SERVICE_CLIENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -890,7 +734,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPackageSet()
 	 * @generated
 	 */
-	int PACKAGE_SET = 14;
+	int PACKAGE_SET = 11;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' containment reference list.
@@ -920,88 +764,6 @@ public interface RosPackage extends EPackage {
 	int PACKAGE_SET_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.ActionSpecImpl <em>Action Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ActionSpecImpl
-	 * @see ros.impl.RosPackageImpl#getActionSpec()
-	 * @generated
-	 */
-	int ACTION_SPEC = 15;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__NAME = SPEC_BASE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__PACKAGE = SPEC_BASE__PACKAGE;
-
-	/**
-	 * The feature id for the '<em><b>Fullname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__FULLNAME = SPEC_BASE__FULLNAME;
-
-	/**
-	 * The feature id for the '<em><b>Goal</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__GOAL = SPEC_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__RESULT = SPEC_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Feedback</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC__FEEDBACK = SPEC_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Action Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC_FEATURE_COUNT = SPEC_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Action Spec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link ros.impl.ActionServerImpl <em>Action Server</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1009,7 +771,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getActionServer()
 	 * @generated
 	 */
-	int ACTION_SERVER = 16;
+	int ACTION_SERVER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1064,7 +826,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getActionClient()
 	 * @generated
 	 */
-	int ACTION_CLIENT = 17;
+	int ACTION_CLIENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1119,7 +881,16 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getMessageDefinition()
 	 * @generated
 	 */
-	int MESSAGE_DEFINITION = 18;
+	int MESSAGE_DEFINITION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DEFINITION__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Message Definition</em>' class.
@@ -1128,7 +899,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_DEFINITION_FEATURE_COUNT = 0;
+	int MESSAGE_DEFINITION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Message Definition</em>' class.
@@ -1147,7 +918,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getNamespace()
 	 * @generated
 	 */
-	int NAMESPACE = 19;
+	int NAMESPACE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1184,7 +955,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
 	 * @generated
 	 */
-	int GLOBAL_NAMESPACE = 20;
+	int GLOBAL_NAMESPACE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1221,7 +992,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
 	 * @generated
 	 */
-	int RELATIVE_NAMESPACE = 21;
+	int RELATIVE_NAMESPACE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1258,7 +1029,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
 	 * @generated
 	 */
-	int PRIVATE_NAMESPACE = 22;
+	int PRIVATE_NAMESPACE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1295,7 +1066,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterType()
 	 * @generated
 	 */
-	int PARAMETER_TYPE = 24;
+	int PARAMETER_TYPE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Type</em>' class.
@@ -1323,7 +1094,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterListType()
 	 * @generated
 	 */
-	int PARAMETER_LIST_TYPE = 25;
+	int PARAMETER_LIST_TYPE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Sequence</b></em>' containment reference list.
@@ -1369,7 +1140,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructType()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_TYPE = 26;
+	int PARAMETER_STRUCT_TYPE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Parameterstructypetmember</b></em>' containment reference list.
@@ -1406,7 +1177,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterIntegerType()
 	 * @generated
 	 */
-	int PARAMETER_INTEGER_TYPE = 27;
+	int PARAMETER_INTEGER_TYPE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1443,7 +1214,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStringType()
 	 * @generated
 	 */
-	int PARAMETER_STRING_TYPE = 28;
+	int PARAMETER_STRING_TYPE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1480,7 +1251,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDoubleType()
 	 * @generated
 	 */
-	int PARAMETER_DOUBLE_TYPE = 29;
+	int PARAMETER_DOUBLE_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1517,7 +1288,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 30;
+	int PARAMETER = 26;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1572,7 +1343,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDateType()
 	 * @generated
 	 */
-	int PARAMETER_DATE_TYPE = 31;
+	int PARAMETER_DATE_TYPE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1609,7 +1380,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBooleanType()
 	 * @generated
 	 */
-	int PARAMETER_BOOLEAN_TYPE = 32;
+	int PARAMETER_BOOLEAN_TYPE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1646,7 +1417,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBase64Type()
 	 * @generated
 	 */
-	int PARAMETER_BASE64_TYPE = 33;
+	int PARAMETER_BASE64_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1683,7 +1454,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterAnyType()
 	 * @generated
 	 */
-	int PARAMETER_ANY_TYPE = 34;
+	int PARAMETER_ANY_TYPE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1720,7 +1491,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructTypeMember()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_TYPE_MEMBER = 35;
+	int PARAMETER_STRUCT_TYPE_MEMBER = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1775,7 +1546,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterArrayType()
 	 * @generated
 	 */
-	int PARAMETER_ARRAY_TYPE = 36;
+	int PARAMETER_ARRAY_TYPE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1821,7 +1592,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterValue()
 	 * @generated
 	 */
-	int PARAMETER_VALUE = 37;
+	int PARAMETER_VALUE = 33;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Value</em>' class.
@@ -1849,7 +1620,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterAny()
 	 * @generated
 	 */
-	int PARAMETER_ANY = 38;
+	int PARAMETER_ANY = 34;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1886,7 +1657,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterString()
 	 * @generated
 	 */
-	int PARAMETER_STRING = 39;
+	int PARAMETER_STRING = 35;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1923,7 +1694,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBase64()
 	 * @generated
 	 */
-	int PARAMETER_BASE64 = 40;
+	int PARAMETER_BASE64 = 36;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1960,7 +1731,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterInteger()
 	 * @generated
 	 */
-	int PARAMETER_INTEGER = 41;
+	int PARAMETER_INTEGER = 37;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1997,7 +1768,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDouble()
 	 * @generated
 	 */
-	int PARAMETER_DOUBLE = 42;
+	int PARAMETER_DOUBLE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2034,7 +1805,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterBoolean()
 	 * @generated
 	 */
-	int PARAMETER_BOOLEAN = 43;
+	int PARAMETER_BOOLEAN = 39;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2071,7 +1842,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterSequence()
 	 * @generated
 	 */
-	int PARAMETER_SEQUENCE = 44;
+	int PARAMETER_SEQUENCE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -2108,7 +1879,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStruct()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT = 45;
+	int PARAMETER_STRUCT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -2145,7 +1916,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterStructMember()
 	 * @generated
 	 */
-	int PARAMETER_STRUCT_MEMBER = 46;
+	int PARAMETER_STRUCT_MEMBER = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2191,7 +1962,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getParameterDate()
 	 * @generated
 	 */
-	int PARAMETER_DATE = 47;
+	int PARAMETER_DATE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2221,6 +1992,80 @@ public interface RosPackage extends EPackage {
 	int PARAMETER_DATE_OPERATION_COUNT = PARAMETER_VALUE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ros.impl.ServiceDefinitionImpl <em>Service Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ServiceDefinitionImpl
+	 * @see ros.impl.RosPackageImpl#getServiceDefinition()
+	 * @generated
+	 */
+	int SERVICE_DEFINITION = 44;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DEFINITION__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DEFINITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Service Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DEFINITION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ActionDefinitionImpl <em>Action Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ActionDefinitionImpl
+	 * @see ros.impl.RosPackageImpl#getActionDefinition()
+	 * @generated
+	 */
+	int ACTION_DEFINITION = 45;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_DEFINITION__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Action Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_DEFINITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Action Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_DEFINITION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Graph Name</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2228,7 +2073,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
-	int GRAPH_NAME = 48;
+	int GRAPH_NAME = 46;
 
 
 	/**
@@ -2351,15 +2196,15 @@ public interface RosPackage extends EPackage {
 	EAttribute getPackage_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ros.Package#getSpec <em>Spec</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ros.Package#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Spec</em>'.
-	 * @see ros.Package#getSpec()
+	 * @return the meta object for the containment reference list '<em>Message</em>'.
+	 * @see ros.Package#getMessage()
 	 * @see #getPackage()
 	 * @generated
 	 */
-	EReference getPackage_Spec();
+	EReference getPackage_Message();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ros.Package#getArtifact <em>Artifact</em>}'.
@@ -2373,6 +2218,28 @@ public interface RosPackage extends EPackage {
 	EReference getPackage_Artifact();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ros.Package#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Service</em>'.
+	 * @see ros.Package#getService()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Service();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ros.Package#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @see ros.Package#getAction()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Action();
+
+	/**
 	 * Returns the meta object for class '{@link ros.Dependency <em>Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2381,38 +2248,6 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDependency();
-
-	/**
-	 * Returns the meta object for class '{@link ros.ServiceSpec <em>Service Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Spec</em>'.
-	 * @see ros.ServiceSpec
-	 * @generated
-	 */
-	EClass getServiceSpec();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.ServiceSpec#getRequest <em>Request</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Request</em>'.
-	 * @see ros.ServiceSpec#getRequest()
-	 * @see #getServiceSpec()
-	 * @generated
-	 */
-	EReference getServiceSpec_Request();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.ServiceSpec#getResponse <em>Response</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Response</em>'.
-	 * @see ros.ServiceSpec#getResponse()
-	 * @see #getServiceSpec()
-	 * @generated
-	 */
-	EReference getServiceSpec_Response();
 
 	/**
 	 * Returns the meta object for class '{@link ros.ServiceServer <em>Service Server</em>}'.
@@ -2434,27 +2269,6 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServiceServer_Service();
-
-	/**
-	 * Returns the meta object for class '{@link ros.TopicSpec <em>Topic Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Topic Spec</em>'.
-	 * @see ros.TopicSpec
-	 * @generated
-	 */
-	EClass getTopicSpec();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.TopicSpec#getMessage <em>Message</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Message</em>'.
-	 * @see ros.TopicSpec#getMessage()
-	 * @see #getTopicSpec()
-	 * @generated
-	 */
-	EReference getTopicSpec_Message();
 
 	/**
 	 * Returns the meta object for class '{@link ros.Publisher <em>Publisher</em>}'.
@@ -2573,49 +2387,6 @@ public interface RosPackage extends EPackage {
 	EReference getArtifact_Node();
 
 	/**
-	 * Returns the meta object for class '{@link ros.SpecBase <em>Spec Base</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spec Base</em>'.
-	 * @see ros.SpecBase
-	 * @generated
-	 */
-	EClass getSpecBase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ros.SpecBase#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ros.SpecBase#getName()
-	 * @see #getSpecBase()
-	 * @generated
-	 */
-	EAttribute getSpecBase_Name();
-
-	/**
-	 * Returns the meta object for the container reference '{@link ros.SpecBase#getPackage <em>Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Package</em>'.
-	 * @see ros.SpecBase#getPackage()
-	 * @see #getSpecBase()
-	 * @generated
-	 */
-	EReference getSpecBase_Package();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ros.SpecBase#getFullname <em>Fullname</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fullname</em>'.
-	 * @see ros.SpecBase#getFullname()
-	 * @see #getSpecBase()
-	 * @generated
-	 */
-	EAttribute getSpecBase_Fullname();
-
-	/**
 	 * Returns the meta object for class '{@link ros.Subscriber <em>Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2679,49 +2450,6 @@ public interface RosPackage extends EPackage {
 	EReference getPackageSet_Package();
 
 	/**
-	 * Returns the meta object for class '{@link ros.ActionSpec <em>Action Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Action Spec</em>'.
-	 * @see ros.ActionSpec
-	 * @generated
-	 */
-	EClass getActionSpec();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.ActionSpec#getGoal <em>Goal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Goal</em>'.
-	 * @see ros.ActionSpec#getGoal()
-	 * @see #getActionSpec()
-	 * @generated
-	 */
-	EReference getActionSpec_Goal();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.ActionSpec#getResult <em>Result</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Result</em>'.
-	 * @see ros.ActionSpec#getResult()
-	 * @see #getActionSpec()
-	 * @generated
-	 */
-	EReference getActionSpec_Result();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ros.ActionSpec#getFeedback <em>Feedback</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Feedback</em>'.
-	 * @see ros.ActionSpec#getFeedback()
-	 * @see #getActionSpec()
-	 * @generated
-	 */
-	EReference getActionSpec_Feedback();
-
-	/**
 	 * Returns the meta object for class '{@link ros.ActionServer <em>Action Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2772,6 +2500,17 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMessageDefinition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.MessageDefinition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ros.MessageDefinition#getName()
+	 * @see #getMessageDefinition()
+	 * @generated
+	 */
+	EAttribute getMessageDefinition_Name();
 
 	/**
 	 * Returns the meta object for class '{@link ros.Namespace <em>Namespace</em>}'.
@@ -3394,6 +3133,48 @@ public interface RosPackage extends EPackage {
 	EAttribute getParameterDate_Value();
 
 	/**
+	 * Returns the meta object for class '{@link ros.ServiceDefinition <em>Service Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Definition</em>'.
+	 * @see ros.ServiceDefinition
+	 * @generated
+	 */
+	EClass getServiceDefinition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.ServiceDefinition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ros.ServiceDefinition#getName()
+	 * @see #getServiceDefinition()
+	 * @generated
+	 */
+	EAttribute getServiceDefinition_Name();
+
+	/**
+	 * Returns the meta object for class '{@link ros.ActionDefinition <em>Action Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action Definition</em>'.
+	 * @see ros.ActionDefinition
+	 * @generated
+	 */
+	EClass getActionDefinition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.ActionDefinition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ros.ActionDefinition#getName()
+	 * @see #getActionDefinition()
+	 * @generated
+	 */
+	EAttribute getActionDefinition_Name();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Graph Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3520,12 +3301,12 @@ public interface RosPackage extends EPackage {
 		EAttribute PACKAGE__NAME = eINSTANCE.getPackage_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Spec</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE__SPEC = eINSTANCE.getPackage_Spec();
+		EReference PACKAGE__MESSAGE = eINSTANCE.getPackage_Message();
 
 		/**
 		 * The meta object literal for the '<em><b>Artifact</b></em>' containment reference list feature.
@@ -3536,6 +3317,22 @@ public interface RosPackage extends EPackage {
 		EReference PACKAGE__ARTIFACT = eINSTANCE.getPackage_Artifact();
 
 		/**
+		 * The meta object literal for the '<em><b>Service</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__SERVICE = eINSTANCE.getPackage_Service();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__ACTION = eINSTANCE.getPackage_Action();
+
+		/**
 		 * The meta object literal for the '{@link ros.impl.DependencyImpl <em>Dependency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3544,32 +3341,6 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DEPENDENCY = eINSTANCE.getDependency();
-
-		/**
-		 * The meta object literal for the '{@link ros.impl.ServiceSpecImpl <em>Service Spec</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.ServiceSpecImpl
-		 * @see ros.impl.RosPackageImpl#getServiceSpec()
-		 * @generated
-		 */
-		EClass SERVICE_SPEC = eINSTANCE.getServiceSpec();
-
-		/**
-		 * The meta object literal for the '<em><b>Request</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_SPEC__REQUEST = eINSTANCE.getServiceSpec_Request();
-
-		/**
-		 * The meta object literal for the '<em><b>Response</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_SPEC__RESPONSE = eINSTANCE.getServiceSpec_Response();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ServiceServerImpl <em>Service Server</em>}' class.
@@ -3588,24 +3359,6 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE_SERVER__SERVICE = eINSTANCE.getServiceServer_Service();
-
-		/**
-		 * The meta object literal for the '{@link ros.impl.TopicSpecImpl <em>Topic Spec</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.TopicSpecImpl
-		 * @see ros.impl.RosPackageImpl#getTopicSpec()
-		 * @generated
-		 */
-		EClass TOPIC_SPEC = eINSTANCE.getTopicSpec();
-
-		/**
-		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOPIC_SPEC__MESSAGE = eINSTANCE.getTopicSpec_Message();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.PublisherImpl <em>Publisher</em>}' class.
@@ -3706,40 +3459,6 @@ public interface RosPackage extends EPackage {
 		EReference ARTIFACT__NODE = eINSTANCE.getArtifact_Node();
 
 		/**
-		 * The meta object literal for the '{@link ros.impl.SpecBaseImpl <em>Spec Base</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.SpecBaseImpl
-		 * @see ros.impl.RosPackageImpl#getSpecBase()
-		 * @generated
-		 */
-		EClass SPEC_BASE = eINSTANCE.getSpecBase();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPEC_BASE__NAME = eINSTANCE.getSpecBase_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Package</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPEC_BASE__PACKAGE = eINSTANCE.getSpecBase_Package();
-
-		/**
-		 * The meta object literal for the '<em><b>Fullname</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPEC_BASE__FULLNAME = eINSTANCE.getSpecBase_Fullname();
-
-		/**
 		 * The meta object literal for the '{@link ros.impl.SubscriberImpl <em>Subscriber</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3794,40 +3513,6 @@ public interface RosPackage extends EPackage {
 		EReference PACKAGE_SET__PACKAGE = eINSTANCE.getPackageSet_Package();
 
 		/**
-		 * The meta object literal for the '{@link ros.impl.ActionSpecImpl <em>Action Spec</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ros.impl.ActionSpecImpl
-		 * @see ros.impl.RosPackageImpl#getActionSpec()
-		 * @generated
-		 */
-		EClass ACTION_SPEC = eINSTANCE.getActionSpec();
-
-		/**
-		 * The meta object literal for the '<em><b>Goal</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION_SPEC__GOAL = eINSTANCE.getActionSpec_Goal();
-
-		/**
-		 * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION_SPEC__RESULT = eINSTANCE.getActionSpec_Result();
-
-		/**
-		 * The meta object literal for the '<em><b>Feedback</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION_SPEC__FEEDBACK = eINSTANCE.getActionSpec_Feedback();
-
-		/**
 		 * The meta object literal for the '{@link ros.impl.ActionServerImpl <em>Action Server</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3872,6 +3557,14 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MESSAGE_DEFINITION = eINSTANCE.getMessageDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_DEFINITION__NAME = eINSTANCE.getMessageDefinition_Name();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.NamespaceImpl <em>Namespace</em>}' class.
@@ -4402,6 +4095,42 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER_DATE__VALUE = eINSTANCE.getParameterDate_Value();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.ServiceDefinitionImpl <em>Service Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.ServiceDefinitionImpl
+		 * @see ros.impl.RosPackageImpl#getServiceDefinition()
+		 * @generated
+		 */
+		EClass SERVICE_DEFINITION = eINSTANCE.getServiceDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_DEFINITION__NAME = eINSTANCE.getServiceDefinition_Name();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.ActionDefinitionImpl <em>Action Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.ActionDefinitionImpl
+		 * @see ros.impl.RosPackageImpl#getActionDefinition()
+		 * @generated
+		 */
+		EClass ACTION_DEFINITION = eINSTANCE.getActionDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION_DEFINITION__NAME = eINSTANCE.getActionDefinition_Name();
 
 		/**
 		 * The meta object literal for the '<em>Graph Name</em>' data type.

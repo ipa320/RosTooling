@@ -31,9 +31,6 @@ public class RosTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new RosTests("ros Tests");
-		suite.addTestSuite(ServiceSpecTest.class);
-		suite.addTestSuite(TopicSpecTest.class);
-		suite.addTestSuite(ActionSpecTest.class);
 		return suite;
 	}
 

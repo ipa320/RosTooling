@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 import ros.ActionClient;
+import ros.ActionDefinition;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -56,11 +56,9 @@ import ros.RelativeNamespace;
 import ros.RosFactory;
 import ros.RosPackage;
 import ros.ServiceClient;
+import ros.ServiceDefinition;
 import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.SpecBase;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,21 +93,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceSpecEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass serviceServerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass topicSpecEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,13 +135,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass specBaseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass subscriberEClass = null;
 
 	/**
@@ -173,13 +150,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	private EClass packageSetEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionSpecEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -410,6 +380,20 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serviceDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType graphNameEDataType = null;
 
 	/**
@@ -580,7 +564,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackage_Spec() {
+	public EReference getPackage_Message() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -598,35 +582,26 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPackage_Service() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPackage_Action() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDependency() {
 		return dependencyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getServiceSpec() {
-		return serviceSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceSpec_Request() {
-		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceSpec_Response() {
-		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -645,24 +620,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 */
 	public EReference getServiceServer_Service() {
 		return (EReference)serviceServerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTopicSpec() {
-		return topicSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTopicSpec_Message() {
-		return (EReference)topicSpecEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -769,42 +726,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSpecBase() {
-		return specBaseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSpecBase_Name() {
-		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSpecBase_Package() {
-		return (EReference)specBaseEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSpecBase_Fullname() {
-		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSubscriber() {
 		return subscriberEClass;
 	}
@@ -859,42 +780,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getActionSpec() {
-		return actionSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Goal() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Result() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Feedback() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getActionServer() {
 		return actionServerEClass;
 	}
@@ -933,6 +818,15 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 */
 	public EClass getMessageDefinition() {
 		return messageDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMessageDefinition_Name() {
+		return (EAttribute)messageDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1471,6 +1365,42 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getServiceDefinition() {
+		return serviceDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceDefinition_Name() {
+		return (EAttribute)serviceDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActionDefinition() {
+		return actionDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getActionDefinition_Name() {
+		return (EAttribute)actionDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getGraphName() {
 		return graphNameEDataType;
 	}
@@ -1515,20 +1445,15 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		packageEClass = createEClass(PACKAGE);
 		createEAttribute(packageEClass, PACKAGE__NAME);
-		createEReference(packageEClass, PACKAGE__SPEC);
+		createEReference(packageEClass, PACKAGE__MESSAGE);
 		createEReference(packageEClass, PACKAGE__ARTIFACT);
+		createEReference(packageEClass, PACKAGE__SERVICE);
+		createEReference(packageEClass, PACKAGE__ACTION);
 
 		dependencyEClass = createEClass(DEPENDENCY);
 
-		serviceSpecEClass = createEClass(SERVICE_SPEC);
-		createEReference(serviceSpecEClass, SERVICE_SPEC__REQUEST);
-		createEReference(serviceSpecEClass, SERVICE_SPEC__RESPONSE);
-
 		serviceServerEClass = createEClass(SERVICE_SERVER);
 		createEReference(serviceServerEClass, SERVICE_SERVER__SERVICE);
-
-		topicSpecEClass = createEClass(TOPIC_SPEC);
-		createEReference(topicSpecEClass, TOPIC_SPEC__MESSAGE);
 
 		publisherEClass = createEClass(PUBLISHER);
 		createEReference(publisherEClass, PUBLISHER__MESSAGE);
@@ -1546,11 +1471,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(artifactEClass, ARTIFACT__NAME);
 		createEReference(artifactEClass, ARTIFACT__NODE);
 
-		specBaseEClass = createEClass(SPEC_BASE);
-		createEAttribute(specBaseEClass, SPEC_BASE__NAME);
-		createEReference(specBaseEClass, SPEC_BASE__PACKAGE);
-		createEAttribute(specBaseEClass, SPEC_BASE__FULLNAME);
-
 		subscriberEClass = createEClass(SUBSCRIBER);
 		createEReference(subscriberEClass, SUBSCRIBER__MESSAGE);
 
@@ -1560,11 +1480,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		packageSetEClass = createEClass(PACKAGE_SET);
 		createEReference(packageSetEClass, PACKAGE_SET__PACKAGE);
 
-		actionSpecEClass = createEClass(ACTION_SPEC);
-		createEReference(actionSpecEClass, ACTION_SPEC__GOAL);
-		createEReference(actionSpecEClass, ACTION_SPEC__RESULT);
-		createEReference(actionSpecEClass, ACTION_SPEC__FEEDBACK);
-
 		actionServerEClass = createEClass(ACTION_SERVER);
 		createEReference(actionServerEClass, ACTION_SERVER__ACTION);
 
@@ -1572,6 +1487,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEReference(actionClientEClass, ACTION_CLIENT__ACTION);
 
 		messageDefinitionEClass = createEClass(MESSAGE_DEFINITION);
+		createEAttribute(messageDefinitionEClass, MESSAGE_DEFINITION__NAME);
 
 		namespaceEClass = createEClass(NAMESPACE);
 		createEAttribute(namespaceEClass, NAMESPACE__PARTS);
@@ -1661,6 +1577,12 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		parameterDateEClass = createEClass(PARAMETER_DATE);
 		createEAttribute(parameterDateEClass, PARAMETER_DATE__VALUE);
 
+		serviceDefinitionEClass = createEClass(SERVICE_DEFINITION);
+		createEAttribute(serviceDefinitionEClass, SERVICE_DEFINITION__NAME);
+
+		actionDefinitionEClass = createEClass(ACTION_DEFINITION);
+		createEAttribute(actionDefinitionEClass, ACTION_DEFINITION__NAME);
+
 		// Create data types
 		graphNameEDataType = createEDataType(GRAPH_NAME);
 	}
@@ -1696,16 +1618,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		serviceSpecEClass.getESuperTypes().add(this.getSpecBase());
 		serviceServerEClass.getESuperTypes().add(this.getNamespacedElement());
-		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
 		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
 		packageDependencyEClass.getESuperTypes().add(this.getDependency());
 		externalDependencyEClass.getESuperTypes().add(this.getDependency());
 		catkinPackageEClass.getESuperTypes().add(this.getPackage());
 		subscriberEClass.getESuperTypes().add(this.getNamespacedElement());
 		serviceClientEClass.getESuperTypes().add(this.getNamespacedElement());
-		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
 		actionServerEClass.getESuperTypes().add(this.getNamespacedElement());
 		actionClientEClass.getESuperTypes().add(this.getNamespacedElement());
 		globalNamespaceEClass.getESuperTypes().add(this.getNamespace());
@@ -1745,23 +1664,18 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(packageEClass, ros.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Message(), this.getMessageDefinition(), null, "message", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Service(), this.getServiceDefinition(), null, "service", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Action(), this.getActionDefinition(), null, "action", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dependencyEClass, Dependency.class, "Dependency", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(serviceSpecEClass, ServiceSpec.class, "ServiceSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceSpec_Request(), this.getMessageDefinition(), null, "request", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceSpec_Response(), this.getMessageDefinition(), null, "response", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(serviceServerEClass, ServiceServer.class, "ServiceServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceServer_Service(), this.getServiceSpec(), null, "service", null, 1, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(topicSpecEClass, TopicSpec.class, "TopicSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTopicSpec_Message(), this.getMessageDefinition(), null, "message", null, 0, 1, TopicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceServer_Service(), this.getServiceDefinition(), null, "service", null, 1, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPublisher_Message(), this.getMessageDefinition(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageDependencyEClass, PackageDependency.class, "PackageDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageDependency_Package(), this.getPackage(), null, "package", null, 1, 1, PackageDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1776,32 +1690,23 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Node(), this.getNode(), null, "node", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(specBaseEClass, SpecBase.class, "SpecBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", "", 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecBase_Package(), this.getPackage(), this.getPackage_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpecBase_Fullname(), ecorePackage.getEString(), "fullname", "", 1, 1, SpecBase.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(subscriberEClass, Subscriber.class, "Subscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubscriber_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriber_Message(), this.getMessageDefinition(), null, "message", null, 1, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceClientEClass, ServiceClient.class, "ServiceClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceClient_Service(), this.getServiceSpec(), null, "service", null, 1, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceClient_Service(), this.getServiceDefinition(), null, "service", null, 1, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageSetEClass, PackageSet.class, "PackageSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageSet_Package(), this.getPackage(), null, "package", null, 0, -1, PackageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionSpecEClass, ActionSpec.class, "ActionSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionSpec_Goal(), this.getMessageDefinition(), null, "goal", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionSpec_Result(), this.getMessageDefinition(), null, "result", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionSpec_Feedback(), this.getMessageDefinition(), null, "feedback", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(actionServerEClass, ActionServer.class, "ActionServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionServer_Action(), this.getActionSpec(), null, "action", null, 1, 1, ActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionServer_Action(), this.getActionDefinition(), null, "action", null, 1, 1, ActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionClientEClass, ActionClient.class, "ActionClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionClient_Action(), this.getActionSpec(), null, "action", null, 1, 1, ActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionClient_Action(), this.getActionDefinition(), null, "action", null, 1, 1, ActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageDefinitionEClass, MessageDefinition.class, "MessageDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMessageDefinition_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamespace_Parts(), this.getGraphName(), "parts", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1890,6 +1795,12 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(parameterDateEClass, ParameterDate.class, "ParameterDate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterDate_Value(), theXMLTypePackage.getDateTime(), "value", null, 1, 1, ParameterDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceDefinitionEClass, ServiceDefinition.class, "ServiceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceDefinition_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionDefinitionEClass, ActionDefinition.class, "ActionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActionDefinition_Name(), ecorePackage.getEString(), "name", null, 1, 1, ActionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(graphNameEDataType, String.class, "GraphName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

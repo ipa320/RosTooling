@@ -29,12 +29,12 @@ public interface ServiceServer extends NamespacedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service</em>' reference.
-	 * @see #setService(ServiceSpec)
+	 * @see #setService(ServiceDefinition)
 	 * @see ros.RosPackage#getServiceServer_Service()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceSpec getService();
+	ServiceDefinition getService();
 
 	/**
 	 * Sets the value of the '{@link ros.ServiceServer#getService <em>Service</em>}' reference.
@@ -44,6 +44,6 @@ public interface ServiceServer extends NamespacedElement {
 	 * @see #getService()
 	 * @generated
 	 */
-	void setService(ServiceSpec value);
+	void setService(ServiceDefinition value);
 
 } // ServiceServer

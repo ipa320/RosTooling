@@ -29,12 +29,12 @@ public interface ActionClient extends NamespacedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action</em>' reference.
-	 * @see #setAction(ActionSpec)
+	 * @see #setAction(ActionDefinition)
 	 * @see ros.RosPackage#getActionClient_Action()
 	 * @model required="true"
 	 * @generated
 	 */
-	ActionSpec getAction();
+	ActionDefinition getAction();
 
 	/**
 	 * Sets the value of the '{@link ros.ActionClient#getAction <em>Action</em>}' reference.
@@ -44,6 +44,6 @@ public interface ActionClient extends NamespacedElement {
 	 * @see #getAction()
 	 * @generated
 	 */
-	void setAction(ActionSpec value);
+	void setAction(ActionDefinition value);
 
 } // ActionClient

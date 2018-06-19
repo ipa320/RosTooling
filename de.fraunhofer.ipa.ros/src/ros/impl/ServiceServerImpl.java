@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.RosPackage;
+import ros.ServiceDefinition;
 import ros.ServiceServer;
-import ros.ServiceSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceSpec service;
+	protected ServiceDefinition service;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +61,10 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceSpec getService() {
+	public ServiceDefinition getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject)service;
-			service = (ServiceSpec)eResolveProxy(oldService);
+			service = (ServiceDefinition)eResolveProxy(oldService);
 			if (service != oldService) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.SERVICE_SERVER__SERVICE, oldService, service));
@@ -78,7 +78,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceSpec basicGetService() {
+	public ServiceDefinition basicGetService() {
 		return service;
 	}
 
@@ -87,8 +87,8 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setService(ServiceSpec newService) {
-		ServiceSpec oldService = service;
+	public void setService(ServiceDefinition newService) {
+		ServiceDefinition oldService = service;
 		service = newService;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SERVICE_SERVER__SERVICE, oldService, service));
@@ -118,7 +118,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RosPackage.SERVICE_SERVER__SERVICE:
-				setService((ServiceSpec)newValue);
+				setService((ServiceDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RosPackage.SERVICE_SERVER__SERVICE:
-				setService((ServiceSpec)null);
+				setService((ServiceDefinition)null);
 				return;
 		}
 		super.eUnset(featureID);

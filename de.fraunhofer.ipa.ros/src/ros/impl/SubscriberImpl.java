@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import ros.MessageDefinition;
 import ros.RosPackage;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * @generated
 	 * @ordered
 	 */
-	protected TopicSpec message;
+	protected MessageDefinition message;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +61,10 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopicSpec getMessage() {
+	public MessageDefinition getMessage() {
 		if (message != null && message.eIsProxy()) {
 			InternalEObject oldMessage = (InternalEObject)message;
-			message = (TopicSpec)eResolveProxy(oldMessage);
+			message = (MessageDefinition)eResolveProxy(oldMessage);
 			if (message != oldMessage) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.SUBSCRIBER__MESSAGE, oldMessage, message));
@@ -78,7 +78,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopicSpec basicGetMessage() {
+	public MessageDefinition basicGetMessage() {
 		return message;
 	}
 
@@ -87,8 +87,8 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessage(TopicSpec newMessage) {
-		TopicSpec oldMessage = message;
+	public void setMessage(MessageDefinition newMessage) {
+		MessageDefinition oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.SUBSCRIBER__MESSAGE, oldMessage, message));
@@ -118,7 +118,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RosPackage.SUBSCRIBER__MESSAGE:
-				setMessage((TopicSpec)newValue);
+				setMessage((MessageDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RosPackage.SUBSCRIBER__MESSAGE:
-				setMessage((TopicSpec)null);
+				setMessage((MessageDefinition)null);
 				return;
 		}
 		super.eUnset(featureID);

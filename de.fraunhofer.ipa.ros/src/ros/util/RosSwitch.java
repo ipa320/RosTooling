@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import ros.ActionClient;
+import ros.ActionDefinition;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -50,11 +50,9 @@ import ros.Publisher;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import ros.ServiceClient;
+import ros.ServiceDefinition;
 import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.SpecBase;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,24 +129,10 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RosPackage.SERVICE_SPEC: {
-				ServiceSpec serviceSpec = (ServiceSpec)theEObject;
-				T result = caseServiceSpec(serviceSpec);
-				if (result == null) result = caseSpecBase(serviceSpec);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RosPackage.SERVICE_SERVER: {
 				ServiceServer serviceServer = (ServiceServer)theEObject;
 				T result = caseServiceServer(serviceServer);
 				if (result == null) result = caseNamespacedElement(serviceServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.TOPIC_SPEC: {
-				TopicSpec topicSpec = (TopicSpec)theEObject;
-				T result = caseTopicSpec(topicSpec);
-				if (result == null) result = caseSpecBase(topicSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -186,12 +170,6 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RosPackage.SPEC_BASE: {
-				SpecBase specBase = (SpecBase)theEObject;
-				T result = caseSpecBase(specBase);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RosPackage.SUBSCRIBER: {
 				Subscriber subscriber = (Subscriber)theEObject;
 				T result = caseSubscriber(subscriber);
@@ -209,13 +187,6 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.PACKAGE_SET: {
 				PackageSet packageSet = (PackageSet)theEObject;
 				T result = casePackageSet(packageSet);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RosPackage.ACTION_SPEC: {
-				ActionSpec actionSpec = (ActionSpec)theEObject;
-				T result = caseActionSpec(actionSpec);
-				if (result == null) result = caseSpecBase(actionSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -437,6 +408,18 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RosPackage.SERVICE_DEFINITION: {
+				ServiceDefinition serviceDefinition = (ServiceDefinition)theEObject;
+				T result = caseServiceDefinition(serviceDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.ACTION_DEFINITION: {
+				ActionDefinition actionDefinition = (ActionDefinition)theEObject;
+				T result = caseActionDefinition(actionDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -487,21 +470,6 @@ public class RosSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Spec</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceSpec(ServiceSpec object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Service Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -513,21 +481,6 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseServiceServer(ServiceServer object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Topic Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Topic Spec</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTopicSpec(TopicSpec object) {
 		return null;
 	}
 
@@ -607,21 +560,6 @@ public class RosSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spec Base</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spec Base</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSpecBase(SpecBase object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Subscriber</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -663,21 +601,6 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePackageSet(PackageSet object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action Spec</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActionSpec(ActionSpec object) {
 		return null;
 	}
 
@@ -1158,6 +1081,36 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterDate(ParameterDate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceDefinition(ServiceDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionDefinition(ActionDefinition object) {
 		return null;
 	}
 

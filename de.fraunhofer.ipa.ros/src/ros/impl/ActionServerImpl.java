@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import ros.ActionDefinition;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.RosPackage;
 
 /**
@@ -35,7 +35,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionSpec action;
+	protected ActionDefinition action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +61,10 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionSpec getAction() {
+	public ActionDefinition getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
-			action = (ActionSpec)eResolveProxy(oldAction);
+			action = (ActionDefinition)eResolveProxy(oldAction);
 			if (action != oldAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RosPackage.ACTION_SERVER__ACTION, oldAction, action));
@@ -78,7 +78,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionSpec basicGetAction() {
+	public ActionDefinition basicGetAction() {
 		return action;
 	}
 
@@ -87,8 +87,8 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAction(ActionSpec newAction) {
-		ActionSpec oldAction = action;
+	public void setAction(ActionDefinition newAction) {
+		ActionDefinition oldAction = action;
 		action = newAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SERVER__ACTION, oldAction, action));
@@ -118,7 +118,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RosPackage.ACTION_SERVER__ACTION:
-				setAction((ActionSpec)newValue);
+				setAction((ActionDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RosPackage.ACTION_SERVER__ACTION:
-				setAction((ActionSpec)null);
+				setAction((ActionDefinition)null);
 				return;
 		}
 		super.eUnset(featureID);

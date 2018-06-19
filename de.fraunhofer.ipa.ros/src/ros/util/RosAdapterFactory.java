@@ -10,8 +10,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import ros.ActionClient;
+import ros.ActionDefinition;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -52,11 +52,9 @@ import ros.Publisher;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import ros.ServiceClient;
+import ros.ServiceDefinition;
 import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.SpecBase;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,16 +125,8 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createDependencyAdapter();
 			}
 			@Override
-			public Adapter caseServiceSpec(ServiceSpec object) {
-				return createServiceSpecAdapter();
-			}
-			@Override
 			public Adapter caseServiceServer(ServiceServer object) {
 				return createServiceServerAdapter();
-			}
-			@Override
-			public Adapter caseTopicSpec(TopicSpec object) {
-				return createTopicSpecAdapter();
 			}
 			@Override
 			public Adapter casePublisher(Publisher object) {
@@ -159,10 +149,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createArtifactAdapter();
 			}
 			@Override
-			public Adapter caseSpecBase(SpecBase object) {
-				return createSpecBaseAdapter();
-			}
-			@Override
 			public Adapter caseSubscriber(Subscriber object) {
 				return createSubscriberAdapter();
 			}
@@ -173,10 +159,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePackageSet(PackageSet object) {
 				return createPackageSetAdapter();
-			}
-			@Override
-			public Adapter caseActionSpec(ActionSpec object) {
-				return createActionSpecAdapter();
 			}
 			@Override
 			public Adapter caseActionServer(ActionServer object) {
@@ -307,6 +289,14 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createParameterDateAdapter();
 			}
 			@Override
+			public Adapter caseServiceDefinition(ServiceDefinition object) {
+				return createServiceDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseActionDefinition(ActionDefinition object) {
+				return createActionDefinitionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -369,20 +359,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ros.ServiceSpec <em>Service Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.ServiceSpec
-	 * @generated
-	 */
-	public Adapter createServiceSpecAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ros.ServiceServer <em>Service Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -393,20 +369,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceServerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.TopicSpec <em>Topic Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.TopicSpec
-	 * @generated
-	 */
-	public Adapter createTopicSpecAdapter() {
 		return null;
 	}
 
@@ -481,20 +443,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ros.SpecBase <em>Spec Base</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.SpecBase
-	 * @generated
-	 */
-	public Adapter createSpecBaseAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ros.Subscriber <em>Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -533,20 +481,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPackageSetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.ActionSpec <em>Action Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.ActionSpec
-	 * @generated
-	 */
-	public Adapter createActionSpecAdapter() {
 		return null;
 	}
 
@@ -995,6 +929,34 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterDateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.ServiceDefinition <em>Service Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.ServiceDefinition
+	 * @generated
+	 */
+	public Adapter createServiceDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.ActionDefinition <em>Action Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.ActionDefinition
+	 * @generated
+	 */
+	public Adapter createActionDefinitionAdapter() {
 		return null;
 	}
 

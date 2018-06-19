@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import ros.ActionClient;
+import ros.ActionDefinition;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -51,10 +51,9 @@ import ros.RelativeNamespace;
 import ros.RosFactory;
 import ros.RosPackage;
 import ros.ServiceClient;
+import ros.ServiceDefinition;
 import ros.ServiceServer;
-import ros.ServiceSpec;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,9 +101,7 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 		switch (eClass.getClassifierID()) {
 			case RosPackage.NODE: return createNode();
 			case RosPackage.PACKAGE: return createPackage();
-			case RosPackage.SERVICE_SPEC: return createServiceSpec();
 			case RosPackage.SERVICE_SERVER: return createServiceServer();
-			case RosPackage.TOPIC_SPEC: return createTopicSpec();
 			case RosPackage.PUBLISHER: return createPublisher();
 			case RosPackage.PACKAGE_DEPENDENCY: return createPackageDependency();
 			case RosPackage.EXTERNAL_DEPENDENCY: return createExternalDependency();
@@ -113,7 +110,6 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.SUBSCRIBER: return createSubscriber();
 			case RosPackage.SERVICE_CLIENT: return createServiceClient();
 			case RosPackage.PACKAGE_SET: return createPackageSet();
-			case RosPackage.ACTION_SPEC: return createActionSpec();
 			case RosPackage.ACTION_SERVER: return createActionServer();
 			case RosPackage.ACTION_CLIENT: return createActionClient();
 			case RosPackage.MESSAGE_DEFINITION: return createMessageDefinition();
@@ -143,6 +139,8 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.PARAMETER_STRUCT: return createParameterStruct();
 			case RosPackage.PARAMETER_STRUCT_MEMBER: return createParameterStructMember();
 			case RosPackage.PARAMETER_DATE: return createParameterDate();
+			case RosPackage.SERVICE_DEFINITION: return createServiceDefinition();
+			case RosPackage.ACTION_DEFINITION: return createActionDefinition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -203,29 +201,9 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceSpec createServiceSpec() {
-		ServiceSpecImpl serviceSpec = new ServiceSpecImpl();
-		return serviceSpec;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ServiceServer createServiceServer() {
 		ServiceServerImpl serviceServer = new ServiceServerImpl();
 		return serviceServer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TopicSpec createTopicSpec() {
-		TopicSpecImpl topicSpec = new TopicSpecImpl();
-		return topicSpec;
 	}
 
 	/**
@@ -306,16 +284,6 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public PackageSet createPackageSet() {
 		PackageSetImpl packageSet = new PackageSetImpl();
 		return packageSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActionSpec createActionSpec() {
-		ActionSpecImpl actionSpec = new ActionSpecImpl();
-		return actionSpec;
 	}
 
 	/**
@@ -606,6 +574,26 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public ParameterDate createParameterDate() {
 		ParameterDateImpl parameterDate = new ParameterDateImpl();
 		return parameterDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceDefinition createServiceDefinition() {
+		ServiceDefinitionImpl serviceDefinition = new ServiceDefinitionImpl();
+		return serviceDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionDefinition createActionDefinition() {
+		ActionDefinitionImpl actionDefinition = new ActionDefinitionImpl();
+		return actionDefinition;
 	}
 
 	/**

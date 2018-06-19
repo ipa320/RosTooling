@@ -2,6 +2,8 @@
  */
 package ros;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,92 +14,65 @@ package ros;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ros.ActionSpec#getGoal <em>Goal</em>}</li>
- *   <li>{@link ros.ActionSpec#getResult <em>Result</em>}</li>
- *   <li>{@link ros.ActionSpec#getFeedback <em>Feedback</em>}</li>
+ *   <li>{@link ros.ActionSpec#getService <em>Service</em>}</li>
+ *   <li>{@link ros.ActionSpec#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getActionSpec()
  * @model
  * @generated
  */
-public interface ActionSpec extends SpecBase {
+public interface ActionSpec extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Goal</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Service</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal</em>' containment reference.
-	 * @see #setGoal(MessageDefinition)
-	 * @see ros.RosPackage#getActionSpec_Goal()
-	 * @model containment="true"
+	 * @return the value of the '<em>Service</em>' reference.
+	 * @see #setService(ActionDefinition)
+	 * @see ros.RosPackage#getActionSpec_Service()
+	 * @model required="true"
 	 * @generated
 	 */
-	MessageDefinition getGoal();
+	ActionDefinition getService();
 
 	/**
-	 * Sets the value of the '{@link ros.ActionSpec#getGoal <em>Goal</em>}' containment reference.
+	 * Sets the value of the '{@link ros.ActionSpec#getService <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Goal</em>' containment reference.
-	 * @see #getGoal()
+	 * @param value the new value of the '<em>Service</em>' reference.
+	 * @see #getService()
 	 * @generated
 	 */
-	void setGoal(MessageDefinition value);
+	void setService(ActionDefinition value);
 
 	/**
-	 * Returns the value of the '<em><b>Result</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Result</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Result</em>' containment reference.
-	 * @see #setResult(MessageDefinition)
-	 * @see ros.RosPackage#getActionSpec_Result()
-	 * @model containment="true"
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see ros.RosPackage#getActionSpec_Name()
+	 * @model required="true"
 	 * @generated
 	 */
-	MessageDefinition getResult();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link ros.ActionSpec#getResult <em>Result</em>}' containment reference.
+	 * Sets the value of the '{@link ros.ActionSpec#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Result</em>' containment reference.
-	 * @see #getResult()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setResult(MessageDefinition value);
-
-	/**
-	 * Returns the value of the '<em><b>Feedback</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Feedback</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feedback</em>' containment reference.
-	 * @see #setFeedback(MessageDefinition)
-	 * @see ros.RosPackage#getActionSpec_Feedback()
-	 * @model containment="true"
-	 * @generated
-	 */
-	MessageDefinition getFeedback();
-
-	/**
-	 * Sets the value of the '{@link ros.ActionSpec#getFeedback <em>Feedback</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feedback</em>' containment reference.
-	 * @see #getFeedback()
-	 * @generated
-	 */
-	void setFeedback(MessageDefinition value);
+	void setName(String value);
 
 } // ActionSpec
