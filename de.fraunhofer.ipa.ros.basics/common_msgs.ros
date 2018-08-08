@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:PackageSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ros="http://www.example.org/ros">
+  <model name="geometry_msgs">
+    <spec xsi:type="ros:TopicSpec" name="Accel"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Inertia"/>
+    <spec xsi:type="ros:TopicSpec" name="InertiaStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Point"/>
+    <spec xsi:type="ros:TopicSpec" name="Point32"/>
+    <spec xsi:type="ros:TopicSpec" name="PointStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Polygon"/>
+    <spec xsi:type="ros:TopicSpec" name="PolygonStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose2D"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseArray"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Quaternion"/>
+    <spec xsi:type="ros:TopicSpec" name="QuaternionStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Transform"/>
+    <spec xsi:type="ros:TopicSpec" name="TransformStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Twist"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3Stamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Wrench"/>
+    <spec xsi:type="ros:TopicSpec" name="WrenchStamped"/>
+  </model>
+  <model name="actionlib_msgs">
+    <spec xsi:type="ros:TopicSpec" name="GoalID"/>
+    <spec xsi:type="ros:TopicSpec" name="GoalStatus"/>
+    <spec xsi:type="ros:TopicSpec" name="GoalStatusArray"/>
+  </model>
+  <model name="diagnostic_msgs">
+    <spec xsi:type="ros:TopicSpec" name="DiagnosticArray"/>
+    <spec xsi:type="ros:TopicSpec" name="DiagnosticStatus"/>
+    <spec xsi:type="ros:TopicSpec" name="KeyValue"/>
+  </model>
+  <model name="geometry_msgs">
+    <spec xsi:type="ros:TopicSpec" name="Accel"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="AccelWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Inertia"/>
+    <spec xsi:type="ros:TopicSpec" name="InertiaStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Point"/>
+    <spec xsi:type="ros:TopicSpec" name="Point32"/>
+    <spec xsi:type="ros:TopicSpec" name="PointStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Polygon"/>
+    <spec xsi:type="ros:TopicSpec" name="PolygonStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose"/>
+    <spec xsi:type="ros:TopicSpec" name="Pose2D"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseArray"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="PoseWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Quaternion"/>
+    <spec xsi:type="ros:TopicSpec" name="QuaternionStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Transform"/>
+    <spec xsi:type="ros:TopicSpec" name="TransformStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Twist"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovariance"/>
+    <spec xsi:type="ros:TopicSpec" name="TwistWithCovarianceStamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3"/>
+    <spec xsi:type="ros:TopicSpec" name="Vector3Stamped"/>
+    <spec xsi:type="ros:TopicSpec" name="Wrench"/>
+    <spec xsi:type="ros:TopicSpec" name="WrenchStamped"/>
+  </model>
+  <model name="nav_msgs">
+    <spec xsi:type="ros:TopicSpec" name="GetMapAction"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapActionFeedback"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapActionGoal"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapActionResult"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapFeedback"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapGoal"/>
+    <spec xsi:type="ros:TopicSpec" name="GetMapResult"/>
+    <spec xsi:type="ros:TopicSpec" name="GridCells"/>
+    <spec xsi:type="ros:TopicSpec" name="MapMetaData"/>
+    <spec xsi:type="ros:TopicSpec" name="OccupancyGrid"/>
+    <spec xsi:type="ros:TopicSpec" name="Odometry"/>
+    <spec xsi:type="ros:TopicSpec" name="Path"/>
+  </model>
+  <model name="sensor_msgs">
+    <spec xsi:type="ros:TopicSpec" name="BatteryState"/>
+    <spec xsi:type="ros:TopicSpec" name="CameraInfo"/>
+    <spec xsi:type="ros:TopicSpec" name="ChannelFloat32"/>
+    <spec xsi:type="ros:TopicSpec" name="CompressedImage"/>
+    <spec xsi:type="ros:TopicSpec" name="FluidPressure"/>
+    <spec xsi:type="ros:TopicSpec" name="Illuminance"/>
+    <spec xsi:type="ros:TopicSpec" name="Image"/>
+    <spec xsi:type="ros:TopicSpec" name="Imu"/>
+    <spec xsi:type="ros:TopicSpec" name="JointState"/>
+    <spec xsi:type="ros:TopicSpec" name="Joy"/>
+    <spec xsi:type="ros:TopicSpec" name="JoyFeedback"/>
+    <spec xsi:type="ros:TopicSpec" name="JoyFeedbackArray"/>
+    <spec xsi:type="ros:TopicSpec" name="LaserEcho"/>
+    <spec xsi:type="ros:TopicSpec" name="LaserScan"/>
+    <spec xsi:type="ros:TopicSpec" name="MagneticField"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiDOFJointState"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiEchoLaserScan"/>
+    <spec xsi:type="ros:TopicSpec" name="NavSatFix"/>
+    <spec xsi:type="ros:TopicSpec" name="NavSatStatus"/>
+    <spec xsi:type="ros:TopicSpec" name="PointCloud"/>
+    <spec xsi:type="ros:TopicSpec" name="PointCloud2"/>
+    <spec xsi:type="ros:TopicSpec" name="PointField"/>
+    <spec xsi:type="ros:TopicSpec" name="Range"/>
+    <spec xsi:type="ros:TopicSpec" name="RegionOfInterest"/>
+    <spec xsi:type="ros:TopicSpec" name="RelativeHumidity"/>
+    <spec xsi:type="ros:TopicSpec" name="Temperature"/>
+    <spec xsi:type="ros:TopicSpec" name="TimeReference"/>
+  </model>
+  <model name="shape_msgs">
+    <spec xsi:type="ros:TopicSpec" name="Mesh"/>
+    <spec xsi:type="ros:TopicSpec" name="MeshTriangle"/>
+    <spec xsi:type="ros:TopicSpec" name="Plane"/>
+    <spec xsi:type="ros:TopicSpec" name="SolidPrimitive"/>
+  </model>
+  <model name="stereo_msgs">
+    <spec xsi:type="ros:TopicSpec" name="DisparityImage"/>
+  </model>
+  <model name="trajectory_msgs">
+    <spec xsi:type="ros:TopicSpec" name="JointTrajectory"/>
+    <spec xsi:type="ros:TopicSpec" name="JointTrajectoryPoint"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiDOFJointTrajectory"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiDOFJointTrajectoryPoint"/>
+  </model>
+  <model name="visualization_msgs">
+    <spec xsi:type="ros:TopicSpec" name="ImageMarker"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarker"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarkerControl"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarkerFeedback"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarkerInit"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarkerPose"/>
+    <spec xsi:type="ros:TopicSpec" name="InteractiveMarkerUpdate"/>
+    <spec xsi:type="ros:TopicSpec" name="Marker"/>
+    <spec xsi:type="ros:TopicSpec" name="MarkerArray"/>
+    <spec xsi:type="ros:TopicSpec" name="MenuEntry"/>
+  </model>
+</ros:PackageSet>
