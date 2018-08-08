@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:PackageSet  xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ros="http://www.example.org/ros">
+  <package name="std_msgs">
+    <spec xsi:type="ros:TopicSpec" name="Bool"/>
+    <spec xsi:type="ros:TopicSpec" name="Byte"/>
+    <spec xsi:type="ros:TopicSpec" name="ByteMultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Char"/>
+    <spec xsi:type="ros:TopicSpec" name="ColorRGBA"/>
+    <spec xsi:type="ros:TopicSpec" name="Duration"/>
+    <spec xsi:type="ros:TopicSpec" name="Empty"/>
+    <spec xsi:type="ros:TopicSpec" name="Float32"/>
+    <spec xsi:type="ros:TopicSpec" name="Float32MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Float64"/>
+    <spec xsi:type="ros:TopicSpec" name="Float64MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Header"/>
+    <spec xsi:type="ros:TopicSpec" name="Int16"/>
+    <spec xsi:type="ros:TopicSpec" name="Int16MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Int32"/>
+    <spec xsi:type="ros:TopicSpec" name="Int32MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Int64"/>
+    <spec xsi:type="ros:TopicSpec" name="Int64MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="Int8"/>
+    <spec xsi:type="ros:TopicSpec" name="Int8MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiArrayDimension"/>
+    <spec xsi:type="ros:TopicSpec" name="MultiArrayLayout"/>
+    <spec xsi:type="ros:TopicSpec" name="String"/>
+    <spec xsi:type="ros:TopicSpec" name="Time"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt16"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt16MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt32"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt32MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt64"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt64MultiArray"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt8"/>
+    <spec xsi:type="ros:TopicSpec" name="UInt8MultiArray"/>
+  </package>
+  <package name="std_srvs">
+    <spec xsi:type="ros:ServiceSpec" name="Empty"/>
+    <spec xsi:type="ros:ServiceSpec" name="SetBool"/>
+    <spec xsi:type="ros:ServiceSpec" name="Trigger"/>
+  </package>
+</ros:PackageSet>
