@@ -20,10 +20,7 @@ Require-Bundle: de.fraunhofer.ipa.ros.xtext,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.ros.xtext.ui.quickfix,
- de.fraunhofer.ipa.ros.xtext.ui.internal,
- de.fraunhofer.ipa.ros.xtext.ui.contentassist,
- de.fraunhofer.ipa.ros.xtext.ui.contentassist,
- de.fraunhofer.ipa.ros.xtext.ui.internal,
- de.fraunhofer.ipa.ros.xtext.ui.quickfix
+Export-Package: de.fraunhofer.ipa.ros.ui.contentassist,
+ de.fraunhofer.ipa.ros.ui.quickfix,
+ de.fraunhofer.ipa.ros.xtext.ui.internal
 Bundle-Activator: de.fraunhofer.ipa.ros.xtext.ui.internal.XtextActivator

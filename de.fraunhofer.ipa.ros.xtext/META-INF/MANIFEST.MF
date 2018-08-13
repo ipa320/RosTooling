@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.xtext
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext;singleton:=true
+Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,
  org.eclipse.xtext,
@@ -14,13 +14,13 @@ Require-Bundle: de.fraunhofer.ipa.ros,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.ros.xtext,
- de.fraunhofer.ipa.ros.xtext.formatting2,
- de.fraunhofer.ipa.ros.xtext.generator,
- de.fraunhofer.ipa.ros.xtext.parser.antlr,
- de.fraunhofer.ipa.ros.xtext.parser.antlr.internal,
- de.fraunhofer.ipa.ros.xtext.scoping,
- de.fraunhofer.ipa.ros.xtext.serializer,
- de.fraunhofer.ipa.ros.xtext.services,
- de.fraunhofer.ipa.ros.xtext.validation
+Export-Package: de.fraunhofer.ipa.ros.formatting2,
+ de.fraunhofer.ipa.ros,
+ de.fraunhofer.ipa.ros.scoping,
+ de.fraunhofer.ipa.ros.parser.antlr.internal,
+ de.fraunhofer.ipa.ros.serializer,
+ de.fraunhofer.ipa.ros.services,
+ de.fraunhofer.ipa.ros.parser.antlr,
+ de.fraunhofer.ipa.ros.validation,
+ de.fraunhofer.ipa.ros.generator
 Import-Package: org.apache.log4j

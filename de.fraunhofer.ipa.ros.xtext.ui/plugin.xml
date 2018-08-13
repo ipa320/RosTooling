@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="ros"
-			id="de.fraunhofer.ipa.ros.xtext.Ros"
+			id="de.fraunhofer.ipa.ros.Ros"
 			name="Ros Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="de.fraunhofer.ipa.ros.xtext.Ros.validate">
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="de.fraunhofer.ipa.ros.Ros.validate">
 		<activeWhen>
 			<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 			</reference>
 		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened" />
+				<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.XtextEditor.opened" />
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+		<definition id="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="de.fraunhofer.ipa.ros.xtext.Ros"
+						value="de.fraunhofer.ipa.ros.Ros"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="de.fraunhofer.ipa.ros.xtext.Ros.XtextEditor.opened">
+		<definition id="de.fraunhofer.ipa.ros.Ros.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="de.fraunhofer.ipa.ros.xtext.Ros"
+						value="de.fraunhofer.ipa.ros.Ros"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros"
 			name="Ros">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 		</page>
 		<page
-			category="de.fraunhofer.ipa.ros.xtext.Ros"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.coloring"
+			category="de.fraunhofer.ipa.ros.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 		</page>
 		<page
-			category="de.fraunhofer.ipa.ros.xtext.Ros"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.templates"
+			category="de.fraunhofer.ipa.ros.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros.templates"
 			name="Templates">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros"
 			name="Ros">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"
+			id="de.fraunhofer.ipa.ros.ui.keyword_Ros"
 			label="Ros"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 	<command
 			description="Trigger expensive validation"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.validate"
+			id="de.fraunhofer.ipa.ros.Ros.validate"
 			name="Validate">
 	</command>
 	<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			 <command
-				 commandId="de.fraunhofer.ipa.ros.xtext.Ros.validate"
+				 commandId="de.fraunhofer.ipa.ros.Ros.validate"
 				 style="push"
 				 tooltip="Trigger expensive validation">
 			<visibleWhen checkEnabled="false">
 				<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 				</reference>
 			</visibleWhen>
 		</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened" />
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened" />
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.XtextEditor.opened" />
+						<reference definitionId="de.fraunhofer.ipa.ros.Ros.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -208,17 +208,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="ros">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="ros">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for de.fraunhofer.ipa.ros.xtext.Ros -->
+	<!-- marker definitions for de.fraunhofer.ipa.ros.Ros -->
 	<extension
 			id="ros.check.fast"
 			name="Ros Problem"
@@ -242,25 +242,25 @@
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="ros"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="de.fraunhofer.ipa.ros.xtext.Ros"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.compiler.preferencePage"
+			category="de.fraunhofer.ipa.ros.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="de.fraunhofer.ipa.ros.xtext.Ros"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.compiler.propertyPage"
+			category="de.fraunhofer.ipa.ros.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -271,20 +271,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="de.fraunhofer.ipa.ros.xtext.Ros.OpenGeneratedCode"
+				id="de.fraunhofer.ipa.ros.Ros.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened" />
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened" />
+				<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -292,11 +292,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -316,16 +316,16 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened"/>
+					<reference definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for de.fraunhofer.ipa.ros.xtext.Ros -->
+	<!-- quickfix marker resolution generator for de.fraunhofer.ipa.ros.Ros -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="de.fraunhofer.ipa.ros.xtext.ui.ros.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
@@ -333,7 +333,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="de.fraunhofer.ipa.ros.xtext.ui.ros.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
@@ -341,7 +341,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="de.fraunhofer.ipa.ros.xtext.ui.ros.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
@@ -352,11 +352,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+					definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -368,7 +368,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="de.fraunhofer.ipa.ros.xtext.Ros.Editor.opened">
+						definitionId="de.fraunhofer.ipa.ros.Ros.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -376,28 +376,28 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="de.fraunhofer.ipa.ros.xtext.Ros"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="de.fraunhofer.ipa.ros.xtext.Ros.refactoring"
+			category="de.fraunhofer.ipa.ros.Ros"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="de.fraunhofer.ipa.ros.Ros.refactoring"
 			name="Refactoring">
-			<keywordReference id="de.fraunhofer.ipa.ros.xtext.ui.keyword_Ros"/>
+			<keywordReference id="de.fraunhofer.ipa.ros.ui.keyword_Ros"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="de.fraunhofer.ipa.ros.xtext.Ros.compare.contentViewers"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="de.fraunhofer.ipa.ros.Ros.compare.contentViewers"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="ros">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="de.fraunhofer.ipa.ros.xtext.Ros.compare.contentMergeViewers"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="de.fraunhofer.ipa.ros.Ros.compare.contentMergeViewers"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="ros" label="Ros Compare">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="de.fraunhofer.ipa.ros.xtext.Ros.editors.documentProviders"
-			class="de.fraunhofer.ipa.ros.xtext.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="de.fraunhofer.ipa.ros.Ros.editors.documentProviders"
+			class="de.fraunhofer.ipa.ros.ui.RosExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="ros">
 		</provider>
 	</extension>
