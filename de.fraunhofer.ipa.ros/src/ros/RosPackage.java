@@ -388,6 +388,176 @@ public interface RosPackage extends EPackage {
 	int NAMESPACED_ELEMENT__NAMESPACE = 0;
 
 	/**
+	 * The meta object id for the '{@link ros.impl.ServiceServerImpl <em>Service Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ServiceServerImpl
+	 * @see ros.impl.RosPackageImpl#getServiceServer()
+	 * @generated
+	 */
+	int SERVICE_SERVER = 4;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.TopicSpecImpl <em>Topic Spec</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.TopicSpecImpl
+	 * @see ros.impl.RosPackageImpl#getTopicSpec()
+	 * @generated
+	 */
+	int TOPIC_SPEC = 5;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.PublisherImpl <em>Publisher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.PublisherImpl
+	 * @see ros.impl.RosPackageImpl#getPublisher()
+	 * @generated
+	 */
+	int PUBLISHER = 6;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.PackageDependencyImpl <em>Package Dependency</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.PackageDependencyImpl
+	 * @see ros.impl.RosPackageImpl#getPackageDependency()
+	 * @generated
+	 */
+	int PACKAGE_DEPENDENCY = 7;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ExternalDependencyImpl <em>External Dependency</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ExternalDependencyImpl
+	 * @see ros.impl.RosPackageImpl#getExternalDependency()
+	 * @generated
+	 */
+	int EXTERNAL_DEPENDENCY = 8;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.CatkinPackageImpl <em>Catkin Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.CatkinPackageImpl
+	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
+	 * @generated
+	 */
+	int CATKIN_PACKAGE = 9;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ArtifactImpl
+	 * @see ros.impl.RosPackageImpl#getArtifact()
+	 * @generated
+	 */
+	int ARTIFACT = 10;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.SubscriberImpl <em>Subscriber</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.SubscriberImpl
+	 * @see ros.impl.RosPackageImpl#getSubscriber()
+	 * @generated
+	 */
+	int SUBSCRIBER = 12;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ServiceClientImpl <em>Service Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ServiceClientImpl
+	 * @see ros.impl.RosPackageImpl#getServiceClient()
+	 * @generated
+	 */
+	int SERVICE_CLIENT = 13;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ActionSpecImpl <em>Action Spec</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ActionSpecImpl
+	 * @see ros.impl.RosPackageImpl#getActionSpec()
+	 * @generated
+	 */
+	int ACTION_SPEC = 15;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ActionServerImpl <em>Action Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ActionServerImpl
+	 * @see ros.impl.RosPackageImpl#getActionServer()
+	 * @generated
+	 */
+	int ACTION_SERVER = 16;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ActionClientImpl <em>Action Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ActionClientImpl
+	 * @see ros.impl.RosPackageImpl#getActionClient()
+	 * @generated
+	 */
+	int ACTION_CLIENT = 17;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.MessageDefinitionImpl <em>Message Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.MessageDefinitionImpl
+	 * @see ros.impl.RosPackageImpl#getMessageDefinition()
+	 * @generated
+	 */
+	int MESSAGE_DEFINITION = 18;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.NamespaceImpl <em>Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.NamespaceImpl
+	 * @see ros.impl.RosPackageImpl#getNamespace()
+	 * @generated
+	 */
+	int NAMESPACE = 19;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.GlobalNamespaceImpl <em>Global Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.GlobalNamespaceImpl
+	 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
+	 * @generated
+	 */
+	int GLOBAL_NAMESPACE = 20;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.RelativeNamespaceImpl <em>Relative Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.RelativeNamespaceImpl
+	 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
+	 * @generated
+	 */
+	int RELATIVE_NAMESPACE = 21;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.PrivateNamespaceImpl <em>Private Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.PrivateNamespaceImpl
+	 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
+	 * @generated
+	 */
+	int PRIVATE_NAMESPACE = 22;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,16 +583,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMESPACED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.ServiceServerImpl <em>Service Server</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ServiceServerImpl
-	 * @see ros.impl.RosPackageImpl#getServiceServer()
-	 * @generated
-	 */
-	int SERVICE_SERVER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -468,16 +628,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_SERVER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.TopicSpecImpl <em>Topic Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.TopicSpecImpl
-	 * @see ros.impl.RosPackageImpl#getTopicSpec()
-	 * @generated
-	 */
-	int TOPIC_SPEC = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -534,16 +684,6 @@ public interface RosPackage extends EPackage {
 	int TOPIC_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.PublisherImpl <em>Publisher</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.PublisherImpl
-	 * @see ros.impl.RosPackageImpl#getPublisher()
-	 * @generated
-	 */
-	int PUBLISHER = 6;
-
-	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -589,16 +729,6 @@ public interface RosPackage extends EPackage {
 	int PUBLISHER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.PackageDependencyImpl <em>Package Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.PackageDependencyImpl
-	 * @see ros.impl.RosPackageImpl#getPackageDependency()
-	 * @generated
-	 */
-	int PACKAGE_DEPENDENCY = 7;
-
-	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,16 +756,6 @@ public interface RosPackage extends EPackage {
 	int PACKAGE_DEPENDENCY_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.ExternalDependencyImpl <em>External Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ExternalDependencyImpl
-	 * @see ros.impl.RosPackageImpl#getExternalDependency()
-	 * @generated
-	 */
-	int EXTERNAL_DEPENDENCY = 8;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,16 +781,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_DEPENDENCY_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.CatkinPackageImpl <em>Catkin Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.CatkinPackageImpl
-	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
-	 * @generated
-	 */
-	int CATKIN_PACKAGE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -727,16 +837,6 @@ public interface RosPackage extends EPackage {
 	int CATKIN_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ArtifactImpl
-	 * @see ros.impl.RosPackageImpl#getArtifact()
-	 * @generated
-	 */
-	int ARTIFACT = 10;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,16 +871,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARTIFACT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.SubscriberImpl <em>Subscriber</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.SubscriberImpl
-	 * @see ros.impl.RosPackageImpl#getSubscriber()
-	 * @generated
-	 */
-	int SUBSCRIBER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -826,16 +916,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUBSCRIBER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.ServiceClientImpl <em>Service Client</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ServiceClientImpl
-	 * @see ros.impl.RosPackageImpl#getServiceClient()
-	 * @generated
-	 */
-	int SERVICE_CLIENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -920,16 +1000,6 @@ public interface RosPackage extends EPackage {
 	int PACKAGE_SET_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.ActionSpecImpl <em>Action Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ActionSpecImpl
-	 * @see ros.impl.RosPackageImpl#getActionSpec()
-	 * @generated
-	 */
-	int ACTION_SPEC = 15;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1002,16 +1072,6 @@ public interface RosPackage extends EPackage {
 	int ACTION_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.ActionServerImpl <em>Action Server</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ActionServerImpl
-	 * @see ros.impl.RosPackageImpl#getActionServer()
-	 * @generated
-	 */
-	int ACTION_SERVER = 16;
-
-	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1055,16 +1115,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_SERVER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.ActionClientImpl <em>Action Client</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.ActionClientImpl
-	 * @see ros.impl.RosPackageImpl#getActionClient()
-	 * @generated
-	 */
-	int ACTION_CLIENT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1112,16 +1162,6 @@ public interface RosPackage extends EPackage {
 	int ACTION_CLIENT_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.MessageDefinitionImpl <em>Message Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.MessageDefinitionImpl
-	 * @see ros.impl.RosPackageImpl#getMessageDefinition()
-	 * @generated
-	 */
-	int MESSAGE_DEFINITION = 18;
-
-	/**
 	 * The number of structural features of the '<em>Message Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1138,16 +1178,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_DEFINITION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.NamespaceImpl <em>Namespace</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.NamespaceImpl
-	 * @see ros.impl.RosPackageImpl#getNamespace()
-	 * @generated
-	 */
-	int NAMESPACE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
@@ -1177,16 +1207,6 @@ public interface RosPackage extends EPackage {
 	int NAMESPACE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.GlobalNamespaceImpl <em>Global Namespace</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.GlobalNamespaceImpl
-	 * @see ros.impl.RosPackageImpl#getGlobalNamespace()
-	 * @generated
-	 */
-	int GLOBAL_NAMESPACE = 20;
-
-	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1214,16 +1234,6 @@ public interface RosPackage extends EPackage {
 	int GLOBAL_NAMESPACE_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.RelativeNamespaceImpl <em>Relative Namespace</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.RelativeNamespaceImpl
-	 * @see ros.impl.RosPackageImpl#getRelativeNamespace()
-	 * @generated
-	 */
-	int RELATIVE_NAMESPACE = 21;
-
-	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1249,16 +1259,6 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATIVE_NAMESPACE_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ros.impl.PrivateNamespaceImpl <em>Private Namespace</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ros.impl.PrivateNamespaceImpl
-	 * @see ros.impl.RosPackageImpl#getPrivateNamespace()
-	 * @generated
-	 */
-	int PRIVATE_NAMESPACE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
