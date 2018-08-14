@@ -172,7 +172,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ActionClient returns ActionClient
 	 *
 	 * Constraint:
-	 *     (name=EString? action=[ActionSpec|EString] namespace=Namespace?)
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ActionClient(ISerializationContext context, ActionClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -184,7 +184,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ActionServer returns ActionServer
 	 *
 	 * Constraint:
-	 *     (name=EString? action=[ActionSpec|EString] namespace=Namespace?)
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ActionServer(ISerializationContext context, ActionServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -558,7 +558,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (name=EString? namespace=Namespace? type=ParameterType)
+	 *     (name=EString namespace=Namespace? type=ParameterType)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -583,7 +583,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Publisher returns Publisher
 	 *
 	 * Constraint:
-	 *     (name=EString? message=[TopicSpec|EString] namespace=Namespace?)
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_Publisher(ISerializationContext context, Publisher semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -608,7 +608,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ServiceClient returns ServiceClient
 	 *
 	 * Constraint:
-	 *     (name=EString? service=[ServiceSpec|EString] namespace=Namespace?)
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ServiceClient(ISerializationContext context, ServiceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -620,7 +620,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ServiceServer returns ServiceServer
 	 *
 	 * Constraint:
-	 *     (name=EString? service=[ServiceSpec|EString] namespace=Namespace?)
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ServiceServer(ISerializationContext context, ServiceServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -632,7 +632,7 @@ public class RosArtifactSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Subscriber returns Subscriber
 	 *
 	 * Constraint:
-	 *     (name=EString? message=[TopicSpec|EString] namespace=Namespace?)
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_Subscriber(ISerializationContext context, Subscriber semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

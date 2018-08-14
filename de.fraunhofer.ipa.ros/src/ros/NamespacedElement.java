@@ -59,7 +59,7 @@ public interface NamespacedElement extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see ros.RosPackage#getNamespacedElement_Name()
-	 * @model dataType="ros.GraphName"
+	 * @model dataType="ros.GraphName" required="true"
 	 * @generated
 	 */
 	String getName();

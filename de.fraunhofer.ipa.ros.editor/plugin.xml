@@ -21,6 +21,21 @@
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
+   
+   <!--extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ros.presentation.RosArtifactWizardID"
+            name="ROS Artifact project"
+            class="ros.presentation.RosArtifactWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RosModelFile.gif">
+         <description>%_UI_RosModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension-->
 
    <extension point="org.eclipse.ui.editors">
       <!-- @generated ros -->

@@ -556,29 +556,28 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cServiceServerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cServiceKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cServiceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cServiceServiceSpecCrossReference_4_0 = (CrossReference)cServiceAssignment_4.eContents().get(0);
-		private final RuleCall cServiceServiceSpecEStringParserRuleCall_4_0_1 = (RuleCall)cServiceServiceSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cServiceKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cServiceAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cServiceServiceSpecCrossReference_5_0 = (CrossReference)cServiceAssignment_5.eContents().get(0);
+		private final RuleCall cServiceServiceSpecEStringParserRuleCall_5_0_1 = (RuleCall)cServiceServiceSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ServiceServer:
 		//	'ServiceServer'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceServer' '{' ('name' name=EString)? 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-		//'}'
+		//'ServiceServer' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceServer'
@@ -587,72 +586,69 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'service'
-		public Keyword getServiceKeyword_3() { return cServiceKeyword_3; }
+		public Keyword getServiceKeyword_4() { return cServiceKeyword_4; }
 		
 		//service=[ServiceSpec|EString]
-		public Assignment getServiceAssignment_4() { return cServiceAssignment_4; }
+		public Assignment getServiceAssignment_5() { return cServiceAssignment_5; }
 		
 		//[ServiceSpec|EString]
-		public CrossReference getServiceServiceSpecCrossReference_4_0() { return cServiceServiceSpecCrossReference_4_0; }
+		public CrossReference getServiceServiceSpecCrossReference_5_0() { return cServiceServiceSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getServiceServiceSpecEStringParserRuleCall_4_0_1() { return cServiceServiceSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getServiceServiceSpecEStringParserRuleCall_5_0_1() { return cServiceServiceSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class PublisherElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.Publisher");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPublisherKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cMessageKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMessageAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cMessageTopicSpecCrossReference_4_0 = (CrossReference)cMessageAssignment_4.eContents().get(0);
-		private final RuleCall cMessageTopicSpecEStringParserRuleCall_4_0_1 = (RuleCall)cMessageTopicSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cMessageKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cMessageTopicSpecCrossReference_5_0 = (CrossReference)cMessageAssignment_5.eContents().get(0);
+		private final RuleCall cMessageTopicSpecEStringParserRuleCall_5_0_1 = (RuleCall)cMessageTopicSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Publisher:
 		//	'Publisher'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Publisher' '{' ('name' name=EString)? 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Publisher' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Publisher'
@@ -661,72 +657,69 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'message'
-		public Keyword getMessageKeyword_3() { return cMessageKeyword_3; }
+		public Keyword getMessageKeyword_4() { return cMessageKeyword_4; }
 		
 		//message=[TopicSpec|EString]
-		public Assignment getMessageAssignment_4() { return cMessageAssignment_4; }
+		public Assignment getMessageAssignment_5() { return cMessageAssignment_5; }
 		
 		//[TopicSpec|EString]
-		public CrossReference getMessageTopicSpecCrossReference_4_0() { return cMessageTopicSpecCrossReference_4_0; }
+		public CrossReference getMessageTopicSpecCrossReference_5_0() { return cMessageTopicSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getMessageTopicSpecEStringParserRuleCall_4_0_1() { return cMessageTopicSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getMessageTopicSpecEStringParserRuleCall_5_0_1() { return cMessageTopicSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class SubscriberElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.Subscriber");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSubscriberKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cMessageKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMessageAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cMessageTopicSpecCrossReference_4_0 = (CrossReference)cMessageAssignment_4.eContents().get(0);
-		private final RuleCall cMessageTopicSpecEStringParserRuleCall_4_0_1 = (RuleCall)cMessageTopicSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cMessageKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cMessageTopicSpecCrossReference_5_0 = (CrossReference)cMessageAssignment_5.eContents().get(0);
+		private final RuleCall cMessageTopicSpecEStringParserRuleCall_5_0_1 = (RuleCall)cMessageTopicSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Subscriber:
 		//	'Subscriber'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Subscriber' '{' ('name' name=EString)? 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Subscriber' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Subscriber'
@@ -735,73 +728,69 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'message'
-		public Keyword getMessageKeyword_3() { return cMessageKeyword_3; }
+		public Keyword getMessageKeyword_4() { return cMessageKeyword_4; }
 		
 		//message=[TopicSpec|EString]
-		public Assignment getMessageAssignment_4() { return cMessageAssignment_4; }
+		public Assignment getMessageAssignment_5() { return cMessageAssignment_5; }
 		
 		//[TopicSpec|EString]
-		public CrossReference getMessageTopicSpecCrossReference_4_0() { return cMessageTopicSpecCrossReference_4_0; }
+		public CrossReference getMessageTopicSpecCrossReference_5_0() { return cMessageTopicSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getMessageTopicSpecEStringParserRuleCall_4_0_1() { return cMessageTopicSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getMessageTopicSpecEStringParserRuleCall_5_0_1() { return cMessageTopicSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class ServiceClientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.ServiceClient");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cServiceClientKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cServiceKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cServiceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cServiceServiceSpecCrossReference_4_0 = (CrossReference)cServiceAssignment_4.eContents().get(0);
-		private final RuleCall cServiceServiceSpecEStringParserRuleCall_4_0_1 = (RuleCall)cServiceServiceSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cServiceKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cServiceAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cServiceServiceSpecCrossReference_5_0 = (CrossReference)cServiceAssignment_5.eContents().get(0);
+		private final RuleCall cServiceServiceSpecEStringParserRuleCall_5_0_1 = (RuleCall)cServiceServiceSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ServiceClient:
 		//	'ServiceClient'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceClient' '{' ('name' name=EString)? 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-		//'}'
+		//'ServiceClient' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceClient'
@@ -810,72 +799,69 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'service'
-		public Keyword getServiceKeyword_3() { return cServiceKeyword_3; }
+		public Keyword getServiceKeyword_4() { return cServiceKeyword_4; }
 		
 		//service=[ServiceSpec|EString]
-		public Assignment getServiceAssignment_4() { return cServiceAssignment_4; }
+		public Assignment getServiceAssignment_5() { return cServiceAssignment_5; }
 		
 		//[ServiceSpec|EString]
-		public CrossReference getServiceServiceSpecCrossReference_4_0() { return cServiceServiceSpecCrossReference_4_0; }
+		public CrossReference getServiceServiceSpecCrossReference_5_0() { return cServiceServiceSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getServiceServiceSpecEStringParserRuleCall_4_0_1() { return cServiceServiceSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getServiceServiceSpecEStringParserRuleCall_5_0_1() { return cServiceServiceSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class ActionServerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.ActionServer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cActionServerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cActionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cActionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cActionActionSpecCrossReference_4_0 = (CrossReference)cActionAssignment_4.eContents().get(0);
-		private final RuleCall cActionActionSpecEStringParserRuleCall_4_0_1 = (RuleCall)cActionActionSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cActionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cActionActionSpecCrossReference_5_0 = (CrossReference)cActionAssignment_5.eContents().get(0);
+		private final RuleCall cActionActionSpecEStringParserRuleCall_5_0_1 = (RuleCall)cActionActionSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ActionServer:
 		//	'ActionServer'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionServer' '{' ('name' name=EString)? 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionServer' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionServer'
@@ -884,72 +870,69 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'action'
-		public Keyword getActionKeyword_3() { return cActionKeyword_3; }
+		public Keyword getActionKeyword_4() { return cActionKeyword_4; }
 		
 		//action=[ActionSpec|EString]
-		public Assignment getActionAssignment_4() { return cActionAssignment_4; }
+		public Assignment getActionAssignment_5() { return cActionAssignment_5; }
 		
 		//[ActionSpec|EString]
-		public CrossReference getActionActionSpecCrossReference_4_0() { return cActionActionSpecCrossReference_4_0; }
+		public CrossReference getActionActionSpecCrossReference_5_0() { return cActionActionSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getActionActionSpecEStringParserRuleCall_4_0_1() { return cActionActionSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getActionActionSpecEStringParserRuleCall_5_0_1() { return cActionActionSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class ActionClientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.ActionClient");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cActionClientKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Keyword cActionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cActionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cActionActionSpecCrossReference_4_0 = (CrossReference)cActionAssignment_4.eContents().get(0);
-		private final RuleCall cActionActionSpecEStringParserRuleCall_4_0_1 = (RuleCall)cActionActionSpecCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNamespaceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNamespaceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_5_1_0 = (RuleCall)cNamespaceAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cActionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cActionActionSpecCrossReference_5_0 = (CrossReference)cActionAssignment_5.eContents().get(0);
+		private final RuleCall cActionActionSpecEStringParserRuleCall_5_0_1 = (RuleCall)cActionActionSpecCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cNamespaceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNamespaceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ActionClient:
 		//	'ActionClient'
-		//	'{' ('name' name=EString)?
+		//	'{'
+		//	'name' name=EString
 		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionClient' '{' ('name' name=EString)? 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionClient' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionClient'
@@ -958,44 +941,41 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'action'
-		public Keyword getActionKeyword_3() { return cActionKeyword_3; }
+		public Keyword getActionKeyword_4() { return cActionKeyword_4; }
 		
 		//action=[ActionSpec|EString]
-		public Assignment getActionAssignment_4() { return cActionAssignment_4; }
+		public Assignment getActionAssignment_5() { return cActionAssignment_5; }
 		
 		//[ActionSpec|EString]
-		public CrossReference getActionActionSpecCrossReference_4_0() { return cActionActionSpecCrossReference_4_0; }
+		public CrossReference getActionActionSpecCrossReference_5_0() { return cActionActionSpecCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getActionActionSpecEStringParserRuleCall_4_0_1() { return cActionActionSpecEStringParserRuleCall_4_0_1; }
+		public RuleCall getActionActionSpecEStringParserRuleCall_5_0_1() { return cActionActionSpecEStringParserRuleCall_5_0_1; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_5_0() { return cNamespaceKeyword_5_0; }
+		public Keyword getNamespaceKeyword_6_0() { return cNamespaceKeyword_6_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_5_1() { return cNamespaceAssignment_5_1; }
+		public Assignment getNamespaceAssignment_6_1() { return cNamespaceAssignment_6_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_5_1_0() { return cNamespaceNamespaceParserRuleCall_5_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class GraphNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.GraphName");
@@ -1013,27 +993,27 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNamespaceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNamespaceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_3_1_0 = (RuleCall)cNamespaceAssignment_3_1.eContents().get(0);
-		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTypeParameterTypeParserRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cNamespaceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cNamespaceAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_4_1_0 = (RuleCall)cNamespaceAssignment_4_1.eContents().get(0);
+		private final Keyword cTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cTypeParameterTypeParserRuleCall_6_0 = (RuleCall)cTypeAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Parameter:
 		//	'Parameter'
-		//	'{' ('name' name=EString)? ('namespace' namespace=Namespace)?
+		//	'{'
+		//	'name' name=EString ('namespace' namespace=Namespace)?
 		//	'type' type=ParameterType
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Parameter' '{' ('name' name=EString)? ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
+		//'Parameter' '{' 'name' name=EString ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Parameter'
@@ -1042,41 +1022,38 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//('name' name=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//'name'
-		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//('namespace' namespace=Namespace)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'namespace'
-		public Keyword getNamespaceKeyword_3_0() { return cNamespaceKeyword_3_0; }
+		public Keyword getNamespaceKeyword_4_0() { return cNamespaceKeyword_4_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_3_1() { return cNamespaceAssignment_3_1; }
+		public Assignment getNamespaceAssignment_4_1() { return cNamespaceAssignment_4_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_3_1_0() { return cNamespaceNamespaceParserRuleCall_3_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_4_1_0() { return cNamespaceNamespaceParserRuleCall_4_1_0; }
 		
 		//'type'
-		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		public Keyword getTypeKeyword_5() { return cTypeKeyword_5; }
 		
 		//type=ParameterType
-		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
 		
 		//ParameterType
-		public RuleCall getTypeParameterTypeParserRuleCall_5_0() { return cTypeParameterTypeParserRuleCall_5_0; }
+		public RuleCall getTypeParameterTypeParserRuleCall_6_0() { return cTypeParameterTypeParserRuleCall_6_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class GlobalNamespaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.RosArtifact.GlobalNamespace");
@@ -2609,7 +2586,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ServiceServer:
 	//	'ServiceServer'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ServiceServerElements getServiceServerAccess() {
@@ -2622,7 +2600,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Publisher:
 	//	'Publisher'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public PublisherElements getPublisherAccess() {
@@ -2635,7 +2614,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Subscriber:
 	//	'Subscriber'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public SubscriberElements getSubscriberAccess() {
@@ -2648,7 +2628,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ServiceClient:
 	//	'ServiceClient'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ServiceClientElements getServiceClientAccess() {
@@ -2661,7 +2642,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ActionServer:
 	//	'ActionServer'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ActionServerElements getActionServerAccess() {
@@ -2674,7 +2656,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ActionClient:
 	//	'ActionClient'
-	//	'{' ('name' name=EString)?
+	//	'{'
+	//	'name' name=EString
 	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ActionClientElements getActionClientAccess() {
@@ -2697,7 +2680,8 @@ public class RosArtifactGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Parameter:
 	//	'Parameter'
-	//	'{' ('name' name=EString)? ('namespace' namespace=Namespace)?
+	//	'{'
+	//	'name' name=EString ('namespace' namespace=Namespace)?
 	//	'type' type=ParameterType
 	//	'}';
 	public ParameterElements getParameterAccess() {

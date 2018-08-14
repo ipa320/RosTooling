@@ -2285,7 +2285,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceServer"
-    // InternalRosArtifact.g:899:1: ruleServiceServer returns [EObject current=null] : (otherlv_0= 'ServiceServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:899:1: ruleServiceServer returns [EObject current=null] : (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleServiceServer() throws RecognitionException {
         EObject current = null;
 
@@ -2304,81 +2304,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:905:2: ( (otherlv_0= 'ServiceServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:906:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:905:2: ( (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:906:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:906:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:907:3: otherlv_0= 'ServiceServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:906:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:907:3: otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getServiceServerAccess().getServiceServerKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_24); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getServiceServerAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:915:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA20_0==16) ) {
-                alt20=1;
+            			newLeafNode(otherlv_2, grammarAccess.getServiceServerAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:919:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:920:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:920:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:921:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getServiceServerAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_24);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getServiceServerRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt20) {
-                case 1 :
-                    // InternalRosArtifact.g:916:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getServiceServerAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:920:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:921:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:921:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:922:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getServiceServerAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_25);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getServiceServerRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,26,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getServiceServerAccess().getServiceKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getServiceServerAccess().getServiceKeyword_4());
             		
-            // InternalRosArtifact.g:944:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:945:4: ( ruleEString )
+            // InternalRosArtifact.g:942:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:943:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:945:4: ( ruleEString )
-            // InternalRosArtifact.g:946:5: ruleEString
+            // InternalRosArtifact.g:943:4: ( ruleEString )
+            // InternalRosArtifact.g:944:5: ruleEString
             {
 
             					if (current==null) {
@@ -2386,9 +2369,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -2402,29 +2385,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:960:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalRosArtifact.g:958:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA21_0==27) ) {
-                alt21=1;
+            if ( (LA20_0==27) ) {
+                alt20=1;
             }
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
-                    // InternalRosArtifact.g:961:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:959:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getServiceServerAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getServiceServerAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:965:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:966:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:963:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:964:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:966:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:967:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:964:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:965:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -2456,7 +2439,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -2481,7 +2464,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePublisher"
-    // InternalRosArtifact.g:993:1: entryRulePublisher returns [EObject current=null] : iv_rulePublisher= rulePublisher EOF ;
+    // InternalRosArtifact.g:991:1: entryRulePublisher returns [EObject current=null] : iv_rulePublisher= rulePublisher EOF ;
     public final EObject entryRulePublisher() throws RecognitionException {
         EObject current = null;
 
@@ -2489,8 +2472,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:993:50: (iv_rulePublisher= rulePublisher EOF )
-            // InternalRosArtifact.g:994:2: iv_rulePublisher= rulePublisher EOF
+            // InternalRosArtifact.g:991:50: (iv_rulePublisher= rulePublisher EOF )
+            // InternalRosArtifact.g:992:2: iv_rulePublisher= rulePublisher EOF
             {
              newCompositeNode(grammarAccess.getPublisherRule()); 
             pushFollow(FOLLOW_1);
@@ -2517,7 +2500,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePublisher"
-    // InternalRosArtifact.g:1000:1: rulePublisher returns [EObject current=null] : (otherlv_0= 'Publisher' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:998:1: rulePublisher returns [EObject current=null] : (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject rulePublisher() throws RecognitionException {
         EObject current = null;
 
@@ -2536,81 +2519,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1006:2: ( (otherlv_0= 'Publisher' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1007:2: (otherlv_0= 'Publisher' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1004:2: ( (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1005:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1007:2: (otherlv_0= 'Publisher' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:1008:3: otherlv_0= 'Publisher' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:1005:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1006:3: otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,28,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPublisherAccess().getPublisherKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_28); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPublisherAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1016:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA22_0==16) ) {
-                alt22=1;
+            			newLeafNode(otherlv_2, grammarAccess.getPublisherAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1018:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1019:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1019:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1020:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getPublisherAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_27);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPublisherRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt22) {
-                case 1 :
-                    // InternalRosArtifact.g:1017:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getPublisherAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:1021:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1022:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:1022:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1023:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getPublisherAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_29);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getPublisherRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,29,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getPublisherAccess().getMessageKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getPublisherAccess().getMessageKeyword_4());
             		
-            // InternalRosArtifact.g:1045:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:1046:4: ( ruleEString )
+            // InternalRosArtifact.g:1041:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:1042:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:1046:4: ( ruleEString )
-            // InternalRosArtifact.g:1047:5: ruleEString
+            // InternalRosArtifact.g:1042:4: ( ruleEString )
+            // InternalRosArtifact.g:1043:5: ruleEString
             {
 
             					if (current==null) {
@@ -2618,9 +2584,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -2634,29 +2600,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:1061:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalRosArtifact.g:1057:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA23_0==27) ) {
-                alt23=1;
+            if ( (LA21_0==27) ) {
+                alt21=1;
             }
-            switch (alt23) {
+            switch (alt21) {
                 case 1 :
-                    // InternalRosArtifact.g:1062:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1058:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getPublisherAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getPublisherAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:1066:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1067:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1062:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1063:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1067:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:1068:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:1063:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1064:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -2688,7 +2654,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -2713,7 +2679,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubscriber"
-    // InternalRosArtifact.g:1094:1: entryRuleSubscriber returns [EObject current=null] : iv_ruleSubscriber= ruleSubscriber EOF ;
+    // InternalRosArtifact.g:1090:1: entryRuleSubscriber returns [EObject current=null] : iv_ruleSubscriber= ruleSubscriber EOF ;
     public final EObject entryRuleSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -2721,8 +2687,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1094:51: (iv_ruleSubscriber= ruleSubscriber EOF )
-            // InternalRosArtifact.g:1095:2: iv_ruleSubscriber= ruleSubscriber EOF
+            // InternalRosArtifact.g:1090:51: (iv_ruleSubscriber= ruleSubscriber EOF )
+            // InternalRosArtifact.g:1091:2: iv_ruleSubscriber= ruleSubscriber EOF
             {
              newCompositeNode(grammarAccess.getSubscriberRule()); 
             pushFollow(FOLLOW_1);
@@ -2749,7 +2715,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubscriber"
-    // InternalRosArtifact.g:1101:1: ruleSubscriber returns [EObject current=null] : (otherlv_0= 'Subscriber' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:1097:1: ruleSubscriber returns [EObject current=null] : (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -2768,81 +2734,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1107:2: ( (otherlv_0= 'Subscriber' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1108:2: (otherlv_0= 'Subscriber' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1103:2: ( (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1104:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1108:2: (otherlv_0= 'Subscriber' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:1109:3: otherlv_0= 'Subscriber' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:1104:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1105:3: otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,30,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSubscriberAccess().getSubscriberKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_28); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSubscriberAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1117:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA24_0==16) ) {
-                alt24=1;
+            			newLeafNode(otherlv_2, grammarAccess.getSubscriberAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1117:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1118:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1118:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1119:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getSubscriberAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_27);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getSubscriberRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt24) {
-                case 1 :
-                    // InternalRosArtifact.g:1118:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getSubscriberAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:1122:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1123:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:1123:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1124:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getSubscriberAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_29);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getSubscriberRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,29,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getSubscriberAccess().getMessageKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getSubscriberAccess().getMessageKeyword_4());
             		
-            // InternalRosArtifact.g:1146:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:1147:4: ( ruleEString )
+            // InternalRosArtifact.g:1140:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:1141:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:1147:4: ( ruleEString )
-            // InternalRosArtifact.g:1148:5: ruleEString
+            // InternalRosArtifact.g:1141:4: ( ruleEString )
+            // InternalRosArtifact.g:1142:5: ruleEString
             {
 
             					if (current==null) {
@@ -2850,9 +2799,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -2866,29 +2815,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:1162:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalRosArtifact.g:1156:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA25_0==27) ) {
-                alt25=1;
+            if ( (LA22_0==27) ) {
+                alt22=1;
             }
-            switch (alt25) {
+            switch (alt22) {
                 case 1 :
-                    // InternalRosArtifact.g:1163:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1157:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getSubscriberAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getSubscriberAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:1167:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1168:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1161:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1162:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1168:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:1169:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:1162:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1163:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -2920,7 +2869,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -2945,7 +2894,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleServiceClient"
-    // InternalRosArtifact.g:1195:1: entryRuleServiceClient returns [EObject current=null] : iv_ruleServiceClient= ruleServiceClient EOF ;
+    // InternalRosArtifact.g:1189:1: entryRuleServiceClient returns [EObject current=null] : iv_ruleServiceClient= ruleServiceClient EOF ;
     public final EObject entryRuleServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -2953,8 +2902,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1195:54: (iv_ruleServiceClient= ruleServiceClient EOF )
-            // InternalRosArtifact.g:1196:2: iv_ruleServiceClient= ruleServiceClient EOF
+            // InternalRosArtifact.g:1189:54: (iv_ruleServiceClient= ruleServiceClient EOF )
+            // InternalRosArtifact.g:1190:2: iv_ruleServiceClient= ruleServiceClient EOF
             {
              newCompositeNode(grammarAccess.getServiceClientRule()); 
             pushFollow(FOLLOW_1);
@@ -2981,7 +2930,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceClient"
-    // InternalRosArtifact.g:1202:1: ruleServiceClient returns [EObject current=null] : (otherlv_0= 'ServiceClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:1196:1: ruleServiceClient returns [EObject current=null] : (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -3000,81 +2949,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1208:2: ( (otherlv_0= 'ServiceClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1209:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1202:2: ( (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1203:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1209:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:1210:3: otherlv_0= 'ServiceClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:1203:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1204:3: otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getServiceClientAccess().getServiceClientKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_24); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getServiceClientAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1218:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA26_0==16) ) {
-                alt26=1;
+            			newLeafNode(otherlv_2, grammarAccess.getServiceClientAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1216:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1217:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1217:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1218:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getServiceClientAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_24);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getServiceClientRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt26) {
-                case 1 :
-                    // InternalRosArtifact.g:1219:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getServiceClientAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:1223:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1224:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:1224:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1225:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getServiceClientAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_25);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getServiceClientRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,26,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getServiceClientAccess().getServiceKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getServiceClientAccess().getServiceKeyword_4());
             		
-            // InternalRosArtifact.g:1247:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:1248:4: ( ruleEString )
+            // InternalRosArtifact.g:1239:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:1240:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:1248:4: ( ruleEString )
-            // InternalRosArtifact.g:1249:5: ruleEString
+            // InternalRosArtifact.g:1240:4: ( ruleEString )
+            // InternalRosArtifact.g:1241:5: ruleEString
             {
 
             					if (current==null) {
@@ -3082,9 +3014,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -3098,29 +3030,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:1263:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalRosArtifact.g:1255:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA27_0==27) ) {
-                alt27=1;
+            if ( (LA23_0==27) ) {
+                alt23=1;
             }
-            switch (alt27) {
+            switch (alt23) {
                 case 1 :
-                    // InternalRosArtifact.g:1264:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1256:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getServiceClientAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getServiceClientAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:1268:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1269:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1260:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1261:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1269:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:1270:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:1261:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1262:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -3152,7 +3084,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -3177,7 +3109,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionServer"
-    // InternalRosArtifact.g:1296:1: entryRuleActionServer returns [EObject current=null] : iv_ruleActionServer= ruleActionServer EOF ;
+    // InternalRosArtifact.g:1288:1: entryRuleActionServer returns [EObject current=null] : iv_ruleActionServer= ruleActionServer EOF ;
     public final EObject entryRuleActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -3185,8 +3117,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1296:53: (iv_ruleActionServer= ruleActionServer EOF )
-            // InternalRosArtifact.g:1297:2: iv_ruleActionServer= ruleActionServer EOF
+            // InternalRosArtifact.g:1288:53: (iv_ruleActionServer= ruleActionServer EOF )
+            // InternalRosArtifact.g:1289:2: iv_ruleActionServer= ruleActionServer EOF
             {
              newCompositeNode(grammarAccess.getActionServerRule()); 
             pushFollow(FOLLOW_1);
@@ -3213,7 +3145,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionServer"
-    // InternalRosArtifact.g:1303:1: ruleActionServer returns [EObject current=null] : (otherlv_0= 'ActionServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:1295:1: ruleActionServer returns [EObject current=null] : (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -3232,81 +3164,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1309:2: ( (otherlv_0= 'ActionServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1310:2: (otherlv_0= 'ActionServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1301:2: ( (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1302:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1310:2: (otherlv_0= 'ActionServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:1311:3: otherlv_0= 'ActionServer' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:1302:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1303:3: otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,32,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionServerAccess().getActionServerKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_30); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getActionServerAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1319:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA28_0==16) ) {
-                alt28=1;
+            			newLeafNode(otherlv_2, grammarAccess.getActionServerAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1315:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1316:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1316:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1317:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getActionServerAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_28);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getActionServerRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt28) {
-                case 1 :
-                    // InternalRosArtifact.g:1320:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getActionServerAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:1324:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1325:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:1325:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1326:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getActionServerAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_31);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getActionServerRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,33,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getActionServerAccess().getActionKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getActionServerAccess().getActionKeyword_4());
             		
-            // InternalRosArtifact.g:1348:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:1349:4: ( ruleEString )
+            // InternalRosArtifact.g:1338:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:1339:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:1349:4: ( ruleEString )
-            // InternalRosArtifact.g:1350:5: ruleEString
+            // InternalRosArtifact.g:1339:4: ( ruleEString )
+            // InternalRosArtifact.g:1340:5: ruleEString
             {
 
             					if (current==null) {
@@ -3314,9 +3229,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -3330,29 +3245,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:1364:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalRosArtifact.g:1354:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA29_0==27) ) {
-                alt29=1;
+            if ( (LA24_0==27) ) {
+                alt24=1;
             }
-            switch (alt29) {
+            switch (alt24) {
                 case 1 :
-                    // InternalRosArtifact.g:1365:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1355:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getActionServerAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getActionServerAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:1369:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1370:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1359:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1360:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1370:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:1371:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:1360:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1361:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -3384,7 +3299,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -3409,7 +3324,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionClient"
-    // InternalRosArtifact.g:1397:1: entryRuleActionClient returns [EObject current=null] : iv_ruleActionClient= ruleActionClient EOF ;
+    // InternalRosArtifact.g:1387:1: entryRuleActionClient returns [EObject current=null] : iv_ruleActionClient= ruleActionClient EOF ;
     public final EObject entryRuleActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -3417,8 +3332,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1397:53: (iv_ruleActionClient= ruleActionClient EOF )
-            // InternalRosArtifact.g:1398:2: iv_ruleActionClient= ruleActionClient EOF
+            // InternalRosArtifact.g:1387:53: (iv_ruleActionClient= ruleActionClient EOF )
+            // InternalRosArtifact.g:1388:2: iv_ruleActionClient= ruleActionClient EOF
             {
              newCompositeNode(grammarAccess.getActionClientRule()); 
             pushFollow(FOLLOW_1);
@@ -3445,7 +3360,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionClient"
-    // InternalRosArtifact.g:1404:1: ruleActionClient returns [EObject current=null] : (otherlv_0= 'ActionClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:1394:1: ruleActionClient returns [EObject current=null] : (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -3464,81 +3379,64 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1410:2: ( (otherlv_0= 'ActionClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1411:2: (otherlv_0= 'ActionClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1400:2: ( (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1401:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1411:2: (otherlv_0= 'ActionClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRosArtifact.g:1412:3: otherlv_0= 'ActionClient' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRosArtifact.g:1401:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRosArtifact.g:1402:3: otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,34,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionClientAccess().getActionClientKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_30); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getActionClientAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1420:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA30_0==16) ) {
-                alt30=1;
+            			newLeafNode(otherlv_2, grammarAccess.getActionClientAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1414:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1415:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1415:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1416:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getActionClientAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_28);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getActionClientRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt30) {
-                case 1 :
-                    // InternalRosArtifact.g:1421:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
-                    {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getActionClientAccess().getNameKeyword_2_0());
-                    			
-                    // InternalRosArtifact.g:1425:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1426:5: (lv_name_3_0= ruleEString )
-                    {
-                    // InternalRosArtifact.g:1426:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1427:6: lv_name_3_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getActionClientAccess().getNameEStringParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_31);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getActionClientRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
             otherlv_4=(Token)match(input,33,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getActionClientAccess().getActionKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getActionClientAccess().getActionKeyword_4());
             		
-            // InternalRosArtifact.g:1449:3: ( ( ruleEString ) )
-            // InternalRosArtifact.g:1450:4: ( ruleEString )
+            // InternalRosArtifact.g:1437:3: ( ( ruleEString ) )
+            // InternalRosArtifact.g:1438:4: ( ruleEString )
             {
-            // InternalRosArtifact.g:1450:4: ( ruleEString )
-            // InternalRosArtifact.g:1451:5: ruleEString
+            // InternalRosArtifact.g:1438:4: ( ruleEString )
+            // InternalRosArtifact.g:1439:5: ruleEString
             {
 
             					if (current==null) {
@@ -3546,9 +3444,9 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_4_0());
+            					newCompositeNode(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             ruleEString();
 
             state._fsp--;
@@ -3562,29 +3460,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:1465:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalRosArtifact.g:1453:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA31_0==27) ) {
-                alt31=1;
+            if ( (LA25_0==27) ) {
+                alt25=1;
             }
-            switch (alt31) {
+            switch (alt25) {
                 case 1 :
-                    // InternalRosArtifact.g:1466:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1454:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_27); 
+                    otherlv_6=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getActionClientAccess().getNamespaceKeyword_5_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getActionClientAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRosArtifact.g:1470:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1471:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1458:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1459:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1471:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRosArtifact.g:1472:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRosArtifact.g:1459:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRosArtifact.g:1460:6: lv_namespace_7_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_namespace_7_0=ruleNamespace();
@@ -3616,7 +3514,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -3641,7 +3539,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphName"
-    // InternalRosArtifact.g:1498:1: entryRuleGraphName returns [String current=null] : iv_ruleGraphName= ruleGraphName EOF ;
+    // InternalRosArtifact.g:1486:1: entryRuleGraphName returns [String current=null] : iv_ruleGraphName= ruleGraphName EOF ;
     public final String entryRuleGraphName() throws RecognitionException {
         String current = null;
 
@@ -3649,8 +3547,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1498:49: (iv_ruleGraphName= ruleGraphName EOF )
-            // InternalRosArtifact.g:1499:2: iv_ruleGraphName= ruleGraphName EOF
+            // InternalRosArtifact.g:1486:49: (iv_ruleGraphName= ruleGraphName EOF )
+            // InternalRosArtifact.g:1487:2: iv_ruleGraphName= ruleGraphName EOF
             {
              newCompositeNode(grammarAccess.getGraphNameRule()); 
             pushFollow(FOLLOW_1);
@@ -3677,7 +3575,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphName"
-    // InternalRosArtifact.g:1505:1: ruleGraphName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'GraphName' ;
+    // InternalRosArtifact.g:1493:1: ruleGraphName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'GraphName' ;
     public final AntlrDatatypeRuleToken ruleGraphName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3687,8 +3585,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1511:2: (kw= 'GraphName' )
-            // InternalRosArtifact.g:1512:2: kw= 'GraphName'
+            // InternalRosArtifact.g:1499:2: (kw= 'GraphName' )
+            // InternalRosArtifact.g:1500:2: kw= 'GraphName'
             {
             kw=(Token)match(input,35,FOLLOW_2); 
 
@@ -3715,7 +3613,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameter"
-    // InternalRosArtifact.g:1520:1: entryRuleParameter returns [EObject current=null] : iv_ruleParameter= ruleParameter EOF ;
+    // InternalRosArtifact.g:1508:1: entryRuleParameter returns [EObject current=null] : iv_ruleParameter= ruleParameter EOF ;
     public final EObject entryRuleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -3723,8 +3621,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1520:50: (iv_ruleParameter= ruleParameter EOF )
-            // InternalRosArtifact.g:1521:2: iv_ruleParameter= ruleParameter EOF
+            // InternalRosArtifact.g:1508:50: (iv_ruleParameter= ruleParameter EOF )
+            // InternalRosArtifact.g:1509:2: iv_ruleParameter= ruleParameter EOF
             {
              newCompositeNode(grammarAccess.getParameterRule()); 
             pushFollow(FOLLOW_1);
@@ -3751,7 +3649,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameter"
-    // InternalRosArtifact.g:1527:1: ruleParameter returns [EObject current=null] : (otherlv_0= 'Parameter' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) ;
+    // InternalRosArtifact.g:1515:1: ruleParameter returns [EObject current=null] : (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) ;
     public final EObject ruleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -3772,97 +3670,80 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1533:2: ( (otherlv_0= 'Parameter' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) )
-            // InternalRosArtifact.g:1534:2: (otherlv_0= 'Parameter' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
+            // InternalRosArtifact.g:1521:2: ( (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) )
+            // InternalRosArtifact.g:1522:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
             {
-            // InternalRosArtifact.g:1534:2: (otherlv_0= 'Parameter' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
-            // InternalRosArtifact.g:1535:3: otherlv_0= 'Parameter' otherlv_1= '{' (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )? (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}'
+            // InternalRosArtifact.g:1522:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
+            // InternalRosArtifact.g:1523:3: otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,36,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterAccess().getParameterKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_32); 
+            otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRosArtifact.g:1543:3: (otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            otherlv_2=(Token)match(input,16,FOLLOW_3); 
 
-            if ( (LA32_0==16) ) {
-                alt32=1;
+            			newLeafNode(otherlv_2, grammarAccess.getParameterAccess().getNameKeyword_2());
+            		
+            // InternalRosArtifact.g:1535:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRosArtifact.g:1536:4: (lv_name_3_0= ruleEString )
+            {
+            // InternalRosArtifact.g:1536:4: (lv_name_3_0= ruleEString )
+            // InternalRosArtifact.g:1537:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_29);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getParameterRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"de.fraunhofer.ipa.ros.RosArtifact.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt32) {
+
+
+            }
+
+            // InternalRosArtifact.g:1554:3: (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( (LA26_0==27) ) {
+                alt26=1;
+            }
+            switch (alt26) {
                 case 1 :
-                    // InternalRosArtifact.g:1544:4: otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) )
+                    // InternalRosArtifact.g:1555:4: otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) )
                     {
-                    otherlv_2=(Token)match(input,16,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,27,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getParameterAccess().getNameKeyword_2_0());
+                    				newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getNamespaceKeyword_4_0());
                     			
-                    // InternalRosArtifact.g:1548:4: ( (lv_name_3_0= ruleEString ) )
-                    // InternalRosArtifact.g:1549:5: (lv_name_3_0= ruleEString )
+                    // InternalRosArtifact.g:1559:4: ( (lv_namespace_5_0= ruleNamespace ) )
+                    // InternalRosArtifact.g:1560:5: (lv_namespace_5_0= ruleNamespace )
                     {
-                    // InternalRosArtifact.g:1549:5: (lv_name_3_0= ruleEString )
-                    // InternalRosArtifact.g:1550:6: lv_name_3_0= ruleEString
+                    // InternalRosArtifact.g:1560:5: (lv_namespace_5_0= ruleNamespace )
+                    // InternalRosArtifact.g:1561:6: lv_namespace_5_0= ruleNamespace
                     {
 
-                    						newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_2_1_0());
+                    						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_33);
-                    lv_name_3_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getParameterRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_3_0,
-                    							"de.fraunhofer.ipa.ros.RosArtifact.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalRosArtifact.g:1568:3: (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
-
-            if ( (LA33_0==27) ) {
-                alt33=1;
-            }
-            switch (alt33) {
-                case 1 :
-                    // InternalRosArtifact.g:1569:4: otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) )
-                    {
-                    otherlv_4=(Token)match(input,27,FOLLOW_27); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getNamespaceKeyword_3_0());
-                    			
-                    // InternalRosArtifact.g:1573:4: ( (lv_namespace_5_0= ruleNamespace ) )
-                    // InternalRosArtifact.g:1574:5: (lv_namespace_5_0= ruleNamespace )
-                    {
-                    // InternalRosArtifact.g:1574:5: (lv_namespace_5_0= ruleNamespace )
-                    // InternalRosArtifact.g:1575:6: lv_namespace_5_0= ruleNamespace
-                    {
-
-                    						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_3_1_0());
-                    					
-                    pushFollow(FOLLOW_34);
+                    pushFollow(FOLLOW_30);
                     lv_namespace_5_0=ruleNamespace();
 
                     state._fsp--;
@@ -3890,18 +3771,18 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,37,FOLLOW_35); 
+            otherlv_6=(Token)match(input,37,FOLLOW_31); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getTypeKeyword_4());
+            			newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getTypeKeyword_5());
             		
-            // InternalRosArtifact.g:1597:3: ( (lv_type_7_0= ruleParameterType ) )
-            // InternalRosArtifact.g:1598:4: (lv_type_7_0= ruleParameterType )
+            // InternalRosArtifact.g:1583:3: ( (lv_type_7_0= ruleParameterType ) )
+            // InternalRosArtifact.g:1584:4: (lv_type_7_0= ruleParameterType )
             {
-            // InternalRosArtifact.g:1598:4: (lv_type_7_0= ruleParameterType )
-            // InternalRosArtifact.g:1599:5: lv_type_7_0= ruleParameterType
+            // InternalRosArtifact.g:1584:4: (lv_type_7_0= ruleParameterType )
+            // InternalRosArtifact.g:1585:5: lv_type_7_0= ruleParameterType
             {
 
-            					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0());
             				
             pushFollow(FOLLOW_7);
             lv_type_7_0=ruleParameterType();
@@ -3927,7 +3808,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -3952,7 +3833,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGlobalNamespace"
-    // InternalRosArtifact.g:1624:1: entryRuleGlobalNamespace returns [EObject current=null] : iv_ruleGlobalNamespace= ruleGlobalNamespace EOF ;
+    // InternalRosArtifact.g:1610:1: entryRuleGlobalNamespace returns [EObject current=null] : iv_ruleGlobalNamespace= ruleGlobalNamespace EOF ;
     public final EObject entryRuleGlobalNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -3960,8 +3841,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1624:56: (iv_ruleGlobalNamespace= ruleGlobalNamespace EOF )
-            // InternalRosArtifact.g:1625:2: iv_ruleGlobalNamespace= ruleGlobalNamespace EOF
+            // InternalRosArtifact.g:1610:56: (iv_ruleGlobalNamespace= ruleGlobalNamespace EOF )
+            // InternalRosArtifact.g:1611:2: iv_ruleGlobalNamespace= ruleGlobalNamespace EOF
             {
              newCompositeNode(grammarAccess.getGlobalNamespaceRule()); 
             pushFollow(FOLLOW_1);
@@ -3988,7 +3869,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGlobalNamespace"
-    // InternalRosArtifact.g:1631:1: ruleGlobalNamespace returns [EObject current=null] : ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:1617:1: ruleGlobalNamespace returns [EObject current=null] : ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleGlobalNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -4008,14 +3889,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1637:2: ( ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:1638:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1623:2: ( ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:1624:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:1638:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:1639:3: () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:1624:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1625:3: () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:1639:3: ()
-            // InternalRosArtifact.g:1640:4: 
+            // InternalRosArtifact.g:1625:3: ()
+            // InternalRosArtifact.g:1626:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4029,34 +3910,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getGlobalNamespaceAccess().getGlobalNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_36); 
+            otherlv_2=(Token)match(input,12,FOLLOW_32); 
 
             			newLeafNode(otherlv_2, grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:1654:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalRosArtifact.g:1640:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA35_0==39) ) {
-                alt35=1;
+            if ( (LA28_0==39) ) {
+                alt28=1;
             }
-            switch (alt35) {
+            switch (alt28) {
                 case 1 :
-                    // InternalRosArtifact.g:1655:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:1641:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,39,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getGlobalNamespaceAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_37); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_33); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:1663:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRosArtifact.g:1664:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1649:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRosArtifact.g:1650:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRosArtifact.g:1664:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRosArtifact.g:1665:6: lv_parts_5_0= ruleGraphName
+                    // InternalRosArtifact.g:1650:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1651:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -4083,30 +3964,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:1682:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop34:
+                    // InternalRosArtifact.g:1668:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop27:
                     do {
-                        int alt34=2;
-                        int LA34_0 = input.LA(1);
+                        int alt27=2;
+                        int LA27_0 = input.LA(1);
 
-                        if ( (LA34_0==18) ) {
-                            alt34=1;
+                        if ( (LA27_0==18) ) {
+                            alt27=1;
                         }
 
 
-                        switch (alt34) {
+                        switch (alt27) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:1683:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1669:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_37); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_33); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getGlobalNamespaceAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:1687:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRosArtifact.g:1688:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1673:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1674:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRosArtifact.g:1688:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRosArtifact.g:1689:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRosArtifact.g:1674:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1675:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -4138,7 +4019,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop34;
+                    	    break loop27;
                         }
                     } while (true);
 
@@ -4179,7 +4060,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelativeNamespace_Impl"
-    // InternalRosArtifact.g:1720:1: entryRuleRelativeNamespace_Impl returns [EObject current=null] : iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF ;
+    // InternalRosArtifact.g:1706:1: entryRuleRelativeNamespace_Impl returns [EObject current=null] : iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF ;
     public final EObject entryRuleRelativeNamespace_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -4187,8 +4068,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1720:63: (iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF )
-            // InternalRosArtifact.g:1721:2: iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF
+            // InternalRosArtifact.g:1706:63: (iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF )
+            // InternalRosArtifact.g:1707:2: iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF
             {
              newCompositeNode(grammarAccess.getRelativeNamespace_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -4215,7 +4096,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelativeNamespace_Impl"
-    // InternalRosArtifact.g:1727:1: ruleRelativeNamespace_Impl returns [EObject current=null] : ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:1713:1: ruleRelativeNamespace_Impl returns [EObject current=null] : ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleRelativeNamespace_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -4235,14 +4116,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1733:2: ( ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:1734:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1719:2: ( ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:1720:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:1734:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:1735:3: () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:1720:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1721:3: () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:1735:3: ()
-            // InternalRosArtifact.g:1736:4: 
+            // InternalRosArtifact.g:1721:3: ()
+            // InternalRosArtifact.g:1722:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4256,34 +4137,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRelativeNamespace_ImplAccess().getRelativeNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_36); 
+            otherlv_2=(Token)match(input,12,FOLLOW_32); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:1750:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalRosArtifact.g:1736:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA37_0==39) ) {
-                alt37=1;
+            if ( (LA30_0==39) ) {
+                alt30=1;
             }
-            switch (alt37) {
+            switch (alt30) {
                 case 1 :
-                    // InternalRosArtifact.g:1751:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:1737:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,39,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getRelativeNamespace_ImplAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_37); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_33); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:1759:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRosArtifact.g:1760:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1745:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRosArtifact.g:1746:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRosArtifact.g:1760:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRosArtifact.g:1761:6: lv_parts_5_0= ruleGraphName
+                    // InternalRosArtifact.g:1746:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1747:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -4310,30 +4191,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:1778:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop36:
+                    // InternalRosArtifact.g:1764:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop29:
                     do {
-                        int alt36=2;
-                        int LA36_0 = input.LA(1);
+                        int alt29=2;
+                        int LA29_0 = input.LA(1);
 
-                        if ( (LA36_0==18) ) {
-                            alt36=1;
+                        if ( (LA29_0==18) ) {
+                            alt29=1;
                         }
 
 
-                        switch (alt36) {
+                        switch (alt29) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:1779:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1765:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_37); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_33); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getRelativeNamespace_ImplAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:1783:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRosArtifact.g:1784:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1769:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1770:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRosArtifact.g:1784:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRosArtifact.g:1785:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRosArtifact.g:1770:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1771:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -4365,7 +4246,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop36;
+                    	    break loop29;
                         }
                     } while (true);
 
@@ -4406,7 +4287,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrivateNamespace"
-    // InternalRosArtifact.g:1816:1: entryRulePrivateNamespace returns [EObject current=null] : iv_rulePrivateNamespace= rulePrivateNamespace EOF ;
+    // InternalRosArtifact.g:1802:1: entryRulePrivateNamespace returns [EObject current=null] : iv_rulePrivateNamespace= rulePrivateNamespace EOF ;
     public final EObject entryRulePrivateNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -4414,8 +4295,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1816:57: (iv_rulePrivateNamespace= rulePrivateNamespace EOF )
-            // InternalRosArtifact.g:1817:2: iv_rulePrivateNamespace= rulePrivateNamespace EOF
+            // InternalRosArtifact.g:1802:57: (iv_rulePrivateNamespace= rulePrivateNamespace EOF )
+            // InternalRosArtifact.g:1803:2: iv_rulePrivateNamespace= rulePrivateNamespace EOF
             {
              newCompositeNode(grammarAccess.getPrivateNamespaceRule()); 
             pushFollow(FOLLOW_1);
@@ -4442,7 +4323,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrivateNamespace"
-    // InternalRosArtifact.g:1823:1: rulePrivateNamespace returns [EObject current=null] : ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:1809:1: rulePrivateNamespace returns [EObject current=null] : ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject rulePrivateNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -4462,14 +4343,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1829:2: ( ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:1830:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1815:2: ( ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:1816:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:1830:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:1831:3: () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:1816:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:1817:3: () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:1831:3: ()
-            // InternalRosArtifact.g:1832:4: 
+            // InternalRosArtifact.g:1817:3: ()
+            // InternalRosArtifact.g:1818:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4483,34 +4364,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPrivateNamespaceAccess().getPrivateNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_36); 
+            otherlv_2=(Token)match(input,12,FOLLOW_32); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:1846:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalRosArtifact.g:1832:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA39_0==39) ) {
-                alt39=1;
+            if ( (LA32_0==39) ) {
+                alt32=1;
             }
-            switch (alt39) {
+            switch (alt32) {
                 case 1 :
-                    // InternalRosArtifact.g:1847:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:1833:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,39,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPrivateNamespaceAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_37); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_33); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:1855:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRosArtifact.g:1856:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1841:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRosArtifact.g:1842:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRosArtifact.g:1856:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRosArtifact.g:1857:6: lv_parts_5_0= ruleGraphName
+                    // InternalRosArtifact.g:1842:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRosArtifact.g:1843:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -4537,30 +4418,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:1874:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop38:
+                    // InternalRosArtifact.g:1860:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop31:
                     do {
-                        int alt38=2;
-                        int LA38_0 = input.LA(1);
+                        int alt31=2;
+                        int LA31_0 = input.LA(1);
 
-                        if ( (LA38_0==18) ) {
-                            alt38=1;
+                        if ( (LA31_0==18) ) {
+                            alt31=1;
                         }
 
 
-                        switch (alt38) {
+                        switch (alt31) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:1875:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1861:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_37); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_33); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getPrivateNamespaceAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:1879:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRosArtifact.g:1880:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1865:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRosArtifact.g:1866:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRosArtifact.g:1880:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRosArtifact.g:1881:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRosArtifact.g:1866:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRosArtifact.g:1867:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -4592,7 +4473,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop38;
+                    	    break loop31;
                         }
                     } while (true);
 
@@ -4633,7 +4514,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterListType"
-    // InternalRosArtifact.g:1912:1: entryRuleParameterListType returns [EObject current=null] : iv_ruleParameterListType= ruleParameterListType EOF ;
+    // InternalRosArtifact.g:1898:1: entryRuleParameterListType returns [EObject current=null] : iv_ruleParameterListType= ruleParameterListType EOF ;
     public final EObject entryRuleParameterListType() throws RecognitionException {
         EObject current = null;
 
@@ -4641,8 +4522,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:1912:58: (iv_ruleParameterListType= ruleParameterListType EOF )
-            // InternalRosArtifact.g:1913:2: iv_ruleParameterListType= ruleParameterListType EOF
+            // InternalRosArtifact.g:1898:58: (iv_ruleParameterListType= ruleParameterListType EOF )
+            // InternalRosArtifact.g:1899:2: iv_ruleParameterListType= ruleParameterListType EOF
             {
              newCompositeNode(grammarAccess.getParameterListTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -4669,7 +4550,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterListType"
-    // InternalRosArtifact.g:1919:1: ruleParameterListType returns [EObject current=null] : ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' ) ;
+    // InternalRosArtifact.g:1905:1: ruleParameterListType returns [EObject current=null] : ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' ) ;
     public final EObject ruleParameterListType() throws RecognitionException {
         EObject current = null;
 
@@ -4692,14 +4573,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:1925:2: ( ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' ) )
-            // InternalRosArtifact.g:1926:2: ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' )
+            // InternalRosArtifact.g:1911:2: ( ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' ) )
+            // InternalRosArtifact.g:1912:2: ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' )
             {
-            // InternalRosArtifact.g:1926:2: ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' )
-            // InternalRosArtifact.g:1927:3: () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}'
+            // InternalRosArtifact.g:1912:2: ( () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}' )
+            // InternalRosArtifact.g:1913:3: () otherlv_1= 'ParameterListType' otherlv_2= '{' (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )? (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )? otherlv_11= '}'
             {
-            // InternalRosArtifact.g:1927:3: ()
-            // InternalRosArtifact.g:1928:4: 
+            // InternalRosArtifact.g:1913:3: ()
+            // InternalRosArtifact.g:1914:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4713,34 +4594,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterListTypeAccess().getParameterListTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_38); 
+            otherlv_2=(Token)match(input,12,FOLLOW_34); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterListTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:1942:3: (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalRosArtifact.g:1928:3: (otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}' )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA41_0==43) ) {
-                alt41=1;
+            if ( (LA34_0==43) ) {
+                alt34=1;
             }
-            switch (alt41) {
+            switch (alt34) {
                 case 1 :
-                    // InternalRosArtifact.g:1943:4: otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:1929:4: otherlv_3= 'sequence' otherlv_4= '{' ( (lv_sequence_5_0= ruleParameterType ) ) (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,43,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterListTypeAccess().getSequenceKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_35); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_31); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterListTypeAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:1951:4: ( (lv_sequence_5_0= ruleParameterType ) )
-                    // InternalRosArtifact.g:1952:5: (lv_sequence_5_0= ruleParameterType )
+                    // InternalRosArtifact.g:1937:4: ( (lv_sequence_5_0= ruleParameterType ) )
+                    // InternalRosArtifact.g:1938:5: (lv_sequence_5_0= ruleParameterType )
                     {
-                    // InternalRosArtifact.g:1952:5: (lv_sequence_5_0= ruleParameterType )
-                    // InternalRosArtifact.g:1953:6: lv_sequence_5_0= ruleParameterType
+                    // InternalRosArtifact.g:1938:5: (lv_sequence_5_0= ruleParameterType )
+                    // InternalRosArtifact.g:1939:6: lv_sequence_5_0= ruleParameterType
                     {
 
                     						newCompositeNode(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_3_2_0());
@@ -4767,30 +4648,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:1970:4: (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )*
-                    loop40:
+                    // InternalRosArtifact.g:1956:4: (otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) ) )*
+                    loop33:
                     do {
-                        int alt40=2;
-                        int LA40_0 = input.LA(1);
+                        int alt33=2;
+                        int LA33_0 = input.LA(1);
 
-                        if ( (LA40_0==18) ) {
-                            alt40=1;
+                        if ( (LA33_0==18) ) {
+                            alt33=1;
                         }
 
 
-                        switch (alt40) {
+                        switch (alt33) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:1971:5: otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) )
+                    	    // InternalRosArtifact.g:1957:5: otherlv_6= ',' ( (lv_sequence_7_0= ruleParameterType ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_35); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_31); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getParameterListTypeAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:1975:5: ( (lv_sequence_7_0= ruleParameterType ) )
-                    	    // InternalRosArtifact.g:1976:6: (lv_sequence_7_0= ruleParameterType )
+                    	    // InternalRosArtifact.g:1961:5: ( (lv_sequence_7_0= ruleParameterType ) )
+                    	    // InternalRosArtifact.g:1962:6: (lv_sequence_7_0= ruleParameterType )
                     	    {
-                    	    // InternalRosArtifact.g:1976:6: (lv_sequence_7_0= ruleParameterType )
-                    	    // InternalRosArtifact.g:1977:7: lv_sequence_7_0= ruleParameterType
+                    	    // InternalRosArtifact.g:1962:6: (lv_sequence_7_0= ruleParameterType )
+                    	    // InternalRosArtifact.g:1963:7: lv_sequence_7_0= ruleParameterType
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_3_3_1_0());
@@ -4822,11 +4703,11 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop40;
+                    	    break loop33;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,14,FOLLOW_39); 
+                    otherlv_8=(Token)match(input,14,FOLLOW_35); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getParameterListTypeAccess().getRightCurlyBracketKeyword_3_4());
                     			
@@ -4836,26 +4717,26 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:2000:3: (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // InternalRosArtifact.g:1986:3: (otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) ) )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA42_0==44) ) {
-                alt42=1;
+            if ( (LA35_0==44) ) {
+                alt35=1;
             }
-            switch (alt42) {
+            switch (alt35) {
                 case 1 :
-                    // InternalRosArtifact.g:2001:4: otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) )
+                    // InternalRosArtifact.g:1987:4: otherlv_9= 'default' ( (lv_default_10_0= ruleParameterSequence ) )
                     {
-                    otherlv_9=(Token)match(input,44,FOLLOW_40); 
+                    otherlv_9=(Token)match(input,44,FOLLOW_36); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getParameterListTypeAccess().getDefaultKeyword_4_0());
                     			
-                    // InternalRosArtifact.g:2005:4: ( (lv_default_10_0= ruleParameterSequence ) )
-                    // InternalRosArtifact.g:2006:5: (lv_default_10_0= ruleParameterSequence )
+                    // InternalRosArtifact.g:1991:4: ( (lv_default_10_0= ruleParameterSequence ) )
+                    // InternalRosArtifact.g:1992:5: (lv_default_10_0= ruleParameterSequence )
                     {
-                    // InternalRosArtifact.g:2006:5: (lv_default_10_0= ruleParameterSequence )
-                    // InternalRosArtifact.g:2007:6: lv_default_10_0= ruleParameterSequence
+                    // InternalRosArtifact.g:1992:5: (lv_default_10_0= ruleParameterSequence )
+                    // InternalRosArtifact.g:1993:6: lv_default_10_0= ruleParameterSequence
                     {
 
                     						newCompositeNode(grammarAccess.getParameterListTypeAccess().getDefaultParameterSequenceParserRuleCall_4_1_0());
@@ -4915,7 +4796,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructType"
-    // InternalRosArtifact.g:2033:1: entryRuleParameterStructType returns [EObject current=null] : iv_ruleParameterStructType= ruleParameterStructType EOF ;
+    // InternalRosArtifact.g:2019:1: entryRuleParameterStructType returns [EObject current=null] : iv_ruleParameterStructType= ruleParameterStructType EOF ;
     public final EObject entryRuleParameterStructType() throws RecognitionException {
         EObject current = null;
 
@@ -4923,8 +4804,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2033:60: (iv_ruleParameterStructType= ruleParameterStructType EOF )
-            // InternalRosArtifact.g:2034:2: iv_ruleParameterStructType= ruleParameterStructType EOF
+            // InternalRosArtifact.g:2019:60: (iv_ruleParameterStructType= ruleParameterStructType EOF )
+            // InternalRosArtifact.g:2020:2: iv_ruleParameterStructType= ruleParameterStructType EOF
             {
              newCompositeNode(grammarAccess.getParameterStructTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -4951,7 +4832,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructType"
-    // InternalRosArtifact.g:2040:1: ruleParameterStructType returns [EObject current=null] : ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:2026:1: ruleParameterStructType returns [EObject current=null] : ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleParameterStructType() throws RecognitionException {
         EObject current = null;
 
@@ -4971,14 +4852,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2046:2: ( ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:2047:2: ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:2032:2: ( ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:2033:2: ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:2047:2: ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:2048:3: () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:2033:2: ( () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:2034:3: () otherlv_1= 'ParameterStructType' otherlv_2= '{' (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:2048:3: ()
-            // InternalRosArtifact.g:2049:4: 
+            // InternalRosArtifact.g:2034:3: ()
+            // InternalRosArtifact.g:2035:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4992,34 +4873,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStructTypeAccess().getParameterStructTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_41); 
+            otherlv_2=(Token)match(input,12,FOLLOW_37); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2063:3: (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalRosArtifact.g:2049:3: (otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}' )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA44_0==46) ) {
-                alt44=1;
+            if ( (LA37_0==46) ) {
+                alt37=1;
             }
-            switch (alt44) {
+            switch (alt37) {
                 case 1 :
-                    // InternalRosArtifact.g:2064:4: otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:2050:4: otherlv_3= 'parameterstructypetmember' otherlv_4= '{' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,46,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_42); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_38); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterStructTypeAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:2072:4: ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
-                    // InternalRosArtifact.g:2073:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
+                    // InternalRosArtifact.g:2058:4: ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
+                    // InternalRosArtifact.g:2059:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
                     {
-                    // InternalRosArtifact.g:2073:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
-                    // InternalRosArtifact.g:2074:6: lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember
+                    // InternalRosArtifact.g:2059:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
+                    // InternalRosArtifact.g:2060:6: lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_2_0());
@@ -5046,30 +4927,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:2091:4: (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )*
-                    loop43:
+                    // InternalRosArtifact.g:2077:4: (otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) ) )*
+                    loop36:
                     do {
-                        int alt43=2;
-                        int LA43_0 = input.LA(1);
+                        int alt36=2;
+                        int LA36_0 = input.LA(1);
 
-                        if ( (LA43_0==18) ) {
-                            alt43=1;
+                        if ( (LA36_0==18) ) {
+                            alt36=1;
                         }
 
 
-                        switch (alt43) {
+                        switch (alt36) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:2092:5: otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) )
+                    	    // InternalRosArtifact.g:2078:5: otherlv_6= ',' ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_42); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_38); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getParameterStructTypeAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:2096:5: ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) )
-                    	    // InternalRosArtifact.g:2097:6: (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember )
+                    	    // InternalRosArtifact.g:2082:5: ( (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember ) )
+                    	    // InternalRosArtifact.g:2083:6: (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember )
                     	    {
-                    	    // InternalRosArtifact.g:2097:6: (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember )
-                    	    // InternalRosArtifact.g:2098:7: lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember
+                    	    // InternalRosArtifact.g:2083:6: (lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember )
+                    	    // InternalRosArtifact.g:2084:7: lv_parameterstructypetmember_7_0= ruleParameterStructTypeMember
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_3_1_0());
@@ -5101,7 +4982,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop43;
+                    	    break loop36;
                         }
                     } while (true);
 
@@ -5142,7 +5023,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterIntegerType"
-    // InternalRosArtifact.g:2129:1: entryRuleParameterIntegerType returns [EObject current=null] : iv_ruleParameterIntegerType= ruleParameterIntegerType EOF ;
+    // InternalRosArtifact.g:2115:1: entryRuleParameterIntegerType returns [EObject current=null] : iv_ruleParameterIntegerType= ruleParameterIntegerType EOF ;
     public final EObject entryRuleParameterIntegerType() throws RecognitionException {
         EObject current = null;
 
@@ -5150,8 +5031,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2129:61: (iv_ruleParameterIntegerType= ruleParameterIntegerType EOF )
-            // InternalRosArtifact.g:2130:2: iv_ruleParameterIntegerType= ruleParameterIntegerType EOF
+            // InternalRosArtifact.g:2115:61: (iv_ruleParameterIntegerType= ruleParameterIntegerType EOF )
+            // InternalRosArtifact.g:2116:2: iv_ruleParameterIntegerType= ruleParameterIntegerType EOF
             {
              newCompositeNode(grammarAccess.getParameterIntegerTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5178,7 +5059,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterIntegerType"
-    // InternalRosArtifact.g:2136:1: ruleParameterIntegerType returns [EObject current=null] : ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2122:1: ruleParameterIntegerType returns [EObject current=null] : ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterIntegerType() throws RecognitionException {
         EObject current = null;
 
@@ -5193,14 +5074,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2142:2: ( ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2143:2: ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2128:2: ( ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2129:2: ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2143:2: ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2144:3: () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2129:2: ( () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2130:3: () otherlv_1= 'ParameterIntegerType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2144:3: ()
-            // InternalRosArtifact.g:2145:4: 
+            // InternalRosArtifact.g:2130:3: ()
+            // InternalRosArtifact.g:2131:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5214,30 +5095,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterIntegerTypeAccess().getParameterIntegerTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterIntegerTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2159:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalRosArtifact.g:2145:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA45_0==44) ) {
-                alt45=1;
+            if ( (LA38_0==44) ) {
+                alt38=1;
             }
-            switch (alt45) {
+            switch (alt38) {
                 case 1 :
-                    // InternalRosArtifact.g:2160:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) )
+                    // InternalRosArtifact.g:2146:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterInteger ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_43); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_39); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterIntegerTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2164:4: ( (lv_default_4_0= ruleParameterInteger ) )
-                    // InternalRosArtifact.g:2165:5: (lv_default_4_0= ruleParameterInteger )
+                    // InternalRosArtifact.g:2150:4: ( (lv_default_4_0= ruleParameterInteger ) )
+                    // InternalRosArtifact.g:2151:5: (lv_default_4_0= ruleParameterInteger )
                     {
-                    // InternalRosArtifact.g:2165:5: (lv_default_4_0= ruleParameterInteger )
-                    // InternalRosArtifact.g:2166:6: lv_default_4_0= ruleParameterInteger
+                    // InternalRosArtifact.g:2151:5: (lv_default_4_0= ruleParameterInteger )
+                    // InternalRosArtifact.g:2152:6: lv_default_4_0= ruleParameterInteger
                     {
 
                     						newCompositeNode(grammarAccess.getParameterIntegerTypeAccess().getDefaultParameterIntegerParserRuleCall_3_1_0());
@@ -5297,7 +5178,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStringType"
-    // InternalRosArtifact.g:2192:1: entryRuleParameterStringType returns [EObject current=null] : iv_ruleParameterStringType= ruleParameterStringType EOF ;
+    // InternalRosArtifact.g:2178:1: entryRuleParameterStringType returns [EObject current=null] : iv_ruleParameterStringType= ruleParameterStringType EOF ;
     public final EObject entryRuleParameterStringType() throws RecognitionException {
         EObject current = null;
 
@@ -5305,8 +5186,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2192:60: (iv_ruleParameterStringType= ruleParameterStringType EOF )
-            // InternalRosArtifact.g:2193:2: iv_ruleParameterStringType= ruleParameterStringType EOF
+            // InternalRosArtifact.g:2178:60: (iv_ruleParameterStringType= ruleParameterStringType EOF )
+            // InternalRosArtifact.g:2179:2: iv_ruleParameterStringType= ruleParameterStringType EOF
             {
              newCompositeNode(grammarAccess.getParameterStringTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5333,7 +5214,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStringType"
-    // InternalRosArtifact.g:2199:1: ruleParameterStringType returns [EObject current=null] : ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2185:1: ruleParameterStringType returns [EObject current=null] : ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterStringType() throws RecognitionException {
         EObject current = null;
 
@@ -5348,14 +5229,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2205:2: ( ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2206:2: ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2191:2: ( ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2192:2: ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2206:2: ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2207:3: () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2192:2: ( () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2193:3: () otherlv_1= 'ParameterStringType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2207:3: ()
-            // InternalRosArtifact.g:2208:4: 
+            // InternalRosArtifact.g:2193:3: ()
+            // InternalRosArtifact.g:2194:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5369,30 +5250,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStringTypeAccess().getParameterStringTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStringTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2222:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalRosArtifact.g:2208:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) ) )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA46_0==44) ) {
-                alt46=1;
+            if ( (LA39_0==44) ) {
+                alt39=1;
             }
-            switch (alt46) {
+            switch (alt39) {
                 case 1 :
-                    // InternalRosArtifact.g:2223:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) )
+                    // InternalRosArtifact.g:2209:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterString ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_44); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_40); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterStringTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2227:4: ( (lv_default_4_0= ruleParameterString ) )
-                    // InternalRosArtifact.g:2228:5: (lv_default_4_0= ruleParameterString )
+                    // InternalRosArtifact.g:2213:4: ( (lv_default_4_0= ruleParameterString ) )
+                    // InternalRosArtifact.g:2214:5: (lv_default_4_0= ruleParameterString )
                     {
-                    // InternalRosArtifact.g:2228:5: (lv_default_4_0= ruleParameterString )
-                    // InternalRosArtifact.g:2229:6: lv_default_4_0= ruleParameterString
+                    // InternalRosArtifact.g:2214:5: (lv_default_4_0= ruleParameterString )
+                    // InternalRosArtifact.g:2215:6: lv_default_4_0= ruleParameterString
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStringTypeAccess().getDefaultParameterStringParserRuleCall_3_1_0());
@@ -5452,7 +5333,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDoubleType"
-    // InternalRosArtifact.g:2255:1: entryRuleParameterDoubleType returns [EObject current=null] : iv_ruleParameterDoubleType= ruleParameterDoubleType EOF ;
+    // InternalRosArtifact.g:2241:1: entryRuleParameterDoubleType returns [EObject current=null] : iv_ruleParameterDoubleType= ruleParameterDoubleType EOF ;
     public final EObject entryRuleParameterDoubleType() throws RecognitionException {
         EObject current = null;
 
@@ -5460,8 +5341,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2255:60: (iv_ruleParameterDoubleType= ruleParameterDoubleType EOF )
-            // InternalRosArtifact.g:2256:2: iv_ruleParameterDoubleType= ruleParameterDoubleType EOF
+            // InternalRosArtifact.g:2241:60: (iv_ruleParameterDoubleType= ruleParameterDoubleType EOF )
+            // InternalRosArtifact.g:2242:2: iv_ruleParameterDoubleType= ruleParameterDoubleType EOF
             {
              newCompositeNode(grammarAccess.getParameterDoubleTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5488,7 +5369,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDoubleType"
-    // InternalRosArtifact.g:2262:1: ruleParameterDoubleType returns [EObject current=null] : ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2248:1: ruleParameterDoubleType returns [EObject current=null] : ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterDoubleType() throws RecognitionException {
         EObject current = null;
 
@@ -5503,14 +5384,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2268:2: ( ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2269:2: ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2254:2: ( ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2255:2: ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2269:2: ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2270:3: () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2255:2: ( () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2256:3: () otherlv_1= 'ParameterDoubleType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2270:3: ()
-            // InternalRosArtifact.g:2271:4: 
+            // InternalRosArtifact.g:2256:3: ()
+            // InternalRosArtifact.g:2257:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5524,30 +5405,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDoubleTypeAccess().getParameterDoubleTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterDoubleTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2285:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // InternalRosArtifact.g:2271:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) ) )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA47_0==44) ) {
-                alt47=1;
+            if ( (LA40_0==44) ) {
+                alt40=1;
             }
-            switch (alt47) {
+            switch (alt40) {
                 case 1 :
-                    // InternalRosArtifact.g:2286:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) )
+                    // InternalRosArtifact.g:2272:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDouble ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_45); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_41); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterDoubleTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2290:4: ( (lv_default_4_0= ruleParameterDouble ) )
-                    // InternalRosArtifact.g:2291:5: (lv_default_4_0= ruleParameterDouble )
+                    // InternalRosArtifact.g:2276:4: ( (lv_default_4_0= ruleParameterDouble ) )
+                    // InternalRosArtifact.g:2277:5: (lv_default_4_0= ruleParameterDouble )
                     {
-                    // InternalRosArtifact.g:2291:5: (lv_default_4_0= ruleParameterDouble )
-                    // InternalRosArtifact.g:2292:6: lv_default_4_0= ruleParameterDouble
+                    // InternalRosArtifact.g:2277:5: (lv_default_4_0= ruleParameterDouble )
+                    // InternalRosArtifact.g:2278:6: lv_default_4_0= ruleParameterDouble
                     {
 
                     						newCompositeNode(grammarAccess.getParameterDoubleTypeAccess().getDefaultParameterDoubleParserRuleCall_3_1_0());
@@ -5607,7 +5488,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDateType"
-    // InternalRosArtifact.g:2318:1: entryRuleParameterDateType returns [EObject current=null] : iv_ruleParameterDateType= ruleParameterDateType EOF ;
+    // InternalRosArtifact.g:2304:1: entryRuleParameterDateType returns [EObject current=null] : iv_ruleParameterDateType= ruleParameterDateType EOF ;
     public final EObject entryRuleParameterDateType() throws RecognitionException {
         EObject current = null;
 
@@ -5615,8 +5496,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2318:58: (iv_ruleParameterDateType= ruleParameterDateType EOF )
-            // InternalRosArtifact.g:2319:2: iv_ruleParameterDateType= ruleParameterDateType EOF
+            // InternalRosArtifact.g:2304:58: (iv_ruleParameterDateType= ruleParameterDateType EOF )
+            // InternalRosArtifact.g:2305:2: iv_ruleParameterDateType= ruleParameterDateType EOF
             {
              newCompositeNode(grammarAccess.getParameterDateTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5643,7 +5524,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDateType"
-    // InternalRosArtifact.g:2325:1: ruleParameterDateType returns [EObject current=null] : ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2311:1: ruleParameterDateType returns [EObject current=null] : ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterDateType() throws RecognitionException {
         EObject current = null;
 
@@ -5658,14 +5539,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2331:2: ( ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2332:2: ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2317:2: ( ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2318:2: ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2332:2: ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2333:3: () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2318:2: ( () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2319:3: () otherlv_1= 'ParameterDateType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2333:3: ()
-            // InternalRosArtifact.g:2334:4: 
+            // InternalRosArtifact.g:2319:3: ()
+            // InternalRosArtifact.g:2320:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5679,30 +5560,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDateTypeAccess().getParameterDateTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterDateTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2348:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // InternalRosArtifact.g:2334:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA48_0==44) ) {
-                alt48=1;
+            if ( (LA41_0==44) ) {
+                alt41=1;
             }
-            switch (alt48) {
+            switch (alt41) {
                 case 1 :
-                    // InternalRosArtifact.g:2349:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) )
+                    // InternalRosArtifact.g:2335:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterDate ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_46); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_42); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterDateTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2353:4: ( (lv_default_4_0= ruleParameterDate ) )
-                    // InternalRosArtifact.g:2354:5: (lv_default_4_0= ruleParameterDate )
+                    // InternalRosArtifact.g:2339:4: ( (lv_default_4_0= ruleParameterDate ) )
+                    // InternalRosArtifact.g:2340:5: (lv_default_4_0= ruleParameterDate )
                     {
-                    // InternalRosArtifact.g:2354:5: (lv_default_4_0= ruleParameterDate )
-                    // InternalRosArtifact.g:2355:6: lv_default_4_0= ruleParameterDate
+                    // InternalRosArtifact.g:2340:5: (lv_default_4_0= ruleParameterDate )
+                    // InternalRosArtifact.g:2341:6: lv_default_4_0= ruleParameterDate
                     {
 
                     						newCompositeNode(grammarAccess.getParameterDateTypeAccess().getDefaultParameterDateParserRuleCall_3_1_0());
@@ -5762,7 +5643,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBooleanType"
-    // InternalRosArtifact.g:2381:1: entryRuleParameterBooleanType returns [EObject current=null] : iv_ruleParameterBooleanType= ruleParameterBooleanType EOF ;
+    // InternalRosArtifact.g:2367:1: entryRuleParameterBooleanType returns [EObject current=null] : iv_ruleParameterBooleanType= ruleParameterBooleanType EOF ;
     public final EObject entryRuleParameterBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -5770,8 +5651,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2381:61: (iv_ruleParameterBooleanType= ruleParameterBooleanType EOF )
-            // InternalRosArtifact.g:2382:2: iv_ruleParameterBooleanType= ruleParameterBooleanType EOF
+            // InternalRosArtifact.g:2367:61: (iv_ruleParameterBooleanType= ruleParameterBooleanType EOF )
+            // InternalRosArtifact.g:2368:2: iv_ruleParameterBooleanType= ruleParameterBooleanType EOF
             {
              newCompositeNode(grammarAccess.getParameterBooleanTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5798,7 +5679,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBooleanType"
-    // InternalRosArtifact.g:2388:1: ruleParameterBooleanType returns [EObject current=null] : ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2374:1: ruleParameterBooleanType returns [EObject current=null] : ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -5813,14 +5694,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2394:2: ( ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2395:2: ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2380:2: ( ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2381:2: ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2395:2: ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2396:3: () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2381:2: ( () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2382:3: () otherlv_1= 'ParameterBooleanType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2396:3: ()
-            // InternalRosArtifact.g:2397:4: 
+            // InternalRosArtifact.g:2382:3: ()
+            // InternalRosArtifact.g:2383:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5834,30 +5715,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBooleanTypeAccess().getParameterBooleanTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterBooleanTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2411:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalRosArtifact.g:2397:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) ) )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA49_0==44) ) {
-                alt49=1;
+            if ( (LA42_0==44) ) {
+                alt42=1;
             }
-            switch (alt49) {
+            switch (alt42) {
                 case 1 :
-                    // InternalRosArtifact.g:2412:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) )
+                    // InternalRosArtifact.g:2398:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBoolean ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_47); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_43); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterBooleanTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2416:4: ( (lv_default_4_0= ruleParameterBoolean ) )
-                    // InternalRosArtifact.g:2417:5: (lv_default_4_0= ruleParameterBoolean )
+                    // InternalRosArtifact.g:2402:4: ( (lv_default_4_0= ruleParameterBoolean ) )
+                    // InternalRosArtifact.g:2403:5: (lv_default_4_0= ruleParameterBoolean )
                     {
-                    // InternalRosArtifact.g:2417:5: (lv_default_4_0= ruleParameterBoolean )
-                    // InternalRosArtifact.g:2418:6: lv_default_4_0= ruleParameterBoolean
+                    // InternalRosArtifact.g:2403:5: (lv_default_4_0= ruleParameterBoolean )
+                    // InternalRosArtifact.g:2404:6: lv_default_4_0= ruleParameterBoolean
                     {
 
                     						newCompositeNode(grammarAccess.getParameterBooleanTypeAccess().getDefaultParameterBooleanParserRuleCall_3_1_0());
@@ -5917,7 +5798,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBase64Type"
-    // InternalRosArtifact.g:2444:1: entryRuleParameterBase64Type returns [EObject current=null] : iv_ruleParameterBase64Type= ruleParameterBase64Type EOF ;
+    // InternalRosArtifact.g:2430:1: entryRuleParameterBase64Type returns [EObject current=null] : iv_ruleParameterBase64Type= ruleParameterBase64Type EOF ;
     public final EObject entryRuleParameterBase64Type() throws RecognitionException {
         EObject current = null;
 
@@ -5925,8 +5806,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2444:60: (iv_ruleParameterBase64Type= ruleParameterBase64Type EOF )
-            // InternalRosArtifact.g:2445:2: iv_ruleParameterBase64Type= ruleParameterBase64Type EOF
+            // InternalRosArtifact.g:2430:60: (iv_ruleParameterBase64Type= ruleParameterBase64Type EOF )
+            // InternalRosArtifact.g:2431:2: iv_ruleParameterBase64Type= ruleParameterBase64Type EOF
             {
              newCompositeNode(grammarAccess.getParameterBase64TypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5953,7 +5834,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBase64Type"
-    // InternalRosArtifact.g:2451:1: ruleParameterBase64Type returns [EObject current=null] : ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2437:1: ruleParameterBase64Type returns [EObject current=null] : ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterBase64Type() throws RecognitionException {
         EObject current = null;
 
@@ -5968,14 +5849,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2457:2: ( ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2458:2: ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2443:2: ( ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2444:2: ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2458:2: ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2459:3: () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2444:2: ( () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2445:3: () otherlv_1= 'ParameterBase64Type' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2459:3: ()
-            // InternalRosArtifact.g:2460:4: 
+            // InternalRosArtifact.g:2445:3: ()
+            // InternalRosArtifact.g:2446:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5989,30 +5870,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBase64TypeAccess().getParameterBase64TypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterBase64TypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2474:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalRosArtifact.g:2460:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA50_0==44) ) {
-                alt50=1;
+            if ( (LA43_0==44) ) {
+                alt43=1;
             }
-            switch (alt50) {
+            switch (alt43) {
                 case 1 :
-                    // InternalRosArtifact.g:2475:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) )
+                    // InternalRosArtifact.g:2461:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterBase64 ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_48); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_44); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterBase64TypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2479:4: ( (lv_default_4_0= ruleParameterBase64 ) )
-                    // InternalRosArtifact.g:2480:5: (lv_default_4_0= ruleParameterBase64 )
+                    // InternalRosArtifact.g:2465:4: ( (lv_default_4_0= ruleParameterBase64 ) )
+                    // InternalRosArtifact.g:2466:5: (lv_default_4_0= ruleParameterBase64 )
                     {
-                    // InternalRosArtifact.g:2480:5: (lv_default_4_0= ruleParameterBase64 )
-                    // InternalRosArtifact.g:2481:6: lv_default_4_0= ruleParameterBase64
+                    // InternalRosArtifact.g:2466:5: (lv_default_4_0= ruleParameterBase64 )
+                    // InternalRosArtifact.g:2467:6: lv_default_4_0= ruleParameterBase64
                     {
 
                     						newCompositeNode(grammarAccess.getParameterBase64TypeAccess().getDefaultParameterBase64ParserRuleCall_3_1_0());
@@ -6072,7 +5953,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterAnyType"
-    // InternalRosArtifact.g:2507:1: entryRuleParameterAnyType returns [EObject current=null] : iv_ruleParameterAnyType= ruleParameterAnyType EOF ;
+    // InternalRosArtifact.g:2493:1: entryRuleParameterAnyType returns [EObject current=null] : iv_ruleParameterAnyType= ruleParameterAnyType EOF ;
     public final EObject entryRuleParameterAnyType() throws RecognitionException {
         EObject current = null;
 
@@ -6080,8 +5961,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2507:57: (iv_ruleParameterAnyType= ruleParameterAnyType EOF )
-            // InternalRosArtifact.g:2508:2: iv_ruleParameterAnyType= ruleParameterAnyType EOF
+            // InternalRosArtifact.g:2493:57: (iv_ruleParameterAnyType= ruleParameterAnyType EOF )
+            // InternalRosArtifact.g:2494:2: iv_ruleParameterAnyType= ruleParameterAnyType EOF
             {
              newCompositeNode(grammarAccess.getParameterAnyTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6108,7 +5989,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterAnyType"
-    // InternalRosArtifact.g:2514:1: ruleParameterAnyType returns [EObject current=null] : ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2500:1: ruleParameterAnyType returns [EObject current=null] : ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterAnyType() throws RecognitionException {
         EObject current = null;
 
@@ -6123,14 +6004,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2520:2: ( ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2521:2: ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2506:2: ( ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2507:2: ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2521:2: ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2522:3: () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2507:2: ( () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2508:3: () otherlv_1= 'ParameterAnyType' otherlv_2= '{' (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2522:3: ()
-            // InternalRosArtifact.g:2523:4: 
+            // InternalRosArtifact.g:2508:3: ()
+            // InternalRosArtifact.g:2509:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6144,30 +6025,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterAnyTypeAccess().getParameterAnyTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_39); 
+            otherlv_2=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterAnyTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2537:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // InternalRosArtifact.g:2523:3: (otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) ) )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA51_0==44) ) {
-                alt51=1;
+            if ( (LA44_0==44) ) {
+                alt44=1;
             }
-            switch (alt51) {
+            switch (alt44) {
                 case 1 :
-                    // InternalRosArtifact.g:2538:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) )
+                    // InternalRosArtifact.g:2524:4: otherlv_3= 'default' ( (lv_default_4_0= ruleParameterAny ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_49); 
+                    otherlv_3=(Token)match(input,44,FOLLOW_45); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterAnyTypeAccess().getDefaultKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2542:4: ( (lv_default_4_0= ruleParameterAny ) )
-                    // InternalRosArtifact.g:2543:5: (lv_default_4_0= ruleParameterAny )
+                    // InternalRosArtifact.g:2528:4: ( (lv_default_4_0= ruleParameterAny ) )
+                    // InternalRosArtifact.g:2529:5: (lv_default_4_0= ruleParameterAny )
                     {
-                    // InternalRosArtifact.g:2543:5: (lv_default_4_0= ruleParameterAny )
-                    // InternalRosArtifact.g:2544:6: lv_default_4_0= ruleParameterAny
+                    // InternalRosArtifact.g:2529:5: (lv_default_4_0= ruleParameterAny )
+                    // InternalRosArtifact.g:2530:6: lv_default_4_0= ruleParameterAny
                     {
 
                     						newCompositeNode(grammarAccess.getParameterAnyTypeAccess().getDefaultParameterAnyParserRuleCall_3_1_0());
@@ -6227,7 +6108,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterArrayType"
-    // InternalRosArtifact.g:2570:1: entryRuleParameterArrayType returns [EObject current=null] : iv_ruleParameterArrayType= ruleParameterArrayType EOF ;
+    // InternalRosArtifact.g:2556:1: entryRuleParameterArrayType returns [EObject current=null] : iv_ruleParameterArrayType= ruleParameterArrayType EOF ;
     public final EObject entryRuleParameterArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -6235,8 +6116,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2570:59: (iv_ruleParameterArrayType= ruleParameterArrayType EOF )
-            // InternalRosArtifact.g:2571:2: iv_ruleParameterArrayType= ruleParameterArrayType EOF
+            // InternalRosArtifact.g:2556:59: (iv_ruleParameterArrayType= ruleParameterArrayType EOF )
+            // InternalRosArtifact.g:2557:2: iv_ruleParameterArrayType= ruleParameterArrayType EOF
             {
              newCompositeNode(grammarAccess.getParameterArrayTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6263,7 +6144,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterArrayType"
-    // InternalRosArtifact.g:2577:1: ruleParameterArrayType returns [EObject current=null] : (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' ) ;
+    // InternalRosArtifact.g:2563:1: ruleParameterArrayType returns [EObject current=null] : (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' ) ;
     public final EObject ruleParameterArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -6281,34 +6162,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2583:2: ( (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' ) )
-            // InternalRosArtifact.g:2584:2: (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' )
+            // InternalRosArtifact.g:2569:2: ( (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' ) )
+            // InternalRosArtifact.g:2570:2: (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' )
             {
-            // InternalRosArtifact.g:2584:2: (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' )
-            // InternalRosArtifact.g:2585:3: otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}'
+            // InternalRosArtifact.g:2570:2: (otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}' )
+            // InternalRosArtifact.g:2571:3: otherlv_0= 'ParameterArrayType' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )? otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,54,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterArrayTypeAccess().getParameterArrayTypeKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_34); 
+            otherlv_1=(Token)match(input,12,FOLLOW_30); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,37,FOLLOW_35); 
+            otherlv_2=(Token)match(input,37,FOLLOW_31); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterArrayTypeAccess().getTypeKeyword_2());
             		
-            // InternalRosArtifact.g:2597:3: ( (lv_type_3_0= ruleParameterType ) )
-            // InternalRosArtifact.g:2598:4: (lv_type_3_0= ruleParameterType )
+            // InternalRosArtifact.g:2583:3: ( (lv_type_3_0= ruleParameterType ) )
+            // InternalRosArtifact.g:2584:4: (lv_type_3_0= ruleParameterType )
             {
-            // InternalRosArtifact.g:2598:4: (lv_type_3_0= ruleParameterType )
-            // InternalRosArtifact.g:2599:5: lv_type_3_0= ruleParameterType
+            // InternalRosArtifact.g:2584:4: (lv_type_3_0= ruleParameterType )
+            // InternalRosArtifact.g:2585:5: lv_type_3_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_35);
             lv_type_3_0=ruleParameterType();
 
             state._fsp--;
@@ -6330,26 +6211,26 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:2616:3: (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalRosArtifact.g:2602:3: (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) ) )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA52_0==44) ) {
-                alt52=1;
+            if ( (LA45_0==44) ) {
+                alt45=1;
             }
-            switch (alt52) {
+            switch (alt45) {
                 case 1 :
-                    // InternalRosArtifact.g:2617:4: otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) )
+                    // InternalRosArtifact.g:2603:4: otherlv_4= 'default' ( (lv_default_5_0= ruleParameterSequence ) )
                     {
-                    otherlv_4=(Token)match(input,44,FOLLOW_40); 
+                    otherlv_4=(Token)match(input,44,FOLLOW_36); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0());
                     			
-                    // InternalRosArtifact.g:2621:4: ( (lv_default_5_0= ruleParameterSequence ) )
-                    // InternalRosArtifact.g:2622:5: (lv_default_5_0= ruleParameterSequence )
+                    // InternalRosArtifact.g:2607:4: ( (lv_default_5_0= ruleParameterSequence ) )
+                    // InternalRosArtifact.g:2608:5: (lv_default_5_0= ruleParameterSequence )
                     {
-                    // InternalRosArtifact.g:2622:5: (lv_default_5_0= ruleParameterSequence )
-                    // InternalRosArtifact.g:2623:6: lv_default_5_0= ruleParameterSequence
+                    // InternalRosArtifact.g:2608:5: (lv_default_5_0= ruleParameterSequence )
+                    // InternalRosArtifact.g:2609:6: lv_default_5_0= ruleParameterSequence
                     {
 
                     						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterSequenceParserRuleCall_4_1_0());
@@ -6409,7 +6290,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterSequence"
-    // InternalRosArtifact.g:2649:1: entryRuleParameterSequence returns [EObject current=null] : iv_ruleParameterSequence= ruleParameterSequence EOF ;
+    // InternalRosArtifact.g:2635:1: entryRuleParameterSequence returns [EObject current=null] : iv_ruleParameterSequence= ruleParameterSequence EOF ;
     public final EObject entryRuleParameterSequence() throws RecognitionException {
         EObject current = null;
 
@@ -6417,8 +6298,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2649:58: (iv_ruleParameterSequence= ruleParameterSequence EOF )
-            // InternalRosArtifact.g:2650:2: iv_ruleParameterSequence= ruleParameterSequence EOF
+            // InternalRosArtifact.g:2635:58: (iv_ruleParameterSequence= ruleParameterSequence EOF )
+            // InternalRosArtifact.g:2636:2: iv_ruleParameterSequence= ruleParameterSequence EOF
             {
              newCompositeNode(grammarAccess.getParameterSequenceRule()); 
             pushFollow(FOLLOW_1);
@@ -6445,7 +6326,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterSequence"
-    // InternalRosArtifact.g:2656:1: ruleParameterSequence returns [EObject current=null] : ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:2642:1: ruleParameterSequence returns [EObject current=null] : ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleParameterSequence() throws RecognitionException {
         EObject current = null;
 
@@ -6465,14 +6346,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2662:2: ( ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:2663:2: ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:2648:2: ( ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:2649:2: ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:2663:2: ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:2664:3: () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:2649:2: ( () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:2650:3: () otherlv_1= 'ParameterSequence' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:2664:3: ()
-            // InternalRosArtifact.g:2665:4: 
+            // InternalRosArtifact.g:2650:3: ()
+            // InternalRosArtifact.g:2651:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6486,34 +6367,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterSequenceAccess().getParameterSequenceKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_50); 
+            otherlv_2=(Token)match(input,12,FOLLOW_46); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterSequenceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2679:3: (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // InternalRosArtifact.g:2665:3: (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}' )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA54_0==56) ) {
-                alt54=1;
+            if ( (LA47_0==56) ) {
+                alt47=1;
             }
-            switch (alt54) {
+            switch (alt47) {
                 case 1 :
-                    // InternalRosArtifact.g:2680:4: otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:2666:4: otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterValue ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,56,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterSequenceAccess().getValueKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_51); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_47); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterSequenceAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:2688:4: ( (lv_value_5_0= ruleParameterValue ) )
-                    // InternalRosArtifact.g:2689:5: (lv_value_5_0= ruleParameterValue )
+                    // InternalRosArtifact.g:2674:4: ( (lv_value_5_0= ruleParameterValue ) )
+                    // InternalRosArtifact.g:2675:5: (lv_value_5_0= ruleParameterValue )
                     {
-                    // InternalRosArtifact.g:2689:5: (lv_value_5_0= ruleParameterValue )
-                    // InternalRosArtifact.g:2690:6: lv_value_5_0= ruleParameterValue
+                    // InternalRosArtifact.g:2675:5: (lv_value_5_0= ruleParameterValue )
+                    // InternalRosArtifact.g:2676:6: lv_value_5_0= ruleParameterValue
                     {
 
                     						newCompositeNode(grammarAccess.getParameterSequenceAccess().getValueParameterValueParserRuleCall_3_2_0());
@@ -6540,30 +6421,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:2707:4: (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )*
-                    loop53:
+                    // InternalRosArtifact.g:2693:4: (otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) ) )*
+                    loop46:
                     do {
-                        int alt53=2;
-                        int LA53_0 = input.LA(1);
+                        int alt46=2;
+                        int LA46_0 = input.LA(1);
 
-                        if ( (LA53_0==18) ) {
-                            alt53=1;
+                        if ( (LA46_0==18) ) {
+                            alt46=1;
                         }
 
 
-                        switch (alt53) {
+                        switch (alt46) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:2708:5: otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) )
+                    	    // InternalRosArtifact.g:2694:5: otherlv_6= ',' ( (lv_value_7_0= ruleParameterValue ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_51); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_47); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getParameterSequenceAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:2712:5: ( (lv_value_7_0= ruleParameterValue ) )
-                    	    // InternalRosArtifact.g:2713:6: (lv_value_7_0= ruleParameterValue )
+                    	    // InternalRosArtifact.g:2698:5: ( (lv_value_7_0= ruleParameterValue ) )
+                    	    // InternalRosArtifact.g:2699:6: (lv_value_7_0= ruleParameterValue )
                     	    {
-                    	    // InternalRosArtifact.g:2713:6: (lv_value_7_0= ruleParameterValue )
-                    	    // InternalRosArtifact.g:2714:7: lv_value_7_0= ruleParameterValue
+                    	    // InternalRosArtifact.g:2699:6: (lv_value_7_0= ruleParameterValue )
+                    	    // InternalRosArtifact.g:2700:7: lv_value_7_0= ruleParameterValue
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterSequenceAccess().getValueParameterValueParserRuleCall_3_3_1_0());
@@ -6595,7 +6476,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop53;
+                    	    break loop46;
                         }
                     } while (true);
 
@@ -6636,7 +6517,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterAny"
-    // InternalRosArtifact.g:2745:1: entryRuleParameterAny returns [EObject current=null] : iv_ruleParameterAny= ruleParameterAny EOF ;
+    // InternalRosArtifact.g:2731:1: entryRuleParameterAny returns [EObject current=null] : iv_ruleParameterAny= ruleParameterAny EOF ;
     public final EObject entryRuleParameterAny() throws RecognitionException {
         EObject current = null;
 
@@ -6644,8 +6525,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2745:53: (iv_ruleParameterAny= ruleParameterAny EOF )
-            // InternalRosArtifact.g:2746:2: iv_ruleParameterAny= ruleParameterAny EOF
+            // InternalRosArtifact.g:2731:53: (iv_ruleParameterAny= ruleParameterAny EOF )
+            // InternalRosArtifact.g:2732:2: iv_ruleParameterAny= ruleParameterAny EOF
             {
              newCompositeNode(grammarAccess.getParameterAnyRule()); 
             pushFollow(FOLLOW_1);
@@ -6672,7 +6553,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterAny"
-    // InternalRosArtifact.g:2752:1: ruleParameterAny returns [EObject current=null] : ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:2738:1: ruleParameterAny returns [EObject current=null] : ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterAny() throws RecognitionException {
         EObject current = null;
 
@@ -6687,14 +6568,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2758:2: ( ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
-            // InternalRosArtifact.g:2759:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2744:2: ( ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
+            // InternalRosArtifact.g:2745:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:2759:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
-            // InternalRosArtifact.g:2760:3: () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}'
+            // InternalRosArtifact.g:2745:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalRosArtifact.g:2746:3: () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}'
             {
-            // InternalRosArtifact.g:2760:3: ()
-            // InternalRosArtifact.g:2761:4: 
+            // InternalRosArtifact.g:2746:3: ()
+            // InternalRosArtifact.g:2747:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6708,30 +6589,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterAnyAccess().getParameterAnyKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_50); 
+            otherlv_2=(Token)match(input,12,FOLLOW_46); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterAnyAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:2775:3: (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )?
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // InternalRosArtifact.g:2761:3: (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA55_0==56) ) {
-                alt55=1;
+            if ( (LA48_0==56) ) {
+                alt48=1;
             }
-            switch (alt55) {
+            switch (alt48) {
                 case 1 :
-                    // InternalRosArtifact.g:2776:4: otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) )
+                    // InternalRosArtifact.g:2762:4: otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,56,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterAnyAccess().getValueKeyword_3_0());
                     			
-                    // InternalRosArtifact.g:2780:4: ( (lv_value_4_0= ruleEString ) )
-                    // InternalRosArtifact.g:2781:5: (lv_value_4_0= ruleEString )
+                    // InternalRosArtifact.g:2766:4: ( (lv_value_4_0= ruleEString ) )
+                    // InternalRosArtifact.g:2767:5: (lv_value_4_0= ruleEString )
                     {
-                    // InternalRosArtifact.g:2781:5: (lv_value_4_0= ruleEString )
-                    // InternalRosArtifact.g:2782:6: lv_value_4_0= ruleEString
+                    // InternalRosArtifact.g:2767:5: (lv_value_4_0= ruleEString )
+                    // InternalRosArtifact.g:2768:6: lv_value_4_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getParameterAnyAccess().getValueEStringParserRuleCall_3_1_0());
@@ -6791,7 +6672,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterString"
-    // InternalRosArtifact.g:2808:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
+    // InternalRosArtifact.g:2794:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
     public final EObject entryRuleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -6799,8 +6680,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2808:56: (iv_ruleParameterString= ruleParameterString EOF )
-            // InternalRosArtifact.g:2809:2: iv_ruleParameterString= ruleParameterString EOF
+            // InternalRosArtifact.g:2794:56: (iv_ruleParameterString= ruleParameterString EOF )
+            // InternalRosArtifact.g:2795:2: iv_ruleParameterString= ruleParameterString EOF
             {
              newCompositeNode(grammarAccess.getParameterStringRule()); 
             pushFollow(FOLLOW_1);
@@ -6827,7 +6708,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterString"
-    // InternalRosArtifact.g:2815:1: ruleParameterString returns [EObject current=null] : (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:2801:1: ruleParameterString returns [EObject current=null] : (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -6842,17 +6723,17 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2821:2: ( (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:2822:2: (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2807:2: ( (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:2808:2: (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:2822:2: (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:2823:3: otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:2808:2: (otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2809:3: otherlv_0= 'ParameterString' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleEString ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,58,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterStringAccess().getParameterStringKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStringAccess().getLeftCurlyBracketKeyword_1());
             		
@@ -6860,11 +6741,11 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStringAccess().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:2835:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalRosArtifact.g:2836:4: (lv_value_3_0= ruleEString )
+            // InternalRosArtifact.g:2821:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalRosArtifact.g:2822:4: (lv_value_3_0= ruleEString )
             {
-            // InternalRosArtifact.g:2836:4: (lv_value_3_0= ruleEString )
-            // InternalRosArtifact.g:2837:5: lv_value_3_0= ruleEString
+            // InternalRosArtifact.g:2822:4: (lv_value_3_0= ruleEString )
+            // InternalRosArtifact.g:2823:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_3_0());
@@ -6918,7 +6799,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBase64"
-    // InternalRosArtifact.g:2862:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
+    // InternalRosArtifact.g:2848:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
     public final EObject entryRuleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -6926,8 +6807,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2862:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
-            // InternalRosArtifact.g:2863:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
+            // InternalRosArtifact.g:2848:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
+            // InternalRosArtifact.g:2849:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
             {
              newCompositeNode(grammarAccess.getParameterBase64Rule()); 
             pushFollow(FOLLOW_1);
@@ -6954,7 +6835,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBase64"
-    // InternalRosArtifact.g:2869:1: ruleParameterBase64 returns [EObject current=null] : (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:2855:1: ruleParameterBase64 returns [EObject current=null] : (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -6969,29 +6850,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2875:2: ( (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:2876:2: (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2861:2: ( (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:2862:2: (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:2876:2: (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:2877:3: otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:2862:2: (otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2863:3: otherlv_0= 'ParameterBase64' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBase64Binary ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,59,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterBase64Access().getParameterBase64Keyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBase64Access().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,56,FOLLOW_53); 
+            otherlv_2=(Token)match(input,56,FOLLOW_49); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterBase64Access().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:2889:3: ( (lv_value_3_0= ruleBase64Binary ) )
-            // InternalRosArtifact.g:2890:4: (lv_value_3_0= ruleBase64Binary )
+            // InternalRosArtifact.g:2875:3: ( (lv_value_3_0= ruleBase64Binary ) )
+            // InternalRosArtifact.g:2876:4: (lv_value_3_0= ruleBase64Binary )
             {
-            // InternalRosArtifact.g:2890:4: (lv_value_3_0= ruleBase64Binary )
-            // InternalRosArtifact.g:2891:5: lv_value_3_0= ruleBase64Binary
+            // InternalRosArtifact.g:2876:4: (lv_value_3_0= ruleBase64Binary )
+            // InternalRosArtifact.g:2877:5: lv_value_3_0= ruleBase64Binary
             {
 
             					newCompositeNode(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_3_0());
@@ -7045,7 +6926,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterInteger"
-    // InternalRosArtifact.g:2916:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
+    // InternalRosArtifact.g:2902:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
     public final EObject entryRuleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -7053,8 +6934,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2916:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
-            // InternalRosArtifact.g:2917:2: iv_ruleParameterInteger= ruleParameterInteger EOF
+            // InternalRosArtifact.g:2902:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
+            // InternalRosArtifact.g:2903:2: iv_ruleParameterInteger= ruleParameterInteger EOF
             {
              newCompositeNode(grammarAccess.getParameterIntegerRule()); 
             pushFollow(FOLLOW_1);
@@ -7081,7 +6962,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterInteger"
-    // InternalRosArtifact.g:2923:1: ruleParameterInteger returns [EObject current=null] : (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:2909:1: ruleParameterInteger returns [EObject current=null] : (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -7096,29 +6977,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2929:2: ( (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:2930:2: (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2915:2: ( (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:2916:2: (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:2930:2: (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:2931:3: otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:2916:2: (otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2917:3: otherlv_0= 'ParameterInteger' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleInt0 ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,60,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterIntegerAccess().getParameterIntegerKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterIntegerAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,56,FOLLOW_54); 
+            otherlv_2=(Token)match(input,56,FOLLOW_50); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterIntegerAccess().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:2943:3: ( (lv_value_3_0= ruleInt0 ) )
-            // InternalRosArtifact.g:2944:4: (lv_value_3_0= ruleInt0 )
+            // InternalRosArtifact.g:2929:3: ( (lv_value_3_0= ruleInt0 ) )
+            // InternalRosArtifact.g:2930:4: (lv_value_3_0= ruleInt0 )
             {
-            // InternalRosArtifact.g:2944:4: (lv_value_3_0= ruleInt0 )
-            // InternalRosArtifact.g:2945:5: lv_value_3_0= ruleInt0
+            // InternalRosArtifact.g:2930:4: (lv_value_3_0= ruleInt0 )
+            // InternalRosArtifact.g:2931:5: lv_value_3_0= ruleInt0
             {
 
             					newCompositeNode(grammarAccess.getParameterIntegerAccess().getValueInt0ParserRuleCall_3_0());
@@ -7172,7 +7053,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDouble"
-    // InternalRosArtifact.g:2970:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
+    // InternalRosArtifact.g:2956:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
     public final EObject entryRuleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -7180,8 +7061,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:2970:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
-            // InternalRosArtifact.g:2971:2: iv_ruleParameterDouble= ruleParameterDouble EOF
+            // InternalRosArtifact.g:2956:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
+            // InternalRosArtifact.g:2957:2: iv_ruleParameterDouble= ruleParameterDouble EOF
             {
              newCompositeNode(grammarAccess.getParameterDoubleRule()); 
             pushFollow(FOLLOW_1);
@@ -7208,7 +7089,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDouble"
-    // InternalRosArtifact.g:2977:1: ruleParameterDouble returns [EObject current=null] : (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:2963:1: ruleParameterDouble returns [EObject current=null] : (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -7223,29 +7104,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:2983:2: ( (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:2984:2: (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2969:2: ( (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:2970:2: (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:2984:2: (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:2985:3: otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:2970:2: (otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:2971:3: otherlv_0= 'ParameterDouble' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDouble ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,61,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterDoubleAccess().getParameterDoubleKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDoubleAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,56,FOLLOW_55); 
+            otherlv_2=(Token)match(input,56,FOLLOW_51); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterDoubleAccess().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:2997:3: ( (lv_value_3_0= ruleDouble ) )
-            // InternalRosArtifact.g:2998:4: (lv_value_3_0= ruleDouble )
+            // InternalRosArtifact.g:2983:3: ( (lv_value_3_0= ruleDouble ) )
+            // InternalRosArtifact.g:2984:4: (lv_value_3_0= ruleDouble )
             {
-            // InternalRosArtifact.g:2998:4: (lv_value_3_0= ruleDouble )
-            // InternalRosArtifact.g:2999:5: lv_value_3_0= ruleDouble
+            // InternalRosArtifact.g:2984:4: (lv_value_3_0= ruleDouble )
+            // InternalRosArtifact.g:2985:5: lv_value_3_0= ruleDouble
             {
 
             					newCompositeNode(grammarAccess.getParameterDoubleAccess().getValueDoubleParserRuleCall_3_0());
@@ -7299,7 +7180,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBoolean"
-    // InternalRosArtifact.g:3024:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
+    // InternalRosArtifact.g:3010:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
     public final EObject entryRuleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -7307,8 +7188,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3024:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
-            // InternalRosArtifact.g:3025:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
+            // InternalRosArtifact.g:3010:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
+            // InternalRosArtifact.g:3011:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
             {
              newCompositeNode(grammarAccess.getParameterBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -7335,7 +7216,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBoolean"
-    // InternalRosArtifact.g:3031:1: ruleParameterBoolean returns [EObject current=null] : (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:3017:1: ruleParameterBoolean returns [EObject current=null] : (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -7350,29 +7231,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3037:2: ( (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:3038:2: (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:3023:2: ( (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:3024:2: (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:3038:2: (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:3039:3: otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:3024:2: (otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:3025:3: otherlv_0= 'ParameterBoolean' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleBoolean ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,62,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterBooleanAccess().getParameterBooleanKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBooleanAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,56,FOLLOW_56); 
+            otherlv_2=(Token)match(input,56,FOLLOW_52); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterBooleanAccess().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:3051:3: ( (lv_value_3_0= ruleBoolean ) )
-            // InternalRosArtifact.g:3052:4: (lv_value_3_0= ruleBoolean )
+            // InternalRosArtifact.g:3037:3: ( (lv_value_3_0= ruleBoolean ) )
+            // InternalRosArtifact.g:3038:4: (lv_value_3_0= ruleBoolean )
             {
-            // InternalRosArtifact.g:3052:4: (lv_value_3_0= ruleBoolean )
-            // InternalRosArtifact.g:3053:5: lv_value_3_0= ruleBoolean
+            // InternalRosArtifact.g:3038:4: (lv_value_3_0= ruleBoolean )
+            // InternalRosArtifact.g:3039:5: lv_value_3_0= ruleBoolean
             {
 
             					newCompositeNode(grammarAccess.getParameterBooleanAccess().getValueBooleanParserRuleCall_3_0());
@@ -7426,7 +7307,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStruct"
-    // InternalRosArtifact.g:3078:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
+    // InternalRosArtifact.g:3064:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
     public final EObject entryRuleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -7434,8 +7315,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3078:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
-            // InternalRosArtifact.g:3079:2: iv_ruleParameterStruct= ruleParameterStruct EOF
+            // InternalRosArtifact.g:3064:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
+            // InternalRosArtifact.g:3065:2: iv_ruleParameterStruct= ruleParameterStruct EOF
             {
              newCompositeNode(grammarAccess.getParameterStructRule()); 
             pushFollow(FOLLOW_1);
@@ -7462,7 +7343,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStruct"
-    // InternalRosArtifact.g:3085:1: ruleParameterStruct returns [EObject current=null] : ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRosArtifact.g:3071:1: ruleParameterStruct returns [EObject current=null] : ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -7482,14 +7363,14 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3091:2: ( ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRosArtifact.g:3092:2: ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:3077:2: ( ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRosArtifact.g:3078:2: ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRosArtifact.g:3092:2: ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRosArtifact.g:3093:3: () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRosArtifact.g:3078:2: ( () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRosArtifact.g:3079:3: () otherlv_1= 'ParameterStruct' otherlv_2= '{' (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRosArtifact.g:3093:3: ()
-            // InternalRosArtifact.g:3094:4: 
+            // InternalRosArtifact.g:3079:3: ()
+            // InternalRosArtifact.g:3080:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7503,34 +7384,34 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStructAccess().getParameterStructKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_50); 
+            otherlv_2=(Token)match(input,12,FOLLOW_46); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRosArtifact.g:3108:3: (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // InternalRosArtifact.g:3094:3: (otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}' )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA57_0==56) ) {
-                alt57=1;
+            if ( (LA50_0==56) ) {
+                alt50=1;
             }
-            switch (alt57) {
+            switch (alt50) {
                 case 1 :
-                    // InternalRosArtifact.g:3109:4: otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}'
+                    // InternalRosArtifact.g:3095:4: otherlv_3= 'value' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,56,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterStructAccess().getValueKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_57); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_53); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRosArtifact.g:3117:4: ( (lv_value_5_0= ruleParameterStructMember ) )
-                    // InternalRosArtifact.g:3118:5: (lv_value_5_0= ruleParameterStructMember )
+                    // InternalRosArtifact.g:3103:4: ( (lv_value_5_0= ruleParameterStructMember ) )
+                    // InternalRosArtifact.g:3104:5: (lv_value_5_0= ruleParameterStructMember )
                     {
-                    // InternalRosArtifact.g:3118:5: (lv_value_5_0= ruleParameterStructMember )
-                    // InternalRosArtifact.g:3119:6: lv_value_5_0= ruleParameterStructMember
+                    // InternalRosArtifact.g:3104:5: (lv_value_5_0= ruleParameterStructMember )
+                    // InternalRosArtifact.g:3105:6: lv_value_5_0= ruleParameterStructMember
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_3_2_0());
@@ -7557,30 +7438,30 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRosArtifact.g:3136:4: (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )*
-                    loop56:
+                    // InternalRosArtifact.g:3122:4: (otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) ) )*
+                    loop49:
                     do {
-                        int alt56=2;
-                        int LA56_0 = input.LA(1);
+                        int alt49=2;
+                        int LA49_0 = input.LA(1);
 
-                        if ( (LA56_0==18) ) {
-                            alt56=1;
+                        if ( (LA49_0==18) ) {
+                            alt49=1;
                         }
 
 
-                        switch (alt56) {
+                        switch (alt49) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:3137:5: otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) )
+                    	    // InternalRosArtifact.g:3123:5: otherlv_6= ',' ( (lv_value_7_0= ruleParameterStructMember ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FOLLOW_57); 
+                    	    otherlv_6=(Token)match(input,18,FOLLOW_53); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getParameterStructAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRosArtifact.g:3141:5: ( (lv_value_7_0= ruleParameterStructMember ) )
-                    	    // InternalRosArtifact.g:3142:6: (lv_value_7_0= ruleParameterStructMember )
+                    	    // InternalRosArtifact.g:3127:5: ( (lv_value_7_0= ruleParameterStructMember ) )
+                    	    // InternalRosArtifact.g:3128:6: (lv_value_7_0= ruleParameterStructMember )
                     	    {
-                    	    // InternalRosArtifact.g:3142:6: (lv_value_7_0= ruleParameterStructMember )
-                    	    // InternalRosArtifact.g:3143:7: lv_value_7_0= ruleParameterStructMember
+                    	    // InternalRosArtifact.g:3128:6: (lv_value_7_0= ruleParameterStructMember )
+                    	    // InternalRosArtifact.g:3129:7: lv_value_7_0= ruleParameterStructMember
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_3_3_1_0());
@@ -7612,7 +7493,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop56;
+                    	    break loop49;
                         }
                     } while (true);
 
@@ -7653,7 +7534,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDate"
-    // InternalRosArtifact.g:3174:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
+    // InternalRosArtifact.g:3160:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
     public final EObject entryRuleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -7661,8 +7542,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3174:54: (iv_ruleParameterDate= ruleParameterDate EOF )
-            // InternalRosArtifact.g:3175:2: iv_ruleParameterDate= ruleParameterDate EOF
+            // InternalRosArtifact.g:3160:54: (iv_ruleParameterDate= ruleParameterDate EOF )
+            // InternalRosArtifact.g:3161:2: iv_ruleParameterDate= ruleParameterDate EOF
             {
              newCompositeNode(grammarAccess.getParameterDateRule()); 
             pushFollow(FOLLOW_1);
@@ -7689,7 +7570,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDate"
-    // InternalRosArtifact.g:3181:1: ruleParameterDate returns [EObject current=null] : (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' ) ;
+    // InternalRosArtifact.g:3167:1: ruleParameterDate returns [EObject current=null] : (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -7704,29 +7585,29 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3187:2: ( (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' ) )
-            // InternalRosArtifact.g:3188:2: (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:3173:2: ( (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' ) )
+            // InternalRosArtifact.g:3174:2: (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' )
             {
-            // InternalRosArtifact.g:3188:2: (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' )
-            // InternalRosArtifact.g:3189:3: otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}'
+            // InternalRosArtifact.g:3174:2: (otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}' )
+            // InternalRosArtifact.g:3175:3: otherlv_0= 'ParameterDate' otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleDateTime ) ) otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,64,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterDateAccess().getParameterDateKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_52); 
+            otherlv_1=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDateAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,56,FOLLOW_58); 
+            otherlv_2=(Token)match(input,56,FOLLOW_54); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterDateAccess().getValueKeyword_2());
             		
-            // InternalRosArtifact.g:3201:3: ( (lv_value_3_0= ruleDateTime ) )
-            // InternalRosArtifact.g:3202:4: (lv_value_3_0= ruleDateTime )
+            // InternalRosArtifact.g:3187:3: ( (lv_value_3_0= ruleDateTime ) )
+            // InternalRosArtifact.g:3188:4: (lv_value_3_0= ruleDateTime )
             {
-            // InternalRosArtifact.g:3202:4: (lv_value_3_0= ruleDateTime )
-            // InternalRosArtifact.g:3203:5: lv_value_3_0= ruleDateTime
+            // InternalRosArtifact.g:3188:4: (lv_value_3_0= ruleDateTime )
+            // InternalRosArtifact.g:3189:5: lv_value_3_0= ruleDateTime
             {
 
             					newCompositeNode(grammarAccess.getParameterDateAccess().getValueDateTimeParserRuleCall_3_0());
@@ -7780,7 +7661,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBase64Binary"
-    // InternalRosArtifact.g:3228:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
+    // InternalRosArtifact.g:3214:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
     public final String entryRuleBase64Binary() throws RecognitionException {
         String current = null;
 
@@ -7788,8 +7669,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3228:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
-            // InternalRosArtifact.g:3229:2: iv_ruleBase64Binary= ruleBase64Binary EOF
+            // InternalRosArtifact.g:3214:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
+            // InternalRosArtifact.g:3215:2: iv_ruleBase64Binary= ruleBase64Binary EOF
             {
              newCompositeNode(grammarAccess.getBase64BinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -7816,7 +7697,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBase64Binary"
-    // InternalRosArtifact.g:3235:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Base64Binary' ;
+    // InternalRosArtifact.g:3221:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Base64Binary' ;
     public final AntlrDatatypeRuleToken ruleBase64Binary() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7826,8 +7707,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3241:2: (kw= 'Base64Binary' )
-            // InternalRosArtifact.g:3242:2: kw= 'Base64Binary'
+            // InternalRosArtifact.g:3227:2: (kw= 'Base64Binary' )
+            // InternalRosArtifact.g:3228:2: kw= 'Base64Binary'
             {
             kw=(Token)match(input,65,FOLLOW_2); 
 
@@ -7854,7 +7735,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInt0"
-    // InternalRosArtifact.g:3250:1: entryRuleInt0 returns [String current=null] : iv_ruleInt0= ruleInt0 EOF ;
+    // InternalRosArtifact.g:3236:1: entryRuleInt0 returns [String current=null] : iv_ruleInt0= ruleInt0 EOF ;
     public final String entryRuleInt0() throws RecognitionException {
         String current = null;
 
@@ -7862,8 +7743,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3250:44: (iv_ruleInt0= ruleInt0 EOF )
-            // InternalRosArtifact.g:3251:2: iv_ruleInt0= ruleInt0 EOF
+            // InternalRosArtifact.g:3236:44: (iv_ruleInt0= ruleInt0 EOF )
+            // InternalRosArtifact.g:3237:2: iv_ruleInt0= ruleInt0 EOF
             {
              newCompositeNode(grammarAccess.getInt0Rule()); 
             pushFollow(FOLLOW_1);
@@ -7890,7 +7771,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInt0"
-    // InternalRosArtifact.g:3257:1: ruleInt0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Int' ;
+    // InternalRosArtifact.g:3243:1: ruleInt0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Int' ;
     public final AntlrDatatypeRuleToken ruleInt0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7900,8 +7781,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3263:2: (kw= 'Int' )
-            // InternalRosArtifact.g:3264:2: kw= 'Int'
+            // InternalRosArtifact.g:3249:2: (kw= 'Int' )
+            // InternalRosArtifact.g:3250:2: kw= 'Int'
             {
             kw=(Token)match(input,66,FOLLOW_2); 
 
@@ -7928,7 +7809,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble"
-    // InternalRosArtifact.g:3272:1: entryRuleDouble returns [String current=null] : iv_ruleDouble= ruleDouble EOF ;
+    // InternalRosArtifact.g:3258:1: entryRuleDouble returns [String current=null] : iv_ruleDouble= ruleDouble EOF ;
     public final String entryRuleDouble() throws RecognitionException {
         String current = null;
 
@@ -7936,8 +7817,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3272:46: (iv_ruleDouble= ruleDouble EOF )
-            // InternalRosArtifact.g:3273:2: iv_ruleDouble= ruleDouble EOF
+            // InternalRosArtifact.g:3258:46: (iv_ruleDouble= ruleDouble EOF )
+            // InternalRosArtifact.g:3259:2: iv_ruleDouble= ruleDouble EOF
             {
              newCompositeNode(grammarAccess.getDoubleRule()); 
             pushFollow(FOLLOW_1);
@@ -7964,7 +7845,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble"
-    // InternalRosArtifact.g:3279:1: ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Double' ;
+    // InternalRosArtifact.g:3265:1: ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Double' ;
     public final AntlrDatatypeRuleToken ruleDouble() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7974,8 +7855,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3285:2: (kw= 'Double' )
-            // InternalRosArtifact.g:3286:2: kw= 'Double'
+            // InternalRosArtifact.g:3271:2: (kw= 'Double' )
+            // InternalRosArtifact.g:3272:2: kw= 'Double'
             {
             kw=(Token)match(input,67,FOLLOW_2); 
 
@@ -8002,7 +7883,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoolean"
-    // InternalRosArtifact.g:3294:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
+    // InternalRosArtifact.g:3280:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
     public final String entryRuleBoolean() throws RecognitionException {
         String current = null;
 
@@ -8010,8 +7891,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3294:47: (iv_ruleBoolean= ruleBoolean EOF )
-            // InternalRosArtifact.g:3295:2: iv_ruleBoolean= ruleBoolean EOF
+            // InternalRosArtifact.g:3280:47: (iv_ruleBoolean= ruleBoolean EOF )
+            // InternalRosArtifact.g:3281:2: iv_ruleBoolean= ruleBoolean EOF
             {
              newCompositeNode(grammarAccess.getBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -8038,7 +7919,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoolean"
-    // InternalRosArtifact.g:3301:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Boolean' ;
+    // InternalRosArtifact.g:3287:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Boolean' ;
     public final AntlrDatatypeRuleToken ruleBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8048,8 +7929,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3307:2: (kw= 'Boolean' )
-            // InternalRosArtifact.g:3308:2: kw= 'Boolean'
+            // InternalRosArtifact.g:3293:2: (kw= 'Boolean' )
+            // InternalRosArtifact.g:3294:2: kw= 'Boolean'
             {
             kw=(Token)match(input,68,FOLLOW_2); 
 
@@ -8076,7 +7957,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructMember"
-    // InternalRosArtifact.g:3316:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
+    // InternalRosArtifact.g:3302:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
     public final EObject entryRuleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -8084,8 +7965,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3316:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
-            // InternalRosArtifact.g:3317:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
+            // InternalRosArtifact.g:3302:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
+            // InternalRosArtifact.g:3303:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -8112,7 +7993,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructMember"
-    // InternalRosArtifact.g:3323:1: ruleParameterStructMember returns [EObject current=null] : (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) ;
+    // InternalRosArtifact.g:3309:1: ruleParameterStructMember returns [EObject current=null] : (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) ;
     public final EObject ruleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -8129,21 +8010,21 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3329:2: ( (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) )
-            // InternalRosArtifact.g:3330:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
+            // InternalRosArtifact.g:3315:2: ( (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) )
+            // InternalRosArtifact.g:3316:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
             {
-            // InternalRosArtifact.g:3330:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
-            // InternalRosArtifact.g:3331:3: otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}'
+            // InternalRosArtifact.g:3316:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
+            // InternalRosArtifact.g:3317:3: otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,69,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterStructMemberAccess().getParameterStructMemberKeyword_0());
             		
-            // InternalRosArtifact.g:3335:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalRosArtifact.g:3336:4: (lv_name_1_0= ruleEString )
+            // InternalRosArtifact.g:3321:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalRosArtifact.g:3322:4: (lv_name_1_0= ruleEString )
             {
-            // InternalRosArtifact.g:3336:4: (lv_name_1_0= ruleEString )
-            // InternalRosArtifact.g:3337:5: lv_name_1_0= ruleEString
+            // InternalRosArtifact.g:3322:4: (lv_name_1_0= ruleEString )
+            // InternalRosArtifact.g:3323:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0());
@@ -8170,19 +8051,19 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_52); 
+            otherlv_2=(Token)match(input,12,FOLLOW_48); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructMemberAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,56,FOLLOW_51); 
+            otherlv_3=(Token)match(input,56,FOLLOW_47); 
 
             			newLeafNode(otherlv_3, grammarAccess.getParameterStructMemberAccess().getValueKeyword_3());
             		
-            // InternalRosArtifact.g:3362:3: ( (lv_value_4_0= ruleParameterValue ) )
-            // InternalRosArtifact.g:3363:4: (lv_value_4_0= ruleParameterValue )
+            // InternalRosArtifact.g:3348:3: ( (lv_value_4_0= ruleParameterValue ) )
+            // InternalRosArtifact.g:3349:4: (lv_value_4_0= ruleParameterValue )
             {
-            // InternalRosArtifact.g:3363:4: (lv_value_4_0= ruleParameterValue )
-            // InternalRosArtifact.g:3364:5: lv_value_4_0= ruleParameterValue
+            // InternalRosArtifact.g:3349:4: (lv_value_4_0= ruleParameterValue )
+            // InternalRosArtifact.g:3350:5: lv_value_4_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0());
@@ -8236,7 +8117,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDateTime"
-    // InternalRosArtifact.g:3389:1: entryRuleDateTime returns [String current=null] : iv_ruleDateTime= ruleDateTime EOF ;
+    // InternalRosArtifact.g:3375:1: entryRuleDateTime returns [String current=null] : iv_ruleDateTime= ruleDateTime EOF ;
     public final String entryRuleDateTime() throws RecognitionException {
         String current = null;
 
@@ -8244,8 +8125,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3389:48: (iv_ruleDateTime= ruleDateTime EOF )
-            // InternalRosArtifact.g:3390:2: iv_ruleDateTime= ruleDateTime EOF
+            // InternalRosArtifact.g:3375:48: (iv_ruleDateTime= ruleDateTime EOF )
+            // InternalRosArtifact.g:3376:2: iv_ruleDateTime= ruleDateTime EOF
             {
              newCompositeNode(grammarAccess.getDateTimeRule()); 
             pushFollow(FOLLOW_1);
@@ -8272,7 +8153,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDateTime"
-    // InternalRosArtifact.g:3396:1: ruleDateTime returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DateTime' ;
+    // InternalRosArtifact.g:3382:1: ruleDateTime returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DateTime' ;
     public final AntlrDatatypeRuleToken ruleDateTime() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8282,8 +8163,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3402:2: (kw= 'DateTime' )
-            // InternalRosArtifact.g:3403:2: kw= 'DateTime'
+            // InternalRosArtifact.g:3388:2: (kw= 'DateTime' )
+            // InternalRosArtifact.g:3389:2: kw= 'DateTime'
             {
             kw=(Token)match(input,70,FOLLOW_2); 
 
@@ -8310,7 +8191,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructTypeMember"
-    // InternalRosArtifact.g:3411:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
+    // InternalRosArtifact.g:3397:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
     public final EObject entryRuleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -8318,8 +8199,8 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRosArtifact.g:3411:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
-            // InternalRosArtifact.g:3412:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
+            // InternalRosArtifact.g:3397:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
+            // InternalRosArtifact.g:3398:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructTypeMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -8346,7 +8227,7 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructTypeMember"
-    // InternalRosArtifact.g:3418:1: ruleParameterStructTypeMember returns [EObject current=null] : (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' ) ;
+    // InternalRosArtifact.g:3404:1: ruleParameterStructTypeMember returns [EObject current=null] : (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' ) ;
     public final EObject ruleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -8366,21 +8247,21 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRosArtifact.g:3424:2: ( (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' ) )
-            // InternalRosArtifact.g:3425:2: (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' )
+            // InternalRosArtifact.g:3410:2: ( (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' ) )
+            // InternalRosArtifact.g:3411:2: (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' )
             {
-            // InternalRosArtifact.g:3425:2: (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' )
-            // InternalRosArtifact.g:3426:3: otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}'
+            // InternalRosArtifact.g:3411:2: (otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}' )
+            // InternalRosArtifact.g:3412:3: otherlv_0= 'ParameterStructTypeMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'type' ( (lv_type_4_0= ruleParameterType ) ) (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )? otherlv_7= '}'
             {
             otherlv_0=(Token)match(input,71,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterStructTypeMemberAccess().getParameterStructTypeMemberKeyword_0());
             		
-            // InternalRosArtifact.g:3430:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalRosArtifact.g:3431:4: (lv_name_1_0= ruleEString )
+            // InternalRosArtifact.g:3416:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalRosArtifact.g:3417:4: (lv_name_1_0= ruleEString )
             {
-            // InternalRosArtifact.g:3431:4: (lv_name_1_0= ruleEString )
-            // InternalRosArtifact.g:3432:5: lv_name_1_0= ruleEString
+            // InternalRosArtifact.g:3417:4: (lv_name_1_0= ruleEString )
+            // InternalRosArtifact.g:3418:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getNameEStringParserRuleCall_1_0());
@@ -8407,24 +8288,24 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_34); 
+            otherlv_2=(Token)match(input,12,FOLLOW_30); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructTypeMemberAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,37,FOLLOW_35); 
+            otherlv_3=(Token)match(input,37,FOLLOW_31); 
 
             			newLeafNode(otherlv_3, grammarAccess.getParameterStructTypeMemberAccess().getTypeKeyword_3());
             		
-            // InternalRosArtifact.g:3457:3: ( (lv_type_4_0= ruleParameterType ) )
-            // InternalRosArtifact.g:3458:4: (lv_type_4_0= ruleParameterType )
+            // InternalRosArtifact.g:3443:3: ( (lv_type_4_0= ruleParameterType ) )
+            // InternalRosArtifact.g:3444:4: (lv_type_4_0= ruleParameterType )
             {
-            // InternalRosArtifact.g:3458:4: (lv_type_4_0= ruleParameterType )
-            // InternalRosArtifact.g:3459:5: lv_type_4_0= ruleParameterType
+            // InternalRosArtifact.g:3444:4: (lv_type_4_0= ruleParameterType )
+            // InternalRosArtifact.g:3445:5: lv_type_4_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getTypeParameterTypeParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_35);
             lv_type_4_0=ruleParameterType();
 
             state._fsp--;
@@ -8446,26 +8327,26 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosArtifact.g:3476:3: (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )?
-            int alt58=2;
-            int LA58_0 = input.LA(1);
+            // InternalRosArtifact.g:3462:3: (otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA58_0==44) ) {
-                alt58=1;
+            if ( (LA51_0==44) ) {
+                alt51=1;
             }
-            switch (alt58) {
+            switch (alt51) {
                 case 1 :
-                    // InternalRosArtifact.g:3477:4: otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) )
+                    // InternalRosArtifact.g:3463:4: otherlv_5= 'default' ( (lv_default_6_0= ruleParameterStruct ) )
                     {
-                    otherlv_5=(Token)match(input,44,FOLLOW_59); 
+                    otherlv_5=(Token)match(input,44,FOLLOW_55); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getParameterStructTypeMemberAccess().getDefaultKeyword_5_0());
                     			
-                    // InternalRosArtifact.g:3481:4: ( (lv_default_6_0= ruleParameterStruct ) )
-                    // InternalRosArtifact.g:3482:5: (lv_default_6_0= ruleParameterStruct )
+                    // InternalRosArtifact.g:3467:4: ( (lv_default_6_0= ruleParameterStruct ) )
+                    // InternalRosArtifact.g:3468:5: (lv_default_6_0= ruleParameterStruct )
                     {
-                    // InternalRosArtifact.g:3482:5: (lv_default_6_0= ruleParameterStruct )
-                    // InternalRosArtifact.g:3483:6: lv_default_6_0= ruleParameterStruct
+                    // InternalRosArtifact.g:3468:5: (lv_default_6_0= ruleParameterStruct )
+                    // InternalRosArtifact.g:3469:6: lv_default_6_0= ruleParameterStruct
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getDefaultParameterStructParserRuleCall_5_1_0());
@@ -8551,41 +8432,37 @@ public class InternalRosArtifactParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000001004000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000008004000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000034000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020010000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000200010000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000002008010000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000002008000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x007FA40000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000008000004000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000180000004000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000100000004000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000400000004000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0100000000004000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0xFE80000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008004000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000034000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000002008000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x007FA40000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000008000004000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000180000004000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000100000004000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000400000004000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0100000000004000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0xFE80000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x8000000000000000L});
 
 }

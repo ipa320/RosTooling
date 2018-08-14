@@ -18800,7 +18800,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             // InternalRos.g:6189:1: ( rule__ServiceServer__Group__1__Impl rule__ServiceServer__Group__2 )
             // InternalRos.g:6190:2: rule__ServiceServer__Group__1__Impl rule__ServiceServer__Group__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_24);
             rule__ServiceServer__Group__1__Impl();
 
             state._fsp--;
@@ -18875,7 +18875,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             // InternalRos.g:6216:1: ( rule__ServiceServer__Group__2__Impl rule__ServiceServer__Group__3 )
             // InternalRos.g:6217:2: rule__ServiceServer__Group__2__Impl rule__ServiceServer__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_25);
             rule__ServiceServer__Group__2__Impl();
 
             state._fsp--;
@@ -18904,42 +18904,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__2__Impl"
-    // InternalRos.g:6224:1: rule__ServiceServer__Group__2__Impl : ( ( rule__ServiceServer__Group_2__0 )? ) ;
+    // InternalRos.g:6224:1: rule__ServiceServer__Group__2__Impl : ( 'name' ) ;
     public final void rule__ServiceServer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6228:1: ( ( ( rule__ServiceServer__Group_2__0 )? ) )
-            // InternalRos.g:6229:1: ( ( rule__ServiceServer__Group_2__0 )? )
+            // InternalRos.g:6228:1: ( ( 'name' ) )
+            // InternalRos.g:6229:1: ( 'name' )
             {
-            // InternalRos.g:6229:1: ( ( rule__ServiceServer__Group_2__0 )? )
-            // InternalRos.g:6230:2: ( rule__ServiceServer__Group_2__0 )?
+            // InternalRos.g:6229:1: ( 'name' )
+            // InternalRos.g:6230:2: 'name'
             {
-             before(grammarAccess.getServiceServerAccess().getGroup_2()); 
-            // InternalRos.g:6231:2: ( rule__ServiceServer__Group_2__0 )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
-
-            if ( (LA41_0==40) ) {
-                alt41=1;
-            }
-            switch (alt41) {
-                case 1 :
-                    // InternalRos.g:6231:3: rule__ServiceServer__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ServiceServer__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getServiceServerAccess().getGroup_2()); 
+             before(grammarAccess.getServiceServerAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getServiceServerAccess().getNameKeyword_2()); 
 
             }
 
@@ -18971,7 +18950,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             // InternalRos.g:6243:1: ( rule__ServiceServer__Group__3__Impl rule__ServiceServer__Group__4 )
             // InternalRos.g:6244:2: rule__ServiceServer__Group__3__Impl rule__ServiceServer__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_34);
             rule__ServiceServer__Group__3__Impl();
 
             state._fsp--;
@@ -19000,21 +18979,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__3__Impl"
-    // InternalRos.g:6251:1: rule__ServiceServer__Group__3__Impl : ( 'service' ) ;
+    // InternalRos.g:6251:1: rule__ServiceServer__Group__3__Impl : ( ( rule__ServiceServer__NameAssignment_3 ) ) ;
     public final void rule__ServiceServer__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6255:1: ( ( 'service' ) )
-            // InternalRos.g:6256:1: ( 'service' )
+            // InternalRos.g:6255:1: ( ( ( rule__ServiceServer__NameAssignment_3 ) ) )
+            // InternalRos.g:6256:1: ( ( rule__ServiceServer__NameAssignment_3 ) )
             {
-            // InternalRos.g:6256:1: ( 'service' )
-            // InternalRos.g:6257:2: 'service'
+            // InternalRos.g:6256:1: ( ( rule__ServiceServer__NameAssignment_3 ) )
+            // InternalRos.g:6257:2: ( rule__ServiceServer__NameAssignment_3 )
             {
-             before(grammarAccess.getServiceServerAccess().getServiceKeyword_3()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getServiceServerAccess().getServiceKeyword_3()); 
+             before(grammarAccess.getServiceServerAccess().getNameAssignment_3()); 
+            // InternalRos.g:6258:2: ( rule__ServiceServer__NameAssignment_3 )
+            // InternalRos.g:6258:3: rule__ServiceServer__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ServiceServer__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getServiceServerAccess().getNameAssignment_3()); 
 
             }
 
@@ -19046,7 +19035,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             // InternalRos.g:6270:1: ( rule__ServiceServer__Group__4__Impl rule__ServiceServer__Group__5 )
             // InternalRos.g:6271:2: rule__ServiceServer__Group__4__Impl rule__ServiceServer__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__ServiceServer__Group__4__Impl();
 
             state._fsp--;
@@ -19075,31 +19064,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__4__Impl"
-    // InternalRos.g:6278:1: rule__ServiceServer__Group__4__Impl : ( ( rule__ServiceServer__ServiceAssignment_4 ) ) ;
+    // InternalRos.g:6278:1: rule__ServiceServer__Group__4__Impl : ( 'service' ) ;
     public final void rule__ServiceServer__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6282:1: ( ( ( rule__ServiceServer__ServiceAssignment_4 ) ) )
-            // InternalRos.g:6283:1: ( ( rule__ServiceServer__ServiceAssignment_4 ) )
+            // InternalRos.g:6282:1: ( ( 'service' ) )
+            // InternalRos.g:6283:1: ( 'service' )
             {
-            // InternalRos.g:6283:1: ( ( rule__ServiceServer__ServiceAssignment_4 ) )
-            // InternalRos.g:6284:2: ( rule__ServiceServer__ServiceAssignment_4 )
+            // InternalRos.g:6283:1: ( 'service' )
+            // InternalRos.g:6284:2: 'service'
             {
-             before(grammarAccess.getServiceServerAccess().getServiceAssignment_4()); 
-            // InternalRos.g:6285:2: ( rule__ServiceServer__ServiceAssignment_4 )
-            // InternalRos.g:6285:3: rule__ServiceServer__ServiceAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ServiceServer__ServiceAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getServiceServerAccess().getServiceAssignment_4()); 
+             before(grammarAccess.getServiceServerAccess().getServiceKeyword_4()); 
+            match(input,49,FOLLOW_2); 
+             after(grammarAccess.getServiceServerAccess().getServiceKeyword_4()); 
 
             }
 
@@ -19160,42 +19139,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__5__Impl"
-    // InternalRos.g:6305:1: rule__ServiceServer__Group__5__Impl : ( ( rule__ServiceServer__Group_5__0 )? ) ;
+    // InternalRos.g:6305:1: rule__ServiceServer__Group__5__Impl : ( ( rule__ServiceServer__ServiceAssignment_5 ) ) ;
     public final void rule__ServiceServer__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6309:1: ( ( ( rule__ServiceServer__Group_5__0 )? ) )
-            // InternalRos.g:6310:1: ( ( rule__ServiceServer__Group_5__0 )? )
+            // InternalRos.g:6309:1: ( ( ( rule__ServiceServer__ServiceAssignment_5 ) ) )
+            // InternalRos.g:6310:1: ( ( rule__ServiceServer__ServiceAssignment_5 ) )
             {
-            // InternalRos.g:6310:1: ( ( rule__ServiceServer__Group_5__0 )? )
-            // InternalRos.g:6311:2: ( rule__ServiceServer__Group_5__0 )?
+            // InternalRos.g:6310:1: ( ( rule__ServiceServer__ServiceAssignment_5 ) )
+            // InternalRos.g:6311:2: ( rule__ServiceServer__ServiceAssignment_5 )
             {
-             before(grammarAccess.getServiceServerAccess().getGroup_5()); 
-            // InternalRos.g:6312:2: ( rule__ServiceServer__Group_5__0 )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+             before(grammarAccess.getServiceServerAccess().getServiceAssignment_5()); 
+            // InternalRos.g:6312:2: ( rule__ServiceServer__ServiceAssignment_5 )
+            // InternalRos.g:6312:3: rule__ServiceServer__ServiceAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ServiceServer__ServiceAssignment_5();
 
-            if ( (LA42_0==50) ) {
-                alt42=1;
-            }
-            switch (alt42) {
-                case 1 :
-                    // InternalRos.g:6312:3: rule__ServiceServer__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ServiceServer__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getServiceServerAccess().getGroup_5()); 
+             after(grammarAccess.getServiceServerAccess().getServiceAssignment_5()); 
 
             }
 
@@ -19218,17 +19186,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__6"
-    // InternalRos.g:6320:1: rule__ServiceServer__Group__6 : rule__ServiceServer__Group__6__Impl ;
+    // InternalRos.g:6320:1: rule__ServiceServer__Group__6 : rule__ServiceServer__Group__6__Impl rule__ServiceServer__Group__7 ;
     public final void rule__ServiceServer__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6324:1: ( rule__ServiceServer__Group__6__Impl )
-            // InternalRos.g:6325:2: rule__ServiceServer__Group__6__Impl
+            // InternalRos.g:6324:1: ( rule__ServiceServer__Group__6__Impl rule__ServiceServer__Group__7 )
+            // InternalRos.g:6325:2: rule__ServiceServer__Group__6__Impl rule__ServiceServer__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__ServiceServer__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ServiceServer__Group__7();
 
             state._fsp--;
 
@@ -19251,21 +19224,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceServer__Group__6__Impl"
-    // InternalRos.g:6331:1: rule__ServiceServer__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:6332:1: rule__ServiceServer__Group__6__Impl : ( ( rule__ServiceServer__Group_6__0 )? ) ;
     public final void rule__ServiceServer__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6335:1: ( ( '}' ) )
-            // InternalRos.g:6336:1: ( '}' )
+            // InternalRos.g:6336:1: ( ( ( rule__ServiceServer__Group_6__0 )? ) )
+            // InternalRos.g:6337:1: ( ( rule__ServiceServer__Group_6__0 )? )
             {
-            // InternalRos.g:6336:1: ( '}' )
-            // InternalRos.g:6337:2: '}'
+            // InternalRos.g:6337:1: ( ( rule__ServiceServer__Group_6__0 )? )
+            // InternalRos.g:6338:2: ( rule__ServiceServer__Group_6__0 )?
             {
-             before(grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getServiceServerAccess().getGroup_6()); 
+            // InternalRos.g:6339:2: ( rule__ServiceServer__Group_6__0 )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
+
+            if ( (LA41_0==50) ) {
+                alt41=1;
+            }
+            switch (alt41) {
+                case 1 :
+                    // InternalRos.g:6339:3: rule__ServiceServer__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ServiceServer__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getServiceServerAccess().getGroup_6()); 
 
             }
 
@@ -19287,93 +19281,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ServiceServer__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_2__0"
-    // InternalRos.g:6347:1: rule__ServiceServer__Group_2__0 : rule__ServiceServer__Group_2__0__Impl rule__ServiceServer__Group_2__1 ;
-    public final void rule__ServiceServer__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group__7"
+    // InternalRos.g:6347:1: rule__ServiceServer__Group__7 : rule__ServiceServer__Group__7__Impl ;
+    public final void rule__ServiceServer__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6351:1: ( rule__ServiceServer__Group_2__0__Impl rule__ServiceServer__Group_2__1 )
-            // InternalRos.g:6352:2: rule__ServiceServer__Group_2__0__Impl rule__ServiceServer__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__ServiceServer__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ServiceServer__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ServiceServer__Group_2__0"
-
-
-    // $ANTLR start "rule__ServiceServer__Group_2__0__Impl"
-    // InternalRos.g:6359:1: rule__ServiceServer__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__ServiceServer__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6363:1: ( ( 'name' ) )
-            // InternalRos.g:6364:1: ( 'name' )
-            {
-            // InternalRos.g:6364:1: ( 'name' )
-            // InternalRos.g:6365:2: 'name'
-            {
-             before(grammarAccess.getServiceServerAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getServiceServerAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ServiceServer__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__ServiceServer__Group_2__1"
-    // InternalRos.g:6374:1: rule__ServiceServer__Group_2__1 : rule__ServiceServer__Group_2__1__Impl ;
-    public final void rule__ServiceServer__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6378:1: ( rule__ServiceServer__Group_2__1__Impl )
-            // InternalRos.g:6379:2: rule__ServiceServer__Group_2__1__Impl
+            // InternalRos.g:6351:1: ( rule__ServiceServer__Group__7__Impl )
+            // InternalRos.g:6352:2: rule__ServiceServer__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceServer__Group_2__1__Impl();
+            rule__ServiceServer__Group__7__Impl();
 
             state._fsp--;
 
@@ -19392,35 +19311,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_2__1"
+    // $ANTLR end "rule__ServiceServer__Group__7"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_2__1__Impl"
-    // InternalRos.g:6385:1: rule__ServiceServer__Group_2__1__Impl : ( ( rule__ServiceServer__NameAssignment_2_1 ) ) ;
-    public final void rule__ServiceServer__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group__7__Impl"
+    // InternalRos.g:6358:1: rule__ServiceServer__Group__7__Impl : ( '}' ) ;
+    public final void rule__ServiceServer__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6389:1: ( ( ( rule__ServiceServer__NameAssignment_2_1 ) ) )
-            // InternalRos.g:6390:1: ( ( rule__ServiceServer__NameAssignment_2_1 ) )
+            // InternalRos.g:6362:1: ( ( '}' ) )
+            // InternalRos.g:6363:1: ( '}' )
             {
-            // InternalRos.g:6390:1: ( ( rule__ServiceServer__NameAssignment_2_1 ) )
-            // InternalRos.g:6391:2: ( rule__ServiceServer__NameAssignment_2_1 )
+            // InternalRos.g:6363:1: ( '}' )
+            // InternalRos.g:6364:2: '}'
             {
-             before(grammarAccess.getServiceServerAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:6392:2: ( rule__ServiceServer__NameAssignment_2_1 )
-            // InternalRos.g:6392:3: rule__ServiceServer__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ServiceServer__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getServiceServerAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getServiceServerAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -19439,26 +19348,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_2__1__Impl"
+    // $ANTLR end "rule__ServiceServer__Group__7__Impl"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_5__0"
-    // InternalRos.g:6401:1: rule__ServiceServer__Group_5__0 : rule__ServiceServer__Group_5__0__Impl rule__ServiceServer__Group_5__1 ;
-    public final void rule__ServiceServer__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group_6__0"
+    // InternalRos.g:6374:1: rule__ServiceServer__Group_6__0 : rule__ServiceServer__Group_6__0__Impl rule__ServiceServer__Group_6__1 ;
+    public final void rule__ServiceServer__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6405:1: ( rule__ServiceServer__Group_5__0__Impl rule__ServiceServer__Group_5__1 )
-            // InternalRos.g:6406:2: rule__ServiceServer__Group_5__0__Impl rule__ServiceServer__Group_5__1
+            // InternalRos.g:6378:1: ( rule__ServiceServer__Group_6__0__Impl rule__ServiceServer__Group_6__1 )
+            // InternalRos.g:6379:2: rule__ServiceServer__Group_6__0__Impl rule__ServiceServer__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__ServiceServer__Group_5__0__Impl();
+            rule__ServiceServer__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ServiceServer__Group_5__1();
+            rule__ServiceServer__Group_6__1();
 
             state._fsp--;
 
@@ -19477,25 +19386,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_5__0"
+    // $ANTLR end "rule__ServiceServer__Group_6__0"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_5__0__Impl"
-    // InternalRos.g:6413:1: rule__ServiceServer__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__ServiceServer__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group_6__0__Impl"
+    // InternalRos.g:6386:1: rule__ServiceServer__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__ServiceServer__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6417:1: ( ( 'namespace' ) )
-            // InternalRos.g:6418:1: ( 'namespace' )
+            // InternalRos.g:6390:1: ( ( 'namespace' ) )
+            // InternalRos.g:6391:1: ( 'namespace' )
             {
-            // InternalRos.g:6418:1: ( 'namespace' )
-            // InternalRos.g:6419:2: 'namespace'
+            // InternalRos.g:6391:1: ( 'namespace' )
+            // InternalRos.g:6392:2: 'namespace'
             {
-             before(grammarAccess.getServiceServerAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getServiceServerAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getServiceServerAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getServiceServerAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -19514,21 +19423,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_5__0__Impl"
+    // $ANTLR end "rule__ServiceServer__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_5__1"
-    // InternalRos.g:6428:1: rule__ServiceServer__Group_5__1 : rule__ServiceServer__Group_5__1__Impl ;
-    public final void rule__ServiceServer__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group_6__1"
+    // InternalRos.g:6401:1: rule__ServiceServer__Group_6__1 : rule__ServiceServer__Group_6__1__Impl ;
+    public final void rule__ServiceServer__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6432:1: ( rule__ServiceServer__Group_5__1__Impl )
-            // InternalRos.g:6433:2: rule__ServiceServer__Group_5__1__Impl
+            // InternalRos.g:6405:1: ( rule__ServiceServer__Group_6__1__Impl )
+            // InternalRos.g:6406:2: rule__ServiceServer__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceServer__Group_5__1__Impl();
+            rule__ServiceServer__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -19547,35 +19456,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_5__1"
+    // $ANTLR end "rule__ServiceServer__Group_6__1"
 
 
-    // $ANTLR start "rule__ServiceServer__Group_5__1__Impl"
-    // InternalRos.g:6439:1: rule__ServiceServer__Group_5__1__Impl : ( ( rule__ServiceServer__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__ServiceServer__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__Group_6__1__Impl"
+    // InternalRos.g:6412:1: rule__ServiceServer__Group_6__1__Impl : ( ( rule__ServiceServer__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__ServiceServer__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6443:1: ( ( ( rule__ServiceServer__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:6444:1: ( ( rule__ServiceServer__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:6416:1: ( ( ( rule__ServiceServer__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:6417:1: ( ( rule__ServiceServer__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:6444:1: ( ( rule__ServiceServer__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:6445:2: ( rule__ServiceServer__NamespaceAssignment_5_1 )
+            // InternalRos.g:6417:1: ( ( rule__ServiceServer__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:6418:2: ( rule__ServiceServer__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getServiceServerAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:6446:2: ( rule__ServiceServer__NamespaceAssignment_5_1 )
-            // InternalRos.g:6446:3: rule__ServiceServer__NamespaceAssignment_5_1
+             before(grammarAccess.getServiceServerAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:6419:2: ( rule__ServiceServer__NamespaceAssignment_6_1 )
+            // InternalRos.g:6419:3: rule__ServiceServer__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceServer__NamespaceAssignment_5_1();
+            rule__ServiceServer__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getServiceServerAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getServiceServerAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -19594,18 +19503,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__Group_5__1__Impl"
+    // $ANTLR end "rule__ServiceServer__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__Publisher__Group__0"
-    // InternalRos.g:6455:1: rule__Publisher__Group__0 : rule__Publisher__Group__0__Impl rule__Publisher__Group__1 ;
+    // InternalRos.g:6428:1: rule__Publisher__Group__0 : rule__Publisher__Group__0__Impl rule__Publisher__Group__1 ;
     public final void rule__Publisher__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6459:1: ( rule__Publisher__Group__0__Impl rule__Publisher__Group__1 )
-            // InternalRos.g:6460:2: rule__Publisher__Group__0__Impl rule__Publisher__Group__1
+            // InternalRos.g:6432:1: ( rule__Publisher__Group__0__Impl rule__Publisher__Group__1 )
+            // InternalRos.g:6433:2: rule__Publisher__Group__0__Impl rule__Publisher__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Publisher__Group__0__Impl();
@@ -19636,17 +19545,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__0__Impl"
-    // InternalRos.g:6467:1: rule__Publisher__Group__0__Impl : ( 'Publisher' ) ;
+    // InternalRos.g:6440:1: rule__Publisher__Group__0__Impl : ( 'Publisher' ) ;
     public final void rule__Publisher__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6471:1: ( ( 'Publisher' ) )
-            // InternalRos.g:6472:1: ( 'Publisher' )
+            // InternalRos.g:6444:1: ( ( 'Publisher' ) )
+            // InternalRos.g:6445:1: ( 'Publisher' )
             {
-            // InternalRos.g:6472:1: ( 'Publisher' )
-            // InternalRos.g:6473:2: 'Publisher'
+            // InternalRos.g:6445:1: ( 'Publisher' )
+            // InternalRos.g:6446:2: 'Publisher'
             {
              before(grammarAccess.getPublisherAccess().getPublisherKeyword_0()); 
             match(input,51,FOLLOW_2); 
@@ -19673,16 +19582,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__1"
-    // InternalRos.g:6482:1: rule__Publisher__Group__1 : rule__Publisher__Group__1__Impl rule__Publisher__Group__2 ;
+    // InternalRos.g:6455:1: rule__Publisher__Group__1 : rule__Publisher__Group__1__Impl rule__Publisher__Group__2 ;
     public final void rule__Publisher__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6486:1: ( rule__Publisher__Group__1__Impl rule__Publisher__Group__2 )
-            // InternalRos.g:6487:2: rule__Publisher__Group__1__Impl rule__Publisher__Group__2
+            // InternalRos.g:6459:1: ( rule__Publisher__Group__1__Impl rule__Publisher__Group__2 )
+            // InternalRos.g:6460:2: rule__Publisher__Group__1__Impl rule__Publisher__Group__2
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_24);
             rule__Publisher__Group__1__Impl();
 
             state._fsp--;
@@ -19711,17 +19620,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__1__Impl"
-    // InternalRos.g:6494:1: rule__Publisher__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:6467:1: rule__Publisher__Group__1__Impl : ( '{' ) ;
     public final void rule__Publisher__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6498:1: ( ( '{' ) )
-            // InternalRos.g:6499:1: ( '{' )
+            // InternalRos.g:6471:1: ( ( '{' ) )
+            // InternalRos.g:6472:1: ( '{' )
             {
-            // InternalRos.g:6499:1: ( '{' )
-            // InternalRos.g:6500:2: '{'
+            // InternalRos.g:6472:1: ( '{' )
+            // InternalRos.g:6473:2: '{'
             {
              before(grammarAccess.getPublisherAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -19748,16 +19657,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__2"
-    // InternalRos.g:6509:1: rule__Publisher__Group__2 : rule__Publisher__Group__2__Impl rule__Publisher__Group__3 ;
+    // InternalRos.g:6482:1: rule__Publisher__Group__2 : rule__Publisher__Group__2__Impl rule__Publisher__Group__3 ;
     public final void rule__Publisher__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6513:1: ( rule__Publisher__Group__2__Impl rule__Publisher__Group__3 )
-            // InternalRos.g:6514:2: rule__Publisher__Group__2__Impl rule__Publisher__Group__3
+            // InternalRos.g:6486:1: ( rule__Publisher__Group__2__Impl rule__Publisher__Group__3 )
+            // InternalRos.g:6487:2: rule__Publisher__Group__2__Impl rule__Publisher__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_25);
             rule__Publisher__Group__2__Impl();
 
             state._fsp--;
@@ -19786,42 +19695,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__2__Impl"
-    // InternalRos.g:6521:1: rule__Publisher__Group__2__Impl : ( ( rule__Publisher__Group_2__0 )? ) ;
+    // InternalRos.g:6494:1: rule__Publisher__Group__2__Impl : ( 'name' ) ;
     public final void rule__Publisher__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6525:1: ( ( ( rule__Publisher__Group_2__0 )? ) )
-            // InternalRos.g:6526:1: ( ( rule__Publisher__Group_2__0 )? )
+            // InternalRos.g:6498:1: ( ( 'name' ) )
+            // InternalRos.g:6499:1: ( 'name' )
             {
-            // InternalRos.g:6526:1: ( ( rule__Publisher__Group_2__0 )? )
-            // InternalRos.g:6527:2: ( rule__Publisher__Group_2__0 )?
+            // InternalRos.g:6499:1: ( 'name' )
+            // InternalRos.g:6500:2: 'name'
             {
-             before(grammarAccess.getPublisherAccess().getGroup_2()); 
-            // InternalRos.g:6528:2: ( rule__Publisher__Group_2__0 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
-
-            if ( (LA43_0==40) ) {
-                alt43=1;
-            }
-            switch (alt43) {
-                case 1 :
-                    // InternalRos.g:6528:3: rule__Publisher__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Publisher__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPublisherAccess().getGroup_2()); 
+             before(grammarAccess.getPublisherAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getPublisherAccess().getNameKeyword_2()); 
 
             }
 
@@ -19844,16 +19732,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__3"
-    // InternalRos.g:6536:1: rule__Publisher__Group__3 : rule__Publisher__Group__3__Impl rule__Publisher__Group__4 ;
+    // InternalRos.g:6509:1: rule__Publisher__Group__3 : rule__Publisher__Group__3__Impl rule__Publisher__Group__4 ;
     public final void rule__Publisher__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6540:1: ( rule__Publisher__Group__3__Impl rule__Publisher__Group__4 )
-            // InternalRos.g:6541:2: rule__Publisher__Group__3__Impl rule__Publisher__Group__4
+            // InternalRos.g:6513:1: ( rule__Publisher__Group__3__Impl rule__Publisher__Group__4 )
+            // InternalRos.g:6514:2: rule__Publisher__Group__3__Impl rule__Publisher__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_37);
             rule__Publisher__Group__3__Impl();
 
             state._fsp--;
@@ -19882,21 +19770,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__3__Impl"
-    // InternalRos.g:6548:1: rule__Publisher__Group__3__Impl : ( 'message' ) ;
+    // InternalRos.g:6521:1: rule__Publisher__Group__3__Impl : ( ( rule__Publisher__NameAssignment_3 ) ) ;
     public final void rule__Publisher__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6552:1: ( ( 'message' ) )
-            // InternalRos.g:6553:1: ( 'message' )
+            // InternalRos.g:6525:1: ( ( ( rule__Publisher__NameAssignment_3 ) ) )
+            // InternalRos.g:6526:1: ( ( rule__Publisher__NameAssignment_3 ) )
             {
-            // InternalRos.g:6553:1: ( 'message' )
-            // InternalRos.g:6554:2: 'message'
+            // InternalRos.g:6526:1: ( ( rule__Publisher__NameAssignment_3 ) )
+            // InternalRos.g:6527:2: ( rule__Publisher__NameAssignment_3 )
             {
-             before(grammarAccess.getPublisherAccess().getMessageKeyword_3()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getPublisherAccess().getMessageKeyword_3()); 
+             before(grammarAccess.getPublisherAccess().getNameAssignment_3()); 
+            // InternalRos.g:6528:2: ( rule__Publisher__NameAssignment_3 )
+            // InternalRos.g:6528:3: rule__Publisher__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Publisher__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPublisherAccess().getNameAssignment_3()); 
 
             }
 
@@ -19919,16 +19817,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__4"
-    // InternalRos.g:6563:1: rule__Publisher__Group__4 : rule__Publisher__Group__4__Impl rule__Publisher__Group__5 ;
+    // InternalRos.g:6536:1: rule__Publisher__Group__4 : rule__Publisher__Group__4__Impl rule__Publisher__Group__5 ;
     public final void rule__Publisher__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6567:1: ( rule__Publisher__Group__4__Impl rule__Publisher__Group__5 )
-            // InternalRos.g:6568:2: rule__Publisher__Group__4__Impl rule__Publisher__Group__5
+            // InternalRos.g:6540:1: ( rule__Publisher__Group__4__Impl rule__Publisher__Group__5 )
+            // InternalRos.g:6541:2: rule__Publisher__Group__4__Impl rule__Publisher__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__Publisher__Group__4__Impl();
 
             state._fsp--;
@@ -19957,31 +19855,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__4__Impl"
-    // InternalRos.g:6575:1: rule__Publisher__Group__4__Impl : ( ( rule__Publisher__MessageAssignment_4 ) ) ;
+    // InternalRos.g:6548:1: rule__Publisher__Group__4__Impl : ( 'message' ) ;
     public final void rule__Publisher__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6579:1: ( ( ( rule__Publisher__MessageAssignment_4 ) ) )
-            // InternalRos.g:6580:1: ( ( rule__Publisher__MessageAssignment_4 ) )
+            // InternalRos.g:6552:1: ( ( 'message' ) )
+            // InternalRos.g:6553:1: ( 'message' )
             {
-            // InternalRos.g:6580:1: ( ( rule__Publisher__MessageAssignment_4 ) )
-            // InternalRos.g:6581:2: ( rule__Publisher__MessageAssignment_4 )
+            // InternalRos.g:6553:1: ( 'message' )
+            // InternalRos.g:6554:2: 'message'
             {
-             before(grammarAccess.getPublisherAccess().getMessageAssignment_4()); 
-            // InternalRos.g:6582:2: ( rule__Publisher__MessageAssignment_4 )
-            // InternalRos.g:6582:3: rule__Publisher__MessageAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Publisher__MessageAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPublisherAccess().getMessageAssignment_4()); 
+             before(grammarAccess.getPublisherAccess().getMessageKeyword_4()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getPublisherAccess().getMessageKeyword_4()); 
 
             }
 
@@ -20004,14 +19892,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__5"
-    // InternalRos.g:6590:1: rule__Publisher__Group__5 : rule__Publisher__Group__5__Impl rule__Publisher__Group__6 ;
+    // InternalRos.g:6563:1: rule__Publisher__Group__5 : rule__Publisher__Group__5__Impl rule__Publisher__Group__6 ;
     public final void rule__Publisher__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6594:1: ( rule__Publisher__Group__5__Impl rule__Publisher__Group__6 )
-            // InternalRos.g:6595:2: rule__Publisher__Group__5__Impl rule__Publisher__Group__6
+            // InternalRos.g:6567:1: ( rule__Publisher__Group__5__Impl rule__Publisher__Group__6 )
+            // InternalRos.g:6568:2: rule__Publisher__Group__5__Impl rule__Publisher__Group__6
             {
             pushFollow(FOLLOW_35);
             rule__Publisher__Group__5__Impl();
@@ -20042,42 +19930,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__5__Impl"
-    // InternalRos.g:6602:1: rule__Publisher__Group__5__Impl : ( ( rule__Publisher__Group_5__0 )? ) ;
+    // InternalRos.g:6575:1: rule__Publisher__Group__5__Impl : ( ( rule__Publisher__MessageAssignment_5 ) ) ;
     public final void rule__Publisher__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6606:1: ( ( ( rule__Publisher__Group_5__0 )? ) )
-            // InternalRos.g:6607:1: ( ( rule__Publisher__Group_5__0 )? )
+            // InternalRos.g:6579:1: ( ( ( rule__Publisher__MessageAssignment_5 ) ) )
+            // InternalRos.g:6580:1: ( ( rule__Publisher__MessageAssignment_5 ) )
             {
-            // InternalRos.g:6607:1: ( ( rule__Publisher__Group_5__0 )? )
-            // InternalRos.g:6608:2: ( rule__Publisher__Group_5__0 )?
+            // InternalRos.g:6580:1: ( ( rule__Publisher__MessageAssignment_5 ) )
+            // InternalRos.g:6581:2: ( rule__Publisher__MessageAssignment_5 )
             {
-             before(grammarAccess.getPublisherAccess().getGroup_5()); 
-            // InternalRos.g:6609:2: ( rule__Publisher__Group_5__0 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+             before(grammarAccess.getPublisherAccess().getMessageAssignment_5()); 
+            // InternalRos.g:6582:2: ( rule__Publisher__MessageAssignment_5 )
+            // InternalRos.g:6582:3: rule__Publisher__MessageAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Publisher__MessageAssignment_5();
 
-            if ( (LA44_0==50) ) {
-                alt44=1;
-            }
-            switch (alt44) {
-                case 1 :
-                    // InternalRos.g:6609:3: rule__Publisher__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Publisher__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getPublisherAccess().getGroup_5()); 
+             after(grammarAccess.getPublisherAccess().getMessageAssignment_5()); 
 
             }
 
@@ -20100,17 +19977,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__6"
-    // InternalRos.g:6617:1: rule__Publisher__Group__6 : rule__Publisher__Group__6__Impl ;
+    // InternalRos.g:6590:1: rule__Publisher__Group__6 : rule__Publisher__Group__6__Impl rule__Publisher__Group__7 ;
     public final void rule__Publisher__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6621:1: ( rule__Publisher__Group__6__Impl )
-            // InternalRos.g:6622:2: rule__Publisher__Group__6__Impl
+            // InternalRos.g:6594:1: ( rule__Publisher__Group__6__Impl rule__Publisher__Group__7 )
+            // InternalRos.g:6595:2: rule__Publisher__Group__6__Impl rule__Publisher__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__Publisher__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Publisher__Group__7();
 
             state._fsp--;
 
@@ -20133,21 +20015,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Publisher__Group__6__Impl"
-    // InternalRos.g:6628:1: rule__Publisher__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:6602:1: rule__Publisher__Group__6__Impl : ( ( rule__Publisher__Group_6__0 )? ) ;
     public final void rule__Publisher__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6632:1: ( ( '}' ) )
-            // InternalRos.g:6633:1: ( '}' )
+            // InternalRos.g:6606:1: ( ( ( rule__Publisher__Group_6__0 )? ) )
+            // InternalRos.g:6607:1: ( ( rule__Publisher__Group_6__0 )? )
             {
-            // InternalRos.g:6633:1: ( '}' )
-            // InternalRos.g:6634:2: '}'
+            // InternalRos.g:6607:1: ( ( rule__Publisher__Group_6__0 )? )
+            // InternalRos.g:6608:2: ( rule__Publisher__Group_6__0 )?
             {
-             before(grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getPublisherAccess().getGroup_6()); 
+            // InternalRos.g:6609:2: ( rule__Publisher__Group_6__0 )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
+
+            if ( (LA42_0==50) ) {
+                alt42=1;
+            }
+            switch (alt42) {
+                case 1 :
+                    // InternalRos.g:6609:3: rule__Publisher__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Publisher__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPublisherAccess().getGroup_6()); 
 
             }
 
@@ -20169,93 +20072,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Publisher__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Publisher__Group_2__0"
-    // InternalRos.g:6644:1: rule__Publisher__Group_2__0 : rule__Publisher__Group_2__0__Impl rule__Publisher__Group_2__1 ;
-    public final void rule__Publisher__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group__7"
+    // InternalRos.g:6617:1: rule__Publisher__Group__7 : rule__Publisher__Group__7__Impl ;
+    public final void rule__Publisher__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6648:1: ( rule__Publisher__Group_2__0__Impl rule__Publisher__Group_2__1 )
-            // InternalRos.g:6649:2: rule__Publisher__Group_2__0__Impl rule__Publisher__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__Publisher__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Publisher__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Publisher__Group_2__0"
-
-
-    // $ANTLR start "rule__Publisher__Group_2__0__Impl"
-    // InternalRos.g:6656:1: rule__Publisher__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__Publisher__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6660:1: ( ( 'name' ) )
-            // InternalRos.g:6661:1: ( 'name' )
-            {
-            // InternalRos.g:6661:1: ( 'name' )
-            // InternalRos.g:6662:2: 'name'
-            {
-             before(grammarAccess.getPublisherAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getPublisherAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Publisher__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Publisher__Group_2__1"
-    // InternalRos.g:6671:1: rule__Publisher__Group_2__1 : rule__Publisher__Group_2__1__Impl ;
-    public final void rule__Publisher__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6675:1: ( rule__Publisher__Group_2__1__Impl )
-            // InternalRos.g:6676:2: rule__Publisher__Group_2__1__Impl
+            // InternalRos.g:6621:1: ( rule__Publisher__Group__7__Impl )
+            // InternalRos.g:6622:2: rule__Publisher__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Publisher__Group_2__1__Impl();
+            rule__Publisher__Group__7__Impl();
 
             state._fsp--;
 
@@ -20274,35 +20102,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_2__1"
+    // $ANTLR end "rule__Publisher__Group__7"
 
 
-    // $ANTLR start "rule__Publisher__Group_2__1__Impl"
-    // InternalRos.g:6682:1: rule__Publisher__Group_2__1__Impl : ( ( rule__Publisher__NameAssignment_2_1 ) ) ;
-    public final void rule__Publisher__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group__7__Impl"
+    // InternalRos.g:6628:1: rule__Publisher__Group__7__Impl : ( '}' ) ;
+    public final void rule__Publisher__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6686:1: ( ( ( rule__Publisher__NameAssignment_2_1 ) ) )
-            // InternalRos.g:6687:1: ( ( rule__Publisher__NameAssignment_2_1 ) )
+            // InternalRos.g:6632:1: ( ( '}' ) )
+            // InternalRos.g:6633:1: ( '}' )
             {
-            // InternalRos.g:6687:1: ( ( rule__Publisher__NameAssignment_2_1 ) )
-            // InternalRos.g:6688:2: ( rule__Publisher__NameAssignment_2_1 )
+            // InternalRos.g:6633:1: ( '}' )
+            // InternalRos.g:6634:2: '}'
             {
-             before(grammarAccess.getPublisherAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:6689:2: ( rule__Publisher__NameAssignment_2_1 )
-            // InternalRos.g:6689:3: rule__Publisher__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Publisher__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPublisherAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getPublisherAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -20321,26 +20139,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_2__1__Impl"
+    // $ANTLR end "rule__Publisher__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Publisher__Group_5__0"
-    // InternalRos.g:6698:1: rule__Publisher__Group_5__0 : rule__Publisher__Group_5__0__Impl rule__Publisher__Group_5__1 ;
-    public final void rule__Publisher__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group_6__0"
+    // InternalRos.g:6644:1: rule__Publisher__Group_6__0 : rule__Publisher__Group_6__0__Impl rule__Publisher__Group_6__1 ;
+    public final void rule__Publisher__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6702:1: ( rule__Publisher__Group_5__0__Impl rule__Publisher__Group_5__1 )
-            // InternalRos.g:6703:2: rule__Publisher__Group_5__0__Impl rule__Publisher__Group_5__1
+            // InternalRos.g:6648:1: ( rule__Publisher__Group_6__0__Impl rule__Publisher__Group_6__1 )
+            // InternalRos.g:6649:2: rule__Publisher__Group_6__0__Impl rule__Publisher__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__Publisher__Group_5__0__Impl();
+            rule__Publisher__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Publisher__Group_5__1();
+            rule__Publisher__Group_6__1();
 
             state._fsp--;
 
@@ -20359,25 +20177,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_5__0"
+    // $ANTLR end "rule__Publisher__Group_6__0"
 
 
-    // $ANTLR start "rule__Publisher__Group_5__0__Impl"
-    // InternalRos.g:6710:1: rule__Publisher__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__Publisher__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group_6__0__Impl"
+    // InternalRos.g:6656:1: rule__Publisher__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__Publisher__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6714:1: ( ( 'namespace' ) )
-            // InternalRos.g:6715:1: ( 'namespace' )
+            // InternalRos.g:6660:1: ( ( 'namespace' ) )
+            // InternalRos.g:6661:1: ( 'namespace' )
             {
-            // InternalRos.g:6715:1: ( 'namespace' )
-            // InternalRos.g:6716:2: 'namespace'
+            // InternalRos.g:6661:1: ( 'namespace' )
+            // InternalRos.g:6662:2: 'namespace'
             {
-             before(grammarAccess.getPublisherAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getPublisherAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getPublisherAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getPublisherAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -20396,21 +20214,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_5__0__Impl"
+    // $ANTLR end "rule__Publisher__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__Publisher__Group_5__1"
-    // InternalRos.g:6725:1: rule__Publisher__Group_5__1 : rule__Publisher__Group_5__1__Impl ;
-    public final void rule__Publisher__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group_6__1"
+    // InternalRos.g:6671:1: rule__Publisher__Group_6__1 : rule__Publisher__Group_6__1__Impl ;
+    public final void rule__Publisher__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6729:1: ( rule__Publisher__Group_5__1__Impl )
-            // InternalRos.g:6730:2: rule__Publisher__Group_5__1__Impl
+            // InternalRos.g:6675:1: ( rule__Publisher__Group_6__1__Impl )
+            // InternalRos.g:6676:2: rule__Publisher__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Publisher__Group_5__1__Impl();
+            rule__Publisher__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -20429,35 +20247,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_5__1"
+    // $ANTLR end "rule__Publisher__Group_6__1"
 
 
-    // $ANTLR start "rule__Publisher__Group_5__1__Impl"
-    // InternalRos.g:6736:1: rule__Publisher__Group_5__1__Impl : ( ( rule__Publisher__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__Publisher__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__Group_6__1__Impl"
+    // InternalRos.g:6682:1: rule__Publisher__Group_6__1__Impl : ( ( rule__Publisher__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__Publisher__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6740:1: ( ( ( rule__Publisher__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:6741:1: ( ( rule__Publisher__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:6686:1: ( ( ( rule__Publisher__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:6687:1: ( ( rule__Publisher__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:6741:1: ( ( rule__Publisher__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:6742:2: ( rule__Publisher__NamespaceAssignment_5_1 )
+            // InternalRos.g:6687:1: ( ( rule__Publisher__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:6688:2: ( rule__Publisher__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getPublisherAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:6743:2: ( rule__Publisher__NamespaceAssignment_5_1 )
-            // InternalRos.g:6743:3: rule__Publisher__NamespaceAssignment_5_1
+             before(grammarAccess.getPublisherAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:6689:2: ( rule__Publisher__NamespaceAssignment_6_1 )
+            // InternalRos.g:6689:3: rule__Publisher__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__Publisher__NamespaceAssignment_5_1();
+            rule__Publisher__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPublisherAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getPublisherAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -20476,18 +20294,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__Group_5__1__Impl"
+    // $ANTLR end "rule__Publisher__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__Subscriber__Group__0"
-    // InternalRos.g:6752:1: rule__Subscriber__Group__0 : rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1 ;
+    // InternalRos.g:6698:1: rule__Subscriber__Group__0 : rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1 ;
     public final void rule__Subscriber__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6756:1: ( rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1 )
-            // InternalRos.g:6757:2: rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1
+            // InternalRos.g:6702:1: ( rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1 )
+            // InternalRos.g:6703:2: rule__Subscriber__Group__0__Impl rule__Subscriber__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Subscriber__Group__0__Impl();
@@ -20518,17 +20336,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__0__Impl"
-    // InternalRos.g:6764:1: rule__Subscriber__Group__0__Impl : ( 'Subscriber' ) ;
+    // InternalRos.g:6710:1: rule__Subscriber__Group__0__Impl : ( 'Subscriber' ) ;
     public final void rule__Subscriber__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6768:1: ( ( 'Subscriber' ) )
-            // InternalRos.g:6769:1: ( 'Subscriber' )
+            // InternalRos.g:6714:1: ( ( 'Subscriber' ) )
+            // InternalRos.g:6715:1: ( 'Subscriber' )
             {
-            // InternalRos.g:6769:1: ( 'Subscriber' )
-            // InternalRos.g:6770:2: 'Subscriber'
+            // InternalRos.g:6715:1: ( 'Subscriber' )
+            // InternalRos.g:6716:2: 'Subscriber'
             {
              before(grammarAccess.getSubscriberAccess().getSubscriberKeyword_0()); 
             match(input,52,FOLLOW_2); 
@@ -20555,16 +20373,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__1"
-    // InternalRos.g:6779:1: rule__Subscriber__Group__1 : rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2 ;
+    // InternalRos.g:6725:1: rule__Subscriber__Group__1 : rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2 ;
     public final void rule__Subscriber__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6783:1: ( rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2 )
-            // InternalRos.g:6784:2: rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2
+            // InternalRos.g:6729:1: ( rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2 )
+            // InternalRos.g:6730:2: rule__Subscriber__Group__1__Impl rule__Subscriber__Group__2
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_24);
             rule__Subscriber__Group__1__Impl();
 
             state._fsp--;
@@ -20593,17 +20411,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__1__Impl"
-    // InternalRos.g:6791:1: rule__Subscriber__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:6737:1: rule__Subscriber__Group__1__Impl : ( '{' ) ;
     public final void rule__Subscriber__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6795:1: ( ( '{' ) )
-            // InternalRos.g:6796:1: ( '{' )
+            // InternalRos.g:6741:1: ( ( '{' ) )
+            // InternalRos.g:6742:1: ( '{' )
             {
-            // InternalRos.g:6796:1: ( '{' )
-            // InternalRos.g:6797:2: '{'
+            // InternalRos.g:6742:1: ( '{' )
+            // InternalRos.g:6743:2: '{'
             {
              before(grammarAccess.getSubscriberAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -20630,16 +20448,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__2"
-    // InternalRos.g:6806:1: rule__Subscriber__Group__2 : rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3 ;
+    // InternalRos.g:6752:1: rule__Subscriber__Group__2 : rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3 ;
     public final void rule__Subscriber__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6810:1: ( rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3 )
-            // InternalRos.g:6811:2: rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3
+            // InternalRos.g:6756:1: ( rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3 )
+            // InternalRos.g:6757:2: rule__Subscriber__Group__2__Impl rule__Subscriber__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_25);
             rule__Subscriber__Group__2__Impl();
 
             state._fsp--;
@@ -20668,42 +20486,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__2__Impl"
-    // InternalRos.g:6818:1: rule__Subscriber__Group__2__Impl : ( ( rule__Subscriber__Group_2__0 )? ) ;
+    // InternalRos.g:6764:1: rule__Subscriber__Group__2__Impl : ( 'name' ) ;
     public final void rule__Subscriber__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6822:1: ( ( ( rule__Subscriber__Group_2__0 )? ) )
-            // InternalRos.g:6823:1: ( ( rule__Subscriber__Group_2__0 )? )
+            // InternalRos.g:6768:1: ( ( 'name' ) )
+            // InternalRos.g:6769:1: ( 'name' )
             {
-            // InternalRos.g:6823:1: ( ( rule__Subscriber__Group_2__0 )? )
-            // InternalRos.g:6824:2: ( rule__Subscriber__Group_2__0 )?
+            // InternalRos.g:6769:1: ( 'name' )
+            // InternalRos.g:6770:2: 'name'
             {
-             before(grammarAccess.getSubscriberAccess().getGroup_2()); 
-            // InternalRos.g:6825:2: ( rule__Subscriber__Group_2__0 )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
-
-            if ( (LA45_0==40) ) {
-                alt45=1;
-            }
-            switch (alt45) {
-                case 1 :
-                    // InternalRos.g:6825:3: rule__Subscriber__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Subscriber__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getSubscriberAccess().getGroup_2()); 
+             before(grammarAccess.getSubscriberAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getSubscriberAccess().getNameKeyword_2()); 
 
             }
 
@@ -20726,16 +20523,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__3"
-    // InternalRos.g:6833:1: rule__Subscriber__Group__3 : rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4 ;
+    // InternalRos.g:6779:1: rule__Subscriber__Group__3 : rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4 ;
     public final void rule__Subscriber__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6837:1: ( rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4 )
-            // InternalRos.g:6838:2: rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4
+            // InternalRos.g:6783:1: ( rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4 )
+            // InternalRos.g:6784:2: rule__Subscriber__Group__3__Impl rule__Subscriber__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_37);
             rule__Subscriber__Group__3__Impl();
 
             state._fsp--;
@@ -20764,21 +20561,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__3__Impl"
-    // InternalRos.g:6845:1: rule__Subscriber__Group__3__Impl : ( 'message' ) ;
+    // InternalRos.g:6791:1: rule__Subscriber__Group__3__Impl : ( ( rule__Subscriber__NameAssignment_3 ) ) ;
     public final void rule__Subscriber__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6849:1: ( ( 'message' ) )
-            // InternalRos.g:6850:1: ( 'message' )
+            // InternalRos.g:6795:1: ( ( ( rule__Subscriber__NameAssignment_3 ) ) )
+            // InternalRos.g:6796:1: ( ( rule__Subscriber__NameAssignment_3 ) )
             {
-            // InternalRos.g:6850:1: ( 'message' )
-            // InternalRos.g:6851:2: 'message'
+            // InternalRos.g:6796:1: ( ( rule__Subscriber__NameAssignment_3 ) )
+            // InternalRos.g:6797:2: ( rule__Subscriber__NameAssignment_3 )
             {
-             before(grammarAccess.getSubscriberAccess().getMessageKeyword_3()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getSubscriberAccess().getMessageKeyword_3()); 
+             before(grammarAccess.getSubscriberAccess().getNameAssignment_3()); 
+            // InternalRos.g:6798:2: ( rule__Subscriber__NameAssignment_3 )
+            // InternalRos.g:6798:3: rule__Subscriber__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Subscriber__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSubscriberAccess().getNameAssignment_3()); 
 
             }
 
@@ -20801,16 +20608,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__4"
-    // InternalRos.g:6860:1: rule__Subscriber__Group__4 : rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5 ;
+    // InternalRos.g:6806:1: rule__Subscriber__Group__4 : rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5 ;
     public final void rule__Subscriber__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6864:1: ( rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5 )
-            // InternalRos.g:6865:2: rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5
+            // InternalRos.g:6810:1: ( rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5 )
+            // InternalRos.g:6811:2: rule__Subscriber__Group__4__Impl rule__Subscriber__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__Subscriber__Group__4__Impl();
 
             state._fsp--;
@@ -20839,31 +20646,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__4__Impl"
-    // InternalRos.g:6872:1: rule__Subscriber__Group__4__Impl : ( ( rule__Subscriber__MessageAssignment_4 ) ) ;
+    // InternalRos.g:6818:1: rule__Subscriber__Group__4__Impl : ( 'message' ) ;
     public final void rule__Subscriber__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6876:1: ( ( ( rule__Subscriber__MessageAssignment_4 ) ) )
-            // InternalRos.g:6877:1: ( ( rule__Subscriber__MessageAssignment_4 ) )
+            // InternalRos.g:6822:1: ( ( 'message' ) )
+            // InternalRos.g:6823:1: ( 'message' )
             {
-            // InternalRos.g:6877:1: ( ( rule__Subscriber__MessageAssignment_4 ) )
-            // InternalRos.g:6878:2: ( rule__Subscriber__MessageAssignment_4 )
+            // InternalRos.g:6823:1: ( 'message' )
+            // InternalRos.g:6824:2: 'message'
             {
-             before(grammarAccess.getSubscriberAccess().getMessageAssignment_4()); 
-            // InternalRos.g:6879:2: ( rule__Subscriber__MessageAssignment_4 )
-            // InternalRos.g:6879:3: rule__Subscriber__MessageAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Subscriber__MessageAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSubscriberAccess().getMessageAssignment_4()); 
+             before(grammarAccess.getSubscriberAccess().getMessageKeyword_4()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getSubscriberAccess().getMessageKeyword_4()); 
 
             }
 
@@ -20886,14 +20683,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__5"
-    // InternalRos.g:6887:1: rule__Subscriber__Group__5 : rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6 ;
+    // InternalRos.g:6833:1: rule__Subscriber__Group__5 : rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6 ;
     public final void rule__Subscriber__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6891:1: ( rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6 )
-            // InternalRos.g:6892:2: rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6
+            // InternalRos.g:6837:1: ( rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6 )
+            // InternalRos.g:6838:2: rule__Subscriber__Group__5__Impl rule__Subscriber__Group__6
             {
             pushFollow(FOLLOW_35);
             rule__Subscriber__Group__5__Impl();
@@ -20924,42 +20721,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__5__Impl"
-    // InternalRos.g:6899:1: rule__Subscriber__Group__5__Impl : ( ( rule__Subscriber__Group_5__0 )? ) ;
+    // InternalRos.g:6845:1: rule__Subscriber__Group__5__Impl : ( ( rule__Subscriber__MessageAssignment_5 ) ) ;
     public final void rule__Subscriber__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6903:1: ( ( ( rule__Subscriber__Group_5__0 )? ) )
-            // InternalRos.g:6904:1: ( ( rule__Subscriber__Group_5__0 )? )
+            // InternalRos.g:6849:1: ( ( ( rule__Subscriber__MessageAssignment_5 ) ) )
+            // InternalRos.g:6850:1: ( ( rule__Subscriber__MessageAssignment_5 ) )
             {
-            // InternalRos.g:6904:1: ( ( rule__Subscriber__Group_5__0 )? )
-            // InternalRos.g:6905:2: ( rule__Subscriber__Group_5__0 )?
+            // InternalRos.g:6850:1: ( ( rule__Subscriber__MessageAssignment_5 ) )
+            // InternalRos.g:6851:2: ( rule__Subscriber__MessageAssignment_5 )
             {
-             before(grammarAccess.getSubscriberAccess().getGroup_5()); 
-            // InternalRos.g:6906:2: ( rule__Subscriber__Group_5__0 )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+             before(grammarAccess.getSubscriberAccess().getMessageAssignment_5()); 
+            // InternalRos.g:6852:2: ( rule__Subscriber__MessageAssignment_5 )
+            // InternalRos.g:6852:3: rule__Subscriber__MessageAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Subscriber__MessageAssignment_5();
 
-            if ( (LA46_0==50) ) {
-                alt46=1;
-            }
-            switch (alt46) {
-                case 1 :
-                    // InternalRos.g:6906:3: rule__Subscriber__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Subscriber__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getSubscriberAccess().getGroup_5()); 
+             after(grammarAccess.getSubscriberAccess().getMessageAssignment_5()); 
 
             }
 
@@ -20982,17 +20768,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__6"
-    // InternalRos.g:6914:1: rule__Subscriber__Group__6 : rule__Subscriber__Group__6__Impl ;
+    // InternalRos.g:6860:1: rule__Subscriber__Group__6 : rule__Subscriber__Group__6__Impl rule__Subscriber__Group__7 ;
     public final void rule__Subscriber__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6918:1: ( rule__Subscriber__Group__6__Impl )
-            // InternalRos.g:6919:2: rule__Subscriber__Group__6__Impl
+            // InternalRos.g:6864:1: ( rule__Subscriber__Group__6__Impl rule__Subscriber__Group__7 )
+            // InternalRos.g:6865:2: rule__Subscriber__Group__6__Impl rule__Subscriber__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__Subscriber__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Subscriber__Group__7();
 
             state._fsp--;
 
@@ -21015,21 +20806,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subscriber__Group__6__Impl"
-    // InternalRos.g:6925:1: rule__Subscriber__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:6872:1: rule__Subscriber__Group__6__Impl : ( ( rule__Subscriber__Group_6__0 )? ) ;
     public final void rule__Subscriber__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6929:1: ( ( '}' ) )
-            // InternalRos.g:6930:1: ( '}' )
+            // InternalRos.g:6876:1: ( ( ( rule__Subscriber__Group_6__0 )? ) )
+            // InternalRos.g:6877:1: ( ( rule__Subscriber__Group_6__0 )? )
             {
-            // InternalRos.g:6930:1: ( '}' )
-            // InternalRos.g:6931:2: '}'
+            // InternalRos.g:6877:1: ( ( rule__Subscriber__Group_6__0 )? )
+            // InternalRos.g:6878:2: ( rule__Subscriber__Group_6__0 )?
             {
-             before(grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getSubscriberAccess().getGroup_6()); 
+            // InternalRos.g:6879:2: ( rule__Subscriber__Group_6__0 )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0==50) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // InternalRos.g:6879:3: rule__Subscriber__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Subscriber__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSubscriberAccess().getGroup_6()); 
 
             }
 
@@ -21051,93 +20863,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Subscriber__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Subscriber__Group_2__0"
-    // InternalRos.g:6941:1: rule__Subscriber__Group_2__0 : rule__Subscriber__Group_2__0__Impl rule__Subscriber__Group_2__1 ;
-    public final void rule__Subscriber__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group__7"
+    // InternalRos.g:6887:1: rule__Subscriber__Group__7 : rule__Subscriber__Group__7__Impl ;
+    public final void rule__Subscriber__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6945:1: ( rule__Subscriber__Group_2__0__Impl rule__Subscriber__Group_2__1 )
-            // InternalRos.g:6946:2: rule__Subscriber__Group_2__0__Impl rule__Subscriber__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__Subscriber__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Subscriber__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Subscriber__Group_2__0"
-
-
-    // $ANTLR start "rule__Subscriber__Group_2__0__Impl"
-    // InternalRos.g:6953:1: rule__Subscriber__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__Subscriber__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6957:1: ( ( 'name' ) )
-            // InternalRos.g:6958:1: ( 'name' )
-            {
-            // InternalRos.g:6958:1: ( 'name' )
-            // InternalRos.g:6959:2: 'name'
-            {
-             before(grammarAccess.getSubscriberAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getSubscriberAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Subscriber__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Subscriber__Group_2__1"
-    // InternalRos.g:6968:1: rule__Subscriber__Group_2__1 : rule__Subscriber__Group_2__1__Impl ;
-    public final void rule__Subscriber__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:6972:1: ( rule__Subscriber__Group_2__1__Impl )
-            // InternalRos.g:6973:2: rule__Subscriber__Group_2__1__Impl
+            // InternalRos.g:6891:1: ( rule__Subscriber__Group__7__Impl )
+            // InternalRos.g:6892:2: rule__Subscriber__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Subscriber__Group_2__1__Impl();
+            rule__Subscriber__Group__7__Impl();
 
             state._fsp--;
 
@@ -21156,35 +20893,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_2__1"
+    // $ANTLR end "rule__Subscriber__Group__7"
 
 
-    // $ANTLR start "rule__Subscriber__Group_2__1__Impl"
-    // InternalRos.g:6979:1: rule__Subscriber__Group_2__1__Impl : ( ( rule__Subscriber__NameAssignment_2_1 ) ) ;
-    public final void rule__Subscriber__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group__7__Impl"
+    // InternalRos.g:6898:1: rule__Subscriber__Group__7__Impl : ( '}' ) ;
+    public final void rule__Subscriber__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6983:1: ( ( ( rule__Subscriber__NameAssignment_2_1 ) ) )
-            // InternalRos.g:6984:1: ( ( rule__Subscriber__NameAssignment_2_1 ) )
+            // InternalRos.g:6902:1: ( ( '}' ) )
+            // InternalRos.g:6903:1: ( '}' )
             {
-            // InternalRos.g:6984:1: ( ( rule__Subscriber__NameAssignment_2_1 ) )
-            // InternalRos.g:6985:2: ( rule__Subscriber__NameAssignment_2_1 )
+            // InternalRos.g:6903:1: ( '}' )
+            // InternalRos.g:6904:2: '}'
             {
-             before(grammarAccess.getSubscriberAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:6986:2: ( rule__Subscriber__NameAssignment_2_1 )
-            // InternalRos.g:6986:3: rule__Subscriber__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Subscriber__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSubscriberAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getSubscriberAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -21203,26 +20930,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_2__1__Impl"
+    // $ANTLR end "rule__Subscriber__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Subscriber__Group_5__0"
-    // InternalRos.g:6995:1: rule__Subscriber__Group_5__0 : rule__Subscriber__Group_5__0__Impl rule__Subscriber__Group_5__1 ;
-    public final void rule__Subscriber__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group_6__0"
+    // InternalRos.g:6914:1: rule__Subscriber__Group_6__0 : rule__Subscriber__Group_6__0__Impl rule__Subscriber__Group_6__1 ;
+    public final void rule__Subscriber__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:6999:1: ( rule__Subscriber__Group_5__0__Impl rule__Subscriber__Group_5__1 )
-            // InternalRos.g:7000:2: rule__Subscriber__Group_5__0__Impl rule__Subscriber__Group_5__1
+            // InternalRos.g:6918:1: ( rule__Subscriber__Group_6__0__Impl rule__Subscriber__Group_6__1 )
+            // InternalRos.g:6919:2: rule__Subscriber__Group_6__0__Impl rule__Subscriber__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__Subscriber__Group_5__0__Impl();
+            rule__Subscriber__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Subscriber__Group_5__1();
+            rule__Subscriber__Group_6__1();
 
             state._fsp--;
 
@@ -21241,25 +20968,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_5__0"
+    // $ANTLR end "rule__Subscriber__Group_6__0"
 
 
-    // $ANTLR start "rule__Subscriber__Group_5__0__Impl"
-    // InternalRos.g:7007:1: rule__Subscriber__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__Subscriber__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group_6__0__Impl"
+    // InternalRos.g:6926:1: rule__Subscriber__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__Subscriber__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7011:1: ( ( 'namespace' ) )
-            // InternalRos.g:7012:1: ( 'namespace' )
+            // InternalRos.g:6930:1: ( ( 'namespace' ) )
+            // InternalRos.g:6931:1: ( 'namespace' )
             {
-            // InternalRos.g:7012:1: ( 'namespace' )
-            // InternalRos.g:7013:2: 'namespace'
+            // InternalRos.g:6931:1: ( 'namespace' )
+            // InternalRos.g:6932:2: 'namespace'
             {
-             before(grammarAccess.getSubscriberAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getSubscriberAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getSubscriberAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getSubscriberAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -21278,21 +21005,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_5__0__Impl"
+    // $ANTLR end "rule__Subscriber__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__Subscriber__Group_5__1"
-    // InternalRos.g:7022:1: rule__Subscriber__Group_5__1 : rule__Subscriber__Group_5__1__Impl ;
-    public final void rule__Subscriber__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group_6__1"
+    // InternalRos.g:6941:1: rule__Subscriber__Group_6__1 : rule__Subscriber__Group_6__1__Impl ;
+    public final void rule__Subscriber__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7026:1: ( rule__Subscriber__Group_5__1__Impl )
-            // InternalRos.g:7027:2: rule__Subscriber__Group_5__1__Impl
+            // InternalRos.g:6945:1: ( rule__Subscriber__Group_6__1__Impl )
+            // InternalRos.g:6946:2: rule__Subscriber__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Subscriber__Group_5__1__Impl();
+            rule__Subscriber__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -21311,35 +21038,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_5__1"
+    // $ANTLR end "rule__Subscriber__Group_6__1"
 
 
-    // $ANTLR start "rule__Subscriber__Group_5__1__Impl"
-    // InternalRos.g:7033:1: rule__Subscriber__Group_5__1__Impl : ( ( rule__Subscriber__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__Subscriber__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__Group_6__1__Impl"
+    // InternalRos.g:6952:1: rule__Subscriber__Group_6__1__Impl : ( ( rule__Subscriber__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__Subscriber__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7037:1: ( ( ( rule__Subscriber__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:7038:1: ( ( rule__Subscriber__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:6956:1: ( ( ( rule__Subscriber__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:6957:1: ( ( rule__Subscriber__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:7038:1: ( ( rule__Subscriber__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:7039:2: ( rule__Subscriber__NamespaceAssignment_5_1 )
+            // InternalRos.g:6957:1: ( ( rule__Subscriber__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:6958:2: ( rule__Subscriber__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getSubscriberAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:7040:2: ( rule__Subscriber__NamespaceAssignment_5_1 )
-            // InternalRos.g:7040:3: rule__Subscriber__NamespaceAssignment_5_1
+             before(grammarAccess.getSubscriberAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:6959:2: ( rule__Subscriber__NamespaceAssignment_6_1 )
+            // InternalRos.g:6959:3: rule__Subscriber__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__Subscriber__NamespaceAssignment_5_1();
+            rule__Subscriber__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSubscriberAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getSubscriberAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -21358,18 +21085,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__Group_5__1__Impl"
+    // $ANTLR end "rule__Subscriber__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__ServiceClient__Group__0"
-    // InternalRos.g:7049:1: rule__ServiceClient__Group__0 : rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1 ;
+    // InternalRos.g:6968:1: rule__ServiceClient__Group__0 : rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1 ;
     public final void rule__ServiceClient__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7053:1: ( rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1 )
-            // InternalRos.g:7054:2: rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1
+            // InternalRos.g:6972:1: ( rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1 )
+            // InternalRos.g:6973:2: rule__ServiceClient__Group__0__Impl rule__ServiceClient__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ServiceClient__Group__0__Impl();
@@ -21400,17 +21127,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__0__Impl"
-    // InternalRos.g:7061:1: rule__ServiceClient__Group__0__Impl : ( 'ServiceClient' ) ;
+    // InternalRos.g:6980:1: rule__ServiceClient__Group__0__Impl : ( 'ServiceClient' ) ;
     public final void rule__ServiceClient__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7065:1: ( ( 'ServiceClient' ) )
-            // InternalRos.g:7066:1: ( 'ServiceClient' )
+            // InternalRos.g:6984:1: ( ( 'ServiceClient' ) )
+            // InternalRos.g:6985:1: ( 'ServiceClient' )
             {
-            // InternalRos.g:7066:1: ( 'ServiceClient' )
-            // InternalRos.g:7067:2: 'ServiceClient'
+            // InternalRos.g:6985:1: ( 'ServiceClient' )
+            // InternalRos.g:6986:2: 'ServiceClient'
             {
              before(grammarAccess.getServiceClientAccess().getServiceClientKeyword_0()); 
             match(input,53,FOLLOW_2); 
@@ -21437,16 +21164,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__1"
-    // InternalRos.g:7076:1: rule__ServiceClient__Group__1 : rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2 ;
+    // InternalRos.g:6995:1: rule__ServiceClient__Group__1 : rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2 ;
     public final void rule__ServiceClient__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7080:1: ( rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2 )
-            // InternalRos.g:7081:2: rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2
+            // InternalRos.g:6999:1: ( rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2 )
+            // InternalRos.g:7000:2: rule__ServiceClient__Group__1__Impl rule__ServiceClient__Group__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_24);
             rule__ServiceClient__Group__1__Impl();
 
             state._fsp--;
@@ -21475,17 +21202,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__1__Impl"
-    // InternalRos.g:7088:1: rule__ServiceClient__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:7007:1: rule__ServiceClient__Group__1__Impl : ( '{' ) ;
     public final void rule__ServiceClient__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7092:1: ( ( '{' ) )
-            // InternalRos.g:7093:1: ( '{' )
+            // InternalRos.g:7011:1: ( ( '{' ) )
+            // InternalRos.g:7012:1: ( '{' )
             {
-            // InternalRos.g:7093:1: ( '{' )
-            // InternalRos.g:7094:2: '{'
+            // InternalRos.g:7012:1: ( '{' )
+            // InternalRos.g:7013:2: '{'
             {
              before(grammarAccess.getServiceClientAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -21512,16 +21239,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__2"
-    // InternalRos.g:7103:1: rule__ServiceClient__Group__2 : rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3 ;
+    // InternalRos.g:7022:1: rule__ServiceClient__Group__2 : rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3 ;
     public final void rule__ServiceClient__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7107:1: ( rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3 )
-            // InternalRos.g:7108:2: rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3
+            // InternalRos.g:7026:1: ( rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3 )
+            // InternalRos.g:7027:2: rule__ServiceClient__Group__2__Impl rule__ServiceClient__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_25);
             rule__ServiceClient__Group__2__Impl();
 
             state._fsp--;
@@ -21550,42 +21277,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__2__Impl"
-    // InternalRos.g:7115:1: rule__ServiceClient__Group__2__Impl : ( ( rule__ServiceClient__Group_2__0 )? ) ;
+    // InternalRos.g:7034:1: rule__ServiceClient__Group__2__Impl : ( 'name' ) ;
     public final void rule__ServiceClient__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7119:1: ( ( ( rule__ServiceClient__Group_2__0 )? ) )
-            // InternalRos.g:7120:1: ( ( rule__ServiceClient__Group_2__0 )? )
+            // InternalRos.g:7038:1: ( ( 'name' ) )
+            // InternalRos.g:7039:1: ( 'name' )
             {
-            // InternalRos.g:7120:1: ( ( rule__ServiceClient__Group_2__0 )? )
-            // InternalRos.g:7121:2: ( rule__ServiceClient__Group_2__0 )?
+            // InternalRos.g:7039:1: ( 'name' )
+            // InternalRos.g:7040:2: 'name'
             {
-             before(grammarAccess.getServiceClientAccess().getGroup_2()); 
-            // InternalRos.g:7122:2: ( rule__ServiceClient__Group_2__0 )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
-
-            if ( (LA47_0==40) ) {
-                alt47=1;
-            }
-            switch (alt47) {
-                case 1 :
-                    // InternalRos.g:7122:3: rule__ServiceClient__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ServiceClient__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getServiceClientAccess().getGroup_2()); 
+             before(grammarAccess.getServiceClientAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getServiceClientAccess().getNameKeyword_2()); 
 
             }
 
@@ -21608,16 +21314,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__3"
-    // InternalRos.g:7130:1: rule__ServiceClient__Group__3 : rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4 ;
+    // InternalRos.g:7049:1: rule__ServiceClient__Group__3 : rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4 ;
     public final void rule__ServiceClient__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7134:1: ( rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4 )
-            // InternalRos.g:7135:2: rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4
+            // InternalRos.g:7053:1: ( rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4 )
+            // InternalRos.g:7054:2: rule__ServiceClient__Group__3__Impl rule__ServiceClient__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_34);
             rule__ServiceClient__Group__3__Impl();
 
             state._fsp--;
@@ -21646,21 +21352,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__3__Impl"
-    // InternalRos.g:7142:1: rule__ServiceClient__Group__3__Impl : ( 'service' ) ;
+    // InternalRos.g:7061:1: rule__ServiceClient__Group__3__Impl : ( ( rule__ServiceClient__NameAssignment_3 ) ) ;
     public final void rule__ServiceClient__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7146:1: ( ( 'service' ) )
-            // InternalRos.g:7147:1: ( 'service' )
+            // InternalRos.g:7065:1: ( ( ( rule__ServiceClient__NameAssignment_3 ) ) )
+            // InternalRos.g:7066:1: ( ( rule__ServiceClient__NameAssignment_3 ) )
             {
-            // InternalRos.g:7147:1: ( 'service' )
-            // InternalRos.g:7148:2: 'service'
+            // InternalRos.g:7066:1: ( ( rule__ServiceClient__NameAssignment_3 ) )
+            // InternalRos.g:7067:2: ( rule__ServiceClient__NameAssignment_3 )
             {
-             before(grammarAccess.getServiceClientAccess().getServiceKeyword_3()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getServiceClientAccess().getServiceKeyword_3()); 
+             before(grammarAccess.getServiceClientAccess().getNameAssignment_3()); 
+            // InternalRos.g:7068:2: ( rule__ServiceClient__NameAssignment_3 )
+            // InternalRos.g:7068:3: rule__ServiceClient__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ServiceClient__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getServiceClientAccess().getNameAssignment_3()); 
 
             }
 
@@ -21683,16 +21399,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__4"
-    // InternalRos.g:7157:1: rule__ServiceClient__Group__4 : rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5 ;
+    // InternalRos.g:7076:1: rule__ServiceClient__Group__4 : rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5 ;
     public final void rule__ServiceClient__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7161:1: ( rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5 )
-            // InternalRos.g:7162:2: rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5
+            // InternalRos.g:7080:1: ( rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5 )
+            // InternalRos.g:7081:2: rule__ServiceClient__Group__4__Impl rule__ServiceClient__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__ServiceClient__Group__4__Impl();
 
             state._fsp--;
@@ -21721,31 +21437,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__4__Impl"
-    // InternalRos.g:7169:1: rule__ServiceClient__Group__4__Impl : ( ( rule__ServiceClient__ServiceAssignment_4 ) ) ;
+    // InternalRos.g:7088:1: rule__ServiceClient__Group__4__Impl : ( 'service' ) ;
     public final void rule__ServiceClient__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7173:1: ( ( ( rule__ServiceClient__ServiceAssignment_4 ) ) )
-            // InternalRos.g:7174:1: ( ( rule__ServiceClient__ServiceAssignment_4 ) )
+            // InternalRos.g:7092:1: ( ( 'service' ) )
+            // InternalRos.g:7093:1: ( 'service' )
             {
-            // InternalRos.g:7174:1: ( ( rule__ServiceClient__ServiceAssignment_4 ) )
-            // InternalRos.g:7175:2: ( rule__ServiceClient__ServiceAssignment_4 )
+            // InternalRos.g:7093:1: ( 'service' )
+            // InternalRos.g:7094:2: 'service'
             {
-             before(grammarAccess.getServiceClientAccess().getServiceAssignment_4()); 
-            // InternalRos.g:7176:2: ( rule__ServiceClient__ServiceAssignment_4 )
-            // InternalRos.g:7176:3: rule__ServiceClient__ServiceAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ServiceClient__ServiceAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getServiceClientAccess().getServiceAssignment_4()); 
+             before(grammarAccess.getServiceClientAccess().getServiceKeyword_4()); 
+            match(input,49,FOLLOW_2); 
+             after(grammarAccess.getServiceClientAccess().getServiceKeyword_4()); 
 
             }
 
@@ -21768,14 +21474,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__5"
-    // InternalRos.g:7184:1: rule__ServiceClient__Group__5 : rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6 ;
+    // InternalRos.g:7103:1: rule__ServiceClient__Group__5 : rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6 ;
     public final void rule__ServiceClient__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7188:1: ( rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6 )
-            // InternalRos.g:7189:2: rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6
+            // InternalRos.g:7107:1: ( rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6 )
+            // InternalRos.g:7108:2: rule__ServiceClient__Group__5__Impl rule__ServiceClient__Group__6
             {
             pushFollow(FOLLOW_35);
             rule__ServiceClient__Group__5__Impl();
@@ -21806,42 +21512,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__5__Impl"
-    // InternalRos.g:7196:1: rule__ServiceClient__Group__5__Impl : ( ( rule__ServiceClient__Group_5__0 )? ) ;
+    // InternalRos.g:7115:1: rule__ServiceClient__Group__5__Impl : ( ( rule__ServiceClient__ServiceAssignment_5 ) ) ;
     public final void rule__ServiceClient__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7200:1: ( ( ( rule__ServiceClient__Group_5__0 )? ) )
-            // InternalRos.g:7201:1: ( ( rule__ServiceClient__Group_5__0 )? )
+            // InternalRos.g:7119:1: ( ( ( rule__ServiceClient__ServiceAssignment_5 ) ) )
+            // InternalRos.g:7120:1: ( ( rule__ServiceClient__ServiceAssignment_5 ) )
             {
-            // InternalRos.g:7201:1: ( ( rule__ServiceClient__Group_5__0 )? )
-            // InternalRos.g:7202:2: ( rule__ServiceClient__Group_5__0 )?
+            // InternalRos.g:7120:1: ( ( rule__ServiceClient__ServiceAssignment_5 ) )
+            // InternalRos.g:7121:2: ( rule__ServiceClient__ServiceAssignment_5 )
             {
-             before(grammarAccess.getServiceClientAccess().getGroup_5()); 
-            // InternalRos.g:7203:2: ( rule__ServiceClient__Group_5__0 )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+             before(grammarAccess.getServiceClientAccess().getServiceAssignment_5()); 
+            // InternalRos.g:7122:2: ( rule__ServiceClient__ServiceAssignment_5 )
+            // InternalRos.g:7122:3: rule__ServiceClient__ServiceAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ServiceClient__ServiceAssignment_5();
 
-            if ( (LA48_0==50) ) {
-                alt48=1;
-            }
-            switch (alt48) {
-                case 1 :
-                    // InternalRos.g:7203:3: rule__ServiceClient__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ServiceClient__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getServiceClientAccess().getGroup_5()); 
+             after(grammarAccess.getServiceClientAccess().getServiceAssignment_5()); 
 
             }
 
@@ -21864,17 +21559,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__6"
-    // InternalRos.g:7211:1: rule__ServiceClient__Group__6 : rule__ServiceClient__Group__6__Impl ;
+    // InternalRos.g:7130:1: rule__ServiceClient__Group__6 : rule__ServiceClient__Group__6__Impl rule__ServiceClient__Group__7 ;
     public final void rule__ServiceClient__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7215:1: ( rule__ServiceClient__Group__6__Impl )
-            // InternalRos.g:7216:2: rule__ServiceClient__Group__6__Impl
+            // InternalRos.g:7134:1: ( rule__ServiceClient__Group__6__Impl rule__ServiceClient__Group__7 )
+            // InternalRos.g:7135:2: rule__ServiceClient__Group__6__Impl rule__ServiceClient__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__ServiceClient__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ServiceClient__Group__7();
 
             state._fsp--;
 
@@ -21897,21 +21597,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceClient__Group__6__Impl"
-    // InternalRos.g:7222:1: rule__ServiceClient__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:7142:1: rule__ServiceClient__Group__6__Impl : ( ( rule__ServiceClient__Group_6__0 )? ) ;
     public final void rule__ServiceClient__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7226:1: ( ( '}' ) )
-            // InternalRos.g:7227:1: ( '}' )
+            // InternalRos.g:7146:1: ( ( ( rule__ServiceClient__Group_6__0 )? ) )
+            // InternalRos.g:7147:1: ( ( rule__ServiceClient__Group_6__0 )? )
             {
-            // InternalRos.g:7227:1: ( '}' )
-            // InternalRos.g:7228:2: '}'
+            // InternalRos.g:7147:1: ( ( rule__ServiceClient__Group_6__0 )? )
+            // InternalRos.g:7148:2: ( rule__ServiceClient__Group_6__0 )?
             {
-             before(grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getServiceClientAccess().getGroup_6()); 
+            // InternalRos.g:7149:2: ( rule__ServiceClient__Group_6__0 )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
+
+            if ( (LA44_0==50) ) {
+                alt44=1;
+            }
+            switch (alt44) {
+                case 1 :
+                    // InternalRos.g:7149:3: rule__ServiceClient__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ServiceClient__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getServiceClientAccess().getGroup_6()); 
 
             }
 
@@ -21933,93 +21654,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ServiceClient__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_2__0"
-    // InternalRos.g:7238:1: rule__ServiceClient__Group_2__0 : rule__ServiceClient__Group_2__0__Impl rule__ServiceClient__Group_2__1 ;
-    public final void rule__ServiceClient__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group__7"
+    // InternalRos.g:7157:1: rule__ServiceClient__Group__7 : rule__ServiceClient__Group__7__Impl ;
+    public final void rule__ServiceClient__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7242:1: ( rule__ServiceClient__Group_2__0__Impl rule__ServiceClient__Group_2__1 )
-            // InternalRos.g:7243:2: rule__ServiceClient__Group_2__0__Impl rule__ServiceClient__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__ServiceClient__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ServiceClient__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ServiceClient__Group_2__0"
-
-
-    // $ANTLR start "rule__ServiceClient__Group_2__0__Impl"
-    // InternalRos.g:7250:1: rule__ServiceClient__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__ServiceClient__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7254:1: ( ( 'name' ) )
-            // InternalRos.g:7255:1: ( 'name' )
-            {
-            // InternalRos.g:7255:1: ( 'name' )
-            // InternalRos.g:7256:2: 'name'
-            {
-             before(grammarAccess.getServiceClientAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getServiceClientAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ServiceClient__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__ServiceClient__Group_2__1"
-    // InternalRos.g:7265:1: rule__ServiceClient__Group_2__1 : rule__ServiceClient__Group_2__1__Impl ;
-    public final void rule__ServiceClient__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7269:1: ( rule__ServiceClient__Group_2__1__Impl )
-            // InternalRos.g:7270:2: rule__ServiceClient__Group_2__1__Impl
+            // InternalRos.g:7161:1: ( rule__ServiceClient__Group__7__Impl )
+            // InternalRos.g:7162:2: rule__ServiceClient__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceClient__Group_2__1__Impl();
+            rule__ServiceClient__Group__7__Impl();
 
             state._fsp--;
 
@@ -22038,35 +21684,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_2__1"
+    // $ANTLR end "rule__ServiceClient__Group__7"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_2__1__Impl"
-    // InternalRos.g:7276:1: rule__ServiceClient__Group_2__1__Impl : ( ( rule__ServiceClient__NameAssignment_2_1 ) ) ;
-    public final void rule__ServiceClient__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group__7__Impl"
+    // InternalRos.g:7168:1: rule__ServiceClient__Group__7__Impl : ( '}' ) ;
+    public final void rule__ServiceClient__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7280:1: ( ( ( rule__ServiceClient__NameAssignment_2_1 ) ) )
-            // InternalRos.g:7281:1: ( ( rule__ServiceClient__NameAssignment_2_1 ) )
+            // InternalRos.g:7172:1: ( ( '}' ) )
+            // InternalRos.g:7173:1: ( '}' )
             {
-            // InternalRos.g:7281:1: ( ( rule__ServiceClient__NameAssignment_2_1 ) )
-            // InternalRos.g:7282:2: ( rule__ServiceClient__NameAssignment_2_1 )
+            // InternalRos.g:7173:1: ( '}' )
+            // InternalRos.g:7174:2: '}'
             {
-             before(grammarAccess.getServiceClientAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:7283:2: ( rule__ServiceClient__NameAssignment_2_1 )
-            // InternalRos.g:7283:3: rule__ServiceClient__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ServiceClient__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getServiceClientAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getServiceClientAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -22085,26 +21721,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_2__1__Impl"
+    // $ANTLR end "rule__ServiceClient__Group__7__Impl"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_5__0"
-    // InternalRos.g:7292:1: rule__ServiceClient__Group_5__0 : rule__ServiceClient__Group_5__0__Impl rule__ServiceClient__Group_5__1 ;
-    public final void rule__ServiceClient__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group_6__0"
+    // InternalRos.g:7184:1: rule__ServiceClient__Group_6__0 : rule__ServiceClient__Group_6__0__Impl rule__ServiceClient__Group_6__1 ;
+    public final void rule__ServiceClient__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7296:1: ( rule__ServiceClient__Group_5__0__Impl rule__ServiceClient__Group_5__1 )
-            // InternalRos.g:7297:2: rule__ServiceClient__Group_5__0__Impl rule__ServiceClient__Group_5__1
+            // InternalRos.g:7188:1: ( rule__ServiceClient__Group_6__0__Impl rule__ServiceClient__Group_6__1 )
+            // InternalRos.g:7189:2: rule__ServiceClient__Group_6__0__Impl rule__ServiceClient__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__ServiceClient__Group_5__0__Impl();
+            rule__ServiceClient__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ServiceClient__Group_5__1();
+            rule__ServiceClient__Group_6__1();
 
             state._fsp--;
 
@@ -22123,25 +21759,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_5__0"
+    // $ANTLR end "rule__ServiceClient__Group_6__0"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_5__0__Impl"
-    // InternalRos.g:7304:1: rule__ServiceClient__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__ServiceClient__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group_6__0__Impl"
+    // InternalRos.g:7196:1: rule__ServiceClient__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__ServiceClient__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7308:1: ( ( 'namespace' ) )
-            // InternalRos.g:7309:1: ( 'namespace' )
+            // InternalRos.g:7200:1: ( ( 'namespace' ) )
+            // InternalRos.g:7201:1: ( 'namespace' )
             {
-            // InternalRos.g:7309:1: ( 'namespace' )
-            // InternalRos.g:7310:2: 'namespace'
+            // InternalRos.g:7201:1: ( 'namespace' )
+            // InternalRos.g:7202:2: 'namespace'
             {
-             before(grammarAccess.getServiceClientAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getServiceClientAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getServiceClientAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getServiceClientAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -22160,21 +21796,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_5__0__Impl"
+    // $ANTLR end "rule__ServiceClient__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_5__1"
-    // InternalRos.g:7319:1: rule__ServiceClient__Group_5__1 : rule__ServiceClient__Group_5__1__Impl ;
-    public final void rule__ServiceClient__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group_6__1"
+    // InternalRos.g:7211:1: rule__ServiceClient__Group_6__1 : rule__ServiceClient__Group_6__1__Impl ;
+    public final void rule__ServiceClient__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7323:1: ( rule__ServiceClient__Group_5__1__Impl )
-            // InternalRos.g:7324:2: rule__ServiceClient__Group_5__1__Impl
+            // InternalRos.g:7215:1: ( rule__ServiceClient__Group_6__1__Impl )
+            // InternalRos.g:7216:2: rule__ServiceClient__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceClient__Group_5__1__Impl();
+            rule__ServiceClient__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -22193,35 +21829,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_5__1"
+    // $ANTLR end "rule__ServiceClient__Group_6__1"
 
 
-    // $ANTLR start "rule__ServiceClient__Group_5__1__Impl"
-    // InternalRos.g:7330:1: rule__ServiceClient__Group_5__1__Impl : ( ( rule__ServiceClient__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__ServiceClient__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__Group_6__1__Impl"
+    // InternalRos.g:7222:1: rule__ServiceClient__Group_6__1__Impl : ( ( rule__ServiceClient__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__ServiceClient__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7334:1: ( ( ( rule__ServiceClient__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:7335:1: ( ( rule__ServiceClient__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:7226:1: ( ( ( rule__ServiceClient__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:7227:1: ( ( rule__ServiceClient__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:7335:1: ( ( rule__ServiceClient__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:7336:2: ( rule__ServiceClient__NamespaceAssignment_5_1 )
+            // InternalRos.g:7227:1: ( ( rule__ServiceClient__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:7228:2: ( rule__ServiceClient__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getServiceClientAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:7337:2: ( rule__ServiceClient__NamespaceAssignment_5_1 )
-            // InternalRos.g:7337:3: rule__ServiceClient__NamespaceAssignment_5_1
+             before(grammarAccess.getServiceClientAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:7229:2: ( rule__ServiceClient__NamespaceAssignment_6_1 )
+            // InternalRos.g:7229:3: rule__ServiceClient__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceClient__NamespaceAssignment_5_1();
+            rule__ServiceClient__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getServiceClientAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getServiceClientAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -22240,18 +21876,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__Group_5__1__Impl"
+    // $ANTLR end "rule__ServiceClient__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__ActionServer__Group__0"
-    // InternalRos.g:7346:1: rule__ActionServer__Group__0 : rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1 ;
+    // InternalRos.g:7238:1: rule__ActionServer__Group__0 : rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1 ;
     public final void rule__ActionServer__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7350:1: ( rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1 )
-            // InternalRos.g:7351:2: rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1
+            // InternalRos.g:7242:1: ( rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1 )
+            // InternalRos.g:7243:2: rule__ActionServer__Group__0__Impl rule__ActionServer__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ActionServer__Group__0__Impl();
@@ -22282,17 +21918,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__0__Impl"
-    // InternalRos.g:7358:1: rule__ActionServer__Group__0__Impl : ( 'ActionServer' ) ;
+    // InternalRos.g:7250:1: rule__ActionServer__Group__0__Impl : ( 'ActionServer' ) ;
     public final void rule__ActionServer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7362:1: ( ( 'ActionServer' ) )
-            // InternalRos.g:7363:1: ( 'ActionServer' )
+            // InternalRos.g:7254:1: ( ( 'ActionServer' ) )
+            // InternalRos.g:7255:1: ( 'ActionServer' )
             {
-            // InternalRos.g:7363:1: ( 'ActionServer' )
-            // InternalRos.g:7364:2: 'ActionServer'
+            // InternalRos.g:7255:1: ( 'ActionServer' )
+            // InternalRos.g:7256:2: 'ActionServer'
             {
              before(grammarAccess.getActionServerAccess().getActionServerKeyword_0()); 
             match(input,54,FOLLOW_2); 
@@ -22319,16 +21955,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__1"
-    // InternalRos.g:7373:1: rule__ActionServer__Group__1 : rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2 ;
+    // InternalRos.g:7265:1: rule__ActionServer__Group__1 : rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2 ;
     public final void rule__ActionServer__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7377:1: ( rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2 )
-            // InternalRos.g:7378:2: rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2
+            // InternalRos.g:7269:1: ( rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2 )
+            // InternalRos.g:7270:2: rule__ActionServer__Group__1__Impl rule__ActionServer__Group__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_24);
             rule__ActionServer__Group__1__Impl();
 
             state._fsp--;
@@ -22357,17 +21993,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__1__Impl"
-    // InternalRos.g:7385:1: rule__ActionServer__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:7277:1: rule__ActionServer__Group__1__Impl : ( '{' ) ;
     public final void rule__ActionServer__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7389:1: ( ( '{' ) )
-            // InternalRos.g:7390:1: ( '{' )
+            // InternalRos.g:7281:1: ( ( '{' ) )
+            // InternalRos.g:7282:1: ( '{' )
             {
-            // InternalRos.g:7390:1: ( '{' )
-            // InternalRos.g:7391:2: '{'
+            // InternalRos.g:7282:1: ( '{' )
+            // InternalRos.g:7283:2: '{'
             {
              before(grammarAccess.getActionServerAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -22394,16 +22030,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__2"
-    // InternalRos.g:7400:1: rule__ActionServer__Group__2 : rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3 ;
+    // InternalRos.g:7292:1: rule__ActionServer__Group__2 : rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3 ;
     public final void rule__ActionServer__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7404:1: ( rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3 )
-            // InternalRos.g:7405:2: rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3
+            // InternalRos.g:7296:1: ( rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3 )
+            // InternalRos.g:7297:2: rule__ActionServer__Group__2__Impl rule__ActionServer__Group__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_25);
             rule__ActionServer__Group__2__Impl();
 
             state._fsp--;
@@ -22432,42 +22068,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__2__Impl"
-    // InternalRos.g:7412:1: rule__ActionServer__Group__2__Impl : ( ( rule__ActionServer__Group_2__0 )? ) ;
+    // InternalRos.g:7304:1: rule__ActionServer__Group__2__Impl : ( 'name' ) ;
     public final void rule__ActionServer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7416:1: ( ( ( rule__ActionServer__Group_2__0 )? ) )
-            // InternalRos.g:7417:1: ( ( rule__ActionServer__Group_2__0 )? )
+            // InternalRos.g:7308:1: ( ( 'name' ) )
+            // InternalRos.g:7309:1: ( 'name' )
             {
-            // InternalRos.g:7417:1: ( ( rule__ActionServer__Group_2__0 )? )
-            // InternalRos.g:7418:2: ( rule__ActionServer__Group_2__0 )?
+            // InternalRos.g:7309:1: ( 'name' )
+            // InternalRos.g:7310:2: 'name'
             {
-             before(grammarAccess.getActionServerAccess().getGroup_2()); 
-            // InternalRos.g:7419:2: ( rule__ActionServer__Group_2__0 )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
-
-            if ( (LA49_0==40) ) {
-                alt49=1;
-            }
-            switch (alt49) {
-                case 1 :
-                    // InternalRos.g:7419:3: rule__ActionServer__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ActionServer__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getActionServerAccess().getGroup_2()); 
+             before(grammarAccess.getActionServerAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getActionServerAccess().getNameKeyword_2()); 
 
             }
 
@@ -22490,16 +22105,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__3"
-    // InternalRos.g:7427:1: rule__ActionServer__Group__3 : rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4 ;
+    // InternalRos.g:7319:1: rule__ActionServer__Group__3 : rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4 ;
     public final void rule__ActionServer__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7431:1: ( rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4 )
-            // InternalRos.g:7432:2: rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4
+            // InternalRos.g:7323:1: ( rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4 )
+            // InternalRos.g:7324:2: rule__ActionServer__Group__3__Impl rule__ActionServer__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_38);
             rule__ActionServer__Group__3__Impl();
 
             state._fsp--;
@@ -22528,21 +22143,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__3__Impl"
-    // InternalRos.g:7439:1: rule__ActionServer__Group__3__Impl : ( 'action' ) ;
+    // InternalRos.g:7331:1: rule__ActionServer__Group__3__Impl : ( ( rule__ActionServer__NameAssignment_3 ) ) ;
     public final void rule__ActionServer__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7443:1: ( ( 'action' ) )
-            // InternalRos.g:7444:1: ( 'action' )
+            // InternalRos.g:7335:1: ( ( ( rule__ActionServer__NameAssignment_3 ) ) )
+            // InternalRos.g:7336:1: ( ( rule__ActionServer__NameAssignment_3 ) )
             {
-            // InternalRos.g:7444:1: ( 'action' )
-            // InternalRos.g:7445:2: 'action'
+            // InternalRos.g:7336:1: ( ( rule__ActionServer__NameAssignment_3 ) )
+            // InternalRos.g:7337:2: ( rule__ActionServer__NameAssignment_3 )
             {
-             before(grammarAccess.getActionServerAccess().getActionKeyword_3()); 
-            match(input,55,FOLLOW_2); 
-             after(grammarAccess.getActionServerAccess().getActionKeyword_3()); 
+             before(grammarAccess.getActionServerAccess().getNameAssignment_3()); 
+            // InternalRos.g:7338:2: ( rule__ActionServer__NameAssignment_3 )
+            // InternalRos.g:7338:3: rule__ActionServer__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ActionServer__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getActionServerAccess().getNameAssignment_3()); 
 
             }
 
@@ -22565,16 +22190,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__4"
-    // InternalRos.g:7454:1: rule__ActionServer__Group__4 : rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5 ;
+    // InternalRos.g:7346:1: rule__ActionServer__Group__4 : rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5 ;
     public final void rule__ActionServer__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7458:1: ( rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5 )
-            // InternalRos.g:7459:2: rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5
+            // InternalRos.g:7350:1: ( rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5 )
+            // InternalRos.g:7351:2: rule__ActionServer__Group__4__Impl rule__ActionServer__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__ActionServer__Group__4__Impl();
 
             state._fsp--;
@@ -22603,31 +22228,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__4__Impl"
-    // InternalRos.g:7466:1: rule__ActionServer__Group__4__Impl : ( ( rule__ActionServer__ActionAssignment_4 ) ) ;
+    // InternalRos.g:7358:1: rule__ActionServer__Group__4__Impl : ( 'action' ) ;
     public final void rule__ActionServer__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7470:1: ( ( ( rule__ActionServer__ActionAssignment_4 ) ) )
-            // InternalRos.g:7471:1: ( ( rule__ActionServer__ActionAssignment_4 ) )
+            // InternalRos.g:7362:1: ( ( 'action' ) )
+            // InternalRos.g:7363:1: ( 'action' )
             {
-            // InternalRos.g:7471:1: ( ( rule__ActionServer__ActionAssignment_4 ) )
-            // InternalRos.g:7472:2: ( rule__ActionServer__ActionAssignment_4 )
+            // InternalRos.g:7363:1: ( 'action' )
+            // InternalRos.g:7364:2: 'action'
             {
-             before(grammarAccess.getActionServerAccess().getActionAssignment_4()); 
-            // InternalRos.g:7473:2: ( rule__ActionServer__ActionAssignment_4 )
-            // InternalRos.g:7473:3: rule__ActionServer__ActionAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ActionServer__ActionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActionServerAccess().getActionAssignment_4()); 
+             before(grammarAccess.getActionServerAccess().getActionKeyword_4()); 
+            match(input,55,FOLLOW_2); 
+             after(grammarAccess.getActionServerAccess().getActionKeyword_4()); 
 
             }
 
@@ -22650,14 +22265,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__5"
-    // InternalRos.g:7481:1: rule__ActionServer__Group__5 : rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6 ;
+    // InternalRos.g:7373:1: rule__ActionServer__Group__5 : rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6 ;
     public final void rule__ActionServer__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7485:1: ( rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6 )
-            // InternalRos.g:7486:2: rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6
+            // InternalRos.g:7377:1: ( rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6 )
+            // InternalRos.g:7378:2: rule__ActionServer__Group__5__Impl rule__ActionServer__Group__6
             {
             pushFollow(FOLLOW_35);
             rule__ActionServer__Group__5__Impl();
@@ -22688,42 +22303,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__5__Impl"
-    // InternalRos.g:7493:1: rule__ActionServer__Group__5__Impl : ( ( rule__ActionServer__Group_5__0 )? ) ;
+    // InternalRos.g:7385:1: rule__ActionServer__Group__5__Impl : ( ( rule__ActionServer__ActionAssignment_5 ) ) ;
     public final void rule__ActionServer__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7497:1: ( ( ( rule__ActionServer__Group_5__0 )? ) )
-            // InternalRos.g:7498:1: ( ( rule__ActionServer__Group_5__0 )? )
+            // InternalRos.g:7389:1: ( ( ( rule__ActionServer__ActionAssignment_5 ) ) )
+            // InternalRos.g:7390:1: ( ( rule__ActionServer__ActionAssignment_5 ) )
             {
-            // InternalRos.g:7498:1: ( ( rule__ActionServer__Group_5__0 )? )
-            // InternalRos.g:7499:2: ( rule__ActionServer__Group_5__0 )?
+            // InternalRos.g:7390:1: ( ( rule__ActionServer__ActionAssignment_5 ) )
+            // InternalRos.g:7391:2: ( rule__ActionServer__ActionAssignment_5 )
             {
-             before(grammarAccess.getActionServerAccess().getGroup_5()); 
-            // InternalRos.g:7500:2: ( rule__ActionServer__Group_5__0 )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+             before(grammarAccess.getActionServerAccess().getActionAssignment_5()); 
+            // InternalRos.g:7392:2: ( rule__ActionServer__ActionAssignment_5 )
+            // InternalRos.g:7392:3: rule__ActionServer__ActionAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ActionServer__ActionAssignment_5();
 
-            if ( (LA50_0==50) ) {
-                alt50=1;
-            }
-            switch (alt50) {
-                case 1 :
-                    // InternalRos.g:7500:3: rule__ActionServer__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ActionServer__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getActionServerAccess().getGroup_5()); 
+             after(grammarAccess.getActionServerAccess().getActionAssignment_5()); 
 
             }
 
@@ -22746,17 +22350,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__6"
-    // InternalRos.g:7508:1: rule__ActionServer__Group__6 : rule__ActionServer__Group__6__Impl ;
+    // InternalRos.g:7400:1: rule__ActionServer__Group__6 : rule__ActionServer__Group__6__Impl rule__ActionServer__Group__7 ;
     public final void rule__ActionServer__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7512:1: ( rule__ActionServer__Group__6__Impl )
-            // InternalRos.g:7513:2: rule__ActionServer__Group__6__Impl
+            // InternalRos.g:7404:1: ( rule__ActionServer__Group__6__Impl rule__ActionServer__Group__7 )
+            // InternalRos.g:7405:2: rule__ActionServer__Group__6__Impl rule__ActionServer__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__ActionServer__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ActionServer__Group__7();
 
             state._fsp--;
 
@@ -22779,21 +22388,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionServer__Group__6__Impl"
-    // InternalRos.g:7519:1: rule__ActionServer__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:7412:1: rule__ActionServer__Group__6__Impl : ( ( rule__ActionServer__Group_6__0 )? ) ;
     public final void rule__ActionServer__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7523:1: ( ( '}' ) )
-            // InternalRos.g:7524:1: ( '}' )
+            // InternalRos.g:7416:1: ( ( ( rule__ActionServer__Group_6__0 )? ) )
+            // InternalRos.g:7417:1: ( ( rule__ActionServer__Group_6__0 )? )
             {
-            // InternalRos.g:7524:1: ( '}' )
-            // InternalRos.g:7525:2: '}'
+            // InternalRos.g:7417:1: ( ( rule__ActionServer__Group_6__0 )? )
+            // InternalRos.g:7418:2: ( rule__ActionServer__Group_6__0 )?
             {
-             before(grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getActionServerAccess().getGroup_6()); 
+            // InternalRos.g:7419:2: ( rule__ActionServer__Group_6__0 )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
+
+            if ( (LA45_0==50) ) {
+                alt45=1;
+            }
+            switch (alt45) {
+                case 1 :
+                    // InternalRos.g:7419:3: rule__ActionServer__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ActionServer__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getActionServerAccess().getGroup_6()); 
 
             }
 
@@ -22815,93 +22445,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ActionServer__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ActionServer__Group_2__0"
-    // InternalRos.g:7535:1: rule__ActionServer__Group_2__0 : rule__ActionServer__Group_2__0__Impl rule__ActionServer__Group_2__1 ;
-    public final void rule__ActionServer__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group__7"
+    // InternalRos.g:7427:1: rule__ActionServer__Group__7 : rule__ActionServer__Group__7__Impl ;
+    public final void rule__ActionServer__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7539:1: ( rule__ActionServer__Group_2__0__Impl rule__ActionServer__Group_2__1 )
-            // InternalRos.g:7540:2: rule__ActionServer__Group_2__0__Impl rule__ActionServer__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__ActionServer__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ActionServer__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ActionServer__Group_2__0"
-
-
-    // $ANTLR start "rule__ActionServer__Group_2__0__Impl"
-    // InternalRos.g:7547:1: rule__ActionServer__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__ActionServer__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7551:1: ( ( 'name' ) )
-            // InternalRos.g:7552:1: ( 'name' )
-            {
-            // InternalRos.g:7552:1: ( 'name' )
-            // InternalRos.g:7553:2: 'name'
-            {
-             before(grammarAccess.getActionServerAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getActionServerAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ActionServer__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__ActionServer__Group_2__1"
-    // InternalRos.g:7562:1: rule__ActionServer__Group_2__1 : rule__ActionServer__Group_2__1__Impl ;
-    public final void rule__ActionServer__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7566:1: ( rule__ActionServer__Group_2__1__Impl )
-            // InternalRos.g:7567:2: rule__ActionServer__Group_2__1__Impl
+            // InternalRos.g:7431:1: ( rule__ActionServer__Group__7__Impl )
+            // InternalRos.g:7432:2: rule__ActionServer__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ActionServer__Group_2__1__Impl();
+            rule__ActionServer__Group__7__Impl();
 
             state._fsp--;
 
@@ -22920,35 +22475,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_2__1"
+    // $ANTLR end "rule__ActionServer__Group__7"
 
 
-    // $ANTLR start "rule__ActionServer__Group_2__1__Impl"
-    // InternalRos.g:7573:1: rule__ActionServer__Group_2__1__Impl : ( ( rule__ActionServer__NameAssignment_2_1 ) ) ;
-    public final void rule__ActionServer__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group__7__Impl"
+    // InternalRos.g:7438:1: rule__ActionServer__Group__7__Impl : ( '}' ) ;
+    public final void rule__ActionServer__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7577:1: ( ( ( rule__ActionServer__NameAssignment_2_1 ) ) )
-            // InternalRos.g:7578:1: ( ( rule__ActionServer__NameAssignment_2_1 ) )
+            // InternalRos.g:7442:1: ( ( '}' ) )
+            // InternalRos.g:7443:1: ( '}' )
             {
-            // InternalRos.g:7578:1: ( ( rule__ActionServer__NameAssignment_2_1 ) )
-            // InternalRos.g:7579:2: ( rule__ActionServer__NameAssignment_2_1 )
+            // InternalRos.g:7443:1: ( '}' )
+            // InternalRos.g:7444:2: '}'
             {
-             before(grammarAccess.getActionServerAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:7580:2: ( rule__ActionServer__NameAssignment_2_1 )
-            // InternalRos.g:7580:3: rule__ActionServer__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ActionServer__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActionServerAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getActionServerAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -22967,26 +22512,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_2__1__Impl"
+    // $ANTLR end "rule__ActionServer__Group__7__Impl"
 
 
-    // $ANTLR start "rule__ActionServer__Group_5__0"
-    // InternalRos.g:7589:1: rule__ActionServer__Group_5__0 : rule__ActionServer__Group_5__0__Impl rule__ActionServer__Group_5__1 ;
-    public final void rule__ActionServer__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group_6__0"
+    // InternalRos.g:7454:1: rule__ActionServer__Group_6__0 : rule__ActionServer__Group_6__0__Impl rule__ActionServer__Group_6__1 ;
+    public final void rule__ActionServer__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7593:1: ( rule__ActionServer__Group_5__0__Impl rule__ActionServer__Group_5__1 )
-            // InternalRos.g:7594:2: rule__ActionServer__Group_5__0__Impl rule__ActionServer__Group_5__1
+            // InternalRos.g:7458:1: ( rule__ActionServer__Group_6__0__Impl rule__ActionServer__Group_6__1 )
+            // InternalRos.g:7459:2: rule__ActionServer__Group_6__0__Impl rule__ActionServer__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__ActionServer__Group_5__0__Impl();
+            rule__ActionServer__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ActionServer__Group_5__1();
+            rule__ActionServer__Group_6__1();
 
             state._fsp--;
 
@@ -23005,25 +22550,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_5__0"
+    // $ANTLR end "rule__ActionServer__Group_6__0"
 
 
-    // $ANTLR start "rule__ActionServer__Group_5__0__Impl"
-    // InternalRos.g:7601:1: rule__ActionServer__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__ActionServer__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group_6__0__Impl"
+    // InternalRos.g:7466:1: rule__ActionServer__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__ActionServer__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7605:1: ( ( 'namespace' ) )
-            // InternalRos.g:7606:1: ( 'namespace' )
+            // InternalRos.g:7470:1: ( ( 'namespace' ) )
+            // InternalRos.g:7471:1: ( 'namespace' )
             {
-            // InternalRos.g:7606:1: ( 'namespace' )
-            // InternalRos.g:7607:2: 'namespace'
+            // InternalRos.g:7471:1: ( 'namespace' )
+            // InternalRos.g:7472:2: 'namespace'
             {
-             before(grammarAccess.getActionServerAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getActionServerAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getActionServerAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getActionServerAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -23042,21 +22587,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_5__0__Impl"
+    // $ANTLR end "rule__ActionServer__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__ActionServer__Group_5__1"
-    // InternalRos.g:7616:1: rule__ActionServer__Group_5__1 : rule__ActionServer__Group_5__1__Impl ;
-    public final void rule__ActionServer__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group_6__1"
+    // InternalRos.g:7481:1: rule__ActionServer__Group_6__1 : rule__ActionServer__Group_6__1__Impl ;
+    public final void rule__ActionServer__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7620:1: ( rule__ActionServer__Group_5__1__Impl )
-            // InternalRos.g:7621:2: rule__ActionServer__Group_5__1__Impl
+            // InternalRos.g:7485:1: ( rule__ActionServer__Group_6__1__Impl )
+            // InternalRos.g:7486:2: rule__ActionServer__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ActionServer__Group_5__1__Impl();
+            rule__ActionServer__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -23075,35 +22620,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_5__1"
+    // $ANTLR end "rule__ActionServer__Group_6__1"
 
 
-    // $ANTLR start "rule__ActionServer__Group_5__1__Impl"
-    // InternalRos.g:7627:1: rule__ActionServer__Group_5__1__Impl : ( ( rule__ActionServer__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__ActionServer__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__Group_6__1__Impl"
+    // InternalRos.g:7492:1: rule__ActionServer__Group_6__1__Impl : ( ( rule__ActionServer__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__ActionServer__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7631:1: ( ( ( rule__ActionServer__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:7632:1: ( ( rule__ActionServer__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:7496:1: ( ( ( rule__ActionServer__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:7497:1: ( ( rule__ActionServer__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:7632:1: ( ( rule__ActionServer__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:7633:2: ( rule__ActionServer__NamespaceAssignment_5_1 )
+            // InternalRos.g:7497:1: ( ( rule__ActionServer__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:7498:2: ( rule__ActionServer__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getActionServerAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:7634:2: ( rule__ActionServer__NamespaceAssignment_5_1 )
-            // InternalRos.g:7634:3: rule__ActionServer__NamespaceAssignment_5_1
+             before(grammarAccess.getActionServerAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:7499:2: ( rule__ActionServer__NamespaceAssignment_6_1 )
+            // InternalRos.g:7499:3: rule__ActionServer__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__ActionServer__NamespaceAssignment_5_1();
+            rule__ActionServer__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionServerAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getActionServerAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -23122,18 +22667,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__Group_5__1__Impl"
+    // $ANTLR end "rule__ActionServer__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__ActionClient__Group__0"
-    // InternalRos.g:7643:1: rule__ActionClient__Group__0 : rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1 ;
+    // InternalRos.g:7508:1: rule__ActionClient__Group__0 : rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1 ;
     public final void rule__ActionClient__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7647:1: ( rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1 )
-            // InternalRos.g:7648:2: rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1
+            // InternalRos.g:7512:1: ( rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1 )
+            // InternalRos.g:7513:2: rule__ActionClient__Group__0__Impl rule__ActionClient__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ActionClient__Group__0__Impl();
@@ -23164,17 +22709,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__0__Impl"
-    // InternalRos.g:7655:1: rule__ActionClient__Group__0__Impl : ( 'ActionClient' ) ;
+    // InternalRos.g:7520:1: rule__ActionClient__Group__0__Impl : ( 'ActionClient' ) ;
     public final void rule__ActionClient__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7659:1: ( ( 'ActionClient' ) )
-            // InternalRos.g:7660:1: ( 'ActionClient' )
+            // InternalRos.g:7524:1: ( ( 'ActionClient' ) )
+            // InternalRos.g:7525:1: ( 'ActionClient' )
             {
-            // InternalRos.g:7660:1: ( 'ActionClient' )
-            // InternalRos.g:7661:2: 'ActionClient'
+            // InternalRos.g:7525:1: ( 'ActionClient' )
+            // InternalRos.g:7526:2: 'ActionClient'
             {
              before(grammarAccess.getActionClientAccess().getActionClientKeyword_0()); 
             match(input,56,FOLLOW_2); 
@@ -23201,16 +22746,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__1"
-    // InternalRos.g:7670:1: rule__ActionClient__Group__1 : rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2 ;
+    // InternalRos.g:7535:1: rule__ActionClient__Group__1 : rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2 ;
     public final void rule__ActionClient__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7674:1: ( rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2 )
-            // InternalRos.g:7675:2: rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2
+            // InternalRos.g:7539:1: ( rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2 )
+            // InternalRos.g:7540:2: rule__ActionClient__Group__1__Impl rule__ActionClient__Group__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_24);
             rule__ActionClient__Group__1__Impl();
 
             state._fsp--;
@@ -23239,17 +22784,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__1__Impl"
-    // InternalRos.g:7682:1: rule__ActionClient__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:7547:1: rule__ActionClient__Group__1__Impl : ( '{' ) ;
     public final void rule__ActionClient__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7686:1: ( ( '{' ) )
-            // InternalRos.g:7687:1: ( '{' )
+            // InternalRos.g:7551:1: ( ( '{' ) )
+            // InternalRos.g:7552:1: ( '{' )
             {
-            // InternalRos.g:7687:1: ( '{' )
-            // InternalRos.g:7688:2: '{'
+            // InternalRos.g:7552:1: ( '{' )
+            // InternalRos.g:7553:2: '{'
             {
              before(grammarAccess.getActionClientAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -23276,16 +22821,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__2"
-    // InternalRos.g:7697:1: rule__ActionClient__Group__2 : rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3 ;
+    // InternalRos.g:7562:1: rule__ActionClient__Group__2 : rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3 ;
     public final void rule__ActionClient__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7701:1: ( rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3 )
-            // InternalRos.g:7702:2: rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3
+            // InternalRos.g:7566:1: ( rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3 )
+            // InternalRos.g:7567:2: rule__ActionClient__Group__2__Impl rule__ActionClient__Group__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_25);
             rule__ActionClient__Group__2__Impl();
 
             state._fsp--;
@@ -23314,42 +22859,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__2__Impl"
-    // InternalRos.g:7709:1: rule__ActionClient__Group__2__Impl : ( ( rule__ActionClient__Group_2__0 )? ) ;
+    // InternalRos.g:7574:1: rule__ActionClient__Group__2__Impl : ( 'name' ) ;
     public final void rule__ActionClient__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7713:1: ( ( ( rule__ActionClient__Group_2__0 )? ) )
-            // InternalRos.g:7714:1: ( ( rule__ActionClient__Group_2__0 )? )
+            // InternalRos.g:7578:1: ( ( 'name' ) )
+            // InternalRos.g:7579:1: ( 'name' )
             {
-            // InternalRos.g:7714:1: ( ( rule__ActionClient__Group_2__0 )? )
-            // InternalRos.g:7715:2: ( rule__ActionClient__Group_2__0 )?
+            // InternalRos.g:7579:1: ( 'name' )
+            // InternalRos.g:7580:2: 'name'
             {
-             before(grammarAccess.getActionClientAccess().getGroup_2()); 
-            // InternalRos.g:7716:2: ( rule__ActionClient__Group_2__0 )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
-
-            if ( (LA51_0==40) ) {
-                alt51=1;
-            }
-            switch (alt51) {
-                case 1 :
-                    // InternalRos.g:7716:3: rule__ActionClient__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ActionClient__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getActionClientAccess().getGroup_2()); 
+             before(grammarAccess.getActionClientAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getActionClientAccess().getNameKeyword_2()); 
 
             }
 
@@ -23372,16 +22896,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__3"
-    // InternalRos.g:7724:1: rule__ActionClient__Group__3 : rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4 ;
+    // InternalRos.g:7589:1: rule__ActionClient__Group__3 : rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4 ;
     public final void rule__ActionClient__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7728:1: ( rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4 )
-            // InternalRos.g:7729:2: rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4
+            // InternalRos.g:7593:1: ( rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4 )
+            // InternalRos.g:7594:2: rule__ActionClient__Group__3__Impl rule__ActionClient__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_38);
             rule__ActionClient__Group__3__Impl();
 
             state._fsp--;
@@ -23410,21 +22934,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__3__Impl"
-    // InternalRos.g:7736:1: rule__ActionClient__Group__3__Impl : ( 'action' ) ;
+    // InternalRos.g:7601:1: rule__ActionClient__Group__3__Impl : ( ( rule__ActionClient__NameAssignment_3 ) ) ;
     public final void rule__ActionClient__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7740:1: ( ( 'action' ) )
-            // InternalRos.g:7741:1: ( 'action' )
+            // InternalRos.g:7605:1: ( ( ( rule__ActionClient__NameAssignment_3 ) ) )
+            // InternalRos.g:7606:1: ( ( rule__ActionClient__NameAssignment_3 ) )
             {
-            // InternalRos.g:7741:1: ( 'action' )
-            // InternalRos.g:7742:2: 'action'
+            // InternalRos.g:7606:1: ( ( rule__ActionClient__NameAssignment_3 ) )
+            // InternalRos.g:7607:2: ( rule__ActionClient__NameAssignment_3 )
             {
-             before(grammarAccess.getActionClientAccess().getActionKeyword_3()); 
-            match(input,55,FOLLOW_2); 
-             after(grammarAccess.getActionClientAccess().getActionKeyword_3()); 
+             before(grammarAccess.getActionClientAccess().getNameAssignment_3()); 
+            // InternalRos.g:7608:2: ( rule__ActionClient__NameAssignment_3 )
+            // InternalRos.g:7608:3: rule__ActionClient__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ActionClient__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getActionClientAccess().getNameAssignment_3()); 
 
             }
 
@@ -23447,16 +22981,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__4"
-    // InternalRos.g:7751:1: rule__ActionClient__Group__4 : rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5 ;
+    // InternalRos.g:7616:1: rule__ActionClient__Group__4 : rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5 ;
     public final void rule__ActionClient__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7755:1: ( rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5 )
-            // InternalRos.g:7756:2: rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5
+            // InternalRos.g:7620:1: ( rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5 )
+            // InternalRos.g:7621:2: rule__ActionClient__Group__4__Impl rule__ActionClient__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_10);
             rule__ActionClient__Group__4__Impl();
 
             state._fsp--;
@@ -23485,31 +23019,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__4__Impl"
-    // InternalRos.g:7763:1: rule__ActionClient__Group__4__Impl : ( ( rule__ActionClient__ActionAssignment_4 ) ) ;
+    // InternalRos.g:7628:1: rule__ActionClient__Group__4__Impl : ( 'action' ) ;
     public final void rule__ActionClient__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7767:1: ( ( ( rule__ActionClient__ActionAssignment_4 ) ) )
-            // InternalRos.g:7768:1: ( ( rule__ActionClient__ActionAssignment_4 ) )
+            // InternalRos.g:7632:1: ( ( 'action' ) )
+            // InternalRos.g:7633:1: ( 'action' )
             {
-            // InternalRos.g:7768:1: ( ( rule__ActionClient__ActionAssignment_4 ) )
-            // InternalRos.g:7769:2: ( rule__ActionClient__ActionAssignment_4 )
+            // InternalRos.g:7633:1: ( 'action' )
+            // InternalRos.g:7634:2: 'action'
             {
-             before(grammarAccess.getActionClientAccess().getActionAssignment_4()); 
-            // InternalRos.g:7770:2: ( rule__ActionClient__ActionAssignment_4 )
-            // InternalRos.g:7770:3: rule__ActionClient__ActionAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ActionClient__ActionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActionClientAccess().getActionAssignment_4()); 
+             before(grammarAccess.getActionClientAccess().getActionKeyword_4()); 
+            match(input,55,FOLLOW_2); 
+             after(grammarAccess.getActionClientAccess().getActionKeyword_4()); 
 
             }
 
@@ -23532,14 +23056,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__5"
-    // InternalRos.g:7778:1: rule__ActionClient__Group__5 : rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6 ;
+    // InternalRos.g:7643:1: rule__ActionClient__Group__5 : rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6 ;
     public final void rule__ActionClient__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7782:1: ( rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6 )
-            // InternalRos.g:7783:2: rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6
+            // InternalRos.g:7647:1: ( rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6 )
+            // InternalRos.g:7648:2: rule__ActionClient__Group__5__Impl rule__ActionClient__Group__6
             {
             pushFollow(FOLLOW_35);
             rule__ActionClient__Group__5__Impl();
@@ -23570,42 +23094,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__5__Impl"
-    // InternalRos.g:7790:1: rule__ActionClient__Group__5__Impl : ( ( rule__ActionClient__Group_5__0 )? ) ;
+    // InternalRos.g:7655:1: rule__ActionClient__Group__5__Impl : ( ( rule__ActionClient__ActionAssignment_5 ) ) ;
     public final void rule__ActionClient__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7794:1: ( ( ( rule__ActionClient__Group_5__0 )? ) )
-            // InternalRos.g:7795:1: ( ( rule__ActionClient__Group_5__0 )? )
+            // InternalRos.g:7659:1: ( ( ( rule__ActionClient__ActionAssignment_5 ) ) )
+            // InternalRos.g:7660:1: ( ( rule__ActionClient__ActionAssignment_5 ) )
             {
-            // InternalRos.g:7795:1: ( ( rule__ActionClient__Group_5__0 )? )
-            // InternalRos.g:7796:2: ( rule__ActionClient__Group_5__0 )?
+            // InternalRos.g:7660:1: ( ( rule__ActionClient__ActionAssignment_5 ) )
+            // InternalRos.g:7661:2: ( rule__ActionClient__ActionAssignment_5 )
             {
-             before(grammarAccess.getActionClientAccess().getGroup_5()); 
-            // InternalRos.g:7797:2: ( rule__ActionClient__Group_5__0 )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+             before(grammarAccess.getActionClientAccess().getActionAssignment_5()); 
+            // InternalRos.g:7662:2: ( rule__ActionClient__ActionAssignment_5 )
+            // InternalRos.g:7662:3: rule__ActionClient__ActionAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ActionClient__ActionAssignment_5();
 
-            if ( (LA52_0==50) ) {
-                alt52=1;
-            }
-            switch (alt52) {
-                case 1 :
-                    // InternalRos.g:7797:3: rule__ActionClient__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ActionClient__Group_5__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getActionClientAccess().getGroup_5()); 
+             after(grammarAccess.getActionClientAccess().getActionAssignment_5()); 
 
             }
 
@@ -23628,17 +23141,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__6"
-    // InternalRos.g:7805:1: rule__ActionClient__Group__6 : rule__ActionClient__Group__6__Impl ;
+    // InternalRos.g:7670:1: rule__ActionClient__Group__6 : rule__ActionClient__Group__6__Impl rule__ActionClient__Group__7 ;
     public final void rule__ActionClient__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7809:1: ( rule__ActionClient__Group__6__Impl )
-            // InternalRos.g:7810:2: rule__ActionClient__Group__6__Impl
+            // InternalRos.g:7674:1: ( rule__ActionClient__Group__6__Impl rule__ActionClient__Group__7 )
+            // InternalRos.g:7675:2: rule__ActionClient__Group__6__Impl rule__ActionClient__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__ActionClient__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ActionClient__Group__7();
 
             state._fsp--;
 
@@ -23661,21 +23179,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClient__Group__6__Impl"
-    // InternalRos.g:7816:1: rule__ActionClient__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:7682:1: rule__ActionClient__Group__6__Impl : ( ( rule__ActionClient__Group_6__0 )? ) ;
     public final void rule__ActionClient__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7820:1: ( ( '}' ) )
-            // InternalRos.g:7821:1: ( '}' )
+            // InternalRos.g:7686:1: ( ( ( rule__ActionClient__Group_6__0 )? ) )
+            // InternalRos.g:7687:1: ( ( rule__ActionClient__Group_6__0 )? )
             {
-            // InternalRos.g:7821:1: ( '}' )
-            // InternalRos.g:7822:2: '}'
+            // InternalRos.g:7687:1: ( ( rule__ActionClient__Group_6__0 )? )
+            // InternalRos.g:7688:2: ( rule__ActionClient__Group_6__0 )?
             {
-             before(grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getActionClientAccess().getGroup_6()); 
+            // InternalRos.g:7689:2: ( rule__ActionClient__Group_6__0 )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
+
+            if ( (LA46_0==50) ) {
+                alt46=1;
+            }
+            switch (alt46) {
+                case 1 :
+                    // InternalRos.g:7689:3: rule__ActionClient__Group_6__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ActionClient__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getActionClientAccess().getGroup_6()); 
 
             }
 
@@ -23697,93 +23236,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ActionClient__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ActionClient__Group_2__0"
-    // InternalRos.g:7832:1: rule__ActionClient__Group_2__0 : rule__ActionClient__Group_2__0__Impl rule__ActionClient__Group_2__1 ;
-    public final void rule__ActionClient__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group__7"
+    // InternalRos.g:7697:1: rule__ActionClient__Group__7 : rule__ActionClient__Group__7__Impl ;
+    public final void rule__ActionClient__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7836:1: ( rule__ActionClient__Group_2__0__Impl rule__ActionClient__Group_2__1 )
-            // InternalRos.g:7837:2: rule__ActionClient__Group_2__0__Impl rule__ActionClient__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__ActionClient__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ActionClient__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ActionClient__Group_2__0"
-
-
-    // $ANTLR start "rule__ActionClient__Group_2__0__Impl"
-    // InternalRos.g:7844:1: rule__ActionClient__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__ActionClient__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7848:1: ( ( 'name' ) )
-            // InternalRos.g:7849:1: ( 'name' )
-            {
-            // InternalRos.g:7849:1: ( 'name' )
-            // InternalRos.g:7850:2: 'name'
-            {
-             before(grammarAccess.getActionClientAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getActionClientAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ActionClient__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__ActionClient__Group_2__1"
-    // InternalRos.g:7859:1: rule__ActionClient__Group_2__1 : rule__ActionClient__Group_2__1__Impl ;
-    public final void rule__ActionClient__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:7863:1: ( rule__ActionClient__Group_2__1__Impl )
-            // InternalRos.g:7864:2: rule__ActionClient__Group_2__1__Impl
+            // InternalRos.g:7701:1: ( rule__ActionClient__Group__7__Impl )
+            // InternalRos.g:7702:2: rule__ActionClient__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ActionClient__Group_2__1__Impl();
+            rule__ActionClient__Group__7__Impl();
 
             state._fsp--;
 
@@ -23802,35 +23266,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_2__1"
+    // $ANTLR end "rule__ActionClient__Group__7"
 
 
-    // $ANTLR start "rule__ActionClient__Group_2__1__Impl"
-    // InternalRos.g:7870:1: rule__ActionClient__Group_2__1__Impl : ( ( rule__ActionClient__NameAssignment_2_1 ) ) ;
-    public final void rule__ActionClient__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group__7__Impl"
+    // InternalRos.g:7708:1: rule__ActionClient__Group__7__Impl : ( '}' ) ;
+    public final void rule__ActionClient__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7874:1: ( ( ( rule__ActionClient__NameAssignment_2_1 ) ) )
-            // InternalRos.g:7875:1: ( ( rule__ActionClient__NameAssignment_2_1 ) )
+            // InternalRos.g:7712:1: ( ( '}' ) )
+            // InternalRos.g:7713:1: ( '}' )
             {
-            // InternalRos.g:7875:1: ( ( rule__ActionClient__NameAssignment_2_1 ) )
-            // InternalRos.g:7876:2: ( rule__ActionClient__NameAssignment_2_1 )
+            // InternalRos.g:7713:1: ( '}' )
+            // InternalRos.g:7714:2: '}'
             {
-             before(grammarAccess.getActionClientAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:7877:2: ( rule__ActionClient__NameAssignment_2_1 )
-            // InternalRos.g:7877:3: rule__ActionClient__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ActionClient__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActionClientAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getActionClientAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -23849,26 +23303,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_2__1__Impl"
+    // $ANTLR end "rule__ActionClient__Group__7__Impl"
 
 
-    // $ANTLR start "rule__ActionClient__Group_5__0"
-    // InternalRos.g:7886:1: rule__ActionClient__Group_5__0 : rule__ActionClient__Group_5__0__Impl rule__ActionClient__Group_5__1 ;
-    public final void rule__ActionClient__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group_6__0"
+    // InternalRos.g:7724:1: rule__ActionClient__Group_6__0 : rule__ActionClient__Group_6__0__Impl rule__ActionClient__Group_6__1 ;
+    public final void rule__ActionClient__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7890:1: ( rule__ActionClient__Group_5__0__Impl rule__ActionClient__Group_5__1 )
-            // InternalRos.g:7891:2: rule__ActionClient__Group_5__0__Impl rule__ActionClient__Group_5__1
+            // InternalRos.g:7728:1: ( rule__ActionClient__Group_6__0__Impl rule__ActionClient__Group_6__1 )
+            // InternalRos.g:7729:2: rule__ActionClient__Group_6__0__Impl rule__ActionClient__Group_6__1
             {
             pushFollow(FOLLOW_36);
-            rule__ActionClient__Group_5__0__Impl();
+            rule__ActionClient__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ActionClient__Group_5__1();
+            rule__ActionClient__Group_6__1();
 
             state._fsp--;
 
@@ -23887,25 +23341,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_5__0"
+    // $ANTLR end "rule__ActionClient__Group_6__0"
 
 
-    // $ANTLR start "rule__ActionClient__Group_5__0__Impl"
-    // InternalRos.g:7898:1: rule__ActionClient__Group_5__0__Impl : ( 'namespace' ) ;
-    public final void rule__ActionClient__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group_6__0__Impl"
+    // InternalRos.g:7736:1: rule__ActionClient__Group_6__0__Impl : ( 'namespace' ) ;
+    public final void rule__ActionClient__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7902:1: ( ( 'namespace' ) )
-            // InternalRos.g:7903:1: ( 'namespace' )
+            // InternalRos.g:7740:1: ( ( 'namespace' ) )
+            // InternalRos.g:7741:1: ( 'namespace' )
             {
-            // InternalRos.g:7903:1: ( 'namespace' )
-            // InternalRos.g:7904:2: 'namespace'
+            // InternalRos.g:7741:1: ( 'namespace' )
+            // InternalRos.g:7742:2: 'namespace'
             {
-             before(grammarAccess.getActionClientAccess().getNamespaceKeyword_5_0()); 
+             before(grammarAccess.getActionClientAccess().getNamespaceKeyword_6_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getActionClientAccess().getNamespaceKeyword_5_0()); 
+             after(grammarAccess.getActionClientAccess().getNamespaceKeyword_6_0()); 
 
             }
 
@@ -23924,21 +23378,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_5__0__Impl"
+    // $ANTLR end "rule__ActionClient__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__ActionClient__Group_5__1"
-    // InternalRos.g:7913:1: rule__ActionClient__Group_5__1 : rule__ActionClient__Group_5__1__Impl ;
-    public final void rule__ActionClient__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group_6__1"
+    // InternalRos.g:7751:1: rule__ActionClient__Group_6__1 : rule__ActionClient__Group_6__1__Impl ;
+    public final void rule__ActionClient__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7917:1: ( rule__ActionClient__Group_5__1__Impl )
-            // InternalRos.g:7918:2: rule__ActionClient__Group_5__1__Impl
+            // InternalRos.g:7755:1: ( rule__ActionClient__Group_6__1__Impl )
+            // InternalRos.g:7756:2: rule__ActionClient__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ActionClient__Group_5__1__Impl();
+            rule__ActionClient__Group_6__1__Impl();
 
             state._fsp--;
 
@@ -23957,35 +23411,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_5__1"
+    // $ANTLR end "rule__ActionClient__Group_6__1"
 
 
-    // $ANTLR start "rule__ActionClient__Group_5__1__Impl"
-    // InternalRos.g:7924:1: rule__ActionClient__Group_5__1__Impl : ( ( rule__ActionClient__NamespaceAssignment_5_1 ) ) ;
-    public final void rule__ActionClient__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__Group_6__1__Impl"
+    // InternalRos.g:7762:1: rule__ActionClient__Group_6__1__Impl : ( ( rule__ActionClient__NamespaceAssignment_6_1 ) ) ;
+    public final void rule__ActionClient__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7928:1: ( ( ( rule__ActionClient__NamespaceAssignment_5_1 ) ) )
-            // InternalRos.g:7929:1: ( ( rule__ActionClient__NamespaceAssignment_5_1 ) )
+            // InternalRos.g:7766:1: ( ( ( rule__ActionClient__NamespaceAssignment_6_1 ) ) )
+            // InternalRos.g:7767:1: ( ( rule__ActionClient__NamespaceAssignment_6_1 ) )
             {
-            // InternalRos.g:7929:1: ( ( rule__ActionClient__NamespaceAssignment_5_1 ) )
-            // InternalRos.g:7930:2: ( rule__ActionClient__NamespaceAssignment_5_1 )
+            // InternalRos.g:7767:1: ( ( rule__ActionClient__NamespaceAssignment_6_1 ) )
+            // InternalRos.g:7768:2: ( rule__ActionClient__NamespaceAssignment_6_1 )
             {
-             before(grammarAccess.getActionClientAccess().getNamespaceAssignment_5_1()); 
-            // InternalRos.g:7931:2: ( rule__ActionClient__NamespaceAssignment_5_1 )
-            // InternalRos.g:7931:3: rule__ActionClient__NamespaceAssignment_5_1
+             before(grammarAccess.getActionClientAccess().getNamespaceAssignment_6_1()); 
+            // InternalRos.g:7769:2: ( rule__ActionClient__NamespaceAssignment_6_1 )
+            // InternalRos.g:7769:3: rule__ActionClient__NamespaceAssignment_6_1
             {
             pushFollow(FOLLOW_2);
-            rule__ActionClient__NamespaceAssignment_5_1();
+            rule__ActionClient__NamespaceAssignment_6_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionClientAccess().getNamespaceAssignment_5_1()); 
+             after(grammarAccess.getActionClientAccess().getNamespaceAssignment_6_1()); 
 
             }
 
@@ -24004,18 +23458,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__Group_5__1__Impl"
+    // $ANTLR end "rule__ActionClient__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__Parameter__Group__0"
-    // InternalRos.g:7940:1: rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl rule__Parameter__Group__1 ;
+    // InternalRos.g:7778:1: rule__Parameter__Group__0 : rule__Parameter__Group__0__Impl rule__Parameter__Group__1 ;
     public final void rule__Parameter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7944:1: ( rule__Parameter__Group__0__Impl rule__Parameter__Group__1 )
-            // InternalRos.g:7945:2: rule__Parameter__Group__0__Impl rule__Parameter__Group__1
+            // InternalRos.g:7782:1: ( rule__Parameter__Group__0__Impl rule__Parameter__Group__1 )
+            // InternalRos.g:7783:2: rule__Parameter__Group__0__Impl rule__Parameter__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Parameter__Group__0__Impl();
@@ -24046,17 +23500,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__0__Impl"
-    // InternalRos.g:7952:1: rule__Parameter__Group__0__Impl : ( 'Parameter' ) ;
+    // InternalRos.g:7790:1: rule__Parameter__Group__0__Impl : ( 'Parameter' ) ;
     public final void rule__Parameter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7956:1: ( ( 'Parameter' ) )
-            // InternalRos.g:7957:1: ( 'Parameter' )
+            // InternalRos.g:7794:1: ( ( 'Parameter' ) )
+            // InternalRos.g:7795:1: ( 'Parameter' )
             {
-            // InternalRos.g:7957:1: ( 'Parameter' )
-            // InternalRos.g:7958:2: 'Parameter'
+            // InternalRos.g:7795:1: ( 'Parameter' )
+            // InternalRos.g:7796:2: 'Parameter'
             {
              before(grammarAccess.getParameterAccess().getParameterKeyword_0()); 
             match(input,57,FOLLOW_2); 
@@ -24083,16 +23537,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__1"
-    // InternalRos.g:7967:1: rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl rule__Parameter__Group__2 ;
+    // InternalRos.g:7805:1: rule__Parameter__Group__1 : rule__Parameter__Group__1__Impl rule__Parameter__Group__2 ;
     public final void rule__Parameter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7971:1: ( rule__Parameter__Group__1__Impl rule__Parameter__Group__2 )
-            // InternalRos.g:7972:2: rule__Parameter__Group__1__Impl rule__Parameter__Group__2
+            // InternalRos.g:7809:1: ( rule__Parameter__Group__1__Impl rule__Parameter__Group__2 )
+            // InternalRos.g:7810:2: rule__Parameter__Group__1__Impl rule__Parameter__Group__2
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_24);
             rule__Parameter__Group__1__Impl();
 
             state._fsp--;
@@ -24121,17 +23575,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__1__Impl"
-    // InternalRos.g:7979:1: rule__Parameter__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:7817:1: rule__Parameter__Group__1__Impl : ( '{' ) ;
     public final void rule__Parameter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7983:1: ( ( '{' ) )
-            // InternalRos.g:7984:1: ( '{' )
+            // InternalRos.g:7821:1: ( ( '{' ) )
+            // InternalRos.g:7822:1: ( '{' )
             {
-            // InternalRos.g:7984:1: ( '{' )
-            // InternalRos.g:7985:2: '{'
+            // InternalRos.g:7822:1: ( '{' )
+            // InternalRos.g:7823:2: '{'
             {
              before(grammarAccess.getParameterAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -24158,16 +23612,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__2"
-    // InternalRos.g:7994:1: rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl rule__Parameter__Group__3 ;
+    // InternalRos.g:7832:1: rule__Parameter__Group__2 : rule__Parameter__Group__2__Impl rule__Parameter__Group__3 ;
     public final void rule__Parameter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:7998:1: ( rule__Parameter__Group__2__Impl rule__Parameter__Group__3 )
-            // InternalRos.g:7999:2: rule__Parameter__Group__2__Impl rule__Parameter__Group__3
+            // InternalRos.g:7836:1: ( rule__Parameter__Group__2__Impl rule__Parameter__Group__3 )
+            // InternalRos.g:7837:2: rule__Parameter__Group__2__Impl rule__Parameter__Group__3
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_25);
             rule__Parameter__Group__2__Impl();
 
             state._fsp--;
@@ -24196,42 +23650,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__2__Impl"
-    // InternalRos.g:8006:1: rule__Parameter__Group__2__Impl : ( ( rule__Parameter__Group_2__0 )? ) ;
+    // InternalRos.g:7844:1: rule__Parameter__Group__2__Impl : ( 'name' ) ;
     public final void rule__Parameter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8010:1: ( ( ( rule__Parameter__Group_2__0 )? ) )
-            // InternalRos.g:8011:1: ( ( rule__Parameter__Group_2__0 )? )
+            // InternalRos.g:7848:1: ( ( 'name' ) )
+            // InternalRos.g:7849:1: ( 'name' )
             {
-            // InternalRos.g:8011:1: ( ( rule__Parameter__Group_2__0 )? )
-            // InternalRos.g:8012:2: ( rule__Parameter__Group_2__0 )?
+            // InternalRos.g:7849:1: ( 'name' )
+            // InternalRos.g:7850:2: 'name'
             {
-             before(grammarAccess.getParameterAccess().getGroup_2()); 
-            // InternalRos.g:8013:2: ( rule__Parameter__Group_2__0 )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
-
-            if ( (LA53_0==40) ) {
-                alt53=1;
-            }
-            switch (alt53) {
-                case 1 :
-                    // InternalRos.g:8013:3: rule__Parameter__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Parameter__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getParameterAccess().getGroup_2()); 
+             before(grammarAccess.getParameterAccess().getNameKeyword_2()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getParameterAccess().getNameKeyword_2()); 
 
             }
 
@@ -24254,14 +23687,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__3"
-    // InternalRos.g:8021:1: rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl rule__Parameter__Group__4 ;
+    // InternalRos.g:7859:1: rule__Parameter__Group__3 : rule__Parameter__Group__3__Impl rule__Parameter__Group__4 ;
     public final void rule__Parameter__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8025:1: ( rule__Parameter__Group__3__Impl rule__Parameter__Group__4 )
-            // InternalRos.g:8026:2: rule__Parameter__Group__3__Impl rule__Parameter__Group__4
+            // InternalRos.g:7863:1: ( rule__Parameter__Group__3__Impl rule__Parameter__Group__4 )
+            // InternalRos.g:7864:2: rule__Parameter__Group__3__Impl rule__Parameter__Group__4
             {
             pushFollow(FOLLOW_39);
             rule__Parameter__Group__3__Impl();
@@ -24292,42 +23725,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__3__Impl"
-    // InternalRos.g:8033:1: rule__Parameter__Group__3__Impl : ( ( rule__Parameter__Group_3__0 )? ) ;
+    // InternalRos.g:7871:1: rule__Parameter__Group__3__Impl : ( ( rule__Parameter__NameAssignment_3 ) ) ;
     public final void rule__Parameter__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8037:1: ( ( ( rule__Parameter__Group_3__0 )? ) )
-            // InternalRos.g:8038:1: ( ( rule__Parameter__Group_3__0 )? )
+            // InternalRos.g:7875:1: ( ( ( rule__Parameter__NameAssignment_3 ) ) )
+            // InternalRos.g:7876:1: ( ( rule__Parameter__NameAssignment_3 ) )
             {
-            // InternalRos.g:8038:1: ( ( rule__Parameter__Group_3__0 )? )
-            // InternalRos.g:8039:2: ( rule__Parameter__Group_3__0 )?
+            // InternalRos.g:7876:1: ( ( rule__Parameter__NameAssignment_3 ) )
+            // InternalRos.g:7877:2: ( rule__Parameter__NameAssignment_3 )
             {
-             before(grammarAccess.getParameterAccess().getGroup_3()); 
-            // InternalRos.g:8040:2: ( rule__Parameter__Group_3__0 )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+             before(grammarAccess.getParameterAccess().getNameAssignment_3()); 
+            // InternalRos.g:7878:2: ( rule__Parameter__NameAssignment_3 )
+            // InternalRos.g:7878:3: rule__Parameter__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Parameter__NameAssignment_3();
 
-            if ( (LA54_0==50) ) {
-                alt54=1;
-            }
-            switch (alt54) {
-                case 1 :
-                    // InternalRos.g:8040:3: rule__Parameter__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Parameter__Group_3__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getParameterAccess().getGroup_3()); 
+             after(grammarAccess.getParameterAccess().getNameAssignment_3()); 
 
             }
 
@@ -24350,16 +23772,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__4"
-    // InternalRos.g:8048:1: rule__Parameter__Group__4 : rule__Parameter__Group__4__Impl rule__Parameter__Group__5 ;
+    // InternalRos.g:7886:1: rule__Parameter__Group__4 : rule__Parameter__Group__4__Impl rule__Parameter__Group__5 ;
     public final void rule__Parameter__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8052:1: ( rule__Parameter__Group__4__Impl rule__Parameter__Group__5 )
-            // InternalRos.g:8053:2: rule__Parameter__Group__4__Impl rule__Parameter__Group__5
+            // InternalRos.g:7890:1: ( rule__Parameter__Group__4__Impl rule__Parameter__Group__5 )
+            // InternalRos.g:7891:2: rule__Parameter__Group__4__Impl rule__Parameter__Group__5
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_39);
             rule__Parameter__Group__4__Impl();
 
             state._fsp--;
@@ -24388,21 +23810,42 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__4__Impl"
-    // InternalRos.g:8060:1: rule__Parameter__Group__4__Impl : ( 'type' ) ;
+    // InternalRos.g:7898:1: rule__Parameter__Group__4__Impl : ( ( rule__Parameter__Group_4__0 )? ) ;
     public final void rule__Parameter__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8064:1: ( ( 'type' ) )
-            // InternalRos.g:8065:1: ( 'type' )
+            // InternalRos.g:7902:1: ( ( ( rule__Parameter__Group_4__0 )? ) )
+            // InternalRos.g:7903:1: ( ( rule__Parameter__Group_4__0 )? )
             {
-            // InternalRos.g:8065:1: ( 'type' )
-            // InternalRos.g:8066:2: 'type'
+            // InternalRos.g:7903:1: ( ( rule__Parameter__Group_4__0 )? )
+            // InternalRos.g:7904:2: ( rule__Parameter__Group_4__0 )?
             {
-             before(grammarAccess.getParameterAccess().getTypeKeyword_4()); 
-            match(input,58,FOLLOW_2); 
-             after(grammarAccess.getParameterAccess().getTypeKeyword_4()); 
+             before(grammarAccess.getParameterAccess().getGroup_4()); 
+            // InternalRos.g:7905:2: ( rule__Parameter__Group_4__0 )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
+
+            if ( (LA47_0==50) ) {
+                alt47=1;
+            }
+            switch (alt47) {
+                case 1 :
+                    // InternalRos.g:7905:3: rule__Parameter__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Parameter__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getParameterAccess().getGroup_4()); 
 
             }
 
@@ -24425,16 +23868,16 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__5"
-    // InternalRos.g:8075:1: rule__Parameter__Group__5 : rule__Parameter__Group__5__Impl rule__Parameter__Group__6 ;
+    // InternalRos.g:7913:1: rule__Parameter__Group__5 : rule__Parameter__Group__5__Impl rule__Parameter__Group__6 ;
     public final void rule__Parameter__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8079:1: ( rule__Parameter__Group__5__Impl rule__Parameter__Group__6 )
-            // InternalRos.g:8080:2: rule__Parameter__Group__5__Impl rule__Parameter__Group__6
+            // InternalRos.g:7917:1: ( rule__Parameter__Group__5__Impl rule__Parameter__Group__6 )
+            // InternalRos.g:7918:2: rule__Parameter__Group__5__Impl rule__Parameter__Group__6
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__Parameter__Group__5__Impl();
 
             state._fsp--;
@@ -24463,31 +23906,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__5__Impl"
-    // InternalRos.g:8087:1: rule__Parameter__Group__5__Impl : ( ( rule__Parameter__TypeAssignment_5 ) ) ;
+    // InternalRos.g:7925:1: rule__Parameter__Group__5__Impl : ( 'type' ) ;
     public final void rule__Parameter__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8091:1: ( ( ( rule__Parameter__TypeAssignment_5 ) ) )
-            // InternalRos.g:8092:1: ( ( rule__Parameter__TypeAssignment_5 ) )
+            // InternalRos.g:7929:1: ( ( 'type' ) )
+            // InternalRos.g:7930:1: ( 'type' )
             {
-            // InternalRos.g:8092:1: ( ( rule__Parameter__TypeAssignment_5 ) )
-            // InternalRos.g:8093:2: ( rule__Parameter__TypeAssignment_5 )
+            // InternalRos.g:7930:1: ( 'type' )
+            // InternalRos.g:7931:2: 'type'
             {
-             before(grammarAccess.getParameterAccess().getTypeAssignment_5()); 
-            // InternalRos.g:8094:2: ( rule__Parameter__TypeAssignment_5 )
-            // InternalRos.g:8094:3: rule__Parameter__TypeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Parameter__TypeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getParameterAccess().getTypeAssignment_5()); 
+             before(grammarAccess.getParameterAccess().getTypeKeyword_5()); 
+            match(input,58,FOLLOW_2); 
+             after(grammarAccess.getParameterAccess().getTypeKeyword_5()); 
 
             }
 
@@ -24510,17 +23943,22 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__6"
-    // InternalRos.g:8102:1: rule__Parameter__Group__6 : rule__Parameter__Group__6__Impl ;
+    // InternalRos.g:7940:1: rule__Parameter__Group__6 : rule__Parameter__Group__6__Impl rule__Parameter__Group__7 ;
     public final void rule__Parameter__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8106:1: ( rule__Parameter__Group__6__Impl )
-            // InternalRos.g:8107:2: rule__Parameter__Group__6__Impl
+            // InternalRos.g:7944:1: ( rule__Parameter__Group__6__Impl rule__Parameter__Group__7 )
+            // InternalRos.g:7945:2: rule__Parameter__Group__6__Impl rule__Parameter__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_41);
             rule__Parameter__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Parameter__Group__7();
 
             state._fsp--;
 
@@ -24543,21 +23981,31 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__6__Impl"
-    // InternalRos.g:8113:1: rule__Parameter__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:7952:1: rule__Parameter__Group__6__Impl : ( ( rule__Parameter__TypeAssignment_6 ) ) ;
     public final void rule__Parameter__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8117:1: ( ( '}' ) )
-            // InternalRos.g:8118:1: ( '}' )
+            // InternalRos.g:7956:1: ( ( ( rule__Parameter__TypeAssignment_6 ) ) )
+            // InternalRos.g:7957:1: ( ( rule__Parameter__TypeAssignment_6 ) )
             {
-            // InternalRos.g:8118:1: ( '}' )
-            // InternalRos.g:8119:2: '}'
+            // InternalRos.g:7957:1: ( ( rule__Parameter__TypeAssignment_6 ) )
+            // InternalRos.g:7958:2: ( rule__Parameter__TypeAssignment_6 )
             {
-             before(grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getParameterAccess().getTypeAssignment_6()); 
+            // InternalRos.g:7959:2: ( rule__Parameter__TypeAssignment_6 )
+            // InternalRos.g:7959:3: rule__Parameter__TypeAssignment_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__Parameter__TypeAssignment_6();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getParameterAccess().getTypeAssignment_6()); 
 
             }
 
@@ -24579,93 +24027,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Parameter__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Parameter__Group_2__0"
-    // InternalRos.g:8129:1: rule__Parameter__Group_2__0 : rule__Parameter__Group_2__0__Impl rule__Parameter__Group_2__1 ;
-    public final void rule__Parameter__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group__7"
+    // InternalRos.g:7967:1: rule__Parameter__Group__7 : rule__Parameter__Group__7__Impl ;
+    public final void rule__Parameter__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8133:1: ( rule__Parameter__Group_2__0__Impl rule__Parameter__Group_2__1 )
-            // InternalRos.g:8134:2: rule__Parameter__Group_2__0__Impl rule__Parameter__Group_2__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__Parameter__Group_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Parameter__Group_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Parameter__Group_2__0"
-
-
-    // $ANTLR start "rule__Parameter__Group_2__0__Impl"
-    // InternalRos.g:8141:1: rule__Parameter__Group_2__0__Impl : ( 'name' ) ;
-    public final void rule__Parameter__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:8145:1: ( ( 'name' ) )
-            // InternalRos.g:8146:1: ( 'name' )
-            {
-            // InternalRos.g:8146:1: ( 'name' )
-            // InternalRos.g:8147:2: 'name'
-            {
-             before(grammarAccess.getParameterAccess().getNameKeyword_2_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getParameterAccess().getNameKeyword_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Parameter__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Parameter__Group_2__1"
-    // InternalRos.g:8156:1: rule__Parameter__Group_2__1 : rule__Parameter__Group_2__1__Impl ;
-    public final void rule__Parameter__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRos.g:8160:1: ( rule__Parameter__Group_2__1__Impl )
-            // InternalRos.g:8161:2: rule__Parameter__Group_2__1__Impl
+            // InternalRos.g:7971:1: ( rule__Parameter__Group__7__Impl )
+            // InternalRos.g:7972:2: rule__Parameter__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Parameter__Group_2__1__Impl();
+            rule__Parameter__Group__7__Impl();
 
             state._fsp--;
 
@@ -24684,35 +24057,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_2__1"
+    // $ANTLR end "rule__Parameter__Group__7"
 
 
-    // $ANTLR start "rule__Parameter__Group_2__1__Impl"
-    // InternalRos.g:8167:1: rule__Parameter__Group_2__1__Impl : ( ( rule__Parameter__NameAssignment_2_1 ) ) ;
-    public final void rule__Parameter__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group__7__Impl"
+    // InternalRos.g:7978:1: rule__Parameter__Group__7__Impl : ( '}' ) ;
+    public final void rule__Parameter__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8171:1: ( ( ( rule__Parameter__NameAssignment_2_1 ) ) )
-            // InternalRos.g:8172:1: ( ( rule__Parameter__NameAssignment_2_1 ) )
+            // InternalRos.g:7982:1: ( ( '}' ) )
+            // InternalRos.g:7983:1: ( '}' )
             {
-            // InternalRos.g:8172:1: ( ( rule__Parameter__NameAssignment_2_1 ) )
-            // InternalRos.g:8173:2: ( rule__Parameter__NameAssignment_2_1 )
+            // InternalRos.g:7983:1: ( '}' )
+            // InternalRos.g:7984:2: '}'
             {
-             before(grammarAccess.getParameterAccess().getNameAssignment_2_1()); 
-            // InternalRos.g:8174:2: ( rule__Parameter__NameAssignment_2_1 )
-            // InternalRos.g:8174:3: rule__Parameter__NameAssignment_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Parameter__NameAssignment_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getParameterAccess().getNameAssignment_2_1()); 
+             before(grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -24731,26 +24094,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_2__1__Impl"
+    // $ANTLR end "rule__Parameter__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Parameter__Group_3__0"
-    // InternalRos.g:8183:1: rule__Parameter__Group_3__0 : rule__Parameter__Group_3__0__Impl rule__Parameter__Group_3__1 ;
-    public final void rule__Parameter__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group_4__0"
+    // InternalRos.g:7994:1: rule__Parameter__Group_4__0 : rule__Parameter__Group_4__0__Impl rule__Parameter__Group_4__1 ;
+    public final void rule__Parameter__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8187:1: ( rule__Parameter__Group_3__0__Impl rule__Parameter__Group_3__1 )
-            // InternalRos.g:8188:2: rule__Parameter__Group_3__0__Impl rule__Parameter__Group_3__1
+            // InternalRos.g:7998:1: ( rule__Parameter__Group_4__0__Impl rule__Parameter__Group_4__1 )
+            // InternalRos.g:7999:2: rule__Parameter__Group_4__0__Impl rule__Parameter__Group_4__1
             {
             pushFollow(FOLLOW_36);
-            rule__Parameter__Group_3__0__Impl();
+            rule__Parameter__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Parameter__Group_3__1();
+            rule__Parameter__Group_4__1();
 
             state._fsp--;
 
@@ -24769,25 +24132,25 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_3__0"
+    // $ANTLR end "rule__Parameter__Group_4__0"
 
 
-    // $ANTLR start "rule__Parameter__Group_3__0__Impl"
-    // InternalRos.g:8195:1: rule__Parameter__Group_3__0__Impl : ( 'namespace' ) ;
-    public final void rule__Parameter__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group_4__0__Impl"
+    // InternalRos.g:8006:1: rule__Parameter__Group_4__0__Impl : ( 'namespace' ) ;
+    public final void rule__Parameter__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8199:1: ( ( 'namespace' ) )
-            // InternalRos.g:8200:1: ( 'namespace' )
+            // InternalRos.g:8010:1: ( ( 'namespace' ) )
+            // InternalRos.g:8011:1: ( 'namespace' )
             {
-            // InternalRos.g:8200:1: ( 'namespace' )
-            // InternalRos.g:8201:2: 'namespace'
+            // InternalRos.g:8011:1: ( 'namespace' )
+            // InternalRos.g:8012:2: 'namespace'
             {
-             before(grammarAccess.getParameterAccess().getNamespaceKeyword_3_0()); 
+             before(grammarAccess.getParameterAccess().getNamespaceKeyword_4_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getParameterAccess().getNamespaceKeyword_3_0()); 
+             after(grammarAccess.getParameterAccess().getNamespaceKeyword_4_0()); 
 
             }
 
@@ -24806,21 +24169,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_3__0__Impl"
+    // $ANTLR end "rule__Parameter__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__Parameter__Group_3__1"
-    // InternalRos.g:8210:1: rule__Parameter__Group_3__1 : rule__Parameter__Group_3__1__Impl ;
-    public final void rule__Parameter__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group_4__1"
+    // InternalRos.g:8021:1: rule__Parameter__Group_4__1 : rule__Parameter__Group_4__1__Impl ;
+    public final void rule__Parameter__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8214:1: ( rule__Parameter__Group_3__1__Impl )
-            // InternalRos.g:8215:2: rule__Parameter__Group_3__1__Impl
+            // InternalRos.g:8025:1: ( rule__Parameter__Group_4__1__Impl )
+            // InternalRos.g:8026:2: rule__Parameter__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Parameter__Group_3__1__Impl();
+            rule__Parameter__Group_4__1__Impl();
 
             state._fsp--;
 
@@ -24839,35 +24202,35 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_3__1"
+    // $ANTLR end "rule__Parameter__Group_4__1"
 
 
-    // $ANTLR start "rule__Parameter__Group_3__1__Impl"
-    // InternalRos.g:8221:1: rule__Parameter__Group_3__1__Impl : ( ( rule__Parameter__NamespaceAssignment_3_1 ) ) ;
-    public final void rule__Parameter__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__Group_4__1__Impl"
+    // InternalRos.g:8032:1: rule__Parameter__Group_4__1__Impl : ( ( rule__Parameter__NamespaceAssignment_4_1 ) ) ;
+    public final void rule__Parameter__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8225:1: ( ( ( rule__Parameter__NamespaceAssignment_3_1 ) ) )
-            // InternalRos.g:8226:1: ( ( rule__Parameter__NamespaceAssignment_3_1 ) )
+            // InternalRos.g:8036:1: ( ( ( rule__Parameter__NamespaceAssignment_4_1 ) ) )
+            // InternalRos.g:8037:1: ( ( rule__Parameter__NamespaceAssignment_4_1 ) )
             {
-            // InternalRos.g:8226:1: ( ( rule__Parameter__NamespaceAssignment_3_1 ) )
-            // InternalRos.g:8227:2: ( rule__Parameter__NamespaceAssignment_3_1 )
+            // InternalRos.g:8037:1: ( ( rule__Parameter__NamespaceAssignment_4_1 ) )
+            // InternalRos.g:8038:2: ( rule__Parameter__NamespaceAssignment_4_1 )
             {
-             before(grammarAccess.getParameterAccess().getNamespaceAssignment_3_1()); 
-            // InternalRos.g:8228:2: ( rule__Parameter__NamespaceAssignment_3_1 )
-            // InternalRos.g:8228:3: rule__Parameter__NamespaceAssignment_3_1
+             before(grammarAccess.getParameterAccess().getNamespaceAssignment_4_1()); 
+            // InternalRos.g:8039:2: ( rule__Parameter__NamespaceAssignment_4_1 )
+            // InternalRos.g:8039:3: rule__Parameter__NamespaceAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Parameter__NamespaceAssignment_3_1();
+            rule__Parameter__NamespaceAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getParameterAccess().getNamespaceAssignment_3_1()); 
+             after(grammarAccess.getParameterAccess().getNamespaceAssignment_4_1()); 
 
             }
 
@@ -24886,18 +24249,18 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__Group_3__1__Impl"
+    // $ANTLR end "rule__Parameter__Group_4__1__Impl"
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__0"
-    // InternalRos.g:8237:1: rule__GlobalNamespace__Group__0 : rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1 ;
+    // InternalRos.g:8048:1: rule__GlobalNamespace__Group__0 : rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1 ;
     public final void rule__GlobalNamespace__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8241:1: ( rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1 )
-            // InternalRos.g:8242:2: rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1
+            // InternalRos.g:8052:1: ( rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1 )
+            // InternalRos.g:8053:2: rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1
             {
             pushFollow(FOLLOW_42);
             rule__GlobalNamespace__Group__0__Impl();
@@ -24928,21 +24291,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__0__Impl"
-    // InternalRos.g:8249:1: rule__GlobalNamespace__Group__0__Impl : ( () ) ;
+    // InternalRos.g:8060:1: rule__GlobalNamespace__Group__0__Impl : ( () ) ;
     public final void rule__GlobalNamespace__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8253:1: ( ( () ) )
-            // InternalRos.g:8254:1: ( () )
+            // InternalRos.g:8064:1: ( ( () ) )
+            // InternalRos.g:8065:1: ( () )
             {
-            // InternalRos.g:8254:1: ( () )
-            // InternalRos.g:8255:2: ()
+            // InternalRos.g:8065:1: ( () )
+            // InternalRos.g:8066:2: ()
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGlobalNamespaceAction_0()); 
-            // InternalRos.g:8256:2: ()
-            // InternalRos.g:8256:3: 
+            // InternalRos.g:8067:2: ()
+            // InternalRos.g:8067:3: 
             {
             }
 
@@ -24965,14 +24328,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__1"
-    // InternalRos.g:8264:1: rule__GlobalNamespace__Group__1 : rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2 ;
+    // InternalRos.g:8075:1: rule__GlobalNamespace__Group__1 : rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2 ;
     public final void rule__GlobalNamespace__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8268:1: ( rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2 )
-            // InternalRos.g:8269:2: rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2
+            // InternalRos.g:8079:1: ( rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2 )
+            // InternalRos.g:8080:2: rule__GlobalNamespace__Group__1__Impl rule__GlobalNamespace__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__GlobalNamespace__Group__1__Impl();
@@ -25003,17 +24366,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__1__Impl"
-    // InternalRos.g:8276:1: rule__GlobalNamespace__Group__1__Impl : ( 'GlobalNamespace' ) ;
+    // InternalRos.g:8087:1: rule__GlobalNamespace__Group__1__Impl : ( 'GlobalNamespace' ) ;
     public final void rule__GlobalNamespace__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8280:1: ( ( 'GlobalNamespace' ) )
-            // InternalRos.g:8281:1: ( 'GlobalNamespace' )
+            // InternalRos.g:8091:1: ( ( 'GlobalNamespace' ) )
+            // InternalRos.g:8092:1: ( 'GlobalNamespace' )
             {
-            // InternalRos.g:8281:1: ( 'GlobalNamespace' )
-            // InternalRos.g:8282:2: 'GlobalNamespace'
+            // InternalRos.g:8092:1: ( 'GlobalNamespace' )
+            // InternalRos.g:8093:2: 'GlobalNamespace'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGlobalNamespaceKeyword_1()); 
             match(input,59,FOLLOW_2); 
@@ -25040,14 +24403,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__2"
-    // InternalRos.g:8291:1: rule__GlobalNamespace__Group__2 : rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3 ;
+    // InternalRos.g:8102:1: rule__GlobalNamespace__Group__2 : rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3 ;
     public final void rule__GlobalNamespace__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8295:1: ( rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3 )
-            // InternalRos.g:8296:2: rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3
+            // InternalRos.g:8106:1: ( rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3 )
+            // InternalRos.g:8107:2: rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3
             {
             pushFollow(FOLLOW_43);
             rule__GlobalNamespace__Group__2__Impl();
@@ -25078,17 +24441,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__2__Impl"
-    // InternalRos.g:8303:1: rule__GlobalNamespace__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:8114:1: rule__GlobalNamespace__Group__2__Impl : ( '{' ) ;
     public final void rule__GlobalNamespace__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8307:1: ( ( '{' ) )
-            // InternalRos.g:8308:1: ( '{' )
+            // InternalRos.g:8118:1: ( ( '{' ) )
+            // InternalRos.g:8119:1: ( '{' )
             {
-            // InternalRos.g:8308:1: ( '{' )
-            // InternalRos.g:8309:2: '{'
+            // InternalRos.g:8119:1: ( '{' )
+            // InternalRos.g:8120:2: '{'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -25115,14 +24478,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__3"
-    // InternalRos.g:8318:1: rule__GlobalNamespace__Group__3 : rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4 ;
+    // InternalRos.g:8129:1: rule__GlobalNamespace__Group__3 : rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4 ;
     public final void rule__GlobalNamespace__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8322:1: ( rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4 )
-            // InternalRos.g:8323:2: rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4
+            // InternalRos.g:8133:1: ( rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4 )
+            // InternalRos.g:8134:2: rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4
             {
             pushFollow(FOLLOW_43);
             rule__GlobalNamespace__Group__3__Impl();
@@ -25153,29 +24516,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__3__Impl"
-    // InternalRos.g:8330:1: rule__GlobalNamespace__Group__3__Impl : ( ( rule__GlobalNamespace__Group_3__0 )? ) ;
+    // InternalRos.g:8141:1: rule__GlobalNamespace__Group__3__Impl : ( ( rule__GlobalNamespace__Group_3__0 )? ) ;
     public final void rule__GlobalNamespace__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8334:1: ( ( ( rule__GlobalNamespace__Group_3__0 )? ) )
-            // InternalRos.g:8335:1: ( ( rule__GlobalNamespace__Group_3__0 )? )
+            // InternalRos.g:8145:1: ( ( ( rule__GlobalNamespace__Group_3__0 )? ) )
+            // InternalRos.g:8146:1: ( ( rule__GlobalNamespace__Group_3__0 )? )
             {
-            // InternalRos.g:8335:1: ( ( rule__GlobalNamespace__Group_3__0 )? )
-            // InternalRos.g:8336:2: ( rule__GlobalNamespace__Group_3__0 )?
+            // InternalRos.g:8146:1: ( ( rule__GlobalNamespace__Group_3__0 )? )
+            // InternalRos.g:8147:2: ( rule__GlobalNamespace__Group_3__0 )?
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGroup_3()); 
-            // InternalRos.g:8337:2: ( rule__GlobalNamespace__Group_3__0 )?
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // InternalRos.g:8148:2: ( rule__GlobalNamespace__Group_3__0 )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA55_0==60) ) {
-                alt55=1;
+            if ( (LA48_0==60) ) {
+                alt48=1;
             }
-            switch (alt55) {
+            switch (alt48) {
                 case 1 :
-                    // InternalRos.g:8337:3: rule__GlobalNamespace__Group_3__0
+                    // InternalRos.g:8148:3: rule__GlobalNamespace__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GlobalNamespace__Group_3__0();
@@ -25211,14 +24574,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__4"
-    // InternalRos.g:8345:1: rule__GlobalNamespace__Group__4 : rule__GlobalNamespace__Group__4__Impl ;
+    // InternalRos.g:8156:1: rule__GlobalNamespace__Group__4 : rule__GlobalNamespace__Group__4__Impl ;
     public final void rule__GlobalNamespace__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8349:1: ( rule__GlobalNamespace__Group__4__Impl )
-            // InternalRos.g:8350:2: rule__GlobalNamespace__Group__4__Impl
+            // InternalRos.g:8160:1: ( rule__GlobalNamespace__Group__4__Impl )
+            // InternalRos.g:8161:2: rule__GlobalNamespace__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GlobalNamespace__Group__4__Impl();
@@ -25244,17 +24607,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group__4__Impl"
-    // InternalRos.g:8356:1: rule__GlobalNamespace__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:8167:1: rule__GlobalNamespace__Group__4__Impl : ( '}' ) ;
     public final void rule__GlobalNamespace__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8360:1: ( ( '}' ) )
-            // InternalRos.g:8361:1: ( '}' )
+            // InternalRos.g:8171:1: ( ( '}' ) )
+            // InternalRos.g:8172:1: ( '}' )
             {
-            // InternalRos.g:8361:1: ( '}' )
-            // InternalRos.g:8362:2: '}'
+            // InternalRos.g:8172:1: ( '}' )
+            // InternalRos.g:8173:2: '}'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -25281,14 +24644,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__0"
-    // InternalRos.g:8372:1: rule__GlobalNamespace__Group_3__0 : rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1 ;
+    // InternalRos.g:8183:1: rule__GlobalNamespace__Group_3__0 : rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1 ;
     public final void rule__GlobalNamespace__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8376:1: ( rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1 )
-            // InternalRos.g:8377:2: rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1
+            // InternalRos.g:8187:1: ( rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1 )
+            // InternalRos.g:8188:2: rule__GlobalNamespace__Group_3__0__Impl rule__GlobalNamespace__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__GlobalNamespace__Group_3__0__Impl();
@@ -25319,17 +24682,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__0__Impl"
-    // InternalRos.g:8384:1: rule__GlobalNamespace__Group_3__0__Impl : ( 'parts' ) ;
+    // InternalRos.g:8195:1: rule__GlobalNamespace__Group_3__0__Impl : ( 'parts' ) ;
     public final void rule__GlobalNamespace__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8388:1: ( ( 'parts' ) )
-            // InternalRos.g:8389:1: ( 'parts' )
+            // InternalRos.g:8199:1: ( ( 'parts' ) )
+            // InternalRos.g:8200:1: ( 'parts' )
             {
-            // InternalRos.g:8389:1: ( 'parts' )
-            // InternalRos.g:8390:2: 'parts'
+            // InternalRos.g:8200:1: ( 'parts' )
+            // InternalRos.g:8201:2: 'parts'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getPartsKeyword_3_0()); 
             match(input,60,FOLLOW_2); 
@@ -25356,14 +24719,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__1"
-    // InternalRos.g:8399:1: rule__GlobalNamespace__Group_3__1 : rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2 ;
+    // InternalRos.g:8210:1: rule__GlobalNamespace__Group_3__1 : rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2 ;
     public final void rule__GlobalNamespace__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8403:1: ( rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2 )
-            // InternalRos.g:8404:2: rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2
+            // InternalRos.g:8214:1: ( rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2 )
+            // InternalRos.g:8215:2: rule__GlobalNamespace__Group_3__1__Impl rule__GlobalNamespace__Group_3__2
             {
             pushFollow(FOLLOW_25);
             rule__GlobalNamespace__Group_3__1__Impl();
@@ -25394,17 +24757,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__1__Impl"
-    // InternalRos.g:8411:1: rule__GlobalNamespace__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:8222:1: rule__GlobalNamespace__Group_3__1__Impl : ( '{' ) ;
     public final void rule__GlobalNamespace__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8415:1: ( ( '{' ) )
-            // InternalRos.g:8416:1: ( '{' )
+            // InternalRos.g:8226:1: ( ( '{' ) )
+            // InternalRos.g:8227:1: ( '{' )
             {
-            // InternalRos.g:8416:1: ( '{' )
-            // InternalRos.g:8417:2: '{'
+            // InternalRos.g:8227:1: ( '{' )
+            // InternalRos.g:8228:2: '{'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -25431,14 +24794,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__2"
-    // InternalRos.g:8426:1: rule__GlobalNamespace__Group_3__2 : rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3 ;
+    // InternalRos.g:8237:1: rule__GlobalNamespace__Group_3__2 : rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3 ;
     public final void rule__GlobalNamespace__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8430:1: ( rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3 )
-            // InternalRos.g:8431:2: rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3
+            // InternalRos.g:8241:1: ( rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3 )
+            // InternalRos.g:8242:2: rule__GlobalNamespace__Group_3__2__Impl rule__GlobalNamespace__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__GlobalNamespace__Group_3__2__Impl();
@@ -25469,21 +24832,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__2__Impl"
-    // InternalRos.g:8438:1: rule__GlobalNamespace__Group_3__2__Impl : ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) ) ;
+    // InternalRos.g:8249:1: rule__GlobalNamespace__Group_3__2__Impl : ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) ) ;
     public final void rule__GlobalNamespace__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8442:1: ( ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) ) )
-            // InternalRos.g:8443:1: ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) )
+            // InternalRos.g:8253:1: ( ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) ) )
+            // InternalRos.g:8254:1: ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) )
             {
-            // InternalRos.g:8443:1: ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) )
-            // InternalRos.g:8444:2: ( rule__GlobalNamespace__PartsAssignment_3_2 )
+            // InternalRos.g:8254:1: ( ( rule__GlobalNamespace__PartsAssignment_3_2 ) )
+            // InternalRos.g:8255:2: ( rule__GlobalNamespace__PartsAssignment_3_2 )
             {
              before(grammarAccess.getGlobalNamespaceAccess().getPartsAssignment_3_2()); 
-            // InternalRos.g:8445:2: ( rule__GlobalNamespace__PartsAssignment_3_2 )
-            // InternalRos.g:8445:3: rule__GlobalNamespace__PartsAssignment_3_2
+            // InternalRos.g:8256:2: ( rule__GlobalNamespace__PartsAssignment_3_2 )
+            // InternalRos.g:8256:3: rule__GlobalNamespace__PartsAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__GlobalNamespace__PartsAssignment_3_2();
@@ -25516,14 +24879,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__3"
-    // InternalRos.g:8453:1: rule__GlobalNamespace__Group_3__3 : rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4 ;
+    // InternalRos.g:8264:1: rule__GlobalNamespace__Group_3__3 : rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4 ;
     public final void rule__GlobalNamespace__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8457:1: ( rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4 )
-            // InternalRos.g:8458:2: rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4
+            // InternalRos.g:8268:1: ( rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4 )
+            // InternalRos.g:8269:2: rule__GlobalNamespace__Group_3__3__Impl rule__GlobalNamespace__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__GlobalNamespace__Group_3__3__Impl();
@@ -25554,33 +24917,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__3__Impl"
-    // InternalRos.g:8465:1: rule__GlobalNamespace__Group_3__3__Impl : ( ( rule__GlobalNamespace__Group_3_3__0 )* ) ;
+    // InternalRos.g:8276:1: rule__GlobalNamespace__Group_3__3__Impl : ( ( rule__GlobalNamespace__Group_3_3__0 )* ) ;
     public final void rule__GlobalNamespace__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8469:1: ( ( ( rule__GlobalNamespace__Group_3_3__0 )* ) )
-            // InternalRos.g:8470:1: ( ( rule__GlobalNamespace__Group_3_3__0 )* )
+            // InternalRos.g:8280:1: ( ( ( rule__GlobalNamespace__Group_3_3__0 )* ) )
+            // InternalRos.g:8281:1: ( ( rule__GlobalNamespace__Group_3_3__0 )* )
             {
-            // InternalRos.g:8470:1: ( ( rule__GlobalNamespace__Group_3_3__0 )* )
-            // InternalRos.g:8471:2: ( rule__GlobalNamespace__Group_3_3__0 )*
+            // InternalRos.g:8281:1: ( ( rule__GlobalNamespace__Group_3_3__0 )* )
+            // InternalRos.g:8282:2: ( rule__GlobalNamespace__Group_3_3__0 )*
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGroup_3_3()); 
-            // InternalRos.g:8472:2: ( rule__GlobalNamespace__Group_3_3__0 )*
-            loop56:
+            // InternalRos.g:8283:2: ( rule__GlobalNamespace__Group_3_3__0 )*
+            loop49:
             do {
-                int alt56=2;
-                int LA56_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA56_0==21) ) {
-                    alt56=1;
+                if ( (LA49_0==21) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt56) {
+                switch (alt49) {
             	case 1 :
-            	    // InternalRos.g:8472:3: rule__GlobalNamespace__Group_3_3__0
+            	    // InternalRos.g:8283:3: rule__GlobalNamespace__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__GlobalNamespace__Group_3_3__0();
@@ -25592,7 +24955,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop56;
+            	    break loop49;
                 }
             } while (true);
 
@@ -25619,14 +24982,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__4"
-    // InternalRos.g:8480:1: rule__GlobalNamespace__Group_3__4 : rule__GlobalNamespace__Group_3__4__Impl ;
+    // InternalRos.g:8291:1: rule__GlobalNamespace__Group_3__4 : rule__GlobalNamespace__Group_3__4__Impl ;
     public final void rule__GlobalNamespace__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8484:1: ( rule__GlobalNamespace__Group_3__4__Impl )
-            // InternalRos.g:8485:2: rule__GlobalNamespace__Group_3__4__Impl
+            // InternalRos.g:8295:1: ( rule__GlobalNamespace__Group_3__4__Impl )
+            // InternalRos.g:8296:2: rule__GlobalNamespace__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GlobalNamespace__Group_3__4__Impl();
@@ -25652,17 +25015,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3__4__Impl"
-    // InternalRos.g:8491:1: rule__GlobalNamespace__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:8302:1: rule__GlobalNamespace__Group_3__4__Impl : ( '}' ) ;
     public final void rule__GlobalNamespace__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8495:1: ( ( '}' ) )
-            // InternalRos.g:8496:1: ( '}' )
+            // InternalRos.g:8306:1: ( ( '}' ) )
+            // InternalRos.g:8307:1: ( '}' )
             {
-            // InternalRos.g:8496:1: ( '}' )
-            // InternalRos.g:8497:2: '}'
+            // InternalRos.g:8307:1: ( '}' )
+            // InternalRos.g:8308:2: '}'
             {
              before(grammarAccess.getGlobalNamespaceAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -25689,14 +25052,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3_3__0"
-    // InternalRos.g:8507:1: rule__GlobalNamespace__Group_3_3__0 : rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1 ;
+    // InternalRos.g:8318:1: rule__GlobalNamespace__Group_3_3__0 : rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1 ;
     public final void rule__GlobalNamespace__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8511:1: ( rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1 )
-            // InternalRos.g:8512:2: rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1
+            // InternalRos.g:8322:1: ( rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1 )
+            // InternalRos.g:8323:2: rule__GlobalNamespace__Group_3_3__0__Impl rule__GlobalNamespace__Group_3_3__1
             {
             pushFollow(FOLLOW_25);
             rule__GlobalNamespace__Group_3_3__0__Impl();
@@ -25727,17 +25090,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3_3__0__Impl"
-    // InternalRos.g:8519:1: rule__GlobalNamespace__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:8330:1: rule__GlobalNamespace__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__GlobalNamespace__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8523:1: ( ( ',' ) )
-            // InternalRos.g:8524:1: ( ',' )
+            // InternalRos.g:8334:1: ( ( ',' ) )
+            // InternalRos.g:8335:1: ( ',' )
             {
-            // InternalRos.g:8524:1: ( ',' )
-            // InternalRos.g:8525:2: ','
+            // InternalRos.g:8335:1: ( ',' )
+            // InternalRos.g:8336:2: ','
             {
              before(grammarAccess.getGlobalNamespaceAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -25764,14 +25127,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3_3__1"
-    // InternalRos.g:8534:1: rule__GlobalNamespace__Group_3_3__1 : rule__GlobalNamespace__Group_3_3__1__Impl ;
+    // InternalRos.g:8345:1: rule__GlobalNamespace__Group_3_3__1 : rule__GlobalNamespace__Group_3_3__1__Impl ;
     public final void rule__GlobalNamespace__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8538:1: ( rule__GlobalNamespace__Group_3_3__1__Impl )
-            // InternalRos.g:8539:2: rule__GlobalNamespace__Group_3_3__1__Impl
+            // InternalRos.g:8349:1: ( rule__GlobalNamespace__Group_3_3__1__Impl )
+            // InternalRos.g:8350:2: rule__GlobalNamespace__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GlobalNamespace__Group_3_3__1__Impl();
@@ -25797,21 +25160,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__Group_3_3__1__Impl"
-    // InternalRos.g:8545:1: rule__GlobalNamespace__Group_3_3__1__Impl : ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) ) ;
+    // InternalRos.g:8356:1: rule__GlobalNamespace__Group_3_3__1__Impl : ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) ) ;
     public final void rule__GlobalNamespace__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8549:1: ( ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) ) )
-            // InternalRos.g:8550:1: ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:8360:1: ( ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) ) )
+            // InternalRos.g:8361:1: ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) )
             {
-            // InternalRos.g:8550:1: ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) )
-            // InternalRos.g:8551:2: ( rule__GlobalNamespace__PartsAssignment_3_3_1 )
+            // InternalRos.g:8361:1: ( ( rule__GlobalNamespace__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:8362:2: ( rule__GlobalNamespace__PartsAssignment_3_3_1 )
             {
              before(grammarAccess.getGlobalNamespaceAccess().getPartsAssignment_3_3_1()); 
-            // InternalRos.g:8552:2: ( rule__GlobalNamespace__PartsAssignment_3_3_1 )
-            // InternalRos.g:8552:3: rule__GlobalNamespace__PartsAssignment_3_3_1
+            // InternalRos.g:8363:2: ( rule__GlobalNamespace__PartsAssignment_3_3_1 )
+            // InternalRos.g:8363:3: rule__GlobalNamespace__PartsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__GlobalNamespace__PartsAssignment_3_3_1();
@@ -25844,14 +25207,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__0"
-    // InternalRos.g:8561:1: rule__RelativeNamespace_Impl__Group__0 : rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1 ;
+    // InternalRos.g:8372:1: rule__RelativeNamespace_Impl__Group__0 : rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1 ;
     public final void rule__RelativeNamespace_Impl__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8565:1: ( rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1 )
-            // InternalRos.g:8566:2: rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1
+            // InternalRos.g:8376:1: ( rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1 )
+            // InternalRos.g:8377:2: rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1
             {
             pushFollow(FOLLOW_44);
             rule__RelativeNamespace_Impl__Group__0__Impl();
@@ -25882,21 +25245,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__0__Impl"
-    // InternalRos.g:8573:1: rule__RelativeNamespace_Impl__Group__0__Impl : ( () ) ;
+    // InternalRos.g:8384:1: rule__RelativeNamespace_Impl__Group__0__Impl : ( () ) ;
     public final void rule__RelativeNamespace_Impl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8577:1: ( ( () ) )
-            // InternalRos.g:8578:1: ( () )
+            // InternalRos.g:8388:1: ( ( () ) )
+            // InternalRos.g:8389:1: ( () )
             {
-            // InternalRos.g:8578:1: ( () )
-            // InternalRos.g:8579:2: ()
+            // InternalRos.g:8389:1: ( () )
+            // InternalRos.g:8390:2: ()
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getRelativeNamespaceAction_0()); 
-            // InternalRos.g:8580:2: ()
-            // InternalRos.g:8580:3: 
+            // InternalRos.g:8391:2: ()
+            // InternalRos.g:8391:3: 
             {
             }
 
@@ -25919,14 +25282,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__1"
-    // InternalRos.g:8588:1: rule__RelativeNamespace_Impl__Group__1 : rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2 ;
+    // InternalRos.g:8399:1: rule__RelativeNamespace_Impl__Group__1 : rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2 ;
     public final void rule__RelativeNamespace_Impl__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8592:1: ( rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2 )
-            // InternalRos.g:8593:2: rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2
+            // InternalRos.g:8403:1: ( rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2 )
+            // InternalRos.g:8404:2: rule__RelativeNamespace_Impl__Group__1__Impl rule__RelativeNamespace_Impl__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__RelativeNamespace_Impl__Group__1__Impl();
@@ -25957,17 +25320,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__1__Impl"
-    // InternalRos.g:8600:1: rule__RelativeNamespace_Impl__Group__1__Impl : ( 'RelativeNamespace' ) ;
+    // InternalRos.g:8411:1: rule__RelativeNamespace_Impl__Group__1__Impl : ( 'RelativeNamespace' ) ;
     public final void rule__RelativeNamespace_Impl__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8604:1: ( ( 'RelativeNamespace' ) )
-            // InternalRos.g:8605:1: ( 'RelativeNamespace' )
+            // InternalRos.g:8415:1: ( ( 'RelativeNamespace' ) )
+            // InternalRos.g:8416:1: ( 'RelativeNamespace' )
             {
-            // InternalRos.g:8605:1: ( 'RelativeNamespace' )
-            // InternalRos.g:8606:2: 'RelativeNamespace'
+            // InternalRos.g:8416:1: ( 'RelativeNamespace' )
+            // InternalRos.g:8417:2: 'RelativeNamespace'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getRelativeNamespaceKeyword_1()); 
             match(input,61,FOLLOW_2); 
@@ -25994,14 +25357,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__2"
-    // InternalRos.g:8615:1: rule__RelativeNamespace_Impl__Group__2 : rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3 ;
+    // InternalRos.g:8426:1: rule__RelativeNamespace_Impl__Group__2 : rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3 ;
     public final void rule__RelativeNamespace_Impl__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8619:1: ( rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3 )
-            // InternalRos.g:8620:2: rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3
+            // InternalRos.g:8430:1: ( rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3 )
+            // InternalRos.g:8431:2: rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3
             {
             pushFollow(FOLLOW_43);
             rule__RelativeNamespace_Impl__Group__2__Impl();
@@ -26032,17 +25395,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__2__Impl"
-    // InternalRos.g:8627:1: rule__RelativeNamespace_Impl__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:8438:1: rule__RelativeNamespace_Impl__Group__2__Impl : ( '{' ) ;
     public final void rule__RelativeNamespace_Impl__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8631:1: ( ( '{' ) )
-            // InternalRos.g:8632:1: ( '{' )
+            // InternalRos.g:8442:1: ( ( '{' ) )
+            // InternalRos.g:8443:1: ( '{' )
             {
-            // InternalRos.g:8632:1: ( '{' )
-            // InternalRos.g:8633:2: '{'
+            // InternalRos.g:8443:1: ( '{' )
+            // InternalRos.g:8444:2: '{'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -26069,14 +25432,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__3"
-    // InternalRos.g:8642:1: rule__RelativeNamespace_Impl__Group__3 : rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4 ;
+    // InternalRos.g:8453:1: rule__RelativeNamespace_Impl__Group__3 : rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4 ;
     public final void rule__RelativeNamespace_Impl__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8646:1: ( rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4 )
-            // InternalRos.g:8647:2: rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4
+            // InternalRos.g:8457:1: ( rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4 )
+            // InternalRos.g:8458:2: rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4
             {
             pushFollow(FOLLOW_43);
             rule__RelativeNamespace_Impl__Group__3__Impl();
@@ -26107,29 +25470,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__3__Impl"
-    // InternalRos.g:8654:1: rule__RelativeNamespace_Impl__Group__3__Impl : ( ( rule__RelativeNamespace_Impl__Group_3__0 )? ) ;
+    // InternalRos.g:8465:1: rule__RelativeNamespace_Impl__Group__3__Impl : ( ( rule__RelativeNamespace_Impl__Group_3__0 )? ) ;
     public final void rule__RelativeNamespace_Impl__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8658:1: ( ( ( rule__RelativeNamespace_Impl__Group_3__0 )? ) )
-            // InternalRos.g:8659:1: ( ( rule__RelativeNamespace_Impl__Group_3__0 )? )
+            // InternalRos.g:8469:1: ( ( ( rule__RelativeNamespace_Impl__Group_3__0 )? ) )
+            // InternalRos.g:8470:1: ( ( rule__RelativeNamespace_Impl__Group_3__0 )? )
             {
-            // InternalRos.g:8659:1: ( ( rule__RelativeNamespace_Impl__Group_3__0 )? )
-            // InternalRos.g:8660:2: ( rule__RelativeNamespace_Impl__Group_3__0 )?
+            // InternalRos.g:8470:1: ( ( rule__RelativeNamespace_Impl__Group_3__0 )? )
+            // InternalRos.g:8471:2: ( rule__RelativeNamespace_Impl__Group_3__0 )?
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3()); 
-            // InternalRos.g:8661:2: ( rule__RelativeNamespace_Impl__Group_3__0 )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // InternalRos.g:8472:2: ( rule__RelativeNamespace_Impl__Group_3__0 )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA57_0==60) ) {
-                alt57=1;
+            if ( (LA50_0==60) ) {
+                alt50=1;
             }
-            switch (alt57) {
+            switch (alt50) {
                 case 1 :
-                    // InternalRos.g:8661:3: rule__RelativeNamespace_Impl__Group_3__0
+                    // InternalRos.g:8472:3: rule__RelativeNamespace_Impl__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__RelativeNamespace_Impl__Group_3__0();
@@ -26165,14 +25528,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__4"
-    // InternalRos.g:8669:1: rule__RelativeNamespace_Impl__Group__4 : rule__RelativeNamespace_Impl__Group__4__Impl ;
+    // InternalRos.g:8480:1: rule__RelativeNamespace_Impl__Group__4 : rule__RelativeNamespace_Impl__Group__4__Impl ;
     public final void rule__RelativeNamespace_Impl__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8673:1: ( rule__RelativeNamespace_Impl__Group__4__Impl )
-            // InternalRos.g:8674:2: rule__RelativeNamespace_Impl__Group__4__Impl
+            // InternalRos.g:8484:1: ( rule__RelativeNamespace_Impl__Group__4__Impl )
+            // InternalRos.g:8485:2: rule__RelativeNamespace_Impl__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RelativeNamespace_Impl__Group__4__Impl();
@@ -26198,17 +25561,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group__4__Impl"
-    // InternalRos.g:8680:1: rule__RelativeNamespace_Impl__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:8491:1: rule__RelativeNamespace_Impl__Group__4__Impl : ( '}' ) ;
     public final void rule__RelativeNamespace_Impl__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8684:1: ( ( '}' ) )
-            // InternalRos.g:8685:1: ( '}' )
+            // InternalRos.g:8495:1: ( ( '}' ) )
+            // InternalRos.g:8496:1: ( '}' )
             {
-            // InternalRos.g:8685:1: ( '}' )
-            // InternalRos.g:8686:2: '}'
+            // InternalRos.g:8496:1: ( '}' )
+            // InternalRos.g:8497:2: '}'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -26235,14 +25598,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__0"
-    // InternalRos.g:8696:1: rule__RelativeNamespace_Impl__Group_3__0 : rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1 ;
+    // InternalRos.g:8507:1: rule__RelativeNamespace_Impl__Group_3__0 : rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1 ;
     public final void rule__RelativeNamespace_Impl__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8700:1: ( rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1 )
-            // InternalRos.g:8701:2: rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1
+            // InternalRos.g:8511:1: ( rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1 )
+            // InternalRos.g:8512:2: rule__RelativeNamespace_Impl__Group_3__0__Impl rule__RelativeNamespace_Impl__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__RelativeNamespace_Impl__Group_3__0__Impl();
@@ -26273,17 +25636,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__0__Impl"
-    // InternalRos.g:8708:1: rule__RelativeNamespace_Impl__Group_3__0__Impl : ( 'parts' ) ;
+    // InternalRos.g:8519:1: rule__RelativeNamespace_Impl__Group_3__0__Impl : ( 'parts' ) ;
     public final void rule__RelativeNamespace_Impl__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8712:1: ( ( 'parts' ) )
-            // InternalRos.g:8713:1: ( 'parts' )
+            // InternalRos.g:8523:1: ( ( 'parts' ) )
+            // InternalRos.g:8524:1: ( 'parts' )
             {
-            // InternalRos.g:8713:1: ( 'parts' )
-            // InternalRos.g:8714:2: 'parts'
+            // InternalRos.g:8524:1: ( 'parts' )
+            // InternalRos.g:8525:2: 'parts'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getPartsKeyword_3_0()); 
             match(input,60,FOLLOW_2); 
@@ -26310,14 +25673,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__1"
-    // InternalRos.g:8723:1: rule__RelativeNamespace_Impl__Group_3__1 : rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2 ;
+    // InternalRos.g:8534:1: rule__RelativeNamespace_Impl__Group_3__1 : rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2 ;
     public final void rule__RelativeNamespace_Impl__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8727:1: ( rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2 )
-            // InternalRos.g:8728:2: rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2
+            // InternalRos.g:8538:1: ( rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2 )
+            // InternalRos.g:8539:2: rule__RelativeNamespace_Impl__Group_3__1__Impl rule__RelativeNamespace_Impl__Group_3__2
             {
             pushFollow(FOLLOW_25);
             rule__RelativeNamespace_Impl__Group_3__1__Impl();
@@ -26348,17 +25711,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__1__Impl"
-    // InternalRos.g:8735:1: rule__RelativeNamespace_Impl__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:8546:1: rule__RelativeNamespace_Impl__Group_3__1__Impl : ( '{' ) ;
     public final void rule__RelativeNamespace_Impl__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8739:1: ( ( '{' ) )
-            // InternalRos.g:8740:1: ( '{' )
+            // InternalRos.g:8550:1: ( ( '{' ) )
+            // InternalRos.g:8551:1: ( '{' )
             {
-            // InternalRos.g:8740:1: ( '{' )
-            // InternalRos.g:8741:2: '{'
+            // InternalRos.g:8551:1: ( '{' )
+            // InternalRos.g:8552:2: '{'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -26385,14 +25748,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__2"
-    // InternalRos.g:8750:1: rule__RelativeNamespace_Impl__Group_3__2 : rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3 ;
+    // InternalRos.g:8561:1: rule__RelativeNamespace_Impl__Group_3__2 : rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3 ;
     public final void rule__RelativeNamespace_Impl__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8754:1: ( rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3 )
-            // InternalRos.g:8755:2: rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3
+            // InternalRos.g:8565:1: ( rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3 )
+            // InternalRos.g:8566:2: rule__RelativeNamespace_Impl__Group_3__2__Impl rule__RelativeNamespace_Impl__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__RelativeNamespace_Impl__Group_3__2__Impl();
@@ -26423,21 +25786,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__2__Impl"
-    // InternalRos.g:8762:1: rule__RelativeNamespace_Impl__Group_3__2__Impl : ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) ) ;
+    // InternalRos.g:8573:1: rule__RelativeNamespace_Impl__Group_3__2__Impl : ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) ) ;
     public final void rule__RelativeNamespace_Impl__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8766:1: ( ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) ) )
-            // InternalRos.g:8767:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) )
+            // InternalRos.g:8577:1: ( ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) ) )
+            // InternalRos.g:8578:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) )
             {
-            // InternalRos.g:8767:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) )
-            // InternalRos.g:8768:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 )
+            // InternalRos.g:8578:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 ) )
+            // InternalRos.g:8579:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 )
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getPartsAssignment_3_2()); 
-            // InternalRos.g:8769:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 )
-            // InternalRos.g:8769:3: rule__RelativeNamespace_Impl__PartsAssignment_3_2
+            // InternalRos.g:8580:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_2 )
+            // InternalRos.g:8580:3: rule__RelativeNamespace_Impl__PartsAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__RelativeNamespace_Impl__PartsAssignment_3_2();
@@ -26470,14 +25833,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__3"
-    // InternalRos.g:8777:1: rule__RelativeNamespace_Impl__Group_3__3 : rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4 ;
+    // InternalRos.g:8588:1: rule__RelativeNamespace_Impl__Group_3__3 : rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4 ;
     public final void rule__RelativeNamespace_Impl__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8781:1: ( rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4 )
-            // InternalRos.g:8782:2: rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4
+            // InternalRos.g:8592:1: ( rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4 )
+            // InternalRos.g:8593:2: rule__RelativeNamespace_Impl__Group_3__3__Impl rule__RelativeNamespace_Impl__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__RelativeNamespace_Impl__Group_3__3__Impl();
@@ -26508,33 +25871,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__3__Impl"
-    // InternalRos.g:8789:1: rule__RelativeNamespace_Impl__Group_3__3__Impl : ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* ) ;
+    // InternalRos.g:8600:1: rule__RelativeNamespace_Impl__Group_3__3__Impl : ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* ) ;
     public final void rule__RelativeNamespace_Impl__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8793:1: ( ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* ) )
-            // InternalRos.g:8794:1: ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* )
+            // InternalRos.g:8604:1: ( ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* ) )
+            // InternalRos.g:8605:1: ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* )
             {
-            // InternalRos.g:8794:1: ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* )
-            // InternalRos.g:8795:2: ( rule__RelativeNamespace_Impl__Group_3_3__0 )*
+            // InternalRos.g:8605:1: ( ( rule__RelativeNamespace_Impl__Group_3_3__0 )* )
+            // InternalRos.g:8606:2: ( rule__RelativeNamespace_Impl__Group_3_3__0 )*
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3_3()); 
-            // InternalRos.g:8796:2: ( rule__RelativeNamespace_Impl__Group_3_3__0 )*
-            loop58:
+            // InternalRos.g:8607:2: ( rule__RelativeNamespace_Impl__Group_3_3__0 )*
+            loop51:
             do {
-                int alt58=2;
-                int LA58_0 = input.LA(1);
+                int alt51=2;
+                int LA51_0 = input.LA(1);
 
-                if ( (LA58_0==21) ) {
-                    alt58=1;
+                if ( (LA51_0==21) ) {
+                    alt51=1;
                 }
 
 
-                switch (alt58) {
+                switch (alt51) {
             	case 1 :
-            	    // InternalRos.g:8796:3: rule__RelativeNamespace_Impl__Group_3_3__0
+            	    // InternalRos.g:8607:3: rule__RelativeNamespace_Impl__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__RelativeNamespace_Impl__Group_3_3__0();
@@ -26546,7 +25909,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop58;
+            	    break loop51;
                 }
             } while (true);
 
@@ -26573,14 +25936,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__4"
-    // InternalRos.g:8804:1: rule__RelativeNamespace_Impl__Group_3__4 : rule__RelativeNamespace_Impl__Group_3__4__Impl ;
+    // InternalRos.g:8615:1: rule__RelativeNamespace_Impl__Group_3__4 : rule__RelativeNamespace_Impl__Group_3__4__Impl ;
     public final void rule__RelativeNamespace_Impl__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8808:1: ( rule__RelativeNamespace_Impl__Group_3__4__Impl )
-            // InternalRos.g:8809:2: rule__RelativeNamespace_Impl__Group_3__4__Impl
+            // InternalRos.g:8619:1: ( rule__RelativeNamespace_Impl__Group_3__4__Impl )
+            // InternalRos.g:8620:2: rule__RelativeNamespace_Impl__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RelativeNamespace_Impl__Group_3__4__Impl();
@@ -26606,17 +25969,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3__4__Impl"
-    // InternalRos.g:8815:1: rule__RelativeNamespace_Impl__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:8626:1: rule__RelativeNamespace_Impl__Group_3__4__Impl : ( '}' ) ;
     public final void rule__RelativeNamespace_Impl__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8819:1: ( ( '}' ) )
-            // InternalRos.g:8820:1: ( '}' )
+            // InternalRos.g:8630:1: ( ( '}' ) )
+            // InternalRos.g:8631:1: ( '}' )
             {
-            // InternalRos.g:8820:1: ( '}' )
-            // InternalRos.g:8821:2: '}'
+            // InternalRos.g:8631:1: ( '}' )
+            // InternalRos.g:8632:2: '}'
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -26643,14 +26006,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3_3__0"
-    // InternalRos.g:8831:1: rule__RelativeNamespace_Impl__Group_3_3__0 : rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1 ;
+    // InternalRos.g:8642:1: rule__RelativeNamespace_Impl__Group_3_3__0 : rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1 ;
     public final void rule__RelativeNamespace_Impl__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8835:1: ( rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1 )
-            // InternalRos.g:8836:2: rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1
+            // InternalRos.g:8646:1: ( rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1 )
+            // InternalRos.g:8647:2: rule__RelativeNamespace_Impl__Group_3_3__0__Impl rule__RelativeNamespace_Impl__Group_3_3__1
             {
             pushFollow(FOLLOW_25);
             rule__RelativeNamespace_Impl__Group_3_3__0__Impl();
@@ -26681,17 +26044,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3_3__0__Impl"
-    // InternalRos.g:8843:1: rule__RelativeNamespace_Impl__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:8654:1: rule__RelativeNamespace_Impl__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__RelativeNamespace_Impl__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8847:1: ( ( ',' ) )
-            // InternalRos.g:8848:1: ( ',' )
+            // InternalRos.g:8658:1: ( ( ',' ) )
+            // InternalRos.g:8659:1: ( ',' )
             {
-            // InternalRos.g:8848:1: ( ',' )
-            // InternalRos.g:8849:2: ','
+            // InternalRos.g:8659:1: ( ',' )
+            // InternalRos.g:8660:2: ','
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -26718,14 +26081,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3_3__1"
-    // InternalRos.g:8858:1: rule__RelativeNamespace_Impl__Group_3_3__1 : rule__RelativeNamespace_Impl__Group_3_3__1__Impl ;
+    // InternalRos.g:8669:1: rule__RelativeNamespace_Impl__Group_3_3__1 : rule__RelativeNamespace_Impl__Group_3_3__1__Impl ;
     public final void rule__RelativeNamespace_Impl__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8862:1: ( rule__RelativeNamespace_Impl__Group_3_3__1__Impl )
-            // InternalRos.g:8863:2: rule__RelativeNamespace_Impl__Group_3_3__1__Impl
+            // InternalRos.g:8673:1: ( rule__RelativeNamespace_Impl__Group_3_3__1__Impl )
+            // InternalRos.g:8674:2: rule__RelativeNamespace_Impl__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RelativeNamespace_Impl__Group_3_3__1__Impl();
@@ -26751,21 +26114,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__Group_3_3__1__Impl"
-    // InternalRos.g:8869:1: rule__RelativeNamespace_Impl__Group_3_3__1__Impl : ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) ) ;
+    // InternalRos.g:8680:1: rule__RelativeNamespace_Impl__Group_3_3__1__Impl : ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) ) ;
     public final void rule__RelativeNamespace_Impl__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8873:1: ( ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) ) )
-            // InternalRos.g:8874:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:8684:1: ( ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) ) )
+            // InternalRos.g:8685:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) )
             {
-            // InternalRos.g:8874:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) )
-            // InternalRos.g:8875:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 )
+            // InternalRos.g:8685:1: ( ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:8686:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 )
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getPartsAssignment_3_3_1()); 
-            // InternalRos.g:8876:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 )
-            // InternalRos.g:8876:3: rule__RelativeNamespace_Impl__PartsAssignment_3_3_1
+            // InternalRos.g:8687:2: ( rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 )
+            // InternalRos.g:8687:3: rule__RelativeNamespace_Impl__PartsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__RelativeNamespace_Impl__PartsAssignment_3_3_1();
@@ -26798,14 +26161,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__0"
-    // InternalRos.g:8885:1: rule__PrivateNamespace__Group__0 : rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1 ;
+    // InternalRos.g:8696:1: rule__PrivateNamespace__Group__0 : rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1 ;
     public final void rule__PrivateNamespace__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8889:1: ( rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1 )
-            // InternalRos.g:8890:2: rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1
+            // InternalRos.g:8700:1: ( rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1 )
+            // InternalRos.g:8701:2: rule__PrivateNamespace__Group__0__Impl rule__PrivateNamespace__Group__1
             {
             pushFollow(FOLLOW_36);
             rule__PrivateNamespace__Group__0__Impl();
@@ -26836,21 +26199,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__0__Impl"
-    // InternalRos.g:8897:1: rule__PrivateNamespace__Group__0__Impl : ( () ) ;
+    // InternalRos.g:8708:1: rule__PrivateNamespace__Group__0__Impl : ( () ) ;
     public final void rule__PrivateNamespace__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8901:1: ( ( () ) )
-            // InternalRos.g:8902:1: ( () )
+            // InternalRos.g:8712:1: ( ( () ) )
+            // InternalRos.g:8713:1: ( () )
             {
-            // InternalRos.g:8902:1: ( () )
-            // InternalRos.g:8903:2: ()
+            // InternalRos.g:8713:1: ( () )
+            // InternalRos.g:8714:2: ()
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPrivateNamespaceAction_0()); 
-            // InternalRos.g:8904:2: ()
-            // InternalRos.g:8904:3: 
+            // InternalRos.g:8715:2: ()
+            // InternalRos.g:8715:3: 
             {
             }
 
@@ -26873,14 +26236,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__1"
-    // InternalRos.g:8912:1: rule__PrivateNamespace__Group__1 : rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2 ;
+    // InternalRos.g:8723:1: rule__PrivateNamespace__Group__1 : rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2 ;
     public final void rule__PrivateNamespace__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8916:1: ( rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2 )
-            // InternalRos.g:8917:2: rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2
+            // InternalRos.g:8727:1: ( rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2 )
+            // InternalRos.g:8728:2: rule__PrivateNamespace__Group__1__Impl rule__PrivateNamespace__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__PrivateNamespace__Group__1__Impl();
@@ -26911,17 +26274,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__1__Impl"
-    // InternalRos.g:8924:1: rule__PrivateNamespace__Group__1__Impl : ( 'PrivateNamespace' ) ;
+    // InternalRos.g:8735:1: rule__PrivateNamespace__Group__1__Impl : ( 'PrivateNamespace' ) ;
     public final void rule__PrivateNamespace__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8928:1: ( ( 'PrivateNamespace' ) )
-            // InternalRos.g:8929:1: ( 'PrivateNamespace' )
+            // InternalRos.g:8739:1: ( ( 'PrivateNamespace' ) )
+            // InternalRos.g:8740:1: ( 'PrivateNamespace' )
             {
-            // InternalRos.g:8929:1: ( 'PrivateNamespace' )
-            // InternalRos.g:8930:2: 'PrivateNamespace'
+            // InternalRos.g:8740:1: ( 'PrivateNamespace' )
+            // InternalRos.g:8741:2: 'PrivateNamespace'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPrivateNamespaceKeyword_1()); 
             match(input,62,FOLLOW_2); 
@@ -26948,14 +26311,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__2"
-    // InternalRos.g:8939:1: rule__PrivateNamespace__Group__2 : rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3 ;
+    // InternalRos.g:8750:1: rule__PrivateNamespace__Group__2 : rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3 ;
     public final void rule__PrivateNamespace__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8943:1: ( rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3 )
-            // InternalRos.g:8944:2: rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3
+            // InternalRos.g:8754:1: ( rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3 )
+            // InternalRos.g:8755:2: rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3
             {
             pushFollow(FOLLOW_43);
             rule__PrivateNamespace__Group__2__Impl();
@@ -26986,17 +26349,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__2__Impl"
-    // InternalRos.g:8951:1: rule__PrivateNamespace__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:8762:1: rule__PrivateNamespace__Group__2__Impl : ( '{' ) ;
     public final void rule__PrivateNamespace__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8955:1: ( ( '{' ) )
-            // InternalRos.g:8956:1: ( '{' )
+            // InternalRos.g:8766:1: ( ( '{' ) )
+            // InternalRos.g:8767:1: ( '{' )
             {
-            // InternalRos.g:8956:1: ( '{' )
-            // InternalRos.g:8957:2: '{'
+            // InternalRos.g:8767:1: ( '{' )
+            // InternalRos.g:8768:2: '{'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -27023,14 +26386,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__3"
-    // InternalRos.g:8966:1: rule__PrivateNamespace__Group__3 : rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4 ;
+    // InternalRos.g:8777:1: rule__PrivateNamespace__Group__3 : rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4 ;
     public final void rule__PrivateNamespace__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8970:1: ( rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4 )
-            // InternalRos.g:8971:2: rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4
+            // InternalRos.g:8781:1: ( rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4 )
+            // InternalRos.g:8782:2: rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4
             {
             pushFollow(FOLLOW_43);
             rule__PrivateNamespace__Group__3__Impl();
@@ -27061,29 +26424,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__3__Impl"
-    // InternalRos.g:8978:1: rule__PrivateNamespace__Group__3__Impl : ( ( rule__PrivateNamespace__Group_3__0 )? ) ;
+    // InternalRos.g:8789:1: rule__PrivateNamespace__Group__3__Impl : ( ( rule__PrivateNamespace__Group_3__0 )? ) ;
     public final void rule__PrivateNamespace__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8982:1: ( ( ( rule__PrivateNamespace__Group_3__0 )? ) )
-            // InternalRos.g:8983:1: ( ( rule__PrivateNamespace__Group_3__0 )? )
+            // InternalRos.g:8793:1: ( ( ( rule__PrivateNamespace__Group_3__0 )? ) )
+            // InternalRos.g:8794:1: ( ( rule__PrivateNamespace__Group_3__0 )? )
             {
-            // InternalRos.g:8983:1: ( ( rule__PrivateNamespace__Group_3__0 )? )
-            // InternalRos.g:8984:2: ( rule__PrivateNamespace__Group_3__0 )?
+            // InternalRos.g:8794:1: ( ( rule__PrivateNamespace__Group_3__0 )? )
+            // InternalRos.g:8795:2: ( rule__PrivateNamespace__Group_3__0 )?
             {
              before(grammarAccess.getPrivateNamespaceAccess().getGroup_3()); 
-            // InternalRos.g:8985:2: ( rule__PrivateNamespace__Group_3__0 )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // InternalRos.g:8796:2: ( rule__PrivateNamespace__Group_3__0 )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA59_0==60) ) {
-                alt59=1;
+            if ( (LA52_0==60) ) {
+                alt52=1;
             }
-            switch (alt59) {
+            switch (alt52) {
                 case 1 :
-                    // InternalRos.g:8985:3: rule__PrivateNamespace__Group_3__0
+                    // InternalRos.g:8796:3: rule__PrivateNamespace__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__PrivateNamespace__Group_3__0();
@@ -27119,14 +26482,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__4"
-    // InternalRos.g:8993:1: rule__PrivateNamespace__Group__4 : rule__PrivateNamespace__Group__4__Impl ;
+    // InternalRos.g:8804:1: rule__PrivateNamespace__Group__4 : rule__PrivateNamespace__Group__4__Impl ;
     public final void rule__PrivateNamespace__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:8997:1: ( rule__PrivateNamespace__Group__4__Impl )
-            // InternalRos.g:8998:2: rule__PrivateNamespace__Group__4__Impl
+            // InternalRos.g:8808:1: ( rule__PrivateNamespace__Group__4__Impl )
+            // InternalRos.g:8809:2: rule__PrivateNamespace__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PrivateNamespace__Group__4__Impl();
@@ -27152,17 +26515,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group__4__Impl"
-    // InternalRos.g:9004:1: rule__PrivateNamespace__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:8815:1: rule__PrivateNamespace__Group__4__Impl : ( '}' ) ;
     public final void rule__PrivateNamespace__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9008:1: ( ( '}' ) )
-            // InternalRos.g:9009:1: ( '}' )
+            // InternalRos.g:8819:1: ( ( '}' ) )
+            // InternalRos.g:8820:1: ( '}' )
             {
-            // InternalRos.g:9009:1: ( '}' )
-            // InternalRos.g:9010:2: '}'
+            // InternalRos.g:8820:1: ( '}' )
+            // InternalRos.g:8821:2: '}'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -27189,14 +26552,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__0"
-    // InternalRos.g:9020:1: rule__PrivateNamespace__Group_3__0 : rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1 ;
+    // InternalRos.g:8831:1: rule__PrivateNamespace__Group_3__0 : rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1 ;
     public final void rule__PrivateNamespace__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9024:1: ( rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1 )
-            // InternalRos.g:9025:2: rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1
+            // InternalRos.g:8835:1: ( rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1 )
+            // InternalRos.g:8836:2: rule__PrivateNamespace__Group_3__0__Impl rule__PrivateNamespace__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__PrivateNamespace__Group_3__0__Impl();
@@ -27227,17 +26590,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__0__Impl"
-    // InternalRos.g:9032:1: rule__PrivateNamespace__Group_3__0__Impl : ( 'parts' ) ;
+    // InternalRos.g:8843:1: rule__PrivateNamespace__Group_3__0__Impl : ( 'parts' ) ;
     public final void rule__PrivateNamespace__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9036:1: ( ( 'parts' ) )
-            // InternalRos.g:9037:1: ( 'parts' )
+            // InternalRos.g:8847:1: ( ( 'parts' ) )
+            // InternalRos.g:8848:1: ( 'parts' )
             {
-            // InternalRos.g:9037:1: ( 'parts' )
-            // InternalRos.g:9038:2: 'parts'
+            // InternalRos.g:8848:1: ( 'parts' )
+            // InternalRos.g:8849:2: 'parts'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPartsKeyword_3_0()); 
             match(input,60,FOLLOW_2); 
@@ -27264,14 +26627,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__1"
-    // InternalRos.g:9047:1: rule__PrivateNamespace__Group_3__1 : rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2 ;
+    // InternalRos.g:8858:1: rule__PrivateNamespace__Group_3__1 : rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2 ;
     public final void rule__PrivateNamespace__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9051:1: ( rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2 )
-            // InternalRos.g:9052:2: rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2
+            // InternalRos.g:8862:1: ( rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2 )
+            // InternalRos.g:8863:2: rule__PrivateNamespace__Group_3__1__Impl rule__PrivateNamespace__Group_3__2
             {
             pushFollow(FOLLOW_25);
             rule__PrivateNamespace__Group_3__1__Impl();
@@ -27302,17 +26665,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__1__Impl"
-    // InternalRos.g:9059:1: rule__PrivateNamespace__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:8870:1: rule__PrivateNamespace__Group_3__1__Impl : ( '{' ) ;
     public final void rule__PrivateNamespace__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9063:1: ( ( '{' ) )
-            // InternalRos.g:9064:1: ( '{' )
+            // InternalRos.g:8874:1: ( ( '{' ) )
+            // InternalRos.g:8875:1: ( '{' )
             {
-            // InternalRos.g:9064:1: ( '{' )
-            // InternalRos.g:9065:2: '{'
+            // InternalRos.g:8875:1: ( '{' )
+            // InternalRos.g:8876:2: '{'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -27339,14 +26702,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__2"
-    // InternalRos.g:9074:1: rule__PrivateNamespace__Group_3__2 : rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3 ;
+    // InternalRos.g:8885:1: rule__PrivateNamespace__Group_3__2 : rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3 ;
     public final void rule__PrivateNamespace__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9078:1: ( rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3 )
-            // InternalRos.g:9079:2: rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3
+            // InternalRos.g:8889:1: ( rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3 )
+            // InternalRos.g:8890:2: rule__PrivateNamespace__Group_3__2__Impl rule__PrivateNamespace__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__PrivateNamespace__Group_3__2__Impl();
@@ -27377,21 +26740,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__2__Impl"
-    // InternalRos.g:9086:1: rule__PrivateNamespace__Group_3__2__Impl : ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) ) ;
+    // InternalRos.g:8897:1: rule__PrivateNamespace__Group_3__2__Impl : ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) ) ;
     public final void rule__PrivateNamespace__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9090:1: ( ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) ) )
-            // InternalRos.g:9091:1: ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) )
+            // InternalRos.g:8901:1: ( ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) ) )
+            // InternalRos.g:8902:1: ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) )
             {
-            // InternalRos.g:9091:1: ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) )
-            // InternalRos.g:9092:2: ( rule__PrivateNamespace__PartsAssignment_3_2 )
+            // InternalRos.g:8902:1: ( ( rule__PrivateNamespace__PartsAssignment_3_2 ) )
+            // InternalRos.g:8903:2: ( rule__PrivateNamespace__PartsAssignment_3_2 )
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPartsAssignment_3_2()); 
-            // InternalRos.g:9093:2: ( rule__PrivateNamespace__PartsAssignment_3_2 )
-            // InternalRos.g:9093:3: rule__PrivateNamespace__PartsAssignment_3_2
+            // InternalRos.g:8904:2: ( rule__PrivateNamespace__PartsAssignment_3_2 )
+            // InternalRos.g:8904:3: rule__PrivateNamespace__PartsAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__PrivateNamespace__PartsAssignment_3_2();
@@ -27424,14 +26787,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__3"
-    // InternalRos.g:9101:1: rule__PrivateNamespace__Group_3__3 : rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4 ;
+    // InternalRos.g:8912:1: rule__PrivateNamespace__Group_3__3 : rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4 ;
     public final void rule__PrivateNamespace__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9105:1: ( rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4 )
-            // InternalRos.g:9106:2: rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4
+            // InternalRos.g:8916:1: ( rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4 )
+            // InternalRos.g:8917:2: rule__PrivateNamespace__Group_3__3__Impl rule__PrivateNamespace__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__PrivateNamespace__Group_3__3__Impl();
@@ -27462,33 +26825,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__3__Impl"
-    // InternalRos.g:9113:1: rule__PrivateNamespace__Group_3__3__Impl : ( ( rule__PrivateNamespace__Group_3_3__0 )* ) ;
+    // InternalRos.g:8924:1: rule__PrivateNamespace__Group_3__3__Impl : ( ( rule__PrivateNamespace__Group_3_3__0 )* ) ;
     public final void rule__PrivateNamespace__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9117:1: ( ( ( rule__PrivateNamespace__Group_3_3__0 )* ) )
-            // InternalRos.g:9118:1: ( ( rule__PrivateNamespace__Group_3_3__0 )* )
+            // InternalRos.g:8928:1: ( ( ( rule__PrivateNamespace__Group_3_3__0 )* ) )
+            // InternalRos.g:8929:1: ( ( rule__PrivateNamespace__Group_3_3__0 )* )
             {
-            // InternalRos.g:9118:1: ( ( rule__PrivateNamespace__Group_3_3__0 )* )
-            // InternalRos.g:9119:2: ( rule__PrivateNamespace__Group_3_3__0 )*
+            // InternalRos.g:8929:1: ( ( rule__PrivateNamespace__Group_3_3__0 )* )
+            // InternalRos.g:8930:2: ( rule__PrivateNamespace__Group_3_3__0 )*
             {
              before(grammarAccess.getPrivateNamespaceAccess().getGroup_3_3()); 
-            // InternalRos.g:9120:2: ( rule__PrivateNamespace__Group_3_3__0 )*
-            loop60:
+            // InternalRos.g:8931:2: ( rule__PrivateNamespace__Group_3_3__0 )*
+            loop53:
             do {
-                int alt60=2;
-                int LA60_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( (LA60_0==21) ) {
-                    alt60=1;
+                if ( (LA53_0==21) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt60) {
+                switch (alt53) {
             	case 1 :
-            	    // InternalRos.g:9120:3: rule__PrivateNamespace__Group_3_3__0
+            	    // InternalRos.g:8931:3: rule__PrivateNamespace__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__PrivateNamespace__Group_3_3__0();
@@ -27500,7 +26863,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop60;
+            	    break loop53;
                 }
             } while (true);
 
@@ -27527,14 +26890,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__4"
-    // InternalRos.g:9128:1: rule__PrivateNamespace__Group_3__4 : rule__PrivateNamespace__Group_3__4__Impl ;
+    // InternalRos.g:8939:1: rule__PrivateNamespace__Group_3__4 : rule__PrivateNamespace__Group_3__4__Impl ;
     public final void rule__PrivateNamespace__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9132:1: ( rule__PrivateNamespace__Group_3__4__Impl )
-            // InternalRos.g:9133:2: rule__PrivateNamespace__Group_3__4__Impl
+            // InternalRos.g:8943:1: ( rule__PrivateNamespace__Group_3__4__Impl )
+            // InternalRos.g:8944:2: rule__PrivateNamespace__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PrivateNamespace__Group_3__4__Impl();
@@ -27560,17 +26923,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3__4__Impl"
-    // InternalRos.g:9139:1: rule__PrivateNamespace__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:8950:1: rule__PrivateNamespace__Group_3__4__Impl : ( '}' ) ;
     public final void rule__PrivateNamespace__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9143:1: ( ( '}' ) )
-            // InternalRos.g:9144:1: ( '}' )
+            // InternalRos.g:8954:1: ( ( '}' ) )
+            // InternalRos.g:8955:1: ( '}' )
             {
-            // InternalRos.g:9144:1: ( '}' )
-            // InternalRos.g:9145:2: '}'
+            // InternalRos.g:8955:1: ( '}' )
+            // InternalRos.g:8956:2: '}'
             {
              before(grammarAccess.getPrivateNamespaceAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -27597,14 +26960,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3_3__0"
-    // InternalRos.g:9155:1: rule__PrivateNamespace__Group_3_3__0 : rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1 ;
+    // InternalRos.g:8966:1: rule__PrivateNamespace__Group_3_3__0 : rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1 ;
     public final void rule__PrivateNamespace__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9159:1: ( rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1 )
-            // InternalRos.g:9160:2: rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1
+            // InternalRos.g:8970:1: ( rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1 )
+            // InternalRos.g:8971:2: rule__PrivateNamespace__Group_3_3__0__Impl rule__PrivateNamespace__Group_3_3__1
             {
             pushFollow(FOLLOW_25);
             rule__PrivateNamespace__Group_3_3__0__Impl();
@@ -27635,17 +26998,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3_3__0__Impl"
-    // InternalRos.g:9167:1: rule__PrivateNamespace__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:8978:1: rule__PrivateNamespace__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__PrivateNamespace__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9171:1: ( ( ',' ) )
-            // InternalRos.g:9172:1: ( ',' )
+            // InternalRos.g:8982:1: ( ( ',' ) )
+            // InternalRos.g:8983:1: ( ',' )
             {
-            // InternalRos.g:9172:1: ( ',' )
-            // InternalRos.g:9173:2: ','
+            // InternalRos.g:8983:1: ( ',' )
+            // InternalRos.g:8984:2: ','
             {
              before(grammarAccess.getPrivateNamespaceAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -27672,14 +27035,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3_3__1"
-    // InternalRos.g:9182:1: rule__PrivateNamespace__Group_3_3__1 : rule__PrivateNamespace__Group_3_3__1__Impl ;
+    // InternalRos.g:8993:1: rule__PrivateNamespace__Group_3_3__1 : rule__PrivateNamespace__Group_3_3__1__Impl ;
     public final void rule__PrivateNamespace__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9186:1: ( rule__PrivateNamespace__Group_3_3__1__Impl )
-            // InternalRos.g:9187:2: rule__PrivateNamespace__Group_3_3__1__Impl
+            // InternalRos.g:8997:1: ( rule__PrivateNamespace__Group_3_3__1__Impl )
+            // InternalRos.g:8998:2: rule__PrivateNamespace__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PrivateNamespace__Group_3_3__1__Impl();
@@ -27705,21 +27068,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__Group_3_3__1__Impl"
-    // InternalRos.g:9193:1: rule__PrivateNamespace__Group_3_3__1__Impl : ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) ) ;
+    // InternalRos.g:9004:1: rule__PrivateNamespace__Group_3_3__1__Impl : ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) ) ;
     public final void rule__PrivateNamespace__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9197:1: ( ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) ) )
-            // InternalRos.g:9198:1: ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:9008:1: ( ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) ) )
+            // InternalRos.g:9009:1: ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) )
             {
-            // InternalRos.g:9198:1: ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) )
-            // InternalRos.g:9199:2: ( rule__PrivateNamespace__PartsAssignment_3_3_1 )
+            // InternalRos.g:9009:1: ( ( rule__PrivateNamespace__PartsAssignment_3_3_1 ) )
+            // InternalRos.g:9010:2: ( rule__PrivateNamespace__PartsAssignment_3_3_1 )
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPartsAssignment_3_3_1()); 
-            // InternalRos.g:9200:2: ( rule__PrivateNamespace__PartsAssignment_3_3_1 )
-            // InternalRos.g:9200:3: rule__PrivateNamespace__PartsAssignment_3_3_1
+            // InternalRos.g:9011:2: ( rule__PrivateNamespace__PartsAssignment_3_3_1 )
+            // InternalRos.g:9011:3: rule__PrivateNamespace__PartsAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__PrivateNamespace__PartsAssignment_3_3_1();
@@ -27752,14 +27115,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__0"
-    // InternalRos.g:9209:1: rule__ParameterListType__Group__0 : rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1 ;
+    // InternalRos.g:9020:1: rule__ParameterListType__Group__0 : rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1 ;
     public final void rule__ParameterListType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9213:1: ( rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1 )
-            // InternalRos.g:9214:2: rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1
+            // InternalRos.g:9024:1: ( rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1 )
+            // InternalRos.g:9025:2: rule__ParameterListType__Group__0__Impl rule__ParameterListType__Group__1
             {
             pushFollow(FOLLOW_45);
             rule__ParameterListType__Group__0__Impl();
@@ -27790,21 +27153,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__0__Impl"
-    // InternalRos.g:9221:1: rule__ParameterListType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:9032:1: rule__ParameterListType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterListType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9225:1: ( ( () ) )
-            // InternalRos.g:9226:1: ( () )
+            // InternalRos.g:9036:1: ( ( () ) )
+            // InternalRos.g:9037:1: ( () )
             {
-            // InternalRos.g:9226:1: ( () )
-            // InternalRos.g:9227:2: ()
+            // InternalRos.g:9037:1: ( () )
+            // InternalRos.g:9038:2: ()
             {
              before(grammarAccess.getParameterListTypeAccess().getParameterListTypeAction_0()); 
-            // InternalRos.g:9228:2: ()
-            // InternalRos.g:9228:3: 
+            // InternalRos.g:9039:2: ()
+            // InternalRos.g:9039:3: 
             {
             }
 
@@ -27827,14 +27190,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__1"
-    // InternalRos.g:9236:1: rule__ParameterListType__Group__1 : rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2 ;
+    // InternalRos.g:9047:1: rule__ParameterListType__Group__1 : rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2 ;
     public final void rule__ParameterListType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9240:1: ( rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2 )
-            // InternalRos.g:9241:2: rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2
+            // InternalRos.g:9051:1: ( rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2 )
+            // InternalRos.g:9052:2: rule__ParameterListType__Group__1__Impl rule__ParameterListType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterListType__Group__1__Impl();
@@ -27865,17 +27228,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__1__Impl"
-    // InternalRos.g:9248:1: rule__ParameterListType__Group__1__Impl : ( 'ParameterListType' ) ;
+    // InternalRos.g:9059:1: rule__ParameterListType__Group__1__Impl : ( 'ParameterListType' ) ;
     public final void rule__ParameterListType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9252:1: ( ( 'ParameterListType' ) )
-            // InternalRos.g:9253:1: ( 'ParameterListType' )
+            // InternalRos.g:9063:1: ( ( 'ParameterListType' ) )
+            // InternalRos.g:9064:1: ( 'ParameterListType' )
             {
-            // InternalRos.g:9253:1: ( 'ParameterListType' )
-            // InternalRos.g:9254:2: 'ParameterListType'
+            // InternalRos.g:9064:1: ( 'ParameterListType' )
+            // InternalRos.g:9065:2: 'ParameterListType'
             {
              before(grammarAccess.getParameterListTypeAccess().getParameterListTypeKeyword_1()); 
             match(input,63,FOLLOW_2); 
@@ -27902,14 +27265,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__2"
-    // InternalRos.g:9263:1: rule__ParameterListType__Group__2 : rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3 ;
+    // InternalRos.g:9074:1: rule__ParameterListType__Group__2 : rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3 ;
     public final void rule__ParameterListType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9267:1: ( rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3 )
-            // InternalRos.g:9268:2: rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3
+            // InternalRos.g:9078:1: ( rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3 )
+            // InternalRos.g:9079:2: rule__ParameterListType__Group__2__Impl rule__ParameterListType__Group__3
             {
             pushFollow(FOLLOW_46);
             rule__ParameterListType__Group__2__Impl();
@@ -27940,17 +27303,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__2__Impl"
-    // InternalRos.g:9275:1: rule__ParameterListType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:9086:1: rule__ParameterListType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterListType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9279:1: ( ( '{' ) )
-            // InternalRos.g:9280:1: ( '{' )
+            // InternalRos.g:9090:1: ( ( '{' ) )
+            // InternalRos.g:9091:1: ( '{' )
             {
-            // InternalRos.g:9280:1: ( '{' )
-            // InternalRos.g:9281:2: '{'
+            // InternalRos.g:9091:1: ( '{' )
+            // InternalRos.g:9092:2: '{'
             {
              before(grammarAccess.getParameterListTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -27977,14 +27340,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__3"
-    // InternalRos.g:9290:1: rule__ParameterListType__Group__3 : rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4 ;
+    // InternalRos.g:9101:1: rule__ParameterListType__Group__3 : rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4 ;
     public final void rule__ParameterListType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9294:1: ( rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4 )
-            // InternalRos.g:9295:2: rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4
+            // InternalRos.g:9105:1: ( rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4 )
+            // InternalRos.g:9106:2: rule__ParameterListType__Group__3__Impl rule__ParameterListType__Group__4
             {
             pushFollow(FOLLOW_46);
             rule__ParameterListType__Group__3__Impl();
@@ -28015,29 +27378,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__3__Impl"
-    // InternalRos.g:9302:1: rule__ParameterListType__Group__3__Impl : ( ( rule__ParameterListType__Group_3__0 )? ) ;
+    // InternalRos.g:9113:1: rule__ParameterListType__Group__3__Impl : ( ( rule__ParameterListType__Group_3__0 )? ) ;
     public final void rule__ParameterListType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9306:1: ( ( ( rule__ParameterListType__Group_3__0 )? ) )
-            // InternalRos.g:9307:1: ( ( rule__ParameterListType__Group_3__0 )? )
+            // InternalRos.g:9117:1: ( ( ( rule__ParameterListType__Group_3__0 )? ) )
+            // InternalRos.g:9118:1: ( ( rule__ParameterListType__Group_3__0 )? )
             {
-            // InternalRos.g:9307:1: ( ( rule__ParameterListType__Group_3__0 )? )
-            // InternalRos.g:9308:2: ( rule__ParameterListType__Group_3__0 )?
+            // InternalRos.g:9118:1: ( ( rule__ParameterListType__Group_3__0 )? )
+            // InternalRos.g:9119:2: ( rule__ParameterListType__Group_3__0 )?
             {
              before(grammarAccess.getParameterListTypeAccess().getGroup_3()); 
-            // InternalRos.g:9309:2: ( rule__ParameterListType__Group_3__0 )?
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            // InternalRos.g:9120:2: ( rule__ParameterListType__Group_3__0 )?
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA61_0==64) ) {
-                alt61=1;
+            if ( (LA54_0==64) ) {
+                alt54=1;
             }
-            switch (alt61) {
+            switch (alt54) {
                 case 1 :
-                    // InternalRos.g:9309:3: rule__ParameterListType__Group_3__0
+                    // InternalRos.g:9120:3: rule__ParameterListType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterListType__Group_3__0();
@@ -28073,14 +27436,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__4"
-    // InternalRos.g:9317:1: rule__ParameterListType__Group__4 : rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5 ;
+    // InternalRos.g:9128:1: rule__ParameterListType__Group__4 : rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5 ;
     public final void rule__ParameterListType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9321:1: ( rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5 )
-            // InternalRos.g:9322:2: rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5
+            // InternalRos.g:9132:1: ( rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5 )
+            // InternalRos.g:9133:2: rule__ParameterListType__Group__4__Impl rule__ParameterListType__Group__5
             {
             pushFollow(FOLLOW_46);
             rule__ParameterListType__Group__4__Impl();
@@ -28111,29 +27474,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__4__Impl"
-    // InternalRos.g:9329:1: rule__ParameterListType__Group__4__Impl : ( ( rule__ParameterListType__Group_4__0 )? ) ;
+    // InternalRos.g:9140:1: rule__ParameterListType__Group__4__Impl : ( ( rule__ParameterListType__Group_4__0 )? ) ;
     public final void rule__ParameterListType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9333:1: ( ( ( rule__ParameterListType__Group_4__0 )? ) )
-            // InternalRos.g:9334:1: ( ( rule__ParameterListType__Group_4__0 )? )
+            // InternalRos.g:9144:1: ( ( ( rule__ParameterListType__Group_4__0 )? ) )
+            // InternalRos.g:9145:1: ( ( rule__ParameterListType__Group_4__0 )? )
             {
-            // InternalRos.g:9334:1: ( ( rule__ParameterListType__Group_4__0 )? )
-            // InternalRos.g:9335:2: ( rule__ParameterListType__Group_4__0 )?
+            // InternalRos.g:9145:1: ( ( rule__ParameterListType__Group_4__0 )? )
+            // InternalRos.g:9146:2: ( rule__ParameterListType__Group_4__0 )?
             {
              before(grammarAccess.getParameterListTypeAccess().getGroup_4()); 
-            // InternalRos.g:9336:2: ( rule__ParameterListType__Group_4__0 )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // InternalRos.g:9147:2: ( rule__ParameterListType__Group_4__0 )?
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA62_0==65) ) {
-                alt62=1;
+            if ( (LA55_0==65) ) {
+                alt55=1;
             }
-            switch (alt62) {
+            switch (alt55) {
                 case 1 :
-                    // InternalRos.g:9336:3: rule__ParameterListType__Group_4__0
+                    // InternalRos.g:9147:3: rule__ParameterListType__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterListType__Group_4__0();
@@ -28169,14 +27532,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__5"
-    // InternalRos.g:9344:1: rule__ParameterListType__Group__5 : rule__ParameterListType__Group__5__Impl ;
+    // InternalRos.g:9155:1: rule__ParameterListType__Group__5 : rule__ParameterListType__Group__5__Impl ;
     public final void rule__ParameterListType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9348:1: ( rule__ParameterListType__Group__5__Impl )
-            // InternalRos.g:9349:2: rule__ParameterListType__Group__5__Impl
+            // InternalRos.g:9159:1: ( rule__ParameterListType__Group__5__Impl )
+            // InternalRos.g:9160:2: rule__ParameterListType__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__Group__5__Impl();
@@ -28202,17 +27565,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group__5__Impl"
-    // InternalRos.g:9355:1: rule__ParameterListType__Group__5__Impl : ( '}' ) ;
+    // InternalRos.g:9166:1: rule__ParameterListType__Group__5__Impl : ( '}' ) ;
     public final void rule__ParameterListType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9359:1: ( ( '}' ) )
-            // InternalRos.g:9360:1: ( '}' )
+            // InternalRos.g:9170:1: ( ( '}' ) )
+            // InternalRos.g:9171:1: ( '}' )
             {
-            // InternalRos.g:9360:1: ( '}' )
-            // InternalRos.g:9361:2: '}'
+            // InternalRos.g:9171:1: ( '}' )
+            // InternalRos.g:9172:2: '}'
             {
              before(grammarAccess.getParameterListTypeAccess().getRightCurlyBracketKeyword_5()); 
             match(input,19,FOLLOW_2); 
@@ -28239,14 +27602,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__0"
-    // InternalRos.g:9371:1: rule__ParameterListType__Group_3__0 : rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1 ;
+    // InternalRos.g:9182:1: rule__ParameterListType__Group_3__0 : rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1 ;
     public final void rule__ParameterListType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9375:1: ( rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1 )
-            // InternalRos.g:9376:2: rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1
+            // InternalRos.g:9186:1: ( rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1 )
+            // InternalRos.g:9187:2: rule__ParameterListType__Group_3__0__Impl rule__ParameterListType__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterListType__Group_3__0__Impl();
@@ -28277,17 +27640,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__0__Impl"
-    // InternalRos.g:9383:1: rule__ParameterListType__Group_3__0__Impl : ( 'sequence' ) ;
+    // InternalRos.g:9194:1: rule__ParameterListType__Group_3__0__Impl : ( 'sequence' ) ;
     public final void rule__ParameterListType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9387:1: ( ( 'sequence' ) )
-            // InternalRos.g:9388:1: ( 'sequence' )
+            // InternalRos.g:9198:1: ( ( 'sequence' ) )
+            // InternalRos.g:9199:1: ( 'sequence' )
             {
-            // InternalRos.g:9388:1: ( 'sequence' )
-            // InternalRos.g:9389:2: 'sequence'
+            // InternalRos.g:9199:1: ( 'sequence' )
+            // InternalRos.g:9200:2: 'sequence'
             {
              before(grammarAccess.getParameterListTypeAccess().getSequenceKeyword_3_0()); 
             match(input,64,FOLLOW_2); 
@@ -28314,14 +27677,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__1"
-    // InternalRos.g:9398:1: rule__ParameterListType__Group_3__1 : rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2 ;
+    // InternalRos.g:9209:1: rule__ParameterListType__Group_3__1 : rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2 ;
     public final void rule__ParameterListType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9402:1: ( rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2 )
-            // InternalRos.g:9403:2: rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2
+            // InternalRos.g:9213:1: ( rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2 )
+            // InternalRos.g:9214:2: rule__ParameterListType__Group_3__1__Impl rule__ParameterListType__Group_3__2
             {
             pushFollow(FOLLOW_40);
             rule__ParameterListType__Group_3__1__Impl();
@@ -28352,17 +27715,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__1__Impl"
-    // InternalRos.g:9410:1: rule__ParameterListType__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:9221:1: rule__ParameterListType__Group_3__1__Impl : ( '{' ) ;
     public final void rule__ParameterListType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9414:1: ( ( '{' ) )
-            // InternalRos.g:9415:1: ( '{' )
+            // InternalRos.g:9225:1: ( ( '{' ) )
+            // InternalRos.g:9226:1: ( '{' )
             {
-            // InternalRos.g:9415:1: ( '{' )
-            // InternalRos.g:9416:2: '{'
+            // InternalRos.g:9226:1: ( '{' )
+            // InternalRos.g:9227:2: '{'
             {
              before(grammarAccess.getParameterListTypeAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -28389,14 +27752,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__2"
-    // InternalRos.g:9425:1: rule__ParameterListType__Group_3__2 : rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3 ;
+    // InternalRos.g:9236:1: rule__ParameterListType__Group_3__2 : rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3 ;
     public final void rule__ParameterListType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9429:1: ( rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3 )
-            // InternalRos.g:9430:2: rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3
+            // InternalRos.g:9240:1: ( rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3 )
+            // InternalRos.g:9241:2: rule__ParameterListType__Group_3__2__Impl rule__ParameterListType__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__ParameterListType__Group_3__2__Impl();
@@ -28427,21 +27790,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__2__Impl"
-    // InternalRos.g:9437:1: rule__ParameterListType__Group_3__2__Impl : ( ( rule__ParameterListType__SequenceAssignment_3_2 ) ) ;
+    // InternalRos.g:9248:1: rule__ParameterListType__Group_3__2__Impl : ( ( rule__ParameterListType__SequenceAssignment_3_2 ) ) ;
     public final void rule__ParameterListType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9441:1: ( ( ( rule__ParameterListType__SequenceAssignment_3_2 ) ) )
-            // InternalRos.g:9442:1: ( ( rule__ParameterListType__SequenceAssignment_3_2 ) )
+            // InternalRos.g:9252:1: ( ( ( rule__ParameterListType__SequenceAssignment_3_2 ) ) )
+            // InternalRos.g:9253:1: ( ( rule__ParameterListType__SequenceAssignment_3_2 ) )
             {
-            // InternalRos.g:9442:1: ( ( rule__ParameterListType__SequenceAssignment_3_2 ) )
-            // InternalRos.g:9443:2: ( rule__ParameterListType__SequenceAssignment_3_2 )
+            // InternalRos.g:9253:1: ( ( rule__ParameterListType__SequenceAssignment_3_2 ) )
+            // InternalRos.g:9254:2: ( rule__ParameterListType__SequenceAssignment_3_2 )
             {
              before(grammarAccess.getParameterListTypeAccess().getSequenceAssignment_3_2()); 
-            // InternalRos.g:9444:2: ( rule__ParameterListType__SequenceAssignment_3_2 )
-            // InternalRos.g:9444:3: rule__ParameterListType__SequenceAssignment_3_2
+            // InternalRos.g:9255:2: ( rule__ParameterListType__SequenceAssignment_3_2 )
+            // InternalRos.g:9255:3: rule__ParameterListType__SequenceAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__SequenceAssignment_3_2();
@@ -28474,14 +27837,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__3"
-    // InternalRos.g:9452:1: rule__ParameterListType__Group_3__3 : rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4 ;
+    // InternalRos.g:9263:1: rule__ParameterListType__Group_3__3 : rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4 ;
     public final void rule__ParameterListType__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9456:1: ( rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4 )
-            // InternalRos.g:9457:2: rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4
+            // InternalRos.g:9267:1: ( rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4 )
+            // InternalRos.g:9268:2: rule__ParameterListType__Group_3__3__Impl rule__ParameterListType__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__ParameterListType__Group_3__3__Impl();
@@ -28512,33 +27875,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__3__Impl"
-    // InternalRos.g:9464:1: rule__ParameterListType__Group_3__3__Impl : ( ( rule__ParameterListType__Group_3_3__0 )* ) ;
+    // InternalRos.g:9275:1: rule__ParameterListType__Group_3__3__Impl : ( ( rule__ParameterListType__Group_3_3__0 )* ) ;
     public final void rule__ParameterListType__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9468:1: ( ( ( rule__ParameterListType__Group_3_3__0 )* ) )
-            // InternalRos.g:9469:1: ( ( rule__ParameterListType__Group_3_3__0 )* )
+            // InternalRos.g:9279:1: ( ( ( rule__ParameterListType__Group_3_3__0 )* ) )
+            // InternalRos.g:9280:1: ( ( rule__ParameterListType__Group_3_3__0 )* )
             {
-            // InternalRos.g:9469:1: ( ( rule__ParameterListType__Group_3_3__0 )* )
-            // InternalRos.g:9470:2: ( rule__ParameterListType__Group_3_3__0 )*
+            // InternalRos.g:9280:1: ( ( rule__ParameterListType__Group_3_3__0 )* )
+            // InternalRos.g:9281:2: ( rule__ParameterListType__Group_3_3__0 )*
             {
              before(grammarAccess.getParameterListTypeAccess().getGroup_3_3()); 
-            // InternalRos.g:9471:2: ( rule__ParameterListType__Group_3_3__0 )*
-            loop63:
+            // InternalRos.g:9282:2: ( rule__ParameterListType__Group_3_3__0 )*
+            loop56:
             do {
-                int alt63=2;
-                int LA63_0 = input.LA(1);
+                int alt56=2;
+                int LA56_0 = input.LA(1);
 
-                if ( (LA63_0==21) ) {
-                    alt63=1;
+                if ( (LA56_0==21) ) {
+                    alt56=1;
                 }
 
 
-                switch (alt63) {
+                switch (alt56) {
             	case 1 :
-            	    // InternalRos.g:9471:3: rule__ParameterListType__Group_3_3__0
+            	    // InternalRos.g:9282:3: rule__ParameterListType__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__ParameterListType__Group_3_3__0();
@@ -28550,7 +27913,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop63;
+            	    break loop56;
                 }
             } while (true);
 
@@ -28577,14 +27940,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__4"
-    // InternalRos.g:9479:1: rule__ParameterListType__Group_3__4 : rule__ParameterListType__Group_3__4__Impl ;
+    // InternalRos.g:9290:1: rule__ParameterListType__Group_3__4 : rule__ParameterListType__Group_3__4__Impl ;
     public final void rule__ParameterListType__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9483:1: ( rule__ParameterListType__Group_3__4__Impl )
-            // InternalRos.g:9484:2: rule__ParameterListType__Group_3__4__Impl
+            // InternalRos.g:9294:1: ( rule__ParameterListType__Group_3__4__Impl )
+            // InternalRos.g:9295:2: rule__ParameterListType__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__Group_3__4__Impl();
@@ -28610,17 +27973,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3__4__Impl"
-    // InternalRos.g:9490:1: rule__ParameterListType__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:9301:1: rule__ParameterListType__Group_3__4__Impl : ( '}' ) ;
     public final void rule__ParameterListType__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9494:1: ( ( '}' ) )
-            // InternalRos.g:9495:1: ( '}' )
+            // InternalRos.g:9305:1: ( ( '}' ) )
+            // InternalRos.g:9306:1: ( '}' )
             {
-            // InternalRos.g:9495:1: ( '}' )
-            // InternalRos.g:9496:2: '}'
+            // InternalRos.g:9306:1: ( '}' )
+            // InternalRos.g:9307:2: '}'
             {
              before(grammarAccess.getParameterListTypeAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -28647,14 +28010,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3_3__0"
-    // InternalRos.g:9506:1: rule__ParameterListType__Group_3_3__0 : rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1 ;
+    // InternalRos.g:9317:1: rule__ParameterListType__Group_3_3__0 : rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1 ;
     public final void rule__ParameterListType__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9510:1: ( rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1 )
-            // InternalRos.g:9511:2: rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1
+            // InternalRos.g:9321:1: ( rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1 )
+            // InternalRos.g:9322:2: rule__ParameterListType__Group_3_3__0__Impl rule__ParameterListType__Group_3_3__1
             {
             pushFollow(FOLLOW_40);
             rule__ParameterListType__Group_3_3__0__Impl();
@@ -28685,17 +28048,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3_3__0__Impl"
-    // InternalRos.g:9518:1: rule__ParameterListType__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:9329:1: rule__ParameterListType__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__ParameterListType__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9522:1: ( ( ',' ) )
-            // InternalRos.g:9523:1: ( ',' )
+            // InternalRos.g:9333:1: ( ( ',' ) )
+            // InternalRos.g:9334:1: ( ',' )
             {
-            // InternalRos.g:9523:1: ( ',' )
-            // InternalRos.g:9524:2: ','
+            // InternalRos.g:9334:1: ( ',' )
+            // InternalRos.g:9335:2: ','
             {
              before(grammarAccess.getParameterListTypeAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -28722,14 +28085,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3_3__1"
-    // InternalRos.g:9533:1: rule__ParameterListType__Group_3_3__1 : rule__ParameterListType__Group_3_3__1__Impl ;
+    // InternalRos.g:9344:1: rule__ParameterListType__Group_3_3__1 : rule__ParameterListType__Group_3_3__1__Impl ;
     public final void rule__ParameterListType__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9537:1: ( rule__ParameterListType__Group_3_3__1__Impl )
-            // InternalRos.g:9538:2: rule__ParameterListType__Group_3_3__1__Impl
+            // InternalRos.g:9348:1: ( rule__ParameterListType__Group_3_3__1__Impl )
+            // InternalRos.g:9349:2: rule__ParameterListType__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__Group_3_3__1__Impl();
@@ -28755,21 +28118,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_3_3__1__Impl"
-    // InternalRos.g:9544:1: rule__ParameterListType__Group_3_3__1__Impl : ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) ) ;
+    // InternalRos.g:9355:1: rule__ParameterListType__Group_3_3__1__Impl : ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) ) ;
     public final void rule__ParameterListType__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9548:1: ( ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) ) )
-            // InternalRos.g:9549:1: ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) )
+            // InternalRos.g:9359:1: ( ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) ) )
+            // InternalRos.g:9360:1: ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) )
             {
-            // InternalRos.g:9549:1: ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) )
-            // InternalRos.g:9550:2: ( rule__ParameterListType__SequenceAssignment_3_3_1 )
+            // InternalRos.g:9360:1: ( ( rule__ParameterListType__SequenceAssignment_3_3_1 ) )
+            // InternalRos.g:9361:2: ( rule__ParameterListType__SequenceAssignment_3_3_1 )
             {
              before(grammarAccess.getParameterListTypeAccess().getSequenceAssignment_3_3_1()); 
-            // InternalRos.g:9551:2: ( rule__ParameterListType__SequenceAssignment_3_3_1 )
-            // InternalRos.g:9551:3: rule__ParameterListType__SequenceAssignment_3_3_1
+            // InternalRos.g:9362:2: ( rule__ParameterListType__SequenceAssignment_3_3_1 )
+            // InternalRos.g:9362:3: rule__ParameterListType__SequenceAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__SequenceAssignment_3_3_1();
@@ -28802,14 +28165,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_4__0"
-    // InternalRos.g:9560:1: rule__ParameterListType__Group_4__0 : rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1 ;
+    // InternalRos.g:9371:1: rule__ParameterListType__Group_4__0 : rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1 ;
     public final void rule__ParameterListType__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9564:1: ( rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1 )
-            // InternalRos.g:9565:2: rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1
+            // InternalRos.g:9375:1: ( rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1 )
+            // InternalRos.g:9376:2: rule__ParameterListType__Group_4__0__Impl rule__ParameterListType__Group_4__1
             {
             pushFollow(FOLLOW_47);
             rule__ParameterListType__Group_4__0__Impl();
@@ -28840,17 +28203,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_4__0__Impl"
-    // InternalRos.g:9572:1: rule__ParameterListType__Group_4__0__Impl : ( 'default' ) ;
+    // InternalRos.g:9383:1: rule__ParameterListType__Group_4__0__Impl : ( 'default' ) ;
     public final void rule__ParameterListType__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9576:1: ( ( 'default' ) )
-            // InternalRos.g:9577:1: ( 'default' )
+            // InternalRos.g:9387:1: ( ( 'default' ) )
+            // InternalRos.g:9388:1: ( 'default' )
             {
-            // InternalRos.g:9577:1: ( 'default' )
-            // InternalRos.g:9578:2: 'default'
+            // InternalRos.g:9388:1: ( 'default' )
+            // InternalRos.g:9389:2: 'default'
             {
              before(grammarAccess.getParameterListTypeAccess().getDefaultKeyword_4_0()); 
             match(input,65,FOLLOW_2); 
@@ -28877,14 +28240,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_4__1"
-    // InternalRos.g:9587:1: rule__ParameterListType__Group_4__1 : rule__ParameterListType__Group_4__1__Impl ;
+    // InternalRos.g:9398:1: rule__ParameterListType__Group_4__1 : rule__ParameterListType__Group_4__1__Impl ;
     public final void rule__ParameterListType__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9591:1: ( rule__ParameterListType__Group_4__1__Impl )
-            // InternalRos.g:9592:2: rule__ParameterListType__Group_4__1__Impl
+            // InternalRos.g:9402:1: ( rule__ParameterListType__Group_4__1__Impl )
+            // InternalRos.g:9403:2: rule__ParameterListType__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__Group_4__1__Impl();
@@ -28910,21 +28273,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__Group_4__1__Impl"
-    // InternalRos.g:9598:1: rule__ParameterListType__Group_4__1__Impl : ( ( rule__ParameterListType__DefaultAssignment_4_1 ) ) ;
+    // InternalRos.g:9409:1: rule__ParameterListType__Group_4__1__Impl : ( ( rule__ParameterListType__DefaultAssignment_4_1 ) ) ;
     public final void rule__ParameterListType__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9602:1: ( ( ( rule__ParameterListType__DefaultAssignment_4_1 ) ) )
-            // InternalRos.g:9603:1: ( ( rule__ParameterListType__DefaultAssignment_4_1 ) )
+            // InternalRos.g:9413:1: ( ( ( rule__ParameterListType__DefaultAssignment_4_1 ) ) )
+            // InternalRos.g:9414:1: ( ( rule__ParameterListType__DefaultAssignment_4_1 ) )
             {
-            // InternalRos.g:9603:1: ( ( rule__ParameterListType__DefaultAssignment_4_1 ) )
-            // InternalRos.g:9604:2: ( rule__ParameterListType__DefaultAssignment_4_1 )
+            // InternalRos.g:9414:1: ( ( rule__ParameterListType__DefaultAssignment_4_1 ) )
+            // InternalRos.g:9415:2: ( rule__ParameterListType__DefaultAssignment_4_1 )
             {
              before(grammarAccess.getParameterListTypeAccess().getDefaultAssignment_4_1()); 
-            // InternalRos.g:9605:2: ( rule__ParameterListType__DefaultAssignment_4_1 )
-            // InternalRos.g:9605:3: rule__ParameterListType__DefaultAssignment_4_1
+            // InternalRos.g:9416:2: ( rule__ParameterListType__DefaultAssignment_4_1 )
+            // InternalRos.g:9416:3: rule__ParameterListType__DefaultAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterListType__DefaultAssignment_4_1();
@@ -28957,14 +28320,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__0"
-    // InternalRos.g:9614:1: rule__ParameterStructType__Group__0 : rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1 ;
+    // InternalRos.g:9425:1: rule__ParameterStructType__Group__0 : rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1 ;
     public final void rule__ParameterStructType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9618:1: ( rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1 )
-            // InternalRos.g:9619:2: rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1
+            // InternalRos.g:9429:1: ( rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1 )
+            // InternalRos.g:9430:2: rule__ParameterStructType__Group__0__Impl rule__ParameterStructType__Group__1
             {
             pushFollow(FOLLOW_48);
             rule__ParameterStructType__Group__0__Impl();
@@ -28995,21 +28358,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__0__Impl"
-    // InternalRos.g:9626:1: rule__ParameterStructType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:9437:1: rule__ParameterStructType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterStructType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9630:1: ( ( () ) )
-            // InternalRos.g:9631:1: ( () )
+            // InternalRos.g:9441:1: ( ( () ) )
+            // InternalRos.g:9442:1: ( () )
             {
-            // InternalRos.g:9631:1: ( () )
-            // InternalRos.g:9632:2: ()
+            // InternalRos.g:9442:1: ( () )
+            // InternalRos.g:9443:2: ()
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterStructTypeAction_0()); 
-            // InternalRos.g:9633:2: ()
-            // InternalRos.g:9633:3: 
+            // InternalRos.g:9444:2: ()
+            // InternalRos.g:9444:3: 
             {
             }
 
@@ -29032,14 +28395,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__1"
-    // InternalRos.g:9641:1: rule__ParameterStructType__Group__1 : rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2 ;
+    // InternalRos.g:9452:1: rule__ParameterStructType__Group__1 : rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2 ;
     public final void rule__ParameterStructType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9645:1: ( rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2 )
-            // InternalRos.g:9646:2: rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2
+            // InternalRos.g:9456:1: ( rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2 )
+            // InternalRos.g:9457:2: rule__ParameterStructType__Group__1__Impl rule__ParameterStructType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStructType__Group__1__Impl();
@@ -29070,17 +28433,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__1__Impl"
-    // InternalRos.g:9653:1: rule__ParameterStructType__Group__1__Impl : ( 'ParameterStructType' ) ;
+    // InternalRos.g:9464:1: rule__ParameterStructType__Group__1__Impl : ( 'ParameterStructType' ) ;
     public final void rule__ParameterStructType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9657:1: ( ( 'ParameterStructType' ) )
-            // InternalRos.g:9658:1: ( 'ParameterStructType' )
+            // InternalRos.g:9468:1: ( ( 'ParameterStructType' ) )
+            // InternalRos.g:9469:1: ( 'ParameterStructType' )
             {
-            // InternalRos.g:9658:1: ( 'ParameterStructType' )
-            // InternalRos.g:9659:2: 'ParameterStructType'
+            // InternalRos.g:9469:1: ( 'ParameterStructType' )
+            // InternalRos.g:9470:2: 'ParameterStructType'
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterStructTypeKeyword_1()); 
             match(input,66,FOLLOW_2); 
@@ -29107,14 +28470,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__2"
-    // InternalRos.g:9668:1: rule__ParameterStructType__Group__2 : rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3 ;
+    // InternalRos.g:9479:1: rule__ParameterStructType__Group__2 : rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3 ;
     public final void rule__ParameterStructType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9672:1: ( rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3 )
-            // InternalRos.g:9673:2: rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3
+            // InternalRos.g:9483:1: ( rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3 )
+            // InternalRos.g:9484:2: rule__ParameterStructType__Group__2__Impl rule__ParameterStructType__Group__3
             {
             pushFollow(FOLLOW_49);
             rule__ParameterStructType__Group__2__Impl();
@@ -29145,17 +28508,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__2__Impl"
-    // InternalRos.g:9680:1: rule__ParameterStructType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:9491:1: rule__ParameterStructType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterStructType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9684:1: ( ( '{' ) )
-            // InternalRos.g:9685:1: ( '{' )
+            // InternalRos.g:9495:1: ( ( '{' ) )
+            // InternalRos.g:9496:1: ( '{' )
             {
-            // InternalRos.g:9685:1: ( '{' )
-            // InternalRos.g:9686:2: '{'
+            // InternalRos.g:9496:1: ( '{' )
+            // InternalRos.g:9497:2: '{'
             {
              before(grammarAccess.getParameterStructTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -29182,14 +28545,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__3"
-    // InternalRos.g:9695:1: rule__ParameterStructType__Group__3 : rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4 ;
+    // InternalRos.g:9506:1: rule__ParameterStructType__Group__3 : rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4 ;
     public final void rule__ParameterStructType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9699:1: ( rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4 )
-            // InternalRos.g:9700:2: rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4
+            // InternalRos.g:9510:1: ( rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4 )
+            // InternalRos.g:9511:2: rule__ParameterStructType__Group__3__Impl rule__ParameterStructType__Group__4
             {
             pushFollow(FOLLOW_49);
             rule__ParameterStructType__Group__3__Impl();
@@ -29220,29 +28583,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__3__Impl"
-    // InternalRos.g:9707:1: rule__ParameterStructType__Group__3__Impl : ( ( rule__ParameterStructType__Group_3__0 )? ) ;
+    // InternalRos.g:9518:1: rule__ParameterStructType__Group__3__Impl : ( ( rule__ParameterStructType__Group_3__0 )? ) ;
     public final void rule__ParameterStructType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9711:1: ( ( ( rule__ParameterStructType__Group_3__0 )? ) )
-            // InternalRos.g:9712:1: ( ( rule__ParameterStructType__Group_3__0 )? )
+            // InternalRos.g:9522:1: ( ( ( rule__ParameterStructType__Group_3__0 )? ) )
+            // InternalRos.g:9523:1: ( ( rule__ParameterStructType__Group_3__0 )? )
             {
-            // InternalRos.g:9712:1: ( ( rule__ParameterStructType__Group_3__0 )? )
-            // InternalRos.g:9713:2: ( rule__ParameterStructType__Group_3__0 )?
+            // InternalRos.g:9523:1: ( ( rule__ParameterStructType__Group_3__0 )? )
+            // InternalRos.g:9524:2: ( rule__ParameterStructType__Group_3__0 )?
             {
              before(grammarAccess.getParameterStructTypeAccess().getGroup_3()); 
-            // InternalRos.g:9714:2: ( rule__ParameterStructType__Group_3__0 )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
+            // InternalRos.g:9525:2: ( rule__ParameterStructType__Group_3__0 )?
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( (LA64_0==67) ) {
-                alt64=1;
+            if ( (LA57_0==67) ) {
+                alt57=1;
             }
-            switch (alt64) {
+            switch (alt57) {
                 case 1 :
-                    // InternalRos.g:9714:3: rule__ParameterStructType__Group_3__0
+                    // InternalRos.g:9525:3: rule__ParameterStructType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterStructType__Group_3__0();
@@ -29278,14 +28641,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__4"
-    // InternalRos.g:9722:1: rule__ParameterStructType__Group__4 : rule__ParameterStructType__Group__4__Impl ;
+    // InternalRos.g:9533:1: rule__ParameterStructType__Group__4 : rule__ParameterStructType__Group__4__Impl ;
     public final void rule__ParameterStructType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9726:1: ( rule__ParameterStructType__Group__4__Impl )
-            // InternalRos.g:9727:2: rule__ParameterStructType__Group__4__Impl
+            // InternalRos.g:9537:1: ( rule__ParameterStructType__Group__4__Impl )
+            // InternalRos.g:9538:2: rule__ParameterStructType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructType__Group__4__Impl();
@@ -29311,17 +28674,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__4__Impl"
-    // InternalRos.g:9733:1: rule__ParameterStructType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:9544:1: rule__ParameterStructType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterStructType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9737:1: ( ( '}' ) )
-            // InternalRos.g:9738:1: ( '}' )
+            // InternalRos.g:9548:1: ( ( '}' ) )
+            // InternalRos.g:9549:1: ( '}' )
             {
-            // InternalRos.g:9738:1: ( '}' )
-            // InternalRos.g:9739:2: '}'
+            // InternalRos.g:9549:1: ( '}' )
+            // InternalRos.g:9550:2: '}'
             {
              before(grammarAccess.getParameterStructTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -29348,14 +28711,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__0"
-    // InternalRos.g:9749:1: rule__ParameterStructType__Group_3__0 : rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1 ;
+    // InternalRos.g:9560:1: rule__ParameterStructType__Group_3__0 : rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1 ;
     public final void rule__ParameterStructType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9753:1: ( rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1 )
-            // InternalRos.g:9754:2: rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1
+            // InternalRos.g:9564:1: ( rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1 )
+            // InternalRos.g:9565:2: rule__ParameterStructType__Group_3__0__Impl rule__ParameterStructType__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStructType__Group_3__0__Impl();
@@ -29386,17 +28749,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__0__Impl"
-    // InternalRos.g:9761:1: rule__ParameterStructType__Group_3__0__Impl : ( 'parameterstructypetmember' ) ;
+    // InternalRos.g:9572:1: rule__ParameterStructType__Group_3__0__Impl : ( 'parameterstructypetmember' ) ;
     public final void rule__ParameterStructType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9765:1: ( ( 'parameterstructypetmember' ) )
-            // InternalRos.g:9766:1: ( 'parameterstructypetmember' )
+            // InternalRos.g:9576:1: ( ( 'parameterstructypetmember' ) )
+            // InternalRos.g:9577:1: ( 'parameterstructypetmember' )
             {
-            // InternalRos.g:9766:1: ( 'parameterstructypetmember' )
-            // InternalRos.g:9767:2: 'parameterstructypetmember'
+            // InternalRos.g:9577:1: ( 'parameterstructypetmember' )
+            // InternalRos.g:9578:2: 'parameterstructypetmember'
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberKeyword_3_0()); 
             match(input,67,FOLLOW_2); 
@@ -29423,14 +28786,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__1"
-    // InternalRos.g:9776:1: rule__ParameterStructType__Group_3__1 : rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2 ;
+    // InternalRos.g:9587:1: rule__ParameterStructType__Group_3__1 : rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2 ;
     public final void rule__ParameterStructType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9780:1: ( rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2 )
-            // InternalRos.g:9781:2: rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2
+            // InternalRos.g:9591:1: ( rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2 )
+            // InternalRos.g:9592:2: rule__ParameterStructType__Group_3__1__Impl rule__ParameterStructType__Group_3__2
             {
             pushFollow(FOLLOW_50);
             rule__ParameterStructType__Group_3__1__Impl();
@@ -29461,17 +28824,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__1__Impl"
-    // InternalRos.g:9788:1: rule__ParameterStructType__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:9599:1: rule__ParameterStructType__Group_3__1__Impl : ( '{' ) ;
     public final void rule__ParameterStructType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9792:1: ( ( '{' ) )
-            // InternalRos.g:9793:1: ( '{' )
+            // InternalRos.g:9603:1: ( ( '{' ) )
+            // InternalRos.g:9604:1: ( '{' )
             {
-            // InternalRos.g:9793:1: ( '{' )
-            // InternalRos.g:9794:2: '{'
+            // InternalRos.g:9604:1: ( '{' )
+            // InternalRos.g:9605:2: '{'
             {
              before(grammarAccess.getParameterStructTypeAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -29498,14 +28861,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__2"
-    // InternalRos.g:9803:1: rule__ParameterStructType__Group_3__2 : rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3 ;
+    // InternalRos.g:9614:1: rule__ParameterStructType__Group_3__2 : rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3 ;
     public final void rule__ParameterStructType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9807:1: ( rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3 )
-            // InternalRos.g:9808:2: rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3
+            // InternalRos.g:9618:1: ( rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3 )
+            // InternalRos.g:9619:2: rule__ParameterStructType__Group_3__2__Impl rule__ParameterStructType__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__ParameterStructType__Group_3__2__Impl();
@@ -29536,21 +28899,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__2__Impl"
-    // InternalRos.g:9815:1: rule__ParameterStructType__Group_3__2__Impl : ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) ) ;
+    // InternalRos.g:9626:1: rule__ParameterStructType__Group_3__2__Impl : ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) ) ;
     public final void rule__ParameterStructType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9819:1: ( ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) ) )
-            // InternalRos.g:9820:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) )
+            // InternalRos.g:9630:1: ( ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) ) )
+            // InternalRos.g:9631:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) )
             {
-            // InternalRos.g:9820:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) )
-            // InternalRos.g:9821:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 )
+            // InternalRos.g:9631:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 ) )
+            // InternalRos.g:9632:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 )
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberAssignment_3_2()); 
-            // InternalRos.g:9822:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 )
-            // InternalRos.g:9822:3: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2
+            // InternalRos.g:9633:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 )
+            // InternalRos.g:9633:3: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2();
@@ -29583,14 +28946,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__3"
-    // InternalRos.g:9830:1: rule__ParameterStructType__Group_3__3 : rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4 ;
+    // InternalRos.g:9641:1: rule__ParameterStructType__Group_3__3 : rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4 ;
     public final void rule__ParameterStructType__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9834:1: ( rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4 )
-            // InternalRos.g:9835:2: rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4
+            // InternalRos.g:9645:1: ( rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4 )
+            // InternalRos.g:9646:2: rule__ParameterStructType__Group_3__3__Impl rule__ParameterStructType__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__ParameterStructType__Group_3__3__Impl();
@@ -29621,33 +28984,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__3__Impl"
-    // InternalRos.g:9842:1: rule__ParameterStructType__Group_3__3__Impl : ( ( rule__ParameterStructType__Group_3_3__0 )* ) ;
+    // InternalRos.g:9653:1: rule__ParameterStructType__Group_3__3__Impl : ( ( rule__ParameterStructType__Group_3_3__0 )* ) ;
     public final void rule__ParameterStructType__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9846:1: ( ( ( rule__ParameterStructType__Group_3_3__0 )* ) )
-            // InternalRos.g:9847:1: ( ( rule__ParameterStructType__Group_3_3__0 )* )
+            // InternalRos.g:9657:1: ( ( ( rule__ParameterStructType__Group_3_3__0 )* ) )
+            // InternalRos.g:9658:1: ( ( rule__ParameterStructType__Group_3_3__0 )* )
             {
-            // InternalRos.g:9847:1: ( ( rule__ParameterStructType__Group_3_3__0 )* )
-            // InternalRos.g:9848:2: ( rule__ParameterStructType__Group_3_3__0 )*
+            // InternalRos.g:9658:1: ( ( rule__ParameterStructType__Group_3_3__0 )* )
+            // InternalRos.g:9659:2: ( rule__ParameterStructType__Group_3_3__0 )*
             {
              before(grammarAccess.getParameterStructTypeAccess().getGroup_3_3()); 
-            // InternalRos.g:9849:2: ( rule__ParameterStructType__Group_3_3__0 )*
-            loop65:
+            // InternalRos.g:9660:2: ( rule__ParameterStructType__Group_3_3__0 )*
+            loop58:
             do {
-                int alt65=2;
-                int LA65_0 = input.LA(1);
+                int alt58=2;
+                int LA58_0 = input.LA(1);
 
-                if ( (LA65_0==21) ) {
-                    alt65=1;
+                if ( (LA58_0==21) ) {
+                    alt58=1;
                 }
 
 
-                switch (alt65) {
+                switch (alt58) {
             	case 1 :
-            	    // InternalRos.g:9849:3: rule__ParameterStructType__Group_3_3__0
+            	    // InternalRos.g:9660:3: rule__ParameterStructType__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__ParameterStructType__Group_3_3__0();
@@ -29659,7 +29022,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop65;
+            	    break loop58;
                 }
             } while (true);
 
@@ -29686,14 +29049,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__4"
-    // InternalRos.g:9857:1: rule__ParameterStructType__Group_3__4 : rule__ParameterStructType__Group_3__4__Impl ;
+    // InternalRos.g:9668:1: rule__ParameterStructType__Group_3__4 : rule__ParameterStructType__Group_3__4__Impl ;
     public final void rule__ParameterStructType__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9861:1: ( rule__ParameterStructType__Group_3__4__Impl )
-            // InternalRos.g:9862:2: rule__ParameterStructType__Group_3__4__Impl
+            // InternalRos.g:9672:1: ( rule__ParameterStructType__Group_3__4__Impl )
+            // InternalRos.g:9673:2: rule__ParameterStructType__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructType__Group_3__4__Impl();
@@ -29719,17 +29082,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3__4__Impl"
-    // InternalRos.g:9868:1: rule__ParameterStructType__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:9679:1: rule__ParameterStructType__Group_3__4__Impl : ( '}' ) ;
     public final void rule__ParameterStructType__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9872:1: ( ( '}' ) )
-            // InternalRos.g:9873:1: ( '}' )
+            // InternalRos.g:9683:1: ( ( '}' ) )
+            // InternalRos.g:9684:1: ( '}' )
             {
-            // InternalRos.g:9873:1: ( '}' )
-            // InternalRos.g:9874:2: '}'
+            // InternalRos.g:9684:1: ( '}' )
+            // InternalRos.g:9685:2: '}'
             {
              before(grammarAccess.getParameterStructTypeAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -29756,14 +29119,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3_3__0"
-    // InternalRos.g:9884:1: rule__ParameterStructType__Group_3_3__0 : rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1 ;
+    // InternalRos.g:9695:1: rule__ParameterStructType__Group_3_3__0 : rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1 ;
     public final void rule__ParameterStructType__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9888:1: ( rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1 )
-            // InternalRos.g:9889:2: rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1
+            // InternalRos.g:9699:1: ( rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1 )
+            // InternalRos.g:9700:2: rule__ParameterStructType__Group_3_3__0__Impl rule__ParameterStructType__Group_3_3__1
             {
             pushFollow(FOLLOW_50);
             rule__ParameterStructType__Group_3_3__0__Impl();
@@ -29794,17 +29157,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3_3__0__Impl"
-    // InternalRos.g:9896:1: rule__ParameterStructType__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:9707:1: rule__ParameterStructType__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__ParameterStructType__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9900:1: ( ( ',' ) )
-            // InternalRos.g:9901:1: ( ',' )
+            // InternalRos.g:9711:1: ( ( ',' ) )
+            // InternalRos.g:9712:1: ( ',' )
             {
-            // InternalRos.g:9901:1: ( ',' )
-            // InternalRos.g:9902:2: ','
+            // InternalRos.g:9712:1: ( ',' )
+            // InternalRos.g:9713:2: ','
             {
              before(grammarAccess.getParameterStructTypeAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -29831,14 +29194,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3_3__1"
-    // InternalRos.g:9911:1: rule__ParameterStructType__Group_3_3__1 : rule__ParameterStructType__Group_3_3__1__Impl ;
+    // InternalRos.g:9722:1: rule__ParameterStructType__Group_3_3__1 : rule__ParameterStructType__Group_3_3__1__Impl ;
     public final void rule__ParameterStructType__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9915:1: ( rule__ParameterStructType__Group_3_3__1__Impl )
-            // InternalRos.g:9916:2: rule__ParameterStructType__Group_3_3__1__Impl
+            // InternalRos.g:9726:1: ( rule__ParameterStructType__Group_3_3__1__Impl )
+            // InternalRos.g:9727:2: rule__ParameterStructType__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructType__Group_3_3__1__Impl();
@@ -29864,21 +29227,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group_3_3__1__Impl"
-    // InternalRos.g:9922:1: rule__ParameterStructType__Group_3_3__1__Impl : ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) ) ;
+    // InternalRos.g:9733:1: rule__ParameterStructType__Group_3_3__1__Impl : ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) ) ;
     public final void rule__ParameterStructType__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9926:1: ( ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) ) )
-            // InternalRos.g:9927:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) )
+            // InternalRos.g:9737:1: ( ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) ) )
+            // InternalRos.g:9738:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) )
             {
-            // InternalRos.g:9927:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) )
-            // InternalRos.g:9928:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 )
+            // InternalRos.g:9738:1: ( ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 ) )
+            // InternalRos.g:9739:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 )
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberAssignment_3_3_1()); 
-            // InternalRos.g:9929:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 )
-            // InternalRos.g:9929:3: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1
+            // InternalRos.g:9740:2: ( rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 )
+            // InternalRos.g:9740:3: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1();
@@ -29911,14 +29274,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__0"
-    // InternalRos.g:9938:1: rule__ParameterIntegerType__Group__0 : rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1 ;
+    // InternalRos.g:9749:1: rule__ParameterIntegerType__Group__0 : rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1 ;
     public final void rule__ParameterIntegerType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9942:1: ( rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1 )
-            // InternalRos.g:9943:2: rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1
+            // InternalRos.g:9753:1: ( rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1 )
+            // InternalRos.g:9754:2: rule__ParameterIntegerType__Group__0__Impl rule__ParameterIntegerType__Group__1
             {
             pushFollow(FOLLOW_51);
             rule__ParameterIntegerType__Group__0__Impl();
@@ -29949,21 +29312,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__0__Impl"
-    // InternalRos.g:9950:1: rule__ParameterIntegerType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:9761:1: rule__ParameterIntegerType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterIntegerType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9954:1: ( ( () ) )
-            // InternalRos.g:9955:1: ( () )
+            // InternalRos.g:9765:1: ( ( () ) )
+            // InternalRos.g:9766:1: ( () )
             {
-            // InternalRos.g:9955:1: ( () )
-            // InternalRos.g:9956:2: ()
+            // InternalRos.g:9766:1: ( () )
+            // InternalRos.g:9767:2: ()
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getParameterIntegerTypeAction_0()); 
-            // InternalRos.g:9957:2: ()
-            // InternalRos.g:9957:3: 
+            // InternalRos.g:9768:2: ()
+            // InternalRos.g:9768:3: 
             {
             }
 
@@ -29986,14 +29349,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__1"
-    // InternalRos.g:9965:1: rule__ParameterIntegerType__Group__1 : rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2 ;
+    // InternalRos.g:9776:1: rule__ParameterIntegerType__Group__1 : rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2 ;
     public final void rule__ParameterIntegerType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9969:1: ( rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2 )
-            // InternalRos.g:9970:2: rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2
+            // InternalRos.g:9780:1: ( rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2 )
+            // InternalRos.g:9781:2: rule__ParameterIntegerType__Group__1__Impl rule__ParameterIntegerType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterIntegerType__Group__1__Impl();
@@ -30024,17 +29387,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__1__Impl"
-    // InternalRos.g:9977:1: rule__ParameterIntegerType__Group__1__Impl : ( 'ParameterIntegerType' ) ;
+    // InternalRos.g:9788:1: rule__ParameterIntegerType__Group__1__Impl : ( 'ParameterIntegerType' ) ;
     public final void rule__ParameterIntegerType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9981:1: ( ( 'ParameterIntegerType' ) )
-            // InternalRos.g:9982:1: ( 'ParameterIntegerType' )
+            // InternalRos.g:9792:1: ( ( 'ParameterIntegerType' ) )
+            // InternalRos.g:9793:1: ( 'ParameterIntegerType' )
             {
-            // InternalRos.g:9982:1: ( 'ParameterIntegerType' )
-            // InternalRos.g:9983:2: 'ParameterIntegerType'
+            // InternalRos.g:9793:1: ( 'ParameterIntegerType' )
+            // InternalRos.g:9794:2: 'ParameterIntegerType'
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getParameterIntegerTypeKeyword_1()); 
             match(input,68,FOLLOW_2); 
@@ -30061,14 +29424,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__2"
-    // InternalRos.g:9992:1: rule__ParameterIntegerType__Group__2 : rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3 ;
+    // InternalRos.g:9803:1: rule__ParameterIntegerType__Group__2 : rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3 ;
     public final void rule__ParameterIntegerType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:9996:1: ( rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3 )
-            // InternalRos.g:9997:2: rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3
+            // InternalRos.g:9807:1: ( rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3 )
+            // InternalRos.g:9808:2: rule__ParameterIntegerType__Group__2__Impl rule__ParameterIntegerType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterIntegerType__Group__2__Impl();
@@ -30099,17 +29462,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__2__Impl"
-    // InternalRos.g:10004:1: rule__ParameterIntegerType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:9815:1: rule__ParameterIntegerType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterIntegerType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10008:1: ( ( '{' ) )
-            // InternalRos.g:10009:1: ( '{' )
+            // InternalRos.g:9819:1: ( ( '{' ) )
+            // InternalRos.g:9820:1: ( '{' )
             {
-            // InternalRos.g:10009:1: ( '{' )
-            // InternalRos.g:10010:2: '{'
+            // InternalRos.g:9820:1: ( '{' )
+            // InternalRos.g:9821:2: '{'
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -30136,14 +29499,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__3"
-    // InternalRos.g:10019:1: rule__ParameterIntegerType__Group__3 : rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4 ;
+    // InternalRos.g:9830:1: rule__ParameterIntegerType__Group__3 : rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4 ;
     public final void rule__ParameterIntegerType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10023:1: ( rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4 )
-            // InternalRos.g:10024:2: rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4
+            // InternalRos.g:9834:1: ( rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4 )
+            // InternalRos.g:9835:2: rule__ParameterIntegerType__Group__3__Impl rule__ParameterIntegerType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterIntegerType__Group__3__Impl();
@@ -30174,29 +29537,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__3__Impl"
-    // InternalRos.g:10031:1: rule__ParameterIntegerType__Group__3__Impl : ( ( rule__ParameterIntegerType__Group_3__0 )? ) ;
+    // InternalRos.g:9842:1: rule__ParameterIntegerType__Group__3__Impl : ( ( rule__ParameterIntegerType__Group_3__0 )? ) ;
     public final void rule__ParameterIntegerType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10035:1: ( ( ( rule__ParameterIntegerType__Group_3__0 )? ) )
-            // InternalRos.g:10036:1: ( ( rule__ParameterIntegerType__Group_3__0 )? )
+            // InternalRos.g:9846:1: ( ( ( rule__ParameterIntegerType__Group_3__0 )? ) )
+            // InternalRos.g:9847:1: ( ( rule__ParameterIntegerType__Group_3__0 )? )
             {
-            // InternalRos.g:10036:1: ( ( rule__ParameterIntegerType__Group_3__0 )? )
-            // InternalRos.g:10037:2: ( rule__ParameterIntegerType__Group_3__0 )?
+            // InternalRos.g:9847:1: ( ( rule__ParameterIntegerType__Group_3__0 )? )
+            // InternalRos.g:9848:2: ( rule__ParameterIntegerType__Group_3__0 )?
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getGroup_3()); 
-            // InternalRos.g:10038:2: ( rule__ParameterIntegerType__Group_3__0 )?
-            int alt66=2;
-            int LA66_0 = input.LA(1);
+            // InternalRos.g:9849:2: ( rule__ParameterIntegerType__Group_3__0 )?
+            int alt59=2;
+            int LA59_0 = input.LA(1);
 
-            if ( (LA66_0==65) ) {
-                alt66=1;
+            if ( (LA59_0==65) ) {
+                alt59=1;
             }
-            switch (alt66) {
+            switch (alt59) {
                 case 1 :
-                    // InternalRos.g:10038:3: rule__ParameterIntegerType__Group_3__0
+                    // InternalRos.g:9849:3: rule__ParameterIntegerType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterIntegerType__Group_3__0();
@@ -30232,14 +29595,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__4"
-    // InternalRos.g:10046:1: rule__ParameterIntegerType__Group__4 : rule__ParameterIntegerType__Group__4__Impl ;
+    // InternalRos.g:9857:1: rule__ParameterIntegerType__Group__4 : rule__ParameterIntegerType__Group__4__Impl ;
     public final void rule__ParameterIntegerType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10050:1: ( rule__ParameterIntegerType__Group__4__Impl )
-            // InternalRos.g:10051:2: rule__ParameterIntegerType__Group__4__Impl
+            // InternalRos.g:9861:1: ( rule__ParameterIntegerType__Group__4__Impl )
+            // InternalRos.g:9862:2: rule__ParameterIntegerType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterIntegerType__Group__4__Impl();
@@ -30265,17 +29628,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group__4__Impl"
-    // InternalRos.g:10057:1: rule__ParameterIntegerType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:9868:1: rule__ParameterIntegerType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterIntegerType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10061:1: ( ( '}' ) )
-            // InternalRos.g:10062:1: ( '}' )
+            // InternalRos.g:9872:1: ( ( '}' ) )
+            // InternalRos.g:9873:1: ( '}' )
             {
-            // InternalRos.g:10062:1: ( '}' )
-            // InternalRos.g:10063:2: '}'
+            // InternalRos.g:9873:1: ( '}' )
+            // InternalRos.g:9874:2: '}'
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -30302,14 +29665,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group_3__0"
-    // InternalRos.g:10073:1: rule__ParameterIntegerType__Group_3__0 : rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1 ;
+    // InternalRos.g:9884:1: rule__ParameterIntegerType__Group_3__0 : rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1 ;
     public final void rule__ParameterIntegerType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10077:1: ( rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1 )
-            // InternalRos.g:10078:2: rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1
+            // InternalRos.g:9888:1: ( rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1 )
+            // InternalRos.g:9889:2: rule__ParameterIntegerType__Group_3__0__Impl rule__ParameterIntegerType__Group_3__1
             {
             pushFollow(FOLLOW_53);
             rule__ParameterIntegerType__Group_3__0__Impl();
@@ -30340,17 +29703,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group_3__0__Impl"
-    // InternalRos.g:10085:1: rule__ParameterIntegerType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:9896:1: rule__ParameterIntegerType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterIntegerType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10089:1: ( ( 'default' ) )
-            // InternalRos.g:10090:1: ( 'default' )
+            // InternalRos.g:9900:1: ( ( 'default' ) )
+            // InternalRos.g:9901:1: ( 'default' )
             {
-            // InternalRos.g:10090:1: ( 'default' )
-            // InternalRos.g:10091:2: 'default'
+            // InternalRos.g:9901:1: ( 'default' )
+            // InternalRos.g:9902:2: 'default'
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -30377,14 +29740,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group_3__1"
-    // InternalRos.g:10100:1: rule__ParameterIntegerType__Group_3__1 : rule__ParameterIntegerType__Group_3__1__Impl ;
+    // InternalRos.g:9911:1: rule__ParameterIntegerType__Group_3__1 : rule__ParameterIntegerType__Group_3__1__Impl ;
     public final void rule__ParameterIntegerType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10104:1: ( rule__ParameterIntegerType__Group_3__1__Impl )
-            // InternalRos.g:10105:2: rule__ParameterIntegerType__Group_3__1__Impl
+            // InternalRos.g:9915:1: ( rule__ParameterIntegerType__Group_3__1__Impl )
+            // InternalRos.g:9916:2: rule__ParameterIntegerType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterIntegerType__Group_3__1__Impl();
@@ -30410,21 +29773,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__Group_3__1__Impl"
-    // InternalRos.g:10111:1: rule__ParameterIntegerType__Group_3__1__Impl : ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:9922:1: rule__ParameterIntegerType__Group_3__1__Impl : ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterIntegerType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10115:1: ( ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:10116:1: ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:9926:1: ( ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:9927:1: ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:10116:1: ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:10117:2: ( rule__ParameterIntegerType__DefaultAssignment_3_1 )
+            // InternalRos.g:9927:1: ( ( rule__ParameterIntegerType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:9928:2: ( rule__ParameterIntegerType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:10118:2: ( rule__ParameterIntegerType__DefaultAssignment_3_1 )
-            // InternalRos.g:10118:3: rule__ParameterIntegerType__DefaultAssignment_3_1
+            // InternalRos.g:9929:2: ( rule__ParameterIntegerType__DefaultAssignment_3_1 )
+            // InternalRos.g:9929:3: rule__ParameterIntegerType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterIntegerType__DefaultAssignment_3_1();
@@ -30457,14 +29820,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__0"
-    // InternalRos.g:10127:1: rule__ParameterStringType__Group__0 : rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1 ;
+    // InternalRos.g:9938:1: rule__ParameterStringType__Group__0 : rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1 ;
     public final void rule__ParameterStringType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10131:1: ( rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1 )
-            // InternalRos.g:10132:2: rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1
+            // InternalRos.g:9942:1: ( rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1 )
+            // InternalRos.g:9943:2: rule__ParameterStringType__Group__0__Impl rule__ParameterStringType__Group__1
             {
             pushFollow(FOLLOW_54);
             rule__ParameterStringType__Group__0__Impl();
@@ -30495,21 +29858,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__0__Impl"
-    // InternalRos.g:10139:1: rule__ParameterStringType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:9950:1: rule__ParameterStringType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterStringType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10143:1: ( ( () ) )
-            // InternalRos.g:10144:1: ( () )
+            // InternalRos.g:9954:1: ( ( () ) )
+            // InternalRos.g:9955:1: ( () )
             {
-            // InternalRos.g:10144:1: ( () )
-            // InternalRos.g:10145:2: ()
+            // InternalRos.g:9955:1: ( () )
+            // InternalRos.g:9956:2: ()
             {
              before(grammarAccess.getParameterStringTypeAccess().getParameterStringTypeAction_0()); 
-            // InternalRos.g:10146:2: ()
-            // InternalRos.g:10146:3: 
+            // InternalRos.g:9957:2: ()
+            // InternalRos.g:9957:3: 
             {
             }
 
@@ -30532,14 +29895,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__1"
-    // InternalRos.g:10154:1: rule__ParameterStringType__Group__1 : rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2 ;
+    // InternalRos.g:9965:1: rule__ParameterStringType__Group__1 : rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2 ;
     public final void rule__ParameterStringType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10158:1: ( rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2 )
-            // InternalRos.g:10159:2: rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2
+            // InternalRos.g:9969:1: ( rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2 )
+            // InternalRos.g:9970:2: rule__ParameterStringType__Group__1__Impl rule__ParameterStringType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStringType__Group__1__Impl();
@@ -30570,17 +29933,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__1__Impl"
-    // InternalRos.g:10166:1: rule__ParameterStringType__Group__1__Impl : ( 'ParameterStringType' ) ;
+    // InternalRos.g:9977:1: rule__ParameterStringType__Group__1__Impl : ( 'ParameterStringType' ) ;
     public final void rule__ParameterStringType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10170:1: ( ( 'ParameterStringType' ) )
-            // InternalRos.g:10171:1: ( 'ParameterStringType' )
+            // InternalRos.g:9981:1: ( ( 'ParameterStringType' ) )
+            // InternalRos.g:9982:1: ( 'ParameterStringType' )
             {
-            // InternalRos.g:10171:1: ( 'ParameterStringType' )
-            // InternalRos.g:10172:2: 'ParameterStringType'
+            // InternalRos.g:9982:1: ( 'ParameterStringType' )
+            // InternalRos.g:9983:2: 'ParameterStringType'
             {
              before(grammarAccess.getParameterStringTypeAccess().getParameterStringTypeKeyword_1()); 
             match(input,69,FOLLOW_2); 
@@ -30607,14 +29970,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__2"
-    // InternalRos.g:10181:1: rule__ParameterStringType__Group__2 : rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3 ;
+    // InternalRos.g:9992:1: rule__ParameterStringType__Group__2 : rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3 ;
     public final void rule__ParameterStringType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10185:1: ( rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3 )
-            // InternalRos.g:10186:2: rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3
+            // InternalRos.g:9996:1: ( rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3 )
+            // InternalRos.g:9997:2: rule__ParameterStringType__Group__2__Impl rule__ParameterStringType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterStringType__Group__2__Impl();
@@ -30645,17 +30008,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__2__Impl"
-    // InternalRos.g:10193:1: rule__ParameterStringType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10004:1: rule__ParameterStringType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterStringType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10197:1: ( ( '{' ) )
-            // InternalRos.g:10198:1: ( '{' )
+            // InternalRos.g:10008:1: ( ( '{' ) )
+            // InternalRos.g:10009:1: ( '{' )
             {
-            // InternalRos.g:10198:1: ( '{' )
-            // InternalRos.g:10199:2: '{'
+            // InternalRos.g:10009:1: ( '{' )
+            // InternalRos.g:10010:2: '{'
             {
              before(grammarAccess.getParameterStringTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -30682,14 +30045,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__3"
-    // InternalRos.g:10208:1: rule__ParameterStringType__Group__3 : rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4 ;
+    // InternalRos.g:10019:1: rule__ParameterStringType__Group__3 : rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4 ;
     public final void rule__ParameterStringType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10212:1: ( rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4 )
-            // InternalRos.g:10213:2: rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4
+            // InternalRos.g:10023:1: ( rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4 )
+            // InternalRos.g:10024:2: rule__ParameterStringType__Group__3__Impl rule__ParameterStringType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterStringType__Group__3__Impl();
@@ -30720,29 +30083,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__3__Impl"
-    // InternalRos.g:10220:1: rule__ParameterStringType__Group__3__Impl : ( ( rule__ParameterStringType__Group_3__0 )? ) ;
+    // InternalRos.g:10031:1: rule__ParameterStringType__Group__3__Impl : ( ( rule__ParameterStringType__Group_3__0 )? ) ;
     public final void rule__ParameterStringType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10224:1: ( ( ( rule__ParameterStringType__Group_3__0 )? ) )
-            // InternalRos.g:10225:1: ( ( rule__ParameterStringType__Group_3__0 )? )
+            // InternalRos.g:10035:1: ( ( ( rule__ParameterStringType__Group_3__0 )? ) )
+            // InternalRos.g:10036:1: ( ( rule__ParameterStringType__Group_3__0 )? )
             {
-            // InternalRos.g:10225:1: ( ( rule__ParameterStringType__Group_3__0 )? )
-            // InternalRos.g:10226:2: ( rule__ParameterStringType__Group_3__0 )?
+            // InternalRos.g:10036:1: ( ( rule__ParameterStringType__Group_3__0 )? )
+            // InternalRos.g:10037:2: ( rule__ParameterStringType__Group_3__0 )?
             {
              before(grammarAccess.getParameterStringTypeAccess().getGroup_3()); 
-            // InternalRos.g:10227:2: ( rule__ParameterStringType__Group_3__0 )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // InternalRos.g:10038:2: ( rule__ParameterStringType__Group_3__0 )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA67_0==65) ) {
-                alt67=1;
+            if ( (LA60_0==65) ) {
+                alt60=1;
             }
-            switch (alt67) {
+            switch (alt60) {
                 case 1 :
-                    // InternalRos.g:10227:3: rule__ParameterStringType__Group_3__0
+                    // InternalRos.g:10038:3: rule__ParameterStringType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterStringType__Group_3__0();
@@ -30778,14 +30141,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__4"
-    // InternalRos.g:10235:1: rule__ParameterStringType__Group__4 : rule__ParameterStringType__Group__4__Impl ;
+    // InternalRos.g:10046:1: rule__ParameterStringType__Group__4 : rule__ParameterStringType__Group__4__Impl ;
     public final void rule__ParameterStringType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10239:1: ( rule__ParameterStringType__Group__4__Impl )
-            // InternalRos.g:10240:2: rule__ParameterStringType__Group__4__Impl
+            // InternalRos.g:10050:1: ( rule__ParameterStringType__Group__4__Impl )
+            // InternalRos.g:10051:2: rule__ParameterStringType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStringType__Group__4__Impl();
@@ -30811,17 +30174,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group__4__Impl"
-    // InternalRos.g:10246:1: rule__ParameterStringType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:10057:1: rule__ParameterStringType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterStringType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10250:1: ( ( '}' ) )
-            // InternalRos.g:10251:1: ( '}' )
+            // InternalRos.g:10061:1: ( ( '}' ) )
+            // InternalRos.g:10062:1: ( '}' )
             {
-            // InternalRos.g:10251:1: ( '}' )
-            // InternalRos.g:10252:2: '}'
+            // InternalRos.g:10062:1: ( '}' )
+            // InternalRos.g:10063:2: '}'
             {
              before(grammarAccess.getParameterStringTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -30848,14 +30211,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group_3__0"
-    // InternalRos.g:10262:1: rule__ParameterStringType__Group_3__0 : rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1 ;
+    // InternalRos.g:10073:1: rule__ParameterStringType__Group_3__0 : rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1 ;
     public final void rule__ParameterStringType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10266:1: ( rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1 )
-            // InternalRos.g:10267:2: rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1
+            // InternalRos.g:10077:1: ( rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1 )
+            // InternalRos.g:10078:2: rule__ParameterStringType__Group_3__0__Impl rule__ParameterStringType__Group_3__1
             {
             pushFollow(FOLLOW_55);
             rule__ParameterStringType__Group_3__0__Impl();
@@ -30886,17 +30249,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group_3__0__Impl"
-    // InternalRos.g:10274:1: rule__ParameterStringType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:10085:1: rule__ParameterStringType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterStringType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10278:1: ( ( 'default' ) )
-            // InternalRos.g:10279:1: ( 'default' )
+            // InternalRos.g:10089:1: ( ( 'default' ) )
+            // InternalRos.g:10090:1: ( 'default' )
             {
-            // InternalRos.g:10279:1: ( 'default' )
-            // InternalRos.g:10280:2: 'default'
+            // InternalRos.g:10090:1: ( 'default' )
+            // InternalRos.g:10091:2: 'default'
             {
              before(grammarAccess.getParameterStringTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -30923,14 +30286,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group_3__1"
-    // InternalRos.g:10289:1: rule__ParameterStringType__Group_3__1 : rule__ParameterStringType__Group_3__1__Impl ;
+    // InternalRos.g:10100:1: rule__ParameterStringType__Group_3__1 : rule__ParameterStringType__Group_3__1__Impl ;
     public final void rule__ParameterStringType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10293:1: ( rule__ParameterStringType__Group_3__1__Impl )
-            // InternalRos.g:10294:2: rule__ParameterStringType__Group_3__1__Impl
+            // InternalRos.g:10104:1: ( rule__ParameterStringType__Group_3__1__Impl )
+            // InternalRos.g:10105:2: rule__ParameterStringType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStringType__Group_3__1__Impl();
@@ -30956,21 +30319,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__Group_3__1__Impl"
-    // InternalRos.g:10300:1: rule__ParameterStringType__Group_3__1__Impl : ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:10111:1: rule__ParameterStringType__Group_3__1__Impl : ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterStringType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10304:1: ( ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:10305:1: ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10115:1: ( ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:10116:1: ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:10305:1: ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:10306:2: ( rule__ParameterStringType__DefaultAssignment_3_1 )
+            // InternalRos.g:10116:1: ( ( rule__ParameterStringType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10117:2: ( rule__ParameterStringType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterStringTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:10307:2: ( rule__ParameterStringType__DefaultAssignment_3_1 )
-            // InternalRos.g:10307:3: rule__ParameterStringType__DefaultAssignment_3_1
+            // InternalRos.g:10118:2: ( rule__ParameterStringType__DefaultAssignment_3_1 )
+            // InternalRos.g:10118:3: rule__ParameterStringType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStringType__DefaultAssignment_3_1();
@@ -31003,14 +30366,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__0"
-    // InternalRos.g:10316:1: rule__ParameterDoubleType__Group__0 : rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1 ;
+    // InternalRos.g:10127:1: rule__ParameterDoubleType__Group__0 : rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1 ;
     public final void rule__ParameterDoubleType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10320:1: ( rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1 )
-            // InternalRos.g:10321:2: rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1
+            // InternalRos.g:10131:1: ( rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1 )
+            // InternalRos.g:10132:2: rule__ParameterDoubleType__Group__0__Impl rule__ParameterDoubleType__Group__1
             {
             pushFollow(FOLLOW_56);
             rule__ParameterDoubleType__Group__0__Impl();
@@ -31041,21 +30404,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__0__Impl"
-    // InternalRos.g:10328:1: rule__ParameterDoubleType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:10139:1: rule__ParameterDoubleType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterDoubleType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10332:1: ( ( () ) )
-            // InternalRos.g:10333:1: ( () )
+            // InternalRos.g:10143:1: ( ( () ) )
+            // InternalRos.g:10144:1: ( () )
             {
-            // InternalRos.g:10333:1: ( () )
-            // InternalRos.g:10334:2: ()
+            // InternalRos.g:10144:1: ( () )
+            // InternalRos.g:10145:2: ()
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getParameterDoubleTypeAction_0()); 
-            // InternalRos.g:10335:2: ()
-            // InternalRos.g:10335:3: 
+            // InternalRos.g:10146:2: ()
+            // InternalRos.g:10146:3: 
             {
             }
 
@@ -31078,14 +30441,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__1"
-    // InternalRos.g:10343:1: rule__ParameterDoubleType__Group__1 : rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2 ;
+    // InternalRos.g:10154:1: rule__ParameterDoubleType__Group__1 : rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2 ;
     public final void rule__ParameterDoubleType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10347:1: ( rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2 )
-            // InternalRos.g:10348:2: rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2
+            // InternalRos.g:10158:1: ( rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2 )
+            // InternalRos.g:10159:2: rule__ParameterDoubleType__Group__1__Impl rule__ParameterDoubleType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterDoubleType__Group__1__Impl();
@@ -31116,17 +30479,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__1__Impl"
-    // InternalRos.g:10355:1: rule__ParameterDoubleType__Group__1__Impl : ( 'ParameterDoubleType' ) ;
+    // InternalRos.g:10166:1: rule__ParameterDoubleType__Group__1__Impl : ( 'ParameterDoubleType' ) ;
     public final void rule__ParameterDoubleType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10359:1: ( ( 'ParameterDoubleType' ) )
-            // InternalRos.g:10360:1: ( 'ParameterDoubleType' )
+            // InternalRos.g:10170:1: ( ( 'ParameterDoubleType' ) )
+            // InternalRos.g:10171:1: ( 'ParameterDoubleType' )
             {
-            // InternalRos.g:10360:1: ( 'ParameterDoubleType' )
-            // InternalRos.g:10361:2: 'ParameterDoubleType'
+            // InternalRos.g:10171:1: ( 'ParameterDoubleType' )
+            // InternalRos.g:10172:2: 'ParameterDoubleType'
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getParameterDoubleTypeKeyword_1()); 
             match(input,70,FOLLOW_2); 
@@ -31153,14 +30516,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__2"
-    // InternalRos.g:10370:1: rule__ParameterDoubleType__Group__2 : rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3 ;
+    // InternalRos.g:10181:1: rule__ParameterDoubleType__Group__2 : rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3 ;
     public final void rule__ParameterDoubleType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10374:1: ( rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3 )
-            // InternalRos.g:10375:2: rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3
+            // InternalRos.g:10185:1: ( rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3 )
+            // InternalRos.g:10186:2: rule__ParameterDoubleType__Group__2__Impl rule__ParameterDoubleType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterDoubleType__Group__2__Impl();
@@ -31191,17 +30554,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__2__Impl"
-    // InternalRos.g:10382:1: rule__ParameterDoubleType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10193:1: rule__ParameterDoubleType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterDoubleType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10386:1: ( ( '{' ) )
-            // InternalRos.g:10387:1: ( '{' )
+            // InternalRos.g:10197:1: ( ( '{' ) )
+            // InternalRos.g:10198:1: ( '{' )
             {
-            // InternalRos.g:10387:1: ( '{' )
-            // InternalRos.g:10388:2: '{'
+            // InternalRos.g:10198:1: ( '{' )
+            // InternalRos.g:10199:2: '{'
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -31228,14 +30591,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__3"
-    // InternalRos.g:10397:1: rule__ParameterDoubleType__Group__3 : rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4 ;
+    // InternalRos.g:10208:1: rule__ParameterDoubleType__Group__3 : rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4 ;
     public final void rule__ParameterDoubleType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10401:1: ( rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4 )
-            // InternalRos.g:10402:2: rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4
+            // InternalRos.g:10212:1: ( rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4 )
+            // InternalRos.g:10213:2: rule__ParameterDoubleType__Group__3__Impl rule__ParameterDoubleType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterDoubleType__Group__3__Impl();
@@ -31266,29 +30629,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__3__Impl"
-    // InternalRos.g:10409:1: rule__ParameterDoubleType__Group__3__Impl : ( ( rule__ParameterDoubleType__Group_3__0 )? ) ;
+    // InternalRos.g:10220:1: rule__ParameterDoubleType__Group__3__Impl : ( ( rule__ParameterDoubleType__Group_3__0 )? ) ;
     public final void rule__ParameterDoubleType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10413:1: ( ( ( rule__ParameterDoubleType__Group_3__0 )? ) )
-            // InternalRos.g:10414:1: ( ( rule__ParameterDoubleType__Group_3__0 )? )
+            // InternalRos.g:10224:1: ( ( ( rule__ParameterDoubleType__Group_3__0 )? ) )
+            // InternalRos.g:10225:1: ( ( rule__ParameterDoubleType__Group_3__0 )? )
             {
-            // InternalRos.g:10414:1: ( ( rule__ParameterDoubleType__Group_3__0 )? )
-            // InternalRos.g:10415:2: ( rule__ParameterDoubleType__Group_3__0 )?
+            // InternalRos.g:10225:1: ( ( rule__ParameterDoubleType__Group_3__0 )? )
+            // InternalRos.g:10226:2: ( rule__ParameterDoubleType__Group_3__0 )?
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getGroup_3()); 
-            // InternalRos.g:10416:2: ( rule__ParameterDoubleType__Group_3__0 )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // InternalRos.g:10227:2: ( rule__ParameterDoubleType__Group_3__0 )?
+            int alt61=2;
+            int LA61_0 = input.LA(1);
 
-            if ( (LA68_0==65) ) {
-                alt68=1;
+            if ( (LA61_0==65) ) {
+                alt61=1;
             }
-            switch (alt68) {
+            switch (alt61) {
                 case 1 :
-                    // InternalRos.g:10416:3: rule__ParameterDoubleType__Group_3__0
+                    // InternalRos.g:10227:3: rule__ParameterDoubleType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterDoubleType__Group_3__0();
@@ -31324,14 +30687,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__4"
-    // InternalRos.g:10424:1: rule__ParameterDoubleType__Group__4 : rule__ParameterDoubleType__Group__4__Impl ;
+    // InternalRos.g:10235:1: rule__ParameterDoubleType__Group__4 : rule__ParameterDoubleType__Group__4__Impl ;
     public final void rule__ParameterDoubleType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10428:1: ( rule__ParameterDoubleType__Group__4__Impl )
-            // InternalRos.g:10429:2: rule__ParameterDoubleType__Group__4__Impl
+            // InternalRos.g:10239:1: ( rule__ParameterDoubleType__Group__4__Impl )
+            // InternalRos.g:10240:2: rule__ParameterDoubleType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDoubleType__Group__4__Impl();
@@ -31357,17 +30720,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group__4__Impl"
-    // InternalRos.g:10435:1: rule__ParameterDoubleType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:10246:1: rule__ParameterDoubleType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterDoubleType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10439:1: ( ( '}' ) )
-            // InternalRos.g:10440:1: ( '}' )
+            // InternalRos.g:10250:1: ( ( '}' ) )
+            // InternalRos.g:10251:1: ( '}' )
             {
-            // InternalRos.g:10440:1: ( '}' )
-            // InternalRos.g:10441:2: '}'
+            // InternalRos.g:10251:1: ( '}' )
+            // InternalRos.g:10252:2: '}'
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -31394,14 +30757,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group_3__0"
-    // InternalRos.g:10451:1: rule__ParameterDoubleType__Group_3__0 : rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1 ;
+    // InternalRos.g:10262:1: rule__ParameterDoubleType__Group_3__0 : rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1 ;
     public final void rule__ParameterDoubleType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10455:1: ( rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1 )
-            // InternalRos.g:10456:2: rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1
+            // InternalRos.g:10266:1: ( rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1 )
+            // InternalRos.g:10267:2: rule__ParameterDoubleType__Group_3__0__Impl rule__ParameterDoubleType__Group_3__1
             {
             pushFollow(FOLLOW_57);
             rule__ParameterDoubleType__Group_3__0__Impl();
@@ -31432,17 +30795,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group_3__0__Impl"
-    // InternalRos.g:10463:1: rule__ParameterDoubleType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:10274:1: rule__ParameterDoubleType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterDoubleType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10467:1: ( ( 'default' ) )
-            // InternalRos.g:10468:1: ( 'default' )
+            // InternalRos.g:10278:1: ( ( 'default' ) )
+            // InternalRos.g:10279:1: ( 'default' )
             {
-            // InternalRos.g:10468:1: ( 'default' )
-            // InternalRos.g:10469:2: 'default'
+            // InternalRos.g:10279:1: ( 'default' )
+            // InternalRos.g:10280:2: 'default'
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -31469,14 +30832,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group_3__1"
-    // InternalRos.g:10478:1: rule__ParameterDoubleType__Group_3__1 : rule__ParameterDoubleType__Group_3__1__Impl ;
+    // InternalRos.g:10289:1: rule__ParameterDoubleType__Group_3__1 : rule__ParameterDoubleType__Group_3__1__Impl ;
     public final void rule__ParameterDoubleType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10482:1: ( rule__ParameterDoubleType__Group_3__1__Impl )
-            // InternalRos.g:10483:2: rule__ParameterDoubleType__Group_3__1__Impl
+            // InternalRos.g:10293:1: ( rule__ParameterDoubleType__Group_3__1__Impl )
+            // InternalRos.g:10294:2: rule__ParameterDoubleType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDoubleType__Group_3__1__Impl();
@@ -31502,21 +30865,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__Group_3__1__Impl"
-    // InternalRos.g:10489:1: rule__ParameterDoubleType__Group_3__1__Impl : ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:10300:1: rule__ParameterDoubleType__Group_3__1__Impl : ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterDoubleType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10493:1: ( ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:10494:1: ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10304:1: ( ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:10305:1: ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:10494:1: ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:10495:2: ( rule__ParameterDoubleType__DefaultAssignment_3_1 )
+            // InternalRos.g:10305:1: ( ( rule__ParameterDoubleType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10306:2: ( rule__ParameterDoubleType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:10496:2: ( rule__ParameterDoubleType__DefaultAssignment_3_1 )
-            // InternalRos.g:10496:3: rule__ParameterDoubleType__DefaultAssignment_3_1
+            // InternalRos.g:10307:2: ( rule__ParameterDoubleType__DefaultAssignment_3_1 )
+            // InternalRos.g:10307:3: rule__ParameterDoubleType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDoubleType__DefaultAssignment_3_1();
@@ -31549,14 +30912,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__0"
-    // InternalRos.g:10505:1: rule__ParameterDateType__Group__0 : rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1 ;
+    // InternalRos.g:10316:1: rule__ParameterDateType__Group__0 : rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1 ;
     public final void rule__ParameterDateType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10509:1: ( rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1 )
-            // InternalRos.g:10510:2: rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1
+            // InternalRos.g:10320:1: ( rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1 )
+            // InternalRos.g:10321:2: rule__ParameterDateType__Group__0__Impl rule__ParameterDateType__Group__1
             {
             pushFollow(FOLLOW_58);
             rule__ParameterDateType__Group__0__Impl();
@@ -31587,21 +30950,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__0__Impl"
-    // InternalRos.g:10517:1: rule__ParameterDateType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:10328:1: rule__ParameterDateType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterDateType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10521:1: ( ( () ) )
-            // InternalRos.g:10522:1: ( () )
+            // InternalRos.g:10332:1: ( ( () ) )
+            // InternalRos.g:10333:1: ( () )
             {
-            // InternalRos.g:10522:1: ( () )
-            // InternalRos.g:10523:2: ()
+            // InternalRos.g:10333:1: ( () )
+            // InternalRos.g:10334:2: ()
             {
              before(grammarAccess.getParameterDateTypeAccess().getParameterDateTypeAction_0()); 
-            // InternalRos.g:10524:2: ()
-            // InternalRos.g:10524:3: 
+            // InternalRos.g:10335:2: ()
+            // InternalRos.g:10335:3: 
             {
             }
 
@@ -31624,14 +30987,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__1"
-    // InternalRos.g:10532:1: rule__ParameterDateType__Group__1 : rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2 ;
+    // InternalRos.g:10343:1: rule__ParameterDateType__Group__1 : rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2 ;
     public final void rule__ParameterDateType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10536:1: ( rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2 )
-            // InternalRos.g:10537:2: rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2
+            // InternalRos.g:10347:1: ( rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2 )
+            // InternalRos.g:10348:2: rule__ParameterDateType__Group__1__Impl rule__ParameterDateType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterDateType__Group__1__Impl();
@@ -31662,17 +31025,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__1__Impl"
-    // InternalRos.g:10544:1: rule__ParameterDateType__Group__1__Impl : ( 'ParameterDateType' ) ;
+    // InternalRos.g:10355:1: rule__ParameterDateType__Group__1__Impl : ( 'ParameterDateType' ) ;
     public final void rule__ParameterDateType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10548:1: ( ( 'ParameterDateType' ) )
-            // InternalRos.g:10549:1: ( 'ParameterDateType' )
+            // InternalRos.g:10359:1: ( ( 'ParameterDateType' ) )
+            // InternalRos.g:10360:1: ( 'ParameterDateType' )
             {
-            // InternalRos.g:10549:1: ( 'ParameterDateType' )
-            // InternalRos.g:10550:2: 'ParameterDateType'
+            // InternalRos.g:10360:1: ( 'ParameterDateType' )
+            // InternalRos.g:10361:2: 'ParameterDateType'
             {
              before(grammarAccess.getParameterDateTypeAccess().getParameterDateTypeKeyword_1()); 
             match(input,71,FOLLOW_2); 
@@ -31699,14 +31062,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__2"
-    // InternalRos.g:10559:1: rule__ParameterDateType__Group__2 : rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3 ;
+    // InternalRos.g:10370:1: rule__ParameterDateType__Group__2 : rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3 ;
     public final void rule__ParameterDateType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10563:1: ( rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3 )
-            // InternalRos.g:10564:2: rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3
+            // InternalRos.g:10374:1: ( rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3 )
+            // InternalRos.g:10375:2: rule__ParameterDateType__Group__2__Impl rule__ParameterDateType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterDateType__Group__2__Impl();
@@ -31737,17 +31100,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__2__Impl"
-    // InternalRos.g:10571:1: rule__ParameterDateType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10382:1: rule__ParameterDateType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterDateType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10575:1: ( ( '{' ) )
-            // InternalRos.g:10576:1: ( '{' )
+            // InternalRos.g:10386:1: ( ( '{' ) )
+            // InternalRos.g:10387:1: ( '{' )
             {
-            // InternalRos.g:10576:1: ( '{' )
-            // InternalRos.g:10577:2: '{'
+            // InternalRos.g:10387:1: ( '{' )
+            // InternalRos.g:10388:2: '{'
             {
              before(grammarAccess.getParameterDateTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -31774,14 +31137,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__3"
-    // InternalRos.g:10586:1: rule__ParameterDateType__Group__3 : rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4 ;
+    // InternalRos.g:10397:1: rule__ParameterDateType__Group__3 : rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4 ;
     public final void rule__ParameterDateType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10590:1: ( rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4 )
-            // InternalRos.g:10591:2: rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4
+            // InternalRos.g:10401:1: ( rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4 )
+            // InternalRos.g:10402:2: rule__ParameterDateType__Group__3__Impl rule__ParameterDateType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterDateType__Group__3__Impl();
@@ -31812,29 +31175,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__3__Impl"
-    // InternalRos.g:10598:1: rule__ParameterDateType__Group__3__Impl : ( ( rule__ParameterDateType__Group_3__0 )? ) ;
+    // InternalRos.g:10409:1: rule__ParameterDateType__Group__3__Impl : ( ( rule__ParameterDateType__Group_3__0 )? ) ;
     public final void rule__ParameterDateType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10602:1: ( ( ( rule__ParameterDateType__Group_3__0 )? ) )
-            // InternalRos.g:10603:1: ( ( rule__ParameterDateType__Group_3__0 )? )
+            // InternalRos.g:10413:1: ( ( ( rule__ParameterDateType__Group_3__0 )? ) )
+            // InternalRos.g:10414:1: ( ( rule__ParameterDateType__Group_3__0 )? )
             {
-            // InternalRos.g:10603:1: ( ( rule__ParameterDateType__Group_3__0 )? )
-            // InternalRos.g:10604:2: ( rule__ParameterDateType__Group_3__0 )?
+            // InternalRos.g:10414:1: ( ( rule__ParameterDateType__Group_3__0 )? )
+            // InternalRos.g:10415:2: ( rule__ParameterDateType__Group_3__0 )?
             {
              before(grammarAccess.getParameterDateTypeAccess().getGroup_3()); 
-            // InternalRos.g:10605:2: ( rule__ParameterDateType__Group_3__0 )?
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            // InternalRos.g:10416:2: ( rule__ParameterDateType__Group_3__0 )?
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA69_0==65) ) {
-                alt69=1;
+            if ( (LA62_0==65) ) {
+                alt62=1;
             }
-            switch (alt69) {
+            switch (alt62) {
                 case 1 :
-                    // InternalRos.g:10605:3: rule__ParameterDateType__Group_3__0
+                    // InternalRos.g:10416:3: rule__ParameterDateType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterDateType__Group_3__0();
@@ -31870,14 +31233,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__4"
-    // InternalRos.g:10613:1: rule__ParameterDateType__Group__4 : rule__ParameterDateType__Group__4__Impl ;
+    // InternalRos.g:10424:1: rule__ParameterDateType__Group__4 : rule__ParameterDateType__Group__4__Impl ;
     public final void rule__ParameterDateType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10617:1: ( rule__ParameterDateType__Group__4__Impl )
-            // InternalRos.g:10618:2: rule__ParameterDateType__Group__4__Impl
+            // InternalRos.g:10428:1: ( rule__ParameterDateType__Group__4__Impl )
+            // InternalRos.g:10429:2: rule__ParameterDateType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDateType__Group__4__Impl();
@@ -31903,17 +31266,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group__4__Impl"
-    // InternalRos.g:10624:1: rule__ParameterDateType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:10435:1: rule__ParameterDateType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterDateType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10628:1: ( ( '}' ) )
-            // InternalRos.g:10629:1: ( '}' )
+            // InternalRos.g:10439:1: ( ( '}' ) )
+            // InternalRos.g:10440:1: ( '}' )
             {
-            // InternalRos.g:10629:1: ( '}' )
-            // InternalRos.g:10630:2: '}'
+            // InternalRos.g:10440:1: ( '}' )
+            // InternalRos.g:10441:2: '}'
             {
              before(grammarAccess.getParameterDateTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -31940,14 +31303,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group_3__0"
-    // InternalRos.g:10640:1: rule__ParameterDateType__Group_3__0 : rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1 ;
+    // InternalRos.g:10451:1: rule__ParameterDateType__Group_3__0 : rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1 ;
     public final void rule__ParameterDateType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10644:1: ( rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1 )
-            // InternalRos.g:10645:2: rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1
+            // InternalRos.g:10455:1: ( rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1 )
+            // InternalRos.g:10456:2: rule__ParameterDateType__Group_3__0__Impl rule__ParameterDateType__Group_3__1
             {
             pushFollow(FOLLOW_59);
             rule__ParameterDateType__Group_3__0__Impl();
@@ -31978,17 +31341,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group_3__0__Impl"
-    // InternalRos.g:10652:1: rule__ParameterDateType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:10463:1: rule__ParameterDateType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterDateType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10656:1: ( ( 'default' ) )
-            // InternalRos.g:10657:1: ( 'default' )
+            // InternalRos.g:10467:1: ( ( 'default' ) )
+            // InternalRos.g:10468:1: ( 'default' )
             {
-            // InternalRos.g:10657:1: ( 'default' )
-            // InternalRos.g:10658:2: 'default'
+            // InternalRos.g:10468:1: ( 'default' )
+            // InternalRos.g:10469:2: 'default'
             {
              before(grammarAccess.getParameterDateTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -32015,14 +31378,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group_3__1"
-    // InternalRos.g:10667:1: rule__ParameterDateType__Group_3__1 : rule__ParameterDateType__Group_3__1__Impl ;
+    // InternalRos.g:10478:1: rule__ParameterDateType__Group_3__1 : rule__ParameterDateType__Group_3__1__Impl ;
     public final void rule__ParameterDateType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10671:1: ( rule__ParameterDateType__Group_3__1__Impl )
-            // InternalRos.g:10672:2: rule__ParameterDateType__Group_3__1__Impl
+            // InternalRos.g:10482:1: ( rule__ParameterDateType__Group_3__1__Impl )
+            // InternalRos.g:10483:2: rule__ParameterDateType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDateType__Group_3__1__Impl();
@@ -32048,21 +31411,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__Group_3__1__Impl"
-    // InternalRos.g:10678:1: rule__ParameterDateType__Group_3__1__Impl : ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:10489:1: rule__ParameterDateType__Group_3__1__Impl : ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterDateType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10682:1: ( ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:10683:1: ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10493:1: ( ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:10494:1: ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:10683:1: ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:10684:2: ( rule__ParameterDateType__DefaultAssignment_3_1 )
+            // InternalRos.g:10494:1: ( ( rule__ParameterDateType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10495:2: ( rule__ParameterDateType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterDateTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:10685:2: ( rule__ParameterDateType__DefaultAssignment_3_1 )
-            // InternalRos.g:10685:3: rule__ParameterDateType__DefaultAssignment_3_1
+            // InternalRos.g:10496:2: ( rule__ParameterDateType__DefaultAssignment_3_1 )
+            // InternalRos.g:10496:3: rule__ParameterDateType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDateType__DefaultAssignment_3_1();
@@ -32095,14 +31458,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__0"
-    // InternalRos.g:10694:1: rule__ParameterBooleanType__Group__0 : rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1 ;
+    // InternalRos.g:10505:1: rule__ParameterBooleanType__Group__0 : rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1 ;
     public final void rule__ParameterBooleanType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10698:1: ( rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1 )
-            // InternalRos.g:10699:2: rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1
+            // InternalRos.g:10509:1: ( rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1 )
+            // InternalRos.g:10510:2: rule__ParameterBooleanType__Group__0__Impl rule__ParameterBooleanType__Group__1
             {
             pushFollow(FOLLOW_60);
             rule__ParameterBooleanType__Group__0__Impl();
@@ -32133,21 +31496,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__0__Impl"
-    // InternalRos.g:10706:1: rule__ParameterBooleanType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:10517:1: rule__ParameterBooleanType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterBooleanType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10710:1: ( ( () ) )
-            // InternalRos.g:10711:1: ( () )
+            // InternalRos.g:10521:1: ( ( () ) )
+            // InternalRos.g:10522:1: ( () )
             {
-            // InternalRos.g:10711:1: ( () )
-            // InternalRos.g:10712:2: ()
+            // InternalRos.g:10522:1: ( () )
+            // InternalRos.g:10523:2: ()
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getParameterBooleanTypeAction_0()); 
-            // InternalRos.g:10713:2: ()
-            // InternalRos.g:10713:3: 
+            // InternalRos.g:10524:2: ()
+            // InternalRos.g:10524:3: 
             {
             }
 
@@ -32170,14 +31533,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__1"
-    // InternalRos.g:10721:1: rule__ParameterBooleanType__Group__1 : rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2 ;
+    // InternalRos.g:10532:1: rule__ParameterBooleanType__Group__1 : rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2 ;
     public final void rule__ParameterBooleanType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10725:1: ( rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2 )
-            // InternalRos.g:10726:2: rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2
+            // InternalRos.g:10536:1: ( rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2 )
+            // InternalRos.g:10537:2: rule__ParameterBooleanType__Group__1__Impl rule__ParameterBooleanType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterBooleanType__Group__1__Impl();
@@ -32208,17 +31571,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__1__Impl"
-    // InternalRos.g:10733:1: rule__ParameterBooleanType__Group__1__Impl : ( 'ParameterBooleanType' ) ;
+    // InternalRos.g:10544:1: rule__ParameterBooleanType__Group__1__Impl : ( 'ParameterBooleanType' ) ;
     public final void rule__ParameterBooleanType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10737:1: ( ( 'ParameterBooleanType' ) )
-            // InternalRos.g:10738:1: ( 'ParameterBooleanType' )
+            // InternalRos.g:10548:1: ( ( 'ParameterBooleanType' ) )
+            // InternalRos.g:10549:1: ( 'ParameterBooleanType' )
             {
-            // InternalRos.g:10738:1: ( 'ParameterBooleanType' )
-            // InternalRos.g:10739:2: 'ParameterBooleanType'
+            // InternalRos.g:10549:1: ( 'ParameterBooleanType' )
+            // InternalRos.g:10550:2: 'ParameterBooleanType'
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getParameterBooleanTypeKeyword_1()); 
             match(input,72,FOLLOW_2); 
@@ -32245,14 +31608,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__2"
-    // InternalRos.g:10748:1: rule__ParameterBooleanType__Group__2 : rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3 ;
+    // InternalRos.g:10559:1: rule__ParameterBooleanType__Group__2 : rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3 ;
     public final void rule__ParameterBooleanType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10752:1: ( rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3 )
-            // InternalRos.g:10753:2: rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3
+            // InternalRos.g:10563:1: ( rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3 )
+            // InternalRos.g:10564:2: rule__ParameterBooleanType__Group__2__Impl rule__ParameterBooleanType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterBooleanType__Group__2__Impl();
@@ -32283,17 +31646,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__2__Impl"
-    // InternalRos.g:10760:1: rule__ParameterBooleanType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10571:1: rule__ParameterBooleanType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterBooleanType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10764:1: ( ( '{' ) )
-            // InternalRos.g:10765:1: ( '{' )
+            // InternalRos.g:10575:1: ( ( '{' ) )
+            // InternalRos.g:10576:1: ( '{' )
             {
-            // InternalRos.g:10765:1: ( '{' )
-            // InternalRos.g:10766:2: '{'
+            // InternalRos.g:10576:1: ( '{' )
+            // InternalRos.g:10577:2: '{'
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -32320,14 +31683,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__3"
-    // InternalRos.g:10775:1: rule__ParameterBooleanType__Group__3 : rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4 ;
+    // InternalRos.g:10586:1: rule__ParameterBooleanType__Group__3 : rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4 ;
     public final void rule__ParameterBooleanType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10779:1: ( rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4 )
-            // InternalRos.g:10780:2: rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4
+            // InternalRos.g:10590:1: ( rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4 )
+            // InternalRos.g:10591:2: rule__ParameterBooleanType__Group__3__Impl rule__ParameterBooleanType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterBooleanType__Group__3__Impl();
@@ -32358,29 +31721,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__3__Impl"
-    // InternalRos.g:10787:1: rule__ParameterBooleanType__Group__3__Impl : ( ( rule__ParameterBooleanType__Group_3__0 )? ) ;
+    // InternalRos.g:10598:1: rule__ParameterBooleanType__Group__3__Impl : ( ( rule__ParameterBooleanType__Group_3__0 )? ) ;
     public final void rule__ParameterBooleanType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10791:1: ( ( ( rule__ParameterBooleanType__Group_3__0 )? ) )
-            // InternalRos.g:10792:1: ( ( rule__ParameterBooleanType__Group_3__0 )? )
+            // InternalRos.g:10602:1: ( ( ( rule__ParameterBooleanType__Group_3__0 )? ) )
+            // InternalRos.g:10603:1: ( ( rule__ParameterBooleanType__Group_3__0 )? )
             {
-            // InternalRos.g:10792:1: ( ( rule__ParameterBooleanType__Group_3__0 )? )
-            // InternalRos.g:10793:2: ( rule__ParameterBooleanType__Group_3__0 )?
+            // InternalRos.g:10603:1: ( ( rule__ParameterBooleanType__Group_3__0 )? )
+            // InternalRos.g:10604:2: ( rule__ParameterBooleanType__Group_3__0 )?
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getGroup_3()); 
-            // InternalRos.g:10794:2: ( rule__ParameterBooleanType__Group_3__0 )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // InternalRos.g:10605:2: ( rule__ParameterBooleanType__Group_3__0 )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA70_0==65) ) {
-                alt70=1;
+            if ( (LA63_0==65) ) {
+                alt63=1;
             }
-            switch (alt70) {
+            switch (alt63) {
                 case 1 :
-                    // InternalRos.g:10794:3: rule__ParameterBooleanType__Group_3__0
+                    // InternalRos.g:10605:3: rule__ParameterBooleanType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterBooleanType__Group_3__0();
@@ -32416,14 +31779,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__4"
-    // InternalRos.g:10802:1: rule__ParameterBooleanType__Group__4 : rule__ParameterBooleanType__Group__4__Impl ;
+    // InternalRos.g:10613:1: rule__ParameterBooleanType__Group__4 : rule__ParameterBooleanType__Group__4__Impl ;
     public final void rule__ParameterBooleanType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10806:1: ( rule__ParameterBooleanType__Group__4__Impl )
-            // InternalRos.g:10807:2: rule__ParameterBooleanType__Group__4__Impl
+            // InternalRos.g:10617:1: ( rule__ParameterBooleanType__Group__4__Impl )
+            // InternalRos.g:10618:2: rule__ParameterBooleanType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBooleanType__Group__4__Impl();
@@ -32449,17 +31812,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group__4__Impl"
-    // InternalRos.g:10813:1: rule__ParameterBooleanType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:10624:1: rule__ParameterBooleanType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterBooleanType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10817:1: ( ( '}' ) )
-            // InternalRos.g:10818:1: ( '}' )
+            // InternalRos.g:10628:1: ( ( '}' ) )
+            // InternalRos.g:10629:1: ( '}' )
             {
-            // InternalRos.g:10818:1: ( '}' )
-            // InternalRos.g:10819:2: '}'
+            // InternalRos.g:10629:1: ( '}' )
+            // InternalRos.g:10630:2: '}'
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -32486,14 +31849,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group_3__0"
-    // InternalRos.g:10829:1: rule__ParameterBooleanType__Group_3__0 : rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1 ;
+    // InternalRos.g:10640:1: rule__ParameterBooleanType__Group_3__0 : rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1 ;
     public final void rule__ParameterBooleanType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10833:1: ( rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1 )
-            // InternalRos.g:10834:2: rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1
+            // InternalRos.g:10644:1: ( rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1 )
+            // InternalRos.g:10645:2: rule__ParameterBooleanType__Group_3__0__Impl rule__ParameterBooleanType__Group_3__1
             {
             pushFollow(FOLLOW_61);
             rule__ParameterBooleanType__Group_3__0__Impl();
@@ -32524,17 +31887,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group_3__0__Impl"
-    // InternalRos.g:10841:1: rule__ParameterBooleanType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:10652:1: rule__ParameterBooleanType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterBooleanType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10845:1: ( ( 'default' ) )
-            // InternalRos.g:10846:1: ( 'default' )
+            // InternalRos.g:10656:1: ( ( 'default' ) )
+            // InternalRos.g:10657:1: ( 'default' )
             {
-            // InternalRos.g:10846:1: ( 'default' )
-            // InternalRos.g:10847:2: 'default'
+            // InternalRos.g:10657:1: ( 'default' )
+            // InternalRos.g:10658:2: 'default'
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -32561,14 +31924,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group_3__1"
-    // InternalRos.g:10856:1: rule__ParameterBooleanType__Group_3__1 : rule__ParameterBooleanType__Group_3__1__Impl ;
+    // InternalRos.g:10667:1: rule__ParameterBooleanType__Group_3__1 : rule__ParameterBooleanType__Group_3__1__Impl ;
     public final void rule__ParameterBooleanType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10860:1: ( rule__ParameterBooleanType__Group_3__1__Impl )
-            // InternalRos.g:10861:2: rule__ParameterBooleanType__Group_3__1__Impl
+            // InternalRos.g:10671:1: ( rule__ParameterBooleanType__Group_3__1__Impl )
+            // InternalRos.g:10672:2: rule__ParameterBooleanType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBooleanType__Group_3__1__Impl();
@@ -32594,21 +31957,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__Group_3__1__Impl"
-    // InternalRos.g:10867:1: rule__ParameterBooleanType__Group_3__1__Impl : ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:10678:1: rule__ParameterBooleanType__Group_3__1__Impl : ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterBooleanType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10871:1: ( ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:10872:1: ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10682:1: ( ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:10683:1: ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:10872:1: ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:10873:2: ( rule__ParameterBooleanType__DefaultAssignment_3_1 )
+            // InternalRos.g:10683:1: ( ( rule__ParameterBooleanType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10684:2: ( rule__ParameterBooleanType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:10874:2: ( rule__ParameterBooleanType__DefaultAssignment_3_1 )
-            // InternalRos.g:10874:3: rule__ParameterBooleanType__DefaultAssignment_3_1
+            // InternalRos.g:10685:2: ( rule__ParameterBooleanType__DefaultAssignment_3_1 )
+            // InternalRos.g:10685:3: rule__ParameterBooleanType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBooleanType__DefaultAssignment_3_1();
@@ -32641,14 +32004,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__0"
-    // InternalRos.g:10883:1: rule__ParameterBase64Type__Group__0 : rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1 ;
+    // InternalRos.g:10694:1: rule__ParameterBase64Type__Group__0 : rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1 ;
     public final void rule__ParameterBase64Type__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10887:1: ( rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1 )
-            // InternalRos.g:10888:2: rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1
+            // InternalRos.g:10698:1: ( rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1 )
+            // InternalRos.g:10699:2: rule__ParameterBase64Type__Group__0__Impl rule__ParameterBase64Type__Group__1
             {
             pushFollow(FOLLOW_62);
             rule__ParameterBase64Type__Group__0__Impl();
@@ -32679,21 +32042,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__0__Impl"
-    // InternalRos.g:10895:1: rule__ParameterBase64Type__Group__0__Impl : ( () ) ;
+    // InternalRos.g:10706:1: rule__ParameterBase64Type__Group__0__Impl : ( () ) ;
     public final void rule__ParameterBase64Type__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10899:1: ( ( () ) )
-            // InternalRos.g:10900:1: ( () )
+            // InternalRos.g:10710:1: ( ( () ) )
+            // InternalRos.g:10711:1: ( () )
             {
-            // InternalRos.g:10900:1: ( () )
-            // InternalRos.g:10901:2: ()
+            // InternalRos.g:10711:1: ( () )
+            // InternalRos.g:10712:2: ()
             {
              before(grammarAccess.getParameterBase64TypeAccess().getParameterBase64TypeAction_0()); 
-            // InternalRos.g:10902:2: ()
-            // InternalRos.g:10902:3: 
+            // InternalRos.g:10713:2: ()
+            // InternalRos.g:10713:3: 
             {
             }
 
@@ -32716,14 +32079,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__1"
-    // InternalRos.g:10910:1: rule__ParameterBase64Type__Group__1 : rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2 ;
+    // InternalRos.g:10721:1: rule__ParameterBase64Type__Group__1 : rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2 ;
     public final void rule__ParameterBase64Type__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10914:1: ( rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2 )
-            // InternalRos.g:10915:2: rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2
+            // InternalRos.g:10725:1: ( rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2 )
+            // InternalRos.g:10726:2: rule__ParameterBase64Type__Group__1__Impl rule__ParameterBase64Type__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterBase64Type__Group__1__Impl();
@@ -32754,17 +32117,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__1__Impl"
-    // InternalRos.g:10922:1: rule__ParameterBase64Type__Group__1__Impl : ( 'ParameterBase64Type' ) ;
+    // InternalRos.g:10733:1: rule__ParameterBase64Type__Group__1__Impl : ( 'ParameterBase64Type' ) ;
     public final void rule__ParameterBase64Type__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10926:1: ( ( 'ParameterBase64Type' ) )
-            // InternalRos.g:10927:1: ( 'ParameterBase64Type' )
+            // InternalRos.g:10737:1: ( ( 'ParameterBase64Type' ) )
+            // InternalRos.g:10738:1: ( 'ParameterBase64Type' )
             {
-            // InternalRos.g:10927:1: ( 'ParameterBase64Type' )
-            // InternalRos.g:10928:2: 'ParameterBase64Type'
+            // InternalRos.g:10738:1: ( 'ParameterBase64Type' )
+            // InternalRos.g:10739:2: 'ParameterBase64Type'
             {
              before(grammarAccess.getParameterBase64TypeAccess().getParameterBase64TypeKeyword_1()); 
             match(input,73,FOLLOW_2); 
@@ -32791,14 +32154,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__2"
-    // InternalRos.g:10937:1: rule__ParameterBase64Type__Group__2 : rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3 ;
+    // InternalRos.g:10748:1: rule__ParameterBase64Type__Group__2 : rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3 ;
     public final void rule__ParameterBase64Type__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10941:1: ( rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3 )
-            // InternalRos.g:10942:2: rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3
+            // InternalRos.g:10752:1: ( rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3 )
+            // InternalRos.g:10753:2: rule__ParameterBase64Type__Group__2__Impl rule__ParameterBase64Type__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterBase64Type__Group__2__Impl();
@@ -32829,17 +32192,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__2__Impl"
-    // InternalRos.g:10949:1: rule__ParameterBase64Type__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10760:1: rule__ParameterBase64Type__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterBase64Type__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10953:1: ( ( '{' ) )
-            // InternalRos.g:10954:1: ( '{' )
+            // InternalRos.g:10764:1: ( ( '{' ) )
+            // InternalRos.g:10765:1: ( '{' )
             {
-            // InternalRos.g:10954:1: ( '{' )
-            // InternalRos.g:10955:2: '{'
+            // InternalRos.g:10765:1: ( '{' )
+            // InternalRos.g:10766:2: '{'
             {
              before(grammarAccess.getParameterBase64TypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -32866,14 +32229,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__3"
-    // InternalRos.g:10964:1: rule__ParameterBase64Type__Group__3 : rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4 ;
+    // InternalRos.g:10775:1: rule__ParameterBase64Type__Group__3 : rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4 ;
     public final void rule__ParameterBase64Type__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10968:1: ( rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4 )
-            // InternalRos.g:10969:2: rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4
+            // InternalRos.g:10779:1: ( rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4 )
+            // InternalRos.g:10780:2: rule__ParameterBase64Type__Group__3__Impl rule__ParameterBase64Type__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterBase64Type__Group__3__Impl();
@@ -32904,29 +32267,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__3__Impl"
-    // InternalRos.g:10976:1: rule__ParameterBase64Type__Group__3__Impl : ( ( rule__ParameterBase64Type__Group_3__0 )? ) ;
+    // InternalRos.g:10787:1: rule__ParameterBase64Type__Group__3__Impl : ( ( rule__ParameterBase64Type__Group_3__0 )? ) ;
     public final void rule__ParameterBase64Type__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10980:1: ( ( ( rule__ParameterBase64Type__Group_3__0 )? ) )
-            // InternalRos.g:10981:1: ( ( rule__ParameterBase64Type__Group_3__0 )? )
+            // InternalRos.g:10791:1: ( ( ( rule__ParameterBase64Type__Group_3__0 )? ) )
+            // InternalRos.g:10792:1: ( ( rule__ParameterBase64Type__Group_3__0 )? )
             {
-            // InternalRos.g:10981:1: ( ( rule__ParameterBase64Type__Group_3__0 )? )
-            // InternalRos.g:10982:2: ( rule__ParameterBase64Type__Group_3__0 )?
+            // InternalRos.g:10792:1: ( ( rule__ParameterBase64Type__Group_3__0 )? )
+            // InternalRos.g:10793:2: ( rule__ParameterBase64Type__Group_3__0 )?
             {
              before(grammarAccess.getParameterBase64TypeAccess().getGroup_3()); 
-            // InternalRos.g:10983:2: ( rule__ParameterBase64Type__Group_3__0 )?
-            int alt71=2;
-            int LA71_0 = input.LA(1);
+            // InternalRos.g:10794:2: ( rule__ParameterBase64Type__Group_3__0 )?
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA71_0==65) ) {
-                alt71=1;
+            if ( (LA64_0==65) ) {
+                alt64=1;
             }
-            switch (alt71) {
+            switch (alt64) {
                 case 1 :
-                    // InternalRos.g:10983:3: rule__ParameterBase64Type__Group_3__0
+                    // InternalRos.g:10794:3: rule__ParameterBase64Type__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterBase64Type__Group_3__0();
@@ -32962,14 +32325,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__4"
-    // InternalRos.g:10991:1: rule__ParameterBase64Type__Group__4 : rule__ParameterBase64Type__Group__4__Impl ;
+    // InternalRos.g:10802:1: rule__ParameterBase64Type__Group__4 : rule__ParameterBase64Type__Group__4__Impl ;
     public final void rule__ParameterBase64Type__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10995:1: ( rule__ParameterBase64Type__Group__4__Impl )
-            // InternalRos.g:10996:2: rule__ParameterBase64Type__Group__4__Impl
+            // InternalRos.g:10806:1: ( rule__ParameterBase64Type__Group__4__Impl )
+            // InternalRos.g:10807:2: rule__ParameterBase64Type__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBase64Type__Group__4__Impl();
@@ -32995,17 +32358,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group__4__Impl"
-    // InternalRos.g:11002:1: rule__ParameterBase64Type__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:10813:1: rule__ParameterBase64Type__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterBase64Type__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11006:1: ( ( '}' ) )
-            // InternalRos.g:11007:1: ( '}' )
+            // InternalRos.g:10817:1: ( ( '}' ) )
+            // InternalRos.g:10818:1: ( '}' )
             {
-            // InternalRos.g:11007:1: ( '}' )
-            // InternalRos.g:11008:2: '}'
+            // InternalRos.g:10818:1: ( '}' )
+            // InternalRos.g:10819:2: '}'
             {
              before(grammarAccess.getParameterBase64TypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -33032,14 +32395,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group_3__0"
-    // InternalRos.g:11018:1: rule__ParameterBase64Type__Group_3__0 : rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1 ;
+    // InternalRos.g:10829:1: rule__ParameterBase64Type__Group_3__0 : rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1 ;
     public final void rule__ParameterBase64Type__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11022:1: ( rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1 )
-            // InternalRos.g:11023:2: rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1
+            // InternalRos.g:10833:1: ( rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1 )
+            // InternalRos.g:10834:2: rule__ParameterBase64Type__Group_3__0__Impl rule__ParameterBase64Type__Group_3__1
             {
             pushFollow(FOLLOW_63);
             rule__ParameterBase64Type__Group_3__0__Impl();
@@ -33070,17 +32433,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group_3__0__Impl"
-    // InternalRos.g:11030:1: rule__ParameterBase64Type__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:10841:1: rule__ParameterBase64Type__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterBase64Type__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11034:1: ( ( 'default' ) )
-            // InternalRos.g:11035:1: ( 'default' )
+            // InternalRos.g:10845:1: ( ( 'default' ) )
+            // InternalRos.g:10846:1: ( 'default' )
             {
-            // InternalRos.g:11035:1: ( 'default' )
-            // InternalRos.g:11036:2: 'default'
+            // InternalRos.g:10846:1: ( 'default' )
+            // InternalRos.g:10847:2: 'default'
             {
              before(grammarAccess.getParameterBase64TypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -33107,14 +32470,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group_3__1"
-    // InternalRos.g:11045:1: rule__ParameterBase64Type__Group_3__1 : rule__ParameterBase64Type__Group_3__1__Impl ;
+    // InternalRos.g:10856:1: rule__ParameterBase64Type__Group_3__1 : rule__ParameterBase64Type__Group_3__1__Impl ;
     public final void rule__ParameterBase64Type__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11049:1: ( rule__ParameterBase64Type__Group_3__1__Impl )
-            // InternalRos.g:11050:2: rule__ParameterBase64Type__Group_3__1__Impl
+            // InternalRos.g:10860:1: ( rule__ParameterBase64Type__Group_3__1__Impl )
+            // InternalRos.g:10861:2: rule__ParameterBase64Type__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBase64Type__Group_3__1__Impl();
@@ -33140,21 +32503,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__Group_3__1__Impl"
-    // InternalRos.g:11056:1: rule__ParameterBase64Type__Group_3__1__Impl : ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:10867:1: rule__ParameterBase64Type__Group_3__1__Impl : ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterBase64Type__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11060:1: ( ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:11061:1: ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10871:1: ( ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:10872:1: ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:11061:1: ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) )
-            // InternalRos.g:11062:2: ( rule__ParameterBase64Type__DefaultAssignment_3_1 )
+            // InternalRos.g:10872:1: ( ( rule__ParameterBase64Type__DefaultAssignment_3_1 ) )
+            // InternalRos.g:10873:2: ( rule__ParameterBase64Type__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterBase64TypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:11063:2: ( rule__ParameterBase64Type__DefaultAssignment_3_1 )
-            // InternalRos.g:11063:3: rule__ParameterBase64Type__DefaultAssignment_3_1
+            // InternalRos.g:10874:2: ( rule__ParameterBase64Type__DefaultAssignment_3_1 )
+            // InternalRos.g:10874:3: rule__ParameterBase64Type__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBase64Type__DefaultAssignment_3_1();
@@ -33187,14 +32550,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__0"
-    // InternalRos.g:11072:1: rule__ParameterAnyType__Group__0 : rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1 ;
+    // InternalRos.g:10883:1: rule__ParameterAnyType__Group__0 : rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1 ;
     public final void rule__ParameterAnyType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11076:1: ( rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1 )
-            // InternalRos.g:11077:2: rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1
+            // InternalRos.g:10887:1: ( rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1 )
+            // InternalRos.g:10888:2: rule__ParameterAnyType__Group__0__Impl rule__ParameterAnyType__Group__1
             {
             pushFollow(FOLLOW_64);
             rule__ParameterAnyType__Group__0__Impl();
@@ -33225,21 +32588,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__0__Impl"
-    // InternalRos.g:11084:1: rule__ParameterAnyType__Group__0__Impl : ( () ) ;
+    // InternalRos.g:10895:1: rule__ParameterAnyType__Group__0__Impl : ( () ) ;
     public final void rule__ParameterAnyType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11088:1: ( ( () ) )
-            // InternalRos.g:11089:1: ( () )
+            // InternalRos.g:10899:1: ( ( () ) )
+            // InternalRos.g:10900:1: ( () )
             {
-            // InternalRos.g:11089:1: ( () )
-            // InternalRos.g:11090:2: ()
+            // InternalRos.g:10900:1: ( () )
+            // InternalRos.g:10901:2: ()
             {
              before(grammarAccess.getParameterAnyTypeAccess().getParameterAnyTypeAction_0()); 
-            // InternalRos.g:11091:2: ()
-            // InternalRos.g:11091:3: 
+            // InternalRos.g:10902:2: ()
+            // InternalRos.g:10902:3: 
             {
             }
 
@@ -33262,14 +32625,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__1"
-    // InternalRos.g:11099:1: rule__ParameterAnyType__Group__1 : rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2 ;
+    // InternalRos.g:10910:1: rule__ParameterAnyType__Group__1 : rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2 ;
     public final void rule__ParameterAnyType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11103:1: ( rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2 )
-            // InternalRos.g:11104:2: rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2
+            // InternalRos.g:10914:1: ( rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2 )
+            // InternalRos.g:10915:2: rule__ParameterAnyType__Group__1__Impl rule__ParameterAnyType__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterAnyType__Group__1__Impl();
@@ -33300,17 +32663,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__1__Impl"
-    // InternalRos.g:11111:1: rule__ParameterAnyType__Group__1__Impl : ( 'ParameterAnyType' ) ;
+    // InternalRos.g:10922:1: rule__ParameterAnyType__Group__1__Impl : ( 'ParameterAnyType' ) ;
     public final void rule__ParameterAnyType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11115:1: ( ( 'ParameterAnyType' ) )
-            // InternalRos.g:11116:1: ( 'ParameterAnyType' )
+            // InternalRos.g:10926:1: ( ( 'ParameterAnyType' ) )
+            // InternalRos.g:10927:1: ( 'ParameterAnyType' )
             {
-            // InternalRos.g:11116:1: ( 'ParameterAnyType' )
-            // InternalRos.g:11117:2: 'ParameterAnyType'
+            // InternalRos.g:10927:1: ( 'ParameterAnyType' )
+            // InternalRos.g:10928:2: 'ParameterAnyType'
             {
              before(grammarAccess.getParameterAnyTypeAccess().getParameterAnyTypeKeyword_1()); 
             match(input,74,FOLLOW_2); 
@@ -33337,14 +32700,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__2"
-    // InternalRos.g:11126:1: rule__ParameterAnyType__Group__2 : rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3 ;
+    // InternalRos.g:10937:1: rule__ParameterAnyType__Group__2 : rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3 ;
     public final void rule__ParameterAnyType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11130:1: ( rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3 )
-            // InternalRos.g:11131:2: rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3
+            // InternalRos.g:10941:1: ( rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3 )
+            // InternalRos.g:10942:2: rule__ParameterAnyType__Group__2__Impl rule__ParameterAnyType__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__ParameterAnyType__Group__2__Impl();
@@ -33375,17 +32738,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__2__Impl"
-    // InternalRos.g:11138:1: rule__ParameterAnyType__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:10949:1: rule__ParameterAnyType__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterAnyType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11142:1: ( ( '{' ) )
-            // InternalRos.g:11143:1: ( '{' )
+            // InternalRos.g:10953:1: ( ( '{' ) )
+            // InternalRos.g:10954:1: ( '{' )
             {
-            // InternalRos.g:11143:1: ( '{' )
-            // InternalRos.g:11144:2: '{'
+            // InternalRos.g:10954:1: ( '{' )
+            // InternalRos.g:10955:2: '{'
             {
              before(grammarAccess.getParameterAnyTypeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -33412,14 +32775,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__3"
-    // InternalRos.g:11153:1: rule__ParameterAnyType__Group__3 : rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4 ;
+    // InternalRos.g:10964:1: rule__ParameterAnyType__Group__3 : rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4 ;
     public final void rule__ParameterAnyType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11157:1: ( rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4 )
-            // InternalRos.g:11158:2: rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4
+            // InternalRos.g:10968:1: ( rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4 )
+            // InternalRos.g:10969:2: rule__ParameterAnyType__Group__3__Impl rule__ParameterAnyType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterAnyType__Group__3__Impl();
@@ -33450,29 +32813,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__3__Impl"
-    // InternalRos.g:11165:1: rule__ParameterAnyType__Group__3__Impl : ( ( rule__ParameterAnyType__Group_3__0 )? ) ;
+    // InternalRos.g:10976:1: rule__ParameterAnyType__Group__3__Impl : ( ( rule__ParameterAnyType__Group_3__0 )? ) ;
     public final void rule__ParameterAnyType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11169:1: ( ( ( rule__ParameterAnyType__Group_3__0 )? ) )
-            // InternalRos.g:11170:1: ( ( rule__ParameterAnyType__Group_3__0 )? )
+            // InternalRos.g:10980:1: ( ( ( rule__ParameterAnyType__Group_3__0 )? ) )
+            // InternalRos.g:10981:1: ( ( rule__ParameterAnyType__Group_3__0 )? )
             {
-            // InternalRos.g:11170:1: ( ( rule__ParameterAnyType__Group_3__0 )? )
-            // InternalRos.g:11171:2: ( rule__ParameterAnyType__Group_3__0 )?
+            // InternalRos.g:10981:1: ( ( rule__ParameterAnyType__Group_3__0 )? )
+            // InternalRos.g:10982:2: ( rule__ParameterAnyType__Group_3__0 )?
             {
              before(grammarAccess.getParameterAnyTypeAccess().getGroup_3()); 
-            // InternalRos.g:11172:2: ( rule__ParameterAnyType__Group_3__0 )?
-            int alt72=2;
-            int LA72_0 = input.LA(1);
+            // InternalRos.g:10983:2: ( rule__ParameterAnyType__Group_3__0 )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA72_0==65) ) {
-                alt72=1;
+            if ( (LA65_0==65) ) {
+                alt65=1;
             }
-            switch (alt72) {
+            switch (alt65) {
                 case 1 :
-                    // InternalRos.g:11172:3: rule__ParameterAnyType__Group_3__0
+                    // InternalRos.g:10983:3: rule__ParameterAnyType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterAnyType__Group_3__0();
@@ -33508,14 +32871,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__4"
-    // InternalRos.g:11180:1: rule__ParameterAnyType__Group__4 : rule__ParameterAnyType__Group__4__Impl ;
+    // InternalRos.g:10991:1: rule__ParameterAnyType__Group__4 : rule__ParameterAnyType__Group__4__Impl ;
     public final void rule__ParameterAnyType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11184:1: ( rule__ParameterAnyType__Group__4__Impl )
-            // InternalRos.g:11185:2: rule__ParameterAnyType__Group__4__Impl
+            // InternalRos.g:10995:1: ( rule__ParameterAnyType__Group__4__Impl )
+            // InternalRos.g:10996:2: rule__ParameterAnyType__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAnyType__Group__4__Impl();
@@ -33541,17 +32904,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group__4__Impl"
-    // InternalRos.g:11191:1: rule__ParameterAnyType__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:11002:1: rule__ParameterAnyType__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterAnyType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11195:1: ( ( '}' ) )
-            // InternalRos.g:11196:1: ( '}' )
+            // InternalRos.g:11006:1: ( ( '}' ) )
+            // InternalRos.g:11007:1: ( '}' )
             {
-            // InternalRos.g:11196:1: ( '}' )
-            // InternalRos.g:11197:2: '}'
+            // InternalRos.g:11007:1: ( '}' )
+            // InternalRos.g:11008:2: '}'
             {
              before(grammarAccess.getParameterAnyTypeAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -33578,14 +32941,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group_3__0"
-    // InternalRos.g:11207:1: rule__ParameterAnyType__Group_3__0 : rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1 ;
+    // InternalRos.g:11018:1: rule__ParameterAnyType__Group_3__0 : rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1 ;
     public final void rule__ParameterAnyType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11211:1: ( rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1 )
-            // InternalRos.g:11212:2: rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1
+            // InternalRos.g:11022:1: ( rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1 )
+            // InternalRos.g:11023:2: rule__ParameterAnyType__Group_3__0__Impl rule__ParameterAnyType__Group_3__1
             {
             pushFollow(FOLLOW_65);
             rule__ParameterAnyType__Group_3__0__Impl();
@@ -33616,17 +32979,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group_3__0__Impl"
-    // InternalRos.g:11219:1: rule__ParameterAnyType__Group_3__0__Impl : ( 'default' ) ;
+    // InternalRos.g:11030:1: rule__ParameterAnyType__Group_3__0__Impl : ( 'default' ) ;
     public final void rule__ParameterAnyType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11223:1: ( ( 'default' ) )
-            // InternalRos.g:11224:1: ( 'default' )
+            // InternalRos.g:11034:1: ( ( 'default' ) )
+            // InternalRos.g:11035:1: ( 'default' )
             {
-            // InternalRos.g:11224:1: ( 'default' )
-            // InternalRos.g:11225:2: 'default'
+            // InternalRos.g:11035:1: ( 'default' )
+            // InternalRos.g:11036:2: 'default'
             {
              before(grammarAccess.getParameterAnyTypeAccess().getDefaultKeyword_3_0()); 
             match(input,65,FOLLOW_2); 
@@ -33653,14 +33016,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group_3__1"
-    // InternalRos.g:11234:1: rule__ParameterAnyType__Group_3__1 : rule__ParameterAnyType__Group_3__1__Impl ;
+    // InternalRos.g:11045:1: rule__ParameterAnyType__Group_3__1 : rule__ParameterAnyType__Group_3__1__Impl ;
     public final void rule__ParameterAnyType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11238:1: ( rule__ParameterAnyType__Group_3__1__Impl )
-            // InternalRos.g:11239:2: rule__ParameterAnyType__Group_3__1__Impl
+            // InternalRos.g:11049:1: ( rule__ParameterAnyType__Group_3__1__Impl )
+            // InternalRos.g:11050:2: rule__ParameterAnyType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAnyType__Group_3__1__Impl();
@@ -33686,21 +33049,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__Group_3__1__Impl"
-    // InternalRos.g:11245:1: rule__ParameterAnyType__Group_3__1__Impl : ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) ) ;
+    // InternalRos.g:11056:1: rule__ParameterAnyType__Group_3__1__Impl : ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) ) ;
     public final void rule__ParameterAnyType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11249:1: ( ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) ) )
-            // InternalRos.g:11250:1: ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:11060:1: ( ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) ) )
+            // InternalRos.g:11061:1: ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) )
             {
-            // InternalRos.g:11250:1: ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) )
-            // InternalRos.g:11251:2: ( rule__ParameterAnyType__DefaultAssignment_3_1 )
+            // InternalRos.g:11061:1: ( ( rule__ParameterAnyType__DefaultAssignment_3_1 ) )
+            // InternalRos.g:11062:2: ( rule__ParameterAnyType__DefaultAssignment_3_1 )
             {
              before(grammarAccess.getParameterAnyTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos.g:11252:2: ( rule__ParameterAnyType__DefaultAssignment_3_1 )
-            // InternalRos.g:11252:3: rule__ParameterAnyType__DefaultAssignment_3_1
+            // InternalRos.g:11063:2: ( rule__ParameterAnyType__DefaultAssignment_3_1 )
+            // InternalRos.g:11063:3: rule__ParameterAnyType__DefaultAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAnyType__DefaultAssignment_3_1();
@@ -33733,14 +33096,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__0"
-    // InternalRos.g:11261:1: rule__ParameterArrayType__Group__0 : rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1 ;
+    // InternalRos.g:11072:1: rule__ParameterArrayType__Group__0 : rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1 ;
     public final void rule__ParameterArrayType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11265:1: ( rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1 )
-            // InternalRos.g:11266:2: rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1
+            // InternalRos.g:11076:1: ( rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1 )
+            // InternalRos.g:11077:2: rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterArrayType__Group__0__Impl();
@@ -33771,17 +33134,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__0__Impl"
-    // InternalRos.g:11273:1: rule__ParameterArrayType__Group__0__Impl : ( 'ParameterArrayType' ) ;
+    // InternalRos.g:11084:1: rule__ParameterArrayType__Group__0__Impl : ( 'ParameterArrayType' ) ;
     public final void rule__ParameterArrayType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11277:1: ( ( 'ParameterArrayType' ) )
-            // InternalRos.g:11278:1: ( 'ParameterArrayType' )
+            // InternalRos.g:11088:1: ( ( 'ParameterArrayType' ) )
+            // InternalRos.g:11089:1: ( 'ParameterArrayType' )
             {
-            // InternalRos.g:11278:1: ( 'ParameterArrayType' )
-            // InternalRos.g:11279:2: 'ParameterArrayType'
+            // InternalRos.g:11089:1: ( 'ParameterArrayType' )
+            // InternalRos.g:11090:2: 'ParameterArrayType'
             {
              before(grammarAccess.getParameterArrayTypeAccess().getParameterArrayTypeKeyword_0()); 
             match(input,75,FOLLOW_2); 
@@ -33808,14 +33171,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__1"
-    // InternalRos.g:11288:1: rule__ParameterArrayType__Group__1 : rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2 ;
+    // InternalRos.g:11099:1: rule__ParameterArrayType__Group__1 : rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2 ;
     public final void rule__ParameterArrayType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11292:1: ( rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2 )
-            // InternalRos.g:11293:2: rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2
+            // InternalRos.g:11103:1: ( rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2 )
+            // InternalRos.g:11104:2: rule__ParameterArrayType__Group__1__Impl rule__ParameterArrayType__Group__2
             {
             pushFollow(FOLLOW_66);
             rule__ParameterArrayType__Group__1__Impl();
@@ -33846,17 +33209,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__1__Impl"
-    // InternalRos.g:11300:1: rule__ParameterArrayType__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:11111:1: rule__ParameterArrayType__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterArrayType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11304:1: ( ( '{' ) )
-            // InternalRos.g:11305:1: ( '{' )
+            // InternalRos.g:11115:1: ( ( '{' ) )
+            // InternalRos.g:11116:1: ( '{' )
             {
-            // InternalRos.g:11305:1: ( '{' )
-            // InternalRos.g:11306:2: '{'
+            // InternalRos.g:11116:1: ( '{' )
+            // InternalRos.g:11117:2: '{'
             {
              before(grammarAccess.getParameterArrayTypeAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -33883,14 +33246,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__2"
-    // InternalRos.g:11315:1: rule__ParameterArrayType__Group__2 : rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3 ;
+    // InternalRos.g:11126:1: rule__ParameterArrayType__Group__2 : rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3 ;
     public final void rule__ParameterArrayType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11319:1: ( rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3 )
-            // InternalRos.g:11320:2: rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3
+            // InternalRos.g:11130:1: ( rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3 )
+            // InternalRos.g:11131:2: rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3
             {
             pushFollow(FOLLOW_40);
             rule__ParameterArrayType__Group__2__Impl();
@@ -33921,17 +33284,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__2__Impl"
-    // InternalRos.g:11327:1: rule__ParameterArrayType__Group__2__Impl : ( 'type' ) ;
+    // InternalRos.g:11138:1: rule__ParameterArrayType__Group__2__Impl : ( 'type' ) ;
     public final void rule__ParameterArrayType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11331:1: ( ( 'type' ) )
-            // InternalRos.g:11332:1: ( 'type' )
+            // InternalRos.g:11142:1: ( ( 'type' ) )
+            // InternalRos.g:11143:1: ( 'type' )
             {
-            // InternalRos.g:11332:1: ( 'type' )
-            // InternalRos.g:11333:2: 'type'
+            // InternalRos.g:11143:1: ( 'type' )
+            // InternalRos.g:11144:2: 'type'
             {
              before(grammarAccess.getParameterArrayTypeAccess().getTypeKeyword_2()); 
             match(input,58,FOLLOW_2); 
@@ -33958,14 +33321,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__3"
-    // InternalRos.g:11342:1: rule__ParameterArrayType__Group__3 : rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4 ;
+    // InternalRos.g:11153:1: rule__ParameterArrayType__Group__3 : rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4 ;
     public final void rule__ParameterArrayType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11346:1: ( rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4 )
-            // InternalRos.g:11347:2: rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4
+            // InternalRos.g:11157:1: ( rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4 )
+            // InternalRos.g:11158:2: rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4
             {
             pushFollow(FOLLOW_52);
             rule__ParameterArrayType__Group__3__Impl();
@@ -33996,21 +33359,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__3__Impl"
-    // InternalRos.g:11354:1: rule__ParameterArrayType__Group__3__Impl : ( ( rule__ParameterArrayType__TypeAssignment_3 ) ) ;
+    // InternalRos.g:11165:1: rule__ParameterArrayType__Group__3__Impl : ( ( rule__ParameterArrayType__TypeAssignment_3 ) ) ;
     public final void rule__ParameterArrayType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11358:1: ( ( ( rule__ParameterArrayType__TypeAssignment_3 ) ) )
-            // InternalRos.g:11359:1: ( ( rule__ParameterArrayType__TypeAssignment_3 ) )
+            // InternalRos.g:11169:1: ( ( ( rule__ParameterArrayType__TypeAssignment_3 ) ) )
+            // InternalRos.g:11170:1: ( ( rule__ParameterArrayType__TypeAssignment_3 ) )
             {
-            // InternalRos.g:11359:1: ( ( rule__ParameterArrayType__TypeAssignment_3 ) )
-            // InternalRos.g:11360:2: ( rule__ParameterArrayType__TypeAssignment_3 )
+            // InternalRos.g:11170:1: ( ( rule__ParameterArrayType__TypeAssignment_3 ) )
+            // InternalRos.g:11171:2: ( rule__ParameterArrayType__TypeAssignment_3 )
             {
              before(grammarAccess.getParameterArrayTypeAccess().getTypeAssignment_3()); 
-            // InternalRos.g:11361:2: ( rule__ParameterArrayType__TypeAssignment_3 )
-            // InternalRos.g:11361:3: rule__ParameterArrayType__TypeAssignment_3
+            // InternalRos.g:11172:2: ( rule__ParameterArrayType__TypeAssignment_3 )
+            // InternalRos.g:11172:3: rule__ParameterArrayType__TypeAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterArrayType__TypeAssignment_3();
@@ -34043,14 +33406,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__4"
-    // InternalRos.g:11369:1: rule__ParameterArrayType__Group__4 : rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5 ;
+    // InternalRos.g:11180:1: rule__ParameterArrayType__Group__4 : rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5 ;
     public final void rule__ParameterArrayType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11373:1: ( rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5 )
-            // InternalRos.g:11374:2: rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5
+            // InternalRos.g:11184:1: ( rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5 )
+            // InternalRos.g:11185:2: rule__ParameterArrayType__Group__4__Impl rule__ParameterArrayType__Group__5
             {
             pushFollow(FOLLOW_52);
             rule__ParameterArrayType__Group__4__Impl();
@@ -34081,29 +33444,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__4__Impl"
-    // InternalRos.g:11381:1: rule__ParameterArrayType__Group__4__Impl : ( ( rule__ParameterArrayType__Group_4__0 )? ) ;
+    // InternalRos.g:11192:1: rule__ParameterArrayType__Group__4__Impl : ( ( rule__ParameterArrayType__Group_4__0 )? ) ;
     public final void rule__ParameterArrayType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11385:1: ( ( ( rule__ParameterArrayType__Group_4__0 )? ) )
-            // InternalRos.g:11386:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
+            // InternalRos.g:11196:1: ( ( ( rule__ParameterArrayType__Group_4__0 )? ) )
+            // InternalRos.g:11197:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
             {
-            // InternalRos.g:11386:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
-            // InternalRos.g:11387:2: ( rule__ParameterArrayType__Group_4__0 )?
+            // InternalRos.g:11197:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
+            // InternalRos.g:11198:2: ( rule__ParameterArrayType__Group_4__0 )?
             {
              before(grammarAccess.getParameterArrayTypeAccess().getGroup_4()); 
-            // InternalRos.g:11388:2: ( rule__ParameterArrayType__Group_4__0 )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            // InternalRos.g:11199:2: ( rule__ParameterArrayType__Group_4__0 )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA73_0==65) ) {
-                alt73=1;
+            if ( (LA66_0==65) ) {
+                alt66=1;
             }
-            switch (alt73) {
+            switch (alt66) {
                 case 1 :
-                    // InternalRos.g:11388:3: rule__ParameterArrayType__Group_4__0
+                    // InternalRos.g:11199:3: rule__ParameterArrayType__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterArrayType__Group_4__0();
@@ -34139,14 +33502,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__5"
-    // InternalRos.g:11396:1: rule__ParameterArrayType__Group__5 : rule__ParameterArrayType__Group__5__Impl ;
+    // InternalRos.g:11207:1: rule__ParameterArrayType__Group__5 : rule__ParameterArrayType__Group__5__Impl ;
     public final void rule__ParameterArrayType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11400:1: ( rule__ParameterArrayType__Group__5__Impl )
-            // InternalRos.g:11401:2: rule__ParameterArrayType__Group__5__Impl
+            // InternalRos.g:11211:1: ( rule__ParameterArrayType__Group__5__Impl )
+            // InternalRos.g:11212:2: rule__ParameterArrayType__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterArrayType__Group__5__Impl();
@@ -34172,17 +33535,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__5__Impl"
-    // InternalRos.g:11407:1: rule__ParameterArrayType__Group__5__Impl : ( '}' ) ;
+    // InternalRos.g:11218:1: rule__ParameterArrayType__Group__5__Impl : ( '}' ) ;
     public final void rule__ParameterArrayType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11411:1: ( ( '}' ) )
-            // InternalRos.g:11412:1: ( '}' )
+            // InternalRos.g:11222:1: ( ( '}' ) )
+            // InternalRos.g:11223:1: ( '}' )
             {
-            // InternalRos.g:11412:1: ( '}' )
-            // InternalRos.g:11413:2: '}'
+            // InternalRos.g:11223:1: ( '}' )
+            // InternalRos.g:11224:2: '}'
             {
              before(grammarAccess.getParameterArrayTypeAccess().getRightCurlyBracketKeyword_5()); 
             match(input,19,FOLLOW_2); 
@@ -34209,14 +33572,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group_4__0"
-    // InternalRos.g:11423:1: rule__ParameterArrayType__Group_4__0 : rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 ;
+    // InternalRos.g:11234:1: rule__ParameterArrayType__Group_4__0 : rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 ;
     public final void rule__ParameterArrayType__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11427:1: ( rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 )
-            // InternalRos.g:11428:2: rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1
+            // InternalRos.g:11238:1: ( rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 )
+            // InternalRos.g:11239:2: rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1
             {
             pushFollow(FOLLOW_47);
             rule__ParameterArrayType__Group_4__0__Impl();
@@ -34247,17 +33610,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group_4__0__Impl"
-    // InternalRos.g:11435:1: rule__ParameterArrayType__Group_4__0__Impl : ( 'default' ) ;
+    // InternalRos.g:11246:1: rule__ParameterArrayType__Group_4__0__Impl : ( 'default' ) ;
     public final void rule__ParameterArrayType__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11439:1: ( ( 'default' ) )
-            // InternalRos.g:11440:1: ( 'default' )
+            // InternalRos.g:11250:1: ( ( 'default' ) )
+            // InternalRos.g:11251:1: ( 'default' )
             {
-            // InternalRos.g:11440:1: ( 'default' )
-            // InternalRos.g:11441:2: 'default'
+            // InternalRos.g:11251:1: ( 'default' )
+            // InternalRos.g:11252:2: 'default'
             {
              before(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0()); 
             match(input,65,FOLLOW_2); 
@@ -34284,14 +33647,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group_4__1"
-    // InternalRos.g:11450:1: rule__ParameterArrayType__Group_4__1 : rule__ParameterArrayType__Group_4__1__Impl ;
+    // InternalRos.g:11261:1: rule__ParameterArrayType__Group_4__1 : rule__ParameterArrayType__Group_4__1__Impl ;
     public final void rule__ParameterArrayType__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11454:1: ( rule__ParameterArrayType__Group_4__1__Impl )
-            // InternalRos.g:11455:2: rule__ParameterArrayType__Group_4__1__Impl
+            // InternalRos.g:11265:1: ( rule__ParameterArrayType__Group_4__1__Impl )
+            // InternalRos.g:11266:2: rule__ParameterArrayType__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterArrayType__Group_4__1__Impl();
@@ -34317,21 +33680,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group_4__1__Impl"
-    // InternalRos.g:11461:1: rule__ParameterArrayType__Group_4__1__Impl : ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) ;
+    // InternalRos.g:11272:1: rule__ParameterArrayType__Group_4__1__Impl : ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) ;
     public final void rule__ParameterArrayType__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11465:1: ( ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) )
-            // InternalRos.g:11466:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
+            // InternalRos.g:11276:1: ( ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) )
+            // InternalRos.g:11277:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
             {
-            // InternalRos.g:11466:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
-            // InternalRos.g:11467:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
+            // InternalRos.g:11277:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
+            // InternalRos.g:11278:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
             {
              before(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_4_1()); 
-            // InternalRos.g:11468:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
-            // InternalRos.g:11468:3: rule__ParameterArrayType__DefaultAssignment_4_1
+            // InternalRos.g:11279:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
+            // InternalRos.g:11279:3: rule__ParameterArrayType__DefaultAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterArrayType__DefaultAssignment_4_1();
@@ -34364,14 +33727,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__0"
-    // InternalRos.g:11477:1: rule__ParameterSequence__Group__0 : rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1 ;
+    // InternalRos.g:11288:1: rule__ParameterSequence__Group__0 : rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1 ;
     public final void rule__ParameterSequence__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11481:1: ( rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1 )
-            // InternalRos.g:11482:2: rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1
+            // InternalRos.g:11292:1: ( rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1 )
+            // InternalRos.g:11293:2: rule__ParameterSequence__Group__0__Impl rule__ParameterSequence__Group__1
             {
             pushFollow(FOLLOW_47);
             rule__ParameterSequence__Group__0__Impl();
@@ -34402,21 +33765,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__0__Impl"
-    // InternalRos.g:11489:1: rule__ParameterSequence__Group__0__Impl : ( () ) ;
+    // InternalRos.g:11300:1: rule__ParameterSequence__Group__0__Impl : ( () ) ;
     public final void rule__ParameterSequence__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11493:1: ( ( () ) )
-            // InternalRos.g:11494:1: ( () )
+            // InternalRos.g:11304:1: ( ( () ) )
+            // InternalRos.g:11305:1: ( () )
             {
-            // InternalRos.g:11494:1: ( () )
-            // InternalRos.g:11495:2: ()
+            // InternalRos.g:11305:1: ( () )
+            // InternalRos.g:11306:2: ()
             {
              before(grammarAccess.getParameterSequenceAccess().getParameterSequenceAction_0()); 
-            // InternalRos.g:11496:2: ()
-            // InternalRos.g:11496:3: 
+            // InternalRos.g:11307:2: ()
+            // InternalRos.g:11307:3: 
             {
             }
 
@@ -34439,14 +33802,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__1"
-    // InternalRos.g:11504:1: rule__ParameterSequence__Group__1 : rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2 ;
+    // InternalRos.g:11315:1: rule__ParameterSequence__Group__1 : rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2 ;
     public final void rule__ParameterSequence__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11508:1: ( rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2 )
-            // InternalRos.g:11509:2: rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2
+            // InternalRos.g:11319:1: ( rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2 )
+            // InternalRos.g:11320:2: rule__ParameterSequence__Group__1__Impl rule__ParameterSequence__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterSequence__Group__1__Impl();
@@ -34477,17 +33840,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__1__Impl"
-    // InternalRos.g:11516:1: rule__ParameterSequence__Group__1__Impl : ( 'ParameterSequence' ) ;
+    // InternalRos.g:11327:1: rule__ParameterSequence__Group__1__Impl : ( 'ParameterSequence' ) ;
     public final void rule__ParameterSequence__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11520:1: ( ( 'ParameterSequence' ) )
-            // InternalRos.g:11521:1: ( 'ParameterSequence' )
+            // InternalRos.g:11331:1: ( ( 'ParameterSequence' ) )
+            // InternalRos.g:11332:1: ( 'ParameterSequence' )
             {
-            // InternalRos.g:11521:1: ( 'ParameterSequence' )
-            // InternalRos.g:11522:2: 'ParameterSequence'
+            // InternalRos.g:11332:1: ( 'ParameterSequence' )
+            // InternalRos.g:11333:2: 'ParameterSequence'
             {
              before(grammarAccess.getParameterSequenceAccess().getParameterSequenceKeyword_1()); 
             match(input,76,FOLLOW_2); 
@@ -34514,14 +33877,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__2"
-    // InternalRos.g:11531:1: rule__ParameterSequence__Group__2 : rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3 ;
+    // InternalRos.g:11342:1: rule__ParameterSequence__Group__2 : rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3 ;
     public final void rule__ParameterSequence__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11535:1: ( rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3 )
-            // InternalRos.g:11536:2: rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3
+            // InternalRos.g:11346:1: ( rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3 )
+            // InternalRos.g:11347:2: rule__ParameterSequence__Group__2__Impl rule__ParameterSequence__Group__3
             {
             pushFollow(FOLLOW_67);
             rule__ParameterSequence__Group__2__Impl();
@@ -34552,17 +33915,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__2__Impl"
-    // InternalRos.g:11543:1: rule__ParameterSequence__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:11354:1: rule__ParameterSequence__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterSequence__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11547:1: ( ( '{' ) )
-            // InternalRos.g:11548:1: ( '{' )
+            // InternalRos.g:11358:1: ( ( '{' ) )
+            // InternalRos.g:11359:1: ( '{' )
             {
-            // InternalRos.g:11548:1: ( '{' )
-            // InternalRos.g:11549:2: '{'
+            // InternalRos.g:11359:1: ( '{' )
+            // InternalRos.g:11360:2: '{'
             {
              before(grammarAccess.getParameterSequenceAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -34589,14 +33952,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__3"
-    // InternalRos.g:11558:1: rule__ParameterSequence__Group__3 : rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4 ;
+    // InternalRos.g:11369:1: rule__ParameterSequence__Group__3 : rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4 ;
     public final void rule__ParameterSequence__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11562:1: ( rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4 )
-            // InternalRos.g:11563:2: rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4
+            // InternalRos.g:11373:1: ( rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4 )
+            // InternalRos.g:11374:2: rule__ParameterSequence__Group__3__Impl rule__ParameterSequence__Group__4
             {
             pushFollow(FOLLOW_67);
             rule__ParameterSequence__Group__3__Impl();
@@ -34627,29 +33990,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__3__Impl"
-    // InternalRos.g:11570:1: rule__ParameterSequence__Group__3__Impl : ( ( rule__ParameterSequence__Group_3__0 )? ) ;
+    // InternalRos.g:11381:1: rule__ParameterSequence__Group__3__Impl : ( ( rule__ParameterSequence__Group_3__0 )? ) ;
     public final void rule__ParameterSequence__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11574:1: ( ( ( rule__ParameterSequence__Group_3__0 )? ) )
-            // InternalRos.g:11575:1: ( ( rule__ParameterSequence__Group_3__0 )? )
+            // InternalRos.g:11385:1: ( ( ( rule__ParameterSequence__Group_3__0 )? ) )
+            // InternalRos.g:11386:1: ( ( rule__ParameterSequence__Group_3__0 )? )
             {
-            // InternalRos.g:11575:1: ( ( rule__ParameterSequence__Group_3__0 )? )
-            // InternalRos.g:11576:2: ( rule__ParameterSequence__Group_3__0 )?
+            // InternalRos.g:11386:1: ( ( rule__ParameterSequence__Group_3__0 )? )
+            // InternalRos.g:11387:2: ( rule__ParameterSequence__Group_3__0 )?
             {
              before(grammarAccess.getParameterSequenceAccess().getGroup_3()); 
-            // InternalRos.g:11577:2: ( rule__ParameterSequence__Group_3__0 )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // InternalRos.g:11388:2: ( rule__ParameterSequence__Group_3__0 )?
+            int alt67=2;
+            int LA67_0 = input.LA(1);
 
-            if ( (LA74_0==77) ) {
-                alt74=1;
+            if ( (LA67_0==77) ) {
+                alt67=1;
             }
-            switch (alt74) {
+            switch (alt67) {
                 case 1 :
-                    // InternalRos.g:11577:3: rule__ParameterSequence__Group_3__0
+                    // InternalRos.g:11388:3: rule__ParameterSequence__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterSequence__Group_3__0();
@@ -34685,14 +34048,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__4"
-    // InternalRos.g:11585:1: rule__ParameterSequence__Group__4 : rule__ParameterSequence__Group__4__Impl ;
+    // InternalRos.g:11396:1: rule__ParameterSequence__Group__4 : rule__ParameterSequence__Group__4__Impl ;
     public final void rule__ParameterSequence__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11589:1: ( rule__ParameterSequence__Group__4__Impl )
-            // InternalRos.g:11590:2: rule__ParameterSequence__Group__4__Impl
+            // InternalRos.g:11400:1: ( rule__ParameterSequence__Group__4__Impl )
+            // InternalRos.g:11401:2: rule__ParameterSequence__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterSequence__Group__4__Impl();
@@ -34718,17 +34081,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group__4__Impl"
-    // InternalRos.g:11596:1: rule__ParameterSequence__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:11407:1: rule__ParameterSequence__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterSequence__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11600:1: ( ( '}' ) )
-            // InternalRos.g:11601:1: ( '}' )
+            // InternalRos.g:11411:1: ( ( '}' ) )
+            // InternalRos.g:11412:1: ( '}' )
             {
-            // InternalRos.g:11601:1: ( '}' )
-            // InternalRos.g:11602:2: '}'
+            // InternalRos.g:11412:1: ( '}' )
+            // InternalRos.g:11413:2: '}'
             {
              before(grammarAccess.getParameterSequenceAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -34755,14 +34118,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__0"
-    // InternalRos.g:11612:1: rule__ParameterSequence__Group_3__0 : rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1 ;
+    // InternalRos.g:11423:1: rule__ParameterSequence__Group_3__0 : rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1 ;
     public final void rule__ParameterSequence__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11616:1: ( rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1 )
-            // InternalRos.g:11617:2: rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1
+            // InternalRos.g:11427:1: ( rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1 )
+            // InternalRos.g:11428:2: rule__ParameterSequence__Group_3__0__Impl rule__ParameterSequence__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterSequence__Group_3__0__Impl();
@@ -34793,17 +34156,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__0__Impl"
-    // InternalRos.g:11624:1: rule__ParameterSequence__Group_3__0__Impl : ( 'value' ) ;
+    // InternalRos.g:11435:1: rule__ParameterSequence__Group_3__0__Impl : ( 'value' ) ;
     public final void rule__ParameterSequence__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11628:1: ( ( 'value' ) )
-            // InternalRos.g:11629:1: ( 'value' )
+            // InternalRos.g:11439:1: ( ( 'value' ) )
+            // InternalRos.g:11440:1: ( 'value' )
             {
-            // InternalRos.g:11629:1: ( 'value' )
-            // InternalRos.g:11630:2: 'value'
+            // InternalRos.g:11440:1: ( 'value' )
+            // InternalRos.g:11441:2: 'value'
             {
              before(grammarAccess.getParameterSequenceAccess().getValueKeyword_3_0()); 
             match(input,77,FOLLOW_2); 
@@ -34830,14 +34193,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__1"
-    // InternalRos.g:11639:1: rule__ParameterSequence__Group_3__1 : rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2 ;
+    // InternalRos.g:11450:1: rule__ParameterSequence__Group_3__1 : rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2 ;
     public final void rule__ParameterSequence__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11643:1: ( rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2 )
-            // InternalRos.g:11644:2: rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2
+            // InternalRos.g:11454:1: ( rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2 )
+            // InternalRos.g:11455:2: rule__ParameterSequence__Group_3__1__Impl rule__ParameterSequence__Group_3__2
             {
             pushFollow(FOLLOW_68);
             rule__ParameterSequence__Group_3__1__Impl();
@@ -34868,17 +34231,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__1__Impl"
-    // InternalRos.g:11651:1: rule__ParameterSequence__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:11462:1: rule__ParameterSequence__Group_3__1__Impl : ( '{' ) ;
     public final void rule__ParameterSequence__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11655:1: ( ( '{' ) )
-            // InternalRos.g:11656:1: ( '{' )
+            // InternalRos.g:11466:1: ( ( '{' ) )
+            // InternalRos.g:11467:1: ( '{' )
             {
-            // InternalRos.g:11656:1: ( '{' )
-            // InternalRos.g:11657:2: '{'
+            // InternalRos.g:11467:1: ( '{' )
+            // InternalRos.g:11468:2: '{'
             {
              before(grammarAccess.getParameterSequenceAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -34905,14 +34268,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__2"
-    // InternalRos.g:11666:1: rule__ParameterSequence__Group_3__2 : rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3 ;
+    // InternalRos.g:11477:1: rule__ParameterSequence__Group_3__2 : rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3 ;
     public final void rule__ParameterSequence__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11670:1: ( rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3 )
-            // InternalRos.g:11671:2: rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3
+            // InternalRos.g:11481:1: ( rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3 )
+            // InternalRos.g:11482:2: rule__ParameterSequence__Group_3__2__Impl rule__ParameterSequence__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__ParameterSequence__Group_3__2__Impl();
@@ -34943,21 +34306,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__2__Impl"
-    // InternalRos.g:11678:1: rule__ParameterSequence__Group_3__2__Impl : ( ( rule__ParameterSequence__ValueAssignment_3_2 ) ) ;
+    // InternalRos.g:11489:1: rule__ParameterSequence__Group_3__2__Impl : ( ( rule__ParameterSequence__ValueAssignment_3_2 ) ) ;
     public final void rule__ParameterSequence__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11682:1: ( ( ( rule__ParameterSequence__ValueAssignment_3_2 ) ) )
-            // InternalRos.g:11683:1: ( ( rule__ParameterSequence__ValueAssignment_3_2 ) )
+            // InternalRos.g:11493:1: ( ( ( rule__ParameterSequence__ValueAssignment_3_2 ) ) )
+            // InternalRos.g:11494:1: ( ( rule__ParameterSequence__ValueAssignment_3_2 ) )
             {
-            // InternalRos.g:11683:1: ( ( rule__ParameterSequence__ValueAssignment_3_2 ) )
-            // InternalRos.g:11684:2: ( rule__ParameterSequence__ValueAssignment_3_2 )
+            // InternalRos.g:11494:1: ( ( rule__ParameterSequence__ValueAssignment_3_2 ) )
+            // InternalRos.g:11495:2: ( rule__ParameterSequence__ValueAssignment_3_2 )
             {
              before(grammarAccess.getParameterSequenceAccess().getValueAssignment_3_2()); 
-            // InternalRos.g:11685:2: ( rule__ParameterSequence__ValueAssignment_3_2 )
-            // InternalRos.g:11685:3: rule__ParameterSequence__ValueAssignment_3_2
+            // InternalRos.g:11496:2: ( rule__ParameterSequence__ValueAssignment_3_2 )
+            // InternalRos.g:11496:3: rule__ParameterSequence__ValueAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__ParameterSequence__ValueAssignment_3_2();
@@ -34990,14 +34353,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__3"
-    // InternalRos.g:11693:1: rule__ParameterSequence__Group_3__3 : rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4 ;
+    // InternalRos.g:11504:1: rule__ParameterSequence__Group_3__3 : rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4 ;
     public final void rule__ParameterSequence__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11697:1: ( rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4 )
-            // InternalRos.g:11698:2: rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4
+            // InternalRos.g:11508:1: ( rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4 )
+            // InternalRos.g:11509:2: rule__ParameterSequence__Group_3__3__Impl rule__ParameterSequence__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__ParameterSequence__Group_3__3__Impl();
@@ -35028,33 +34391,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__3__Impl"
-    // InternalRos.g:11705:1: rule__ParameterSequence__Group_3__3__Impl : ( ( rule__ParameterSequence__Group_3_3__0 )* ) ;
+    // InternalRos.g:11516:1: rule__ParameterSequence__Group_3__3__Impl : ( ( rule__ParameterSequence__Group_3_3__0 )* ) ;
     public final void rule__ParameterSequence__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11709:1: ( ( ( rule__ParameterSequence__Group_3_3__0 )* ) )
-            // InternalRos.g:11710:1: ( ( rule__ParameterSequence__Group_3_3__0 )* )
+            // InternalRos.g:11520:1: ( ( ( rule__ParameterSequence__Group_3_3__0 )* ) )
+            // InternalRos.g:11521:1: ( ( rule__ParameterSequence__Group_3_3__0 )* )
             {
-            // InternalRos.g:11710:1: ( ( rule__ParameterSequence__Group_3_3__0 )* )
-            // InternalRos.g:11711:2: ( rule__ParameterSequence__Group_3_3__0 )*
+            // InternalRos.g:11521:1: ( ( rule__ParameterSequence__Group_3_3__0 )* )
+            // InternalRos.g:11522:2: ( rule__ParameterSequence__Group_3_3__0 )*
             {
              before(grammarAccess.getParameterSequenceAccess().getGroup_3_3()); 
-            // InternalRos.g:11712:2: ( rule__ParameterSequence__Group_3_3__0 )*
-            loop75:
+            // InternalRos.g:11523:2: ( rule__ParameterSequence__Group_3_3__0 )*
+            loop68:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt68=2;
+                int LA68_0 = input.LA(1);
 
-                if ( (LA75_0==21) ) {
-                    alt75=1;
+                if ( (LA68_0==21) ) {
+                    alt68=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt68) {
             	case 1 :
-            	    // InternalRos.g:11712:3: rule__ParameterSequence__Group_3_3__0
+            	    // InternalRos.g:11523:3: rule__ParameterSequence__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__ParameterSequence__Group_3_3__0();
@@ -35066,7 +34429,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop75;
+            	    break loop68;
                 }
             } while (true);
 
@@ -35093,14 +34456,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__4"
-    // InternalRos.g:11720:1: rule__ParameterSequence__Group_3__4 : rule__ParameterSequence__Group_3__4__Impl ;
+    // InternalRos.g:11531:1: rule__ParameterSequence__Group_3__4 : rule__ParameterSequence__Group_3__4__Impl ;
     public final void rule__ParameterSequence__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11724:1: ( rule__ParameterSequence__Group_3__4__Impl )
-            // InternalRos.g:11725:2: rule__ParameterSequence__Group_3__4__Impl
+            // InternalRos.g:11535:1: ( rule__ParameterSequence__Group_3__4__Impl )
+            // InternalRos.g:11536:2: rule__ParameterSequence__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterSequence__Group_3__4__Impl();
@@ -35126,17 +34489,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3__4__Impl"
-    // InternalRos.g:11731:1: rule__ParameterSequence__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:11542:1: rule__ParameterSequence__Group_3__4__Impl : ( '}' ) ;
     public final void rule__ParameterSequence__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11735:1: ( ( '}' ) )
-            // InternalRos.g:11736:1: ( '}' )
+            // InternalRos.g:11546:1: ( ( '}' ) )
+            // InternalRos.g:11547:1: ( '}' )
             {
-            // InternalRos.g:11736:1: ( '}' )
-            // InternalRos.g:11737:2: '}'
+            // InternalRos.g:11547:1: ( '}' )
+            // InternalRos.g:11548:2: '}'
             {
              before(grammarAccess.getParameterSequenceAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -35163,14 +34526,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3_3__0"
-    // InternalRos.g:11747:1: rule__ParameterSequence__Group_3_3__0 : rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1 ;
+    // InternalRos.g:11558:1: rule__ParameterSequence__Group_3_3__0 : rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1 ;
     public final void rule__ParameterSequence__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11751:1: ( rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1 )
-            // InternalRos.g:11752:2: rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1
+            // InternalRos.g:11562:1: ( rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1 )
+            // InternalRos.g:11563:2: rule__ParameterSequence__Group_3_3__0__Impl rule__ParameterSequence__Group_3_3__1
             {
             pushFollow(FOLLOW_68);
             rule__ParameterSequence__Group_3_3__0__Impl();
@@ -35201,17 +34564,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3_3__0__Impl"
-    // InternalRos.g:11759:1: rule__ParameterSequence__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:11570:1: rule__ParameterSequence__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__ParameterSequence__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11763:1: ( ( ',' ) )
-            // InternalRos.g:11764:1: ( ',' )
+            // InternalRos.g:11574:1: ( ( ',' ) )
+            // InternalRos.g:11575:1: ( ',' )
             {
-            // InternalRos.g:11764:1: ( ',' )
-            // InternalRos.g:11765:2: ','
+            // InternalRos.g:11575:1: ( ',' )
+            // InternalRos.g:11576:2: ','
             {
              before(grammarAccess.getParameterSequenceAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -35238,14 +34601,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3_3__1"
-    // InternalRos.g:11774:1: rule__ParameterSequence__Group_3_3__1 : rule__ParameterSequence__Group_3_3__1__Impl ;
+    // InternalRos.g:11585:1: rule__ParameterSequence__Group_3_3__1 : rule__ParameterSequence__Group_3_3__1__Impl ;
     public final void rule__ParameterSequence__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11778:1: ( rule__ParameterSequence__Group_3_3__1__Impl )
-            // InternalRos.g:11779:2: rule__ParameterSequence__Group_3_3__1__Impl
+            // InternalRos.g:11589:1: ( rule__ParameterSequence__Group_3_3__1__Impl )
+            // InternalRos.g:11590:2: rule__ParameterSequence__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterSequence__Group_3_3__1__Impl();
@@ -35271,21 +34634,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__Group_3_3__1__Impl"
-    // InternalRos.g:11785:1: rule__ParameterSequence__Group_3_3__1__Impl : ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) ) ;
+    // InternalRos.g:11596:1: rule__ParameterSequence__Group_3_3__1__Impl : ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) ) ;
     public final void rule__ParameterSequence__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11789:1: ( ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) ) )
-            // InternalRos.g:11790:1: ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) )
+            // InternalRos.g:11600:1: ( ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) ) )
+            // InternalRos.g:11601:1: ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) )
             {
-            // InternalRos.g:11790:1: ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) )
-            // InternalRos.g:11791:2: ( rule__ParameterSequence__ValueAssignment_3_3_1 )
+            // InternalRos.g:11601:1: ( ( rule__ParameterSequence__ValueAssignment_3_3_1 ) )
+            // InternalRos.g:11602:2: ( rule__ParameterSequence__ValueAssignment_3_3_1 )
             {
              before(grammarAccess.getParameterSequenceAccess().getValueAssignment_3_3_1()); 
-            // InternalRos.g:11792:2: ( rule__ParameterSequence__ValueAssignment_3_3_1 )
-            // InternalRos.g:11792:3: rule__ParameterSequence__ValueAssignment_3_3_1
+            // InternalRos.g:11603:2: ( rule__ParameterSequence__ValueAssignment_3_3_1 )
+            // InternalRos.g:11603:3: rule__ParameterSequence__ValueAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterSequence__ValueAssignment_3_3_1();
@@ -35318,14 +34681,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__0"
-    // InternalRos.g:11801:1: rule__ParameterAny__Group__0 : rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1 ;
+    // InternalRos.g:11612:1: rule__ParameterAny__Group__0 : rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1 ;
     public final void rule__ParameterAny__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11805:1: ( rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1 )
-            // InternalRos.g:11806:2: rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1
+            // InternalRos.g:11616:1: ( rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1 )
+            // InternalRos.g:11617:2: rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1
             {
             pushFollow(FOLLOW_65);
             rule__ParameterAny__Group__0__Impl();
@@ -35356,21 +34719,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__0__Impl"
-    // InternalRos.g:11813:1: rule__ParameterAny__Group__0__Impl : ( () ) ;
+    // InternalRos.g:11624:1: rule__ParameterAny__Group__0__Impl : ( () ) ;
     public final void rule__ParameterAny__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11817:1: ( ( () ) )
-            // InternalRos.g:11818:1: ( () )
+            // InternalRos.g:11628:1: ( ( () ) )
+            // InternalRos.g:11629:1: ( () )
             {
-            // InternalRos.g:11818:1: ( () )
-            // InternalRos.g:11819:2: ()
+            // InternalRos.g:11629:1: ( () )
+            // InternalRos.g:11630:2: ()
             {
              before(grammarAccess.getParameterAnyAccess().getParameterAnyAction_0()); 
-            // InternalRos.g:11820:2: ()
-            // InternalRos.g:11820:3: 
+            // InternalRos.g:11631:2: ()
+            // InternalRos.g:11631:3: 
             {
             }
 
@@ -35393,14 +34756,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__1"
-    // InternalRos.g:11828:1: rule__ParameterAny__Group__1 : rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2 ;
+    // InternalRos.g:11639:1: rule__ParameterAny__Group__1 : rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2 ;
     public final void rule__ParameterAny__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11832:1: ( rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2 )
-            // InternalRos.g:11833:2: rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2
+            // InternalRos.g:11643:1: ( rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2 )
+            // InternalRos.g:11644:2: rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterAny__Group__1__Impl();
@@ -35431,17 +34794,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__1__Impl"
-    // InternalRos.g:11840:1: rule__ParameterAny__Group__1__Impl : ( 'ParameterAny' ) ;
+    // InternalRos.g:11651:1: rule__ParameterAny__Group__1__Impl : ( 'ParameterAny' ) ;
     public final void rule__ParameterAny__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11844:1: ( ( 'ParameterAny' ) )
-            // InternalRos.g:11845:1: ( 'ParameterAny' )
+            // InternalRos.g:11655:1: ( ( 'ParameterAny' ) )
+            // InternalRos.g:11656:1: ( 'ParameterAny' )
             {
-            // InternalRos.g:11845:1: ( 'ParameterAny' )
-            // InternalRos.g:11846:2: 'ParameterAny'
+            // InternalRos.g:11656:1: ( 'ParameterAny' )
+            // InternalRos.g:11657:2: 'ParameterAny'
             {
              before(grammarAccess.getParameterAnyAccess().getParameterAnyKeyword_1()); 
             match(input,78,FOLLOW_2); 
@@ -35468,14 +34831,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__2"
-    // InternalRos.g:11855:1: rule__ParameterAny__Group__2 : rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3 ;
+    // InternalRos.g:11666:1: rule__ParameterAny__Group__2 : rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3 ;
     public final void rule__ParameterAny__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11859:1: ( rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3 )
-            // InternalRos.g:11860:2: rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3
+            // InternalRos.g:11670:1: ( rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3 )
+            // InternalRos.g:11671:2: rule__ParameterAny__Group__2__Impl rule__ParameterAny__Group__3
             {
             pushFollow(FOLLOW_67);
             rule__ParameterAny__Group__2__Impl();
@@ -35506,17 +34869,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__2__Impl"
-    // InternalRos.g:11867:1: rule__ParameterAny__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:11678:1: rule__ParameterAny__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterAny__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11871:1: ( ( '{' ) )
-            // InternalRos.g:11872:1: ( '{' )
+            // InternalRos.g:11682:1: ( ( '{' ) )
+            // InternalRos.g:11683:1: ( '{' )
             {
-            // InternalRos.g:11872:1: ( '{' )
-            // InternalRos.g:11873:2: '{'
+            // InternalRos.g:11683:1: ( '{' )
+            // InternalRos.g:11684:2: '{'
             {
              before(grammarAccess.getParameterAnyAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -35543,14 +34906,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__3"
-    // InternalRos.g:11882:1: rule__ParameterAny__Group__3 : rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4 ;
+    // InternalRos.g:11693:1: rule__ParameterAny__Group__3 : rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4 ;
     public final void rule__ParameterAny__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11886:1: ( rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4 )
-            // InternalRos.g:11887:2: rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4
+            // InternalRos.g:11697:1: ( rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4 )
+            // InternalRos.g:11698:2: rule__ParameterAny__Group__3__Impl rule__ParameterAny__Group__4
             {
             pushFollow(FOLLOW_67);
             rule__ParameterAny__Group__3__Impl();
@@ -35581,29 +34944,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__3__Impl"
-    // InternalRos.g:11894:1: rule__ParameterAny__Group__3__Impl : ( ( rule__ParameterAny__Group_3__0 )? ) ;
+    // InternalRos.g:11705:1: rule__ParameterAny__Group__3__Impl : ( ( rule__ParameterAny__Group_3__0 )? ) ;
     public final void rule__ParameterAny__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11898:1: ( ( ( rule__ParameterAny__Group_3__0 )? ) )
-            // InternalRos.g:11899:1: ( ( rule__ParameterAny__Group_3__0 )? )
+            // InternalRos.g:11709:1: ( ( ( rule__ParameterAny__Group_3__0 )? ) )
+            // InternalRos.g:11710:1: ( ( rule__ParameterAny__Group_3__0 )? )
             {
-            // InternalRos.g:11899:1: ( ( rule__ParameterAny__Group_3__0 )? )
-            // InternalRos.g:11900:2: ( rule__ParameterAny__Group_3__0 )?
+            // InternalRos.g:11710:1: ( ( rule__ParameterAny__Group_3__0 )? )
+            // InternalRos.g:11711:2: ( rule__ParameterAny__Group_3__0 )?
             {
              before(grammarAccess.getParameterAnyAccess().getGroup_3()); 
-            // InternalRos.g:11901:2: ( rule__ParameterAny__Group_3__0 )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // InternalRos.g:11712:2: ( rule__ParameterAny__Group_3__0 )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA76_0==77) ) {
-                alt76=1;
+            if ( (LA69_0==77) ) {
+                alt69=1;
             }
-            switch (alt76) {
+            switch (alt69) {
                 case 1 :
-                    // InternalRos.g:11901:3: rule__ParameterAny__Group_3__0
+                    // InternalRos.g:11712:3: rule__ParameterAny__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterAny__Group_3__0();
@@ -35639,14 +35002,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__4"
-    // InternalRos.g:11909:1: rule__ParameterAny__Group__4 : rule__ParameterAny__Group__4__Impl ;
+    // InternalRos.g:11720:1: rule__ParameterAny__Group__4 : rule__ParameterAny__Group__4__Impl ;
     public final void rule__ParameterAny__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11913:1: ( rule__ParameterAny__Group__4__Impl )
-            // InternalRos.g:11914:2: rule__ParameterAny__Group__4__Impl
+            // InternalRos.g:11724:1: ( rule__ParameterAny__Group__4__Impl )
+            // InternalRos.g:11725:2: rule__ParameterAny__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAny__Group__4__Impl();
@@ -35672,17 +35035,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group__4__Impl"
-    // InternalRos.g:11920:1: rule__ParameterAny__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:11731:1: rule__ParameterAny__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterAny__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11924:1: ( ( '}' ) )
-            // InternalRos.g:11925:1: ( '}' )
+            // InternalRos.g:11735:1: ( ( '}' ) )
+            // InternalRos.g:11736:1: ( '}' )
             {
-            // InternalRos.g:11925:1: ( '}' )
-            // InternalRos.g:11926:2: '}'
+            // InternalRos.g:11736:1: ( '}' )
+            // InternalRos.g:11737:2: '}'
             {
              before(grammarAccess.getParameterAnyAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -35709,14 +35072,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group_3__0"
-    // InternalRos.g:11936:1: rule__ParameterAny__Group_3__0 : rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1 ;
+    // InternalRos.g:11747:1: rule__ParameterAny__Group_3__0 : rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1 ;
     public final void rule__ParameterAny__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11940:1: ( rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1 )
-            // InternalRos.g:11941:2: rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1
+            // InternalRos.g:11751:1: ( rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1 )
+            // InternalRos.g:11752:2: rule__ParameterAny__Group_3__0__Impl rule__ParameterAny__Group_3__1
             {
             pushFollow(FOLLOW_10);
             rule__ParameterAny__Group_3__0__Impl();
@@ -35747,17 +35110,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group_3__0__Impl"
-    // InternalRos.g:11948:1: rule__ParameterAny__Group_3__0__Impl : ( 'value' ) ;
+    // InternalRos.g:11759:1: rule__ParameterAny__Group_3__0__Impl : ( 'value' ) ;
     public final void rule__ParameterAny__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11952:1: ( ( 'value' ) )
-            // InternalRos.g:11953:1: ( 'value' )
+            // InternalRos.g:11763:1: ( ( 'value' ) )
+            // InternalRos.g:11764:1: ( 'value' )
             {
-            // InternalRos.g:11953:1: ( 'value' )
-            // InternalRos.g:11954:2: 'value'
+            // InternalRos.g:11764:1: ( 'value' )
+            // InternalRos.g:11765:2: 'value'
             {
              before(grammarAccess.getParameterAnyAccess().getValueKeyword_3_0()); 
             match(input,77,FOLLOW_2); 
@@ -35784,14 +35147,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group_3__1"
-    // InternalRos.g:11963:1: rule__ParameterAny__Group_3__1 : rule__ParameterAny__Group_3__1__Impl ;
+    // InternalRos.g:11774:1: rule__ParameterAny__Group_3__1 : rule__ParameterAny__Group_3__1__Impl ;
     public final void rule__ParameterAny__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11967:1: ( rule__ParameterAny__Group_3__1__Impl )
-            // InternalRos.g:11968:2: rule__ParameterAny__Group_3__1__Impl
+            // InternalRos.g:11778:1: ( rule__ParameterAny__Group_3__1__Impl )
+            // InternalRos.g:11779:2: rule__ParameterAny__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAny__Group_3__1__Impl();
@@ -35817,21 +35180,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__Group_3__1__Impl"
-    // InternalRos.g:11974:1: rule__ParameterAny__Group_3__1__Impl : ( ( rule__ParameterAny__ValueAssignment_3_1 ) ) ;
+    // InternalRos.g:11785:1: rule__ParameterAny__Group_3__1__Impl : ( ( rule__ParameterAny__ValueAssignment_3_1 ) ) ;
     public final void rule__ParameterAny__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11978:1: ( ( ( rule__ParameterAny__ValueAssignment_3_1 ) ) )
-            // InternalRos.g:11979:1: ( ( rule__ParameterAny__ValueAssignment_3_1 ) )
+            // InternalRos.g:11789:1: ( ( ( rule__ParameterAny__ValueAssignment_3_1 ) ) )
+            // InternalRos.g:11790:1: ( ( rule__ParameterAny__ValueAssignment_3_1 ) )
             {
-            // InternalRos.g:11979:1: ( ( rule__ParameterAny__ValueAssignment_3_1 ) )
-            // InternalRos.g:11980:2: ( rule__ParameterAny__ValueAssignment_3_1 )
+            // InternalRos.g:11790:1: ( ( rule__ParameterAny__ValueAssignment_3_1 ) )
+            // InternalRos.g:11791:2: ( rule__ParameterAny__ValueAssignment_3_1 )
             {
              before(grammarAccess.getParameterAnyAccess().getValueAssignment_3_1()); 
-            // InternalRos.g:11981:2: ( rule__ParameterAny__ValueAssignment_3_1 )
-            // InternalRos.g:11981:3: rule__ParameterAny__ValueAssignment_3_1
+            // InternalRos.g:11792:2: ( rule__ParameterAny__ValueAssignment_3_1 )
+            // InternalRos.g:11792:3: rule__ParameterAny__ValueAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterAny__ValueAssignment_3_1();
@@ -35864,14 +35227,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__0"
-    // InternalRos.g:11990:1: rule__ParameterString__Group__0 : rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1 ;
+    // InternalRos.g:11801:1: rule__ParameterString__Group__0 : rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1 ;
     public final void rule__ParameterString__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:11994:1: ( rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1 )
-            // InternalRos.g:11995:2: rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1
+            // InternalRos.g:11805:1: ( rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1 )
+            // InternalRos.g:11806:2: rule__ParameterString__Group__0__Impl rule__ParameterString__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterString__Group__0__Impl();
@@ -35902,17 +35265,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__0__Impl"
-    // InternalRos.g:12002:1: rule__ParameterString__Group__0__Impl : ( 'ParameterString' ) ;
+    // InternalRos.g:11813:1: rule__ParameterString__Group__0__Impl : ( 'ParameterString' ) ;
     public final void rule__ParameterString__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12006:1: ( ( 'ParameterString' ) )
-            // InternalRos.g:12007:1: ( 'ParameterString' )
+            // InternalRos.g:11817:1: ( ( 'ParameterString' ) )
+            // InternalRos.g:11818:1: ( 'ParameterString' )
             {
-            // InternalRos.g:12007:1: ( 'ParameterString' )
-            // InternalRos.g:12008:2: 'ParameterString'
+            // InternalRos.g:11818:1: ( 'ParameterString' )
+            // InternalRos.g:11819:2: 'ParameterString'
             {
              before(grammarAccess.getParameterStringAccess().getParameterStringKeyword_0()); 
             match(input,79,FOLLOW_2); 
@@ -35939,14 +35302,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__1"
-    // InternalRos.g:12017:1: rule__ParameterString__Group__1 : rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2 ;
+    // InternalRos.g:11828:1: rule__ParameterString__Group__1 : rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2 ;
     public final void rule__ParameterString__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12021:1: ( rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2 )
-            // InternalRos.g:12022:2: rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2
+            // InternalRos.g:11832:1: ( rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2 )
+            // InternalRos.g:11833:2: rule__ParameterString__Group__1__Impl rule__ParameterString__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterString__Group__1__Impl();
@@ -35977,17 +35340,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__1__Impl"
-    // InternalRos.g:12029:1: rule__ParameterString__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:11840:1: rule__ParameterString__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterString__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12033:1: ( ( '{' ) )
-            // InternalRos.g:12034:1: ( '{' )
+            // InternalRos.g:11844:1: ( ( '{' ) )
+            // InternalRos.g:11845:1: ( '{' )
             {
-            // InternalRos.g:12034:1: ( '{' )
-            // InternalRos.g:12035:2: '{'
+            // InternalRos.g:11845:1: ( '{' )
+            // InternalRos.g:11846:2: '{'
             {
              before(grammarAccess.getParameterStringAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -36014,14 +35377,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__2"
-    // InternalRos.g:12044:1: rule__ParameterString__Group__2 : rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3 ;
+    // InternalRos.g:11855:1: rule__ParameterString__Group__2 : rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3 ;
     public final void rule__ParameterString__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12048:1: ( rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3 )
-            // InternalRos.g:12049:2: rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3
+            // InternalRos.g:11859:1: ( rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3 )
+            // InternalRos.g:11860:2: rule__ParameterString__Group__2__Impl rule__ParameterString__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__ParameterString__Group__2__Impl();
@@ -36052,17 +35415,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__2__Impl"
-    // InternalRos.g:12056:1: rule__ParameterString__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:11867:1: rule__ParameterString__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterString__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12060:1: ( ( 'value' ) )
-            // InternalRos.g:12061:1: ( 'value' )
+            // InternalRos.g:11871:1: ( ( 'value' ) )
+            // InternalRos.g:11872:1: ( 'value' )
             {
-            // InternalRos.g:12061:1: ( 'value' )
-            // InternalRos.g:12062:2: 'value'
+            // InternalRos.g:11872:1: ( 'value' )
+            // InternalRos.g:11873:2: 'value'
             {
              before(grammarAccess.getParameterStringAccess().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -36089,14 +35452,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__3"
-    // InternalRos.g:12071:1: rule__ParameterString__Group__3 : rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4 ;
+    // InternalRos.g:11882:1: rule__ParameterString__Group__3 : rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4 ;
     public final void rule__ParameterString__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12075:1: ( rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4 )
-            // InternalRos.g:12076:2: rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4
+            // InternalRos.g:11886:1: ( rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4 )
+            // InternalRos.g:11887:2: rule__ParameterString__Group__3__Impl rule__ParameterString__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterString__Group__3__Impl();
@@ -36127,21 +35490,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__3__Impl"
-    // InternalRos.g:12083:1: rule__ParameterString__Group__3__Impl : ( ( rule__ParameterString__ValueAssignment_3 ) ) ;
+    // InternalRos.g:11894:1: rule__ParameterString__Group__3__Impl : ( ( rule__ParameterString__ValueAssignment_3 ) ) ;
     public final void rule__ParameterString__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12087:1: ( ( ( rule__ParameterString__ValueAssignment_3 ) ) )
-            // InternalRos.g:12088:1: ( ( rule__ParameterString__ValueAssignment_3 ) )
+            // InternalRos.g:11898:1: ( ( ( rule__ParameterString__ValueAssignment_3 ) ) )
+            // InternalRos.g:11899:1: ( ( rule__ParameterString__ValueAssignment_3 ) )
             {
-            // InternalRos.g:12088:1: ( ( rule__ParameterString__ValueAssignment_3 ) )
-            // InternalRos.g:12089:2: ( rule__ParameterString__ValueAssignment_3 )
+            // InternalRos.g:11899:1: ( ( rule__ParameterString__ValueAssignment_3 ) )
+            // InternalRos.g:11900:2: ( rule__ParameterString__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterStringAccess().getValueAssignment_3()); 
-            // InternalRos.g:12090:2: ( rule__ParameterString__ValueAssignment_3 )
-            // InternalRos.g:12090:3: rule__ParameterString__ValueAssignment_3
+            // InternalRos.g:11901:2: ( rule__ParameterString__ValueAssignment_3 )
+            // InternalRos.g:11901:3: rule__ParameterString__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterString__ValueAssignment_3();
@@ -36174,14 +35537,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__4"
-    // InternalRos.g:12098:1: rule__ParameterString__Group__4 : rule__ParameterString__Group__4__Impl ;
+    // InternalRos.g:11909:1: rule__ParameterString__Group__4 : rule__ParameterString__Group__4__Impl ;
     public final void rule__ParameterString__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12102:1: ( rule__ParameterString__Group__4__Impl )
-            // InternalRos.g:12103:2: rule__ParameterString__Group__4__Impl
+            // InternalRos.g:11913:1: ( rule__ParameterString__Group__4__Impl )
+            // InternalRos.g:11914:2: rule__ParameterString__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterString__Group__4__Impl();
@@ -36207,17 +35570,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__Group__4__Impl"
-    // InternalRos.g:12109:1: rule__ParameterString__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:11920:1: rule__ParameterString__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterString__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12113:1: ( ( '}' ) )
-            // InternalRos.g:12114:1: ( '}' )
+            // InternalRos.g:11924:1: ( ( '}' ) )
+            // InternalRos.g:11925:1: ( '}' )
             {
-            // InternalRos.g:12114:1: ( '}' )
-            // InternalRos.g:12115:2: '}'
+            // InternalRos.g:11925:1: ( '}' )
+            // InternalRos.g:11926:2: '}'
             {
              before(grammarAccess.getParameterStringAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -36244,14 +35607,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__0"
-    // InternalRos.g:12125:1: rule__ParameterBase64__Group__0 : rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1 ;
+    // InternalRos.g:11936:1: rule__ParameterBase64__Group__0 : rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1 ;
     public final void rule__ParameterBase64__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12129:1: ( rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1 )
-            // InternalRos.g:12130:2: rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1
+            // InternalRos.g:11940:1: ( rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1 )
+            // InternalRos.g:11941:2: rule__ParameterBase64__Group__0__Impl rule__ParameterBase64__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterBase64__Group__0__Impl();
@@ -36282,17 +35645,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__0__Impl"
-    // InternalRos.g:12137:1: rule__ParameterBase64__Group__0__Impl : ( 'ParameterBase64' ) ;
+    // InternalRos.g:11948:1: rule__ParameterBase64__Group__0__Impl : ( 'ParameterBase64' ) ;
     public final void rule__ParameterBase64__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12141:1: ( ( 'ParameterBase64' ) )
-            // InternalRos.g:12142:1: ( 'ParameterBase64' )
+            // InternalRos.g:11952:1: ( ( 'ParameterBase64' ) )
+            // InternalRos.g:11953:1: ( 'ParameterBase64' )
             {
-            // InternalRos.g:12142:1: ( 'ParameterBase64' )
-            // InternalRos.g:12143:2: 'ParameterBase64'
+            // InternalRos.g:11953:1: ( 'ParameterBase64' )
+            // InternalRos.g:11954:2: 'ParameterBase64'
             {
              before(grammarAccess.getParameterBase64Access().getParameterBase64Keyword_0()); 
             match(input,80,FOLLOW_2); 
@@ -36319,14 +35682,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__1"
-    // InternalRos.g:12152:1: rule__ParameterBase64__Group__1 : rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2 ;
+    // InternalRos.g:11963:1: rule__ParameterBase64__Group__1 : rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2 ;
     public final void rule__ParameterBase64__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12156:1: ( rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2 )
-            // InternalRos.g:12157:2: rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2
+            // InternalRos.g:11967:1: ( rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2 )
+            // InternalRos.g:11968:2: rule__ParameterBase64__Group__1__Impl rule__ParameterBase64__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterBase64__Group__1__Impl();
@@ -36357,17 +35720,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__1__Impl"
-    // InternalRos.g:12164:1: rule__ParameterBase64__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:11975:1: rule__ParameterBase64__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterBase64__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12168:1: ( ( '{' ) )
-            // InternalRos.g:12169:1: ( '{' )
+            // InternalRos.g:11979:1: ( ( '{' ) )
+            // InternalRos.g:11980:1: ( '{' )
             {
-            // InternalRos.g:12169:1: ( '{' )
-            // InternalRos.g:12170:2: '{'
+            // InternalRos.g:11980:1: ( '{' )
+            // InternalRos.g:11981:2: '{'
             {
              before(grammarAccess.getParameterBase64Access().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -36394,14 +35757,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__2"
-    // InternalRos.g:12179:1: rule__ParameterBase64__Group__2 : rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3 ;
+    // InternalRos.g:11990:1: rule__ParameterBase64__Group__2 : rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3 ;
     public final void rule__ParameterBase64__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12183:1: ( rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3 )
-            // InternalRos.g:12184:2: rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3
+            // InternalRos.g:11994:1: ( rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3 )
+            // InternalRos.g:11995:2: rule__ParameterBase64__Group__2__Impl rule__ParameterBase64__Group__3
             {
             pushFollow(FOLLOW_70);
             rule__ParameterBase64__Group__2__Impl();
@@ -36432,17 +35795,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__2__Impl"
-    // InternalRos.g:12191:1: rule__ParameterBase64__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:12002:1: rule__ParameterBase64__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterBase64__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12195:1: ( ( 'value' ) )
-            // InternalRos.g:12196:1: ( 'value' )
+            // InternalRos.g:12006:1: ( ( 'value' ) )
+            // InternalRos.g:12007:1: ( 'value' )
             {
-            // InternalRos.g:12196:1: ( 'value' )
-            // InternalRos.g:12197:2: 'value'
+            // InternalRos.g:12007:1: ( 'value' )
+            // InternalRos.g:12008:2: 'value'
             {
              before(grammarAccess.getParameterBase64Access().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -36469,14 +35832,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__3"
-    // InternalRos.g:12206:1: rule__ParameterBase64__Group__3 : rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4 ;
+    // InternalRos.g:12017:1: rule__ParameterBase64__Group__3 : rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4 ;
     public final void rule__ParameterBase64__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12210:1: ( rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4 )
-            // InternalRos.g:12211:2: rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4
+            // InternalRos.g:12021:1: ( rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4 )
+            // InternalRos.g:12022:2: rule__ParameterBase64__Group__3__Impl rule__ParameterBase64__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterBase64__Group__3__Impl();
@@ -36507,21 +35870,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__3__Impl"
-    // InternalRos.g:12218:1: rule__ParameterBase64__Group__3__Impl : ( ( rule__ParameterBase64__ValueAssignment_3 ) ) ;
+    // InternalRos.g:12029:1: rule__ParameterBase64__Group__3__Impl : ( ( rule__ParameterBase64__ValueAssignment_3 ) ) ;
     public final void rule__ParameterBase64__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12222:1: ( ( ( rule__ParameterBase64__ValueAssignment_3 ) ) )
-            // InternalRos.g:12223:1: ( ( rule__ParameterBase64__ValueAssignment_3 ) )
+            // InternalRos.g:12033:1: ( ( ( rule__ParameterBase64__ValueAssignment_3 ) ) )
+            // InternalRos.g:12034:1: ( ( rule__ParameterBase64__ValueAssignment_3 ) )
             {
-            // InternalRos.g:12223:1: ( ( rule__ParameterBase64__ValueAssignment_3 ) )
-            // InternalRos.g:12224:2: ( rule__ParameterBase64__ValueAssignment_3 )
+            // InternalRos.g:12034:1: ( ( rule__ParameterBase64__ValueAssignment_3 ) )
+            // InternalRos.g:12035:2: ( rule__ParameterBase64__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterBase64Access().getValueAssignment_3()); 
-            // InternalRos.g:12225:2: ( rule__ParameterBase64__ValueAssignment_3 )
-            // InternalRos.g:12225:3: rule__ParameterBase64__ValueAssignment_3
+            // InternalRos.g:12036:2: ( rule__ParameterBase64__ValueAssignment_3 )
+            // InternalRos.g:12036:3: rule__ParameterBase64__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBase64__ValueAssignment_3();
@@ -36554,14 +35917,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__4"
-    // InternalRos.g:12233:1: rule__ParameterBase64__Group__4 : rule__ParameterBase64__Group__4__Impl ;
+    // InternalRos.g:12044:1: rule__ParameterBase64__Group__4 : rule__ParameterBase64__Group__4__Impl ;
     public final void rule__ParameterBase64__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12237:1: ( rule__ParameterBase64__Group__4__Impl )
-            // InternalRos.g:12238:2: rule__ParameterBase64__Group__4__Impl
+            // InternalRos.g:12048:1: ( rule__ParameterBase64__Group__4__Impl )
+            // InternalRos.g:12049:2: rule__ParameterBase64__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBase64__Group__4__Impl();
@@ -36587,17 +35950,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__Group__4__Impl"
-    // InternalRos.g:12244:1: rule__ParameterBase64__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12055:1: rule__ParameterBase64__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterBase64__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12248:1: ( ( '}' ) )
-            // InternalRos.g:12249:1: ( '}' )
+            // InternalRos.g:12059:1: ( ( '}' ) )
+            // InternalRos.g:12060:1: ( '}' )
             {
-            // InternalRos.g:12249:1: ( '}' )
-            // InternalRos.g:12250:2: '}'
+            // InternalRos.g:12060:1: ( '}' )
+            // InternalRos.g:12061:2: '}'
             {
              before(grammarAccess.getParameterBase64Access().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -36624,14 +35987,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__0"
-    // InternalRos.g:12260:1: rule__ParameterInteger__Group__0 : rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1 ;
+    // InternalRos.g:12071:1: rule__ParameterInteger__Group__0 : rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1 ;
     public final void rule__ParameterInteger__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12264:1: ( rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1 )
-            // InternalRos.g:12265:2: rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1
+            // InternalRos.g:12075:1: ( rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1 )
+            // InternalRos.g:12076:2: rule__ParameterInteger__Group__0__Impl rule__ParameterInteger__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterInteger__Group__0__Impl();
@@ -36662,17 +36025,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__0__Impl"
-    // InternalRos.g:12272:1: rule__ParameterInteger__Group__0__Impl : ( 'ParameterInteger' ) ;
+    // InternalRos.g:12083:1: rule__ParameterInteger__Group__0__Impl : ( 'ParameterInteger' ) ;
     public final void rule__ParameterInteger__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12276:1: ( ( 'ParameterInteger' ) )
-            // InternalRos.g:12277:1: ( 'ParameterInteger' )
+            // InternalRos.g:12087:1: ( ( 'ParameterInteger' ) )
+            // InternalRos.g:12088:1: ( 'ParameterInteger' )
             {
-            // InternalRos.g:12277:1: ( 'ParameterInteger' )
-            // InternalRos.g:12278:2: 'ParameterInteger'
+            // InternalRos.g:12088:1: ( 'ParameterInteger' )
+            // InternalRos.g:12089:2: 'ParameterInteger'
             {
              before(grammarAccess.getParameterIntegerAccess().getParameterIntegerKeyword_0()); 
             match(input,81,FOLLOW_2); 
@@ -36699,14 +36062,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__1"
-    // InternalRos.g:12287:1: rule__ParameterInteger__Group__1 : rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2 ;
+    // InternalRos.g:12098:1: rule__ParameterInteger__Group__1 : rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2 ;
     public final void rule__ParameterInteger__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12291:1: ( rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2 )
-            // InternalRos.g:12292:2: rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2
+            // InternalRos.g:12102:1: ( rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2 )
+            // InternalRos.g:12103:2: rule__ParameterInteger__Group__1__Impl rule__ParameterInteger__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterInteger__Group__1__Impl();
@@ -36737,17 +36100,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__1__Impl"
-    // InternalRos.g:12299:1: rule__ParameterInteger__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:12110:1: rule__ParameterInteger__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterInteger__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12303:1: ( ( '{' ) )
-            // InternalRos.g:12304:1: ( '{' )
+            // InternalRos.g:12114:1: ( ( '{' ) )
+            // InternalRos.g:12115:1: ( '{' )
             {
-            // InternalRos.g:12304:1: ( '{' )
-            // InternalRos.g:12305:2: '{'
+            // InternalRos.g:12115:1: ( '{' )
+            // InternalRos.g:12116:2: '{'
             {
              before(grammarAccess.getParameterIntegerAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -36774,14 +36137,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__2"
-    // InternalRos.g:12314:1: rule__ParameterInteger__Group__2 : rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3 ;
+    // InternalRos.g:12125:1: rule__ParameterInteger__Group__2 : rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3 ;
     public final void rule__ParameterInteger__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12318:1: ( rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3 )
-            // InternalRos.g:12319:2: rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3
+            // InternalRos.g:12129:1: ( rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3 )
+            // InternalRos.g:12130:2: rule__ParameterInteger__Group__2__Impl rule__ParameterInteger__Group__3
             {
             pushFollow(FOLLOW_71);
             rule__ParameterInteger__Group__2__Impl();
@@ -36812,17 +36175,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__2__Impl"
-    // InternalRos.g:12326:1: rule__ParameterInteger__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:12137:1: rule__ParameterInteger__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterInteger__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12330:1: ( ( 'value' ) )
-            // InternalRos.g:12331:1: ( 'value' )
+            // InternalRos.g:12141:1: ( ( 'value' ) )
+            // InternalRos.g:12142:1: ( 'value' )
             {
-            // InternalRos.g:12331:1: ( 'value' )
-            // InternalRos.g:12332:2: 'value'
+            // InternalRos.g:12142:1: ( 'value' )
+            // InternalRos.g:12143:2: 'value'
             {
              before(grammarAccess.getParameterIntegerAccess().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -36849,14 +36212,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__3"
-    // InternalRos.g:12341:1: rule__ParameterInteger__Group__3 : rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4 ;
+    // InternalRos.g:12152:1: rule__ParameterInteger__Group__3 : rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4 ;
     public final void rule__ParameterInteger__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12345:1: ( rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4 )
-            // InternalRos.g:12346:2: rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4
+            // InternalRos.g:12156:1: ( rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4 )
+            // InternalRos.g:12157:2: rule__ParameterInteger__Group__3__Impl rule__ParameterInteger__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterInteger__Group__3__Impl();
@@ -36887,21 +36250,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__3__Impl"
-    // InternalRos.g:12353:1: rule__ParameterInteger__Group__3__Impl : ( ( rule__ParameterInteger__ValueAssignment_3 ) ) ;
+    // InternalRos.g:12164:1: rule__ParameterInteger__Group__3__Impl : ( ( rule__ParameterInteger__ValueAssignment_3 ) ) ;
     public final void rule__ParameterInteger__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12357:1: ( ( ( rule__ParameterInteger__ValueAssignment_3 ) ) )
-            // InternalRos.g:12358:1: ( ( rule__ParameterInteger__ValueAssignment_3 ) )
+            // InternalRos.g:12168:1: ( ( ( rule__ParameterInteger__ValueAssignment_3 ) ) )
+            // InternalRos.g:12169:1: ( ( rule__ParameterInteger__ValueAssignment_3 ) )
             {
-            // InternalRos.g:12358:1: ( ( rule__ParameterInteger__ValueAssignment_3 ) )
-            // InternalRos.g:12359:2: ( rule__ParameterInteger__ValueAssignment_3 )
+            // InternalRos.g:12169:1: ( ( rule__ParameterInteger__ValueAssignment_3 ) )
+            // InternalRos.g:12170:2: ( rule__ParameterInteger__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterIntegerAccess().getValueAssignment_3()); 
-            // InternalRos.g:12360:2: ( rule__ParameterInteger__ValueAssignment_3 )
-            // InternalRos.g:12360:3: rule__ParameterInteger__ValueAssignment_3
+            // InternalRos.g:12171:2: ( rule__ParameterInteger__ValueAssignment_3 )
+            // InternalRos.g:12171:3: rule__ParameterInteger__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterInteger__ValueAssignment_3();
@@ -36934,14 +36297,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__4"
-    // InternalRos.g:12368:1: rule__ParameterInteger__Group__4 : rule__ParameterInteger__Group__4__Impl ;
+    // InternalRos.g:12179:1: rule__ParameterInteger__Group__4 : rule__ParameterInteger__Group__4__Impl ;
     public final void rule__ParameterInteger__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12372:1: ( rule__ParameterInteger__Group__4__Impl )
-            // InternalRos.g:12373:2: rule__ParameterInteger__Group__4__Impl
+            // InternalRos.g:12183:1: ( rule__ParameterInteger__Group__4__Impl )
+            // InternalRos.g:12184:2: rule__ParameterInteger__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterInteger__Group__4__Impl();
@@ -36967,17 +36330,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__Group__4__Impl"
-    // InternalRos.g:12379:1: rule__ParameterInteger__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12190:1: rule__ParameterInteger__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterInteger__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12383:1: ( ( '}' ) )
-            // InternalRos.g:12384:1: ( '}' )
+            // InternalRos.g:12194:1: ( ( '}' ) )
+            // InternalRos.g:12195:1: ( '}' )
             {
-            // InternalRos.g:12384:1: ( '}' )
-            // InternalRos.g:12385:2: '}'
+            // InternalRos.g:12195:1: ( '}' )
+            // InternalRos.g:12196:2: '}'
             {
              before(grammarAccess.getParameterIntegerAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -37004,14 +36367,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__0"
-    // InternalRos.g:12395:1: rule__ParameterDouble__Group__0 : rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1 ;
+    // InternalRos.g:12206:1: rule__ParameterDouble__Group__0 : rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1 ;
     public final void rule__ParameterDouble__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12399:1: ( rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1 )
-            // InternalRos.g:12400:2: rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1
+            // InternalRos.g:12210:1: ( rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1 )
+            // InternalRos.g:12211:2: rule__ParameterDouble__Group__0__Impl rule__ParameterDouble__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterDouble__Group__0__Impl();
@@ -37042,17 +36405,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__0__Impl"
-    // InternalRos.g:12407:1: rule__ParameterDouble__Group__0__Impl : ( 'ParameterDouble' ) ;
+    // InternalRos.g:12218:1: rule__ParameterDouble__Group__0__Impl : ( 'ParameterDouble' ) ;
     public final void rule__ParameterDouble__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12411:1: ( ( 'ParameterDouble' ) )
-            // InternalRos.g:12412:1: ( 'ParameterDouble' )
+            // InternalRos.g:12222:1: ( ( 'ParameterDouble' ) )
+            // InternalRos.g:12223:1: ( 'ParameterDouble' )
             {
-            // InternalRos.g:12412:1: ( 'ParameterDouble' )
-            // InternalRos.g:12413:2: 'ParameterDouble'
+            // InternalRos.g:12223:1: ( 'ParameterDouble' )
+            // InternalRos.g:12224:2: 'ParameterDouble'
             {
              before(grammarAccess.getParameterDoubleAccess().getParameterDoubleKeyword_0()); 
             match(input,82,FOLLOW_2); 
@@ -37079,14 +36442,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__1"
-    // InternalRos.g:12422:1: rule__ParameterDouble__Group__1 : rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2 ;
+    // InternalRos.g:12233:1: rule__ParameterDouble__Group__1 : rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2 ;
     public final void rule__ParameterDouble__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12426:1: ( rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2 )
-            // InternalRos.g:12427:2: rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2
+            // InternalRos.g:12237:1: ( rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2 )
+            // InternalRos.g:12238:2: rule__ParameterDouble__Group__1__Impl rule__ParameterDouble__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterDouble__Group__1__Impl();
@@ -37117,17 +36480,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__1__Impl"
-    // InternalRos.g:12434:1: rule__ParameterDouble__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:12245:1: rule__ParameterDouble__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterDouble__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12438:1: ( ( '{' ) )
-            // InternalRos.g:12439:1: ( '{' )
+            // InternalRos.g:12249:1: ( ( '{' ) )
+            // InternalRos.g:12250:1: ( '{' )
             {
-            // InternalRos.g:12439:1: ( '{' )
-            // InternalRos.g:12440:2: '{'
+            // InternalRos.g:12250:1: ( '{' )
+            // InternalRos.g:12251:2: '{'
             {
              before(grammarAccess.getParameterDoubleAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -37154,14 +36517,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__2"
-    // InternalRos.g:12449:1: rule__ParameterDouble__Group__2 : rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3 ;
+    // InternalRos.g:12260:1: rule__ParameterDouble__Group__2 : rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3 ;
     public final void rule__ParameterDouble__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12453:1: ( rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3 )
-            // InternalRos.g:12454:2: rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3
+            // InternalRos.g:12264:1: ( rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3 )
+            // InternalRos.g:12265:2: rule__ParameterDouble__Group__2__Impl rule__ParameterDouble__Group__3
             {
             pushFollow(FOLLOW_72);
             rule__ParameterDouble__Group__2__Impl();
@@ -37192,17 +36555,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__2__Impl"
-    // InternalRos.g:12461:1: rule__ParameterDouble__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:12272:1: rule__ParameterDouble__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterDouble__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12465:1: ( ( 'value' ) )
-            // InternalRos.g:12466:1: ( 'value' )
+            // InternalRos.g:12276:1: ( ( 'value' ) )
+            // InternalRos.g:12277:1: ( 'value' )
             {
-            // InternalRos.g:12466:1: ( 'value' )
-            // InternalRos.g:12467:2: 'value'
+            // InternalRos.g:12277:1: ( 'value' )
+            // InternalRos.g:12278:2: 'value'
             {
              before(grammarAccess.getParameterDoubleAccess().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -37229,14 +36592,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__3"
-    // InternalRos.g:12476:1: rule__ParameterDouble__Group__3 : rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4 ;
+    // InternalRos.g:12287:1: rule__ParameterDouble__Group__3 : rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4 ;
     public final void rule__ParameterDouble__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12480:1: ( rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4 )
-            // InternalRos.g:12481:2: rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4
+            // InternalRos.g:12291:1: ( rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4 )
+            // InternalRos.g:12292:2: rule__ParameterDouble__Group__3__Impl rule__ParameterDouble__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterDouble__Group__3__Impl();
@@ -37267,21 +36630,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__3__Impl"
-    // InternalRos.g:12488:1: rule__ParameterDouble__Group__3__Impl : ( ( rule__ParameterDouble__ValueAssignment_3 ) ) ;
+    // InternalRos.g:12299:1: rule__ParameterDouble__Group__3__Impl : ( ( rule__ParameterDouble__ValueAssignment_3 ) ) ;
     public final void rule__ParameterDouble__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12492:1: ( ( ( rule__ParameterDouble__ValueAssignment_3 ) ) )
-            // InternalRos.g:12493:1: ( ( rule__ParameterDouble__ValueAssignment_3 ) )
+            // InternalRos.g:12303:1: ( ( ( rule__ParameterDouble__ValueAssignment_3 ) ) )
+            // InternalRos.g:12304:1: ( ( rule__ParameterDouble__ValueAssignment_3 ) )
             {
-            // InternalRos.g:12493:1: ( ( rule__ParameterDouble__ValueAssignment_3 ) )
-            // InternalRos.g:12494:2: ( rule__ParameterDouble__ValueAssignment_3 )
+            // InternalRos.g:12304:1: ( ( rule__ParameterDouble__ValueAssignment_3 ) )
+            // InternalRos.g:12305:2: ( rule__ParameterDouble__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterDoubleAccess().getValueAssignment_3()); 
-            // InternalRos.g:12495:2: ( rule__ParameterDouble__ValueAssignment_3 )
-            // InternalRos.g:12495:3: rule__ParameterDouble__ValueAssignment_3
+            // InternalRos.g:12306:2: ( rule__ParameterDouble__ValueAssignment_3 )
+            // InternalRos.g:12306:3: rule__ParameterDouble__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDouble__ValueAssignment_3();
@@ -37314,14 +36677,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__4"
-    // InternalRos.g:12503:1: rule__ParameterDouble__Group__4 : rule__ParameterDouble__Group__4__Impl ;
+    // InternalRos.g:12314:1: rule__ParameterDouble__Group__4 : rule__ParameterDouble__Group__4__Impl ;
     public final void rule__ParameterDouble__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12507:1: ( rule__ParameterDouble__Group__4__Impl )
-            // InternalRos.g:12508:2: rule__ParameterDouble__Group__4__Impl
+            // InternalRos.g:12318:1: ( rule__ParameterDouble__Group__4__Impl )
+            // InternalRos.g:12319:2: rule__ParameterDouble__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDouble__Group__4__Impl();
@@ -37347,17 +36710,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__Group__4__Impl"
-    // InternalRos.g:12514:1: rule__ParameterDouble__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12325:1: rule__ParameterDouble__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterDouble__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12518:1: ( ( '}' ) )
-            // InternalRos.g:12519:1: ( '}' )
+            // InternalRos.g:12329:1: ( ( '}' ) )
+            // InternalRos.g:12330:1: ( '}' )
             {
-            // InternalRos.g:12519:1: ( '}' )
-            // InternalRos.g:12520:2: '}'
+            // InternalRos.g:12330:1: ( '}' )
+            // InternalRos.g:12331:2: '}'
             {
              before(grammarAccess.getParameterDoubleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -37384,14 +36747,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__0"
-    // InternalRos.g:12530:1: rule__ParameterBoolean__Group__0 : rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1 ;
+    // InternalRos.g:12341:1: rule__ParameterBoolean__Group__0 : rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1 ;
     public final void rule__ParameterBoolean__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12534:1: ( rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1 )
-            // InternalRos.g:12535:2: rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1
+            // InternalRos.g:12345:1: ( rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1 )
+            // InternalRos.g:12346:2: rule__ParameterBoolean__Group__0__Impl rule__ParameterBoolean__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterBoolean__Group__0__Impl();
@@ -37422,17 +36785,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__0__Impl"
-    // InternalRos.g:12542:1: rule__ParameterBoolean__Group__0__Impl : ( 'ParameterBoolean' ) ;
+    // InternalRos.g:12353:1: rule__ParameterBoolean__Group__0__Impl : ( 'ParameterBoolean' ) ;
     public final void rule__ParameterBoolean__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12546:1: ( ( 'ParameterBoolean' ) )
-            // InternalRos.g:12547:1: ( 'ParameterBoolean' )
+            // InternalRos.g:12357:1: ( ( 'ParameterBoolean' ) )
+            // InternalRos.g:12358:1: ( 'ParameterBoolean' )
             {
-            // InternalRos.g:12547:1: ( 'ParameterBoolean' )
-            // InternalRos.g:12548:2: 'ParameterBoolean'
+            // InternalRos.g:12358:1: ( 'ParameterBoolean' )
+            // InternalRos.g:12359:2: 'ParameterBoolean'
             {
              before(grammarAccess.getParameterBooleanAccess().getParameterBooleanKeyword_0()); 
             match(input,83,FOLLOW_2); 
@@ -37459,14 +36822,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__1"
-    // InternalRos.g:12557:1: rule__ParameterBoolean__Group__1 : rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2 ;
+    // InternalRos.g:12368:1: rule__ParameterBoolean__Group__1 : rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2 ;
     public final void rule__ParameterBoolean__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12561:1: ( rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2 )
-            // InternalRos.g:12562:2: rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2
+            // InternalRos.g:12372:1: ( rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2 )
+            // InternalRos.g:12373:2: rule__ParameterBoolean__Group__1__Impl rule__ParameterBoolean__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterBoolean__Group__1__Impl();
@@ -37497,17 +36860,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__1__Impl"
-    // InternalRos.g:12569:1: rule__ParameterBoolean__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:12380:1: rule__ParameterBoolean__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterBoolean__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12573:1: ( ( '{' ) )
-            // InternalRos.g:12574:1: ( '{' )
+            // InternalRos.g:12384:1: ( ( '{' ) )
+            // InternalRos.g:12385:1: ( '{' )
             {
-            // InternalRos.g:12574:1: ( '{' )
-            // InternalRos.g:12575:2: '{'
+            // InternalRos.g:12385:1: ( '{' )
+            // InternalRos.g:12386:2: '{'
             {
              before(grammarAccess.getParameterBooleanAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -37534,14 +36897,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__2"
-    // InternalRos.g:12584:1: rule__ParameterBoolean__Group__2 : rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3 ;
+    // InternalRos.g:12395:1: rule__ParameterBoolean__Group__2 : rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3 ;
     public final void rule__ParameterBoolean__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12588:1: ( rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3 )
-            // InternalRos.g:12589:2: rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3
+            // InternalRos.g:12399:1: ( rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3 )
+            // InternalRos.g:12400:2: rule__ParameterBoolean__Group__2__Impl rule__ParameterBoolean__Group__3
             {
             pushFollow(FOLLOW_73);
             rule__ParameterBoolean__Group__2__Impl();
@@ -37572,17 +36935,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__2__Impl"
-    // InternalRos.g:12596:1: rule__ParameterBoolean__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:12407:1: rule__ParameterBoolean__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterBoolean__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12600:1: ( ( 'value' ) )
-            // InternalRos.g:12601:1: ( 'value' )
+            // InternalRos.g:12411:1: ( ( 'value' ) )
+            // InternalRos.g:12412:1: ( 'value' )
             {
-            // InternalRos.g:12601:1: ( 'value' )
-            // InternalRos.g:12602:2: 'value'
+            // InternalRos.g:12412:1: ( 'value' )
+            // InternalRos.g:12413:2: 'value'
             {
              before(grammarAccess.getParameterBooleanAccess().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -37609,14 +36972,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__3"
-    // InternalRos.g:12611:1: rule__ParameterBoolean__Group__3 : rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4 ;
+    // InternalRos.g:12422:1: rule__ParameterBoolean__Group__3 : rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4 ;
     public final void rule__ParameterBoolean__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12615:1: ( rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4 )
-            // InternalRos.g:12616:2: rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4
+            // InternalRos.g:12426:1: ( rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4 )
+            // InternalRos.g:12427:2: rule__ParameterBoolean__Group__3__Impl rule__ParameterBoolean__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterBoolean__Group__3__Impl();
@@ -37647,21 +37010,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__3__Impl"
-    // InternalRos.g:12623:1: rule__ParameterBoolean__Group__3__Impl : ( ( rule__ParameterBoolean__ValueAssignment_3 ) ) ;
+    // InternalRos.g:12434:1: rule__ParameterBoolean__Group__3__Impl : ( ( rule__ParameterBoolean__ValueAssignment_3 ) ) ;
     public final void rule__ParameterBoolean__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12627:1: ( ( ( rule__ParameterBoolean__ValueAssignment_3 ) ) )
-            // InternalRos.g:12628:1: ( ( rule__ParameterBoolean__ValueAssignment_3 ) )
+            // InternalRos.g:12438:1: ( ( ( rule__ParameterBoolean__ValueAssignment_3 ) ) )
+            // InternalRos.g:12439:1: ( ( rule__ParameterBoolean__ValueAssignment_3 ) )
             {
-            // InternalRos.g:12628:1: ( ( rule__ParameterBoolean__ValueAssignment_3 ) )
-            // InternalRos.g:12629:2: ( rule__ParameterBoolean__ValueAssignment_3 )
+            // InternalRos.g:12439:1: ( ( rule__ParameterBoolean__ValueAssignment_3 ) )
+            // InternalRos.g:12440:2: ( rule__ParameterBoolean__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterBooleanAccess().getValueAssignment_3()); 
-            // InternalRos.g:12630:2: ( rule__ParameterBoolean__ValueAssignment_3 )
-            // InternalRos.g:12630:3: rule__ParameterBoolean__ValueAssignment_3
+            // InternalRos.g:12441:2: ( rule__ParameterBoolean__ValueAssignment_3 )
+            // InternalRos.g:12441:3: rule__ParameterBoolean__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBoolean__ValueAssignment_3();
@@ -37694,14 +37057,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__4"
-    // InternalRos.g:12638:1: rule__ParameterBoolean__Group__4 : rule__ParameterBoolean__Group__4__Impl ;
+    // InternalRos.g:12449:1: rule__ParameterBoolean__Group__4 : rule__ParameterBoolean__Group__4__Impl ;
     public final void rule__ParameterBoolean__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12642:1: ( rule__ParameterBoolean__Group__4__Impl )
-            // InternalRos.g:12643:2: rule__ParameterBoolean__Group__4__Impl
+            // InternalRos.g:12453:1: ( rule__ParameterBoolean__Group__4__Impl )
+            // InternalRos.g:12454:2: rule__ParameterBoolean__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterBoolean__Group__4__Impl();
@@ -37727,17 +37090,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__Group__4__Impl"
-    // InternalRos.g:12649:1: rule__ParameterBoolean__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12460:1: rule__ParameterBoolean__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterBoolean__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12653:1: ( ( '}' ) )
-            // InternalRos.g:12654:1: ( '}' )
+            // InternalRos.g:12464:1: ( ( '}' ) )
+            // InternalRos.g:12465:1: ( '}' )
             {
-            // InternalRos.g:12654:1: ( '}' )
-            // InternalRos.g:12655:2: '}'
+            // InternalRos.g:12465:1: ( '}' )
+            // InternalRos.g:12466:2: '}'
             {
              before(grammarAccess.getParameterBooleanAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -37764,14 +37127,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__0"
-    // InternalRos.g:12665:1: rule__ParameterStruct__Group__0 : rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1 ;
+    // InternalRos.g:12476:1: rule__ParameterStruct__Group__0 : rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1 ;
     public final void rule__ParameterStruct__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12669:1: ( rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1 )
-            // InternalRos.g:12670:2: rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1
+            // InternalRos.g:12480:1: ( rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1 )
+            // InternalRos.g:12481:2: rule__ParameterStruct__Group__0__Impl rule__ParameterStruct__Group__1
             {
             pushFollow(FOLLOW_74);
             rule__ParameterStruct__Group__0__Impl();
@@ -37802,21 +37165,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__0__Impl"
-    // InternalRos.g:12677:1: rule__ParameterStruct__Group__0__Impl : ( () ) ;
+    // InternalRos.g:12488:1: rule__ParameterStruct__Group__0__Impl : ( () ) ;
     public final void rule__ParameterStruct__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12681:1: ( ( () ) )
-            // InternalRos.g:12682:1: ( () )
+            // InternalRos.g:12492:1: ( ( () ) )
+            // InternalRos.g:12493:1: ( () )
             {
-            // InternalRos.g:12682:1: ( () )
-            // InternalRos.g:12683:2: ()
+            // InternalRos.g:12493:1: ( () )
+            // InternalRos.g:12494:2: ()
             {
              before(grammarAccess.getParameterStructAccess().getParameterStructAction_0()); 
-            // InternalRos.g:12684:2: ()
-            // InternalRos.g:12684:3: 
+            // InternalRos.g:12495:2: ()
+            // InternalRos.g:12495:3: 
             {
             }
 
@@ -37839,14 +37202,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__1"
-    // InternalRos.g:12692:1: rule__ParameterStruct__Group__1 : rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2 ;
+    // InternalRos.g:12503:1: rule__ParameterStruct__Group__1 : rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2 ;
     public final void rule__ParameterStruct__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12696:1: ( rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2 )
-            // InternalRos.g:12697:2: rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2
+            // InternalRos.g:12507:1: ( rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2 )
+            // InternalRos.g:12508:2: rule__ParameterStruct__Group__1__Impl rule__ParameterStruct__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStruct__Group__1__Impl();
@@ -37877,17 +37240,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__1__Impl"
-    // InternalRos.g:12704:1: rule__ParameterStruct__Group__1__Impl : ( 'ParameterStruct' ) ;
+    // InternalRos.g:12515:1: rule__ParameterStruct__Group__1__Impl : ( 'ParameterStruct' ) ;
     public final void rule__ParameterStruct__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12708:1: ( ( 'ParameterStruct' ) )
-            // InternalRos.g:12709:1: ( 'ParameterStruct' )
+            // InternalRos.g:12519:1: ( ( 'ParameterStruct' ) )
+            // InternalRos.g:12520:1: ( 'ParameterStruct' )
             {
-            // InternalRos.g:12709:1: ( 'ParameterStruct' )
-            // InternalRos.g:12710:2: 'ParameterStruct'
+            // InternalRos.g:12520:1: ( 'ParameterStruct' )
+            // InternalRos.g:12521:2: 'ParameterStruct'
             {
              before(grammarAccess.getParameterStructAccess().getParameterStructKeyword_1()); 
             match(input,84,FOLLOW_2); 
@@ -37914,14 +37277,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__2"
-    // InternalRos.g:12719:1: rule__ParameterStruct__Group__2 : rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3 ;
+    // InternalRos.g:12530:1: rule__ParameterStruct__Group__2 : rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3 ;
     public final void rule__ParameterStruct__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12723:1: ( rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3 )
-            // InternalRos.g:12724:2: rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3
+            // InternalRos.g:12534:1: ( rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3 )
+            // InternalRos.g:12535:2: rule__ParameterStruct__Group__2__Impl rule__ParameterStruct__Group__3
             {
             pushFollow(FOLLOW_67);
             rule__ParameterStruct__Group__2__Impl();
@@ -37952,17 +37315,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__2__Impl"
-    // InternalRos.g:12731:1: rule__ParameterStruct__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:12542:1: rule__ParameterStruct__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterStruct__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12735:1: ( ( '{' ) )
-            // InternalRos.g:12736:1: ( '{' )
+            // InternalRos.g:12546:1: ( ( '{' ) )
+            // InternalRos.g:12547:1: ( '{' )
             {
-            // InternalRos.g:12736:1: ( '{' )
-            // InternalRos.g:12737:2: '{'
+            // InternalRos.g:12547:1: ( '{' )
+            // InternalRos.g:12548:2: '{'
             {
              before(grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -37989,14 +37352,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__3"
-    // InternalRos.g:12746:1: rule__ParameterStruct__Group__3 : rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4 ;
+    // InternalRos.g:12557:1: rule__ParameterStruct__Group__3 : rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4 ;
     public final void rule__ParameterStruct__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12750:1: ( rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4 )
-            // InternalRos.g:12751:2: rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4
+            // InternalRos.g:12561:1: ( rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4 )
+            // InternalRos.g:12562:2: rule__ParameterStruct__Group__3__Impl rule__ParameterStruct__Group__4
             {
             pushFollow(FOLLOW_67);
             rule__ParameterStruct__Group__3__Impl();
@@ -38027,29 +37390,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__3__Impl"
-    // InternalRos.g:12758:1: rule__ParameterStruct__Group__3__Impl : ( ( rule__ParameterStruct__Group_3__0 )? ) ;
+    // InternalRos.g:12569:1: rule__ParameterStruct__Group__3__Impl : ( ( rule__ParameterStruct__Group_3__0 )? ) ;
     public final void rule__ParameterStruct__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12762:1: ( ( ( rule__ParameterStruct__Group_3__0 )? ) )
-            // InternalRos.g:12763:1: ( ( rule__ParameterStruct__Group_3__0 )? )
+            // InternalRos.g:12573:1: ( ( ( rule__ParameterStruct__Group_3__0 )? ) )
+            // InternalRos.g:12574:1: ( ( rule__ParameterStruct__Group_3__0 )? )
             {
-            // InternalRos.g:12763:1: ( ( rule__ParameterStruct__Group_3__0 )? )
-            // InternalRos.g:12764:2: ( rule__ParameterStruct__Group_3__0 )?
+            // InternalRos.g:12574:1: ( ( rule__ParameterStruct__Group_3__0 )? )
+            // InternalRos.g:12575:2: ( rule__ParameterStruct__Group_3__0 )?
             {
              before(grammarAccess.getParameterStructAccess().getGroup_3()); 
-            // InternalRos.g:12765:2: ( rule__ParameterStruct__Group_3__0 )?
-            int alt77=2;
-            int LA77_0 = input.LA(1);
+            // InternalRos.g:12576:2: ( rule__ParameterStruct__Group_3__0 )?
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA77_0==77) ) {
-                alt77=1;
+            if ( (LA70_0==77) ) {
+                alt70=1;
             }
-            switch (alt77) {
+            switch (alt70) {
                 case 1 :
-                    // InternalRos.g:12765:3: rule__ParameterStruct__Group_3__0
+                    // InternalRos.g:12576:3: rule__ParameterStruct__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterStruct__Group_3__0();
@@ -38085,14 +37448,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__4"
-    // InternalRos.g:12773:1: rule__ParameterStruct__Group__4 : rule__ParameterStruct__Group__4__Impl ;
+    // InternalRos.g:12584:1: rule__ParameterStruct__Group__4 : rule__ParameterStruct__Group__4__Impl ;
     public final void rule__ParameterStruct__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12777:1: ( rule__ParameterStruct__Group__4__Impl )
-            // InternalRos.g:12778:2: rule__ParameterStruct__Group__4__Impl
+            // InternalRos.g:12588:1: ( rule__ParameterStruct__Group__4__Impl )
+            // InternalRos.g:12589:2: rule__ParameterStruct__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStruct__Group__4__Impl();
@@ -38118,17 +37481,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group__4__Impl"
-    // InternalRos.g:12784:1: rule__ParameterStruct__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12595:1: rule__ParameterStruct__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterStruct__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12788:1: ( ( '}' ) )
-            // InternalRos.g:12789:1: ( '}' )
+            // InternalRos.g:12599:1: ( ( '}' ) )
+            // InternalRos.g:12600:1: ( '}' )
             {
-            // InternalRos.g:12789:1: ( '}' )
-            // InternalRos.g:12790:2: '}'
+            // InternalRos.g:12600:1: ( '}' )
+            // InternalRos.g:12601:2: '}'
             {
              before(grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -38155,14 +37518,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__0"
-    // InternalRos.g:12800:1: rule__ParameterStruct__Group_3__0 : rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1 ;
+    // InternalRos.g:12611:1: rule__ParameterStruct__Group_3__0 : rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1 ;
     public final void rule__ParameterStruct__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12804:1: ( rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1 )
-            // InternalRos.g:12805:2: rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1
+            // InternalRos.g:12615:1: ( rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1 )
+            // InternalRos.g:12616:2: rule__ParameterStruct__Group_3__0__Impl rule__ParameterStruct__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStruct__Group_3__0__Impl();
@@ -38193,17 +37556,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__0__Impl"
-    // InternalRos.g:12812:1: rule__ParameterStruct__Group_3__0__Impl : ( 'value' ) ;
+    // InternalRos.g:12623:1: rule__ParameterStruct__Group_3__0__Impl : ( 'value' ) ;
     public final void rule__ParameterStruct__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12816:1: ( ( 'value' ) )
-            // InternalRos.g:12817:1: ( 'value' )
+            // InternalRos.g:12627:1: ( ( 'value' ) )
+            // InternalRos.g:12628:1: ( 'value' )
             {
-            // InternalRos.g:12817:1: ( 'value' )
-            // InternalRos.g:12818:2: 'value'
+            // InternalRos.g:12628:1: ( 'value' )
+            // InternalRos.g:12629:2: 'value'
             {
              before(grammarAccess.getParameterStructAccess().getValueKeyword_3_0()); 
             match(input,77,FOLLOW_2); 
@@ -38230,14 +37593,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__1"
-    // InternalRos.g:12827:1: rule__ParameterStruct__Group_3__1 : rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2 ;
+    // InternalRos.g:12638:1: rule__ParameterStruct__Group_3__1 : rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2 ;
     public final void rule__ParameterStruct__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12831:1: ( rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2 )
-            // InternalRos.g:12832:2: rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2
+            // InternalRos.g:12642:1: ( rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2 )
+            // InternalRos.g:12643:2: rule__ParameterStruct__Group_3__1__Impl rule__ParameterStruct__Group_3__2
             {
             pushFollow(FOLLOW_75);
             rule__ParameterStruct__Group_3__1__Impl();
@@ -38268,17 +37631,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__1__Impl"
-    // InternalRos.g:12839:1: rule__ParameterStruct__Group_3__1__Impl : ( '{' ) ;
+    // InternalRos.g:12650:1: rule__ParameterStruct__Group_3__1__Impl : ( '{' ) ;
     public final void rule__ParameterStruct__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12843:1: ( ( '{' ) )
-            // InternalRos.g:12844:1: ( '{' )
+            // InternalRos.g:12654:1: ( ( '{' ) )
+            // InternalRos.g:12655:1: ( '{' )
             {
-            // InternalRos.g:12844:1: ( '{' )
-            // InternalRos.g:12845:2: '{'
+            // InternalRos.g:12655:1: ( '{' )
+            // InternalRos.g:12656:2: '{'
             {
              before(grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_3_1()); 
             match(input,18,FOLLOW_2); 
@@ -38305,14 +37668,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__2"
-    // InternalRos.g:12854:1: rule__ParameterStruct__Group_3__2 : rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3 ;
+    // InternalRos.g:12665:1: rule__ParameterStruct__Group_3__2 : rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3 ;
     public final void rule__ParameterStruct__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12858:1: ( rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3 )
-            // InternalRos.g:12859:2: rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3
+            // InternalRos.g:12669:1: ( rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3 )
+            // InternalRos.g:12670:2: rule__ParameterStruct__Group_3__2__Impl rule__ParameterStruct__Group_3__3
             {
             pushFollow(FOLLOW_7);
             rule__ParameterStruct__Group_3__2__Impl();
@@ -38343,21 +37706,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__2__Impl"
-    // InternalRos.g:12866:1: rule__ParameterStruct__Group_3__2__Impl : ( ( rule__ParameterStruct__ValueAssignment_3_2 ) ) ;
+    // InternalRos.g:12677:1: rule__ParameterStruct__Group_3__2__Impl : ( ( rule__ParameterStruct__ValueAssignment_3_2 ) ) ;
     public final void rule__ParameterStruct__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12870:1: ( ( ( rule__ParameterStruct__ValueAssignment_3_2 ) ) )
-            // InternalRos.g:12871:1: ( ( rule__ParameterStruct__ValueAssignment_3_2 ) )
+            // InternalRos.g:12681:1: ( ( ( rule__ParameterStruct__ValueAssignment_3_2 ) ) )
+            // InternalRos.g:12682:1: ( ( rule__ParameterStruct__ValueAssignment_3_2 ) )
             {
-            // InternalRos.g:12871:1: ( ( rule__ParameterStruct__ValueAssignment_3_2 ) )
-            // InternalRos.g:12872:2: ( rule__ParameterStruct__ValueAssignment_3_2 )
+            // InternalRos.g:12682:1: ( ( rule__ParameterStruct__ValueAssignment_3_2 ) )
+            // InternalRos.g:12683:2: ( rule__ParameterStruct__ValueAssignment_3_2 )
             {
              before(grammarAccess.getParameterStructAccess().getValueAssignment_3_2()); 
-            // InternalRos.g:12873:2: ( rule__ParameterStruct__ValueAssignment_3_2 )
-            // InternalRos.g:12873:3: rule__ParameterStruct__ValueAssignment_3_2
+            // InternalRos.g:12684:2: ( rule__ParameterStruct__ValueAssignment_3_2 )
+            // InternalRos.g:12684:3: rule__ParameterStruct__ValueAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStruct__ValueAssignment_3_2();
@@ -38390,14 +37753,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__3"
-    // InternalRos.g:12881:1: rule__ParameterStruct__Group_3__3 : rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4 ;
+    // InternalRos.g:12692:1: rule__ParameterStruct__Group_3__3 : rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4 ;
     public final void rule__ParameterStruct__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12885:1: ( rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4 )
-            // InternalRos.g:12886:2: rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4
+            // InternalRos.g:12696:1: ( rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4 )
+            // InternalRos.g:12697:2: rule__ParameterStruct__Group_3__3__Impl rule__ParameterStruct__Group_3__4
             {
             pushFollow(FOLLOW_7);
             rule__ParameterStruct__Group_3__3__Impl();
@@ -38428,33 +37791,33 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__3__Impl"
-    // InternalRos.g:12893:1: rule__ParameterStruct__Group_3__3__Impl : ( ( rule__ParameterStruct__Group_3_3__0 )* ) ;
+    // InternalRos.g:12704:1: rule__ParameterStruct__Group_3__3__Impl : ( ( rule__ParameterStruct__Group_3_3__0 )* ) ;
     public final void rule__ParameterStruct__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12897:1: ( ( ( rule__ParameterStruct__Group_3_3__0 )* ) )
-            // InternalRos.g:12898:1: ( ( rule__ParameterStruct__Group_3_3__0 )* )
+            // InternalRos.g:12708:1: ( ( ( rule__ParameterStruct__Group_3_3__0 )* ) )
+            // InternalRos.g:12709:1: ( ( rule__ParameterStruct__Group_3_3__0 )* )
             {
-            // InternalRos.g:12898:1: ( ( rule__ParameterStruct__Group_3_3__0 )* )
-            // InternalRos.g:12899:2: ( rule__ParameterStruct__Group_3_3__0 )*
+            // InternalRos.g:12709:1: ( ( rule__ParameterStruct__Group_3_3__0 )* )
+            // InternalRos.g:12710:2: ( rule__ParameterStruct__Group_3_3__0 )*
             {
              before(grammarAccess.getParameterStructAccess().getGroup_3_3()); 
-            // InternalRos.g:12900:2: ( rule__ParameterStruct__Group_3_3__0 )*
-            loop78:
+            // InternalRos.g:12711:2: ( rule__ParameterStruct__Group_3_3__0 )*
+            loop71:
             do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
+                int alt71=2;
+                int LA71_0 = input.LA(1);
 
-                if ( (LA78_0==21) ) {
-                    alt78=1;
+                if ( (LA71_0==21) ) {
+                    alt71=1;
                 }
 
 
-                switch (alt78) {
+                switch (alt71) {
             	case 1 :
-            	    // InternalRos.g:12900:3: rule__ParameterStruct__Group_3_3__0
+            	    // InternalRos.g:12711:3: rule__ParameterStruct__Group_3_3__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__ParameterStruct__Group_3_3__0();
@@ -38466,7 +37829,7 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop78;
+            	    break loop71;
                 }
             } while (true);
 
@@ -38493,14 +37856,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__4"
-    // InternalRos.g:12908:1: rule__ParameterStruct__Group_3__4 : rule__ParameterStruct__Group_3__4__Impl ;
+    // InternalRos.g:12719:1: rule__ParameterStruct__Group_3__4 : rule__ParameterStruct__Group_3__4__Impl ;
     public final void rule__ParameterStruct__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12912:1: ( rule__ParameterStruct__Group_3__4__Impl )
-            // InternalRos.g:12913:2: rule__ParameterStruct__Group_3__4__Impl
+            // InternalRos.g:12723:1: ( rule__ParameterStruct__Group_3__4__Impl )
+            // InternalRos.g:12724:2: rule__ParameterStruct__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStruct__Group_3__4__Impl();
@@ -38526,17 +37889,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3__4__Impl"
-    // InternalRos.g:12919:1: rule__ParameterStruct__Group_3__4__Impl : ( '}' ) ;
+    // InternalRos.g:12730:1: rule__ParameterStruct__Group_3__4__Impl : ( '}' ) ;
     public final void rule__ParameterStruct__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12923:1: ( ( '}' ) )
-            // InternalRos.g:12924:1: ( '}' )
+            // InternalRos.g:12734:1: ( ( '}' ) )
+            // InternalRos.g:12735:1: ( '}' )
             {
-            // InternalRos.g:12924:1: ( '}' )
-            // InternalRos.g:12925:2: '}'
+            // InternalRos.g:12735:1: ( '}' )
+            // InternalRos.g:12736:2: '}'
             {
              before(grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,19,FOLLOW_2); 
@@ -38563,14 +37926,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3_3__0"
-    // InternalRos.g:12935:1: rule__ParameterStruct__Group_3_3__0 : rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1 ;
+    // InternalRos.g:12746:1: rule__ParameterStruct__Group_3_3__0 : rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1 ;
     public final void rule__ParameterStruct__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12939:1: ( rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1 )
-            // InternalRos.g:12940:2: rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1
+            // InternalRos.g:12750:1: ( rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1 )
+            // InternalRos.g:12751:2: rule__ParameterStruct__Group_3_3__0__Impl rule__ParameterStruct__Group_3_3__1
             {
             pushFollow(FOLLOW_75);
             rule__ParameterStruct__Group_3_3__0__Impl();
@@ -38601,17 +37964,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3_3__0__Impl"
-    // InternalRos.g:12947:1: rule__ParameterStruct__Group_3_3__0__Impl : ( ',' ) ;
+    // InternalRos.g:12758:1: rule__ParameterStruct__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__ParameterStruct__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12951:1: ( ( ',' ) )
-            // InternalRos.g:12952:1: ( ',' )
+            // InternalRos.g:12762:1: ( ( ',' ) )
+            // InternalRos.g:12763:1: ( ',' )
             {
-            // InternalRos.g:12952:1: ( ',' )
-            // InternalRos.g:12953:2: ','
+            // InternalRos.g:12763:1: ( ',' )
+            // InternalRos.g:12764:2: ','
             {
              before(grammarAccess.getParameterStructAccess().getCommaKeyword_3_3_0()); 
             match(input,21,FOLLOW_2); 
@@ -38638,14 +38001,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3_3__1"
-    // InternalRos.g:12962:1: rule__ParameterStruct__Group_3_3__1 : rule__ParameterStruct__Group_3_3__1__Impl ;
+    // InternalRos.g:12773:1: rule__ParameterStruct__Group_3_3__1 : rule__ParameterStruct__Group_3_3__1__Impl ;
     public final void rule__ParameterStruct__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12966:1: ( rule__ParameterStruct__Group_3_3__1__Impl )
-            // InternalRos.g:12967:2: rule__ParameterStruct__Group_3_3__1__Impl
+            // InternalRos.g:12777:1: ( rule__ParameterStruct__Group_3_3__1__Impl )
+            // InternalRos.g:12778:2: rule__ParameterStruct__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStruct__Group_3_3__1__Impl();
@@ -38671,21 +38034,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__Group_3_3__1__Impl"
-    // InternalRos.g:12973:1: rule__ParameterStruct__Group_3_3__1__Impl : ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) ) ;
+    // InternalRos.g:12784:1: rule__ParameterStruct__Group_3_3__1__Impl : ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) ) ;
     public final void rule__ParameterStruct__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12977:1: ( ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) ) )
-            // InternalRos.g:12978:1: ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) )
+            // InternalRos.g:12788:1: ( ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) ) )
+            // InternalRos.g:12789:1: ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) )
             {
-            // InternalRos.g:12978:1: ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) )
-            // InternalRos.g:12979:2: ( rule__ParameterStruct__ValueAssignment_3_3_1 )
+            // InternalRos.g:12789:1: ( ( rule__ParameterStruct__ValueAssignment_3_3_1 ) )
+            // InternalRos.g:12790:2: ( rule__ParameterStruct__ValueAssignment_3_3_1 )
             {
              before(grammarAccess.getParameterStructAccess().getValueAssignment_3_3_1()); 
-            // InternalRos.g:12980:2: ( rule__ParameterStruct__ValueAssignment_3_3_1 )
-            // InternalRos.g:12980:3: rule__ParameterStruct__ValueAssignment_3_3_1
+            // InternalRos.g:12791:2: ( rule__ParameterStruct__ValueAssignment_3_3_1 )
+            // InternalRos.g:12791:3: rule__ParameterStruct__ValueAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStruct__ValueAssignment_3_3_1();
@@ -38718,14 +38081,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__0"
-    // InternalRos.g:12989:1: rule__ParameterDate__Group__0 : rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1 ;
+    // InternalRos.g:12800:1: rule__ParameterDate__Group__0 : rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1 ;
     public final void rule__ParameterDate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:12993:1: ( rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1 )
-            // InternalRos.g:12994:2: rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1
+            // InternalRos.g:12804:1: ( rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1 )
+            // InternalRos.g:12805:2: rule__ParameterDate__Group__0__Impl rule__ParameterDate__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__ParameterDate__Group__0__Impl();
@@ -38756,17 +38119,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__0__Impl"
-    // InternalRos.g:13001:1: rule__ParameterDate__Group__0__Impl : ( 'ParameterDate' ) ;
+    // InternalRos.g:12812:1: rule__ParameterDate__Group__0__Impl : ( 'ParameterDate' ) ;
     public final void rule__ParameterDate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13005:1: ( ( 'ParameterDate' ) )
-            // InternalRos.g:13006:1: ( 'ParameterDate' )
+            // InternalRos.g:12816:1: ( ( 'ParameterDate' ) )
+            // InternalRos.g:12817:1: ( 'ParameterDate' )
             {
-            // InternalRos.g:13006:1: ( 'ParameterDate' )
-            // InternalRos.g:13007:2: 'ParameterDate'
+            // InternalRos.g:12817:1: ( 'ParameterDate' )
+            // InternalRos.g:12818:2: 'ParameterDate'
             {
              before(grammarAccess.getParameterDateAccess().getParameterDateKeyword_0()); 
             match(input,85,FOLLOW_2); 
@@ -38793,14 +38156,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__1"
-    // InternalRos.g:13016:1: rule__ParameterDate__Group__1 : rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2 ;
+    // InternalRos.g:12827:1: rule__ParameterDate__Group__1 : rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2 ;
     public final void rule__ParameterDate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13020:1: ( rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2 )
-            // InternalRos.g:13021:2: rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2
+            // InternalRos.g:12831:1: ( rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2 )
+            // InternalRos.g:12832:2: rule__ParameterDate__Group__1__Impl rule__ParameterDate__Group__2
             {
             pushFollow(FOLLOW_69);
             rule__ParameterDate__Group__1__Impl();
@@ -38831,17 +38194,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__1__Impl"
-    // InternalRos.g:13028:1: rule__ParameterDate__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:12839:1: rule__ParameterDate__Group__1__Impl : ( '{' ) ;
     public final void rule__ParameterDate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13032:1: ( ( '{' ) )
-            // InternalRos.g:13033:1: ( '{' )
+            // InternalRos.g:12843:1: ( ( '{' ) )
+            // InternalRos.g:12844:1: ( '{' )
             {
-            // InternalRos.g:13033:1: ( '{' )
-            // InternalRos.g:13034:2: '{'
+            // InternalRos.g:12844:1: ( '{' )
+            // InternalRos.g:12845:2: '{'
             {
              before(grammarAccess.getParameterDateAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -38868,14 +38231,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__2"
-    // InternalRos.g:13043:1: rule__ParameterDate__Group__2 : rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3 ;
+    // InternalRos.g:12854:1: rule__ParameterDate__Group__2 : rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3 ;
     public final void rule__ParameterDate__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13047:1: ( rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3 )
-            // InternalRos.g:13048:2: rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3
+            // InternalRos.g:12858:1: ( rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3 )
+            // InternalRos.g:12859:2: rule__ParameterDate__Group__2__Impl rule__ParameterDate__Group__3
             {
             pushFollow(FOLLOW_76);
             rule__ParameterDate__Group__2__Impl();
@@ -38906,17 +38269,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__2__Impl"
-    // InternalRos.g:13055:1: rule__ParameterDate__Group__2__Impl : ( 'value' ) ;
+    // InternalRos.g:12866:1: rule__ParameterDate__Group__2__Impl : ( 'value' ) ;
     public final void rule__ParameterDate__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13059:1: ( ( 'value' ) )
-            // InternalRos.g:13060:1: ( 'value' )
+            // InternalRos.g:12870:1: ( ( 'value' ) )
+            // InternalRos.g:12871:1: ( 'value' )
             {
-            // InternalRos.g:13060:1: ( 'value' )
-            // InternalRos.g:13061:2: 'value'
+            // InternalRos.g:12871:1: ( 'value' )
+            // InternalRos.g:12872:2: 'value'
             {
              before(grammarAccess.getParameterDateAccess().getValueKeyword_2()); 
             match(input,77,FOLLOW_2); 
@@ -38943,14 +38306,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__3"
-    // InternalRos.g:13070:1: rule__ParameterDate__Group__3 : rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4 ;
+    // InternalRos.g:12881:1: rule__ParameterDate__Group__3 : rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4 ;
     public final void rule__ParameterDate__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13074:1: ( rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4 )
-            // InternalRos.g:13075:2: rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4
+            // InternalRos.g:12885:1: ( rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4 )
+            // InternalRos.g:12886:2: rule__ParameterDate__Group__3__Impl rule__ParameterDate__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__ParameterDate__Group__3__Impl();
@@ -38981,21 +38344,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__3__Impl"
-    // InternalRos.g:13082:1: rule__ParameterDate__Group__3__Impl : ( ( rule__ParameterDate__ValueAssignment_3 ) ) ;
+    // InternalRos.g:12893:1: rule__ParameterDate__Group__3__Impl : ( ( rule__ParameterDate__ValueAssignment_3 ) ) ;
     public final void rule__ParameterDate__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13086:1: ( ( ( rule__ParameterDate__ValueAssignment_3 ) ) )
-            // InternalRos.g:13087:1: ( ( rule__ParameterDate__ValueAssignment_3 ) )
+            // InternalRos.g:12897:1: ( ( ( rule__ParameterDate__ValueAssignment_3 ) ) )
+            // InternalRos.g:12898:1: ( ( rule__ParameterDate__ValueAssignment_3 ) )
             {
-            // InternalRos.g:13087:1: ( ( rule__ParameterDate__ValueAssignment_3 ) )
-            // InternalRos.g:13088:2: ( rule__ParameterDate__ValueAssignment_3 )
+            // InternalRos.g:12898:1: ( ( rule__ParameterDate__ValueAssignment_3 ) )
+            // InternalRos.g:12899:2: ( rule__ParameterDate__ValueAssignment_3 )
             {
              before(grammarAccess.getParameterDateAccess().getValueAssignment_3()); 
-            // InternalRos.g:13089:2: ( rule__ParameterDate__ValueAssignment_3 )
-            // InternalRos.g:13089:3: rule__ParameterDate__ValueAssignment_3
+            // InternalRos.g:12900:2: ( rule__ParameterDate__ValueAssignment_3 )
+            // InternalRos.g:12900:3: rule__ParameterDate__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDate__ValueAssignment_3();
@@ -39028,14 +38391,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__4"
-    // InternalRos.g:13097:1: rule__ParameterDate__Group__4 : rule__ParameterDate__Group__4__Impl ;
+    // InternalRos.g:12908:1: rule__ParameterDate__Group__4 : rule__ParameterDate__Group__4__Impl ;
     public final void rule__ParameterDate__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13101:1: ( rule__ParameterDate__Group__4__Impl )
-            // InternalRos.g:13102:2: rule__ParameterDate__Group__4__Impl
+            // InternalRos.g:12912:1: ( rule__ParameterDate__Group__4__Impl )
+            // InternalRos.g:12913:2: rule__ParameterDate__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterDate__Group__4__Impl();
@@ -39061,17 +38424,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__Group__4__Impl"
-    // InternalRos.g:13108:1: rule__ParameterDate__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:12919:1: rule__ParameterDate__Group__4__Impl : ( '}' ) ;
     public final void rule__ParameterDate__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13112:1: ( ( '}' ) )
-            // InternalRos.g:13113:1: ( '}' )
+            // InternalRos.g:12923:1: ( ( '}' ) )
+            // InternalRos.g:12924:1: ( '}' )
             {
-            // InternalRos.g:13113:1: ( '}' )
-            // InternalRos.g:13114:2: '}'
+            // InternalRos.g:12924:1: ( '}' )
+            // InternalRos.g:12925:2: '}'
             {
              before(grammarAccess.getParameterDateAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -39098,14 +38461,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__0"
-    // InternalRos.g:13124:1: rule__ParameterStructMember__Group__0 : rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1 ;
+    // InternalRos.g:12935:1: rule__ParameterStructMember__Group__0 : rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1 ;
     public final void rule__ParameterStructMember__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13128:1: ( rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1 )
-            // InternalRos.g:13129:2: rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1
+            // InternalRos.g:12939:1: ( rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1 )
+            // InternalRos.g:12940:2: rule__ParameterStructMember__Group__0__Impl rule__ParameterStructMember__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__ParameterStructMember__Group__0__Impl();
@@ -39136,17 +38499,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__0__Impl"
-    // InternalRos.g:13136:1: rule__ParameterStructMember__Group__0__Impl : ( 'ParameterStructMember' ) ;
+    // InternalRos.g:12947:1: rule__ParameterStructMember__Group__0__Impl : ( 'ParameterStructMember' ) ;
     public final void rule__ParameterStructMember__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13140:1: ( ( 'ParameterStructMember' ) )
-            // InternalRos.g:13141:1: ( 'ParameterStructMember' )
+            // InternalRos.g:12951:1: ( ( 'ParameterStructMember' ) )
+            // InternalRos.g:12952:1: ( 'ParameterStructMember' )
             {
-            // InternalRos.g:13141:1: ( 'ParameterStructMember' )
-            // InternalRos.g:13142:2: 'ParameterStructMember'
+            // InternalRos.g:12952:1: ( 'ParameterStructMember' )
+            // InternalRos.g:12953:2: 'ParameterStructMember'
             {
              before(grammarAccess.getParameterStructMemberAccess().getParameterStructMemberKeyword_0()); 
             match(input,86,FOLLOW_2); 
@@ -39173,14 +38536,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__1"
-    // InternalRos.g:13151:1: rule__ParameterStructMember__Group__1 : rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2 ;
+    // InternalRos.g:12962:1: rule__ParameterStructMember__Group__1 : rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2 ;
     public final void rule__ParameterStructMember__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13155:1: ( rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2 )
-            // InternalRos.g:13156:2: rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2
+            // InternalRos.g:12966:1: ( rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2 )
+            // InternalRos.g:12967:2: rule__ParameterStructMember__Group__1__Impl rule__ParameterStructMember__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStructMember__Group__1__Impl();
@@ -39211,21 +38574,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__1__Impl"
-    // InternalRos.g:13163:1: rule__ParameterStructMember__Group__1__Impl : ( ( rule__ParameterStructMember__NameAssignment_1 ) ) ;
+    // InternalRos.g:12974:1: rule__ParameterStructMember__Group__1__Impl : ( ( rule__ParameterStructMember__NameAssignment_1 ) ) ;
     public final void rule__ParameterStructMember__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13167:1: ( ( ( rule__ParameterStructMember__NameAssignment_1 ) ) )
-            // InternalRos.g:13168:1: ( ( rule__ParameterStructMember__NameAssignment_1 ) )
+            // InternalRos.g:12978:1: ( ( ( rule__ParameterStructMember__NameAssignment_1 ) ) )
+            // InternalRos.g:12979:1: ( ( rule__ParameterStructMember__NameAssignment_1 ) )
             {
-            // InternalRos.g:13168:1: ( ( rule__ParameterStructMember__NameAssignment_1 ) )
-            // InternalRos.g:13169:2: ( rule__ParameterStructMember__NameAssignment_1 )
+            // InternalRos.g:12979:1: ( ( rule__ParameterStructMember__NameAssignment_1 ) )
+            // InternalRos.g:12980:2: ( rule__ParameterStructMember__NameAssignment_1 )
             {
              before(grammarAccess.getParameterStructMemberAccess().getNameAssignment_1()); 
-            // InternalRos.g:13170:2: ( rule__ParameterStructMember__NameAssignment_1 )
-            // InternalRos.g:13170:3: rule__ParameterStructMember__NameAssignment_1
+            // InternalRos.g:12981:2: ( rule__ParameterStructMember__NameAssignment_1 )
+            // InternalRos.g:12981:3: rule__ParameterStructMember__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructMember__NameAssignment_1();
@@ -39258,14 +38621,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__2"
-    // InternalRos.g:13178:1: rule__ParameterStructMember__Group__2 : rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3 ;
+    // InternalRos.g:12989:1: rule__ParameterStructMember__Group__2 : rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3 ;
     public final void rule__ParameterStructMember__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13182:1: ( rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3 )
-            // InternalRos.g:13183:2: rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3
+            // InternalRos.g:12993:1: ( rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3 )
+            // InternalRos.g:12994:2: rule__ParameterStructMember__Group__2__Impl rule__ParameterStructMember__Group__3
             {
             pushFollow(FOLLOW_69);
             rule__ParameterStructMember__Group__2__Impl();
@@ -39296,17 +38659,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__2__Impl"
-    // InternalRos.g:13190:1: rule__ParameterStructMember__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:13001:1: rule__ParameterStructMember__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterStructMember__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13194:1: ( ( '{' ) )
-            // InternalRos.g:13195:1: ( '{' )
+            // InternalRos.g:13005:1: ( ( '{' ) )
+            // InternalRos.g:13006:1: ( '{' )
             {
-            // InternalRos.g:13195:1: ( '{' )
-            // InternalRos.g:13196:2: '{'
+            // InternalRos.g:13006:1: ( '{' )
+            // InternalRos.g:13007:2: '{'
             {
              before(grammarAccess.getParameterStructMemberAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -39333,14 +38696,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__3"
-    // InternalRos.g:13205:1: rule__ParameterStructMember__Group__3 : rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4 ;
+    // InternalRos.g:13016:1: rule__ParameterStructMember__Group__3 : rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4 ;
     public final void rule__ParameterStructMember__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13209:1: ( rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4 )
-            // InternalRos.g:13210:2: rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4
+            // InternalRos.g:13020:1: ( rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4 )
+            // InternalRos.g:13021:2: rule__ParameterStructMember__Group__3__Impl rule__ParameterStructMember__Group__4
             {
             pushFollow(FOLLOW_68);
             rule__ParameterStructMember__Group__3__Impl();
@@ -39371,17 +38734,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__3__Impl"
-    // InternalRos.g:13217:1: rule__ParameterStructMember__Group__3__Impl : ( 'value' ) ;
+    // InternalRos.g:13028:1: rule__ParameterStructMember__Group__3__Impl : ( 'value' ) ;
     public final void rule__ParameterStructMember__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13221:1: ( ( 'value' ) )
-            // InternalRos.g:13222:1: ( 'value' )
+            // InternalRos.g:13032:1: ( ( 'value' ) )
+            // InternalRos.g:13033:1: ( 'value' )
             {
-            // InternalRos.g:13222:1: ( 'value' )
-            // InternalRos.g:13223:2: 'value'
+            // InternalRos.g:13033:1: ( 'value' )
+            // InternalRos.g:13034:2: 'value'
             {
              before(grammarAccess.getParameterStructMemberAccess().getValueKeyword_3()); 
             match(input,77,FOLLOW_2); 
@@ -39408,14 +38771,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__4"
-    // InternalRos.g:13232:1: rule__ParameterStructMember__Group__4 : rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5 ;
+    // InternalRos.g:13043:1: rule__ParameterStructMember__Group__4 : rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5 ;
     public final void rule__ParameterStructMember__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13236:1: ( rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5 )
-            // InternalRos.g:13237:2: rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5
+            // InternalRos.g:13047:1: ( rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5 )
+            // InternalRos.g:13048:2: rule__ParameterStructMember__Group__4__Impl rule__ParameterStructMember__Group__5
             {
             pushFollow(FOLLOW_41);
             rule__ParameterStructMember__Group__4__Impl();
@@ -39446,21 +38809,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__4__Impl"
-    // InternalRos.g:13244:1: rule__ParameterStructMember__Group__4__Impl : ( ( rule__ParameterStructMember__ValueAssignment_4 ) ) ;
+    // InternalRos.g:13055:1: rule__ParameterStructMember__Group__4__Impl : ( ( rule__ParameterStructMember__ValueAssignment_4 ) ) ;
     public final void rule__ParameterStructMember__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13248:1: ( ( ( rule__ParameterStructMember__ValueAssignment_4 ) ) )
-            // InternalRos.g:13249:1: ( ( rule__ParameterStructMember__ValueAssignment_4 ) )
+            // InternalRos.g:13059:1: ( ( ( rule__ParameterStructMember__ValueAssignment_4 ) ) )
+            // InternalRos.g:13060:1: ( ( rule__ParameterStructMember__ValueAssignment_4 ) )
             {
-            // InternalRos.g:13249:1: ( ( rule__ParameterStructMember__ValueAssignment_4 ) )
-            // InternalRos.g:13250:2: ( rule__ParameterStructMember__ValueAssignment_4 )
+            // InternalRos.g:13060:1: ( ( rule__ParameterStructMember__ValueAssignment_4 ) )
+            // InternalRos.g:13061:2: ( rule__ParameterStructMember__ValueAssignment_4 )
             {
              before(grammarAccess.getParameterStructMemberAccess().getValueAssignment_4()); 
-            // InternalRos.g:13251:2: ( rule__ParameterStructMember__ValueAssignment_4 )
-            // InternalRos.g:13251:3: rule__ParameterStructMember__ValueAssignment_4
+            // InternalRos.g:13062:2: ( rule__ParameterStructMember__ValueAssignment_4 )
+            // InternalRos.g:13062:3: rule__ParameterStructMember__ValueAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructMember__ValueAssignment_4();
@@ -39493,14 +38856,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__5"
-    // InternalRos.g:13259:1: rule__ParameterStructMember__Group__5 : rule__ParameterStructMember__Group__5__Impl ;
+    // InternalRos.g:13070:1: rule__ParameterStructMember__Group__5 : rule__ParameterStructMember__Group__5__Impl ;
     public final void rule__ParameterStructMember__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13263:1: ( rule__ParameterStructMember__Group__5__Impl )
-            // InternalRos.g:13264:2: rule__ParameterStructMember__Group__5__Impl
+            // InternalRos.g:13074:1: ( rule__ParameterStructMember__Group__5__Impl )
+            // InternalRos.g:13075:2: rule__ParameterStructMember__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructMember__Group__5__Impl();
@@ -39526,17 +38889,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__Group__5__Impl"
-    // InternalRos.g:13270:1: rule__ParameterStructMember__Group__5__Impl : ( '}' ) ;
+    // InternalRos.g:13081:1: rule__ParameterStructMember__Group__5__Impl : ( '}' ) ;
     public final void rule__ParameterStructMember__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13274:1: ( ( '}' ) )
-            // InternalRos.g:13275:1: ( '}' )
+            // InternalRos.g:13085:1: ( ( '}' ) )
+            // InternalRos.g:13086:1: ( '}' )
             {
-            // InternalRos.g:13275:1: ( '}' )
-            // InternalRos.g:13276:2: '}'
+            // InternalRos.g:13086:1: ( '}' )
+            // InternalRos.g:13087:2: '}'
             {
              before(grammarAccess.getParameterStructMemberAccess().getRightCurlyBracketKeyword_5()); 
             match(input,19,FOLLOW_2); 
@@ -39563,14 +38926,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__0"
-    // InternalRos.g:13286:1: rule__ParameterStructTypeMember__Group__0 : rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1 ;
+    // InternalRos.g:13097:1: rule__ParameterStructTypeMember__Group__0 : rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1 ;
     public final void rule__ParameterStructTypeMember__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13290:1: ( rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1 )
-            // InternalRos.g:13291:2: rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1
+            // InternalRos.g:13101:1: ( rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1 )
+            // InternalRos.g:13102:2: rule__ParameterStructTypeMember__Group__0__Impl rule__ParameterStructTypeMember__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__ParameterStructTypeMember__Group__0__Impl();
@@ -39601,17 +38964,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__0__Impl"
-    // InternalRos.g:13298:1: rule__ParameterStructTypeMember__Group__0__Impl : ( 'ParameterStructTypeMember' ) ;
+    // InternalRos.g:13109:1: rule__ParameterStructTypeMember__Group__0__Impl : ( 'ParameterStructTypeMember' ) ;
     public final void rule__ParameterStructTypeMember__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13302:1: ( ( 'ParameterStructTypeMember' ) )
-            // InternalRos.g:13303:1: ( 'ParameterStructTypeMember' )
+            // InternalRos.g:13113:1: ( ( 'ParameterStructTypeMember' ) )
+            // InternalRos.g:13114:1: ( 'ParameterStructTypeMember' )
             {
-            // InternalRos.g:13303:1: ( 'ParameterStructTypeMember' )
-            // InternalRos.g:13304:2: 'ParameterStructTypeMember'
+            // InternalRos.g:13114:1: ( 'ParameterStructTypeMember' )
+            // InternalRos.g:13115:2: 'ParameterStructTypeMember'
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getParameterStructTypeMemberKeyword_0()); 
             match(input,87,FOLLOW_2); 
@@ -39638,14 +39001,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__1"
-    // InternalRos.g:13313:1: rule__ParameterStructTypeMember__Group__1 : rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2 ;
+    // InternalRos.g:13124:1: rule__ParameterStructTypeMember__Group__1 : rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2 ;
     public final void rule__ParameterStructTypeMember__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13317:1: ( rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2 )
-            // InternalRos.g:13318:2: rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2
+            // InternalRos.g:13128:1: ( rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2 )
+            // InternalRos.g:13129:2: rule__ParameterStructTypeMember__Group__1__Impl rule__ParameterStructTypeMember__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ParameterStructTypeMember__Group__1__Impl();
@@ -39676,21 +39039,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__1__Impl"
-    // InternalRos.g:13325:1: rule__ParameterStructTypeMember__Group__1__Impl : ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) ) ;
+    // InternalRos.g:13136:1: rule__ParameterStructTypeMember__Group__1__Impl : ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) ) ;
     public final void rule__ParameterStructTypeMember__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13329:1: ( ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) ) )
-            // InternalRos.g:13330:1: ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) )
+            // InternalRos.g:13140:1: ( ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) ) )
+            // InternalRos.g:13141:1: ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) )
             {
-            // InternalRos.g:13330:1: ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) )
-            // InternalRos.g:13331:2: ( rule__ParameterStructTypeMember__NameAssignment_1 )
+            // InternalRos.g:13141:1: ( ( rule__ParameterStructTypeMember__NameAssignment_1 ) )
+            // InternalRos.g:13142:2: ( rule__ParameterStructTypeMember__NameAssignment_1 )
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getNameAssignment_1()); 
-            // InternalRos.g:13332:2: ( rule__ParameterStructTypeMember__NameAssignment_1 )
-            // InternalRos.g:13332:3: rule__ParameterStructTypeMember__NameAssignment_1
+            // InternalRos.g:13143:2: ( rule__ParameterStructTypeMember__NameAssignment_1 )
+            // InternalRos.g:13143:3: rule__ParameterStructTypeMember__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructTypeMember__NameAssignment_1();
@@ -39723,14 +39086,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__2"
-    // InternalRos.g:13340:1: rule__ParameterStructTypeMember__Group__2 : rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3 ;
+    // InternalRos.g:13151:1: rule__ParameterStructTypeMember__Group__2 : rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3 ;
     public final void rule__ParameterStructTypeMember__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13344:1: ( rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3 )
-            // InternalRos.g:13345:2: rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3
+            // InternalRos.g:13155:1: ( rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3 )
+            // InternalRos.g:13156:2: rule__ParameterStructTypeMember__Group__2__Impl rule__ParameterStructTypeMember__Group__3
             {
             pushFollow(FOLLOW_66);
             rule__ParameterStructTypeMember__Group__2__Impl();
@@ -39761,17 +39124,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__2__Impl"
-    // InternalRos.g:13352:1: rule__ParameterStructTypeMember__Group__2__Impl : ( '{' ) ;
+    // InternalRos.g:13163:1: rule__ParameterStructTypeMember__Group__2__Impl : ( '{' ) ;
     public final void rule__ParameterStructTypeMember__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13356:1: ( ( '{' ) )
-            // InternalRos.g:13357:1: ( '{' )
+            // InternalRos.g:13167:1: ( ( '{' ) )
+            // InternalRos.g:13168:1: ( '{' )
             {
-            // InternalRos.g:13357:1: ( '{' )
-            // InternalRos.g:13358:2: '{'
+            // InternalRos.g:13168:1: ( '{' )
+            // InternalRos.g:13169:2: '{'
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
@@ -39798,14 +39161,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__3"
-    // InternalRos.g:13367:1: rule__ParameterStructTypeMember__Group__3 : rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4 ;
+    // InternalRos.g:13178:1: rule__ParameterStructTypeMember__Group__3 : rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4 ;
     public final void rule__ParameterStructTypeMember__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13371:1: ( rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4 )
-            // InternalRos.g:13372:2: rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4
+            // InternalRos.g:13182:1: ( rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4 )
+            // InternalRos.g:13183:2: rule__ParameterStructTypeMember__Group__3__Impl rule__ParameterStructTypeMember__Group__4
             {
             pushFollow(FOLLOW_40);
             rule__ParameterStructTypeMember__Group__3__Impl();
@@ -39836,17 +39199,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__3__Impl"
-    // InternalRos.g:13379:1: rule__ParameterStructTypeMember__Group__3__Impl : ( 'type' ) ;
+    // InternalRos.g:13190:1: rule__ParameterStructTypeMember__Group__3__Impl : ( 'type' ) ;
     public final void rule__ParameterStructTypeMember__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13383:1: ( ( 'type' ) )
-            // InternalRos.g:13384:1: ( 'type' )
+            // InternalRos.g:13194:1: ( ( 'type' ) )
+            // InternalRos.g:13195:1: ( 'type' )
             {
-            // InternalRos.g:13384:1: ( 'type' )
-            // InternalRos.g:13385:2: 'type'
+            // InternalRos.g:13195:1: ( 'type' )
+            // InternalRos.g:13196:2: 'type'
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getTypeKeyword_3()); 
             match(input,58,FOLLOW_2); 
@@ -39873,14 +39236,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__4"
-    // InternalRos.g:13394:1: rule__ParameterStructTypeMember__Group__4 : rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5 ;
+    // InternalRos.g:13205:1: rule__ParameterStructTypeMember__Group__4 : rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5 ;
     public final void rule__ParameterStructTypeMember__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13398:1: ( rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5 )
-            // InternalRos.g:13399:2: rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5
+            // InternalRos.g:13209:1: ( rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5 )
+            // InternalRos.g:13210:2: rule__ParameterStructTypeMember__Group__4__Impl rule__ParameterStructTypeMember__Group__5
             {
             pushFollow(FOLLOW_52);
             rule__ParameterStructTypeMember__Group__4__Impl();
@@ -39911,21 +39274,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__4__Impl"
-    // InternalRos.g:13406:1: rule__ParameterStructTypeMember__Group__4__Impl : ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) ) ;
+    // InternalRos.g:13217:1: rule__ParameterStructTypeMember__Group__4__Impl : ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) ) ;
     public final void rule__ParameterStructTypeMember__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13410:1: ( ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) ) )
-            // InternalRos.g:13411:1: ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) )
+            // InternalRos.g:13221:1: ( ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) ) )
+            // InternalRos.g:13222:1: ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) )
             {
-            // InternalRos.g:13411:1: ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) )
-            // InternalRos.g:13412:2: ( rule__ParameterStructTypeMember__TypeAssignment_4 )
+            // InternalRos.g:13222:1: ( ( rule__ParameterStructTypeMember__TypeAssignment_4 ) )
+            // InternalRos.g:13223:2: ( rule__ParameterStructTypeMember__TypeAssignment_4 )
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getTypeAssignment_4()); 
-            // InternalRos.g:13413:2: ( rule__ParameterStructTypeMember__TypeAssignment_4 )
-            // InternalRos.g:13413:3: rule__ParameterStructTypeMember__TypeAssignment_4
+            // InternalRos.g:13224:2: ( rule__ParameterStructTypeMember__TypeAssignment_4 )
+            // InternalRos.g:13224:3: rule__ParameterStructTypeMember__TypeAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructTypeMember__TypeAssignment_4();
@@ -39958,14 +39321,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__5"
-    // InternalRos.g:13421:1: rule__ParameterStructTypeMember__Group__5 : rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6 ;
+    // InternalRos.g:13232:1: rule__ParameterStructTypeMember__Group__5 : rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6 ;
     public final void rule__ParameterStructTypeMember__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13425:1: ( rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6 )
-            // InternalRos.g:13426:2: rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6
+            // InternalRos.g:13236:1: ( rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6 )
+            // InternalRos.g:13237:2: rule__ParameterStructTypeMember__Group__5__Impl rule__ParameterStructTypeMember__Group__6
             {
             pushFollow(FOLLOW_52);
             rule__ParameterStructTypeMember__Group__5__Impl();
@@ -39996,29 +39359,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__5__Impl"
-    // InternalRos.g:13433:1: rule__ParameterStructTypeMember__Group__5__Impl : ( ( rule__ParameterStructTypeMember__Group_5__0 )? ) ;
+    // InternalRos.g:13244:1: rule__ParameterStructTypeMember__Group__5__Impl : ( ( rule__ParameterStructTypeMember__Group_5__0 )? ) ;
     public final void rule__ParameterStructTypeMember__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13437:1: ( ( ( rule__ParameterStructTypeMember__Group_5__0 )? ) )
-            // InternalRos.g:13438:1: ( ( rule__ParameterStructTypeMember__Group_5__0 )? )
+            // InternalRos.g:13248:1: ( ( ( rule__ParameterStructTypeMember__Group_5__0 )? ) )
+            // InternalRos.g:13249:1: ( ( rule__ParameterStructTypeMember__Group_5__0 )? )
             {
-            // InternalRos.g:13438:1: ( ( rule__ParameterStructTypeMember__Group_5__0 )? )
-            // InternalRos.g:13439:2: ( rule__ParameterStructTypeMember__Group_5__0 )?
+            // InternalRos.g:13249:1: ( ( rule__ParameterStructTypeMember__Group_5__0 )? )
+            // InternalRos.g:13250:2: ( rule__ParameterStructTypeMember__Group_5__0 )?
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getGroup_5()); 
-            // InternalRos.g:13440:2: ( rule__ParameterStructTypeMember__Group_5__0 )?
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            // InternalRos.g:13251:2: ( rule__ParameterStructTypeMember__Group_5__0 )?
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA79_0==65) ) {
-                alt79=1;
+            if ( (LA72_0==65) ) {
+                alt72=1;
             }
-            switch (alt79) {
+            switch (alt72) {
                 case 1 :
-                    // InternalRos.g:13440:3: rule__ParameterStructTypeMember__Group_5__0
+                    // InternalRos.g:13251:3: rule__ParameterStructTypeMember__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ParameterStructTypeMember__Group_5__0();
@@ -40054,14 +39417,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__6"
-    // InternalRos.g:13448:1: rule__ParameterStructTypeMember__Group__6 : rule__ParameterStructTypeMember__Group__6__Impl ;
+    // InternalRos.g:13259:1: rule__ParameterStructTypeMember__Group__6 : rule__ParameterStructTypeMember__Group__6__Impl ;
     public final void rule__ParameterStructTypeMember__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13452:1: ( rule__ParameterStructTypeMember__Group__6__Impl )
-            // InternalRos.g:13453:2: rule__ParameterStructTypeMember__Group__6__Impl
+            // InternalRos.g:13263:1: ( rule__ParameterStructTypeMember__Group__6__Impl )
+            // InternalRos.g:13264:2: rule__ParameterStructTypeMember__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructTypeMember__Group__6__Impl();
@@ -40087,17 +39450,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group__6__Impl"
-    // InternalRos.g:13459:1: rule__ParameterStructTypeMember__Group__6__Impl : ( '}' ) ;
+    // InternalRos.g:13270:1: rule__ParameterStructTypeMember__Group__6__Impl : ( '}' ) ;
     public final void rule__ParameterStructTypeMember__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13463:1: ( ( '}' ) )
-            // InternalRos.g:13464:1: ( '}' )
+            // InternalRos.g:13274:1: ( ( '}' ) )
+            // InternalRos.g:13275:1: ( '}' )
             {
-            // InternalRos.g:13464:1: ( '}' )
-            // InternalRos.g:13465:2: '}'
+            // InternalRos.g:13275:1: ( '}' )
+            // InternalRos.g:13276:2: '}'
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getRightCurlyBracketKeyword_6()); 
             match(input,19,FOLLOW_2); 
@@ -40124,14 +39487,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group_5__0"
-    // InternalRos.g:13475:1: rule__ParameterStructTypeMember__Group_5__0 : rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1 ;
+    // InternalRos.g:13286:1: rule__ParameterStructTypeMember__Group_5__0 : rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1 ;
     public final void rule__ParameterStructTypeMember__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13479:1: ( rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1 )
-            // InternalRos.g:13480:2: rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1
+            // InternalRos.g:13290:1: ( rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1 )
+            // InternalRos.g:13291:2: rule__ParameterStructTypeMember__Group_5__0__Impl rule__ParameterStructTypeMember__Group_5__1
             {
             pushFollow(FOLLOW_74);
             rule__ParameterStructTypeMember__Group_5__0__Impl();
@@ -40162,17 +39525,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group_5__0__Impl"
-    // InternalRos.g:13487:1: rule__ParameterStructTypeMember__Group_5__0__Impl : ( 'default' ) ;
+    // InternalRos.g:13298:1: rule__ParameterStructTypeMember__Group_5__0__Impl : ( 'default' ) ;
     public final void rule__ParameterStructTypeMember__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13491:1: ( ( 'default' ) )
-            // InternalRos.g:13492:1: ( 'default' )
+            // InternalRos.g:13302:1: ( ( 'default' ) )
+            // InternalRos.g:13303:1: ( 'default' )
             {
-            // InternalRos.g:13492:1: ( 'default' )
-            // InternalRos.g:13493:2: 'default'
+            // InternalRos.g:13303:1: ( 'default' )
+            // InternalRos.g:13304:2: 'default'
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getDefaultKeyword_5_0()); 
             match(input,65,FOLLOW_2); 
@@ -40199,14 +39562,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group_5__1"
-    // InternalRos.g:13502:1: rule__ParameterStructTypeMember__Group_5__1 : rule__ParameterStructTypeMember__Group_5__1__Impl ;
+    // InternalRos.g:13313:1: rule__ParameterStructTypeMember__Group_5__1 : rule__ParameterStructTypeMember__Group_5__1__Impl ;
     public final void rule__ParameterStructTypeMember__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13506:1: ( rule__ParameterStructTypeMember__Group_5__1__Impl )
-            // InternalRos.g:13507:2: rule__ParameterStructTypeMember__Group_5__1__Impl
+            // InternalRos.g:13317:1: ( rule__ParameterStructTypeMember__Group_5__1__Impl )
+            // InternalRos.g:13318:2: rule__ParameterStructTypeMember__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructTypeMember__Group_5__1__Impl();
@@ -40232,21 +39595,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__Group_5__1__Impl"
-    // InternalRos.g:13513:1: rule__ParameterStructTypeMember__Group_5__1__Impl : ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) ) ;
+    // InternalRos.g:13324:1: rule__ParameterStructTypeMember__Group_5__1__Impl : ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) ) ;
     public final void rule__ParameterStructTypeMember__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13517:1: ( ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) ) )
-            // InternalRos.g:13518:1: ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) )
+            // InternalRos.g:13328:1: ( ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) ) )
+            // InternalRos.g:13329:1: ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) )
             {
-            // InternalRos.g:13518:1: ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) )
-            // InternalRos.g:13519:2: ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 )
+            // InternalRos.g:13329:1: ( ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 ) )
+            // InternalRos.g:13330:2: ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 )
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getDefaultAssignment_5_1()); 
-            // InternalRos.g:13520:2: ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 )
-            // InternalRos.g:13520:3: rule__ParameterStructTypeMember__DefaultAssignment_5_1
+            // InternalRos.g:13331:2: ( rule__ParameterStructTypeMember__DefaultAssignment_5_1 )
+            // InternalRos.g:13331:3: rule__ParameterStructTypeMember__DefaultAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__ParameterStructTypeMember__DefaultAssignment_5_1();
@@ -40279,14 +39642,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__0"
-    // InternalRos.g:13529:1: rule__PackageDependency__Group__0 : rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1 ;
+    // InternalRos.g:13340:1: rule__PackageDependency__Group__0 : rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1 ;
     public final void rule__PackageDependency__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13533:1: ( rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1 )
-            // InternalRos.g:13534:2: rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1
+            // InternalRos.g:13344:1: ( rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1 )
+            // InternalRos.g:13345:2: rule__PackageDependency__Group__0__Impl rule__PackageDependency__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__PackageDependency__Group__0__Impl();
@@ -40317,17 +39680,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__0__Impl"
-    // InternalRos.g:13541:1: rule__PackageDependency__Group__0__Impl : ( 'PackageDependency' ) ;
+    // InternalRos.g:13352:1: rule__PackageDependency__Group__0__Impl : ( 'PackageDependency' ) ;
     public final void rule__PackageDependency__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13545:1: ( ( 'PackageDependency' ) )
-            // InternalRos.g:13546:1: ( 'PackageDependency' )
+            // InternalRos.g:13356:1: ( ( 'PackageDependency' ) )
+            // InternalRos.g:13357:1: ( 'PackageDependency' )
             {
-            // InternalRos.g:13546:1: ( 'PackageDependency' )
-            // InternalRos.g:13547:2: 'PackageDependency'
+            // InternalRos.g:13357:1: ( 'PackageDependency' )
+            // InternalRos.g:13358:2: 'PackageDependency'
             {
              before(grammarAccess.getPackageDependencyAccess().getPackageDependencyKeyword_0()); 
             match(input,88,FOLLOW_2); 
@@ -40354,14 +39717,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__1"
-    // InternalRos.g:13556:1: rule__PackageDependency__Group__1 : rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2 ;
+    // InternalRos.g:13367:1: rule__PackageDependency__Group__1 : rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2 ;
     public final void rule__PackageDependency__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13560:1: ( rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2 )
-            // InternalRos.g:13561:2: rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2
+            // InternalRos.g:13371:1: ( rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2 )
+            // InternalRos.g:13372:2: rule__PackageDependency__Group__1__Impl rule__PackageDependency__Group__2
             {
             pushFollow(FOLLOW_77);
             rule__PackageDependency__Group__1__Impl();
@@ -40392,17 +39755,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__1__Impl"
-    // InternalRos.g:13568:1: rule__PackageDependency__Group__1__Impl : ( '{' ) ;
+    // InternalRos.g:13379:1: rule__PackageDependency__Group__1__Impl : ( '{' ) ;
     public final void rule__PackageDependency__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13572:1: ( ( '{' ) )
-            // InternalRos.g:13573:1: ( '{' )
+            // InternalRos.g:13383:1: ( ( '{' ) )
+            // InternalRos.g:13384:1: ( '{' )
             {
-            // InternalRos.g:13573:1: ( '{' )
-            // InternalRos.g:13574:2: '{'
+            // InternalRos.g:13384:1: ( '{' )
+            // InternalRos.g:13385:2: '{'
             {
              before(grammarAccess.getPackageDependencyAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -40429,14 +39792,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__2"
-    // InternalRos.g:13583:1: rule__PackageDependency__Group__2 : rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3 ;
+    // InternalRos.g:13394:1: rule__PackageDependency__Group__2 : rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3 ;
     public final void rule__PackageDependency__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13587:1: ( rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3 )
-            // InternalRos.g:13588:2: rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3
+            // InternalRos.g:13398:1: ( rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3 )
+            // InternalRos.g:13399:2: rule__PackageDependency__Group__2__Impl rule__PackageDependency__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__PackageDependency__Group__2__Impl();
@@ -40467,17 +39830,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__2__Impl"
-    // InternalRos.g:13595:1: rule__PackageDependency__Group__2__Impl : ( 'package' ) ;
+    // InternalRos.g:13406:1: rule__PackageDependency__Group__2__Impl : ( 'package' ) ;
     public final void rule__PackageDependency__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13599:1: ( ( 'package' ) )
-            // InternalRos.g:13600:1: ( 'package' )
+            // InternalRos.g:13410:1: ( ( 'package' ) )
+            // InternalRos.g:13411:1: ( 'package' )
             {
-            // InternalRos.g:13600:1: ( 'package' )
-            // InternalRos.g:13601:2: 'package'
+            // InternalRos.g:13411:1: ( 'package' )
+            // InternalRos.g:13412:2: 'package'
             {
              before(grammarAccess.getPackageDependencyAccess().getPackageKeyword_2()); 
             match(input,20,FOLLOW_2); 
@@ -40504,14 +39867,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__3"
-    // InternalRos.g:13610:1: rule__PackageDependency__Group__3 : rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4 ;
+    // InternalRos.g:13421:1: rule__PackageDependency__Group__3 : rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4 ;
     public final void rule__PackageDependency__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13614:1: ( rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4 )
-            // InternalRos.g:13615:2: rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4
+            // InternalRos.g:13425:1: ( rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4 )
+            // InternalRos.g:13426:2: rule__PackageDependency__Group__3__Impl rule__PackageDependency__Group__4
             {
             pushFollow(FOLLOW_41);
             rule__PackageDependency__Group__3__Impl();
@@ -40542,21 +39905,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__3__Impl"
-    // InternalRos.g:13622:1: rule__PackageDependency__Group__3__Impl : ( ( rule__PackageDependency__PackageAssignment_3 ) ) ;
+    // InternalRos.g:13433:1: rule__PackageDependency__Group__3__Impl : ( ( rule__PackageDependency__PackageAssignment_3 ) ) ;
     public final void rule__PackageDependency__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13626:1: ( ( ( rule__PackageDependency__PackageAssignment_3 ) ) )
-            // InternalRos.g:13627:1: ( ( rule__PackageDependency__PackageAssignment_3 ) )
+            // InternalRos.g:13437:1: ( ( ( rule__PackageDependency__PackageAssignment_3 ) ) )
+            // InternalRos.g:13438:1: ( ( rule__PackageDependency__PackageAssignment_3 ) )
             {
-            // InternalRos.g:13627:1: ( ( rule__PackageDependency__PackageAssignment_3 ) )
-            // InternalRos.g:13628:2: ( rule__PackageDependency__PackageAssignment_3 )
+            // InternalRos.g:13438:1: ( ( rule__PackageDependency__PackageAssignment_3 ) )
+            // InternalRos.g:13439:2: ( rule__PackageDependency__PackageAssignment_3 )
             {
              before(grammarAccess.getPackageDependencyAccess().getPackageAssignment_3()); 
-            // InternalRos.g:13629:2: ( rule__PackageDependency__PackageAssignment_3 )
-            // InternalRos.g:13629:3: rule__PackageDependency__PackageAssignment_3
+            // InternalRos.g:13440:2: ( rule__PackageDependency__PackageAssignment_3 )
+            // InternalRos.g:13440:3: rule__PackageDependency__PackageAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__PackageDependency__PackageAssignment_3();
@@ -40589,14 +39952,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__4"
-    // InternalRos.g:13637:1: rule__PackageDependency__Group__4 : rule__PackageDependency__Group__4__Impl ;
+    // InternalRos.g:13448:1: rule__PackageDependency__Group__4 : rule__PackageDependency__Group__4__Impl ;
     public final void rule__PackageDependency__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13641:1: ( rule__PackageDependency__Group__4__Impl )
-            // InternalRos.g:13642:2: rule__PackageDependency__Group__4__Impl
+            // InternalRos.g:13452:1: ( rule__PackageDependency__Group__4__Impl )
+            // InternalRos.g:13453:2: rule__PackageDependency__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PackageDependency__Group__4__Impl();
@@ -40622,17 +39985,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__Group__4__Impl"
-    // InternalRos.g:13648:1: rule__PackageDependency__Group__4__Impl : ( '}' ) ;
+    // InternalRos.g:13459:1: rule__PackageDependency__Group__4__Impl : ( '}' ) ;
     public final void rule__PackageDependency__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13652:1: ( ( '}' ) )
-            // InternalRos.g:13653:1: ( '}' )
+            // InternalRos.g:13463:1: ( ( '}' ) )
+            // InternalRos.g:13464:1: ( '}' )
             {
-            // InternalRos.g:13653:1: ( '}' )
-            // InternalRos.g:13654:2: '}'
+            // InternalRos.g:13464:1: ( '}' )
+            // InternalRos.g:13465:2: '}'
             {
              before(grammarAccess.getPackageDependencyAccess().getRightCurlyBracketKeyword_4()); 
             match(input,19,FOLLOW_2); 
@@ -40659,14 +40022,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__0"
-    // InternalRos.g:13664:1: rule__ExternalDependency__Group__0 : rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1 ;
+    // InternalRos.g:13475:1: rule__ExternalDependency__Group__0 : rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1 ;
     public final void rule__ExternalDependency__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13668:1: ( rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1 )
-            // InternalRos.g:13669:2: rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1
+            // InternalRos.g:13479:1: ( rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1 )
+            // InternalRos.g:13480:2: rule__ExternalDependency__Group__0__Impl rule__ExternalDependency__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__ExternalDependency__Group__0__Impl();
@@ -40697,21 +40060,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__0__Impl"
-    // InternalRos.g:13676:1: rule__ExternalDependency__Group__0__Impl : ( () ) ;
+    // InternalRos.g:13487:1: rule__ExternalDependency__Group__0__Impl : ( () ) ;
     public final void rule__ExternalDependency__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13680:1: ( ( () ) )
-            // InternalRos.g:13681:1: ( () )
+            // InternalRos.g:13491:1: ( ( () ) )
+            // InternalRos.g:13492:1: ( () )
             {
-            // InternalRos.g:13681:1: ( () )
-            // InternalRos.g:13682:2: ()
+            // InternalRos.g:13492:1: ( () )
+            // InternalRos.g:13493:2: ()
             {
              before(grammarAccess.getExternalDependencyAccess().getExternalDependencyAction_0()); 
-            // InternalRos.g:13683:2: ()
-            // InternalRos.g:13683:3: 
+            // InternalRos.g:13494:2: ()
+            // InternalRos.g:13494:3: 
             {
             }
 
@@ -40734,14 +40097,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__1"
-    // InternalRos.g:13691:1: rule__ExternalDependency__Group__1 : rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2 ;
+    // InternalRos.g:13502:1: rule__ExternalDependency__Group__1 : rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2 ;
     public final void rule__ExternalDependency__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13695:1: ( rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2 )
-            // InternalRos.g:13696:2: rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2
+            // InternalRos.g:13506:1: ( rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2 )
+            // InternalRos.g:13507:2: rule__ExternalDependency__Group__1__Impl rule__ExternalDependency__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__ExternalDependency__Group__1__Impl();
@@ -40772,17 +40135,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__1__Impl"
-    // InternalRos.g:13703:1: rule__ExternalDependency__Group__1__Impl : ( 'ExternalDependency' ) ;
+    // InternalRos.g:13514:1: rule__ExternalDependency__Group__1__Impl : ( 'ExternalDependency' ) ;
     public final void rule__ExternalDependency__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13707:1: ( ( 'ExternalDependency' ) )
-            // InternalRos.g:13708:1: ( 'ExternalDependency' )
+            // InternalRos.g:13518:1: ( ( 'ExternalDependency' ) )
+            // InternalRos.g:13519:1: ( 'ExternalDependency' )
             {
-            // InternalRos.g:13708:1: ( 'ExternalDependency' )
-            // InternalRos.g:13709:2: 'ExternalDependency'
+            // InternalRos.g:13519:1: ( 'ExternalDependency' )
+            // InternalRos.g:13520:2: 'ExternalDependency'
             {
              before(grammarAccess.getExternalDependencyAccess().getExternalDependencyKeyword_1()); 
             match(input,89,FOLLOW_2); 
@@ -40809,14 +40172,14 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__2"
-    // InternalRos.g:13718:1: rule__ExternalDependency__Group__2 : rule__ExternalDependency__Group__2__Impl ;
+    // InternalRos.g:13529:1: rule__ExternalDependency__Group__2 : rule__ExternalDependency__Group__2__Impl ;
     public final void rule__ExternalDependency__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13722:1: ( rule__ExternalDependency__Group__2__Impl )
-            // InternalRos.g:13723:2: rule__ExternalDependency__Group__2__Impl
+            // InternalRos.g:13533:1: ( rule__ExternalDependency__Group__2__Impl )
+            // InternalRos.g:13534:2: rule__ExternalDependency__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExternalDependency__Group__2__Impl();
@@ -40842,21 +40205,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__Group__2__Impl"
-    // InternalRos.g:13729:1: rule__ExternalDependency__Group__2__Impl : ( ( rule__ExternalDependency__NameAssignment_2 ) ) ;
+    // InternalRos.g:13540:1: rule__ExternalDependency__Group__2__Impl : ( ( rule__ExternalDependency__NameAssignment_2 ) ) ;
     public final void rule__ExternalDependency__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13733:1: ( ( ( rule__ExternalDependency__NameAssignment_2 ) ) )
-            // InternalRos.g:13734:1: ( ( rule__ExternalDependency__NameAssignment_2 ) )
+            // InternalRos.g:13544:1: ( ( ( rule__ExternalDependency__NameAssignment_2 ) ) )
+            // InternalRos.g:13545:1: ( ( rule__ExternalDependency__NameAssignment_2 ) )
             {
-            // InternalRos.g:13734:1: ( ( rule__ExternalDependency__NameAssignment_2 ) )
-            // InternalRos.g:13735:2: ( rule__ExternalDependency__NameAssignment_2 )
+            // InternalRos.g:13545:1: ( ( rule__ExternalDependency__NameAssignment_2 ) )
+            // InternalRos.g:13546:2: ( rule__ExternalDependency__NameAssignment_2 )
             {
              before(grammarAccess.getExternalDependencyAccess().getNameAssignment_2()); 
-            // InternalRos.g:13736:2: ( rule__ExternalDependency__NameAssignment_2 )
-            // InternalRos.g:13736:3: rule__ExternalDependency__NameAssignment_2
+            // InternalRos.g:13547:2: ( rule__ExternalDependency__NameAssignment_2 )
+            // InternalRos.g:13547:3: rule__ExternalDependency__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ExternalDependency__NameAssignment_2();
@@ -40889,17 +40252,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageSet__PackageAssignment_3_2"
-    // InternalRos.g:13745:1: rule__PackageSet__PackageAssignment_3_2 : ( rulePackage ) ;
+    // InternalRos.g:13556:1: rule__PackageSet__PackageAssignment_3_2 : ( rulePackage ) ;
     public final void rule__PackageSet__PackageAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13749:1: ( ( rulePackage ) )
-            // InternalRos.g:13750:2: ( rulePackage )
+            // InternalRos.g:13560:1: ( ( rulePackage ) )
+            // InternalRos.g:13561:2: ( rulePackage )
             {
-            // InternalRos.g:13750:2: ( rulePackage )
-            // InternalRos.g:13751:3: rulePackage
+            // InternalRos.g:13561:2: ( rulePackage )
+            // InternalRos.g:13562:3: rulePackage
             {
              before(grammarAccess.getPackageSetAccess().getPackagePackageParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -40930,17 +40293,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageSet__PackageAssignment_3_3_1"
-    // InternalRos.g:13760:1: rule__PackageSet__PackageAssignment_3_3_1 : ( rulePackage ) ;
+    // InternalRos.g:13571:1: rule__PackageSet__PackageAssignment_3_3_1 : ( rulePackage ) ;
     public final void rule__PackageSet__PackageAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13764:1: ( ( rulePackage ) )
-            // InternalRos.g:13765:2: ( rulePackage )
+            // InternalRos.g:13575:1: ( ( rulePackage ) )
+            // InternalRos.g:13576:2: ( rulePackage )
             {
-            // InternalRos.g:13765:2: ( rulePackage )
-            // InternalRos.g:13766:3: rulePackage
+            // InternalRos.g:13576:2: ( rulePackage )
+            // InternalRos.g:13577:3: rulePackage
             {
              before(grammarAccess.getPackageSetAccess().getPackagePackageParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -40971,17 +40334,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package_Impl__NameAssignment_2"
-    // InternalRos.g:13775:1: rule__Package_Impl__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13586:1: rule__Package_Impl__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Package_Impl__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13779:1: ( ( ruleEString ) )
-            // InternalRos.g:13780:2: ( ruleEString )
+            // InternalRos.g:13590:1: ( ( ruleEString ) )
+            // InternalRos.g:13591:2: ( ruleEString )
             {
-            // InternalRos.g:13780:2: ( ruleEString )
-            // InternalRos.g:13781:3: ruleEString
+            // InternalRos.g:13591:2: ( ruleEString )
+            // InternalRos.g:13592:3: ruleEString
             {
              before(grammarAccess.getPackage_ImplAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41012,17 +40375,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package_Impl__SpecAssignment_4_2"
-    // InternalRos.g:13790:1: rule__Package_Impl__SpecAssignment_4_2 : ( ruleSpecBase ) ;
+    // InternalRos.g:13601:1: rule__Package_Impl__SpecAssignment_4_2 : ( ruleSpecBase ) ;
     public final void rule__Package_Impl__SpecAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13794:1: ( ( ruleSpecBase ) )
-            // InternalRos.g:13795:2: ( ruleSpecBase )
+            // InternalRos.g:13605:1: ( ( ruleSpecBase ) )
+            // InternalRos.g:13606:2: ( ruleSpecBase )
             {
-            // InternalRos.g:13795:2: ( ruleSpecBase )
-            // InternalRos.g:13796:3: ruleSpecBase
+            // InternalRos.g:13606:2: ( ruleSpecBase )
+            // InternalRos.g:13607:3: ruleSpecBase
             {
              before(grammarAccess.getPackage_ImplAccess().getSpecSpecBaseParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41053,17 +40416,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package_Impl__SpecAssignment_4_3_1"
-    // InternalRos.g:13805:1: rule__Package_Impl__SpecAssignment_4_3_1 : ( ruleSpecBase ) ;
+    // InternalRos.g:13616:1: rule__Package_Impl__SpecAssignment_4_3_1 : ( ruleSpecBase ) ;
     public final void rule__Package_Impl__SpecAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13809:1: ( ( ruleSpecBase ) )
-            // InternalRos.g:13810:2: ( ruleSpecBase )
+            // InternalRos.g:13620:1: ( ( ruleSpecBase ) )
+            // InternalRos.g:13621:2: ( ruleSpecBase )
             {
-            // InternalRos.g:13810:2: ( ruleSpecBase )
-            // InternalRos.g:13811:3: ruleSpecBase
+            // InternalRos.g:13621:2: ( ruleSpecBase )
+            // InternalRos.g:13622:3: ruleSpecBase
             {
              before(grammarAccess.getPackage_ImplAccess().getSpecSpecBaseParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41094,17 +40457,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package_Impl__ArtifactAssignment_5_2"
-    // InternalRos.g:13820:1: rule__Package_Impl__ArtifactAssignment_5_2 : ( ruleArtifact ) ;
+    // InternalRos.g:13631:1: rule__Package_Impl__ArtifactAssignment_5_2 : ( ruleArtifact ) ;
     public final void rule__Package_Impl__ArtifactAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13824:1: ( ( ruleArtifact ) )
-            // InternalRos.g:13825:2: ( ruleArtifact )
+            // InternalRos.g:13635:1: ( ( ruleArtifact ) )
+            // InternalRos.g:13636:2: ( ruleArtifact )
             {
-            // InternalRos.g:13825:2: ( ruleArtifact )
-            // InternalRos.g:13826:3: ruleArtifact
+            // InternalRos.g:13636:2: ( ruleArtifact )
+            // InternalRos.g:13637:3: ruleArtifact
             {
              before(grammarAccess.getPackage_ImplAccess().getArtifactArtifactParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41135,17 +40498,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package_Impl__ArtifactAssignment_5_3_1"
-    // InternalRos.g:13835:1: rule__Package_Impl__ArtifactAssignment_5_3_1 : ( ruleArtifact ) ;
+    // InternalRos.g:13646:1: rule__Package_Impl__ArtifactAssignment_5_3_1 : ( ruleArtifact ) ;
     public final void rule__Package_Impl__ArtifactAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13839:1: ( ( ruleArtifact ) )
-            // InternalRos.g:13840:2: ( ruleArtifact )
+            // InternalRos.g:13650:1: ( ( ruleArtifact ) )
+            // InternalRos.g:13651:2: ( ruleArtifact )
             {
-            // InternalRos.g:13840:2: ( ruleArtifact )
-            // InternalRos.g:13841:3: ruleArtifact
+            // InternalRos.g:13651:2: ( ruleArtifact )
+            // InternalRos.g:13652:3: ruleArtifact
             {
              before(grammarAccess.getPackage_ImplAccess().getArtifactArtifactParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41176,17 +40539,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Artifact__NameAssignment_2"
-    // InternalRos.g:13850:1: rule__Artifact__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13661:1: rule__Artifact__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Artifact__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13854:1: ( ( ruleEString ) )
-            // InternalRos.g:13855:2: ( ruleEString )
+            // InternalRos.g:13665:1: ( ( ruleEString ) )
+            // InternalRos.g:13666:2: ( ruleEString )
             {
-            // InternalRos.g:13855:2: ( ruleEString )
-            // InternalRos.g:13856:3: ruleEString
+            // InternalRos.g:13666:2: ( ruleEString )
+            // InternalRos.g:13667:3: ruleEString
             {
              before(grammarAccess.getArtifactAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41217,17 +40580,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Artifact__NodeAssignment_4_1"
-    // InternalRos.g:13865:1: rule__Artifact__NodeAssignment_4_1 : ( ruleNode ) ;
+    // InternalRos.g:13676:1: rule__Artifact__NodeAssignment_4_1 : ( ruleNode ) ;
     public final void rule__Artifact__NodeAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13869:1: ( ( ruleNode ) )
-            // InternalRos.g:13870:2: ( ruleNode )
+            // InternalRos.g:13680:1: ( ( ruleNode ) )
+            // InternalRos.g:13681:2: ( ruleNode )
             {
-            // InternalRos.g:13870:2: ( ruleNode )
-            // InternalRos.g:13871:3: ruleNode
+            // InternalRos.g:13681:2: ( ruleNode )
+            // InternalRos.g:13682:3: ruleNode
             {
              before(grammarAccess.getArtifactAccess().getNodeNodeParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41258,17 +40621,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__NameAssignment_2"
-    // InternalRos.g:13880:1: rule__CatkinPackage__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13691:1: rule__CatkinPackage__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__CatkinPackage__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13884:1: ( ( ruleEString ) )
-            // InternalRos.g:13885:2: ( ruleEString )
+            // InternalRos.g:13695:1: ( ( ruleEString ) )
+            // InternalRos.g:13696:2: ( ruleEString )
             {
-            // InternalRos.g:13885:2: ( ruleEString )
-            // InternalRos.g:13886:3: ruleEString
+            // InternalRos.g:13696:2: ( ruleEString )
+            // InternalRos.g:13697:3: ruleEString
             {
              before(grammarAccess.getCatkinPackageAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41299,17 +40662,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__SpecAssignment_4_2"
-    // InternalRos.g:13895:1: rule__CatkinPackage__SpecAssignment_4_2 : ( ruleSpecBase ) ;
+    // InternalRos.g:13706:1: rule__CatkinPackage__SpecAssignment_4_2 : ( ruleSpecBase ) ;
     public final void rule__CatkinPackage__SpecAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13899:1: ( ( ruleSpecBase ) )
-            // InternalRos.g:13900:2: ( ruleSpecBase )
+            // InternalRos.g:13710:1: ( ( ruleSpecBase ) )
+            // InternalRos.g:13711:2: ( ruleSpecBase )
             {
-            // InternalRos.g:13900:2: ( ruleSpecBase )
-            // InternalRos.g:13901:3: ruleSpecBase
+            // InternalRos.g:13711:2: ( ruleSpecBase )
+            // InternalRos.g:13712:3: ruleSpecBase
             {
              before(grammarAccess.getCatkinPackageAccess().getSpecSpecBaseParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41340,17 +40703,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__SpecAssignment_4_3_1"
-    // InternalRos.g:13910:1: rule__CatkinPackage__SpecAssignment_4_3_1 : ( ruleSpecBase ) ;
+    // InternalRos.g:13721:1: rule__CatkinPackage__SpecAssignment_4_3_1 : ( ruleSpecBase ) ;
     public final void rule__CatkinPackage__SpecAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13914:1: ( ( ruleSpecBase ) )
-            // InternalRos.g:13915:2: ( ruleSpecBase )
+            // InternalRos.g:13725:1: ( ( ruleSpecBase ) )
+            // InternalRos.g:13726:2: ( ruleSpecBase )
             {
-            // InternalRos.g:13915:2: ( ruleSpecBase )
-            // InternalRos.g:13916:3: ruleSpecBase
+            // InternalRos.g:13726:2: ( ruleSpecBase )
+            // InternalRos.g:13727:3: ruleSpecBase
             {
              before(grammarAccess.getCatkinPackageAccess().getSpecSpecBaseParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41381,17 +40744,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__ArtifactAssignment_5_2"
-    // InternalRos.g:13925:1: rule__CatkinPackage__ArtifactAssignment_5_2 : ( ruleArtifact ) ;
+    // InternalRos.g:13736:1: rule__CatkinPackage__ArtifactAssignment_5_2 : ( ruleArtifact ) ;
     public final void rule__CatkinPackage__ArtifactAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13929:1: ( ( ruleArtifact ) )
-            // InternalRos.g:13930:2: ( ruleArtifact )
+            // InternalRos.g:13740:1: ( ( ruleArtifact ) )
+            // InternalRos.g:13741:2: ( ruleArtifact )
             {
-            // InternalRos.g:13930:2: ( ruleArtifact )
-            // InternalRos.g:13931:3: ruleArtifact
+            // InternalRos.g:13741:2: ( ruleArtifact )
+            // InternalRos.g:13742:3: ruleArtifact
             {
              before(grammarAccess.getCatkinPackageAccess().getArtifactArtifactParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41422,17 +40785,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__ArtifactAssignment_5_3_1"
-    // InternalRos.g:13940:1: rule__CatkinPackage__ArtifactAssignment_5_3_1 : ( ruleArtifact ) ;
+    // InternalRos.g:13751:1: rule__CatkinPackage__ArtifactAssignment_5_3_1 : ( ruleArtifact ) ;
     public final void rule__CatkinPackage__ArtifactAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13944:1: ( ( ruleArtifact ) )
-            // InternalRos.g:13945:2: ( ruleArtifact )
+            // InternalRos.g:13755:1: ( ( ruleArtifact ) )
+            // InternalRos.g:13756:2: ( ruleArtifact )
             {
-            // InternalRos.g:13945:2: ( ruleArtifact )
-            // InternalRos.g:13946:3: ruleArtifact
+            // InternalRos.g:13756:2: ( ruleArtifact )
+            // InternalRos.g:13757:3: ruleArtifact
             {
              before(grammarAccess.getCatkinPackageAccess().getArtifactArtifactParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41463,17 +40826,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__DependencyAssignment_6_2"
-    // InternalRos.g:13955:1: rule__CatkinPackage__DependencyAssignment_6_2 : ( ruleDependency ) ;
+    // InternalRos.g:13766:1: rule__CatkinPackage__DependencyAssignment_6_2 : ( ruleDependency ) ;
     public final void rule__CatkinPackage__DependencyAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13959:1: ( ( ruleDependency ) )
-            // InternalRos.g:13960:2: ( ruleDependency )
+            // InternalRos.g:13770:1: ( ( ruleDependency ) )
+            // InternalRos.g:13771:2: ( ruleDependency )
             {
-            // InternalRos.g:13960:2: ( ruleDependency )
-            // InternalRos.g:13961:3: ruleDependency
+            // InternalRos.g:13771:2: ( ruleDependency )
+            // InternalRos.g:13772:3: ruleDependency
             {
              before(grammarAccess.getCatkinPackageAccess().getDependencyDependencyParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41504,17 +40867,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CatkinPackage__DependencyAssignment_6_3_1"
-    // InternalRos.g:13970:1: rule__CatkinPackage__DependencyAssignment_6_3_1 : ( ruleDependency ) ;
+    // InternalRos.g:13781:1: rule__CatkinPackage__DependencyAssignment_6_3_1 : ( ruleDependency ) ;
     public final void rule__CatkinPackage__DependencyAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13974:1: ( ( ruleDependency ) )
-            // InternalRos.g:13975:2: ( ruleDependency )
+            // InternalRos.g:13785:1: ( ( ruleDependency ) )
+            // InternalRos.g:13786:2: ( ruleDependency )
             {
-            // InternalRos.g:13975:2: ( ruleDependency )
-            // InternalRos.g:13976:3: ruleDependency
+            // InternalRos.g:13786:2: ( ruleDependency )
+            // InternalRos.g:13787:3: ruleDependency
             {
              before(grammarAccess.getCatkinPackageAccess().getDependencyDependencyParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41545,17 +40908,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceSpec__NameAssignment_2"
-    // InternalRos.g:13985:1: rule__ServiceSpec__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13796:1: rule__ServiceSpec__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ServiceSpec__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:13989:1: ( ( ruleEString ) )
-            // InternalRos.g:13990:2: ( ruleEString )
+            // InternalRos.g:13800:1: ( ( ruleEString ) )
+            // InternalRos.g:13801:2: ( ruleEString )
             {
-            // InternalRos.g:13990:2: ( ruleEString )
-            // InternalRos.g:13991:3: ruleEString
+            // InternalRos.g:13801:2: ( ruleEString )
+            // InternalRos.g:13802:3: ruleEString
             {
              before(grammarAccess.getServiceSpecAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41586,17 +40949,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceSpec__RequestAssignment_4_1"
-    // InternalRos.g:14000:1: rule__ServiceSpec__RequestAssignment_4_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13811:1: rule__ServiceSpec__RequestAssignment_4_1 : ( ruleMessageDefinition ) ;
     public final void rule__ServiceSpec__RequestAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14004:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14005:2: ( ruleMessageDefinition )
+            // InternalRos.g:13815:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13816:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14005:2: ( ruleMessageDefinition )
-            // InternalRos.g:14006:3: ruleMessageDefinition
+            // InternalRos.g:13816:2: ( ruleMessageDefinition )
+            // InternalRos.g:13817:3: ruleMessageDefinition
             {
              before(grammarAccess.getServiceSpecAccess().getRequestMessageDefinitionParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41627,17 +40990,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ServiceSpec__ResponseAssignment_5_1"
-    // InternalRos.g:14015:1: rule__ServiceSpec__ResponseAssignment_5_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13826:1: rule__ServiceSpec__ResponseAssignment_5_1 : ( ruleMessageDefinition ) ;
     public final void rule__ServiceSpec__ResponseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14019:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14020:2: ( ruleMessageDefinition )
+            // InternalRos.g:13830:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13831:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14020:2: ( ruleMessageDefinition )
-            // InternalRos.g:14021:3: ruleMessageDefinition
+            // InternalRos.g:13831:2: ( ruleMessageDefinition )
+            // InternalRos.g:13832:3: ruleMessageDefinition
             {
              before(grammarAccess.getServiceSpecAccess().getResponseMessageDefinitionParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41668,17 +41031,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TopicSpec__NameAssignment_2"
-    // InternalRos.g:14030:1: rule__TopicSpec__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13841:1: rule__TopicSpec__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__TopicSpec__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14034:1: ( ( ruleEString ) )
-            // InternalRos.g:14035:2: ( ruleEString )
+            // InternalRos.g:13845:1: ( ( ruleEString ) )
+            // InternalRos.g:13846:2: ( ruleEString )
             {
-            // InternalRos.g:14035:2: ( ruleEString )
-            // InternalRos.g:14036:3: ruleEString
+            // InternalRos.g:13846:2: ( ruleEString )
+            // InternalRos.g:13847:3: ruleEString
             {
              before(grammarAccess.getTopicSpecAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41709,17 +41072,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TopicSpec__MessageAssignment_4_1"
-    // InternalRos.g:14045:1: rule__TopicSpec__MessageAssignment_4_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13856:1: rule__TopicSpec__MessageAssignment_4_1 : ( ruleMessageDefinition ) ;
     public final void rule__TopicSpec__MessageAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14049:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14050:2: ( ruleMessageDefinition )
+            // InternalRos.g:13860:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13861:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14050:2: ( ruleMessageDefinition )
-            // InternalRos.g:14051:3: ruleMessageDefinition
+            // InternalRos.g:13861:2: ( ruleMessageDefinition )
+            // InternalRos.g:13862:3: ruleMessageDefinition
             {
              before(grammarAccess.getTopicSpecAccess().getMessageMessageDefinitionParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41750,17 +41113,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionSpec__NameAssignment_2"
-    // InternalRos.g:14060:1: rule__ActionSpec__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:13871:1: rule__ActionSpec__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ActionSpec__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14064:1: ( ( ruleEString ) )
-            // InternalRos.g:14065:2: ( ruleEString )
+            // InternalRos.g:13875:1: ( ( ruleEString ) )
+            // InternalRos.g:13876:2: ( ruleEString )
             {
-            // InternalRos.g:14065:2: ( ruleEString )
-            // InternalRos.g:14066:3: ruleEString
+            // InternalRos.g:13876:2: ( ruleEString )
+            // InternalRos.g:13877:3: ruleEString
             {
              before(grammarAccess.getActionSpecAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41791,17 +41154,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionSpec__GoalAssignment_4_1"
-    // InternalRos.g:14075:1: rule__ActionSpec__GoalAssignment_4_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13886:1: rule__ActionSpec__GoalAssignment_4_1 : ( ruleMessageDefinition ) ;
     public final void rule__ActionSpec__GoalAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14079:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14080:2: ( ruleMessageDefinition )
+            // InternalRos.g:13890:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13891:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14080:2: ( ruleMessageDefinition )
-            // InternalRos.g:14081:3: ruleMessageDefinition
+            // InternalRos.g:13891:2: ( ruleMessageDefinition )
+            // InternalRos.g:13892:3: ruleMessageDefinition
             {
              before(grammarAccess.getActionSpecAccess().getGoalMessageDefinitionParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41832,17 +41195,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionSpec__ResultAssignment_5_1"
-    // InternalRos.g:14090:1: rule__ActionSpec__ResultAssignment_5_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13901:1: rule__ActionSpec__ResultAssignment_5_1 : ( ruleMessageDefinition ) ;
     public final void rule__ActionSpec__ResultAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14094:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14095:2: ( ruleMessageDefinition )
+            // InternalRos.g:13905:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13906:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14095:2: ( ruleMessageDefinition )
-            // InternalRos.g:14096:3: ruleMessageDefinition
+            // InternalRos.g:13906:2: ( ruleMessageDefinition )
+            // InternalRos.g:13907:3: ruleMessageDefinition
             {
              before(grammarAccess.getActionSpecAccess().getResultMessageDefinitionParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41873,17 +41236,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionSpec__FeedbackAssignment_6_1"
-    // InternalRos.g:14105:1: rule__ActionSpec__FeedbackAssignment_6_1 : ( ruleMessageDefinition ) ;
+    // InternalRos.g:13916:1: rule__ActionSpec__FeedbackAssignment_6_1 : ( ruleMessageDefinition ) ;
     public final void rule__ActionSpec__FeedbackAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14109:1: ( ( ruleMessageDefinition ) )
-            // InternalRos.g:14110:2: ( ruleMessageDefinition )
+            // InternalRos.g:13920:1: ( ( ruleMessageDefinition ) )
+            // InternalRos.g:13921:2: ( ruleMessageDefinition )
             {
-            // InternalRos.g:14110:2: ( ruleMessageDefinition )
-            // InternalRos.g:14111:3: ruleMessageDefinition
+            // InternalRos.g:13921:2: ( ruleMessageDefinition )
+            // InternalRos.g:13922:3: ruleMessageDefinition
             {
              before(grammarAccess.getActionSpecAccess().getFeedbackMessageDefinitionParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -41914,17 +41277,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__NameAssignment_3"
-    // InternalRos.g:14120:1: rule__Node__NameAssignment_3 : ( ruleGraphName ) ;
+    // InternalRos.g:13931:1: rule__Node__NameAssignment_3 : ( ruleGraphName ) ;
     public final void rule__Node__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14124:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14125:2: ( ruleGraphName )
+            // InternalRos.g:13935:1: ( ( ruleGraphName ) )
+            // InternalRos.g:13936:2: ( ruleGraphName )
             {
-            // InternalRos.g:14125:2: ( ruleGraphName )
-            // InternalRos.g:14126:3: ruleGraphName
+            // InternalRos.g:13936:2: ( ruleGraphName )
+            // InternalRos.g:13937:3: ruleGraphName
             {
              before(grammarAccess.getNodeAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -41955,17 +41318,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ServiceserverAssignment_4_2"
-    // InternalRos.g:14135:1: rule__Node__ServiceserverAssignment_4_2 : ( ruleServiceServer ) ;
+    // InternalRos.g:13946:1: rule__Node__ServiceserverAssignment_4_2 : ( ruleServiceServer ) ;
     public final void rule__Node__ServiceserverAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14139:1: ( ( ruleServiceServer ) )
-            // InternalRos.g:14140:2: ( ruleServiceServer )
+            // InternalRos.g:13950:1: ( ( ruleServiceServer ) )
+            // InternalRos.g:13951:2: ( ruleServiceServer )
             {
-            // InternalRos.g:14140:2: ( ruleServiceServer )
-            // InternalRos.g:14141:3: ruleServiceServer
+            // InternalRos.g:13951:2: ( ruleServiceServer )
+            // InternalRos.g:13952:3: ruleServiceServer
             {
              before(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -41996,17 +41359,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ServiceserverAssignment_4_3_1"
-    // InternalRos.g:14150:1: rule__Node__ServiceserverAssignment_4_3_1 : ( ruleServiceServer ) ;
+    // InternalRos.g:13961:1: rule__Node__ServiceserverAssignment_4_3_1 : ( ruleServiceServer ) ;
     public final void rule__Node__ServiceserverAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14154:1: ( ( ruleServiceServer ) )
-            // InternalRos.g:14155:2: ( ruleServiceServer )
+            // InternalRos.g:13965:1: ( ( ruleServiceServer ) )
+            // InternalRos.g:13966:2: ( ruleServiceServer )
             {
-            // InternalRos.g:14155:2: ( ruleServiceServer )
-            // InternalRos.g:14156:3: ruleServiceServer
+            // InternalRos.g:13966:2: ( ruleServiceServer )
+            // InternalRos.g:13967:3: ruleServiceServer
             {
              before(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42037,17 +41400,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__PublisherAssignment_5_2"
-    // InternalRos.g:14165:1: rule__Node__PublisherAssignment_5_2 : ( rulePublisher ) ;
+    // InternalRos.g:13976:1: rule__Node__PublisherAssignment_5_2 : ( rulePublisher ) ;
     public final void rule__Node__PublisherAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14169:1: ( ( rulePublisher ) )
-            // InternalRos.g:14170:2: ( rulePublisher )
+            // InternalRos.g:13980:1: ( ( rulePublisher ) )
+            // InternalRos.g:13981:2: ( rulePublisher )
             {
-            // InternalRos.g:14170:2: ( rulePublisher )
-            // InternalRos.g:14171:3: rulePublisher
+            // InternalRos.g:13981:2: ( rulePublisher )
+            // InternalRos.g:13982:3: rulePublisher
             {
              before(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42078,17 +41441,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__PublisherAssignment_5_3_1"
-    // InternalRos.g:14180:1: rule__Node__PublisherAssignment_5_3_1 : ( rulePublisher ) ;
+    // InternalRos.g:13991:1: rule__Node__PublisherAssignment_5_3_1 : ( rulePublisher ) ;
     public final void rule__Node__PublisherAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14184:1: ( ( rulePublisher ) )
-            // InternalRos.g:14185:2: ( rulePublisher )
+            // InternalRos.g:13995:1: ( ( rulePublisher ) )
+            // InternalRos.g:13996:2: ( rulePublisher )
             {
-            // InternalRos.g:14185:2: ( rulePublisher )
-            // InternalRos.g:14186:3: rulePublisher
+            // InternalRos.g:13996:2: ( rulePublisher )
+            // InternalRos.g:13997:3: rulePublisher
             {
              before(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42119,17 +41482,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__SubscriberAssignment_6_2"
-    // InternalRos.g:14195:1: rule__Node__SubscriberAssignment_6_2 : ( ruleSubscriber ) ;
+    // InternalRos.g:14006:1: rule__Node__SubscriberAssignment_6_2 : ( ruleSubscriber ) ;
     public final void rule__Node__SubscriberAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14199:1: ( ( ruleSubscriber ) )
-            // InternalRos.g:14200:2: ( ruleSubscriber )
+            // InternalRos.g:14010:1: ( ( ruleSubscriber ) )
+            // InternalRos.g:14011:2: ( ruleSubscriber )
             {
-            // InternalRos.g:14200:2: ( ruleSubscriber )
-            // InternalRos.g:14201:3: ruleSubscriber
+            // InternalRos.g:14011:2: ( ruleSubscriber )
+            // InternalRos.g:14012:3: ruleSubscriber
             {
              before(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42160,17 +41523,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__SubscriberAssignment_6_3_1"
-    // InternalRos.g:14210:1: rule__Node__SubscriberAssignment_6_3_1 : ( ruleSubscriber ) ;
+    // InternalRos.g:14021:1: rule__Node__SubscriberAssignment_6_3_1 : ( ruleSubscriber ) ;
     public final void rule__Node__SubscriberAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14214:1: ( ( ruleSubscriber ) )
-            // InternalRos.g:14215:2: ( ruleSubscriber )
+            // InternalRos.g:14025:1: ( ( ruleSubscriber ) )
+            // InternalRos.g:14026:2: ( ruleSubscriber )
             {
-            // InternalRos.g:14215:2: ( ruleSubscriber )
-            // InternalRos.g:14216:3: ruleSubscriber
+            // InternalRos.g:14026:2: ( ruleSubscriber )
+            // InternalRos.g:14027:3: ruleSubscriber
             {
              before(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42201,17 +41564,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ServiceclientAssignment_7_2"
-    // InternalRos.g:14225:1: rule__Node__ServiceclientAssignment_7_2 : ( ruleServiceClient ) ;
+    // InternalRos.g:14036:1: rule__Node__ServiceclientAssignment_7_2 : ( ruleServiceClient ) ;
     public final void rule__Node__ServiceclientAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14229:1: ( ( ruleServiceClient ) )
-            // InternalRos.g:14230:2: ( ruleServiceClient )
+            // InternalRos.g:14040:1: ( ( ruleServiceClient ) )
+            // InternalRos.g:14041:2: ( ruleServiceClient )
             {
-            // InternalRos.g:14230:2: ( ruleServiceClient )
-            // InternalRos.g:14231:3: ruleServiceClient
+            // InternalRos.g:14041:2: ( ruleServiceClient )
+            // InternalRos.g:14042:3: ruleServiceClient
             {
              before(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42242,17 +41605,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ServiceclientAssignment_7_3_1"
-    // InternalRos.g:14240:1: rule__Node__ServiceclientAssignment_7_3_1 : ( ruleServiceClient ) ;
+    // InternalRos.g:14051:1: rule__Node__ServiceclientAssignment_7_3_1 : ( ruleServiceClient ) ;
     public final void rule__Node__ServiceclientAssignment_7_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14244:1: ( ( ruleServiceClient ) )
-            // InternalRos.g:14245:2: ( ruleServiceClient )
+            // InternalRos.g:14055:1: ( ( ruleServiceClient ) )
+            // InternalRos.g:14056:2: ( ruleServiceClient )
             {
-            // InternalRos.g:14245:2: ( ruleServiceClient )
-            // InternalRos.g:14246:3: ruleServiceClient
+            // InternalRos.g:14056:2: ( ruleServiceClient )
+            // InternalRos.g:14057:3: ruleServiceClient
             {
              before(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_7_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42283,17 +41646,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ActionserverAssignment_8_2"
-    // InternalRos.g:14255:1: rule__Node__ActionserverAssignment_8_2 : ( ruleActionServer ) ;
+    // InternalRos.g:14066:1: rule__Node__ActionserverAssignment_8_2 : ( ruleActionServer ) ;
     public final void rule__Node__ActionserverAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14259:1: ( ( ruleActionServer ) )
-            // InternalRos.g:14260:2: ( ruleActionServer )
+            // InternalRos.g:14070:1: ( ( ruleActionServer ) )
+            // InternalRos.g:14071:2: ( ruleActionServer )
             {
-            // InternalRos.g:14260:2: ( ruleActionServer )
-            // InternalRos.g:14261:3: ruleActionServer
+            // InternalRos.g:14071:2: ( ruleActionServer )
+            // InternalRos.g:14072:3: ruleActionServer
             {
              before(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_8_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42324,17 +41687,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ActionserverAssignment_8_3_1"
-    // InternalRos.g:14270:1: rule__Node__ActionserverAssignment_8_3_1 : ( ruleActionServer ) ;
+    // InternalRos.g:14081:1: rule__Node__ActionserverAssignment_8_3_1 : ( ruleActionServer ) ;
     public final void rule__Node__ActionserverAssignment_8_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14274:1: ( ( ruleActionServer ) )
-            // InternalRos.g:14275:2: ( ruleActionServer )
+            // InternalRos.g:14085:1: ( ( ruleActionServer ) )
+            // InternalRos.g:14086:2: ( ruleActionServer )
             {
-            // InternalRos.g:14275:2: ( ruleActionServer )
-            // InternalRos.g:14276:3: ruleActionServer
+            // InternalRos.g:14086:2: ( ruleActionServer )
+            // InternalRos.g:14087:3: ruleActionServer
             {
              before(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_8_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42365,17 +41728,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ActionclientAssignment_9_2"
-    // InternalRos.g:14285:1: rule__Node__ActionclientAssignment_9_2 : ( ruleActionClient ) ;
+    // InternalRos.g:14096:1: rule__Node__ActionclientAssignment_9_2 : ( ruleActionClient ) ;
     public final void rule__Node__ActionclientAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14289:1: ( ( ruleActionClient ) )
-            // InternalRos.g:14290:2: ( ruleActionClient )
+            // InternalRos.g:14100:1: ( ( ruleActionClient ) )
+            // InternalRos.g:14101:2: ( ruleActionClient )
             {
-            // InternalRos.g:14290:2: ( ruleActionClient )
-            // InternalRos.g:14291:3: ruleActionClient
+            // InternalRos.g:14101:2: ( ruleActionClient )
+            // InternalRos.g:14102:3: ruleActionClient
             {
              before(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_9_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42406,17 +41769,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ActionclientAssignment_9_3_1"
-    // InternalRos.g:14300:1: rule__Node__ActionclientAssignment_9_3_1 : ( ruleActionClient ) ;
+    // InternalRos.g:14111:1: rule__Node__ActionclientAssignment_9_3_1 : ( ruleActionClient ) ;
     public final void rule__Node__ActionclientAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14304:1: ( ( ruleActionClient ) )
-            // InternalRos.g:14305:2: ( ruleActionClient )
+            // InternalRos.g:14115:1: ( ( ruleActionClient ) )
+            // InternalRos.g:14116:2: ( ruleActionClient )
             {
-            // InternalRos.g:14305:2: ( ruleActionClient )
-            // InternalRos.g:14306:3: ruleActionClient
+            // InternalRos.g:14116:2: ( ruleActionClient )
+            // InternalRos.g:14117:3: ruleActionClient
             {
              before(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_9_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42447,17 +41810,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ParameterAssignment_10_2"
-    // InternalRos.g:14315:1: rule__Node__ParameterAssignment_10_2 : ( ruleParameter ) ;
+    // InternalRos.g:14126:1: rule__Node__ParameterAssignment_10_2 : ( ruleParameter ) ;
     public final void rule__Node__ParameterAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14319:1: ( ( ruleParameter ) )
-            // InternalRos.g:14320:2: ( ruleParameter )
+            // InternalRos.g:14130:1: ( ( ruleParameter ) )
+            // InternalRos.g:14131:2: ( ruleParameter )
             {
-            // InternalRos.g:14320:2: ( ruleParameter )
-            // InternalRos.g:14321:3: ruleParameter
+            // InternalRos.g:14131:2: ( ruleParameter )
+            // InternalRos.g:14132:3: ruleParameter
             {
              before(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_10_2_0()); 
             pushFollow(FOLLOW_2);
@@ -42488,17 +41851,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ParameterAssignment_10_3_1"
-    // InternalRos.g:14330:1: rule__Node__ParameterAssignment_10_3_1 : ( ruleParameter ) ;
+    // InternalRos.g:14141:1: rule__Node__ParameterAssignment_10_3_1 : ( ruleParameter ) ;
     public final void rule__Node__ParameterAssignment_10_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14334:1: ( ( ruleParameter ) )
-            // InternalRos.g:14335:2: ( ruleParameter )
+            // InternalRos.g:14145:1: ( ( ruleParameter ) )
+            // InternalRos.g:14146:2: ( ruleParameter )
             {
-            // InternalRos.g:14335:2: ( ruleParameter )
-            // InternalRos.g:14336:3: ruleParameter
+            // InternalRos.g:14146:2: ( ruleParameter )
+            // InternalRos.g:14147:3: ruleParameter
             {
              before(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_10_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -42528,26 +41891,26 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Node__ParameterAssignment_10_3_1"
 
 
-    // $ANTLR start "rule__ServiceServer__NameAssignment_2_1"
-    // InternalRos.g:14345:1: rule__ServiceServer__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__ServiceServer__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__NameAssignment_3"
+    // InternalRos.g:14156:1: rule__ServiceServer__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__ServiceServer__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14349:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14350:2: ( ruleGraphName )
+            // InternalRos.g:14160:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14161:2: ( ruleGraphName )
             {
-            // InternalRos.g:14350:2: ( ruleGraphName )
-            // InternalRos.g:14351:3: ruleGraphName
+            // InternalRos.g:14161:2: ( ruleGraphName )
+            // InternalRos.g:14162:3: ruleGraphName
             {
-             before(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -42566,37 +41929,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__NameAssignment_2_1"
+    // $ANTLR end "rule__ServiceServer__NameAssignment_3"
 
 
-    // $ANTLR start "rule__ServiceServer__ServiceAssignment_4"
-    // InternalRos.g:14360:1: rule__ServiceServer__ServiceAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__ServiceServer__ServiceAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__ServiceAssignment_5"
+    // InternalRos.g:14171:1: rule__ServiceServer__ServiceAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__ServiceServer__ServiceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14364:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14365:2: ( ( ruleEString ) )
+            // InternalRos.g:14175:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14176:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14365:2: ( ( ruleEString ) )
-            // InternalRos.g:14366:3: ( ruleEString )
+            // InternalRos.g:14176:2: ( ( ruleEString ) )
+            // InternalRos.g:14177:3: ( ruleEString )
             {
-             before(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_4_0()); 
-            // InternalRos.g:14367:3: ( ruleEString )
-            // InternalRos.g:14368:4: ruleEString
+             before(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_5_0()); 
+            // InternalRos.g:14178:3: ( ruleEString )
+            // InternalRos.g:14179:4: ruleEString
             {
-             before(grammarAccess.getServiceServerAccess().getServiceServiceSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getServiceServerAccess().getServiceServiceSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceServerAccess().getServiceServiceSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getServiceServerAccess().getServiceServiceSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_4_0()); 
+             after(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_5_0()); 
 
             }
 
@@ -42615,29 +41978,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__ServiceAssignment_4"
+    // $ANTLR end "rule__ServiceServer__ServiceAssignment_5"
 
 
-    // $ANTLR start "rule__ServiceServer__NamespaceAssignment_5_1"
-    // InternalRos.g:14379:1: rule__ServiceServer__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__ServiceServer__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceServer__NamespaceAssignment_6_1"
+    // InternalRos.g:14190:1: rule__ServiceServer__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__ServiceServer__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14383:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14384:2: ( ruleNamespace )
+            // InternalRos.g:14194:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14195:2: ( ruleNamespace )
             {
-            // InternalRos.g:14384:2: ( ruleNamespace )
-            // InternalRos.g:14385:3: ruleNamespace
+            // InternalRos.g:14195:2: ( ruleNamespace )
+            // InternalRos.g:14196:3: ruleNamespace
             {
-             before(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -42656,29 +42019,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceServer__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__ServiceServer__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__Publisher__NameAssignment_2_1"
-    // InternalRos.g:14394:1: rule__Publisher__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__Publisher__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__NameAssignment_3"
+    // InternalRos.g:14205:1: rule__Publisher__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__Publisher__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14398:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14399:2: ( ruleGraphName )
+            // InternalRos.g:14209:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14210:2: ( ruleGraphName )
             {
-            // InternalRos.g:14399:2: ( ruleGraphName )
-            // InternalRos.g:14400:3: ruleGraphName
+            // InternalRos.g:14210:2: ( ruleGraphName )
+            // InternalRos.g:14211:3: ruleGraphName
             {
-             before(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -42697,37 +42060,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__NameAssignment_2_1"
+    // $ANTLR end "rule__Publisher__NameAssignment_3"
 
 
-    // $ANTLR start "rule__Publisher__MessageAssignment_4"
-    // InternalRos.g:14409:1: rule__Publisher__MessageAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__Publisher__MessageAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__MessageAssignment_5"
+    // InternalRos.g:14220:1: rule__Publisher__MessageAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__Publisher__MessageAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14413:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14414:2: ( ( ruleEString ) )
+            // InternalRos.g:14224:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14225:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14414:2: ( ( ruleEString ) )
-            // InternalRos.g:14415:3: ( ruleEString )
+            // InternalRos.g:14225:2: ( ( ruleEString ) )
+            // InternalRos.g:14226:3: ( ruleEString )
             {
-             before(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_4_0()); 
-            // InternalRos.g:14416:3: ( ruleEString )
-            // InternalRos.g:14417:4: ruleEString
+             before(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_5_0()); 
+            // InternalRos.g:14227:3: ( ruleEString )
+            // InternalRos.g:14228:4: ruleEString
             {
-             before(grammarAccess.getPublisherAccess().getMessageTopicSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getPublisherAccess().getMessageTopicSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPublisherAccess().getMessageTopicSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getPublisherAccess().getMessageTopicSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_4_0()); 
+             after(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_5_0()); 
 
             }
 
@@ -42746,29 +42109,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__MessageAssignment_4"
+    // $ANTLR end "rule__Publisher__MessageAssignment_5"
 
 
-    // $ANTLR start "rule__Publisher__NamespaceAssignment_5_1"
-    // InternalRos.g:14428:1: rule__Publisher__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__Publisher__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__Publisher__NamespaceAssignment_6_1"
+    // InternalRos.g:14239:1: rule__Publisher__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__Publisher__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14432:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14433:2: ( ruleNamespace )
+            // InternalRos.g:14243:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14244:2: ( ruleNamespace )
             {
-            // InternalRos.g:14433:2: ( ruleNamespace )
-            // InternalRos.g:14434:3: ruleNamespace
+            // InternalRos.g:14244:2: ( ruleNamespace )
+            // InternalRos.g:14245:3: ruleNamespace
             {
-             before(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -42787,29 +42150,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Publisher__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__Publisher__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__Subscriber__NameAssignment_2_1"
-    // InternalRos.g:14443:1: rule__Subscriber__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__Subscriber__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__NameAssignment_3"
+    // InternalRos.g:14254:1: rule__Subscriber__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__Subscriber__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14447:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14448:2: ( ruleGraphName )
+            // InternalRos.g:14258:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14259:2: ( ruleGraphName )
             {
-            // InternalRos.g:14448:2: ( ruleGraphName )
-            // InternalRos.g:14449:3: ruleGraphName
+            // InternalRos.g:14259:2: ( ruleGraphName )
+            // InternalRos.g:14260:3: ruleGraphName
             {
-             before(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -42828,37 +42191,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__NameAssignment_2_1"
+    // $ANTLR end "rule__Subscriber__NameAssignment_3"
 
 
-    // $ANTLR start "rule__Subscriber__MessageAssignment_4"
-    // InternalRos.g:14458:1: rule__Subscriber__MessageAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__Subscriber__MessageAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__MessageAssignment_5"
+    // InternalRos.g:14269:1: rule__Subscriber__MessageAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__Subscriber__MessageAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14462:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14463:2: ( ( ruleEString ) )
+            // InternalRos.g:14273:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14274:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14463:2: ( ( ruleEString ) )
-            // InternalRos.g:14464:3: ( ruleEString )
+            // InternalRos.g:14274:2: ( ( ruleEString ) )
+            // InternalRos.g:14275:3: ( ruleEString )
             {
-             before(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_4_0()); 
-            // InternalRos.g:14465:3: ( ruleEString )
-            // InternalRos.g:14466:4: ruleEString
+             before(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_5_0()); 
+            // InternalRos.g:14276:3: ( ruleEString )
+            // InternalRos.g:14277:4: ruleEString
             {
-             before(grammarAccess.getSubscriberAccess().getMessageTopicSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getSubscriberAccess().getMessageTopicSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getSubscriberAccess().getMessageTopicSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getSubscriberAccess().getMessageTopicSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_4_0()); 
+             after(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_5_0()); 
 
             }
 
@@ -42877,29 +42240,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__MessageAssignment_4"
+    // $ANTLR end "rule__Subscriber__MessageAssignment_5"
 
 
-    // $ANTLR start "rule__Subscriber__NamespaceAssignment_5_1"
-    // InternalRos.g:14477:1: rule__Subscriber__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__Subscriber__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__Subscriber__NamespaceAssignment_6_1"
+    // InternalRos.g:14288:1: rule__Subscriber__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__Subscriber__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14481:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14482:2: ( ruleNamespace )
+            // InternalRos.g:14292:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14293:2: ( ruleNamespace )
             {
-            // InternalRos.g:14482:2: ( ruleNamespace )
-            // InternalRos.g:14483:3: ruleNamespace
+            // InternalRos.g:14293:2: ( ruleNamespace )
+            // InternalRos.g:14294:3: ruleNamespace
             {
-             before(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -42918,29 +42281,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Subscriber__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__Subscriber__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__ServiceClient__NameAssignment_2_1"
-    // InternalRos.g:14492:1: rule__ServiceClient__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__ServiceClient__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__NameAssignment_3"
+    // InternalRos.g:14303:1: rule__ServiceClient__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__ServiceClient__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14496:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14497:2: ( ruleGraphName )
+            // InternalRos.g:14307:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14308:2: ( ruleGraphName )
             {
-            // InternalRos.g:14497:2: ( ruleGraphName )
-            // InternalRos.g:14498:3: ruleGraphName
+            // InternalRos.g:14308:2: ( ruleGraphName )
+            // InternalRos.g:14309:3: ruleGraphName
             {
-             before(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -42959,37 +42322,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__NameAssignment_2_1"
+    // $ANTLR end "rule__ServiceClient__NameAssignment_3"
 
 
-    // $ANTLR start "rule__ServiceClient__ServiceAssignment_4"
-    // InternalRos.g:14507:1: rule__ServiceClient__ServiceAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__ServiceClient__ServiceAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__ServiceAssignment_5"
+    // InternalRos.g:14318:1: rule__ServiceClient__ServiceAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__ServiceClient__ServiceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14511:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14512:2: ( ( ruleEString ) )
+            // InternalRos.g:14322:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14323:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14512:2: ( ( ruleEString ) )
-            // InternalRos.g:14513:3: ( ruleEString )
+            // InternalRos.g:14323:2: ( ( ruleEString ) )
+            // InternalRos.g:14324:3: ( ruleEString )
             {
-             before(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_4_0()); 
-            // InternalRos.g:14514:3: ( ruleEString )
-            // InternalRos.g:14515:4: ruleEString
+             before(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_5_0()); 
+            // InternalRos.g:14325:3: ( ruleEString )
+            // InternalRos.g:14326:4: ruleEString
             {
-             before(grammarAccess.getServiceClientAccess().getServiceServiceSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getServiceClientAccess().getServiceServiceSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceClientAccess().getServiceServiceSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getServiceClientAccess().getServiceServiceSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_4_0()); 
+             after(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_5_0()); 
 
             }
 
@@ -43008,29 +42371,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__ServiceAssignment_4"
+    // $ANTLR end "rule__ServiceClient__ServiceAssignment_5"
 
 
-    // $ANTLR start "rule__ServiceClient__NamespaceAssignment_5_1"
-    // InternalRos.g:14526:1: rule__ServiceClient__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__ServiceClient__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceClient__NamespaceAssignment_6_1"
+    // InternalRos.g:14337:1: rule__ServiceClient__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__ServiceClient__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14530:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14531:2: ( ruleNamespace )
+            // InternalRos.g:14341:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14342:2: ( ruleNamespace )
             {
-            // InternalRos.g:14531:2: ( ruleNamespace )
-            // InternalRos.g:14532:3: ruleNamespace
+            // InternalRos.g:14342:2: ( ruleNamespace )
+            // InternalRos.g:14343:3: ruleNamespace
             {
-             before(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -43049,29 +42412,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceClient__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__ServiceClient__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__ActionServer__NameAssignment_2_1"
-    // InternalRos.g:14541:1: rule__ActionServer__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__ActionServer__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__NameAssignment_3"
+    // InternalRos.g:14352:1: rule__ActionServer__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__ActionServer__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14545:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14546:2: ( ruleGraphName )
+            // InternalRos.g:14356:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14357:2: ( ruleGraphName )
             {
-            // InternalRos.g:14546:2: ( ruleGraphName )
-            // InternalRos.g:14547:3: ruleGraphName
+            // InternalRos.g:14357:2: ( ruleGraphName )
+            // InternalRos.g:14358:3: ruleGraphName
             {
-             before(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -43090,37 +42453,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__NameAssignment_2_1"
+    // $ANTLR end "rule__ActionServer__NameAssignment_3"
 
 
-    // $ANTLR start "rule__ActionServer__ActionAssignment_4"
-    // InternalRos.g:14556:1: rule__ActionServer__ActionAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__ActionServer__ActionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__ActionAssignment_5"
+    // InternalRos.g:14367:1: rule__ActionServer__ActionAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__ActionServer__ActionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14560:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14561:2: ( ( ruleEString ) )
+            // InternalRos.g:14371:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14372:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14561:2: ( ( ruleEString ) )
-            // InternalRos.g:14562:3: ( ruleEString )
+            // InternalRos.g:14372:2: ( ( ruleEString ) )
+            // InternalRos.g:14373:3: ( ruleEString )
             {
-             before(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_4_0()); 
-            // InternalRos.g:14563:3: ( ruleEString )
-            // InternalRos.g:14564:4: ruleEString
+             before(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_5_0()); 
+            // InternalRos.g:14374:3: ( ruleEString )
+            // InternalRos.g:14375:4: ruleEString
             {
-             before(grammarAccess.getActionServerAccess().getActionActionSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getActionServerAccess().getActionActionSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getActionServerAccess().getActionActionSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getActionServerAccess().getActionActionSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_4_0()); 
+             after(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_5_0()); 
 
             }
 
@@ -43139,29 +42502,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__ActionAssignment_4"
+    // $ANTLR end "rule__ActionServer__ActionAssignment_5"
 
 
-    // $ANTLR start "rule__ActionServer__NamespaceAssignment_5_1"
-    // InternalRos.g:14575:1: rule__ActionServer__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__ActionServer__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__ActionServer__NamespaceAssignment_6_1"
+    // InternalRos.g:14386:1: rule__ActionServer__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__ActionServer__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14579:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14580:2: ( ruleNamespace )
+            // InternalRos.g:14390:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14391:2: ( ruleNamespace )
             {
-            // InternalRos.g:14580:2: ( ruleNamespace )
-            // InternalRos.g:14581:3: ruleNamespace
+            // InternalRos.g:14391:2: ( ruleNamespace )
+            // InternalRos.g:14392:3: ruleNamespace
             {
-             before(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -43180,29 +42543,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionServer__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__ActionServer__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__ActionClient__NameAssignment_2_1"
-    // InternalRos.g:14590:1: rule__ActionClient__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__ActionClient__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__NameAssignment_3"
+    // InternalRos.g:14401:1: rule__ActionClient__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__ActionClient__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14594:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14595:2: ( ruleGraphName )
+            // InternalRos.g:14405:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14406:2: ( ruleGraphName )
             {
-            // InternalRos.g:14595:2: ( ruleGraphName )
-            // InternalRos.g:14596:3: ruleGraphName
+            // InternalRos.g:14406:2: ( ruleGraphName )
+            // InternalRos.g:14407:3: ruleGraphName
             {
-             before(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -43221,37 +42584,37 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__NameAssignment_2_1"
+    // $ANTLR end "rule__ActionClient__NameAssignment_3"
 
 
-    // $ANTLR start "rule__ActionClient__ActionAssignment_4"
-    // InternalRos.g:14605:1: rule__ActionClient__ActionAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__ActionClient__ActionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__ActionAssignment_5"
+    // InternalRos.g:14416:1: rule__ActionClient__ActionAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__ActionClient__ActionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14609:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:14610:2: ( ( ruleEString ) )
+            // InternalRos.g:14420:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:14421:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:14610:2: ( ( ruleEString ) )
-            // InternalRos.g:14611:3: ( ruleEString )
+            // InternalRos.g:14421:2: ( ( ruleEString ) )
+            // InternalRos.g:14422:3: ( ruleEString )
             {
-             before(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_4_0()); 
-            // InternalRos.g:14612:3: ( ruleEString )
-            // InternalRos.g:14613:4: ruleEString
+             before(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_5_0()); 
+            // InternalRos.g:14423:3: ( ruleEString )
+            // InternalRos.g:14424:4: ruleEString
             {
-             before(grammarAccess.getActionClientAccess().getActionActionSpecEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getActionClientAccess().getActionActionSpecEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getActionClientAccess().getActionActionSpecEStringParserRuleCall_4_0_1()); 
+             after(grammarAccess.getActionClientAccess().getActionActionSpecEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_4_0()); 
+             after(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_5_0()); 
 
             }
 
@@ -43270,29 +42633,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__ActionAssignment_4"
+    // $ANTLR end "rule__ActionClient__ActionAssignment_5"
 
 
-    // $ANTLR start "rule__ActionClient__NamespaceAssignment_5_1"
-    // InternalRos.g:14624:1: rule__ActionClient__NamespaceAssignment_5_1 : ( ruleNamespace ) ;
-    public final void rule__ActionClient__NamespaceAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__ActionClient__NamespaceAssignment_6_1"
+    // InternalRos.g:14435:1: rule__ActionClient__NamespaceAssignment_6_1 : ( ruleNamespace ) ;
+    public final void rule__ActionClient__NamespaceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14628:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14629:2: ( ruleNamespace )
+            // InternalRos.g:14439:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14440:2: ( ruleNamespace )
             {
-            // InternalRos.g:14629:2: ( ruleNamespace )
-            // InternalRos.g:14630:3: ruleNamespace
+            // InternalRos.g:14440:2: ( ruleNamespace )
+            // InternalRos.g:14441:3: ruleNamespace
             {
-             before(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             before(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_5_1_0()); 
+             after(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0()); 
 
             }
 
@@ -43311,29 +42674,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionClient__NamespaceAssignment_5_1"
+    // $ANTLR end "rule__ActionClient__NamespaceAssignment_6_1"
 
 
-    // $ANTLR start "rule__Parameter__NameAssignment_2_1"
-    // InternalRos.g:14639:1: rule__Parameter__NameAssignment_2_1 : ( ruleGraphName ) ;
-    public final void rule__Parameter__NameAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__NameAssignment_3"
+    // InternalRos.g:14450:1: rule__Parameter__NameAssignment_3 : ( ruleGraphName ) ;
+    public final void rule__Parameter__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14643:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14644:2: ( ruleGraphName )
+            // InternalRos.g:14454:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14455:2: ( ruleGraphName )
             {
-            // InternalRos.g:14644:2: ( ruleGraphName )
-            // InternalRos.g:14645:3: ruleGraphName
+            // InternalRos.g:14455:2: ( ruleGraphName )
+            // InternalRos.g:14456:3: ruleGraphName
             {
-             before(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             before(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleGraphName();
 
             state._fsp--;
 
-             after(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_2_1_0()); 
+             after(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_3_0()); 
 
             }
 
@@ -43352,29 +42715,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__NameAssignment_2_1"
+    // $ANTLR end "rule__Parameter__NameAssignment_3"
 
 
-    // $ANTLR start "rule__Parameter__NamespaceAssignment_3_1"
-    // InternalRos.g:14654:1: rule__Parameter__NamespaceAssignment_3_1 : ( ruleNamespace ) ;
-    public final void rule__Parameter__NamespaceAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__NamespaceAssignment_4_1"
+    // InternalRos.g:14465:1: rule__Parameter__NamespaceAssignment_4_1 : ( ruleNamespace ) ;
+    public final void rule__Parameter__NamespaceAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14658:1: ( ( ruleNamespace ) )
-            // InternalRos.g:14659:2: ( ruleNamespace )
+            // InternalRos.g:14469:1: ( ( ruleNamespace ) )
+            // InternalRos.g:14470:2: ( ruleNamespace )
             {
-            // InternalRos.g:14659:2: ( ruleNamespace )
-            // InternalRos.g:14660:3: ruleNamespace
+            // InternalRos.g:14470:2: ( ruleNamespace )
+            // InternalRos.g:14471:3: ruleNamespace
             {
-             before(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_3_1_0()); 
+             before(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNamespace();
 
             state._fsp--;
 
-             after(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_3_1_0()); 
+             after(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0()); 
 
             }
 
@@ -43393,29 +42756,29 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__NamespaceAssignment_3_1"
+    // $ANTLR end "rule__Parameter__NamespaceAssignment_4_1"
 
 
-    // $ANTLR start "rule__Parameter__TypeAssignment_5"
-    // InternalRos.g:14669:1: rule__Parameter__TypeAssignment_5 : ( ruleParameterType ) ;
-    public final void rule__Parameter__TypeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Parameter__TypeAssignment_6"
+    // InternalRos.g:14480:1: rule__Parameter__TypeAssignment_6 : ( ruleParameterType ) ;
+    public final void rule__Parameter__TypeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14673:1: ( ( ruleParameterType ) )
-            // InternalRos.g:14674:2: ( ruleParameterType )
+            // InternalRos.g:14484:1: ( ( ruleParameterType ) )
+            // InternalRos.g:14485:2: ( ruleParameterType )
             {
-            // InternalRos.g:14674:2: ( ruleParameterType )
-            // InternalRos.g:14675:3: ruleParameterType
+            // InternalRos.g:14485:2: ( ruleParameterType )
+            // InternalRos.g:14486:3: ruleParameterType
             {
-             before(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_5_0()); 
+             before(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleParameterType();
 
             state._fsp--;
 
-             after(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_5_0()); 
+             after(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0()); 
 
             }
 
@@ -43434,21 +42797,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Parameter__TypeAssignment_5"
+    // $ANTLR end "rule__Parameter__TypeAssignment_6"
 
 
     // $ANTLR start "rule__GlobalNamespace__PartsAssignment_3_2"
-    // InternalRos.g:14684:1: rule__GlobalNamespace__PartsAssignment_3_2 : ( ruleGraphName ) ;
+    // InternalRos.g:14495:1: rule__GlobalNamespace__PartsAssignment_3_2 : ( ruleGraphName ) ;
     public final void rule__GlobalNamespace__PartsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14688:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14689:2: ( ruleGraphName )
+            // InternalRos.g:14499:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14500:2: ( ruleGraphName )
             {
-            // InternalRos.g:14689:2: ( ruleGraphName )
-            // InternalRos.g:14690:3: ruleGraphName
+            // InternalRos.g:14500:2: ( ruleGraphName )
+            // InternalRos.g:14501:3: ruleGraphName
             {
              before(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -43479,17 +42842,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GlobalNamespace__PartsAssignment_3_3_1"
-    // InternalRos.g:14699:1: rule__GlobalNamespace__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
+    // InternalRos.g:14510:1: rule__GlobalNamespace__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
     public final void rule__GlobalNamespace__PartsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14703:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14704:2: ( ruleGraphName )
+            // InternalRos.g:14514:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14515:2: ( ruleGraphName )
             {
-            // InternalRos.g:14704:2: ( ruleGraphName )
-            // InternalRos.g:14705:3: ruleGraphName
+            // InternalRos.g:14515:2: ( ruleGraphName )
+            // InternalRos.g:14516:3: ruleGraphName
             {
              before(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43520,17 +42883,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__PartsAssignment_3_2"
-    // InternalRos.g:14714:1: rule__RelativeNamespace_Impl__PartsAssignment_3_2 : ( ruleGraphName ) ;
+    // InternalRos.g:14525:1: rule__RelativeNamespace_Impl__PartsAssignment_3_2 : ( ruleGraphName ) ;
     public final void rule__RelativeNamespace_Impl__PartsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14718:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14719:2: ( ruleGraphName )
+            // InternalRos.g:14529:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14530:2: ( ruleGraphName )
             {
-            // InternalRos.g:14719:2: ( ruleGraphName )
-            // InternalRos.g:14720:3: ruleGraphName
+            // InternalRos.g:14530:2: ( ruleGraphName )
+            // InternalRos.g:14531:3: ruleGraphName
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -43561,17 +42924,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RelativeNamespace_Impl__PartsAssignment_3_3_1"
-    // InternalRos.g:14729:1: rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
+    // InternalRos.g:14540:1: rule__RelativeNamespace_Impl__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
     public final void rule__RelativeNamespace_Impl__PartsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14733:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14734:2: ( ruleGraphName )
+            // InternalRos.g:14544:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14545:2: ( ruleGraphName )
             {
-            // InternalRos.g:14734:2: ( ruleGraphName )
-            // InternalRos.g:14735:3: ruleGraphName
+            // InternalRos.g:14545:2: ( ruleGraphName )
+            // InternalRos.g:14546:3: ruleGraphName
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43602,17 +42965,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__PartsAssignment_3_2"
-    // InternalRos.g:14744:1: rule__PrivateNamespace__PartsAssignment_3_2 : ( ruleGraphName ) ;
+    // InternalRos.g:14555:1: rule__PrivateNamespace__PartsAssignment_3_2 : ( ruleGraphName ) ;
     public final void rule__PrivateNamespace__PartsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14748:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14749:2: ( ruleGraphName )
+            // InternalRos.g:14559:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14560:2: ( ruleGraphName )
             {
-            // InternalRos.g:14749:2: ( ruleGraphName )
-            // InternalRos.g:14750:3: ruleGraphName
+            // InternalRos.g:14560:2: ( ruleGraphName )
+            // InternalRos.g:14561:3: ruleGraphName
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -43643,17 +43006,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrivateNamespace__PartsAssignment_3_3_1"
-    // InternalRos.g:14759:1: rule__PrivateNamespace__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
+    // InternalRos.g:14570:1: rule__PrivateNamespace__PartsAssignment_3_3_1 : ( ruleGraphName ) ;
     public final void rule__PrivateNamespace__PartsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14763:1: ( ( ruleGraphName ) )
-            // InternalRos.g:14764:2: ( ruleGraphName )
+            // InternalRos.g:14574:1: ( ( ruleGraphName ) )
+            // InternalRos.g:14575:2: ( ruleGraphName )
             {
-            // InternalRos.g:14764:2: ( ruleGraphName )
-            // InternalRos.g:14765:3: ruleGraphName
+            // InternalRos.g:14575:2: ( ruleGraphName )
+            // InternalRos.g:14576:3: ruleGraphName
             {
              before(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43684,17 +43047,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__SequenceAssignment_3_2"
-    // InternalRos.g:14774:1: rule__ParameterListType__SequenceAssignment_3_2 : ( ruleParameterType ) ;
+    // InternalRos.g:14585:1: rule__ParameterListType__SequenceAssignment_3_2 : ( ruleParameterType ) ;
     public final void rule__ParameterListType__SequenceAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14778:1: ( ( ruleParameterType ) )
-            // InternalRos.g:14779:2: ( ruleParameterType )
+            // InternalRos.g:14589:1: ( ( ruleParameterType ) )
+            // InternalRos.g:14590:2: ( ruleParameterType )
             {
-            // InternalRos.g:14779:2: ( ruleParameterType )
-            // InternalRos.g:14780:3: ruleParameterType
+            // InternalRos.g:14590:2: ( ruleParameterType )
+            // InternalRos.g:14591:3: ruleParameterType
             {
              before(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -43725,17 +43088,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__SequenceAssignment_3_3_1"
-    // InternalRos.g:14789:1: rule__ParameterListType__SequenceAssignment_3_3_1 : ( ruleParameterType ) ;
+    // InternalRos.g:14600:1: rule__ParameterListType__SequenceAssignment_3_3_1 : ( ruleParameterType ) ;
     public final void rule__ParameterListType__SequenceAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14793:1: ( ( ruleParameterType ) )
-            // InternalRos.g:14794:2: ( ruleParameterType )
+            // InternalRos.g:14604:1: ( ( ruleParameterType ) )
+            // InternalRos.g:14605:2: ( ruleParameterType )
             {
-            // InternalRos.g:14794:2: ( ruleParameterType )
-            // InternalRos.g:14795:3: ruleParameterType
+            // InternalRos.g:14605:2: ( ruleParameterType )
+            // InternalRos.g:14606:3: ruleParameterType
             {
              before(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43766,17 +43129,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterListType__DefaultAssignment_4_1"
-    // InternalRos.g:14804:1: rule__ParameterListType__DefaultAssignment_4_1 : ( ruleParameterSequence ) ;
+    // InternalRos.g:14615:1: rule__ParameterListType__DefaultAssignment_4_1 : ( ruleParameterSequence ) ;
     public final void rule__ParameterListType__DefaultAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14808:1: ( ( ruleParameterSequence ) )
-            // InternalRos.g:14809:2: ( ruleParameterSequence )
+            // InternalRos.g:14619:1: ( ( ruleParameterSequence ) )
+            // InternalRos.g:14620:2: ( ruleParameterSequence )
             {
-            // InternalRos.g:14809:2: ( ruleParameterSequence )
-            // InternalRos.g:14810:3: ruleParameterSequence
+            // InternalRos.g:14620:2: ( ruleParameterSequence )
+            // InternalRos.g:14621:3: ruleParameterSequence
             {
              before(grammarAccess.getParameterListTypeAccess().getDefaultParameterSequenceParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43807,17 +43170,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2"
-    // InternalRos.g:14819:1: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 : ( ruleParameterStructTypeMember ) ;
+    // InternalRos.g:14630:1: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2 : ( ruleParameterStructTypeMember ) ;
     public final void rule__ParameterStructType__ParameterstructypetmemberAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14823:1: ( ( ruleParameterStructTypeMember ) )
-            // InternalRos.g:14824:2: ( ruleParameterStructTypeMember )
+            // InternalRos.g:14634:1: ( ( ruleParameterStructTypeMember ) )
+            // InternalRos.g:14635:2: ( ruleParameterStructTypeMember )
             {
-            // InternalRos.g:14824:2: ( ruleParameterStructTypeMember )
-            // InternalRos.g:14825:3: ruleParameterStructTypeMember
+            // InternalRos.g:14635:2: ( ruleParameterStructTypeMember )
+            // InternalRos.g:14636:3: ruleParameterStructTypeMember
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -43848,17 +43211,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1"
-    // InternalRos.g:14834:1: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 : ( ruleParameterStructTypeMember ) ;
+    // InternalRos.g:14645:1: rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1 : ( ruleParameterStructTypeMember ) ;
     public final void rule__ParameterStructType__ParameterstructypetmemberAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14838:1: ( ( ruleParameterStructTypeMember ) )
-            // InternalRos.g:14839:2: ( ruleParameterStructTypeMember )
+            // InternalRos.g:14649:1: ( ( ruleParameterStructTypeMember ) )
+            // InternalRos.g:14650:2: ( ruleParameterStructTypeMember )
             {
-            // InternalRos.g:14839:2: ( ruleParameterStructTypeMember )
-            // InternalRos.g:14840:3: ruleParameterStructTypeMember
+            // InternalRos.g:14650:2: ( ruleParameterStructTypeMember )
+            // InternalRos.g:14651:3: ruleParameterStructTypeMember
             {
              before(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43889,17 +43252,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterIntegerType__DefaultAssignment_3_1"
-    // InternalRos.g:14849:1: rule__ParameterIntegerType__DefaultAssignment_3_1 : ( ruleParameterInteger ) ;
+    // InternalRos.g:14660:1: rule__ParameterIntegerType__DefaultAssignment_3_1 : ( ruleParameterInteger ) ;
     public final void rule__ParameterIntegerType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14853:1: ( ( ruleParameterInteger ) )
-            // InternalRos.g:14854:2: ( ruleParameterInteger )
+            // InternalRos.g:14664:1: ( ( ruleParameterInteger ) )
+            // InternalRos.g:14665:2: ( ruleParameterInteger )
             {
-            // InternalRos.g:14854:2: ( ruleParameterInteger )
-            // InternalRos.g:14855:3: ruleParameterInteger
+            // InternalRos.g:14665:2: ( ruleParameterInteger )
+            // InternalRos.g:14666:3: ruleParameterInteger
             {
              before(grammarAccess.getParameterIntegerTypeAccess().getDefaultParameterIntegerParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43930,17 +43293,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStringType__DefaultAssignment_3_1"
-    // InternalRos.g:14864:1: rule__ParameterStringType__DefaultAssignment_3_1 : ( ruleParameterString ) ;
+    // InternalRos.g:14675:1: rule__ParameterStringType__DefaultAssignment_3_1 : ( ruleParameterString ) ;
     public final void rule__ParameterStringType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14868:1: ( ( ruleParameterString ) )
-            // InternalRos.g:14869:2: ( ruleParameterString )
+            // InternalRos.g:14679:1: ( ( ruleParameterString ) )
+            // InternalRos.g:14680:2: ( ruleParameterString )
             {
-            // InternalRos.g:14869:2: ( ruleParameterString )
-            // InternalRos.g:14870:3: ruleParameterString
+            // InternalRos.g:14680:2: ( ruleParameterString )
+            // InternalRos.g:14681:3: ruleParameterString
             {
              before(grammarAccess.getParameterStringTypeAccess().getDefaultParameterStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -43971,17 +43334,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDoubleType__DefaultAssignment_3_1"
-    // InternalRos.g:14879:1: rule__ParameterDoubleType__DefaultAssignment_3_1 : ( ruleParameterDouble ) ;
+    // InternalRos.g:14690:1: rule__ParameterDoubleType__DefaultAssignment_3_1 : ( ruleParameterDouble ) ;
     public final void rule__ParameterDoubleType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14883:1: ( ( ruleParameterDouble ) )
-            // InternalRos.g:14884:2: ( ruleParameterDouble )
+            // InternalRos.g:14694:1: ( ( ruleParameterDouble ) )
+            // InternalRos.g:14695:2: ( ruleParameterDouble )
             {
-            // InternalRos.g:14884:2: ( ruleParameterDouble )
-            // InternalRos.g:14885:3: ruleParameterDouble
+            // InternalRos.g:14695:2: ( ruleParameterDouble )
+            // InternalRos.g:14696:3: ruleParameterDouble
             {
              before(grammarAccess.getParameterDoubleTypeAccess().getDefaultParameterDoubleParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44012,17 +43375,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDateType__DefaultAssignment_3_1"
-    // InternalRos.g:14894:1: rule__ParameterDateType__DefaultAssignment_3_1 : ( ruleParameterDate ) ;
+    // InternalRos.g:14705:1: rule__ParameterDateType__DefaultAssignment_3_1 : ( ruleParameterDate ) ;
     public final void rule__ParameterDateType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14898:1: ( ( ruleParameterDate ) )
-            // InternalRos.g:14899:2: ( ruleParameterDate )
+            // InternalRos.g:14709:1: ( ( ruleParameterDate ) )
+            // InternalRos.g:14710:2: ( ruleParameterDate )
             {
-            // InternalRos.g:14899:2: ( ruleParameterDate )
-            // InternalRos.g:14900:3: ruleParameterDate
+            // InternalRos.g:14710:2: ( ruleParameterDate )
+            // InternalRos.g:14711:3: ruleParameterDate
             {
              before(grammarAccess.getParameterDateTypeAccess().getDefaultParameterDateParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44053,17 +43416,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBooleanType__DefaultAssignment_3_1"
-    // InternalRos.g:14909:1: rule__ParameterBooleanType__DefaultAssignment_3_1 : ( ruleParameterBoolean ) ;
+    // InternalRos.g:14720:1: rule__ParameterBooleanType__DefaultAssignment_3_1 : ( ruleParameterBoolean ) ;
     public final void rule__ParameterBooleanType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14913:1: ( ( ruleParameterBoolean ) )
-            // InternalRos.g:14914:2: ( ruleParameterBoolean )
+            // InternalRos.g:14724:1: ( ( ruleParameterBoolean ) )
+            // InternalRos.g:14725:2: ( ruleParameterBoolean )
             {
-            // InternalRos.g:14914:2: ( ruleParameterBoolean )
-            // InternalRos.g:14915:3: ruleParameterBoolean
+            // InternalRos.g:14725:2: ( ruleParameterBoolean )
+            // InternalRos.g:14726:3: ruleParameterBoolean
             {
              before(grammarAccess.getParameterBooleanTypeAccess().getDefaultParameterBooleanParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44094,17 +43457,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64Type__DefaultAssignment_3_1"
-    // InternalRos.g:14924:1: rule__ParameterBase64Type__DefaultAssignment_3_1 : ( ruleParameterBase64 ) ;
+    // InternalRos.g:14735:1: rule__ParameterBase64Type__DefaultAssignment_3_1 : ( ruleParameterBase64 ) ;
     public final void rule__ParameterBase64Type__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14928:1: ( ( ruleParameterBase64 ) )
-            // InternalRos.g:14929:2: ( ruleParameterBase64 )
+            // InternalRos.g:14739:1: ( ( ruleParameterBase64 ) )
+            // InternalRos.g:14740:2: ( ruleParameterBase64 )
             {
-            // InternalRos.g:14929:2: ( ruleParameterBase64 )
-            // InternalRos.g:14930:3: ruleParameterBase64
+            // InternalRos.g:14740:2: ( ruleParameterBase64 )
+            // InternalRos.g:14741:3: ruleParameterBase64
             {
              before(grammarAccess.getParameterBase64TypeAccess().getDefaultParameterBase64ParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44135,17 +43498,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAnyType__DefaultAssignment_3_1"
-    // InternalRos.g:14939:1: rule__ParameterAnyType__DefaultAssignment_3_1 : ( ruleParameterAny ) ;
+    // InternalRos.g:14750:1: rule__ParameterAnyType__DefaultAssignment_3_1 : ( ruleParameterAny ) ;
     public final void rule__ParameterAnyType__DefaultAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14943:1: ( ( ruleParameterAny ) )
-            // InternalRos.g:14944:2: ( ruleParameterAny )
+            // InternalRos.g:14754:1: ( ( ruleParameterAny ) )
+            // InternalRos.g:14755:2: ( ruleParameterAny )
             {
-            // InternalRos.g:14944:2: ( ruleParameterAny )
-            // InternalRos.g:14945:3: ruleParameterAny
+            // InternalRos.g:14755:2: ( ruleParameterAny )
+            // InternalRos.g:14756:3: ruleParameterAny
             {
              before(grammarAccess.getParameterAnyTypeAccess().getDefaultParameterAnyParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44176,17 +43539,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__TypeAssignment_3"
-    // InternalRos.g:14954:1: rule__ParameterArrayType__TypeAssignment_3 : ( ruleParameterType ) ;
+    // InternalRos.g:14765:1: rule__ParameterArrayType__TypeAssignment_3 : ( ruleParameterType ) ;
     public final void rule__ParameterArrayType__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14958:1: ( ( ruleParameterType ) )
-            // InternalRos.g:14959:2: ( ruleParameterType )
+            // InternalRos.g:14769:1: ( ( ruleParameterType ) )
+            // InternalRos.g:14770:2: ( ruleParameterType )
             {
-            // InternalRos.g:14959:2: ( ruleParameterType )
-            // InternalRos.g:14960:3: ruleParameterType
+            // InternalRos.g:14770:2: ( ruleParameterType )
+            // InternalRos.g:14771:3: ruleParameterType
             {
              before(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44217,17 +43580,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__DefaultAssignment_4_1"
-    // InternalRos.g:14969:1: rule__ParameterArrayType__DefaultAssignment_4_1 : ( ruleParameterSequence ) ;
+    // InternalRos.g:14780:1: rule__ParameterArrayType__DefaultAssignment_4_1 : ( ruleParameterSequence ) ;
     public final void rule__ParameterArrayType__DefaultAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14973:1: ( ( ruleParameterSequence ) )
-            // InternalRos.g:14974:2: ( ruleParameterSequence )
+            // InternalRos.g:14784:1: ( ( ruleParameterSequence ) )
+            // InternalRos.g:14785:2: ( ruleParameterSequence )
             {
-            // InternalRos.g:14974:2: ( ruleParameterSequence )
-            // InternalRos.g:14975:3: ruleParameterSequence
+            // InternalRos.g:14785:2: ( ruleParameterSequence )
+            // InternalRos.g:14786:3: ruleParameterSequence
             {
              before(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterSequenceParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44258,17 +43621,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__ValueAssignment_3_2"
-    // InternalRos.g:14984:1: rule__ParameterSequence__ValueAssignment_3_2 : ( ruleParameterValue ) ;
+    // InternalRos.g:14795:1: rule__ParameterSequence__ValueAssignment_3_2 : ( ruleParameterValue ) ;
     public final void rule__ParameterSequence__ValueAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:14988:1: ( ( ruleParameterValue ) )
-            // InternalRos.g:14989:2: ( ruleParameterValue )
+            // InternalRos.g:14799:1: ( ( ruleParameterValue ) )
+            // InternalRos.g:14800:2: ( ruleParameterValue )
             {
-            // InternalRos.g:14989:2: ( ruleParameterValue )
-            // InternalRos.g:14990:3: ruleParameterValue
+            // InternalRos.g:14800:2: ( ruleParameterValue )
+            // InternalRos.g:14801:3: ruleParameterValue
             {
              before(grammarAccess.getParameterSequenceAccess().getValueParameterValueParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -44299,17 +43662,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterSequence__ValueAssignment_3_3_1"
-    // InternalRos.g:14999:1: rule__ParameterSequence__ValueAssignment_3_3_1 : ( ruleParameterValue ) ;
+    // InternalRos.g:14810:1: rule__ParameterSequence__ValueAssignment_3_3_1 : ( ruleParameterValue ) ;
     public final void rule__ParameterSequence__ValueAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15003:1: ( ( ruleParameterValue ) )
-            // InternalRos.g:15004:2: ( ruleParameterValue )
+            // InternalRos.g:14814:1: ( ( ruleParameterValue ) )
+            // InternalRos.g:14815:2: ( ruleParameterValue )
             {
-            // InternalRos.g:15004:2: ( ruleParameterValue )
-            // InternalRos.g:15005:3: ruleParameterValue
+            // InternalRos.g:14815:2: ( ruleParameterValue )
+            // InternalRos.g:14816:3: ruleParameterValue
             {
              before(grammarAccess.getParameterSequenceAccess().getValueParameterValueParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44340,17 +43703,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterAny__ValueAssignment_3_1"
-    // InternalRos.g:15014:1: rule__ParameterAny__ValueAssignment_3_1 : ( ruleEString ) ;
+    // InternalRos.g:14825:1: rule__ParameterAny__ValueAssignment_3_1 : ( ruleEString ) ;
     public final void rule__ParameterAny__ValueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15018:1: ( ( ruleEString ) )
-            // InternalRos.g:15019:2: ( ruleEString )
+            // InternalRos.g:14829:1: ( ( ruleEString ) )
+            // InternalRos.g:14830:2: ( ruleEString )
             {
-            // InternalRos.g:15019:2: ( ruleEString )
-            // InternalRos.g:15020:3: ruleEString
+            // InternalRos.g:14830:2: ( ruleEString )
+            // InternalRos.g:14831:3: ruleEString
             {
              before(grammarAccess.getParameterAnyAccess().getValueEStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44381,17 +43744,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterString__ValueAssignment_3"
-    // InternalRos.g:15029:1: rule__ParameterString__ValueAssignment_3 : ( ruleEString ) ;
+    // InternalRos.g:14840:1: rule__ParameterString__ValueAssignment_3 : ( ruleEString ) ;
     public final void rule__ParameterString__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15033:1: ( ( ruleEString ) )
-            // InternalRos.g:15034:2: ( ruleEString )
+            // InternalRos.g:14844:1: ( ( ruleEString ) )
+            // InternalRos.g:14845:2: ( ruleEString )
             {
-            // InternalRos.g:15034:2: ( ruleEString )
-            // InternalRos.g:15035:3: ruleEString
+            // InternalRos.g:14845:2: ( ruleEString )
+            // InternalRos.g:14846:3: ruleEString
             {
              before(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44422,17 +43785,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBase64__ValueAssignment_3"
-    // InternalRos.g:15044:1: rule__ParameterBase64__ValueAssignment_3 : ( ruleBase64Binary ) ;
+    // InternalRos.g:14855:1: rule__ParameterBase64__ValueAssignment_3 : ( ruleBase64Binary ) ;
     public final void rule__ParameterBase64__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15048:1: ( ( ruleBase64Binary ) )
-            // InternalRos.g:15049:2: ( ruleBase64Binary )
+            // InternalRos.g:14859:1: ( ( ruleBase64Binary ) )
+            // InternalRos.g:14860:2: ( ruleBase64Binary )
             {
-            // InternalRos.g:15049:2: ( ruleBase64Binary )
-            // InternalRos.g:15050:3: ruleBase64Binary
+            // InternalRos.g:14860:2: ( ruleBase64Binary )
+            // InternalRos.g:14861:3: ruleBase64Binary
             {
              before(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44463,17 +43826,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterInteger__ValueAssignment_3"
-    // InternalRos.g:15059:1: rule__ParameterInteger__ValueAssignment_3 : ( ruleInt0 ) ;
+    // InternalRos.g:14870:1: rule__ParameterInteger__ValueAssignment_3 : ( ruleInt0 ) ;
     public final void rule__ParameterInteger__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15063:1: ( ( ruleInt0 ) )
-            // InternalRos.g:15064:2: ( ruleInt0 )
+            // InternalRos.g:14874:1: ( ( ruleInt0 ) )
+            // InternalRos.g:14875:2: ( ruleInt0 )
             {
-            // InternalRos.g:15064:2: ( ruleInt0 )
-            // InternalRos.g:15065:3: ruleInt0
+            // InternalRos.g:14875:2: ( ruleInt0 )
+            // InternalRos.g:14876:3: ruleInt0
             {
              before(grammarAccess.getParameterIntegerAccess().getValueInt0ParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44504,17 +43867,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDouble__ValueAssignment_3"
-    // InternalRos.g:15074:1: rule__ParameterDouble__ValueAssignment_3 : ( ruleDouble ) ;
+    // InternalRos.g:14885:1: rule__ParameterDouble__ValueAssignment_3 : ( ruleDouble ) ;
     public final void rule__ParameterDouble__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15078:1: ( ( ruleDouble ) )
-            // InternalRos.g:15079:2: ( ruleDouble )
+            // InternalRos.g:14889:1: ( ( ruleDouble ) )
+            // InternalRos.g:14890:2: ( ruleDouble )
             {
-            // InternalRos.g:15079:2: ( ruleDouble )
-            // InternalRos.g:15080:3: ruleDouble
+            // InternalRos.g:14890:2: ( ruleDouble )
+            // InternalRos.g:14891:3: ruleDouble
             {
              before(grammarAccess.getParameterDoubleAccess().getValueDoubleParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44545,17 +43908,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterBoolean__ValueAssignment_3"
-    // InternalRos.g:15089:1: rule__ParameterBoolean__ValueAssignment_3 : ( ruleBoolean ) ;
+    // InternalRos.g:14900:1: rule__ParameterBoolean__ValueAssignment_3 : ( ruleBoolean ) ;
     public final void rule__ParameterBoolean__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15093:1: ( ( ruleBoolean ) )
-            // InternalRos.g:15094:2: ( ruleBoolean )
+            // InternalRos.g:14904:1: ( ( ruleBoolean ) )
+            // InternalRos.g:14905:2: ( ruleBoolean )
             {
-            // InternalRos.g:15094:2: ( ruleBoolean )
-            // InternalRos.g:15095:3: ruleBoolean
+            // InternalRos.g:14905:2: ( ruleBoolean )
+            // InternalRos.g:14906:3: ruleBoolean
             {
              before(grammarAccess.getParameterBooleanAccess().getValueBooleanParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44586,17 +43949,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__ValueAssignment_3_2"
-    // InternalRos.g:15104:1: rule__ParameterStruct__ValueAssignment_3_2 : ( ruleParameterStructMember ) ;
+    // InternalRos.g:14915:1: rule__ParameterStruct__ValueAssignment_3_2 : ( ruleParameterStructMember ) ;
     public final void rule__ParameterStruct__ValueAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15108:1: ( ( ruleParameterStructMember ) )
-            // InternalRos.g:15109:2: ( ruleParameterStructMember )
+            // InternalRos.g:14919:1: ( ( ruleParameterStructMember ) )
+            // InternalRos.g:14920:2: ( ruleParameterStructMember )
             {
-            // InternalRos.g:15109:2: ( ruleParameterStructMember )
-            // InternalRos.g:15110:3: ruleParameterStructMember
+            // InternalRos.g:14920:2: ( ruleParameterStructMember )
+            // InternalRos.g:14921:3: ruleParameterStructMember
             {
              before(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -44627,17 +43990,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStruct__ValueAssignment_3_3_1"
-    // InternalRos.g:15119:1: rule__ParameterStruct__ValueAssignment_3_3_1 : ( ruleParameterStructMember ) ;
+    // InternalRos.g:14930:1: rule__ParameterStruct__ValueAssignment_3_3_1 : ( ruleParameterStructMember ) ;
     public final void rule__ParameterStruct__ValueAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15123:1: ( ( ruleParameterStructMember ) )
-            // InternalRos.g:15124:2: ( ruleParameterStructMember )
+            // InternalRos.g:14934:1: ( ( ruleParameterStructMember ) )
+            // InternalRos.g:14935:2: ( ruleParameterStructMember )
             {
-            // InternalRos.g:15124:2: ( ruleParameterStructMember )
-            // InternalRos.g:15125:3: ruleParameterStructMember
+            // InternalRos.g:14935:2: ( ruleParameterStructMember )
+            // InternalRos.g:14936:3: ruleParameterStructMember
             {
              before(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44668,17 +44031,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterDate__ValueAssignment_3"
-    // InternalRos.g:15134:1: rule__ParameterDate__ValueAssignment_3 : ( ruleDateTime ) ;
+    // InternalRos.g:14945:1: rule__ParameterDate__ValueAssignment_3 : ( ruleDateTime ) ;
     public final void rule__ParameterDate__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15138:1: ( ( ruleDateTime ) )
-            // InternalRos.g:15139:2: ( ruleDateTime )
+            // InternalRos.g:14949:1: ( ( ruleDateTime ) )
+            // InternalRos.g:14950:2: ( ruleDateTime )
             {
-            // InternalRos.g:15139:2: ( ruleDateTime )
-            // InternalRos.g:15140:3: ruleDateTime
+            // InternalRos.g:14950:2: ( ruleDateTime )
+            // InternalRos.g:14951:3: ruleDateTime
             {
              before(grammarAccess.getParameterDateAccess().getValueDateTimeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -44709,17 +44072,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__NameAssignment_1"
-    // InternalRos.g:15149:1: rule__ParameterStructMember__NameAssignment_1 : ( ruleEString ) ;
+    // InternalRos.g:14960:1: rule__ParameterStructMember__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__ParameterStructMember__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15153:1: ( ( ruleEString ) )
-            // InternalRos.g:15154:2: ( ruleEString )
+            // InternalRos.g:14964:1: ( ( ruleEString ) )
+            // InternalRos.g:14965:2: ( ruleEString )
             {
-            // InternalRos.g:15154:2: ( ruleEString )
-            // InternalRos.g:15155:3: ruleEString
+            // InternalRos.g:14965:2: ( ruleEString )
+            // InternalRos.g:14966:3: ruleEString
             {
              before(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44750,17 +44113,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructMember__ValueAssignment_4"
-    // InternalRos.g:15164:1: rule__ParameterStructMember__ValueAssignment_4 : ( ruleParameterValue ) ;
+    // InternalRos.g:14975:1: rule__ParameterStructMember__ValueAssignment_4 : ( ruleParameterValue ) ;
     public final void rule__ParameterStructMember__ValueAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15168:1: ( ( ruleParameterValue ) )
-            // InternalRos.g:15169:2: ( ruleParameterValue )
+            // InternalRos.g:14979:1: ( ( ruleParameterValue ) )
+            // InternalRos.g:14980:2: ( ruleParameterValue )
             {
-            // InternalRos.g:15169:2: ( ruleParameterValue )
-            // InternalRos.g:15170:3: ruleParameterValue
+            // InternalRos.g:14980:2: ( ruleParameterValue )
+            // InternalRos.g:14981:3: ruleParameterValue
             {
              before(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -44791,17 +44154,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__NameAssignment_1"
-    // InternalRos.g:15179:1: rule__ParameterStructTypeMember__NameAssignment_1 : ( ruleEString ) ;
+    // InternalRos.g:14990:1: rule__ParameterStructTypeMember__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__ParameterStructTypeMember__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15183:1: ( ( ruleEString ) )
-            // InternalRos.g:15184:2: ( ruleEString )
+            // InternalRos.g:14994:1: ( ( ruleEString ) )
+            // InternalRos.g:14995:2: ( ruleEString )
             {
-            // InternalRos.g:15184:2: ( ruleEString )
-            // InternalRos.g:15185:3: ruleEString
+            // InternalRos.g:14995:2: ( ruleEString )
+            // InternalRos.g:14996:3: ruleEString
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44832,17 +44195,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__TypeAssignment_4"
-    // InternalRos.g:15194:1: rule__ParameterStructTypeMember__TypeAssignment_4 : ( ruleParameterType ) ;
+    // InternalRos.g:15005:1: rule__ParameterStructTypeMember__TypeAssignment_4 : ( ruleParameterType ) ;
     public final void rule__ParameterStructTypeMember__TypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15198:1: ( ( ruleParameterType ) )
-            // InternalRos.g:15199:2: ( ruleParameterType )
+            // InternalRos.g:15009:1: ( ( ruleParameterType ) )
+            // InternalRos.g:15010:2: ( ruleParameterType )
             {
-            // InternalRos.g:15199:2: ( ruleParameterType )
-            // InternalRos.g:15200:3: ruleParameterType
+            // InternalRos.g:15010:2: ( ruleParameterType )
+            // InternalRos.g:15011:3: ruleParameterType
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getTypeParameterTypeParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -44873,17 +44236,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructTypeMember__DefaultAssignment_5_1"
-    // InternalRos.g:15209:1: rule__ParameterStructTypeMember__DefaultAssignment_5_1 : ( ruleParameterStruct ) ;
+    // InternalRos.g:15020:1: rule__ParameterStructTypeMember__DefaultAssignment_5_1 : ( ruleParameterStruct ) ;
     public final void rule__ParameterStructTypeMember__DefaultAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15213:1: ( ( ruleParameterStruct ) )
-            // InternalRos.g:15214:2: ( ruleParameterStruct )
+            // InternalRos.g:15024:1: ( ( ruleParameterStruct ) )
+            // InternalRos.g:15025:2: ( ruleParameterStruct )
             {
-            // InternalRos.g:15214:2: ( ruleParameterStruct )
-            // InternalRos.g:15215:3: ruleParameterStruct
+            // InternalRos.g:15025:2: ( ruleParameterStruct )
+            // InternalRos.g:15026:3: ruleParameterStruct
             {
              before(grammarAccess.getParameterStructTypeMemberAccess().getDefaultParameterStructParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -44914,21 +44277,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDependency__PackageAssignment_3"
-    // InternalRos.g:15224:1: rule__PackageDependency__PackageAssignment_3 : ( ( ruleEString ) ) ;
+    // InternalRos.g:15035:1: rule__PackageDependency__PackageAssignment_3 : ( ( ruleEString ) ) ;
     public final void rule__PackageDependency__PackageAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15228:1: ( ( ( ruleEString ) ) )
-            // InternalRos.g:15229:2: ( ( ruleEString ) )
+            // InternalRos.g:15039:1: ( ( ( ruleEString ) ) )
+            // InternalRos.g:15040:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:15229:2: ( ( ruleEString ) )
-            // InternalRos.g:15230:3: ( ruleEString )
+            // InternalRos.g:15040:2: ( ( ruleEString ) )
+            // InternalRos.g:15041:3: ( ruleEString )
             {
              before(grammarAccess.getPackageDependencyAccess().getPackagePackageCrossReference_3_0()); 
-            // InternalRos.g:15231:3: ( ruleEString )
-            // InternalRos.g:15232:4: ruleEString
+            // InternalRos.g:15042:3: ( ruleEString )
+            // InternalRos.g:15043:4: ruleEString
             {
              before(grammarAccess.getPackageDependencyAccess().getPackagePackageEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -44963,17 +44326,17 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDependency__NameAssignment_2"
-    // InternalRos.g:15243:1: rule__ExternalDependency__NameAssignment_2 : ( ruleEString ) ;
+    // InternalRos.g:15054:1: rule__ExternalDependency__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ExternalDependency__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:15247:1: ( ( ruleEString ) )
-            // InternalRos.g:15248:2: ( ruleEString )
+            // InternalRos.g:15058:1: ( ( ruleEString ) )
+            // InternalRos.g:15059:2: ( ruleEString )
             {
-            // InternalRos.g:15248:2: ( ruleEString )
-            // InternalRos.g:15249:3: ruleEString
+            // InternalRos.g:15059:2: ( ruleEString )
+            // InternalRos.g:15060:3: ruleEString
             {
              before(grammarAccess.getExternalDependencyAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -45040,12 +44403,12 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0040000000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0100000000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0002010000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0002000000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0004000000080000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x6800000000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000010200000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0080010000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0404010000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0404000000000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0800000000000000L});

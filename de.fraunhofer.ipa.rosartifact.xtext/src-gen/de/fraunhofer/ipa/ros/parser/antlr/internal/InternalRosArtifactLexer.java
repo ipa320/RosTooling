@@ -1378,10 +1378,10 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3508:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalRosArtifact.g:3508:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRosArtifact.g:3494:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalRosArtifact.g:3494:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalRosArtifact.g:3508:11: ( '^' )?
+            // InternalRosArtifact.g:3494:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1390,7 +1390,7 @@ public class InternalRosArtifactLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalRosArtifact.g:3508:11: '^'
+                    // InternalRosArtifact.g:3494:11: '^'
                     {
                     match('^'); 
 
@@ -1408,7 +1408,7 @@ public class InternalRosArtifactLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRosArtifact.g:3508:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRosArtifact.g:3494:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1457,10 +1457,10 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3510:10: ( ( '0' .. '9' )+ )
-            // InternalRosArtifact.g:3510:12: ( '0' .. '9' )+
+            // InternalRosArtifact.g:3496:10: ( ( '0' .. '9' )+ )
+            // InternalRosArtifact.g:3496:12: ( '0' .. '9' )+
             {
-            // InternalRosArtifact.g:3510:12: ( '0' .. '9' )+
+            // InternalRosArtifact.g:3496:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1474,7 +1474,7 @@ public class InternalRosArtifactLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRosArtifact.g:3510:13: '0' .. '9'
+            	    // InternalRosArtifact.g:3496:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1506,10 +1506,10 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3512:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalRosArtifact.g:3512:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRosArtifact.g:3498:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalRosArtifact.g:3498:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalRosArtifact.g:3512:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRosArtifact.g:3498:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1527,10 +1527,10 @@ public class InternalRosArtifactLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRosArtifact.g:3512:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalRosArtifact.g:3498:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalRosArtifact.g:3512:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRosArtifact.g:3498:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1546,7 +1546,7 @@ public class InternalRosArtifactLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:3512:21: '\\\\' .
+                    	    // InternalRosArtifact.g:3498:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1554,7 +1554,7 @@ public class InternalRosArtifactLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRosArtifact.g:3512:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRosArtifact.g:3498:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1579,10 +1579,10 @@ public class InternalRosArtifactLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRosArtifact.g:3512:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalRosArtifact.g:3498:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalRosArtifact.g:3512:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRosArtifact.g:3498:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1598,7 +1598,7 @@ public class InternalRosArtifactLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalRosArtifact.g:3512:54: '\\\\' .
+                    	    // InternalRosArtifact.g:3498:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1606,7 +1606,7 @@ public class InternalRosArtifactLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRosArtifact.g:3512:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRosArtifact.g:3498:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1649,12 +1649,12 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3514:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRosArtifact.g:3514:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRosArtifact.g:3500:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRosArtifact.g:3500:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRosArtifact.g:3514:24: ( options {greedy=false; } : . )*
+            // InternalRosArtifact.g:3500:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1679,7 +1679,7 @@ public class InternalRosArtifactLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalRosArtifact.g:3514:52: .
+            	    // InternalRosArtifact.g:3500:52: .
             	    {
             	    matchAny(); 
 
@@ -1709,12 +1709,12 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3516:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRosArtifact.g:3516:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRosArtifact.g:3502:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRosArtifact.g:3502:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRosArtifact.g:3516:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRosArtifact.g:3502:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1727,7 +1727,7 @@ public class InternalRosArtifactLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRosArtifact.g:3516:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRosArtifact.g:3502:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1747,7 +1747,7 @@ public class InternalRosArtifactLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRosArtifact.g:3516:40: ( ( '\\r' )? '\\n' )?
+            // InternalRosArtifact.g:3502:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1756,9 +1756,9 @@ public class InternalRosArtifactLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalRosArtifact.g:3516:41: ( '\\r' )? '\\n'
+                    // InternalRosArtifact.g:3502:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRosArtifact.g:3516:41: ( '\\r' )?
+                    // InternalRosArtifact.g:3502:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1767,7 +1767,7 @@ public class InternalRosArtifactLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalRosArtifact.g:3516:41: '\\r'
+                            // InternalRosArtifact.g:3502:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1799,10 +1799,10 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3518:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRosArtifact.g:3518:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRosArtifact.g:3504:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRosArtifact.g:3504:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRosArtifact.g:3518:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRosArtifact.g:3504:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1856,8 +1856,8 @@ public class InternalRosArtifactLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosArtifact.g:3520:16: ( . )
-            // InternalRosArtifact.g:3520:18: .
+            // InternalRosArtifact.g:3506:16: ( . )
+            // InternalRosArtifact.g:3506:18: .
             {
             matchAny(); 
 

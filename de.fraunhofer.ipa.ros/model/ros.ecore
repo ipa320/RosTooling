@@ -109,7 +109,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//GraphName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//GraphName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GraphName" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true"/>
