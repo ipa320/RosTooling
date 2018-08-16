@@ -17,6 +17,6 @@ de.fraunhofer.ipa.ros.sirius
 
 4.Create a new ROS model to hold the description of your node (inside the modeling project New  > Other > Ros Model and choose as Model Object *Artifact*)
 
-5.Create a new representation for your artifact (open the file representarions.aird with the aird editor, enable the representation *component*, select *Artifact* diagram" and click *New...*
+5.Create a new representation for your artifact (open the file representarions.aird with the aird editor, enable the representation *component*, select *Artifact* diagram" and click *New...*)
 
 Use the palette toolbar to add a new node, to configure your model use also the *Properties* view.
