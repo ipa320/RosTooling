@@ -1,9 +1,6 @@
 package ros.presentation;
 
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
@@ -11,7 +8,6 @@ import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
@@ -23,7 +19,6 @@ import org.eclipse.swt.widgets.Text;
 
 public class NewArtifactProjectWizardPage extends WizardPage {
 	private Text ProjectText;
-	private ISelection selection;
 
 	/**
 	 * Constructor for NewCodeGenProjectWizardPage.
@@ -74,49 +69,5 @@ public class NewArtifactProjectWizardPage extends WizardPage {
     public String getProjectName() {
         return ProjectText.getText();
     }
-
-	/**
-	 * Tests if the current workbench selection is a suitable container to use.
-	 */
-
-	private void initialize() {
-		if (selection != null && selection.isEmpty() == false
-				&& selection instanceof IStructuredSelection) {
-			IStructuredSelection ssel = (IStructuredSelection) selection;
-			if (ssel.size() > 1)
-				return;
-			Object obj = ssel.getFirstElement();
-			if (obj instanceof IResource) {
-				IContainer container;
-				if (obj instanceof IContainer)
-					container = (IContainer) obj;
-				else
-					container = ((IResource) obj).getParent();
-				ProjectText.setText(container.getFullPath().toString());
-			}
-		}
-	}
-
-	/**
-	 * Uses the standard container selection dialog to choose the new value for
-	 * the container field.
-	 */
-
-	private void handleProjectBrowse() {
-		DirectoryDialog dialog = new DirectoryDialog(getShell());			
-		String dialogResult = dialog.open();
-		if (dialogResult != null) {
-			ProjectText.setText(dialogResult);
-		}
-	}
-
-	
-	/**
-	 * Ensures that both text fields are set.
-	 */
-
-	private void dialogChanged() {
-		return;
-	}
 
 }

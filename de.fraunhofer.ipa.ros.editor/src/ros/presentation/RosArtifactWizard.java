@@ -107,7 +107,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 	}
 	
 	/**
-	 * TODO: Update to create a new project with a desired description and nature
+	 * TODO: add dependency to predefined msgs and open automatically the Properties view
 	 */
 
 	private void doFinish( String ProjectName, IProgressMonitor monitor)
@@ -119,53 +119,63 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
 		description.setNatureIds(newNatures);
-        project.setDescription(description, monitor);
-        IFile file = project.getFile(ProjectName+".rosartifact");
+		project.setDescription(description, monitor);
+		IFile file = project.getFile(ProjectName+".rosartifact");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
-        byte[] bytes = ("Artifact "+ProjectName+" {}").getBytes();
-        InputStream source = new ByteArrayInputStream(bytes);
-        file.create(source, IResource.NONE, null);
-        
-        //Add viewpoints to the aird file
-        IFile airdFile = project.getFile("representations.aird");
-        URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
-        Session session = SessionManager.INSTANCE.getSession(airdFileURI, monitor);
-        Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
-        Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
-        for(Viewpoint p : availableViewPoints)
-        	viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, p));
-        ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();
-        
-        //set ros model as root object for the representation
-        @SuppressWarnings("restriction")
+		byte[] bytes = ("Artifact "+ProjectName+" {}").getBytes();
+		InputStream source = new ByteArrayInputStream(bytes);
+		file.create(source, IResource.NONE, null);
+		
+		//Add viewpoints to the aird file
+		IFile airdFile = project.getFile("representations.aird");
+		URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
+		Session session = SessionManager.INSTANCE.getSession(airdFileURI, monitor);
+		Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
+		Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
+		for(Viewpoint p : availableViewPoints)
+			viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, p));
+		ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();
+		
+		//set ros model as root object for the representation
+		@SuppressWarnings("restriction")
 		RecordingCommand command = new ChangeViewpointSelectionCommand( session, callback, viewpoints, new HashSet<Viewpoint>(), true, monitor);
-        TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-        domain.getCommandStack().execute(command);
+		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
+		domain.getCommandStack().execute(command);
 		EObject rootObject = RosFactory.eINSTANCE.createArtifact();
-        rootObject = session.getSemanticResources().iterator().next().getContents().get(0);
+		rootObject = session.getSemanticResources().iterator().next().getContents().get(0);
 
-        //create representation
-        Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false),  rootObject );
-        RepresentationDescription description_ = descriptions.iterator().next();
-        DialectManager viewpointDialectManager = DialectManager.INSTANCE;
-        Command createViewCommand = new CreateRepresentationCommand(session,
-        		  description_, rootObject, ProjectName, monitor);
-        session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
-        SessionManager.INSTANCE.notifyRepresentationCreated(session);
+		//create representation
+		Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false),  rootObject );
+		RepresentationDescription description_ = descriptions.iterator().next();
+		DialectManager viewpointDialectManager = DialectManager.INSTANCE;
+		Command createViewCommand = new CreateRepresentationCommand(session,
+				  description_, rootObject, ProjectName, monitor);
+		session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
+		SessionManager.INSTANCE.notifyRepresentationCreated(session);
 
-        //open editor 
-        Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
-        DRepresentation myDiagramRepresentation = representations.iterator().next();
-        DialectUIManager dialectUIManager = DialectUIManager.INSTANCE;
-        	dialectUIManager.openEditor(session,
-        		myDiagramRepresentation, monitor);
-
+		//open editor 
+		Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
+		DRepresentation myDiagramRepresentation = representations.iterator().next();
+		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 
-		//project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		//IFolder folder = project.getFolder("ros_basics");
+		//folder.create(true, true, monitor);
+
+		//IFile msgs_file = project.getFile(new Path("platform:/resource/de.fraunhofer.ipa.objects/common_msgs.ros"));
+		//System.out.println(msgs_file.getFullPath());
+		//copyFiles();
+		//IWorkbench workbench = PlatformUI.getWorkbench();
+		//IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
+		// open the perspective
+		//workbench.showPerspective("org.eclipse.sirius.ui.tools.perspective.modeling", window);
+		//project.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		// open the view
+		//window.getActivePage().showView("org.eclipse.ui.views.properties");
+		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		monitor.worked(1);
 	}
-
+	
 	protected IProject getProjectHandle() {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(page.getName());
 	}
