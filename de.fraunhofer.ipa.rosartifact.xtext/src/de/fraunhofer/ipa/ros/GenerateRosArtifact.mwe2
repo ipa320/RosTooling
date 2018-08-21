@@ -27,7 +27,7 @@ Workflow {
 			name = "de.fraunhofer.ipa.ros.RosArtifact"
 			fileExtensions = "rosartifact"
 			referencedResource = "platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel"
-			
+			referencedResource = "platform:/resource/de.fraunhofer.ipa.ros.objects/common_msgs.ros"
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 
 			formatter = {
