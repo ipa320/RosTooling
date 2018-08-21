@@ -33,7 +33,7 @@ public interface NamespacedElement extends EObject {
 	 * @return the value of the '<em>Namespace</em>' containment reference.
 	 * @see #setNamespace(Namespace)
 	 * @see ros.RosPackage#getNamespacedElement_Namespace()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Namespace getNamespace();

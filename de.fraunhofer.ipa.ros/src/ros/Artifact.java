@@ -59,7 +59,7 @@ public interface Artifact extends EObject {
 	 * @return the value of the '<em>Node</em>' containment reference.
 	 * @see #setNode(Node)
 	 * @see ros.RosPackage#getArtifact_Node()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Node getNode();
