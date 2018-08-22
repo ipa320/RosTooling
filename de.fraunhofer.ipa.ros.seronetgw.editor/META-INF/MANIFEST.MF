@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.emf.emfstore.common
+ org.eclipse.emf.emfstore.common;resolution:=optional,
+ org.eclipse.wb.core.lib
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: de.fraunhofer.ipa.ros.seronetgw.editor
