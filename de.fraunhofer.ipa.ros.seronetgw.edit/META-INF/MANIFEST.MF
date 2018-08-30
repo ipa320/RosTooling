@@ -8,9 +8,10 @@ Bundle-Activator: de.fraunhofer.ipa.ros.seronetgw.rosgw.provider.RosgwEditPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.ros.seronetgw.rosgw.provider,
- ros.provider
+Export-Package: de.fraunhofer.ipa.ros.seronetgw.rosgw.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.ros.seronetgw;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ de.fraunhofer.ipa.ros;visibility:=reexport,
+ de.fraunhofer.ipa.ros.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

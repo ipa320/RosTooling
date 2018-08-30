@@ -6,7 +6,7 @@
     <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
-    <semanticResources>ros.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_TIfskKRSEei7VcjdVLGQmQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_TMFzIKRSEei7VcjdVLGQmQ" name="rosgw" repPath="#_TJkDkKRSEei7VcjdVLGQmQ">

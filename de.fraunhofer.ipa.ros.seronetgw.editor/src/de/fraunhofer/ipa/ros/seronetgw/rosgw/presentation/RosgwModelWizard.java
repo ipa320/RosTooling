@@ -62,7 +62,6 @@ import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosgwFactory;
 import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosgwPackage;
 import de.fraunhofer.ipa.ros.seronetgw.rosgw.provider.RosgwEditPlugin;
 
-
 /**
  * This is a simple wizard for creating a new model file.
  * <!-- begin-user-doc -->
@@ -119,7 +118,7 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected RosgwModelWizardInitialObjectCreationPage initialObjectCreationPage;
-	protected File ResourceFile; 
+	protected File ResourceFile;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -200,15 +199,15 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean performFinish() {
 		try {
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
-			ResourceSet resourceSet = new ResourceSetImpl();
 
 			// Do the work within an operation.
 			//
@@ -218,7 +217,7 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 					try {
 						// Create a resource set
 						//
-						//ResourceSet resourceSet = new ResourceSetImpl();
+						ResourceSet resourceSet = new ResourceSetImpl();
 
 						// Get the URI of the model file.
 						//
@@ -240,15 +239,12 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 						Map<Object, Object> options = new HashMap<Object, Object>();
 						options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
 						resource.save(options);
-						
 					} catch (Exception exception) {
 						RosgwEditorPlugin.INSTANCE.log(exception);
 					} finally {
 						progressMonitor.done();
 					}
-
 				}
-				
 			};
 
 			getContainer().run(false, false, operation);
@@ -266,11 +262,10 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 					}
 				});
 			}
-			
+
 			// Open an editor on the new file.
 			//
 			try {
-				
 				page.openEditor(new FileEditorInput(modelFile),
 						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			} catch (PartInitException exception) {
@@ -285,13 +280,10 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 			loadResourceAction.run();
 
 			return true;
-
 		} catch (Exception exception) {
 			RosgwEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
-		
-
 	}
 
 	/**
@@ -550,7 +542,6 @@ public class RosgwModelWizard extends Wizard implements INewWizard {
 		}
 	}
 
-	
 	/**
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->

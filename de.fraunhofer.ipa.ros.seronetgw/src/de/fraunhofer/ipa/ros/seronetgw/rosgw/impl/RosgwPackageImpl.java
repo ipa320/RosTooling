@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import ros.RosPackage;
 
-import ros.impl.RosPackageImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -79,19 +77,14 @@ public class RosgwPackageImpl extends EPackageImpl implements RosgwPackage {
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		RosPackageImpl theRosPackage = (RosPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(RosPackage.eNS_URI) instanceof RosPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI)
-						: RosPackage.eINSTANCE);
+		// Initialize simple dependencies
+		RosPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRosgwPackage.createPackageContents();
-		theRosPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRosgwPackage.initializePackageContents();
-		theRosPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRosgwPackage.freeze();

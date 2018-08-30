@@ -9,12 +9,9 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.fraunhofer.ipa.ros.seronetgw.rosgw,
  de.fraunhofer.ipa.ros.seronetgw.rosgw.impl,
- de.fraunhofer.ipa.ros.seronetgw.rosgw.util,
- ros,
- ros.impl,
- ros.util
+ de.fraunhofer.ipa.ros.seronetgw.rosgw.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
- de.fraunhofer.ipa.ros;bundle-version="0.1.0"
+ de.fraunhofer.ipa.ros;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: de.fraunhofer.ipa.ros

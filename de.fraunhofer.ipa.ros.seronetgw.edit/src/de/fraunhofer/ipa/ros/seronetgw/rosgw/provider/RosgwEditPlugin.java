@@ -1,29 +1,28 @@
 /**
  */
-package de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation;
+package de.fraunhofer.ipa.ros.seronetgw.rosgw.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
-import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import ros.provider.RosEditPlugin;
 
+
 /**
- * This is the central singleton for the Rosgw editor plugin.
+ * This is the central singleton for the Rosgw edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class RosgwEditorPlugin extends EMFPlugin {
+public final class RosgwEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final RosgwEditorPlugin INSTANCE = new RosgwEditorPlugin();
+	public static final RosgwEditPlugin INSTANCE = new RosgwEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -39,7 +38,7 @@ public final class RosgwEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosgwEditorPlugin() {
+	public RosgwEditPlugin() {
 		super(new ResourceLocator[] { RosEditPlugin.INSTANCE, });
 	}
 
@@ -72,7 +71,7 @@ public final class RosgwEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin {
+	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
