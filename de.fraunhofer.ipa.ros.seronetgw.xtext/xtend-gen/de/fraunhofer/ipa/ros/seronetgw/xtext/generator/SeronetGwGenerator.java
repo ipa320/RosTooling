@@ -13,6 +13,9 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import ros.Publisher;
+import ros.ServiceClient;
+import ros.ServiceServer;
 import ros.Subscriber;
 
 /**
@@ -32,29 +35,93 @@ public class SeronetGwGenerator extends AbstractGenerator {
   
   public CharSequence compile(final RosGateway gateway) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Artifact hola { node Node { name Gateway_node ");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("publisher {");
+    _builder.append("Artifact artifact_name { node Node { name gateway_node ");
     _builder.newLine();
     {
       EList<Subscriber> _rosTopicSubscriber = gateway.getRosTopicSubscriber();
       for(final Subscriber pub : _rosTopicSubscriber) {
         _builder.append("\t");
+        _builder.append("publisher {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
         _builder.append("Publisher { name ");
         String _name = pub.getName();
-        _builder.append(_name, "\t");
+        _builder.append(_name, "\t\t");
         _builder.append(" message \"");
         String _name_1 = pub.getMessage().getPackage().getName();
-        _builder.append(_name_1, "\t");
+        _builder.append(_name_1, "\t\t");
         _builder.append(".");
         String _name_2 = pub.getMessage().getName();
-        _builder.append(_name_2, "\t");
-        _builder.append("\" }");
+        _builder.append(_name_2, "\t\t");
+        _builder.append("\" } }");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("}}}");
+    {
+      EList<Publisher> _rosTopicPublisher = gateway.getRosTopicPublisher();
+      for(final Publisher sub : _rosTopicPublisher) {
+        _builder.append("\t");
+        _builder.append("subscriber {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("Subscriber { name ");
+        String _name_3 = sub.getName();
+        _builder.append(_name_3, "\t\t");
+        _builder.append(" message \"");
+        String _name_4 = sub.getMessage().getPackage().getName();
+        _builder.append(_name_4, "\t\t");
+        _builder.append(".");
+        String _name_5 = sub.getMessage().getName();
+        _builder.append(_name_5, "\t\t");
+        _builder.append("\" } }");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      EList<ServiceServer> _rosServiceServer = gateway.getRosServiceServer();
+      for(final ServiceServer srvc : _rosServiceServer) {
+        _builder.append("\t");
+        _builder.append("serviceclient {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("ServiceClient { name ");
+        String _name_6 = srvc.getName();
+        _builder.append(_name_6, "\t\t");
+        _builder.append(" service \"");
+        String _name_7 = srvc.getService().getPackage().getName();
+        _builder.append(_name_7, "\t\t");
+        _builder.append(".");
+        String _name_8 = srvc.getService().getName();
+        _builder.append(_name_8, "\t\t");
+        _builder.append("\" } }");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      EList<ServiceClient> _rosServiceClient = gateway.getRosServiceClient();
+      for(final ServiceClient srvs : _rosServiceClient) {
+        _builder.append("\t");
+        _builder.append("serviceserver {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("ServiceServer { name ");
+        String _name_9 = srvs.getName();
+        _builder.append(_name_9, "\t\t");
+        _builder.append(" service \"");
+        String _name_10 = srvs.getService().getPackage().getName();
+        _builder.append(_name_10, "\t\t");
+        _builder.append(".");
+        String _name_11 = srvs.getService().getName();
+        _builder.append(_name_11, "\t\t");
+        _builder.append("\" } }");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("}}");
     _builder.newLine();
     return _builder;
   }

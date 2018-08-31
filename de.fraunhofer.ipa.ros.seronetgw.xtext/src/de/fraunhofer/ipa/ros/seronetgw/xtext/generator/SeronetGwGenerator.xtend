@@ -23,12 +23,24 @@ class SeronetGwGenerator extends AbstractGenerator {
 		}
 	
 	def CharSequence compile(RosGateway gateway)'''
-Artifact hola { node Node { name Gateway_node 
-	publisher {
+Artifact artifact_name { node Node { name gateway_node 
 	«FOR pub : gateway.rosTopicSubscriber»
-		Publisher { name «pub.name» message "«pub.message.package.name».«pub.message.name»" }
+	publisher {
+		Publisher { name «pub.name» message "«pub.message.package.name».«pub.message.name»" } }
     «ENDFOR»
-}}}
+	«FOR sub : gateway.rosTopicPublisher»
+	subscriber {
+		Subscriber { name «sub.name» message "«sub.message.package.name».«sub.message.name»" } }
+    «ENDFOR»
+	«FOR srvc : gateway.rosServiceServer»
+	serviceclient {
+		ServiceClient { name «srvc.name» service "«srvc.service.package.name».«srvc.service.name»" } }
+    «ENDFOR»
+	«FOR srvs : gateway.rosServiceClient»
+	serviceserver {
+		ServiceServer { name «srvs.name» service "«srvs.service.package.name».«srvs.service.name»" } }
+    «ENDFOR»
+}}
 	'''
 	
 	
