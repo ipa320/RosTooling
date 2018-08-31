@@ -133,11 +133,11 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 					IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 					IWorkbenchPage page = workbenchWindow.getActivePage();		
 					final IWorkbenchPart activePart = page.getActivePart();
-					System.out.println(workbenchWindow.getWorkbench().getWorkbenchWindowCount());
 					((ISetSelectionTarget) activePart).selectReveal(targetSelection);
 					try {
 						page.openEditor(new FileEditorInput(modelFile),
 								workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+
 					} catch (PartInitException exception) {
 						MessageDialog.openError(workbenchWindow.getShell(),
 								RosgwEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
