@@ -169,8 +169,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 
 		//TODO: HotFix to copy basic msgs 
 		try {
-			File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
-	    	//File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().findMember("de.fraunhofer.ipa.ros.objects").getLocation().toString()+"/basic_msgs");
+	    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/de.fraunhofer.ipa.ros/basic_msgs");
 	    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+project.getFullPath().toString()+"/basic_msgs");
 	    	copyDependencies(srcFolder,destFolder);
 		} catch(IOException e){

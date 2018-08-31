@@ -6,8 +6,7 @@
 
 <plugin>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated rosgw -->
+   <!--extension point="org.eclipse.ui.newWizards">
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -18,6 +17,21 @@
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RosgwModelFile.gif">
          <description>%_UI_RosgwModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension-->
+   
+      <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.GwProjectWizardID"
+            name="Ros-SeRoNet gateway Project"
+            class="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.GwProjectWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RosgwModelFile.gif">
+         <description>%_UI_GwProjectWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
