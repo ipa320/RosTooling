@@ -25,13 +25,20 @@ import ros.Subscriber;
  */
 @SuppressWarnings("all")
 public class RosArtifactGenerator extends AbstractGenerator {
+  private String resourcepath;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<Node> _filter = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
-    for (final Node node : _filter) {
-      String _name = node.getName();
-      String _plus = (_name + ".cpp");
-      fsa.generateFile(_plus, this.compile(node));
+    this.resourcepath = resource.getURI().toString();
+    boolean _contains = this.resourcepath.contains("/ros-input");
+    boolean _not = (!_contains);
+    if (_not) {
+      Iterable<Node> _filter = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
+      for (final Node node : _filter) {
+        String _name = node.getName();
+        String _plus = (_name + ".cpp");
+        fsa.generateFile(_plus, this.compile(node));
+      }
     }
   }
   

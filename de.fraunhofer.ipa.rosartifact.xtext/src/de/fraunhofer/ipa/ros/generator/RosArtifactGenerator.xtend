@@ -17,11 +17,14 @@ import de.fraunhofer.ipa.ros.services.RosArtifactGrammarAccess.ArtifactElements
  */
 class RosArtifactGenerator extends AbstractGenerator {
 
-
-
+	String resourcepath
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for (node : resource.allContents.toIterable.filter(Node)){
-			fsa.generateFile(node.getName()+".cpp",node.compile)
+		resourcepath = resource.URI.toString();
+		if (! resourcepath.contains("/ros-input")) {
+			for (node : resource.allContents.toIterable.filter(Node)){
+				fsa.generateFile(node.getName()+".cpp",node.compile)
+				}
 			}
 		}
 
