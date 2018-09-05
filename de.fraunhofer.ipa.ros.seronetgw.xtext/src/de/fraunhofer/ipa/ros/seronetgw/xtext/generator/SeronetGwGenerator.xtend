@@ -8,6 +8,9 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway
+import java.util.List
+import org.eclipse.emf.common.util.EList
+import ros.Subscriber
 
 /**
  * Generates code from your model files on save.
@@ -16,32 +19,65 @@ import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway
  */
 class SeronetGwGenerator extends AbstractGenerator {
 
+	int count_pub
+	int count_sub
+	int count_srvc
+	int count_srvs
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (node : resource.allContents.toIterable.filter(RosGateway)){
-			fsa.generateFile("gateway.rosartifact",node.compile)
+			fsa.generateFile("../gateway.rosartifact",node.compile)
 			}
 		}
+
+	def lenght(Object x) {
+      switch x {
+        String case x.length > 0 : x.length // length is defined for String 
+        List<?> : x.size    // size is defined for List
+        default : -1
+      }	}
 	
-	def CharSequence compile(RosGateway gateway)'''
-Artifact artifact_name { node Node { name gateway_node 
-	«FOR pub : gateway.rosTopicSubscriber»
-	publisher {
-		Publisher { name «pub.name» message "«pub.message.package.name».«pub.message.name»" } }
-    «ENDFOR»
-	«FOR sub : gateway.rosTopicPublisher»
-	subscriber {
-		Subscriber { name «sub.name» message "«sub.message.package.name».«sub.message.name»" } }
-    «ENDFOR»
-	«FOR srvc : gateway.rosServiceServer»
-	serviceclient {
-		ServiceClient { name «srvc.name» service "«srvc.service.package.name».«srvc.service.name»" } }
-    «ENDFOR»
-	«FOR srvs : gateway.rosServiceClient»
-	serviceserver {
-		ServiceServer { name «srvs.name» service "«srvs.service.package.name».«srvs.service.name»" } }
-    «ENDFOR»
-}}
+	def CharSequence compile(RosGateway gateway){
+		count_pub=lenght(gateway.rosTopicSubscriber)
+		count_sub=lenght(gateway.rosTopicPublisher)
+		count_srvc=lenght(gateway.rosServiceServer)
+		count_srvs=lenght(gateway.rosServiceClient)
 	'''
+Artifact artifact_name { node Node { name gateway_node 
+	«//SERVICE_SERVER (SERVICE_CLIENT ORIGINAL MODEL)
+IF count_srvs > 0»
+	serviceserver {
+	«ENDIF»
+	«FOR srvs : gateway.rosServiceClient»
+«val count_srvs=count_srvs--»
+		ServiceServer { name «srvs.name» service "«srvs.service.package.name».«srvs.service.name»" } «IF count_srvs > 1 »,«ELSE »}«ENDIF»
+    «ENDFOR»
+	«//PUBLISHER (SUBSCRIBER ORIGINAL MODEL)
+	IF count_pub > 0»
+	publisher {
+	«ENDIF»
+	«FOR pub : gateway.rosTopicSubscriber»
+«val count_pub=count_pub--»
+		Publisher { name «pub.name» message "«pub.message.package.name».«pub.message.name»" } «IF count_pub > 1 »,«ELSE »}«ENDIF»
+    «ENDFOR»
+	«//SUBSCRIBER (PUBLISHER ORIGINAL MODEL)
+IF count_sub > 0»
+	subscriber {
+	«ENDIF»
+	«FOR sub : gateway.rosTopicPublisher»
+«val count_sub=count_sub--»
+		Subscriber { name «sub.name» message "«sub.message.package.name».«sub.message.name»" } «IF count_sub > 1 »,«ELSE »}«ENDIF»
+    «ENDFOR»
+	«//SERVICE_CLIENT (SERVICE_SERVER ORIGINAL MODEL)
+IF count_srvc > 0»
+	serviceclient {
+	«ENDIF»
+	«FOR srvc : gateway.rosServiceServer»
+«val count_srvc=count_srvc--»
+		ServiceClient { name «srvc.name» service "«srvc.service.package.name».«srvc.service.name»" } «IF count_srvc > 1 »,«ELSE »}«ENDIF»
+    «ENDFOR»
+}}'''
 	
-	
+	}
+
 }

@@ -1,9 +1,15 @@
 package de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
@@ -12,22 +18,25 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.edit.ui.action.LoadResourceAction;
+import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.ISetSelectionTarget;
+
+import ros.presentation.GenerationFailedException;
 
 /**
  * This is a sample new wizard. Its role is to create a new file 
@@ -44,6 +53,8 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 	private NewGwProjectWizardPage page;
 	private ISelection selection;
 	protected IWorkbench workbench;
+	protected File RosModelFile; 
+	protected EditingDomain domain;
 
 
 	/**
@@ -61,6 +72,7 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		page = new NewGwProjectWizardPage(selection);
 		addPage(page);
+
 		
 	}
 
@@ -93,12 +105,11 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 			MessageDialog.openError(getShell(), "Error", realException.getMessage());
 			return false;
 		}
-
 		return true;
 
 	}
 
-	private void doFinish( String ProjectName, IProgressMonitor monitor)
+  	private void doFinish( String ProjectName, IProgressMonitor monitor)
 		throws CoreException, GenerationFailedException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(ProjectName);
@@ -111,7 +122,7 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
 		description.setNatureIds(newNatures);
-		project.setDescription(description, monitor);
+		project.setDescription(description, new NullProgressMonitor());
 
 
 		IFile modelFile = project.getFile(ProjectName+".rosgw");
@@ -119,21 +130,37 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 		byte[] bytes = ("RosGateway {}").getBytes();
 		InputStream source = new ByteArrayInputStream(bytes);
 		modelFile.create(source, IResource.NONE, monitor);
-
-    	ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		project.open(IResource.BACKGROUND_REFRESH, monitor);
-		monitor.done();
 		
-		// Open an editor on the new file and call load resources
+		IFolder inputfolder = project.getFolder("ros-input");
+		project.open(IResource.BACKGROUND_REFRESH, monitor);
+		inputfolder.create(false, true, monitor);
+    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
+    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/basic_msgs");
+		try {
+	    	copyDependencies(srcFolder,destFolder);
+		} catch(IOException e){
+        	e.printStackTrace();
+        } 
+		
+		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 
-
-		final ISelection targetSelection = new StructuredSelection(modelFile);
 		getShell().getDisplay().syncExec(new Runnable() {
 				public void run() {
+					// Open an editor on the new file and call load resources
+					ResourceDialog dialog = new ResourceDialog(getShell(),"Select ROS input model", 0);
+					dialog.open();
+					RosModelFile = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+dialog.getURIs().get(0).path().replaceFirst("/resource/", "/"));
+					File destRosModel = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/"+RosModelFile.getName());
+					try {
+				    	copyDependencies(RosModelFile,destRosModel);
+					} catch(IOException e){
+			        	e.printStackTrace();
+			        } 
+
 					IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-					IWorkbenchPage page = workbenchWindow.getActivePage();		
-					final IWorkbenchPart activePart = page.getActivePart();
-					((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+					IWorkbenchPage page = workbenchWindow.getActivePage();
+					
+					//Open editor for the rosgw model
 					try {
 						page.openEditor(new FileEditorInput(modelFile),
 								workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
@@ -143,19 +170,54 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 								RosgwEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 					}
 
-					LoadResourceAction loadResourceAction = new LoadResourceAction();
+					//Load the ros-input resources
+					domain= page.getActivePart() instanceof IEditingDomainProvider ? ((IEditingDomainProvider)page.getActivePart()).getEditingDomain() : null;
+					URI modelURI = URI.createURI("platform:/resource/"+ProjectName+"/ros-input/"+RosModelFile.getName());
+
+				      if (domain != null){
+				          try {
+				            domain.getResourceSet().getResource(modelURI, true);
+				          }
+				          catch (RuntimeException exception) {
+				            EMFEditUIPlugin.INSTANCE.log(exception);
+				          }
+				    }
+
+					/**LoadResourceAction loadResourceAction = new LoadResourceAction();
 					loadResourceAction.setActiveWorkbenchPart(activePart);
 					loadResourceAction.setActiveEditor(page.getActiveEditor());
-					loadResourceAction.run();
+					loadResourceAction.run();*/
+					monitor.done();
 
 				}
+
 			});
-				
-		project.open(IResource.BACKGROUND_REFRESH, null);
 
 	}
-		
 
+	public void copyDependencies(File srcFolder, File destFolder) throws IOException {
+		if(srcFolder.isDirectory()){
+        		if(!destFolder.exists()){
+    			destFolder.mkdir();
+    		}
+    		String files[] = srcFolder.list();
+    		for (String file : files) {
+    		   File srcFile = new File(srcFolder, file);
+    		   File destFile = new File(destFolder, file);
+    		   copyDependencies(srcFile,destFile);
+    		}
+    	}else{
+    		InputStream in = new FileInputStream(srcFolder);
+    	        OutputStream out = new FileOutputStream(destFolder);        
+    	        byte[] buffer = new byte[1024];
+    	        int length;
+    	        while ((length = in.read(buffer)) > 0){
+    	    	   out.write(buffer, 0, length);
+    	        }
+    	        in.close();
+    	        out.close();
+    	}
+    }
 	
 	protected IProject getProjectHandle() {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(page.getName());

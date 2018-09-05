@@ -8,6 +8,8 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import ros.*
+import de.fraunhofer.ipa.ros.services.RosArtifactGrammarAccess.ArtifactElements
+
 /**
  * Generates code from your model files on save.
  * 
@@ -39,8 +41,7 @@ def compile(Node node) '''
             «ENDFOR»
 
             «FOR srvserver : node.serviceserver»
-bool  «srvserver.name»_cb («srvserver.service.package.name»::«srvserver.service.name» &req,
-							«srvserver.service.package.name»::«srvserver.service.name» &res){
+bool  «srvserver.name»_cb («srvserver.service.package.name»::«srvserver.service.name» &req, «srvserver.service.package.name»::«srvserver.service.name» &res){
   return true;
 }
             «ENDFOR»
@@ -66,7 +67,7 @@ int main(int argc, char **argv)
             «FOR srvclient : node.serviceclient»
   «srvclient.compile»
             «ENDFOR»
-            
+
   ros::spin();
 
   return 0;
@@ -74,20 +75,12 @@ int main(int argc, char **argv)
             '''
             
 def compile(Publisher pub)       
-'''
-ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 1000);
-'''
+'''  ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
 def compile(Subscriber sub)       
-'''
-ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 1000, «sub.name»_cb);
-'''
+'''  ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
 def compile(ServiceServer srvserver)       
-'''
-ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);
-'''
+'''  ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
 def compile(ServiceClient srvclient)       
-'''
-ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");
-'''
+'''  ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
 
 }

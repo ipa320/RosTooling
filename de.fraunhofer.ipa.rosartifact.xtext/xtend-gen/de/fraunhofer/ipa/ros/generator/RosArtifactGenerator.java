@@ -104,14 +104,12 @@ public class RosArtifactGenerator extends AbstractGenerator {
         _builder.append("::");
         String _name_10 = srvserver_1.getService().getName();
         _builder.append(_name_10);
-        _builder.append(" &req,");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t\t\t\t");
+        _builder.append(" &req, ");
         String _name_11 = srvserver_1.getService().getPackage().getName();
-        _builder.append(_name_11, "\t\t\t\t\t\t\t");
+        _builder.append(_name_11);
         _builder.append("::");
         String _name_12 = srvserver_1.getService().getName();
-        _builder.append(_name_12, "\t\t\t\t\t\t\t");
+        _builder.append(_name_12);
         _builder.append(" &res){");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
@@ -186,7 +184,6 @@ public class RosArtifactGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("            ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("ros::spin();");
@@ -202,71 +199,71 @@ public class RosArtifactGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Publisher pub) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::Publisher ");
     String _name = pub.getName();
-    _builder.append(_name);
+    _builder.append(_name, "  ");
     _builder.append("_pub = n.advertise<");
     String _name_1 = pub.getMessage().getPackage().getName();
-    _builder.append(_name_1);
+    _builder.append(_name_1, "  ");
     _builder.append("::");
     String _name_2 = pub.getMessage().getName();
-    _builder.append(_name_2);
+    _builder.append(_name_2, "  ");
     _builder.append(">(\"");
     String _name_3 = pub.getName();
-    _builder.append(_name_3);
-    _builder.append("\", 1000);");
-    _builder.newLineIfNotEmpty();
+    _builder.append(_name_3, "  ");
+    _builder.append("\", 10);");
     return _builder;
   }
   
   public CharSequence compile(final Subscriber sub) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::Subscriber ");
     String _name = sub.getName();
-    _builder.append(_name);
+    _builder.append(_name, "  ");
     _builder.append(" = n.subscribe(\"");
     String _name_1 = sub.getName();
-    _builder.append(_name_1);
-    _builder.append("\", 1000, ");
+    _builder.append(_name_1, "  ");
+    _builder.append("\", 10, ");
     String _name_2 = sub.getName();
-    _builder.append(_name_2);
+    _builder.append(_name_2, "  ");
     _builder.append("_cb);");
-    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   public CharSequence compile(final ServiceServer srvserver) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::ServiceServer ");
     String _name = srvserver.getName();
-    _builder.append(_name);
+    _builder.append(_name, "  ");
     _builder.append(" = n.advertiseService(\"");
     String _name_1 = srvserver.getName();
-    _builder.append(_name_1);
+    _builder.append(_name_1, "  ");
     _builder.append("\", ");
     String _name_2 = srvserver.getName();
-    _builder.append(_name_2);
+    _builder.append(_name_2, "  ");
     _builder.append("_cb);");
-    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   public CharSequence compile(final ServiceClient srvclient) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::ServiceClient ");
     String _name = srvclient.getName();
-    _builder.append(_name);
+    _builder.append(_name, "  ");
     _builder.append(" = n.serviceClient<");
     String _name_1 = srvclient.getService().getPackage().getName();
-    _builder.append(_name_1);
+    _builder.append(_name_1, "  ");
     _builder.append("::");
     String _name_2 = srvclient.getService().getName();
-    _builder.append(_name_2);
+    _builder.append(_name_2, "  ");
     _builder.append(">(\"");
     String _name_3 = srvclient.getName();
-    _builder.append(_name_3);
+    _builder.append(_name_3, "  ");
     _builder.append("\");");
-    _builder.newLineIfNotEmpty();
     return _builder;
   }
 }
