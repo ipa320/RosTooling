@@ -1,6 +1,10 @@
 # Ros Model
 
-#### Describe a ROS node using Sirius
+1. <a href="#RosNode">Describe a ROS node using Sirius</a>
+2. <a href="#RosArtifactProject">Create a ROS artifact project</a>
+3. <a href="#RosSRGatewayProject">Create a SeRoNet Gateway project for ROS</a>
+
+#### Describe a ROS node using Sirius <a id="RosNode"/>
 
 1.Import into a new Eclipse workspace the projects:
 
@@ -21,7 +25,7 @@ de.fraunhofer.ipa.ros.sirius
 
 Use the palette toolbar to add a new node, to configure your model use also the *Properties* view.
 
-#### Create a ROS artifact project
+#### Create a ROS artifact project <a id="RosArtifactProject"/>
 
 1.Import into a new Eclipse workspace the projects:
 
@@ -43,3 +47,38 @@ de.fraunhofer.ipa.rosartifact.xtext.ui
 3.Create a new ROS artifact project (menu File > New > Other > ROS Artifact project)
 
 Use the palette toolbar to add a new node, to configure your model use also the *Properties* view (if it is disabled go to *Window* > *Show view* > *Other* and choose *Properties*). 
+
+#### Create a SeRoNet Gateway project for ROS <a id="RosSRGatewayProject"/>
+
+1.Import into a new Eclipse workspace the projects:
+
+```
+de.fraunhofer.ipa.ros
+de.fraunhofer.ipa.rosartifact.xtext
+de.fraunhofer.ipa.rosartifact.xtext.ide
+de.fraunhofer.ipa.rosartifact.xtext.ui
+de.fraunhofer.ipa.ros.edit
+de.fraunhofer.ipa.ros.editor
+de.fraunhofer.ipa.ros.seronetgw
+de.fraunhofer.ipa.ros.seronetgw.edit
+de.fraunhofer.ipa.ros.seronetgw.editor
+de.fraunhofer.ipa.ros.seronetgw.xtext
+de.fraunhofer.ipa.ros.seronetgw.xtext.ide
+de.fraunhofer.ipa.ros.seronetgw.xtext.ui
+de.fraunhofer.ipa.ros.sirius
+de.fraunhofer.ipa.ros.tests
+de.fraunhofer.ipa.ros.xtext
+de.fraunhofer.ipa.ros.xtext.ide
+de.fraunhofer.ipa.ros.xtext.ui
+```
+2.Start a new eclipse application (de.fraunhofer.ipa.ros.editor -> plugin.xml and click *Launch an Eclipse application*)
+
+3.Create a new ROS-SeRoNet gateway project (menu File > New > Other > ROS-SeRoNet gateway Project)
+
+4.Give a name to your project and press *Next*
+
+5.A new dialog will be open asking for a ROS input model, press *Browse Workspace..." and select the ROS model for which you want to generate a gateway (extension ".rosartifact"). You can create a new one by <a href="#RosArtifactProject">Create a ROS artifact project</a> step 3.
+
+6.Expand the tree of the resouce *platform:/resource/YourProjectName/YourProjectName.rosgw* and select *Ros Gateway* using the view *Properties* (if it is disabled go to *Window* > *Show view* > *Other* and *Properties*) you can chosse the interfaces of the input ROS model you want to make available to your SeRoNet system.
+
+7.You can add more ROS input models by the option *Load Resource..* in the "Right-click" menu of your resouce *platform:/resource/YourProjectName/YourProjectName.rosgw*
