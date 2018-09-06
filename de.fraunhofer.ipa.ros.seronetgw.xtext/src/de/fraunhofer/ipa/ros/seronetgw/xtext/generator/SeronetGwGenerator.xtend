@@ -3,14 +3,12 @@
  */
 package de.fraunhofer.ipa.ros.seronetgw.xtext.generator
 
+import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway
+import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway
-import java.util.List
-import org.eclipse.emf.common.util.EList
-import ros.Subscriber
 
 /**
  * Generates code from your model files on save.
@@ -24,18 +22,22 @@ class SeronetGwGenerator extends AbstractGenerator {
 	int count_srvc
 	int count_srvs
 	
+	String ProjectName
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for (node : resource.allContents.toIterable.filter(RosGateway)){
-			fsa.generateFile("../gateway.rosartifact",node.compile)
-			}
-		}
+		ProjectName = resource.URI.toString().substring(19,resource.URI.toString().lastIndexOf('/'));	
 
+			for (node : resource.allContents.toIterable.filter(RosGateway)){
+				fsa.generateFile("../"+ProjectName+".rosartifact",node.compile)
+				}
+			}
+			
 	def lenght(Object x) {
-      switch x {
-        String case x.length > 0 : x.length // length is defined for String 
-        List<?> : x.size    // size is defined for List
-        default : -1
-      }	}
+		switch x {
+		String case x.length > 0 : x.length // length is defined for String 
+		List<?> : x.size    // size is defined for List
+		default : -1
+	}	}
 	
 	def CharSequence compile(RosGateway gateway){
 		count_pub=lenght(gateway.rosTopicSubscriber)
@@ -43,7 +45,7 @@ class SeronetGwGenerator extends AbstractGenerator {
 		count_srvc=lenght(gateway.rosServiceServer)
 		count_srvs=lenght(gateway.rosServiceClient)
 	'''
-Artifact artifact_name { node Node { name gateway_node 
+Artifact «ProjectName» { node Node { name «ProjectName»_node
 	«//SERVICE_SERVER (SERVICE_CLIENT ORIGINAL MODEL)
 IF count_srvs > 0»
 	serviceserver {

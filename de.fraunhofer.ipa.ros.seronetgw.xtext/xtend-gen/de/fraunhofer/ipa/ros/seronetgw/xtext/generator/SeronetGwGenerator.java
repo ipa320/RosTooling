@@ -34,11 +34,14 @@ public class SeronetGwGenerator extends AbstractGenerator {
   
   private int count_srvs;
   
+  private String ProjectName;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.ProjectName = resource.getURI().toString().substring(19, resource.getURI().toString().lastIndexOf("/"));
     Iterable<RosGateway> _filter = Iterables.<RosGateway>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RosGateway.class);
     for (final RosGateway node : _filter) {
-      fsa.generateFile("../gateway.rosartifact", this.compile(node));
+      fsa.generateFile((("../" + this.ProjectName) + ".rosartifact"), this.compile(node));
     }
   }
   
@@ -73,8 +76,12 @@ public class SeronetGwGenerator extends AbstractGenerator {
       this.count_srvc = this.lenght(gateway.getRosServiceServer());
       this.count_srvs = this.lenght(gateway.getRosServiceClient());
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Artifact artifact_name { node Node { name gateway_node ");
-      _builder.newLine();
+      _builder.append("Artifact ");
+      _builder.append(this.ProjectName);
+      _builder.append(" { node Node { name ");
+      _builder.append(this.ProjectName);
+      _builder.append("_node");
+      _builder.newLineIfNotEmpty();
       {
         if ((this.count_srvs > 0)) {
           _builder.append("\t");

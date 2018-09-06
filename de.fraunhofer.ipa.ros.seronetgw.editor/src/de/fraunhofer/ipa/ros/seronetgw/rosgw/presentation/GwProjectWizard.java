@@ -109,7 +109,7 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 
 	}
 
-  	private void doFinish( String ProjectName, IProgressMonitor monitor)
+	private void doFinish( String ProjectName, IProgressMonitor monitor)
 		throws CoreException, GenerationFailedException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(ProjectName);
@@ -134,13 +134,13 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 		IFolder inputfolder = project.getFolder("ros-input");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		inputfolder.create(false, true, monitor);
-    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
-    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/basic_msgs");
+		File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
+		File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/basic_msgs");
 		try {
-	    	copyDependencies(srcFolder,destFolder);
+			copyDependencies(srcFolder,destFolder);
 		} catch(IOException e){
-        	e.printStackTrace();
-        } 
+			e.printStackTrace();
+		}
 		
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 
@@ -152,10 +152,10 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 					RosModelFile = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+dialog.getURIs().get(0).path().replaceFirst("/resource/", "/"));
 					File destRosModel = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/"+RosModelFile.getName());
 					try {
-				    	copyDependencies(RosModelFile,destRosModel);
+						copyDependencies(RosModelFile,destRosModel);
 					} catch(IOException e){
-			        	e.printStackTrace();
-			        } 
+						e.printStackTrace();
+					}
 
 					IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 					IWorkbenchPage page = workbenchWindow.getActivePage();
@@ -174,14 +174,14 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 					domain= page.getActivePart() instanceof IEditingDomainProvider ? ((IEditingDomainProvider)page.getActivePart()).getEditingDomain() : null;
 					URI modelURI = URI.createURI("platform:/resource/"+ProjectName+"/ros-input/"+RosModelFile.getName());
 
-				      if (domain != null){
-				          try {
-				            domain.getResourceSet().getResource(modelURI, true);
-				          }
-				          catch (RuntimeException exception) {
-				            EMFEditUIPlugin.INSTANCE.log(exception);
-				          }
-				    }
+					if (domain != null){
+						try {
+							domain.getResourceSet().getResource(modelURI, true);
+						}
+						catch (RuntimeException exception) {
+							EMFEditUIPlugin.INSTANCE.log(exception);
+						}
+					}
 
 					/**LoadResourceAction loadResourceAction = new LoadResourceAction();
 					loadResourceAction.setActiveWorkbenchPart(activePart);
@@ -197,27 +197,27 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 
 	public void copyDependencies(File srcFolder, File destFolder) throws IOException {
 		if(srcFolder.isDirectory()){
-        		if(!destFolder.exists()){
-    			destFolder.mkdir();
-    		}
-    		String files[] = srcFolder.list();
-    		for (String file : files) {
-    		   File srcFile = new File(srcFolder, file);
-    		   File destFile = new File(destFolder, file);
-    		   copyDependencies(srcFile,destFile);
-    		}
-    	}else{
-    		InputStream in = new FileInputStream(srcFolder);
-    	        OutputStream out = new FileOutputStream(destFolder);        
-    	        byte[] buffer = new byte[1024];
-    	        int length;
-    	        while ((length = in.read(buffer)) > 0){
-    	    	   out.write(buffer, 0, length);
-    	        }
-    	        in.close();
-    	        out.close();
-    	}
-    }
+			if(!destFolder.exists()){
+				destFolder.mkdir();
+			}
+			String files[] = srcFolder.list();
+			for (String file : files) {
+				File srcFile = new File(srcFolder, file);
+				File destFile = new File(destFolder, file);
+				copyDependencies(srcFile,destFile);
+			}
+		}else{
+			InputStream in = new FileInputStream(srcFolder);
+			OutputStream out = new FileOutputStream(destFolder);
+			byte[] buffer = new byte[1024];
+			int length;
+			while ((length = in.read(buffer)) > 0){
+				out.write(buffer, 0, length);
+			}
+			in.close();
+			out.close();
+		}
+	}
 	
 	protected IProject getProjectHandle() {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(page.getName());
