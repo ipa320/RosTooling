@@ -131,6 +131,12 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 		InputStream source = new ByteArrayInputStream(bytes);
 		modelFile.create(source, IResource.NONE, monitor);
 		
+		IFile modelArtifactFile = project.getFile(ProjectName+".rosartifact");
+		project.open(IResource.BACKGROUND_REFRESH, monitor);
+		byte[] bytes2 = ("Artifact "+ProjectName+" { node Node { name "+ProjectName+"_node }}").getBytes();
+		InputStream source2 = new ByteArrayInputStream(bytes2);
+		modelArtifactFile.create(source2, IResource.NONE, monitor);
+		
 		IFolder inputfolder = project.getFolder("ros-input");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		inputfolder.create(false, true, monitor);
@@ -183,6 +189,7 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 						}
 					}
 
+					
 					/**LoadResourceAction loadResourceAction = new LoadResourceAction();
 					loadResourceAction.setActiveWorkbenchPart(activePart);
 					loadResourceAction.setActiveEditor(page.getActiveEditor());
