@@ -52,7 +52,7 @@ IF count_srvs > 0»
 	«ENDIF»
 	«FOR srvs : gateway.rosServiceClient»
 «val count_srvs=count_srvs--»
-		ServiceServer { name «srvs.name» service "«srvs.service.package.name».«srvs.service.name»" } «IF count_srvs > 1 »,«ELSE »}«ENDIF»
+		ServiceServer { name "«srvs.name»" service "«srvs.service.package.name».«srvs.service.name»" } «IF count_srvs > 1 »,«ELSE »}«ENDIF»
     «ENDFOR»
 	«//PUBLISHER (SUBSCRIBER ORIGINAL MODEL)
 	IF count_pub > 0»
@@ -60,7 +60,7 @@ IF count_srvs > 0»
 	«ENDIF»
 	«FOR pub : gateway.rosTopicSubscriber»
 «val count_pub=count_pub--»
-		Publisher { name «pub.name» message "«pub.message.package.name».«pub.message.name»" } «IF count_pub > 1 »,«ELSE »}«ENDIF»
+		Publisher { name "«pub.name»" message "«pub.message.package.name».«pub.message.name»" } «IF count_pub > 1 »,«ELSE »}«ENDIF»
     «ENDFOR»
 	«//SUBSCRIBER (PUBLISHER ORIGINAL MODEL)
 IF count_sub > 0»
@@ -68,7 +68,7 @@ IF count_sub > 0»
 	«ENDIF»
 	«FOR sub : gateway.rosTopicPublisher»
 «val count_sub=count_sub--»
-		Subscriber { name «sub.name» message "«sub.message.package.name».«sub.message.name»" } «IF count_sub > 1 »,«ELSE »}«ENDIF»
+		Subscriber { name "«sub.name»" message "«sub.message.package.name».«sub.message.name»" } «IF count_sub > 1 »,«ELSE »}«ENDIF»
     «ENDFOR»
 	«//SERVICE_CLIENT (SERVICE_SERVER ORIGINAL MODEL)
 IF count_srvc > 0»
@@ -76,7 +76,7 @@ IF count_srvc > 0»
 	«ENDIF»
 	«FOR srvc : gateway.rosServiceServer»
 «val count_srvc=count_srvc--»
-		ServiceClient { name «srvc.name» service "«srvc.service.package.name».«srvc.service.name»" } «IF count_srvc > 1 »,«ELSE »}«ENDIF»
+		ServiceClient { name "«srvc.name»" service "«srvc.service.package.name».«srvc.service.name»" } «IF count_srvc > 1 »,«ELSE »}«ENDIF»
     «ENDFOR»
 }}'''
 	
