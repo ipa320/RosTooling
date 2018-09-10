@@ -167,9 +167,9 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 
-		//TODO: HotFix to copy basic msgs 
+		//TODO find a better solution instead of copy-paste the predefined messages and services
 		try {
-	    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
+	    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs");
 	    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+project.getFullPath().toString()+"/basic_msgs");
 	    	copyDependencies(srcFolder,destFolder);
 		} catch(IOException e){
