@@ -44,18 +44,18 @@ def compile(Node node) '''
             «ENDFOR»
 
             «FOR srvserver : node.serviceserver»
-bool  «srvserver.name»_cb («srvserver.service.package.name»::«srvserver.service.name»::Request &req, «srvserver.service.package.name»::«srvserver.service.name»::Response &res){
+bool  «checkname(srvserver.name)»_cb («srvserver.service.package.name»::«srvserver.service.name»::Request &req, «srvserver.service.package.name»::«srvserver.service.name»::Response &res){
   return true;
 }
             «ENDFOR»
             «FOR sub : node.subscriber»
-void  «sub.name»_cb (const «sub.message.package.name»::«sub.message.name» msg){}
+void  «checkname(sub.name)»_cb (const «sub.message.package.name»::«sub.message.name» msg){}
             «ENDFOR»
 
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "«node.name»");
+  ros::init(argc, argv, "«checkname(node.name)»");
   ros::NodeHandle n;
   
             «FOR pub : node.publisher»
@@ -78,12 +78,19 @@ int main(int argc, char **argv)
             '''
             
 def compile(Publisher pub)       
-'''  ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
+'''  ros::Publisher «checkname(pub.name)»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
 def compile(Subscriber sub)       
-'''  ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
+'''  ros::Subscriber «checkname(sub.name)» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
 def compile(ServiceServer srvserver)       
-'''  ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
+'''  ros::ServiceServer «checkname(srvserver.name)» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
 def compile(ServiceClient srvclient)       
-'''  ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
+'''  ros::ServiceClient «checkname(srvclient.name)» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
 
-}
+	def String checkname(String name){
+		if (name.contains("/"))
+			return name.replace("/","_")
+		else
+			return name
+	}
+
+	}
