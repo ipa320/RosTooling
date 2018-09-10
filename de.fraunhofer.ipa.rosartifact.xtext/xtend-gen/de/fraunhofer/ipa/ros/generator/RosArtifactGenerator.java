@@ -111,13 +111,13 @@ public class RosArtifactGenerator extends AbstractGenerator {
         _builder.append("::");
         String _name_10 = srvserver_1.getService().getName();
         _builder.append(_name_10);
-        _builder.append(" &req, ");
+        _builder.append("::Request &req, ");
         String _name_11 = srvserver_1.getService().getPackage().getName();
         _builder.append(_name_11);
         _builder.append("::");
         String _name_12 = srvserver_1.getService().getName();
         _builder.append(_name_12);
-        _builder.append(" &res){");
+        _builder.append("::Response &res){");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("return true;");

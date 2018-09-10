@@ -44,7 +44,7 @@ def compile(Node node) '''
             «ENDFOR»
 
             «FOR srvserver : node.serviceserver»
-bool  «srvserver.name»_cb («srvserver.service.package.name»::«srvserver.service.name» &req, «srvserver.service.package.name»::«srvserver.service.name» &res){
+bool  «srvserver.name»_cb («srvserver.service.package.name»::«srvserver.service.name»::Request &req, «srvserver.service.package.name»::«srvserver.service.name»::Response &res){
   return true;
 }
             «ENDFOR»
