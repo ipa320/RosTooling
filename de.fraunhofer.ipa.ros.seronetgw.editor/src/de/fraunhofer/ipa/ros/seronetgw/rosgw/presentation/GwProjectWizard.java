@@ -140,7 +140,8 @@ public class GwProjectWizard extends Wizard implements INewWizard {
 		IFolder inputfolder = project.getFolder("ros-input");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		inputfolder.create(false, true, monitor);
-		File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/../de.fraunhofer.ipa.ros/basic_msgs");
+		//TODO find a better solution instead of copy-paste the predefined messages and services
+		File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs");
 		File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+root.getProject(ProjectName).getFullPath().toString()+"/ros-input/basic_msgs");
 		try {
 			copyDependencies(srcFolder,destFolder);

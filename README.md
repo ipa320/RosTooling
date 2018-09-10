@@ -44,7 +44,11 @@ de.fraunhofer.ipa.rosartifact.xtext.ui
 ```
 2.Start a new eclipse application (de.fraunhofer.ipa.ros.editor -> plugin.xml and click *Launch an Eclipse application*)
 
-3.Create a new ROS artifact project (menu File > New > Other > ROS Artifact project)
+3.Import the common communication objects project to the workspace of your application:
+```
+de.fraunhofer.ipa.ros.communication.objects
+```
+4.Create a new ROS artifact project (menu File > New > Other > ROS Artifact project)
 
 Use the palette toolbar to add a new node, to configure your model use also the *Properties* view (if it is disabled go to *Window* > *Show view* > *Other* and choose *Properties*). 
 
@@ -73,11 +77,13 @@ de.fraunhofer.ipa.ros.xtext.ui
 ```
 2.Start a new eclipse application (de.fraunhofer.ipa.ros.editor -> plugin.xml and click *Launch an Eclipse application*)
 
-3.Create a new ROS-SeRoNet gateway project (menu File > New > Other > ROS-SeRoNet gateway Project)
+3.Import the common communication objects project to the workspace of your application:
+```
+de.fraunhofer.ipa.ros.communication.objects
+```
+4.Create a new ROS-SeRoNet gateway project (menu File > New > Other > ROS-SeRoNet gateway Project)
 
-4.Give a name to your project and press *Next*
-
-5.A new dialog will be open asking for a ROS input model, press *Browse Workspace..." and select the ROS model for which you want to generate a gateway (extension ".rosartifact"). You can create a new one by <a href="#RosArtifactProject">Create a ROS artifact project</a> step 3.
+5.Give a name to your project and press *Next*. A new dialog will be open asking for a ROS input model, press *"Browse Workspace..."* and select the ROS model for which you want to generate a gateway (extension ".rosartifact"). You can create a new one by <a href="#RosArtifactProject">Create a ROS artifact project</a> step 3
 
 6.Expand the tree of the resouce *platform:/resource/YourProjectName/YourProjectName.rosgw* and select *Ros Gateway* using the view *Properties* (if it is disabled go to *Window* > *Show view* > *Other* and *Properties*) you can chosse the interfaces of the input ROS model you want to make available to your SeRoNet system.
 
