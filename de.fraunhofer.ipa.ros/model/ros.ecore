@@ -58,8 +58,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="#//Node"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecBase" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
@@ -108,8 +107,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="RelativeNamespace" eSuperTypes="#//Namespace"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrivateNamespace" eSuperTypes="#//RelativeNamespace"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamespacedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" lowerBound="1"
-        eType="#//Namespace" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//GraphName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GraphName" instanceClassName="java.lang.String"/>

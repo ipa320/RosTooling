@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/de.fraunhofer.ipa.ros.seronetgw/src" creationIcons="false"
+    editDirectory="/de.fraunhofer.ipa.ros.seronetgw.edit/src" editorDirectory="/de.fraunhofer.ipa.ros.seronetgw.editor/src"
+    modelPluginID="de.fraunhofer.ipa.ros.seronetgw" modelName="Rosgw" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>rosgw.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Rosgw" basePackage="de.fraunhofer.ipa.ros.seronetgw" disposableProviderFactory="true"
+      ecorePackage="rosgw.ecore#/">
+    <genClasses ecoreClass="rosgw.ecore#//RosGateway">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosgw.ecore#//RosGateway/RosTopicPublisher"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosgw.ecore#//RosGateway/RosTopicSubscriber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosgw.ecore#//RosGateway/RosServiceServer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosgw.ecore#//RosGateway/RosServiceClient"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

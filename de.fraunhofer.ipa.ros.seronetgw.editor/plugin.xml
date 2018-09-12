@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.RosgwModelWizardID"
+            name="%_UI_RosgwModelWizard_label"
+            class="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.RosgwModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RosgwModelFile.gif">
+         <description>%_UI_RosgwModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   
+      <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.GwProjectWizardID"
+            name="Ros-SeRoNet gateway Project"
+            class="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.GwProjectWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RosgwModelFile.gif">
+         <description>%_UI_GwProjectWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rosgw -->
+      <editor
+            id="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.RosgwEditorID"
+            name="%_UI_RosgwEditor_label"
+            icon="icons/full/obj16/RosgwModelFile.gif"
+            extensions="rosgw"
+            class="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.RosgwEditor"
+            contributorClass="de.fraunhofer.ipa.ros.seronetgw.rosgw.presentation.RosgwActionBarContributor">
+      </editor>
+   </extension>
+
+
+</plugin>

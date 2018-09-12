@@ -1,0 +1,42 @@
+PackageSet{package{
+    Package std_msgs{spec{
+      TopicSpec Bool{},
+      TopicSpec Byte{},
+      TopicSpec ByteMultiArray{},
+      TopicSpec Char{},
+      TopicSpec ColorRGBA{},
+      TopicSpec Duration{},
+      TopicSpec Empty{},
+      TopicSpec Float32{},
+      TopicSpec Float32MultiArray{},
+      TopicSpec Float64{},
+      TopicSpec Float64MultiArray{},
+      TopicSpec Header{},
+      TopicSpec Int16{},
+      TopicSpec Int16MultiArray{},
+      TopicSpec Int32{},
+      TopicSpec Int32MultiArray{},
+      TopicSpec Int64{},
+      TopicSpec Int64MultiArray{},
+      TopicSpec Int8{},
+      TopicSpec Int8MultiArray{},
+      TopicSpec MultiArrayDimension{},
+      TopicSpec MultiArrayLayout{},
+      TopicSpec String{},
+      TopicSpec Time{},
+      TopicSpec UInt16{},
+      TopicSpec UInt16MultiArray{},
+      TopicSpec UInt32{},
+      TopicSpec UInt32MultiArray{},
+      TopicSpec UInt64{},
+      TopicSpec UInt64MultiArray{},
+      TopicSpec UInt8{},
+      TopicSpec UInt8MultiArray{}
+    }},
+    Package std_srvs{spec{
+      ServiceSpec Empty{},
+      ServiceSpec SetBool{},
+      ServiceSpec Trigger{}
+    }}
+  }
+}
