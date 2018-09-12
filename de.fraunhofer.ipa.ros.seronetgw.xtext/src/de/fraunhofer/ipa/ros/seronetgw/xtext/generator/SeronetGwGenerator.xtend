@@ -4,33 +4,53 @@
 package de.fraunhofer.ipa.ros.seronetgw.xtext.generator
 
 import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway
+
 import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.eclipse.xtext.generator.OutputConfiguration
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import java.util.Set
 
 /**
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
+ 
+
+class CustomOutputProvider implements IOutputConfigurationProvider {
+	public final static String GW_CONFIGURATION = "GW_CONFIGURATION"
+
+	override Set<OutputConfiguration> getOutputConfigurations() {
+		var OutputConfiguration gw_config = new OutputConfiguration(GW_CONFIGURATION)
+		gw_config.setDescription("gw_config");
+		gw_config.setOutputDirectory("./");
+		gw_config.setOverrideExistingResources(true);
+		gw_config.setCreateOutputDirectory(false);
+		gw_config.setCleanUpDerivedResources(false);
+		gw_config.setSetDerivedProperty(false);
+		return newHashSet(gw_config)
+	}
+}
+
 class SeronetGwGenerator extends AbstractGenerator {
 
 	int count_pub
 	int count_sub
 	int count_srvc
 	int count_srvs
-	
 	String ProjectName
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		ProjectName = resource.URI.toString().substring(19,resource.URI.toString().lastIndexOf('/'));	
 
-			for (node : resource.allContents.toIterable.filter(RosGateway)){
-				fsa.generateFile("../"+ProjectName+".rosartifact",node.compile)
-				}
+		for (node : resource.allContents.toIterable.filter(RosGateway)){
+			fsa.generateFile(ProjectName+".rosartifact",CustomOutputProvider::GW_CONFIGURATION,node.compile)		
 			}
+		}
 			
 	def lenght(Object x) {
 		switch x {
@@ -81,5 +101,19 @@ IF count_srvc > 0»
 }}'''
 	
 	}
-
+	/**override void beforeGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+			ProjectName = resource.URI.toString().substring(19,resource.URI.toString().lastIndexOf('/'));
+			fsa.deleteFile("../"+ProjectName+".rosartifact")
+			}	
+	override void afterGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+			fsa.generateFile("../"+ProjectName+".rosartifact",''' ''')
+		
+			ProjectName = resource.URI.toString().substring(19,resource.URI.toString().lastIndexOf('/'));	
+			System.out.println(resource.URI.toString().substring(0,19)+ProjectName+"/"+ProjectName+".rosartifact")
+			remove = new File(resource.URI.toString().substring(0,19)+ProjectName+"/"+ProjectName+".rosartifact");
+			remove.delete()
+			}*/
+			
+			
 }
+
