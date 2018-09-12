@@ -3,18 +3,41 @@
  */
 package de.fraunhofer.ipa.ros.generator
 
+
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import ros.*
-import de.fraunhofer.ipa.ros.services.RosArtifactGrammarAccess.ArtifactElements
+import ros.Node
+import ros.Publisher
+import ros.ServiceClient
+import ros.ServiceServer
+import ros.Subscriber
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.generator.OutputConfiguration
+import java.util.Set
 
 /**
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
+ 
+class CustomOutputProvider implements IOutputConfigurationProvider {
+	public final static String ROS_CONFIGURATION = "ROS_CONFIGURATION"
+
+	override Set<OutputConfiguration> getOutputConfigurations() {
+		var OutputConfiguration ros_config = new OutputConfiguration(ROS_CONFIGURATION)
+		ros_config.setDescription("ros_config");
+		ros_config.setOutputDirectory("./src-gen");
+		ros_config.setOverrideExistingResources(true);
+		ros_config.setCreateOutputDirectory(true);
+		ros_config.setCleanUpDerivedResources(true);
+		ros_config.setSetDerivedProperty(true);
+		return newHashSet(ros_config)
+	}
+}
+
 class RosArtifactGenerator extends AbstractGenerator {
 
 	String resourcepath
@@ -23,7 +46,7 @@ class RosArtifactGenerator extends AbstractGenerator {
 		resourcepath = resource.URI.toString();
 		if (! resourcepath.contains("/ros-input")) {
 			for (node : resource.allContents.toIterable.filter(Node)){
-				fsa.generateFile(node.getName()+".cpp",node.compile)
+				fsa.generateFile(node.getName()+".cpp",CustomOutputProvider::ROS_CONFIGURATION,node.compile)
 				}
 			}
 		}

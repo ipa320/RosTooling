@@ -5,6 +5,7 @@ package de.fraunhofer.ipa.ros.seronetgw.xtext.generator;
 
 import com.google.common.collect.Iterables;
 import de.fraunhofer.ipa.ros.seronetgw.rosgw.RosGateway;
+import de.fraunhofer.ipa.ros.seronetgw.xtext.generator.CustomOutputProvider;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -19,11 +20,6 @@ import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.Subscriber;
 
-/**
- * Generates code from your model files on save.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
- */
 @SuppressWarnings("all")
 public class SeronetGwGenerator extends AbstractGenerator {
   private int count_pub;
@@ -41,7 +37,7 @@ public class SeronetGwGenerator extends AbstractGenerator {
     this.ProjectName = resource.getURI().toString().substring(19, resource.getURI().toString().lastIndexOf("/"));
     Iterable<RosGateway> _filter = Iterables.<RosGateway>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RosGateway.class);
     for (final RosGateway node : _filter) {
-      fsa.generateFile((("../" + this.ProjectName) + ".rosartifact"), this.compile(node));
+      fsa.generateFile((this.ProjectName + ".rosartifact"), CustomOutputProvider.GW_CONFIGURATION, this.compile(node));
     }
   }
   

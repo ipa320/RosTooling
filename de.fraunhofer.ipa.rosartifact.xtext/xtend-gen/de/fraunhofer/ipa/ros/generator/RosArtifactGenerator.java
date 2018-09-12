@@ -4,6 +4,7 @@
 package de.fraunhofer.ipa.ros.generator;
 
 import com.google.common.collect.Iterables;
+import de.fraunhofer.ipa.ros.generator.CustomOutputProvider;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -37,7 +38,7 @@ public class RosArtifactGenerator extends AbstractGenerator {
       for (final Node node : _filter) {
         String _name = node.getName();
         String _plus = (_name + ".cpp");
-        fsa.generateFile(_plus, this.compile(node));
+        fsa.generateFile(_plus, CustomOutputProvider.ROS_CONFIGURATION, this.compile(node));
       }
     }
   }
