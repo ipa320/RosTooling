@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_lnmkQLduEeiazpVLrhbX4A" selectedViews="_loxB4LduEeiazpVLrhbX4A" version="12.1.0.201708031200">
+    <semanticResources>rossystem.ecore</semanticResources>
+    <semanticResources>rossystem.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_loxB4LduEeiazpVLrhbX4A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_lpFyBbduEeiazpVLrhbX4A" name="rossystem" repPath="#_lo7Z8LduEeiazpVLrhbX4A">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="rossystem.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_lpFyALduEeiazpVLrhbX4A" name="rossystem" uid="_lo7Z8LduEeiazpVLrhbX4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_lpFyAbduEeiazpVLrhbX4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_lpFyArduEeiazpVLrhbX4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_lpGZELduEeiazpVLrhbX4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_lpGZEbduEeiazpVLrhbX4A" type="Sirius" element="_lpFyALduEeiazpVLrhbX4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_x3MtoLduEeiazpVLrhbX4A" type="2001" element="_x3H1ILduEeiazpVLrhbX4A">
+          <children xmi:type="notation:Node" xmi:id="_x3NUsLduEeiazpVLrhbX4A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_x3NUsbduEeiazpVLrhbX4A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_x3aJALduEeiazpVLrhbX4A" type="3005" element="_x3IcMLduEeiazpVLrhbX4A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_x3aJAbduEeiazpVLrhbX4A" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x3aJArduEeiazpVLrhbX4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_x3MtobduEeiazpVLrhbX4A" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x3MtorduEeiazpVLrhbX4A" width="500" height="90"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_lpGZErduEeiazpVLrhbX4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_x3H1ILduEeiazpVLrhbX4A" width="-1" height="-1">
+      <target xmi:type="ecore:EPackage" href="rossystem.ecore#/"/>
+      <semanticElements xmi:type="ecore:EPackage" href="rossystem.ecore#/"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_x3IcMLduEeiazpVLrhbX4A" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_lpFyBLduEeiazpVLrhbX4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="rossystem.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

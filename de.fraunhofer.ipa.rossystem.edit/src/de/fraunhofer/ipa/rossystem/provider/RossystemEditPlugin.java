@@ -1,6 +1,6 @@
 /**
  */
-package de.fraunhofer.ipa.ros.seronetgw.rosgw.provider;
+package de.fraunhofer.ipa.rossystem.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 
@@ -9,19 +9,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import ros.provider.RosEditPlugin;
 
 /**
- * This is the central singleton for the Rosgw edit plugin.
+ * This is the central singleton for the Rossystem edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class RosgwEditPlugin extends EMFPlugin {
+public final class RossystemEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final RosgwEditPlugin INSTANCE = new RosgwEditPlugin();
+	public static final RossystemEditPlugin INSTANCE = new RossystemEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -37,7 +37,7 @@ public final class RosgwEditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosgwEditPlugin() {
+	public RossystemEditPlugin() {
 		super(new ResourceLocator[] { RosEditPlugin.INSTANCE, });
 	}
 

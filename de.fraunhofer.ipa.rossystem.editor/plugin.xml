@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rossystem -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fraunhofer.ipa.rossystem.presentation.RossystemModelWizardID"
+            name="%_UI_RossystemModelWizard_label"
+            class="de.fraunhofer.ipa.rossystem.presentation.RossystemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RossystemModelFile.gif">
+         <description>%_UI_RossystemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rossystem -->
+      <editor
+            id="de.fraunhofer.ipa.rossystem.presentation.RossystemEditorID"
+            name="%_UI_RossystemEditor_label"
+            icon="icons/full/obj16/RossystemModelFile.gif"
+            extensions="rossystem"
+            class="de.fraunhofer.ipa.rossystem.presentation.RossystemEditor"
+            contributorClass="de.fraunhofer.ipa.rossystem.presentation.RossystemActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
