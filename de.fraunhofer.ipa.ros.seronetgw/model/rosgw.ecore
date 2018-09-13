@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rosgw" nsURI="http://www.example.org/rosgw" nsPrefix="rosgw">
+  <eClassifiers xsi:type="ecore:EClass" name="RosGateway">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicPublisher" upperBound="-1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicSubscriber" upperBound="-1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceServer" upperBound="-1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceClient" upperBound="-1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
+  </eClassifiers>
+</ecore:EPackage>

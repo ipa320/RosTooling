@@ -4,6 +4,7 @@
 package de.fraunhofer.ipa.ros.generator;
 
 import com.google.common.collect.Iterables;
+import de.fraunhofer.ipa.ros.generator.CustomOutputProvider;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -25,13 +26,20 @@ import ros.Subscriber;
  */
 @SuppressWarnings("all")
 public class RosArtifactGenerator extends AbstractGenerator {
+  private String resourcepath;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<Node> _filter = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
-    for (final Node node : _filter) {
-      String _name = node.getName();
-      String _plus = (_name + ".cpp");
-      fsa.generateFile(_plus, this.compile(node));
+    this.resourcepath = resource.getURI().toString();
+    boolean _contains = this.resourcepath.contains("/ros-input");
+    boolean _not = (!_contains);
+    if (_not) {
+      Iterable<Node> _filter = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
+      for (final Node node : _filter) {
+        String _name = node.getName();
+        String _plus = (_name + ".cpp");
+        fsa.generateFile(_plus, CustomOutputProvider.ROS_CONFIGURATION, this.compile(node));
+      }
     }
   }
   
@@ -96,23 +104,21 @@ public class RosArtifactGenerator extends AbstractGenerator {
       EList<ServiceServer> _serviceserver_1 = node.getServiceserver();
       for(final ServiceServer srvserver_1 : _serviceserver_1) {
         _builder.append("bool  ");
-        String _name_8 = srvserver_1.getName();
-        _builder.append(_name_8);
+        String _checkname = this.checkname(srvserver_1.getName());
+        _builder.append(_checkname);
         _builder.append("_cb (");
-        String _name_9 = srvserver_1.getService().getPackage().getName();
+        String _name_8 = srvserver_1.getService().getPackage().getName();
+        _builder.append(_name_8);
+        _builder.append("::");
+        String _name_9 = srvserver_1.getService().getName();
         _builder.append(_name_9);
-        _builder.append("::");
-        String _name_10 = srvserver_1.getService().getName();
+        _builder.append("::Request &req, ");
+        String _name_10 = srvserver_1.getService().getPackage().getName();
         _builder.append(_name_10);
-        _builder.append(" &req,");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t\t\t\t");
-        String _name_11 = srvserver_1.getService().getPackage().getName();
-        _builder.append(_name_11, "\t\t\t\t\t\t\t");
         _builder.append("::");
-        String _name_12 = srvserver_1.getService().getName();
-        _builder.append(_name_12, "\t\t\t\t\t\t\t");
-        _builder.append(" &res){");
+        String _name_11 = srvserver_1.getService().getName();
+        _builder.append(_name_11);
+        _builder.append("::Response &res){");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("return true;");
@@ -125,14 +131,14 @@ public class RosArtifactGenerator extends AbstractGenerator {
       EList<Subscriber> _subscriber_1 = node.getSubscriber();
       for(final Subscriber sub_1 : _subscriber_1) {
         _builder.append("void  ");
-        String _name_13 = sub_1.getName();
-        _builder.append(_name_13);
+        String _checkname_1 = this.checkname(sub_1.getName());
+        _builder.append(_checkname_1);
         _builder.append("_cb (const ");
-        String _name_14 = sub_1.getMessage().getPackage().getName();
-        _builder.append(_name_14);
+        String _name_12 = sub_1.getMessage().getPackage().getName();
+        _builder.append(_name_12);
         _builder.append("::");
-        String _name_15 = sub_1.getMessage().getName();
-        _builder.append(_name_15);
+        String _name_13 = sub_1.getMessage().getName();
+        _builder.append(_name_13);
         _builder.append(" msg){}");
         _builder.newLineIfNotEmpty();
       }
@@ -145,8 +151,8 @@ public class RosArtifactGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append("ros::init(argc, argv, \"");
-    String _name_16 = node.getName();
-    _builder.append(_name_16, "  ");
+    String _checkname_2 = this.checkname(node.getName());
+    _builder.append(_checkname_2, "  ");
     _builder.append("\");");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
@@ -186,7 +192,6 @@ public class RosArtifactGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("            ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("ros::spin();");
@@ -202,71 +207,80 @@ public class RosArtifactGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Publisher pub) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::Publisher ");
-    String _name = pub.getName();
-    _builder.append(_name);
+    String _checkname = this.checkname(pub.getName());
+    _builder.append(_checkname, "  ");
     _builder.append("_pub = n.advertise<");
-    String _name_1 = pub.getMessage().getPackage().getName();
-    _builder.append(_name_1);
+    String _name = pub.getMessage().getPackage().getName();
+    _builder.append(_name, "  ");
     _builder.append("::");
-    String _name_2 = pub.getMessage().getName();
-    _builder.append(_name_2);
+    String _name_1 = pub.getMessage().getName();
+    _builder.append(_name_1, "  ");
     _builder.append(">(\"");
-    String _name_3 = pub.getName();
-    _builder.append(_name_3);
-    _builder.append("\", 1000);");
-    _builder.newLineIfNotEmpty();
+    String _name_2 = pub.getName();
+    _builder.append(_name_2, "  ");
+    _builder.append("\", 10);");
     return _builder;
   }
   
   public CharSequence compile(final Subscriber sub) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::Subscriber ");
-    String _name = sub.getName();
-    _builder.append(_name);
+    String _checkname = this.checkname(sub.getName());
+    _builder.append(_checkname, "  ");
     _builder.append(" = n.subscribe(\"");
+    String _name = sub.getName();
+    _builder.append(_name, "  ");
+    _builder.append("\", 10, ");
     String _name_1 = sub.getName();
-    _builder.append(_name_1);
-    _builder.append("\", 1000, ");
-    String _name_2 = sub.getName();
-    _builder.append(_name_2);
+    _builder.append(_name_1, "  ");
     _builder.append("_cb);");
-    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   public CharSequence compile(final ServiceServer srvserver) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::ServiceServer ");
-    String _name = srvserver.getName();
-    _builder.append(_name);
+    String _checkname = this.checkname(srvserver.getName());
+    _builder.append(_checkname, "  ");
     _builder.append(" = n.advertiseService(\"");
-    String _name_1 = srvserver.getName();
-    _builder.append(_name_1);
+    String _name = srvserver.getName();
+    _builder.append(_name, "  ");
     _builder.append("\", ");
-    String _name_2 = srvserver.getName();
-    _builder.append(_name_2);
+    String _name_1 = srvserver.getName();
+    _builder.append(_name_1, "  ");
     _builder.append("_cb);");
-    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   public CharSequence compile(final ServiceClient srvclient) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("  ");
     _builder.append("ros::ServiceClient ");
-    String _name = srvclient.getName();
-    _builder.append(_name);
+    String _checkname = this.checkname(srvclient.getName());
+    _builder.append(_checkname, "  ");
     _builder.append(" = n.serviceClient<");
-    String _name_1 = srvclient.getService().getPackage().getName();
-    _builder.append(_name_1);
+    String _name = srvclient.getService().getPackage().getName();
+    _builder.append(_name, "  ");
     _builder.append("::");
-    String _name_2 = srvclient.getService().getName();
-    _builder.append(_name_2);
+    String _name_1 = srvclient.getService().getName();
+    _builder.append(_name_1, "  ");
     _builder.append(">(\"");
-    String _name_3 = srvclient.getName();
-    _builder.append(_name_3);
+    String _name_2 = srvclient.getName();
+    _builder.append(_name_2, "  ");
     _builder.append("\");");
-    _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  public String checkname(final String name) {
+    boolean _contains = name.contains("/");
+    if (_contains) {
+      return name.replace("/", "_");
+    } else {
+      return name;
+    }
   }
 }

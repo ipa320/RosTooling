@@ -1,7 +1,12 @@
 package ros.presentation;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashSet;
@@ -14,6 +19,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -40,6 +46,7 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
+
 import ros.RosFactory;
 
 /**
@@ -157,24 +164,48 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
 		DRepresentation myDiagramRepresentation = representations.iterator().next();
 		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
+		
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 
-		//IFolder folder = project.getFolder("ros_basics");
-		//folder.create(true, true, monitor);
-
-		//IFile msgs_file = project.getFile(new Path("platform:/resource/de.fraunhofer.ipa.objects/common_msgs.ros"));
-		//System.out.println(msgs_file.getFullPath());
-		//copyFiles();
-		//IWorkbench workbench = PlatformUI.getWorkbench();
-		//IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-		// open the perspective
-		//workbench.showPerspective("org.eclipse.sirius.ui.tools.perspective.modeling", window);
-		//project.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, monitor);
-		// open the view
-		//window.getActivePage().showView("org.eclipse.ui.views.properties");
+		//TODO find a better solution instead of copy-paste the predefined messages and services
+		try {
+	    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs");
+	    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+project.getFullPath().toString()+"/basic_msgs");
+	    	copyDependencies(srcFolder,destFolder);
+		} catch(IOException e){
+        	e.printStackTrace();
+        }
+    	ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		monitor.worked(1);
 	}
+	
+	public void copyDependencies(File srcFolder, File destFolder) throws IOException {
+		if(srcFolder.isDirectory()){
+        		if(!destFolder.exists()){
+    			destFolder.mkdir();
+    		   System.out.println("Directory copied from " + srcFolder + "  to " + destFolder);
+    		}
+    		String files[] = srcFolder.list();
+    		for (String file : files) {
+    		   File srcFile = new File(srcFolder, file);
+    		   File destFile = new File(destFolder, file);
+    		   copyDependencies(srcFile,destFile);
+    		}
+    	}else{
+    		InputStream in = new FileInputStream(srcFolder);
+    	        OutputStream out = new FileOutputStream(destFolder);        
+    	        byte[] buffer = new byte[1024];
+    	        int length;
+    	        while ((length = in.read(buffer)) > 0){
+    	    	   out.write(buffer, 0, length);
+    	        }
+    	        in.close();
+    	        out.close();
+    	        System.out.println("File copied from " + srcFolder + " to " + destFolder);
+    	}
+    }
+		
 	
 	protected IProject getProjectHandle() {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(page.getName());

@@ -4,6 +4,7 @@
     <semanticResources>ros.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros.seronetgw/model/rosgw.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_K8EeMGh8EeiMJqoOQV1LOg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Va3_YGh8EeiMJqoOQV1LOg" name="ros class diagram" repPath="#_VZVuUGh8EeiMJqoOQV1LOg">
