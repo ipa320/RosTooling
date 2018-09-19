@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated rossystem -->
+      <!-- @generated rosystem -->
       <package
             uri="http://www.example.org/rossystem"
-            class="de.fraunhofer.ipa.rossystem.RossystemPackage"
-            genModel="model/rossystem.genmodel"/>
+            class="rossystem.RossystemPackage"
+            genModel="model/rosystem.genmodel"/>
    </extension>
 
 </plugin>
