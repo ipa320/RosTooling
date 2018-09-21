@@ -64,6 +64,7 @@ public class RosSystemItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRosComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class RosSystemItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Ros Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRosComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RosSystem_RosComponent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_RosComponent_feature", "_UI_RosSystem_type"),
+				 RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -102,7 +125,6 @@ public class RosSystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
 		}
@@ -163,7 +185,6 @@ public class RosSystemItemProvider
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -182,11 +203,6 @@ public class RosSystemItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
-				 RossystemFactory.eINSTANCE.createRosComponent()));
 
 		newChildDescriptors.add
 			(createChildParameter

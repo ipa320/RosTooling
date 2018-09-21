@@ -2,6 +2,8 @@
  */
 package rossystem.provider;
 
+import de.fraunhofer.ipa.componentInterface.provider.ComponentInterfaceEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -40,6 +42,7 @@ public final class RossystemEditPlugin extends EMFPlugin {
 	public RossystemEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ComponentInterfaceEditPlugin.INSTANCE,
 		     RosEditPlugin.INSTANCE,
 		   });
 	}

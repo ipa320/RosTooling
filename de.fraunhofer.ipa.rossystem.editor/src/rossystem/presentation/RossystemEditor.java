@@ -156,6 +156,8 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import rossystem.provider.RossystemItemProviderAdapterFactory;
 
+import de.fraunhofer.ipa.componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import ros.provider.RosItemProviderAdapterFactory;
@@ -701,6 +703,7 @@ public class RossystemEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RossystemItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ComponentInterfaceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RosItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

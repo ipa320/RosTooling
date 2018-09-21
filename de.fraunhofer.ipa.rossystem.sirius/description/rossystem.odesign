@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" name="rossystem" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="rossystem" version="12.0.0.2017041100">
   <ownedViewpoints name="MyViewpoint" modelFileExtension="rossystem">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RosSystem" initialisation="true" showOnStartup="true" domainClass="rossystem::RosSystem" enablePopupBars="true">
       <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
       <metamodel href="../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#/"/>
       <defaultLayer name="Default">
-        <reusedMappings xsi:type="description_1:ContainerMapping" href="../../de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']"/>
+        <containerMappings name="RosComponent" semanticCandidatesExpression="feature:eAllContents" domainClass="rossystem::RosComponent">
+          <reusedContainerMappings href="../../de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="14" labelExpression="feature:namespace" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/ros_logo.png" tooltipExpression="ComponentDefinition">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="RosSystem">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="RosComponent" forceRefresh="true" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='RosComponent']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::RosComponent" referenceName="Component">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="namespace" valueExpression="/"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="de.fraunhofer.ipa.rossystem.sirius.Services"/>

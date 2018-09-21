@@ -17,6 +17,7 @@ import ros.Subscriber;
  * </p>
  * <ul>
  *   <li>{@link rossystem.TopicConnection#getFrom <em>From</em>}</li>
+ *   <li>{@link rossystem.TopicConnection#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link rossystem.TopicConnection#getTo <em>To</em>}</li>
  * </ul>
  *
@@ -50,6 +51,32 @@ public interface TopicConnection extends EObject {
 	 * @generated
 	 */
 	void setFrom(Publisher value);
+
+	/**
+	 * Returns the value of the '<em><b>Topic Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Topic Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Topic Name</em>' attribute.
+	 * @see #setTopicName(String)
+	 * @see rossystem.RossystemPackage#getTopicConnection_TopicName()
+	 * @model
+	 * @generated
+	 */
+	String getTopicName();
+
+	/**
+	 * Sets the value of the '{@link rossystem.TopicConnection#getTopicName <em>Topic Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Topic Name</em>' attribute.
+	 * @see #getTopicName()
+	 * @generated
+	 */
+	void setTopicName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.

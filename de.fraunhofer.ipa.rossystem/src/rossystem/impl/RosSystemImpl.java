@@ -2,6 +2,8 @@
  */
 package rossystem.impl;
 
+import de.fraunhofer.ipa.componentInterface.ComponentInterface;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,9 +18,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import rossystem.RosComponent;
 import rossystem.RosSystem;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
@@ -32,25 +34,15 @@ import rossystem.TopicConnection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link rossystem.impl.RosSystemImpl#getRosComponent <em>Ros Component</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getTopicConnections <em>Topic Connections</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getServiceConnections <em>Service Connections</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link rossystem.impl.RosSystemImpl#getRosComponent <em>Ros Component</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSystem {
-	/**
-	 * The cached value of the '{@link #getRosComponent() <em>Ros Component</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRosComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<RosComponent> rosComponent;
-
 	/**
 	 * The cached value of the '{@link #getTopicConnections() <em>Topic Connections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -92,6 +84,16 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getRosComponent() <em>Ros Component</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRosComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentInterface> rosComponent;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,18 +110,6 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	@Override
 	protected EClass eStaticClass() {
 		return RossystemPackage.Literals.ROS_SYSTEM;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RosComponent> getRosComponent() {
-		if (rosComponent == null) {
-			rosComponent = new EObjectContainmentEList<RosComponent>(RosComponent.class, this, RossystemPackage.ROS_SYSTEM__ROS_COMPONENT);
-		}
-		return rosComponent;
 	}
 
 	/**
@@ -172,11 +162,21 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ComponentInterface> getRosComponent() {
+		if (rosComponent == null) {
+			rosComponent = new EObjectResolvingEList<ComponentInterface>(ComponentInterface.class, this, RossystemPackage.ROS_SYSTEM__ROS_COMPONENT);
+		}
+		return rosComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
-				return ((InternalEList<?>)getRosComponent()).basicRemove(otherEnd, msgs);
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 				return ((InternalEList<?>)getTopicConnections()).basicRemove(otherEnd, msgs);
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
@@ -193,14 +193,14 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
-				return getRosComponent();
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 				return getTopicConnections();
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
 				return getServiceConnections();
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				return getName();
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+				return getRosComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,10 +214,6 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
-				getRosComponent().clear();
-				getRosComponent().addAll((Collection<? extends RosComponent>)newValue);
-				return;
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 				getTopicConnections().clear();
 				getTopicConnections().addAll((Collection<? extends TopicConnection>)newValue);
@@ -228,6 +224,10 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return;
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				setName((String)newValue);
+				return;
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+				getRosComponent().clear();
+				getRosComponent().addAll((Collection<? extends ComponentInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,9 +241,6 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
-				getRosComponent().clear();
-				return;
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 				getTopicConnections().clear();
 				return;
@@ -252,6 +249,9 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return;
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+				getRosComponent().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,14 +265,14 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
-				return rosComponent != null && !rosComponent.isEmpty();
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 				return topicConnections != null && !topicConnections.isEmpty();
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
 				return serviceConnections != null && !serviceConnections.isEmpty();
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+				return rosComponent != null && !rosComponent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

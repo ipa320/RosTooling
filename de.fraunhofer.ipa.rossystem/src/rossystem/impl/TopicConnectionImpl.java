@@ -25,6 +25,7 @@ import rossystem.TopicConnection;
  * </p>
  * <ul>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link rossystem.impl.TopicConnectionImpl#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getTo <em>To</em>}</li>
  * </ul>
  *
@@ -40,6 +41,26 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Publisher from;
+
+	/**
+	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTopicName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOPIC_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTopicName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String topicName = TOPIC_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -113,6 +134,27 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTopicName() {
+		return topicName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTopicName(String newTopicName) {
+		String oldTopicName = topicName;
+		topicName = newTopicName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME, oldTopicName, topicName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Subscriber getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
@@ -157,6 +199,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+				return getTopicName();
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
@@ -174,6 +218,9 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				setFrom((Publisher)newValue);
+				return;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+				setTopicName((String)newValue);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				setTo((Subscriber)newValue);
@@ -193,6 +240,9 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				setFrom((Publisher)null);
 				return;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+				setTopicName(TOPIC_NAME_EDEFAULT);
+				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				setTo((Subscriber)null);
 				return;
@@ -210,10 +260,28 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				return from != null;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				return to != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (TopicName: ");
+		result.append(topicName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //TopicConnectionImpl

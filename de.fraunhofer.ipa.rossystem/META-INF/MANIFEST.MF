@@ -11,6 +11,7 @@ Export-Package: rossystem,
  rossystem.impl,
  rossystem.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ de.fraunhofer.ipa.componentInterface;visibility:=reexport,
  de.fraunhofer.ipa.ros;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

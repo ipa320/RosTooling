@@ -14,4 +14,12 @@
             genModel="model/rosystem.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RosComponent -->
+      <package
+            uri="http://www.example.org/RosComponent"
+            class="RosComponent.RosComponentPackage"
+            genModel="model/RosComponent.genmodel"/>
+   </extension>
+
 </plugin>

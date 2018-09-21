@@ -2,6 +2,8 @@
  */
 package rossystem;
 
+import de.fraunhofer.ipa.componentInterface.ComponentInterface;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
  *   <li>{@link rossystem.RosSystem#getTopicConnections <em>Topic Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getServiceConnections <em>Service Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getName <em>Name</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()
@@ -26,22 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface RosSystem extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Ros Component</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.RosComponent}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Ros Component</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Component</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_RosComponent()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<RosComponent> getRosComponent();
-
 	/**
 	 * Returns the value of the '<em><b>Topic Connections</b></em>' containment reference list.
 	 * The list contents are of type {@link rossystem.TopicConnection}.
@@ -99,5 +85,21 @@ public interface RosSystem extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ros Component</b></em>' reference list.
+	 * The list contents are of type {@link de.fraunhofer.ipa.componentInterface.ComponentInterface}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ros Component</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ros Component</em>' reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_RosComponent()
+	 * @model derived="true"
+	 * @generated
+	 */
+	EList<ComponentInterface> getRosComponent();
 
 } // RosSystem

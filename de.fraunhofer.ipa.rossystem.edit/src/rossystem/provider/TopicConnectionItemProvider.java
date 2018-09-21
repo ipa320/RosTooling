@@ -18,9 +18,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import rossystem.RossystemPackage;
+import rossystem.TopicConnection;
 
 /**
  * This is the item provider adapter for a {@link rossystem.TopicConnection} object.
@@ -58,6 +61,7 @@ public class TopicConnectionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFromPropertyDescriptor(object);
+			addTopicNamePropertyDescriptor(object);
 			addToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -81,6 +85,28 @@ public class TopicConnectionItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Topic Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTopicNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TopicConnection_TopicName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_TopicName_feature", "_UI_TopicConnection_type"),
+				 RossystemPackage.Literals.TOPIC_CONNECTION__TOPIC_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -126,7 +152,10 @@ public class TopicConnectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_TopicConnection_type");
+		String label = ((TopicConnection)object).getTopicName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_TopicConnection_type") :
+			getString("_UI_TopicConnection_type") + " " + label;
 	}
 	
 
@@ -140,6 +169,12 @@ public class TopicConnectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(TopicConnection.class)) {
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

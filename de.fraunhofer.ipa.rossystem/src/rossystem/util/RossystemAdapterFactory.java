@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import ros.NamespacedElement;
 import rossystem.*;
 
 /**
@@ -81,14 +80,6 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 				return createServiceConnectionAdapter();
 			}
 			@Override
-			public Adapter caseRosComponent(RosComponent object) {
-				return createRosComponentAdapter();
-			}
-			@Override
-			public Adapter caseNamespacedElement(NamespacedElement object) {
-				return createNamespacedElementAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -147,34 +138,6 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceConnectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link rossystem.RosComponent <em>Ros Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see rossystem.RosComponent
-	 * @generated
-	 */
-	public Adapter createRosComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ros.NamespacedElement <em>Namespaced Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ros.NamespacedElement
-	 * @generated
-	 */
-	public Adapter createNamespacedElementAdapter() {
 		return null;
 	}
 
