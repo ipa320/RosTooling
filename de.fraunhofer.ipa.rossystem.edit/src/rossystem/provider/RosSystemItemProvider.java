@@ -3,6 +3,8 @@
 package rossystem.provider;
 
 
+import de.fraunhofer.ipa.componentInterface.ComponentInterfaceFactory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -64,7 +66,6 @@ public class RosSystemItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addRosComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,28 +93,6 @@ public class RosSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Ros Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRosComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RosSystem_RosComponent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_RosComponent_feature", "_UI_RosSystem_type"),
-				 RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -127,6 +106,7 @@ public class RosSystemItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT);
 		}
 		return childrenFeatures;
 	}
@@ -187,6 +167,7 @@ public class RosSystemItemProvider
 				return;
 			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -213,6 +194,11 @@ public class RosSystemItemProvider
 			(createChildParameter
 				(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS,
 				 RossystemFactory.eINSTANCE.createServiceConnection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
+				 ComponentInterfaceFactory.eINSTANCE.createComponentInterface()));
 	}
 
 	/**

@@ -87,7 +87,7 @@ public interface RosSystem extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Ros Component</b></em>' reference list.
+	 * Returns the value of the '<em><b>Ros Component</b></em>' containment reference list.
 	 * The list contents are of type {@link de.fraunhofer.ipa.componentInterface.ComponentInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -95,9 +95,9 @@ public interface RosSystem extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Component</em>' reference list.
+	 * @return the value of the '<em>Ros Component</em>' containment reference list.
 	 * @see rossystem.RossystemPackage#getRosSystem_RosComponent()
-	 * @model derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ComponentInterface> getRosComponent();

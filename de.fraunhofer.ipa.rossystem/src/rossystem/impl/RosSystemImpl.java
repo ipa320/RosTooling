@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import rossystem.RosSystem;
@@ -84,7 +83,7 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRosComponent() <em>Ros Component</em>}' reference list.
+	 * The cached value of the '{@link #getRosComponent() <em>Ros Component</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRosComponent()
@@ -164,7 +163,7 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 */
 	public EList<ComponentInterface> getRosComponent() {
 		if (rosComponent == null) {
-			rosComponent = new EObjectResolvingEList<ComponentInterface>(ComponentInterface.class, this, RossystemPackage.ROS_SYSTEM__ROS_COMPONENT);
+			rosComponent = new EObjectContainmentEList<ComponentInterface>(ComponentInterface.class, this, RossystemPackage.ROS_SYSTEM__ROS_COMPONENT);
 		}
 		return rosComponent;
 	}
@@ -181,6 +180,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return ((InternalEList<?>)getTopicConnections()).basicRemove(otherEnd, msgs);
 			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
 				return ((InternalEList<?>)getServiceConnections()).basicRemove(otherEnd, msgs);
+			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+				return ((InternalEList<?>)getRosComponent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
