@@ -52,6 +52,10 @@
 				</and>
 			</activeWhen>
 		</handler>
+  <handler
+        class="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.handlers.UpdateArtifactFileHandler"
+        commandId="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.updateCommand">
+  </handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
 		<definition id="de.fraunhofer.ipa.ros.seronetgw.xtext.SeronetGw.Editor.opened">
@@ -137,6 +141,15 @@
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
 	</command>
+ <category
+       id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.category"
+       name="Sample Category">
+ </category>
+ <command
+       categoryId="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.category"
+       id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.updateCommand"
+       name="Sample Command">
+ </command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
@@ -182,6 +195,31 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
+  <menuContribution
+        locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+     <menu
+           id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.menus.sampleMenu"
+           label="Sample Menu"
+           mnemonic="M">
+        <command
+              commandId="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.updateCommand"
+              id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.menus.updateCommand"
+              mnemonic="S">
+        </command>
+     </menu>
+  </menuContribution>
+  <menuContribution
+        locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+     <toolbar
+           id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.toolbars.sampleToolbar">
+        <command
+              commandId="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.updateCommand"
+              icon="icons/seronet.png"
+              id="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.toolbars.updateCommand"
+              tooltip="Press to create cpp code automatically">
+        </command>
+     </toolbar>
+  </menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
@@ -407,4 +445,16 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       point="org.eclipse.ui.bindings">
+    <key
+          commandId="de.fraunhofer.ipa.ros.seronetgw.xtext.ui.commands.updateCommand"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="M1+6">
+    </key>
+ </extension>
+ <extension
+       point="org.eclipse.ui.menus">
+ </extension>
 </plugin>
