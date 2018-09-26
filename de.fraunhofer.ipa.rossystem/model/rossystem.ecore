@@ -8,8 +8,7 @@
         eType="#//ServiceConnection" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosComponent" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ComponentInterface"
-        containment="true"/>
+        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ComponentInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TopicConnection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>

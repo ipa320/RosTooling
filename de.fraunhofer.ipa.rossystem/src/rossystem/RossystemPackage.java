@@ -94,7 +94,7 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ros Component</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -275,10 +275,10 @@ public interface RossystemPackage extends EPackage {
 	EAttribute getRosSystem_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}'.
+	 * Returns the meta object for the reference list '{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ros Component</em>'.
+	 * @return the meta object for the reference list '<em>Ros Component</em>'.
 	 * @see rossystem.RosSystem#getRosComponent()
 	 * @see #getRosSystem()
 	 * @generated
@@ -429,7 +429,7 @@ public interface RossystemPackage extends EPackage {
 		EAttribute ROS_SYSTEM__NAME = eINSTANCE.getRosSystem_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Ros Component</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ros Component</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

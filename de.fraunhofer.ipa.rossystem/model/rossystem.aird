@@ -8,8 +8,8 @@
     <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel</semanticResources>
     <semanticResources>platform:/resource/de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore</semanticResources>
     <semanticResources>platform:/resource/de.fraunhofer.ipa.componentInterface/model/componentInterface.genmodel</semanticResources>
-    <semanticResources>rossystem.genmodel</semanticResources>
     <semanticResources>ComponentInterface.ecore</semanticResources>
+    <semanticResources>rossystem.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_loxB4LduEeiazpVLrhbX4A">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_O_mq97zEEei4lNPy8AOK4w" name="rossystem class diagram" repPath="#_O_kOsLzEEei4lNPy8AOK4w">
