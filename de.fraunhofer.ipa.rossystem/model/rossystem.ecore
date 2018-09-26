@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rossystem" nsURI="http://www.example.org/rossystem" nsPrefix="rossystem">
-  <eClassifiers xsi:type="ecore:EClass" name="ROSSystem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RosNode" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RosSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicConnections" upperBound="-1"
+        eType="#//TopicConnection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ServiceConnections" upperBound="-1"
+        eType="#//ServiceConnection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RosComponent" upperBound="-1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ComponentInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopicConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TopicName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ServiceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

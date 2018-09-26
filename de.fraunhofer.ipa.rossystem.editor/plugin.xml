@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.fraunhofer.ipa.rossystem.presentation.RossystemModelWizardID"
+            id="rossystem.presentation.RossystemModelWizardID"
             name="%_UI_RossystemModelWizard_label"
-            class="de.fraunhofer.ipa.rossystem.presentation.RossystemModelWizard"
+            class="rossystem.presentation.RossystemModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RossystemModelFile.gif">
          <description>%_UI_RossystemModelWizard_description</description>
@@ -25,12 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated rossystem -->
       <editor
-            id="de.fraunhofer.ipa.rossystem.presentation.RossystemEditorID"
+            id="rossystem.presentation.RossystemEditorID"
             name="%_UI_RossystemEditor_label"
             icon="icons/full/obj16/RossystemModelFile.gif"
             extensions="rossystem"
-            class="de.fraunhofer.ipa.rossystem.presentation.RossystemEditor"
-            contributorClass="de.fraunhofer.ipa.rossystem.presentation.RossystemActionBarContributor">
+            class="rossystem.presentation.RossystemEditor"
+            contributorClass="rossystem.presentation.RossystemActionBarContributor">
       </editor>
    </extension>
 

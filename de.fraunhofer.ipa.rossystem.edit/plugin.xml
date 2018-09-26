@@ -10,7 +10,7 @@
       <!-- @generated rossystem -->
       <factory
             uri="http://www.example.org/rossystem"
-            class="de.fraunhofer.ipa.rossystem.provider.RossystemItemProviderAdapterFactory"
+            class="rossystem.provider.RossystemItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
