@@ -142,7 +142,7 @@
         <edgeMappings name="TopicConnection" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:To" sourceFinderExpression="feature:From" domainClass="rossystem::TopicConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditConnections']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="feature:TopicName">
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:TopicRemap">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -150,7 +150,7 @@
         <edgeMappings name="ServiceConnection" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" targetFinderExpression="feature:To" sourceFinderExpression="feature:From" domainClass="rossystem::ServiceConnection" useDomainElement="true">
           <style sourceArrow="OutputArrow" sizeComputationExpression="2" routingStyle="tree" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="feature:ServiceName">
+            <centerLabelStyleDescription showIcon="false">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
