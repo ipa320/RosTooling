@@ -26,7 +26,6 @@ import rossystem.ServiceConnection;
  * <ul>
  *   <li>{@link rossystem.impl.ServiceConnectionImpl#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.impl.ServiceConnectionImpl#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.impl.ServiceConnectionImpl#getServiceName <em>Service Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,26 +50,6 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected ServiceClient to;
-
-	/**
-	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SERVICE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String serviceName = SERVICE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,27 +151,6 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getServiceName() {
-		return serviceName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
-		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME, oldServiceName, serviceName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -202,8 +160,6 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				return getServiceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,9 +177,6 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				setTo((ServiceClient)newValue);
-				return;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				setServiceName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,9 +196,6 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				setTo((ServiceClient)null);
 				return;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				setServiceName(SERVICE_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -262,26 +212,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 				return from != null;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				return to != null;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ServiceName: ");
-		result.append(serviceName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServiceConnectionImpl

@@ -61,8 +61,8 @@ public class TopicConnectionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFromPropertyDescriptor(object);
-			addTopicNamePropertyDescriptor(object);
 			addToPropertyDescriptor(object);
+			addTopicRemapPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,28 +90,6 @@ public class TopicConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopicNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TopicConnection_TopicName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_TopicName_feature", "_UI_TopicConnection_type"),
-				 RossystemPackage.Literals.TOPIC_CONNECTION__TOPIC_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the To feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +107,28 @@ public class TopicConnectionItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Topic Remap feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTopicRemapPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TopicConnection_TopicRemap_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_TopicRemap_feature", "_UI_TopicConnection_type"),
+				 RossystemPackage.Literals.TOPIC_CONNECTION__TOPIC_REMAP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -152,7 +152,7 @@ public class TopicConnectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TopicConnection)object).getTopicName();
+		String label = ((TopicConnection)object).getTopicRemap();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TopicConnection_type") :
 			getString("_UI_TopicConnection_type") + " " + label;
@@ -171,7 +171,7 @@ public class TopicConnectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TopicConnection.class)) {
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

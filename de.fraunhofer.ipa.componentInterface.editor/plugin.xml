@@ -33,4 +33,5 @@
             contributorClass="de.fraunhofer.ipa.componentInterface.presentation.ComponentInterfaceActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

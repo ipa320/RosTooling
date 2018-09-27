@@ -25,8 +25,8 @@ import rossystem.TopicConnection;
  * </p>
  * <ul>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getFrom <em>From</em>}</li>
- *   <li>{@link rossystem.impl.TopicConnectionImpl#getTopicName <em>Topic Name</em>}</li>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getTo <em>To</em>}</li>
+ *   <li>{@link rossystem.impl.TopicConnectionImpl#getTopicRemap <em>Topic Remap</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,26 +43,6 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	protected Publisher from;
 
 	/**
-	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopicName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOPIC_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopicName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String topicName = TOPIC_NAME_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,6 +51,26 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Subscriber to;
+
+	/**
+	 * The default value of the '{@link #getTopicRemap() <em>Topic Remap</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTopicRemap()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOPIC_REMAP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTopicRemap() <em>Topic Remap</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTopicRemap()
+	 * @generated
+	 * @ordered
+	 */
+	protected String topicRemap = TOPIC_REMAP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,27 +134,6 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTopicName() {
-		return topicName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopicName(String newTopicName) {
-		String oldTopicName = topicName;
-		topicName = newTopicName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME, oldTopicName, topicName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Subscriber getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
@@ -193,17 +172,38 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTopicRemap() {
+		return topicRemap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTopicRemap(String newTopicRemap) {
+		String oldTopicRemap = topicRemap;
+		topicRemap = newTopicRemap;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP, oldTopicRemap, topicRemap));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
-				return getTopicName();
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
+				return getTopicRemap();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,11 +219,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				setFrom((Publisher)newValue);
 				return;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
-				setTopicName((String)newValue);
-				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				setTo((Subscriber)newValue);
+				return;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
+				setTopicRemap((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,11 +240,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				setFrom((Publisher)null);
 				return;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
-				setTopicName(TOPIC_NAME_EDEFAULT);
-				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				setTo((Subscriber)null);
+				return;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
+				setTopicRemap(TOPIC_REMAP_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,10 +260,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
 				return from != null;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
-				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				return to != null;
+			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
+				return TOPIC_REMAP_EDEFAULT == null ? topicRemap != null : !TOPIC_REMAP_EDEFAULT.equals(topicRemap);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -278,8 +278,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (TopicName: ");
-		result.append(topicName);
+		result.append(" (TopicRemap: ");
+		result.append(topicRemap);
 		result.append(')');
 		return result.toString();
 	}
