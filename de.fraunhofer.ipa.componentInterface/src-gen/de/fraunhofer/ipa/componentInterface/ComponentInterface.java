@@ -37,7 +37,7 @@ public interface ComponentInterface extends EObject {
 	 * The list contents are of type {@link ros.Publisher}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Topic Publisher</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ros Topic Publisher</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -53,7 +53,7 @@ public interface ComponentInterface extends EObject {
 	 * The list contents are of type {@link ros.Subscriber}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Topic Subscriber</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ros Topic Subscriber</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -69,7 +69,7 @@ public interface ComponentInterface extends EObject {
 	 * The list contents are of type {@link ros.ServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Service Server</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ros Service Server</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -85,7 +85,7 @@ public interface ComponentInterface extends EObject {
 	 * The list contents are of type {@link ros.ServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Service Client</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ros Service Client</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
