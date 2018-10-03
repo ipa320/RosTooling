@@ -10,7 +10,7 @@
       <!-- @generated componentInterface -->
       <package
             uri="http://www.example.org/componentInterface"
-            class="de.fraunhofer.ipa.componentInterface.ComponentInterfacePackage"
+            class="componentInterface.ComponentInterfacePackage"
             genModel="model/componentInterface.genmodel"/>
    </extension>
 

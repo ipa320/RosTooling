@@ -2,7 +2,7 @@
  */
 package rossystem.impl;
 
-import de.fraunhofer.ipa.componentInterface.ComponentInterface;
+import componentInterface.ComponentInterface;
 
 import java.util.Collection;
 

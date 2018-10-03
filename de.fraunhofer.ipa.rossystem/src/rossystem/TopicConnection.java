@@ -2,10 +2,9 @@
  */
 package rossystem;
 
+import componentInterface.RemapPub;
+import componentInterface.RemapSub;
 import org.eclipse.emf.ecore.EObject;
-
-import ros.Publisher;
-import ros.Subscriber;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +17,6 @@ import ros.Subscriber;
  * <ul>
  *   <li>{@link rossystem.TopicConnection#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.TopicConnection#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.TopicConnection#getTopicRemap <em>Topic Remap</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getTopicConnection()
@@ -35,12 +33,12 @@ public interface TopicConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(Publisher)
+	 * @see #setFrom(RemapPub)
 	 * @see rossystem.RossystemPackage#getTopicConnection_From()
 	 * @model
 	 * @generated
 	 */
-	Publisher getFrom();
+	RemapPub getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getFrom <em>From</em>}' reference.
@@ -50,7 +48,7 @@ public interface TopicConnection extends EObject {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(Publisher value);
+	void setFrom(RemapPub value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -61,12 +59,12 @@ public interface TopicConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(Subscriber)
+	 * @see #setTo(RemapSub)
 	 * @see rossystem.RossystemPackage#getTopicConnection_To()
 	 * @model
 	 * @generated
 	 */
-	Subscriber getTo();
+	RemapSub getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getTo <em>To</em>}' reference.
@@ -76,32 +74,6 @@ public interface TopicConnection extends EObject {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(Subscriber value);
-
-	/**
-	 * Returns the value of the '<em><b>Topic Remap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Topic Remap</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Topic Remap</em>' attribute.
-	 * @see #setTopicRemap(String)
-	 * @see rossystem.RossystemPackage#getTopicConnection_TopicRemap()
-	 * @model
-	 * @generated
-	 */
-	String getTopicRemap();
-
-	/**
-	 * Sets the value of the '{@link rossystem.TopicConnection#getTopicRemap <em>Topic Remap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Topic Remap</em>' attribute.
-	 * @see #getTopicRemap()
-	 * @generated
-	 */
-	void setTopicRemap(String value);
+	void setTo(RemapSub value);
 
 } // TopicConnection

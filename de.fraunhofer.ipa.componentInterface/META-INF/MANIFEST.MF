@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.componentInterface,
- de.fraunhofer.ipa.componentInterface.impl,
- de.fraunhofer.ipa.componentInterface.util
+Export-Package: componentInterface,
+ componentInterface.impl,
+ componentInterface.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  de.fraunhofer.ipa.ros;visibility:=reexport,
  org.eclipse.core.runtime

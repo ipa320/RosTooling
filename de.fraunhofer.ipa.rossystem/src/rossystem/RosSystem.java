@@ -2,7 +2,7 @@
  */
 package rossystem;
 
-import de.fraunhofer.ipa.componentInterface.ComponentInterface;
+import componentInterface.ComponentInterface;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -88,7 +88,7 @@ public interface RosSystem extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ros Component</b></em>' reference list.
-	 * The list contents are of type {@link de.fraunhofer.ipa.componentInterface.ComponentInterface}.
+	 * The list contents are of type {@link componentInterface.ComponentInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Component</em>' reference list isn't clear,

@@ -10,7 +10,7 @@
       <!-- @generated componentInterface -->
       <factory
             uri="http://www.example.org/componentInterface"
-            class="de.fraunhofer.ipa.componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory"
+            class="componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

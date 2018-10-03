@@ -18,12 +18,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import rossystem.RossystemPackage;
-import rossystem.TopicConnection;
 
 /**
  * This is the item provider adapter for a {@link rossystem.TopicConnection} object.
@@ -62,7 +58,6 @@ public class TopicConnectionItemProvider
 
 			addFromPropertyDescriptor(object);
 			addToPropertyDescriptor(object);
-			addTopicRemapPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,28 +107,6 @@ public class TopicConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Remap feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopicRemapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TopicConnection_TopicRemap_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_TopicRemap_feature", "_UI_TopicConnection_type"),
-				 RossystemPackage.Literals.TOPIC_CONNECTION__TOPIC_REMAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns TopicConnection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,10 +125,7 @@ public class TopicConnectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TopicConnection)object).getTopicRemap();
-		return label == null || label.length() == 0 ?
-			getString("_UI_TopicConnection_type") :
-			getString("_UI_TopicConnection_type") + " " + label;
+		return getString("_UI_TopicConnection_type");
 	}
 	
 
@@ -169,12 +139,6 @@ public class TopicConnectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(TopicConnection.class)) {
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -2,15 +2,34 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentInterface" nsURI="http://www.example.org/componentInterface"
     nsPrefix="componentInterface">
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="../../de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicPublisher" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+        eType="#//RemapPub" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicSubscriber" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+        eType="#//RemapSub" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceServer" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
+        eType="#//RemapSrvServ" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceClient" upperBound="-1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//RemapSrvCli" derived="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemapPub">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RemapName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemapSub">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RemapName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemapSrvServ">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SrvRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RemapName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemapSrvCli">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SrvRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RemapName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
   </eClassifiers>
 </ecore:EPackage>

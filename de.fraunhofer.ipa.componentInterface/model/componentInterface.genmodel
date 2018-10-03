@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/de.fraunhofer.ipa.componentInterface/src-gen"
-    creationIcons="false" editDirectory="/de.fraunhofer.ipa.componentInterface.edit/src-gen"
-    editorDirectory="/de.fraunhofer.ipa.componentInterface.editor/src-gen" modelPluginID="de.fraunhofer.ipa.componentInterface"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.componentInterface/src" modelPluginID="de.fraunhofer.ipa.componentInterface"
     modelName="ComponentInterface" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" usedGenPackages="../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    providerRootExtendsClass="" usedGenPackages="../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros"
     operationReflection="true" importOrganizing="true">
   <foreignModel>componentInterface.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="ComponentInterface" basePackage="de.fraunhofer.ipa" disposableProviderFactory="true"
-      ecorePackage="componentInterface.ecore#/">
+  <genPackages prefix="ComponentInterface" disposableProviderFactory="true" ecorePackage="componentInterface.ecore#/">
     <genClasses ecoreClass="componentInterface.ecore#//ComponentInterface">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicPublisher"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicSubscriber"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceServer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceClient"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//ComponentInterface/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicPublisher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicSubscriber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceServer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceClient"/>
+    </genClasses>
+    <genClasses ecoreClass="componentInterface.ecore#//RemapPub">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapPub/TopicRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RemapPub/RemapName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapPub/NameSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="componentInterface.ecore#//RemapSub">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSub/TopicRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RemapSub/RemapName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSub/NameSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="componentInterface.ecore#//RemapSrvServ">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSrvServ/SrvRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RemapSrvServ/RemapName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSrvServ/NameSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="componentInterface.ecore#//RemapSrvCli">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSrvCli/SrvRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RemapSrvCli/RemapName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RemapSrvCli/NameSpace"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

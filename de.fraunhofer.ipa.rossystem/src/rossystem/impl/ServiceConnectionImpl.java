@@ -2,6 +2,8 @@
  */
 package rossystem.impl;
 
+import componentInterface.RemapSrvCli;
+import componentInterface.RemapSrvServ;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -9,10 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import ros.ServiceClient;
-import ros.ServiceServer;
-
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
 
@@ -39,7 +37,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceServer from;
+	protected RemapSrvServ from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -49,7 +47,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceClient to;
+	protected RemapSrvCli to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,10 +73,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceServer getFrom() {
+	public RemapSrvServ getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (ServiceServer)eResolveProxy(oldFrom);
+			from = (RemapSrvServ)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
@@ -92,7 +90,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceServer basicGetFrom() {
+	public RemapSrvServ basicGetFrom() {
 		return from;
 	}
 
@@ -101,8 +99,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(ServiceServer newFrom) {
-		ServiceServer oldFrom = from;
+	public void setFrom(RemapSrvServ newFrom) {
+		RemapSrvServ oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
@@ -113,10 +111,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient getTo() {
+	public RemapSrvCli getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (ServiceClient)eResolveProxy(oldTo);
+			to = (RemapSrvCli)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -130,7 +128,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient basicGetTo() {
+	public RemapSrvCli basicGetTo() {
 		return to;
 	}
 
@@ -139,8 +137,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(ServiceClient newTo) {
-		ServiceClient oldTo = to;
+	public void setTo(RemapSrvCli newTo) {
+		RemapSrvCli oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -173,10 +171,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((ServiceServer)newValue);
+				setFrom((RemapSrvServ)newValue);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((ServiceClient)newValue);
+				setTo((RemapSrvCli)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,10 +189,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((ServiceServer)null);
+				setFrom((RemapSrvServ)null);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((ServiceClient)null);
+				setTo((RemapSrvCli)null);
 				return;
 		}
 		super.eUnset(featureID);

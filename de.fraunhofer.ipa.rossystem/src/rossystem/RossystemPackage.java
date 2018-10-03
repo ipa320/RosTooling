@@ -149,22 +149,13 @@ public interface RossystemPackage extends EPackage {
 	int TOPIC_CONNECTION__TO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Topic Remap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_CONNECTION__TOPIC_REMAP = 2;
-
-	/**
 	 * The number of structural features of the '<em>Topic Connection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION_FEATURE_COUNT = 3;
+	int TOPIC_CONNECTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Topic Connection</em>' class.
@@ -309,17 +300,6 @@ public interface RossystemPackage extends EPackage {
 	EReference getTopicConnection_To();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rossystem.TopicConnection#getTopicRemap <em>Topic Remap</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Topic Remap</em>'.
-	 * @see rossystem.TopicConnection#getTopicRemap()
-	 * @see #getTopicConnection()
-	 * @generated
-	 */
-	EAttribute getTopicConnection_TopicRemap();
-
-	/**
 	 * Returns the meta object for class '{@link rossystem.ServiceConnection <em>Service Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,14 +421,6 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TOPIC_CONNECTION__TO = eINSTANCE.getTopicConnection_To();
-
-		/**
-		 * The meta object literal for the '<em><b>Topic Remap</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TOPIC_CONNECTION__TOPIC_REMAP = eINSTANCE.getTopicConnection_TopicRemap();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.ServiceConnectionImpl <em>Service Connection</em>}' class.

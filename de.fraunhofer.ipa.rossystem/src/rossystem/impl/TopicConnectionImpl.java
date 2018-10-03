@@ -2,6 +2,8 @@
  */
 package rossystem.impl;
 
+import componentInterface.RemapPub;
+import componentInterface.RemapSub;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -9,10 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import ros.Publisher;
-import ros.Subscriber;
-
 import rossystem.RossystemPackage;
 import rossystem.TopicConnection;
 
@@ -26,7 +24,6 @@ import rossystem.TopicConnection;
  * <ul>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.impl.TopicConnectionImpl#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.impl.TopicConnectionImpl#getTopicRemap <em>Topic Remap</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,7 +37,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Publisher from;
+	protected RemapPub from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -50,27 +47,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Subscriber to;
-
-	/**
-	 * The default value of the '{@link #getTopicRemap() <em>Topic Remap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopicRemap()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOPIC_REMAP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTopicRemap() <em>Topic Remap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopicRemap()
-	 * @generated
-	 * @ordered
-	 */
-	protected String topicRemap = TOPIC_REMAP_EDEFAULT;
+	protected RemapSub to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,10 +73,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher getFrom() {
+	public RemapPub getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (Publisher)eResolveProxy(oldFrom);
+			from = (RemapPub)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -113,7 +90,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher basicGetFrom() {
+	public RemapPub basicGetFrom() {
 		return from;
 	}
 
@@ -122,8 +99,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(Publisher newFrom) {
-		Publisher oldFrom = from;
+	public void setFrom(RemapPub newFrom) {
+		RemapPub oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -134,10 +111,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber getTo() {
+	public RemapSub getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (Subscriber)eResolveProxy(oldTo);
+			to = (RemapSub)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -151,7 +128,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber basicGetTo() {
+	public RemapSub basicGetTo() {
 		return to;
 	}
 
@@ -160,32 +137,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(Subscriber newTo) {
-		Subscriber oldTo = to;
+	public void setTo(RemapSub newTo) {
+		RemapSub oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTopicRemap() {
-		return topicRemap;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopicRemap(String newTopicRemap) {
-		String oldTopicRemap = topicRemap;
-		topicRemap = newTopicRemap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP, oldTopicRemap, topicRemap));
 	}
 
 	/**
@@ -202,8 +158,6 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
-				return getTopicRemap();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,13 +171,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((Publisher)newValue);
+				setFrom((RemapPub)newValue);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((Subscriber)newValue);
-				return;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
-				setTopicRemap((String)newValue);
+				setTo((RemapSub)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,13 +189,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((Publisher)null);
+				setFrom((RemapPub)null);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((Subscriber)null);
-				return;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
-				setTopicRemap(TOPIC_REMAP_EDEFAULT);
+				setTo((RemapSub)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -262,26 +210,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 				return from != null;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
 				return to != null;
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_REMAP:
-				return TOPIC_REMAP_EDEFAULT == null ? topicRemap != null : !TOPIC_REMAP_EDEFAULT.equals(topicRemap);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (TopicRemap: ");
-		result.append(topicRemap);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TopicConnectionImpl

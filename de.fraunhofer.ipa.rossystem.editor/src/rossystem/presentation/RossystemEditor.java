@@ -156,7 +156,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import rossystem.provider.RossystemItemProviderAdapterFactory;
 
-import de.fraunhofer.ipa.componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory;
+import componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 

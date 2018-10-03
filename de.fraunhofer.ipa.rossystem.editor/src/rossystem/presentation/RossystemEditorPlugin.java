@@ -2,7 +2,7 @@
  */
 package rossystem.presentation;
 
-import de.fraunhofer.ipa.componentInterface.provider.ComponentInterfaceEditPlugin;
+import componentInterface.provider.ComponentInterfaceEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
 

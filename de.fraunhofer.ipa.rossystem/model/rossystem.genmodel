@@ -15,13 +15,11 @@
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//TopicConnection/TopicName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/To"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//ServiceConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/From"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/To"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ServiceConnection/ServiceName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
