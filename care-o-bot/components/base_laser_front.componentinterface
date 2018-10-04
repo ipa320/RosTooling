@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentInterface:ComponentInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:componentInterface="http://www.example.org/componentInterface" xmlns:ros="http://www.example.org/ros" name="base_laser_front">
+  <namespace xsi:type="ros:RelativeNamespace">
+    <parts>/base_laser_front</parts>
+  </namespace>
+  <RosTopicPublisher TopicName="/base_laser_front/scan" NameSpace="//@namespace">
+    <TopicRef href="../rosnodes/sick_s300.rosartifact#//@node/@publisher.0"/>
+  </RosTopicPublisher>
+  <RosTopicPublisher TopicName="/diagnostics">
+    <TopicRef href="../rosnodes/sick_s300.rosartifact#//@node/@publisher.1"/>
+  </RosTopicPublisher>
+</componentInterface:ComponentInterface>

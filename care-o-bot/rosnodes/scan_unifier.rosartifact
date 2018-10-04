@@ -1,0 +1,9 @@
+Artifact scan_unifier { node Node { name scan_unifier 
+	publisher {
+	Publisher { name "/scan_unified" message "sensor_msgs.LaserScan"
+	}}
+	subscriber {
+	Subscriber { name "/base_laser_front/scan" message "sensor_msgs.LaserScan" } ,
+	Subscriber { name "/base_laser_right/scan" message "sensor_msgs.LaserScan" } ,
+	Subscriber { name "/base_laser_left/scan" message "sensor_msgs.LaserScan" }
+	}}}

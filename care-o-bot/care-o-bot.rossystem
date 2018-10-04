@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rossystem:RosSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rossystem="http://www.example.org/rossystem" Name="care-o-bot">
+  <TopicConnections>
+    <From href="components/base_laser_front.componentinterface#//@RosTopicPublisher.1"/>
+    <To href="components/diagnostics_aggregator.componentinterface#//@RosTopicSubscriber.0"/>
+  </TopicConnections>
+  <TopicConnections>
+    <From href="components/base_laser_left.componentinterface#//@RosTopicPublisher.0"/>
+    <To href="components/scan_unifier.componentinterface#//@RosTopicSubscriber.1"/>
+  </TopicConnections>
+  <TopicConnections>
+    <From href="components/base_laser_left.componentinterface#//@RosTopicPublisher.1"/>
+    <To href="components/diagnostics_aggregator.componentinterface#//@RosTopicSubscriber.0"/>
+  </TopicConnections>
+  <TopicConnections>
+    <From href="components/base_laser_right.componentinterface#//@RosTopicPublisher.0"/>
+    <To href="components/scan_unifier.componentinterface#//@RosTopicSubscriber.2"/>
+  </TopicConnections>
+  <TopicConnections>
+    <From href="components/base_laser_front.componentinterface#//@RosTopicPublisher.0"/>
+    <To href="components/scan_unifier.componentinterface#//@RosTopicSubscriber.0"/>
+  </TopicConnections>
+  <TopicConnections>
+    <From href="components/base_laser_right.componentinterface#//@RosTopicPublisher.1"/>
+    <To href="components/diagnostics_aggregator.componentinterface#//@RosTopicSubscriber.0"/>
+  </TopicConnections>
+  <RosComponent href="components/base_laser_front.componentinterface#/"/>
+  <RosComponent href="components/base_laser_left.componentinterface#/"/>
+  <RosComponent href="components/base_laser_right.componentinterface#/"/>
+  <RosComponent href="components/scan_unifier.componentinterface#/"/>
+  <RosComponent href="components/diagnostics_aggregator.componentinterface#/"/>
+</rossystem:RosSystem>
