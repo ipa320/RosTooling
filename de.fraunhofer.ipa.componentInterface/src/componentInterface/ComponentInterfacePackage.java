@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import ros.RosPackage;
 
 /**
@@ -140,14 +141,14 @@ public interface ComponentInterfacePackage extends EPackage {
 	int COMPONENT_INTERFACE_OPERATION_COUNT = RosPackage.NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link componentInterface.impl.RemapPubImpl <em>Remap Pub</em>}' class.
+	 * The meta object id for the '{@link componentInterface.impl.PublisherImpl <em>Publisher</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentInterface.impl.RemapPubImpl
-	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapPub()
+	 * @see componentInterface.impl.PublisherImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getPublisher()
 	 * @generated
 	 */
-	int REMAP_PUB = 1;
+	int PUBLISHER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Topic Ref</b></em>' reference.
@@ -156,16 +157,16 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_PUB__TOPIC_REF = 0;
+	int PUBLISHER__TOPIC_REF = 0;
 
 	/**
-	 * The feature id for the '<em><b>Remap Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Topic Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_PUB__REMAP_NAME = 1;
+	int PUBLISHER__TOPIC_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name Space</b></em>' reference.
@@ -174,35 +175,35 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_PUB__NAME_SPACE = 2;
+	int PUBLISHER__NAME_SPACE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Remap Pub</em>' class.
+	 * The number of structural features of the '<em>Publisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_PUB_FEATURE_COUNT = 3;
+	int PUBLISHER_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Remap Pub</em>' class.
+	 * The number of operations of the '<em>Publisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_PUB_OPERATION_COUNT = 0;
+	int PUBLISHER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link componentInterface.impl.RemapSubImpl <em>Remap Sub</em>}' class.
+	 * The meta object id for the '{@link componentInterface.impl.SubscriberImpl <em>Subscriber</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentInterface.impl.RemapSubImpl
-	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSub()
+	 * @see componentInterface.impl.SubscriberImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getSubscriber()
 	 * @generated
 	 */
-	int REMAP_SUB = 2;
+	int SUBSCRIBER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Topic Ref</b></em>' reference.
@@ -211,16 +212,16 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SUB__TOPIC_REF = 0;
+	int SUBSCRIBER__TOPIC_REF = 0;
 
 	/**
-	 * The feature id for the '<em><b>Remap Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Topic Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SUB__REMAP_NAME = 1;
+	int SUBSCRIBER__TOPIC_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name Space</b></em>' reference.
@@ -229,35 +230,35 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SUB__NAME_SPACE = 2;
+	int SUBSCRIBER__NAME_SPACE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Remap Sub</em>' class.
+	 * The number of structural features of the '<em>Subscriber</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SUB_FEATURE_COUNT = 3;
+	int SUBSCRIBER_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Remap Sub</em>' class.
+	 * The number of operations of the '<em>Subscriber</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SUB_OPERATION_COUNT = 0;
+	int SUBSCRIBER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link componentInterface.impl.RemapSrvServImpl <em>Remap Srv Serv</em>}' class.
+	 * The meta object id for the '{@link componentInterface.impl.ServiceServerImpl <em>Service Server</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentInterface.impl.RemapSrvServImpl
-	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSrvServ()
+	 * @see componentInterface.impl.ServiceServerImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getServiceServer()
 	 * @generated
 	 */
-	int REMAP_SRV_SERV = 3;
+	int SERVICE_SERVER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Srv Ref</b></em>' reference.
@@ -266,16 +267,16 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_SERV__SRV_REF = 0;
+	int SERVICE_SERVER__SRV_REF = 0;
 
 	/**
-	 * The feature id for the '<em><b>Remap Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_SERV__REMAP_NAME = 1;
+	int SERVICE_SERVER__SERVICE_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name Space</b></em>' reference.
@@ -284,35 +285,35 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_SERV__NAME_SPACE = 2;
+	int SERVICE_SERVER__NAME_SPACE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Remap Srv Serv</em>' class.
+	 * The number of structural features of the '<em>Service Server</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_SERV_FEATURE_COUNT = 3;
+	int SERVICE_SERVER_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Remap Srv Serv</em>' class.
+	 * The number of operations of the '<em>Service Server</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_SERV_OPERATION_COUNT = 0;
+	int SERVICE_SERVER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link componentInterface.impl.RemapSrvCliImpl <em>Remap Srv Cli</em>}' class.
+	 * The meta object id for the '{@link componentInterface.impl.ServiceClientImpl <em>Service Client</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentInterface.impl.RemapSrvCliImpl
-	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSrvCli()
+	 * @see componentInterface.impl.ServiceClientImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getServiceClient()
 	 * @generated
 	 */
-	int REMAP_SRV_CLI = 4;
+	int SERVICE_CLIENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Srv Ref</b></em>' reference.
@@ -321,16 +322,16 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_CLI__SRV_REF = 0;
+	int SERVICE_CLIENT__SRV_REF = 0;
 
 	/**
-	 * The feature id for the '<em><b>Remap Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_CLI__REMAP_NAME = 1;
+	int SERVICE_CLIENT__SERVICE_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name Space</b></em>' reference.
@@ -339,25 +340,25 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_CLI__NAME_SPACE = 2;
+	int SERVICE_CLIENT__NAME_SPACE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Remap Srv Cli</em>' class.
+	 * The number of structural features of the '<em>Service Client</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_CLI_FEATURE_COUNT = 3;
+	int SERVICE_CLIENT_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Remap Srv Cli</em>' class.
+	 * The number of operations of the '<em>Service Client</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMAP_SRV_CLI_OPERATION_COUNT = 0;
+	int SERVICE_CLIENT_OPERATION_COUNT = 0;
 
 
 	/**
@@ -415,176 +416,176 @@ public interface ComponentInterfacePackage extends EPackage {
 	EReference getComponentInterface_RosServiceClient();
 
 	/**
-	 * Returns the meta object for class '{@link componentInterface.RemapPub <em>Remap Pub</em>}'.
+	 * Returns the meta object for class '{@link componentInterface.Publisher <em>Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remap Pub</em>'.
-	 * @see componentInterface.RemapPub
+	 * @return the meta object for class '<em>Publisher</em>'.
+	 * @see componentInterface.Publisher
 	 * @generated
 	 */
-	EClass getRemapPub();
+	EClass getPublisher();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapPub#getTopicRef <em>Topic Ref</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.Publisher#getTopicRef <em>Topic Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Topic Ref</em>'.
-	 * @see componentInterface.RemapPub#getTopicRef()
-	 * @see #getRemapPub()
+	 * @see componentInterface.Publisher#getTopicRef()
+	 * @see #getPublisher()
 	 * @generated
 	 */
-	EReference getRemapPub_TopicRef();
+	EReference getPublisher_TopicRef();
 
 	/**
-	 * Returns the meta object for the attribute '{@link componentInterface.RemapPub#getRemapName <em>Remap Name</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.Publisher#getTopicName <em>Topic Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remap Name</em>'.
-	 * @see componentInterface.RemapPub#getRemapName()
-	 * @see #getRemapPub()
+	 * @return the meta object for the attribute '<em>Topic Name</em>'.
+	 * @see componentInterface.Publisher#getTopicName()
+	 * @see #getPublisher()
 	 * @generated
 	 */
-	EAttribute getRemapPub_RemapName();
+	EAttribute getPublisher_TopicName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapPub#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.Publisher#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Name Space</em>'.
-	 * @see componentInterface.RemapPub#getNameSpace()
-	 * @see #getRemapPub()
+	 * @see componentInterface.Publisher#getNameSpace()
+	 * @see #getPublisher()
 	 * @generated
 	 */
-	EReference getRemapPub_NameSpace();
+	EReference getPublisher_NameSpace();
 
 	/**
-	 * Returns the meta object for class '{@link componentInterface.RemapSub <em>Remap Sub</em>}'.
+	 * Returns the meta object for class '{@link componentInterface.Subscriber <em>Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remap Sub</em>'.
-	 * @see componentInterface.RemapSub
+	 * @return the meta object for class '<em>Subscriber</em>'.
+	 * @see componentInterface.Subscriber
 	 * @generated
 	 */
-	EClass getRemapSub();
+	EClass getSubscriber();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSub#getTopicRef <em>Topic Ref</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.Subscriber#getTopicRef <em>Topic Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Topic Ref</em>'.
-	 * @see componentInterface.RemapSub#getTopicRef()
-	 * @see #getRemapSub()
+	 * @see componentInterface.Subscriber#getTopicRef()
+	 * @see #getSubscriber()
 	 * @generated
 	 */
-	EReference getRemapSub_TopicRef();
+	EReference getSubscriber_TopicRef();
 
 	/**
-	 * Returns the meta object for the attribute '{@link componentInterface.RemapSub#getRemapName <em>Remap Name</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.Subscriber#getTopicName <em>Topic Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remap Name</em>'.
-	 * @see componentInterface.RemapSub#getRemapName()
-	 * @see #getRemapSub()
+	 * @return the meta object for the attribute '<em>Topic Name</em>'.
+	 * @see componentInterface.Subscriber#getTopicName()
+	 * @see #getSubscriber()
 	 * @generated
 	 */
-	EAttribute getRemapSub_RemapName();
+	EAttribute getSubscriber_TopicName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSub#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.Subscriber#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Name Space</em>'.
-	 * @see componentInterface.RemapSub#getNameSpace()
-	 * @see #getRemapSub()
+	 * @see componentInterface.Subscriber#getNameSpace()
+	 * @see #getSubscriber()
 	 * @generated
 	 */
-	EReference getRemapSub_NameSpace();
+	EReference getSubscriber_NameSpace();
 
 	/**
-	 * Returns the meta object for class '{@link componentInterface.RemapSrvServ <em>Remap Srv Serv</em>}'.
+	 * Returns the meta object for class '{@link componentInterface.ServiceServer <em>Service Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remap Srv Serv</em>'.
-	 * @see componentInterface.RemapSrvServ
+	 * @return the meta object for class '<em>Service Server</em>'.
+	 * @see componentInterface.ServiceServer
 	 * @generated
 	 */
-	EClass getRemapSrvServ();
+	EClass getServiceServer();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSrvServ#getSrvRef <em>Srv Ref</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.ServiceServer#getSrvRef <em>Srv Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Srv Ref</em>'.
-	 * @see componentInterface.RemapSrvServ#getSrvRef()
-	 * @see #getRemapSrvServ()
+	 * @see componentInterface.ServiceServer#getSrvRef()
+	 * @see #getServiceServer()
 	 * @generated
 	 */
-	EReference getRemapSrvServ_SrvRef();
+	EReference getServiceServer_SrvRef();
 
 	/**
-	 * Returns the meta object for the attribute '{@link componentInterface.RemapSrvServ#getRemapName <em>Remap Name</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.ServiceServer#getServiceName <em>Service Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remap Name</em>'.
-	 * @see componentInterface.RemapSrvServ#getRemapName()
-	 * @see #getRemapSrvServ()
+	 * @return the meta object for the attribute '<em>Service Name</em>'.
+	 * @see componentInterface.ServiceServer#getServiceName()
+	 * @see #getServiceServer()
 	 * @generated
 	 */
-	EAttribute getRemapSrvServ_RemapName();
+	EAttribute getServiceServer_ServiceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSrvServ#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.ServiceServer#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Name Space</em>'.
-	 * @see componentInterface.RemapSrvServ#getNameSpace()
-	 * @see #getRemapSrvServ()
+	 * @see componentInterface.ServiceServer#getNameSpace()
+	 * @see #getServiceServer()
 	 * @generated
 	 */
-	EReference getRemapSrvServ_NameSpace();
+	EReference getServiceServer_NameSpace();
 
 	/**
-	 * Returns the meta object for class '{@link componentInterface.RemapSrvCli <em>Remap Srv Cli</em>}'.
+	 * Returns the meta object for class '{@link componentInterface.ServiceClient <em>Service Client</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remap Srv Cli</em>'.
-	 * @see componentInterface.RemapSrvCli
+	 * @return the meta object for class '<em>Service Client</em>'.
+	 * @see componentInterface.ServiceClient
 	 * @generated
 	 */
-	EClass getRemapSrvCli();
+	EClass getServiceClient();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSrvCli#getSrvRef <em>Srv Ref</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.ServiceClient#getSrvRef <em>Srv Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Srv Ref</em>'.
-	 * @see componentInterface.RemapSrvCli#getSrvRef()
-	 * @see #getRemapSrvCli()
+	 * @see componentInterface.ServiceClient#getSrvRef()
+	 * @see #getServiceClient()
 	 * @generated
 	 */
-	EReference getRemapSrvCli_SrvRef();
+	EReference getServiceClient_SrvRef();
 
 	/**
-	 * Returns the meta object for the attribute '{@link componentInterface.RemapSrvCli#getRemapName <em>Remap Name</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.ServiceClient#getServiceName <em>Service Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remap Name</em>'.
-	 * @see componentInterface.RemapSrvCli#getRemapName()
-	 * @see #getRemapSrvCli()
+	 * @return the meta object for the attribute '<em>Service Name</em>'.
+	 * @see componentInterface.ServiceClient#getServiceName()
+	 * @see #getServiceClient()
 	 * @generated
 	 */
-	EAttribute getRemapSrvCli_RemapName();
+	EAttribute getServiceClient_ServiceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RemapSrvCli#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the reference '{@link componentInterface.ServiceClient#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Name Space</em>'.
-	 * @see componentInterface.RemapSrvCli#getNameSpace()
-	 * @see #getRemapSrvCli()
+	 * @see componentInterface.ServiceClient#getNameSpace()
+	 * @see #getServiceClient()
 	 * @generated
 	 */
-	EReference getRemapSrvCli_NameSpace();
+	EReference getServiceClient_NameSpace();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -652,14 +653,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		EReference COMPONENT_INTERFACE__ROS_SERVICE_CLIENT = eINSTANCE.getComponentInterface_RosServiceClient();
 
 		/**
-		 * The meta object literal for the '{@link componentInterface.impl.RemapPubImpl <em>Remap Pub</em>}' class.
+		 * The meta object literal for the '{@link componentInterface.impl.PublisherImpl <em>Publisher</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentInterface.impl.RemapPubImpl
-		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapPub()
+		 * @see componentInterface.impl.PublisherImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getPublisher()
 		 * @generated
 		 */
-		EClass REMAP_PUB = eINSTANCE.getRemapPub();
+		EClass PUBLISHER = eINSTANCE.getPublisher();
 
 		/**
 		 * The meta object literal for the '<em><b>Topic Ref</b></em>' reference feature.
@@ -667,15 +668,15 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_PUB__TOPIC_REF = eINSTANCE.getRemapPub_TopicRef();
+		EReference PUBLISHER__TOPIC_REF = eINSTANCE.getPublisher_TopicRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Remap Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Topic Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REMAP_PUB__REMAP_NAME = eINSTANCE.getRemapPub_RemapName();
+		EAttribute PUBLISHER__TOPIC_NAME = eINSTANCE.getPublisher_TopicName();
 
 		/**
 		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
@@ -683,17 +684,17 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_PUB__NAME_SPACE = eINSTANCE.getRemapPub_NameSpace();
+		EReference PUBLISHER__NAME_SPACE = eINSTANCE.getPublisher_NameSpace();
 
 		/**
-		 * The meta object literal for the '{@link componentInterface.impl.RemapSubImpl <em>Remap Sub</em>}' class.
+		 * The meta object literal for the '{@link componentInterface.impl.SubscriberImpl <em>Subscriber</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentInterface.impl.RemapSubImpl
-		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSub()
+		 * @see componentInterface.impl.SubscriberImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getSubscriber()
 		 * @generated
 		 */
-		EClass REMAP_SUB = eINSTANCE.getRemapSub();
+		EClass SUBSCRIBER = eINSTANCE.getSubscriber();
 
 		/**
 		 * The meta object literal for the '<em><b>Topic Ref</b></em>' reference feature.
@@ -701,15 +702,15 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SUB__TOPIC_REF = eINSTANCE.getRemapSub_TopicRef();
+		EReference SUBSCRIBER__TOPIC_REF = eINSTANCE.getSubscriber_TopicRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Remap Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Topic Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REMAP_SUB__REMAP_NAME = eINSTANCE.getRemapSub_RemapName();
+		EAttribute SUBSCRIBER__TOPIC_NAME = eINSTANCE.getSubscriber_TopicName();
 
 		/**
 		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
@@ -717,17 +718,17 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SUB__NAME_SPACE = eINSTANCE.getRemapSub_NameSpace();
+		EReference SUBSCRIBER__NAME_SPACE = eINSTANCE.getSubscriber_NameSpace();
 
 		/**
-		 * The meta object literal for the '{@link componentInterface.impl.RemapSrvServImpl <em>Remap Srv Serv</em>}' class.
+		 * The meta object literal for the '{@link componentInterface.impl.ServiceServerImpl <em>Service Server</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentInterface.impl.RemapSrvServImpl
-		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSrvServ()
+		 * @see componentInterface.impl.ServiceServerImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getServiceServer()
 		 * @generated
 		 */
-		EClass REMAP_SRV_SERV = eINSTANCE.getRemapSrvServ();
+		EClass SERVICE_SERVER = eINSTANCE.getServiceServer();
 
 		/**
 		 * The meta object literal for the '<em><b>Srv Ref</b></em>' reference feature.
@@ -735,15 +736,15 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SRV_SERV__SRV_REF = eINSTANCE.getRemapSrvServ_SrvRef();
+		EReference SERVICE_SERVER__SRV_REF = eINSTANCE.getServiceServer_SrvRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Remap Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REMAP_SRV_SERV__REMAP_NAME = eINSTANCE.getRemapSrvServ_RemapName();
+		EAttribute SERVICE_SERVER__SERVICE_NAME = eINSTANCE.getServiceServer_ServiceName();
 
 		/**
 		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
@@ -751,17 +752,17 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SRV_SERV__NAME_SPACE = eINSTANCE.getRemapSrvServ_NameSpace();
+		EReference SERVICE_SERVER__NAME_SPACE = eINSTANCE.getServiceServer_NameSpace();
 
 		/**
-		 * The meta object literal for the '{@link componentInterface.impl.RemapSrvCliImpl <em>Remap Srv Cli</em>}' class.
+		 * The meta object literal for the '{@link componentInterface.impl.ServiceClientImpl <em>Service Client</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentInterface.impl.RemapSrvCliImpl
-		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRemapSrvCli()
+		 * @see componentInterface.impl.ServiceClientImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getServiceClient()
 		 * @generated
 		 */
-		EClass REMAP_SRV_CLI = eINSTANCE.getRemapSrvCli();
+		EClass SERVICE_CLIENT = eINSTANCE.getServiceClient();
 
 		/**
 		 * The meta object literal for the '<em><b>Srv Ref</b></em>' reference feature.
@@ -769,15 +770,15 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SRV_CLI__SRV_REF = eINSTANCE.getRemapSrvCli_SrvRef();
+		EReference SERVICE_CLIENT__SRV_REF = eINSTANCE.getServiceClient_SrvRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Remap Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REMAP_SRV_CLI__REMAP_NAME = eINSTANCE.getRemapSrvCli_RemapName();
+		EAttribute SERVICE_CLIENT__SERVICE_NAME = eINSTANCE.getServiceClient_ServiceName();
 
 		/**
 		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
@@ -785,7 +786,7 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMAP_SRV_CLI__NAME_SPACE = eINSTANCE.getRemapSrvCli_NameSpace();
+		EReference SERVICE_CLIENT__NAME_SPACE = eINSTANCE.getServiceClient_NameSpace();
 
 	}
 

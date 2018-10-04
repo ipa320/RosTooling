@@ -5,27 +5,26 @@ package componentInterface;
 import org.eclipse.emf.ecore.EObject;
 
 import ros.Namespace;
-import ros.ServiceServer;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Remap Srv Serv</b></em>'.
+ * A representation of the model object '<em><b>Service Server</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.RemapSrvServ#getSrvRef <em>Srv Ref</em>}</li>
- *   <li>{@link componentInterface.RemapSrvServ#getRemapName <em>Remap Name</em>}</li>
- *   <li>{@link componentInterface.RemapSrvServ#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.ServiceServer#getSrvRef <em>Srv Ref</em>}</li>
+ *   <li>{@link componentInterface.ServiceServer#getServiceName <em>Service Name</em>}</li>
+ *   <li>{@link componentInterface.ServiceServer#getNameSpace <em>Name Space</em>}</li>
  * </ul>
  *
- * @see componentInterface.ComponentInterfacePackage#getRemapSrvServ()
+ * @see componentInterface.ComponentInterfacePackage#getServiceServer()
  * @model
  * @generated
  */
-public interface RemapSrvServ extends EObject {
+public interface ServiceServer extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Srv Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -35,48 +34,48 @@ public interface RemapSrvServ extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Srv Ref</em>' reference.
-	 * @see #setSrvRef(ServiceServer)
-	 * @see componentInterface.ComponentInterfacePackage#getRemapSrvServ_SrvRef()
+	 * @see #setSrvRef(ros.ServiceServer)
+	 * @see componentInterface.ComponentInterfacePackage#getServiceServer_SrvRef()
 	 * @model
 	 * @generated
 	 */
-	ServiceServer getSrvRef();
+	ros.ServiceServer getSrvRef();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RemapSrvServ#getSrvRef <em>Srv Ref</em>}' reference.
+	 * Sets the value of the '{@link componentInterface.ServiceServer#getSrvRef <em>Srv Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Srv Ref</em>' reference.
 	 * @see #getSrvRef()
 	 * @generated
 	 */
-	void setSrvRef(ServiceServer value);
+	void setSrvRef(ros.ServiceServer value);
 
 	/**
-	 * Returns the value of the '<em><b>Remap Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Service Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Remap Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Service Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Remap Name</em>' attribute.
-	 * @see #setRemapName(String)
-	 * @see componentInterface.ComponentInterfacePackage#getRemapSrvServ_RemapName()
+	 * @return the value of the '<em>Service Name</em>' attribute.
+	 * @see #setServiceName(String)
+	 * @see componentInterface.ComponentInterfacePackage#getServiceServer_ServiceName()
 	 * @model
 	 * @generated
 	 */
-	String getRemapName();
+	String getServiceName();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RemapSrvServ#getRemapName <em>Remap Name</em>}' attribute.
+	 * Sets the value of the '{@link componentInterface.ServiceServer#getServiceName <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remap Name</em>' attribute.
-	 * @see #getRemapName()
+	 * @param value the new value of the '<em>Service Name</em>' attribute.
+	 * @see #getServiceName()
 	 * @generated
 	 */
-	void setRemapName(String value);
+	void setServiceName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Name Space</b></em>' reference.
@@ -88,14 +87,14 @@ public interface RemapSrvServ extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name Space</em>' reference.
 	 * @see #setNameSpace(Namespace)
-	 * @see componentInterface.ComponentInterfacePackage#getRemapSrvServ_NameSpace()
+	 * @see componentInterface.ComponentInterfacePackage#getServiceServer_NameSpace()
 	 * @model
 	 * @generated
 	 */
 	Namespace getNameSpace();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RemapSrvServ#getNameSpace <em>Name Space</em>}' reference.
+	 * Sets the value of the '{@link componentInterface.ServiceServer#getNameSpace <em>Name Space</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name Space</em>' reference.
@@ -104,4 +103,4 @@ public interface RemapSrvServ extends EObject {
 	 */
 	void setNameSpace(Namespace value);
 
-} // RemapSrvServ
+} // ServiceServer

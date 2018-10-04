@@ -31,40 +31,40 @@ public interface ComponentInterfaceFactory extends EFactory {
 	ComponentInterface createComponentInterface();
 
 	/**
-	 * Returns a new object of class '<em>Remap Pub</em>'.
+	 * Returns a new object of class '<em>Publisher</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remap Pub</em>'.
+	 * @return a new object of class '<em>Publisher</em>'.
 	 * @generated
 	 */
-	RemapPub createRemapPub();
+	Publisher createPublisher();
 
 	/**
-	 * Returns a new object of class '<em>Remap Sub</em>'.
+	 * Returns a new object of class '<em>Subscriber</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remap Sub</em>'.
+	 * @return a new object of class '<em>Subscriber</em>'.
 	 * @generated
 	 */
-	RemapSub createRemapSub();
+	Subscriber createSubscriber();
 
 	/**
-	 * Returns a new object of class '<em>Remap Srv Serv</em>'.
+	 * Returns a new object of class '<em>Service Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remap Srv Serv</em>'.
+	 * @return a new object of class '<em>Service Server</em>'.
 	 * @generated
 	 */
-	RemapSrvServ createRemapSrvServ();
+	ServiceServer createServiceServer();
 
 	/**
-	 * Returns a new object of class '<em>Remap Srv Cli</em>'.
+	 * Returns a new object of class '<em>Service Client</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remap Srv Cli</em>'.
+	 * @return a new object of class '<em>Service Client</em>'.
 	 * @generated
 	 */
-	RemapSrvCli createRemapSrvCli();
+	ServiceClient createServiceClient();
 
 	/**
 	 * Returns the package supported by this factory.

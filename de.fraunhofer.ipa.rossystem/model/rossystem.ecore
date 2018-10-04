@@ -11,11 +11,11 @@
         eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ComponentInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TopicConnection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RemapPub"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RemapSub"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//Publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//Subscriber"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceConnection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RemapSrvServ"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RemapSrvCli"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ServiceClient"/>
   </eClassifiers>
 </ecore:EPackage>

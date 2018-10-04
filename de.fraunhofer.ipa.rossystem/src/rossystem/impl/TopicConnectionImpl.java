@@ -2,8 +2,9 @@
  */
 package rossystem.impl;
 
-import componentInterface.RemapPub;
-import componentInterface.RemapSub;
+import componentInterface.Publisher;
+import componentInterface.Subscriber;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import rossystem.RossystemPackage;
 import rossystem.TopicConnection;
 
@@ -37,7 +39,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected RemapPub from;
+	protected Publisher from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -47,7 +49,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected RemapSub to;
+	protected Subscriber to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,10 +75,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapPub getFrom() {
+	public Publisher getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (RemapPub)eResolveProxy(oldFrom);
+			from = (Publisher)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -90,7 +92,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapPub basicGetFrom() {
+	public Publisher basicGetFrom() {
 		return from;
 	}
 
@@ -99,8 +101,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(RemapPub newFrom) {
-		RemapPub oldFrom = from;
+	public void setFrom(Publisher newFrom) {
+		Publisher oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -111,10 +113,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSub getTo() {
+	public Subscriber getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (RemapSub)eResolveProxy(oldTo);
+			to = (Subscriber)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -128,7 +130,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSub basicGetTo() {
+	public Subscriber basicGetTo() {
 		return to;
 	}
 
@@ -137,8 +139,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(RemapSub newTo) {
-		RemapSub oldTo = to;
+	public void setTo(Subscriber newTo) {
+		Subscriber oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -171,10 +173,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((RemapPub)newValue);
+				setFrom((Publisher)newValue);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((RemapSub)newValue);
+				setTo((Subscriber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,10 +191,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((RemapPub)null);
+				setFrom((Publisher)null);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((RemapSub)null);
+				setTo((Subscriber)null);
 				return;
 		}
 		super.eUnset(featureID);

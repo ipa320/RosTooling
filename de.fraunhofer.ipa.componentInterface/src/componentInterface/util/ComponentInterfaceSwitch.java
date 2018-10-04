@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
 import ros.NamespacedElement;
 
 /**
@@ -74,27 +75,27 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentInterfacePackage.REMAP_PUB: {
-				RemapPub remapPub = (RemapPub)theEObject;
-				T result = caseRemapPub(remapPub);
+			case ComponentInterfacePackage.PUBLISHER: {
+				Publisher publisher = (Publisher)theEObject;
+				T result = casePublisher(publisher);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentInterfacePackage.REMAP_SUB: {
-				RemapSub remapSub = (RemapSub)theEObject;
-				T result = caseRemapSub(remapSub);
+			case ComponentInterfacePackage.SUBSCRIBER: {
+				Subscriber subscriber = (Subscriber)theEObject;
+				T result = caseSubscriber(subscriber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentInterfacePackage.REMAP_SRV_SERV: {
-				RemapSrvServ remapSrvServ = (RemapSrvServ)theEObject;
-				T result = caseRemapSrvServ(remapSrvServ);
+			case ComponentInterfacePackage.SERVICE_SERVER: {
+				ServiceServer serviceServer = (ServiceServer)theEObject;
+				T result = caseServiceServer(serviceServer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentInterfacePackage.REMAP_SRV_CLI: {
-				RemapSrvCli remapSrvCli = (RemapSrvCli)theEObject;
-				T result = caseRemapSrvCli(remapSrvCli);
+			case ComponentInterfacePackage.SERVICE_CLIENT: {
+				ServiceClient serviceClient = (ServiceClient)theEObject;
+				T result = caseServiceClient(serviceClient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,62 +119,62 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remap Pub</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Publisher</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remap Pub</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Publisher</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemapPub(RemapPub object) {
+	public T casePublisher(Publisher object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remap Sub</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Subscriber</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remap Sub</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Subscriber</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemapSub(RemapSub object) {
+	public T caseSubscriber(Subscriber object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remap Srv Serv</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Service Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remap Srv Serv</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Service Server</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemapSrvServ(RemapSrvServ object) {
+	public T caseServiceServer(ServiceServer object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remap Srv Cli</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Service Client</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remap Srv Cli</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Service Client</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemapSrvCli(RemapSrvCli object) {
+	public T caseServiceClient(ServiceClient object) {
 		return null;
 	}
 

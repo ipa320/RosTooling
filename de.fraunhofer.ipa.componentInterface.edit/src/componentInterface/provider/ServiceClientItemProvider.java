@@ -4,7 +4,7 @@ package componentInterface.provider;
 
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapSub;
+import componentInterface.ServiceClient;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link componentInterface.RemapSub} object.
+ * This is the item provider adapter for a {@link componentInterface.ServiceClient} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemapSubItemProvider 
+public class ServiceClientItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class RemapSubItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSubItemProvider(AdapterFactory adapterFactory) {
+	public ServiceClientItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,27 +60,27 @@ public class RemapSubItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTopicRefPropertyDescriptor(object);
-			addRemapNamePropertyDescriptor(object);
+			addSrvRefPropertyDescriptor(object);
+			addServiceNamePropertyDescriptor(object);
 			addNameSpacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Ref feature.
+	 * This adds a property descriptor for the Srv Ref feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTopicRefPropertyDescriptor(Object object) {
+	protected void addSrvRefPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSub_TopicRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSub_TopicRef_feature", "_UI_RemapSub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SUB__TOPIC_REF,
+				 getString("_UI_ServiceClient_SrvRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceClient_SrvRef_feature", "_UI_ServiceClient_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_CLIENT__SRV_REF,
 				 true,
 				 false,
 				 true,
@@ -90,19 +90,19 @@ public class RemapSubItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remap Name feature.
+	 * This adds a property descriptor for the Service Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRemapNamePropertyDescriptor(Object object) {
+	protected void addServiceNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSub_RemapName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSub_RemapName_feature", "_UI_RemapSub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SUB__REMAP_NAME,
+				 getString("_UI_ServiceClient_ServiceName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceClient_ServiceName_feature", "_UI_ServiceClient_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_CLIENT__SERVICE_NAME,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class RemapSubItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSub_NameSpace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSub_NameSpace_feature", "_UI_RemapSub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SUB__NAME_SPACE,
+				 getString("_UI_ServiceClient_NameSpace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceClient_NameSpace_feature", "_UI_ServiceClient_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_CLIENT__NAME_SPACE,
 				 true,
 				 false,
 				 true,
@@ -134,14 +134,14 @@ public class RemapSubItemProvider
 	}
 
 	/**
-	 * This returns RemapSub.gif.
+	 * This returns ServiceClient.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RemapSub"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceClient"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class RemapSubItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RemapSub)object).getRemapName();
+		String label = ((ServiceClient)object).getServiceName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RemapSub_type") :
-			getString("_UI_RemapSub_type") + " " + label;
+			getString("_UI_ServiceClient_type") :
+			getString("_UI_ServiceClient_type") + " " + label;
 	}
 	
 
@@ -170,8 +170,8 @@ public class RemapSubItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RemapSub.class)) {
-			case ComponentInterfacePackage.REMAP_SUB__REMAP_NAME:
+		switch (notification.getFeatureID(ServiceClient.class)) {
+			case ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

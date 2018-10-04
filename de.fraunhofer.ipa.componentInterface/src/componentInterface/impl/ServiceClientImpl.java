@@ -3,7 +3,7 @@
 package componentInterface.impl;
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapSrvCli;
+import componentInterface.ServiceClient;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,24 +14,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.Namespace;
-import ros.ServiceClient;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Remap Srv Cli</b></em>'.
+ * An implementation of the model object '<em><b>Service Client</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RemapSrvCliImpl#getSrvRef <em>Srv Ref</em>}</li>
- *   <li>{@link componentInterface.impl.RemapSrvCliImpl#getRemapName <em>Remap Name</em>}</li>
- *   <li>{@link componentInterface.impl.RemapSrvCliImpl#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.impl.ServiceClientImpl#getSrvRef <em>Srv Ref</em>}</li>
+ *   <li>{@link componentInterface.impl.ServiceClientImpl#getServiceName <em>Service Name</em>}</li>
+ *   <li>{@link componentInterface.impl.ServiceClientImpl#getNameSpace <em>Name Space</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements RemapSrvCli {
+public class ServiceClientImpl extends MinimalEObjectImpl.Container implements ServiceClient {
 	/**
 	 * The cached value of the '{@link #getSrvRef() <em>Srv Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -40,27 +39,27 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceClient srvRef;
+	protected ros.ServiceClient srvRef;
 
 	/**
-	 * The default value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getServiceName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REMAP_NAME_EDEFAULT = null;
+	protected static final String SERVICE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getServiceName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String remapName = REMAP_NAME_EDEFAULT;
+	protected String serviceName = SERVICE_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' reference.
@@ -77,7 +76,7 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapSrvCliImpl() {
+	protected ServiceClientImpl() {
 		super();
 	}
 
@@ -88,7 +87,7 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentInterfacePackage.Literals.REMAP_SRV_CLI;
+		return ComponentInterfacePackage.Literals.SERVICE_CLIENT;
 	}
 
 	/**
@@ -96,13 +95,13 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient getSrvRef() {
+	public ros.ServiceClient getSrvRef() {
 		if (srvRef != null && srvRef.eIsProxy()) {
 			InternalEObject oldSrvRef = (InternalEObject)srvRef;
-			srvRef = (ServiceClient)eResolveProxy(oldSrvRef);
+			srvRef = (ros.ServiceClient)eResolveProxy(oldSrvRef);
 			if (srvRef != oldSrvRef) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF, oldSrvRef, srvRef));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF, oldSrvRef, srvRef));
 			}
 		}
 		return srvRef;
@@ -113,7 +112,7 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient basicGetSrvRef() {
+	public ros.ServiceClient basicGetSrvRef() {
 		return srvRef;
 	}
 
@@ -122,11 +121,11 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSrvRef(ServiceClient newSrvRef) {
-		ServiceClient oldSrvRef = srvRef;
+	public void setSrvRef(ros.ServiceClient newSrvRef) {
+		ros.ServiceClient oldSrvRef = srvRef;
 		srvRef = newSrvRef;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF, oldSrvRef, srvRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF, oldSrvRef, srvRef));
 	}
 
 	/**
@@ -134,11 +133,16 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getRemapName() {
-		if (getNameSpace().getParts() != null) {
-			return String.format("%s/%s", getNameSpace().getParts().get(0), getSrvRef().getName());	
+	public String getServiceName() {
+		if (serviceName.isEmpty()) {
+			if (nameSpace != null) {
+				return String.format("%s/%s", nameSpace.getParts().get(0), srvRef.getName());	
+			}else if (srvRef != null) {
+				return srvRef.getName();
+			} else
+				return serviceName;
 		}else {
-			return getSrvRef().getName();
+			return serviceName;
 		}
 	}
 
@@ -147,11 +151,11 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRemapName(String newRemapName) {
-		String oldRemapName = remapName;
-		remapName = newRemapName;
+	public void setServiceName(String newServiceName) {
+		String oldServiceName = serviceName;
+		serviceName = newServiceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME, oldRemapName, remapName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME, oldServiceName, serviceName));
 	}
 
 	/**
@@ -165,7 +169,7 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 			nameSpace = (Namespace)eResolveProxy(oldNameSpace);
 			if (nameSpace != oldNameSpace) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE, oldNameSpace, nameSpace));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE, oldNameSpace, nameSpace));
 			}
 		}
 		return nameSpace;
@@ -189,7 +193,7 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 		Namespace oldNameSpace = nameSpace;
 		nameSpace = newNameSpace;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE, oldNameSpace, nameSpace));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE, oldNameSpace, nameSpace));
 	}
 
 	/**
@@ -200,12 +204,12 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF:
+			case ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF:
 				if (resolve) return getSrvRef();
 				return basicGetSrvRef();
-			case ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME:
-				return getRemapName();
-			case ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE:
+			case ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME:
+				return getServiceName();
+			case ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE:
 				if (resolve) return getNameSpace();
 				return basicGetNameSpace();
 		}
@@ -220,13 +224,13 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF:
-				setSrvRef((ServiceClient)newValue);
+			case ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF:
+				setSrvRef((ros.ServiceClient)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME:
-				setRemapName((String)newValue);
+			case ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME:
+				setServiceName((String)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE:
+			case ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE:
 				setNameSpace((Namespace)newValue);
 				return;
 		}
@@ -241,13 +245,13 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF:
-				setSrvRef((ServiceClient)null);
+			case ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF:
+				setSrvRef((ros.ServiceClient)null);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME:
-				setRemapName(REMAP_NAME_EDEFAULT);
+			case ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME:
+				setServiceName(SERVICE_NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE:
+			case ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE:
 				setNameSpace((Namespace)null);
 				return;
 		}
@@ -262,11 +266,11 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_CLI__SRV_REF:
+			case ComponentInterfacePackage.SERVICE_CLIENT__SRV_REF:
 				return srvRef != null;
-			case ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME:
-				return REMAP_NAME_EDEFAULT == null ? remapName != null : !REMAP_NAME_EDEFAULT.equals(remapName);
-			case ComponentInterfacePackage.REMAP_SRV_CLI__NAME_SPACE:
+			case ComponentInterfacePackage.SERVICE_CLIENT__SERVICE_NAME:
+				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
+			case ComponentInterfacePackage.SERVICE_CLIENT__NAME_SPACE:
 				return nameSpace != null;
 		}
 		return super.eIsSet(featureID);
@@ -282,10 +286,10 @@ public class RemapSrvCliImpl extends MinimalEObjectImpl.Container implements Rem
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (RemapName: ");
-		result.append(remapName);
+		result.append(" (ServiceName: ");
+		result.append(serviceName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RemapSrvCliImpl
+} //ServiceClientImpl

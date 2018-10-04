@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+
 import ros.NamespacedElement;
 
 /**
@@ -73,20 +74,20 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 				return createComponentInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseRemapPub(RemapPub object) {
-				return createRemapPubAdapter();
+			public Adapter casePublisher(Publisher object) {
+				return createPublisherAdapter();
 			}
 			@Override
-			public Adapter caseRemapSub(RemapSub object) {
-				return createRemapSubAdapter();
+			public Adapter caseSubscriber(Subscriber object) {
+				return createSubscriberAdapter();
 			}
 			@Override
-			public Adapter caseRemapSrvServ(RemapSrvServ object) {
-				return createRemapSrvServAdapter();
+			public Adapter caseServiceServer(ServiceServer object) {
+				return createServiceServerAdapter();
 			}
 			@Override
-			public Adapter caseRemapSrvCli(RemapSrvCli object) {
-				return createRemapSrvCliAdapter();
+			public Adapter caseServiceClient(ServiceClient object) {
+				return createServiceClientAdapter();
 			}
 			@Override
 			public Adapter caseNamespacedElement(NamespacedElement object) {
@@ -127,58 +128,58 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.RemapPub <em>Remap Pub</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.Publisher <em>Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.RemapPub
+	 * @see componentInterface.Publisher
 	 * @generated
 	 */
-	public Adapter createRemapPubAdapter() {
+	public Adapter createPublisherAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.RemapSub <em>Remap Sub</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.Subscriber <em>Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.RemapSub
+	 * @see componentInterface.Subscriber
 	 * @generated
 	 */
-	public Adapter createRemapSubAdapter() {
+	public Adapter createSubscriberAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.RemapSrvServ <em>Remap Srv Serv</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.ServiceServer <em>Service Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.RemapSrvServ
+	 * @see componentInterface.ServiceServer
 	 * @generated
 	 */
-	public Adapter createRemapSrvServAdapter() {
+	public Adapter createServiceServerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.RemapSrvCli <em>Remap Srv Cli</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.ServiceClient <em>Service Client</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.RemapSrvCli
+	 * @see componentInterface.ServiceClient
 	 * @generated
 	 */
-	public Adapter createRemapSrvCliAdapter() {
+	public Adapter createServiceClientAdapter() {
 		return null;
 	}
 

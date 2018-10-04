@@ -3,7 +3,7 @@
 package componentInterface.impl;
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapPub;
+import componentInterface.Subscriber;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,24 +14,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.Namespace;
-import ros.Publisher;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Remap Pub</b></em>'.
+ * An implementation of the model object '<em><b>Subscriber</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RemapPubImpl#getTopicRef <em>Topic Ref</em>}</li>
- *   <li>{@link componentInterface.impl.RemapPubImpl#getRemapName <em>Remap Name</em>}</li>
- *   <li>{@link componentInterface.impl.RemapPubImpl#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.impl.SubscriberImpl#getTopicRef <em>Topic Ref</em>}</li>
+ *   <li>{@link componentInterface.impl.SubscriberImpl#getTopicName <em>Topic Name</em>}</li>
+ *   <li>{@link componentInterface.impl.SubscriberImpl#getNameSpace <em>Name Space</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapPub {
+public class SubscriberImpl extends MinimalEObjectImpl.Container implements Subscriber {
 	/**
 	 * The cached value of the '{@link #getTopicRef() <em>Topic Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -40,27 +39,27 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * @generated
 	 * @ordered
 	 */
-	protected Publisher topicRef;
+	protected ros.Subscriber topicRef;
 
 	/**
-	 * The default value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getTopicName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REMAP_NAME_EDEFAULT = null;
+	protected static final String TOPIC_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The cached value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getTopicName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String remapName = REMAP_NAME_EDEFAULT;
+	protected String topicName = TOPIC_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' reference.
@@ -77,7 +76,7 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapPubImpl() {
+	protected SubscriberImpl() {
 		super();
 	}
 
@@ -88,7 +87,7 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentInterfacePackage.Literals.REMAP_PUB;
+		return ComponentInterfacePackage.Literals.SUBSCRIBER;
 	}
 
 	/**
@@ -96,13 +95,13 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher getTopicRef() {
+	public ros.Subscriber getTopicRef() {
 		if (topicRef != null && topicRef.eIsProxy()) {
 			InternalEObject oldTopicRef = (InternalEObject)topicRef;
-			topicRef = (Publisher)eResolveProxy(oldTopicRef);
+			topicRef = (ros.Subscriber)eResolveProxy(oldTopicRef);
 			if (topicRef != oldTopicRef) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_PUB__TOPIC_REF, oldTopicRef, topicRef));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF, oldTopicRef, topicRef));
 			}
 		}
 		return topicRef;
@@ -113,7 +112,7 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher basicGetTopicRef() {
+	public ros.Subscriber basicGetTopicRef() {
 		return topicRef;
 	}
 
@@ -122,11 +121,11 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTopicRef(Publisher newTopicRef) {
-		Publisher oldTopicRef = topicRef;
+	public void setTopicRef(ros.Subscriber newTopicRef) {
+		ros.Subscriber oldTopicRef = topicRef;
 		topicRef = newTopicRef;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_PUB__TOPIC_REF, oldTopicRef, topicRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF, oldTopicRef, topicRef));
 	}
 
 	/**
@@ -134,25 +133,29 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getRemapName() {
-		if (getNameSpace().getParts() != null) {
-			return String.format("%s/%s", getNameSpace().getParts().get(0), getTopicRef().getName());	
+	public String getTopicName() {
+		if (topicName.isEmpty()) {
+			if (nameSpace != null) {
+				return String.format("%s/%s", nameSpace.getParts().get(0), topicRef.getName());	
+			}else if (topicRef != null) {
+				return topicRef.getName();
+			} else
+				return topicName;
 		}else {
-			return getTopicRef().getName();
+			return topicName;
 		}
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRemapName(String newRemapName) {
-		String oldRemapName = remapName;
-		remapName = newRemapName;
+	public void setTopicName(String newTopicName) {
+		String oldTopicName = topicName;
+		topicName = newTopicName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_PUB__REMAP_NAME, oldRemapName, remapName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SUBSCRIBER__TOPIC_NAME, oldTopicName, topicName));
 	}
 
 	/**
@@ -166,7 +169,7 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 			nameSpace = (Namespace)eResolveProxy(oldNameSpace);
 			if (nameSpace != oldNameSpace) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_PUB__NAME_SPACE, oldNameSpace, nameSpace));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE, oldNameSpace, nameSpace));
 			}
 		}
 		return nameSpace;
@@ -190,7 +193,7 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 		Namespace oldNameSpace = nameSpace;
 		nameSpace = newNameSpace;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_PUB__NAME_SPACE, oldNameSpace, nameSpace));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE, oldNameSpace, nameSpace));
 	}
 
 	/**
@@ -201,12 +204,12 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_PUB__TOPIC_REF:
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF:
 				if (resolve) return getTopicRef();
 				return basicGetTopicRef();
-			case ComponentInterfacePackage.REMAP_PUB__REMAP_NAME:
-				return getRemapName();
-			case ComponentInterfacePackage.REMAP_PUB__NAME_SPACE:
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_NAME:
+				return getTopicName();
+			case ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE:
 				if (resolve) return getNameSpace();
 				return basicGetNameSpace();
 		}
@@ -221,13 +224,13 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_PUB__TOPIC_REF:
-				setTopicRef((Publisher)newValue);
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF:
+				setTopicRef((ros.Subscriber)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_PUB__REMAP_NAME:
-				setRemapName((String)newValue);
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_NAME:
+				setTopicName((String)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_PUB__NAME_SPACE:
+			case ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE:
 				setNameSpace((Namespace)newValue);
 				return;
 		}
@@ -242,13 +245,13 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_PUB__TOPIC_REF:
-				setTopicRef((Publisher)null);
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF:
+				setTopicRef((ros.Subscriber)null);
 				return;
-			case ComponentInterfacePackage.REMAP_PUB__REMAP_NAME:
-				setRemapName(REMAP_NAME_EDEFAULT);
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_NAME:
+				setTopicName(TOPIC_NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.REMAP_PUB__NAME_SPACE:
+			case ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE:
 				setNameSpace((Namespace)null);
 				return;
 		}
@@ -263,11 +266,11 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_PUB__TOPIC_REF:
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_REF:
 				return topicRef != null;
-			case ComponentInterfacePackage.REMAP_PUB__REMAP_NAME:
-				return REMAP_NAME_EDEFAULT == null ? remapName != null : !REMAP_NAME_EDEFAULT.equals(remapName);
-			case ComponentInterfacePackage.REMAP_PUB__NAME_SPACE:
+			case ComponentInterfacePackage.SUBSCRIBER__TOPIC_NAME:
+				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
+			case ComponentInterfacePackage.SUBSCRIBER__NAME_SPACE:
 				return nameSpace != null;
 		}
 		return super.eIsSet(featureID);
@@ -283,10 +286,10 @@ public class RemapPubImpl extends MinimalEObjectImpl.Container implements RemapP
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (RemapName: ");
-		result.append(remapName);
+		result.append(" (TopicName: ");
+		result.append(topicName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RemapPubImpl
+} //SubscriberImpl

@@ -2,8 +2,9 @@
  */
 package rossystem;
 
-import componentInterface.RemapSrvCli;
-import componentInterface.RemapSrvServ;
+import componentInterface.ServiceClient;
+import componentInterface.ServiceServer;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,12 +34,12 @@ public interface ServiceConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(RemapSrvServ)
+	 * @see #setFrom(ServiceServer)
 	 * @see rossystem.RossystemPackage#getServiceConnection_From()
 	 * @model
 	 * @generated
 	 */
-	RemapSrvServ getFrom();
+	ServiceServer getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getFrom <em>From</em>}' reference.
@@ -48,7 +49,7 @@ public interface ServiceConnection extends EObject {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(RemapSrvServ value);
+	void setFrom(ServiceServer value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -59,12 +60,12 @@ public interface ServiceConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(RemapSrvCli)
+	 * @see #setTo(ServiceClient)
 	 * @see rossystem.RossystemPackage#getServiceConnection_To()
 	 * @model
 	 * @generated
 	 */
-	RemapSrvCli getTo();
+	ServiceClient getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getTo <em>To</em>}' reference.
@@ -74,6 +75,6 @@ public interface ServiceConnection extends EObject {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(RemapSrvCli value);
+	void setTo(ServiceClient value);
 
 } // ServiceConnection

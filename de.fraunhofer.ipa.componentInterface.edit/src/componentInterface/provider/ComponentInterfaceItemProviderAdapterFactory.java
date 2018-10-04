@@ -95,95 +95,95 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.RemapPub} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.Publisher} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapPubItemProvider remapPubItemProvider;
+	protected PublisherItemProvider publisherItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.RemapPub}.
+	 * This creates an adapter for a {@link componentInterface.Publisher}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRemapPubAdapter() {
-		if (remapPubItemProvider == null) {
-			remapPubItemProvider = new RemapPubItemProvider(this);
+	public Adapter createPublisherAdapter() {
+		if (publisherItemProvider == null) {
+			publisherItemProvider = new PublisherItemProvider(this);
 		}
 
-		return remapPubItemProvider;
+		return publisherItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.RemapSub} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.Subscriber} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapSubItemProvider remapSubItemProvider;
+	protected SubscriberItemProvider subscriberItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.RemapSub}.
+	 * This creates an adapter for a {@link componentInterface.Subscriber}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRemapSubAdapter() {
-		if (remapSubItemProvider == null) {
-			remapSubItemProvider = new RemapSubItemProvider(this);
+	public Adapter createSubscriberAdapter() {
+		if (subscriberItemProvider == null) {
+			subscriberItemProvider = new SubscriberItemProvider(this);
 		}
 
-		return remapSubItemProvider;
+		return subscriberItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.RemapSrvServ} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.ServiceServer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapSrvServItemProvider remapSrvServItemProvider;
+	protected ServiceServerItemProvider serviceServerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.RemapSrvServ}.
+	 * This creates an adapter for a {@link componentInterface.ServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRemapSrvServAdapter() {
-		if (remapSrvServItemProvider == null) {
-			remapSrvServItemProvider = new RemapSrvServItemProvider(this);
+	public Adapter createServiceServerAdapter() {
+		if (serviceServerItemProvider == null) {
+			serviceServerItemProvider = new ServiceServerItemProvider(this);
 		}
 
-		return remapSrvServItemProvider;
+		return serviceServerItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.RemapSrvCli} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.ServiceClient} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapSrvCliItemProvider remapSrvCliItemProvider;
+	protected ServiceClientItemProvider serviceClientItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.RemapSrvCli}.
+	 * This creates an adapter for a {@link componentInterface.ServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRemapSrvCliAdapter() {
-		if (remapSrvCliItemProvider == null) {
-			remapSrvCliItemProvider = new RemapSrvCliItemProvider(this);
+	public Adapter createServiceClientAdapter() {
+		if (serviceClientItemProvider == null) {
+			serviceClientItemProvider = new ServiceClientItemProvider(this);
 		}
 
-		return remapSrvCliItemProvider;
+		return serviceClientItemProvider;
 	}
 
 	/**
@@ -286,10 +286,10 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	 */
 	public void dispose() {
 		if (componentInterfaceItemProvider != null) componentInterfaceItemProvider.dispose();
-		if (remapPubItemProvider != null) remapPubItemProvider.dispose();
-		if (remapSubItemProvider != null) remapSubItemProvider.dispose();
-		if (remapSrvServItemProvider != null) remapSrvServItemProvider.dispose();
-		if (remapSrvCliItemProvider != null) remapSrvCliItemProvider.dispose();
+		if (publisherItemProvider != null) publisherItemProvider.dispose();
+		if (subscriberItemProvider != null) subscriberItemProvider.dispose();
+		if (serviceServerItemProvider != null) serviceServerItemProvider.dispose();
+		if (serviceClientItemProvider != null) serviceClientItemProvider.dispose();
 	}
 
 }

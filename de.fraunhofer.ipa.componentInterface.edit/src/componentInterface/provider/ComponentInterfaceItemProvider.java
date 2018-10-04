@@ -16,8 +16,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import ros.provider.NamespacedElementItemProvider;
 
 /**
@@ -26,8 +28,7 @@ import ros.provider.NamespacedElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentInterfaceItemProvider 
-	extends NamespacedElementItemProvider {
+public class ComponentInterfaceItemProvider extends NamespacedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -148,22 +149,22 @@ public class ComponentInterfaceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER,
-				 ComponentInterfaceFactory.eINSTANCE.createRemapPub()));
+				 ComponentInterfaceFactory.eINSTANCE.createPublisher()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER,
-				 ComponentInterfaceFactory.eINSTANCE.createRemapSub()));
+				 ComponentInterfaceFactory.eINSTANCE.createSubscriber()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_SERVER,
-				 ComponentInterfaceFactory.eINSTANCE.createRemapSrvServ()));
+				 ComponentInterfaceFactory.eINSTANCE.createServiceServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT,
-				 ComponentInterfaceFactory.eINSTANCE.createRemapSrvCli()));
+				 ComponentInterfaceFactory.eINSTANCE.createServiceClient()));
 	}
 
 	/**

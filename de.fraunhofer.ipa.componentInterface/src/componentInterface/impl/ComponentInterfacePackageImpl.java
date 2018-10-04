@@ -5,10 +5,10 @@ package componentInterface.impl;
 import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfaceFactory;
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapPub;
-import componentInterface.RemapSrvCli;
-import componentInterface.RemapSrvServ;
-import componentInterface.RemapSub;
+import componentInterface.Publisher;
+import componentInterface.ServiceClient;
+import componentInterface.ServiceServer;
+import componentInterface.Subscriber;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -38,28 +38,28 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass remapPubEClass = null;
+	private EClass publisherEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass remapSubEClass = null;
+	private EClass subscriberEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass remapSrvServEClass = null;
+	private EClass serviceServerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass remapSrvCliEClass = null;
+	private EClass serviceClientEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -175,8 +175,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemapPub() {
-		return remapPubEClass;
+	public EClass getPublisher() {
+		return publisherEClass;
 	}
 
 	/**
@@ -184,8 +184,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapPub_TopicRef() {
-		return (EReference)remapPubEClass.getEStructuralFeatures().get(0);
+	public EReference getPublisher_TopicRef() {
+		return (EReference)publisherEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -193,8 +193,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemapPub_RemapName() {
-		return (EAttribute)remapPubEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPublisher_TopicName() {
+		return (EAttribute)publisherEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -202,8 +202,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapPub_NameSpace() {
-		return (EReference)remapPubEClass.getEStructuralFeatures().get(2);
+	public EReference getPublisher_NameSpace() {
+		return (EReference)publisherEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemapSub() {
-		return remapSubEClass;
+	public EClass getSubscriber() {
+		return subscriberEClass;
 	}
 
 	/**
@@ -220,8 +220,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSub_TopicRef() {
-		return (EReference)remapSubEClass.getEStructuralFeatures().get(0);
+	public EReference getSubscriber_TopicRef() {
+		return (EReference)subscriberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -229,8 +229,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemapSub_RemapName() {
-		return (EAttribute)remapSubEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSubscriber_TopicName() {
+		return (EAttribute)subscriberEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -238,8 +238,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSub_NameSpace() {
-		return (EReference)remapSubEClass.getEStructuralFeatures().get(2);
+	public EReference getSubscriber_NameSpace() {
+		return (EReference)subscriberEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -247,8 +247,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemapSrvServ() {
-		return remapSrvServEClass;
+	public EClass getServiceServer() {
+		return serviceServerEClass;
 	}
 
 	/**
@@ -256,8 +256,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSrvServ_SrvRef() {
-		return (EReference)remapSrvServEClass.getEStructuralFeatures().get(0);
+	public EReference getServiceServer_SrvRef() {
+		return (EReference)serviceServerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -265,8 +265,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemapSrvServ_RemapName() {
-		return (EAttribute)remapSrvServEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceServer_ServiceName() {
+		return (EAttribute)serviceServerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -274,8 +274,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSrvServ_NameSpace() {
-		return (EReference)remapSrvServEClass.getEStructuralFeatures().get(2);
+	public EReference getServiceServer_NameSpace() {
+		return (EReference)serviceServerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -283,8 +283,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemapSrvCli() {
-		return remapSrvCliEClass;
+	public EClass getServiceClient() {
+		return serviceClientEClass;
 	}
 
 	/**
@@ -292,8 +292,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSrvCli_SrvRef() {
-		return (EReference)remapSrvCliEClass.getEStructuralFeatures().get(0);
+	public EReference getServiceClient_SrvRef() {
+		return (EReference)serviceClientEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -301,8 +301,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemapSrvCli_RemapName() {
-		return (EAttribute)remapSrvCliEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceClient_ServiceName() {
+		return (EAttribute)serviceClientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -310,8 +310,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRemapSrvCli_NameSpace() {
-		return (EReference)remapSrvCliEClass.getEStructuralFeatures().get(2);
+	public EReference getServiceClient_NameSpace() {
+		return (EReference)serviceClientEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -348,25 +348,25 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROS_SERVICE_SERVER);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROS_SERVICE_CLIENT);
 
-		remapPubEClass = createEClass(REMAP_PUB);
-		createEReference(remapPubEClass, REMAP_PUB__TOPIC_REF);
-		createEAttribute(remapPubEClass, REMAP_PUB__REMAP_NAME);
-		createEReference(remapPubEClass, REMAP_PUB__NAME_SPACE);
+		publisherEClass = createEClass(PUBLISHER);
+		createEReference(publisherEClass, PUBLISHER__TOPIC_REF);
+		createEAttribute(publisherEClass, PUBLISHER__TOPIC_NAME);
+		createEReference(publisherEClass, PUBLISHER__NAME_SPACE);
 
-		remapSubEClass = createEClass(REMAP_SUB);
-		createEReference(remapSubEClass, REMAP_SUB__TOPIC_REF);
-		createEAttribute(remapSubEClass, REMAP_SUB__REMAP_NAME);
-		createEReference(remapSubEClass, REMAP_SUB__NAME_SPACE);
+		subscriberEClass = createEClass(SUBSCRIBER);
+		createEReference(subscriberEClass, SUBSCRIBER__TOPIC_REF);
+		createEAttribute(subscriberEClass, SUBSCRIBER__TOPIC_NAME);
+		createEReference(subscriberEClass, SUBSCRIBER__NAME_SPACE);
 
-		remapSrvServEClass = createEClass(REMAP_SRV_SERV);
-		createEReference(remapSrvServEClass, REMAP_SRV_SERV__SRV_REF);
-		createEAttribute(remapSrvServEClass, REMAP_SRV_SERV__REMAP_NAME);
-		createEReference(remapSrvServEClass, REMAP_SRV_SERV__NAME_SPACE);
+		serviceServerEClass = createEClass(SERVICE_SERVER);
+		createEReference(serviceServerEClass, SERVICE_SERVER__SRV_REF);
+		createEAttribute(serviceServerEClass, SERVICE_SERVER__SERVICE_NAME);
+		createEReference(serviceServerEClass, SERVICE_SERVER__NAME_SPACE);
 
-		remapSrvCliEClass = createEClass(REMAP_SRV_CLI);
-		createEReference(remapSrvCliEClass, REMAP_SRV_CLI__SRV_REF);
-		createEAttribute(remapSrvCliEClass, REMAP_SRV_CLI__REMAP_NAME);
-		createEReference(remapSrvCliEClass, REMAP_SRV_CLI__NAME_SPACE);
+		serviceClientEClass = createEClass(SERVICE_CLIENT);
+		createEReference(serviceClientEClass, SERVICE_CLIENT__SRV_REF);
+		createEAttribute(serviceClientEClass, SERVICE_CLIENT__SERVICE_NAME);
+		createEReference(serviceClientEClass, SERVICE_CLIENT__NAME_SPACE);
 	}
 
 	/**
@@ -404,30 +404,30 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentInterfaceEClass, ComponentInterface.class, "ComponentInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInterface_RosTopicPublisher(), this.getRemapPub(), null, "RosTopicPublisher", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInterface_RosTopicSubscriber(), this.getRemapSub(), null, "RosTopicSubscriber", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInterface_RosServiceServer(), this.getRemapSrvServ(), null, "RosServiceServer", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInterface_RosServiceClient(), this.getRemapSrvCli(), null, "RosServiceClient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_RosTopicPublisher(), this.getPublisher(), null, "RosTopicPublisher", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_RosTopicSubscriber(), this.getSubscriber(), null, "RosTopicSubscriber", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_RosServiceServer(), this.getServiceServer(), null, "RosServiceServer", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_RosServiceClient(), this.getServiceClient(), null, "RosServiceClient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(remapPubEClass, RemapPub.class, "RemapPub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemapPub_TopicRef(), theRosPackage.getPublisher(), null, "TopicRef", null, 0, 1, RemapPub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRemapPub_RemapName(), ecorePackage.getEString(), "RemapName", null, 0, 1, RemapPub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemapPub_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RemapPub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPublisher_TopicRef(), theRosPackage.getPublisher(), null, "TopicRef", null, 0, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPublisher_TopicName(), ecorePackage.getEString(), "TopicName", null, 0, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPublisher_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(remapSubEClass, RemapSub.class, "RemapSub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemapSub_TopicRef(), theRosPackage.getSubscriber(), null, "TopicRef", null, 0, 1, RemapSub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRemapSub_RemapName(), ecorePackage.getEString(), "RemapName", null, 0, 1, RemapSub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemapSub_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RemapSub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(subscriberEClass, Subscriber.class, "Subscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubscriber_TopicRef(), theRosPackage.getSubscriber(), null, "TopicRef", null, 0, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSubscriber_TopicName(), ecorePackage.getEString(), "TopicName", null, 0, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriber_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(remapSrvServEClass, RemapSrvServ.class, "RemapSrvServ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemapSrvServ_SrvRef(), theRosPackage.getServiceServer(), null, "SrvRef", null, 0, 1, RemapSrvServ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRemapSrvServ_RemapName(), ecorePackage.getEString(), "RemapName", null, 0, 1, RemapSrvServ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemapSrvServ_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RemapSrvServ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceServerEClass, ServiceServer.class, "ServiceServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceServer_SrvRef(), theRosPackage.getServiceServer(), null, "SrvRef", null, 0, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceServer_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 0, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceServer_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(remapSrvCliEClass, RemapSrvCli.class, "RemapSrvCli", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemapSrvCli_SrvRef(), theRosPackage.getServiceClient(), null, "SrvRef", null, 0, 1, RemapSrvCli.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRemapSrvCli_RemapName(), ecorePackage.getEString(), "RemapName", null, 0, 1, RemapSrvCli.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemapSrvCli_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RemapSrvCli.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceClientEClass, ServiceClient.class, "ServiceClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceClient_SrvRef(), theRosPackage.getServiceClient(), null, "SrvRef", null, 0, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceClient_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 0, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceClient_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -57,10 +57,10 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ComponentInterfacePackage.COMPONENT_INTERFACE: return createComponentInterface();
-			case ComponentInterfacePackage.REMAP_PUB: return createRemapPub();
-			case ComponentInterfacePackage.REMAP_SUB: return createRemapSub();
-			case ComponentInterfacePackage.REMAP_SRV_SERV: return createRemapSrvServ();
-			case ComponentInterfacePackage.REMAP_SRV_CLI: return createRemapSrvCli();
+			case ComponentInterfacePackage.PUBLISHER: return createPublisher();
+			case ComponentInterfacePackage.SUBSCRIBER: return createSubscriber();
+			case ComponentInterfacePackage.SERVICE_SERVER: return createServiceServer();
+			case ComponentInterfacePackage.SERVICE_CLIENT: return createServiceClient();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,9 +81,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapPub createRemapPub() {
-		RemapPubImpl remapPub = new RemapPubImpl();
-		return remapPub;
+	public Publisher createPublisher() {
+		PublisherImpl publisher = new PublisherImpl();
+		return publisher;
 	}
 
 	/**
@@ -91,9 +91,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSub createRemapSub() {
-		RemapSubImpl remapSub = new RemapSubImpl();
-		return remapSub;
+	public Subscriber createSubscriber() {
+		SubscriberImpl subscriber = new SubscriberImpl();
+		return subscriber;
 	}
 
 	/**
@@ -101,9 +101,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSrvServ createRemapSrvServ() {
-		RemapSrvServImpl remapSrvServ = new RemapSrvServImpl();
-		return remapSrvServ;
+	public ServiceServer createServiceServer() {
+		ServiceServerImpl serviceServer = new ServiceServerImpl();
+		return serviceServer;
 	}
 
 	/**
@@ -111,9 +111,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSrvCli createRemapSrvCli() {
-		RemapSrvCliImpl remapSrvCli = new RemapSrvCliImpl();
-		return remapSrvCli;
+	public ServiceClient createServiceClient() {
+		ServiceClientImpl serviceClient = new ServiceClientImpl();
+		return serviceClient;
 	}
 
 	/**

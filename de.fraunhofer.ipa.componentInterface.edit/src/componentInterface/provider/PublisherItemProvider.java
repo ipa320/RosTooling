@@ -4,7 +4,7 @@ package componentInterface.provider;
 
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapPub;
+import componentInterface.Publisher;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link componentInterface.RemapPub} object.
+ * This is the item provider adapter for a {@link componentInterface.Publisher} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemapPubItemProvider 
+public class PublisherItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class RemapPubItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapPubItemProvider(AdapterFactory adapterFactory) {
+	public PublisherItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,7 @@ public class RemapPubItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTopicRefPropertyDescriptor(object);
-			addRemapNamePropertyDescriptor(object);
+			addTopicNamePropertyDescriptor(object);
 			addNameSpacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -78,9 +78,9 @@ public class RemapPubItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapPub_TopicRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapPub_TopicRef_feature", "_UI_RemapPub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_PUB__TOPIC_REF,
+				 getString("_UI_Publisher_TopicRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Publisher_TopicRef_feature", "_UI_Publisher_type"),
+				 ComponentInterfacePackage.Literals.PUBLISHER__TOPIC_REF,
 				 true,
 				 false,
 				 true,
@@ -90,19 +90,19 @@ public class RemapPubItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remap Name feature.
+	 * This adds a property descriptor for the Topic Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRemapNamePropertyDescriptor(Object object) {
+	protected void addTopicNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapPub_RemapName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapPub_RemapName_feature", "_UI_RemapPub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_PUB__REMAP_NAME,
+				 getString("_UI_Publisher_TopicName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Publisher_TopicName_feature", "_UI_Publisher_type"),
+				 ComponentInterfacePackage.Literals.PUBLISHER__TOPIC_NAME,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class RemapPubItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapPub_NameSpace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapPub_NameSpace_feature", "_UI_RemapPub_type"),
-				 ComponentInterfacePackage.Literals.REMAP_PUB__NAME_SPACE,
+				 getString("_UI_Publisher_NameSpace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Publisher_NameSpace_feature", "_UI_Publisher_type"),
+				 ComponentInterfacePackage.Literals.PUBLISHER__NAME_SPACE,
 				 true,
 				 false,
 				 true,
@@ -134,14 +134,14 @@ public class RemapPubItemProvider
 	}
 
 	/**
-	 * This returns RemapPub.gif.
+	 * This returns Publisher.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RemapPub"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Publisher"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class RemapPubItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RemapPub)object).getRemapName();
+		String label = ((Publisher)object).getTopicName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RemapPub_type") :
-			getString("_UI_RemapPub_type") + " " + label;
+			getString("_UI_Publisher_type") :
+			getString("_UI_Publisher_type") + " " + label;
 	}
 	
 
@@ -170,8 +170,8 @@ public class RemapPubItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RemapPub.class)) {
-			case ComponentInterfacePackage.REMAP_PUB__REMAP_NAME:
+		switch (notification.getFeatureID(Publisher.class)) {
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

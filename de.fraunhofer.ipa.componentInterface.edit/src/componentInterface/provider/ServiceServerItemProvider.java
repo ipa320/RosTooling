@@ -4,7 +4,7 @@ package componentInterface.provider;
 
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapSrvCli;
+import componentInterface.ServiceServer;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link componentInterface.RemapSrvCli} object.
+ * This is the item provider adapter for a {@link componentInterface.ServiceServer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemapSrvCliItemProvider 
+public class ServiceServerItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class RemapSrvCliItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemapSrvCliItemProvider(AdapterFactory adapterFactory) {
+	public ServiceServerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,7 @@ public class RemapSrvCliItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSrvRefPropertyDescriptor(object);
-			addRemapNamePropertyDescriptor(object);
+			addServiceNamePropertyDescriptor(object);
 			addNameSpacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -78,9 +78,9 @@ public class RemapSrvCliItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSrvCli_SrvRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSrvCli_SrvRef_feature", "_UI_RemapSrvCli_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SRV_CLI__SRV_REF,
+				 getString("_UI_ServiceServer_SrvRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceServer_SrvRef_feature", "_UI_ServiceServer_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_SERVER__SRV_REF,
 				 true,
 				 false,
 				 true,
@@ -90,19 +90,19 @@ public class RemapSrvCliItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remap Name feature.
+	 * This adds a property descriptor for the Service Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRemapNamePropertyDescriptor(Object object) {
+	protected void addServiceNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSrvCli_RemapName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSrvCli_RemapName_feature", "_UI_RemapSrvCli_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SRV_CLI__REMAP_NAME,
+				 getString("_UI_ServiceServer_ServiceName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceServer_ServiceName_feature", "_UI_ServiceServer_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_SERVER__SERVICE_NAME,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class RemapSrvCliItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemapSrvCli_NameSpace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemapSrvCli_NameSpace_feature", "_UI_RemapSrvCli_type"),
-				 ComponentInterfacePackage.Literals.REMAP_SRV_CLI__NAME_SPACE,
+				 getString("_UI_ServiceServer_NameSpace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceServer_NameSpace_feature", "_UI_ServiceServer_type"),
+				 ComponentInterfacePackage.Literals.SERVICE_SERVER__NAME_SPACE,
 				 true,
 				 false,
 				 true,
@@ -134,14 +134,14 @@ public class RemapSrvCliItemProvider
 	}
 
 	/**
-	 * This returns RemapSrvCli.gif.
+	 * This returns ServiceServer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RemapSrvCli"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceServer"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class RemapSrvCliItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RemapSrvCli)object).getRemapName();
+		String label = ((ServiceServer)object).getServiceName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RemapSrvCli_type") :
-			getString("_UI_RemapSrvCli_type") + " " + label;
+			getString("_UI_ServiceServer_type") :
+			getString("_UI_ServiceServer_type") + " " + label;
 	}
 	
 
@@ -170,8 +170,8 @@ public class RemapSrvCliItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RemapSrvCli.class)) {
-			case ComponentInterfacePackage.REMAP_SRV_CLI__REMAP_NAME:
+		switch (notification.getFeatureID(ServiceServer.class)) {
+			case ComponentInterfacePackage.SERVICE_SERVER__SERVICE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

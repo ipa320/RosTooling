@@ -3,6 +3,7 @@
 package componentInterface;
 
 import org.eclipse.emf.common.util.EList;
+
 import ros.NamespacedElement;
 
 /**
@@ -27,7 +28,7 @@ import ros.NamespacedElement;
 public interface ComponentInterface extends NamespacedElement {
 	/**
 	 * Returns the value of the '<em><b>Ros Topic Publisher</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.RemapPub}.
+	 * The list contents are of type {@link componentInterface.Publisher}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Topic Publisher</em>' containment reference list isn't clear,
@@ -39,11 +40,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<RemapPub> getRosTopicPublisher();
+	EList<Publisher> getRosTopicPublisher();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Topic Subscriber</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.RemapSub}.
+	 * The list contents are of type {@link componentInterface.Subscriber}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Topic Subscriber</em>' containment reference list isn't clear,
@@ -55,11 +56,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<RemapSub> getRosTopicSubscriber();
+	EList<Subscriber> getRosTopicSubscriber();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Service Server</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.RemapSrvServ}.
+	 * The list contents are of type {@link componentInterface.ServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Service Server</em>' containment reference list isn't clear,
@@ -71,11 +72,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<RemapSrvServ> getRosServiceServer();
+	EList<ServiceServer> getRosServiceServer();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Service Client</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.RemapSrvCli}.
+	 * The list contents are of type {@link componentInterface.ServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Service Client</em>' containment reference list isn't clear,
@@ -87,6 +88,6 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<RemapSrvCli> getRosServiceClient();
+	EList<ServiceClient> getRosServiceClient();
 
 } // ComponentInterface

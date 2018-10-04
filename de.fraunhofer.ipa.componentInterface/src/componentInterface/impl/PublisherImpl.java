@@ -3,7 +3,7 @@
 package componentInterface.impl;
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RemapSrvServ;
+import componentInterface.Publisher;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,53 +14,52 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.Namespace;
-import ros.ServiceServer;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Remap Srv Serv</b></em>'.
+ * An implementation of the model object '<em><b>Publisher</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RemapSrvServImpl#getSrvRef <em>Srv Ref</em>}</li>
- *   <li>{@link componentInterface.impl.RemapSrvServImpl#getRemapName <em>Remap Name</em>}</li>
- *   <li>{@link componentInterface.impl.RemapSrvServImpl#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.impl.PublisherImpl#getTopicRef <em>Topic Ref</em>}</li>
+ *   <li>{@link componentInterface.impl.PublisherImpl#getTopicName <em>Topic Name</em>}</li>
+ *   <li>{@link componentInterface.impl.PublisherImpl#getNameSpace <em>Name Space</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements RemapSrvServ {
+public class PublisherImpl extends MinimalEObjectImpl.Container implements Publisher {
 	/**
-	 * The cached value of the '{@link #getSrvRef() <em>Srv Ref</em>}' reference.
+	 * The cached value of the '{@link #getTopicRef() <em>Topic Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSrvRef()
+	 * @see #getTopicRef()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceServer srvRef;
+	protected ros.Publisher topicRef;
 
 	/**
-	 * The default value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getTopicName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REMAP_NAME_EDEFAULT = null;
+	protected static final String TOPIC_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRemapName() <em>Remap Name</em>}' attribute.
+	 * The cached value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemapName()
+	 * @see #getTopicName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String remapName = REMAP_NAME_EDEFAULT;
+	protected String topicName = TOPIC_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' reference.
@@ -77,7 +76,7 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RemapSrvServImpl() {
+	protected PublisherImpl() {
 		super();
 	}
 
@@ -88,7 +87,7 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentInterfacePackage.Literals.REMAP_SRV_SERV;
+		return ComponentInterfacePackage.Literals.PUBLISHER;
 	}
 
 	/**
@@ -96,16 +95,16 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceServer getSrvRef() {
-		if (srvRef != null && srvRef.eIsProxy()) {
-			InternalEObject oldSrvRef = (InternalEObject)srvRef;
-			srvRef = (ServiceServer)eResolveProxy(oldSrvRef);
-			if (srvRef != oldSrvRef) {
+	public ros.Publisher getTopicRef() {
+		if (topicRef != null && topicRef.eIsProxy()) {
+			InternalEObject oldTopicRef = (InternalEObject)topicRef;
+			topicRef = (ros.Publisher)eResolveProxy(oldTopicRef);
+			if (topicRef != oldTopicRef) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF, oldSrvRef, srvRef));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.PUBLISHER__TOPIC_REF, oldTopicRef, topicRef));
 			}
 		}
-		return srvRef;
+		return topicRef;
 	}
 
 	/**
@@ -113,8 +112,8 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceServer basicGetSrvRef() {
-		return srvRef;
+	public ros.Publisher basicGetTopicRef() {
+		return topicRef;
 	}
 
 	/**
@@ -122,11 +121,11 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSrvRef(ServiceServer newSrvRef) {
-		ServiceServer oldSrvRef = srvRef;
-		srvRef = newSrvRef;
+	public void setTopicRef(ros.Publisher newTopicRef) {
+		ros.Publisher oldTopicRef = topicRef;
+		topicRef = newTopicRef;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF, oldSrvRef, srvRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.PUBLISHER__TOPIC_REF, oldTopicRef, topicRef));
 	}
 
 	/**
@@ -134,24 +133,30 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getRemapName() {
-		if (getNameSpace().getParts() != null) {
-			return String.format("%s/%s", getNameSpace().getParts().get(0), getSrvRef().getName());	
+	public String getTopicName() {
+		if (topicName.isEmpty()) {
+			if (nameSpace != null) {
+				return String.format("%s/%s", nameSpace.getParts().get(0), topicRef.getName());	
+			}else if (topicRef != null) {
+				return topicRef.getName();
+			} else
+				return topicName;
 		}else {
-			return getSrvRef().getName();
+			return topicName;
 		}
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRemapName(String newRemapName) {
-		String oldRemapName = remapName;
-		remapName = newRemapName;
+	public void setTopicName(String newTopicName) {
+		String oldTopicName = topicName;
+		topicName = newTopicName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_SERV__REMAP_NAME, oldRemapName, remapName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.PUBLISHER__TOPIC_NAME, oldTopicName, topicName));
 	}
 
 	/**
@@ -165,7 +170,7 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 			nameSpace = (Namespace)eResolveProxy(oldNameSpace);
 			if (nameSpace != oldNameSpace) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE, oldNameSpace, nameSpace));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.PUBLISHER__NAME_SPACE, oldNameSpace, nameSpace));
 			}
 		}
 		return nameSpace;
@@ -189,7 +194,7 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 		Namespace oldNameSpace = nameSpace;
 		nameSpace = newNameSpace;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE, oldNameSpace, nameSpace));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.PUBLISHER__NAME_SPACE, oldNameSpace, nameSpace));
 	}
 
 	/**
@@ -200,12 +205,12 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF:
-				if (resolve) return getSrvRef();
-				return basicGetSrvRef();
-			case ComponentInterfacePackage.REMAP_SRV_SERV__REMAP_NAME:
-				return getRemapName();
-			case ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE:
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_REF:
+				if (resolve) return getTopicRef();
+				return basicGetTopicRef();
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_NAME:
+				return getTopicName();
+			case ComponentInterfacePackage.PUBLISHER__NAME_SPACE:
 				if (resolve) return getNameSpace();
 				return basicGetNameSpace();
 		}
@@ -220,13 +225,13 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF:
-				setSrvRef((ServiceServer)newValue);
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_REF:
+				setTopicRef((ros.Publisher)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_SERV__REMAP_NAME:
-				setRemapName((String)newValue);
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_NAME:
+				setTopicName((String)newValue);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE:
+			case ComponentInterfacePackage.PUBLISHER__NAME_SPACE:
 				setNameSpace((Namespace)newValue);
 				return;
 		}
@@ -241,13 +246,13 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF:
-				setSrvRef((ServiceServer)null);
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_REF:
+				setTopicRef((ros.Publisher)null);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_SERV__REMAP_NAME:
-				setRemapName(REMAP_NAME_EDEFAULT);
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_NAME:
+				setTopicName(TOPIC_NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE:
+			case ComponentInterfacePackage.PUBLISHER__NAME_SPACE:
 				setNameSpace((Namespace)null);
 				return;
 		}
@@ -262,11 +267,11 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.REMAP_SRV_SERV__SRV_REF:
-				return srvRef != null;
-			case ComponentInterfacePackage.REMAP_SRV_SERV__REMAP_NAME:
-				return REMAP_NAME_EDEFAULT == null ? remapName != null : !REMAP_NAME_EDEFAULT.equals(remapName);
-			case ComponentInterfacePackage.REMAP_SRV_SERV__NAME_SPACE:
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_REF:
+				return topicRef != null;
+			case ComponentInterfacePackage.PUBLISHER__TOPIC_NAME:
+				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
+			case ComponentInterfacePackage.PUBLISHER__NAME_SPACE:
 				return nameSpace != null;
 		}
 		return super.eIsSet(featureID);
@@ -282,10 +287,10 @@ public class RemapSrvServImpl extends MinimalEObjectImpl.Container implements Re
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (RemapName: ");
-		result.append(remapName);
+		result.append(" (TopicName: ");
+		result.append(topicName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RemapSrvServImpl
+} //PublisherImpl
