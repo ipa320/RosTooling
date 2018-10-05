@@ -134,13 +134,16 @@ public class PublisherImpl extends MinimalEObjectImpl.Container implements Publi
 	 * @generated NOT
 	 */
 	public String getTopicName() {
-		if (topicName.isEmpty()) {
-			if (nameSpace != null) {
-				return String.format("%s/%s", nameSpace.getParts().get(0), topicRef.getName());	
-			}else if (topicRef != null) {
-				return topicRef.getName();
-			} else
+		if (topicName!=null) {
+			if (topicName.length()>0) {
 				return topicName;
+			}if (nameSpace != null && topicRef != null) {
+				return String.format("/%s/%s", nameSpace.getParts().get(0).replaceFirst("/",""), topicRef.getName().replaceFirst("/",""));	
+			}else if (topicRef != null) {
+				return String.format("/%s", topicRef.getName().replaceFirst("/",""));	
+			}else {
+				return topicName;
+			}
 		}else {
 			return topicName;
 		}

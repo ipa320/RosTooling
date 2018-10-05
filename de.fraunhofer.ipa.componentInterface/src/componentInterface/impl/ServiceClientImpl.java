@@ -134,13 +134,16 @@ public class ServiceClientImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated NOT
 	 */
 	public String getServiceName() {
-		if (serviceName.isEmpty()) {
-			if (nameSpace != null) {
-				return String.format("%s/%s", nameSpace.getParts().get(0), srvRef.getName());	
-			}else if (srvRef != null) {
-				return srvRef.getName();
-			} else
+		if (serviceName!=null) {
+			if (serviceName.length()>0) {
 				return serviceName;
+			}if (nameSpace != null && srvRef != null) {
+				return String.format("/%s/%s", nameSpace.getParts().get(0).replaceFirst("/",""), srvRef.getName().replaceFirst("/",""));	
+			}else if (srvRef != null) {
+				return String.format("/%s", srvRef.getName().replaceFirst("/",""));	
+			}else {
+				return serviceName;
+			}
 		}else {
 			return serviceName;
 		}
