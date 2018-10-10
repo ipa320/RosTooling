@@ -6,39 +6,45 @@
       <defaultLayer name="Default">
         <containerMappings name="Node" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Node">
           <borderedNodeMappings name="RosPublisher" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Publisher">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/output_right.png">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="RosSubscriber" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Subscriber">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/input_left.png">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>EAST</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="RosServiceServer" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ServiceServer">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/outprov_right.png">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="RosServiceClient" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ServiceClient">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/inprov_left.png">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>EAST</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
           <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" domainClass="ros::Parameter">
@@ -67,7 +73,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS publisher topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosPublisher']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/output_right.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS publisher topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosPublisher']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -78,7 +84,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS subscriber topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosSubscriber']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/input_left.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS subscriber topic" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosSubscriber']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -89,7 +95,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceServer']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/outprov_right.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceServer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -100,7 +106,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service client" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceClient']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/inprov_left.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS service client" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosServiceClient']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -147,7 +153,7 @@
           </style>
         </nodeMappings>
         <edgeMappings name="TopicConnection" preconditionExpression="[target.TopicName.equalsIgnoreCase(source.TopicName) and target.TopicRef.message.name.equalsIgnoreCase(source.TopicRef.message.name)/]" semanticElements="feature:eContainer" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:To" sourceFinderExpression="feature:From" domainClass="rossystem::TopicConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditTopicConnections']" pathNodeMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher'] //@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="2" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -164,7 +170,7 @@
         </edgeMappings>
         <containerMappings name="ComponentInterface" semanticCandidatesExpression="feature:RosComponent" domainClass="componentInterface::ComponentInterface">
           <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:RosTopicPublisher" domainClass="componentInterface::Publisher">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -174,7 +180,7 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="feature:RosTopicSubscriber" domainClass="componentInterface::Subscriber">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
@@ -184,7 +190,7 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:RosServiceServer" domainClass="componentInterface::ServiceServer">
-            <style xsi:type="style:DotDescription" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -194,7 +200,7 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:RosServiceClient" domainClass="componentInterface::ServiceClient">
-            <style xsi:type="style:DotDescription" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
@@ -203,11 +209,13 @@
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" tooltipExpression="feature:namespace">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
         <toolSections name="Tools">
