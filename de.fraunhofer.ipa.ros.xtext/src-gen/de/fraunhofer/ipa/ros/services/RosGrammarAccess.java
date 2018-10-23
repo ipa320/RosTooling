@@ -879,7 +879,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cServiceserverKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
@@ -955,7 +955,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Node:
 		//	'Node'
 		//	'{'
-		//	'name' name=GraphName ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
+		//	'name' name=EString ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
 		//	('publisher' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? ('subscriber' '{' subscriber+=Subscriber (","
 		//	subscriber+=Subscriber)* '}')? ('serviceclient' '{' serviceclient+=ServiceClient ("," serviceclient+=ServiceClient)*
 		//	'}')? ('actionserver' '{' actionserver+=ActionServer ("," actionserver+=ActionServer)* '}')? ('actionclient' '{'
@@ -964,7 +964,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Node' '{' 'name' name=GraphName ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)*
+		//'Node' '{' 'name' name=EString ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)*
 		//'}')? ('publisher' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? ('subscriber' '{' subscriber+=Subscriber
 		//("," subscriber+=Subscriber)* '}')? ('serviceclient' '{' serviceclient+=ServiceClient (","
 		//serviceclient+=ServiceClient)* '}')? ('actionserver' '{' actionserver+=ActionServer ("," actionserver+=ActionServer)*
@@ -981,11 +981,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
 		public Group getGroup_4() { return cGroup_4; }
@@ -1207,7 +1207,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cServiceKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cServiceAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cServiceServiceSpecCrossReference_5_0 = (CrossReference)cServiceAssignment_5.eContents().get(0);
@@ -1221,12 +1221,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ServiceServer:
 		//	'ServiceServer'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceServer' '{' 'name' name=GraphName 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ServiceServer' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceServer'
@@ -1238,11 +1238,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'service'
 		public Keyword getServiceKeyword_4() { return cServiceKeyword_4; }
@@ -1278,7 +1278,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cMessageKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cMessageTopicSpecCrossReference_5_0 = (CrossReference)cMessageAssignment_5.eContents().get(0);
@@ -1292,12 +1292,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Publisher:
 		//	'Publisher'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Publisher' '{' 'name' name=GraphName 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Publisher' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Publisher'
@@ -1309,11 +1309,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'message'
 		public Keyword getMessageKeyword_4() { return cMessageKeyword_4; }
@@ -1349,7 +1349,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cMessageKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cMessageTopicSpecCrossReference_5_0 = (CrossReference)cMessageAssignment_5.eContents().get(0);
@@ -1363,12 +1363,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Subscriber:
 		//	'Subscriber'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Subscriber' '{' 'name' name=GraphName 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Subscriber' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Subscriber'
@@ -1380,11 +1380,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'message'
 		public Keyword getMessageKeyword_4() { return cMessageKeyword_4; }
@@ -1420,7 +1420,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cServiceKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cServiceAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cServiceServiceSpecCrossReference_5_0 = (CrossReference)cServiceAssignment_5.eContents().get(0);
@@ -1434,12 +1434,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ServiceClient:
 		//	'ServiceClient'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceClient' '{' 'name' name=GraphName 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ServiceClient' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceClient'
@@ -1451,11 +1451,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'service'
 		public Keyword getServiceKeyword_4() { return cServiceKeyword_4; }
@@ -1491,7 +1491,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cActionKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cActionActionSpecCrossReference_5_0 = (CrossReference)cActionAssignment_5.eContents().get(0);
@@ -1505,12 +1505,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionServer:
 		//	'ActionServer'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionServer' '{' 'name' name=GraphName 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionServer' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionServer'
@@ -1522,11 +1522,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'action'
 		public Keyword getActionKeyword_4() { return cActionKeyword_4; }
@@ -1562,7 +1562,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cActionKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cActionActionSpecCrossReference_5_0 = (CrossReference)cActionAssignment_5.eContents().get(0);
@@ -1576,12 +1576,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionClient:
 		//	'ActionClient'
 		//	'{'
-		//	'name' name=GraphName
+		//	'name' name=EString
 		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionClient' '{' 'name' name=GraphName 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionClient' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionClient'
@@ -1593,11 +1593,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'action'
 		public Keyword getActionKeyword_4() { return cActionKeyword_4; }
@@ -1644,7 +1644,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameGraphNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cNamespaceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNamespaceAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -1657,12 +1657,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Parameter:
 		//	'Parameter'
 		//	'{'
-		//	'name' name=GraphName ('namespace' namespace=Namespace)?
+		//	'name' name=EString ('namespace' namespace=Namespace)?
 		//	'type' type=ParameterType
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Parameter' '{' 'name' name=GraphName ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
+		//'Parameter' '{' 'name' name=EString ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Parameter'
@@ -1674,11 +1674,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=GraphName
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//GraphName
-		public RuleCall getNameGraphNameParserRuleCall_3_0() { return cNameGraphNameParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//('namespace' namespace=Namespace)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -3439,7 +3439,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//Node:
 	//	'Node'
 	//	'{'
-	//	'name' name=GraphName ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
+	//	'name' name=EString ('serviceserver' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
 	//	('publisher' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? ('subscriber' '{' subscriber+=Subscriber (","
 	//	subscriber+=Subscriber)* '}')? ('serviceclient' '{' serviceclient+=ServiceClient ("," serviceclient+=ServiceClient)*
 	//	'}')? ('actionserver' '{' actionserver+=ActionServer ("," actionserver+=ActionServer)* '}')? ('actionclient' '{'
@@ -3457,7 +3457,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//ServiceServer:
 	//	'ServiceServer'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ServiceServerElements getServiceServerAccess() {
@@ -3471,7 +3471,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//Publisher:
 	//	'Publisher'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public PublisherElements getPublisherAccess() {
@@ -3485,7 +3485,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//Subscriber:
 	//	'Subscriber'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public SubscriberElements getSubscriberAccess() {
@@ -3499,7 +3499,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//ServiceClient:
 	//	'ServiceClient'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ServiceClientElements getServiceClientAccess() {
@@ -3513,7 +3513,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//ActionServer:
 	//	'ActionServer'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ActionServerElements getActionServerAccess() {
@@ -3527,7 +3527,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//ActionClient:
 	//	'ActionClient'
 	//	'{'
-	//	'name' name=GraphName
+	//	'name' name=EString
 	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
 	//	'}';
 	public ActionClientElements getActionClientAccess() {
@@ -3551,7 +3551,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//Parameter:
 	//	'Parameter'
 	//	'{'
-	//	'name' name=GraphName ('namespace' namespace=Namespace)?
+	//	'name' name=EString ('namespace' namespace=Namespace)?
 	//	'type' type=ParameterType
 	//	'}';
 	public ParameterElements getParameterAccess() {

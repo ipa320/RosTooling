@@ -44,7 +44,7 @@ class RosArtifactGenerator extends AbstractGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resourcepath = resource.URI.toString();
-		if (! resourcepath.contains("/ros-input")) {
+		if (! resourcepath.contains("/ros-input") || ! resourcepath.contains("/rosnodes")) {
 			for (node : resource.allContents.toIterable.filter(Node)){
 				fsa.generateFile(node.getName()+".cpp",CustomOutputProvider::ROS_CONFIGURATION,node.compile)
 				}

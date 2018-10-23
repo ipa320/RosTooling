@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <componentInterface:ComponentInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentInterface="http://www.example.org/componentInterface" name="diagnotics_aggregator">
   <RosTopicPublisher TopicName="/diagnostics_toplevel_state">
-    <TopicRef href="../rosnodes/diagnostics_aggregator.rosartifact#//@node/@publisher.0"/>
+    <TopicRef href="../rosnodes/diagnostic_aggregator.ros#//@package.0/@artifact.0/@node/@publisher.0"/>
   </RosTopicPublisher>
   <RosTopicSubscriber TopicName="/diagnostics">
-    <TopicRef href="../rosnodes/diagnostics_aggregator.rosartifact#//@node/@subscriber.0"/>
+    <TopicRef href="../rosnodes/diagnostic_aggregator.ros#//@package.0/@artifact.0/@node/@subscriber.0"/>
   </RosTopicSubscriber>
 </componentInterface:ComponentInterface>

@@ -207,7 +207,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ActionClient returns ActionClient
 	 *
 	 * Constraint:
-	 *     (name=GraphName action=[ActionSpec|EString] namespace=Namespace?)
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ActionClient(ISerializationContext context, ActionClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -219,7 +219,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ActionServer returns ActionServer
 	 *
 	 * Constraint:
-	 *     (name=GraphName action=[ActionSpec|EString] namespace=Namespace?)
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ActionServer(ISerializationContext context, ActionServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -314,7 +314,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=GraphName 
+	 *         name=EString 
 	 *         (serviceserver+=ServiceServer serviceserver+=ServiceServer*)? 
 	 *         (publisher+=Publisher publisher+=Publisher*)? 
 	 *         (subscriber+=Subscriber subscriber+=Subscriber*)? 
@@ -694,7 +694,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (name=GraphName namespace=Namespace? type=ParameterType)
+	 *     (name=EString namespace=Namespace? type=ParameterType)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -719,7 +719,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Publisher returns Publisher
 	 *
 	 * Constraint:
-	 *     (name=GraphName message=[TopicSpec|EString] namespace=Namespace?)
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_Publisher(ISerializationContext context, Publisher semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -744,7 +744,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ServiceClient returns ServiceClient
 	 *
 	 * Constraint:
-	 *     (name=GraphName service=[ServiceSpec|EString] namespace=Namespace?)
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ServiceClient(ISerializationContext context, ServiceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -756,7 +756,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ServiceServer returns ServiceServer
 	 *
 	 * Constraint:
-	 *     (name=GraphName service=[ServiceSpec|EString] namespace=Namespace?)
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_ServiceServer(ISerializationContext context, ServiceServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -781,7 +781,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Subscriber returns Subscriber
 	 *
 	 * Constraint:
-	 *     (name=GraphName message=[TopicSpec|EString] namespace=Namespace?)
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace?)
 	 */
 	protected void sequence_Subscriber(ISerializationContext context, Subscriber semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

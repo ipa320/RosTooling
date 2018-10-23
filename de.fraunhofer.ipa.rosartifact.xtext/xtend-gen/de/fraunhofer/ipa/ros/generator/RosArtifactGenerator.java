@@ -26,9 +26,7 @@ public class RosArtifactGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     this.resourcepath = resource.getURI().toString();
-    boolean _contains = this.resourcepath.contains("/ros-input");
-    boolean _not = (!_contains);
-    if (_not) {
+    if (((!this.resourcepath.contains("/ros-input")) || (!this.resourcepath.contains("/rosnodes")))) {
       Iterable<Node> _filter = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
       for (final Node node : _filter) {
         String _name = node.getName();

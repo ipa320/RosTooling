@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <componentInterface:ComponentInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentInterface="http://www.example.org/componentInterface" name="scan_unifier">
   <RosTopicPublisher TopicName="/scan_unified">
-    <TopicRef href="../rosnodes/scan_unifier.rosartifact#//@node/@publisher.0"/>
+    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@publisher.0"/>
   </RosTopicPublisher>
   <RosTopicSubscriber TopicName="/base_laser_front/scan">
-    <TopicRef href="../rosnodes/scan_unifier.rosartifact#//@node/@subscriber.0"/>
+    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.0"/>
   </RosTopicSubscriber>
   <RosTopicSubscriber TopicName="/base_laser_left/scan">
-    <TopicRef href="../rosnodes/scan_unifier.rosartifact#//@node/@subscriber.2"/>
+    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.2"/>
   </RosTopicSubscriber>
   <RosTopicSubscriber TopicName="/base_laser_right/scan">
-    <TopicRef href="../rosnodes/scan_unifier.rosartifact#//@node/@subscriber.1"/>
+    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.1"/>
   </RosTopicSubscriber>
 </componentInterface:ComponentInterface>

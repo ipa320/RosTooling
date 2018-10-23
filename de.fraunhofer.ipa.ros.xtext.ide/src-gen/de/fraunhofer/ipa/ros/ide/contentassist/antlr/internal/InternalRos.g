@@ -13934,9 +13934,9 @@ rule__Node__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getNodeAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getNodeAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getNodeAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getNodeAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14159,9 +14159,9 @@ rule__ServiceServer__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getServiceServerAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getServiceServerAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getServiceServerAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14208,9 +14208,9 @@ rule__Publisher__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getPublisherAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getPublisherAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getPublisherAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14257,9 +14257,9 @@ rule__Subscriber__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getSubscriberAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getSubscriberAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getSubscriberAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14306,9 +14306,9 @@ rule__ServiceClient__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getServiceClientAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getServiceClientAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getServiceClientAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14355,9 +14355,9 @@ rule__ActionServer__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getActionServerAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getActionServerAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getActionServerAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14404,9 +14404,9 @@ rule__ActionClient__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getActionClientAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getActionClientAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getActionClientAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -14453,9 +14453,9 @@ rule__Parameter__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_3_0()); }
-		ruleGraphName
-		{ after(grammarAccess.getParameterAccess().getNameGraphNameParserRuleCall_3_0()); }
+		{ before(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {

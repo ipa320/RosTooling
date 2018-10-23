@@ -97,7 +97,7 @@ MessageDefinition returns MessageDefinition:
 Node returns Node:
 	'Node'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )?
 		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )?
 		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )?
@@ -110,7 +110,7 @@ Node returns Node:
 ServiceServer returns ServiceServer:
 	'ServiceServer'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'service' service=[ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -118,7 +118,7 @@ ServiceServer returns ServiceServer:
 Publisher returns Publisher:
 	'Publisher'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'message' message=[TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -126,7 +126,7 @@ Publisher returns Publisher:
 Subscriber returns Subscriber:
 	'Subscriber'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'message' message=[TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -134,7 +134,7 @@ Subscriber returns Subscriber:
 ServiceClient returns ServiceClient:
 	'ServiceClient'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'service' service=[ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -142,7 +142,7 @@ ServiceClient returns ServiceClient:
 ActionServer returns ActionServer:
 	'ActionServer'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'action' action=[ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -150,7 +150,7 @@ ActionServer returns ActionServer:
 ActionClient returns ActionClient:
 	'ActionClient'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'action' action=[ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -161,7 +161,7 @@ GraphName returns GraphName:
 Parameter returns Parameter:
 	'Parameter'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		('namespace' namespace=Namespace)?
 		'type' type=ParameterType
 	'}';
