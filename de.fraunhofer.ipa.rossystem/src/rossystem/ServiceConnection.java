@@ -2,9 +2,8 @@
  */
 package rossystem;
 
-import componentInterface.ServiceClient;
-import componentInterface.ServiceServer;
-
+import componentInterface.RosServiceClient;
+import componentInterface.RosServiceServer;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,12 +33,12 @@ public interface ServiceConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(ServiceServer)
+	 * @see #setFrom(RosServiceServer)
 	 * @see rossystem.RossystemPackage#getServiceConnection_From()
 	 * @model
 	 * @generated
 	 */
-	ServiceServer getFrom();
+	RosServiceServer getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getFrom <em>From</em>}' reference.
@@ -49,7 +48,7 @@ public interface ServiceConnection extends EObject {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(ServiceServer value);
+	void setFrom(RosServiceServer value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -60,12 +59,12 @@ public interface ServiceConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(ServiceClient)
+	 * @see #setTo(RosServiceClient)
 	 * @see rossystem.RossystemPackage#getServiceConnection_To()
 	 * @model
 	 * @generated
 	 */
-	ServiceClient getTo();
+	RosServiceClient getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getTo <em>To</em>}' reference.
@@ -75,6 +74,6 @@ public interface ServiceConnection extends EObject {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(ServiceClient value);
+	void setTo(RosServiceClient value);
 
 } // ServiceConnection

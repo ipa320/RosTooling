@@ -2,9 +2,8 @@
  */
 package rossystem;
 
-import componentInterface.Publisher;
-import componentInterface.Subscriber;
-
+import componentInterface.RosPublisher;
+import componentInterface.RosSubscriber;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,12 +33,12 @@ public interface TopicConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(Publisher)
+	 * @see #setFrom(RosPublisher)
 	 * @see rossystem.RossystemPackage#getTopicConnection_From()
 	 * @model
 	 * @generated
 	 */
-	Publisher getFrom();
+	RosPublisher getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getFrom <em>From</em>}' reference.
@@ -49,7 +48,7 @@ public interface TopicConnection extends EObject {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(Publisher value);
+	void setFrom(RosPublisher value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -60,12 +59,12 @@ public interface TopicConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(Subscriber)
+	 * @see #setTo(RosSubscriber)
 	 * @see rossystem.RossystemPackage#getTopicConnection_To()
 	 * @model
 	 * @generated
 	 */
-	Subscriber getTo();
+	RosSubscriber getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getTo <em>To</em>}' reference.
@@ -75,6 +74,6 @@ public interface TopicConnection extends EObject {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(Subscriber value);
+	void setTo(RosSubscriber value);
 
 } // TopicConnection

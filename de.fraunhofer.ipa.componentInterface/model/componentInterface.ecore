@@ -4,30 +4,30 @@
     nsPrefix="componentInterface">
   <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="../../de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicPublisher" upperBound="-1"
-        eType="#//Publisher" derived="true" containment="true"/>
+        eType="#//RosPublisher" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicSubscriber" upperBound="-1"
-        eType="#//Subscriber" derived="true" containment="true"/>
+        eType="#//RosSubscriber" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceServer" upperBound="-1"
-        eType="#//ServiceServer" derived="true" containment="true"/>
+        eType="#//RosServiceServer" derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceClient" upperBound="-1"
-        eType="#//ServiceClient" derived="true" containment="true"/>
+        eType="#//RosServiceClient" derived="true" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Publisher">
+  <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="TopicRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TopicName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Subscriber">
+  <eClassifiers xsi:type="ecore:EClass" name="RosSubscriber">
     <eStructuralFeatures xsi:type="ecore:EReference" name="TopicRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TopicName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceServer">
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceServer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="SrvRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ServiceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceClient">
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceClient">
     <eStructuralFeatures xsi:type="ecore:EReference" name="SrvRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ServiceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="NameSpace" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Namespace"/>

@@ -28,7 +28,7 @@ import ros.NamespacedElement;
 public interface ComponentInterface extends NamespacedElement {
 	/**
 	 * Returns the value of the '<em><b>Ros Topic Publisher</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.Publisher}.
+	 * The list contents are of type {@link componentInterface.RosPublisher}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Topic Publisher</em>' containment reference list isn't clear,
@@ -40,11 +40,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<Publisher> getRosTopicPublisher();
+	EList<RosPublisher> getRosTopicPublisher();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Topic Subscriber</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.Subscriber}.
+	 * The list contents are of type {@link componentInterface.RosSubscriber}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Topic Subscriber</em>' containment reference list isn't clear,
@@ -56,11 +56,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<Subscriber> getRosTopicSubscriber();
+	EList<RosSubscriber> getRosTopicSubscriber();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Service Server</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.ServiceServer}.
+	 * The list contents are of type {@link componentInterface.RosServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Service Server</em>' containment reference list isn't clear,
@@ -72,11 +72,11 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<ServiceServer> getRosServiceServer();
+	EList<RosServiceServer> getRosServiceServer();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Service Client</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.ServiceClient}.
+	 * The list contents are of type {@link componentInterface.RosServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ros Service Client</em>' containment reference list isn't clear,
@@ -88,6 +88,6 @@ public interface ComponentInterface extends NamespacedElement {
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EList<ServiceClient> getRosServiceClient();
+	EList<RosServiceClient> getRosServiceClient();
 
 } // ComponentInterface

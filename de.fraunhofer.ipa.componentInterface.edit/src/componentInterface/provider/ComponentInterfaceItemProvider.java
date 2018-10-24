@@ -149,22 +149,22 @@ public class ComponentInterfaceItemProvider extends NamespacedElementItemProvide
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER,
-				 ComponentInterfaceFactory.eINSTANCE.createPublisher()));
+				 ComponentInterfaceFactory.eINSTANCE.createRosPublisher()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER,
-				 ComponentInterfaceFactory.eINSTANCE.createSubscriber()));
+				 ComponentInterfaceFactory.eINSTANCE.createRosSubscriber()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_SERVER,
-				 ComponentInterfaceFactory.eINSTANCE.createServiceServer()));
+				 ComponentInterfaceFactory.eINSTANCE.createRosServiceServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT,
-				 ComponentInterfaceFactory.eINSTANCE.createServiceClient()));
+				 ComponentInterfaceFactory.eINSTANCE.createRosServiceClient()));
 	}
 
 	/**

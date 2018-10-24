@@ -74,20 +74,20 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 				return createComponentInterfaceAdapter();
 			}
 			@Override
-			public Adapter casePublisher(Publisher object) {
-				return createPublisherAdapter();
+			public Adapter caseRosPublisher(RosPublisher object) {
+				return createRosPublisherAdapter();
 			}
 			@Override
-			public Adapter caseSubscriber(Subscriber object) {
-				return createSubscriberAdapter();
+			public Adapter caseRosSubscriber(RosSubscriber object) {
+				return createRosSubscriberAdapter();
 			}
 			@Override
-			public Adapter caseServiceServer(ServiceServer object) {
-				return createServiceServerAdapter();
+			public Adapter caseRosServiceServer(RosServiceServer object) {
+				return createRosServiceServerAdapter();
 			}
 			@Override
-			public Adapter caseServiceClient(ServiceClient object) {
-				return createServiceClientAdapter();
+			public Adapter caseRosServiceClient(RosServiceClient object) {
+				return createRosServiceClientAdapter();
 			}
 			@Override
 			public Adapter caseNamespacedElement(NamespacedElement object) {
@@ -128,58 +128,58 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.Publisher <em>Publisher</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosPublisher <em>Ros Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.Publisher
+	 * @see componentInterface.RosPublisher
 	 * @generated
 	 */
-	public Adapter createPublisherAdapter() {
+	public Adapter createRosPublisherAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.Subscriber <em>Subscriber</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosSubscriber <em>Ros Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.Subscriber
+	 * @see componentInterface.RosSubscriber
 	 * @generated
 	 */
-	public Adapter createSubscriberAdapter() {
+	public Adapter createRosSubscriberAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.ServiceServer <em>Service Server</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosServiceServer <em>Ros Service Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.ServiceServer
+	 * @see componentInterface.RosServiceServer
 	 * @generated
 	 */
-	public Adapter createServiceServerAdapter() {
+	public Adapter createRosServiceServerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentInterface.ServiceClient <em>Service Client</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosServiceClient <em>Ros Service Client</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentInterface.ServiceClient
+	 * @see componentInterface.RosServiceClient
 	 * @generated
 	 */
-	public Adapter createServiceClientAdapter() {
+	public Adapter createRosServiceClientAdapter() {
 		return null;
 	}
 

@@ -2,9 +2,8 @@
  */
 package rossystem.impl;
 
-import componentInterface.Publisher;
-import componentInterface.Subscriber;
-
+import componentInterface.RosPublisher;
+import componentInterface.RosSubscriber;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -39,7 +38,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Publisher from;
+	protected RosPublisher from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -49,7 +48,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Subscriber to;
+	protected RosSubscriber to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,10 +74,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher getFrom() {
+	public RosPublisher getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (Publisher)eResolveProxy(oldFrom);
+			from = (RosPublisher)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -92,7 +91,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher basicGetFrom() {
+	public RosPublisher basicGetFrom() {
 		return from;
 	}
 
@@ -101,8 +100,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(Publisher newFrom) {
-		Publisher oldFrom = from;
+	public void setFrom(RosPublisher newFrom) {
+		RosPublisher oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -113,10 +112,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber getTo() {
+	public RosSubscriber getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (Subscriber)eResolveProxy(oldTo);
+			to = (RosSubscriber)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -130,7 +129,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber basicGetTo() {
+	public RosSubscriber basicGetTo() {
 		return to;
 	}
 
@@ -139,8 +138,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(Subscriber newTo) {
-		Subscriber oldTo = to;
+	public void setTo(RosSubscriber newTo) {
+		RosSubscriber oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -173,10 +172,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((Publisher)newValue);
+				setFrom((RosPublisher)newValue);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((Subscriber)newValue);
+				setTo((RosSubscriber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,10 +190,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((Publisher)null);
+				setFrom((RosPublisher)null);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((Subscriber)null);
+				setTo((RosSubscriber)null);
 				return;
 		}
 		super.eUnset(featureID);

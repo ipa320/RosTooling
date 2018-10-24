@@ -95,95 +95,95 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.Publisher} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosPublisher} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PublisherItemProvider publisherItemProvider;
+	protected RosPublisherItemProvider rosPublisherItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.Publisher}.
+	 * This creates an adapter for a {@link componentInterface.RosPublisher}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPublisherAdapter() {
-		if (publisherItemProvider == null) {
-			publisherItemProvider = new PublisherItemProvider(this);
+	public Adapter createRosPublisherAdapter() {
+		if (rosPublisherItemProvider == null) {
+			rosPublisherItemProvider = new RosPublisherItemProvider(this);
 		}
 
-		return publisherItemProvider;
+		return rosPublisherItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.Subscriber} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosSubscriber} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SubscriberItemProvider subscriberItemProvider;
+	protected RosSubscriberItemProvider rosSubscriberItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.Subscriber}.
+	 * This creates an adapter for a {@link componentInterface.RosSubscriber}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSubscriberAdapter() {
-		if (subscriberItemProvider == null) {
-			subscriberItemProvider = new SubscriberItemProvider(this);
+	public Adapter createRosSubscriberAdapter() {
+		if (rosSubscriberItemProvider == null) {
+			rosSubscriberItemProvider = new RosSubscriberItemProvider(this);
 		}
 
-		return subscriberItemProvider;
+		return rosSubscriberItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.ServiceServer} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosServiceServer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceServerItemProvider serviceServerItemProvider;
+	protected RosServiceServerItemProvider rosServiceServerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.ServiceServer}.
+	 * This creates an adapter for a {@link componentInterface.RosServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createServiceServerAdapter() {
-		if (serviceServerItemProvider == null) {
-			serviceServerItemProvider = new ServiceServerItemProvider(this);
+	public Adapter createRosServiceServerAdapter() {
+		if (rosServiceServerItemProvider == null) {
+			rosServiceServerItemProvider = new RosServiceServerItemProvider(this);
 		}
 
-		return serviceServerItemProvider;
+		return rosServiceServerItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link componentInterface.ServiceClient} instances.
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosServiceClient} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceClientItemProvider serviceClientItemProvider;
+	protected RosServiceClientItemProvider rosServiceClientItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link componentInterface.ServiceClient}.
+	 * This creates an adapter for a {@link componentInterface.RosServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createServiceClientAdapter() {
-		if (serviceClientItemProvider == null) {
-			serviceClientItemProvider = new ServiceClientItemProvider(this);
+	public Adapter createRosServiceClientAdapter() {
+		if (rosServiceClientItemProvider == null) {
+			rosServiceClientItemProvider = new RosServiceClientItemProvider(this);
 		}
 
-		return serviceClientItemProvider;
+		return rosServiceClientItemProvider;
 	}
 
 	/**
@@ -286,10 +286,10 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	 */
 	public void dispose() {
 		if (componentInterfaceItemProvider != null) componentInterfaceItemProvider.dispose();
-		if (publisherItemProvider != null) publisherItemProvider.dispose();
-		if (subscriberItemProvider != null) subscriberItemProvider.dispose();
-		if (serviceServerItemProvider != null) serviceServerItemProvider.dispose();
-		if (serviceClientItemProvider != null) serviceClientItemProvider.dispose();
+		if (rosPublisherItemProvider != null) rosPublisherItemProvider.dispose();
+		if (rosSubscriberItemProvider != null) rosSubscriberItemProvider.dispose();
+		if (rosServiceServerItemProvider != null) rosServiceServerItemProvider.dispose();
+		if (rosServiceClientItemProvider != null) rosServiceClientItemProvider.dispose();
 	}
 
 }

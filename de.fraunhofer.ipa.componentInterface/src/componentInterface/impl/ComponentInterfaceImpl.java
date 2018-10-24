@@ -4,11 +4,10 @@ package componentInterface.impl;
 
 import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.Publisher;
-import componentInterface.ServiceClient;
-import componentInterface.ServiceServer;
-import componentInterface.Subscriber;
-
+import componentInterface.RosPublisher;
+import componentInterface.RosServiceClient;
+import componentInterface.RosServiceServer;
+import componentInterface.RosSubscriber;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -48,7 +47,7 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Publisher> rosTopicPublisher;
+	protected EList<RosPublisher> rosTopicPublisher;
 
 	/**
 	 * The cached value of the '{@link #getRosTopicSubscriber() <em>Ros Topic Subscriber</em>}' containment reference list.
@@ -58,7 +57,7 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Subscriber> rosTopicSubscriber;
+	protected EList<RosSubscriber> rosTopicSubscriber;
 
 	/**
 	 * The cached value of the '{@link #getRosServiceServer() <em>Ros Service Server</em>}' containment reference list.
@@ -68,7 +67,7 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceServer> rosServiceServer;
+	protected EList<RosServiceServer> rosServiceServer;
 
 	/**
 	 * The cached value of the '{@link #getRosServiceClient() <em>Ros Service Client</em>}' containment reference list.
@@ -78,7 +77,7 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceClient> rosServiceClient;
+	protected EList<RosServiceClient> rosServiceClient;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,9 +103,9 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Publisher> getRosTopicPublisher() {
+	public EList<RosPublisher> getRosTopicPublisher() {
 		if (rosTopicPublisher == null) {
-			rosTopicPublisher = new EObjectContainmentEList<Publisher>(Publisher.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER);
+			rosTopicPublisher = new EObjectContainmentEList<RosPublisher>(RosPublisher.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER);
 		}
 		return rosTopicPublisher;
 	}
@@ -116,9 +115,9 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Subscriber> getRosTopicSubscriber() {
+	public EList<RosSubscriber> getRosTopicSubscriber() {
 		if (rosTopicSubscriber == null) {
-			rosTopicSubscriber = new EObjectContainmentEList<Subscriber>(Subscriber.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER);
+			rosTopicSubscriber = new EObjectContainmentEList<RosSubscriber>(RosSubscriber.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER);
 		}
 		return rosTopicSubscriber;
 	}
@@ -128,9 +127,9 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceServer> getRosServiceServer() {
+	public EList<RosServiceServer> getRosServiceServer() {
 		if (rosServiceServer == null) {
-			rosServiceServer = new EObjectContainmentEList<ServiceServer>(ServiceServer.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_SERVER);
+			rosServiceServer = new EObjectContainmentEList<RosServiceServer>(RosServiceServer.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_SERVER);
 		}
 		return rosServiceServer;
 	}
@@ -140,9 +139,9 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceClient> getRosServiceClient() {
+	public EList<RosServiceClient> getRosServiceClient() {
 		if (rosServiceClient == null) {
-			rosServiceClient = new EObjectContainmentEList<ServiceClient>(ServiceClient.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT);
+			rosServiceClient = new EObjectContainmentEList<RosServiceClient>(RosServiceClient.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT);
 		}
 		return rosServiceClient;
 	}
@@ -198,19 +197,19 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 		switch (featureID) {
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER:
 				getRosTopicPublisher().clear();
-				getRosTopicPublisher().addAll((Collection<? extends Publisher>)newValue);
+				getRosTopicPublisher().addAll((Collection<? extends RosPublisher>)newValue);
 				return;
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER:
 				getRosTopicSubscriber().clear();
-				getRosTopicSubscriber().addAll((Collection<? extends Subscriber>)newValue);
+				getRosTopicSubscriber().addAll((Collection<? extends RosSubscriber>)newValue);
 				return;
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_SERVER:
 				getRosServiceServer().clear();
-				getRosServiceServer().addAll((Collection<? extends ServiceServer>)newValue);
+				getRosServiceServer().addAll((Collection<? extends RosServiceServer>)newValue);
 				return;
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT:
 				getRosServiceClient().clear();
-				getRosServiceClient().addAll((Collection<? extends ServiceClient>)newValue);
+				getRosServiceClient().addAll((Collection<? extends RosServiceClient>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -31,40 +31,40 @@ public interface ComponentInterfaceFactory extends EFactory {
 	ComponentInterface createComponentInterface();
 
 	/**
-	 * Returns a new object of class '<em>Publisher</em>'.
+	 * Returns a new object of class '<em>Ros Publisher</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Publisher</em>'.
+	 * @return a new object of class '<em>Ros Publisher</em>'.
 	 * @generated
 	 */
-	Publisher createPublisher();
+	RosPublisher createRosPublisher();
 
 	/**
-	 * Returns a new object of class '<em>Subscriber</em>'.
+	 * Returns a new object of class '<em>Ros Subscriber</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Subscriber</em>'.
+	 * @return a new object of class '<em>Ros Subscriber</em>'.
 	 * @generated
 	 */
-	Subscriber createSubscriber();
+	RosSubscriber createRosSubscriber();
 
 	/**
-	 * Returns a new object of class '<em>Service Server</em>'.
+	 * Returns a new object of class '<em>Ros Service Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Server</em>'.
+	 * @return a new object of class '<em>Ros Service Server</em>'.
 	 * @generated
 	 */
-	ServiceServer createServiceServer();
+	RosServiceServer createRosServiceServer();
 
 	/**
-	 * Returns a new object of class '<em>Service Client</em>'.
+	 * Returns a new object of class '<em>Ros Service Client</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Client</em>'.
+	 * @return a new object of class '<em>Ros Service Client</em>'.
 	 * @generated
 	 */
-	ServiceClient createServiceClient();
+	RosServiceClient createRosServiceClient();
 
 	/**
 	 * Returns the package supported by this factory.

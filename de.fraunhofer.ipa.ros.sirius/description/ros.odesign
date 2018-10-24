@@ -171,7 +171,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="ComponentInterface" semanticCandidatesExpression="feature:RosComponent" domainClass="componentInterface::ComponentInterface">
-          <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:RosTopicPublisher" domainClass="componentInterface::Publisher">
+          <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:RosTopicPublisher" domainClass="componentInterface::RosPublisher">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -181,7 +181,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="feature:RosTopicSubscriber" domainClass="componentInterface::Subscriber">
+          <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="feature:RosTopicSubscriber" domainClass="componentInterface::RosSubscriber">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -191,7 +191,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:RosServiceServer" domainClass="componentInterface::ServiceServer">
+          <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:RosServiceServer" domainClass="componentInterface::RosServiceServer">
             <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -201,7 +201,7 @@
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:RosServiceClient" domainClass="componentInterface::ServiceClient">
+          <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:RosServiceClient" domainClass="componentInterface::RosServiceClient">
             <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

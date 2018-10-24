@@ -57,10 +57,10 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ComponentInterfacePackage.COMPONENT_INTERFACE: return createComponentInterface();
-			case ComponentInterfacePackage.PUBLISHER: return createPublisher();
-			case ComponentInterfacePackage.SUBSCRIBER: return createSubscriber();
-			case ComponentInterfacePackage.SERVICE_SERVER: return createServiceServer();
-			case ComponentInterfacePackage.SERVICE_CLIENT: return createServiceClient();
+			case ComponentInterfacePackage.ROS_PUBLISHER: return createRosPublisher();
+			case ComponentInterfacePackage.ROS_SUBSCRIBER: return createRosSubscriber();
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER: return createRosServiceServer();
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT: return createRosServiceClient();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,9 +81,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Publisher createPublisher() {
-		PublisherImpl publisher = new PublisherImpl();
-		return publisher;
+	public RosPublisher createRosPublisher() {
+		RosPublisherImpl rosPublisher = new RosPublisherImpl();
+		return rosPublisher;
 	}
 
 	/**
@@ -91,9 +91,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber createSubscriber() {
-		SubscriberImpl subscriber = new SubscriberImpl();
-		return subscriber;
+	public RosSubscriber createRosSubscriber() {
+		RosSubscriberImpl rosSubscriber = new RosSubscriberImpl();
+		return rosSubscriber;
 	}
 
 	/**
@@ -101,9 +101,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceServer createServiceServer() {
-		ServiceServerImpl serviceServer = new ServiceServerImpl();
-		return serviceServer;
+	public RosServiceServer createRosServiceServer() {
+		RosServiceServerImpl rosServiceServer = new RosServiceServerImpl();
+		return rosServiceServer;
 	}
 
 	/**
@@ -111,9 +111,9 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient createServiceClient() {
-		ServiceClientImpl serviceClient = new ServiceClientImpl();
-		return serviceClient;
+	public RosServiceClient createRosServiceClient() {
+		RosServiceClientImpl rosServiceClient = new RosServiceClientImpl();
+		return rosServiceClient;
 	}
 
 	/**
