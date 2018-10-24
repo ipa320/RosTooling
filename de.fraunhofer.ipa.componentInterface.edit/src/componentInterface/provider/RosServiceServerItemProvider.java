@@ -127,8 +127,8 @@ public class RosServiceServerItemProvider
 				 ComponentInterfacePackage.Literals.ROS_SERVICE_SERVER__NAME_SPACE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -172,6 +172,7 @@ public class RosServiceServerItemProvider
 
 		switch (notification.getFeatureID(RosServiceServer.class)) {
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__SERVICE_NAME:
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NAME_SPACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

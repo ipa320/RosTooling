@@ -4,9 +4,9 @@ package componentInterface;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import ros.RosPackage;
 
 /**
@@ -169,7 +169,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_PUBLISHER__TOPIC_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name Space</b></em>' reference.
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -224,7 +224,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SUBSCRIBER__TOPIC_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name Space</b></em>' reference.
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -279,7 +279,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SERVICE_SERVER__SERVICE_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name Space</b></em>' reference.
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -334,7 +334,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SERVICE_CLIENT__SERVICE_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name Space</b></em>' reference.
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -359,6 +359,16 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @ordered
 	 */
 	int ROS_SERVICE_CLIENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '<em>NS</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNS()
+	 * @generated
+	 */
+	int NS = 5;
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.ComponentInterface <em>Component Interface</em>}'.
@@ -447,15 +457,15 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosPublisher_TopicName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosPublisher#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.RosPublisher#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Name Space</em>'.
+	 * @return the meta object for the attribute '<em>Name Space</em>'.
 	 * @see componentInterface.RosPublisher#getNameSpace()
 	 * @see #getRosPublisher()
 	 * @generated
 	 */
-	EReference getRosPublisher_NameSpace();
+	EAttribute getRosPublisher_NameSpace();
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.RosSubscriber <em>Ros Subscriber</em>}'.
@@ -490,15 +500,15 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosSubscriber_TopicName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosSubscriber#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.RosSubscriber#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Name Space</em>'.
+	 * @return the meta object for the attribute '<em>Name Space</em>'.
 	 * @see componentInterface.RosSubscriber#getNameSpace()
 	 * @see #getRosSubscriber()
 	 * @generated
 	 */
-	EReference getRosSubscriber_NameSpace();
+	EAttribute getRosSubscriber_NameSpace();
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.RosServiceServer <em>Ros Service Server</em>}'.
@@ -533,15 +543,15 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosServiceServer_ServiceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosServiceServer#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.RosServiceServer#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Name Space</em>'.
+	 * @return the meta object for the attribute '<em>Name Space</em>'.
 	 * @see componentInterface.RosServiceServer#getNameSpace()
 	 * @see #getRosServiceServer()
 	 * @generated
 	 */
-	EReference getRosServiceServer_NameSpace();
+	EAttribute getRosServiceServer_NameSpace();
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.RosServiceClient <em>Ros Service Client</em>}'.
@@ -576,15 +586,26 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosServiceClient_ServiceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosServiceClient#getNameSpace <em>Name Space</em>}'.
+	 * Returns the meta object for the attribute '{@link componentInterface.RosServiceClient#getNameSpace <em>Name Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Name Space</em>'.
+	 * @return the meta object for the attribute '<em>Name Space</em>'.
 	 * @see componentInterface.RosServiceClient#getNameSpace()
 	 * @see #getRosServiceClient()
 	 * @generated
 	 */
-	EReference getRosServiceClient_NameSpace();
+	EAttribute getRosServiceClient_NameSpace();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>NS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NS</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getNS();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -678,12 +699,12 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_PUBLISHER__TOPIC_NAME = eINSTANCE.getRosPublisher_TopicName();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name Space</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_PUBLISHER__NAME_SPACE = eINSTANCE.getRosPublisher_NameSpace();
+		EAttribute ROS_PUBLISHER__NAME_SPACE = eINSTANCE.getRosPublisher_NameSpace();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosSubscriberImpl <em>Ros Subscriber</em>}' class.
@@ -712,12 +733,12 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_SUBSCRIBER__TOPIC_NAME = eINSTANCE.getRosSubscriber_TopicName();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name Space</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_SUBSCRIBER__NAME_SPACE = eINSTANCE.getRosSubscriber_NameSpace();
+		EAttribute ROS_SUBSCRIBER__NAME_SPACE = eINSTANCE.getRosSubscriber_NameSpace();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosServiceServerImpl <em>Ros Service Server</em>}' class.
@@ -746,12 +767,12 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_SERVICE_SERVER__SERVICE_NAME = eINSTANCE.getRosServiceServer_ServiceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name Space</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_SERVICE_SERVER__NAME_SPACE = eINSTANCE.getRosServiceServer_NameSpace();
+		EAttribute ROS_SERVICE_SERVER__NAME_SPACE = eINSTANCE.getRosServiceServer_NameSpace();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosServiceClientImpl <em>Ros Service Client</em>}' class.
@@ -780,12 +801,22 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_SERVICE_CLIENT__SERVICE_NAME = eINSTANCE.getRosServiceClient_ServiceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Space</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name Space</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_SERVICE_CLIENT__NAME_SPACE = eINSTANCE.getRosServiceClient_NameSpace();
+		EAttribute ROS_SERVICE_CLIENT__NAME_SPACE = eINSTANCE.getRosServiceClient_NameSpace();
+
+		/**
+		 * The meta object literal for the '<em>NS</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNS()
+		 * @generated
+		 */
+		EDataType NS = eINSTANCE.getNS();
 
 	}
 

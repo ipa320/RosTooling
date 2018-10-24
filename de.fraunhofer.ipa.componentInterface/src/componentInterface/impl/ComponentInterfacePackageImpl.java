@@ -11,6 +11,7 @@ import componentInterface.RosServiceServer;
 import componentInterface.RosSubscriber;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -59,6 +60,13 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass rosServiceClientEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nsEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -201,8 +209,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosPublisher_NameSpace() {
-		return (EReference)rosPublisherEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosPublisher_NameSpace() {
+		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -237,8 +245,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosSubscriber_NameSpace() {
-		return (EReference)rosSubscriberEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosSubscriber_NameSpace() {
+		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -273,8 +281,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosServiceServer_NameSpace() {
-		return (EReference)rosServiceServerEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosServiceServer_NameSpace() {
+		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -309,8 +317,17 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosServiceClient_NameSpace() {
-		return (EReference)rosServiceClientEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosServiceClient_NameSpace() {
+		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNS() {
+		return nsEDataType;
 	}
 
 	/**
@@ -350,22 +367,25 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		rosPublisherEClass = createEClass(ROS_PUBLISHER);
 		createEReference(rosPublisherEClass, ROS_PUBLISHER__TOPIC_REF);
 		createEAttribute(rosPublisherEClass, ROS_PUBLISHER__TOPIC_NAME);
-		createEReference(rosPublisherEClass, ROS_PUBLISHER__NAME_SPACE);
+		createEAttribute(rosPublisherEClass, ROS_PUBLISHER__NAME_SPACE);
 
 		rosSubscriberEClass = createEClass(ROS_SUBSCRIBER);
 		createEReference(rosSubscriberEClass, ROS_SUBSCRIBER__TOPIC_REF);
 		createEAttribute(rosSubscriberEClass, ROS_SUBSCRIBER__TOPIC_NAME);
-		createEReference(rosSubscriberEClass, ROS_SUBSCRIBER__NAME_SPACE);
+		createEAttribute(rosSubscriberEClass, ROS_SUBSCRIBER__NAME_SPACE);
 
 		rosServiceServerEClass = createEClass(ROS_SERVICE_SERVER);
 		createEReference(rosServiceServerEClass, ROS_SERVICE_SERVER__SRV_REF);
 		createEAttribute(rosServiceServerEClass, ROS_SERVICE_SERVER__SERVICE_NAME);
-		createEReference(rosServiceServerEClass, ROS_SERVICE_SERVER__NAME_SPACE);
+		createEAttribute(rosServiceServerEClass, ROS_SERVICE_SERVER__NAME_SPACE);
 
 		rosServiceClientEClass = createEClass(ROS_SERVICE_CLIENT);
 		createEReference(rosServiceClientEClass, ROS_SERVICE_CLIENT__SRV_REF);
 		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__SERVICE_NAME);
-		createEReference(rosServiceClientEClass, ROS_SERVICE_CLIENT__NAME_SPACE);
+		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__NAME_SPACE);
+
+		// Create data types
+		nsEDataType = createEDataType(NS);
 	}
 
 	/**
@@ -411,22 +431,25 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEClass(rosPublisherEClass, RosPublisher.class, "RosPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosPublisher_TopicRef(), theRosPackage.getPublisher(), null, "TopicRef", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosPublisher_TopicName(), ecorePackage.getEString(), "TopicName", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosPublisher_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosPublisher_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosSubscriberEClass, RosSubscriber.class, "RosSubscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosSubscriber_TopicRef(), theRosPackage.getSubscriber(), null, "TopicRef", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosSubscriber_TopicName(), ecorePackage.getEString(), "TopicName", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSubscriber_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosSubscriber_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosServiceServerEClass, RosServiceServer.class, "RosServiceServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosServiceServer_SrvRef(), theRosPackage.getServiceServer(), null, "SrvRef", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceServer_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosServiceServer_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosServiceServer_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosServiceClientEClass, RosServiceClient.class, "RosServiceClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosServiceClient_SrvRef(), theRosPackage.getServiceClient(), null, "SrvRef", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceClient_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosServiceClient_NameSpace(), theRosPackage.getNamespace(), null, "NameSpace", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosServiceClient_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(nsEDataType, String.class, "NS", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

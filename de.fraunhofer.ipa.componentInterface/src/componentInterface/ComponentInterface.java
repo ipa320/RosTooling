@@ -3,7 +3,6 @@
 package componentInterface;
 
 import org.eclipse.emf.common.util.EList;
-
 import ros.NamespacedElement;
 
 /**

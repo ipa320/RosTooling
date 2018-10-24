@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import ros.Namespace;
 import ros.Subscriber;
 
 /**
@@ -63,14 +61,24 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	protected String topicName = TOPIC_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' reference.
+	 * The default value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNameSpace()
 	 * @generated
 	 * @ordered
 	 */
-	protected Namespace nameSpace;
+	protected static final String NAME_SPACE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNameSpace()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nameSpace = NAME_SPACE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +147,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 			if (topicName.length()>0) {
 				return topicName;
 			}if (nameSpace != null && topicRef != null) {
-				return String.format("/%s/%s", nameSpace.getParts().get(0).replaceFirst("/",""), topicRef.getName().replaceFirst("/",""));	
+				return String.format("/%s/%s", nameSpace.replaceFirst("/",""), topicRef.getName().replaceFirst("/",""));	
 			}else if (topicRef != null) {
 				return String.format("/%s", topicRef.getName().replaceFirst("/",""));	
 			}else {
@@ -167,15 +175,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Namespace getNameSpace() {
-		if (nameSpace != null && nameSpace.eIsProxy()) {
-			InternalEObject oldNameSpace = (InternalEObject)nameSpace;
-			nameSpace = (Namespace)eResolveProxy(oldNameSpace);
-			if (nameSpace != oldNameSpace) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE, oldNameSpace, nameSpace));
-			}
-		}
+	public String getNameSpace() {
 		return nameSpace;
 	}
 
@@ -184,17 +184,8 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Namespace basicGetNameSpace() {
-		return nameSpace;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNameSpace(Namespace newNameSpace) {
-		Namespace oldNameSpace = nameSpace;
+	public void setNameSpace(String newNameSpace) {
+		String oldNameSpace = nameSpace;
 		nameSpace = newNameSpace;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE, oldNameSpace, nameSpace));
@@ -214,8 +205,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
 				return getTopicName();
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				if (resolve) return getNameSpace();
-				return basicGetNameSpace();
+				return getNameSpace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,7 +225,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 				setTopicName((String)newValue);
 				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				setNameSpace((Namespace)newValue);
+				setNameSpace((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,7 +246,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 				setTopicName(TOPIC_NAME_EDEFAULT);
 				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				setNameSpace((Namespace)null);
+				setNameSpace(NAME_SPACE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -275,7 +265,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
 				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				return nameSpace != null;
+				return NAME_SPACE_EDEFAULT == null ? nameSpace != null : !NAME_SPACE_EDEFAULT.equals(nameSpace);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -292,6 +282,8 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (TopicName: ");
 		result.append(topicName);
+		result.append(", NameSpace: ");
+		result.append(nameSpace);
 		result.append(')');
 		return result.toString();
 	}

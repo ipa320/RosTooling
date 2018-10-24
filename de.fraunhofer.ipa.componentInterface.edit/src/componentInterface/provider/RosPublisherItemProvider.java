@@ -127,8 +127,8 @@ public class RosPublisherItemProvider
 				 ComponentInterfacePackage.Literals.ROS_PUBLISHER__NAME_SPACE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -172,6 +172,7 @@ public class RosPublisherItemProvider
 
 		switch (notification.getFeatureID(RosPublisher.class)) {
 			case ComponentInterfacePackage.ROS_PUBLISHER__TOPIC_NAME:
+			case ComponentInterfacePackage.ROS_PUBLISHER__NAME_SPACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
