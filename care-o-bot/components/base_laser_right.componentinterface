@@ -3,7 +3,7 @@
   <namespace xsi:type="ros:RelativeNamespace">
     <parts>/base_laser_right</parts>
   </namespace>
-  <RosTopicPublisher TopicName="/base_laser_right/scan" NameSpace="//@namespace">
+  <RosTopicPublisher TopicName="/base_laser_right/scan" NameSpace="/base_laser_right">
     <TopicRef href="../rosnodes/sick_s300.ros#//@package.0/@artifact.0/@node/@publisher.0"/>
   </RosTopicPublisher>
   <RosTopicPublisher TopicName="/diagnostics">
