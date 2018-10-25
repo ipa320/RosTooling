@@ -17,10 +17,10 @@ Require-Bundle: de.fraunhofer.ipa.componentInterface.xtext,
  org.eclipse.compare,
  org.eclipse.xtext.builder,
  org.eclipse.xtend.lib;resolution:=optional,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib;bundle-version="2.13.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.ui.contentassist,
+Export-Package: de.fraunhofer.ipa.componentInterface.ui.quickfix,
  de.fraunhofer.ipa.componentInterface.xtext.ui.internal,
- de.fraunhofer.ipa.ui.quickfix
+ de.fraunhofer.ipa.componentInterface.ui.contentassist
 Bundle-Activator: de.fraunhofer.ipa.componentInterface.xtext.ui.internal.XtextActivator
