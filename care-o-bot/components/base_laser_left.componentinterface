@@ -1,5 +1,5 @@
 ComponentInterface { name base_laser_left namespace RelativeNamespace {parts{"/base_laser_left" }}
-	publisher( 
+	RosTopicPublisher{ 
 		Publisher { TopicName "/base_laser_left/scan" TopicRef "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" NameSpace "/base_laser_left" },
-		Publisher { TopicName "/diagnostics" TopicRef "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"})
+		Publisher { TopicName "/diagnostics" TopicRef "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}}
 }

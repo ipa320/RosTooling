@@ -10,10 +10,10 @@ ComponentInterface returns ComponentInterface:
 	'{'
 		'name' name=EString
 		('namespace' namespace=Namespace)?
-		('publisher' '(' RosTopicPublisher+=Publisher ( "," RosTopicPublisher+=Publisher)* ')' )?
-		('subscriber' '(' RosTopicSubscriber+=Subscriber ( "," RosTopicSubscriber+=Subscriber)* ')' )?
-		('serviceServer''(' RosServiceServer+=ServiceServer ( "," RosServiceServer+=ServiceServer)* ')' )? 
-		('serviceClient''(' RosServiceClient+=ServiceClient ( "," RosServiceClient+=ServiceClient)* ')' )? 
+		('RosTopicPublisher' '{' RosTopicPublisher+=RosPublisher ( "," RosTopicPublisher+=RosPublisher)* '}' )?
+		('RosTopicSubscriber' '{' RosTopicSubscriber+=RosSubscriber ( "," RosTopicSubscriber+=RosSubscriber)* '}' )?
+		('RosServiceServer' '{' RosServiceServer+=RosServiceServer ( "," RosServiceServer+=RosServiceServer)* '}' )?
+		('RosServiceClient' '{' RosServiceClient+=RosServiceClient ( "," RosServiceClient+=RosServiceClient)* '}' )?
 	'}';
 
 EString returns ecore::EString:
@@ -46,7 +46,7 @@ PrivateNamespace returns ros::PrivateNamespace:
 		('parts' '{' parts+=EString ( "," parts+=EString)* '}' )?
 	'}';
 	
-Publisher returns RosPublisher:
+RosPublisher returns RosPublisher:
 	{RosPublisher}
 	'Publisher'
 	'{'
@@ -55,7 +55,7 @@ Publisher returns RosPublisher:
 		('NameSpace' NameSpace=EString)?
 	'}';
 
-Subscriber returns RosSubscriber:
+RosSubscriber returns RosSubscriber:
 	{RosSubscriber}
 	'Subscriber'
 	'{'
@@ -64,7 +64,7 @@ Subscriber returns RosSubscriber:
 		('NameSpace' NameSpace=EString)?
 	'}';
 
-ServiceServer returns RosServiceServer:
+RosServiceServer returns RosServiceServer:
 	{RosServiceServer}
 	'ServiceServer'
 	'{'
@@ -73,7 +73,7 @@ ServiceServer returns RosServiceServer:
 		('NameSpace' NameSpace=EString)?
 	'}';
 
-ServiceClient returns RosServiceClient:
+RosServiceClient returns RosServiceClient:
 	{RosServiceClient}
 	'ServiceServer'
 	'{'

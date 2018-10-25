@@ -42,16 +42,16 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 				sequence_ComponentInterface(context, (ComponentInterface) semanticObject); 
 				return; 
 			case ComponentInterfacePackage.ROS_PUBLISHER:
-				sequence_Publisher(context, (RosPublisher) semanticObject); 
+				sequence_RosPublisher(context, (RosPublisher) semanticObject); 
 				return; 
 			case ComponentInterfacePackage.ROS_SERVICE_CLIENT:
-				sequence_ServiceClient(context, (RosServiceClient) semanticObject); 
+				sequence_RosServiceClient(context, (RosServiceClient) semanticObject); 
 				return; 
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER:
-				sequence_ServiceServer(context, (RosServiceServer) semanticObject); 
+				sequence_RosServiceServer(context, (RosServiceServer) semanticObject); 
 				return; 
 			case ComponentInterfacePackage.ROS_SUBSCRIBER:
-				sequence_Subscriber(context, (RosSubscriber) semanticObject); 
+				sequence_RosSubscriber(context, (RosSubscriber) semanticObject); 
 				return; 
 			}
 		else if (epackage == RosPackage.eINSTANCE)
@@ -78,10 +78,10 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     (
 	 *         name=EString 
 	 *         namespace=Namespace? 
-	 *         (RosTopicPublisher+=Publisher RosTopicPublisher+=Publisher*)? 
-	 *         (RosTopicSubscriber+=Subscriber RosTopicSubscriber+=Subscriber*)? 
-	 *         (RosServiceServer+=ServiceServer RosServiceServer+=ServiceServer*)? 
-	 *         (RosServiceClient+=ServiceClient RosServiceClient+=ServiceClient*)?
+	 *         (RosTopicPublisher+=RosPublisher RosTopicPublisher+=RosPublisher*)? 
+	 *         (RosTopicSubscriber+=RosSubscriber RosTopicSubscriber+=RosSubscriber*)? 
+	 *         (RosServiceServer+=RosServiceServer RosServiceServer+=RosServiceServer*)? 
+	 *         (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)?
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
@@ -117,18 +117,6 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Contexts:
-	 *     Publisher returns RosPublisher
-	 *
-	 * Constraint:
-	 *     (TopicName=EString? TopicRef=[Publisher|EString]? NameSpace=EString?)
-	 */
-	protected void sequence_Publisher(ISerializationContext context, RosPublisher semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Namespace returns RelativeNamespace
 	 *     RelativeNamespace_Impl returns RelativeNamespace
 	 *
@@ -142,36 +130,48 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Contexts:
-	 *     ServiceClient returns RosServiceClient
+	 *     RosPublisher returns RosPublisher
+	 *
+	 * Constraint:
+	 *     (TopicName=EString? TopicRef=[Publisher|EString]? NameSpace=EString?)
+	 */
+	protected void sequence_RosPublisher(ISerializationContext context, RosPublisher semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RosServiceClient returns RosServiceClient
 	 *
 	 * Constraint:
 	 *     (ServiceName=EString? SrvRef=[ServiceClient|EString]? NameSpace=EString?)
 	 */
-	protected void sequence_ServiceClient(ISerializationContext context, RosServiceClient semanticObject) {
+	protected void sequence_RosServiceClient(ISerializationContext context, RosServiceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ServiceServer returns RosServiceServer
+	 *     RosServiceServer returns RosServiceServer
 	 *
 	 * Constraint:
 	 *     (ServiceName=EString? SrvRef=[ServiceServer|EString]? NameSpace=EString?)
 	 */
-	protected void sequence_ServiceServer(ISerializationContext context, RosServiceServer semanticObject) {
+	protected void sequence_RosServiceServer(ISerializationContext context, RosServiceServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Subscriber returns RosSubscriber
+	 *     RosSubscriber returns RosSubscriber
 	 *
 	 * Constraint:
 	 *     (TopicName=EString? TopicRef=[Subscriber|EString]? NameSpace=EString?)
 	 */
-	protected void sequence_Subscriber(ISerializationContext context, RosSubscriber semanticObject) {
+	protected void sequence_RosSubscriber(ISerializationContext context, RosSubscriber semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

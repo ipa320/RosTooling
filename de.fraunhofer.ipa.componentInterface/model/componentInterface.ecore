@@ -4,13 +4,13 @@
     nsPrefix="componentInterface">
   <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="../../de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicPublisher" upperBound="-1"
-        eType="#//RosPublisher" derived="true" containment="true"/>
+        eType="#//RosPublisher" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosTopicSubscriber" upperBound="-1"
-        eType="#//RosSubscriber" derived="true" containment="true"/>
+        eType="#//RosSubscriber" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceServer" upperBound="-1"
-        eType="#//RosServiceServer" derived="true" containment="true"/>
+        eType="#//RosServiceServer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosServiceClient" upperBound="-1"
-        eType="#//RosServiceClient" derived="true" containment="true"/>
+        eType="#//RosServiceClient" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="TopicRef" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>

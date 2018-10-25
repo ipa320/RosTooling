@@ -206,8 +206,6 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 				return getTopicName();
 			case ComponentInterfacePackage.ROS_PUBLISHER__NAME_SPACE:
 				return getNameSpace();
-
-
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
