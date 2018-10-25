@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<componentInterface:ComponentInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentInterface="http://www.example.org/componentInterface" name="scan_unifier">
-  <RosTopicPublisher TopicName="/scan_unified">
-    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@publisher.0"/>
-  </RosTopicPublisher>
-  <RosTopicSubscriber TopicName="/base_laser_front/scan">
-    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.0"/>
-  </RosTopicSubscriber>
-  <RosTopicSubscriber TopicName="/base_laser_left/scan">
-    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.2"/>
-  </RosTopicSubscriber>
-  <RosTopicSubscriber TopicName="/base_laser_right/scan">
-    <TopicRef href="../rosnodes/scan_unifier.ros#//@package.0/@artifact.0/@node/@subscriber.1"/>
-  </RosTopicSubscriber>
-</componentInterface:ComponentInterface>
+ComponentInterface { name scan_unifier 
+	RosTopicPublisher{
+		Publisher { TopicName "/scan_unified" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./scan_unified" }
+	} RosTopicSubscriber{ 
+		Subscriber { TopicName "/base_laser_front/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_front/scan" } ,
+		Subscriber { TopicName "/base_laser_left/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_left/scan" NameSpace "" } ,
+		Subscriber { TopicName "/base_laser_right/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_right/scan" }
+	}
+}

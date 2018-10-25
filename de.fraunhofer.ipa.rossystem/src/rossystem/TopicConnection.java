@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rossystem.TopicConnection#getFrom <em>From</em>}</li>
- *   <li>{@link rossystem.TopicConnection#getTo <em>To</em>}</li>
+ *   <li>{@link rossystem.TopicConnection#getFromTopic <em>From Topic</em>}</li>
+ *   <li>{@link rossystem.TopicConnection#getToTopic <em>To Topic</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getTopicConnection()
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TopicConnection extends EObject {
 	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
+	 * Returns the value of the '<em><b>From Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From</em>' reference isn't clear,
+	 * If the meaning of the '<em>From Topic</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(RosPublisher)
-	 * @see rossystem.RossystemPackage#getTopicConnection_From()
-	 * @model
+	 * @return the value of the '<em>From Topic</em>' reference.
+	 * @see #setFromTopic(RosPublisher)
+	 * @see rossystem.RossystemPackage#getTopicConnection_FromTopic()
+	 * @model required="true"
 	 * @generated
 	 */
-	RosPublisher getFrom();
+	RosPublisher getFromTopic();
 
 	/**
-	 * Sets the value of the '{@link rossystem.TopicConnection#getFrom <em>From</em>}' reference.
+	 * Sets the value of the '{@link rossystem.TopicConnection#getFromTopic <em>From Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
+	 * @param value the new value of the '<em>From Topic</em>' reference.
+	 * @see #getFromTopic()
 	 * @generated
 	 */
-	void setFrom(RosPublisher value);
+	void setFromTopic(RosPublisher value);
 
 	/**
-	 * Returns the value of the '<em><b>To</b></em>' reference.
+	 * Returns the value of the '<em><b>To Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Topic</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(RosSubscriber)
-	 * @see rossystem.RossystemPackage#getTopicConnection_To()
-	 * @model
+	 * @return the value of the '<em>To Topic</em>' reference.
+	 * @see #setToTopic(RosSubscriber)
+	 * @see rossystem.RossystemPackage#getTopicConnection_ToTopic()
+	 * @model required="true"
 	 * @generated
 	 */
-	RosSubscriber getTo();
+	RosSubscriber getToTopic();
 
 	/**
-	 * Sets the value of the '{@link rossystem.TopicConnection#getTo <em>To</em>}' reference.
+	 * Sets the value of the '{@link rossystem.TopicConnection#getToTopic <em>To Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' reference.
-	 * @see #getTo()
+	 * @param value the new value of the '<em>To Topic</em>' reference.
+	 * @see #getToTopic()
 	 * @generated
 	 */
-	void setTo(RosSubscriber value);
+	void setToTopic(RosSubscriber value);
 
 } // TopicConnection

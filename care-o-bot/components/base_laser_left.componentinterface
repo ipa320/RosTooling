@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<componentInterface:ComponentInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:componentInterface="http://www.example.org/componentInterface" xmlns:ros="http://www.example.org/ros" name="base_laser_left">
-  <namespace xsi:type="ros:RelativeNamespace">
-    <parts>/base_laser_left</parts>
-  </namespace>
-  <RosTopicPublisher TopicName="/base_laser_left/scan" NameSpace="/base_laser_left">
-    <TopicRef href="../rosnodes/sick_s300.ros#//@package.0/@artifact.0/@node/@publisher.0"/>
-  </RosTopicPublisher>
-  <RosTopicPublisher TopicName="/diagnostics">
-    <TopicRef href="../rosnodes/sick_s300.ros#//@package.0/@artifact.0/@node/@publisher.1"/>
-  </RosTopicPublisher>
-</componentInterface:ComponentInterface>
+ComponentInterface { name base_laser_left namespace RelativeNamespace {parts{"/base_laser_left" }}
+	RosTopicPublisher{ 
+		Publisher { TopicName "/base_laser_left/scan" TopicRef "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" NameSpace "/base_laser_left" },
+		Publisher { TopicName "/diagnostics" TopicRef "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}}
+}

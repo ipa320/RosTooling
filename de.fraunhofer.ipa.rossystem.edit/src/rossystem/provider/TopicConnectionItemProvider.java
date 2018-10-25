@@ -57,26 +57,26 @@ public class TopicConnectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFromPropertyDescriptor(object);
-			addToPropertyDescriptor(object);
+			addFromTopicPropertyDescriptor(object);
+			addToTopicPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the From feature.
+	 * This adds a property descriptor for the From Topic feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFromPropertyDescriptor(Object object) {
+	protected void addFromTopicPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TopicConnection_From_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_From_feature", "_UI_TopicConnection_type"),
-				 RossystemPackage.Literals.TOPIC_CONNECTION__FROM,
+				 getString("_UI_TopicConnection_FromTopic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_FromTopic_feature", "_UI_TopicConnection_type"),
+				 RossystemPackage.Literals.TOPIC_CONNECTION__FROM_TOPIC,
 				 true,
 				 false,
 				 true,
@@ -86,19 +86,19 @@ public class TopicConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the To feature.
+	 * This adds a property descriptor for the To Topic feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addToPropertyDescriptor(Object object) {
+	protected void addToTopicPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TopicConnection_To_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_To_feature", "_UI_TopicConnection_type"),
-				 RossystemPackage.Literals.TOPIC_CONNECTION__TO,
+				 getString("_UI_TopicConnection_ToTopic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_ToTopic_feature", "_UI_TopicConnection_type"),
+				 RossystemPackage.Literals.TOPIC_CONNECTION__TO_TOPIC,
 				 true,
 				 false,
 				 true,

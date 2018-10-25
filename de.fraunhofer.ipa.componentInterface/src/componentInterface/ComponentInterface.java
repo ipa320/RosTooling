@@ -36,7 +36,7 @@ public interface ComponentInterface extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ros Topic Publisher</em>' containment reference list.
 	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosTopicPublisher()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<RosPublisher> getRosTopicPublisher();
@@ -52,7 +52,7 @@ public interface ComponentInterface extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ros Topic Subscriber</em>' containment reference list.
 	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosTopicSubscriber()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<RosSubscriber> getRosTopicSubscriber();
@@ -68,7 +68,7 @@ public interface ComponentInterface extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ros Service Server</em>' containment reference list.
 	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosServiceServer()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<RosServiceServer> getRosServiceServer();
@@ -84,7 +84,7 @@ public interface ComponentInterface extends NamespacedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ros Service Client</em>' containment reference list.
 	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosServiceClient()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<RosServiceClient> getRosServiceClient();

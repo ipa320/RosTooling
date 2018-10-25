@@ -23,32 +23,32 @@ import rossystem.TopicConnection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link rossystem.impl.TopicConnectionImpl#getFrom <em>From</em>}</li>
- *   <li>{@link rossystem.impl.TopicConnectionImpl#getTo <em>To</em>}</li>
+ *   <li>{@link rossystem.impl.TopicConnectionImpl#getFromTopic <em>From Topic</em>}</li>
+ *   <li>{@link rossystem.impl.TopicConnectionImpl#getToTopic <em>To Topic</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements TopicConnection {
 	/**
-	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
+	 * The cached value of the '{@link #getFromTopic() <em>From Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrom()
+	 * @see #getFromTopic()
 	 * @generated
 	 * @ordered
 	 */
-	protected RosPublisher from;
+	protected RosPublisher fromTopic;
 
 	/**
-	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
+	 * The cached value of the '{@link #getToTopic() <em>To Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTo()
+	 * @see #getToTopic()
 	 * @generated
 	 * @ordered
 	 */
-	protected RosSubscriber to;
+	protected RosSubscriber toTopic;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,16 +74,16 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosPublisher getFrom() {
-		if (from != null && from.eIsProxy()) {
-			InternalEObject oldFrom = (InternalEObject)from;
-			from = (RosPublisher)eResolveProxy(oldFrom);
-			if (from != oldFrom) {
+	public RosPublisher getFromTopic() {
+		if (fromTopic != null && fromTopic.eIsProxy()) {
+			InternalEObject oldFromTopic = (InternalEObject)fromTopic;
+			fromTopic = (RosPublisher)eResolveProxy(oldFromTopic);
+			if (fromTopic != oldFromTopic) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC, oldFromTopic, fromTopic));
 			}
 		}
-		return from;
+		return fromTopic;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosPublisher basicGetFrom() {
-		return from;
+	public RosPublisher basicGetFromTopic() {
+		return fromTopic;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(RosPublisher newFrom) {
-		RosPublisher oldFrom = from;
-		from = newFrom;
+	public void setFromTopic(RosPublisher newFromTopic) {
+		RosPublisher oldFromTopic = fromTopic;
+		fromTopic = newFromTopic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC, oldFromTopic, fromTopic));
 	}
 
 	/**
@@ -112,16 +112,16 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosSubscriber getTo() {
-		if (to != null && to.eIsProxy()) {
-			InternalEObject oldTo = (InternalEObject)to;
-			to = (RosSubscriber)eResolveProxy(oldTo);
-			if (to != oldTo) {
+	public RosSubscriber getToTopic() {
+		if (toTopic != null && toTopic.eIsProxy()) {
+			InternalEObject oldToTopic = (InternalEObject)toTopic;
+			toTopic = (RosSubscriber)eResolveProxy(oldToTopic);
+			if (toTopic != oldToTopic) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO_TOPIC, oldToTopic, toTopic));
 			}
 		}
-		return to;
+		return toTopic;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosSubscriber basicGetTo() {
-		return to;
+	public RosSubscriber basicGetToTopic() {
+		return toTopic;
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(RosSubscriber newTo) {
-		RosSubscriber oldTo = to;
-		to = newTo;
+	public void setToTopic(RosSubscriber newToTopic) {
+		RosSubscriber oldToTopic = toTopic;
+		toTopic = newToTopic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO_TOPIC, oldToTopic, toTopic));
 	}
 
 	/**
@@ -153,12 +153,12 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				if (resolve) return getFrom();
-				return basicGetFrom();
-			case RossystemPackage.TOPIC_CONNECTION__TO:
-				if (resolve) return getTo();
-				return basicGetTo();
+			case RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC:
+				if (resolve) return getFromTopic();
+				return basicGetFromTopic();
+			case RossystemPackage.TOPIC_CONNECTION__TO_TOPIC:
+				if (resolve) return getToTopic();
+				return basicGetToTopic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +171,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((RosPublisher)newValue);
+			case RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC:
+				setFromTopic((RosPublisher)newValue);
 				return;
-			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((RosSubscriber)newValue);
+			case RossystemPackage.TOPIC_CONNECTION__TO_TOPIC:
+				setToTopic((RosSubscriber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((RosPublisher)null);
+			case RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC:
+				setFromTopic((RosPublisher)null);
 				return;
-			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((RosSubscriber)null);
+			case RossystemPackage.TOPIC_CONNECTION__TO_TOPIC:
+				setToTopic((RosSubscriber)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				return from != null;
-			case RossystemPackage.TOPIC_CONNECTION__TO:
-				return to != null;
+			case RossystemPackage.TOPIC_CONNECTION__FROM_TOPIC:
+				return fromTopic != null;
+			case RossystemPackage.TOPIC_CONNECTION__TO_TOPIC:
+				return toTopic != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -131,22 +131,22 @@ public interface RossystemPackage extends EPackage {
 	int TOPIC_CONNECTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * The feature id for the '<em><b>From Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__FROM = 0;
+	int TOPIC_CONNECTION__FROM_TOPIC = 0;
 
 	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * The feature id for the '<em><b>To Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__TO = 1;
+	int TOPIC_CONNECTION__TO_TOPIC = 1;
 
 	/**
 	 * The number of structural features of the '<em>Topic Connection</em>' class.
@@ -177,22 +177,22 @@ public interface RossystemPackage extends EPackage {
 	int SERVICE_CONNECTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * The feature id for the '<em><b>From Srv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__FROM = 0;
+	int SERVICE_CONNECTION__FROM_SRV = 0;
 
 	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * The feature id for the '<em><b>To Srv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__TO = 1;
+	int SERVICE_CONNECTION__TO_SRV = 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Connection</em>' class.
@@ -278,26 +278,26 @@ public interface RossystemPackage extends EPackage {
 	EClass getTopicConnection();
 
 	/**
-	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getFrom <em>From</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getFromTopic <em>From Topic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From</em>'.
-	 * @see rossystem.TopicConnection#getFrom()
+	 * @return the meta object for the reference '<em>From Topic</em>'.
+	 * @see rossystem.TopicConnection#getFromTopic()
 	 * @see #getTopicConnection()
 	 * @generated
 	 */
-	EReference getTopicConnection_From();
+	EReference getTopicConnection_FromTopic();
 
 	/**
-	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getTo <em>To</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getToTopic <em>To Topic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To</em>'.
-	 * @see rossystem.TopicConnection#getTo()
+	 * @return the meta object for the reference '<em>To Topic</em>'.
+	 * @see rossystem.TopicConnection#getToTopic()
 	 * @see #getTopicConnection()
 	 * @generated
 	 */
-	EReference getTopicConnection_To();
+	EReference getTopicConnection_ToTopic();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.ServiceConnection <em>Service Connection</em>}'.
@@ -310,26 +310,26 @@ public interface RossystemPackage extends EPackage {
 	EClass getServiceConnection();
 
 	/**
-	 * Returns the meta object for the reference '{@link rossystem.ServiceConnection#getFrom <em>From</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.ServiceConnection#getFromSrv <em>From Srv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From</em>'.
-	 * @see rossystem.ServiceConnection#getFrom()
+	 * @return the meta object for the reference '<em>From Srv</em>'.
+	 * @see rossystem.ServiceConnection#getFromSrv()
 	 * @see #getServiceConnection()
 	 * @generated
 	 */
-	EReference getServiceConnection_From();
+	EReference getServiceConnection_FromSrv();
 
 	/**
-	 * Returns the meta object for the reference '{@link rossystem.ServiceConnection#getTo <em>To</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.ServiceConnection#getToSrv <em>To Srv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To</em>'.
-	 * @see rossystem.ServiceConnection#getTo()
+	 * @return the meta object for the reference '<em>To Srv</em>'.
+	 * @see rossystem.ServiceConnection#getToSrv()
 	 * @see #getServiceConnection()
 	 * @generated
 	 */
-	EReference getServiceConnection_To();
+	EReference getServiceConnection_ToSrv();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -407,20 +407,20 @@ public interface RossystemPackage extends EPackage {
 		EClass TOPIC_CONNECTION = eINSTANCE.getTopicConnection();
 
 		/**
-		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>From Topic</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOPIC_CONNECTION__FROM = eINSTANCE.getTopicConnection_From();
+		EReference TOPIC_CONNECTION__FROM_TOPIC = eINSTANCE.getTopicConnection_FromTopic();
 
 		/**
-		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Topic</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOPIC_CONNECTION__TO = eINSTANCE.getTopicConnection_To();
+		EReference TOPIC_CONNECTION__TO_TOPIC = eINSTANCE.getTopicConnection_ToTopic();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.ServiceConnectionImpl <em>Service Connection</em>}' class.
@@ -433,20 +433,20 @@ public interface RossystemPackage extends EPackage {
 		EClass SERVICE_CONNECTION = eINSTANCE.getServiceConnection();
 
 		/**
-		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>From Srv</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_CONNECTION__FROM = eINSTANCE.getServiceConnection_From();
+		EReference SERVICE_CONNECTION__FROM_SRV = eINSTANCE.getServiceConnection_FromSrv();
 
 		/**
-		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Srv</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_CONNECTION__TO = eINSTANCE.getServiceConnection_To();
+		EReference SERVICE_CONNECTION__TO_SRV = eINSTANCE.getServiceConnection_ToSrv();
 
 	}
 

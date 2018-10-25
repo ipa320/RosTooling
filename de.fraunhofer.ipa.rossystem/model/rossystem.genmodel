@@ -14,12 +14,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/To"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/FromTopic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/ToTopic"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//ServiceConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/From"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/To"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/FromSrv"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/ToSrv"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

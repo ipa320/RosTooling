@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rossystem.ServiceConnection#getFrom <em>From</em>}</li>
- *   <li>{@link rossystem.ServiceConnection#getTo <em>To</em>}</li>
+ *   <li>{@link rossystem.ServiceConnection#getFromSrv <em>From Srv</em>}</li>
+ *   <li>{@link rossystem.ServiceConnection#getToSrv <em>To Srv</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getServiceConnection()
@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ServiceConnection extends EObject {
 	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
+	 * Returns the value of the '<em><b>From Srv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From</em>' reference isn't clear,
+	 * If the meaning of the '<em>From Srv</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(RosServiceServer)
-	 * @see rossystem.RossystemPackage#getServiceConnection_From()
-	 * @model
+	 * @return the value of the '<em>From Srv</em>' reference.
+	 * @see #setFromSrv(RosServiceServer)
+	 * @see rossystem.RossystemPackage#getServiceConnection_FromSrv()
+	 * @model required="true"
 	 * @generated
 	 */
-	RosServiceServer getFrom();
+	RosServiceServer getFromSrv();
 
 	/**
-	 * Sets the value of the '{@link rossystem.ServiceConnection#getFrom <em>From</em>}' reference.
+	 * Sets the value of the '{@link rossystem.ServiceConnection#getFromSrv <em>From Srv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
+	 * @param value the new value of the '<em>From Srv</em>' reference.
+	 * @see #getFromSrv()
 	 * @generated
 	 */
-	void setFrom(RosServiceServer value);
+	void setFromSrv(RosServiceServer value);
 
 	/**
-	 * Returns the value of the '<em><b>To</b></em>' reference.
+	 * Returns the value of the '<em><b>To Srv</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Srv</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(RosServiceClient)
-	 * @see rossystem.RossystemPackage#getServiceConnection_To()
-	 * @model
+	 * @return the value of the '<em>To Srv</em>' reference.
+	 * @see #setToSrv(RosServiceClient)
+	 * @see rossystem.RossystemPackage#getServiceConnection_ToSrv()
+	 * @model required="true"
 	 * @generated
 	 */
-	RosServiceClient getTo();
+	RosServiceClient getToSrv();
 
 	/**
-	 * Sets the value of the '{@link rossystem.ServiceConnection#getTo <em>To</em>}' reference.
+	 * Sets the value of the '{@link rossystem.ServiceConnection#getToSrv <em>To Srv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' reference.
-	 * @see #getTo()
+	 * @param value the new value of the '<em>To Srv</em>' reference.
+	 * @see #getToSrv()
 	 * @generated
 	 */
-	void setTo(RosServiceClient value);
+	void setToSrv(RosServiceClient value);
 
 } // ServiceConnection
