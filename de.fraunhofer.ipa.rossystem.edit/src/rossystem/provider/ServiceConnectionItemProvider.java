@@ -57,26 +57,26 @@ public class ServiceConnectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFromPropertyDescriptor(object);
-			addToPropertyDescriptor(object);
+			addFromSrvPropertyDescriptor(object);
+			addToSrvPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the From feature.
+	 * This adds a property descriptor for the From Srv feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFromPropertyDescriptor(Object object) {
+	protected void addFromSrvPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceConnection_From_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConnection_From_feature", "_UI_ServiceConnection_type"),
-				 RossystemPackage.Literals.SERVICE_CONNECTION__FROM,
+				 getString("_UI_ServiceConnection_FromSrv_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConnection_FromSrv_feature", "_UI_ServiceConnection_type"),
+				 RossystemPackage.Literals.SERVICE_CONNECTION__FROM_SRV,
 				 true,
 				 false,
 				 true,
@@ -86,19 +86,19 @@ public class ServiceConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the To feature.
+	 * This adds a property descriptor for the To Srv feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addToPropertyDescriptor(Object object) {
+	protected void addToSrvPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceConnection_To_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConnection_To_feature", "_UI_ServiceConnection_type"),
-				 RossystemPackage.Literals.SERVICE_CONNECTION__TO,
+				 getString("_UI_ServiceConnection_ToSrv_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConnection_ToSrv_feature", "_UI_ServiceConnection_type"),
+				 RossystemPackage.Literals.SERVICE_CONNECTION__TO_SRV,
 				 true,
 				 false,
 				 true,

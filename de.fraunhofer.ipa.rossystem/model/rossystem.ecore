@@ -11,11 +11,14 @@
         eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//ComponentInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TopicConnection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosPublisher"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosSubscriber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FromTopic" lowerBound="1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosPublisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ToTopic" lowerBound="1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosSubscriber"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceConnection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="From" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosServiceServer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="To" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosServiceClient"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FromSrv" lowerBound="1"
+        eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ToSrv" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#//RosServiceClient"/>
   </eClassifiers>
 </ecore:EPackage>

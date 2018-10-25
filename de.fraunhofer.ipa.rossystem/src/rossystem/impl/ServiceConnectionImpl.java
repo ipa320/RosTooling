@@ -23,32 +23,32 @@ import rossystem.ServiceConnection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link rossystem.impl.ServiceConnectionImpl#getFrom <em>From</em>}</li>
- *   <li>{@link rossystem.impl.ServiceConnectionImpl#getTo <em>To</em>}</li>
+ *   <li>{@link rossystem.impl.ServiceConnectionImpl#getFromSrv <em>From Srv</em>}</li>
+ *   <li>{@link rossystem.impl.ServiceConnectionImpl#getToSrv <em>To Srv</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implements ServiceConnection {
 	/**
-	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
+	 * The cached value of the '{@link #getFromSrv() <em>From Srv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrom()
+	 * @see #getFromSrv()
 	 * @generated
 	 * @ordered
 	 */
-	protected RosServiceServer from;
+	protected RosServiceServer fromSrv;
 
 	/**
-	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
+	 * The cached value of the '{@link #getToSrv() <em>To Srv</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTo()
+	 * @see #getToSrv()
 	 * @generated
 	 * @ordered
 	 */
-	protected RosServiceClient to;
+	protected RosServiceClient toSrv;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,16 +74,16 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosServiceServer getFrom() {
-		if (from != null && from.eIsProxy()) {
-			InternalEObject oldFrom = (InternalEObject)from;
-			from = (RosServiceServer)eResolveProxy(oldFrom);
-			if (from != oldFrom) {
+	public RosServiceServer getFromSrv() {
+		if (fromSrv != null && fromSrv.eIsProxy()) {
+			InternalEObject oldFromSrv = (InternalEObject)fromSrv;
+			fromSrv = (RosServiceServer)eResolveProxy(oldFromSrv);
+			if (fromSrv != oldFromSrv) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__FROM_SRV, oldFromSrv, fromSrv));
 			}
 		}
-		return from;
+		return fromSrv;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosServiceServer basicGetFrom() {
-		return from;
+	public RosServiceServer basicGetFromSrv() {
+		return fromSrv;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(RosServiceServer newFrom) {
-		RosServiceServer oldFrom = from;
-		from = newFrom;
+	public void setFromSrv(RosServiceServer newFromSrv) {
+		RosServiceServer oldFromSrv = fromSrv;
+		fromSrv = newFromSrv;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__FROM_SRV, oldFromSrv, fromSrv));
 	}
 
 	/**
@@ -112,16 +112,16 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosServiceClient getTo() {
-		if (to != null && to.eIsProxy()) {
-			InternalEObject oldTo = (InternalEObject)to;
-			to = (RosServiceClient)eResolveProxy(oldTo);
-			if (to != oldTo) {
+	public RosServiceClient getToSrv() {
+		if (toSrv != null && toSrv.eIsProxy()) {
+			InternalEObject oldToSrv = (InternalEObject)toSrv;
+			toSrv = (RosServiceClient)eResolveProxy(oldToSrv);
+			if (toSrv != oldToSrv) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__TO_SRV, oldToSrv, toSrv));
 			}
 		}
-		return to;
+		return toSrv;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosServiceClient basicGetTo() {
-		return to;
+	public RosServiceClient basicGetToSrv() {
+		return toSrv;
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(RosServiceClient newTo) {
-		RosServiceClient oldTo = to;
-		to = newTo;
+	public void setToSrv(RosServiceClient newToSrv) {
+		RosServiceClient oldToSrv = toSrv;
+		toSrv = newToSrv;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__TO_SRV, oldToSrv, toSrv));
 	}
 
 	/**
@@ -153,12 +153,12 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				if (resolve) return getFrom();
-				return basicGetFrom();
-			case RossystemPackage.SERVICE_CONNECTION__TO:
-				if (resolve) return getTo();
-				return basicGetTo();
+			case RossystemPackage.SERVICE_CONNECTION__FROM_SRV:
+				if (resolve) return getFromSrv();
+				return basicGetFromSrv();
+			case RossystemPackage.SERVICE_CONNECTION__TO_SRV:
+				if (resolve) return getToSrv();
+				return basicGetToSrv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +171,11 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((RosServiceServer)newValue);
+			case RossystemPackage.SERVICE_CONNECTION__FROM_SRV:
+				setFromSrv((RosServiceServer)newValue);
 				return;
-			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((RosServiceClient)newValue);
+			case RossystemPackage.SERVICE_CONNECTION__TO_SRV:
+				setToSrv((RosServiceClient)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((RosServiceServer)null);
+			case RossystemPackage.SERVICE_CONNECTION__FROM_SRV:
+				setFromSrv((RosServiceServer)null);
 				return;
-			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((RosServiceClient)null);
+			case RossystemPackage.SERVICE_CONNECTION__TO_SRV:
+				setToSrv((RosServiceClient)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				return from != null;
-			case RossystemPackage.SERVICE_CONNECTION__TO:
-				return to != null;
+			case RossystemPackage.SERVICE_CONNECTION__FROM_SRV:
+				return fromSrv != null;
+			case RossystemPackage.SERVICE_CONNECTION__TO_SRV:
+				return toSrv != null;
 		}
 		return super.eIsSet(featureID);
 	}
