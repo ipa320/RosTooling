@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:componentInterface="http://www.example.org/componentInterface" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ros="http://www.example.org/ros" xmlns:rossystem="http://www.example.org/rossystem" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_B0sUEMfhEeiH8ahURsoTNg" selectedViews="_B3UKQMfhEeiH8ahURsoTNg _LIWzoMfoEeiH8ahURsoTNg" version="12.1.0.201708031200">
+  <viewpoint:DAnalysis xmi:id="_B0sUEMfhEeiH8ahURsoTNg" selectedViews="_B3UKQMfhEeiH8ahURsoTNg _LIWzoMfoEeiH8ahURsoTNg" version="13.0.0.201804031646">
     <semanticResources>basic_msgs/common_msgs.ros</semanticResources>
     <semanticResources>basic_msgs/ros_core.ros</semanticResources>
     <semanticResources>components/base_laser_front.componentinterface</semanticResources>
@@ -17,6 +17,7 @@
     <semanticResources>My.rossystem</semanticResources>
     <semanticResources>components/My1.componentinterface</semanticResources>
     <semanticResources>My1.rossystem</semanticResources>
+    <semanticResources>My.componentinterface</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_B3UKQMfhEeiH8ahURsoTNg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='component']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_StXQ0NbIEeiXIfKTRMNAVA" name="scan_unifier" repPath="#_StUNgNbIEeiXIfKTRMNAVA">
@@ -454,7 +455,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@nodeMappings[name='NewTopicConnection']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eM9MMNgeEeiUK8lVC6Q0dg" name="base_laser_front" tooltipText="ros.impl.RelativeNamespaceImpl@11b4411b (parts: [/base_laser_front])">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eM9MMNgeEeiUK8lVC6Q0dg" name="base_laser_front" tooltipText="ros.impl.RelativeNamespaceImpl@2d9c1b93 (parts: [/base_laser_front])">
       <target xmi:type="componentInterface:ComponentInterface" href="components/base_laser_front.componentinterface#/"/>
       <semanticElements xmi:type="componentInterface:ComponentInterface" href="components/base_laser_front.componentinterface#/"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_yG7qgNgiEei5DtHxL_xnnA" name="/base_laser_front/scan" tooltipText="Topic" outgoingEdges="_yNe-cNgiEei5DtHxL_xnnA" width="2" height="2" resizeKind="NSEW">
@@ -488,7 +489,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eNBdoNgeEeiUK8lVC6Q0dg" name="base_laser_left" tooltipText="ros.impl.RelativeNamespaceImpl@40c8fc52 (parts: [/base_laser_left])">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eNBdoNgeEeiUK8lVC6Q0dg" name="base_laser_left" tooltipText="ros.impl.RelativeNamespaceImpl@2f9ec8ad (parts: [/base_laser_left])">
       <target xmi:type="componentInterface:ComponentInterface" href="components/base_laser_left.componentinterface#/"/>
       <semanticElements xmi:type="componentInterface:ComponentInterface" href="components/base_laser_left.componentinterface#/"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_yG_78NgiEei5DtHxL_xnnA" name="/base_laser_left/scan" tooltipText="Topic" outgoingEdges="_yNbUENgiEei5DtHxL_xnnA" width="2" height="2" resizeKind="NSEW">
@@ -522,7 +523,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eND54NgeEeiUK8lVC6Q0dg" name="base_laser_right" tooltipText="ros.impl.RelativeNamespaceImpl@1b5fe60c (parts: [/base_laser_right])">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eND54NgeEeiUK8lVC6Q0dg" name="base_laser_right" tooltipText="ros.impl.RelativeNamespaceImpl@550ae683 (parts: [/base_laser_right])">
       <target xmi:type="componentInterface:ComponentInterface" href="components/base_laser_right.componentinterface#/"/>
       <semanticElements xmi:type="componentInterface:ComponentInterface" href="components/base_laser_right.componentinterface#/"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_yHCYMNgiEei5DtHxL_xnnA" name="/base_laser_right/scan" tooltipText="Topic" outgoingEdges="_yNdwUNgiEei5DtHxL_xnnA" width="2" height="2" resizeKind="NSEW">

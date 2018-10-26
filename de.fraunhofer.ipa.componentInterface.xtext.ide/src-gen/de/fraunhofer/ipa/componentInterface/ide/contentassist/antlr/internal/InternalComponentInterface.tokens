@@ -15,11 +15,11 @@
 'Subscriber'=29
 'TopicName'=26
 'TopicRef'=27
-'name'=13
+'name'=14
 'namespace'=15
 'parts'=22
 '{'=12
-'}'=14
+'}'=13
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=6

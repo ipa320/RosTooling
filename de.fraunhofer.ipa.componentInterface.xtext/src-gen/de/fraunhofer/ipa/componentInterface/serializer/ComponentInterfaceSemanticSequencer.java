@@ -76,13 +76,52 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
-	 *         namespace=Namespace? 
-	 *         (RosTopicPublisher+=RosPublisher RosTopicPublisher+=RosPublisher*)? 
-	 *         (RosTopicSubscriber+=RosSubscriber RosTopicSubscriber+=RosSubscriber*)? 
-	 *         (RosServiceServer+=RosServiceServer RosServiceServer+=RosServiceServer*)? 
-	 *         (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)?
-	 *     )
+	 *         (
+	 *             ((name=EString? namespace=Namespace) | namespace=Namespace) 
+	 *             RosTopicSubscriber+=RosSubscriber 
+	 *             RosTopicSubscriber+=RosSubscriber* 
+	 *             (
+	 *                 (
+	 *                     RosServiceServer+=RosServiceServer 
+	 *                     RosServiceServer+=RosServiceServer* 
+	 *                     (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)
+	 *                 ) | 
+	 *                 (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)
+	 *             )?
+	 *         ) | 
+	 *         (
+	 *             (
+	 *                 (name=EString? namespace=Namespace) | 
+	 *                 (
+	 *                     name=EString? 
+	 *                     namespace=Namespace 
+	 *                     RosTopicPublisher+=RosPublisher 
+	 *                     RosTopicPublisher+=RosPublisher* 
+	 *                     (RosTopicSubscriber+=RosSubscriber RosTopicSubscriber+=RosSubscriber*)?
+	 *                 ) | 
+	 *                 namespace=Namespace
+	 *             ) 
+	 *             RosServiceServer+=RosServiceServer 
+	 *             RosServiceServer+=RosServiceServer* 
+	 *             (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)
+	 *         ) | 
+	 *         (name=EString? namespace=Namespace) | 
+	 *         (((name=EString? namespace=Namespace) | namespace=Namespace) (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)) | 
+	 *         (
+	 *             name=EString? 
+	 *             namespace=Namespace 
+	 *             RosTopicPublisher+=RosPublisher 
+	 *             RosTopicPublisher+=RosPublisher* 
+	 *             (
+	 *                 (
+	 *                     (RosTopicSubscriber+=RosSubscriber RosTopicSubscriber+=RosSubscriber*)? 
+	 *                     (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)
+	 *                 ) | 
+	 *                 (RosServiceClient+=RosServiceClient RosServiceClient+=RosServiceClient*)
+	 *             )
+	 *         ) | 
+	 *         namespace=Namespace
+	 *     )?
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
