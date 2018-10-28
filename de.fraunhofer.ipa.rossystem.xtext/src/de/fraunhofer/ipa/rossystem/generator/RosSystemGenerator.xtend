@@ -7,19 +7,88 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import rossystem.RosSystem
+import componentInterface.ComponentInterface
+import componentInterface.RosPublisher
+import ros.Publisher
+import componentInterface.RosSubscriber
+import ros.Subscriber
+import componentInterface.RosServiceClient
+import ros.ServiceClient
+import componentInterface.RosServiceServer
+import ros.ServiceServer
 
-/**
- * Generates code from your model files on save.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
- */
+
 class RosSystemGenerator extends AbstractGenerator {
 
+	String resourcepath
+	String package_name
+	Iterable<RosPublisher> pub
+	Object rospub
+	Iterable<RosSubscriber> sub
+	Iterable<Subscriber> rossub
+	Iterable<RosServiceClient> client
+	Iterable<ServiceClient> rosclient
+	Iterable<RosServiceServer> server
+	Iterable<ServiceServer> rosserver
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+			resourcepath = resource.URI.toString();
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName()+".launch",system.compile)
+				}
+			}
+	
+	
+	def compile(RosSystem system) '''
+	
+	<?xml version="1.0"?>
+	<launch>
+
+	«FOR component:system.rosComponent»
+		«component.compile»
+	«ENDFOR»
+
+
+	</launch>
+	
+	
+	'''
+
+
+def compile(ComponentInterface component) 
+	'''
+	<node pkg="«component.package»" type="" name="" />
+
+	'''
+	 
+def String getPackage(ComponentInterface component){
+	if(component.eContents.contains(RosPublisher)){
+		pub=component.eContents.toList.filter(RosPublisher);
+		rospub=pub.get(0).eContents.toList.filter(Publisher);
+		package_name=rospub.class.package.name;
+		return package_name;
 	}
+	if(component.eContents.contains(RosSubscriber)){
+		sub=component.eContents.toList.filter(RosSubscriber);
+		rossub=sub.get(0).eContents.toList.filter(Subscriber);
+		package_name=rossub.class.package.name;
+		return package_name;
+	}	
+	if(component.eContents.contains(RosServiceClient)){
+		client=component.eContents.toList.filter(RosServiceClient);
+		rosclient=client.get(0).eContents.toList.filter(ServiceClient);
+		package_name=rosclient.class.package.name;
+		return package_name;
+	}
+	if(component.eContents.contains(RosServiceServer)){
+		server=component.eContents.toList.filter(RosServiceServer);
+		rosserver=server.get(0).eContents.toList.filter(ServiceServer);
+		package_name=rosserver.class.package.name;
+		return package_name;
+	}	
 }
+
+}
+
+
