@@ -14,9 +14,9 @@ import ros.Publisher;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link componentInterface.RosPublisher#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.RosPublisher#getNs <em>Ns</em>}</li>
- *   <li>{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getRosPublisher()
@@ -24,6 +24,32 @@ import ros.Publisher;
  * @generated
  */
 public interface RosPublisher extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Publisher</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Publisher</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Publisher</em>' reference.
+	 * @see #setPublisher(Publisher)
+	 * @see componentInterface.ComponentInterfacePackage#getRosPublisher_Publisher()
+	 * @model
+	 * @generated
+	 */
+	Publisher getPublisher();
+
+	/**
+	 * Sets the value of the '{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Publisher</em>' reference.
+	 * @see #getPublisher()
+	 * @generated
+	 */
+	void setPublisher(Publisher value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,31 +101,5 @@ public interface RosPublisher extends EObject {
 	 * @generated
 	 */
 	void setNs(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Publisher</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Publisher</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Publisher</em>' reference.
-	 * @see #setPublisher(Publisher)
-	 * @see componentInterface.ComponentInterfacePackage#getRosPublisher_Publisher()
-	 * @model
-	 * @generated
-	 */
-	Publisher getPublisher();
-
-	/**
-	 * Sets the value of the '{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Publisher</em>' reference.
-	 * @see #getPublisher()
-	 * @generated
-	 */
-	void setPublisher(Publisher value);
 
 } // RosPublisher

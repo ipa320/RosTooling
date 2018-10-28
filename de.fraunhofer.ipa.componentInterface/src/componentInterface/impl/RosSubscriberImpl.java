@@ -22,54 +22,14 @@ import ros.Subscriber;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.impl.RosSubscriberImpl#getSubscriber <em>Subscriber</em>}</li>
  *   <li>{@link componentInterface.impl.RosSubscriberImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.impl.RosSubscriberImpl#getNs <em>Ns</em>}</li>
- *   <li>{@link componentInterface.impl.RosSubscriberImpl#getSubscriber <em>Subscriber</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements RosSubscriber {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNs()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNs()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ns = NS_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getSubscriber() <em>Subscriber</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -79,6 +39,43 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @ordered
 	 */
 	protected Subscriber subscriber;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NS_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNs()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ns = NS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,48 +94,6 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentInterfacePackage.Literals.ROS_SUBSCRIBER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNs() {
-		return ns;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNs(String newNs) {
-		String oldNs = ns;
-		ns = newNs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NS, oldNs, ns));
 	}
 
 	/**
@@ -182,18 +137,72 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getTopicName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && subscriber != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+			}else if (subscriber != null) {
+				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNs() {
+		return ns;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNs(String newNs) {
+		String oldNs = ns;
+		ns = newNs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NS, oldNs, ns));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				if (resolve) return getSubscriber();
+				return basicGetSubscriber();
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
 				return getName();
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
 				return getNs();
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
-				if (resolve) return getSubscriber();
-				return basicGetSubscriber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,14 +215,14 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				setSubscriber((Subscriber)newValue);
+				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
 				setName((String)newValue);
 				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
 				setNs((String)newValue);
-				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
-				setSubscriber((Subscriber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,14 +236,14 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				setSubscriber((Subscriber)null);
+				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
 				setNs(NS_EDEFAULT);
-				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
-				setSubscriber((Subscriber)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,12 +257,12 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				return subscriber != null;
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
-				return subscriber != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -274,6 +283,22 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 		result.append(ns);
 		result.append(')');
 		return result.toString();
+	}
+
+	public String getName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && subscriber != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+			}else if (subscriber != null) {
+				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
 	}
 
 } //RosSubscriberImpl

@@ -15,20 +15,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosPublisher">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosPublisher/publisher"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/ns"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosPublisher/publisher"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosSubscriber">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosSubscriber/subscriber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/ns"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosSubscriber/subscriber"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosServiceServer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceServer/srvserver"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/ns"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosServiceClient">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceClient/srvclient"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/ns"/>
     </genClasses>

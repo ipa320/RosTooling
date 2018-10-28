@@ -3,6 +3,7 @@
 package componentInterface;
 
 import org.eclipse.emf.ecore.EObject;
+import ros.ServiceServer;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.RosServiceServer#getSrvserver <em>Srvserver</em>}</li>
  *   <li>{@link componentInterface.RosServiceServer#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.RosServiceServer#getNs <em>Ns</em>}</li>
  * </ul>
@@ -22,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface RosServiceServer extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Srvserver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Srvserver</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Srvserver</em>' reference.
+	 * @see #setSrvserver(ServiceServer)
+	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_Srvserver()
+	 * @model
+	 * @generated
+	 */
+	ServiceServer getSrvserver();
+
+	/**
+	 * Sets the value of the '{@link componentInterface.RosServiceServer#getSrvserver <em>Srvserver</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Srvserver</em>' reference.
+	 * @see #getSrvserver()
+	 * @generated
+	 */
+	void setSrvserver(ServiceServer value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

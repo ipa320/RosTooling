@@ -29,70 +29,70 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cComponentInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNameSpaceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNamespaceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNamespaceNamespaceParserRuleCall_3_1_0 = (RuleCall)cNamespaceAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cNamespaceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cNamespaceAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_4_1_0 = (RuleCall)cNamespaceAssignment_4_1.eContents().get(0);
+		private final Keyword cRosPublishersKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cRospublisherAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cRospublisherRosPublisherParserRuleCall_4_2_0 = (RuleCall)cRospublisherAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cRospublisherAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cRospublisherRosPublisherParserRuleCall_4_3_1_0 = (RuleCall)cRospublisherAssignment_4_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cRospublisherKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cRosSubscribersKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cRospublisherAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cRospublisherRosPublisherParserRuleCall_5_2_0 = (RuleCall)cRospublisherAssignment_5_2.eContents().get(0);
+		private final Assignment cRossubscriberAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cRossubscriberRosSubscriberParserRuleCall_5_2_0 = (RuleCall)cRossubscriberAssignment_5_2.eContents().get(0);
 		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
 		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cRospublisherAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cRospublisherRosPublisherParserRuleCall_5_3_1_0 = (RuleCall)cRospublisherAssignment_5_3_1.eContents().get(0);
+		private final Assignment cRossubscriberAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cRossubscriberRosSubscriberParserRuleCall_5_3_1_0 = (RuleCall)cRossubscriberAssignment_5_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cRossubscriberKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cRosSrvServersKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cRossubscriberAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cRossubscriberRosSubscriberParserRuleCall_6_2_0 = (RuleCall)cRossubscriberAssignment_6_2.eContents().get(0);
+		private final Assignment cRosserviceserverAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cRosserviceserverRosServiceServerParserRuleCall_6_2_0 = (RuleCall)cRosserviceserverAssignment_6_2.eContents().get(0);
 		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
 		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cRossubscriberAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cRossubscriberRosSubscriberParserRuleCall_6_3_1_0 = (RuleCall)cRossubscriberAssignment_6_3_1.eContents().get(0);
+		private final Assignment cRosserviceserverAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
+		private final RuleCall cRosserviceserverRosServiceServerParserRuleCall_6_3_1_0 = (RuleCall)cRosserviceserverAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cRosserviceserverKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cRosSrvClientsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cRosserviceserverAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cRosserviceserverRosServiceServerParserRuleCall_7_2_0 = (RuleCall)cRosserviceserverAssignment_7_2.eContents().get(0);
+		private final Assignment cRosserviceclientAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cRosserviceclientRosServiceClientParserRuleCall_7_2_0 = (RuleCall)cRosserviceclientAssignment_7_2.eContents().get(0);
 		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
 		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cRosserviceserverAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cRosserviceserverRosServiceServerParserRuleCall_7_3_1_0 = (RuleCall)cRosserviceserverAssignment_7_3_1.eContents().get(0);
+		private final Assignment cRosserviceclientAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
+		private final RuleCall cRosserviceclientRosServiceClientParserRuleCall_7_3_1_0 = (RuleCall)cRosserviceclientAssignment_7_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cRosserviceclientKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cRosserviceclientAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cRosserviceclientRosServiceClientParserRuleCall_8_2_0 = (RuleCall)cRosserviceclientAssignment_8_2.eContents().get(0);
-		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
-		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
-		private final Assignment cRosserviceclientAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
-		private final RuleCall cRosserviceclientRosServiceClientParserRuleCall_8_3_1_0 = (RuleCall)cRosserviceclientAssignment_8_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//ComponentInterface:
 		//	'ComponentInterface'
-		//	'{'
-		//	'name' name=EString ('namespace' namespace=Namespace)? ('rospublisher' '{' rospublisher+=RosPublisher (","
-		//	rospublisher+=RosPublisher)* '}')? ('rossubscriber' '{' rossubscriber+=RosSubscriber (","
-		//	rossubscriber+=RosSubscriber)* '}')? ('rosserviceserver' '{' rosserviceserver+=RosServiceServer (","
-		//	rosserviceserver+=RosServiceServer)* '}')? ('rosserviceclient' '{' rosserviceclient+=RosServiceClient (","
+		//	'{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
+		//	rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber (","
+		//	rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
+		//	rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
 		//	rosserviceclient+=RosServiceClient)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ComponentInterface' '{' 'name' name=EString ('namespace' namespace=Namespace)? ('rospublisher' '{'
-		//rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')? ('rossubscriber' '{' rossubscriber+=RosSubscriber
-		//("," rossubscriber+=RosSubscriber)* '}')? ('rosserviceserver' '{' rosserviceserver+=RosServiceServer (","
-		//rosserviceserver+=RosServiceServer)* '}')? ('rosserviceclient' '{' rosserviceclient+=RosServiceClient (","
+		//'ComponentInterface' '{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{'
+		//rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber
+		//("," rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
+		//rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
 		//rosserviceclient+=RosServiceClient)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -102,149 +102,152 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
+		//('name' name=EString)?
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//'name'
-		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
+		public Keyword getNameKeyword_2_0() { return cNameKeyword_2_0; }
 		
 		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
+		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
 		
-		//('namespace' namespace=Namespace)?
-		public Group getGroup_4() { return cGroup_4; }
+		//('NameSpace' namespace=Namespace)?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//'namespace'
-		public Keyword getNamespaceKeyword_4_0() { return cNamespaceKeyword_4_0; }
+		//'NameSpace'
+		public Keyword getNameSpaceKeyword_3_0() { return cNameSpaceKeyword_3_0; }
 		
 		//namespace=Namespace
-		public Assignment getNamespaceAssignment_4_1() { return cNamespaceAssignment_4_1; }
+		public Assignment getNamespaceAssignment_3_1() { return cNamespaceAssignment_3_1; }
 		
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_4_1_0() { return cNamespaceNamespaceParserRuleCall_4_1_0; }
+		public RuleCall getNamespaceNamespaceParserRuleCall_3_1_0() { return cNamespaceNamespaceParserRuleCall_3_1_0; }
 		
-		//('rospublisher' '{' rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')?
+		//('RosPublishers' '{' rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'RosPublishers'
+		public Keyword getRosPublishersKeyword_4_0() { return cRosPublishersKeyword_4_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		
+		//rospublisher+=RosPublisher
+		public Assignment getRospublisherAssignment_4_2() { return cRospublisherAssignment_4_2; }
+		
+		//RosPublisher
+		public RuleCall getRospublisherRosPublisherParserRuleCall_4_2_0() { return cRospublisherRosPublisherParserRuleCall_4_2_0; }
+		
+		//("," rospublisher+=RosPublisher)*
+		public Group getGroup_4_3() { return cGroup_4_3; }
+		
+		//","
+		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		
+		//rospublisher+=RosPublisher
+		public Assignment getRospublisherAssignment_4_3_1() { return cRospublisherAssignment_4_3_1; }
+		
+		//RosPublisher
+		public RuleCall getRospublisherRosPublisherParserRuleCall_4_3_1_0() { return cRospublisherRosPublisherParserRuleCall_4_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		
+		//('RosSubscribers' '{' rossubscriber+=RosSubscriber ("," rossubscriber+=RosSubscriber)* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'rospublisher'
-		public Keyword getRospublisherKeyword_5_0() { return cRospublisherKeyword_5_0; }
+		//'RosSubscribers'
+		public Keyword getRosSubscribersKeyword_5_0() { return cRosSubscribersKeyword_5_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 		
-		//rospublisher+=RosPublisher
-		public Assignment getRospublisherAssignment_5_2() { return cRospublisherAssignment_5_2; }
+		//rossubscriber+=RosSubscriber
+		public Assignment getRossubscriberAssignment_5_2() { return cRossubscriberAssignment_5_2; }
 		
-		//RosPublisher
-		public RuleCall getRospublisherRosPublisherParserRuleCall_5_2_0() { return cRospublisherRosPublisherParserRuleCall_5_2_0; }
+		//RosSubscriber
+		public RuleCall getRossubscriberRosSubscriberParserRuleCall_5_2_0() { return cRossubscriberRosSubscriberParserRuleCall_5_2_0; }
 		
-		//("," rospublisher+=RosPublisher)*
+		//("," rossubscriber+=RosSubscriber)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
 		
 		//","
 		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
 		
-		//rospublisher+=RosPublisher
-		public Assignment getRospublisherAssignment_5_3_1() { return cRospublisherAssignment_5_3_1; }
+		//rossubscriber+=RosSubscriber
+		public Assignment getRossubscriberAssignment_5_3_1() { return cRossubscriberAssignment_5_3_1; }
 		
-		//RosPublisher
-		public RuleCall getRospublisherRosPublisherParserRuleCall_5_3_1_0() { return cRospublisherRosPublisherParserRuleCall_5_3_1_0; }
+		//RosSubscriber
+		public RuleCall getRossubscriberRosSubscriberParserRuleCall_5_3_1_0() { return cRossubscriberRosSubscriberParserRuleCall_5_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
-		//('rossubscriber' '{' rossubscriber+=RosSubscriber ("," rossubscriber+=RosSubscriber)* '}')?
+		//('RosSrvServers' '{' rosserviceserver+=RosServiceServer ("," rosserviceserver+=RosServiceServer)* '}')?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'rossubscriber'
-		public Keyword getRossubscriberKeyword_6_0() { return cRossubscriberKeyword_6_0; }
+		//'RosSrvServers'
+		public Keyword getRosSrvServersKeyword_6_0() { return cRosSrvServersKeyword_6_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
 		
-		//rossubscriber+=RosSubscriber
-		public Assignment getRossubscriberAssignment_6_2() { return cRossubscriberAssignment_6_2; }
+		//rosserviceserver+=RosServiceServer
+		public Assignment getRosserviceserverAssignment_6_2() { return cRosserviceserverAssignment_6_2; }
 		
-		//RosSubscriber
-		public RuleCall getRossubscriberRosSubscriberParserRuleCall_6_2_0() { return cRossubscriberRosSubscriberParserRuleCall_6_2_0; }
+		//RosServiceServer
+		public RuleCall getRosserviceserverRosServiceServerParserRuleCall_6_2_0() { return cRosserviceserverRosServiceServerParserRuleCall_6_2_0; }
 		
-		//("," rossubscriber+=RosSubscriber)*
+		//("," rosserviceserver+=RosServiceServer)*
 		public Group getGroup_6_3() { return cGroup_6_3; }
 		
 		//","
 		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
 		
-		//rossubscriber+=RosSubscriber
-		public Assignment getRossubscriberAssignment_6_3_1() { return cRossubscriberAssignment_6_3_1; }
+		//rosserviceserver+=RosServiceServer
+		public Assignment getRosserviceserverAssignment_6_3_1() { return cRosserviceserverAssignment_6_3_1; }
 		
-		//RosSubscriber
-		public RuleCall getRossubscriberRosSubscriberParserRuleCall_6_3_1_0() { return cRossubscriberRosSubscriberParserRuleCall_6_3_1_0; }
+		//RosServiceServer
+		public RuleCall getRosserviceserverRosServiceServerParserRuleCall_6_3_1_0() { return cRosserviceserverRosServiceServerParserRuleCall_6_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
 		
-		//('rosserviceserver' '{' rosserviceserver+=RosServiceServer ("," rosserviceserver+=RosServiceServer)* '}')?
+		//('RosSrvClients' '{' rosserviceclient+=RosServiceClient ("," rosserviceclient+=RosServiceClient)* '}')?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'rosserviceserver'
-		public Keyword getRosserviceserverKeyword_7_0() { return cRosserviceserverKeyword_7_0; }
+		//'RosSrvClients'
+		public Keyword getRosSrvClientsKeyword_7_0() { return cRosSrvClientsKeyword_7_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 		
-		//rosserviceserver+=RosServiceServer
-		public Assignment getRosserviceserverAssignment_7_2() { return cRosserviceserverAssignment_7_2; }
+		//rosserviceclient+=RosServiceClient
+		public Assignment getRosserviceclientAssignment_7_2() { return cRosserviceclientAssignment_7_2; }
 		
-		//RosServiceServer
-		public RuleCall getRosserviceserverRosServiceServerParserRuleCall_7_2_0() { return cRosserviceserverRosServiceServerParserRuleCall_7_2_0; }
+		//RosServiceClient
+		public RuleCall getRosserviceclientRosServiceClientParserRuleCall_7_2_0() { return cRosserviceclientRosServiceClientParserRuleCall_7_2_0; }
 		
-		//("," rosserviceserver+=RosServiceServer)*
+		//("," rosserviceclient+=RosServiceClient)*
 		public Group getGroup_7_3() { return cGroup_7_3; }
 		
 		//","
 		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
 		
-		//rosserviceserver+=RosServiceServer
-		public Assignment getRosserviceserverAssignment_7_3_1() { return cRosserviceserverAssignment_7_3_1; }
+		//rosserviceclient+=RosServiceClient
+		public Assignment getRosserviceclientAssignment_7_3_1() { return cRosserviceclientAssignment_7_3_1; }
 		
-		//RosServiceServer
-		public RuleCall getRosserviceserverRosServiceServerParserRuleCall_7_3_1_0() { return cRosserviceserverRosServiceServerParserRuleCall_7_3_1_0; }
+		//RosServiceClient
+		public RuleCall getRosserviceclientRosServiceClientParserRuleCall_7_3_1_0() { return cRosserviceclientRosServiceClientParserRuleCall_7_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
 		
-		//('rosserviceclient' '{' rosserviceclient+=RosServiceClient ("," rosserviceclient+=RosServiceClient)* '}')?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'rosserviceclient'
-		public Keyword getRosserviceclientKeyword_8_0() { return cRosserviceclientKeyword_8_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
-		
-		//rosserviceclient+=RosServiceClient
-		public Assignment getRosserviceclientAssignment_8_2() { return cRosserviceclientAssignment_8_2; }
-		
-		//RosServiceClient
-		public RuleCall getRosserviceclientRosServiceClientParserRuleCall_8_2_0() { return cRosserviceclientRosServiceClientParserRuleCall_8_2_0; }
-		
-		//("," rosserviceclient+=RosServiceClient)*
-		public Group getGroup_8_3() { return cGroup_8_3; }
-		
-		//","
-		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
-		
-		//rosserviceclient+=RosServiceClient
-		public Assignment getRosserviceclientAssignment_8_3_1() { return cRosserviceclientAssignment_8_3_1; }
-		
-		//RosServiceClient
-		public RuleCall getRosserviceclientRosServiceClientParserRuleCall_8_3_1_0() { return cRosserviceclientRosServiceClientParserRuleCall_8_3_1_0; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class NamespaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.componentInterface.ComponentInterface.Namespace");
@@ -293,7 +296,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cNsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNsEStringParserRuleCall_4_1_0 = (RuleCall)cNsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cPublisherKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cRefPublisherKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cPublisherAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final CrossReference cPublisherPublisherCrossReference_5_1_0 = (CrossReference)cPublisherAssignment_5_1.eContents().get(0);
 		private final RuleCall cPublisherPublisherEStringParserRuleCall_5_1_0_1 = (RuleCall)cPublisherPublisherCrossReference_5_1_0.eContents().get(1);
@@ -303,11 +306,12 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//	{RosPublisher}
 		//	'RosPublisher'
 		//	name=EString
-		//	'{' ('ns' ns=EString)? ('publisher' publisher=[ros::Publisher|EString])?
+		//	'{' ('ns' ns=EString)? ('RefPublisher' publisher=[ros::Publisher|EString])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosPublisher} 'RosPublisher' name=EString '{' ('ns' ns=EString)? ('publisher' publisher=[ros::Publisher|EString])? '}'
+		//{RosPublisher} 'RosPublisher' name=EString '{' ('ns' ns=EString)? ('RefPublisher' publisher=[ros::Publisher|EString])?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosPublisher}
@@ -337,11 +341,11 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//EString
 		public RuleCall getNsEStringParserRuleCall_4_1_0() { return cNsEStringParserRuleCall_4_1_0; }
 		
-		//('publisher' publisher=[ros::Publisher|EString])?
+		//('RefPublisher' publisher=[ros::Publisher|EString])?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'publisher'
-		public Keyword getPublisherKeyword_5_0() { return cPublisherKeyword_5_0; }
+		//'RefPublisher'
+		public Keyword getRefPublisherKeyword_5_0() { return cRefPublisherKeyword_5_0; }
 		
 		//publisher=[ros::Publisher|EString]
 		public Assignment getPublisherAssignment_5_1() { return cPublisherAssignment_5_1; }
@@ -368,7 +372,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cNsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNsEStringParserRuleCall_4_1_0 = (RuleCall)cNsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSubscriberKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cRefSubscriberKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cSubscriberAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final CrossReference cSubscriberSubscriberCrossReference_5_1_0 = (CrossReference)cSubscriberAssignment_5_1.eContents().get(0);
 		private final RuleCall cSubscriberSubscriberEStringParserRuleCall_5_1_0_1 = (RuleCall)cSubscriberSubscriberCrossReference_5_1_0.eContents().get(1);
@@ -378,12 +382,12 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//	{RosSubscriber}
 		//	'RosSubscriber'
 		//	name=EString
-		//	'{' ('ns' ns=EString)? ('subscriber' subscriber=[ros::Subscriber|EString])?
+		//	'{' ('ns' ns=EString)? ('RefSubscriber' subscriber=[ros::Subscriber|EString])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosSubscriber} 'RosSubscriber' name=EString '{' ('ns' ns=EString)? ('subscriber' subscriber=[ros::Subscriber|EString])?
-		//'}'
+		//{RosSubscriber} 'RosSubscriber' name=EString '{' ('ns' ns=EString)? ('RefSubscriber'
+		//subscriber=[ros::Subscriber|EString])? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosSubscriber}
@@ -413,11 +417,11 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//EString
 		public RuleCall getNsEStringParserRuleCall_4_1_0() { return cNsEStringParserRuleCall_4_1_0; }
 		
-		//('subscriber' subscriber=[ros::Subscriber|EString])?
+		//('RefSubscriber' subscriber=[ros::Subscriber|EString])?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'subscriber'
-		public Keyword getSubscriberKeyword_5_0() { return cSubscriberKeyword_5_0; }
+		//'RefSubscriber'
+		public Keyword getRefSubscriberKeyword_5_0() { return cRefSubscriberKeyword_5_0; }
 		
 		//subscriber=[ros::Subscriber|EString]
 		public Assignment getSubscriberAssignment_5_1() { return cSubscriberAssignment_5_1; }
@@ -443,17 +447,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cNsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNsEStringParserRuleCall_4_1_0 = (RuleCall)cNsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRefServerKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cSrvserverAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cSrvserverServiceServerCrossReference_5_1_0 = (CrossReference)cSrvserverAssignment_5_1.eContents().get(0);
+		private final RuleCall cSrvserverServiceServerIDTerminalRuleCall_5_1_0_1 = (RuleCall)cSrvserverServiceServerCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RosServiceServer:
 		//	{RosServiceServer}
 		//	'RosServiceServer'
 		//	name=EString
-		//	'{' ('ns' ns=EString)?
+		//	'{' ('ns' ns=EString)? ('RefServer' srvserver=[ros::ServiceServer])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosServiceServer} 'RosServiceServer' name=EString '{' ('ns' ns=EString)? '}'
+		//{RosServiceServer} 'RosServiceServer' name=EString '{' ('ns' ns=EString)? ('RefServer' srvserver=[ros::ServiceServer])?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosServiceServer}
@@ -483,8 +493,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//EString
 		public RuleCall getNsEStringParserRuleCall_4_1_0() { return cNsEStringParserRuleCall_4_1_0; }
 		
+		//('RefServer' srvserver=[ros::ServiceServer])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'RefServer'
+		public Keyword getRefServerKeyword_5_0() { return cRefServerKeyword_5_0; }
+		
+		//srvserver=[ros::ServiceServer]
+		public Assignment getSrvserverAssignment_5_1() { return cSrvserverAssignment_5_1; }
+		
+		//[ros::ServiceServer]
+		public CrossReference getSrvserverServiceServerCrossReference_5_1_0() { return cSrvserverServiceServerCrossReference_5_1_0; }
+		
+		//ID
+		public RuleCall getSrvserverServiceServerIDTerminalRuleCall_5_1_0_1() { return cSrvserverServiceServerIDTerminalRuleCall_5_1_0_1; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class RosServiceClientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceClient");
@@ -498,17 +523,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cNsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNsEStringParserRuleCall_4_1_0 = (RuleCall)cNsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRefClientKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cSrvclientAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cSrvclientServiceClientCrossReference_5_1_0 = (CrossReference)cSrvclientAssignment_5_1.eContents().get(0);
+		private final RuleCall cSrvclientServiceClientIDTerminalRuleCall_5_1_0_1 = (RuleCall)cSrvclientServiceClientCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RosServiceClient:
 		//	{RosServiceClient}
 		//	'RosServiceClient'
 		//	name=EString
-		//	'{' ('ns' ns=EString)?
+		//	'{' ('ns' ns=EString)? ('RefClient' srvclient=[ros::ServiceClient])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosServiceClient} 'RosServiceClient' name=EString '{' ('ns' ns=EString)? '}'
+		//{RosServiceClient} 'RosServiceClient' name=EString '{' ('ns' ns=EString)? ('RefClient' srvclient=[ros::ServiceClient])?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosServiceClient}
@@ -538,8 +569,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//EString
 		public RuleCall getNsEStringParserRuleCall_4_1_0() { return cNsEStringParserRuleCall_4_1_0; }
 		
+		//('RefClient' srvclient=[ros::ServiceClient])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'RefClient'
+		public Keyword getRefClientKeyword_5_0() { return cRefClientKeyword_5_0; }
+		
+		//srvclient=[ros::ServiceClient]
+		public Assignment getSrvclientAssignment_5_1() { return cSrvclientAssignment_5_1; }
+		
+		//[ros::ServiceClient]
+		public CrossReference getSrvclientServiceClientCrossReference_5_1_0() { return cSrvclientServiceClientCrossReference_5_1_0; }
+		
+		//ID
+		public RuleCall getSrvclientServiceClientIDTerminalRuleCall_5_1_0_1() { return cSrvclientServiceClientIDTerminalRuleCall_5_1_0_1; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class GlobalNamespaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.componentInterface.ComponentInterface.GlobalNamespace");
@@ -848,11 +894,10 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	
 	//ComponentInterface:
 	//	'ComponentInterface'
-	//	'{'
-	//	'name' name=EString ('namespace' namespace=Namespace)? ('rospublisher' '{' rospublisher+=RosPublisher (","
-	//	rospublisher+=RosPublisher)* '}')? ('rossubscriber' '{' rossubscriber+=RosSubscriber (","
-	//	rossubscriber+=RosSubscriber)* '}')? ('rosserviceserver' '{' rosserviceserver+=RosServiceServer (","
-	//	rosserviceserver+=RosServiceServer)* '}')? ('rosserviceclient' '{' rosserviceclient+=RosServiceClient (","
+	//	'{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
+	//	rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber (","
+	//	rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
+	//	rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
 	//	rosserviceclient+=RosServiceClient)* '}')?
 	//	'}';
 	public ComponentInterfaceElements getComponentInterfaceAccess() {
@@ -887,7 +932,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	{RosPublisher}
 	//	'RosPublisher'
 	//	name=EString
-	//	'{' ('ns' ns=EString)? ('publisher' publisher=[ros::Publisher|EString])?
+	//	'{' ('ns' ns=EString)? ('RefPublisher' publisher=[ros::Publisher|EString])?
 	//	'}';
 	public RosPublisherElements getRosPublisherAccess() {
 		return pRosPublisher;
@@ -901,7 +946,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	{RosSubscriber}
 	//	'RosSubscriber'
 	//	name=EString
-	//	'{' ('ns' ns=EString)? ('subscriber' subscriber=[ros::Subscriber|EString])?
+	//	'{' ('ns' ns=EString)? ('RefSubscriber' subscriber=[ros::Subscriber|EString])?
 	//	'}';
 	public RosSubscriberElements getRosSubscriberAccess() {
 		return pRosSubscriber;
@@ -915,7 +960,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	{RosServiceServer}
 	//	'RosServiceServer'
 	//	name=EString
-	//	'{' ('ns' ns=EString)?
+	//	'{' ('ns' ns=EString)? ('RefServer' srvserver=[ros::ServiceServer])?
 	//	'}';
 	public RosServiceServerElements getRosServiceServerAccess() {
 		return pRosServiceServer;
@@ -929,7 +974,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	{RosServiceClient}
 	//	'RosServiceClient'
 	//	name=EString
-	//	'{' ('ns' ns=EString)?
+	//	'{' ('ns' ns=EString)? ('RefClient' srvclient=[ros::ServiceClient])?
 	//	'}';
 	public RosServiceClientElements getRosServiceClientAccess() {
 		return pRosServiceClient;

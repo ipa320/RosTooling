@@ -9,8 +9,10 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import ros.ServiceServer;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.impl.RosServiceServerImpl#getSrvserver <em>Srvserver</em>}</li>
  *   <li>{@link componentInterface.impl.RosServiceServerImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.impl.RosServiceServerImpl#getNs <em>Ns</em>}</li>
  * </ul>
@@ -27,6 +30,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RosServiceServerImpl extends MinimalEObjectImpl.Container implements RosServiceServer {
+	/**
+	 * The cached value of the '{@link #getSrvserver() <em>Srvserver</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSrvserver()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceServer srvserver;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -36,7 +49,6 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,7 +58,6 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,7 +67,6 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected static final String NS_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,8 +101,58 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public ServiceServer getSrvserver() {
+		if (srvserver != null && srvserver.eIsProxy()) {
+			InternalEObject oldSrvserver = (InternalEObject)srvserver;
+			srvserver = (ServiceServer)eResolveProxy(oldSrvserver);
+			if (srvserver != oldSrvserver) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER, oldSrvserver, srvserver));
+			}
+		}
+		return srvserver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceServer basicGetSrvserver() {
+		return srvserver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSrvserver(ServiceServer newSrvserver) {
+		ServiceServer oldSrvserver = srvserver;
+		srvserver = newSrvserver;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER, oldSrvserver, srvserver));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getServiceName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && srvserver != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), srvserver.getName().replaceFirst("/",""));	
+			}else if (srvserver != null) {
+				return String.format("/%s", srvserver.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
 	}
 
 	/**
@@ -136,6 +196,9 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER:
+				if (resolve) return getSrvserver();
+				return basicGetSrvserver();
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NAME:
 				return getName();
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NS:
@@ -152,6 +215,9 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER:
+				setSrvserver((ServiceServer)newValue);
+				return;
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NAME:
 				setName((String)newValue);
 				return;
@@ -170,6 +236,9 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER:
+				setSrvserver((ServiceServer)null);
+				return;
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -188,6 +257,8 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.ROS_SERVICE_SERVER__SRVSERVER:
+				return srvserver != null;
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER__NS:
@@ -212,6 +283,22 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 		result.append(ns);
 		result.append(')');
 		return result.toString();
+	}
+
+	public String getName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && srvserver != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), srvserver.getName().replaceFirst("/",""));	
+			}else if (srvserver != null) {
+				return String.format("/%s", srvserver.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
 	}
 
 } //RosServiceServerImpl

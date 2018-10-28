@@ -13,20 +13,22 @@
         eType="#//RosServiceClient" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosSubscriber">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosServiceServer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srvserver" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosServiceClient">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srvclient" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
   </eClassifiers>

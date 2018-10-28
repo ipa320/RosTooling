@@ -35,7 +35,7 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cRosComponentKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cRosComponentsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cRosComponentAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final CrossReference cRosComponentComponentInterfaceCrossReference_4_2_0 = (CrossReference)cRosComponentAssignment_4_2.eContents().get(0);
@@ -71,14 +71,14 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//RosSystem:
 		//	{RosSystem}
 		//	'RosSystem'
-		//	'{' ('Name' Name=EString)? ('RosComponent' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
+		//	'{' ('Name' Name=EString)? ('RosComponents' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
 		//	RosComponent+=[componentInterface::ComponentInterface|EString])* ')')? ('TopicConnections' '{'
 		//	TopicConnections+=TopicConnection ("," TopicConnections+=TopicConnection)* '}')? ('ServiceConnections' '{'
 		//	ServiceConnections+=ServiceConnection ("," ServiceConnections+=ServiceConnection)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosSystem} 'RosSystem' '{' ('Name' Name=EString)? ('RosComponent' '('
+		//{RosSystem} 'RosSystem' '{' ('Name' Name=EString)? ('RosComponents' '('
 		//RosComponent+=[componentInterface::ComponentInterface|EString] (","
 		//RosComponent+=[componentInterface::ComponentInterface|EString])* ')')? ('TopicConnections' '{'
 		//TopicConnections+=TopicConnection ("," TopicConnections+=TopicConnection)* '}')? ('ServiceConnections' '{'
@@ -106,12 +106,12 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_3_1_0() { return cNameEStringParserRuleCall_3_1_0; }
 		
-		//('RosComponent' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
+		//('RosComponents' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
 		//RosComponent+=[componentInterface::ComponentInterface|EString])* ')')?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'RosComponent'
-		public Keyword getRosComponentKeyword_4_0() { return cRosComponentKeyword_4_0; }
+		//'RosComponents'
+		public Keyword getRosComponentsKeyword_4_0() { return cRosComponentsKeyword_4_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_4_1() { return cLeftParenthesisKeyword_4_1; }
@@ -397,7 +397,7 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 	//RosSystem:
 	//	{RosSystem}
 	//	'RosSystem'
-	//	'{' ('Name' Name=EString)? ('RosComponent' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
+	//	'{' ('Name' Name=EString)? ('RosComponents' '(' RosComponent+=[componentInterface::ComponentInterface|EString] (","
 	//	RosComponent+=[componentInterface::ComponentInterface|EString])* ')')? ('TopicConnections' '{'
 	//	TopicConnections+=TopicConnection ("," TopicConnections+=TopicConnection)* '}')? ('ServiceConnections' '{'
 	//	ServiceConnections+=ServiceConnection ("," ServiceConnections+=ServiceConnection)* '}')?

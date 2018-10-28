@@ -152,13 +152,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_PUBLISHER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER__PUBLISHER = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER__NAME = 0;
+	int ROS_PUBLISHER__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -167,16 +176,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER__NS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_PUBLISHER__PUBLISHER = 2;
+	int ROS_PUBLISHER__NS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Ros Publisher</em>' class.
@@ -207,13 +207,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SUBSCRIBER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Subscriber</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER__SUBSCRIBER = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER__NAME = 0;
+	int ROS_SUBSCRIBER__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -222,16 +231,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER__NS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Subscriber</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_SUBSCRIBER__SUBSCRIBER = 2;
+	int ROS_SUBSCRIBER__NS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Ros Subscriber</em>' class.
@@ -262,13 +262,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SERVICE_SERVER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Srvserver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_SERVER__SRVSERVER = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER__NAME = 0;
+	int ROS_SERVICE_SERVER__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -277,7 +286,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER__NS = 1;
+	int ROS_SERVICE_SERVER__NS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Ros Service Server</em>' class.
@@ -286,7 +295,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER_FEATURE_COUNT = 2;
+	int ROS_SERVICE_SERVER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Ros Service Server</em>' class.
@@ -308,13 +317,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SERVICE_CLIENT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Srvclient</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_CLIENT__SRVCLIENT = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT__NAME = 0;
+	int ROS_SERVICE_CLIENT__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -323,7 +341,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT__NS = 1;
+	int ROS_SERVICE_CLIENT__NS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Ros Service Client</em>' class.
@@ -332,7 +350,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT_FEATURE_COUNT = 2;
+	int ROS_SERVICE_CLIENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Ros Service Client</em>' class.
@@ -419,6 +437,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	EClass getRosPublisher();
 
 	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Publisher</em>'.
+	 * @see componentInterface.RosPublisher#getPublisher()
+	 * @see #getRosPublisher()
+	 * @generated
+	 */
+	EReference getRosPublisher_Publisher();
+
+	/**
 	 * Returns the meta object for the attribute '{@link componentInterface.RosPublisher#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,17 +470,6 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosPublisher_Ns();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosPublisher#getPublisher <em>Publisher</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Publisher</em>'.
-	 * @see componentInterface.RosPublisher#getPublisher()
-	 * @see #getRosPublisher()
-	 * @generated
-	 */
-	EReference getRosPublisher_Publisher();
-
-	/**
 	 * Returns the meta object for class '{@link componentInterface.RosSubscriber <em>Ros Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,6 +478,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRosSubscriber();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosSubscriber#getSubscriber <em>Subscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Subscriber</em>'.
+	 * @see componentInterface.RosSubscriber#getSubscriber()
+	 * @see #getRosSubscriber()
+	 * @generated
+	 */
+	EReference getRosSubscriber_Subscriber();
 
 	/**
 	 * Returns the meta object for the attribute '{@link componentInterface.RosSubscriber#getName <em>Name</em>}'.
@@ -484,17 +513,6 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosSubscriber_Ns();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentInterface.RosSubscriber#getSubscriber <em>Subscriber</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Subscriber</em>'.
-	 * @see componentInterface.RosSubscriber#getSubscriber()
-	 * @see #getRosSubscriber()
-	 * @generated
-	 */
-	EReference getRosSubscriber_Subscriber();
-
-	/**
 	 * Returns the meta object for class '{@link componentInterface.RosServiceServer <em>Ros Service Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +521,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRosServiceServer();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosServiceServer#getSrvserver <em>Srvserver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Srvserver</em>'.
+	 * @see componentInterface.RosServiceServer#getSrvserver()
+	 * @see #getRosServiceServer()
+	 * @generated
+	 */
+	EReference getRosServiceServer_Srvserver();
 
 	/**
 	 * Returns the meta object for the attribute '{@link componentInterface.RosServiceServer#getName <em>Name</em>}'.
@@ -535,6 +564,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRosServiceClient();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosServiceClient#getSrvclient <em>Srvclient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Srvclient</em>'.
+	 * @see componentInterface.RosServiceClient#getSrvclient()
+	 * @see #getRosServiceClient()
+	 * @generated
+	 */
+	EReference getRosServiceClient_Srvclient();
 
 	/**
 	 * Returns the meta object for the attribute '{@link componentInterface.RosServiceClient#getName <em>Name</em>}'.
@@ -645,6 +685,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		EClass ROS_PUBLISHER = eINSTANCE.getRosPublisher();
 
 		/**
+		 * The meta object literal for the '<em><b>Publisher</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PUBLISHER__PUBLISHER = eINSTANCE.getRosPublisher_Publisher();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -661,14 +709,6 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_PUBLISHER__NS = eINSTANCE.getRosPublisher_Ns();
 
 		/**
-		 * The meta object literal for the '<em><b>Publisher</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_PUBLISHER__PUBLISHER = eINSTANCE.getRosPublisher_Publisher();
-
-		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosSubscriberImpl <em>Ros Subscriber</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -677,6 +717,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROS_SUBSCRIBER = eINSTANCE.getRosSubscriber();
+
+		/**
+		 * The meta object literal for the '<em><b>Subscriber</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SUBSCRIBER__SUBSCRIBER = eINSTANCE.getRosSubscriber_Subscriber();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -695,14 +743,6 @@ public interface ComponentInterfacePackage extends EPackage {
 		EAttribute ROS_SUBSCRIBER__NS = eINSTANCE.getRosSubscriber_Ns();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscriber</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_SUBSCRIBER__SUBSCRIBER = eINSTANCE.getRosSubscriber_Subscriber();
-
-		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosServiceServerImpl <em>Ros Service Server</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -711,6 +751,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROS_SERVICE_SERVER = eINSTANCE.getRosServiceServer();
+
+		/**
+		 * The meta object literal for the '<em><b>Srvserver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SERVICE_SERVER__SRVSERVER = eINSTANCE.getRosServiceServer_Srvserver();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -737,6 +785,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROS_SERVICE_CLIENT = eINSTANCE.getRosServiceClient();
+
+		/**
+		 * The meta object literal for the '<em><b>Srvclient</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SERVICE_CLIENT__SRVCLIENT = eINSTANCE.getRosServiceClient_Srvclient();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

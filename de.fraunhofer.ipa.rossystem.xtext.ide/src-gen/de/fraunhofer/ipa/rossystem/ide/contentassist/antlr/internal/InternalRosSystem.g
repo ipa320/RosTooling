@@ -458,9 +458,9 @@ rule__RosSystem__Group_4__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getRosComponentKeyword_4_0()); }
-	'RosComponent'
-	{ after(grammarAccess.getRosSystemAccess().getRosComponentKeyword_4_0()); }
+	{ before(grammarAccess.getRosSystemAccess().getRosComponentsKeyword_4_0()); }
+	'RosComponents'
+	{ after(grammarAccess.getRosSystemAccess().getRosComponentsKeyword_4_0()); }
 )
 ;
 finally {

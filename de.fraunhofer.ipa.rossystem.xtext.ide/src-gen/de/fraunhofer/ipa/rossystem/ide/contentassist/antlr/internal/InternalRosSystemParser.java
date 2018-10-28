@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRosSystemParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'RosSystem'", "'{'", "'}'", "'Name'", "'RosComponent'", "'('", "')'", "','", "'TopicConnections'", "'ServiceConnections'", "'TopicConnection'", "'FromTopic'", "'ToTopic'", "'ServiceConnection'", "'FromSrv'", "'ToSrv'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'RosSystem'", "'{'", "'}'", "'Name'", "'RosComponents'", "'('", "')'", "','", "'TopicConnections'", "'ServiceConnections'", "'TopicConnection'", "'FromTopic'", "'ToTopic'", "'ServiceConnection'", "'FromSrv'", "'ToSrv'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1336,21 +1336,21 @@ public class InternalRosSystemParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__RosSystem__Group_4__0__Impl"
-    // InternalRosSystem.g:455:1: rule__RosSystem__Group_4__0__Impl : ( 'RosComponent' ) ;
+    // InternalRosSystem.g:455:1: rule__RosSystem__Group_4__0__Impl : ( 'RosComponents' ) ;
     public final void rule__RosSystem__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRosSystem.g:459:1: ( ( 'RosComponent' ) )
-            // InternalRosSystem.g:460:1: ( 'RosComponent' )
+            // InternalRosSystem.g:459:1: ( ( 'RosComponents' ) )
+            // InternalRosSystem.g:460:1: ( 'RosComponents' )
             {
-            // InternalRosSystem.g:460:1: ( 'RosComponent' )
-            // InternalRosSystem.g:461:2: 'RosComponent'
+            // InternalRosSystem.g:460:1: ( 'RosComponents' )
+            // InternalRosSystem.g:461:2: 'RosComponents'
             {
-             before(grammarAccess.getRosSystemAccess().getRosComponentKeyword_4_0()); 
+             before(grammarAccess.getRosSystemAccess().getRosComponentsKeyword_4_0()); 
             match(input,15,FOLLOW_2); 
-             after(grammarAccess.getRosSystemAccess().getRosComponentKeyword_4_0()); 
+             after(grammarAccess.getRosSystemAccess().getRosComponentsKeyword_4_0()); 
 
             }
 

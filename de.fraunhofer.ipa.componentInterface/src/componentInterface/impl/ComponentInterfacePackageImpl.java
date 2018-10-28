@@ -192,8 +192,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRosPublisher_Name() {
-		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(0);
+	public EReference getRosPublisher_Publisher() {
+		return (EReference)rosPublisherEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRosPublisher_Ns() {
+	public EAttribute getRosPublisher_Name() {
 		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -210,8 +210,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosPublisher_Publisher() {
-		return (EReference)rosPublisherEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosPublisher_Ns() {
+		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -228,8 +228,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRosSubscriber_Name() {
-		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(0);
+	public EReference getRosSubscriber_Subscriber() {
+		return (EReference)rosSubscriberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRosSubscriber_Ns() {
+	public EAttribute getRosSubscriber_Name() {
 		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -246,8 +246,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRosSubscriber_Subscriber() {
-		return (EReference)rosSubscriberEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosSubscriber_Ns() {
+		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -264,8 +264,17 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRosServiceServer_Srvserver() {
+		return (EReference)rosServiceServerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getRosServiceServer_Name() {
-		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -274,7 +283,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	public EAttribute getRosServiceServer_Ns() {
-		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -291,8 +300,17 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRosServiceClient_Srvclient() {
+		return (EReference)rosServiceClientEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getRosServiceClient_Name() {
-		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -301,7 +319,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	public EAttribute getRosServiceClient_Ns() {
-		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -348,20 +366,22 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSSERVICECLIENT);
 
 		rosPublisherEClass = createEClass(ROS_PUBLISHER);
+		createEReference(rosPublisherEClass, ROS_PUBLISHER__PUBLISHER);
 		createEAttribute(rosPublisherEClass, ROS_PUBLISHER__NAME);
 		createEAttribute(rosPublisherEClass, ROS_PUBLISHER__NS);
-		createEReference(rosPublisherEClass, ROS_PUBLISHER__PUBLISHER);
 
 		rosSubscriberEClass = createEClass(ROS_SUBSCRIBER);
+		createEReference(rosSubscriberEClass, ROS_SUBSCRIBER__SUBSCRIBER);
 		createEAttribute(rosSubscriberEClass, ROS_SUBSCRIBER__NAME);
 		createEAttribute(rosSubscriberEClass, ROS_SUBSCRIBER__NS);
-		createEReference(rosSubscriberEClass, ROS_SUBSCRIBER__SUBSCRIBER);
 
 		rosServiceServerEClass = createEClass(ROS_SERVICE_SERVER);
+		createEReference(rosServiceServerEClass, ROS_SERVICE_SERVER__SRVSERVER);
 		createEAttribute(rosServiceServerEClass, ROS_SERVICE_SERVER__NAME);
 		createEAttribute(rosServiceServerEClass, ROS_SERVICE_SERVER__NS);
 
 		rosServiceClientEClass = createEClass(ROS_SERVICE_CLIENT);
+		createEReference(rosServiceClientEClass, ROS_SERVICE_CLIENT__SRVCLIENT);
 		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__NAME);
 		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__NS);
 
@@ -410,20 +430,22 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentInterface_Rosserviceclient(), this.getRosServiceClient(), null, "rosserviceclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosPublisherEClass, RosPublisher.class, "RosPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosPublisher_Publisher(), theRosPackage.getPublisher(), null, "publisher", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosPublisher_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosPublisher_Ns(), this.getNS(), "ns", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosPublisher_Publisher(), theRosPackage.getPublisher(), null, "publisher", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosSubscriberEClass, RosSubscriber.class, "RosSubscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosSubscriber_Subscriber(), theRosPackage.getSubscriber(), null, "subscriber", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosSubscriber_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosSubscriber_Ns(), this.getNS(), "ns", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSubscriber_Subscriber(), theRosPackage.getSubscriber(), null, "subscriber", null, 0, 1, RosSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosServiceServerEClass, RosServiceServer.class, "RosServiceServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosServiceServer_Srvserver(), theRosPackage.getServiceServer(), null, "srvserver", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceServer_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceServer_Ns(), this.getNS(), "ns", null, 0, 1, RosServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosServiceClientEClass, RosServiceClient.class, "RosServiceClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosServiceClient_Srvclient(), theRosPackage.getServiceClient(), null, "srvclient", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceClient_Ns(), this.getNS(), "ns", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

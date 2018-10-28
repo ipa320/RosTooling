@@ -11,7 +11,7 @@ RosSystem returns RosSystem:
 	'RosSystem'
 	'{'
 		('Name' Name=EString)?
-		('RosComponent' '(' RosComponent+=[componentInterface::ComponentInterface|EString] ( "," RosComponent+=[componentInterface::ComponentInterface|EString])* ')' )?
+		('RosComponents' '(' RosComponent+=[componentInterface::ComponentInterface|EString] ( "," RosComponent+=[componentInterface::ComponentInterface|EString])* ')' )?
 		('TopicConnections' '{' TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)* '}' )?
 		('ServiceConnections' '{' ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)* '}' )?
 	'}';

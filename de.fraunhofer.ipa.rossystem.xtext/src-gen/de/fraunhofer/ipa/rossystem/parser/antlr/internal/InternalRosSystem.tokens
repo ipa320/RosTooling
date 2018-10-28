@@ -4,7 +4,7 @@
 'FromSrv'=25
 'FromTopic'=22
 'Name'=13
-'RosComponent'=14
+'RosComponents'=14
 'RosSystem'=11
 'ServiceConnection'=24
 'ServiceConnections'=20

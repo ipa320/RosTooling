@@ -3,6 +3,7 @@
 package componentInterface;
 
 import org.eclipse.emf.ecore.EObject;
+import ros.ServiceClient;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.RosServiceClient#getSrvclient <em>Srvclient</em>}</li>
  *   <li>{@link componentInterface.RosServiceClient#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.RosServiceClient#getNs <em>Ns</em>}</li>
  * </ul>
@@ -22,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface RosServiceClient extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Srvclient</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Srvclient</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Srvclient</em>' reference.
+	 * @see #setSrvclient(ServiceClient)
+	 * @see componentInterface.ComponentInterfacePackage#getRosServiceClient_Srvclient()
+	 * @model
+	 * @generated
+	 */
+	ServiceClient getSrvclient();
+
+	/**
+	 * Sets the value of the '{@link componentInterface.RosServiceClient#getSrvclient <em>Srvclient</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Srvclient</em>' reference.
+	 * @see #getSrvclient()
+	 * @generated
+	 */
+	void setSrvclient(ServiceClient value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

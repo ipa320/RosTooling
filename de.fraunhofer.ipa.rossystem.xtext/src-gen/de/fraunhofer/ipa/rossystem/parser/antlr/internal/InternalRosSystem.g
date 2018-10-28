@@ -117,9 +117,9 @@ ruleRosSystem returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_5='RosComponent'
+			otherlv_5='RosComponents'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getRosSystemAccess().getRosComponentKeyword_4_0());
+				newLeafNode(otherlv_5, grammarAccess.getRosSystemAccess().getRosComponentsKeyword_4_0());
 			}
 			otherlv_6='('
 			{
