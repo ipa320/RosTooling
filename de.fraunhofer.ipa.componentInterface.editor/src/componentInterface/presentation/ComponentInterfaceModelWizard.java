@@ -245,7 +245,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							//	resource.getContents().add(rootObject);
 							//}
 							
-							byte[] bytes = ("ComponentInterface { }").getBytes();
+							byte[] bytes = ("ComponentInterface { name NewComponent }").getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
 							modelFile.create(source, IResource.NONE, null);
 							

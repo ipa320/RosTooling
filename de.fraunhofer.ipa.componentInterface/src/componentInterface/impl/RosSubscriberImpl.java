@@ -45,7 +45,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
@@ -63,10 +63,10 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNs()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NS_EDEFAULT = null;
+	protected static String NS_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,9 +125,16 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setSubscriber(Subscriber newSubscriber) {
+		String component_ns = null;
+		String ComponentInterface_toString = eContainer().eContents().toString();
+		component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
+		if (component_ns.length()>0) {
+			NS_EDEFAULT=component_ns;
+		}
+		setNs(component_ns);
 		Subscriber oldSubscriber = subscriber;
 		subscriber = newSubscriber;
 		if (eNotificationRequired())

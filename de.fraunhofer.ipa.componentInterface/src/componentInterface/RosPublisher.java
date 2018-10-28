@@ -78,6 +78,7 @@ public interface RosPublisher extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ns</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ns</em>' attribute isn't clear,
@@ -87,7 +88,7 @@ public interface RosPublisher extends EObject {
 	 * @return the value of the '<em>Ns</em>' attribute.
 	 * @see #setNs(String)
 	 * @see componentInterface.ComponentInterfacePackage#getRosPublisher_Ns()
-	 * @model dataType="componentInterface.NS"
+	 * @model default="" dataType="componentInterface.NS"
 	 * @generated
 	 */
 	String getNs();

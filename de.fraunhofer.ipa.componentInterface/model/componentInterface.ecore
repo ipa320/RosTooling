@@ -15,7 +15,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosSubscriber">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
