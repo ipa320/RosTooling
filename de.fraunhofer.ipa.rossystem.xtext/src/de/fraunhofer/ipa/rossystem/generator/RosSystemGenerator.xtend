@@ -3,34 +3,24 @@
  */
 package de.fraunhofer.ipa.rossystem.generator
 
+import componentInterface.ComponentInterface
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import rossystem.RosSystem
-import componentInterface.ComponentInterface
-import componentInterface.RosPublisher
 import ros.Publisher
-import componentInterface.RosSubscriber
-import ros.Subscriber
-import componentInterface.RosServiceClient
 import ros.ServiceClient
-import componentInterface.RosServiceServer
 import ros.ServiceServer
-
+import ros.Subscriber
+import rossystem.RosSystem
 
 class RosSystemGenerator extends AbstractGenerator {
 
 	String resourcepath
-	String package_name
-	Iterable<RosPublisher> pub
-	Object rospub
-	Iterable<RosSubscriber> sub
-	Iterable<Subscriber> rossub
-	Iterable<RosServiceClient> client
-	Iterable<ServiceClient> rosclient
-	Iterable<RosServiceServer> server
-	Iterable<ServiceServer> rosserver
+	String package_name	
+	String package_impl
+	Object artifact_name
+	String artifact_impl
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 			resourcepath = resource.URI.toString();
@@ -41,54 +31,96 @@ class RosSystemGenerator extends AbstractGenerator {
 	
 	
 	def compile(RosSystem system) '''
-	
 	<?xml version="1.0"?>
 	<launch>
-
 	«FOR component:system.rosComponent»
-		«component.compile»
+  <node pkg="«component.compile_pkg»" type="«component.compile_art»" name="«component.namespace.parts.get(0)»_«component.compile_art»" ns="«component.namespace.parts.get(0)»" cwd="node" respawn="false" output="screen">
+	«FOR rosPublisher:component.rospublisher»
+		«IF !rosPublisher.name.contains(component.namespace.parts.get(0))»
+   <remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
+		«ENDIF»
 	«ENDFOR»
-
-
+	«FOR rosSubscriber:component.rossubscriber»
+		«IF !rosSubscriber.name.contains(component.namespace.parts.get(0))»
+   <remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
+		«ENDIF»
+	«ENDFOR»
+	«FOR rosServiceServer:component.rosserviceserver»
+		«IF !rosServiceServer.name.contains(component.namespace.parts.get(0))»
+   <remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
+		«ENDIF»
+	«ENDFOR»
+	«FOR rosServiceClient:component.rosserviceclient»
+		«IF !rosServiceClient.name.contains(component.namespace.parts.get(0))»
+   <remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
+		«ENDIF»
+	«ENDFOR»
+  </node>
+	«ENDFOR»
 	</launch>
-	
-	
 	'''
 
 
-def compile(ComponentInterface component) 
-	'''
-	<node pkg="«component.package»" type="" name="" />
+def compile_pkg(ComponentInterface component) 
+'''«IF !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«Rospublisher.publisher.getPackage_pub()»«ENDFOR»«ELSEIF !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«Rossubscriber.subscriber.getPackage_sub()»«ENDFOR»«ELSEIF !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«Rosserviceserver.srvserver.getPackage_srvserv()»«ENDFOR»«ELSEIF !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«Rosserviceclient.srvclient.getPackage_srvcli()»«ENDFOR»«ENDIF»'''
 
-	'''
-	 
-def String getPackage(ComponentInterface component){
-	if(component.eContents.contains(RosPublisher)){
-		pub=component.eContents.toList.filter(RosPublisher);
-		rospub=pub.get(0).eContents.toList.filter(Publisher);
-		package_name=rospub.class.package.name;
+	def getPackage_pub(Publisher publisher){
+		package_impl = publisher.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+	def getPackage_sub(Subscriber subscriber){
+		package_impl = subscriber.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+	def getPackage_srvserv(ServiceServer serviceserver){
+		package_impl = serviceserver.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+	def getPackage_srvcli(ServiceClient serviceclient){
+		package_impl = serviceclient.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+	def getPackage(String package_impl){
+		package_name = package_impl.substring(package_impl.indexOf("name")+6,package_impl.length-1)
 		return package_name;
 	}
-	if(component.eContents.contains(RosSubscriber)){
-		sub=component.eContents.toList.filter(RosSubscriber);
-		rossub=sub.get(0).eContents.toList.filter(Subscriber);
-		package_name=rossub.class.package.name;
-		return package_name;
-	}	
-	if(component.eContents.contains(RosServiceClient)){
-		client=component.eContents.toList.filter(RosServiceClient);
-		rosclient=client.get(0).eContents.toList.filter(ServiceClient);
-		package_name=rosclient.class.package.name;
-		return package_name;
-	}
-	if(component.eContents.contains(RosServiceServer)){
-		server=component.eContents.toList.filter(RosServiceServer);
-		rosserver=server.get(0).eContents.toList.filter(ServiceServer);
-		package_name=rosserver.class.package.name;
-		return package_name;
-	}	
-}
+	
+	def compile_art(ComponentInterface component) 
+'''«IF !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«Rospublisher.publisher.getArtifact_pub()»«ENDFOR»«ELSEIF !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«Rossubscriber.subscriber.getArtifact_sub()»«ENDFOR»«ELSEIF !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«Rosserviceserver.srvserver.getArtifact_srvserv()»«ENDFOR»«ELSEIF !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«Rosserviceclient.srvclient.getArtifact_srvcli()»«ENDFOR»«ENDIF»'''
 
+	def getArtifact_pub(Publisher publisher){
+		artifact_impl = publisher.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact_sub(Subscriber subscriber){
+		artifact_impl = subscriber.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact_srvserv(ServiceServer serviceserver){
+		artifact_impl = serviceserver.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact_srvcli(ServiceClient serviceclient){
+		artifact_impl = serviceclient.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact(String artifact_impl){
+		artifact_name = artifact_impl.substring(artifact_impl.indexOf("name")+6,artifact_impl.length-1)
+		return artifact_name;
+	}
+	
+	def compile_topic_name(Publisher publisher){
+		return publisher.name;
+	}
+	def compile_topic_name(Subscriber subscriber){
+		return subscriber.name;
+	}
+	def compile_service_name(ServiceServer serviceserver){
+		return serviceserver.name;
+	}
+	def compile_service_name(ServiceClient serviceclient){
+		return serviceclient.name;
+	}
 }
 
 
