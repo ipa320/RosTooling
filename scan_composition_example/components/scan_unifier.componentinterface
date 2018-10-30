@@ -1,0 +1,9 @@
+ComponentInterface { name scan_unifier 
+	RosPublishers{
+		RosPublisher "/scan_unified" { }
+	} RosSubscribers{ 
+		RosSubscriber "/base_laser_front/scan" { } ,
+		RosSubscriber "/base_laser_left/scan" { } ,
+		RosSubscriber "/base_laser_right/scan" { }
+	}
+}

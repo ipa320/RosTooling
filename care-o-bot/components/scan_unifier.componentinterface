@@ -1,9 +1,0 @@
-ComponentInterface { name scan_unifier 
-	RosTopicPublisher{
-		Publisher { TopicName "/scan_unified" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./scan_unified" }
-	} RosTopicSubscriber{ 
-		Subscriber { TopicName "/base_laser_front/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_front/scan" } ,
-		Subscriber { TopicName "/base_laser_left/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_left/scan" NameSpace "" } ,
-		Subscriber { TopicName "/base_laser_right/scan" TopicRef "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_right/scan" }
-	}
-}
