@@ -1,6 +1,6 @@
 PackageSet { package {
 	CatkinPackage diagnostic_aggregator { artifact {
-		Artifact diagnostic_aggregator { node Node { name aggregator_node 
+		Artifact aggregator_node { node Node { name aggregator_node 
 				publisher { 
 				Publisher { name "/diagnostics_toplevel_state" message "diagnostic_msgs.DiagnosticStatus" 
 				}}
