@@ -169,7 +169,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosPublisher returns RosPublisher
 	 *
 	 * Constraint:
-	 *     (name=EString ns=EString? publisher=[Publisher|EString]?)
+	 *     (name=EString ns=EString? publisher=[Publisher|EString])
 	 */
 	protected void sequence_RosPublisher(ISerializationContext context, RosPublisher semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -181,7 +181,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosServiceClient returns RosServiceClient
 	 *
 	 * Constraint:
-	 *     (name=EString ns=EString? srvclient=[ServiceClient|ID]?)
+	 *     (name=EString ns=EString? srvclient=[ServiceClient|ID])
 	 */
 	protected void sequence_RosServiceClient(ISerializationContext context, RosServiceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -193,7 +193,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosServiceServer returns RosServiceServer
 	 *
 	 * Constraint:
-	 *     (name=EString ns=EString? srvserver=[ServiceServer|ID]?)
+	 *     (name=EString ns=EString? srvserver=[ServiceServer|ID])
 	 */
 	protected void sequence_RosServiceServer(ISerializationContext context, RosServiceServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -205,7 +205,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosSubscriber returns RosSubscriber
 	 *
 	 * Constraint:
-	 *     (name=EString ns=EString? subscriber=[Subscriber|EString]?)
+	 *     (name=EString ns=EString? subscriber=[Subscriber|EString])
 	 */
 	protected void sequence_RosSubscriber(ISerializationContext context, RosSubscriber semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

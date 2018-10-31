@@ -493,31 +493,29 @@ ruleRosPublisher returns [EObject current=null]
 				)
 			)
 		)?
+		otherlv_6='RefPublisher'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getRosPublisherAccess().getRefPublisherKeyword_5());
+		}
 		(
-			otherlv_6='RefPublisher'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getRosPublisherAccess().getRefPublisherKeyword_5_0());
-			}
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRosPublisherRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRosPublisherRule());
 					}
-					{
-						newCompositeNode(grammarAccess.getRosPublisherAccess().getPublisherPublisherCrossReference_5_1_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
+				}
+				{
+					newCompositeNode(grammarAccess.getRosPublisherAccess().getPublisherPublisherCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
+		)
 		otherlv_8='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRosPublisherAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getRosPublisherAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -597,31 +595,29 @@ ruleRosSubscriber returns [EObject current=null]
 				)
 			)
 		)?
+		otherlv_6='RefSubscriber'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getRosSubscriberAccess().getRefSubscriberKeyword_5());
+		}
 		(
-			otherlv_6='RefSubscriber'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getRosSubscriberAccess().getRefSubscriberKeyword_5_0());
-			}
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRosSubscriberRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRosSubscriberRule());
 					}
-					{
-						newCompositeNode(grammarAccess.getRosSubscriberAccess().getSubscriberSubscriberCrossReference_5_1_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
+				}
+				{
+					newCompositeNode(grammarAccess.getRosSubscriberAccess().getSubscriberSubscriberCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
+		)
 		otherlv_8='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRosSubscriberAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getRosSubscriberAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -701,28 +697,26 @@ ruleRosServiceServer returns [EObject current=null]
 				)
 			)
 		)?
+		otherlv_6='RefServer'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getRosServiceServerAccess().getRefServerKeyword_5());
+		}
 		(
-			otherlv_6='RefServer'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getRosServiceServerAccess().getRefServerKeyword_5_0());
-			}
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRosServiceServerRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRosServiceServerRule());
 					}
-					otherlv_7=RULE_ID
-					{
-						newLeafNode(otherlv_7, grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_5_1_0());
-					}
-				)
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0());
+				}
 			)
-		)?
+		)
 		otherlv_8='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRosServiceServerAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getRosServiceServerAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -802,28 +796,26 @@ ruleRosServiceClient returns [EObject current=null]
 				)
 			)
 		)?
+		otherlv_6='RefClient'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getRosServiceClientAccess().getRefClientKeyword_5());
+		}
 		(
-			otherlv_6='RefClient'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getRosServiceClientAccess().getRefClientKeyword_5_0());
-			}
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRosServiceClientRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRosServiceClientRule());
 					}
-					otherlv_7=RULE_ID
-					{
-						newLeafNode(otherlv_7, grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_5_1_0());
-					}
-				)
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0());
+				}
 			)
-		)?
+		)
 		otherlv_8='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRosServiceClientAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getRosServiceClientAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

@@ -4,7 +4,7 @@
 'NameSpace'=15
 'PrivateNamespace'=33
 'RefClient'=29
-'RefPublisher'=23
+'RefPublisher'=22
 'RefServer'=27
 'RefSubscriber'=25
 'RelativeNamespace'=32
@@ -17,7 +17,7 @@
 'RosSubscriber'=24
 'RosSubscribers'=18
 'name'=14
-'ns'=22
+'ns'=23
 'parts'=31
 '{'=12
 '}'=13
