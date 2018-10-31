@@ -26,18 +26,6 @@ class RosSystemFormatter extends AbstractFormatter2 {
 			serviceConnection.format;
 		}
 	}
-	def dispatch void format(Publisher publisher, extension IFormattableDocument document) {
-                // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
-                publisher.getNamespace.format;
-                publisher.getName.format;
-    }
-    
-	def dispatch void format(RosPublisher rospublisher, extension IFormattableDocument document) {
-                // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
-                rospublisher.publisher.format;
-				rospublisher.name.format;
-				rospublisher.ns.format;
-	}
 	
 }	// TODO: implement for 
 

@@ -128,13 +128,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void setSubscriber(Subscriber newSubscriber) {
-		String component_ns = null;
-		String ComponentInterface_toString = eContainer().eContents().toString();
-		component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
-		if (component_ns.length()>0) {
-			NS_EDEFAULT=component_ns;
-		}
-		setNs(component_ns);
+		setNs(NS_EDEFAULT);
 		Subscriber oldSubscriber = subscriber;
 		subscriber = newSubscriber;
 		if (eNotificationRequired())
