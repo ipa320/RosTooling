@@ -128,13 +128,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public void setPublisher(Publisher newPublisher) {
-		String component_ns = null;
-		String ComponentInterface_toString = eContainer().eContents().toString();
-		component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
-		if (component_ns.length()>0) {
-			NS_EDEFAULT=component_ns;
-		}
-		setNs(component_ns);
+		setNs(NS_EDEFAULT);
 		Publisher oldPublisher = publisher;
 		publisher = newPublisher;
 		if (eNotificationRequired())
