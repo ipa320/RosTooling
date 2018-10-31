@@ -11,9 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,13 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class RosServiceClientItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,27 +52,27 @@ public class RosServiceClientItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSrvRefPropertyDescriptor(object);
-			addServiceNamePropertyDescriptor(object);
-			addNameSpacePropertyDescriptor(object);
+			addSrvclientPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addNsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Srv Ref feature.
+	 * This adds a property descriptor for the Srvclient feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSrvRefPropertyDescriptor(Object object) {
+	protected void addSrvclientPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosServiceClient_SrvRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_SrvRef_feature", "_UI_RosServiceClient_type"),
-				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__SRV_REF,
+				 getString("_UI_RosServiceClient_srvclient_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_srvclient_feature", "_UI_RosServiceClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__SRVCLIENT,
 				 true,
 				 false,
 				 true,
@@ -90,19 +82,19 @@ public class RosServiceClientItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Service Name feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServiceNamePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosServiceClient_ServiceName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_ServiceName_feature", "_UI_RosServiceClient_type"),
-				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__SERVICE_NAME,
+				 getString("_UI_RosServiceClient_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_name_feature", "_UI_RosServiceClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -112,19 +104,19 @@ public class RosServiceClientItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name Space feature.
+	 * This adds a property descriptor for the Ns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNameSpacePropertyDescriptor(Object object) {
+	protected void addNsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosServiceClient_NameSpace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_NameSpace_feature", "_UI_RosServiceClient_type"),
-				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__NAME_SPACE,
+				 getString("_UI_RosServiceClient_ns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceClient_ns_feature", "_UI_RosServiceClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_SERVICE_CLIENT__NS,
 				 true,
 				 false,
 				 false,
@@ -152,7 +144,7 @@ public class RosServiceClientItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RosServiceClient)object).getServiceName();
+		String label = ((RosServiceClient)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_RosServiceClient_type") :
 			getString("_UI_RosServiceClient_type") + " " + label;
@@ -171,8 +163,8 @@ public class RosServiceClientItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RosServiceClient.class)) {
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME:
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE:
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME:
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

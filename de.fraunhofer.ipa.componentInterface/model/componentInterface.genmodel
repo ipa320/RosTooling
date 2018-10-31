@@ -9,30 +9,30 @@
   <genPackages prefix="ComponentInterface" disposableProviderFactory="true" ecorePackage="componentInterface.ecore#/">
     <genDataTypes ecoreDataType="componentInterface.ecore#//NS"/>
     <genClasses ecoreClass="componentInterface.ecore#//ComponentInterface">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicPublisher"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosTopicSubscriber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceServer"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/RosServiceClient"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rospublisher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rossubscriber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosPublisher">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosPublisher/TopicRef"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/TopicName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/NameSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosPublisher/publisher"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosPublisher/ns"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosSubscriber">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosSubscriber/TopicRef"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/TopicName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/NameSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosSubscriber/subscriber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosSubscriber/ns"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosServiceServer">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceServer/SrvRef"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/ServiceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/NameSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceServer/srvserver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceServer/ns"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosServiceClient">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceClient/SrvRef"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/ServiceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/NameSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosServiceClient/srvclient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/ns"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

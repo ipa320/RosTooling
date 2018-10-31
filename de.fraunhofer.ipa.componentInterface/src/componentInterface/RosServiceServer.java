@@ -14,9 +14,9 @@ import ros.ServiceServer;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.RosServiceServer#getSrvRef <em>Srv Ref</em>}</li>
- *   <li>{@link componentInterface.RosServiceServer#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link componentInterface.RosServiceServer#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.RosServiceServer#getSrvserver <em>Srvserver</em>}</li>
+ *   <li>{@link componentInterface.RosServiceServer#getName <em>Name</em>}</li>
+ *   <li>{@link componentInterface.RosServiceServer#getNs <em>Ns</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getRosServiceServer()
@@ -25,81 +25,81 @@ import ros.ServiceServer;
  */
 public interface RosServiceServer extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Srv Ref</b></em>' reference.
+	 * Returns the value of the '<em><b>Srvserver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Srv Ref</em>' reference isn't clear,
+	 * If the meaning of the '<em>Srvserver</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Srv Ref</em>' reference.
-	 * @see #setSrvRef(ServiceServer)
-	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_SrvRef()
+	 * @return the value of the '<em>Srvserver</em>' reference.
+	 * @see #setSrvserver(ServiceServer)
+	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_Srvserver()
 	 * @model
 	 * @generated
 	 */
-	ServiceServer getSrvRef();
+	ServiceServer getSrvserver();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RosServiceServer#getSrvRef <em>Srv Ref</em>}' reference.
+	 * Sets the value of the '{@link componentInterface.RosServiceServer#getSrvserver <em>Srvserver</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Srv Ref</em>' reference.
-	 * @see #getSrvRef()
+	 * @param value the new value of the '<em>Srvserver</em>' reference.
+	 * @see #getSrvserver()
 	 * @generated
 	 */
-	void setSrvRef(ServiceServer value);
+	void setSrvserver(ServiceServer value);
 
 	/**
-	 * Returns the value of the '<em><b>Service Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service Name</em>' attribute.
-	 * @see #setServiceName(String)
-	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_ServiceName()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_Name()
 	 * @model
 	 * @generated
 	 */
-	String getServiceName();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RosServiceServer#getServiceName <em>Service Name</em>}' attribute.
+	 * Sets the value of the '{@link componentInterface.RosServiceServer#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service Name</em>' attribute.
-	 * @see #getServiceName()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setServiceName(String value);
+	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Name Space</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ns</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name Space</em>' reference isn't clear,
+	 * If the meaning of the '<em>Ns</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name Space</em>' attribute.
-	 * @see #setNameSpace(String)
-	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_NameSpace()
+	 * @return the value of the '<em>Ns</em>' attribute.
+	 * @see #setNs(String)
+	 * @see componentInterface.ComponentInterfacePackage#getRosServiceServer_Ns()
 	 * @model dataType="componentInterface.NS"
 	 * @generated
 	 */
-	String getNameSpace();
+	String getNs();
 
 	/**
-	 * Sets the value of the '{@link componentInterface.RosServiceServer#getNameSpace <em>Name Space</em>}' attribute.
+	 * Sets the value of the '{@link componentInterface.RosServiceServer#getNs <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name Space</em>' attribute.
-	 * @see #getNameSpace()
+	 * @param value the new value of the '<em>Ns</em>' attribute.
+	 * @see #getNs()
 	 * @generated
 	 */
-	void setNameSpace(String value);
+	void setNs(String value);
 
 } // RosServiceServer

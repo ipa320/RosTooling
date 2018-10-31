@@ -249,15 +249,6 @@
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
-	<extension point="org.eclipse.ui.preferencePages">
-		<page
-			category="de.fraunhofer.ipa.componentInterface.ComponentInterface"
-			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="de.fraunhofer.ipa.componentInterface.ComponentInterface.validator.preferencePage"
-			name="Errors/Warnings">
-			<keywordReference id="de.fraunhofer.ipa.componentInterface.ui.keyword_ComponentInterface"/>
-		</page>
-	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
@@ -406,18 +397,12 @@
 			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="componentinterface">
 		</viewer>
-		<contentTypeBinding
-			contentTypeId="de.fraunhofer.ipa.componentInterface.ComponentInterface.contenttype"
-			contentViewerId="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentMergeViewers"
 			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="componentinterface" label="ComponentInterface Compare">
 		</viewer>
-		<contentTypeBinding
-			contentTypeId="de.fraunhofer.ipa.componentInterface.ComponentInterface.contenttype"
-			contentMergeViewerId="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="de.fraunhofer.ipa.componentInterface.ComponentInterface.editors.documentProviders"

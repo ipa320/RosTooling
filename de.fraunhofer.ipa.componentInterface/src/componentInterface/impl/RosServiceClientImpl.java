@@ -8,8 +8,8 @@ import componentInterface.RosServiceClient;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import ros.ServiceClient;
@@ -22,63 +22,60 @@ import ros.ServiceClient;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RosServiceClientImpl#getSrvRef <em>Srv Ref</em>}</li>
- *   <li>{@link componentInterface.impl.RosServiceClientImpl#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link componentInterface.impl.RosServiceClientImpl#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.impl.RosServiceClientImpl#getSrvclient <em>Srvclient</em>}</li>
+ *   <li>{@link componentInterface.impl.RosServiceClientImpl#getName <em>Name</em>}</li>
+ *   <li>{@link componentInterface.impl.RosServiceClientImpl#getNs <em>Ns</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RosServiceClientImpl extends MinimalEObjectImpl.Container implements RosServiceClient {
 	/**
-	 * The cached value of the '{@link #getSrvRef() <em>Srv Ref</em>}' reference.
+	 * The cached value of the '{@link #getSrvclient() <em>Srvclient</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSrvRef()
+	 * @see #getSrvclient()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceClient srvRef;
+	protected ServiceClient srvclient;
 
 	/**
-	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SERVICE_NAME_EDEFAULT = null;
-
+	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String serviceName = SERVICE_NAME_EDEFAULT;
-
+	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameSpace()
-	 * @generated
+	 * @see #getNs()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NAME_SPACE_EDEFAULT = null;
-
+	protected static String NS_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameSpace()
+	 * @see #getNs()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nameSpace = NAME_SPACE_EDEFAULT;
+	protected String ns = NS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,16 +101,16 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient getSrvRef() {
-		if (srvRef != null && srvRef.eIsProxy()) {
-			InternalEObject oldSrvRef = (InternalEObject)srvRef;
-			srvRef = (ServiceClient)eResolveProxy(oldSrvRef);
-			if (srvRef != oldSrvRef) {
+	public ServiceClient getSrvclient() {
+		if (srvclient != null && srvclient.eIsProxy()) {
+			InternalEObject oldSrvclient = (InternalEObject)srvclient;
+			srvclient = (ServiceClient)eResolveProxy(oldSrvclient);
+			if (srvclient != oldSrvclient) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF, oldSrvRef, srvRef));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT, oldSrvclient, srvclient));
 			}
 		}
-		return srvRef;
+		return srvclient;
 	}
 
 	/**
@@ -121,20 +118,27 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClient basicGetSrvRef() {
-		return srvRef;
+	public ServiceClient basicGetSrvclient() {
+		return srvclient;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void setSrvRef(ServiceClient newSrvRef) {
-		ServiceClient oldSrvRef = srvRef;
-		srvRef = newSrvRef;
+	public void setSrvclient(ServiceClient newSrvclient) {
+		String component_ns = null;
+		String ComponentInterface_toString = eContainer().eContents().toString();
+		component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
+		if (component_ns.length()>0) {
+			NS_EDEFAULT=component_ns;
+		}
+		setNs(component_ns);
+		ServiceClient oldSrvclient = srvclient;
+		srvclient = newSrvclient;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF, oldSrvRef, srvRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT, oldSrvclient, srvclient));
 	}
 
 	/**
@@ -143,18 +147,18 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * @generated NOT
 	 */
 	public String getServiceName() {
-		if (serviceName!=null) {
-			if (serviceName.length()>0) {
-				return serviceName;
-			}if (nameSpace != null && srvRef != null) {
-				return String.format("/%s/%s", nameSpace.replaceFirst("/",""), srvRef.getName().replaceFirst("/",""));	
-			}else if (srvRef != null) {
-				return String.format("/%s", srvRef.getName().replaceFirst("/",""));	
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && srvclient != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), srvclient.getName().replaceFirst("/",""));	
+			}else if (srvclient != null) {
+				return String.format("/%s", srvclient.getName().replaceFirst("/",""));	
 			}else {
-				return serviceName;
+				return name;
 			}
 		}else {
-			return serviceName;
+			return name;
 		}
 	}
 
@@ -163,11 +167,11 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
-		serviceName = newServiceName;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME, oldServiceName, serviceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME, oldName, name));
 	}
 
 	/**
@@ -175,8 +179,8 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNameSpace() {
-		return nameSpace;
+	public String getNs() {
+		return ns;
 	}
 
 	/**
@@ -184,11 +188,11 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNameSpace(String newNameSpace) {
-		String oldNameSpace = nameSpace;
-		nameSpace = newNameSpace;
+	public void setNs(String newNs) {
+		String oldNs = ns;
+		ns = newNs;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE, oldNameSpace, nameSpace));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS, oldNs, ns));
 	}
 
 	/**
@@ -199,13 +203,13 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF:
-				if (resolve) return getSrvRef();
-				return basicGetSrvRef();
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME:
-				return getServiceName();
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE:
-				return getNameSpace();
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT:
+				if (resolve) return getSrvclient();
+				return basicGetSrvclient();
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME:
+				return getName();
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS:
+				return getNs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,14 +222,14 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF:
-				setSrvRef((ServiceClient)newValue);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT:
+				setSrvclient((ServiceClient)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME:
-				setServiceName((String)newValue);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME:
+				setName((String)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE:
-				setNameSpace((String)newValue);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS:
+				setNs((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,14 +243,14 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF:
-				setSrvRef((ServiceClient)null);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT:
+				setSrvclient((ServiceClient)null);
 				return;
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME:
-				setServiceName(SERVICE_NAME_EDEFAULT);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE:
-				setNameSpace(NAME_SPACE_EDEFAULT);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS:
+				setNs(NS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,12 +264,12 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRV_REF:
-				return srvRef != null;
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SERVICE_NAME:
-				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
-			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME_SPACE:
-				return NAME_SPACE_EDEFAULT == null ? nameSpace != null : !NAME_SPACE_EDEFAULT.equals(nameSpace);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__SRVCLIENT:
+				return srvclient != null;
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ComponentInterfacePackage.ROS_SERVICE_CLIENT__NS:
+				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,12 +284,28 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ServiceName: ");
-		result.append(serviceName);
-		result.append(", NameSpace: ");
-		result.append(nameSpace);
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", ns: ");
+		result.append(ns);
 		result.append(')');
 		return result.toString();
+	}
+
+	public String getName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && srvclient != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), srvclient.getName().replaceFirst("/",""));	
+			}else if (srvclient != null) {
+				return String.format("/%s", srvclient.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
 	}
 
 } //RosServiceClientImpl

@@ -154,7 +154,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="TopicConnection" preconditionExpression="[target.TopicName.equalsIgnoreCase(source.TopicName) and target.TopicRef.message.name.equalsIgnoreCase(source.TopicRef.message.name)/]" semanticElements="feature:eContainer" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:ToTopic" sourceFinderExpression="feature:FromTopic" domainClass="rossystem::TopicConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditTopicConnections']" pathNodeMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher'] //@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
+        <edgeMappings name="TopicConnection" semanticElements="feature:eContainer" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:ToTopic" sourceFinderExpression="feature:FromTopic" domainClass="rossystem::TopicConnection" useDomainElement="true" pathNodeMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher'] //@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
@@ -162,7 +162,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ServiceConnection" preconditionExpression="[target.ServiceName.equalsIgnoreCase(source.ServiceName) and target.ServiceRef.service.name.equalsIgnoreCase(source.ServiceRef.service.name)/]" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" targetFinderExpression="feature:ToSrv" sourceFinderExpression="feature:FromSrv" domainClass="rossystem::ServiceConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditServiceConnections']">
+        <edgeMappings name="ServiceConnection" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" targetFinderExpression="feature:ToSrv" sourceFinderExpression="feature:FromSrv" domainClass="rossystem::ServiceConnection" useDomainElement="true">
           <style sourceArrow="OutputArrow" sizeComputationExpression="2" routingStyle="tree" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <centerLabelStyleDescription showIcon="false">
@@ -171,8 +171,8 @@
           </style>
         </edgeMappings>
         <containerMappings name="ComponentInterface" semanticCandidatesExpression="feature:RosComponent" domainClass="componentInterface::ComponentInterface">
-          <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:RosTopicPublisher" domainClass="componentInterface::RosPublisher">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+          <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:rospublisher" domainClass="componentInterface::RosPublisher">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -181,8 +181,8 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="feature:RosTopicSubscriber" domainClass="componentInterface::RosSubscriber">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:TopicName" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+          <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="feature:rossubscriber" domainClass="componentInterface::RosSubscriber">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
@@ -191,8 +191,8 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:RosServiceServer" domainClass="componentInterface::RosServiceServer">
-            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
+          <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:rosserviceserver" domainClass="componentInterface::RosServiceServer">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -201,8 +201,8 @@
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:RosServiceClient" domainClass="componentInterface::RosServiceClient">
-            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" labelExpression="feature:ServiceName" resizeKind="NSEW">
+          <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:rosserviceclient" domainClass="componentInterface::RosServiceClient">
+            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
@@ -232,7 +232,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditTopicConnections" precondition="[target.TopicName.equalsIgnoreCase(source.TopicName) and target.TopicRef.message.name.equalsIgnoreCase(source.TopicRef.message.name)/]" forceRefresh="true">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditServiceConnections" precondition="[target.name.equalsIgnoreCase(source.name) and target.svrserver.service.name.equalsIgnoreCase(source.srvclient.service.name)/]" forceRefresh="true">
             <source name="source"/>
             <target name="target"/>
             <sourceView name="sourceView"/>
@@ -243,7 +243,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditServiceConnections" precondition="[target.ServiceName.equalsIgnoreCase(source.ServiceName) and target.ServiceRef.service.name.equalsIgnoreCase(source.ServiceRef.service.name)/]" forceRefresh="true">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditTopicConnections" precondition="[target.name.equalsIgnoreCase(source.name) and target.publisher.message.name.equalsIgnoreCase(source.subscriber.message.name)/]" forceRefresh="true">
             <source name="source"/>
             <target name="target"/>
             <sourceView name="sourceView"/>

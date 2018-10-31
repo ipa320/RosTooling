@@ -3,7 +3,6 @@
 package rossystem.impl;
 
 import componentInterface.ComponentInterface;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

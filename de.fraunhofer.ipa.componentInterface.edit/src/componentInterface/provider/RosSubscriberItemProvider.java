@@ -11,9 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,13 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class RosSubscriberItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,27 +52,27 @@ public class RosSubscriberItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTopicRefPropertyDescriptor(object);
-			addTopicNamePropertyDescriptor(object);
-			addNameSpacePropertyDescriptor(object);
+			addSubscriberPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addNsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Ref feature.
+	 * This adds a property descriptor for the Subscriber feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTopicRefPropertyDescriptor(Object object) {
+	protected void addSubscriberPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSubscriber_TopicRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_TopicRef_feature", "_UI_RosSubscriber_type"),
-				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__TOPIC_REF,
+				 getString("_UI_RosSubscriber_subscriber_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_subscriber_feature", "_UI_RosSubscriber_type"),
+				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__SUBSCRIBER,
 				 true,
 				 false,
 				 true,
@@ -90,19 +82,19 @@ public class RosSubscriberItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Name feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTopicNamePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSubscriber_TopicName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_TopicName_feature", "_UI_RosSubscriber_type"),
-				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__TOPIC_NAME,
+				 getString("_UI_RosSubscriber_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_name_feature", "_UI_RosSubscriber_type"),
+				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__NAME,
 				 true,
 				 false,
 				 false,
@@ -112,19 +104,19 @@ public class RosSubscriberItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name Space feature.
+	 * This adds a property descriptor for the Ns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNameSpacePropertyDescriptor(Object object) {
+	protected void addNsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSubscriber_NameSpace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_NameSpace_feature", "_UI_RosSubscriber_type"),
-				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__NAME_SPACE,
+				 getString("_UI_RosSubscriber_ns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosSubscriber_ns_feature", "_UI_RosSubscriber_type"),
+				 ComponentInterfacePackage.Literals.ROS_SUBSCRIBER__NS,
 				 true,
 				 false,
 				 false,
@@ -152,7 +144,7 @@ public class RosSubscriberItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RosSubscriber)object).getTopicName();
+		String label = ((RosSubscriber)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_RosSubscriber_type") :
 			getString("_UI_RosSubscriber_type") + " " + label;
@@ -171,8 +163,8 @@ public class RosSubscriberItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RosSubscriber.class)) {
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

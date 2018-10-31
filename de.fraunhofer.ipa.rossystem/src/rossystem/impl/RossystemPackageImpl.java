@@ -3,7 +3,6 @@
 package rossystem.impl;
 
 import componentInterface.ComponentInterfacePackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
