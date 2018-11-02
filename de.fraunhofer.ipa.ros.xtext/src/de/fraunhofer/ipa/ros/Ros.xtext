@@ -43,11 +43,15 @@ Package_Impl returns Package:
 
 EString returns ecore::EString:
 	STRING | ID;
+	
+RosNames returns ecore::EString:
+	ID
+;
 
 Artifact returns Artifact:
 	{Artifact}
 	'Artifact'
-	name=EString
+	name=RosNames
 	'{'
 		('node' node=Node)?
 	'}';
@@ -55,7 +59,7 @@ Artifact returns Artifact:
 CatkinPackage returns CatkinPackage:
 	{CatkinPackage}
 	'CatkinPackage'
-	name=EString
+	name=RosNames
 	'{'
 		('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}' )?
 		('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}' )?
@@ -97,7 +101,7 @@ MessageDefinition returns MessageDefinition:
 Node returns Node:
 	'Node'
 	'{'
-		'name' name=EString
+		'name' name=RosNames
 		('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )?
 		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )?
 		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )?
@@ -156,7 +160,7 @@ ActionClient returns ActionClient:
 	'}';
 
 GraphName returns GraphName:
-	'GraphName' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'GraphName' ;
 
 Parameter returns Parameter:
 	'Parameter'
@@ -316,16 +320,16 @@ ParameterDate returns ParameterDate:
 	'}';
 
 Base64Binary returns type::Base64Binary:
-	'Base64Binary' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Base64Binary' ;
 
 Int0 returns type::Int:
-	'Int' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Int' ;
 
 Double returns type::Double:
-	'Double' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Double';
 
 Boolean returns type::Boolean:
-	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Boolean';
 
 ParameterStructMember returns ParameterStructMember:
 	'ParameterStructMember'
@@ -335,7 +339,7 @@ ParameterStructMember returns ParameterStructMember:
 	'}';
 
 DateTime returns type::DateTime:
-	'DateTime' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'DateTime' ;
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
 	'ParameterStructTypeMember'
