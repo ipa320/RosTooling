@@ -18,14 +18,19 @@ class RosSystemFormatter extends AbstractFormatter2 {
 	@Inject extension RosSystemGrammarAccess
 
 	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		for (TopicConnection topicConnection : rosSystem.getTopicConnections()) {
-			topicConnection.format;
+			if( topicConnection.fromTopic.name.equalsIgnoreCase(topicConnection.toTopic.name)){
+					topicConnection.format;
+				
+			}
+			if( topicConnection.fromTopic.publisher.message.name.equalsIgnoreCase(topicConnection.toTopic.subscriber.message.name)){
+			}
+				topicConnection.format;
 		}
 		for (ServiceConnection serviceConnection : rosSystem.getServiceConnections()) {
 			serviceConnection.format;
 		}
 	}
 	
-}	// TODO: implement for 
+}
 

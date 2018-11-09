@@ -3,6 +3,10 @@
  */
 package de.fraunhofer.ipa.rossystem.validation
 
+import rossystem.TopicConnection
+import rossystem.RossystemPackage
+import org.omg.CORBA.DynAnyPackage.InvalidValue
+import rossystem.ServiceConnection
 
 /**
  * This class contains custom validation rules. 
@@ -11,7 +15,7 @@ package de.fraunhofer.ipa.rossystem.validation
  */
 class RosSystemValidator extends AbstractRosSystemValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
+	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
 //	def checkGreetingStartsWithCapital(Greeting greeting) {
@@ -21,5 +25,22 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 //					INVALID_NAME)
 //		}
 //	}
+	def checkTopicConnection(TopicConnection topicconnection){
+		if( !topicconnection.fromTopic.name.equalsIgnoreCase(topicconnection.toTopic.name)){
+			error("Names not matched", RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS, INVALID_NAME)
+		}
+		if( !topicconnection.fromTopic.publisher.message.name.equalsIgnoreCase(topicconnection.toTopic.subscriber.message.name)){
+			error("Messages not matched", RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS, INVALID_NAME)
+		}
+	}
+	
+	def checkSrvConnection(ServiceConnection serviceconnection){
+		if( !serviceconnection.fromSrv.name.equalsIgnoreCase(serviceconnection.toSrv.name)){
+			error("Names not matched", RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS)
+		}
+		if( !serviceconnection.fromSrv.srvserver.service.name.equalsIgnoreCase(serviceconnection.toSrv.srvclient.service.name)){
+			error("Services not matched", RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS)
+		}
+	}
 	
 }
