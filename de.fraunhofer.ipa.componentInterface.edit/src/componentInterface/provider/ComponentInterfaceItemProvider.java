@@ -16,8 +16,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import ros.provider.NamespacedElementItemProvider;
 
 /**
@@ -64,10 +66,10 @@ public class ComponentInterfaceItemProvider extends NamespacedElementItemProvide
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_SERVER);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSPUBLISHER);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSUBSCRIBER);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICESERVER);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT);
 		}
 		return childrenFeatures;
 	}
@@ -123,10 +125,10 @@ public class ComponentInterfaceItemProvider extends NamespacedElementItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInterface.class)) {
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER:
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER:
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_SERVER:
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICESERVER:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -146,22 +148,22 @@ public class ComponentInterfaceItemProvider extends NamespacedElementItemProvide
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_PUBLISHER,
+				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSPUBLISHER,
 				 ComponentInterfaceFactory.eINSTANCE.createRosPublisher()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_TOPIC_SUBSCRIBER,
+				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSUBSCRIBER,
 				 ComponentInterfaceFactory.eINSTANCE.createRosSubscriber()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_SERVER,
+				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICESERVER,
 				 ComponentInterfaceFactory.eINSTANCE.createRosServiceServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROS_SERVICE_CLIENT,
+				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT,
 				 ComponentInterfaceFactory.eINSTANCE.createRosServiceClient()));
 	}
 

@@ -3,32 +3,25 @@
 package componentInterface.presentation;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.CommonPlugin;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.ecore.xmi.XMLResource;
-
+import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 
 import org.eclipse.core.resources.IContainer;
@@ -217,7 +210,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean performFinish() {
@@ -239,24 +232,29 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 
 							// Get the URI of the model file.
 							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							//URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
-							Resource resource = resourceSet.createResource(fileURI);
+							//Resource resource = resourceSet.createResource(fileURI);
 
 							// Add the initial model object to the contents.
 							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
-								resource.getContents().add(rootObject);
-							}
-
+							//EObject rootObject = createInitialModel();
+							//if (rootObject != null) {
+							//	resource.getContents().add(rootObject);
+							//}
+							
+							byte[] bytes = ("ComponentInterface { name NewComponent }").getBytes();
+							InputStream source = new ByteArrayInputStream(bytes);
+							modelFile.create(source, IResource.NONE, null);
+							
 							// Save the contents of the resource to the file system.
 							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
+							//Map<Object, Object> options = new HashMap<Object, Object>();
+							//options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							//resource.save(options);
+
 						}
 						catch (Exception exception) {
 							ComponentInterfaceEditorPlugin.INSTANCE.log(exception);
@@ -287,15 +285,18 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 			// Open an editor on the new file.
 			//
 			try {
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				page.openEditor(new FileEditorInput(modelFile),
+						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception) {
+				MessageDialog.openError(workbenchWindow.getShell(),
+						ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
-
+			
+			LoadResourceAction loadResourceAction = new LoadResourceAction();
+			loadResourceAction.setActiveWorkbenchPart(activePart);
+			loadResourceAction.setActiveEditor(page.getActiveEditor());
+			loadResourceAction.run();
 			return true;
 		}
 		catch (Exception exception) {

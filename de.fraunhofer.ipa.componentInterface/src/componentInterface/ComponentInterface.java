@@ -3,6 +3,7 @@
 package componentInterface;
 
 import org.eclipse.emf.common.util.EList;
+
 import ros.NamespacedElement;
 
 /**
@@ -14,10 +15,10 @@ import ros.NamespacedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.ComponentInterface#getRosTopicPublisher <em>Ros Topic Publisher</em>}</li>
- *   <li>{@link componentInterface.ComponentInterface#getRosTopicSubscriber <em>Ros Topic Subscriber</em>}</li>
- *   <li>{@link componentInterface.ComponentInterface#getRosServiceServer <em>Ros Service Server</em>}</li>
- *   <li>{@link componentInterface.ComponentInterface#getRosServiceClient <em>Ros Service Client</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getRospublisher <em>Rospublisher</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getRossubscriber <em>Rossubscriber</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getRosserviceserver <em>Rosserviceserver</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getRosserviceclient <em>Rosserviceclient</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getComponentInterface()
@@ -26,67 +27,67 @@ import ros.NamespacedElement;
  */
 public interface ComponentInterface extends NamespacedElement {
 	/**
-	 * Returns the value of the '<em><b>Ros Topic Publisher</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rospublisher</b></em>' containment reference list.
 	 * The list contents are of type {@link componentInterface.RosPublisher}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Topic Publisher</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Rospublisher</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Topic Publisher</em>' containment reference list.
-	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosTopicPublisher()
+	 * @return the value of the '<em>Rospublisher</em>' containment reference list.
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_Rospublisher()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RosPublisher> getRosTopicPublisher();
+	EList<RosPublisher> getRospublisher();
 
 	/**
-	 * Returns the value of the '<em><b>Ros Topic Subscriber</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rossubscriber</b></em>' containment reference list.
 	 * The list contents are of type {@link componentInterface.RosSubscriber}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Topic Subscriber</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Rossubscriber</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Topic Subscriber</em>' containment reference list.
-	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosTopicSubscriber()
+	 * @return the value of the '<em>Rossubscriber</em>' containment reference list.
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_Rossubscriber()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RosSubscriber> getRosTopicSubscriber();
+	EList<RosSubscriber> getRossubscriber();
 
 	/**
-	 * Returns the value of the '<em><b>Ros Service Server</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rosserviceserver</b></em>' containment reference list.
 	 * The list contents are of type {@link componentInterface.RosServiceServer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Service Server</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Rosserviceserver</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Service Server</em>' containment reference list.
-	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosServiceServer()
+	 * @return the value of the '<em>Rosserviceserver</em>' containment reference list.
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_Rosserviceserver()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RosServiceServer> getRosServiceServer();
+	EList<RosServiceServer> getRosserviceserver();
 
 	/**
-	 * Returns the value of the '<em><b>Ros Service Client</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rosserviceclient</b></em>' containment reference list.
 	 * The list contents are of type {@link componentInterface.RosServiceClient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ros Service Client</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Rosserviceclient</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Service Client</em>' containment reference list.
-	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_RosServiceClient()
+	 * @return the value of the '<em>Rosserviceclient</em>' containment reference list.
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_Rosserviceclient()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RosServiceClient> getRosServiceClient();
+	EList<RosServiceClient> getRosserviceclient();
 
 } // ComponentInterface

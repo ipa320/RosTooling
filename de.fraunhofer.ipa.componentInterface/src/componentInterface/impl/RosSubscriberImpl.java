@@ -8,8 +8,8 @@ import componentInterface.RosSubscriber;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import ros.Subscriber;
@@ -22,63 +22,60 @@ import ros.Subscriber;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RosSubscriberImpl#getTopicRef <em>Topic Ref</em>}</li>
- *   <li>{@link componentInterface.impl.RosSubscriberImpl#getTopicName <em>Topic Name</em>}</li>
- *   <li>{@link componentInterface.impl.RosSubscriberImpl#getNameSpace <em>Name Space</em>}</li>
+ *   <li>{@link componentInterface.impl.RosSubscriberImpl#getSubscriber <em>Subscriber</em>}</li>
+ *   <li>{@link componentInterface.impl.RosSubscriberImpl#getName <em>Name</em>}</li>
+ *   <li>{@link componentInterface.impl.RosSubscriberImpl#getNs <em>Ns</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements RosSubscriber {
 	/**
-	 * The cached value of the '{@link #getTopicRef() <em>Topic Ref</em>}' reference.
+	 * The cached value of the '{@link #getSubscriber() <em>Subscriber</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTopicRef()
+	 * @see #getSubscriber()
 	 * @generated
 	 * @ordered
 	 */
-	protected Subscriber topicRef;
+	protected Subscriber subscriber;
 
 	/**
-	 * The default value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTopicName()
-	 * @generated
+	 * @see #getName()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String TOPIC_NAME_EDEFAULT = null;
-
+	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getTopicName() <em>Topic Name</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTopicName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String topicName = TOPIC_NAME_EDEFAULT;
-
+	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameSpace()
-	 * @generated
+	 * @see #getNs()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NAME_SPACE_EDEFAULT = null;
-
+	protected static String NS_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameSpace()
+	 * @see #getNs()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nameSpace = NAME_SPACE_EDEFAULT;
+	protected String ns = NS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,16 +101,16 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber getTopicRef() {
-		if (topicRef != null && topicRef.eIsProxy()) {
-			InternalEObject oldTopicRef = (InternalEObject)topicRef;
-			topicRef = (Subscriber)eResolveProxy(oldTopicRef);
-			if (topicRef != oldTopicRef) {
+	public Subscriber getSubscriber() {
+		if (subscriber != null && subscriber.eIsProxy()) {
+			InternalEObject oldSubscriber = (InternalEObject)subscriber;
+			subscriber = (Subscriber)eResolveProxy(oldSubscriber);
+			if (subscriber != oldSubscriber) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF, oldTopicRef, topicRef));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER, oldSubscriber, subscriber));
 			}
 		}
-		return topicRef;
+		return subscriber;
 	}
 
 	/**
@@ -121,20 +118,21 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subscriber basicGetTopicRef() {
-		return topicRef;
+	public Subscriber basicGetSubscriber() {
+		return subscriber;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void setTopicRef(Subscriber newTopicRef) {
-		Subscriber oldTopicRef = topicRef;
-		topicRef = newTopicRef;
+	public void setSubscriber(Subscriber newSubscriber) {
+		setNs(NS_EDEFAULT);
+		Subscriber oldSubscriber = subscriber;
+		subscriber = newSubscriber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF, oldTopicRef, topicRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER, oldSubscriber, subscriber));
 	}
 
 	/**
@@ -143,18 +141,18 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public String getTopicName() {
-		if (topicName!=null) {
-			if (topicName.length()>0) {
-				return topicName;
-			}if (nameSpace != null && topicRef != null) {
-				return String.format("/%s/%s", nameSpace.replaceFirst("/",""), topicRef.getName().replaceFirst("/",""));	
-			}else if (topicRef != null) {
-				return String.format("/%s", topicRef.getName().replaceFirst("/",""));	
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && subscriber != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+			}else if (subscriber != null) {
+				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
 			}else {
-				return topicName;
+				return name;
 			}
 		}else {
-			return topicName;
+			return name;
 		}
 	}
 
@@ -163,11 +161,11 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTopicName(String newTopicName) {
-		String oldTopicName = topicName;
-		topicName = newTopicName;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME, oldTopicName, topicName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME, oldName, name));
 	}
 
 	/**
@@ -175,8 +173,8 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNameSpace() {
-		return nameSpace;
+	public String getNs() {
+		return ns;
 	}
 
 	/**
@@ -184,11 +182,11 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNameSpace(String newNameSpace) {
-		String oldNameSpace = nameSpace;
-		nameSpace = newNameSpace;
+	public void setNs(String newNs) {
+		String oldNs = ns;
+		ns = newNs;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE, oldNameSpace, nameSpace));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_SUBSCRIBER__NS, oldNs, ns));
 	}
 
 	/**
@@ -199,13 +197,13 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF:
-				if (resolve) return getTopicRef();
-				return basicGetTopicRef();
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
-				return getTopicName();
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				return getNameSpace();
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				if (resolve) return getSubscriber();
+				return basicGetSubscriber();
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
+				return getName();
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
+				return getNs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,14 +216,14 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF:
-				setTopicRef((Subscriber)newValue);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				setSubscriber((Subscriber)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
-				setTopicName((String)newValue);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
+				setName((String)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				setNameSpace((String)newValue);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
+				setNs((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,14 +237,14 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF:
-				setTopicRef((Subscriber)null);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				setSubscriber((Subscriber)null);
 				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
-				setTopicName(TOPIC_NAME_EDEFAULT);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
+				setName(NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				setNameSpace(NAME_SPACE_EDEFAULT);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
+				setNs(NS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,12 +258,12 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_REF:
-				return topicRef != null;
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__TOPIC_NAME:
-				return TOPIC_NAME_EDEFAULT == null ? topicName != null : !TOPIC_NAME_EDEFAULT.equals(topicName);
-			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME_SPACE:
-				return NAME_SPACE_EDEFAULT == null ? nameSpace != null : !NAME_SPACE_EDEFAULT.equals(nameSpace);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__SUBSCRIBER:
+				return subscriber != null;
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ComponentInterfacePackage.ROS_SUBSCRIBER__NS:
+				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,12 +278,28 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (TopicName: ");
-		result.append(topicName);
-		result.append(", NameSpace: ");
-		result.append(nameSpace);
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", ns: ");
+		result.append(ns);
 		result.append(')');
 		return result.toString();
+	}
+
+	public String getName() {
+		if (name!=null) {
+			if (name.length()>0) {
+				return name;
+			}if (ns != null && subscriber != null) {
+				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+			}else if (subscriber != null) {
+				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
+			}else {
+				return name;
+			}
+		}else {
+			return name;
+		}
 	}
 
 } //RosSubscriberImpl
