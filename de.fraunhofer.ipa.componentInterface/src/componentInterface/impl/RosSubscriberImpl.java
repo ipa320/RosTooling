@@ -48,7 +48,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static String NAME_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected static String NS_EDEFAULT = null;
+	protected static String NS_EDEFAULT = "";
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,10 +125,9 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setSubscriber(Subscriber newSubscriber) {
-		setNs(NS_EDEFAULT);
 		Subscriber oldSubscriber = subscriber;
 		subscriber = newSubscriber;
 		if (eNotificationRequired())
@@ -140,12 +139,13 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getTopicName() {
+	public String getName() {
 		if (name!=null) {
 			if (name.length()>0) {
 				return name;
 			}if (ns != null && subscriber != null) {
-				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+				String composed_name = String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
+				return composed_name.replaceFirst("//","/");
 			}else if (subscriber != null) {
 				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
 			}else {
@@ -171,10 +171,46 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 */
+	public String getComponentNs() {
+		String component_ns = null;
+		String ComponentInterface_toString = eContainer().eContents().toString();
+		if (ComponentInterface_toString.contains("parts") && ComponentInterface_toString.contains("componentInterface")) {
+			component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [", 1) + 8, ComponentInterface_toString.indexOf("]"));
+			if (component_ns.length()>0) {
+				return component_ns;
+			}else {
+				return NS_EDEFAULT;
+			}
+		}else {
+			return NS_EDEFAULT;
+		}
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setDefaultValues() {
+		NS_EDEFAULT = getComponentNs();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public String getNs() {
-		return ns;
+		setDefaultValues();
+		if (ns.isEmpty()) {
+			ns = NS_EDEFAULT;
+			return NS_EDEFAULT;
+		}else {
+			return ns;
+		}
 	}
 
 	/**
@@ -183,6 +219,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated
 	 */
 	public void setNs(String newNs) {
+		setDefaultValues();
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())
@@ -284,22 +321,6 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 		result.append(ns);
 		result.append(')');
 		return result.toString();
-	}
-
-	public String getName() {
-		if (name!=null) {
-			if (name.length()>0) {
-				return name;
-			}if (ns != null && subscriber != null) {
-				return String.format("/%s/%s", ns.replaceFirst("/",""), subscriber.getName().replaceFirst("/",""));	
-			}else if (subscriber != null) {
-				return String.format("/%s", subscriber.getName().replaceFirst("/",""));	
-			}else {
-				return name;
-			}
-		}else {
-			return name;
-		}
 	}
 
 } //RosSubscriberImpl

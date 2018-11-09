@@ -45,10 +45,10 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static String NAME_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected static String NS_EDEFAULT = null;
+	protected static String NS_EDEFAULT = "";
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,7 +125,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setSrvclient(ServiceClient newSrvclient) {
 		String component_ns = null;
@@ -146,12 +146,13 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getServiceName() {
+	public String getName() {
 		if (name!=null) {
 			if (name.length()>0) {
 				return name;
 			}if (ns != null && srvclient != null) {
-				return String.format("/%s/%s", ns.replaceFirst("/",""), srvclient.getName().replaceFirst("/",""));	
+				String composed_name = String.format("/%s/%s", ns.replaceFirst("/",""), srvclient.getName().replaceFirst("/",""));	
+				return composed_name.replaceFirst("//","/");
 			}else if (srvclient != null) {
 				return String.format("/%s", srvclient.getName().replaceFirst("/",""));	
 			}else {
@@ -177,10 +178,46 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 */
+	public String getComponentNs() {
+		String component_ns = null;
+		String ComponentInterface_toString = eContainer().eContents().toString();
+		if (ComponentInterface_toString.contains("parts") && ComponentInterface_toString.contains("componentInterface")) {
+			component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [", 1) + 8, ComponentInterface_toString.indexOf("]"));
+			if (component_ns.length()>0) {
+				return component_ns;
+			}else {
+				return NS_EDEFAULT;
+			}
+		}else {
+			return NS_EDEFAULT;
+		}
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setDefaultValues() {
+		NS_EDEFAULT = getComponentNs();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public String getNs() {
-		return ns;
+		setDefaultValues();
+		if (ns.isEmpty()) {
+			ns = NS_EDEFAULT;
+			return NS_EDEFAULT;
+		}else {
+			return ns;
+		}
 	}
 
 	/**
@@ -189,6 +226,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setNs(String newNs) {
+		setDefaultValues();
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())
@@ -290,22 +328,6 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 		result.append(ns);
 		result.append(')');
 		return result.toString();
-	}
-
-	public String getName() {
-		if (name!=null) {
-			if (name.length()>0) {
-				return name;
-			}if (ns != null && srvclient != null) {
-				return String.format("/%s/%s", ns.replaceFirst("/",""), srvclient.getName().replaceFirst("/",""));	
-			}else if (srvclient != null) {
-				return String.format("/%s", srvclient.getName().replaceFirst("/",""));	
-			}else {
-				return name;
-			}
-		}else {
-			return name;
-		}
 	}
 
 } //RosServiceClientImpl

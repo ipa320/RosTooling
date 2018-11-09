@@ -1527,7 +1527,7 @@ rule__RosPublisher__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getRosPublisherAccess().getNameAssignment_2()); }
-	(rule__RosPublisher__NameAssignment_2)
+	(rule__RosPublisher__NameAssignment_2)?
 	{ after(grammarAccess.getRosPublisherAccess().getNameAssignment_2()); }
 )
 ;
@@ -1797,7 +1797,7 @@ rule__RosSubscriber__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getRosSubscriberAccess().getNameAssignment_2()); }
-	(rule__RosSubscriber__NameAssignment_2)
+	(rule__RosSubscriber__NameAssignment_2)?
 	{ after(grammarAccess.getRosSubscriberAccess().getNameAssignment_2()); }
 )
 ;
@@ -2067,7 +2067,7 @@ rule__RosServiceServer__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getRosServiceServerAccess().getNameAssignment_2()); }
-	(rule__RosServiceServer__NameAssignment_2)
+	(rule__RosServiceServer__NameAssignment_2)?
 	{ after(grammarAccess.getRosServiceServerAccess().getNameAssignment_2()); }
 )
 ;
@@ -2337,7 +2337,7 @@ rule__RosServiceClient__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getRosServiceClientAccess().getNameAssignment_2()); }
-	(rule__RosServiceClient__NameAssignment_2)
+	(rule__RosServiceClient__NameAssignment_2)?
 	{ after(grammarAccess.getRosServiceClientAccess().getNameAssignment_2()); }
 )
 ;
