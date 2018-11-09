@@ -216,7 +216,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
 		setDefaultValues();
@@ -273,7 +273,6 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		//setDefaultValues();
 		switch (featureID) {
 			case ComponentInterfacePackage.ROS_PUBLISHER__PUBLISHER:
 				setPublisher((Publisher)null);

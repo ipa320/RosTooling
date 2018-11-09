@@ -216,7 +216,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
 		setDefaultValues();

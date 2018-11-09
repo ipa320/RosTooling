@@ -128,13 +128,6 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setSrvserver(ServiceServer newSrvserver) {
-		String component_ns = null;
-		String ComponentInterface_toString = eContainer().eContents().toString();
-		component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
-		if (component_ns.length()>0) {
-			NS_EDEFAULT=component_ns;
-		}
-		setNs(component_ns);
 		ServiceServer oldSrvserver = srvserver;
 		srvserver = newSrvserver;
 		if (eNotificationRequired())
@@ -223,7 +216,7 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
 		setDefaultValues();
