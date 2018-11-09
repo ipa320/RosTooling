@@ -127,9 +127,9 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
 		description.setNatureIds(newNatures);
 		project.setDescription(description, monitor);
-		IFile file = project.getFile(ProjectName+".rosartifact");
+		IFile file = project.getFile(ProjectName+".ros");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
-		byte[] bytes = ("Artifact "+ProjectName+" {}").getBytes();
+		byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +ProjectName+ "{ artifact {\n" +"		Artifact  "+ProjectName+" {}}}}}").getBytes();
 		InputStream source = new ByteArrayInputStream(bytes);
 		file.create(source, IResource.NONE, null);
 		
@@ -151,8 +151,9 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		EObject rootObject = RosFactory.eINSTANCE.createArtifact();
 		rootObject = session.getSemanticResources().iterator().next().getContents().get(0);
 
+		//TODO: Uncomment
 		//create representation
-		Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false),  rootObject );
+		/**Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false), rootObject);
 		RepresentationDescription description_ = descriptions.iterator().next();
 		DialectManager viewpointDialectManager = DialectManager.INSTANCE;
 		Command createViewCommand = new CreateRepresentationCommand(session,
@@ -163,7 +164,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		//open editor 
 		Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
 		DRepresentation myDiagramRepresentation = representations.iterator().next();
-		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
+		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);*/
 		
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 
