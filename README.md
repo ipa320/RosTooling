@@ -1,5 +1,18 @@
 # Ros Model
 
+## Installation and setup requirements
+
+Download the official (Eclipse Oxygen Installer)[https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz] and choose the *Eclipse Modeling tools* package.
+
+Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
+```
+Sirius (version 6)
+Eclipse Xtext (version 2.15)
+Eclipse Xtend (version 2.15)
+```
+
+## Setup the work environment and start the software
+
 1. <a href="#RosArtifactProject">Create a ROS Model project</a>
 2. <a href="#RosSRGatewayProject">Create a Component Interface for your ROS Model</a>
 3. <a href="#RosSystem">Create a RosSystem</a>
@@ -74,6 +87,6 @@ Use the palette toolbar to add a new node, to configure your model use also the 
  
 1. Import the common communication objects project to the workbench of your application:
 ```
-care-o-bot
+scan_composition_example
 ```
  
