@@ -87,6 +87,6 @@ Use the palette toolbar to add a new node, to configure your model use also the 
  
 1. Import the common communication objects project to the workbench of your application:
 ```
-care-o-bot
+scan_composition_example
 ```
  
