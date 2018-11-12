@@ -1,11 +1,22 @@
-# METAMODELING FROM ROS TO SYSTEMS
+# Metamodeling From ROS To Systems
 
-## I. <a href="#RosArtifactProject">Create a ROS Model project</a>
-## II. <a href="#RosSRGatewayProject">Create a Component Interface Metamodel for your ROS Model</a>
-## III. <a href="#RosSystem">Create a System Metamodel</a>
-## IV. <a href="#Examples">A motivating Example: THE CARE-O-BOT 4</a>
+## Installation and setup requirements
 
-### Create a ROS Model project <a id="RosArtifactProject"/>
+* Download the official (Eclipse Oxygen Installer)[https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz] and then choose the *Eclipse Modeling* tools package.
+* Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
+```
+Sirius (version 6)
+Eclipse Xtext (version 2.15)
+Eclipse Xtend (version 2.15)
+```
+
+## Setup the work environment and start the software
+### I. <a href="#RosArtifactProject">Create a ROS Model project</a>
+### II. <a href="#RosSRGatewayProject">Create a Component Interface Metamodel for your ROS Model</a>
+### III. <a href="#RosSystem">Create a System Metamodel</a>
+### IV. <a href="#Examples">A motivating Example</a>
+
+### I. Create a ROS Model project <a id="RosArtifactProject"/>
 
 1.  Download the project into your local:
 ```
@@ -46,9 +57,9 @@ de.fraunhofer.ipa.ros.communication.objects
 
 7. Once the project is created, open the *representations.aird* file and add a new representation for your Ros artifact
 
-Use the palette toolbar to add a new node, to configure your model use also the *Properties* view (if it is disabled go to *Window* > *Show view* > *Other* and choose *Properties*). 
+Use the palette toolbar to add a new node, to configure your model use also the *Properties* view (if it is disabled go to *Window* > *Show view* > *Other* and choose *Properties*).
 
-### Create a Component Interface Metamodel for your ROS Model <a id="RosSRGatewayProject"/>
+### II. Create a Component Interface Metamodel for your ROS Model <a id="RosSRGatewayProject"/>
 
 1. Create a new ComponentInterface model (Menu > File > New > Other > ComponentInterface Model)
 
@@ -58,7 +69,7 @@ Use the palette toolbar to add a new node, to configure your model use also the 
 
 4. Use the *Properties* view to configure the component
 
-### Create a System Metamodel <a id="RosSystem"/>
+### III. Create a System Metamodel <a id="RosSystem"/>
 
 1. Create a new Rossystem model (Menu > File > New > Other > Rossystem Model)
 
@@ -71,10 +82,10 @@ Use the palette toolbar to add a new node, to configure your model use also the 
  Use the *Properties* view to configure the system
  
  
-### A motivating Example: THE CARE-O-BOT 4 <a id="Examples"/>
+### IV. A motivating Example <a id="Examples"/>
  
 1. Import the common communication objects project to the workbench of your application:
 ```
-care-o-bot
+scan_composition_example
 ```
  
