@@ -218,7 +218,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
-
+			final String modelName = newFileCreationPage.getFileName().replace(".componentinterface", "");
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
@@ -245,7 +245,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							//	resource.getContents().add(rootObject);
 							//}
 							
-							byte[] bytes = ("ComponentInterface { name NewComponent }").getBytes();
+							byte[] bytes = ("ComponentInterface { name '"+modelName+"' }").getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
 							modelFile.create(source, IResource.NONE, null);
 							
@@ -284,9 +284,10 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 
 			// Open an editor on the new file.
 			//
+			
 			try {
-				page.openEditor(new FileEditorInput(modelFile),
-						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+				page.openEditor(new FileEditorInput(modelFile), "componentInterface.presentation.ComponentInterfaceEditorID");
+						//workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			} catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(),
 						ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
