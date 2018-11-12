@@ -1,14 +1,18 @@
-# Ros Model
+# METAMODELING FROM ROS TO SYSTEMS
 
-1. <a href="#RosArtifactProject">Create a ROS Model project</a>
-2. <a href="#RosSRGatewayProject">Create a Component Interface for your ROS Model</a>
-3. <a href="#RosSystem">Create a RosSystem</a>
-4. <a href="#Examples">Use the existing example</a>
+## I. <a href="#RosArtifactProject">Create a ROS Model project</a>
+## II. <a href="#RosSRGatewayProject">Create a Component Interface Metamodel for your ROS Model</a>
+## III. <a href="#RosSystem">Create a System Metamodel</a>
+## IV. <a href="#Examples">A motivating Example: THE CARE-O-BOT 4</a>
 
+### Create a ROS Model project <a id="RosArtifactProject"/>
 
-1. Create a new and clean Workspace
-
-2. File -> Import -> General -> Existing projects into Workspace:
+1.  Download the project into your local:
+```
+git clone --recursive https://github.com/ipa-nhg/ros-model.git
+```
+2. Open Eclipse and create a new workspace
+3. Import below projects into the new workspace (File -> Import -> General -> Existing projects)
 
 ```
 de.fraunhofer.ipa.componentInterface
@@ -30,25 +34,23 @@ de.fraunhofer.ipa.ros.xtext.ide
 de.fraunhofer.ipa.ros.xtext.ui
 
 ```
+4. Start a new eclipse application by either
+* de.fraunhofer.ipa.ros.sirius > plugin.xml and click *Launch an Eclipse application* or 
+* *right click* de.fraunhofer.ipa.ros.sirius and *click* on Run As > Eclipse Application
 
-3. Start a new eclipse application by either (de.fraunhofer.ipa.ros.sirius -> plugin.xml and click *Launch an Eclipse application*) or (*right click* de.fraunhofer.ipa.ros.sirius and *click* on Run As > Eclipse Application)
-
-
-#### Create a ROS artifact project <a id="RosArtifactProject"/>
-
-1. Import the common communication objects project to the workbench of your application:
+5. Import the common communication objects project to the workbench of your application:
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
-3. Create a new ROS model project (menu File > New > Other > ROS Model project)
+6. Create a new ROS model project (Menu > File > New > Other > ROS Model project)
 
-4. Once the project is created, open the *representations.aird* file and add a new representation for your Ros artifact
+7. Once the project is created, open the *representations.aird* file and add a new representation for your Ros artifact
 
 Use the palette toolbar to add a new node, to configure your model use also the *Properties* view (if it is disabled go to *Window* > *Show view* > *Other* and choose *Properties*). 
 
-#### Create a Component Interface for your ROS Model <a id="RosSRGatewayProject"/>
+### Create a Component Interface Metamodel for your ROS Model <a id="RosSRGatewayProject"/>
 
-1. Create a new ComponentInterface model (menu File > New > Other > ComponentInterface Model)
+1. Create a new ComponentInterface model (Menu > File > New > Other > ComponentInterface Model)
 
 2. Open the model with the ComponentInterface Model Editor
 
@@ -56,10 +58,9 @@ Use the palette toolbar to add a new node, to configure your model use also the 
 
 4. Use the *Properties* view to configure the component
 
+### Create a System Metamodel <a id="RosSystem"/>
 
-#### Create a RosSystem <a id="RosSystem"/>
-
-1. Create a new Rossystem model (menu File > New > Other > Rossystem Model)
+1. Create a new Rossystem model (Menu > File > New > Other > Rossystem Model)
 
 2. Open the model with the ComponentInterface Model Editor
 
@@ -70,7 +71,7 @@ Use the palette toolbar to add a new node, to configure your model use also the 
  Use the *Properties* view to configure the system
  
  
-#### Use the existing example <a id="Examples"/>
+### A motivating Example: THE CARE-O-BOT 4 <a id="Examples"/>
  
 1. Import the common communication objects project to the workbench of your application:
 ```
