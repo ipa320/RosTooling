@@ -1,9 +1,10 @@
-# Metamodeling From ROS To Systems
+# Ros Model
 
 ## Installation and setup requirements
 
-* Download the official (Eclipse Oxygen Installer)[https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz] and then choose the *Eclipse Modeling* tools package.
-* Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
+Download the official (Eclipse Oxygen Installer)[https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz] and choose the *Eclipse Modeling tools* package.
+
+Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
 ```
 Sirius (version 6)
 Eclipse Xtext (version 2.15)
@@ -56,6 +57,7 @@ de.fraunhofer.ipa.ros.xtext.ui
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
+3. Create a new ROS model project (menu File > New > Other > ROS Model project)
 
 #### I. Create a ROS Model project <a id="RosArtifactProject"/>
 
