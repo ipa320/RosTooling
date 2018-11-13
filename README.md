@@ -57,8 +57,6 @@ de.fraunhofer.ipa.ros.xtext.ui
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
-3. Create a new ROS model project (menu File > New > Other > ROS Model project)
-
 #### I. Create a ROS Model project <a id="RosArtifactProject"/>
 
 1. Create a new ROS model project (Menu > File > New > Other > ROS Model project)
