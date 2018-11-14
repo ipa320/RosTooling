@@ -3,10 +3,9 @@
  */
 package de.fraunhofer.ipa.rossystem.validation
 
-import rossystem.TopicConnection
-import rossystem.RossystemPackage
-import org.omg.CORBA.DynAnyPackage.InvalidValue
+import org.eclipse.xtext.validation.Check
 import rossystem.ServiceConnection
+import rossystem.TopicConnection
 
 /**
  * This class contains custom validation rules. 
@@ -15,31 +14,28 @@ import rossystem.ServiceConnection
  */
 class RosSystemValidator extends AbstractRosSystemValidator {
 	
-	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					RosSystemPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
-	def checkTopicConnection(TopicConnection topicconnection){
+	public static val NOT_MATCHED_NAME = 'notMatchedName'
+	public static val NOT_MATCHED_TYPE = 'notMatchedType'
+
+	@Check
+	def void checkTopicConnection(TopicConnection topicconnection){
 		if( !topicconnection.fromTopic.name.equalsIgnoreCase(topicconnection.toTopic.name)){
-			error("Names not matched", RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS, INVALID_NAME)
+			error("Names not matched", null, NOT_MATCHED_NAME)
 		}
 		if( !topicconnection.fromTopic.publisher.message.name.equalsIgnoreCase(topicconnection.toTopic.subscriber.message.name)){
-			error("Messages not matched", RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS, INVALID_NAME)
+			error("Messages not matched", null, NOT_MATCHED_TYPE)
 		}
 	}
-	
-	def checkSrvConnection(ServiceConnection serviceconnection){
+
+	@Check
+	def void checkSrvConnection(ServiceConnection serviceconnection){
 		if( !serviceconnection.fromSrv.name.equalsIgnoreCase(serviceconnection.toSrv.name)){
-			error("Names not matched", RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS)
+			error("Names not matched", null, NOT_MATCHED_NAME)
+			return
 		}
 		if( !serviceconnection.fromSrv.srvserver.service.name.equalsIgnoreCase(serviceconnection.toSrv.srvclient.service.name)){
-			error("Services not matched", RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS)
+			error("Services not matched", null, NOT_MATCHED_TYPE)
+			return
 		}
 	}
 	
