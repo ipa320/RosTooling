@@ -1,0 +1,5 @@
+ComponentInterface { name base_laser_right NameSpace RelativeNamespace {parts{"/base_laser_right" }}
+	RosPublishers{ 
+		RosPublisher "/base_laser_right/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" },
+		RosPublisher "/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}}
+}

@@ -26,7 +26,7 @@ GraphName returns ros::GraphName:
 RosPublisher returns RosPublisher:
 	{RosPublisher}
 	'RosPublisher'
-	name=EString
+	(name=EString)?
 	'{'
 		('ns' ns=EString)?
 		'RefPublisher' publisher=[ros::Publisher|EString]
@@ -35,7 +35,7 @@ RosPublisher returns RosPublisher:
 RosSubscriber returns RosSubscriber:
 	{RosSubscriber}
 	'RosSubscriber'
-	name=EString
+	(name=EString)?
 	'{'
 		('ns' ns=EString)?
 		'RefSubscriber' subscriber=[ros::Subscriber|EString]
@@ -44,7 +44,7 @@ RosSubscriber returns RosSubscriber:
 RosServiceServer returns RosServiceServer:
 	{RosServiceServer}
 	'RosServiceServer'
-	name=EString
+	(name=EString)?
 	'{'
 		('ns' ns=EString)?
 		'RefServer' srvserver=[ros::ServiceServer]
@@ -53,7 +53,7 @@ RosServiceServer returns RosServiceServer:
 RosServiceClient returns RosServiceClient:
 	{RosServiceClient}
 	'RosServiceClient'
-	name=EString
+	(name=EString)?
 	'{'
 		('ns' ns=EString)?
 		'RefClient' srvclient=[ros::ServiceClient]

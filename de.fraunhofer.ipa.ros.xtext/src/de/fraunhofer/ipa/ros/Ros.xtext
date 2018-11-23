@@ -43,11 +43,15 @@ Package_Impl returns Package:
 
 EString returns ecore::EString:
 	STRING | ID;
+	
+RosNames returns ecore::EString:
+	ID
+;
 
 Artifact returns Artifact:
 	{Artifact}
 	'Artifact'
-	name=EString
+	name=RosNames
 	'{'
 		('node' node=Node)?
 	'}';
@@ -55,7 +59,7 @@ Artifact returns Artifact:
 CatkinPackage returns CatkinPackage:
 	{CatkinPackage}
 	'CatkinPackage'
-	name=EString
+	name=RosNames
 	'{'
 		('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}' )?
 		('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}' )?
@@ -97,7 +101,7 @@ MessageDefinition returns MessageDefinition:
 Node returns Node:
 	'Node'
 	'{'
-		'name' name=GraphName
+		'name' name=RosNames
 		('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )?
 		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )?
 		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )?
@@ -110,7 +114,7 @@ Node returns Node:
 ServiceServer returns ServiceServer:
 	'ServiceServer'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'service' service=[ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -118,7 +122,7 @@ ServiceServer returns ServiceServer:
 Publisher returns Publisher:
 	'Publisher'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'message' message=[TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -126,7 +130,7 @@ Publisher returns Publisher:
 Subscriber returns Subscriber:
 	'Subscriber'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'message' message=[TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -134,7 +138,7 @@ Subscriber returns Subscriber:
 ServiceClient returns ServiceClient:
 	'ServiceClient'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'service' service=[ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -142,7 +146,7 @@ ServiceClient returns ServiceClient:
 ActionServer returns ActionServer:
 	'ActionServer'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'action' action=[ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
@@ -150,18 +154,18 @@ ActionServer returns ActionServer:
 ActionClient returns ActionClient:
 	'ActionClient'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		'action' action=[ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
 GraphName returns GraphName:
-	'GraphName' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'GraphName' ;
 
 Parameter returns Parameter:
 	'Parameter'
 	'{'
-		'name' name=GraphName
+		'name' name=EString
 		('namespace' namespace=Namespace)?
 		'type' type=ParameterType
 	'}';
@@ -316,16 +320,16 @@ ParameterDate returns ParameterDate:
 	'}';
 
 Base64Binary returns type::Base64Binary:
-	'Base64Binary' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Base64Binary' ;
 
 Int0 returns type::Int:
-	'Int' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Int' ;
 
 Double returns type::Double:
-	'Double' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Double';
 
 Boolean returns type::Boolean:
-	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'Boolean';
 
 ParameterStructMember returns ParameterStructMember:
 	'ParameterStructMember'
@@ -335,7 +339,7 @@ ParameterStructMember returns ParameterStructMember:
 	'}';
 
 DateTime returns type::DateTime:
-	'DateTime' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'DateTime' ;
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
 	'ParameterStructTypeMember'

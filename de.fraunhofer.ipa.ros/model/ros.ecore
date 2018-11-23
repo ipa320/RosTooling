@@ -41,10 +41,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//MessageDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//NamespacedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
-        eType="#//TopicSpec"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageDependency" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
         eType="#//Package"/>
@@ -55,6 +51,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="CatkinPackage" eSuperTypes="#//Package">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" upperBound="-1"
         eType="#//Dependency" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//NamespacedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="#//TopicSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
