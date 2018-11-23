@@ -1,1 +1,0 @@
-Artifact diagnostics_aggregator { node Node { name diagnostics_aggregator publisher { Publisher { name "/diagnostics_toplevel_state" message "diagnostic_msgs.DiagnosticStatus" } } subscriber { Subscriber { name "/diagnostics" message "diagnostic_msgs.DiagnosticArray" } } } }
