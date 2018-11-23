@@ -1,8 +1,0 @@
-ComponentInterface { name diagnotics_aggregator
-	RosTopicPublisher {
-		Publisher { TopicName "/diagnostics_toplevel_state" TopicRef "diagnostics_aggregator.diagnostics_aggregator./diagnostics_toplevel_state" }
-	} 
-	RosTopicSubscriber {
-		Subscriber { TopicName "/diagnostics" TopicRef "diagnostics_aggregator.diagnostics_aggregator./diagnostics" }
-	}
-}
