@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.fraunhofer.ipa.rossystem.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.fraunhofer.ipa.rossystem,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.fraunhofer.ipa.rossystem.scoping,
+ de.fraunhofer.ipa.rossystem.serializer,
+ de.fraunhofer.ipa.rossystem.services,
+ de.fraunhofer.ipa.rossystem.generator,
+ de.fraunhofer.ipa.rossystem.formatting2,
+ de.fraunhofer.ipa.rossystem.parser.antlr,
+ de.fraunhofer.ipa.rossystem.validation,
+ de.fraunhofer.ipa.rossystem.parser.antlr.internal,
+ de.fraunhofer.ipa.rossystem
+Import-Package: org.apache.log4j

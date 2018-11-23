@@ -4482,7 +4482,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1488:1: ( rule__RosPublisher__Group__1__Impl rule__RosPublisher__Group__2 )
             // InternalComponentInterface.g:1489:2: rule__RosPublisher__Group__1__Impl rule__RosPublisher__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_13);
             rule__RosPublisher__Group__1__Impl();
 
             state._fsp--;
@@ -4557,7 +4557,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1515:1: ( rule__RosPublisher__Group__2__Impl rule__RosPublisher__Group__3 )
             // InternalComponentInterface.g:1516:2: rule__RosPublisher__Group__2__Impl rule__RosPublisher__Group__3
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_13);
             rule__RosPublisher__Group__2__Impl();
 
             state._fsp--;
@@ -4586,27 +4586,38 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RosPublisher__Group__2__Impl"
-    // InternalComponentInterface.g:1523:1: rule__RosPublisher__Group__2__Impl : ( ( rule__RosPublisher__NameAssignment_2 ) ) ;
+    // InternalComponentInterface.g:1523:1: rule__RosPublisher__Group__2__Impl : ( ( rule__RosPublisher__NameAssignment_2 )? ) ;
     public final void rule__RosPublisher__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentInterface.g:1527:1: ( ( ( rule__RosPublisher__NameAssignment_2 ) ) )
-            // InternalComponentInterface.g:1528:1: ( ( rule__RosPublisher__NameAssignment_2 ) )
+            // InternalComponentInterface.g:1527:1: ( ( ( rule__RosPublisher__NameAssignment_2 )? ) )
+            // InternalComponentInterface.g:1528:1: ( ( rule__RosPublisher__NameAssignment_2 )? )
             {
-            // InternalComponentInterface.g:1528:1: ( ( rule__RosPublisher__NameAssignment_2 ) )
-            // InternalComponentInterface.g:1529:2: ( rule__RosPublisher__NameAssignment_2 )
+            // InternalComponentInterface.g:1528:1: ( ( rule__RosPublisher__NameAssignment_2 )? )
+            // InternalComponentInterface.g:1529:2: ( rule__RosPublisher__NameAssignment_2 )?
             {
              before(grammarAccess.getRosPublisherAccess().getNameAssignment_2()); 
-            // InternalComponentInterface.g:1530:2: ( rule__RosPublisher__NameAssignment_2 )
-            // InternalComponentInterface.g:1530:3: rule__RosPublisher__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__RosPublisher__NameAssignment_2();
+            // InternalComponentInterface.g:1530:2: ( rule__RosPublisher__NameAssignment_2 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA13_0>=RULE_STRING && LA13_0<=RULE_ID)) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalComponentInterface.g:1530:3: rule__RosPublisher__NameAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RosPublisher__NameAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -4642,7 +4653,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1542:1: ( rule__RosPublisher__Group__3__Impl rule__RosPublisher__Group__4 )
             // InternalComponentInterface.g:1543:2: rule__RosPublisher__Group__3__Impl rule__RosPublisher__Group__4
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__RosPublisher__Group__3__Impl();
 
             state._fsp--;
@@ -4717,7 +4728,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1569:1: ( rule__RosPublisher__Group__4__Impl rule__RosPublisher__Group__5 )
             // InternalComponentInterface.g:1570:2: rule__RosPublisher__Group__4__Impl rule__RosPublisher__Group__5
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__RosPublisher__Group__4__Impl();
 
             state._fsp--;
@@ -4760,13 +4771,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRosPublisherAccess().getGroup_4()); 
             // InternalComponentInterface.g:1584:2: ( rule__RosPublisher__Group_4__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==23) ) {
-                alt13=1;
+            if ( (LA14_0==23) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
                     // InternalComponentInterface.g:1584:3: rule__RosPublisher__Group_4__0
                     {
@@ -4888,7 +4899,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1623:1: ( rule__RosPublisher__Group__6__Impl rule__RosPublisher__Group__7 )
             // InternalComponentInterface.g:1624:2: rule__RosPublisher__Group__6__Impl rule__RosPublisher__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__RosPublisher__Group__6__Impl();
 
             state._fsp--;
@@ -5273,7 +5284,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1758:1: ( rule__RosSubscriber__Group__1__Impl rule__RosSubscriber__Group__2 )
             // InternalComponentInterface.g:1759:2: rule__RosSubscriber__Group__1__Impl rule__RosSubscriber__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_13);
             rule__RosSubscriber__Group__1__Impl();
 
             state._fsp--;
@@ -5348,7 +5359,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1785:1: ( rule__RosSubscriber__Group__2__Impl rule__RosSubscriber__Group__3 )
             // InternalComponentInterface.g:1786:2: rule__RosSubscriber__Group__2__Impl rule__RosSubscriber__Group__3
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_13);
             rule__RosSubscriber__Group__2__Impl();
 
             state._fsp--;
@@ -5377,27 +5388,38 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RosSubscriber__Group__2__Impl"
-    // InternalComponentInterface.g:1793:1: rule__RosSubscriber__Group__2__Impl : ( ( rule__RosSubscriber__NameAssignment_2 ) ) ;
+    // InternalComponentInterface.g:1793:1: rule__RosSubscriber__Group__2__Impl : ( ( rule__RosSubscriber__NameAssignment_2 )? ) ;
     public final void rule__RosSubscriber__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentInterface.g:1797:1: ( ( ( rule__RosSubscriber__NameAssignment_2 ) ) )
-            // InternalComponentInterface.g:1798:1: ( ( rule__RosSubscriber__NameAssignment_2 ) )
+            // InternalComponentInterface.g:1797:1: ( ( ( rule__RosSubscriber__NameAssignment_2 )? ) )
+            // InternalComponentInterface.g:1798:1: ( ( rule__RosSubscriber__NameAssignment_2 )? )
             {
-            // InternalComponentInterface.g:1798:1: ( ( rule__RosSubscriber__NameAssignment_2 ) )
-            // InternalComponentInterface.g:1799:2: ( rule__RosSubscriber__NameAssignment_2 )
+            // InternalComponentInterface.g:1798:1: ( ( rule__RosSubscriber__NameAssignment_2 )? )
+            // InternalComponentInterface.g:1799:2: ( rule__RosSubscriber__NameAssignment_2 )?
             {
              before(grammarAccess.getRosSubscriberAccess().getNameAssignment_2()); 
-            // InternalComponentInterface.g:1800:2: ( rule__RosSubscriber__NameAssignment_2 )
-            // InternalComponentInterface.g:1800:3: rule__RosSubscriber__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__RosSubscriber__NameAssignment_2();
+            // InternalComponentInterface.g:1800:2: ( rule__RosSubscriber__NameAssignment_2 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA15_0>=RULE_STRING && LA15_0<=RULE_ID)) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalComponentInterface.g:1800:3: rule__RosSubscriber__NameAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RosSubscriber__NameAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -5433,7 +5455,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1812:1: ( rule__RosSubscriber__Group__3__Impl rule__RosSubscriber__Group__4 )
             // InternalComponentInterface.g:1813:2: rule__RosSubscriber__Group__3__Impl rule__RosSubscriber__Group__4
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__RosSubscriber__Group__3__Impl();
 
             state._fsp--;
@@ -5508,7 +5530,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1839:1: ( rule__RosSubscriber__Group__4__Impl rule__RosSubscriber__Group__5 )
             // InternalComponentInterface.g:1840:2: rule__RosSubscriber__Group__4__Impl rule__RosSubscriber__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__RosSubscriber__Group__4__Impl();
 
             state._fsp--;
@@ -5551,13 +5573,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRosSubscriberAccess().getGroup_4()); 
             // InternalComponentInterface.g:1854:2: ( rule__RosSubscriber__Group_4__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA14_0==23) ) {
-                alt14=1;
+            if ( (LA16_0==23) ) {
+                alt16=1;
             }
-            switch (alt14) {
+            switch (alt16) {
                 case 1 :
                     // InternalComponentInterface.g:1854:3: rule__RosSubscriber__Group_4__0
                     {
@@ -5679,7 +5701,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:1893:1: ( rule__RosSubscriber__Group__6__Impl rule__RosSubscriber__Group__7 )
             // InternalComponentInterface.g:1894:2: rule__RosSubscriber__Group__6__Impl rule__RosSubscriber__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__RosSubscriber__Group__6__Impl();
 
             state._fsp--;
@@ -6064,7 +6086,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2028:1: ( rule__RosServiceServer__Group__1__Impl rule__RosServiceServer__Group__2 )
             // InternalComponentInterface.g:2029:2: rule__RosServiceServer__Group__1__Impl rule__RosServiceServer__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_13);
             rule__RosServiceServer__Group__1__Impl();
 
             state._fsp--;
@@ -6139,7 +6161,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2055:1: ( rule__RosServiceServer__Group__2__Impl rule__RosServiceServer__Group__3 )
             // InternalComponentInterface.g:2056:2: rule__RosServiceServer__Group__2__Impl rule__RosServiceServer__Group__3
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_13);
             rule__RosServiceServer__Group__2__Impl();
 
             state._fsp--;
@@ -6168,27 +6190,38 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RosServiceServer__Group__2__Impl"
-    // InternalComponentInterface.g:2063:1: rule__RosServiceServer__Group__2__Impl : ( ( rule__RosServiceServer__NameAssignment_2 ) ) ;
+    // InternalComponentInterface.g:2063:1: rule__RosServiceServer__Group__2__Impl : ( ( rule__RosServiceServer__NameAssignment_2 )? ) ;
     public final void rule__RosServiceServer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentInterface.g:2067:1: ( ( ( rule__RosServiceServer__NameAssignment_2 ) ) )
-            // InternalComponentInterface.g:2068:1: ( ( rule__RosServiceServer__NameAssignment_2 ) )
+            // InternalComponentInterface.g:2067:1: ( ( ( rule__RosServiceServer__NameAssignment_2 )? ) )
+            // InternalComponentInterface.g:2068:1: ( ( rule__RosServiceServer__NameAssignment_2 )? )
             {
-            // InternalComponentInterface.g:2068:1: ( ( rule__RosServiceServer__NameAssignment_2 ) )
-            // InternalComponentInterface.g:2069:2: ( rule__RosServiceServer__NameAssignment_2 )
+            // InternalComponentInterface.g:2068:1: ( ( rule__RosServiceServer__NameAssignment_2 )? )
+            // InternalComponentInterface.g:2069:2: ( rule__RosServiceServer__NameAssignment_2 )?
             {
              before(grammarAccess.getRosServiceServerAccess().getNameAssignment_2()); 
-            // InternalComponentInterface.g:2070:2: ( rule__RosServiceServer__NameAssignment_2 )
-            // InternalComponentInterface.g:2070:3: rule__RosServiceServer__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__RosServiceServer__NameAssignment_2();
+            // InternalComponentInterface.g:2070:2: ( rule__RosServiceServer__NameAssignment_2 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_ID)) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // InternalComponentInterface.g:2070:3: rule__RosServiceServer__NameAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RosServiceServer__NameAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -6224,7 +6257,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2082:1: ( rule__RosServiceServer__Group__3__Impl rule__RosServiceServer__Group__4 )
             // InternalComponentInterface.g:2083:2: rule__RosServiceServer__Group__3__Impl rule__RosServiceServer__Group__4
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__RosServiceServer__Group__3__Impl();
 
             state._fsp--;
@@ -6299,7 +6332,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2109:1: ( rule__RosServiceServer__Group__4__Impl rule__RosServiceServer__Group__5 )
             // InternalComponentInterface.g:2110:2: rule__RosServiceServer__Group__4__Impl rule__RosServiceServer__Group__5
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__RosServiceServer__Group__4__Impl();
 
             state._fsp--;
@@ -6342,13 +6375,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRosServiceServerAccess().getGroup_4()); 
             // InternalComponentInterface.g:2124:2: ( rule__RosServiceServer__Group_4__0 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA15_0==23) ) {
-                alt15=1;
+            if ( (LA18_0==23) ) {
+                alt18=1;
             }
-            switch (alt15) {
+            switch (alt18) {
                 case 1 :
                     // InternalComponentInterface.g:2124:3: rule__RosServiceServer__Group_4__0
                     {
@@ -6395,7 +6428,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2136:1: ( rule__RosServiceServer__Group__5__Impl rule__RosServiceServer__Group__6 )
             // InternalComponentInterface.g:2137:2: rule__RosServiceServer__Group__5__Impl rule__RosServiceServer__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__RosServiceServer__Group__5__Impl();
 
             state._fsp--;
@@ -6470,7 +6503,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2163:1: ( rule__RosServiceServer__Group__6__Impl rule__RosServiceServer__Group__7 )
             // InternalComponentInterface.g:2164:2: rule__RosServiceServer__Group__6__Impl rule__RosServiceServer__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__RosServiceServer__Group__6__Impl();
 
             state._fsp--;
@@ -6855,7 +6888,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2298:1: ( rule__RosServiceClient__Group__1__Impl rule__RosServiceClient__Group__2 )
             // InternalComponentInterface.g:2299:2: rule__RosServiceClient__Group__1__Impl rule__RosServiceClient__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_13);
             rule__RosServiceClient__Group__1__Impl();
 
             state._fsp--;
@@ -6930,7 +6963,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2325:1: ( rule__RosServiceClient__Group__2__Impl rule__RosServiceClient__Group__3 )
             // InternalComponentInterface.g:2326:2: rule__RosServiceClient__Group__2__Impl rule__RosServiceClient__Group__3
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_13);
             rule__RosServiceClient__Group__2__Impl();
 
             state._fsp--;
@@ -6959,27 +6992,38 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RosServiceClient__Group__2__Impl"
-    // InternalComponentInterface.g:2333:1: rule__RosServiceClient__Group__2__Impl : ( ( rule__RosServiceClient__NameAssignment_2 ) ) ;
+    // InternalComponentInterface.g:2333:1: rule__RosServiceClient__Group__2__Impl : ( ( rule__RosServiceClient__NameAssignment_2 )? ) ;
     public final void rule__RosServiceClient__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentInterface.g:2337:1: ( ( ( rule__RosServiceClient__NameAssignment_2 ) ) )
-            // InternalComponentInterface.g:2338:1: ( ( rule__RosServiceClient__NameAssignment_2 ) )
+            // InternalComponentInterface.g:2337:1: ( ( ( rule__RosServiceClient__NameAssignment_2 )? ) )
+            // InternalComponentInterface.g:2338:1: ( ( rule__RosServiceClient__NameAssignment_2 )? )
             {
-            // InternalComponentInterface.g:2338:1: ( ( rule__RosServiceClient__NameAssignment_2 ) )
-            // InternalComponentInterface.g:2339:2: ( rule__RosServiceClient__NameAssignment_2 )
+            // InternalComponentInterface.g:2338:1: ( ( rule__RosServiceClient__NameAssignment_2 )? )
+            // InternalComponentInterface.g:2339:2: ( rule__RosServiceClient__NameAssignment_2 )?
             {
              before(grammarAccess.getRosServiceClientAccess().getNameAssignment_2()); 
-            // InternalComponentInterface.g:2340:2: ( rule__RosServiceClient__NameAssignment_2 )
-            // InternalComponentInterface.g:2340:3: rule__RosServiceClient__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__RosServiceClient__NameAssignment_2();
+            // InternalComponentInterface.g:2340:2: ( rule__RosServiceClient__NameAssignment_2 )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA19_0>=RULE_STRING && LA19_0<=RULE_ID)) ) {
+                alt19=1;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalComponentInterface.g:2340:3: rule__RosServiceClient__NameAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RosServiceClient__NameAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -7015,7 +7059,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2352:1: ( rule__RosServiceClient__Group__3__Impl rule__RosServiceClient__Group__4 )
             // InternalComponentInterface.g:2353:2: rule__RosServiceClient__Group__3__Impl rule__RosServiceClient__Group__4
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__RosServiceClient__Group__3__Impl();
 
             state._fsp--;
@@ -7090,7 +7134,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2379:1: ( rule__RosServiceClient__Group__4__Impl rule__RosServiceClient__Group__5 )
             // InternalComponentInterface.g:2380:2: rule__RosServiceClient__Group__4__Impl rule__RosServiceClient__Group__5
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__RosServiceClient__Group__4__Impl();
 
             state._fsp--;
@@ -7133,13 +7177,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRosServiceClientAccess().getGroup_4()); 
             // InternalComponentInterface.g:2394:2: ( rule__RosServiceClient__Group_4__0 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA16_0==23) ) {
-                alt16=1;
+            if ( (LA20_0==23) ) {
+                alt20=1;
             }
-            switch (alt16) {
+            switch (alt20) {
                 case 1 :
                     // InternalComponentInterface.g:2394:3: rule__RosServiceClient__Group_4__0
                     {
@@ -7186,7 +7230,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2406:1: ( rule__RosServiceClient__Group__5__Impl rule__RosServiceClient__Group__6 )
             // InternalComponentInterface.g:2407:2: rule__RosServiceClient__Group__5__Impl rule__RosServiceClient__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__RosServiceClient__Group__5__Impl();
 
             state._fsp--;
@@ -7261,7 +7305,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2433:1: ( rule__RosServiceClient__Group__6__Impl rule__RosServiceClient__Group__7 )
             // InternalComponentInterface.g:2434:2: rule__RosServiceClient__Group__6__Impl rule__RosServiceClient__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__RosServiceClient__Group__6__Impl();
 
             state._fsp--;
@@ -7571,7 +7615,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2541:1: ( rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1 )
             // InternalComponentInterface.g:2542:2: rule__GlobalNamespace__Group__0__Impl rule__GlobalNamespace__Group__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__GlobalNamespace__Group__0__Impl();
 
             state._fsp--;
@@ -7721,7 +7765,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2595:1: ( rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3 )
             // InternalComponentInterface.g:2596:2: rule__GlobalNamespace__Group__2__Impl rule__GlobalNamespace__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__GlobalNamespace__Group__2__Impl();
 
             state._fsp--;
@@ -7796,7 +7840,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2622:1: ( rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4 )
             // InternalComponentInterface.g:2623:2: rule__GlobalNamespace__Group__3__Impl rule__GlobalNamespace__Group__4
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__GlobalNamespace__Group__3__Impl();
 
             state._fsp--;
@@ -7839,13 +7883,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGroup_3()); 
             // InternalComponentInterface.g:2637:2: ( rule__GlobalNamespace__Group_3__0 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA17_0==31) ) {
-                alt17=1;
+            if ( (LA21_0==31) ) {
+                alt21=1;
             }
-            switch (alt17) {
+            switch (alt21) {
                 case 1 :
                     // InternalComponentInterface.g:2637:3: rule__GlobalNamespace__Group_3__0
                     {
@@ -8240,17 +8284,17 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getGlobalNamespaceAccess().getGroup_3_3()); 
             // InternalComponentInterface.g:2772:2: ( rule__GlobalNamespace__Group_3_3__0 )*
-            loop18:
+            loop22:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA18_0==17) ) {
-                    alt18=1;
+                if ( (LA22_0==17) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt22) {
             	case 1 :
             	    // InternalComponentInterface.g:2772:3: rule__GlobalNamespace__Group_3_3__0
             	    {
@@ -8264,7 +8308,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop22;
                 }
             } while (true);
 
@@ -8525,7 +8569,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2865:1: ( rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1 )
             // InternalComponentInterface.g:2866:2: rule__RelativeNamespace_Impl__Group__0__Impl rule__RelativeNamespace_Impl__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__RelativeNamespace_Impl__Group__0__Impl();
 
             state._fsp--;
@@ -8675,7 +8719,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2919:1: ( rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3 )
             // InternalComponentInterface.g:2920:2: rule__RelativeNamespace_Impl__Group__2__Impl rule__RelativeNamespace_Impl__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__RelativeNamespace_Impl__Group__2__Impl();
 
             state._fsp--;
@@ -8750,7 +8794,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:2946:1: ( rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4 )
             // InternalComponentInterface.g:2947:2: rule__RelativeNamespace_Impl__Group__3__Impl rule__RelativeNamespace_Impl__Group__4
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__RelativeNamespace_Impl__Group__3__Impl();
 
             state._fsp--;
@@ -8793,13 +8837,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3()); 
             // InternalComponentInterface.g:2961:2: ( rule__RelativeNamespace_Impl__Group_3__0 )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA19_0==31) ) {
-                alt19=1;
+            if ( (LA23_0==31) ) {
+                alt23=1;
             }
-            switch (alt19) {
+            switch (alt23) {
                 case 1 :
                     // InternalComponentInterface.g:2961:3: rule__RelativeNamespace_Impl__Group_3__0
                     {
@@ -9194,17 +9238,17 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3_3()); 
             // InternalComponentInterface.g:3096:2: ( rule__RelativeNamespace_Impl__Group_3_3__0 )*
-            loop20:
+            loop24:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA20_0==17) ) {
-                    alt20=1;
+                if ( (LA24_0==17) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt24) {
             	case 1 :
             	    // InternalComponentInterface.g:3096:3: rule__RelativeNamespace_Impl__Group_3_3__0
             	    {
@@ -9218,7 +9262,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop24;
                 }
             } while (true);
 
@@ -9629,7 +9673,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:3243:1: ( rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3 )
             // InternalComponentInterface.g:3244:2: rule__PrivateNamespace__Group__2__Impl rule__PrivateNamespace__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__PrivateNamespace__Group__2__Impl();
 
             state._fsp--;
@@ -9704,7 +9748,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             // InternalComponentInterface.g:3270:1: ( rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4 )
             // InternalComponentInterface.g:3271:2: rule__PrivateNamespace__Group__3__Impl rule__PrivateNamespace__Group__4
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__PrivateNamespace__Group__3__Impl();
 
             state._fsp--;
@@ -9747,13 +9791,13 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getPrivateNamespaceAccess().getGroup_3()); 
             // InternalComponentInterface.g:3285:2: ( rule__PrivateNamespace__Group_3__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA21_0==31) ) {
-                alt21=1;
+            if ( (LA25_0==31) ) {
+                alt25=1;
             }
-            switch (alt21) {
+            switch (alt25) {
                 case 1 :
                     // InternalComponentInterface.g:3285:3: rule__PrivateNamespace__Group_3__0
                     {
@@ -10148,17 +10192,17 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             {
              before(grammarAccess.getPrivateNamespaceAccess().getGroup_3_3()); 
             // InternalComponentInterface.g:3420:2: ( rule__PrivateNamespace__Group_3_3__0 )*
-            loop22:
+            loop26:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA22_0==17) ) {
-                    alt22=1;
+                if ( (LA26_0==17) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt26) {
             	case 1 :
             	    // InternalComponentInterface.g:3420:3: rule__PrivateNamespace__Group_3_3__0
             	    {
@@ -10172,7 +10216,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop26;
                 }
             } while (true);
 
@@ -11611,14 +11655,15 @@ public class InternalComponentInterfaceParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002800000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000008800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000080002000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000001030L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000080002000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000100000000L});
 
 }

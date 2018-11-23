@@ -45,10 +45,10 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static String NAME_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected  String NS_EDEFAULT = null;
+	protected static String NS_EDEFAULT = "";
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -125,10 +125,9 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setPublisher(Publisher newPublisher) {
-		setNs(NS_EDEFAULT);
 		Publisher oldPublisher = publisher;
 		publisher = newPublisher;
 		if (eNotificationRequired())
@@ -145,7 +144,8 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 			if (name.length()>0) {
 				return name;
 			}if (ns != null && publisher != null) {
-				return String.format("/%s/%s", ns.replaceFirst("/",""), publisher.getName().replaceFirst("/",""));	
+				String composed_name = String.format("/%s/%s", ns.replaceFirst("/",""), publisher.getName().replaceFirst("/",""));	
+				return composed_name.replaceFirst("//","/");
 			}else if (publisher != null) {
 				return String.format("/%s", publisher.getName().replaceFirst("/",""));	
 			}else {
@@ -171,18 +171,55 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getNs() {
-		return ns;
+	public String getComponentNs() {
+		String component_ns = null;
+		String ComponentInterface_toString = eContainer().eContents().toString();
+		if (ComponentInterface_toString.contains("parts") && ComponentInterface_toString.contains("componentInterface")) {
+			component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [", 1) + 8, ComponentInterface_toString.indexOf("]"));
+			if (component_ns.length()>0) {
+				return component_ns;
+			}else {
+				return NS_EDEFAULT;
+			}
+		}else {
+			return NS_EDEFAULT;
+		}
+		
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 */
+	public void setDefaultValues() {
+		NS_EDEFAULT = getComponentNs();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getNs() {
+		setDefaultValues();
+		if (ns.isEmpty()) {
+			ns = NS_EDEFAULT;
+			return NS_EDEFAULT;
+		}else {
+			return ns;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
+		setDefaultValues();
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())
@@ -232,25 +269,19 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentInterfacePackage.ROS_PUBLISHER__PUBLISHER:
-				setPublisher(publisher);
+				setPublisher((Publisher)null);
 				return;
 			case ComponentInterfacePackage.ROS_PUBLISHER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 			case ComponentInterfacePackage.ROS_PUBLISHER__NS:
-				String component_ns = null;
-				String ComponentInterface_toString = eContainer().eContents().toString();
-				component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [") + 8, ComponentInterface_toString.indexOf("]"));
-				if (component_ns.length()>0) {
-					NS_EDEFAULT=component_ns;
-				}
-				setNs(component_ns);
+				setNs(NS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
