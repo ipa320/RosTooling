@@ -1,8 +1,15 @@
 # Ros Model
 
-## Installation and setup requirements
+This repository holds the models and eclipse plugins to start MDE tools to describe ROS nodes and its interfaces.
 
-Download the official (Eclipse Oxygen Installer)[https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz] and choose the *Eclipse Modeling tools* package.
+Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
+
+1. <a href="#1--installation-requirements">Installation Requirements</a>
+2. <a href="#2--start">Start the software</a>
+
+## Installation and setup requirements <a id="1--installation-requirements"/> 
+
+Download the official [Eclipse Oxygen Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz) and choose the *Eclipse Modeling tools* package.
 
 Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
 ```
@@ -19,7 +26,7 @@ Eclipse Xtend (version 2.15)
 #### III. <a href="#RosSystem">Create a System Metamodel</a>
 #### IV. <a href="#Examples">A motivating Example</a>
 
-#### Setup the environment and start the eclipse application <a id="Setup"/>
+#### Setup the environment and start the eclipse application <a id="2--start"/> 
 
 1.  Download the project into your local:
 ```
