@@ -4,16 +4,49 @@
 package de.fraunhofer.ipa.rossystem.generator
 
 import componentInterface.ComponentInterface
+import java.util.ArrayList
+import java.util.List
+import java.util.Set
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.generator.OutputConfiguration
+import ros.Namespace
 import ros.Publisher
 import ros.ServiceClient
 import ros.ServiceServer
 import ros.Subscriber
 import rossystem.RosSystem
-import ros.Namespace
+import componentInterface.RosPublisher
+import componentInterface.RosSubscriber
+import componentInterface.RosServiceServer
+import componentInterface.RosServiceClient
+
+class CustomOutputProvider implements IOutputConfigurationProvider {
+	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
+	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
+	
+
+	override Set<OutputConfiguration> getOutputConfigurations() {
+		var OutputConfiguration cm_config = new OutputConfiguration(CM_CONFIGURATION)
+		cm_config.setDescription("CM_CONFIGURATION");
+		cm_config.setOutputDirectory("./components/");
+		cm_config.setOverrideExistingResources(true);
+		cm_config.setCreateOutputDirectory(false);
+		cm_config.setCleanUpDerivedResources(false);
+		cm_config.setSetDerivedProperty(false);
+		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
+		default_config.setDescription("DEFAULT_OUTPUT");
+		default_config.setOutputDirectory("./src-gen/");
+		default_config.setOverrideExistingResources(true);
+		default_config.setCreateOutputDirectory(false);
+		default_config.setCleanUpDerivedResources(false);
+		default_config.setSetDerivedProperty(false);
+		return newHashSet(cm_config, default_config)
+	}
+}
 
 class RosSystemGenerator extends AbstractGenerator {
 
@@ -26,15 +59,35 @@ class RosSystemGenerator extends AbstractGenerator {
 	
 	boolean ArtifactSet
 
+	List<String> ListInterfaceDef
+
+	List<RosPublisher> pubs
+	List<RosSubscriber> subs
+	List<RosServiceServer> svrs
+	List<RosServiceClient> svrc
+	
+	int count_pub
+	int count_sub
+	int count_srvc
+	int count_srvs
+	
+	String node_impl
+	
+	String node_name
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName()+".launch",system.compile)
+				fsa.generateFile(system.getName()+".launch",system.compile_tolaunch)
+				}
+	
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName()+".componentinterface",CustomOutputProvider::CM_CONFIGURATION,system.compile_toComponentInterface)
 				}
 			}
 	
 	
-	def compile(RosSystem system) '''«init()»
+	def compile_tolaunch(RosSystem system) '''«init()»
 <?xml version="1.0"?>
 <launch>
 	«FOR component:system.rosComponent»
@@ -99,6 +152,74 @@ class RosSystemGenerator extends AbstractGenerator {
 	«ENDFOR»
 </launch>
 	'''
+
+def List InterfaceDef(String name, String type){
+	ListInterfaceDef = new ArrayList()
+	ListInterfaceDef.add(name.replace("/","_"))
+	ListInterfaceDef.add(name)
+	ListInterfaceDef.add(type)
+	return ListInterfaceDef
+}
+	
+def compile_toComponentInterface(RosSystem system){
+	pubs = new ArrayList()
+	subs = new ArrayList()
+	svrs = new ArrayList()
+	svrc = new ArrayList()
+
+		
+	for (component: system.rosComponent){
+		for ( pub:component.rospublisher){pubs.add(pub)	}
+		for ( sub:component.rossubscriber){subs.add(sub)}
+		for ( srv:component.rosserviceserver){svrs.add(srv)}
+		for ( cl: component.rosserviceclient){svrc.add(cl)}
+	}
+	count_pub = pubs.length
+	count_sub = subs.length
+	count_srvs = svrs.length
+	count_srvc = svrc.length
+
+	
+	'''
+ComponentInterface { name «system.name»
+«IF !pubs.empty»
+RosPublishers{
+	«FOR pub:pubs»
+	«val count_pub=count_pub--»
+	RosPublisher "«pub.name»" { RefPublisher "«pub.publisher.package_pub».«pub.publisher.artifact_pub».«pub.publisher.node_pub».«pub.publisher.compile_topic_name»"}«IF count_pub > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+«IF !subs.empty»
+RosSubscribers{
+	«FOR sub:subs»
+	«val count_sub=count_sub--»
+	RosSubscriber "«sub.name»" { RefSubscriber "«sub.subscriber.package_sub».«sub.subscriber.artifact_sub».«sub.subscriber.node_sub».«sub.subscriber.compile_topic_name»"}«IF count_sub > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+«IF !svrs.empty»
+RosSrvServers{
+	«FOR svrs:svrs»
+	«val count_srvs=count_srvs--»
+	RosSrvServer "«svrs.name»" { Refsrvserver "«svrs.srvserver.package_srvserv».«svrs.srvserver.artifact_srvserv».«svrs.srvserver.node_srvserv».«svrs.srvserver.compile_service_name»"}«IF count_srvs > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+«IF !svrc.empty»
+RosSrvClients{
+	«FOR svrc:svrc»
+	«val count_srvs=count_srvs--»
+	RosSrvClient "«svrc.name»" { Refsrvclient "«svrc.srvclient.package_srvcli».«svrc.srvclient.artifact_srvcli».«svrc.srvclient.node_srvcli».«svrc.srvclient.compile_service_name»"}«IF count_srvs > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+}
+'''
+}
+	
+
+
 def boolean hasNS(ComponentInterface component){
 	if(!component.eAllContents.toIterable.filter(Namespace).empty){
 		return true;
@@ -163,6 +284,27 @@ def compile_pkg(ComponentInterface component)
 		return artifact_name;
 	}
 	
+	def getNode_pub(Publisher publisher){
+		node_impl = publisher.eContainer.toString;
+		return node_impl.getNode;
+	}
+	def getNode_sub(Subscriber subscriber){
+		node_impl = subscriber.eContainer.toString;
+		return node_impl.getArtifact;
+	}
+	def getNode_srvserv(ServiceServer serviceserver){
+		node_impl = serviceserver.eContainer.toString;
+		return node_impl.getArtifact;
+	}
+	def getNode_srvcli(ServiceClient serviceclient){
+		node_impl = serviceclient.eContainer.toString;
+		return node_impl.getArtifact;
+	}
+	def getNode(String node_impl){
+		node_name = node_impl.substring(node_impl.indexOf("name")+6,node_impl.length-1)
+		return artifact_name;
+	}
+
 	def compile_topic_name(Publisher publisher){
 		return publisher.name;
 	}
@@ -175,4 +317,6 @@ def compile_pkg(ComponentInterface component)
 	def compile_service_name(ServiceClient serviceclient){
 		return serviceclient.name;
 	}
+	
+
 }
