@@ -34,7 +34,7 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 		cm_config.setDescription("CM_CONFIGURATION");
 		cm_config.setOutputDirectory("./components/");
 		cm_config.setOverrideExistingResources(true);
-		cm_config.setCreateOutputDirectory(false);
+		cm_config.setCreateOutputDirectory(true);
 		cm_config.setCleanUpDerivedResources(false);
 		cm_config.setSetDerivedProperty(false);
 		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
