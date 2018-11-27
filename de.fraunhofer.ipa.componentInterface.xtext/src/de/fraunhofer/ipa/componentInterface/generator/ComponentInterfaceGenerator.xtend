@@ -8,7 +8,25 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import componentInterface.ComponentInterface
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.generator.OutputConfiguration
+import java.util.Set
 
+class CustomOutputProvider implements IOutputConfigurationProvider {
+	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
+	
+
+	override Set<OutputConfiguration> getOutputConfigurations() {
+		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
+		default_config.setDescription("DEFAULT_OUTPUT");
+		default_config.setOutputDirectory("./src-gen/");
+		default_config.setOverrideExistingResources(true);
+		default_config.setCreateOutputDirectory(true);
+		default_config.setCleanUpDerivedResources(true);
+		default_config.setSetDerivedProperty(true);
+		return newHashSet(default_config)
+	}
+}
 
 /**
  * Generates code from your model files on save.
@@ -19,7 +37,7 @@ class ComponentInterfaceGenerator extends AbstractGenerator {
 
  	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (componentinterface : resource.allContents.toIterable.filter(ComponentInterface)){
-				fsa.generateFile(componentinterface.name+".rosinterfacespool",componentinterface.compile)
+				fsa.generateFile(componentinterface.name+".rosinterfacespool",CustomOutputProvider::DEFAULT_OUTPUT,componentinterface.compile)
 				}
 			}
 		
