@@ -45,16 +45,16 @@ class ComponentInterfaceGenerator extends AbstractGenerator {
 	'''
 RosInterfacesPool {
 	«FOR pub:componentinterface.rospublisher»
-	RosPublisher «checkname(pub.name)» { topicName "«pub.name»" type "«pub.publisher.message.package.name».«pub.publisher.message.name»" }
+	RosSubscriber «checkname(pub.name)» { topicName "«pub.name»" type "«pub.publisher.message.package.name».«pub.publisher.message.name»" }
 	«ENDFOR»
 	«FOR sub:componentinterface.rossubscriber»
-	RosSubscriber «checkname(sub.name)» { topicName "«sub.name»" type "«sub.subscriber.message.package.name».«sub.subscriber.message.name»" }
+	RosPublisher «checkname(sub.name)» { topicName "«sub.name»" type "«sub.subscriber.message.package.name».«sub.subscriber.message.name»" }
 	«ENDFOR»
 	«FOR srvserver:componentinterface.rosserviceserver»
-	RosSrvServer «checkname(srvserver.name)» { srvName "«srvserver.name»" type "«srvserver.srvserver.service.package.name».«srvserver.srvserver.service.name»" }
+	RosSrvClient «checkname(srvserver.name)» { srvName "«srvserver.name»" type "«srvserver.srvserver.service.package.name».«srvserver.srvserver.service.name»" }
 	«ENDFOR»
 	«FOR srvclient:componentinterface.rosserviceclient»
-	RosSrvClient «checkname(srvclient.name)» { srvName "«srvclient.name»" type "«srvclient.srvclient.service.name».«srvclient.srvclient.name»" }
+	RosSrvServer «checkname(srvclient.name)» { srvName "«srvclient.name»" type "«srvclient.srvclient.service.name».«srvclient.srvclient.name»" }
 	«ENDFOR»
 }
 	'''
