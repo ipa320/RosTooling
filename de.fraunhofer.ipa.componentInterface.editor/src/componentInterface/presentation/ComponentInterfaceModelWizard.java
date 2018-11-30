@@ -613,7 +613,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		initialObjectCreationPage = new ComponentInterfaceModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_label"));
 		initialObjectCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		//addPage(initialObjectCreationPage);
 	}
 
 	/**
