@@ -47,7 +47,7 @@ RosServiceServer returns RosServiceServer:
 	(name=EString)?
 	'{'
 		('ns' ns=EString)?
-		'RefServer' srvserver=[ros::ServiceServer]
+		'RefServer' srvserver=[ros::ServiceServer|EString]
 	'}';
 
 RosServiceClient returns RosServiceClient:
@@ -56,7 +56,7 @@ RosServiceClient returns RosServiceClient:
 	(name=EString)?
 	'{'
 		('ns' ns=EString)?
-		'RefClient' srvclient=[ros::ServiceClient]
+		'RefClient' srvclient=[ros::ServiceClient|EString]
 	'}';
 
 GlobalNamespace returns ros::GlobalNamespace:

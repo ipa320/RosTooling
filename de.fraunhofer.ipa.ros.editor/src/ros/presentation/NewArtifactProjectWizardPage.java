@@ -28,7 +28,7 @@ public class NewArtifactProjectWizardPage extends WizardPage {
 	public NewArtifactProjectWizardPage(ISelection selection) {
 		super("wizardPage");
 		setTitle("New ROS Component project");
-		setDescription("This wizard creates a new ROS artifact project");
+		setDescription("This wizard creates a new ROS project");
 		//this.workbench = workbench;
 	}
 

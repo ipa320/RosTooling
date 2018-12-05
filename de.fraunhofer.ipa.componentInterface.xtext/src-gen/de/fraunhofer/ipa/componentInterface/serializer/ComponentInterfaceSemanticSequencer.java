@@ -181,7 +181,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosServiceClient returns RosServiceClient
 	 *
 	 * Constraint:
-	 *     (name=EString? ns=EString? srvclient=[ServiceClient|ID])
+	 *     (name=EString? ns=EString? srvclient=[ServiceClient|EString])
 	 */
 	protected void sequence_RosServiceClient(ISerializationContext context, RosServiceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -193,7 +193,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     RosServiceServer returns RosServiceServer
 	 *
 	 * Constraint:
-	 *     (name=EString? ns=EString? srvserver=[ServiceServer|ID])
+	 *     (name=EString? ns=EString? srvserver=[ServiceServer|EString])
 	 */
 	protected void sequence_RosServiceServer(ISerializationContext context, RosServiceServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

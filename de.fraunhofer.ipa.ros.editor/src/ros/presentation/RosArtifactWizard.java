@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
@@ -127,7 +128,12 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
 		description.setNatureIds(newNatures);
 		project.setDescription(description, monitor);
-		IFile file = project.getFile(ProjectName+".ros");
+		
+		IFolder dir = project.getFolder("rosnodes");
+		dir.create(true, true, null);
+		IFolder dir2 = project.getFolder("components");
+		dir2.create(true, true, null);
+		IFile file = project.getFile("rosnodes/"+ProjectName+".ros");
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +ProjectName+ "{ artifact {\n" +"		Artifact  "+ProjectName+" {}}}}}").getBytes();
 		InputStream source = new ByteArrayInputStream(bytes);

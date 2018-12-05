@@ -3,33 +3,17 @@
 package rossystem.presentation;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.MissingResourceException;
+import java.util.Set;
 import java.util.StringTokenizer;
-
-import org.eclipse.emf.common.CommonPlugin;
-
-import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.ecore.xmi.XMLResource;
-
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -37,52 +21,51 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.IProgressMonitor;
-
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.ui.action.LoadResourceAction;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.dialogs.MessageDialog;
-
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
-
+import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
+import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallbackWithConfimation;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.swt.SWT;
-
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.ModifyEvent;
-
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
 import rossystem.RossystemFactory;
 import rossystem.RossystemPackage;
 import rossystem.provider.RossystemEditPlugin;
-
-
-import org.eclipse.core.runtime.Path;
-
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
 
 
 /**
@@ -225,7 +208,10 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
+			final String ModelName = newFileCreationPage.getFileName().replace(".rossystem", "");
+			IProject project = modelFile.getProject();
 
+			System.out.println(project.getFile("representation.aird").getFullPath());
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
@@ -237,26 +223,39 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
 
+							byte[] bytes = ("RosSystem { Name '"+ModelName+"' }").getBytes();
+							InputStream source = new ByteArrayInputStream(bytes);
+							modelFile.create(source, IResource.NONE, null);
+
+							//Add viewpoints to the aird file
+							IFile airdFile = project.getFile("representations2.aird");
+							URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
+							Session session = SessionManager.INSTANCE.getSession(airdFileURI, progressMonitor);
+							Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
+							Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
+							for(Viewpoint p : availableViewPoints)
+								viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, p));
+							ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();
 							// Get the URI of the model file.
 							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							//URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
-							Resource resource = resourceSet.createResource(fileURI);
+							//Resource resource = resourceSet.createResource(fileURI);
 
 							// Add the initial model object to the contents.
 							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
-								resource.getContents().add(rootObject);
-							}
+							//EObject rootObject = createInitialModel();
+							//if (rootObject != null) {
+								//resource.getContents().add(rootObject);
+							//}
 
 							// Save the contents of the resource to the file system.
 							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
+							//Map<Object, Object> options = new HashMap<Object, Object>();
+							//options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							//resource.save(options);
 						}
 						catch (Exception exception) {
 							RossystemEditorPlugin.INSTANCE.log(exception);
@@ -269,8 +268,6 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 
 			getContainer().run(false, false, operation);
 
-			// Select the new file resource in the current view.
-			//
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
@@ -283,20 +280,29 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 						 }
 					 });
 			}
+			
+			
+			LoadResourceAction loadResourceAction = new LoadResourceAction();
+			loadResourceAction.setActiveWorkbenchPart(activePart);
+			loadResourceAction.setActiveEditor(page.getActiveEditor());
+			loadResourceAction.run();
+			
 
 			// Open an editor on the new file.
 			//
 			try {
 				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
+					(new FileEditorInput(modelFile), "rossystem.presentation.RossystemEditorID" );
+					 //workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+				return true;
 			}
 			catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(), RossystemEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
-			return true;
+
+			
 		}
 		catch (Exception exception) {
 			RossystemEditorPlugin.INSTANCE.log(exception);
@@ -351,6 +357,19 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 		}
 	}
 
+	
+	public class RossystemModelWizardAddComponents extends WizardPage {
+		public RossystemModelWizardAddComponents(String pageId) {
+			super(pageId);
+		}
+
+		@Override
+		public void createControl(Composite parent) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 	/**
 	 * This is the page where the type of object to create is selected.
 	 * <!-- begin-user-doc -->
@@ -388,6 +407,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 		public RossystemModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
+
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -611,7 +631,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 		initialObjectCreationPage = new RossystemModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_label"));
 		initialObjectCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		//addPage(initialObjectCreationPage);
 	}
 
 	/**

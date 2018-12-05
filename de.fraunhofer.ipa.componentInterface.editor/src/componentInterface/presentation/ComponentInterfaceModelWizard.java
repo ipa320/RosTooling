@@ -4,25 +4,14 @@ package componentInterface.presentation;
 
 
 import java.io.ByteArrayInputStream;
+import java.io.FileReader;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.MissingResourceException;
-import java.util.StringTokenizer;
-
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.action.LoadResourceAction;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import java.util.Scanner;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -30,53 +19,48 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.IProgressMonitor;
-
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.dialogs.MessageDialog;
-
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
-
+import org.eclipse.jface.wizard.WizardSelectionPage;
 import org.eclipse.swt.SWT;
-
-import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.events.ModifyEvent;
-
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
-import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
-
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
 import componentInterface.ComponentInterfaceFactory;
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.provider.ComponentInterfaceEditPlugin;
-
-
-import org.eclipse.core.runtime.Path;
-
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
-
 
 /**
  * This is a simple wizard for creating a new model file.
@@ -126,14 +110,15 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	protected ComponentInterfaceModelWizardNewFileCreationPage newFileCreationPage;
+	protected SelectinputFile getInputFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ComponentInterfaceModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected ComponentInterfaceModelWizardNamNSCreationPage getNameandNamespaceCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -158,6 +143,8 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
+
+	public FileDialog fDialog;
 
 	/**
 	 * This just records the information.
@@ -194,17 +181,6 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		return initialObjectNames;
 	}
 
-	/**
-	 * Create a new model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EObject createInitialModel() {
-		EClass eClass = (EClass)componentInterfacePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = componentInterfaceFactory.create(eClass);
-		return rootObject;
-	}
 
 	/**
 	 * Do the work after everything is specified.
@@ -219,6 +195,14 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 			//
 			final IFile modelFile = getModelFile();
 			final String modelName = newFileCreationPage.getFileName().replace(".componentinterface", "");
+			final String ComponentName = getNameandNamespaceCreationPage.getComponentInterfaceName();
+			final String ComponentNameSpace = getNameandNamespaceCreationPage.getComponentInterfaceNameSpace();
+			final String Inputpath = getInputFileCreationPage.getPath();
+
+			ResourceSet resourceSet = new ResourceSetImpl();
+			URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+			Resource resource = resourceSet.createResource(fileURI);
+
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
@@ -226,29 +210,117 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 					@Override
 					protected void execute(IProgressMonitor progressMonitor) {
 						try {
-							// Create a resource set
-							//
-							ResourceSet resourceSet = new ResourceSetImpl();
+							
 
-							// Get the URI of the model file.
-							//
-							//URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
-
-							// Create a resource for this file.
-							//
-							//Resource resource = resourceSet.createResource(fileURI);
-
+							
 							// Add the initial model object to the contents.
 							//
 							//EObject rootObject = createInitialModel();
 							//if (rootObject != null) {
 							//	resource.getContents().add(rootObject);
 							//}
+							StringBuilder model_output = new StringBuilder();
+							resource.getContents().clear();
+							model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' } }\n");
+
 							
-							byte[] bytes = ("ComponentInterface { name '"+modelName+"' }").getBytes();
+							
+							Scanner in = new Scanner(new FileReader(Inputpath));
+							StringBuilder sb = new StringBuilder();
+							
+							String pkg_name=null;
+							String artifact_name=null;
+							String node_name=null;
+							List<String> pubs = new ArrayList<String>();
+							List<String> subs = new ArrayList<String>();
+							List<String> srvser = new ArrayList<String>();
+							List<String> srvcl = new ArrayList<String>();
+
+							while(in.hasNext()) {
+								String next_st = in.next();
+								sb.append(next_st);
+								if (next_st.equals("CatkinPackage")) {
+									pkg_name = in.next();
+								}if (next_st.equals("Artifact")) {
+									artifact_name = in.next();
+								}if (next_st.equals("Node")) {
+									in.next();
+									in.next();
+									node_name = in.next();
+								}if (next_st.equals("Publisher")) {
+									in.next();
+									in.next();
+									String pub_name= in.next();
+									pubs.add(pub_name.replace("\"",""));
+								}if (next_st.equals("Subscriber")) {
+									in.next();
+									in.next();
+									String sub_name= in.next();
+									subs.add(sub_name.replace("\"",""));
+								}if (next_st.equals("ServiceServer")) {
+									in.next();
+									in.next();
+									String srv_name= in.next();
+									srvser.add(srv_name.replace("\"",""));
+								}if (next_st.equals("ServiceClient")) {
+									in.next();
+									in.next();
+									String srv_name= in.next();
+									srvcl.add(srv_name.replace("\"",""));
+								}
+							}
+							in.close();
+							String outString = sb.toString();
+
+							if (pubs.size() > 0) {
+								int cout_pub = pubs.size();
+								model_output.append("    RosPublishers{\n");
+								for(String pub:pubs) {
+									cout_pub--;
+									model_output.append("        RosPublisher '/"+ComponentNameSpace+"/"+pub.replace("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+									if (cout_pub > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (subs.size() > 0) {
+								int cout_subs = subs.size();
+								model_output.append("    RosSubscribers{\n");
+								for(String sub:subs) {
+									cout_subs--;
+									model_output.append("        RosSubscriber '/"+ComponentNameSpace+"/"+sub.replace("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+									if (cout_subs > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (srvser.size() > 0) {
+								int cout_srvs = srvser.size();
+								model_output.append("    RosSrvServers{\n");
+								for(String srvsr:srvser) {
+									cout_srvs--;
+									model_output.append("        RosServiceServer '/"+ComponentNameSpace+"/"+srvsr.replace("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+									if (cout_srvs > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (srvcl.size() > 0) {
+								int cout_srvc = srvcl.size();
+								model_output.append("    RosSrvClients{\n");
+								for(String srvc:srvcl) {
+									cout_srvc--;
+									model_output.append("        RosServiceClient '/"+ComponentNameSpace+"/"+srvc.replace("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+									if (cout_srvc > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}
+							model_output.append("}");
+							byte[] bytes = model_output.toString().getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
-							modelFile.create(source, IResource.NONE, null);
-							
+							modelFile.create(source, IResource.FILE, null);
 							// Save the contents of the resource to the file system.
 							//
 							//Map<Object, Object> options = new HashMap<Object, Object>();
@@ -294,10 +366,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 				return false;
 			}
 			
-			LoadResourceAction loadResourceAction = new LoadResourceAction();
-			loadResourceAction.setActiveWorkbenchPart(activePart);
-			loadResourceAction.setActiveEditor(page.getActiveEditor());
-			loadResourceAction.run();
+			//LoadResourceAction loadResourceAction = new LoadResourceAction();
+			//loadResourceAction.setActiveWorkbenchPart(activePart);
+			//loadResourceAction.setActiveEditor(page.getActiveEditor());
+			//loadResourceAction.run();
+						
 			return true;
 		}
 		catch (Exception exception) {
@@ -305,6 +378,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 			return false;
 		}
 	}
+
 
 	/**
 	 * This is the one page of the wizard.
@@ -353,213 +427,125 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		}
 	}
 
-	/**
-	 * This is the page where the type of object to create is selected.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class ComponentInterfaceModelWizardInitialObjectCreationPage extends WizardPage {
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo initialObjectField;
 
-		/**
-		 * @generated
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected List<String> encodings;
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo encodingField;
+	public class ComponentInterfaceModelWizardNamNSCreationPage extends WizardPage {
+	    private Text CIName;
+	    private Text CINameSpace;
+	    private Composite container;
 
-		/**
-		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public ComponentInterfaceModelWizardInitialObjectCreationPage(String pageId) {
+		public ComponentInterfaceModelWizardNamNSCreationPage(String pageId) {
+			super(pageId);
+		}
+	
+	    @Override
+	    public void createControl(Composite parent) {
+	        container = new Composite(parent, SWT.NONE);
+	        GridLayout layout = new GridLayout(2, false);
+	        container.setLayout(layout);
+	        layout.numColumns = 2;
+	        Label label1 = new Label(container, SWT.NONE);
+	        label1.setText("ComponentInterface name");
+	        CIName = new Text(container, SWT.BORDER | SWT.SINGLE);
+	        CIName.setText("");
+	        CIName.addKeyListener(new KeyListener() {
+	            public void keyPressed(KeyEvent e) {
+	            }
+	            public void keyReleased(KeyEvent e) {
+	                if (!CIName.getText().isEmpty()) {
+	                    setPageComplete(true);
+	                }
+	            }
+	        });
+	        Label label2 = new Label(container, SWT.NONE);
+	        label2.setText("ComponentInterface namespace");
+	        CINameSpace = new Text(container, SWT.BORDER | SWT.SINGLE);
+	        CINameSpace.setText("");
+	        CINameSpace.addKeyListener(new KeyListener() {
+	            public void keyPressed(KeyEvent e) {
+	            }
+	            public void keyReleased(KeyEvent e) {
+	                if (!CINameSpace.getText().isEmpty()) {
+	                    setPageComplete(true);
+	                }
+	            }
+
+	        });
+
+	        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+			gd.grabExcessHorizontalSpace = true;
+			gd.horizontalAlignment = GridData.FILL;
+	        CIName.setLayoutData(gd);
+	        CINameSpace.setLayoutData(gd);
+	        
+	        // required to avoid an error in the system
+	        setControl(container);
+	        setPageComplete(false);
+	    }
+
+	    public String getComponentInterfaceName() {
+	        return CIName.getText();
+	    }
+	    
+	    public String getComponentInterfaceNameSpace() {
+	        return CINameSpace.getText();
+	    }
+
+	}
+	
+
+	public class SelectinputFile extends WizardSelectionPage{
+
+	    private Composite container;
+	    private Text locationPathField;
+		private Button browseButton;
+		private String path;
+
+		protected SelectinputFile(String pageId) {
 			super(pageId);
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
-				GridLayout layout = new GridLayout();
-				layout.numColumns = 1;
-				layout.verticalSpacing = 12;
-				composite.setLayout(layout);
-
-				GridData data = new GridData();
-				data.verticalAlignment = GridData.FILL;
-				data.grabExcessVerticalSpace = true;
-				data.horizontalAlignment = GridData.FILL;
-				composite.setLayoutData(data);
-			}
-
-			Label containerLabel = new Label(composite, SWT.LEFT);
-			{
-				containerLabel.setText(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
-
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				containerLabel.setLayoutData(data);
-			}
-
-			initialObjectField = new Combo(composite, SWT.BORDER);
-			{
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				data.grabExcessHorizontalSpace = true;
-				initialObjectField.setLayoutData(data);
-			}
-
-			for (String objectName : getInitialObjectNames()) {
-				initialObjectField.add(getLabel(objectName));
-			}
-
-			if (initialObjectField.getItemCount() == 1) {
-				initialObjectField.select(0);
-			}
-			initialObjectField.addModifyListener(validator);
-
-			Label encodingLabel = new Label(composite, SWT.LEFT);
-			{
-				encodingLabel.setText(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
-
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				encodingLabel.setLayoutData(data);
-			}
-			encodingField = new Combo(composite, SWT.BORDER);
-			{
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				data.grabExcessHorizontalSpace = true;
-				encodingField.setLayoutData(data);
-			}
-
-			for (String encoding : getEncodings()) {
-				encodingField.add(encoding);
-			}
-
-			encodingField.select(0);
-			encodingField.addModifyListener(validator);
-
-			setPageComplete(validatePage());
-			setControl(composite);
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected ModifyListener validator =
-			new ModifyListener() {
-				public void modifyText(ModifyEvent e) {
-					setPageComplete(validatePage());
-				}
-			};
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected boolean validatePage() {
-			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		@Override
-		public void setVisible(boolean visible) {
-			super.setVisible(visible);
-			if (visible) {
-				if (initialObjectField.getItemCount() == 1) {
-					initialObjectField.clearSelection();
-					encodingField.setFocus();
+		public void createControl(Composite parent) {
+	        container = new Composite(parent, SWT.NONE);
+
+			GridLayout layout = new GridLayout(2, false);
+			container.setLayout(layout);
+			
+			locationPathField = new Text(container, SWT.BORDER | SWT.SINGLE);
+			GridData gd = new GridData (GridData.FILL_HORIZONTAL);
+			gd.grabExcessHorizontalSpace = true;
+			gd.horizontalAlignment = GridData.FILL;
+			locationPathField.setLayoutData(gd);
+			browseButton = new Button(container, SWT.PUSH);
+			browseButton.setText("Browse...");
+			browseButton.addSelectionListener(new SelectionListener() {
+				public void widgetDefaultSelected(SelectionEvent e) {
+					
 				}
-				else {
-					encodingField.clearSelection();
-					initialObjectField.setFocus();
+	 
+				public void widgetSelected(SelectionEvent e) {
+					//TODO filter to only show the ros models on my workspace
+					FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
+					dlg.setText("Open");
+					path = dlg.open();
+					if (path == null) return;
+					locationPathField.setText(path);
+
 				}
+
+			});
+	        setControl(container);
+	        setPageComplete(true);
+	        
+
 			}
+
+		public String getPath() {
+			return path;
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public String getInitialObjectName() {
-			String label = initialObjectField.getText();
-
-			for (String name : getInitialObjectNames()) {
-				if (getLabel(name).equals(label)) {
-					return name;
-				}
-			}
-			return null;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public String getEncoding() {
-			return encodingField.getText();
-		}
-
-		/**
-		 * Returns the label for the specified type name.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected String getLabel(String typeName) {
-			try {
-				return ComponentInterfaceEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-			}
-			catch(MissingResourceException mre) {
-				ComponentInterfaceEditorPlugin.INSTANCE.log(mre);
-			}
-			return typeName;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Collection<String> getEncodings() {
-			if (encodings == null) {
-				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
-					encodings.add(stringTokenizer.nextToken());
-				}
-			}
-			return encodings;
-		}
-	}
+}
 
 	/**
 	 * The framework calls this to create the contents of the wizard.
@@ -610,10 +596,17 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 				}
 			}
 		}
-		initialObjectCreationPage = new ComponentInterfaceModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_label"));
-		initialObjectCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		
+		getNameandNamespaceCreationPage = new ComponentInterfaceModelWizardNamNSCreationPage("Whatever3");
+		getNameandNamespaceCreationPage.setTitle("Set Name and Namespace to the ComponentInterface");
+		getNameandNamespaceCreationPage.setDescription("Set Name and Namespace to the ComponentInterface");
+		addPage(getNameandNamespaceCreationPage);
+
+		
+		getInputFileCreationPage = new SelectinputFile("Whatever4");
+		getInputFileCreationPage.setTitle("Select ROS model input");
+		getInputFileCreationPage.setDescription("Select ROS model input");
+		addPage(getInputFileCreationPage);
 	}
 
 	/**
