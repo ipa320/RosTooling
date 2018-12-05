@@ -708,9 +708,12 @@ ruleRosServiceServer returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRosServiceServerRule());
 					}
 				}
-				otherlv_7=RULE_ID
 				{
-					newLeafNode(otherlv_7, grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0());
+					newCompositeNode(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -807,9 +810,12 @@ ruleRosServiceClient returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRosServiceClientRule());
 					}
 				}
-				otherlv_7=RULE_ID
 				{
-					newLeafNode(otherlv_7, grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0());
+					newCompositeNode(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

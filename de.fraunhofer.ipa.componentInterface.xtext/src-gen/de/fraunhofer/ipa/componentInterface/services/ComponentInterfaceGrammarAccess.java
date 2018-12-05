@@ -443,7 +443,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRefServerKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cSrvserverAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cSrvserverServiceServerCrossReference_6_0 = (CrossReference)cSrvserverAssignment_6.eContents().get(0);
-		private final RuleCall cSrvserverServiceServerIDTerminalRuleCall_6_0_1 = (RuleCall)cSrvserverServiceServerCrossReference_6_0.eContents().get(1);
+		private final RuleCall cSrvserverServiceServerEStringParserRuleCall_6_0_1 = (RuleCall)cSrvserverServiceServerCrossReference_6_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RosServiceServer:
@@ -451,12 +451,12 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//	'RosServiceServer'
 		//	name=EString?
 		//	'{' ('ns' ns=EString)?
-		//	'RefServer' srvserver=[ros::ServiceServer]
+		//	'RefServer' srvserver=[ros::ServiceServer|EString]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosServiceServer} 'RosServiceServer' name=EString? '{' ('ns' ns=EString)? 'RefServer' srvserver=[ros::ServiceServer]
-		//'}'
+		//{RosServiceServer} 'RosServiceServer' name=EString? '{' ('ns' ns=EString)? 'RefServer'
+		//srvserver=[ros::ServiceServer|EString] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosServiceServer}
@@ -489,14 +489,14 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//'RefServer'
 		public Keyword getRefServerKeyword_5() { return cRefServerKeyword_5; }
 		
-		//srvserver=[ros::ServiceServer]
+		//srvserver=[ros::ServiceServer|EString]
 		public Assignment getSrvserverAssignment_6() { return cSrvserverAssignment_6; }
 		
-		//[ros::ServiceServer]
+		//[ros::ServiceServer|EString]
 		public CrossReference getSrvserverServiceServerCrossReference_6_0() { return cSrvserverServiceServerCrossReference_6_0; }
 		
-		//ID
-		public RuleCall getSrvserverServiceServerIDTerminalRuleCall_6_0_1() { return cSrvserverServiceServerIDTerminalRuleCall_6_0_1; }
+		//EString
+		public RuleCall getSrvserverServiceServerEStringParserRuleCall_6_0_1() { return cSrvserverServiceServerEStringParserRuleCall_6_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -516,7 +516,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRefClientKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cSrvclientAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cSrvclientServiceClientCrossReference_6_0 = (CrossReference)cSrvclientAssignment_6.eContents().get(0);
-		private final RuleCall cSrvclientServiceClientIDTerminalRuleCall_6_0_1 = (RuleCall)cSrvclientServiceClientCrossReference_6_0.eContents().get(1);
+		private final RuleCall cSrvclientServiceClientEStringParserRuleCall_6_0_1 = (RuleCall)cSrvclientServiceClientCrossReference_6_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RosServiceClient:
@@ -524,12 +524,12 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//	'RosServiceClient'
 		//	name=EString?
 		//	'{' ('ns' ns=EString)?
-		//	'RefClient' srvclient=[ros::ServiceClient]
+		//	'RefClient' srvclient=[ros::ServiceClient|EString]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosServiceClient} 'RosServiceClient' name=EString? '{' ('ns' ns=EString)? 'RefClient' srvclient=[ros::ServiceClient]
-		//'}'
+		//{RosServiceClient} 'RosServiceClient' name=EString? '{' ('ns' ns=EString)? 'RefClient'
+		//srvclient=[ros::ServiceClient|EString] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RosServiceClient}
@@ -562,14 +562,14 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//'RefClient'
 		public Keyword getRefClientKeyword_5() { return cRefClientKeyword_5; }
 		
-		//srvclient=[ros::ServiceClient]
+		//srvclient=[ros::ServiceClient|EString]
 		public Assignment getSrvclientAssignment_6() { return cSrvclientAssignment_6; }
 		
-		//[ros::ServiceClient]
+		//[ros::ServiceClient|EString]
 		public CrossReference getSrvclientServiceClientCrossReference_6_0() { return cSrvclientServiceClientCrossReference_6_0; }
 		
-		//ID
-		public RuleCall getSrvclientServiceClientIDTerminalRuleCall_6_0_1() { return cSrvclientServiceClientIDTerminalRuleCall_6_0_1; }
+		//EString
+		public RuleCall getSrvclientServiceClientEStringParserRuleCall_6_0_1() { return cSrvclientServiceClientEStringParserRuleCall_6_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -950,7 +950,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	'RosServiceServer'
 	//	name=EString?
 	//	'{' ('ns' ns=EString)?
-	//	'RefServer' srvserver=[ros::ServiceServer]
+	//	'RefServer' srvserver=[ros::ServiceServer|EString]
 	//	'}';
 	public RosServiceServerElements getRosServiceServerAccess() {
 		return pRosServiceServer;
@@ -965,7 +965,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	//	'RosServiceClient'
 	//	name=EString?
 	//	'{' ('ns' ns=EString)?
-	//	'RefClient' srvclient=[ros::ServiceClient]
+	//	'RefClient' srvclient=[ros::ServiceClient|EString]
 	//	'}';
 	public RosServiceClientElements getRosServiceClientAccess() {
 		return pRosServiceClient;

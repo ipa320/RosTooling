@@ -3792,9 +3792,9 @@ rule__RosServiceServer__SrvserverAssignment_6
 	(
 		{ before(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0()); }
 		(
-			{ before(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerIDTerminalRuleCall_6_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerIDTerminalRuleCall_6_0_1()); }
+			{ before(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerEStringParserRuleCall_6_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerEStringParserRuleCall_6_0_1()); }
 		)
 		{ after(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0()); }
 	)
@@ -3841,9 +3841,9 @@ rule__RosServiceClient__SrvclientAssignment_6
 	(
 		{ before(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0()); }
 		(
-			{ before(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientIDTerminalRuleCall_6_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientIDTerminalRuleCall_6_0_1()); }
+			{ before(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientEStringParserRuleCall_6_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientEStringParserRuleCall_6_0_1()); }
 		)
 		{ after(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0()); }
 	)
