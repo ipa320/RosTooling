@@ -33,7 +33,6 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.jface.wizard.WizardSelectionPage;
@@ -48,7 +47,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
@@ -56,10 +54,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.ui.dialogs.FileSelectionDialog;
-import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
@@ -224,11 +219,10 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							//if (rootObject != null) {
 							//	resource.getContents().add(rootObject);
 							//}
-							
+							StringBuilder model_output = new StringBuilder();
 							resource.getContents().clear();
-							byte[] bytes = ("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' }}}").getBytes();
-							InputStream source = new ByteArrayInputStream(bytes);
-							modelFile.create(source, IResource.FILE, null);
+							model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' } }\n");
+
 							
 							
 							Scanner in = new Scanner(new FileReader(Inputpath));
@@ -237,32 +231,96 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							String pkg_name=null;
 							String artifact_name=null;
 							String node_name=null;
-							//String[] pubs = {};
-							String[] subs = null;
+							List<String> pubs = new ArrayList<String>();
+							List<String> subs = new ArrayList<String>();
+							List<String> srvser = new ArrayList<String>();
+							List<String> srvcl = new ArrayList<String>();
+
 							while(in.hasNext()) {
 								String next_st = in.next();
 								sb.append(next_st);
 								if (next_st.equals("CatkinPackage")) {
 									pkg_name = in.next();
-								} if (next_st.equals("Artifact")) {
+								}if (next_st.equals("Artifact")) {
 									artifact_name = in.next();
-								} if (next_st.equals("Node")) {
+								}if (next_st.equals("Node")) {
 									in.next();
 									in.next();
 									node_name = in.next();
-								}  if (next_st.equals("Publisher")) {
+								}if (next_st.equals("Publisher")) {
 									in.next();
 									in.next();
-									String[] pubs = {in.next()};
-									System.out.println("RosPublisher '/"+ComponentNameSpace+"/"+pubs[0]+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pubs[0]+"'}");
+									String pub_name= in.next();
+									pubs.add(pub_name.replace("\"",""));
+								}if (next_st.equals("Subscriber")) {
+									in.next();
+									in.next();
+									String sub_name= in.next();
+									subs.add(sub_name.replace("\"",""));
+								}if (next_st.equals("ServiceServer")) {
+									in.next();
+									in.next();
+									String srv_name= in.next();
+									srvser.add(srv_name.replace("\"",""));
+								}if (next_st.equals("ServiceClient")) {
+									in.next();
+									in.next();
+									String srv_name= in.next();
+									srvcl.add(srv_name.replace("\"",""));
 								}
 							}
 							in.close();
 							String outString = sb.toString();
 
-							//System.out.println(outString);
-
-							
+							if (pubs.size() > 0) {
+								int cout_pub = pubs.size();
+								model_output.append("    RosPublishers{\n");
+								for(String pub:pubs) {
+									cout_pub--;
+									model_output.append("        RosPublisher '/"+ComponentNameSpace+"/"+pub.replace("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+									if (cout_pub > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (subs.size() > 0) {
+								int cout_subs = subs.size();
+								model_output.append("    RosSubscribers{\n");
+								for(String sub:subs) {
+									cout_subs--;
+									model_output.append("        RosSubscriber '/"+ComponentNameSpace+"/"+sub.replace("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+									if (cout_subs > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (srvser.size() > 0) {
+								int cout_srvs = srvser.size();
+								model_output.append("    RosSrvServers{\n");
+								for(String srvsr:srvser) {
+									cout_srvs--;
+									model_output.append("        RosServiceServer '/"+ComponentNameSpace+"/"+srvsr.replace("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+									if (cout_srvs > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}if (srvcl.size() > 0) {
+								int cout_srvc = srvcl.size();
+								model_output.append("    RosSrvClients{\n");
+								for(String srvc:srvcl) {
+									cout_srvc--;
+									model_output.append("        RosServiceClient '/"+ComponentNameSpace+"/"+srvc.replace("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+									if (cout_srvc > 0) {
+										model_output.append(",\n");
+									}
+								}
+								model_output.append("}\n");
+							}
+							model_output.append("}");
+							byte[] bytes = model_output.toString().getBytes();
+							InputStream source = new ByteArrayInputStream(bytes);
+							modelFile.create(source, IResource.FILE, null);
 							// Save the contents of the resource to the file system.
 							//
 							//Map<Object, Object> options = new HashMap<Object, Object>();
