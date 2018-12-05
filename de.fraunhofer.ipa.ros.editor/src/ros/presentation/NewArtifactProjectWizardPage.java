@@ -1,15 +1,23 @@
 package ros.presentation;
 
+import java.util.Collection;
+import java.util.MissingResourceException;
+import java.util.StringTokenizer;
+
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
+import ros.provider.RosEditPlugin;
 
 /**
  * The "New" wizard page allows setting the container for the new file as well
@@ -65,6 +73,53 @@ public class NewArtifactProjectWizardPage extends WizardPage {
         setPageComplete(false);
 
     }
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModifyListener validator =
+		new ModifyListener() {
+			public void modifyText(ModifyEvent e) {
+				setPageComplete(validatePage());
+			}
+		};
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected boolean validatePage() {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVisible(boolean visible) {
+		super.setVisible(visible);
+	}
+
+	/**
+	 * Returns the label for the specified type name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected String getLabel(String typeName) {
+		try {
+			return RosEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+		}
+		catch(MissingResourceException mre) {
+			RosEditorPlugin.INSTANCE.log(mre);
+		}
+		return typeName;
+	}
 
     public String getProjectName() {
         return ProjectText.getText();

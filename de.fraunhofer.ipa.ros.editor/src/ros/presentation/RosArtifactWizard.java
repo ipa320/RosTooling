@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -64,6 +65,7 @@ import ros.RosFactory;
 public class RosArtifactWizard extends Wizard implements INewWizard {
 	private NewArtifactProjectWizardPage page;
 	private ISelection selection;
+	protected IWorkbench workbench;
 
 	/**
 	 * Constructor for NewCodeGenProjectWizard.
@@ -79,6 +81,8 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 
 	public void addPages() {
 		page = new NewArtifactProjectWizardPage(selection);
+		//page.setTitle(RosEditorPlugin.INSTANCE.getString("_UI_RosModelWizard_label"));
+		//page.setDescription(RosEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(page);
 	}
 
@@ -212,7 +216,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
     	        System.out.println("File copied from " + srcFolder + " to " + destFolder);
     	}
     }
-		
+	
 	
 	protected IProject getProjectHandle() {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(page.getName());
@@ -223,6 +227,10 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 	 * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		this.workbench = workbench;
 		this.selection = selection;
+		setWindowTitle(RosEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RosEditorPlugin.INSTANCE.getImage("full/wizban/NewRos")));
+
 	}
 }
