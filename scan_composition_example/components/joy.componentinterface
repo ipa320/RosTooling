@@ -1,0 +1,1 @@
+ComponentInterface { name 'joy' RosPublishers { RosPublisher "/diagnostics" { RefPublisher "joy.joy_node.joy_node.diagnostics" } , RosPublisher "/joy" { RefPublisher "joy.joy_node.joy_node.joy" } } }
