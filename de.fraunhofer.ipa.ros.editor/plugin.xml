@@ -74,7 +74,7 @@
          label="NewProject">
           <command
             commandId="de.fraunhofer.ipa.ros.newRosProject"
-            icon="icons/full/wizban/NewRos.gif"
+            icon="icons/full/obj16/NewRosProject_icon.gif"
             id="NewProject"
             style="push">
          </command>
@@ -106,7 +106,7 @@
          label="NewNode">
           <command
             commandId="de.fraunhofer.ipa.ros.newRosNode"
-            icon="icons/full/wizban/NewRos.gif"
+            icon="icons/full/obj16/NewRosModel_icon.gif"
             id="NewNode"
             style="push">
          </command>

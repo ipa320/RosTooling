@@ -58,7 +58,7 @@
          label="NewSystem">
           <command
             commandId="de.fraunhofer.ipa.ros.newRosSystem"
-            icon="icons/full/obj16/RossystemModelFile.gif"
+            icon="icons/full/obj16/NewRosSystem_icon.gif"
             id="NewSystem"
             style="push">
          </command>
