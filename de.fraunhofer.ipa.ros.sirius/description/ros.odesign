@@ -140,20 +140,6 @@
       <metamodel href="../../de.fraunhofer.ipa.componentInterface/model/componentInterface.ecore#/"/>
       <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="NewTopicConnection" domainClass="rossystem::TopicConnection">
-          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="NewServiceConnection" domainClass="rossystem::ServiceConnection">
-          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-          </style>
-        </nodeMappings>
         <edgeMappings name="TopicConnection" semanticElements="feature:eContainer" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:ToTopic" sourceFinderExpression="feature:FromTopic" domainClass="rossystem::TopicConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditTopicConnections']" pathNodeMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher'] //@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Publisher']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='Subscriber']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -221,17 +207,6 @@
           </style>
         </containerMappings>
         <toolSections name="Tools">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="TopicCon" inverseSelectionOrder="true" nodeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@nodeMappings[name='NewTopicConnection']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::TopicConnection" referenceName="TopicConnections">
-                  <subModelOperations xsi:type="tool_1:SetValue"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditTopicConnections" precondition="[source.name.equalsIgnoreCase(target.name)/]" forceRefresh="true" inverseSelectionOrder="true" reconnectionKind="RECONNECT_BOTH">
             <source name="source"/>
             <target name="target"/>
@@ -253,17 +228,6 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="ToSrv" valueExpression="var:target"/>
             </initialOperation>
             <edgeView name="edgeView"/>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ServiceCon" inverseSelectionOrder="true" nodeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@nodeMappings[name='NewServiceConnection']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::ServiceConnection" referenceName="ServiceConnections">
-                  <subModelOperations xsi:type="tool_1:SetValue"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
