@@ -18,6 +18,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
@@ -56,6 +57,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.ui.dialogs.FileSelectionDialog;
+import org.eclipse.ui.dialogs.ResourceSelectionDialog;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
@@ -148,6 +151,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 
 	public FileDialog fDialog;
 
+	public IFile modelFile;
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
@@ -195,7 +199,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		try {
 			// Remember the file.
 			//
-			final IFile modelFile = getModelFile();
+			modelFile = getModelFile();
 			final String modelName = newFileCreationPage.getFileName().replace(".componentinterface", "");
 			final String ComponentName = getNameandNamespaceCreationPage.getComponentInterfaceName();
 			final String ComponentNameSpace = getNameandNamespaceCreationPage.getComponentInterfaceNameSpace();
@@ -242,32 +246,32 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								String next_st = in.next();
 								sb.append(next_st);
 								if (next_st.equals("CatkinPackage")) {
-									pkg_name = in.next();
+									pkg_name = in.next().replace("{", "");
 								}if (next_st.equals("Artifact")) {
 									artifact_name = in.next();
 								}if (next_st.equals("Node")) {
 									in.next();
 									in.next();
-									node_name = in.next();
+									node_name = in.next().replace("{", "");
 								}if (next_st.equals("Publisher")) {
 									in.next();
 									in.next();
-									String pub_name= in.next();
+									String pub_name= in.next().replace("{", "");
 									pubs.add(pub_name.replace("\"",""));
 								}if (next_st.equals("Subscriber")) {
 									in.next();
 									in.next();
-									String sub_name= in.next();
+									String sub_name= in.next().replace("{", "");
 									subs.add(sub_name.replace("\"",""));
 								}if (next_st.equals("ServiceServer")) {
 									in.next();
 									in.next();
-									String srv_name= in.next();
+									String srv_name= in.next().replace("{", "");
 									srvser.add(srv_name.replace("\"",""));
 								}if (next_st.equals("ServiceClient")) {
 									in.next();
 									in.next();
-									String srv_name= in.next();
+									String srv_name= in.next().replace("{", "");
 									srvcl.add(srv_name.replace("\"",""));
 								}
 							}
@@ -279,7 +283,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								model_output.append("    RosPublishers{\n");
 								for(String pub:pubs) {
 									cout_pub--;
-									model_output.append("        RosPublisher '/"+ComponentNameSpace+"/"+pub.replace("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+									if (ComponentNameSpace.isEmpty()) {
+										model_output.append("        RosPublisher '/"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+									} else {
+										model_output.append("        RosPublisher '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+									}
 									if (cout_pub > 0) {
 										model_output.append(",\n");
 									}
@@ -290,7 +298,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								model_output.append("    RosSubscribers{\n");
 								for(String sub:subs) {
 									cout_subs--;
-									model_output.append("        RosSubscriber '/"+ComponentNameSpace+"/"+sub.replace("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+									if (ComponentNameSpace.isEmpty()) {
+										model_output.append("        RosSubscriber '/"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+									} else {
+										model_output.append("        RosSubscriber '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+									}
 									if (cout_subs > 0) {
 										model_output.append(",\n");
 									}
@@ -301,7 +313,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								model_output.append("    RosSrvServers{\n");
 								for(String srvsr:srvser) {
 									cout_srvs--;
-									model_output.append("        RosServiceServer '/"+ComponentNameSpace+"/"+srvsr.replace("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+									if (ComponentNameSpace.isEmpty()) {
+										model_output.append("        RosServiceServer '/"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+									} else {
+										model_output.append("        RosServiceServer '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+									}
 									if (cout_srvs > 0) {
 										model_output.append(",\n");
 									}
@@ -312,7 +328,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								model_output.append("    RosSrvClients{\n");
 								for(String srvc:srvcl) {
 									cout_srvc--;
-									model_output.append("        RosServiceClient '/"+ComponentNameSpace+"/"+srvc.replace("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+									if (ComponentNameSpace.isEmpty()) {
+										model_output.append("        RosServiceClient '/"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+									} else {
+										model_output.append("        RosServiceClient '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+									}
 									if (cout_srvc > 0) {
 										model_output.append(",\n");
 									}
@@ -530,10 +550,17 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 					//TODO filter to only show the ros models on my workspace
 					FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
 					dlg.setText("Open");
+					dlg.setFilterExtensions(new String[] { "*.ros" } );
+					IWorkspaceRoot ws = ResourcesPlugin.getWorkspace().getRoot();
+					String Workspace_path = ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();
+					if (ws.getLocation().toString().length() > 0) {
+						dlg.setFilterPath(ws.getLocation().toString());
+					} else if (Workspace_path.toString().length() > 0){
+						dlg.setFilterPath(Workspace_path);
+					}
 					path = dlg.open();
 					if (path == null) return;
 					locationPathField.setText(path);
-
 				}
 
 			});
@@ -564,7 +591,6 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		newFileCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_description"));
 		newFileCreationPage.setFileName(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
-
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
 		if (selection != null && !selection.isEmpty()) {

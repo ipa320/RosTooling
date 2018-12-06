@@ -3,6 +3,8 @@
 package ros.presentation;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -225,7 +227,8 @@ public class RosModelWizard extends Wizard implements INewWizard {
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
-
+			final String ModelName = newFileCreationPage.getFileName().replace(".ros", "");
+			IProject project = modelFile.getProject();
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
@@ -235,28 +238,32 @@ public class RosModelWizard extends Wizard implements INewWizard {
 						try {
 							// Create a resource set
 							//
-							ResourceSet resourceSet = new ResourceSetImpl();
+							//ResourceSet resourceSet = new ResourceSetImpl();
 
+							byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +project.getName()+ "{ artifact {\n" +"		Artifact  "+project.getName()+" {}}}}}").getBytes();
+							InputStream source = new ByteArrayInputStream(bytes);
+							modelFile.create(source, IResource.NONE, null);
+							
 							// Get the URI of the model file.
 							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							//URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
-							Resource resource = resourceSet.createResource(fileURI);
+							//Resource resource = resourceSet.createResource(fileURI);
 
 							// Add the initial model object to the contents.
 							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
-								resource.getContents().add(rootObject);
-							}
+							//EObject rootObject = createInitialModel();
+							//if (rootObject != null) {
+								//resource.getContents().add(rootObject);
+							//}
 
 							// Save the contents of the resource to the file system.
 							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
+							//Map<Object, Object> options = new HashMap<Object, Object>();
+							//options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							//resource.save(options);
 						}
 						catch (Exception exception) {
 							RosEditorPlugin.INSTANCE.log(exception);
