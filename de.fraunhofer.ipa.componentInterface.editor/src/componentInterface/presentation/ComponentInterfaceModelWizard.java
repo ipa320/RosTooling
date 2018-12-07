@@ -227,8 +227,11 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							//}
 							StringBuilder model_output = new StringBuilder();
 							resource.getContents().clear();
-							model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' } }\n");
-
+							if (ComponentNameSpace.isEmpty()) {
+								model_output.append("ComponentInterface { name '"+ComponentName+"' \n");
+							} else {
+								model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' } }\n");
+							}
 							
 							
 							Scanner in = new Scanner(new FileReader(Inputpath));
