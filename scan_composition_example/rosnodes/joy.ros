@@ -1,8 +1,0 @@
-PackageSet { package {
-	CatkinPackage joy { artifact {
-		Artifact joy_node { node Node { name joy_node
-			publisher {
-			Publisher { name "joy" message "sensor_msgs.Joy" },
-			Publisher { name "diagnostics" message "diagnostic_msgs.DiagnosticArray" }
-			}}
-}}}}}

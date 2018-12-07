@@ -1,6 +1,6 @@
 ComponentInterface { name base_laser_front NameSpace RelativeNamespace {parts{"/base_laser_front" }}
 	RosPublishers{
-		RosPublisher "/base_laser_front/scan" {RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" },
+		RosPublisher "/base_laser_front/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" },
 		RosPublisher "/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}}
 }
 
