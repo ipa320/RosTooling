@@ -45,9 +45,9 @@
    <extension point="org.eclipse.ui.commands">
       <command
          defaultHandler="componentInterface.presentation.AddComponentInterfaceHandler"
-         description="Add new Component interface"
+         description="Add new Component from ROS node"
          id="de.fraunhofer.ipa.componentInterface.newComponent"
-         name="Add new Component interface">
+         name="Add new Component from ROS node">
       </command>
    </extension>
 
@@ -59,7 +59,7 @@
          label="NewComponent">
           <command
             commandId="de.fraunhofer.ipa.componentInterface.newComponent"
-            icon="icons/full/obj16/NewComponentInterface_icon.gif"
+            icon="icons/full/ros_component_icon.jpg"
             id="newComponent"
             style="push">
          </command>

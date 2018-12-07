@@ -547,16 +547,16 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 				}
 	 
 				public void widgetSelected(SelectionEvent e) {
-					//TODO filter to only show the ros models on my workspace
+					//TODO use a resourc dialog
 					FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
 					dlg.setText("Open");
 					dlg.setFilterExtensions(new String[] { "*.ros" } );
 					IWorkspaceRoot ws = ResourcesPlugin.getWorkspace().getRoot();
 					String Workspace_path = ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();
-					if (ws.getLocation().toString().length() > 0) {
+					if (ws.getLocation().toString().length() > 10) {
 						dlg.setFilterPath(ws.getLocation().toString());
-					} else if (Workspace_path.toString().length() > 0){
-						dlg.setFilterPath(Workspace_path);
+					} else if (Workspace_path.toString().length() > 20){
+						dlg.setFilterPath("../"+Workspace_path);
 					}
 					path = dlg.open();
 					if (path == null) return;

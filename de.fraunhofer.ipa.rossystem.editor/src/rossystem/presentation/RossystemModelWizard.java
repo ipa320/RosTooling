@@ -810,10 +810,10 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 					dlg.setText("Open");
 					dlg.setFilterExtensions(new String[] { "*.componentinterface" } );
 					IWorkspaceRoot ws = ResourcesPlugin.getWorkspace().getRoot();
-					String Workspace_path = "../"+ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();
-					if (Workspace_path.length() > 0) {
+					String Workspace_path = ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();
+					if (Workspace_path.length() > 20) {
 						dlg.setFilterPath(Workspace_path);
-					} else if (ws.getLocation().toString().length() > 0){
+					} else if (ws.getLocation().toString().length() > 10){
 						dlg.setFilterPath(ws.getLocation().toString());
 					}
 					dlg.open();

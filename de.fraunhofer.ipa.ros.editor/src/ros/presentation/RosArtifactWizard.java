@@ -195,7 +195,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		if(srcFolder.isDirectory()){
         		if(!destFolder.exists()){
     			destFolder.mkdir();
-    		   System.out.println("Directory copied from " + srcFolder + "  to " + destFolder);
+    		   //System.out.println("Directory copied from " + srcFolder + "  to " + destFolder);
     		}
     		String files[] = srcFolder.list();
     		for (String file : files) {
@@ -213,7 +213,7 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
     	        }
     	        in.close();
     	        out.close();
-    	        System.out.println("File copied from " + srcFolder + " to " + destFolder);
+    	        //System.out.println("File copied from " + srcFolder + " to " + destFolder);
     	}
     }
 	
