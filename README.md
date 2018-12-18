@@ -88,3 +88,4 @@ Now that your workspace is setup and the eclipse application running you can sta
 
 ![alt text](docu/images/eclipse_app_empty.png)
 
+To play with the tool please follow our [tutorials](https://github.com/ipa-nhg/ros-model/tree/master/docu).
