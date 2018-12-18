@@ -50,7 +50,7 @@ git clone https://github.com/ipa-nhg/ros-model.git
 ```
 2. Open Eclipse and create a new workspace
 
-3. Import below projects into the new workspace (File -> Import -> General -> Existing projects)
+3. Import below projects (under the "plugins" folder of this repository) into the new workspace (File -> Import -> General -> Existing projects)
 
 ```
 de.fraunhofer.ipa.componentInterface
@@ -79,12 +79,12 @@ de.fraunhofer.ipa.rossystem.xtext.ui
 * de.fraunhofer.ipa.ros.sirius > plugin.xml and click *Launch an Eclipse application* or 
 * *right click* de.fraunhofer.ipa.ros.sirius and *click* on Run As > Eclipse Application
 
-5. Import the common communication objects project to the workbench of your application:
+5. Import the common communication objects project (under the "examples" folder of this repository) to the workbench of your application:
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
 
 Now that your workspace is setup and the eclipse application running you can start creating your project and defining your ROS system
 
-![alt text](images/eclipse_app_empty.png)
+![alt text](docu/images/eclipse_app_empty.png)
 
