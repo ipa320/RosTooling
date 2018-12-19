@@ -1,6 +1,6 @@
 ## Create a new Rossystem composing existing components
 
-Please be sure that the tool is installed and your workspace setup, see the [installation guide](https://github.com/ipa-nhg/ros-model#2--installation-requirements) for further details.
+Please be sure that the tool is installed and your workspace setup, see the [installation guide](../README.md) for further details.
 
 Import the example project scan_system_demo (under the "examples" folder of this repository) to the workbench of your application:
 

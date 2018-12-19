@@ -1,6 +1,6 @@
 ## Create a component from a node
 
-Please be sure that the tool is installed and your workspace setup, see the [installation guide](https://github.com/ipa-nhg/ros-model#2--installation-requirements) for further details.
+Please be sure that the tool is installed and your workspace setup, see the [installation guide](../README.md) for further details.
 
 To create a new component you have to press the button "Add new Component from Ros node"
 
