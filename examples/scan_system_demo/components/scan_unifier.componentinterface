@@ -2,8 +2,8 @@ ComponentInterface { name scan_unifier
 	RosPublishers{
 		RosPublisher "/scan_unified" { RefPublisher  "cob_scan_unifier.scan_unifier_node.scan_unifier_node./scan_unified"}
 	} RosSubscribers{ 
-		RosSubscriber "/base_laser_front/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_front/scan"} ,
-		RosSubscriber "/base_laser_left/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_left/scan"} ,
-		RosSubscriber "/base_laser_right/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_right/scan" }
+		RosSubscriber "base_laser_front/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_front/scan"} ,
+		RosSubscriber "base_laser_left/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_left/scan"} ,
+		RosSubscriber "base_laser_right/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_right/scan" }
 	}
 }
