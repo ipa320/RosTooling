@@ -1,0 +1,13 @@
+RosSystem { Name 'scan_composition'  RosComponents ( 
+    ComponentInterface { name scan_unifier RosPublishers{ RosPublisher "/scan_unified" { RefPublisher "cob_scan_unifier.scan_unifier_node.scan_unifier_node./scan_unified"} } RosSubscribers{ RosSubscriber "base_laser_front/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_front/scan"} , RosSubscriber "base_laser_left/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_left/scan"} , RosSubscriber "base_laser_right/scan" { RefSubscriber "cob_scan_unifier.scan_unifier_node.scan_unifier_node./base_laser_right/scan" } } } ,
+    ComponentInterface { name diagnotics_aggregator RosPublishers { RosPublisher "/diagnostics_toplevel_state" { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node./diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber "/diagnostics" { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node./diagnostics"} } } ,
+    ComponentInterface { name base_laser_right NameSpace base_laser_right RosPublishers{ RosPublisher "base_laser_right/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" }, RosPublisher "/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}} } ,
+    ComponentInterface { name base_laser_left NameSpace base_laser_left RosPublishers{ RosPublisher "base_laser_left/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan"}, RosPublisher "/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}} } ,
+    ComponentInterface { name base_laser_front NameSpace base_laser_front RosPublishers{ RosPublisher "base_laser_front/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" }, RosPublisher "/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300./diagnostics"}} } )
+	TopicConnections { 
+		TopicConnection diagnostics { From ("base_laser_front./diagnostics", "base_laser_left./diagnostics", "base_laser_right./diagnostics" )  To ("diagnotics_aggregator./diagnostics")},
+		TopicConnection "base_laser_front/scan" { From ("base_laser_front.base_laser_front/scan" )  To ("scan_unifier.base_laser_front/scan") },
+		TopicConnection "base_laser_right/scan" { From ("base_laser_right.base_laser_right/scan" )  To ("scan_unifier.base_laser_right/scan") },
+		TopicConnection "base_laser_left/scan" { From ("base_laser_left.base_laser_left/scan" )  To ("scan_unifier.base_laser_left/scan") }
+
+}}
