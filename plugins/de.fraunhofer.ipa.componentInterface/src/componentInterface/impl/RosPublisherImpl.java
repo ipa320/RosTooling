@@ -4,11 +4,12 @@ package componentInterface.impl;
 
 import componentInterface.ComponentInterfacePackage;
 import componentInterface.RosPublisher;
+import componentInterface.ComponentInterface;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -174,19 +175,13 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public String getComponentNs() {
-		String component_ns = null;
-		String ComponentInterface_toString = eContainer().eContents().toString();
-		if (ComponentInterface_toString.contains("parts") && ComponentInterface_toString.contains("componentInterface")) {
-			component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [", 1) + 8, ComponentInterface_toString.indexOf("]"));
-			if (component_ns.length()>0) {
-				return component_ns;
-			}else {
-				return NS_EDEFAULT;
-			}
+		ComponentInterface component = (ComponentInterface) publisher.eContainer();
+		String component_ns = component.getNameSpace();
+		if (component_ns.length()>0) {
+			return component_ns;
 		}else {
 			return NS_EDEFAULT;
 		}
-		
 	}
 
 	/**

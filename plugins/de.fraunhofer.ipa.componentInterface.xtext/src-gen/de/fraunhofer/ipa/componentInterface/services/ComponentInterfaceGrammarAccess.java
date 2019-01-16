@@ -35,8 +35,8 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cNameEStringParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cNameSpaceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNamespaceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_3_1_0 = (RuleCall)cNamespaceAssignment_3_1.eContents().get(0);
+		private final Assignment cNameSpaceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNameSpaceEStringParserRuleCall_3_1_0 = (RuleCall)cNameSpaceAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cRosPublishersKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
@@ -81,7 +81,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		
 		//ComponentInterface:
 		//	'ComponentInterface'
-		//	'{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
+		//	'{' ('name' name=EString)? ('NameSpace' NameSpace=EString)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
 		//	rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber (","
 		//	rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
 		//	rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
@@ -89,7 +89,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ComponentInterface' '{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{'
+		//'ComponentInterface' '{' ('name' name=EString)? ('NameSpace' NameSpace=EString)? ('RosPublishers' '{'
 		//rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber
 		//("," rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
 		//rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
@@ -114,17 +114,17 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_1_0() { return cNameEStringParserRuleCall_2_1_0; }
 		
-		//('NameSpace' namespace=Namespace)?
+		//('NameSpace' NameSpace=EString)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'NameSpace'
 		public Keyword getNameSpaceKeyword_3_0() { return cNameSpaceKeyword_3_0; }
 		
-		//namespace=Namespace
-		public Assignment getNamespaceAssignment_3_1() { return cNamespaceAssignment_3_1; }
+		//NameSpace=EString
+		public Assignment getNameSpaceAssignment_3_1() { return cNameSpaceAssignment_3_1; }
 		
-		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_3_1_0() { return cNamespaceNamespaceParserRuleCall_3_1_0; }
+		//EString
+		public RuleCall getNameSpaceEStringParserRuleCall_3_1_0() { return cNameSpaceEStringParserRuleCall_3_1_0; }
 		
 		//('RosPublishers' '{' rospublisher+=RosPublisher ("," rospublisher+=RosPublisher)* '}')?
 		public Group getGroup_4() { return cGroup_4; }
@@ -881,7 +881,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	
 	//ComponentInterface:
 	//	'ComponentInterface'
-	//	'{' ('name' name=EString)? ('NameSpace' namespace=Namespace)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
+	//	'{' ('name' name=EString)? ('NameSpace' NameSpace=EString)? ('RosPublishers' '{' rospublisher+=RosPublisher (","
 	//	rospublisher+=RosPublisher)* '}')? ('RosSubscribers' '{' rossubscriber+=RosSubscriber (","
 	//	rossubscriber+=RosSubscriber)* '}')? ('RosSrvServers' '{' rosserviceserver+=RosServiceServer (","
 	//	rosserviceserver+=RosServiceServer)* '}')? ('RosSrvClients' '{' rosserviceclient+=RosServiceClient (","
