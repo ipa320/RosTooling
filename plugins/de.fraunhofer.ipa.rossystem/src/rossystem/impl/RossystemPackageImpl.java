@@ -170,7 +170,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTopicConnection_FromTopic() {
+	public EReference getTopicConnection_From() {
 		return (EReference)topicConnectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -179,8 +179,17 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTopicConnection_ToTopic() {
+	public EReference getTopicConnection_To() {
 		return (EReference)topicConnectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTopicConnection_TopicName() {
+		return (EAttribute)topicConnectionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -197,7 +206,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceConnection_FromSrv() {
+	public EReference getServiceConnection_From() {
 		return (EReference)serviceConnectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -206,8 +215,17 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceConnection_ToSrv() {
+	public EReference getServiceConnection_To() {
 		return (EReference)serviceConnectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceConnection_ServiceName() {
+		return (EAttribute)serviceConnectionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -245,12 +263,14 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 		createEReference(rosSystemEClass, ROS_SYSTEM__ROS_COMPONENT);
 
 		topicConnectionEClass = createEClass(TOPIC_CONNECTION);
-		createEReference(topicConnectionEClass, TOPIC_CONNECTION__FROM_TOPIC);
-		createEReference(topicConnectionEClass, TOPIC_CONNECTION__TO_TOPIC);
+		createEReference(topicConnectionEClass, TOPIC_CONNECTION__FROM);
+		createEReference(topicConnectionEClass, TOPIC_CONNECTION__TO);
+		createEAttribute(topicConnectionEClass, TOPIC_CONNECTION__TOPIC_NAME);
 
 		serviceConnectionEClass = createEClass(SERVICE_CONNECTION);
-		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__FROM_SRV);
-		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__TO_SRV);
+		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__FROM);
+		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__TO);
+		createEAttribute(serviceConnectionEClass, SERVICE_CONNECTION__SERVICE_NAME);
 	}
 
 	/**
@@ -293,12 +313,14 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 		initEReference(getRosSystem_RosComponent(), theComponentInterfacePackage.getComponentInterface(), null, "RosComponent", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(topicConnectionEClass, TopicConnection.class, "TopicConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTopicConnection_FromTopic(), theComponentInterfacePackage.getRosPublisher(), null, "FromTopic", null, 1, 1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTopicConnection_ToTopic(), theComponentInterfacePackage.getRosSubscriber(), null, "ToTopic", null, 1, 1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTopicConnection_From(), theComponentInterfacePackage.getRosPublisher(), null, "From", null, 1, -1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTopicConnection_To(), theComponentInterfacePackage.getRosSubscriber(), null, "To", null, 1, -1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTopicConnection_TopicName(), ecorePackage.getEString(), "TopicName", null, 1, 1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceConnectionEClass, ServiceConnection.class, "ServiceConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceConnection_FromSrv(), theComponentInterfacePackage.getRosServiceServer(), null, "FromSrv", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceConnection_ToSrv(), theComponentInterfacePackage.getRosServiceClient(), null, "ToSrv", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceConnection_From(), theComponentInterfacePackage.getRosServiceServer(), null, "From", null, 1, -1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceConnection_To(), theComponentInterfacePackage.getRosServiceClient(), null, "To", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceConnection_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

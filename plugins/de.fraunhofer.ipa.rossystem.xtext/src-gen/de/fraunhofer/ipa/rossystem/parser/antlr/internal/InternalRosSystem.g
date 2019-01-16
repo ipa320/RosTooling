@@ -317,13 +317,36 @@ ruleTopicConnection returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getTopicConnectionAccess().getTopicConnectionKeyword_0());
 		}
-		otherlv_1='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTopicConnectionAccess().getTopicNameEStringParserRuleCall_1_0());
+				}
+				lv_TopicName_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTopicConnectionRule());
+					}
+					set(
+						$current,
+						"TopicName",
+						lv_TopicName_1_0,
+						"de.fraunhofer.ipa.rossystem.RosSystem.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTopicConnectionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getTopicConnectionAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_2='FromTopic'
+		otherlv_3='From'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getTopicConnectionAccess().getFromTopicKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getTopicConnectionAccess().getFromKeyword_3());
+		}
+		otherlv_4='('
+		{
+			newLeafNode(otherlv_4, grammarAccess.getTopicConnectionAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
@@ -333,7 +356,7 @@ ruleTopicConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTopicConnectionAccess().getFromTopicRosPublisherCrossReference_3_0());
+					newCompositeNode(grammarAccess.getTopicConnectionAccess().getFromRosPublisherCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -341,9 +364,39 @@ ruleTopicConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='ToTopic'
+		(
+			otherlv_6=','
+			{
+				newLeafNode(otherlv_6, grammarAccess.getTopicConnectionAccess().getCommaKeyword_6_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTopicConnectionRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getTopicConnectionAccess().getFromRosPublisherCrossReference_6_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_8=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getTopicConnectionAccess().getToTopicKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getTopicConnectionAccess().getRightParenthesisKeyword_7());
+		}
+		otherlv_9='To'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getTopicConnectionAccess().getToKeyword_8());
+		}
+		otherlv_10='('
+		{
+			newLeafNode(otherlv_10, grammarAccess.getTopicConnectionAccess().getLeftParenthesisKeyword_9());
 		}
 		(
 			(
@@ -353,7 +406,7 @@ ruleTopicConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTopicConnectionAccess().getToTopicRosSubscriberCrossReference_5_0());
+					newCompositeNode(grammarAccess.getTopicConnectionAccess().getToRosSubscriberCrossReference_10_0());
 				}
 				ruleEString
 				{
@@ -361,9 +414,35 @@ ruleTopicConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='}'
+		(
+			otherlv_12=','
+			{
+				newLeafNode(otherlv_12, grammarAccess.getTopicConnectionAccess().getCommaKeyword_11_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTopicConnectionRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getTopicConnectionAccess().getToRosSubscriberCrossReference_11_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_14=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getTopicConnectionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_14, grammarAccess.getTopicConnectionAccess().getRightParenthesisKeyword_12());
+		}
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getTopicConnectionAccess().getRightCurlyBracketKeyword_13());
 		}
 	)
 ;
@@ -388,13 +467,36 @@ ruleServiceConnection returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getServiceConnectionAccess().getServiceConnectionKeyword_0());
 		}
-		otherlv_1='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getServiceConnectionAccess().getServiceNameEStringParserRuleCall_1_0());
+				}
+				lv_ServiceName_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getServiceConnectionRule());
+					}
+					set(
+						$current,
+						"ServiceName",
+						lv_ServiceName_1_0,
+						"de.fraunhofer.ipa.rossystem.RosSystem.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getServiceConnectionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getServiceConnectionAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_2='FromSrv'
+		otherlv_3='From'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getServiceConnectionAccess().getFromSrvKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getServiceConnectionAccess().getFromKeyword_3());
+		}
+		otherlv_4='('
+		{
+			newLeafNode(otherlv_4, grammarAccess.getServiceConnectionAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
@@ -404,7 +506,7 @@ ruleServiceConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getServiceConnectionAccess().getFromSrvRosServiceServerCrossReference_3_0());
+					newCompositeNode(grammarAccess.getServiceConnectionAccess().getFromRosServiceServerCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -412,9 +514,35 @@ ruleServiceConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='ToSrv'
+		(
+			otherlv_6=','
+			{
+				newLeafNode(otherlv_6, grammarAccess.getServiceConnectionAccess().getCommaKeyword_6_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getServiceConnectionRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getServiceConnectionAccess().getFromRosServiceServerCrossReference_6_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_8=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getServiceConnectionAccess().getToSrvKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getServiceConnectionAccess().getRightParenthesisKeyword_7());
+		}
+		otherlv_9='To'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getServiceConnectionAccess().getToKeyword_8());
 		}
 		(
 			(
@@ -424,7 +552,7 @@ ruleServiceConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getServiceConnectionAccess().getToSrvRosServiceClientCrossReference_5_0());
+					newCompositeNode(grammarAccess.getServiceConnectionAccess().getToRosServiceClientCrossReference_9_0());
 				}
 				ruleEString
 				{
@@ -432,9 +560,9 @@ ruleServiceConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getServiceConnectionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getServiceConnectionAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;

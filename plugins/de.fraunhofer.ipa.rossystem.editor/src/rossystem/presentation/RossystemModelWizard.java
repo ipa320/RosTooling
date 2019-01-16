@@ -652,7 +652,6 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}
-
 			};
 
 		/**

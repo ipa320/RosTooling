@@ -16,21 +16,26 @@ import componentInterface.RosPublisher
 class RosSystemFormatter extends AbstractFormatter2 {
 	
 	@Inject extension RosSystemGrammarAccess
-
-	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
-		for (TopicConnection topicConnection : rosSystem.getTopicConnections()) {
-			if( topicConnection.fromTopic.name.equalsIgnoreCase(topicConnection.toTopic.name)){
-					topicConnection.format;
-				
-			}
-			if( topicConnection.fromTopic.publisher.message.name.equalsIgnoreCase(topicConnection.toTopic.subscriber.message.name)){
-			}
-				topicConnection.format;
-		}
-		for (ServiceConnection serviceConnection : rosSystem.getServiceConnections()) {
-			serviceConnection.format;
-		}
+	
+	override format(Object obj, IFormattableDocument document) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
+ /** 
+	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
+		for (TopicConnection topicConnection : rosSystem.getTopicConnections()) {
+			for (pub:topicConnection.from){
+				for (sub:topicConnection.to){
+					if( pub.publisher.message.name.equalsIgnoreCase(sub.subscriber.message.name)){
+						topicConnection.format;
+				}
+			}
+		}}
+		for (ServiceConnection serviceConnection : rosSystem.getServiceConnections()) {
+			for (svrser:serviceConnection.from){
+				if(svrser.srvserver.service.name.equalsIgnoreCase(serviceConnection.to.srvclient.service.name)){
+						serviceConnection.format;
+				}
+			}
+	}}*/
 }
-
