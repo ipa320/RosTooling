@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import ros.RosPackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -60,6 +58,52 @@ public interface ComponentInterfacePackage extends EPackage {
 	ComponentInterfacePackage eINSTANCE = componentInterface.impl.ComponentInterfacePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link componentInterface.NameSpaceComponent <em>Name Space Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentInterface.NameSpaceComponent
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNameSpaceComponent()
+	 * @generated
+	 */
+	int NAME_SPACE_COMPONENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_SPACE_COMPONENT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_SPACE_COMPONENT__NAME_SPACE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Name Space Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_SPACE_COMPONENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Name Space Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAME_SPACE_COMPONENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link componentInterface.impl.ComponentInterfaceImpl <em>Component Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,22 +114,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int COMPONENT_INTERFACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INTERFACE__NAMESPACE = RosPackage.NAMESPACED_ELEMENT__NAMESPACE;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE__NAME = RosPackage.NAMESPACED_ELEMENT__NAME;
+	int COMPONENT_INTERFACE__NAME = NAME_SPACE_COMPONENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INTERFACE__NAME_SPACE = NAME_SPACE_COMPONENT__NAME_SPACE;
 
 	/**
 	 * The feature id for the '<em><b>Rospublisher</b></em>' containment reference list.
@@ -94,7 +138,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE__ROSPUBLISHER = RosPackage.NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_INTERFACE__ROSPUBLISHER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rossubscriber</b></em>' containment reference list.
@@ -103,7 +147,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE__ROSSUBSCRIBER = RosPackage.NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_INTERFACE__ROSSUBSCRIBER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Rosserviceserver</b></em>' containment reference list.
@@ -112,7 +156,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE__ROSSERVICESERVER = RosPackage.NAMESPACED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_INTERFACE__ROSSERVICESERVER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Rosserviceclient</b></em>' containment reference list.
@@ -121,7 +165,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE__ROSSERVICECLIENT = RosPackage.NAMESPACED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INTERFACE__ROSSERVICECLIENT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component Interface</em>' class.
@@ -130,7 +174,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE_FEATURE_COUNT = RosPackage.NAMESPACED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Component Interface</em>' class.
@@ -139,7 +183,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE_OPERATION_COUNT = RosPackage.NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int COMPONENT_INTERFACE_OPERATION_COUNT = NAME_SPACE_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentInterface.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
@@ -369,7 +413,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNS()
 	 * @generated
 	 */
-	int NS = 5;
+	int NS = 6;
 
 
 	/**
@@ -599,6 +643,38 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosServiceClient_Ns();
 
 	/**
+	 * Returns the meta object for class '{@link componentInterface.NameSpaceComponent <em>Name Space Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Name Space Component</em>'.
+	 * @see componentInterface.NameSpaceComponent
+	 * @generated
+	 */
+	EClass getNameSpaceComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.NameSpaceComponent#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentInterface.NameSpaceComponent#getName()
+	 * @see #getNameSpaceComponent()
+	 * @generated
+	 */
+	EAttribute getNameSpaceComponent_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.NameSpaceComponent#getNameSpace <em>Name Space</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name Space</em>'.
+	 * @see componentInterface.NameSpaceComponent#getNameSpace()
+	 * @see #getNameSpaceComponent()
+	 * @generated
+	 */
+	EAttribute getNameSpaceComponent_NameSpace();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>NS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -809,6 +885,32 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROS_SERVICE_CLIENT__NS = eINSTANCE.getRosServiceClient_Ns();
+
+		/**
+		 * The meta object literal for the '{@link componentInterface.NameSpaceComponent <em>Name Space Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentInterface.NameSpaceComponent
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNameSpaceComponent()
+		 * @generated
+		 */
+		EClass NAME_SPACE_COMPONENT = eINSTANCE.getNameSpaceComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAME_SPACE_COMPONENT__NAME = eINSTANCE.getNameSpaceComponent_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Name Space</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAME_SPACE_COMPONENT__NAME_SPACE = eINSTANCE.getNameSpaceComponent_NameSpace();
 
 		/**
 		 * The meta object literal for the '<em>NS</em>' data type.

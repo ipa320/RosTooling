@@ -34,5 +34,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosServiceClient/ns"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="componentInterface.ecore#//NameSpaceComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//NameSpaceComponent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//NameSpaceComponent/NameSpace"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

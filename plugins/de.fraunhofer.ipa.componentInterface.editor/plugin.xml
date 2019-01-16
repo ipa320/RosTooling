@@ -20,7 +20,7 @@
          <description>%_UI_ComponentInterfaceModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
-	</extension>
+   </extension>
 
    <extension point="org.eclipse.ui.editors">
       <!-- @generated componentInterface -->

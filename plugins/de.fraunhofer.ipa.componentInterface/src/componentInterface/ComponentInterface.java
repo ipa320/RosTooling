@@ -4,8 +4,6 @@ package componentInterface;
 
 import org.eclipse.emf.common.util.EList;
 
-import ros.NamespacedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Interface</b></em>'.
@@ -25,7 +23,7 @@ import ros.NamespacedElement;
  * @model
  * @generated
  */
-public interface ComponentInterface extends NamespacedElement {
+public interface ComponentInterface extends NameSpaceComponent {
 	/**
 	 * Returns the value of the '<em><b>Rospublisher</b></em>' containment reference list.
 	 * The list contents are of type {@link componentInterface.RosPublisher}.

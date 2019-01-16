@@ -9,8 +9,6 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import ros.NamespacedElement;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -71,7 +69,7 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 			case ComponentInterfacePackage.COMPONENT_INTERFACE: {
 				ComponentInterface componentInterface = (ComponentInterface)theEObject;
 				T result = caseComponentInterface(componentInterface);
-				if (result == null) result = caseNamespacedElement(componentInterface);
+				if (result == null) result = caseNameSpaceComponent(componentInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,6 +94,12 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 			case ComponentInterfacePackage.ROS_SERVICE_CLIENT: {
 				RosServiceClient rosServiceClient = (RosServiceClient)theEObject;
 				T result = caseRosServiceClient(rosServiceClient);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentInterfacePackage.NAME_SPACE_COMPONENT: {
+				NameSpaceComponent nameSpaceComponent = (NameSpaceComponent)theEObject;
+				T result = caseNameSpaceComponent(nameSpaceComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,17 +183,17 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Namespaced Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Name Space Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Namespaced Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Name Space Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNamespacedElement(NamespacedElement object) {
+	public T caseNameSpaceComponent(NameSpaceComponent object) {
 		return null;
 	}
 
