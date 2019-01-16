@@ -228,7 +228,7 @@ def boolean hasNS(ComponentInterface component){
 	}
 }
 def String get_ns(ComponentInterface component){
-	return component.namespace.parts.get(0).replaceFirst("/","");
+	return component.nameSpace.replaceFirst("/","");
 }
 
 def compile_pkg(ComponentInterface component) 
