@@ -19,7 +19,7 @@ class ComponentInterfaceFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(ComponentInterface componentInterface, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		componentInterface.getNamespace.format;
+		componentInterface.getNameSpace.format;
 		for (RosPublisher rosPublisher : componentInterface.getRospublisher()) {
 			rosPublisher.format;
 		}

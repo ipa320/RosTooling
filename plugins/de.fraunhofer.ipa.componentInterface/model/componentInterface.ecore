@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentInterface" nsURI="http://www.example.org/componentInterface"
     nsPrefix="componentInterface">
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="../../de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="#//NameSpaceComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rospublisher" upperBound="-1"
         eType="#//RosPublisher" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rossubscriber" upperBound="-1"
@@ -33,4 +33,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NS" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NameSpaceComponent" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NameSpace" eType="#//NS"/>
+  </eClassifiers>
 </ecore:EPackage>

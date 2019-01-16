@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.MissingResourceException;
+import java.util.StringTokenizer;
 import java.util.Scanner;
 
 import org.eclipse.core.resources.IContainer;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -38,12 +41,15 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.jface.wizard.WizardSelectionPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
@@ -66,6 +72,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import componentInterface.ComponentInterfaceFactory;
 import componentInterface.ComponentInterfacePackage;
+import componentInterface.provider.ComponentInterfaceEditPlugin;
 
 /**
  * This is a simple wizard for creating a new model file.
@@ -115,6 +122,14 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	protected ComponentInterfaceModelWizardNewFileCreationPage newFileCreationPage;
+	/**
+	 * This is the initial object creation page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentInterfaceModelWizardInitialObjectCreationPage initialObjectCreationPage;
+
 	protected SelectinputFile getInputFileCreationPage;
 
 	/**
@@ -189,6 +204,18 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 
 
 	/**
+	 * Create a new model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EObject createInitialModel() {
+		EClass eClass = (EClass)componentInterfacePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = componentInterfaceFactory.create(eClass);
+		return rootObject;
+	}
+
+	/**
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,7 +257,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							if (ComponentNameSpace.isEmpty()) {
 								model_output.append("ComponentInterface { name '"+ComponentName+"' \n");
 							} else {
-								model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace RelativeNamespace {parts{ '"+ComponentNameSpace+"' } }\n");
+								model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace '"+ComponentNameSpace+"' \n");
 							}
 							
 							
@@ -287,9 +314,9 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								for(String pub:pubs) {
 									cout_pub--;
 									if (ComponentNameSpace.isEmpty()) {
-										model_output.append("        RosPublisher '/"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+										model_output.append("        RosPublisher '"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
 									} else {
-										model_output.append("        RosPublisher '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
+										model_output.append("        RosPublisher '"+ComponentNameSpace.replaceFirst("/", "")+"/"+pub.replaceFirst("/", "")+"' { RefPublisher '"+pkg_name+"."+artifact_name+"."+node_name+"."+pub+"'}");
 									}
 									if (cout_pub > 0) {
 										model_output.append(",\n");
@@ -302,9 +329,9 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								for(String sub:subs) {
 									cout_subs--;
 									if (ComponentNameSpace.isEmpty()) {
-										model_output.append("        RosSubscriber '/"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+										model_output.append("        RosSubscriber '"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
 									} else {
-										model_output.append("        RosSubscriber '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
+										model_output.append("        RosSubscriber '"+ComponentNameSpace.replaceFirst("/", "")+"/"+sub.replaceFirst("/", "")+"' { RefSubscriber '"+pkg_name+"."+artifact_name+"."+node_name+"."+sub+"'}");
 									}
 									if (cout_subs > 0) {
 										model_output.append(",\n");
@@ -317,9 +344,9 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								for(String srvsr:srvser) {
 									cout_srvs--;
 									if (ComponentNameSpace.isEmpty()) {
-										model_output.append("        RosServiceServer '/"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+										model_output.append("        RosServiceServer '"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
 									} else {
-										model_output.append("        RosServiceServer '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
+										model_output.append("        RosServiceServer '"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvsr.replaceFirst("/", "")+"' { RefServer '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvsr+"'}");
 									}
 									if (cout_srvs > 0) {
 										model_output.append(",\n");
@@ -332,9 +359,9 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 								for(String srvc:srvcl) {
 									cout_srvc--;
 									if (ComponentNameSpace.isEmpty()) {
-										model_output.append("        RosServiceClient '/"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+										model_output.append("        RosServiceClient '"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
 									} else {
-										model_output.append("        RosServiceClient '/"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
+										model_output.append("        RosServiceClient '"+ComponentNameSpace.replaceFirst("/", "")+"/"+srvc.replaceFirst("/", "")+"' { RefClient '"+pkg_name+"."+artifact_name+"."+node_name+"."+srvc+"'}");
 									}
 									if (cout_srvc > 0) {
 										model_output.append(",\n");
@@ -449,6 +476,217 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		 */
 		public IFile getModelFile() {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
+		}
+	}
+
+
+
+	/**
+	 * This is the page where the type of object to create is selected.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public class ComponentInterfaceModelWizardInitialObjectCreationPage extends WizardPage {
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Combo initialObjectField;
+
+		/**
+		 * @generated
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected List<String> encodings;
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Combo encodingField;
+
+		/**
+		 * Pass in the selection.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ComponentInterfaceModelWizardInitialObjectCreationPage(String pageId) {
+			super(pageId);
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public void createControl(Composite parent) {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
+				GridLayout layout = new GridLayout();
+				layout.numColumns = 1;
+				layout.verticalSpacing = 12;
+				composite.setLayout(layout);
+
+				GridData data = new GridData();
+				data.verticalAlignment = GridData.FILL;
+				data.grabExcessVerticalSpace = true;
+				data.horizontalAlignment = GridData.FILL;
+				composite.setLayoutData(data);
+			}
+
+			Label containerLabel = new Label(composite, SWT.LEFT);
+			{
+				containerLabel.setText(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				containerLabel.setLayoutData(data);
+			}
+
+			initialObjectField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				initialObjectField.setLayoutData(data);
+			}
+
+			for (String objectName : getInitialObjectNames()) {
+				initialObjectField.add(getLabel(objectName));
+			}
+
+			if (initialObjectField.getItemCount() == 1) {
+				initialObjectField.select(0);
+			}
+			initialObjectField.addModifyListener(validator);
+
+			Label encodingLabel = new Label(composite, SWT.LEFT);
+			{
+				encodingLabel.setText(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				encodingLabel.setLayoutData(data);
+			}
+			encodingField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				encodingField.setLayoutData(data);
+			}
+
+			for (String encoding : getEncodings()) {
+				encodingField.add(encoding);
+			}
+
+			encodingField.select(0);
+			encodingField.addModifyListener(validator);
+
+			setPageComplete(validatePage());
+			setControl(composite);
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected ModifyListener validator =
+			new ModifyListener() {
+				public void modifyText(ModifyEvent e) {
+					setPageComplete(validatePage());
+				}
+			};
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected boolean validatePage() {
+			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		public void setVisible(boolean visible) {
+			super.setVisible(visible);
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
+					initialObjectField.clearSelection();
+					encodingField.setFocus();
+				}
+				else {
+					encodingField.clearSelection();
+					initialObjectField.setFocus();
+				}
+			}
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public String getInitialObjectName() {
+			String label = initialObjectField.getText();
+
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
+					return name;
+				}
+			}
+			return null;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public String getEncoding() {
+			return encodingField.getText();
+		}
+
+		/**
+		 * Returns the label for the specified type name.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected String getLabel(String typeName) {
+			try {
+				return ComponentInterfaceEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+			}
+			catch(MissingResourceException mre) {
+				ComponentInterfaceEditorPlugin.INSTANCE.log(mre);
+			}
+			return typeName;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Collection<String> getEncodings() {
+			if (encodings == null) {
+				encodings = new ArrayList<String>();
+				for (StringTokenizer stringTokenizer = new StringTokenizer(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+					encodings.add(stringTokenizer.nextToken());
+				}
+			}
+			return encodings;
 		}
 	}
 
@@ -594,6 +832,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		newFileCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_description"));
 		newFileCreationPage.setFileName(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
+
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
 		if (selection != null && !selection.isEmpty()) {

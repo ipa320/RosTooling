@@ -5,6 +5,7 @@ package componentInterface.impl;
 import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfaceFactory;
 import componentInterface.ComponentInterfacePackage;
+import componentInterface.NameSpaceComponent;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -61,6 +62,13 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass rosServiceClientEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nameSpaceComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -327,6 +335,33 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNameSpaceComponent() {
+		return nameSpaceComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameSpaceComponent_Name() {
+		return (EAttribute)nameSpaceComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNameSpaceComponent_NameSpace() {
+		return (EAttribute)nameSpaceComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNS() {
 		return nsEDataType;
 	}
@@ -385,6 +420,10 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__NAME);
 		createEAttribute(rosServiceClientEClass, ROS_SERVICE_CLIENT__NS);
 
+		nameSpaceComponentEClass = createEClass(NAME_SPACE_COMPONENT);
+		createEAttribute(nameSpaceComponentEClass, NAME_SPACE_COMPONENT__NAME);
+		createEAttribute(nameSpaceComponentEClass, NAME_SPACE_COMPONENT__NAME_SPACE);
+
 		// Create data types
 		nsEDataType = createEDataType(NS);
 	}
@@ -420,7 +459,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentInterfaceEClass.getESuperTypes().add(theRosPackage.getNamespacedElement());
+		componentInterfaceEClass.getESuperTypes().add(this.getNameSpaceComponent());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentInterfaceEClass, ComponentInterface.class, "ComponentInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -448,6 +487,10 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getRosServiceClient_Srvclient(), theRosPackage.getServiceClient(), null, "srvclient", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosServiceClient_Ns(), this.getNS(), "ns", null, 0, 1, RosServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(nameSpaceComponentEClass, NameSpaceComponent.class, "NameSpaceComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNameSpaceComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, NameSpaceComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNameSpaceComponent_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, NameSpaceComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(nsEDataType, String.class, "NS", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

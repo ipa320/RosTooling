@@ -2,6 +2,7 @@
  */
 package componentInterface.impl;
 
+import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
 import componentInterface.RosServiceClient;
 
@@ -174,19 +175,13 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * @generated NOT
 	 */
 	public String getComponentNs() {
-		String component_ns = null;
-		String ComponentInterface_toString = eContainer().eContents().toString();
-		if (ComponentInterface_toString.contains("parts") && ComponentInterface_toString.contains("componentInterface")) {
-			component_ns=ComponentInterface_toString.substring(ComponentInterface_toString.indexOf("parts: [", 1) + 8, ComponentInterface_toString.indexOf("]"));
-			if (component_ns.length()>0) {
-				return component_ns;
-			}else {
-				return NS_EDEFAULT;
-			}
+		ComponentInterface component = (ComponentInterface) srvclient.eContainer();
+		String component_ns = component.getNameSpace();
+		if (component_ns.length()>0) {
+			return component_ns;
 		}else {
 			return NS_EDEFAULT;
 		}
-		
 	}
 
 	/**

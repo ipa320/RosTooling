@@ -11,6 +11,7 @@ import componentInterface.RosSubscriber;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import ros.impl.NamespacedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,8 @@ import ros.impl.NamespacedElementImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getNameSpace <em>Name Space</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRospublisher <em>Rospublisher</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRossubscriber <em>Rossubscriber</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosserviceserver <em>Rosserviceserver</em>}</li>
@@ -39,7 +42,47 @@ import ros.impl.NamespacedElementImpl;
  *
  * @generated
  */
-public class ComponentInterfaceImpl extends NamespacedElementImpl implements ComponentInterface {
+public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container implements ComponentInterface {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNameSpace()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_SPACE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNameSpace() <em>Name Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNameSpace()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nameSpace = NAME_SPACE_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getRospublisher() <em>Rospublisher</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -97,6 +140,48 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentInterfacePackage.Literals.COMPONENT_INTERFACE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.COMPONENT_INTERFACE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNameSpace() {
+		return nameSpace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNameSpace(String newNameSpace) {
+		String oldNameSpace = nameSpace;
+		nameSpace = newNameSpace;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.COMPONENT_INTERFACE__NAME_SPACE, oldNameSpace, nameSpace));
 	}
 
 	/**
@@ -175,6 +260,10 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME:
+				return getName();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME_SPACE:
+				return getNameSpace();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
 				return getRospublisher();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER:
@@ -196,6 +285,12 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME:
+				setName((String)newValue);
+				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME_SPACE:
+				setNameSpace((String)newValue);
+				return;
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
 				getRospublisher().clear();
 				getRospublisher().addAll((Collection<? extends RosPublisher>)newValue);
@@ -224,6 +319,12 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME_SPACE:
+				setNameSpace(NAME_SPACE_EDEFAULT);
+				return;
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
 				getRospublisher().clear();
 				return;
@@ -248,6 +349,10 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__NAME_SPACE:
+				return NAME_SPACE_EDEFAULT == null ? nameSpace != null : !NAME_SPACE_EDEFAULT.equals(nameSpace);
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
 				return rospublisher != null && !rospublisher.isEmpty();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER:
@@ -258,6 +363,24 @@ public class ComponentInterfaceImpl extends NamespacedElementImpl implements Com
 				return rosserviceclient != null && !rosserviceclient.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", NameSpace: ");
+		result.append(nameSpace);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentInterfaceImpl

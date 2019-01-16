@@ -62,7 +62,7 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrivateNamespaceAccess().getGroup_3(), "rule__PrivateNamespace__Group_3__0");
 					put(grammarAccess.getPrivateNamespaceAccess().getGroup_3_3(), "rule__PrivateNamespace__Group_3_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getNameAssignment_2_1(), "rule__ComponentInterface__NameAssignment_2_1");
-					put(grammarAccess.getComponentInterfaceAccess().getNamespaceAssignment_3_1(), "rule__ComponentInterface__NamespaceAssignment_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getNameSpaceAssignment_3_1(), "rule__ComponentInterface__NameSpaceAssignment_3_1");
 					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_4_2(), "rule__ComponentInterface__RospublisherAssignment_4_2");
 					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_4_3_1(), "rule__ComponentInterface__RospublisherAssignment_4_3_1");
 					put(grammarAccess.getComponentInterfaceAccess().getRossubscriberAssignment_5_2(), "rule__ComponentInterface__RossubscriberAssignment_5_2");
