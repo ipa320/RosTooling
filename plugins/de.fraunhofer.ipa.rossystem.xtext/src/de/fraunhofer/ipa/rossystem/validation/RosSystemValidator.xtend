@@ -19,24 +19,26 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 
 	@Check
 	def void checkTopicConnection(TopicConnection topicconnection){
-		if( !topicconnection.fromTopic.name.equalsIgnoreCase(topicconnection.toTopic.name)){
-			error("Names not matched", null, NOT_MATCHED_NAME)
-		}
-		if( !topicconnection.fromTopic.publisher.message.name.equalsIgnoreCase(topicconnection.toTopic.subscriber.message.name)){
-			error("Messages not matched", null, NOT_MATCHED_TYPE)
-		}
-	}
+		for (pub:topicconnection.from){
+			for (sub:topicconnection.to){
+				/**if( !pub.name.equalsIgnoreCase(sub.name)){
+				error("Names not matched", null, NOT_MATCHED_NAME)
+				}*/
+				if( !pub.publisher.message.name.equalsIgnoreCase(sub.subscriber.message.name)){
+					error("Messages not matched", null, NOT_MATCHED_TYPE)
+				}
+			}
+	}}
 
 	@Check
 	def void checkSrvConnection(ServiceConnection serviceconnection){
-		if( !serviceconnection.fromSrv.name.equalsIgnoreCase(serviceconnection.toSrv.name)){
-			error("Names not matched", null, NOT_MATCHED_NAME)
-			return
-		}
-		if( !serviceconnection.fromSrv.srvserver.service.name.equalsIgnoreCase(serviceconnection.toSrv.srvclient.service.name)){
-			error("Services not matched", null, NOT_MATCHED_TYPE)
-			return
-		}
-	}
-	
-}
+		for (srvs:serviceconnection.from){
+			/**if( !srvs.name.equalsIgnoreCase(serviceconnection.to.name)){
+				error("Names not matched", null, NOT_MATCHED_NAME)
+				return
+			}*/
+			if( !srvs.srvserver.service.name.equalsIgnoreCase(serviceconnection.to.srvclient.service.name)){
+				error("Services not matched", null, NOT_MATCHED_TYPE)
+				return
+			}
+	}}}

@@ -18,9 +18,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import rossystem.RosSystem;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
@@ -197,19 +195,10 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ServiceConnection returns ServiceConnection
 	 *
 	 * Constraint:
-	 *     (FromSrv=[RosServiceServer|EString] ToSrv=[RosServiceClient|EString])
+	 *     (ServiceName=EString From+=[RosServiceServer|EString] From+=[RosServiceServer|EString]* To=[RosServiceClient|EString])
 	 */
 	protected void sequence_ServiceConnection(ISerializationContext context, ServiceConnection semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.SERVICE_CONNECTION__FROM_SRV) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.SERVICE_CONNECTION__FROM_SRV));
-			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.SERVICE_CONNECTION__TO_SRV) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.SERVICE_CONNECTION__TO_SRV));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getServiceConnectionAccess().getFromSrvRosServiceServerEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.SERVICE_CONNECTION__FROM_SRV, false));
-		feeder.accept(grammarAccess.getServiceConnectionAccess().getToSrvRosServiceClientEStringParserRuleCall_5_0_1(), semanticObject.eGet(RossystemPackage.Literals.SERVICE_CONNECTION__TO_SRV, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -218,19 +207,10 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     TopicConnection returns TopicConnection
 	 *
 	 * Constraint:
-	 *     (FromTopic=[RosPublisher|EString] ToTopic=[RosSubscriber|EString])
+	 *     (TopicName=EString From+=[RosPublisher|EString] From+=[RosPublisher|EString]* To+=[RosSubscriber|EString] To+=[RosSubscriber|EString]*)
 	 */
 	protected void sequence_TopicConnection(ISerializationContext context, TopicConnection semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.TOPIC_CONNECTION__FROM_TOPIC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.TOPIC_CONNECTION__FROM_TOPIC));
-			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.TOPIC_CONNECTION__TO_TOPIC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.TOPIC_CONNECTION__TO_TOPIC));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTopicConnectionAccess().getFromTopicRosPublisherEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.TOPIC_CONNECTION__FROM_TOPIC, false));
-		feeder.accept(grammarAccess.getTopicConnectionAccess().getToTopicRosSubscriberEStringParserRuleCall_5_0_1(), semanticObject.eGet(RossystemPackage.Literals.TOPIC_CONNECTION__TO_TOPIC, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
