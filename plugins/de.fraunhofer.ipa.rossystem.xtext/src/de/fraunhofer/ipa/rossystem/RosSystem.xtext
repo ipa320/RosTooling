@@ -18,16 +18,19 @@ RosSystem returns RosSystem:
 
 TopicConnection returns TopicConnection:
 	'TopicConnection'
+	TopicName=EString
 	'{'
-		'FromTopic' FromTopic=[componentInterface::RosPublisher|EString]
-		'ToTopic' ToTopic=[componentInterface::RosSubscriber|EString]
+		'From' '(' From+=[componentInterface::RosPublisher|EString] (',' From+=[componentInterface::RosPublisher|EString])* ')'
+		'To' '(' To+=[componentInterface::RosSubscriber|EString] ( ',' To+=[componentInterface::RosSubscriber|EString])* ')'
+
 	'}';
 
 ServiceConnection returns ServiceConnection:
 	'ServiceConnection'
+	ServiceName=EString
 	'{'
-		'FromSrv' FromSrv=[componentInterface::RosServiceServer|EString]
-		'ToSrv' ToSrv=[componentInterface::RosServiceClient|EString]
+		'From' '(' From+=[componentInterface::RosServiceServer|EString] (',' From+=[componentInterface::RosServiceServer|EString])* ')'
+		'To' To=[componentInterface::RosServiceClient|EString] 
 	'}';
 
 
