@@ -141,7 +141,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public String getName() {
-		if (name!=null) {
+		/**if (name!=null) {
 			if (name.length()>0) {
 				return name;
 			}if (ns != null && subscriber != null) {
@@ -154,7 +154,8 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 			}
 		}else {
 			return name;
-		}
+		}*/
+		return name;
 	}
 
 	/**
@@ -199,13 +200,14 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public String getNs() {
-		setDefaultValues();
+		/**setDefaultValues();
 		if (ns.isEmpty()) {
 			ns = NS_EDEFAULT;
 			return NS_EDEFAULT;
 		}else {
 			return ns;
-		}
+		}*/
+		return ns;
 	}
 
 	/**
@@ -214,7 +216,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
-		setDefaultValues();
+		/*setDefaultValues();*/
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())

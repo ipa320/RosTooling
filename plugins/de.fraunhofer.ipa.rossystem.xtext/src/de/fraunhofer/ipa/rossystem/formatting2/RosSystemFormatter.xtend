@@ -3,25 +3,16 @@
  */
 package de.fraunhofer.ipa.rossystem.formatting2
 
-import com.google.inject.Inject
-import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import rossystem.RosSystem
 import rossystem.ServiceConnection
 import rossystem.TopicConnection
-import ros.Publisher
-import componentInterface.RosPublisher
+import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess
+import javax.inject.Inject
 
-class RosSystemFormatter extends AbstractFormatter2 {
+/*class RosSystemFormatter extends AbstractFormatter2 {
 	
-	@Inject extension RosSystemGrammarAccess
-	
-	override format(Object obj, IFormattableDocument document) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
- /** 
 	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
 		for (TopicConnection topicConnection : rosSystem.getTopicConnections()) {
 			for (pub:topicConnection.from){
@@ -37,5 +28,22 @@ class RosSystemFormatter extends AbstractFormatter2 {
 						serviceConnection.format;
 				}
 			}
-	}}*/
+	}}
+}*/
+
+class RosSystemFormatter extends AbstractFormatter2 {
+	
+	@Inject extension RosSystemGrammarAccess
+
+	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
+		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		for (TopicConnection topicConnection : rosSystem.getTopicConnections()) {
+			topicConnection.format;
+		}
+		for (ServiceConnection serviceConnection : rosSystem.getServiceConnections()) {
+			serviceConnection.format;
+		}
+	}
+	
+	// TODO: implement for 
 }

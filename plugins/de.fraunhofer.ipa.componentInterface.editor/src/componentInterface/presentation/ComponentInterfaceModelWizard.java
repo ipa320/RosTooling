@@ -54,7 +54,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
@@ -63,10 +62,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.ui.dialogs.FileSelectionDialog;
-import org.eclipse.ui.dialogs.ResourceSelectionDialog;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
@@ -525,8 +521,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -866,17 +861,10 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 				}
 			}
 		}
-		
-		getNameandNamespaceCreationPage = new ComponentInterfaceModelWizardNamNSCreationPage("Whatever3");
-		getNameandNamespaceCreationPage.setTitle("Set Name and Namespace to the ComponentInterface");
-		getNameandNamespaceCreationPage.setDescription("Set Name and Namespace to the ComponentInterface");
-		addPage(getNameandNamespaceCreationPage);
-
-		
-		getInputFileCreationPage = new SelectinputFile("Whatever4");
-		getInputFileCreationPage.setTitle("Select ROS model input");
-		getInputFileCreationPage.setDescription("Select ROS model input");
-		addPage(getInputFileCreationPage);
+		initialObjectCreationPage = new ComponentInterfaceModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_label"));
+		initialObjectCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		addPage(initialObjectCreationPage);
 	}
 
 	/**
