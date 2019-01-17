@@ -110,10 +110,11 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:13:7: ( '}' )
-            // InternalRosSystem.g:13:9: '}'
+            // InternalRosSystem.g:13:7: ( 'Name' )
+            // InternalRosSystem.g:13:9: 'Name'
             {
-            match('}'); 
+            match("Name"); 
+
 
             }
 
@@ -130,11 +131,10 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:14:7: ( 'Name' )
-            // InternalRosSystem.g:14:9: 'Name'
+            // InternalRosSystem.g:14:7: ( '}' )
+            // InternalRosSystem.g:14:9: '}'
             {
-            match("Name"); 
-
+            match('}'); 
 
             }
 
@@ -694,10 +694,10 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4773:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalRosSystem.g:4773:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRosSystem.g:4827:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalRosSystem.g:4827:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalRosSystem.g:4773:11: ( '^' )?
+            // InternalRosSystem.g:4827:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -706,7 +706,7 @@ public class InternalRosSystemLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalRosSystem.g:4773:11: '^'
+                    // InternalRosSystem.g:4827:11: '^'
                     {
                     match('^'); 
 
@@ -724,7 +724,7 @@ public class InternalRosSystemLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRosSystem.g:4773:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRosSystem.g:4827:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -773,10 +773,10 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4775:10: ( ( '0' .. '9' )+ )
-            // InternalRosSystem.g:4775:12: ( '0' .. '9' )+
+            // InternalRosSystem.g:4829:10: ( ( '0' .. '9' )+ )
+            // InternalRosSystem.g:4829:12: ( '0' .. '9' )+
             {
-            // InternalRosSystem.g:4775:12: ( '0' .. '9' )+
+            // InternalRosSystem.g:4829:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -790,7 +790,7 @@ public class InternalRosSystemLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRosSystem.g:4775:13: '0' .. '9'
+            	    // InternalRosSystem.g:4829:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -822,10 +822,10 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4777:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalRosSystem.g:4777:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRosSystem.g:4831:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalRosSystem.g:4831:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalRosSystem.g:4777:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRosSystem.g:4831:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -843,10 +843,10 @@ public class InternalRosSystemLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRosSystem.g:4777:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalRosSystem.g:4831:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalRosSystem.g:4777:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRosSystem.g:4831:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -862,7 +862,7 @@ public class InternalRosSystemLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalRosSystem.g:4777:21: '\\\\' .
+                    	    // InternalRosSystem.g:4831:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -870,7 +870,7 @@ public class InternalRosSystemLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRosSystem.g:4777:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRosSystem.g:4831:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -895,10 +895,10 @@ public class InternalRosSystemLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRosSystem.g:4777:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalRosSystem.g:4831:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalRosSystem.g:4777:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRosSystem.g:4831:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -914,7 +914,7 @@ public class InternalRosSystemLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalRosSystem.g:4777:54: '\\\\' .
+                    	    // InternalRosSystem.g:4831:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -922,7 +922,7 @@ public class InternalRosSystemLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRosSystem.g:4777:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRosSystem.g:4831:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -965,12 +965,12 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4779:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRosSystem.g:4779:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRosSystem.g:4833:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRosSystem.g:4833:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRosSystem.g:4779:24: ( options {greedy=false; } : . )*
+            // InternalRosSystem.g:4833:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -995,7 +995,7 @@ public class InternalRosSystemLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalRosSystem.g:4779:52: .
+            	    // InternalRosSystem.g:4833:52: .
             	    {
             	    matchAny(); 
 
@@ -1025,12 +1025,12 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4781:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRosSystem.g:4781:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRosSystem.g:4835:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRosSystem.g:4835:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRosSystem.g:4781:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRosSystem.g:4835:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1043,7 +1043,7 @@ public class InternalRosSystemLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRosSystem.g:4781:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRosSystem.g:4835:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1063,7 +1063,7 @@ public class InternalRosSystemLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRosSystem.g:4781:40: ( ( '\\r' )? '\\n' )?
+            // InternalRosSystem.g:4835:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1072,9 +1072,9 @@ public class InternalRosSystemLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalRosSystem.g:4781:41: ( '\\r' )? '\\n'
+                    // InternalRosSystem.g:4835:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRosSystem.g:4781:41: ( '\\r' )?
+                    // InternalRosSystem.g:4835:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1083,7 +1083,7 @@ public class InternalRosSystemLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalRosSystem.g:4781:41: '\\r'
+                            // InternalRosSystem.g:4835:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1115,10 +1115,10 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4783:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRosSystem.g:4783:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRosSystem.g:4837:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRosSystem.g:4837:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRosSystem.g:4783:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRosSystem.g:4837:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1172,8 +1172,8 @@ public class InternalRosSystemLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRosSystem.g:4785:16: ( . )
-            // InternalRosSystem.g:4785:18: .
+            // InternalRosSystem.g:4839:16: ( . )
+            // InternalRosSystem.g:4839:18: .
             {
             matchAny(); 
 
@@ -1459,23 +1459,23 @@ public class InternalRosSystemLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\27\2\uffff\1\27\3\uffff\5\27\1\24\2\uffff\3\24\2\uffff\2\27\3\uffff\1\27\3\uffff\1\55\4\27\1\62\5\uffff\4\27\1\uffff\4\27\1\uffff\6\27\1\112\2\27\1\115\1\27\1\117\13\27\1\uffff\2\27\1\uffff\1\27\1\uffff\54\27\1\u008b\10\27\1\u0094\1\u0095\1\u0096\3\27\1\uffff\10\27\3\uffff\25\27\1\u00b9\1\u00ba\4\27\1\u00c0\1\u00c1\1\u00c2\2\27\1\u00c5\1\u00c6\2\uffff\1\u00c7\3\27\1\u00cb\3\uffff\2\27\3\uffff\3\27\1\uffff\2\27\1\u00d4\2\27\1\u00d7\1\u00d8\1\u00d9\1\uffff\2\27\3\uffff\1\u00dd\1\27\1\u00df\1\uffff\1\u00e0\2\uffff";
+        "\1\uffff\1\27\1\uffff\1\27\4\uffff\5\27\1\24\2\uffff\3\24\2\uffff\2\27\2\uffff\1\27\4\uffff\1\55\4\27\1\62\5\uffff\4\27\1\uffff\4\27\1\uffff\6\27\1\112\2\27\1\115\1\27\1\117\13\27\1\uffff\2\27\1\uffff\1\27\1\uffff\54\27\1\u008b\10\27\1\u0094\1\u0095\1\u0096\3\27\1\uffff\10\27\3\uffff\25\27\1\u00b9\1\u00ba\4\27\1\u00c0\1\u00c1\1\u00c2\2\27\1\u00c5\1\u00c6\2\uffff\1\u00c7\3\27\1\u00cb\3\uffff\2\27\3\uffff\3\27\1\uffff\2\27\1\u00d4\2\27\1\u00d7\1\u00d8\1\u00d9\1\uffff\2\27\3\uffff\1\u00dd\1\27\1\u00df\1\uffff\1\u00e0\2\uffff";
     static final String DFA12_eofS =
         "\u00e1\uffff";
     static final String DFA12_minS =
-        "\1\0\1\145\2\uffff\1\141\3\uffff\1\157\1\145\1\162\1\157\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\163\1\146\3\uffff\1\155\3\uffff\1\60\1\162\1\157\2\155\1\60\5\uffff\2\103\1\145\1\151\1\uffff\1\166\1\155\1\160\1\145\1\uffff\1\145\1\157\2\165\1\145\1\154\1\60\1\143\1\151\1\60\1\157\1\60\1\163\1\142\1\166\1\162\1\155\3\142\1\162\1\151\1\160\1\uffff\1\103\1\143\1\uffff\1\156\1\uffff\1\164\1\163\1\103\1\166\1\160\2\154\1\163\1\166\1\145\1\141\1\157\3\145\1\143\1\145\1\154\1\151\1\157\2\151\1\143\1\145\1\156\1\143\1\156\1\103\1\156\1\155\2\162\1\151\1\143\1\156\2\163\2\162\1\164\1\145\1\156\1\157\1\164\1\60\1\151\1\166\3\145\2\150\1\151\3\60\1\145\1\156\1\111\1\uffff\1\142\1\145\1\156\1\103\1\156\2\145\1\142\3\uffff\1\143\2\156\1\145\1\162\1\164\1\145\1\154\1\164\2\162\1\145\1\164\1\145\1\164\1\162\2\163\1\162\1\151\1\163\2\60\1\162\1\151\1\143\1\145\3\60\1\166\1\145\2\60\2\uffff\1\60\1\157\1\164\1\162\1\60\3\uffff\1\145\1\156\3\uffff\1\156\1\151\1\146\1\uffff\1\162\1\164\1\60\1\157\1\141\3\60\1\uffff\1\156\1\143\3\uffff\1\60\1\145\1\60\1\uffff\1\60\2\uffff";
+        "\1\0\1\145\1\uffff\1\141\4\uffff\1\157\1\145\1\162\1\157\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\163\1\146\2\uffff\1\155\4\uffff\1\60\1\162\1\157\2\155\1\60\5\uffff\2\103\1\145\1\151\1\uffff\1\166\1\155\1\160\1\145\1\uffff\1\145\1\157\2\165\1\145\1\154\1\60\1\143\1\151\1\60\1\157\1\60\1\163\1\142\1\166\1\162\1\155\3\142\1\162\1\151\1\160\1\uffff\1\103\1\143\1\uffff\1\156\1\uffff\1\164\1\163\1\103\1\166\1\160\2\154\1\163\1\166\1\145\1\141\1\157\3\145\1\143\1\145\1\154\1\151\1\157\2\151\1\143\1\145\1\156\1\143\1\156\1\103\1\156\1\155\2\162\1\151\1\143\1\156\2\163\2\162\1\164\1\145\1\156\1\157\1\164\1\60\1\151\1\166\3\145\2\150\1\151\3\60\1\145\1\156\1\111\1\uffff\1\142\1\145\1\156\1\103\1\156\2\145\1\142\3\uffff\1\143\2\156\1\145\1\162\1\164\1\145\1\154\1\164\2\162\1\145\1\164\1\145\1\164\1\162\2\163\1\162\1\151\1\163\2\60\1\162\1\151\1\143\1\145\3\60\1\166\1\145\2\60\2\uffff\1\60\1\157\1\164\1\162\1\60\3\uffff\1\145\1\156\3\uffff\1\156\1\151\1\146\1\uffff\1\162\1\164\1\60\1\157\1\141\3\60\1\uffff\1\156\1\143\3\uffff\1\60\1\145\1\60\1\uffff\1\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\157\2\uffff\1\141\3\uffff\1\157\1\145\1\162\1\157\1\163\1\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\146\3\uffff\1\155\3\uffff\1\172\1\162\1\157\2\155\1\172\5\uffff\2\123\1\145\1\151\1\uffff\1\166\1\155\1\160\1\145\1\uffff\1\171\1\157\3\165\1\154\1\172\1\143\1\151\1\172\1\157\1\172\1\163\1\142\1\166\1\162\1\155\3\142\1\162\1\151\1\160\1\uffff\1\103\1\143\1\uffff\1\156\1\uffff\1\164\1\163\1\123\1\166\1\160\2\154\1\163\1\166\1\145\1\141\1\157\3\145\1\143\1\145\1\154\1\151\1\157\2\151\1\143\1\145\1\156\1\143\1\156\1\103\1\156\1\155\2\162\1\151\1\143\1\156\2\163\2\162\1\164\1\145\1\156\1\157\1\164\1\172\1\151\1\166\3\145\2\150\1\151\3\172\1\145\1\156\1\111\1\uffff\1\142\1\145\1\156\1\123\1\156\2\145\1\142\3\uffff\1\143\2\156\1\145\1\162\1\164\1\145\1\154\1\164\2\162\1\145\1\164\1\145\1\164\1\162\2\163\1\162\1\151\1\163\2\172\1\162\1\151\1\143\1\145\3\172\1\166\1\145\2\172\2\uffff\1\172\1\157\1\164\1\162\1\172\3\uffff\1\145\1\156\3\uffff\1\156\1\151\1\146\1\uffff\1\162\1\164\1\172\1\157\1\141\3\172\1\uffff\1\156\1\143\3\uffff\1\172\1\145\1\172\1\uffff\1\172\2\uffff";
+        "\1\uffff\1\157\1\uffff\1\141\4\uffff\1\157\1\145\1\162\1\157\1\163\1\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\146\2\uffff\1\155\4\uffff\1\172\1\162\1\157\2\155\1\172\5\uffff\2\123\1\145\1\151\1\uffff\1\166\1\155\1\160\1\145\1\uffff\1\171\1\157\3\165\1\154\1\172\1\143\1\151\1\172\1\157\1\172\1\163\1\142\1\166\1\162\1\155\3\142\1\162\1\151\1\160\1\uffff\1\103\1\143\1\uffff\1\156\1\uffff\1\164\1\163\1\123\1\166\1\160\2\154\1\163\1\166\1\145\1\141\1\157\3\145\1\143\1\145\1\154\1\151\1\157\2\151\1\143\1\145\1\156\1\143\1\156\1\103\1\156\1\155\2\162\1\151\1\143\1\156\2\163\2\162\1\164\1\145\1\156\1\157\1\164\1\172\1\151\1\166\3\145\2\150\1\151\3\172\1\145\1\156\1\111\1\uffff\1\142\1\145\1\156\1\123\1\156\2\145\1\142\3\uffff\1\143\2\156\1\145\1\162\1\164\1\145\1\154\1\164\2\162\1\145\1\164\1\145\1\164\1\162\2\163\1\162\1\151\1\163\2\172\1\162\1\151\1\143\1\145\3\172\1\166\1\145\2\172\2\uffff\1\172\1\157\1\164\1\162\1\172\3\uffff\1\145\1\156\3\uffff\1\156\1\151\1\146\1\uffff\1\162\1\164\1\172\1\157\1\141\3\172\1\uffff\1\156\1\143\3\uffff\1\172\1\145\1\172\1\uffff\1\172\2\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\1\uffff\1\6\1\7\1\10\6\uffff\1\37\1\40\3\uffff\1\44\1\45\2\uffff\1\37\1\2\1\3\1\uffff\1\6\1\7\1\10\6\uffff\1\40\1\41\1\42\1\43\1\44\4\uffff\1\15\4\uffff\1\30\27\uffff\1\4\2\uffff\1\14\1\uffff\1\20\73\uffff\1\1\10\uffff\1\34\1\36\1\21\42\uffff\1\26\1\27\5\uffff\1\31\1\24\1\25\2\uffff\1\5\1\22\1\32\3\uffff\1\23\10\uffff\1\13\2\uffff\1\33\1\35\1\11\3\uffff\1\16\1\uffff\1\12\1\17";
+        "\2\uffff\1\2\1\uffff\1\4\1\6\1\7\1\10\6\uffff\1\37\1\40\3\uffff\1\44\1\45\2\uffff\1\37\1\2\1\uffff\1\4\1\6\1\7\1\10\6\uffff\1\40\1\41\1\42\1\43\1\44\4\uffff\1\15\4\uffff\1\30\27\uffff\1\3\2\uffff\1\14\1\uffff\1\20\73\uffff\1\1\10\uffff\1\34\1\36\1\21\42\uffff\1\26\1\27\5\uffff\1\31\1\24\1\25\2\uffff\1\5\1\22\1\32\3\uffff\1\23\10\uffff\1\13\2\uffff\1\33\1\35\1\11\3\uffff\1\16\1\uffff\1\12\1\17";
     static final String DFA12_specialS =
         "\1\1\17\uffff\1\2\1\0\u00cf\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\24\2\23\2\24\1\23\22\24\1\23\1\24\1\20\4\24\1\21\1\5\1\6\2\24\1\7\2\24\1\22\12\17\7\24\2\16\1\13\2\16\1\12\7\16\1\4\3\16\1\1\1\11\1\10\6\16\3\24\1\15\1\16\1\24\15\16\1\14\14\16\1\2\1\24\1\3\uff82\24",
+            "\11\24\2\23\2\24\1\23\22\24\1\23\1\24\1\20\4\24\1\21\1\5\1\6\2\24\1\7\2\24\1\22\12\17\7\24\2\16\1\13\2\16\1\12\7\16\1\3\3\16\1\1\1\11\1\10\6\16\3\24\1\15\1\16\1\24\15\16\1\14\14\16\1\2\1\24\1\4\uff82\24",
             "\1\26\11\uffff\1\25",
             "",
+            "\1\31",
             "",
-            "\1\32",
             "",
             "",
             "",
@@ -1496,8 +1496,8 @@ public class InternalRosSystemLexer extends Lexer {
             "\1\52",
             "",
             "",
-            "",
             "\1\53",
+            "",
             "",
             "",
             "",
@@ -1752,9 +1752,9 @@ public class InternalRosSystemLexer extends Lexer {
 
                         else if ( (LA12_0=='{') ) {s = 2;}
 
-                        else if ( (LA12_0=='}') ) {s = 3;}
+                        else if ( (LA12_0=='N') ) {s = 3;}
 
-                        else if ( (LA12_0=='N') ) {s = 4;}
+                        else if ( (LA12_0=='}') ) {s = 4;}
 
                         else if ( (LA12_0=='(') ) {s = 5;}
 

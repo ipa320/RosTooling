@@ -96,7 +96,7 @@ public interface RosSystem extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ros Component</em>' containment reference list.
 	 * @see rossystem.RossystemPackage#getRosSystem_RosComponent()
-	 * @model containment="true"
+	 * @model containment="true" derived="true"
 	 * @generated
 	 */
 	EList<ComponentInterface> getRosComponent();

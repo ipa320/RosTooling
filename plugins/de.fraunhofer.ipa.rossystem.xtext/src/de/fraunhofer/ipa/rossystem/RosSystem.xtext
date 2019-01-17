@@ -10,10 +10,10 @@ RosSystem returns RosSystem:
 	{RosSystem}
 	'RosSystem'
 	'{'
-		('Name' Name=EString)?
-		('RosComponents' '(' RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)* ')' )?
-		('TopicConnections' '{' TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)* '}' )?
-		('ServiceConnections' '{' ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)* '}' )?
+		'Name' Name=EString
+		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
+		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
+		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
 	'}';
 
 TopicConnection returns TopicConnection:

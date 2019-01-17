@@ -9,7 +9,6 @@ import componentInterface.ComponentInterface;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -141,7 +140,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public String getName() {
-		if (name!=null) {
+		/**if (name!=null) {
 			if (name.length()>0) {
 				return name;
 			}if (ns != null && publisher != null) {
@@ -154,7 +153,8 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 			}
 		}else {
 			return name;
-		}
+		}*/
+		return name;
 	}
 
 	/**
@@ -199,13 +199,14 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public String getNs() {
-		setDefaultValues();
+		/**setDefaultValues();
 		if (ns.isEmpty()) {
 			ns = NS_EDEFAULT;
 			return NS_EDEFAULT;
 		}else {
 			return ns;
-		}
+		}*/
+		return ns;
 	}
 
 	/**
@@ -214,7 +215,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public void setNs(String newNs) {
-		setDefaultValues();
+		/*setDefaultValues();*/
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())
