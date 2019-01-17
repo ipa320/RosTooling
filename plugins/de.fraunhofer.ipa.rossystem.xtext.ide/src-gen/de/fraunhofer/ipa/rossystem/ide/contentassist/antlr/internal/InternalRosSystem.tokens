@@ -3,7 +3,7 @@
 ','=18
 'ComponentInterface'=25
 'From'=22
-'Name'=14
+'Name'=13
 'NameSpace'=27
 'RefClient'=40
 'RefPublisher'=33
@@ -27,7 +27,7 @@
 'name'=26
 'ns'=34
 '{'=12
-'}'=13
+'}'=14
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=6

@@ -11,6 +11,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +21,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RosSystemGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
+	protected AbstractElementAlias match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
+	protected AbstractElementAlias match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RosSystemGrammarAccess) access;
+		match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRosComponentsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightParenthesisKeyword_5_3()));
+		match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getServiceConnectionsKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_7_3()));
+		match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getTopicConnectionsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_6_3()));
 	}
 	
 	@Override
@@ -36,8 +45,54 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
+				emit_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
+				emit_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q.equals(syntax))
+				emit_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ('RosComponents' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString (ambiguity) 'TopicConnections' '{' TopicConnections+=TopicConnection
+	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? '}' (rule end)
+	 */
+	protected void emit_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('ServiceConnections' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? (ambiguity) '}' (rule end)
+	 *     TopicConnections+=TopicConnection '}' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('TopicConnections' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('ServiceConnections' '{' '}')? '}' (rule end)
+	 */
+	protected void emit_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

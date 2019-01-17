@@ -179,7 +179,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         Name=EString? 
+	 *         Name=EString 
 	 *         (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*)? 
 	 *         (TopicConnections+=TopicConnection TopicConnections+=TopicConnection*)? 
 	 *         (ServiceConnections+=ServiceConnection ServiceConnections+=ServiceConnection*)?
