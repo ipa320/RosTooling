@@ -7,4 +7,11 @@
 	       name="ros">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="de.fraunhofer.ipa.ros.sirius.ExternalJavaActionNewComponents"
+           id="de.fraunhofer.ipa.ros.sirius.javaActionsNewComponent">
+     </javaActions>
+  </extension>
 </plugin>
