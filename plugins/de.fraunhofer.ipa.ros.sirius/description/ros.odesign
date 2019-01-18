@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ros" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ros" version="12.0.0.2017041100">
   <ownedViewpoints name="component" modelFileExtension="ros" icon="/de.fraunhofer.ipa.ros.sirius/icons/component.gif">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Artifact diagram" domainClass="ros::Artifact" enablePopupBars="true">
       <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
@@ -264,6 +264,49 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="New Component" forceRefresh="true" inverseSelectionOrder="true" containerMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="componentInterface::ComponentInterface" referenceName="RosComponent">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Ros Component">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="RosComponent" labelExpression="RosComponent" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='New%20Component']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Component" labelExpression="Component Description" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" helpExpression="Component Name" valueExpression="aql:instance.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="NameSpace" labelExpression="NameSpace" helpExpression="Component NameSpace" valueExpression="aql:instance.NameSpace">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="NameSpace" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="Browser" labelExpression="RosModel" helpExpression="Select ROS model input" buttonLabelExpression="Browse..">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="BrowserROSFile" action="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='NewComponent2']"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewComponent2" id="de.fraunhofer.ipa.ros.sirius.javaActionsNewComponent"/>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
