@@ -17,4 +17,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
 Automatic-Module-Name: de.fraunhofer.ipa.ros.sirius
-Import-Package: componentInterface.presentation
+Import-Package: componentInterface.impl,
+ componentInterface.presentation

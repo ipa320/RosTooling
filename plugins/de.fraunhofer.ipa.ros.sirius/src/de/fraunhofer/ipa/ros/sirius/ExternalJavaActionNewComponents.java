@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
-
+import componentInterface.impl.ComponentInterfaceImpl;
 import componentInterface.presentation.ComponentInterfaceEditorPlugin;
 import componentInterface.presentation.ComponentInterfaceModelWizardOnlyRosInputModel;
 
@@ -49,10 +49,7 @@ public class ExternalJavaActionNewComponents implements IExternalJavaAction {
     	WizardDialog dialog = new WizardDialog(activeShell,wizard);
     	dialog.create();
     	dialog.getShell().setText(wizard.getWindowTitle());
-    	int result = dialog.open();
-    	System.out.println(result);
-
+    	dialog.open();
 	}
-
 }
 
