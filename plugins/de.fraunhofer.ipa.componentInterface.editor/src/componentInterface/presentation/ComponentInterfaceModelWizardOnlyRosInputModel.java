@@ -15,6 +15,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -61,13 +63,14 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	public IFile modelFile;
 	public String ComponentName;
 	public String ComponentNameSpace;
+	public Collection<? extends EObject> CInterface;
 
-	public void init(IWorkbench workbench, IStructuredSelection selection, Collection<? extends EObject> name, Map<String, Object> nameSpace) {
+	public void init(IWorkbench workbench, IStructuredSelection selection, Collection<? extends EObject> CI, Map<String, Object> nameSpace) {
 		this.workbench = workbench;
 		this.selection = selection;
-		ComponentName = name.toString();
-		ComponentNameSpace = nameSpace.toString();
-		setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		ComponentName = CI.toString().substring(CI.toString().indexOf("name:")+6,CI.toString().indexOf(","));
+		ComponentNameSpace = CI.toString().substring(CI.toString().indexOf("NameSpace:")+11,CI.toString().indexOf(")]"));
+	    setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ComponentInterfaceEditorPlugin.INSTANCE.getImage("full/wizban/NewComponentInterface")));
 	}
 
@@ -83,14 +86,20 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 					@Override
 					protected void execute(IProgressMonitor progressMonitor) {
 						try {
+							String representation_name = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getName();
+							IProject project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
+							IFile aird_file = project.getFile("representation.aird");
+							
+							System.out.println(project.getName());
+							
+							
 							StringBuilder model_output = new StringBuilder();
 							if (ComponentNameSpace.isEmpty()) {
 								model_output.append("ComponentInterface { name '"+ComponentName+"' \n");
 							} else {
 								model_output.append("ComponentInterface { name '"+ComponentName+"' NameSpace '"+ComponentNameSpace+"' \n");
 							}
-							
-							
+
 							Scanner in = new Scanner(new FileReader(Inputpath));
 							StringBuilder sb = new StringBuilder();
 							
@@ -202,8 +211,7 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 							model_output.append("}");
 							byte[] bytes = model_output.toString().getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
-							System.out.println(source);
-
+							System.out.println(model_output);
 
 						}
 						catch (Exception exception) {
