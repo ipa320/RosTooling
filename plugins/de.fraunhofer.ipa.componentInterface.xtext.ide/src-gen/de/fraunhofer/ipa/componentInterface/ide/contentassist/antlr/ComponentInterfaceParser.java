@@ -31,19 +31,17 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getNamespaceAccess().getAlternatives(), "rule__Namespace__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup(), "rule__ComponentInterface__Group__0");
-					put(grammarAccess.getComponentInterfaceAccess().getGroup_2(), "rule__ComponentInterface__Group_2__0");
-					put(grammarAccess.getComponentInterfaceAccess().getGroup_3(), "rule__ComponentInterface__Group_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_4(), "rule__ComponentInterface__Group_4__0");
-					put(grammarAccess.getComponentInterfaceAccess().getGroup_4_3(), "rule__ComponentInterface__Group_4_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_5(), "rule__ComponentInterface__Group_5__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_5_3(), "rule__ComponentInterface__Group_5_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_6(), "rule__ComponentInterface__Group_6__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_6_3(), "rule__ComponentInterface__Group_6_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_7(), "rule__ComponentInterface__Group_7__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_7_3(), "rule__ComponentInterface__Group_7_3__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_8(), "rule__ComponentInterface__Group_8__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_8_3(), "rule__ComponentInterface__Group_8_3__0");
 					put(grammarAccess.getRosPublisherAccess().getGroup(), "rule__RosPublisher__Group__0");
 					put(grammarAccess.getRosPublisherAccess().getGroup_4(), "rule__RosPublisher__Group_4__0");
 					put(grammarAccess.getRosSubscriberAccess().getGroup(), "rule__RosSubscriber__Group__0");
@@ -52,25 +50,16 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRosServiceServerAccess().getGroup_4(), "rule__RosServiceServer__Group_4__0");
 					put(grammarAccess.getRosServiceClientAccess().getGroup(), "rule__RosServiceClient__Group__0");
 					put(grammarAccess.getRosServiceClientAccess().getGroup_4(), "rule__RosServiceClient__Group_4__0");
-					put(grammarAccess.getGlobalNamespaceAccess().getGroup(), "rule__GlobalNamespace__Group__0");
-					put(grammarAccess.getGlobalNamespaceAccess().getGroup_3(), "rule__GlobalNamespace__Group_3__0");
-					put(grammarAccess.getGlobalNamespaceAccess().getGroup_3_3(), "rule__GlobalNamespace__Group_3_3__0");
-					put(grammarAccess.getRelativeNamespace_ImplAccess().getGroup(), "rule__RelativeNamespace_Impl__Group__0");
-					put(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3(), "rule__RelativeNamespace_Impl__Group_3__0");
-					put(grammarAccess.getRelativeNamespace_ImplAccess().getGroup_3_3(), "rule__RelativeNamespace_Impl__Group_3_3__0");
-					put(grammarAccess.getPrivateNamespaceAccess().getGroup(), "rule__PrivateNamespace__Group__0");
-					put(grammarAccess.getPrivateNamespaceAccess().getGroup_3(), "rule__PrivateNamespace__Group_3__0");
-					put(grammarAccess.getPrivateNamespaceAccess().getGroup_3_3(), "rule__PrivateNamespace__Group_3_3__0");
-					put(grammarAccess.getComponentInterfaceAccess().getNameAssignment_2_1(), "rule__ComponentInterface__NameAssignment_2_1");
-					put(grammarAccess.getComponentInterfaceAccess().getNameSpaceAssignment_3_1(), "rule__ComponentInterface__NameSpaceAssignment_3_1");
-					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_4_2(), "rule__ComponentInterface__RospublisherAssignment_4_2");
-					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_4_3_1(), "rule__ComponentInterface__RospublisherAssignment_4_3_1");
-					put(grammarAccess.getComponentInterfaceAccess().getRossubscriberAssignment_5_2(), "rule__ComponentInterface__RossubscriberAssignment_5_2");
-					put(grammarAccess.getComponentInterfaceAccess().getRossubscriberAssignment_5_3_1(), "rule__ComponentInterface__RossubscriberAssignment_5_3_1");
-					put(grammarAccess.getComponentInterfaceAccess().getRosserviceserverAssignment_6_2(), "rule__ComponentInterface__RosserviceserverAssignment_6_2");
-					put(grammarAccess.getComponentInterfaceAccess().getRosserviceserverAssignment_6_3_1(), "rule__ComponentInterface__RosserviceserverAssignment_6_3_1");
-					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_7_2(), "rule__ComponentInterface__RosserviceclientAssignment_7_2");
-					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_7_3_1(), "rule__ComponentInterface__RosserviceclientAssignment_7_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getNameAssignment_3(), "rule__ComponentInterface__NameAssignment_3");
+					put(grammarAccess.getComponentInterfaceAccess().getNameSpaceAssignment_4_1(), "rule__ComponentInterface__NameSpaceAssignment_4_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_5_2(), "rule__ComponentInterface__RospublisherAssignment_5_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_5_3_1(), "rule__ComponentInterface__RospublisherAssignment_5_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRossubscriberAssignment_6_2(), "rule__ComponentInterface__RossubscriberAssignment_6_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRossubscriberAssignment_6_3_1(), "rule__ComponentInterface__RossubscriberAssignment_6_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRosserviceserverAssignment_7_2(), "rule__ComponentInterface__RosserviceserverAssignment_7_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRosserviceserverAssignment_7_3_1(), "rule__ComponentInterface__RosserviceserverAssignment_7_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_8_2(), "rule__ComponentInterface__RosserviceclientAssignment_8_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_8_3_1(), "rule__ComponentInterface__RosserviceclientAssignment_8_3_1");
 					put(grammarAccess.getRosPublisherAccess().getNameAssignment_2(), "rule__RosPublisher__NameAssignment_2");
 					put(grammarAccess.getRosPublisherAccess().getNsAssignment_4_1(), "rule__RosPublisher__NsAssignment_4_1");
 					put(grammarAccess.getRosPublisherAccess().getPublisherAssignment_6(), "rule__RosPublisher__PublisherAssignment_6");
@@ -83,12 +72,6 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRosServiceClientAccess().getNameAssignment_2(), "rule__RosServiceClient__NameAssignment_2");
 					put(grammarAccess.getRosServiceClientAccess().getNsAssignment_4_1(), "rule__RosServiceClient__NsAssignment_4_1");
 					put(grammarAccess.getRosServiceClientAccess().getSrvclientAssignment_6(), "rule__RosServiceClient__SrvclientAssignment_6");
-					put(grammarAccess.getGlobalNamespaceAccess().getPartsAssignment_3_2(), "rule__GlobalNamespace__PartsAssignment_3_2");
-					put(grammarAccess.getGlobalNamespaceAccess().getPartsAssignment_3_3_1(), "rule__GlobalNamespace__PartsAssignment_3_3_1");
-					put(grammarAccess.getRelativeNamespace_ImplAccess().getPartsAssignment_3_2(), "rule__RelativeNamespace_Impl__PartsAssignment_3_2");
-					put(grammarAccess.getRelativeNamespace_ImplAccess().getPartsAssignment_3_3_1(), "rule__RelativeNamespace_Impl__PartsAssignment_3_3_1");
-					put(grammarAccess.getPrivateNamespaceAccess().getPartsAssignment_3_2(), "rule__PrivateNamespace__PartsAssignment_3_2");
-					put(grammarAccess.getPrivateNamespaceAccess().getPartsAssignment_3_3_1(), "rule__PrivateNamespace__PartsAssignment_3_3_1");
 				}
 			};
 		}

@@ -23,6 +23,7 @@ import componentInterface.RosPublisher
 import componentInterface.RosSubscriber
 import componentInterface.RosServiceServer
 import componentInterface.RosServiceClient
+import componentInterface.NameSpaceComponent
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -41,7 +42,7 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 		default_config.setDescription("DEFAULT_OUTPUT");
 		default_config.setOutputDirectory("./src-gen/");
 		default_config.setOverrideExistingResources(true);
-		default_config.setCreateOutputDirectory(false);
+		default_config.setCreateOutputDirectory(true);
 		default_config.setCleanUpDerivedResources(false);
 		default_config.setSetDerivedProperty(false);
 		return newHashSet(cm_config, default_config)
@@ -91,7 +92,7 @@ class RosSystemGenerator extends AbstractGenerator {
 <?xml version="1.0"?>
 <launch>
 	«FOR component:system.rosComponent»
-	<node pkg="«component.compile_pkg»" type="«component.compile_art»«init()»" name="«IF component.hasNS»«component.get_ns»_«ENDIF»«component.compile_art»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init()»
+	<node pkg="«component.compile_pkg»" type="«component.compile_art»«init()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init()»
 		«FOR rosPublisher:component.rospublisher»
 			«IF component.hasNS»
 				«IF rosPublisher.name.contains(component.get_ns)»
@@ -221,7 +222,7 @@ RosSrvClients{
 
 
 def boolean hasNS(ComponentInterface component){
-	if(!component.eAllContents.toIterable.filter(Namespace).empty){
+	if(!component.nameSpace.nullOrEmpty){
 		return true;
 	}else{
 		return false

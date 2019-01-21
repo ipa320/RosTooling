@@ -14,7 +14,6 @@ public abstract class AbstractComponentInterfaceValidator extends AbstractDeclar
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.example.org/componentInterface"));
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.example.org/ros"));
 		return result;
 	}
 	
