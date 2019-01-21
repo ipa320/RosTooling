@@ -19,10 +19,6 @@ import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import ros.GlobalNamespace;
-import ros.PrivateNamespace;
-import ros.RelativeNamespace;
-import ros.RosPackage;
 
 @SuppressWarnings("all")
 public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -54,18 +50,6 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 				sequence_RosSubscriber(context, (RosSubscriber) semanticObject); 
 				return; 
 			}
-		else if (epackage == RosPackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case RosPackage.GLOBAL_NAMESPACE:
-				sequence_GlobalNamespace(context, (GlobalNamespace) semanticObject); 
-				return; 
-			case RosPackage.PRIVATE_NAMESPACE:
-				sequence_PrivateNamespace(context, (PrivateNamespace) semanticObject); 
-				return; 
-			case RosPackage.RELATIVE_NAMESPACE:
-				sequence_RelativeNamespace_Impl(context, (RelativeNamespace) semanticObject); 
-				return; 
-			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -76,90 +60,15 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             ((name=EString? NameSpace=EString) | NameSpace=EString) 
-	 *             rossubscriber+=RosSubscriber 
-	 *             rossubscriber+=RosSubscriber* 
-	 *             (
-	 *                 (
-	 *                     rosserviceserver+=RosServiceServer 
-	 *                     rosserviceserver+=RosServiceServer* 
-	 *                     (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)
-	 *                 ) | 
-	 *                 (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)
-	 *             )?
-	 *         ) | 
-	 *         (
-	 *             (
-	 *                 (name=EString? NameSpace=EString) | 
-	 *                 (
-	 *                     name=EString? 
-	 *                     NameSpace=EString 
-	 *                     rospublisher+=RosPublisher 
-	 *                     rospublisher+=RosPublisher* 
-	 *                     (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)?
-	 *                 ) | 
-	 *                 NameSpace=EString
-	 *             ) 
-	 *             rosserviceserver+=RosServiceServer 
-	 *             rosserviceserver+=RosServiceServer* 
-	 *             (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)
-	 *         ) | 
-	 *         (name=EString? NameSpace=EString) | 
-	 *         (((name=EString? NameSpace=EString) | NameSpace=EString) (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)) | 
-	 *         (
-	 *             name=EString? 
-	 *             NameSpace=EString 
-	 *             rospublisher+=RosPublisher 
-	 *             rospublisher+=RosPublisher* 
-	 *             (
-	 *                 ((rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)) | 
-	 *                 (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)
-	 *             )
-	 *         ) | 
-	 *         NameSpace=EString
-	 *     )?
+	 *         name=EString 
+	 *         NameSpace=EString? 
+	 *         (rospublisher+=RosPublisher rospublisher+=RosPublisher*)? 
+	 *         (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? 
+	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
+	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)?
+	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Namespace returns GlobalNamespace
-	 *     GlobalNamespace returns GlobalNamespace
-	 *
-	 * Constraint:
-	 *     (parts+=EString parts+=EString*)?
-	 */
-	protected void sequence_GlobalNamespace(ISerializationContext context, GlobalNamespace semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Namespace returns PrivateNamespace
-	 *     PrivateNamespace returns PrivateNamespace
-	 *
-	 * Constraint:
-	 *     (parts+=EString parts+=EString*)?
-	 */
-	protected void sequence_PrivateNamespace(ISerializationContext context, PrivateNamespace semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Namespace returns RelativeNamespace
-	 *     RelativeNamespace_Impl returns RelativeNamespace
-	 *
-	 * Constraint:
-	 *     (parts+=EString parts+=EString*)?
-	 */
-	protected void sequence_RelativeNamespace_Impl(ISerializationContext context, RelativeNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

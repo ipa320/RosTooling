@@ -44,7 +44,7 @@ EString returns ecore::EString:
 ComponentInterface returns componentInterface::ComponentInterface:
 	'ComponentInterface'
 	'{'
-		('name' name=EString)?
+		'name' name=EString
 		('NameSpace' NameSpace=EString)?
 		('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )?
 		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
