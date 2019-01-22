@@ -1,0 +1,16 @@
+PackageSet { package {
+	CatkinPackage hokuyo_node{ artifact {
+		Artifact  hokuyo_node {
+			node Node { name hokuyo_node 
+				publisher { 
+				Publisher { name scan message "sensor_msgs.LaserScan" } ,
+				Publisher { name diagnostics message "diagnostic_msgs.DiagnosticArray" } , 
+				Publisher { name "hokuyo/parameter_descriptions" message "dynamic_reconfigure.ConfigDescription" } , 
+				Publisher { name "hokuyo/parameter_updates" message "dynamic_reconfigure.Config" }
+				}
+				serviceclient { 
+				ServiceClient { name "hokuyo/set_parameters" service "dynamic_reconfigure.Reconfigure" }, 
+				ServiceClient { name "hokuyo/self_test" service "diagnostic_msgs.SelfTest" } 
+				} 
+			} }
+		}}}}

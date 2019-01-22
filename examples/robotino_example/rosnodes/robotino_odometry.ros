@@ -1,0 +1,6 @@
+PackageSet { package {
+	CatkinPackage robotino_driver{ artifact {
+		Artifact   robotino_odometry_node  {
+			node Node {name robotino_odometry_node
+				publisher { Publisher  { name "odom" message "nav_msgs.Odometry" } , Publisher { name tf message "tf2_msgs.TFMessage" } } serviceclient { ServiceClient { name reset_odometry service "robotino_msgs.ResetOdometry" } } }
+		}}}}}

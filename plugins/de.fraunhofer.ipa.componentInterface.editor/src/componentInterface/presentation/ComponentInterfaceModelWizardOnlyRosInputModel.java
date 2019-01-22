@@ -4,6 +4,8 @@ package componentInterface.presentation;
 
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -20,11 +22,18 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardSelectionPage;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.viewpoint.DAnalysis;
+import org.eclipse.sirius.viewpoint.DView;
+import org.eclipse.sirius.viewpoint.ViewpointFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -88,11 +97,36 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 						try {
 							String representation_name = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getName();
 							IProject project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
-							IFile aird_file = project.getFile("representation.aird");
-							
-							System.out.println(project.getName());
-							
-							
+							IFile aird_file = project.getFile("representations.aird");
+							//TODO: super ugly hot-fix
+							 DAnalysis slaveAnalysis = ViewpointFactory.eINSTANCE.createDAnalysis();
+							 EList<DView> owned_views = slaveAnalysis.getOwnedViews();
+							 System.out.println(owned_views);
+
+							 for (DView view:owned_views) {
+								 System.out.println(view.getOwnedRepresentationDescriptors().toString());
+								 if (view.getOwnedRepresentationDescriptors().toString().contains(representation_name)) {
+									 System.out.println(view.getOwnedRepresentationDescriptors());
+								 }
+							 }
+							/**InputStream air_file_is = aird_file.getContents();
+							if (aird_file == null) throw new FileNotFoundException();
+							Scanner aird_file_in = new Scanner(new FileReader(aird_file.getRawLocation().toOSString()));
+							while (aird_file_in.hasNext()) {
+								String next = aird_file_in.next();
+								System.out.println("\nNEXT:");
+								System.out.print(next);
+
+								if (next.equals(representation_name )) {
+									while (aird_file_in.hasNext()) {
+										String next2 = aird_file_in.next();
+										if (next2.contains("href=")) {
+											System.out.println("FileREF: "+aird_file_in.next());
+											return;
+									}
+								}
+							}
+							}*/
 							StringBuilder model_output = new StringBuilder();
 							if (ComponentNameSpace.isEmpty()) {
 								model_output.append("ComponentInterface { name '"+ComponentName+"' \n");
