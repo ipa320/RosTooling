@@ -92,60 +92,84 @@ class RosSystemGenerator extends AbstractGenerator {
 	«FOR component:system.rosComponent»
 	<node pkg="«component.compile_pkg»" type="«component.compile_art»«init()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init()»
 		«FOR rosPublisher:component.rospublisher»
-			«IF component.hasNS»
+			«FOR topicConnection:system.topicConnections»
+				«IF topicConnection.from.contains(rosPublisher)»
+					«IF !topicConnection.topicName.equals(rosPublisher.name)»
+					<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«topicConnection.topicName»" />
+				«ELSEIF component.hasNS»
 				«IF rosPublisher.name.contains(component.get_ns)»
 				«ELSEIF rosPublisher.name.equals(rosPublisher.publisher.compile_topic_name()) »
 				«ELSEIF !rosPublisher.name.contains(component.get_ns)»
-				<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
+					<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
 				«ELSEIF !rosPublisher.name.equals(rosPublisher.publisher.compile_topic_name()) »
-				<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
+					<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
 				«ENDIF»
 			«ELSEIF rosPublisher.name.equals(rosPublisher.publisher.compile_topic_name()) »
 			«ELSEIF !rosPublisher.name.equals(rosPublisher.publisher.compile_topic_name()) »
-			<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
+					<remap from="«rosPublisher.publisher.compile_topic_name()»" to="«rosPublisher.name»" />
 			«ENDIF»
+		«ENDIF»
+		«ENDFOR»
 		«ENDFOR»
 		«FOR rosSubscriber:component.rossubscriber»
-			«IF component.hasNS»
+			«FOR topicConnection:system.topicConnections»
+				«IF topicConnection.to.contains(rosSubscriber)»
+					«IF !topicConnection.topicName.equals(rosSubscriber.name)»
+					<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«topicConnection.topicName»" />
+			«ELSEIF component.hasNS»
 				«IF rosSubscriber.name.contains(component.get_ns)»
 				«ELSEIF rosSubscriber.name.equals(rosSubscriber.subscriber.compile_topic_name()) »
 				«ELSEIF !rosSubscriber.name.contains(component.get_ns)»
-				<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
+					<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
 				«ELSEIF !rosSubscriber.name.equals(rosSubscriber.subscriber.compile_topic_name()) »
 				<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
 				«ENDIF»
 			«ELSEIF rosSubscriber.name.equals(rosSubscriber.subscriber.compile_topic_name()) »
 			«ELSEIF !rosSubscriber.name.equals(rosSubscriber.subscriber.compile_topic_name()) »
-			<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
+					<remap from="«rosSubscriber.subscriber.compile_topic_name()»" to="«rosSubscriber.name»" />
 			«ENDIF»
+		«ENDIF»
+		«ENDFOR»
 		«ENDFOR»
 		«FOR rosServiceServer:component.rosserviceserver»
-			«IF component.hasNS»
+			«FOR serviceConnection:system.serviceConnections»
+				«IF serviceConnection.from.contains(rosServiceServer)»
+					«IF !serviceConnection.serviceName.equals(rosServiceServer.name)»
+					<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«serviceConnection.serviceName»" />
+			«ELSEIF component.hasNS»
 				«IF rosServiceServer.name.contains(component.get_ns)»
 				«ELSEIF rosServiceServer.name.equals(rosServiceServer.srvserver.compile_service_name()) »
 				«ELSEIF !rosServiceServer.name.contains(component.get_ns)»
-				<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
+					<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
 				«ELSEIF !rosServiceServer.name.equals(rosServiceServer.srvserver.compile_service_name()) »
 				<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
 				«ENDIF»
 			«ELSEIF rosServiceServer.name.equals(rosServiceServer.srvserver.compile_service_name()) »
 			«ELSEIF !rosServiceServer.name.equals(rosServiceServer.srvserver.compile_service_name()) »
-			<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
+					<remap from="«rosServiceServer.srvserver.compile_service_name()»" to="«rosServiceServer.name»" />
 			«ENDIF»
+		«ENDIF»
+		«ENDFOR»
 		«ENDFOR»
 		«FOR rosServiceClient:component.rosserviceclient»
-			«IF component.hasNS»
+			«FOR serviceConnection:system.serviceConnections»
+				«IF serviceConnection.to.equals(rosServiceClient)»
+					«IF !serviceConnection.serviceName.equals(rosServiceClient.name)»
+					<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«serviceConnection.serviceName»" />
+			«ELSEIF component.hasNS»
 				«IF rosServiceClient.name.contains(component.get_ns)»
 				«ELSEIF rosServiceClient.name.equals(rosServiceClient.srvclient.compile_service_name()) »
 				«ELSEIF !rosServiceClient.name.contains(component.get_ns)»
-				<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
+					<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
 				«ELSEIF !rosServiceClient.name.equals(rosServiceClient.srvclient.compile_service_name()) »
 				<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
 				«ENDIF»
 			«ELSEIF rosServiceClient.name.equals(rosServiceClient.srvclient.compile_service_name()) »
 			«ELSEIF !rosServiceClient.name.equals(rosServiceClient.srvclient.compile_service_name()) »
-			<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
+					<remap from="«rosServiceClient.srvclient.compile_service_name()»" to="«rosServiceClient.name»" />
 			«ENDIF»
+			«ENDIF»
+			«ENDFOR»
 			«ENDFOR»
 	</node>
 	«ENDFOR»
