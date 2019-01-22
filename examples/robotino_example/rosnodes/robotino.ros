@@ -1,0 +1,5 @@
+PackageSet { package {
+	CatkinPackage robotino_driver { artifact {
+		Artifact  robotino_driver {
+			node Node {name robotino_driver publisher { Publisher { name joint_states message "sensor_msgs.JointState" } , Publisher { name bumper message "std_msgs.Bool" } , Publisher { name sondar_scan message "sensor_msgs.LaserScan" } } subscriber { Subscriber { name cmd_vel message "geometry_msgs.Twist" } } }
+		}}}}}

@@ -1,0 +1,15 @@
+PackageSet{package{
+    Package tf2_msgs{spec{
+      TopicSpec LookupTransformAction{},
+      TopicSpec LookupTransformActionFeedback{},
+      TopicSpec LookupTransformActionGoal{},
+      TopicSpec LookupTransformActionResult{},
+      TopicSpec LookupTransformFeedback{},
+      TopicSpec LookupTransformGoal{},
+      TopicSpec LookupTransformResult{},
+      TopicSpec TF2Error{},
+      TopicSpec TFMessage{},
+      ServiceSpec FrameGraph{}
+    }}
+  }
+}
