@@ -1,0 +1,27 @@
+PackageSet{package{
+    Package robotino_msgs{spec{
+      TopicSpec AnalogReadings{},
+      TopicSpec BHAReadings{},
+      TopicSpec DigitalReadings{},
+      TopicSpec EncoderReadings{},
+      TopicSpec GrapplerReadings{},
+      TopicSpec GripperState{},
+      TopicSpec MotorReadings{},
+      TopicSpec NorthStarReadings{},
+      TopicSpec PowerReadings{},
+      TopicSpec SetBHAPressures{},
+      TopicSpec SetGrapplerAxes{},
+      TopicSpec SetGrapplerAxis{},
+      ServiceSpec ClearFixation{},
+      ServiceSpec FixatePanTilt{},
+      ServiceSpec FixatePosition{},
+      ServiceSpec LookAtImagePosition{},
+      ServiceSpec LookAtPanTilt{},
+      ServiceSpec LookAtPosition{},
+      ServiceSpec ResetOdometry{},
+      ServiceSpec ReturnJointStates{},
+      ServiceSpec SetEncoderPosition{},
+      ServiceSpec SetGripperState{}
+    }}
+  }
+}

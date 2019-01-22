@@ -1,0 +1,20 @@
+PackageSet{package{
+    Package nav_msgs{spec{
+      TopicSpec GetMapAction{},
+      TopicSpec GetMapActionFeedback{},
+      TopicSpec GetMapActionGoal{},
+      TopicSpec GetMapActionResult{},
+      TopicSpec GetMapFeedback{},
+      TopicSpec GetMapGoal{},
+      TopicSpec GetMapResult{},
+      TopicSpec GridCells{},
+      TopicSpec MapMetaData{},
+      TopicSpec OccupancyGrid{},
+      TopicSpec Odometry{},
+      TopicSpec Path{},
+      ServiceSpec GetMap{},
+      ServiceSpec GetPlan{},
+      ServiceSpec SetMap{}
+    }}
+  }
+}
