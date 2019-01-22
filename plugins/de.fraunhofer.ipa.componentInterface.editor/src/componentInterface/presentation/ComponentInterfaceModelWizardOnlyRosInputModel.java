@@ -79,6 +79,8 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 		this.selection = selection;
 		ComponentName = CI.toString().substring(CI.toString().indexOf("name:")+6,CI.toString().indexOf(","));
 		ComponentNameSpace = CI.toString().substring(CI.toString().indexOf("NameSpace:")+11,CI.toString().indexOf(")]"));
+		if (ComponentNameSpace.equalsIgnoreCase("null"))
+			ComponentNameSpace="";
 	    setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ComponentInterfaceEditorPlugin.INSTANCE.getImage("full/wizban/NewComponentInterface")));
 	}
