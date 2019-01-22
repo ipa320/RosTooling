@@ -4,6 +4,10 @@
 package de.fraunhofer.ipa.rossystem.generator
 
 import componentInterface.ComponentInterface
+import componentInterface.RosPublisher
+import componentInterface.RosServiceClient
+import componentInterface.RosServiceServer
+import componentInterface.RosSubscriber
 import java.util.ArrayList
 import java.util.List
 import java.util.Set
@@ -13,17 +17,11 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
-import ros.Namespace
 import ros.Publisher
 import ros.ServiceClient
 import ros.ServiceServer
 import ros.Subscriber
 import rossystem.RosSystem
-import componentInterface.RosPublisher
-import componentInterface.RosSubscriber
-import componentInterface.RosServiceServer
-import componentInterface.RosServiceClient
-import componentInterface.NameSpaceComponent
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"

@@ -179,23 +179,23 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="ServiceServer" semanticCandidatesExpression="feature:rosserviceserver" domainClass="componentInterface::RosServiceServer">
-            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="ServiceClient" semanticCandidatesExpression="feature:rosserviceclient" domainClass="componentInterface::RosServiceClient">
-            <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>EAST</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" tooltipExpression="feature:namespace">
