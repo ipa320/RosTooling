@@ -225,15 +225,15 @@ RosSubscribers{
 RosSrvServers{
 	«FOR svrs:svrs»
 	«val count_srvs=count_srvs--»
-	RosSrvServer "«svrs.name»" { Refsrvserver "«svrs.srvserver.package_srvserv».«svrs.srvserver.artifact_srvserv».«svrs.srvserver.node_srvserv».«svrs.srvserver.compile_service_name»"}«IF count_srvs > 1 »,«ENDIF»
+	RosServiceServer "«svrs.name»" { RefServer "«svrs.srvserver.package_srvserv».«svrs.srvserver.artifact_srvserv».«svrs.srvserver.node_srvserv».«svrs.srvserver.compile_service_name»"}«IF count_srvs > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
 «IF !svrc.empty»
 RosSrvClients{
 	«FOR svrc:svrc»
-	«val count_srvs=count_srvs--»
-	RosSrvClient "«svrc.name»" { Refsrvclient "«svrc.srvclient.package_srvcli».«svrc.srvclient.artifact_srvcli».«svrc.srvclient.node_srvcli».«svrc.srvclient.compile_service_name»"}«IF count_srvs > 1 »,«ENDIF»
+	«val count_srvc=count_srvc--»
+	RosServiceClient "«svrc.name»" { RefClient "«svrc.srvclient.package_srvcli».«svrc.srvclient.artifact_srvcli».«svrc.srvclient.node_srvcli».«svrc.srvclient.compile_service_name»"}«IF count_srvc > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -313,19 +313,19 @@ def compile_pkg(ComponentInterface component)
 	}
 	def getNode_sub(Subscriber subscriber){
 		node_impl = subscriber.eContainer.toString;
-		return node_impl.getArtifact;
+		return node_impl.getNode;
 	}
 	def getNode_srvserv(ServiceServer serviceserver){
 		node_impl = serviceserver.eContainer.toString;
-		return node_impl.getArtifact;
+		return node_impl.getNode;
 	}
 	def getNode_srvcli(ServiceClient serviceclient){
 		node_impl = serviceclient.eContainer.toString;
-		return node_impl.getArtifact;
+		return node_impl.getNode;
 	}
 	def getNode(String node_impl){
 		node_name = node_impl.substring(node_impl.indexOf("name")+6,node_impl.length-1)
-		return artifact_name;
+		return node_name;
 	}
 
 	def compile_topic_name(Publisher publisher){
