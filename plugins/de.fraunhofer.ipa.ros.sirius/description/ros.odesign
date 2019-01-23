@@ -230,7 +230,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Topic Connection" precondition="[preSource.publisher.message.fullname.equalsIgnoreCase(preTarget.subscriber.message.fullname)/]" elementsToSelect="var:source" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='TopicConnection']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Topic Connection" precondition="[preSource.publisher.message.fullname.equalsIgnoreCase(preTarget.subscriber.message.fullname)/]" forceRefresh="true" elementsToSelect="var:source" inverseSelectionOrder="true" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='TopicConnection']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -247,7 +247,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Service Connection" precondition="[preSource.srvserver.service.fullname.equalsIgnoreCase(preTarget.srvclient.service.fullname)/]" elementsToSelect="var:source" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='ServiceConnection']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Service Connection" precondition="[preSource.srvserver.service.fullname.equalsIgnoreCase(preTarget.srvclient.service.fullname)/]" forceRefresh="true" elementsToSelect="var:source" inverseSelectionOrder="true" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='ServiceConnection']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
