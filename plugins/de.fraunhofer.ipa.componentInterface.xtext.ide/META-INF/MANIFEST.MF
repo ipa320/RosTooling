@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.componentInterface.xtext.ide
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.componentInterface.xtext.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
