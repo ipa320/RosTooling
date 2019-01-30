@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated componentInterface -->
       <factory
-            uri="http://www.example.org/componentInterface"
+            uri="http://www.ipa.fraunhofer.de/componentInterface"
             class="componentInterface.provider.ComponentInterfaceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

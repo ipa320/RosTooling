@@ -41,7 +41,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/componentInterface";
+	String eNS_URI = "http://www.ipa.fraunhofer.de/componentInterface";
 
 	/**
 	 * The package namespace name.

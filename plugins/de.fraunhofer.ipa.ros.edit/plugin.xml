@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated ros -->
       <factory
-            uri="http://www.example.org/ros"
+            uri="http://www.ipa.fraunhofer.de/ros"
             class="ros.provider.RosItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

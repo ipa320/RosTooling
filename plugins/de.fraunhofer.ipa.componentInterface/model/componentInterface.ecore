@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentInterface" nsURI="http://www.example.org/componentInterface"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentInterface" nsURI="http://www.ipa.fraunhofer.de/componentInterface"
     nsPrefix="componentInterface">
   <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="../../de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rospublisher" upperBound="-1"

@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ros -->
       <package
-            uri="http://www.example.org/ros"
+            uri="http://www.ipa.fraunhofer.de/ros"
             class="ros.RosPackage"
             genModel="model/ros.genmodel"/>
    </extension>
