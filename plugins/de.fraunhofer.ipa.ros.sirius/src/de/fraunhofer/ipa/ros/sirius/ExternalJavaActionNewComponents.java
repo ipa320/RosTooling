@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
-import componentInterface.impl.ComponentInterfaceImpl;
+
 import componentInterface.presentation.ComponentInterfaceEditorPlugin;
 import componentInterface.presentation.ComponentInterfaceModelWizardOnlyRosInputModel;
 
