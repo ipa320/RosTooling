@@ -13,7 +13,7 @@ public abstract class AbstractRosSystemValidator extends AbstractDeclarativeVali
 	@Override
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.example.org/rossystem"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/rossystem"));
 		return result;
 	}
 	

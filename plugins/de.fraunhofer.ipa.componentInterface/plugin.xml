@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated componentInterface -->
       <package
-            uri="http://www.example.org/componentInterface"
+            uri="http://www.ipa.fraunhofer.de/componentInterface"
             class="componentInterface.ComponentInterfacePackage"
             genModel="model/componentInterface.genmodel"/>
    </extension>

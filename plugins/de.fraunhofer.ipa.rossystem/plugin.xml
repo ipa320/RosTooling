@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated rosystem -->
       <package
-            uri="http://www.example.org/rossystem"
+            uri="http://www.ipa.fraunhofer.de/rossystem"
             class="rossystem.RossystemPackage"
             genModel="model/rosystem.genmodel"/>
    </extension>
@@ -17,7 +17,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated RosComponent -->
       <package
-            uri="http://www.example.org/RosComponent"
+            uri="http://www.ipa.fraunhofer.de/RosComponent"
             class="RosComponent.RosComponentPackage"
             genModel="model/RosComponent.genmodel"/>
    </extension>

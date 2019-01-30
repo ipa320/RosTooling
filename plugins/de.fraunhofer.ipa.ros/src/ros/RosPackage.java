@@ -39,7 +39,7 @@ public interface RosPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/ros";
+	String eNS_URI = "http://www.ipa.fraunhofer.de/ros";
 
 	/**
 	 * The package namespace name.
