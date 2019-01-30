@@ -80,9 +80,9 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected RosPublisherImpl() {
+	public RosPublisherImpl() {
 		super();
 	}
 
