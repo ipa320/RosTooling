@@ -81,9 +81,9 @@ public class RosServiceServerImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected RosServiceServerImpl() {
+	public RosServiceServerImpl() {
 		super();
 	}
 

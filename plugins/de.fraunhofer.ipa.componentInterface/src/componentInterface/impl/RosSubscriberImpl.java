@@ -81,9 +81,9 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected RosSubscriberImpl() {
+	public RosSubscriberImpl() {
 		super();
 	}
 

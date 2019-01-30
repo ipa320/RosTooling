@@ -18,5 +18,15 @@ Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.ros.edit;visibility:=reexport,
  org.eclipse.sirius,
  org.eclipse.sirius.ui,
- org.eclipse.emf.common
+ org.eclipse.emf.common,
+ de.fraunhofer.ipa.ros,
+ de.fraunhofer.ipa.componentInterface
 Bundle-ActivationPolicy: lazy
+Import-Package: com.google.inject;version="1.3.0",
+ de.fraunhofer.ipa.componentInterface,
+ de.fraunhofer.ipa.ros,
+ de.fraunhofer.ipa.rossystem,
+ org.eclipse.xtext,
+ org.eclipse.xtext.resource,
+ rossystem,
+ rossystem.impl
