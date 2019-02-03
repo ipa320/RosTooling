@@ -5,8 +5,8 @@ PackageSet { package {
 			Publisher { name "/scan_unified" message "sensor_msgs.LaserScan"
 			}}
 			subscriber {
-			Subscriber { name "/base_laser_front/scan" message "sensor_msgs.LaserScan" } ,
-			Subscriber { name "/base_laser_right/scan" message "sensor_msgs.LaserScan" } ,
-			Subscriber { name "/base_laser_left/scan" message "sensor_msgs.LaserScan" }
+			Subscriber { name scan3 message "sensor_msgs.LaserScan" } ,
+			Subscriber { name scan1 message "sensor_msgs.LaserScan" } ,
+			Subscriber { name scan2 message "sensor_msgs.LaserScan" }
 			}}}}
 }}}
