@@ -1,8 +1,0 @@
-ComponentInterface { name diagnotics_aggregator
-	RosPublishers {
-		RosPublisher "/diagnostics_toplevel_state" { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node./diagnostics_toplevel_state" }
-	} 
-	RosSubscribers {
-		RosSubscriber "/diagnostics" { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node./diagnostics"}
-	}
-}
