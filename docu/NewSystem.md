@@ -50,3 +50,54 @@ Now that the components are created you can define the desired connections betwe
 
 If the modifications are correct and after save the changes, two files will be automatically generated 1) a componentinterface file of your full system in the folder "components" and 2) a launch file to start the selected ROS nodes in the correct predefined Namespace (in a new folder "src-gen").
 
+The resulted launch file contains the defined namespaces and remap the topics of the scan_unifier node, looking like:
+
+```
+<?xml version="1.0"?>
+<launch>
+
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
+		<remap from="scan3" to="base_laser_front/scan" />
+		<remap from="scan1" to="base_laser_right/scan" />
+		<remap from="scan2" to="base_laser_left/scan" />
+	</node>
+
+</launch>
+```
+
+We can also try removing the namespace of the diagnostics topics for the scanners. Choose the different diagnostics publisher and modify using the properties view its names to for example:
+
+![alt text](images/diagnostics_names.png)
+
+These changes should change the roslaunch file to:
+
+```
+<?xml version="1.0"?>
+<launch>
+
+	<remap from="base_laser_front/diagnostics" to="diagnostics" />
+	<remap from="base_laser_right/diagnostics" to="diagnostics" />
+	<remap from="base_laser_left/diagnostics" to="diagnostics" />
+
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
+	</node>
+	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
+		<remap from="scan3" to="base_laser_front/scan" />
+		<remap from="scan1" to="base_laser_right/scan" />
+		<remap from="scan2" to="base_laser_left/scan" />
+	</node>
+
+</launch>
+```
+
+Tbd: save and create a new system from the ComponentInterface generated 
