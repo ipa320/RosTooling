@@ -2,9 +2,9 @@ PackageSet { package {
 	CatkinPackage diagnostic_aggregator { artifact {
 		Artifact aggregator_node { node Node { name aggregator_node 
 				publisher { 
-				Publisher { name "/diagnostics_toplevel_state" message "diagnostic_msgs.DiagnosticStatus" 
+				Publisher { name diagnostics_toplevel_state message "diagnostic_msgs.DiagnosticStatus" 
 				}}
 				subscriber { 
-				Subscriber { name "/diagnostics" message "diagnostic_msgs.DiagnosticArray" }
+				Subscriber { name diagnostics message "diagnostic_msgs.DiagnosticArray" }
 				}}}}
 }}}
