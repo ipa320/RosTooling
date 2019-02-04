@@ -151,7 +151,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 	protected List<String> initialObjectNames;
 
 	private SelectinputFile getInputFileCreationPage;
-
+	private File[] InputFiles;
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 		try {
 			final IFile modelFile = getModelFile();
 			final String ModelName = newFileCreationPage.getFileName().replace(".rossystem", "");
-			final File[] InputFiles = getInputFileCreationPage.getPaths();
+			InputFiles = getInputFileCreationPage.getPaths();
 			WorkspaceModifyOperation operation =new WorkspaceModifyOperation() {
 					@Override
 					protected void execute(IProgressMonitor progressMonitor) {
@@ -222,25 +222,23 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 							StringBuilder model_output = new StringBuilder();
 							resource.getContents().clear();
 							model_output.append("RosSystem { Name '"+ModelName+"' ");
-				
 							int cout = InputFiles.length;
 							if (cout > 0) {
 								model_output.append(" RosComponents ( \n    ");
-							}
-							for (File file:InputFiles) {
-								Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
-								while (in.hasNext()) {
-									model_output.append(in.next());
-									model_output.append(" ");
-								}
-								in.close();
-								cout--;
-								if (cout > 0) {
-									model_output.append(",\n    ");
-								} else {
-									model_output.append(")");
-								}
-							}
+								for (File file:InputFiles) {
+									Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
+									while (in.hasNext()) {
+										model_output.append(in.next());
+										model_output.append(" ");
+									}
+									in.close();
+									cout--;
+									if (cout > 0) {
+										model_output.append(",\n    ");
+									} else {
+										model_output.append(")");
+									}
+							}}
 							model_output.append("\n}");
 							byte[] bytes = model_output.toString().getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
@@ -871,7 +869,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 		initialObjectCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		//addPage(initialObjectCreationPage);
 		getInputFileCreationPage = new SelectinputFile("Whatever4");
-		getInputFileCreationPage.setTitle("Select ROS components");
+		getInputFileCreationPage.setTitle("Select ROS components (only if the system is a composition of subsystems)");
 		getInputFileCreationPage.setDescription("Select ROS components");
 		addPage(getInputFileCreationPage);
 	}
