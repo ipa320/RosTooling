@@ -2,7 +2,7 @@ PackageSet { package {
 	CatkinPackage cob_scan_unifier { artifact {
 		Artifact scan_unifier_node { node Node { name scan_unifier_node 
 			publisher {
-			Publisher { name "/scan_unified" message "sensor_msgs.LaserScan"
+			Publisher { name scan_unified message "sensor_msgs.LaserScan"
 			}}
 			subscriber {
 			Subscriber { name scan3 message "sensor_msgs.LaserScan" } ,
