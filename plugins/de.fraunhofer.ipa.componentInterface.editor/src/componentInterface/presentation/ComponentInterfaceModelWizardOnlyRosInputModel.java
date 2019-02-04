@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
@@ -36,10 +38,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+
 import componentInterface.ComponentInterface;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
@@ -49,9 +48,6 @@ import componentInterface.impl.RosPublisherImpl;
 import componentInterface.impl.RosServiceClientImpl;
 import componentInterface.impl.RosServiceServerImpl;
 import componentInterface.impl.RosSubscriberImpl;
-import de.fraunhofer.ipa.componentInterface.ComponentInterfaceStandaloneSetup;
-import de.fraunhofer.ipa.ros.RosRuntimeModule;
-import de.fraunhofer.ipa.ros.RosStandaloneSetup;
 import ros.Artifact;
 import ros.Node;
 import ros.Package;
@@ -80,7 +76,7 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	public FileDialog fDialog;
 	public String ComponentName;
 	public String ComponentNameSpace;
-	public ComponentInterface CI_input;
+	//public ComponentInterface CI_input;
 	public IProject project;
 	public EObject eobject;
 
@@ -88,12 +84,16 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	public void init(IWorkbench workbench, IStructuredSelection selection, Collection<? extends EObject> CI, Map<String, Object> nameSpace) {
 		this.workbench = workbench;
 		this.selection = selection;
-		@SuppressWarnings("unchecked")
-		Collection <ComponentInterface> ci_collection = (Collection<ComponentInterface>) CI;
-		new ComponentInterfaceStandaloneSetup().createInjectorAndDoEMFRegistration();
-		CI_input = ci_collection.iterator().next();
-		ComponentName = CI_input.getName();
-		ComponentNameSpace = CI_input.getNameSpace();
+		//@SuppressWarnings("unchecked")
+		//Collection <ComponentInterface> ci_collection = (Collection<ComponentInterface>) CI;
+		//new ComponentInterfaceStandaloneSetup().createInjectorAndDoEMFRegistration();
+		//CI_input = ci_collection.iterator().next();
+		//ComponentName = CI_input.getName();
+		//ComponentNameSpace = CI_input.getNameSpace();
+		ComponentName = CI.toString().substring(CI.toString().indexOf("name:")+6,CI.toString().indexOf(","));
+		ComponentNameSpace = CI.toString().substring(CI.toString().indexOf("NameSpace:")+11,CI.toString().indexOf(")]"));
+		if (ComponentNameSpace.equalsIgnoreCase("null"))
+			ComponentNameSpace="";
 		project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
 	    setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ComponentInterfaceEditorPlugin.INSTANCE.getImage("full/wizban/NewComponentInterface")));
@@ -105,10 +105,11 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 			final String Inputpath = getInputFileCreationPage.getPath();
 			//TODO: this only works if the ros model is in the same eclipse project
 			String RelativePath = Inputpath.replace(project.getLocation().toString(), project.getName());
-			Injector injector = Guice.createInjector(new RosRuntimeModule());
-			XtextResourceSet rs = injector.getInstance(XtextResourceSet.class);
-			rs.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-			new RosStandaloneSetup().createInjectorAndDoEMFRegistration();
+			ResourceSet rs = new ResourceSetImpl();
+			//Injector injector = Guice.createInjector(new RosRuntimeModule());
+			//XtextResourceSet rs = injector.getInstance(XtextResourceSet.class);
+			//rs.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+			//new RosStandaloneSetup().createInjectorAndDoEMFRegistration();
 			Resource resource = rs.getResource(URI.createPlatformResourceURI(RelativePath,true),true);			
 			PackageSet packageSet_model = (PackageSet) resource.getContents().get(0);
 			EList<Package> package_model= (EList<Package>) packageSet_model.getPackage();
@@ -131,46 +132,48 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 								 DAnalysis slaveAnalysis=(DAnalysis)session.getSessionResource().getContents().get(0);
 								 EList<DView> owned_views = slaveAnalysis.getOwnedViews();
 								 for (DView view:owned_views) {
-									 if (view.getOwnedRepresentationDescriptors().toString().contains(representation_name)) { 
-										RosSystem rossystem = (RosSystem) view.getModels().get(0);										
-										for (Publisher pub:pubs) {
-											RosPublisher rospub = new RosPublisherImpl();
-											rospub.setName(pub.getName());
-											rospub.setPublisher(pub);
-											CI_input.getRospublisher().add(rospub);
-										}
-										for (Subscriber sub:subs) {
-											RosSubscriber rossub = new RosSubscriberImpl();
-											rossub.setName(sub.getName());
-											rossub.setSubscriber(sub);
-											CI_input.getRossubscriber().add(rossub);
-										}
-										for (ServiceClient scl:scls) {
-											RosServiceClient rosscl = new RosServiceClientImpl();
-											rosscl.setSrvclient(scl);
-											rosscl.setName(scl.getName());
-											CI_input.getRosserviceclient().add(rosscl);
-										}
-										for (ServiceServer ssr:ssrs) {
-											RosServiceServer rosssr = new RosServiceServerImpl();
-											rosssr.setSrvserver(ssr);
-											rosssr.setName(ssr.getName());
-											CI_input.getRosserviceserver().add(rosssr);
-										}
-										rossystem.getRosComponent().add(CI_input);
-					}										 
-					}}}catch (Exception exception) {
+									 if (view.getOwnedRepresentationDescriptors().toString().contains(representation_name)) {
+										for (EObject rossystem:view.getModels()) {
+											for (ComponentInterface component:((RosSystem) rossystem).getRosComponent()) {
+												if (component.getName().equalsIgnoreCase(ComponentName)) {
+													for (Publisher pub:pubs) {
+														RosPublisher rospub = new RosPublisherImpl();
+														rospub.setName(ComponentNameSpace+"/"+pub.getName());
+														rospub.setNs(ComponentNameSpace);
+														rospub.setPublisher(pub);
+														component.getRospublisher().add(rospub);
+													}
+													for (Subscriber sub:subs) {
+														RosSubscriber rossub = new RosSubscriberImpl();
+														rossub.setName(ComponentNameSpace+"/"+sub.getName());
+														rossub.setNs(ComponentNameSpace);
+														rossub.setSubscriber(sub);
+														component.getRossubscriber().add(rossub);
+													}
+													for (ServiceClient scl:scls) {
+														RosServiceClient rosscl = new RosServiceClientImpl();
+														rosscl.setName(ComponentNameSpace+"/"+scl.getName());
+														rosscl.setNs(ComponentNameSpace);
+														rosscl.setSrvclient(scl);
+														component.getRosserviceclient().add(rosscl);
+													}
+													for (ServiceServer ssr:ssrs) {
+														RosServiceServer rosssr = new RosServiceServerImpl();
+														rosssr.setName(ComponentNameSpace+"/"+ssr.getName());
+														rosssr.setNs(ComponentNameSpace);
+														rosssr.setSrvserver(ssr);
+														component.getRosserviceserver().add(rosssr);
+													}				 
+					}}}}}}}catch (Exception exception) {
 						ComponentInterfaceEditorPlugin.INSTANCE.log(exception);
 					}
 					finally {
 						progressMonitor.done();
 					}
-					}
-				};
+					}};
 			getContainer().run(false, false, operation);
 			return true;
-		}
-		catch (Exception exception) {
+		}catch (Exception exception) {
 			ComponentInterfaceEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
