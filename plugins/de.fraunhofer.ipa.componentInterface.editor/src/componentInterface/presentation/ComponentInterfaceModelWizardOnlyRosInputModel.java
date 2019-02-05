@@ -76,6 +76,7 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	public FileDialog fDialog;
 	public String ComponentName;
 	public String ComponentNameSpace;
+	public String NameSpaceInterfaces;
 	//public ComponentInterface CI_input;
 	public IProject project;
 	public EObject eobject;
@@ -136,30 +137,33 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 										for (EObject rossystem:view.getModels()) {
 											for (ComponentInterface component:((RosSystem) rossystem).getRosComponent()) {
 												if (component.getName().equalsIgnoreCase(ComponentName)) {
+													NameSpaceInterfaces = "";
+													if (!(ComponentNameSpace.length()==0))
+														NameSpaceInterfaces = ComponentNameSpace + "/";
 													for (Publisher pub:pubs) {
 														RosPublisher rospub = new RosPublisherImpl();
-														rospub.setName(ComponentNameSpace+"/"+pub.getName());
+														rospub.setName(NameSpaceInterfaces+pub.getName());
 														rospub.setNs(ComponentNameSpace);
 														rospub.setPublisher(pub);
 														component.getRospublisher().add(rospub);
 													}
 													for (Subscriber sub:subs) {
 														RosSubscriber rossub = new RosSubscriberImpl();
-														rossub.setName(ComponentNameSpace+"/"+sub.getName());
+														rossub.setName(NameSpaceInterfaces+sub.getName());
 														rossub.setNs(ComponentNameSpace);
 														rossub.setSubscriber(sub);
 														component.getRossubscriber().add(rossub);
 													}
 													for (ServiceClient scl:scls) {
 														RosServiceClient rosscl = new RosServiceClientImpl();
-														rosscl.setName(ComponentNameSpace+"/"+scl.getName());
+														rosscl.setName(NameSpaceInterfaces+scl.getName());
 														rosscl.setNs(ComponentNameSpace);
 														rosscl.setSrvclient(scl);
 														component.getRosserviceclient().add(rosscl);
 													}
 													for (ServiceServer ssr:ssrs) {
 														RosServiceServer rosssr = new RosServiceServerImpl();
-														rosssr.setName(ComponentNameSpace+"/"+ssr.getName());
+														rosssr.setName(NameSpaceInterfaces+ssr.getName());
 														rosssr.setNs(ComponentNameSpace);
 														rosssr.setSrvserver(ssr);
 														component.getRosserviceserver().add(rosssr);
