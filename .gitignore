@@ -2,5 +2,6 @@
 /.metadata/
 /.recommenders/
 *.xtendbin
+*.xtextbin
 /xtend-gen/
 */bin/
