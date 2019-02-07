@@ -816,7 +816,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 		@Override
 	public void addPages() {
@@ -827,7 +827,6 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 		newFileCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_description"));
 		newFileCreationPage.setFileName(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
-
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
 		if (selection != null && !selection.isEmpty()) {
@@ -861,10 +860,17 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 				}
 			}
 		}
-		initialObjectCreationPage = new ComponentInterfaceModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceModelWizard_label"));
-		initialObjectCreationPage.setDescription(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		
+		getNameandNamespaceCreationPage = new ComponentInterfaceModelWizardNamNSCreationPage("Whatever3");
+		getNameandNamespaceCreationPage.setTitle("Set Name and Namespace to the ComponentInterface");
+		getNameandNamespaceCreationPage.setDescription("Set Name and Namespace to the ComponentInterface");
+		addPage(getNameandNamespaceCreationPage);
+
+		
+		getInputFileCreationPage = new SelectinputFile("Whatever4");
+		getInputFileCreationPage.setTitle("Select ROS model input");
+		getInputFileCreationPage.setDescription("Select ROS model input");
+		addPage(getInputFileCreationPage);
 	}
 
 	/**
