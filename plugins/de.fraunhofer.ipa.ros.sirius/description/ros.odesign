@@ -49,6 +49,27 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
           </borderedNodeMappings>
+          <borderedNodeMappings name="RosActionServer" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ActionServer">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosActionClient" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ActionClient">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </style>
+          </borderedNodeMappings>
           <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" domainClass="ros::Parameter">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png" tooltipExpression="ComponentParameters" sizeComputationExpression="5" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/parameters_scale.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -126,6 +147,28 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Parameter" referenceName="parameter">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewParameter"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS action server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosActionServer']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/action_icon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ActionServer" referenceName="actionserver">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewServer"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS action client" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosActionClient']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/action_icon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ActionClient" referenceName="actionclient">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewClient"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
