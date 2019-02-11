@@ -187,6 +187,52 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosActionServer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosActionServerItemProvider rosActionServerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link componentInterface.RosActionServer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosActionServerAdapter() {
+		if (rosActionServerItemProvider == null) {
+			rosActionServerItemProvider = new RosActionServerItemProvider(this);
+		}
+
+		return rosActionServerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosActionClient} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosActionClientItemProvider rosActionClientItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link componentInterface.RosActionClient}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosActionClientAdapter() {
+		if (rosActionClientItemProvider == null) {
+			rosActionClientItemProvider = new RosActionClientItemProvider(this);
+		}
+
+		return rosActionClientItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +336,8 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 		if (rosSubscriberItemProvider != null) rosSubscriberItemProvider.dispose();
 		if (rosServiceServerItemProvider != null) rosServiceServerItemProvider.dispose();
 		if (rosServiceClientItemProvider != null) rosServiceClientItemProvider.dispose();
+		if (rosActionServerItemProvider != null) rosActionServerItemProvider.dispose();
+		if (rosActionClientItemProvider != null) rosActionClientItemProvider.dispose();
 	}
 
 }

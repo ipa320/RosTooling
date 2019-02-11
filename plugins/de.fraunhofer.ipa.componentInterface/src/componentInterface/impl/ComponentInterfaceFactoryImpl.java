@@ -62,6 +62,8 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 			case ComponentInterfacePackage.ROS_SUBSCRIBER: return createRosSubscriber();
 			case ComponentInterfacePackage.ROS_SERVICE_SERVER: return createRosServiceServer();
 			case ComponentInterfacePackage.ROS_SERVICE_CLIENT: return createRosServiceClient();
+			case ComponentInterfacePackage.ROS_ACTION_SERVER: return createRosActionServer();
+			case ComponentInterfacePackage.ROS_ACTION_CLIENT: return createRosActionClient();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +147,26 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	public RosServiceClient createRosServiceClient() {
 		RosServiceClientImpl rosServiceClient = new RosServiceClientImpl();
 		return rosServiceClient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RosActionServer createRosActionServer() {
+		RosActionServerImpl rosActionServer = new RosActionServerImpl();
+		return rosActionServer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RosActionClient createRosActionClient() {
+		RosActionClientImpl rosActionClient = new RosActionClientImpl();
+		return rosActionClient;
 	}
 
 	/**

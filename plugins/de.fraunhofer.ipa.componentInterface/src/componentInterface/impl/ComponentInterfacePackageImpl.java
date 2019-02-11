@@ -6,6 +6,8 @@ import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfaceFactory;
 import componentInterface.ComponentInterfacePackage;
 import componentInterface.NameSpaceComponent;
+import componentInterface.RosActionClient;
+import componentInterface.RosActionServer;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -69,6 +71,20 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass nameSpaceComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosActionServerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosActionClientEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,6 +200,24 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 */
 	public EReference getComponentInterface_Rosserviceclient() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentInterface_Rosactionserver() {
+		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentInterface_Rosactionclient() {
+		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -362,6 +396,78 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRosActionServer() {
+		return rosActionServerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRosActionServer_Actserver() {
+		return (EReference)rosActionServerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRosActionServer_Name() {
+		return (EAttribute)rosActionServerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRosActionServer_Ns() {
+		return (EAttribute)rosActionServerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRosActionClient() {
+		return rosActionClientEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRosActionClient_Actclient() {
+		return (EReference)rosActionClientEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRosActionClient_Name() {
+		return (EAttribute)rosActionClientEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRosActionClient_Ns() {
+		return (EAttribute)rosActionClientEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNS() {
 		return nsEDataType;
 	}
@@ -399,6 +505,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSSUBSCRIBER);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSSERVICESERVER);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSSERVICECLIENT);
+		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONSERVER);
+		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONCLIENT);
 
 		rosPublisherEClass = createEClass(ROS_PUBLISHER);
 		createEReference(rosPublisherEClass, ROS_PUBLISHER__PUBLISHER);
@@ -423,6 +531,16 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		nameSpaceComponentEClass = createEClass(NAME_SPACE_COMPONENT);
 		createEAttribute(nameSpaceComponentEClass, NAME_SPACE_COMPONENT__NAME);
 		createEAttribute(nameSpaceComponentEClass, NAME_SPACE_COMPONENT__NAME_SPACE);
+
+		rosActionServerEClass = createEClass(ROS_ACTION_SERVER);
+		createEReference(rosActionServerEClass, ROS_ACTION_SERVER__ACTSERVER);
+		createEAttribute(rosActionServerEClass, ROS_ACTION_SERVER__NAME);
+		createEAttribute(rosActionServerEClass, ROS_ACTION_SERVER__NS);
+
+		rosActionClientEClass = createEClass(ROS_ACTION_CLIENT);
+		createEReference(rosActionClientEClass, ROS_ACTION_CLIENT__ACTCLIENT);
+		createEAttribute(rosActionClientEClass, ROS_ACTION_CLIENT__NAME);
+		createEAttribute(rosActionClientEClass, ROS_ACTION_CLIENT__NS);
 
 		// Create data types
 		nsEDataType = createEDataType(NS);
@@ -467,6 +585,8 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentInterface_Rossubscriber(), this.getRosSubscriber(), null, "rossubscriber", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosserviceserver(), this.getRosServiceServer(), null, "rosserviceserver", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosserviceclient(), this.getRosServiceClient(), null, "rosserviceclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_Rosactionserver(), this.getRosActionServer(), null, "rosactionserver", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_Rosactionclient(), this.getRosActionClient(), null, "rosactionclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosPublisherEClass, RosPublisher.class, "RosPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosPublisher_Publisher(), theRosPackage.getPublisher(), null, "publisher", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -491,6 +611,16 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEClass(nameSpaceComponentEClass, NameSpaceComponent.class, "NameSpaceComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNameSpaceComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, NameSpaceComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNameSpaceComponent_NameSpace(), this.getNS(), "NameSpace", null, 0, 1, NameSpaceComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosActionServerEClass, RosActionServer.class, "RosActionServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosActionServer_Actserver(), theRosPackage.getActionServer(), null, "actserver", null, 0, 1, RosActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosActionServer_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosActionServer_Ns(), this.getNS(), "ns", null, 0, 1, RosActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosActionClientEClass, RosActionClient.class, "RosActionClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosActionClient_Actclient(), theRosPackage.getActionClient(), null, "actclient", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosActionClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosActionClient_Ns(), this.getNS(), "ns", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(nsEDataType, String.class, "NS", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

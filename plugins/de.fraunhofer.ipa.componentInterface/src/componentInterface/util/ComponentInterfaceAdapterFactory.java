@@ -92,6 +92,14 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 				return createNameSpaceComponentAdapter();
 			}
 			@Override
+			public Adapter caseRosActionServer(RosActionServer object) {
+				return createRosActionServerAdapter();
+			}
+			@Override
+			public Adapter caseRosActionClient(RosActionClient object) {
+				return createRosActionClientAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -192,6 +200,34 @@ public class ComponentInterfaceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNameSpaceComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosActionServer <em>Ros Action Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentInterface.RosActionServer
+	 * @generated
+	 */
+	public Adapter createRosActionServerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentInterface.RosActionClient <em>Ros Action Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentInterface.RosActionClient
+	 * @generated
+	 */
+	public Adapter createRosActionClientAdapter() {
 		return null;
 	}
 

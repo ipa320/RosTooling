@@ -58,6 +58,8 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 
 			addNamePropertyDescriptor(object);
 			addNameSpacePropertyDescriptor(object);
+			addRosactionserverPropertyDescriptor(object);
+			addRosactionclientPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,6 +104,50 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rosactionserver feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRosactionserverPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInterface_rosactionserver_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_rosactionserver_feature", "_UI_ComponentInterface_type"),
+				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rosactionclient feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRosactionclientPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInterface_rosactionclient_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_rosactionclient_feature", "_UI_ComponentInterface_type"),
+				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
