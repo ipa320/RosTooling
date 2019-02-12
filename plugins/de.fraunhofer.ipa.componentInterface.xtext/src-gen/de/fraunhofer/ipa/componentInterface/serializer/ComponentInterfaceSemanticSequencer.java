@@ -6,6 +6,8 @@ package de.fraunhofer.ipa.componentInterface.serializer;
 import com.google.inject.Inject;
 import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
+import componentInterface.RosActionClient;
+import componentInterface.RosActionServer;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -37,6 +39,12 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 			case ComponentInterfacePackage.COMPONENT_INTERFACE:
 				sequence_ComponentInterface(context, (ComponentInterface) semanticObject); 
 				return; 
+			case ComponentInterfacePackage.ROS_ACTION_CLIENT:
+				sequence_RosActionClient(context, (RosActionClient) semanticObject); 
+				return; 
+			case ComponentInterfacePackage.ROS_ACTION_SERVER:
+				sequence_RosActionServer(context, (RosActionServer) semanticObject); 
+				return; 
 			case ComponentInterfacePackage.ROS_PUBLISHER:
 				sequence_RosPublisher(context, (RosPublisher) semanticObject); 
 				return; 
@@ -65,10 +73,36 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *         (rospublisher+=RosPublisher rospublisher+=RosPublisher*)? 
 	 *         (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? 
 	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
-	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)?
+	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)? 
+	 *         (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*)? 
+	 *         (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*)?
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RosActionClient returns RosActionClient
+	 *
+	 * Constraint:
+	 *     (name=EString? ns=EString? actclient=[ActionClient|EString])
+	 */
+	protected void sequence_RosActionClient(ISerializationContext context, RosActionClient semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RosActionServer returns RosActionServer
+	 *
+	 * Constraint:
+	 *     (name=EString? ns=EString? actserver=[ActionServer|EString])
+	 */
+	protected void sequence_RosActionServer(ISerializationContext context, RosActionServer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
