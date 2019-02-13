@@ -6,6 +6,7 @@ package de.fraunhofer.ipa.rossystem.validation
 import org.eclipse.xtext.validation.Check
 import rossystem.ServiceConnection
 import rossystem.TopicConnection
+import rossystem.ActionConnection
 
 /**
  * This class contains custom validation rules. 
@@ -17,7 +18,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	public static val NOT_MATCHED_NAME = 'notMatchedName'
 	public static val NOT_MATCHED_TYPE = 'notMatchedType'
 
-	/** @Check
+	@Check
 	def void checkTopicConnection(TopicConnection topicconnection){
 		for (pub:topicconnection.from){
 			for (sub:topicconnection.to){
@@ -34,5 +35,13 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				error("Services not matched", null, NOT_MATCHED_TYPE)
 				return
 			}
-	}}*/
-	}
+	}}
+	
+	@Check
+	def void checkActConnection(ActionConnection actionconnection){
+		if( !actionconnection.from.actserver.action.name.equalsIgnoreCase(actionconnection.to.actclient.action.name)){
+				error("Action type not matched", null, NOT_MATCHED_TYPE)
+				return
+			}
+	}}
+
