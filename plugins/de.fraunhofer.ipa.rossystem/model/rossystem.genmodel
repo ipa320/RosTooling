@@ -12,6 +12,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ServiceConnections"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosSystem/Name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
@@ -22,6 +23,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/From"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/To"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ServiceConnection/ServiceName"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//ActionConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/From"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/To"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ActionConnection/ActionName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

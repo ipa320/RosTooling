@@ -141,6 +141,29 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.ActionConnection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActionConnectionItemProvider actionConnectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.ActionConnection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActionConnectionAdapter() {
+		if (actionConnectionItemProvider == null) {
+			actionConnectionItemProvider = new ActionConnectionItemProvider(this);
+		}
+
+		return actionConnectionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,6 +265,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 		if (rosSystemItemProvider != null) rosSystemItemProvider.dispose();
 		if (topicConnectionItemProvider != null) topicConnectionItemProvider.dispose();
 		if (serviceConnectionItemProvider != null) serviceConnectionItemProvider.dispose();
+		if (actionConnectionItemProvider != null) actionConnectionItemProvider.dispose();
 	}
 
 }

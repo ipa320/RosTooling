@@ -84,6 +84,12 @@ public class RossystemSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RossystemPackage.ACTION_CONNECTION: {
+				ActionConnection actionConnection = (ActionConnection)theEObject;
+				T result = caseActionConnection(actionConnection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -130,6 +136,21 @@ public class RossystemSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseServiceConnection(ServiceConnection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Connection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionConnection(ActionConnection object) {
 		return null;
 	}
 

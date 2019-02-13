@@ -80,6 +80,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 				return createServiceConnectionAdapter();
 			}
 			@Override
+			public Adapter caseActionConnection(ActionConnection object) {
+				return createActionConnectionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -138,6 +142,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.ActionConnection <em>Action Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.ActionConnection
+	 * @generated
+	 */
+	public Adapter createActionConnectionAdapter() {
 		return null;
 	}
 

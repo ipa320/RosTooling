@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import rossystem.ActionConnection;
 import rossystem.RosSystem;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
@@ -36,6 +37,7 @@ import rossystem.TopicConnection;
  *   <li>{@link rossystem.impl.RosSystemImpl#getServiceConnections <em>Service Connections</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getRosComponent <em>Ros Component</em>}</li>
+ *   <li>{@link rossystem.impl.RosSystemImpl#getActionConnections <em>Action Connections</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +92,16 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * @ordered
 	 */
 	protected EList<ComponentInterface> rosComponent;
+
+	/**
+	 * The cached value of the '{@link #getActionConnections() <em>Action Connections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionConnections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ActionConnection> actionConnections;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +184,18 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ActionConnection> getActionConnections() {
+		if (actionConnections == null) {
+			actionConnections = new EObjectContainmentEList<ActionConnection>(ActionConnection.class, this, RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS);
+		}
+		return actionConnections;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -181,6 +205,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return ((InternalEList<?>)getServiceConnections()).basicRemove(otherEnd, msgs);
 			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 				return ((InternalEList<?>)getRosComponent()).basicRemove(otherEnd, msgs);
+			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
+				return ((InternalEList<?>)getActionConnections()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,6 +227,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return getName();
 			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 				return getRosComponent();
+			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
+				return getActionConnections();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +257,10 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				getRosComponent().clear();
 				getRosComponent().addAll((Collection<? extends ComponentInterface>)newValue);
 				return;
+			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
+				getActionConnections().clear();
+				getActionConnections().addAll((Collection<? extends ActionConnection>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -253,6 +285,9 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 				getRosComponent().clear();
 				return;
+			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
+				getActionConnections().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -273,6 +308,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
 				return rosComponent != null && !rosComponent.isEmpty();
+			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
+				return actionConnections != null && !actionConnections.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

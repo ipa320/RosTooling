@@ -103,13 +103,22 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__ROS_COMPONENT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Action Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SYSTEM__ACTION_CONNECTIONS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Ros System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM_FEATURE_COUNT = 4;
+	int ROS_SYSTEM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Ros System</em>' class.
@@ -232,6 +241,62 @@ public interface RossystemPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link rossystem.impl.ActionConnectionImpl <em>Action Connection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.ActionConnectionImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getActionConnection()
+	 * @generated
+	 */
+	int ACTION_CONNECTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION__FROM = 0;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION__TO = 1;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION__ACTION_NAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>Action Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Action Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link rossystem.RosSystem <em>Ros System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -284,6 +349,17 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRosSystem_RosComponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action Connections</em>'.
+	 * @see rossystem.RosSystem#getActionConnections()
+	 * @see #getRosSystem()
+	 * @generated
+	 */
+	EReference getRosSystem_ActionConnections();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.TopicConnection <em>Topic Connection</em>}'.
@@ -372,6 +448,49 @@ public interface RossystemPackage extends EPackage {
 	EAttribute getServiceConnection_ServiceName();
 
 	/**
+	 * Returns the meta object for class '{@link rossystem.ActionConnection <em>Action Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action Connection</em>'.
+	 * @see rossystem.ActionConnection
+	 * @generated
+	 */
+	EClass getActionConnection();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.ActionConnection#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.ActionConnection#getFrom()
+	 * @see #getActionConnection()
+	 * @generated
+	 */
+	EReference getActionConnection_From();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.ActionConnection#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To</em>'.
+	 * @see rossystem.ActionConnection#getTo()
+	 * @see #getActionConnection()
+	 * @generated
+	 */
+	EReference getActionConnection_To();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action Name</em>'.
+	 * @see rossystem.ActionConnection#getActionName()
+	 * @see #getActionConnection()
+	 * @generated
+	 */
+	EAttribute getActionConnection_ActionName();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,6 +554,14 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROS_SYSTEM__ROS_COMPONENT = eINSTANCE.getRosSystem_RosComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Action Connections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SYSTEM__ACTION_CONNECTIONS = eINSTANCE.getRosSystem_ActionConnections();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.TopicConnectionImpl <em>Topic Connection</em>}' class.
@@ -503,6 +630,40 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_CONNECTION__SERVICE_NAME = eINSTANCE.getServiceConnection_ServiceName();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.ActionConnectionImpl <em>Action Connection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.ActionConnectionImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getActionConnection()
+		 * @generated
+		 */
+		EClass ACTION_CONNECTION = eINSTANCE.getActionConnection();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION_CONNECTION__FROM = eINSTANCE.getActionConnection_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION_CONNECTION__TO = eINSTANCE.getActionConnection_To();
+
+		/**
+		 * The meta object literal for the '<em><b>Action Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION_CONNECTION__ACTION_NAME = eINSTANCE.getActionConnection_ActionName();
 
 	}
 

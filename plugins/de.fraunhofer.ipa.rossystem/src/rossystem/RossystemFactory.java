@@ -49,6 +49,15 @@ public interface RossystemFactory extends EFactory {
 	ServiceConnection createServiceConnection();
 
 	/**
+	 * Returns a new object of class '<em>Action Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action Connection</em>'.
+	 * @generated
+	 */
+	ActionConnection createActionConnection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
