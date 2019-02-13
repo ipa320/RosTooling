@@ -40,14 +40,20 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import componentInterface.ComponentInterface;
+import componentInterface.RosActionClient;
+import componentInterface.RosActionServer;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
 import componentInterface.RosSubscriber;
+import componentInterface.impl.RosActionClientImpl;
+import componentInterface.impl.RosActionServerImpl;
 import componentInterface.impl.RosPublisherImpl;
 import componentInterface.impl.RosServiceClientImpl;
 import componentInterface.impl.RosServiceServerImpl;
 import componentInterface.impl.RosSubscriberImpl;
+import ros.ActionClient;
+import ros.ActionServer;
 import ros.Artifact;
 import ros.Node;
 import ros.Package;
@@ -121,6 +127,8 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 			EList <Subscriber> subs = (EList<Subscriber>) rosnode.getSubscriber();
 			EList <ServiceClient> scls = (EList<ServiceClient>) rosnode.getServiceclient();
 			EList <ServiceServer> ssrs = (EList<ServiceServer>) rosnode.getServiceserver();
+			EList <ActionClient> acls = (EList<ActionClient>) rosnode.getActionclient();
+			EList <ActionServer> asrs = (EList<ActionServer>) rosnode.getActionserver();
 
 			WorkspaceModifyOperation operation =
 				new WorkspaceModifyOperation() {
@@ -167,7 +175,21 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 														rosssr.setNs(ComponentNameSpace);
 														rosssr.setSrvserver(ssr);
 														component.getRosserviceserver().add(rosssr);
-													}				 
+													}
+													for (ActionClient acl:acls) {
+														RosActionClient rosacl = new RosActionClientImpl();
+														rosacl.setName(NameSpaceInterfaces+acl.getName());
+														rosacl.setNs(ComponentNameSpace);
+														rosacl.setActclient(acl);
+														component.getRosactionclient().add(rosacl);
+													}
+													for (ActionServer asr:asrs) {
+														RosActionServer rosasr = new RosActionServerImpl();
+														rosasr.setName(NameSpaceInterfaces+asr.getName());
+														rosasr.setNs(ComponentNameSpace);
+														rosasr.setActserver(asr);
+														component.getRosactionserver().add(rosasr);
+													}
 					}}}}}}}catch (Exception exception) {
 						ComponentInterfaceEditorPlugin.INSTANCE.log(exception);
 					}

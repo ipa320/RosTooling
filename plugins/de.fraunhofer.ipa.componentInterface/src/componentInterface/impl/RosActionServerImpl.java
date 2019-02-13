@@ -86,7 +86,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RosActionServerImpl() {
+	public RosActionServerImpl() {
 		super();
 	}
 
