@@ -22,6 +22,8 @@ import ros.ServiceClient
 import ros.ServiceServer
 import ros.Subscriber
 import rossystem.RosSystem
+import ros.ActionServer
+import ros.ActionClient
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -118,6 +120,20 @@ class RosSystemGenerator extends AbstractGenerator {
 				«ENDIF»
 				«ENDIF»
 		«ENDFOR»
+		«FOR rosActionServer:component.rosactionserver»
+				«IF component.hasNS»
+				«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.get_ns))»
+				<remap from=«compile_action_name(rosActionServer.actserver,component.get_ns)» to=«rosActionServer.name» />
+				«ENDIF»
+				«ENDIF»
+		«ENDFOR»
+		«FOR rosActionClient:component.rosactionclient»
+				«IF component.hasNS»
+				«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.get_ns))»
+				<remap from=«compile_action_name(rosActionClient.actclient,component.get_ns)» to=«rosActionClient.name» />
+				«ENDIF»
+				«ENDIF»
+		«ENDFOR»
 	«ENDFOR»
 	«FOR component:system.rosComponent»
 
@@ -182,6 +198,37 @@ class RosSystemGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ENDFOR»
 		«ENDFOR»
+		«FOR rosActionServer:component.rosactionserver»
+			«FOR actionConnection:system.actionConnections»
+				«IF actionConnection.from.equals(rosActionServer)»
+					«IF component.hasNS»					
+						«IF !actionConnection.actionName.equals(compile_action_name(rosActionServer.actserver,component.get_ns))»
+						<remap from="«rosActionServer.actserver.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+					«ELSE»
+						«IF !actionConnection.actionName.equals(rosActionServer.actserver.name)»
+						<remap from="«rosActionServer.actserver.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+			«ENDIF»
+			«ENDIF»
+		«ENDFOR»
+		«ENDFOR»
+		«FOR rosActionClient:component.rosactionclient»
+			«FOR actionConnection:system.actionConnections»
+				«IF actionConnection.to.equals(rosActionClient)»
+					«IF component.hasNS»					
+						«IF !actionConnection.actionName.equals(compile_action_name(rosActionClient.actclient,component.get_ns))»
+						<remap from="«rosActionClient.actclient.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+					«ELSE»
+						«IF !actionConnection.actionName.equals(rosActionClient.actclient.name)»
+						<remap from="«rosActionClient.actclient.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+			«ENDIF»
+			«ENDIF»
+		«ENDFOR»
+		«ENDFOR»
+
 	</node>
 	«ENDFOR»
 </launch>
@@ -350,6 +397,12 @@ def compile_pkg(ComponentInterface component)
 	}
 	def compile_service_name(ServiceClient serviceclient, String NS){
 		return NS+"/"+serviceclient.name;
+	}
+	def compile_action_name(ActionServer actionserver, String NS){
+		return NS+"/"+actionserver.name;
+	}
+	def compile_action_name(ActionClient actionclient, String NS){
+		return NS+"/"+actionclient.name;
 	}
 	
 
