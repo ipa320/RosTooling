@@ -4,3 +4,4 @@
 *.xtendbin
 /xtend-gen/
 */bin/
+*.pyc
