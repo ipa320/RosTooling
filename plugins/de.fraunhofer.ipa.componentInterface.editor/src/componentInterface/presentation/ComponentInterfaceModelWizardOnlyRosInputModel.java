@@ -105,7 +105,8 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 		try {
 			final String Inputpath = getInputFileCreationPage.getPath();
 			//TODO: this only works if the ros model is in the same eclipse project
-			String RelativePath = Inputpath.replace(project.getLocation().toString(), project.getName());
+			String Inputpath_win = Inputpath.replace("\\","/");
+			String RelativePath = Inputpath_win.replace(project.getLocation().toString(), project.getName());
 			ResourceSet rs = new ResourceSetImpl();
 			//Injector injector = Guice.createInjector(new RosRuntimeModule());
 			//XtextResourceSet rs = injector.getInstance(XtextResourceSet.class);
