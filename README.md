@@ -31,55 +31,34 @@ The description of a ROS system is divided into 3 metamodels:
 
 ## Installation and setup requirements <a id="2--installation-requirements"/>
 
-Download the official [Eclipse Oxygen Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R2/eclipse-inst-linux64.tar.gz) and choose the *Eclipse Modeling tools* package.
+Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended use *Oxygen*.
 
-Once Eclipse is installed go to the menu *Help* and open the *Eclipse Marketplace* to install the packages:
+![alt text](docu/images/eclipse_installer1.png)
+
+Press *Next* and add a new *User project* pressing the green button *+*:
 ```
-Sirius (version 6)
-Eclipse Xtext (version 2.15)
-Eclipse Xtend (version 2.15)
+Catalog: Github Projects
+Resource URIs: https://raw.githubusercontent.com/ipa320/ros-model/master/EclipseInstaller/ROSModel.setup
 ```
+![alt text](docu/images/eclipse_installer2.png)
+
+Select the the ROS Model project (under Github Projects -> <User>) and press next. 
+
+By default the ROS tooling installation will be saved under the folder *ros-model-master* in your home directory. In case your github credentials are not setup on your machine, change the *Ros model Github repository* to the *HTTPs(read-write)* option.
+
+Follow the installation instructions of the Oompth installer dialog, after the installation eclipse will be restarted to launch the ROS tooling configuration. Finally, when all the startup tasks finished press "Worbench".
 
 ## Setup the work environment and start the software <a id="3--start"/>
 
 #### Setup the environment and start the eclipse application
 
-1.  Download the project into your local:
-```
-git clone https://github.com/ipa-nhg/ros-model.git
-```
-2. Open Eclipse and create a new workspace
 
-3. Import below projects (under the "plugins" folder of this repository) into the new workspace (File -> Import -> General -> Existing projects)
+1. Start the ROS tooling:
+* select de.fraunhofer.ipa.ros.siriusand press the button *Run*
 
-```
-de.fraunhofer.ipa.componentInterface
-de.fraunhofer.ipa.componentInterface.edit
-de.fraunhofer.ipa.componentInterface.editor
-de.fraunhofer.ipa.componentInterface.xtext
-de.fraunhofer.ipa.componentInterface.xtext.ide
-de.fraunhofer.ipa.componentInterface.xtext.ui
-de.fraunhofer.ipa.ros
-de.fraunhofer.ipa.ros.edit
-de.fraunhofer.ipa.ros.editor
-de.fraunhofer.ipa.ros.tests
-de.fraunhofer.ipa.ros.xtext
-de.fraunhofer.ipa.ros.xtext.ide
-de.fraunhofer.ipa.ros.xtext.ui
-de.fraunhofer.ipa.ros.sirius
-de.fraunhofer.ipa.rossystem
-de.fraunhofer.ipa.rossystem.edit
-de.fraunhofer.ipa.rossystem.editor
-de.fraunhofer.ipa.rossystem.xtext
-de.fraunhofer.ipa.rossystem.xtext.ide
-de.fraunhofer.ipa.rossystem.xtext.ui
+![alt text](docu/images/run_ros_tooling.png)
 
-```
-4. Start a new eclipse application by either
-* de.fraunhofer.ipa.ros.sirius > plugin.xml and click *Launch an Eclipse application* or 
-* *right click* de.fraunhofer.ipa.ros.sirius and *click* on Run As > Eclipse Application
-
-5. Import the common communication objects project (under the "examples" folder of this repository) to the workbench of your application:
+2. Import the common communication objects project (under the "examples" folder of this repository) to the workbench of your application:
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
