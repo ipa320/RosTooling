@@ -1,10 +1,10 @@
 ## Ros model tools
 
-1. <a href="#1--msggen">Messages, services and actions generator</a>
-2. <a href="#2--model-extractor">Model extractor using static code analysis</a>
+1. <a href="#messages-services-and-actions-generator">Messages, services and actions generator</a>
+2. <a href="#model-extractor-using-static-code-analysis">Model extractor using static code analysis</a>
 
 
-## Messages, services and actions generator <a id="#1--msggen"/>
+## Messages, services and actions generator
 
 A new communication object for the ROS tooling can only be generated if the interface already exists in ROS, consequently this tool requires a local ROS installation. 
 
@@ -20,17 +20,15 @@ Call the script giving as argument the name of the ROS package and save the oupu
 bash ros-model/tools/generate_messages_model_helper.sh *PACKAGE_NAME* > ros-model/examples/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/*PACKAGE_NAME*.ros
 ```
 
-## Model extractor using static code analysis <a id="#2--model-extractor"/>
+## Model extractor using static code analysis
 
 To extract the ROS model of a node we use the framework [HAROS](https://github.com/git-afsantos/haros).
 
 Install HAROS using the following command:
 ```
-[sudo] apt-get install cppcheck
-[sudo] apt-get install cccc
-pip install -e git+https://github.com/timtadh/pyflwor.git#egg=pyflwor
+[sudo] apt-get install cppcheck cccc libclang-3.8-dev
+[sudo] pip install -e git+https://github.com/timtadh/pyflwor.git#egg=pyflwor
 [sudo] pip install -Iv clang==3.8
-[sudo] apt-get install libclang-3.8-dev
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/llvm-3.8/lib
 [sudo] pip install haros
 haros init
@@ -39,10 +37,7 @@ For further information and alternative installation methods please see: [HAROS 
 
 Install bonsai:
 ```
-cd ~/haros/
-git clone https://github.com/git-afsantos/bonsai
-cd bonsai
-sudo python setup.py install
+[sudo] pip install bonsai-code
 ```
 
 Create your ROS workspace and clone the repository that contains the ROS code:
