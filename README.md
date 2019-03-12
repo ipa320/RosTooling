@@ -5,9 +5,10 @@
 Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
 
 1. <a href="#1--intro">Introduction</a>
-2. <a href="#2--installation-requirements">Installation Requirements</a>
+2. <a href="#2--installation-requirements">Installation</a>
 3. <a href="#3--start">Setup the work environment and start the software</a>
-
+4. <a href="#4--tutorials">Usage</a>
+5. <a href="#5--tools">Tools: Auto-extraction of ROS models from static code analysis (HAROS)</a>
 
 ## Introduction <a id="1--intro"/>
 
@@ -67,4 +68,15 @@ Now that your workspace is setup and the eclipse application running you can sta
 
 ![alt text](docu/images/eclipse_app_empty.png)
 
+## Usage <a id="4--tutorials"/>
+
 To play with the tool please follow our [tutorials](docu/README.md).
+
+## Usage <a id="5--tools"/>
+
+To avoid errors creating models we provide [tools](tools/README.md).:
+
+1. Create ROS models from exixting ros nodes
+2. Provide new ROS messages, services and actions types
+
+:bangbang: these tools require a ROS installation.
