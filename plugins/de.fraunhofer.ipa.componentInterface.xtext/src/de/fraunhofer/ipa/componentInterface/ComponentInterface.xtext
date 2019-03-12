@@ -14,6 +14,8 @@ ComponentInterface returns ComponentInterface:
 		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
 		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?
 		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
+		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
+		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
 	'}';
 
 
@@ -53,6 +55,23 @@ RosServiceClient returns RosServiceClient:
 		'RefClient' srvclient=[ros::ServiceClient|EString]
 	'}';
 
+RosActionServer returns RosActionServer:
+	{RosActionServer}
+	'RosActionServer'
+	(name=EString)?
+	'{'
+		('ns' ns=EString)?
+		'RefServer' actserver=[ros::ActionServer|EString]
+	'}';
+
+RosActionClient returns RosActionClient:
+	{RosActionClient}
+	'RosActionClient'
+	(name=EString)?
+	'{'
+		('ns' ns=EString)?
+		'RefClient' actclient=[ros::ActionClient|EString]
+	'}';
 EString returns ecore::EString:
 	STRING | ID;
 

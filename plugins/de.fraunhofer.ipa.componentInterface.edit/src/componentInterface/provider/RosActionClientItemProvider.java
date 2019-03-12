@@ -1,7 +1,10 @@
 /**
  */
-package rossystem.provider;
+package componentInterface.provider;
 
+
+import componentInterface.ComponentInterfacePackage;
+import componentInterface.RosActionClient;
 
 import java.util.Collection;
 import java.util.List;
@@ -10,8 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -24,17 +25,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import rossystem.RosSystem;
-import rossystem.RossystemFactory;
-import rossystem.RossystemPackage;
-
 /**
- * This is the item provider adapter for a {@link rossystem.RosSystem} object.
+ * This is the item provider adapter for a {@link componentInterface.RosActionClient} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RosSystemItemProvider 
+public class RosActionClientItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +45,7 @@ public class RosSystemItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosSystemItemProvider(AdapterFactory adapterFactory) {
+	public RosActionClientItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,10 +60,33 @@ public class RosSystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addActclientPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addRosComponentPropertyDescriptor(object);
+			addNsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Actclient feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActclientPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RosActionClient_actclient_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosActionClient_actclient_feature", "_UI_RosActionClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_ACTION_CLIENT__ACTCLIENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -80,9 +100,9 @@ public class RosSystemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSystem_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_Name_feature", "_UI_RosSystem_type"),
-				 RossystemPackage.Literals.ROS_SYSTEM__NAME,
+				 getString("_UI_RosActionClient_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosActionClient_name_feature", "_UI_RosActionClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_ACTION_CLIENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -92,68 +112,36 @@ public class RosSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Ros Component feature.
+	 * This adds a property descriptor for the Ns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRosComponentPropertyDescriptor(Object object) {
+	protected void addNsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSystem_RosComponent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_RosComponent_feature", "_UI_RosSystem_type"),
-				 RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
+				 getString("_UI_RosActionClient_ns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosActionClient_ns_feature", "_UI_RosActionClient_type"),
+				 ComponentInterfacePackage.Literals.ROS_ACTION_CLIENT__NS,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns RosSystem.gif.
+	 * This returns RosActionClient.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RosSystem"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RosActionClient"));
 	}
 
 	/**
@@ -164,10 +152,10 @@ public class RosSystemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RosSystem)object).getName();
+		String label = ((RosActionClient)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RosSystem_type") :
-			getString("_UI_RosSystem_type") + " " + label;
+			getString("_UI_RosActionClient_type") :
+			getString("_UI_RosActionClient_type") + " " + label;
 	}
 	
 
@@ -182,14 +170,10 @@ public class RosSystemItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RosSystem.class)) {
-			case RossystemPackage.ROS_SYSTEM__NAME:
+		switch (notification.getFeatureID(RosActionClient.class)) {
+			case ComponentInterfacePackage.ROS_ACTION_CLIENT__NAME:
+			case ComponentInterfacePackage.ROS_ACTION_CLIENT__NS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -205,21 +189,6 @@ public class RosSystemItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createTopicConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createServiceConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createActionConnection()));
 	}
 
 	/**
@@ -230,7 +199,7 @@ public class RosSystemItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return RossystemEditPlugin.INSTANCE;
+		return ComponentInterfaceEditPlugin.INSTANCE;
 	}
 
 }

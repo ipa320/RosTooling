@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link rossystem.RosSystem#getServiceConnections <em>Service Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()
@@ -100,5 +101,21 @@ public interface RosSystem extends EObject {
 	 * @generated
 	 */
 	EList<ComponentInterface> getRosComponent();
+
+	/**
+	 * Returns the value of the '<em><b>Action Connections</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.ActionConnection}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action Connections</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action Connections</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_ActionConnections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ActionConnection> getActionConnections();
 
 } // RosSystem

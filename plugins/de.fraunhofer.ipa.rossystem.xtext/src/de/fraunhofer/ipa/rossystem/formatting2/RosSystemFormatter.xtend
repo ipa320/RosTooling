@@ -10,6 +10,7 @@ import rossystem.ServiceConnection
 import rossystem.TopicConnection
 import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess
 import javax.inject.Inject
+import rossystem.ActionConnection
 
 /*class RosSystemFormatter extends AbstractFormatter2 {
 	
@@ -42,6 +43,9 @@ class RosSystemFormatter extends AbstractFormatter2 {
 		}
 		for (ServiceConnection serviceConnection : rosSystem.getServiceConnections()) {
 			serviceConnection.format;
+		}
+		for (ActionConnection actionConnection : rosSystem.getActionConnections()) {
+			actionConnection.format;
 		}
 	}
 	

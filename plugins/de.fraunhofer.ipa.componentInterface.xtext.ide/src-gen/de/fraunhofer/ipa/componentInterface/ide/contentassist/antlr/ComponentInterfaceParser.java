@@ -42,6 +42,10 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_7_3(), "rule__ComponentInterface__Group_7_3__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_8(), "rule__ComponentInterface__Group_8__0");
 					put(grammarAccess.getComponentInterfaceAccess().getGroup_8_3(), "rule__ComponentInterface__Group_8_3__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_9(), "rule__ComponentInterface__Group_9__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_9_3(), "rule__ComponentInterface__Group_9_3__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_10(), "rule__ComponentInterface__Group_10__0");
+					put(grammarAccess.getComponentInterfaceAccess().getGroup_10_3(), "rule__ComponentInterface__Group_10_3__0");
 					put(grammarAccess.getRosPublisherAccess().getGroup(), "rule__RosPublisher__Group__0");
 					put(grammarAccess.getRosPublisherAccess().getGroup_4(), "rule__RosPublisher__Group_4__0");
 					put(grammarAccess.getRosSubscriberAccess().getGroup(), "rule__RosSubscriber__Group__0");
@@ -50,6 +54,10 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRosServiceServerAccess().getGroup_4(), "rule__RosServiceServer__Group_4__0");
 					put(grammarAccess.getRosServiceClientAccess().getGroup(), "rule__RosServiceClient__Group__0");
 					put(grammarAccess.getRosServiceClientAccess().getGroup_4(), "rule__RosServiceClient__Group_4__0");
+					put(grammarAccess.getRosActionServerAccess().getGroup(), "rule__RosActionServer__Group__0");
+					put(grammarAccess.getRosActionServerAccess().getGroup_4(), "rule__RosActionServer__Group_4__0");
+					put(grammarAccess.getRosActionClientAccess().getGroup(), "rule__RosActionClient__Group__0");
+					put(grammarAccess.getRosActionClientAccess().getGroup_4(), "rule__RosActionClient__Group_4__0");
 					put(grammarAccess.getComponentInterfaceAccess().getNameAssignment_3(), "rule__ComponentInterface__NameAssignment_3");
 					put(grammarAccess.getComponentInterfaceAccess().getNameSpaceAssignment_4_1(), "rule__ComponentInterface__NameSpaceAssignment_4_1");
 					put(grammarAccess.getComponentInterfaceAccess().getRospublisherAssignment_5_2(), "rule__ComponentInterface__RospublisherAssignment_5_2");
@@ -60,6 +68,10 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComponentInterfaceAccess().getRosserviceserverAssignment_7_3_1(), "rule__ComponentInterface__RosserviceserverAssignment_7_3_1");
 					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_8_2(), "rule__ComponentInterface__RosserviceclientAssignment_8_2");
 					put(grammarAccess.getComponentInterfaceAccess().getRosserviceclientAssignment_8_3_1(), "rule__ComponentInterface__RosserviceclientAssignment_8_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRosactionserverAssignment_9_2(), "rule__ComponentInterface__RosactionserverAssignment_9_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRosactionserverAssignment_9_3_1(), "rule__ComponentInterface__RosactionserverAssignment_9_3_1");
+					put(grammarAccess.getComponentInterfaceAccess().getRosactionclientAssignment_10_2(), "rule__ComponentInterface__RosactionclientAssignment_10_2");
+					put(grammarAccess.getComponentInterfaceAccess().getRosactionclientAssignment_10_3_1(), "rule__ComponentInterface__RosactionclientAssignment_10_3_1");
 					put(grammarAccess.getRosPublisherAccess().getNameAssignment_2(), "rule__RosPublisher__NameAssignment_2");
 					put(grammarAccess.getRosPublisherAccess().getNsAssignment_4_1(), "rule__RosPublisher__NsAssignment_4_1");
 					put(grammarAccess.getRosPublisherAccess().getPublisherAssignment_6(), "rule__RosPublisher__PublisherAssignment_6");
@@ -72,6 +84,12 @@ public class ComponentInterfaceParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRosServiceClientAccess().getNameAssignment_2(), "rule__RosServiceClient__NameAssignment_2");
 					put(grammarAccess.getRosServiceClientAccess().getNsAssignment_4_1(), "rule__RosServiceClient__NsAssignment_4_1");
 					put(grammarAccess.getRosServiceClientAccess().getSrvclientAssignment_6(), "rule__RosServiceClient__SrvclientAssignment_6");
+					put(grammarAccess.getRosActionServerAccess().getNameAssignment_2(), "rule__RosActionServer__NameAssignment_2");
+					put(grammarAccess.getRosActionServerAccess().getNsAssignment_4_1(), "rule__RosActionServer__NsAssignment_4_1");
+					put(grammarAccess.getRosActionServerAccess().getActserverAssignment_6(), "rule__RosActionServer__ActserverAssignment_6");
+					put(grammarAccess.getRosActionClientAccess().getNameAssignment_2(), "rule__RosActionClient__NameAssignment_2");
+					put(grammarAccess.getRosActionClientAccess().getNsAssignment_4_1(), "rule__RosActionClient__NsAssignment_4_1");
+					put(grammarAccess.getRosActionClientAccess().getActclientAssignment_6(), "rule__RosActionClient__ActclientAssignment_6");
 				}
 			};
 		}

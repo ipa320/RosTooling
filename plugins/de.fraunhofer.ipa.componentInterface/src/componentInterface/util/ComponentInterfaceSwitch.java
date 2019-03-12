@@ -103,6 +103,18 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentInterfacePackage.ROS_ACTION_SERVER: {
+				RosActionServer rosActionServer = (RosActionServer)theEObject;
+				T result = caseRosActionServer(rosActionServer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentInterfacePackage.ROS_ACTION_CLIENT: {
+				RosActionClient rosActionClient = (RosActionClient)theEObject;
+				T result = caseRosActionClient(rosActionClient);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -194,6 +206,36 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNameSpaceComponent(NameSpaceComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Action Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Action Server</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosActionServer(RosActionServer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Action Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Action Client</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosActionClient(RosActionClient object) {
 		return null;
 	}
 

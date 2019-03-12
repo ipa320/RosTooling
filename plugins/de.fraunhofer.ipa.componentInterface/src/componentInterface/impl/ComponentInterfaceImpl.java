@@ -4,6 +4,8 @@ package componentInterface.impl;
 
 import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
+import componentInterface.RosActionClient;
+import componentInterface.RosActionServer;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,6 +41,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRossubscriber <em>Rossubscriber</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosserviceserver <em>Rosserviceserver</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosserviceclient <em>Rosserviceclient</em>}</li>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionserver <em>Rosactionserver</em>}</li>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionclient <em>Rosactionclient</em>}</li>
  * </ul>
  *
  * @generated
@@ -124,11 +129,31 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<RosServiceClient> rosserviceclient;
 
 	/**
+	 * The cached value of the '{@link #getRosactionserver() <em>Rosactionserver</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRosactionserver()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RosActionServer> rosactionserver;
+
+	/**
+	 * The cached value of the '{@link #getRosactionclient() <em>Rosactionclient</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRosactionclient()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RosActionClient> rosactionclient;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInterfaceImpl() {
+	protected ComponentInterfaceImpl() {
 		super();
 	}
 
@@ -237,6 +262,30 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<RosActionServer> getRosactionserver() {
+		if (rosactionserver == null) {
+			rosactionserver = new EObjectContainmentEList<RosActionServer>(RosActionServer.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER);
+		}
+		return rosactionserver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RosActionClient> getRosactionclient() {
+		if (rosactionclient == null) {
+			rosactionclient = new EObjectContainmentEList<RosActionClient>(RosActionClient.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT);
+		}
+		return rosactionclient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -248,6 +297,10 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return ((InternalEList<?>)getRosserviceserver()).basicRemove(otherEnd, msgs);
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
 				return ((InternalEList<?>)getRosserviceclient()).basicRemove(otherEnd, msgs);
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+				return ((InternalEList<?>)getRosactionserver()).basicRemove(otherEnd, msgs);
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+				return ((InternalEList<?>)getRosactionclient()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -272,6 +325,10 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return getRosserviceserver();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
 				return getRosserviceclient();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+				return getRosactionserver();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+				return getRosactionclient();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,6 +364,14 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				getRosserviceclient().clear();
 				getRosserviceclient().addAll((Collection<? extends RosServiceClient>)newValue);
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+				getRosactionserver().clear();
+				getRosactionserver().addAll((Collection<? extends RosActionServer>)newValue);
+				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+				getRosactionclient().clear();
+				getRosactionclient().addAll((Collection<? extends RosActionClient>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -337,6 +402,12 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
 				getRosserviceclient().clear();
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+				getRosactionserver().clear();
+				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+				getRosactionclient().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -361,6 +432,10 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return rosserviceserver != null && !rosserviceserver.isEmpty();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
 				return rosserviceclient != null && !rosserviceclient.isEmpty();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+				return rosactionserver != null && !rosactionserver.isEmpty();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+				return rosactionclient != null && !rosactionclient.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

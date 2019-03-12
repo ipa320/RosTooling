@@ -22,6 +22,10 @@ import ros.ServiceClient
 import ros.ServiceServer
 import ros.Subscriber
 import rossystem.RosSystem
+import ros.ActionServer
+import ros.ActionClient
+import componentInterface.RosActionServer
+import componentInterface.RosActionClient
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -64,11 +68,15 @@ class RosSystemGenerator extends AbstractGenerator {
 	List<RosSubscriber> subs
 	List<RosServiceServer> svrs
 	List<RosServiceClient> svrc
+	List<RosActionServer> acts
+	List<RosActionClient> actc
 	
 	int count_pub
 	int count_sub
 	int count_srvc
 	int count_srvs
+	int count_acts
+	int count_actc
 	
 	String node_impl
 	
@@ -115,6 +123,20 @@ class RosSystemGenerator extends AbstractGenerator {
 				«IF component.hasNS»
 				«IF !rosServiceClient.name.equals(compile_service_name(rosServiceClient.srvclient,component.get_ns))»
 				<remap from=«compile_service_name(rosServiceClient.srvclient,component.get_ns)» to=«rosServiceClient.name» />
+				«ENDIF»
+				«ENDIF»
+		«ENDFOR»
+		«FOR rosActionServer:component.rosactionserver»
+				«IF component.hasNS»
+				«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.get_ns))»
+				<remap from=«compile_action_name(rosActionServer.actserver,component.get_ns)» to=«rosActionServer.name» />
+				«ENDIF»
+				«ENDIF»
+		«ENDFOR»
+		«FOR rosActionClient:component.rosactionclient»
+				«IF component.hasNS»
+				«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.get_ns))»
+				<remap from=«compile_action_name(rosActionClient.actclient,component.get_ns)» to=«rosActionClient.name» />
 				«ENDIF»
 				«ENDIF»
 		«ENDFOR»
@@ -182,6 +204,37 @@ class RosSystemGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ENDFOR»
 		«ENDFOR»
+		«FOR rosActionServer:component.rosactionserver»
+			«FOR actionConnection:system.actionConnections»
+				«IF actionConnection.from.equals(rosActionServer)»
+					«IF component.hasNS»					
+						«IF !actionConnection.actionName.equals(compile_action_name(rosActionServer.actserver,component.get_ns))»
+						<remap from="«rosActionServer.actserver.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+					«ELSE»
+						«IF !actionConnection.actionName.equals(rosActionServer.actserver.name)»
+						<remap from="«rosActionServer.actserver.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+			«ENDIF»
+			«ENDIF»
+		«ENDFOR»
+		«ENDFOR»
+		«FOR rosActionClient:component.rosactionclient»
+			«FOR actionConnection:system.actionConnections»
+				«IF actionConnection.to.equals(rosActionClient)»
+					«IF component.hasNS»					
+						«IF !actionConnection.actionName.equals(compile_action_name(rosActionClient.actclient,component.get_ns))»
+						<remap from="«rosActionClient.actclient.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+					«ELSE»
+						«IF !actionConnection.actionName.equals(rosActionClient.actclient.name)»
+						<remap from="«rosActionClient.actclient.name»" to="«actionConnection.actionName»" />
+						«ENDIF»	
+			«ENDIF»
+			«ENDIF»
+		«ENDFOR»
+		«ENDFOR»
+
 	</node>
 	«ENDFOR»
 </launch>
@@ -200,6 +253,9 @@ def compile_toComponentInterface(RosSystem system){
 	subs = new ArrayList()
 	svrs = new ArrayList()
 	svrc = new ArrayList()
+	acts = new ArrayList()
+	actc = new ArrayList()
+	
 
 		
 	for (component: system.rosComponent){
@@ -207,11 +263,15 @@ def compile_toComponentInterface(RosSystem system){
 		for ( sub:component.rossubscriber){if (!subs.contains(sub)) subs.add(sub)}
 		for ( srv:component.rosserviceserver){if (!svrs.contains(srv)) svrs.add(srv)}
 		for ( cl: component.rosserviceclient){if (!svrc.contains(cl)) svrc.add(cl)}
+		for ( act:component.rosactionserver){if (!acts.contains(act)) acts.add(act)}
+		for ( acl: component.rosactionclient){if (!actc.contains(acl)) actc.add(acl)}
 	}
 	count_pub = pubs.length
 	count_sub = subs.length
 	count_srvs = svrs.length
 	count_srvc = svrc.length
+	count_acts = acts.length
+	count_actc = actc.length
 
 	
 	'''
@@ -245,6 +305,22 @@ RosSrvClients{
 	«FOR svrc:svrc»
 	«val count_srvc=count_srvc--»
 	RosServiceClient "«svrc.name»" { RefClient "«svrc.srvclient.package_srvcli».«svrc.srvclient.artifact_srvcli».«svrc.srvclient.node_srvcli».«svrc.srvclient.name»"}«IF count_srvc > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+«IF !acts.empty»
+RosActionServers{
+	«FOR acts:acts»
+	«val count_acts=count_acts--»
+	RosActionServer "«acts.name»" { RefServer "«acts.actserver.package_actserver».«acts.actserver.artifact_actserver».«acts.actserver.node_actserver».«acts.actserver.name»"}«IF count_acts > 1 »,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
+«IF !actc.empty»
+RosActionClients{
+	«FOR actc:actc»
+	«val count_actc=count_actc--»
+	RosActionClient "«actc.name»" { RefClient "«actc.actclient.package_actclient».«actc.actclient.artifact_actclient».«actc.actclient.node_actclient».«actc.actclient.name»"}«IF count_actc > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -288,6 +364,14 @@ def compile_pkg(ComponentInterface component)
 		package_impl = serviceclient.eContainer.eContainer.eContainer.toString;
 		return package_impl.getPackage;
 	}
+	def getPackage_actserver(ActionServer actionserver){
+		package_impl = actionserver.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+	def getPackage_actclient(ActionClient actionclient){
+		package_impl = actionclient.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
 	def getPackage(String package_impl){
 			package_name = package_impl.substring(package_impl.indexOf("name")+6,package_impl.length-1)
 			PackageSet=true;
@@ -312,6 +396,14 @@ def compile_pkg(ComponentInterface component)
 		artifact_impl = serviceclient.eContainer.eContainer.toString;
 		return artifact_impl.getArtifact;
 	}
+	def getArtifact_actserver(ActionServer actionserver){
+		artifact_impl = actionserver.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact_actclient(ActionClient actionclient){
+		artifact_impl = actionclient.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
 	def getArtifact(String artifact_impl){
 		artifact_name = artifact_impl.substring(artifact_impl.indexOf("name")+6,artifact_impl.length-1)
 		ArtifactSet=true;
@@ -334,10 +426,19 @@ def compile_pkg(ComponentInterface component)
 		node_impl = serviceclient.eContainer.toString;
 		return node_impl.getNode;
 	}
+	def getNode_actserver(ActionServer actionserver){
+		node_impl = actionserver.eContainer.toString;
+		return node_impl.getNode;
+	}
+	def getNode_actclient(ActionClient actionclient){
+		node_impl = actionclient.eContainer.toString;
+		return node_impl.getNode;
+	}
 	def getNode(String node_impl){
 		node_name = node_impl.substring(node_impl.indexOf("name")+6,node_impl.length-1)
 		return node_name;
 	}
+	
 
 	def compile_topic_name(Publisher publisher, String NS){
 		return NS+"/"+publisher.name;
@@ -350,6 +451,12 @@ def compile_pkg(ComponentInterface component)
 	}
 	def compile_service_name(ServiceClient serviceclient, String NS){
 		return NS+"/"+serviceclient.name;
+	}
+	def compile_action_name(ActionServer actionserver, String NS){
+		return NS+"/"+actionserver.name;
+	}
+	def compile_action_name(ActionClient actionclient, String NS){
+		return NS+"/"+actionclient.name;
 	}
 	
 

@@ -49,6 +49,27 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
           </borderedNodeMappings>
+          <borderedNodeMappings name="RosActionServer" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ActionServer">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosActionClient" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::ActionClient">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </style>
+          </borderedNodeMappings>
           <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" domainClass="ros::Parameter">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png" tooltipExpression="ComponentParameters" sizeComputationExpression="5" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/parameters_scale.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -119,6 +140,28 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS action server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosActionServer']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/action_icon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ActionServer" referenceName="actionserver">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewServer"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS action client" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosActionClient']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/action_icon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ActionClient" referenceName="actionclient">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewClient"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -149,10 +192,18 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ServiceConnection" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" targetFinderExpression="feature:ToSrv" sourceFinderExpression="feature:FromSrv" domainClass="rossystem::ServiceConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditServiceConnections']">
+        <edgeMappings name="ServiceConnection" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" targetFinderExpression="feature:To" sourceFinderExpression="feature:From" domainClass="rossystem::ServiceConnection" useDomainElement="true" reconnections="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='EditServiceConnections']">
           <style sourceArrow="OutputArrow" sizeComputationExpression="2" routingStyle="tree" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="feature:ServiceName">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ActionConnection" semanticElements="feature:eContainer" sourceMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ActionServer']" targetMapping="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ActionClient']" targetFinderExpression="feature:To" sourceFinderExpression="feature:From" domainClass="rossystem::ActionConnection" useDomainElement="true">
+          <style sourceArrow="OutputArrow" sizeComputationExpression="2" routingStyle="tree" centeredSourceMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceClient']" centeredTargetMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']/@borderedNodeMappings[name='ServiceServer']">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:ActionName">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -196,6 +247,26 @@
               <forbiddenSides>EAST</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ActionServer" semanticCandidatesExpression="feature:rosactionserver" domainClass="componentInterface::RosActionServer">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Action" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ActionClient" semanticCandidatesExpression="feature:rosactionclient" domainClass="componentInterface::RosActionClient">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Action" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             </style>
           </borderedNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" tooltipExpression="feature:namespace">
@@ -256,6 +327,34 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer().eContainer()/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::ServiceConnection" referenceName="ServiceConnections">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="ServiceName" valueExpression="[source.name/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="From" valueExpression="var:source">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditActionConnections" precondition="[source.name.equalsIgnoreCase(target.name)/]" forceRefresh="true">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ActionConnection" precondition="[preSource.actserver.action.fullname.equalsIgnoreCase(preTarget.actclient.action.fullname)/]" forceRefresh="true" elementsToSelect="var:source" inverseSelectionOrder="true" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='ActionConnection']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer().eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::ActionConnection" referenceName="ActionConnections">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ActionName" valueExpression="[source.name/]">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="From" valueExpression="var:source">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
                     </subModelOperations>

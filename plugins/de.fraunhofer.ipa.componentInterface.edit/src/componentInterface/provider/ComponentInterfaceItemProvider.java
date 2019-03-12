@@ -58,6 +58,8 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 
 			addNamePropertyDescriptor(object);
 			addNameSpacePropertyDescriptor(object);
+			addRosactionserverPropertyDescriptor(object);
+			addRosactionclientPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,6 +109,50 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 	}
 
 	/**
+	 * This adds a property descriptor for the Rosactionserver feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRosactionserverPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInterface_rosactionserver_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_rosactionserver_feature", "_UI_ComponentInterface_type"),
+				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rosactionclient feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRosactionclientPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInterface_rosactionclient_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_rosactionclient_feature", "_UI_ComponentInterface_type"),
+				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -122,6 +168,8 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSUBSCRIBER);
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICESERVER);
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT);
 		}
 		return childrenFeatures;
 	}
@@ -185,6 +233,8 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER:
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICESERVER:
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -221,6 +271,15 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT,
 				 ComponentInterfaceFactory.eINSTANCE.createRosServiceClient()));
+		newChildDescriptors.add
+		(createChildParameter
+			(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER,
+			 ComponentInterfaceFactory.eINSTANCE.createRosActionServer()));
+
+	newChildDescriptors.add
+		(createChildParameter
+			(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT,
+			 ComponentInterfaceFactory.eINSTANCE.createRosActionClient()));
 	}
 
 	/**

@@ -59,6 +59,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 			case RossystemPackage.ROS_SYSTEM: return createRosSystem();
 			case RossystemPackage.TOPIC_CONNECTION: return createTopicConnection();
 			case RossystemPackage.SERVICE_CONNECTION: return createServiceConnection();
+			case RossystemPackage.ACTION_CONNECTION: return createActionConnection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +93,16 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	public ServiceConnection createServiceConnection() {
 		ServiceConnectionImpl serviceConnection = new ServiceConnectionImpl();
 		return serviceConnection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionConnection createActionConnection() {
+		ActionConnectionImpl actionConnection = new ActionConnectionImpl();
+		return actionConnection;
 	}
 
 	/**

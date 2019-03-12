@@ -168,13 +168,31 @@ public interface ComponentInterfacePackage extends EPackage {
 	int COMPONENT_INTERFACE__ROSSERVICECLIENT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Rosactionserver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INTERFACE__ROSACTIONSERVER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Rosactionclient</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INTERFACE__ROSACTIONCLIENT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Component Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 4;
+	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Component Interface</em>' class.
@@ -406,6 +424,116 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_SERVICE_CLIENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link componentInterface.impl.RosActionServerImpl <em>Ros Action Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentInterface.impl.RosActionServerImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosActionServer()
+	 * @generated
+	 */
+	int ROS_ACTION_SERVER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Actserver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER__ACTSERVER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER__NS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Ros Action Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Ros Action Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link componentInterface.impl.RosActionClientImpl <em>Ros Action Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentInterface.impl.RosActionClientImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosActionClient()
+	 * @generated
+	 */
+	int ROS_ACTION_CLIENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Actclient</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT__ACTCLIENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT__NS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Ros Action Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Ros Action Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>NS</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,7 +541,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNS()
 	 * @generated
 	 */
-	int NS = 6;
+	int NS = 8;
 
 
 	/**
@@ -469,6 +597,28 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInterface_Rosserviceclient();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentInterface.ComponentInterface#getRosactionserver <em>Rosactionserver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosactionserver</em>'.
+	 * @see componentInterface.ComponentInterface#getRosactionserver()
+	 * @see #getComponentInterface()
+	 * @generated
+	 */
+	EReference getComponentInterface_Rosactionserver();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentInterface.ComponentInterface#getRosactionclient <em>Rosactionclient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosactionclient</em>'.
+	 * @see componentInterface.ComponentInterface#getRosactionclient()
+	 * @see #getComponentInterface()
+	 * @generated
+	 */
+	EReference getComponentInterface_Rosactionclient();
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.RosPublisher <em>Ros Publisher</em>}'.
@@ -675,6 +825,92 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getNameSpaceComponent_NameSpace();
 
 	/**
+	 * Returns the meta object for class '{@link componentInterface.RosActionServer <em>Ros Action Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Action Server</em>'.
+	 * @see componentInterface.RosActionServer
+	 * @generated
+	 */
+	EClass getRosActionServer();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosActionServer#getActserver <em>Actserver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Actserver</em>'.
+	 * @see componentInterface.RosActionServer#getActserver()
+	 * @see #getRosActionServer()
+	 * @generated
+	 */
+	EReference getRosActionServer_Actserver();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosActionServer#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentInterface.RosActionServer#getName()
+	 * @see #getRosActionServer()
+	 * @generated
+	 */
+	EAttribute getRosActionServer_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosActionServer#getNs <em>Ns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ns</em>'.
+	 * @see componentInterface.RosActionServer#getNs()
+	 * @see #getRosActionServer()
+	 * @generated
+	 */
+	EAttribute getRosActionServer_Ns();
+
+	/**
+	 * Returns the meta object for class '{@link componentInterface.RosActionClient <em>Ros Action Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Action Client</em>'.
+	 * @see componentInterface.RosActionClient
+	 * @generated
+	 */
+	EClass getRosActionClient();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosActionClient#getActclient <em>Actclient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Actclient</em>'.
+	 * @see componentInterface.RosActionClient#getActclient()
+	 * @see #getRosActionClient()
+	 * @generated
+	 */
+	EReference getRosActionClient_Actclient();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosActionClient#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentInterface.RosActionClient#getName()
+	 * @see #getRosActionClient()
+	 * @generated
+	 */
+	EAttribute getRosActionClient_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosActionClient#getNs <em>Ns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ns</em>'.
+	 * @see componentInterface.RosActionClient#getNs()
+	 * @see #getRosActionClient()
+	 * @generated
+	 */
+	EAttribute getRosActionClient_Ns();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>NS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -749,6 +985,22 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INTERFACE__ROSSERVICECLIENT = eINSTANCE.getComponentInterface_Rosserviceclient();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosactionserver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INTERFACE__ROSACTIONSERVER = eINSTANCE.getComponentInterface_Rosactionserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosactionclient</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INTERFACE__ROSACTIONCLIENT = eINSTANCE.getComponentInterface_Rosactionclient();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
@@ -911,6 +1163,74 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAME_SPACE_COMPONENT__NAME_SPACE = eINSTANCE.getNameSpaceComponent_NameSpace();
+
+		/**
+		 * The meta object literal for the '{@link componentInterface.impl.RosActionServerImpl <em>Ros Action Server</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentInterface.impl.RosActionServerImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosActionServer()
+		 * @generated
+		 */
+		EClass ROS_ACTION_SERVER = eINSTANCE.getRosActionServer();
+
+		/**
+		 * The meta object literal for the '<em><b>Actserver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_ACTION_SERVER__ACTSERVER = eINSTANCE.getRosActionServer_Actserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_ACTION_SERVER__NAME = eINSTANCE.getRosActionServer_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Ns</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_ACTION_SERVER__NS = eINSTANCE.getRosActionServer_Ns();
+
+		/**
+		 * The meta object literal for the '{@link componentInterface.impl.RosActionClientImpl <em>Ros Action Client</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentInterface.impl.RosActionClientImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosActionClient()
+		 * @generated
+		 */
+		EClass ROS_ACTION_CLIENT = eINSTANCE.getRosActionClient();
+
+		/**
+		 * The meta object literal for the '<em><b>Actclient</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_ACTION_CLIENT__ACTCLIENT = eINSTANCE.getRosActionClient_Actclient();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_ACTION_CLIENT__NAME = eINSTANCE.getRosActionClient_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Ns</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_ACTION_CLIENT__NS = eINSTANCE.getRosActionClient_Ns();
 
 		/**
 		 * The meta object literal for the '<em>NS</em>' data type.

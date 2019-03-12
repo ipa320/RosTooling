@@ -14,6 +14,8 @@ RosSystem returns RosSystem:
 		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
 		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
+		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )?
+
 	'}';
 
 TopicConnection returns TopicConnection:
@@ -33,6 +35,14 @@ ServiceConnection returns ServiceConnection:
 		'To' To=[componentInterface::RosServiceClient|EString] 
 	'}';
 
+ActionConnection returns ActionConnection:
+	'ActionConnection'
+	ActionName=EString
+	'{'
+		'From' From=[componentInterface::RosActionServer|EString]
+		'To'  To=[componentInterface::RosActionClient|EString] 
+
+	'}';
 
 
 EString returns ecore::EString:
@@ -50,11 +60,9 @@ ComponentInterface returns componentInterface::ComponentInterface:
 		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
 		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?
 		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
+		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
+		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
 	'}';
-
-Namespace returns ecore::EString:
-	STRING;
-
 
 
 RosPublisher returns componentInterface::RosPublisher:
@@ -93,5 +101,21 @@ RosServiceClient returns componentInterface::RosServiceClient:
 		'RefClient' srvclient=[ros::ServiceClient|EString]
 	'}';
 
- 
+RosActionServer returns componentInterface::RosActionServer:
+	{componentInterface::RosActionServer}
+	'RosActionServer'
+	(name=EString)?
+	'{'
+		('ns' ns=EString)?
+		'RefServer' actserver=[ros::ActionServer|EString]
+	'}';
+
+RosActionClient returns componentInterface::RosActionClient:
+	{componentInterface::RosActionClient}
+	'RosActionClient'
+	(name=EString)?
+	'{'
+		('ns' ns=EString)?
+		'RefClient' actclient=[ros::ActionClient|EString]
+	'}';
 
