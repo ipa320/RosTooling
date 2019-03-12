@@ -140,17 +140,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Parameter" referenceName="parameter">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewParameter"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS action server" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@borderedNodeMappings[name='RosActionServer']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/action_icon.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -169,6 +158,17 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::ActionClient" referenceName="actionclient">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewClient"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Parameter" referenceName="parameter">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewParameter"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -335,6 +335,34 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditActionConnections" precondition="[source.name.equalsIgnoreCase(target.name)/]" forceRefresh="true">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ActionConnection" precondition="[preSource.actserver.action.fullname.equalsIgnoreCase(preTarget.actclient.action.fullname)/]" forceRefresh="true" elementsToSelect="var:source" inverseSelectionOrder="true" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='ActionConnection']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer().eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::ActionConnection" referenceName="ActionConnections">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ActionName" valueExpression="[source.name/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="From" valueExpression="var:source">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="New Component" forceRefresh="true" inverseSelectionOrder="true" containerMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='ComponentInterface']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -378,34 +406,6 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewComponent2" id="de.fraunhofer.ipa.ros.sirius.javaActionsNewComponent"/>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="EditActionConnections" precondition="[source.name.equalsIgnoreCase(target.name)/]" forceRefresh="true">
-            <source name="source"/>
-            <target name="target"/>
-            <sourceView name="sourceView"/>
-            <targetView name="targetView"/>
-            <element name="element"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
-            </initialOperation>
-            <edgeView name="edgeView"/>
-          </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ActionConnection" precondition="[preSource.actserver.action.fullname.equalsIgnoreCase(preTarget.actclient.action.fullname)/]" forceRefresh="true" elementsToSelect="var:source" inverseSelectionOrder="true" edgeMappings="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@edgeMappings[name='ActionConnection']">
-            <sourceVariable name="source"/>
-            <targetVariable name="target"/>
-            <sourceViewVariable name="sourceView"/>
-            <targetViewVariable name="targetView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer().eContainer()/]">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rossystem::ActionConnection" referenceName="ActionConnections">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ActionName" valueExpression="[source.name/]">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="From" valueExpression="var:source">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="To" valueExpression="var:target"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
