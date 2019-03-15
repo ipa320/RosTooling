@@ -1,0 +1,271 @@
+package model.spec.check;
+
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardSelectionPage;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.INewWizard;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+import ros.ActionClient;
+import ros.ActionServer;
+import ros.Artifact;
+import ros.Node;
+import ros.Package;
+import ros.PackageSet;
+import ros.Publisher;
+import ros.ServiceClient;
+import ros.ServiceServer;
+import ros.Subscriber;
+
+/**
+ * This is a simple wizard for creating a new model file.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class CompareModelWizard extends Wizard implements INewWizard {
+
+	protected SelectinputFile getInputFileCreationPage;
+	protected IStructuredSelection selection;
+	protected IWorkbench workbench;
+	public FileDialog fDialog;
+	public String ComponentName;
+	public String ComponentNameSpace;
+	public String NameSpaceInterfaces;
+	//public ComponentInterface CI_input;
+	public IProject project;
+	public EObject eobject;
+
+
+	public void init(IWorkbench workbench, IStructuredSelection selection, Collection<? extends EObject> CI, Map<String, Object> nameSpace) {
+		this.workbench = workbench;
+		this.selection = selection;
+		//@SuppressWarnings("unchecked")
+		//Collection <ComponentInterface> ci_collection = (Collection<ComponentInterface>) CI;
+		//new ComponentInterfaceStandaloneSetup().createInjectorAndDoEMFRegistration();
+		//CI_input = ci_collection.iterator().next();
+		//ComponentName = CI_input.getName();
+		//ComponentNameSpace = CI_input.getNameSpace();
+		ComponentName = CI.toString().substring(CI.toString().indexOf("name:")+6,CI.toString().indexOf(","));
+		ComponentNameSpace = CI.toString().substring(CI.toString().indexOf("NameSpace:")+11,CI.toString().indexOf(")]"));
+		if (ComponentNameSpace.equalsIgnoreCase("null"))
+			ComponentNameSpace="";
+		project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
+	    setWindowTitle("Compare");
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(.INSTANCE.getImage("full/wizban/NewComponentInterface")));
+	}
+
+	@Override
+	public boolean performFinish() {
+		try {
+			final String Inputpath = getInputFileCreationPage.getInputPath();
+			final String Specpath = getInputFileCreationPage.getSpecPath();
+			//TODO: this only works if the ros model is in the same eclipse project
+			String Inputpath_win = Inputpath.replace("\\","/");
+			String RelativePath = Inputpath_win.replace(project.getLocation().toString(), project.getName());
+			ResourceSet rs = new ResourceSetImpl();
+			//Injector injector = Guice.createInjector(new RosRuntimeModule());
+			//XtextResourceSet rs = injector.getInstance(XtextResourceSet.class);
+			//rs.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+			//new RosStandaloneSetup().createInjectorAndDoEMFRegistration();
+			Resource resource = rs.getResource(URI.createPlatformResourceURI(RelativePath,true),true);			
+			PackageSet packageSet_model = (PackageSet) resource.getContents().get(0);
+			EList<Package> package_model= (EList<Package>) packageSet_model.getPackage();
+			EList<Artifact> artifact = (EList<Artifact>) package_model.get(0).getArtifact();
+			Node rosnode = (Node) artifact.get(0).getNode();
+
+			EList <Publisher> pubs = (EList<Publisher>) rosnode.getPublisher();
+			EList <Subscriber> subs = (EList<Subscriber>) rosnode.getSubscriber();
+			EList <ServiceClient> scls = (EList<ServiceClient>) rosnode.getServiceclient();
+			EList <ServiceServer> ssrs = (EList<ServiceServer>) rosnode.getServiceserver();
+			EList <ActionClient> acls = (EList<ActionClient>) rosnode.getActionclient();
+			EList <ActionServer> asrs = (EList<ActionServer>) rosnode.getActionserver();
+
+			WorkspaceModifyOperation operation =
+				new WorkspaceModifyOperation() {
+					@Override
+					protected void execute(IProgressMonitor progressMonitor) {
+						/**try {
+							if (component.getName().equalsIgnoreCase(ComponentName)) {
+								NameSpaceInterfaces = "";
+								if (!(ComponentNameSpace.length()==0))
+									NameSpaceInterfaces = ComponentNameSpace + "/";
+								for (Publisher pub:pubs) {
+									RosPublisher rospub = new RosPublisherImpl();
+									rospub.setName(NameSpaceInterfaces+pub.getName());
+									rospub.setNs(ComponentNameSpace);
+									rospub.setPublisher(pub);
+									component.getRospublisher().add(rospub);
+								}
+								for (Subscriber sub:subs) {
+									RosSubscriber rossub = new RosSubscriberImpl();
+									rossub.setName(NameSpaceInterfaces+sub.getName());
+									rossub.setNs(ComponentNameSpace);
+									rossub.setSubscriber(sub);
+									component.getRossubscriber().add(rossub);
+								}
+								for (ServiceClient scl:scls) {
+									RosServiceClient rosscl = new RosServiceClientImpl();
+									rosscl.setName(NameSpaceInterfaces+scl.getName());
+									rosscl.setNs(ComponentNameSpace);
+									rosscl.setSrvclient(scl);
+									component.getRosserviceclient().add(rosscl);
+								}
+								for (ServiceServer ssr:ssrs) {
+									RosServiceServer rosssr = new RosServiceServerImpl();
+									rosssr.setName(NameSpaceInterfaces+ssr.getName());
+									rosssr.setNs(ComponentNameSpace);
+									rosssr.setSrvserver(ssr);
+									component.getRosserviceserver().add(rosssr);
+								}
+								for (ActionClient acl:acls) {
+									RosActionClient rosacl = new RosActionClientImpl();
+									rosacl.setName(NameSpaceInterfaces+acl.getName());
+									rosacl.setNs(ComponentNameSpace);
+									rosacl.setActclient(acl);
+									component.getRosactionclient().add(rosacl);
+								}
+								for (ActionServer asr:asrs) {
+									RosActionServer rosasr = new RosActionServerImpl();
+									rosasr.setName(NameSpaceInterfaces+asr.getName());
+									rosasr.setNs(ComponentNameSpace);
+									rosasr.setActserver(asr);
+									component.getRosactionserver().add(rosasr);
+								}
+					}}}}}}}catch (Exception exception) {
+						ComponentInterfaceEditorPlugin.INSTANCE.log(exception);
+					}
+					finally {
+						progressMonitor.done();
+					}*/
+					}};
+			getContainer().run(false, false, operation);
+			return true;
+		}catch (Exception exception) {
+			return false;
+		}
+	}
+
+	public class SelectinputFile extends WizardSelectionPage{
+	    private Composite container;
+	    private Text locationPathField;
+	    private Text locationPathField2;
+
+		private Button browseButton1;
+		private Button browseButton2;
+
+		private String spec_path;
+		private String input_path;
+
+		protected SelectinputFile(String pageId) {
+			super(pageId);
+		}
+		@Override
+		public void createControl(Composite parent) {
+	        container = new Composite(parent, SWT.NONE);
+			GridLayout layout = new GridLayout(2, false);
+			container.setLayout(layout);
+	        layout.numColumns = 1;
+	        Label label1 = new Label(container, SWT.NONE);
+	        label1.setText("Input model");
+
+			locationPathField = new Text(container, SWT.BORDER | SWT.SINGLE);
+			GridData gd = new GridData (GridData.FILL_HORIZONTAL);
+			gd.grabExcessHorizontalSpace = true;
+			gd.horizontalAlignment = GridData.FILL;
+			locationPathField.setLayoutData(gd);
+			browseButton1 = new Button(container, SWT.PUSH);
+			browseButton1.setText("Browse...");
+			browseButton1.addSelectionListener(new SelectionListener() {
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+					public void widgetSelected(SelectionEvent e) {
+						FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
+						dlg.setText("Open");
+						dlg.setFilterExtensions(new String[] { "*.ros" } );
+						//dlg.setFilterPath(project.getLocation().toString());
+						input_path = dlg.open();
+						if (input_path == null) return;
+						locationPathField.setText(input_path);
+					}
+			});
+	        Label label2 = new Label(container, SWT.NONE);
+	        label2.setText("Specification model");
+			locationPathField2 = new Text(container, SWT.BORDER | SWT.SINGLE);
+			GridData gd2 = new GridData (GridData.FILL_HORIZONTAL);
+			gd2.grabExcessHorizontalSpace = true;
+			gd2.horizontalAlignment = GridData.FILL;
+			locationPathField2.setLayoutData(gd2);
+			browseButton2 = new Button(container, SWT.PUSH);
+			browseButton2.setText("Browse...");
+			browseButton2.addSelectionListener(new SelectionListener() {
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+					public void widgetSelected(SelectionEvent e) {
+						FileDialog dlg2 = new FileDialog(getShell(),  SWT.OPEN  );
+						dlg2.setText("Open");
+						dlg2.setFilterExtensions(new String[] { "*.ros" } );
+						//dlg2.setFilterPath(project.getLocation().toString());
+						spec_path = dlg2.open();
+						if (spec_path == null) return;
+						locationPathField2.setText(spec_path);
+					}
+			});
+	        setControl(container);
+	        setPageComplete(true);
+			}
+
+		public String getSpecPath() {
+			return spec_path;
+		}
+		public String getInputPath() {
+			return input_path;
+		}
+	}
+
+	@Override
+	public void addPages() {
+		getInputFileCreationPage = new SelectinputFile("Whatever4");
+		getInputFileCreationPage.setTitle("Select ROS model input");
+		getInputFileCreationPage.setDescription("Select ROS model input");
+		addPage(getInputFileCreationPage);
+	}
+
+
+	@Override
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
