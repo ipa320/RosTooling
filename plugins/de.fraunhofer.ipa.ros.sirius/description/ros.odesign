@@ -162,17 +162,56 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add ROS Parameter" forceRefresh="true" inverseSelectionOrder="true" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ros::Parameter" referenceName="parameter">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="NewParameter"/>
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Parameter">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="RosParameter" labelExpression="RosParameter" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Add%20ROS%20Parameter']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Parameter" labelExpression="Parameter Description" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" helpExpression="Parameter Name" valueExpression="aql:instance.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="NameSpace" labelExpression="NameSpace (optional)" helpExpression="Parameter NameSpace" valueExpression="aql:instance.NameSpace">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="namespace" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:SelectDescription" name="Type" labelExpression="Type" helpExpression="Parameter Type" isEnabledExpression="aql:true" valueExpression="aql:instance.ParemeterType" candidatesExpression="[input.eContents()/]">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:NewValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="TestNewParameter" labelExpression="Type" helpExpression="Parameter Type" buttonLabelExpression="Type">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="NewParameter" action="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewParameter']"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewParameter" id="de.fraunhofer.ipa.ros.sirius.javaActionsNewParameter"/>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
