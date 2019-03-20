@@ -43,7 +43,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterDoubleTypeImpl() {
+	public ParameterDoubleTypeImpl() {
 		super();
 	}
 

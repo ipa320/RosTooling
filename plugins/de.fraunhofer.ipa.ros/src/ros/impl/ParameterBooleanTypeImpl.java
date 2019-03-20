@@ -43,7 +43,7 @@ public class ParameterBooleanTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterBooleanTypeImpl() {
+	public ParameterBooleanTypeImpl() {
 		super();
 	}
 

@@ -43,7 +43,7 @@ public class ParameterIntegerTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterIntegerTypeImpl() {
+	public ParameterIntegerTypeImpl() {
 		super();
 	}
 
