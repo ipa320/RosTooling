@@ -43,7 +43,7 @@ public class ParameterStringTypeImpl extends ParameterTypeImpl implements Parame
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterStringTypeImpl() {
+	public ParameterStringTypeImpl() {
 		super();
 	}
 
