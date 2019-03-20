@@ -184,21 +184,7 @@
                           </firstModelOperations>
                         </initialOperation>
                       </controls>
-                      <controls xsi:type="properties:TextDescription" name="NameSpace" labelExpression="NameSpace (optional)" helpExpression="Parameter NameSpace" valueExpression="aql:instance.NameSpace">
-                        <initialOperation>
-                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                            <subModelOperations xsi:type="tool_1:SetValue" featureName="namespace" valueExpression="aql:newValue"/>
-                          </firstModelOperations>
-                        </initialOperation>
-                      </controls>
-                      <controls xsi:type="properties:SelectDescription" name="Type" labelExpression="Type" helpExpression="Parameter Type" isEnabledExpression="aql:true" valueExpression="aql:instance.ParemeterType" candidatesExpression="[input.eContents()/]">
-                        <initialOperation>
-                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                            <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:NewValue"/>
-                          </firstModelOperations>
-                        </initialOperation>
-                      </controls>
-                      <controls xsi:type="properties:ButtonDescription" name="TestNewParameter" labelExpression="Type" helpExpression="Parameter Type" buttonLabelExpression="Type">
+                      <controls xsi:type="properties:ButtonDescription" name="ParameterType" labelExpression="Type" helpExpression="Parameter Type">
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                             <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="NewParameter" action="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewParameter']"/>
