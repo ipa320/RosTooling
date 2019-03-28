@@ -1,0 +1,1 @@
+../../../tools/ros_model_extractor.py
