@@ -22,6 +22,13 @@ bash ros-model/tools/generate_messages_model_helper.sh *PACKAGE_NAME* > ros-mode
 
 ## Model extractor using static code analysis
 
+### Using a ready-to-use docker container:
+[DOCKER](docker/README.md)
+
+### From eclipse:
+tbd - Using the button
+
+### Manually with a HAROS local installation:
 To extract the ROS model of a node we use the framework [HAROS](https://github.com/git-afsantos/haros).
 
 Install HAROS using the following command:
