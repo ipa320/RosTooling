@@ -43,7 +43,7 @@ public class ParameterDateTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterDateTypeImpl() {
+	public ParameterDateTypeImpl() {
 		super();
 	}
 
