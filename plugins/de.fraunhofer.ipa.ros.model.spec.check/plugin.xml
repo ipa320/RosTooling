@@ -25,7 +25,7 @@
          label="Compare Models">
           <command
             commandId="de.fraunhofer.ipa.ros.model.spec.check.CheckModelSpec"
-            icon="icons/compare_icon.gif"
+            icon="icons/ros_compare_model.png"
             id="newComponent"
             style="push">
          </command>

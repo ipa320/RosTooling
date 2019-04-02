@@ -2,14 +2,12 @@ package model.spec.check;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
+
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -23,13 +21,13 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.Artifact;
@@ -50,29 +48,17 @@ import ros.Subscriber;
 public class CompareModelWizard extends Wizard implements INewWizard {
 
 	protected SelectinputFile getInputFileCreationPage;
-	protected IStructuredSelection selection;
-	protected IWorkbench workbench;
-	public FileDialog fDialog;
-	public IProject project;
-	public EObject eobject;
-
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		this.workbench = workbench;
-		this.selection = selection;
-		project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
 		setWindowTitle("Compare");
 	}
 
 	@Override
 	public boolean performFinish() {
 		try {
-
-			final String Inputpath = getInputFileCreationPage.getInputPath();
-			String Inputpath_win = Inputpath.replace("\\","/");
-			String RelativePath = Inputpath_win.replace(project.getLocation().toString(), project.getName());
+			IFile InputFile = getInputFileCreationPage.getInputFile();
+			String RelativePath = InputFile.getProject().getName()+"/"+InputFile.getProjectRelativePath();
 			ResourceSet rs_input = new ResourceSetImpl();
-			//TODO: this only works for files in your workspace
 			Resource resource_input = rs_input.getResource(URI.createPlatformResourceURI(RelativePath,true),true);			
 			PackageSet packageSet_model_input = (PackageSet) resource_input.getContents().get(0);
 			EList<Package> package_model_input = (EList<Package>) packageSet_model_input.getPackage();
@@ -85,12 +71,9 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 			EList <ActionClient> acls_input = (EList<ActionClient>) rosnode_input.getActionclient();
 			EList <ActionServer> asrs_input = (EList<ActionServer>) rosnode_input.getActionserver();
 
-			final String Specpath = getInputFileCreationPage.getSpecPath();
-			String Specpath_win = Specpath.replace("\\","/");
-			IProject project_basics =  ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects");
-			String SpecRelativePath = Specpath_win.replace(project_basics.getLocation().toString(), project_basics.getName());
+			final IFile SpecFile = getInputFileCreationPage.getSpecFile();
+			String SpecRelativePath = SpecFile.getProject().getName()+"/"+SpecFile.getProjectRelativePath();
 			ResourceSet rs_spec = new ResourceSetImpl();
-			//TODO: this only works for files in your workspace
 			Resource resource_spec = rs_spec.getResource(URI.createPlatformResourceURI(SpecRelativePath,true),true);			
 			PackageSet packageSet_model_spec = (PackageSet) resource_spec.getContents().get(0);
 			EList<Package> package_model_spec = (EList<Package>) packageSet_model_spec.getPackage();
@@ -116,7 +99,7 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 								for (Publisher pub_i:pubs_input) {
 									if (pub.getMessage().getFullname().equals(pub_i.getMessage().getFullname())){
 										pub_ok = true;
-										OKs.add("- OK: Topic for message type " + pub.getMessage().getFullname() +" found: \n"  +pub.getName() + " -> " + pub_i.getName());
+										OKs.add("- OK: Publisher for message type " + pub.getMessage().getFullname() +" found: \n"  +pub.getName() + " -> " + pub_i.getName());
 									}
 								}
 								if (!pub_ok) {
@@ -128,11 +111,11 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 								for (Subscriber sub_i:subs_input) {
 									if (sub.getMessage().getFullname().equals(sub_i.getMessage().getFullname())){
 										sub_ok = true;
-										OKs.add("- OK: Topic for message type " + sub.getMessage().getFullname() +" found: \n"  +sub.getName() + " -> " + sub_i.getName());
+										OKs.add("- OK: Subscriber for message type " + sub.getMessage().getFullname() +" found: \n"  +sub.getName() + " -> " + sub_i.getName());
 									}
 								}
 								if (!sub_ok) {
-									Errors.add("- ERROR: missed a publisher for message type:\n" +sub.getMessage().getFullname());
+									Errors.add("- ERROR: missed a subscriber for message type:\n" +sub.getMessage().getFullname());
 								}
 						}
 							for(ServiceClient scl:scls_spec) {
@@ -186,10 +169,10 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 					}finally {
 						// create a dialog with ok and cancel buttons and a question icon
 						MessageBox dialog;
-						String message ="Check File:\n "+ Inputpath + "\nwith the specification:\n"+ Specpath+"\n";
+						String message ="Validate the file:\n "+ InputFile.getName() + "\nfor the specifications model:\n"+ SpecFile.getName()+"\n";
 						if (!Errors.isEmpty()) {
 							dialog = new MessageBox(getShell(), SWT.ICON_ERROR | SWT.OK);
-							message = "\nERRORS:\n";
+							message+="\nERRORS:\n";
 							for (String s:Errors) {
 								message+=s+"\n";
 							}
@@ -222,6 +205,8 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 		private Text locationPathField2;
 		private Button browseButton1;
 		private Button browseButton2;
+		protected IFile SpecFile;
+		protected IFile InputFile;
 		private String spec_path;
 		private String input_path;
 
@@ -236,8 +221,6 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 			layout.numColumns = 1;
 			Label label1 = new Label(container, SWT.NONE);
 			label1.setText("Input model");
-			IWorkspaceRoot ws = ResourcesPlugin.getWorkspace().getRoot();
-			String Workspace_path = ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();			
 			locationPathField = new Text(container, SWT.BORDER | SWT.SINGLE);
 			GridData gd = new GridData (GridData.FILL_HORIZONTAL);
 			gd.grabExcessHorizontalSpace = true;
@@ -249,17 +232,11 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 					public void widgetSelected(SelectionEvent e) {
-						FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
-						dlg.setText("Open");
-						dlg.setFilterExtensions(new String[] { "*.ros" } );
-						if (ws.getLocation().toString().length() > 10) {
-							dlg.setFilterPath(ws.getLocation().toString());
-						} else if (Workspace_path.toString().length() > 20){
-							dlg.setFilterPath("../"+Workspace_path);
-						}
-						input_path = dlg.open();
+						IFile[] files_input = WorkspaceResourceDialog.openFileSelection(getShell(), "Select the ROS Input model", "open", false, null, null);
+						InputFile= files_input[0];
+						input_path = InputFile.getLocation().toString();
 						if (input_path == null) return;
-						locationPathField.setText(input_path);
+						locationPathField.setText(InputFile.getName());
 					}
 			});
 			Label label2 = new Label(container, SWT.NONE);
@@ -275,27 +252,22 @@ public class CompareModelWizard extends Wizard implements INewWizard {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 					public void widgetSelected(SelectionEvent e) {
-						FileDialog dlg2 = new FileDialog(getShell(),  SWT.OPEN  );
-						dlg2.setText("Open");
-						dlg2.setFilterExtensions(new String[] { "*.ros" } );
-						dlg2.setFilterPath(Workspace_path+"/BasicSpecs");
-						spec_path = dlg2.open();
+						IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), "Select the ROS Specification model", "open", false, null, null);
+						SpecFile= files[0];
+						spec_path= SpecFile.getLocation().toString();
 						if (spec_path == null) return;
-						locationPathField2.setText(spec_path);
+						locationPathField2.setText(SpecFile.getName());
 					}
-				
 			});
-			input_path = locationPathField.getText();
-			spec_path = locationPathField2.getText();
 			setControl(container);
 			setPageComplete(true);
 			}
 
-		public String getSpecPath() {
-			return spec_path;
+		public IFile getSpecFile() {
+			return SpecFile;
 		}
-		public String getInputPath() {
-			return input_path;
+		public IFile getInputFile() {
+			return InputFile;
 		}
 	}
 
