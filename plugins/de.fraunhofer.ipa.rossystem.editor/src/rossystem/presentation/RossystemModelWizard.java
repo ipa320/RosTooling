@@ -743,8 +743,8 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 	
 	public class SelectinputFile extends WizardSelectionPage{
 
-	    private Composite container;
-	    private Text locationPathField;
+		private Composite container;
+		private Text locationPathField;
 		private Button browseButton;
 		private IFile[] selectedFiles = null;
 
@@ -754,7 +754,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 
 		@Override
 		public void createControl(Composite parent) {
-	        container = new Composite(parent, SWT.NONE);
+			container = new Composite(parent, SWT.NONE);
 
 			GridLayout layout = new GridLayout(2, false);
 			container.setLayout(layout);
@@ -770,7 +770,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 				public void widgetDefaultSelected(SelectionEvent e) {
 					
 				}
-	 
+
 				public void widgetSelected(SelectionEvent e) {
 						selectedFiles = WorkspaceResourceDialog.openFileSelection(getShell(), "Select the ComponentInterface models", "open", true, null, null);
 						if (selectedFiles.length == 0) return;
@@ -782,9 +782,9 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 					}
 
 			});
-	        setControl(container);
-	        setPageComplete(true);
-	        
+			setControl(container);
+			setPageComplete(true);
+
 
 			}
 
