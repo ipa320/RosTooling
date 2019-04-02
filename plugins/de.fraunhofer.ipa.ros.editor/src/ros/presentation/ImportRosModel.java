@@ -95,8 +95,8 @@ public class ImportRosModel extends Wizard implements INewWizard {
 					StringBuilder builder = new StringBuilder();
 					String line;
 					while ( (line = in.readLine()) != null) {
-					   builder.append(line);
-					   builder.append(System.getProperty("line.separator"));
+						builder.append(line);
+						builder.append(System.getProperty("line.separator"));
 					}
 					byte[] bytes = builder.toString().getBytes();
 					InputStream source = new ByteArrayInputStream(bytes);
@@ -172,38 +172,38 @@ public class ImportRosModel extends Wizard implements INewWizard {
 
 		@Override
 		public void createControl(Composite parent) {
-	        container = new Composite(parent, SWT.NONE);
+			container = new Composite(parent, SWT.NONE);
 			GridLayout layout = new GridLayout(2, false);
 			container.setLayout(layout);
 			
-	        layout.numColumns = 2;
-	        Label label1 = new Label(container, SWT.NONE);
-	        label1.setText("Ros Package Name");
-	        package_name = new Text(container, SWT.BORDER | SWT.SINGLE);
-	        package_name.setText("");
-	        package_name.addKeyListener(new KeyListener() {
-	            public void keyPressed(KeyEvent e) {
-	            }
-	            public void keyReleased(KeyEvent e) {
-	                if (!package_name.getText().isEmpty()) {
-	                    setPageComplete(true);
-	                }
-	            }
-	        });
-	        Label label2 = new Label(container, SWT.NONE);
-	        label2.setText("Ros Node name");
-	        node_name = new Text(container, SWT.BORDER | SWT.SINGLE);
-	        node_name.setText("");
-	        node_name.addKeyListener(new KeyListener() {
-	            public void keyPressed(KeyEvent e) {
-	            }
-	            public void keyReleased(KeyEvent e) {
-	                if (!node_name.getText().isEmpty()) {
-	                    setPageComplete(true);
-	                }
-	            }
+			layout.numColumns = 2;
+			Label label1 = new Label(container, SWT.NONE);
+			label1.setText("Ros Package Name");
+			package_name = new Text(container, SWT.BORDER | SWT.SINGLE);
+			package_name.setText("");
+			package_name.addKeyListener(new KeyListener() {
+				public void keyPressed(KeyEvent e) {
+				}
+				public void keyReleased(KeyEvent e) {
+					if (!package_name.getText().isEmpty()) {
+						setPageComplete(true);
+					}
+				}
+			});
+			Label label2 = new Label(container, SWT.NONE);
+			label2.setText("Ros Node name");
+			node_name = new Text(container, SWT.BORDER | SWT.SINGLE);
+			node_name.setText("");
+			node_name.addKeyListener(new KeyListener() {
+				public void keyPressed(KeyEvent e) {
+				}
+				public void keyReleased(KeyEvent e) {
+					if (!node_name.getText().isEmpty()) {
+						setPageComplete(true);
+					}
+				}
 
-	        });
+			});
 			GridLayout gridLayout = new GridLayout();
 			gridLayout.numColumns = 1;
 			container.setLayout(gridLayout);
@@ -211,13 +211,13 @@ public class ImportRosModel extends Wizard implements INewWizard {
 			Group WorspaceGroup = new Group(container, SWT.NONE);
 			WorspaceGroup.setText("Path to compile_commands.json file of your ROS workspace (under catkin_ws/build/)");
 			WorspaceGroup.setLayout(gridLayout);
-	        workspace_path = new Text(WorspaceGroup, SWT.BORDER | SWT.SINGLE);
-	        Button browseButton = new Button(WorspaceGroup, SWT.PUSH);
+			workspace_path = new Text(WorspaceGroup, SWT.BORDER | SWT.SINGLE);
+			Button browseButton = new Button(WorspaceGroup, SWT.PUSH);
 			browseButton.setText("Browse...");
 			browseButton.addSelectionListener(new SelectionListener() {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
-	 
+
 				public void widgetSelected(SelectionEvent e) {
 					FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
 					dlg.setText("Open");
@@ -229,27 +229,27 @@ public class ImportRosModel extends Wizard implements INewWizard {
 
 			});
 
-	        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+			GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 			gd.grabExcessHorizontalSpace = false;
 			gd.horizontalAlignment = GridData.FILL;
 			package_name.setLayoutData(gd);
 			node_name.setLayoutData(gd);
 			WorspaceGroup.setLayoutData(gd);
 			setControl(container);
-	        setPageComplete(false);
+			setPageComplete(false);
 		}
-        
-	    public String getPackageName() {
-	        return package_name.getText();
-	    }
-	    
-	    public String getNodeName() {
-	        return node_name.getText();
-	    }
-	    
-	    public String getWorkspacePath() {
-	        return workspace_path.getText();
-	    }
+
+		public String getPackageName() {
+			return package_name.getText();
+		}
+
+		public String getNodeName() {
+			return node_name.getText();
+		}
+
+		public String getWorkspacePath() {
+			return workspace_path.getText();
+		}
 	}
 	
 	@Override
