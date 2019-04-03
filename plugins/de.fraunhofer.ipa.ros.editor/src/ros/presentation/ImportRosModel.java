@@ -6,8 +6,11 @@ package ros.presentation;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,6 +22,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
@@ -52,6 +56,7 @@ public class ImportRosModel extends Wizard implements INewWizard {
 	public IProject project;
 	protected String package_name;
 	protected String node_name;
+	protected String workspace_path;
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameExtensions").split("\\s*,\\s*")));
 	public static final String FORMATTED_FILE_EXTENSIONS = RosEditorPlugin.INSTANCE.getString("_UI_RosEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 	
@@ -70,42 +75,89 @@ public class ImportRosModel extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		try {
 			final IFile modelFile = newFileCreationPage.getModelFile();
+			project = modelFile.getProject();
 			final String package_name = getHAROSConfigurationPage.getPackageName();
 			final String node_name = getHAROSConfigurationPage.getNodeName();
-			String workspace_path = getHAROSConfigurationPage.getWorkspacePath();
-
 			WorkspaceModifyOperation operation =
 				new WorkspaceModifyOperation() {
 					@Override
 					protected void execute(IProgressMonitor progressMonitor) {
-					}};
-					getContainer().run(false, false, operation);
-					URL url = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/test.sh");
-					File file = new File(FileLocator.resolve(url).toURI());
-					String URLfile = file.getAbsolutePath();
 					
-					URL url_py = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/ros_model_extractor.py");
-					File file_py = new File(FileLocator.resolve(url_py).toURI());
-					String URLfile_py = file_py.getAbsolutePath();
-					workspace_path = workspace_path.replace("build/compile_commands.json", "devel/setup.bash");
-					String args = workspace_path+" "+package_name+" "+node_name+" "+URLfile_py;
-					Process p = Runtime.getRuntime().exec("bash "+URLfile+" "+args);
-					BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-					p.waitFor();
-					StringBuilder builder = new StringBuilder();
-					String line;
-					while ( (line = in.readLine()) != null) {
-						builder.append(line);
-						builder.append(System.getProperty("line.separator"));
-					}
-					byte[] bytes = builder.toString().getBytes();
-					InputStream source = new ByteArrayInputStream(bytes);
-					modelFile.create(source, IResource.FILE, null);
-					return true;
-	}
-		catch (Exception exception) {
+					try {
+						URL url = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/test.sh");
+						File file = new File(FileLocator.resolve(url).toURI());
+						String URLfile = file.getAbsolutePath();
+						
+						URL url_py = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/ros_model_extractor.py");
+						File file_py = new File(FileLocator.resolve(url_py).toURI());
+						String URLfile_py = file_py.getAbsolutePath();
+						workspace_path = getHAROSConfigurationPage.getWorkspacePath();
+						workspace_path = workspace_path.replace("build/compile_commands.json", "devel/setup.bash");
+						String args = workspace_path+" "+package_name+" "+node_name+" "+URLfile_py;
+						Process p = Runtime.getRuntime().exec("bash "+URLfile+" "+args);
+						BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+						p.waitFor();
+						StringBuilder builder = new StringBuilder();
+						String line;
+						while ( (line = in.readLine()) != null) {
+							builder.append(line);
+							builder.append(System.getProperty("line.separator"));
+						}
+						byte[] bytes = builder.toString().getBytes();
+						InputStream source = new ByteArrayInputStream(bytes);
+						modelFile.create(source, IResource.FILE, null);
+
+						//Add viewpoints to the aird file
+						/*IFile airdFile = project.getFile("representations.aird");
+						URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
+						Session session = SessionManager.INSTANCE.getSession(airdFileURI, progressMonitor);
+						Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
+						Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
+						for(Viewpoint view_p : availableViewPoints)
+							viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, view_p));
+						ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();*/
+						
+						//set ros model as root object for the representation
+						/*@SuppressWarnings("restriction")
+						RecordingCommand command = new ChangeViewpointSelectionCommand( session, callback, viewpoints, new HashSet<Viewpoint>(), true, progressMonitor);
+						TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
+						domain.getCommandStack().execute(command);
+						EObject rootObject = RosFactory.eINSTANCE.createArtifact();
+						rootObject = session.getSemanticResources().iterator().next().getContents().get(0);
+						Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false), rootObject);
+						RepresentationDescription description_ = descriptions.iterator().next();
+						DialectManager viewpointDialectManager = DialectManager.INSTANCE;
+						Command createViewCommand = new CreateRepresentationCommand(session,
+								  description_, rootObject, project.getName(), progressMonitor);
+						session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
+						SessionManager.INSTANCE.notifyRepresentationCreated(session);
+						open editor 
+						Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
+						DRepresentation myDiagramRepresentation = representations.iterator().next();
+						DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, progressMonitor);*/
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (MalformedURLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (CoreException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}}};
+		getContainer().run(false, false, operation);
+		return true;
+	}catch (Exception exception) {
 		RosEditorPlugin.INSTANCE.log(exception);
 		return false;
+		
+
 	}
 	}
 	
