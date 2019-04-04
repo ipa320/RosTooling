@@ -45,8 +45,13 @@ EString returns ecore::EString:
 	STRING | ID;
 	
 RosNames returns ecore::EString:
-	ID
+	ROS_CONVENTION_A | ID
 ;
+
+
+terminal ROS_CONVENTION_A:
+	( ('/' ID ) | ( ID '/' ) )* ;
+
 
 Artifact returns Artifact:
 	{Artifact}
@@ -359,3 +364,4 @@ ExternalDependency returns ExternalDependency:
 	{ExternalDependency}
 	'ExternalDependency'
 	name=EString;
+

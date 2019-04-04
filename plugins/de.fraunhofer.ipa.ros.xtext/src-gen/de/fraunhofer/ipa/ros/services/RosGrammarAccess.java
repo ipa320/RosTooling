@@ -422,14 +422,22 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class RosNamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.RosNames");
-		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cROS_CONVENTION_ATerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//RosNames:
-		//	ID;
+		//	ROS_CONVENTION_A | ID;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//ROS_CONVENTION_A | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ROS_CONVENTION_A
+		public RuleCall getROS_CONVENTION_ATerminalRuleCall_0() { return cROS_CONVENTION_ATerminalRuleCall_0; }
+		
 		//ID
-		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	public class ArtifactElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Artifact");
@@ -3126,6 +3134,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	private final Package_ImplElements pPackage_Impl;
 	private final EStringElements pEString;
 	private final RosNamesElements pRosNames;
+	private final TerminalRule tROS_CONVENTION_A;
 	private final ArtifactElements pArtifact;
 	private final CatkinPackageElements pCatkinPackage;
 	private final ServiceSpecElements pServiceSpec;
@@ -3192,6 +3201,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPackage_Impl = new Package_ImplElements();
 		this.pEString = new EStringElements();
 		this.pRosNames = new RosNamesElements();
+		this.tROS_CONVENTION_A = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ROS_CONVENTION_A");
 		this.pArtifact = new ArtifactElements();
 		this.pCatkinPackage = new CatkinPackageElements();
 		this.pServiceSpec = new ServiceSpecElements();
@@ -3368,13 +3378,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RosNames:
-	//	ID;
+	//	ROS_CONVENTION_A | ID;
 	public RosNamesElements getRosNamesAccess() {
 		return pRosNames;
 	}
 	
 	public ParserRule getRosNamesRule() {
 		return getRosNamesAccess().getRule();
+	}
+	
+	//terminal ROS_CONVENTION_A:
+	//	'/' ID | ID '/'*;
+	public TerminalRule getROS_CONVENTION_ARule() {
+		return tROS_CONVENTION_A;
 	}
 	
 	//Artifact:
