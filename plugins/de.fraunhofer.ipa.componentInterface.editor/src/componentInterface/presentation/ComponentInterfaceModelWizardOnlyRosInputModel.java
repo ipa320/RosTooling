@@ -9,9 +9,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -91,33 +93,21 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	public void init(IWorkbench workbench, IStructuredSelection selection, Collection<? extends EObject> CI, Map<String, Object> nameSpace) {
 		this.workbench = workbench;
 		this.selection = selection;
-		//@SuppressWarnings("unchecked")
-		//Collection <ComponentInterface> ci_collection = (Collection<ComponentInterface>) CI;
-		//new ComponentInterfaceStandaloneSetup().createInjectorAndDoEMFRegistration();
-		//CI_input = ci_collection.iterator().next();
-		//ComponentName = CI_input.getName();
-		//ComponentNameSpace = CI_input.getNameSpace();
 		ComponentName = CI.toString().substring(CI.toString().indexOf("name:")+6,CI.toString().indexOf(","));
 		ComponentNameSpace = CI.toString().substring(CI.toString().indexOf("NameSpace:")+11,CI.toString().indexOf(")]"));
 		if (ComponentNameSpace.equalsIgnoreCase("null"))
 			ComponentNameSpace="";
 		project = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorInput().getAdapter(IResource.class).getProject();
-	    setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setWindowTitle(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ComponentInterfaceEditorPlugin.INSTANCE.getImage("full/wizban/NewComponentInterface")));
 	}
 
 	@Override
 	public boolean performFinish() {
 		try {
-			final String Inputpath = getInputFileCreationPage.getPath();
-			//TODO: this only works if the ros model is in the same eclipse project
-			String Inputpath_win = Inputpath.replace("\\","/");
-			String RelativePath = Inputpath_win.replace(project.getLocation().toString(), project.getName());
+			final IFile InputFile = getInputFileCreationPage.getFile();
+			String RelativePath = InputFile.getProject().getName()+"/"+InputFile.getProjectRelativePath();
 			ResourceSet rs = new ResourceSetImpl();
-			//Injector injector = Guice.createInjector(new RosRuntimeModule());
-			//XtextResourceSet rs = injector.getInstance(XtextResourceSet.class);
-			//rs.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-			//new RosStandaloneSetup().createInjectorAndDoEMFRegistration();
 			Resource resource = rs.getResource(URI.createPlatformResourceURI(RelativePath,true),true);			
 			PackageSet packageSet_model = (PackageSet) resource.getContents().get(0);
 			EList<Package> package_model= (EList<Package>) packageSet_model.getPackage();
@@ -207,16 +197,18 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 	}
 
 	public class SelectinputFile extends WizardSelectionPage{
-	    private Composite container;
-	    private Text locationPathField;
+		private Composite container;
+		private Text locationPathField;
 		private Button browseButton;
 		private String path;
+		protected IFile file;
+
 		protected SelectinputFile(String pageId) {
 			super(pageId);
 		}
 		@Override
 		public void createControl(Composite parent) {
-	        container = new Composite(parent, SWT.NONE);
+			container = new Composite(parent, SWT.NONE);
 			GridLayout layout = new GridLayout(2, false);
 			container.setLayout(layout);
 			locationPathField = new Text(container, SWT.BORDER | SWT.SINGLE);
@@ -229,22 +221,20 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 			browseButton.addSelectionListener(new SelectionListener() {
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
-					public void widgetSelected(SelectionEvent e) {
-						FileDialog dlg = new FileDialog(getShell(),  SWT.OPEN  );
-						dlg.setText("Open");
-						dlg.setFilterExtensions(new String[] { "*.ros" } );
-						dlg.setFilterPath(project.getLocation().toString());
-						path = dlg.open();
-						if (path == null) return;
-						locationPathField.setText(path);
-					}
+				public void widgetSelected(SelectionEvent e) {
+					IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), "Select the ROS Input model", "open", false, null, null);
+					file = files[0];
+					path = file.getLocation().toString();
+					if (path == null) return;
+					locationPathField.setText(file.getName());
+				}
 			});
-	        setControl(container);
-	        setPageComplete(true);
+			setControl(container);
+			setPageComplete(true);
 			}
 
-		public String getPath() {
-			return path;
+		public IFile getFile() {
+			return file;
 		}
 	}
 

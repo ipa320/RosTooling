@@ -26,6 +26,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -151,7 +152,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 	protected List<String> initialObjectNames;
 
 	private SelectinputFile getInputFileCreationPage;
-	private File[] InputFiles;
+	private IFile[] InputFiles;
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
@@ -226,8 +227,8 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 								int cout = InputFiles.length;
 								if (cout > 0) {
 									model_output.append(" RosComponents ( \n    ");
-									for (File file:InputFiles) {
-										Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
+									for (IFile file:InputFiles) {
+										Scanner in = new Scanner(new FileReader(file.getLocation().toString()));
 										while (in.hasNext()) {
 											model_output.append(in.next());
 											model_output.append(" ");
@@ -742,10 +743,10 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 	
 	public class SelectinputFile extends WizardSelectionPage{
 
-	    private Composite container;
-	    private Text locationPathField;
+		private Composite container;
+		private Text locationPathField;
 		private Button browseButton;
-		private File[] selectedFiles = null;
+		private IFile[] selectedFiles = null;
 
 		protected SelectinputFile(String pageId) {
 			super(pageId);
@@ -753,7 +754,7 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 
 		@Override
 		public void createControl(Composite parent) {
-	        container = new Composite(parent, SWT.NONE);
+			container = new Composite(parent, SWT.NONE);
 
 			GridLayout layout = new GridLayout(2, false);
 			container.setLayout(layout);
@@ -769,49 +770,25 @@ public class RossystemModelWizard extends Wizard implements INewWizard {
 				public void widgetDefaultSelected(SelectionEvent e) {
 					
 				}
-	 
-				public void widgetSelected(SelectionEvent e) {
-					//TODO filter to only show the ros models on my workspace
-					FileDialog dlg = new FileDialog(getShell(),  SWT.MULTI  );
 
-					dlg.setText("Open");
-					dlg.setFilterExtensions(new String[] { "*.componentinterface" } );
-					IWorkspaceRoot ws = ResourcesPlugin.getWorkspace().getRoot();
-					String Workspace_path = ws.getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString();
-					if (Workspace_path.length() > 20) {
-						dlg.setFilterPath(Workspace_path);
-					} else if (ws.getLocation().toString().length() > 10){
-						dlg.setFilterPath(ws.getLocation().toString());
+				public void widgetSelected(SelectionEvent e) {
+						selectedFiles = WorkspaceResourceDialog.openFileSelection(getShell(), "Select the ComponentInterface models", "open", true, null, null);
+						if (selectedFiles.length == 0) return;
+						String info_text="";
+						for (IFile i:selectedFiles) {
+							info_text+=i.getName()+", ";
+						}
+						locationPathField.setText(info_text);
 					}
-					dlg.open();
-					String [] filenames = dlg.getFileNames();
-					String filterPath = dlg.getFilterPath();
-					selectedFiles = new File[filenames.length];
-					
-					for(int i = 0; i < filenames.length; i++)
-					{
-					    if(filterPath != null && filterPath.trim().length() > 0)
-					    {
-					        selectedFiles[i] = new File(filterPath, filenames[i]);
-					    }
-					    else
-					    {
-					        selectedFiles[i] = new File(filenames[i]);
-					    }
-					}
-					if (filenames == null) 
-						return;
-					locationPathField.setText(filenames[0].toString());
-				}
 
 			});
-	        setControl(container);
-	        setPageComplete(true);
-	        
+			setControl(container);
+			setPageComplete(true);
+
 
 			}
 
-		public File[] getPaths() {
+		public IFile[] getPaths() {
 			return selectedFiles;
 		}
 
