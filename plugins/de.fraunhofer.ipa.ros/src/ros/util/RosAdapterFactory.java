@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
@@ -139,10 +138,6 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createTopicSpecAdapter();
 			}
 			@Override
-			public Adapter casePublisher(Publisher object) {
-				return createPublisherAdapter();
-			}
-			@Override
 			public Adapter casePackageDependency(PackageDependency object) {
 				return createPackageDependencyAdapter();
 			}
@@ -153,6 +148,10 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCatkinPackage(CatkinPackage object) {
 				return createCatkinPackageAdapter();
+			}
+			@Override
+			public Adapter casePublisher(Publisher object) {
+				return createPublisherAdapter();
 			}
 			@Override
 			public Adapter caseArtifact(Artifact object) {

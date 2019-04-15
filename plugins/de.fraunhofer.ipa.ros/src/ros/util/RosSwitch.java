@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
@@ -152,13 +151,6 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RosPackage.PUBLISHER: {
-				Publisher publisher = (Publisher)theEObject;
-				T result = casePublisher(publisher);
-				if (result == null) result = caseNamespacedElement(publisher);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RosPackage.PACKAGE_DEPENDENCY: {
 				PackageDependency packageDependency = (PackageDependency)theEObject;
 				T result = casePackageDependency(packageDependency);
@@ -177,6 +169,13 @@ public class RosSwitch<T> extends Switch<T> {
 				CatkinPackage catkinPackage = (CatkinPackage)theEObject;
 				T result = caseCatkinPackage(catkinPackage);
 				if (result == null) result = casePackage(catkinPackage);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.PUBLISHER: {
+				Publisher publisher = (Publisher)theEObject;
+				T result = casePublisher(publisher);
+				if (result == null) result = caseNamespacedElement(publisher);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

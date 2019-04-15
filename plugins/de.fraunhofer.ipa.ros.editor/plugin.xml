@@ -49,6 +49,34 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ros -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="primitives.presentation.PrimitivesModelWizardID"
+            name="%_UI_PrimitivesModelWizard_label"
+            class="primitives.presentation.PrimitivesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PrimitivesModelFile.gif">
+         <description>%_UI_PrimitivesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ros -->
+      <editor
+            id="primitives.presentation.PrimitivesEditorID"
+            name="%_UI_PrimitivesEditor_label"
+            icon="icons/full/obj16/PrimitivesModelFile.gif"
+            extensions="primitives"
+            class="primitives.presentation.PrimitivesEditor"
+            contributorClass="primitives.presentation.PrimitivesActionBarContributor">
+      </editor>
+   </extension>
+
    <extension point="org.eclipse.ui.handlers">
       <handler
          class="ros.presentation.AddRosProjectHandler"

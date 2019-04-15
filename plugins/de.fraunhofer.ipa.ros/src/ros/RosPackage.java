@@ -415,7 +415,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPublisher()
 	 * @generated
 	 */
-	int PUBLISHER = 6;
+	int PUBLISHER = 9;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.PackageDependencyImpl <em>Package Dependency</em>}' class.
@@ -425,7 +425,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getPackageDependency()
 	 * @generated
 	 */
-	int PACKAGE_DEPENDENCY = 7;
+	int PACKAGE_DEPENDENCY = 6;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.ExternalDependencyImpl <em>External Dependency</em>}' class.
@@ -435,7 +435,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getExternalDependency()
 	 * @generated
 	 */
-	int EXTERNAL_DEPENDENCY = 8;
+	int EXTERNAL_DEPENDENCY = 7;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.CatkinPackageImpl <em>Catkin Package</em>}' class.
@@ -445,7 +445,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getCatkinPackage()
 	 * @generated
 	 */
-	int CATKIN_PACKAGE = 9;
+	int CATKIN_PACKAGE = 8;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.
@@ -684,51 +684,6 @@ public interface RosPackage extends EPackage {
 	int TOPIC_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHER__NAME = NAMESPACED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Message</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHER__MESSAGE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Publisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Publisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -835,6 +790,51 @@ public interface RosPackage extends EPackage {
 	 * @ordered
 	 */
 	int CATKIN_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER__NAME = NAMESPACED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER__MESSAGE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Publisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Publisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1162,13 +1162,22 @@ public interface RosPackage extends EPackage {
 	int ACTION_CLIENT_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Message Part</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DEFINITION__MESSAGE_PART = 0;
+
+	/**
 	 * The number of structural features of the '<em>Message Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_DEFINITION_FEATURE_COUNT = 0;
+	int MESSAGE_DEFINITION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Message Definition</em>' class.
@@ -2774,6 +2783,17 @@ public interface RosPackage extends EPackage {
 	EClass getMessageDefinition();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ros.MessageDefinition#getMessagePart <em>Message Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Message Part</em>'.
+	 * @see ros.MessageDefinition#getMessagePart()
+	 * @see #getMessageDefinition()
+	 * @generated
+	 */
+	EReference getMessageDefinition_MessagePart();
+
+	/**
 	 * Returns the meta object for class '{@link ros.Namespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3872,6 +3892,14 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MESSAGE_DEFINITION = eINSTANCE.getMessageDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Part</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_DEFINITION__MESSAGE_PART = eINSTANCE.getMessageDefinition_MessagePart();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.NamespaceImpl <em>Namespace</em>}' class.

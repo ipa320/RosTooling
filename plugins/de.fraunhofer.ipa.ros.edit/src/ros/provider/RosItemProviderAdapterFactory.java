@@ -1164,10 +1164,10 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		if (serviceSpecItemProvider != null) serviceSpecItemProvider.dispose();
 		if (serviceServerItemProvider != null) serviceServerItemProvider.dispose();
 		if (topicSpecItemProvider != null) topicSpecItemProvider.dispose();
-		if (publisherItemProvider != null) publisherItemProvider.dispose();
 		if (packageDependencyItemProvider != null) packageDependencyItemProvider.dispose();
 		if (externalDependencyItemProvider != null) externalDependencyItemProvider.dispose();
 		if (catkinPackageItemProvider != null) catkinPackageItemProvider.dispose();
+		if (publisherItemProvider != null) publisherItemProvider.dispose();
 		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (subscriberItemProvider != null) subscriberItemProvider.dispose();
 		if (serviceClientItemProvider != null) serviceClientItemProvider.dispose();
