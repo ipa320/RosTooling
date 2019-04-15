@@ -68,6 +68,7 @@ class RosExtractor():
                     node.source_files.append(source_file)
         parser = CppAstParser(workspace = ws)
         node.source_tree = parser.global_scope
+        model_str = ""
         for sf in node.source_files:
             if parser.parse(sf.path) is None:
                 print "File not found"
@@ -76,7 +77,14 @@ class RosExtractor():
                 rosmodel = ros_model(self.args.package_name, self.args.name, self.args.name)
                 self.extract_primitives(node, parser.global_scope, analysis, rosmodel)
                 # SAVE ROS MODEL
-                rosmodel.save_model()
+                model_str = rosmodel.save_model()
+        if self.args.output:
+            print model_str
+        else:
+            text_file = open(self.args.name+".ros", "w")
+            text_file.write(model_str)
+            text_file.close()
+
 
   def extract_primitives(self, node, gs, analysis, rosmodel):
         for call in (CodeQuery(gs).all_calls.where_name("advertise").where_result("ros::Publisher").get()):
@@ -106,6 +114,7 @@ class RosExtractor():
     mutually_exclusive = parser.add_mutually_exclusive_group()
     mutually_exclusive.add_argument('--node', '-n', help="node analyse", action='store_true')
     mutually_exclusive.add_argument('--launch', '-l', help="launch analyse", action='store_true')
+    parser.add_argument('--output', help='print the model output')
     parser.add_argument('--package', required=True, dest='package_name')
     parser.add_argument('--name', required=True, dest='name')
     self.args = parser.parse_args()
@@ -165,9 +174,7 @@ class ros_model:
             else:
                 model_str = model_str+"}\n"
     model_str = model_str + "}}}}}}"
-    text_file = open(self.node+".ros", "w")
-    text_file.write(model_str)
-    text_file.close()
+    return model_str
 
 class publisher:
   def __init__(self, name, msg_type):
