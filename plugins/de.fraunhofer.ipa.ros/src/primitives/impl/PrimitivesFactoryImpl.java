@@ -10,6 +10,39 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
+import primitives.MessagePart;
+import primitives.PrimitivesFactory;
+import primitives.PrimitivesPackage;
+import primitives.TopicSpecRef;
+import primitives.bool;
+import primitives.boolArray;
+import primitives.duration;
+import primitives.float32;
+import primitives.float32Array;
+import primitives.float64;
+import primitives.float64Array;
+import primitives.int16;
+import primitives.int16Array;
+import primitives.int32;
+import primitives.int32Array;
+import primitives.int64;
+import primitives.int64Array;
+import primitives.int8;
+import primitives.int8Array;
+import primitives.string;
+import primitives.stringArray;
+import primitives.time;
+import primitives.uint16;
+import primitives.uint16Array;
+import primitives.uint32;
+import primitives.uint32Array;
+import primitives.uint64;
+import primitives.uint64Array;
+import primitives.uint8;
+import primitives.uint8Array;
 import primitives.*;
 
 /**
@@ -84,6 +117,10 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 			case PrimitivesPackage.FLOAT64_ARRAY: return createfloat64Array();
 			case PrimitivesPackage.STRING_ARRAY: return createstringArray();
 			case PrimitivesPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
+			case PrimitivesPackage.HEADER: return createHeader();
+			case PrimitivesPackage.BYTE: return createByte();
+			case PrimitivesPackage.BYTE_ARRAY: return createByteArray();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -357,6 +394,46 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	public TopicSpecRef createTopicSpecRef() {
 		TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
 		return topicSpecRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArrayTopicSpecRef createArrayTopicSpecRef() {
+		ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
+		return arrayTopicSpecRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Header createHeader() {
+		HeaderImpl header = new HeaderImpl();
+		return header;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public primitives.Byte createByte() {
+		ByteImpl byte_ = new ByteImpl();
+		return byte_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ByteArray createByteArray() {
+		ByteArrayImpl byteArray = new ByteArrayImpl();
+		return byteArray;
 	}
 
 	/**

@@ -15,6 +15,9 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
 import primitives.TopicSpecRef;
@@ -100,6 +103,18 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == PrimitivesPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF:
+				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
+				return; 
+			case PrimitivesPackage.BYTE:
+				sequence_byte(context, (primitives.Byte) semanticObject); 
+				return; 
+			case PrimitivesPackage.BYTE_ARRAY:
+				sequence_byteArray(context, (ByteArray) semanticObject); 
+				return; 
+			case PrimitivesPackage.HEADER:
+				sequence_Header(context, (Header) semanticObject); 
+				return; 
 			case PrimitivesPackage.MESSAGE_PART:
 				sequence_MessagePart(context, (MessagePart) semanticObject); 
 				return; 
@@ -357,6 +372,25 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AbstractType returns ArrayTopicSpecRef
+	 *     ArrayTopicSpecRef returns ArrayTopicSpecRef
+	 *
+	 * Constraint:
+	 *     TopicSpec=[TopicSpec|EString]
+	 */
+	protected void sequence_ArrayTopicSpecRef(ISerializationContext context, ArrayTopicSpecRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1(), semanticObject.eGet(PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
@@ -414,6 +448,19 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AbstractType returns Header
+	 *     Header returns Header
+	 *
+	 * Constraint:
+	 *     {Header}
+	 */
+	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MessageDefinition returns MessageDefinition
 	 *
 	 * Constraint:
@@ -429,19 +476,10 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MessagePart returns MessagePart
 	 *
 	 * Constraint:
-	 *     (Type=AbstractType Data=EString)
+	 *     (Type=AbstractType (Data=KEYWORD | Data=MESSAGE_ASIGMENT | Data=EString))
 	 */
 	protected void sequence_MessagePart(ISerializationContext context, MessagePart semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.MESSAGE_PART__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.MESSAGE_PART__TYPE));
-			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.MESSAGE_PART__DATA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.MESSAGE_PART__DATA));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMessagePartAccess().getTypeAbstractTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getMessagePartAccess().getDataEStringParserRuleCall_1_0(), semanticObject.getData());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -950,7 +988,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TopicSpec returns TopicSpec
 	 *
 	 * Constraint:
-	 *     (name=EString message=MessageDefinition?)
+	 *     ((name=EString | name='Header') message=MessageDefinition?)
 	 */
 	protected void sequence_TopicSpec(ISerializationContext context, TopicSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -979,6 +1017,32 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     {bool}
 	 */
 	protected void sequence_bool(ISerializationContext context, bool semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns ByteArray
+	 *     byteArray returns ByteArray
+	 *
+	 * Constraint:
+	 *     {ByteArray}
+	 */
+	protected void sequence_byteArray(ISerializationContext context, ByteArray semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns Byte
+	 *     byte returns Byte
+	 *
+	 * Constraint:
+	 *     {Byte}
+	 */
+	protected void sequence_byte(ISerializationContext context, primitives.Byte semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

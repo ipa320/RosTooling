@@ -7,6 +7,39 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import primitives.AbstractType;
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
+import primitives.MessagePart;
+import primitives.PrimitivesPackage;
+import primitives.TopicSpecRef;
+import primitives.bool;
+import primitives.boolArray;
+import primitives.duration;
+import primitives.float32;
+import primitives.float32Array;
+import primitives.float64;
+import primitives.float64Array;
+import primitives.int16;
+import primitives.int16Array;
+import primitives.int32;
+import primitives.int32Array;
+import primitives.int64;
+import primitives.int64Array;
+import primitives.int8;
+import primitives.int8Array;
+import primitives.string;
+import primitives.stringArray;
+import primitives.time;
+import primitives.uint16;
+import primitives.uint16Array;
+import primitives.uint32;
+import primitives.uint32Array;
+import primitives.uint64;
+import primitives.uint64Array;
+import primitives.uint8;
+import primitives.uint8Array;
 import primitives.*;
 
 /**
@@ -264,6 +297,34 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 				TopicSpecRef topicSpecRef = (TopicSpecRef)theEObject;
 				T result = caseTopicSpecRef(topicSpecRef);
 				if (result == null) result = caseAbstractType(topicSpecRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: {
+				ArrayTopicSpecRef arrayTopicSpecRef = (ArrayTopicSpecRef)theEObject;
+				T result = caseArrayTopicSpecRef(arrayTopicSpecRef);
+				if (result == null) result = caseAbstractType(arrayTopicSpecRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.HEADER: {
+				Header header = (Header)theEObject;
+				T result = caseHeader(header);
+				if (result == null) result = caseAbstractType(header);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.BYTE: {
+				primitives.Byte byte_ = (primitives.Byte)theEObject;
+				T result = caseByte(byte_);
+				if (result == null) result = caseAbstractType(byte_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.BYTE_ARRAY: {
+				ByteArray byteArray = (ByteArray)theEObject;
+				T result = caseByteArray(byteArray);
+				if (result == null) result = caseAbstractType(byteArray);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -688,6 +749,66 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTopicSpecRef(TopicSpecRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Header</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHeader(Header object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Byte</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Byte</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseByte(primitives.Byte object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Byte Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Byte Array</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseByteArray(ByteArray object) {
 		return null;
 	}
 

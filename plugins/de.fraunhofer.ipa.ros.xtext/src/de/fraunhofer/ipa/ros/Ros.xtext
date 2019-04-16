@@ -26,11 +26,6 @@ Dependency returns Dependency:
 Namespace returns Namespace:
 	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 
-ParameterType returns ParameterType:
-	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterDateType | ParameterBooleanType | ParameterBase64Type | ParameterAnyType | ParameterArrayType;
-
-ParameterValue returns ParameterValue:
-	ParameterAny | ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterSequence | ParameterStruct | ParameterDate;
 
 Package_Impl returns Package:
 	{Package}
@@ -78,7 +73,7 @@ ServiceSpec returns ServiceSpec:
 TopicSpec returns TopicSpec:
 	{TopicSpec}
 	'TopicSpec'
-	name=EString
+	name=(EString|'Header')
 	'{'
 		('message' message=MessageDefinition)?
 	'}';
@@ -156,6 +151,16 @@ ActionClient returns ActionClient:
 
 GraphName returns GraphName:
 	'GraphName' ;
+
+
+//PARAMETERS DEFINITION
+
+ParameterType returns ParameterType:
+	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterDateType | ParameterBooleanType | ParameterBase64Type | ParameterAnyType | ParameterArrayType;
+
+ParameterValue returns ParameterValue:
+	ParameterAny | ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterSequence | ParameterStruct | ParameterDate;
+
 
 Parameter returns Parameter:
 	'Parameter'
@@ -356,14 +361,22 @@ ExternalDependency returns ExternalDependency:
 	name=EString;
 	
 
+//MESSAGE PRIMITIVES DEFINITION
+
+
 MessagePart returns primitives::MessagePart:
 	Type = AbstractType
-	Data = EString
+	Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
 ;
 
+terminal MESSAGE_ASIGMENT:
+	((ID|STRING)'='(ID|STRING|INT|'-'INT))
+;
 
 AbstractType returns primitives::AbstractType:
-	TopicSpecRef | bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | time | duration | boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array ;
+	bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
+	boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | 
+	TopicSpecRef | ArrayTopicSpecRef ;
 
 
 MessageDefinition returns MessageDefinition:
@@ -431,6 +444,11 @@ float64 returns primitives::float64:
 string0 returns primitives::string:
 	{primitives::string}
 	'string'
+	;
+	
+byte returns primitives::Byte:
+	{primitives::Byte}
+	'byte'
 	;
 
 time returns primitives::time:
@@ -502,7 +520,22 @@ string0Array returns primitives::stringArray:
 	{primitives::stringArray}
 	'string[]'
 	;
+byteArray returns primitives::ByteArray:
+	{primitives::ByteArray}
+	'byte[]'
+	;
+	
+Header returns primitives::Header:
+	{primitives::Header}
+	'Header'
+;
 
 TopicSpecRef returns primitives::TopicSpecRef:
 	TopicSpec=[TopicSpec|EString]
 ;
+
+ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+	TopicSpec=[TopicSpec|EString]'[]'
+;
+
+KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;

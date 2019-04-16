@@ -265,6 +265,42 @@ public interface PrimitivesFactory extends EFactory {
 	TopicSpecRef createTopicSpecRef();
 
 	/**
+	 * Returns a new object of class '<em>Array Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Topic Spec Ref</em>'.
+	 * @generated
+	 */
+	ArrayTopicSpecRef createArrayTopicSpecRef();
+
+	/**
+	 * Returns a new object of class '<em>Header</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header</em>'.
+	 * @generated
+	 */
+	Header createHeader();
+
+	/**
+	 * Returns a new object of class '<em>Byte</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Byte</em>'.
+	 * @generated
+	 */
+	Byte createByte();
+
+	/**
+	 * Returns a new object of class '<em>Byte Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Byte Array</em>'.
+	 * @generated
+	 */
+	ByteArray createByteArray();
+
+	/**
 	 * Returns a new object of class '<em>Message Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

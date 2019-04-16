@@ -692,6 +692,98 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link primitives.ArrayTopicSpecRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayTopicSpecRefItemProvider arrayTopicSpecRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.ArrayTopicSpecRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayTopicSpecRefAdapter() {
+		if (arrayTopicSpecRefItemProvider == null) {
+			arrayTopicSpecRefItemProvider = new ArrayTopicSpecRefItemProvider(this);
+		}
+
+		return arrayTopicSpecRefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.Header} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderItemProvider headerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.Header}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderAdapter() {
+		if (headerItemProvider == null) {
+			headerItemProvider = new HeaderItemProvider(this);
+		}
+
+		return headerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.Byte} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ByteItemProvider byteItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.Byte}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createByteAdapter() {
+		if (byteItemProvider == null) {
+			byteItemProvider = new ByteItemProvider(this);
+		}
+
+		return byteItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.ByteArray} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ByteArrayItemProvider byteArrayItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.ByteArray}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createByteArrayAdapter() {
+		if (byteArrayItemProvider == null) {
+			byteArrayItemProvider = new ByteArrayItemProvider(this);
+		}
+
+		return byteArrayItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link primitives.MessagePart} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

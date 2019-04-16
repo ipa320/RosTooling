@@ -10,6 +10,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import primitives.AbstractType;
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
@@ -247,6 +250,34 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * @generated
 	 */
 	private EClass topicSpecRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arrayTopicSpecRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass headerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass byteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass byteArrayEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -587,6 +618,51 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getArrayTopicSpecRef() {
+		return arrayTopicSpecRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArrayTopicSpecRef_TopicSpec() {
+		return (EReference)arrayTopicSpecRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHeader() {
+		return headerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getByte() {
+		return byteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getByteArray() {
+		return byteArrayEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMessagePart() {
 		return messagePartEClass;
 	}
@@ -697,6 +773,15 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 		topicSpecRefEClass = createEClass(TOPIC_SPEC_REF);
 		createEReference(topicSpecRefEClass, TOPIC_SPEC_REF__TOPIC_SPEC);
+
+		arrayTopicSpecRefEClass = createEClass(ARRAY_TOPIC_SPEC_REF);
+		createEReference(arrayTopicSpecRefEClass, ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC);
+
+		headerEClass = createEClass(HEADER);
+
+		byteEClass = createEClass(BYTE);
+
+		byteArrayEClass = createEClass(BYTE_ARRAY);
 	}
 
 	/**
@@ -757,6 +842,10 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		float64ArrayEClass.getESuperTypes().add(this.getAbstractType());
 		stringArrayEClass.getESuperTypes().add(this.getAbstractType());
 		topicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
+		arrayTopicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
+		headerEClass.getESuperTypes().add(this.getAbstractType());
+		byteEClass.getESuperTypes().add(this.getAbstractType());
+		byteArrayEClass.getESuperTypes().add(this.getAbstractType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTypeEClass, AbstractType.class, "AbstractType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -819,6 +908,15 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 		initEClass(topicSpecRefEClass, TopicSpecRef.class, "TopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTopicSpecRef_TopicSpec(), theRosPackage.getTopicSpec(), null, "TopicSpec", null, 1, 1, TopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arrayTopicSpecRefEClass, ArrayTopicSpecRef.class, "ArrayTopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArrayTopicSpecRef_TopicSpec(), theRosPackage.getTopicSpec(), null, "TopicSpec", null, 1, 1, ArrayTopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(byteEClass, primitives.Byte.class, "Byte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(byteArrayEClass, ByteArray.class, "ByteArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

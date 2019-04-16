@@ -38,7 +38,10 @@ public class RosParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterTypeAccess().getAlternatives(), "rule__ParameterType__Alternatives");
 					put(grammarAccess.getParameterValueAccess().getAlternatives(), "rule__ParameterValue__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+					put(grammarAccess.getTopicSpecAccess().getNameAlternatives_2_0(), "rule__TopicSpec__NameAlternatives_2_0");
+					put(grammarAccess.getMessagePartAccess().getDataAlternatives_1_0(), "rule__MessagePart__DataAlternatives_1_0");
 					put(grammarAccess.getAbstractTypeAccess().getAlternatives(), "rule__AbstractType__Alternatives");
+					put(grammarAccess.getKEYWORDAccess().getAlternatives(), "rule__KEYWORD__Alternatives");
 					put(grammarAccess.getPackageSetAccess().getGroup(), "rule__PackageSet__Group__0");
 					put(grammarAccess.getPackageSetAccess().getGroup_3(), "rule__PackageSet__Group_3__0");
 					put(grammarAccess.getPackageSetAccess().getGroup_3_3(), "rule__PackageSet__Group_3_3__0");
@@ -160,6 +163,7 @@ public class RosParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFloat32Access().getGroup(), "rule__Float32__Group__0");
 					put(grammarAccess.getFloat64Access().getGroup(), "rule__Float64__Group__0");
 					put(grammarAccess.getString0Access().getGroup(), "rule__String0__Group__0");
+					put(grammarAccess.getByteAccess().getGroup(), "rule__Byte__Group__0");
 					put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
 					put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
 					put(grammarAccess.getBoolArrayAccess().getGroup(), "rule__BoolArray__Group__0");
@@ -174,6 +178,9 @@ public class RosParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFloat32ArrayAccess().getGroup(), "rule__Float32Array__Group__0");
 					put(grammarAccess.getFloat64ArrayAccess().getGroup(), "rule__Float64Array__Group__0");
 					put(grammarAccess.getString0ArrayAccess().getGroup(), "rule__String0Array__Group__0");
+					put(grammarAccess.getByteArrayAccess().getGroup(), "rule__ByteArray__Group__0");
+					put(grammarAccess.getHeaderAccess().getGroup(), "rule__Header__Group__0");
+					put(grammarAccess.getArrayTopicSpecRefAccess().getGroup(), "rule__ArrayTopicSpecRef__Group__0");
 					put(grammarAccess.getPackageSetAccess().getPackageAssignment_3_2(), "rule__PackageSet__PackageAssignment_3_2");
 					put(grammarAccess.getPackageSetAccess().getPackageAssignment_3_3_1(), "rule__PackageSet__PackageAssignment_3_3_1");
 					put(grammarAccess.getPackage_ImplAccess().getNameAssignment_2(), "rule__Package_Impl__NameAssignment_2");
@@ -278,6 +285,7 @@ public class RosParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMessageDefinitionAccess().getMessagePartAssignment_2_0(), "rule__MessageDefinition__MessagePartAssignment_2_0");
 					put(grammarAccess.getMessageDefinitionAccess().getMessagePartAssignment_2_1(), "rule__MessageDefinition__MessagePartAssignment_2_1");
 					put(grammarAccess.getTopicSpecRefAccess().getTopicSpecAssignment(), "rule__TopicSpecRef__TopicSpecAssignment");
+					put(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecAssignment_0(), "rule__ArrayTopicSpecRef__TopicSpecAssignment_0");
 				}
 			};
 		}

@@ -9,6 +9,39 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import primitives.AbstractType;
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
+import primitives.MessagePart;
+import primitives.PrimitivesPackage;
+import primitives.TopicSpecRef;
+import primitives.bool;
+import primitives.boolArray;
+import primitives.duration;
+import primitives.float32;
+import primitives.float32Array;
+import primitives.float64;
+import primitives.float64Array;
+import primitives.int16;
+import primitives.int16Array;
+import primitives.int32;
+import primitives.int32Array;
+import primitives.int64;
+import primitives.int64Array;
+import primitives.int8;
+import primitives.int8Array;
+import primitives.string;
+import primitives.stringArray;
+import primitives.time;
+import primitives.uint16;
+import primitives.uint16Array;
+import primitives.uint32;
+import primitives.uint32Array;
+import primitives.uint64;
+import primitives.uint64Array;
+import primitives.uint8;
+import primitives.uint8Array;
 import primitives.*;
 
 /**
@@ -182,6 +215,22 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTopicSpecRef(TopicSpecRef object) {
 				return createTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+				return createArrayTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseHeader(Header object) {
+				return createHeaderAdapter();
+			}
+			@Override
+			public Adapter caseByte(primitives.Byte object) {
+				return createByteAdapter();
+			}
+			@Override
+			public Adapter caseByteArray(ByteArray object) {
+				return createByteArrayAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -592,6 +641,62 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.ArrayTopicSpecRef
+	 * @generated
+	 */
+	public Adapter createArrayTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.Header <em>Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.Header
+	 * @generated
+	 */
+	public Adapter createHeaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.Byte <em>Byte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.Byte
+	 * @generated
+	 */
+	public Adapter createByteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.ByteArray <em>Byte Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.ByteArray
+	 * @generated
+	 */
+	public Adapter createByteArrayAdapter() {
 		return null;
 	}
 

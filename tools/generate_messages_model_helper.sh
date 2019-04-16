@@ -1,6 +1,25 @@
 #!/bin/bash
 package_list=$@
 
+
+function parserToRosModel(){    
+    msg_desc=""
+    for word in $1; do
+        word="$(echo $word | sed -e 's/\[[^][]*\]/[]/g' )"
+        if [[ $word == *"/"* ]]; then
+            ref="$(echo $word | tr / .)"
+            if [[ $ref = *"[]"* ]]; then
+                msg_desc+='"'${ref%"[]"}'"[]'
+            else
+                msg_desc+='"'$ref'"'
+            fi
+        else
+            msg_desc+=" "$word" "
+        fi
+    done
+    echo $msg_desc
+}
+
 echo 'PackageSet{package{'
 arr_pkg=($package_list)
 cout_pkg=${#arr_pkg[@]}
@@ -22,17 +41,7 @@ do
         cout_msg=$((cout_msg-1))
         message=${i/$p\//}
         message_show=$(rosmsg show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
-        msg_desc=""
-        for word in $message_show; do
-
-            if [[ $word == *"/"* ]]; then
-                ref="$(echo $word | tr / .)"
-                msg_desc+='"'$ref'"'
-            else
-                msg_desc+=" "$word" "
-            fi
-        final_desc="$(echo $msg_desc)"       
-        done
+        final_desc=$(parserToRosModel "$message_show")
 	    echo -n '      TopicSpec '$message'{ message { '$final_desc' }}'
         if (("$cout_msg" >= "1" || "$cout_srv" >= "1" ))
         then
@@ -44,7 +53,12 @@ do
     do
         cout_srv=$((cout_srv-1))
         service=${i/$p\//}
-	    echo -n '      ServiceSpec '$service'{}'
+        service_show=$(rossrv show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
+        request="$(echo $service_show | sed 's/---.*//')"
+        response="$(echo $service_show | sed -e 's#.*---\(\)#\1#')"
+        final_request=$(parserToRosModel "$request")
+        final_response=$(parserToRosModel "$response")   
+	    echo -n '      ServiceSpec '$service'{ request { '$final_request' } response { '$final_response' } }'
         if (("$cout_srv" >= "1"))
         then
             echo ','
@@ -59,3 +73,4 @@ done
 
 echo $'\n  }'
 echo '}'
+
