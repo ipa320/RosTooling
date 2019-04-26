@@ -38,10 +38,14 @@ public class RosParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterTypeAccess().getAlternatives(), "rule__ParameterType__Alternatives");
 					put(grammarAccess.getParameterValueAccess().getAlternatives(), "rule__ParameterValue__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+<<<<<<< HEAD
 					put(grammarAccess.getTopicSpecAccess().getNameAlternatives_2_0(), "rule__TopicSpec__NameAlternatives_2_0");
 					put(grammarAccess.getMessagePartAccess().getDataAlternatives_1_0(), "rule__MessagePart__DataAlternatives_1_0");
 					put(grammarAccess.getAbstractTypeAccess().getAlternatives(), "rule__AbstractType__Alternatives");
 					put(grammarAccess.getKEYWORDAccess().getAlternatives(), "rule__KEYWORD__Alternatives");
+=======
+					put(grammarAccess.getRosNamesAccess().getAlternatives(), "rule__RosNames__Alternatives");
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 					put(grammarAccess.getPackageSetAccess().getGroup(), "rule__PackageSet__Group__0");
 					put(grammarAccess.getPackageSetAccess().getGroup_3(), "rule__PackageSet__Group_3__0");
 					put(grammarAccess.getPackageSetAccess().getGroup_3_3(), "rule__PackageSet__Group_3_3__0");

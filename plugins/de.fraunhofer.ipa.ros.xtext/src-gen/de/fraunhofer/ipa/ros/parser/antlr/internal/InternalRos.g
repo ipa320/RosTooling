@@ -747,13 +747,23 @@ ruleRosNames returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 @after {
 	leaveRule();
 }:
-	this_ID_0=RULE_ID
-	{
-		$current.merge(this_ID_0);
-	}
-	{
-		newLeafNode(this_ID_0, grammarAccess.getRosNamesAccess().getIDTerminalRuleCall());
-	}
+	(
+		this_ROS_CONVENTION_A_0=RULE_ROS_CONVENTION_A
+		{
+			$current.merge(this_ROS_CONVENTION_A_0);
+		}
+		{
+			newLeafNode(this_ROS_CONVENTION_A_0, grammarAccess.getRosNamesAccess().getROS_CONVENTION_ATerminalRuleCall_0());
+		}
+		    |
+		this_ID_1=RULE_ID
+		{
+			$current.merge(this_ID_1);
+		}
+		{
+			newLeafNode(this_ID_1, grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1());
+		}
+	)
 ;
 
 // Entry rule entryRuleArtifact
@@ -4566,6 +4576,7 @@ ruleExternalDependency returns [EObject current=null]
 	)
 ;
 
+<<<<<<< HEAD
 // Entry rule entryRuleMessagePart
 entryRuleMessagePart returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMessagePartRule()); }
@@ -6054,6 +6065,9 @@ ruleArrayTopicSpecRef returns [EObject current=null]
 ;
 
 RULE_MESSAGE_ASIGMENT : (RULE_ID|RULE_STRING) '=' (RULE_ID|RULE_STRING|RULE_INT|'-' RULE_INT);
+=======
+RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

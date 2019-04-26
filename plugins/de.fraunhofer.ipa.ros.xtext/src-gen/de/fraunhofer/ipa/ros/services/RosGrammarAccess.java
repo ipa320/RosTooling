@@ -422,14 +422,22 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class RosNamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.RosNames");
-		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cROS_CONVENTION_ATerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//RosNames:
-		//	ID;
+		//	ROS_CONVENTION_A | ID;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//ROS_CONVENTION_A | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ROS_CONVENTION_A
+		public RuleCall getROS_CONVENTION_ATerminalRuleCall_0() { return cROS_CONVENTION_ATerminalRuleCall_0; }
+		
 		//ID
-		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	public class ArtifactElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Artifact");
@@ -3102,6 +3110,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 	}
+<<<<<<< HEAD
 	public class MessagePartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.MessagePart");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3141,6 +3150,160 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getDataEStringParserRuleCall_1_0_2() { return cDataEStringParserRuleCall_1_0_2; }
+=======
+	
+	
+	private final PackageSetElements pPackageSet;
+	private final PackageElements pPackage;
+	private final SpecBaseElements pSpecBase;
+	private final DependencyElements pDependency;
+	private final NamespaceElements pNamespace;
+	private final ParameterTypeElements pParameterType;
+	private final ParameterValueElements pParameterValue;
+	private final Package_ImplElements pPackage_Impl;
+	private final EStringElements pEString;
+	private final RosNamesElements pRosNames;
+	private final TerminalRule tROS_CONVENTION_A;
+	private final ArtifactElements pArtifact;
+	private final CatkinPackageElements pCatkinPackage;
+	private final ServiceSpecElements pServiceSpec;
+	private final TopicSpecElements pTopicSpec;
+	private final ActionSpecElements pActionSpec;
+	private final MessageDefinitionElements pMessageDefinition;
+	private final NodeElements pNode;
+	private final ServiceServerElements pServiceServer;
+	private final PublisherElements pPublisher;
+	private final SubscriberElements pSubscriber;
+	private final ServiceClientElements pServiceClient;
+	private final ActionServerElements pActionServer;
+	private final ActionClientElements pActionClient;
+	private final GraphNameElements pGraphName;
+	private final ParameterElements pParameter;
+	private final GlobalNamespaceElements pGlobalNamespace;
+	private final RelativeNamespace_ImplElements pRelativeNamespace_Impl;
+	private final PrivateNamespaceElements pPrivateNamespace;
+	private final ParameterListTypeElements pParameterListType;
+	private final ParameterStructTypeElements pParameterStructType;
+	private final ParameterIntegerTypeElements pParameterIntegerType;
+	private final ParameterStringTypeElements pParameterStringType;
+	private final ParameterDoubleTypeElements pParameterDoubleType;
+	private final ParameterDateTypeElements pParameterDateType;
+	private final ParameterBooleanTypeElements pParameterBooleanType;
+	private final ParameterBase64TypeElements pParameterBase64Type;
+	private final ParameterAnyTypeElements pParameterAnyType;
+	private final ParameterArrayTypeElements pParameterArrayType;
+	private final ParameterSequenceElements pParameterSequence;
+	private final ParameterAnyElements pParameterAny;
+	private final ParameterStringElements pParameterString;
+	private final ParameterBase64Elements pParameterBase64;
+	private final ParameterIntegerElements pParameterInteger;
+	private final ParameterDoubleElements pParameterDouble;
+	private final ParameterBooleanElements pParameterBoolean;
+	private final ParameterStructElements pParameterStruct;
+	private final ParameterDateElements pParameterDate;
+	private final Base64BinaryElements pBase64Binary;
+	private final Int0Elements pInt0;
+	private final DoubleElements pDouble;
+	private final BooleanElements pBoolean;
+	private final ParameterStructMemberElements pParameterStructMember;
+	private final DateTimeElements pDateTime;
+	private final ParameterStructTypeMemberElements pParameterStructTypeMember;
+	private final PackageDependencyElements pPackageDependency;
+	private final ExternalDependencyElements pExternalDependency;
+	
+	private final Grammar grammar;
+	
+	private final TerminalsGrammarAccess gaTerminals;
+
+	@Inject
+	public RosGrammarAccess(GrammarProvider grammarProvider,
+			TerminalsGrammarAccess gaTerminals) {
+		this.grammar = internalFindGrammar(grammarProvider);
+		this.gaTerminals = gaTerminals;
+		this.pPackageSet = new PackageSetElements();
+		this.pPackage = new PackageElements();
+		this.pSpecBase = new SpecBaseElements();
+		this.pDependency = new DependencyElements();
+		this.pNamespace = new NamespaceElements();
+		this.pParameterType = new ParameterTypeElements();
+		this.pParameterValue = new ParameterValueElements();
+		this.pPackage_Impl = new Package_ImplElements();
+		this.pEString = new EStringElements();
+		this.pRosNames = new RosNamesElements();
+		this.tROS_CONVENTION_A = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ROS_CONVENTION_A");
+		this.pArtifact = new ArtifactElements();
+		this.pCatkinPackage = new CatkinPackageElements();
+		this.pServiceSpec = new ServiceSpecElements();
+		this.pTopicSpec = new TopicSpecElements();
+		this.pActionSpec = new ActionSpecElements();
+		this.pMessageDefinition = new MessageDefinitionElements();
+		this.pNode = new NodeElements();
+		this.pServiceServer = new ServiceServerElements();
+		this.pPublisher = new PublisherElements();
+		this.pSubscriber = new SubscriberElements();
+		this.pServiceClient = new ServiceClientElements();
+		this.pActionServer = new ActionServerElements();
+		this.pActionClient = new ActionClientElements();
+		this.pGraphName = new GraphNameElements();
+		this.pParameter = new ParameterElements();
+		this.pGlobalNamespace = new GlobalNamespaceElements();
+		this.pRelativeNamespace_Impl = new RelativeNamespace_ImplElements();
+		this.pPrivateNamespace = new PrivateNamespaceElements();
+		this.pParameterListType = new ParameterListTypeElements();
+		this.pParameterStructType = new ParameterStructTypeElements();
+		this.pParameterIntegerType = new ParameterIntegerTypeElements();
+		this.pParameterStringType = new ParameterStringTypeElements();
+		this.pParameterDoubleType = new ParameterDoubleTypeElements();
+		this.pParameterDateType = new ParameterDateTypeElements();
+		this.pParameterBooleanType = new ParameterBooleanTypeElements();
+		this.pParameterBase64Type = new ParameterBase64TypeElements();
+		this.pParameterAnyType = new ParameterAnyTypeElements();
+		this.pParameterArrayType = new ParameterArrayTypeElements();
+		this.pParameterSequence = new ParameterSequenceElements();
+		this.pParameterAny = new ParameterAnyElements();
+		this.pParameterString = new ParameterStringElements();
+		this.pParameterBase64 = new ParameterBase64Elements();
+		this.pParameterInteger = new ParameterIntegerElements();
+		this.pParameterDouble = new ParameterDoubleElements();
+		this.pParameterBoolean = new ParameterBooleanElements();
+		this.pParameterStruct = new ParameterStructElements();
+		this.pParameterDate = new ParameterDateElements();
+		this.pBase64Binary = new Base64BinaryElements();
+		this.pInt0 = new Int0Elements();
+		this.pDouble = new DoubleElements();
+		this.pBoolean = new BooleanElements();
+		this.pParameterStructMember = new ParameterStructMemberElements();
+		this.pDateTime = new DateTimeElements();
+		this.pParameterStructTypeMember = new ParameterStructTypeMemberElements();
+		this.pPackageDependency = new PackageDependencyElements();
+		this.pExternalDependency = new ExternalDependencyElements();
+	}
+	
+	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
+		Grammar grammar = grammarProvider.getGrammar(this);
+		while (grammar != null) {
+			if ("de.fraunhofer.ipa.ros.Ros".equals(grammar.getName())) {
+				return grammar;
+			}
+			List<Grammar> grammars = grammar.getUsedGrammars();
+			if (!grammars.isEmpty()) {
+				grammar = grammars.iterator().next();
+			} else {
+				return null;
+			}
+		}
+		return grammar;
+	}
+	
+	@Override
+	public Grammar getGrammar() {
+		return grammar;
+	}
+	
+	
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 	}
 	public class AbstractTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.AbstractType");
@@ -4331,13 +4494,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RosNames:
-	//	ID;
+	//	ROS_CONVENTION_A | ID;
 	public RosNamesElements getRosNamesAccess() {
 		return pRosNames;
 	}
 	
 	public ParserRule getRosNamesRule() {
 		return getRosNamesAccess().getRule();
+	}
+	
+	//terminal ROS_CONVENTION_A:
+	//	'/' ID | ID '/'*;
+	public TerminalRule getROS_CONVENTION_ARule() {
+		return tROS_CONVENTION_A;
 	}
 	
 	//Artifact:

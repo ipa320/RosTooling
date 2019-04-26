@@ -1,7 +1,11 @@
 ','=15
 'ActionClient'=51
 'ActionServer'=49
+<<<<<<< HEAD
 'ActionSpec'=30
+=======
+'ActionSpec'=29
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'Artifact'=20
 'Base64Binary'=82
 'Boolean'=85
@@ -11,8 +15,13 @@
 'ExternalDependency'=90
 'GlobalNamespace'=55
 'GraphName'=52
+<<<<<<< HEAD
 'Header'=28
 'Int'=83
+=======
+'Int'=83
+'MessageDefinition'=33
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'Node'=34
 'Package'=17
 'PackageDependency'=89
@@ -47,11 +56,15 @@
 'ServiceSpec'=24
 'Subscriber'=47
 'TopicSpec'=27
+<<<<<<< HEAD
 '[]'=119
+=======
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'action'=50
 'actionclient'=41
 'actionserver'=40
 'artifact'=19
+<<<<<<< HEAD
 'bool'=93
 'bool[]'=106
 'byte'=105
@@ -74,6 +87,13 @@
 'int8'=94
 'int8[]'=107
 'message'=29
+=======
+'default'=61
+'dependency'=23
+'feedback'=32
+'goal'=30
+'message'=28
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'name'=35
 'namespace'=45
 'node'=21
@@ -84,12 +104,17 @@
 'publisher'=37
 'request'=25
 'response'=26
+<<<<<<< HEAD
 'result'=32
+=======
+'result'=31
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'sequence'=60
 'service'=44
 'serviceclient'=39
 'serviceserver'=36
 'spec'=18
+<<<<<<< HEAD
 'string'=104
 'string[]'=117
 'subscriber'=38
@@ -103,12 +128,17 @@
 'uint64[]'=114
 'uint8'=95
 'uint8[]'=108
+=======
+'subscriber'=38
+'type'=54
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 'value'=73
 '{'=13
 '}'=16
 RULE_ANY_OTHER=11
 RULE_ID=5
 RULE_INT=7
+<<<<<<< HEAD
 RULE_MESSAGE_ASIGMENT=6
 RULE_ML_COMMENT=8
 RULE_SL_COMMENT=9
@@ -134,6 +164,13 @@ T__116=116
 T__117=117
 T__118=118
 T__119=119
+=======
+RULE_ML_COMMENT=8
+RULE_ROS_CONVENTION_A=6
+RULE_SL_COMMENT=9
+RULE_STRING=4
+RULE_WS=10
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
 T__12=12
 T__13=13
 T__14=14
@@ -213,6 +250,7 @@ T__87=87
 T__88=88
 T__89=89
 T__90=90
+<<<<<<< HEAD
 T__91=91
 T__92=92
 T__93=93
@@ -222,3 +260,5 @@ T__96=96
 T__97=97
 T__98=98
 T__99=99
+=======
+>>>>>>> 1c0dd59d5843177f9079ebbc99ae22ede25dba19
