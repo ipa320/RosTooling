@@ -1698,6 +1698,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__RosNames__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getRosNamesAccess().getROS_CONVENTION_ATerminalRuleCall_0()); }
+		RULE_ROS_CONVENTION_A
+		{ after(grammarAccess.getRosNamesAccess().getROS_CONVENTION_ATerminalRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1()); }
+		RULE_ID
+		{ after(grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__PackageSet__Group__0
 	@init {
 		int stackSize = keepStackSize();
