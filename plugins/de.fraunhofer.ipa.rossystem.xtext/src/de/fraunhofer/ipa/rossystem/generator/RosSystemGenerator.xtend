@@ -71,6 +71,13 @@ class RosSystemGenerator extends AbstractGenerator {
 	List<RosActionServer> acts
 	List<RosActionClient> actc
 	
+	List<String> pubs_names
+	List<String> subs_names
+	List<String> svrs_names
+	List<String> svrc_names
+	List<String> acts_names
+	List<String> actc_names
+	
 	int count_pub
 	int count_sub
 	int count_srvc
@@ -256,16 +263,24 @@ def compile_toComponentInterface(RosSystem system){
 	acts = new ArrayList()
 	actc = new ArrayList()
 	
+	pubs_names = new ArrayList()
+	subs_names = new ArrayList()
+	svrs_names = new ArrayList()
+	svrc_names = new ArrayList()
+	acts_names = new ArrayList()
+	actc_names = new ArrayList()
+	
 
 		
 	for (component: system.rosComponent){
-		for ( pub:component.rospublisher){if (!pubs.contains(pub)) pubs.add(pub)}
-		for ( sub:component.rossubscriber){if (!subs.contains(sub)) subs.add(sub)}
-		for ( srv:component.rosserviceserver){if (!svrs.contains(srv)) svrs.add(srv)}
-		for ( cl: component.rosserviceclient){if (!svrc.contains(cl)) svrc.add(cl)}
-		for ( act:component.rosactionserver){if (!acts.contains(act)) acts.add(act)}
-		for ( acl: component.rosactionclient){if (!actc.contains(acl)) actc.add(acl)}
+		for ( pub:component.rospublisher){if (!pubs_names.contains(pub.name)) pubs.add(pub); pubs_names.add(pub.name)}
+		for ( sub:component.rossubscriber){if (!subs_names.contains(sub.name)) subs.add(sub); subs_names.add(sub.name)}
+		for ( srv:component.rosserviceserver){if (!svrs_names.contains(srv.name)) svrs.add(srv); svrs_names.add(srv.name)}
+		for ( cl: component.rosserviceclient){if (!svrc_names.contains(cl.name)) svrc.add(cl); svrc_names.add(cl.name)}
+		for ( act:component.rosactionserver){if (!acts_names.contains(act.name)) acts.add(act); acts_names.add(act.name)}
+		for ( acl: component.rosactionclient){if (!actc_names.contains(acl.name)) actc.add(acl); actc_names.add(acl.name)}
 	}
+
 	count_pub = pubs.length
 	count_sub = subs.length
 	count_srvs = svrs.length
