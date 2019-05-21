@@ -15,6 +15,38 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import primitives.ArrayTopicSpecRef;
+import primitives.ByteArray;
+import primitives.Header;
+import primitives.MessagePart;
+import primitives.PrimitivesPackage;
+import primitives.TopicSpecRef;
+import primitives.bool;
+import primitives.boolArray;
+import primitives.duration;
+import primitives.float32;
+import primitives.float32Array;
+import primitives.float64;
+import primitives.float64Array;
+import primitives.int16;
+import primitives.int16Array;
+import primitives.int32;
+import primitives.int32Array;
+import primitives.int64;
+import primitives.int64Array;
+import primitives.int8;
+import primitives.int8Array;
+import primitives.string;
+import primitives.stringArray;
+import primitives.time;
+import primitives.uint16;
+import primitives.uint16Array;
+import primitives.uint32;
+import primitives.uint32Array;
+import primitives.uint64;
+import primitives.uint64Array;
+import primitives.uint8;
+import primitives.uint8Array;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
@@ -69,7 +101,106 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == RosPackage.eINSTANCE)
+		if (epackage == PrimitivesPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF:
+				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
+				return; 
+			case PrimitivesPackage.BYTE:
+				sequence_byte(context, (primitives.Byte) semanticObject); 
+				return; 
+			case PrimitivesPackage.BYTE_ARRAY:
+				sequence_byteArray(context, (ByteArray) semanticObject); 
+				return; 
+			case PrimitivesPackage.HEADER:
+				sequence_Header(context, (Header) semanticObject); 
+				return; 
+			case PrimitivesPackage.MESSAGE_PART:
+				sequence_MessagePart(context, (MessagePart) semanticObject); 
+				return; 
+			case PrimitivesPackage.TOPIC_SPEC_REF:
+				sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject); 
+				return; 
+			case PrimitivesPackage.BOOL:
+				sequence_bool(context, (bool) semanticObject); 
+				return; 
+			case PrimitivesPackage.BOOL_ARRAY:
+				sequence_boolArray(context, (boolArray) semanticObject); 
+				return; 
+			case PrimitivesPackage.DURATION:
+				sequence_duration(context, (duration) semanticObject); 
+				return; 
+			case PrimitivesPackage.FLOAT32:
+				sequence_float32(context, (float32) semanticObject); 
+				return; 
+			case PrimitivesPackage.FLOAT32_ARRAY:
+				sequence_float32Array(context, (float32Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.FLOAT64:
+				sequence_float64(context, (float64) semanticObject); 
+				return; 
+			case PrimitivesPackage.FLOAT64_ARRAY:
+				sequence_float64Array(context, (float64Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT16:
+				sequence_int16(context, (int16) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT16_ARRAY:
+				sequence_int16Array(context, (int16Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT32:
+				sequence_int32(context, (int32) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT32_ARRAY:
+				sequence_int32Array(context, (int32Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT64:
+				sequence_int64(context, (int64) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT64_ARRAY:
+				sequence_int64Array(context, (int64Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT8:
+				sequence_int8(context, (int8) semanticObject); 
+				return; 
+			case PrimitivesPackage.INT8_ARRAY:
+				sequence_int8Array(context, (int8Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.STRING:
+				sequence_string0(context, (string) semanticObject); 
+				return; 
+			case PrimitivesPackage.STRING_ARRAY:
+				sequence_string0Array(context, (stringArray) semanticObject); 
+				return; 
+			case PrimitivesPackage.TIME:
+				sequence_time(context, (time) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT16:
+				sequence_uint16(context, (uint16) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT16_ARRAY:
+				sequence_uint16Array(context, (uint16Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT32:
+				sequence_uint32(context, (uint32) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT32_ARRAY:
+				sequence_uint32Array(context, (uint32Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT64:
+				sequence_uint64(context, (uint64) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT64_ARRAY:
+				sequence_uint64Array(context, (uint64Array) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT8:
+				sequence_uint8(context, (uint8) semanticObject); 
+				return; 
+			case PrimitivesPackage.UINT8_ARRAY:
+				sequence_uint8Array(context, (uint8Array) semanticObject); 
+				return; 
+			}
+		else if (epackage == RosPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case RosPackage.ACTION_CLIENT:
 				sequence_ActionClient(context, (ActionClient) semanticObject); 
@@ -241,6 +372,25 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AbstractType returns ArrayTopicSpecRef
+	 *     ArrayTopicSpecRef returns ArrayTopicSpecRef
+	 *
+	 * Constraint:
+	 *     TopicSpec=[TopicSpec|EString]
+	 */
+	protected void sequence_ArrayTopicSpecRef(ISerializationContext context, ArrayTopicSpecRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1(), semanticObject.eGet(PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
@@ -298,12 +448,37 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AbstractType returns Header
+	 *     Header returns Header
+	 *
+	 * Constraint:
+	 *     {Header}
+	 */
+	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MessageDefinition returns MessageDefinition
 	 *
 	 * Constraint:
-	 *     {MessageDefinition}
+	 *     (MessagePart+=MessagePart MessagePart+=MessagePart*)?
 	 */
 	protected void sequence_MessageDefinition(ISerializationContext context, MessageDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessagePart returns MessagePart
+	 *
+	 * Constraint:
+	 *     (Type=AbstractType (Data=KEYWORD | Data=MESSAGE_ASIGMENT | Data=EString))
+	 */
+	protected void sequence_MessagePart(ISerializationContext context, MessagePart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -790,13 +965,396 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AbstractType returns TopicSpecRef
+	 *     TopicSpecRef returns TopicSpecRef
+	 *
+	 * Constraint:
+	 *     TopicSpec=[TopicSpec|EString]
+	 */
+	protected void sequence_TopicSpecRef(ISerializationContext context, TopicSpecRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_1(), semanticObject.eGet(PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SpecBase returns TopicSpec
 	 *     TopicSpec returns TopicSpec
 	 *
 	 * Constraint:
-	 *     (name=EString message=MessageDefinition?)
+	 *     ((name=EString | name='Header') message=MessageDefinition?)
 	 */
 	protected void sequence_TopicSpec(ISerializationContext context, TopicSpec semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns boolArray
+	 *     boolArray returns boolArray
+	 *
+	 * Constraint:
+	 *     {boolArray}
+	 */
+	protected void sequence_boolArray(ISerializationContext context, boolArray semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns bool
+	 *     bool returns bool
+	 *
+	 * Constraint:
+	 *     {bool}
+	 */
+	protected void sequence_bool(ISerializationContext context, bool semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns ByteArray
+	 *     byteArray returns ByteArray
+	 *
+	 * Constraint:
+	 *     {ByteArray}
+	 */
+	protected void sequence_byteArray(ISerializationContext context, ByteArray semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns Byte
+	 *     byte returns Byte
+	 *
+	 * Constraint:
+	 *     {Byte}
+	 */
+	protected void sequence_byte(ISerializationContext context, primitives.Byte semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns duration
+	 *     duration returns duration
+	 *
+	 * Constraint:
+	 *     {duration}
+	 */
+	protected void sequence_duration(ISerializationContext context, duration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns float32Array
+	 *     float32Array returns float32Array
+	 *
+	 * Constraint:
+	 *     {float32Array}
+	 */
+	protected void sequence_float32Array(ISerializationContext context, float32Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns float32
+	 *     float32 returns float32
+	 *
+	 * Constraint:
+	 *     {float32}
+	 */
+	protected void sequence_float32(ISerializationContext context, float32 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns float64Array
+	 *     float64Array returns float64Array
+	 *
+	 * Constraint:
+	 *     {float64Array}
+	 */
+	protected void sequence_float64Array(ISerializationContext context, float64Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns float64
+	 *     float64 returns float64
+	 *
+	 * Constraint:
+	 *     {float64}
+	 */
+	protected void sequence_float64(ISerializationContext context, float64 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int16Array
+	 *     int16Array returns int16Array
+	 *
+	 * Constraint:
+	 *     {int16Array}
+	 */
+	protected void sequence_int16Array(ISerializationContext context, int16Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int16
+	 *     int16 returns int16
+	 *
+	 * Constraint:
+	 *     {int16}
+	 */
+	protected void sequence_int16(ISerializationContext context, int16 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int32Array
+	 *     int32Array returns int32Array
+	 *
+	 * Constraint:
+	 *     {int32Array}
+	 */
+	protected void sequence_int32Array(ISerializationContext context, int32Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int32
+	 *     int32 returns int32
+	 *
+	 * Constraint:
+	 *     {int32}
+	 */
+	protected void sequence_int32(ISerializationContext context, int32 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int64Array
+	 *     int64Array returns int64Array
+	 *
+	 * Constraint:
+	 *     {int64Array}
+	 */
+	protected void sequence_int64Array(ISerializationContext context, int64Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int64
+	 *     int64 returns int64
+	 *
+	 * Constraint:
+	 *     {int64}
+	 */
+	protected void sequence_int64(ISerializationContext context, int64 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int8Array
+	 *     int8Array returns int8Array
+	 *
+	 * Constraint:
+	 *     {int8Array}
+	 */
+	protected void sequence_int8Array(ISerializationContext context, int8Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns int8
+	 *     int8 returns int8
+	 *
+	 * Constraint:
+	 *     {int8}
+	 */
+	protected void sequence_int8(ISerializationContext context, int8 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns stringArray
+	 *     string0Array returns stringArray
+	 *
+	 * Constraint:
+	 *     {stringArray}
+	 */
+	protected void sequence_string0Array(ISerializationContext context, stringArray semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns string
+	 *     string0 returns string
+	 *
+	 * Constraint:
+	 *     {string}
+	 */
+	protected void sequence_string0(ISerializationContext context, string semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns time
+	 *     time returns time
+	 *
+	 * Constraint:
+	 *     {time}
+	 */
+	protected void sequence_time(ISerializationContext context, time semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint16Array
+	 *     uint16Array returns uint16Array
+	 *
+	 * Constraint:
+	 *     {uint16Array}
+	 */
+	protected void sequence_uint16Array(ISerializationContext context, uint16Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint16
+	 *     uint16 returns uint16
+	 *
+	 * Constraint:
+	 *     {uint16}
+	 */
+	protected void sequence_uint16(ISerializationContext context, uint16 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint32Array
+	 *     uint32Array returns uint32Array
+	 *
+	 * Constraint:
+	 *     {uint32Array}
+	 */
+	protected void sequence_uint32Array(ISerializationContext context, uint32Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint32
+	 *     uint32 returns uint32
+	 *
+	 * Constraint:
+	 *     {uint32}
+	 */
+	protected void sequence_uint32(ISerializationContext context, uint32 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint64Array
+	 *     uint64Array returns uint64Array
+	 *
+	 * Constraint:
+	 *     {uint64Array}
+	 */
+	protected void sequence_uint64Array(ISerializationContext context, uint64Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint64
+	 *     uint64 returns uint64
+	 *
+	 * Constraint:
+	 *     {uint64}
+	 */
+	protected void sequence_uint64(ISerializationContext context, uint64 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint8Array
+	 *     uint8Array returns uint8Array
+	 *
+	 * Constraint:
+	 *     {uint8Array}
+	 */
+	protected void sequence_uint8Array(ISerializationContext context, uint8Array semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractType returns uint8
+	 *     uint8 returns uint8
+	 *
+	 * Constraint:
+	 *     {uint8}
+	 */
+	protected void sequence_uint8(ISerializationContext context, uint8 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
