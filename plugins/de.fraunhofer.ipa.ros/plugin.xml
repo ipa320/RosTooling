@@ -14,4 +14,12 @@
             genModel="model/ros.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ros -->
+      <package
+            uri="http://www.ipa.fraunhofer.de/primitives"
+            class="primitives.PrimitivesPackage"
+            genModel="model/ros.genmodel"/>
+   </extension>
+
 </plugin>

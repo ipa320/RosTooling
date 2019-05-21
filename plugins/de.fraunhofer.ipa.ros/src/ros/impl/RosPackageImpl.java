@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
+import primitives.PrimitivesPackage;
+import primitives.impl.PrimitivesPackageImpl;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
@@ -461,11 +463,16 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Initialize simple dependencies
 		XMLTypePackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) instanceof PrimitivesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) : PrimitivesPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theRosPackage.createPackageContents();
+		thePrimitivesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRosPackage.initializePackageContents();
+		thePrimitivesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRosPackage.freeze();
@@ -933,6 +940,15 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 */
 	public EClass getMessageDefinition() {
 		return messageDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageDefinition_MessagePart() {
+		return (EReference)messageDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1530,9 +1546,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		topicSpecEClass = createEClass(TOPIC_SPEC);
 		createEReference(topicSpecEClass, TOPIC_SPEC__MESSAGE);
 
-		publisherEClass = createEClass(PUBLISHER);
-		createEReference(publisherEClass, PUBLISHER__MESSAGE);
-
 		packageDependencyEClass = createEClass(PACKAGE_DEPENDENCY);
 		createEReference(packageDependencyEClass, PACKAGE_DEPENDENCY__PACKAGE);
 
@@ -1541,6 +1554,9 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		catkinPackageEClass = createEClass(CATKIN_PACKAGE);
 		createEReference(catkinPackageEClass, CATKIN_PACKAGE__DEPENDENCY);
+
+		publisherEClass = createEClass(PUBLISHER);
+		createEReference(publisherEClass, PUBLISHER__MESSAGE);
 
 		artifactEClass = createEClass(ARTIFACT);
 		createEAttribute(artifactEClass, ARTIFACT__NAME);
@@ -1572,6 +1588,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEReference(actionClientEClass, ACTION_CLIENT__ACTION);
 
 		messageDefinitionEClass = createEClass(MESSAGE_DEFINITION);
+		createEReference(messageDefinitionEClass, MESSAGE_DEFINITION__MESSAGE_PART);
 
 		namespaceEClass = createEClass(NAMESPACE);
 		createEAttribute(namespaceEClass, NAMESPACE__PARTS);
@@ -1689,6 +1706,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PrimitivesPackage thePrimitivesPackage = (PrimitivesPackage)EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI);
 		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
@@ -1699,10 +1717,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		serviceSpecEClass.getESuperTypes().add(this.getSpecBase());
 		serviceServerEClass.getESuperTypes().add(this.getNamespacedElement());
 		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
-		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
 		packageDependencyEClass.getESuperTypes().add(this.getDependency());
 		externalDependencyEClass.getESuperTypes().add(this.getDependency());
 		catkinPackageEClass.getESuperTypes().add(this.getPackage());
+		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
 		subscriberEClass.getESuperTypes().add(this.getNamespacedElement());
 		serviceClientEClass.getESuperTypes().add(this.getNamespacedElement());
 		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
@@ -1760,9 +1778,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEClass(topicSpecEClass, TopicSpec.class, "TopicSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTopicSpec_Message(), this.getMessageDefinition(), null, "message", null, 0, 1, TopicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(packageDependencyEClass, PackageDependency.class, "PackageDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageDependency_Package(), this.getPackage(), null, "package", null, 1, 1, PackageDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1771,6 +1786,9 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(catkinPackageEClass, CatkinPackage.class, "CatkinPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCatkinPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, CatkinPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1802,6 +1820,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEReference(getActionClient_Action(), this.getActionSpec(), null, "action", null, 1, 1, ActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageDefinitionEClass, MessageDefinition.class, "MessageDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageDefinition_MessagePart(), thePrimitivesPackage.getMessagePart(), null, "MessagePart", null, 0, -1, MessageDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamespace_Parts(), this.getGraphName(), "parts", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

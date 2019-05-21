@@ -105,10 +105,10 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.SERVICE_SPEC: return createServiceSpec();
 			case RosPackage.SERVICE_SERVER: return createServiceServer();
 			case RosPackage.TOPIC_SPEC: return createTopicSpec();
-			case RosPackage.PUBLISHER: return createPublisher();
 			case RosPackage.PACKAGE_DEPENDENCY: return createPackageDependency();
 			case RosPackage.EXTERNAL_DEPENDENCY: return createExternalDependency();
 			case RosPackage.CATKIN_PACKAGE: return createCatkinPackage();
+			case RosPackage.PUBLISHER: return createPublisher();
 			case RosPackage.ARTIFACT: return createArtifact();
 			case RosPackage.SUBSCRIBER: return createSubscriber();
 			case RosPackage.SERVICE_CLIENT: return createServiceClient();

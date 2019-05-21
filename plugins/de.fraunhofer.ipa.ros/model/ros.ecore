@@ -98,7 +98,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         eType="#//ActionSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MessagePart" upperBound="-1"
+        eType="ecore:EClass PrimitivesTypes.ecore#//MessagePart" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parts" unique="false" upperBound="-1"
         eType="#//GraphName"/>

@@ -41,7 +41,7 @@ public class ParameterDoubleTypeImpl extends ParameterTypeImpl implements Parame
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public ParameterDoubleTypeImpl() {
 		super();

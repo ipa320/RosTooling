@@ -33,9 +33,6 @@
     <genClasses ecoreClass="ros.ecore#//TopicSpec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//TopicSpec/message"/>
     </genClasses>
-    <genClasses ecoreClass="ros.ecore#//Publisher">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Publisher/message"/>
-    </genClasses>
     <genClasses ecoreClass="ros.ecore#//PackageDependency">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//PackageDependency/package"/>
     </genClasses>
@@ -44,6 +41,9 @@
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//CatkinPackage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//CatkinPackage/dependency"/>
+    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//Publisher">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Publisher/message"/>
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//Artifact">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Artifact/name"/>
@@ -60,6 +60,9 @@
     <genClasses ecoreClass="ros.ecore#//ServiceClient">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ServiceClient/service"/>
     </genClasses>
+    <genClasses ecoreClass="ros.ecore#//PackageSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//PackageSet/package"/>
+    </genClasses>
     <genClasses ecoreClass="ros.ecore#//ActionSpec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ActionSpec/goal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ActionSpec/result"/>
@@ -71,7 +74,9 @@
     <genClasses ecoreClass="ros.ecore#//ActionClient">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ActionClient/action"/>
     </genClasses>
-    <genClasses ecoreClass="ros.ecore#//MessageDefinition"/>
+    <genClasses ecoreClass="ros.ecore#//MessageDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//MessageDefinition/MessagePart"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="ros.ecore#//Namespace">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Namespace/parts"/>
     </genClasses>
@@ -79,6 +84,7 @@
     <genClasses ecoreClass="ros.ecore#//RelativeNamespace"/>
     <genClasses ecoreClass="ros.ecore#//PrivateNamespace"/>
     <genClasses ecoreClass="ros.ecore#//NamespacedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//NamespacedElement/namespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//NamespacedElement/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ros.ecore#//ParameterType"/>
@@ -154,5 +160,47 @@
     <genClasses ecoreClass="ros.ecore#//ParameterDate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDate/value"/>
     </genClasses>
+  </genPackages>
+  <genPackages prefix="Primitives" ecorePackage="PrimitivesTypes.ecore#/">
+    <genClasses image="false" ecoreClass="PrimitivesTypes.ecore#//AbstractType"/>
+    <genClasses image="false" ecoreClass="PrimitivesTypes.ecore#//MessagePart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PrimitivesTypes.ecore#//MessagePart/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PrimitivesTypes.ecore#//MessagePart/Data"/>
+    </genClasses>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//bool"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int8"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint8"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int16"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint16"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int32"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint32"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int64"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint64"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//float32"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//float64"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//string"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//time"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//duration"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//boolArray"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int8Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint8Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int16Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint16Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int32Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint32Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//int64Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//uint64Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//float32Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//float64Array"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//stringArray"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//TopicSpecRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PrimitivesTypes.ecore#//TopicSpecRef/TopicSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//ArrayTopicSpecRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PrimitivesTypes.ecore#//ArrayTopicSpecRef/TopicSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//Header"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//Byte"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//ByteArray"/>
   </genPackages>
 </genmodel:GenModel>
