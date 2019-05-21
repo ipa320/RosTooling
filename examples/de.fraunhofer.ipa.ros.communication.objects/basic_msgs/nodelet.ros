@@ -1,0 +1,8 @@
+PackageSet{package{
+    Package nodelet{spec{
+      ServiceSpec NodeletList{},
+      ServiceSpec NodeletLoad{},
+      ServiceSpec NodeletUnload{}
+    }}
+  }
+}

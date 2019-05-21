@@ -1,0 +1,19 @@
+PackageSet{package{
+    Package map_msgs{spec{
+      TopicSpec OccupancyGridUpdate{},
+      TopicSpec PointCloud2Update{},
+      TopicSpec ProjectedMap{},
+      TopicSpec ProjectedMapInfo{},
+      TopicSpec octoOctomap{},
+      TopicSpec octoOctomapWithPose{},
+      ServiceSpec GetMapROI{},
+      ServiceSpec GetPointMap{},
+      ServiceSpec GetPointMapROI{},
+      ServiceSpec ProjectedMapsInfo{},
+      ServiceSpec SaveMap{},
+      ServiceSpec SetMapProjections{},
+      ServiceSpec octoBoundingBoxQuery{},
+      ServiceSpec octoGetOctomap{}
+    }}
+  }
+}

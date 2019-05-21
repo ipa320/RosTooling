@@ -1,0 +1,15 @@
+PackageSet{package{
+    Package controller_manager_msgs{spec{
+      TopicSpec ControllerState{},
+      TopicSpec ControllerStatistics{},
+      TopicSpec ControllersStatistics{},
+      TopicSpec HardwareInterfaceResources{},
+      ServiceSpec ListControllerTypes{},
+      ServiceSpec ListControllers{},
+      ServiceSpec LoadController{},
+      ServiceSpec ReloadControllerLibraries{},
+      ServiceSpec SwitchController{},
+      ServiceSpec UnloadController{}
+    }}
+  }
+}

@@ -1,0 +1,16 @@
+PackageSet{package{
+    Package dynamic_reconfigure{spec{
+      TopicSpec BoolParameter{},
+      TopicSpec Config{},
+      TopicSpec ConfigDescription{},
+      TopicSpec DoubleParameter{},
+      TopicSpec Group{},
+      TopicSpec GroupState{},
+      TopicSpec IntParameter{},
+      TopicSpec ParamDescription{},
+      TopicSpec SensorLevels{},
+      TopicSpec StrParameter{},
+      ServiceSpec Reconfigure{}
+    }}
+  }
+}

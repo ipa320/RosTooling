@@ -26,7 +26,6 @@ Dependency returns Dependency:
 Namespace returns Namespace:
 	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 
-
 Package_Impl returns Package:
 	{Package}
 	'Package'
@@ -40,8 +39,13 @@ EString returns ecore::EString:
 	STRING | ID;
 	
 RosNames returns ecore::EString:
-	ID
+	ROS_CONVENTION_A | ID
 ;
+
+
+terminal ROS_CONVENTION_A:
+	( ('/' ID ) | ( ID '/' ) )* ;
+
 
 Artifact returns Artifact:
 	{Artifact}
@@ -86,6 +90,13 @@ ActionSpec returns ActionSpec:
 		('goal' goal=MessageDefinition)?
 		('result' result=MessageDefinition)?
 		('feedback' feedback=MessageDefinition)?
+	'}';
+
+
+MessageDefinition returns MessageDefinition:
+	{MessageDefinition}
+	'{'
+		( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
 	'}';
 
 Node returns Node:
@@ -377,13 +388,6 @@ AbstractType returns primitives::AbstractType:
 	bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 	boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | 
 	TopicSpecRef | ArrayTopicSpecRef ;
-
-
-MessageDefinition returns MessageDefinition:
-	{MessageDefinition}
-	'{'
-		( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
-	'}';
 
 
 bool returns primitives::bool:
