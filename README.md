@@ -9,6 +9,6 @@ This repository holds a family of metamodels defined as ecore models that togeth
 
 For further information about the metamodels, please check the [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
 
-### [Installation](docu/Installation.md)
-### [Tutorials](docu/README.md)
-### [Tools](tools/README.md)
+##### [Installation](docu/Installation.md)
+##### [Tutorials](docu/README.md)
+

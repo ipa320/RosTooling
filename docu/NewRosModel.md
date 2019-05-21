@@ -3,7 +3,7 @@
 Please be sure that the tool is installed and your workspace setup, see the [installation guide](../README.md) for further details.
 
 To extract your model from ROS code ou have 3 options:
-- [Use the avalable web interface to autogenerate models from code hosted on GitHub](#cloud)
+- [Use the available web interface to autogenerate models from code hosted on GitHub](#cloud)
 - [Call our docker container configuration for the extraction from a GitHub hosted repository (requires only the installation of Docker)](#docker-container)
 - [Use a local build of your ROS package (requires the local installation of HAROS)](#local-ros-workspace)
 
@@ -22,6 +22,8 @@ Save the result content of the extraction as a ".ros" file in your tooling works
 To check the created model open the file representation.aird with the Aird editor and in the menu representations choose the "component" option and press "New.." then choose the Artifact entity of your "*.ros" model and press finish.
 
 ### Local ROS workspace
+
+:bangbang::bangbang: this section requires a local ROS installation
 
 To extract the model we use static code analysis techniques, concreatelly the framework HAROS. To analyse a local ROS package you have first to install and setup [HAROS](../tools/README.md#model-extractor-using-static-code-analysis).
 
