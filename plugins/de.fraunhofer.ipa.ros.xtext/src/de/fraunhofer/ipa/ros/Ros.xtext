@@ -164,22 +164,16 @@ GraphName returns GraphName:
 	'GraphName' ;
 
 
-//PARAMETERS DEFINITION
-
-ParameterType returns ParameterType:
-	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterDateType | ParameterBooleanType | ParameterBase64Type | ParameterAnyType | ParameterArrayType;
-
-ParameterValue returns ParameterValue:
-	ParameterAny | ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterSequence | ParameterStruct | ParameterDate;
-
-
-Parameter returns Parameter:
-	'Parameter'
+PackageDependency returns PackageDependency:
+	'PackageDependency'
 	'{'
-		'name' name=EString
-		('namespace' namespace=Namespace)?
-		'type' type=ParameterType
+		'package' package=[Package|EString]
 	'}';
+
+ExternalDependency returns ExternalDependency:
+	{ExternalDependency}
+	'ExternalDependency'
+	name=EString;
 
 GlobalNamespace returns GlobalNamespace:
 	{GlobalNamespace}
@@ -202,9 +196,25 @@ PrivateNamespace returns PrivateNamespace:
 		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
 	'}';
 
+//PARAMETERS DEFINITION
+Parameter returns Parameter:
+	'Parameter'
+	'{'
+		'name' name=EString
+		('namespace' namespace=Namespace)?
+		'type' type=ParameterType
+	'}';
+	
+ParameterType returns ParameterType:
+	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterDateType | ParameterBooleanType | ParameterBase64Type | ParameterAnyType | ParameterArrayType;
+
+ParameterValue returns ParameterValue:
+	ParameterAny | ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterSequence | ParameterStruct | ParameterDate;
+
+
 ParameterListType returns ParameterListType:
 	{ParameterListType}
-	'ParameterListType'
+	'List'
 	'{'
 		('sequence' '{' sequence+=ParameterType ( "," sequence+=ParameterType)* '}' )?
 		('default' default=ParameterSequence)?
@@ -212,62 +222,62 @@ ParameterListType returns ParameterListType:
 
 ParameterStructType returns ParameterStructType:
 	{ParameterStructType}
-	'ParameterStructType'
+	'Struct'
 	'{'
 		('parameterstructypetmember' '{' parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)* '}' )?
 	'}';
 
 ParameterIntegerType returns ParameterIntegerType:
 	{ParameterIntegerType}
-	'ParameterIntegerType'
+	'Integer'
 	'{'
 		('default' default=ParameterInteger)?
 	'}';
 
 ParameterStringType returns ParameterStringType:
 	{ParameterStringType}
-	'ParameterStringType'
+	'String'
 	'{'
 		('default' default=ParameterString)?
 	'}';
 
 ParameterDoubleType returns ParameterDoubleType:
 	{ParameterDoubleType}
-	'ParameterDoubleType'
+	'Double'
 	'{'
 		('default' default=ParameterDouble)?
 	'}';
 
 ParameterDateType returns ParameterDateType:
 	{ParameterDateType}
-	'ParameterDateType'
+	'Date'
 	'{'
 		('default' default=ParameterDate)?
 	'}';
 
 ParameterBooleanType returns ParameterBooleanType:
 	{ParameterBooleanType}
-	'ParameterBooleanType'
+	'Boolean'
 	'{'
 		('default' default=ParameterBoolean)?
 	'}';
 
 ParameterBase64Type returns ParameterBase64Type:
 	{ParameterBase64Type}
-	'ParameterBase64Type'
+	'Base64'
 	'{'
 		('default' default=ParameterBase64)?
 	'}';
 
 ParameterAnyType returns ParameterAnyType:
 	{ParameterAnyType}
-	'ParameterAnyType'
+	'Any'
 	'{'
 		('default' default=ParameterAny)?
 	'}';
 
 ParameterArrayType returns ParameterArrayType:
-	'ParameterArrayType'
+	'Array'
 	'{'
 		'type' type=ParameterType
 		('default' default=ParameterSequence)?
@@ -275,10 +285,8 @@ ParameterArrayType returns ParameterArrayType:
 
 ParameterSequence returns ParameterSequence:
 	{ParameterSequence}
-	'ParameterSequence'
-	'{'
-		('value' '{' value+=ParameterValue ( "," value+=ParameterValue)* '}' )?
-	'}';
+		('{' value+=ParameterValue ( "," value+=ParameterValue)* '}' )?
+;
 
 ParameterAny returns ParameterAny:
 	{ParameterAny}
@@ -288,16 +296,12 @@ ParameterAny returns ParameterAny:
 	'}';
 
 ParameterString returns ParameterString:
-	'ParameterString'
-	'{'
-		'value' value=EString
-	'}';
+	value=EString
+;
 
 ParameterBase64 returns ParameterBase64:
-	'ParameterBase64'
-	'{'
-		'value' value=Base64Binary
-	'}';
+	value=Base64Binary
+;
 
 ParameterInteger returns ParameterInteger:
 	'ParameterInteger'
@@ -306,16 +310,12 @@ ParameterInteger returns ParameterInteger:
 	'}';
 
 ParameterDouble returns ParameterDouble:
-	'ParameterDouble'
-	'{'
-		'value' value=Double
-	'}';
+	value=Double
+;
 
 ParameterBoolean returns ParameterBoolean:
-	'ParameterBoolean'
-	'{'
-		'value' value=Boolean
-	'}';
+	value=Boolean
+;
 
 ParameterStruct returns ParameterStruct:
 	{ParameterStruct}
@@ -325,22 +325,9 @@ ParameterStruct returns ParameterStruct:
 	'}';
 
 ParameterDate returns ParameterDate:
-	'ParameterDate'
-	'{'
-		'value' value=DateTime
+	value=DateTime
 	'}';
 
-Base64Binary returns type::Base64Binary:
-	'Base64Binary' ;
-
-Int0 returns type::Int:
-	'Int' ;
-
-Double returns type::Double:
-	'Double';
-
-Boolean returns type::Boolean:
-	'Boolean';
 
 ParameterStructMember returns ParameterStructMember:
 	'ParameterStructMember'
@@ -349,8 +336,6 @@ ParameterStructMember returns ParameterStructMember:
 		'value' value=ParameterValue
 	'}';
 
-DateTime returns type::DateTime:
-	'DateTime' ;
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
 	'ParameterStructTypeMember'
@@ -360,17 +345,6 @@ ParameterStructTypeMember returns ParameterStructTypeMember:
 		('default' default=ParameterStruct)?
 	'}';
 
-PackageDependency returns PackageDependency:
-	'PackageDependency'
-	'{'
-		'package' package=[Package|EString]
-	'}';
-
-ExternalDependency returns ExternalDependency:
-	{ExternalDependency}
-	'ExternalDependency'
-	name=EString;
-	
 
 //MESSAGE PRIMITIVES DEFINITION
 
@@ -543,3 +517,19 @@ ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
+
+Base64Binary returns type::Base64Binary:
+	'Base64Binary' ;
+
+Int0 returns type::Int:
+	'Int' ;
+
+Double returns type::Double:
+	'Double';
+
+Boolean returns type::Boolean:
+	'Boolean';
+
+DateTime returns type::DateTime:
+	'DateTime' ;
+
