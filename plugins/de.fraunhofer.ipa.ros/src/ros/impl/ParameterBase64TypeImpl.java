@@ -41,9 +41,9 @@ public class ParameterBase64TypeImpl extends ParameterTypeImpl implements Parame
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ParameterBase64TypeImpl() {
+	public ParameterBase64TypeImpl() {
 		super();
 	}
 

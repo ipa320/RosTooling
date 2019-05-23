@@ -45,9 +45,9 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ParameterStructTypeImpl() {
+	public ParameterStructTypeImpl() {
 		super();
 	}
 

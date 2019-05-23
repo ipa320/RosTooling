@@ -41,9 +41,9 @@ public class ParameterAnyTypeImpl extends ParameterTypeImpl implements Parameter
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ParameterAnyTypeImpl() {
+	public ParameterAnyTypeImpl() {
 		super();
 	}
 
