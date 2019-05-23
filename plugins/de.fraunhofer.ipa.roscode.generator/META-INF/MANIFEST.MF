@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.seronet_projekt.componentGateway.generator
+Bundle-SymbolicName: de.fraunhofer.ipa.roscode.generator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SeRoNet (www.seronet-projekt.de)
+Export-Package: de.fraunhofer.ipa.roscode.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.inject;version="1.0.0",
+ org.eclipse.ui.handlers,
+ org.eclipse.xtext.ui.resource
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.fraunhofer.ipa.roscode.generator.Activator
+Require-Bundle: org.eclipse.xtext.builder,
+ org.eclipse.xtext.ui,
+ de.fraunhofer.ipa.ros;bundle-version="0.1.0",
+ de.fraunhofer.ipa.ros.xtext.ide;bundle-version="1.0.0",
+ de.fraunhofer.ipa.ros.xtext.ui;bundle-version="1.0.0"
