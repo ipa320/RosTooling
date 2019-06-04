@@ -12,10 +12,15 @@ Workflow {
 			project = StandardProjectConfig {
 				baseName = "de.fraunhofer.ipa.ros.xtext"
 				rootPath = rootPath
+				runtimeTest = {
+					enabled = true
+				}
 				eclipsePlugin = {
 					enabled = true
 				}
+
 				createEclipseMetaData = true
+
 			}
 			code = {
 				encoding = "UTF-8"
@@ -40,6 +45,7 @@ Workflow {
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
+
 		}
 	}
 }
