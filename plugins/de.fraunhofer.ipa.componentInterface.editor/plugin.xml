@@ -48,6 +48,16 @@
          description="Add new Component from ROS node"
          id="de.fraunhofer.ipa.componentInterface.newComponent"
          name="Add new Component from ROS node">
+ 		 <visibleWhen
+             checkEnabled="false">
+          <or>
+             <with variable="activeWorkbenchWindow.activePerspective">
+                <equals
+                      value="de.fraunhofer.ipa.ros.perspective">
+                </equals>
+             </with>
+          </or>
+        </visibleWhen>
       </command>
    </extension>
 
