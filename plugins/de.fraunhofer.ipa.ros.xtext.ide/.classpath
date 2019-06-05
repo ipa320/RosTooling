@@ -3,6 +3,18 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.elk.graph.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.antlr.runtime.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.sprotty.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.elk.core.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gson.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/com.google.inject.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.apache.log4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.elk.alg.layered.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.lsp4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.sprotty.layout.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.sprotty.server.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.sprotty.xtext.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
