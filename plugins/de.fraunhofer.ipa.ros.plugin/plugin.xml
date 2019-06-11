@@ -7,7 +7,7 @@
        point="org.eclipse.ui.perspectives">
 	   <perspective
           class="de.fraunhofer.ipa.ros.plugin.ResourceManagerPerspectiveFactory"
-          icon="icons/sample.png"
+          icon="icons/ros_icon.png"
           id="de.fraunhofer.ipa.ros.perspective"
           name="ROS developer">
 	   </perspective>
