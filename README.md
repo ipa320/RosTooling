@@ -31,7 +31,7 @@ Follow the installation instructions of the Oompth installer dialog, after the i
 
 
 1. Start the ROS tooling:
-* select de.fraunhofer.ipa.ros.siriusand press the button *Run*
+* select de.fraunhofer.ipa.ros.sirius and press the button *Run*
 
 ![alt text](docu/images/run_ros_tooling.png)
 
@@ -40,7 +40,8 @@ Follow the installation instructions of the Oompth installer dialog, after the i
 de.fraunhofer.ipa.ros.communication.objects
 ```
 
-Now that your workspace is setup and the eclipse application running you can start creating your project and defining your ROS system
+Now that your workspace is setup and the eclipse application running, you have to switch to th "ROS developer" perspective (Menu Window -> Perspective -> Open Perspective -> Other... -> ROS developer).
+Your application toolbar will be automatically configured and you can start creating your [project and defining your ROS system](#Tutorials)
 
 ![alt text](docu/images/eclipse_app_empty.png)
 
