@@ -4,6 +4,7 @@
 
 	<extension
        id="Ros developer perspective"
+       name="RosDeveloper"
        point="org.eclipse.ui.perspectives">
 	   <perspective
           class="de.fraunhofer.ipa.ros.plugin.ResourceManagerPerspectiveFactory"
@@ -12,5 +13,6 @@
           name="ROS developer">
 	   </perspective>
 	</extension>
+	
 
 </plugin>
