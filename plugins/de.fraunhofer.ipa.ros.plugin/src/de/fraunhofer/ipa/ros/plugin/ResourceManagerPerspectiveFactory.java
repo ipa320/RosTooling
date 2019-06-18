@@ -1,38 +1,18 @@
 package de.fraunhofer.ipa.ros.plugin;
 
 import org.eclipse.ui.IPerspectiveFactory;
-import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IFolderLayout;
+import org.eclipse.ui.IPageLayout;
  
 public class ResourceManagerPerspectiveFactory implements IPerspectiveFactory {
- 
-    private static final String NAVIGATOR_VIEW_ID = "de.fraunhofer.ipa.ros.ResourceManagerView";
-     
-    @Override
-    public void createInitialLayout(IPageLayout myLayout) {
-		defineActions(myLayout);
-		defineLayout(myLayout);
-    }
-    
-    public void defineActions(final IPageLayout myLayout) {
-    	myLayout.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder"); //$NON-NLS-1$ 
-    	myLayout.addNewWizardShortcut("org.eclipse.ui.wizards.new.file"); //$NON-NLS-1$
-    	myLayout.addNewWizardShortcut("RosDeveloper");
-    	myLayout.addShowViewShortcut(IPageLayout.ID_BOOKMARKS);
-    	myLayout.addShowViewShortcut(IPageLayout.ID_OUTLINE);
-    	myLayout.addShowViewShortcut(IPageLayout.ID_PROP_SHEET);
-    	myLayout.addShowViewShortcut(IPageLayout.ID_TASK_LIST);
-    	myLayout.addShowViewShortcut(IPageLayout.ID_PROJECT_EXPLORER);
-    }
-    
-    protected void defineLayout(final IPageLayout layout) {
-        // Editors are placed for free.
-        String editorArea = layout.getEditorArea();
 
-        // Place navigator and outline to left of editor area.
-        IFolderLayout left = layout.createFolder("left", IPageLayout.LEFT, (float) 0.26, editorArea);
-        left.addView(IPageLayout.ID_OUTLINE);
-        left.addView(NAVIGATOR_VIEW_ID);
-    }
+	@Override
+	public void createInitialLayout(IPageLayout layout) {
+
+		  IFolderLayout left = layout.createFolder("left", IPageLayout.LEFT, 0.2f, layout.getEditorArea());
+		  left.addView("org.eclipse.ui.navigator.ProjectExplorer");
+		  IFolderLayout bottom = layout.createFolder("bottom", IPageLayout.BOTTOM, .7f, layout.getEditorArea());
+		  bottom.addView(IPageLayout.ID_PROP_SHEET);
+	}
 
 }
