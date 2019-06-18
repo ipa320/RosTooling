@@ -61,6 +61,16 @@
             icon="icons/full/ros_system_icon.jpg"
             id="NewSystem"
             style="push">
+				<visibleWhen
+                     checkEnabled="false">
+                  <or>
+                     <with variable="activeWorkbenchWindow.activePerspective">
+                        <equals
+                              value="de.fraunhofer.ipa.ros.perspective">
+                        </equals>
+                     </with>
+                  </or>
+               </visibleWhen>
          </command>
       </toolbar>
       </menuContribution>
