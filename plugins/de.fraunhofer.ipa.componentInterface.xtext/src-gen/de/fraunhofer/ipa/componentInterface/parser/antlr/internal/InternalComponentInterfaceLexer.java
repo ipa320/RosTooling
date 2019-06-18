@@ -55,15 +55,15 @@ public class InternalComponentInterfaceLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "InternalComponentInterface.g"; }
+    public String getGrammarFileName() { return "../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:11:7: ( 'ComponentInterface' )
-            // InternalComponentInterface.g:11:9: 'ComponentInterface'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:11:7: ( 'ComponentInterface' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:11:9: 'ComponentInterface'
             {
             match("ComponentInterface"); 
 
@@ -83,8 +83,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:12:7: ( '{' )
-            // InternalComponentInterface.g:12:9: '{'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:12:7: ( '{' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:12:9: '{'
             {
             match('{'); 
 
@@ -103,8 +103,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:13:7: ( 'name' )
-            // InternalComponentInterface.g:13:9: 'name'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:13:7: ( 'name' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:13:9: 'name'
             {
             match("name"); 
 
@@ -124,8 +124,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:14:7: ( 'NameSpace' )
-            // InternalComponentInterface.g:14:9: 'NameSpace'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:14:7: ( 'NameSpace' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:14:9: 'NameSpace'
             {
             match("NameSpace"); 
 
@@ -145,8 +145,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:15:7: ( 'RosPublishers' )
-            // InternalComponentInterface.g:15:9: 'RosPublishers'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:15:7: ( 'RosPublishers' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:15:9: 'RosPublishers'
             {
             match("RosPublishers"); 
 
@@ -166,8 +166,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:16:7: ( ',' )
-            // InternalComponentInterface.g:16:9: ','
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:16:7: ( ',' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:16:9: ','
             {
             match(','); 
 
@@ -186,8 +186,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:17:7: ( '}' )
-            // InternalComponentInterface.g:17:9: '}'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:17:7: ( '}' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:17:9: '}'
             {
             match('}'); 
 
@@ -206,8 +206,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:18:7: ( 'RosSubscribers' )
-            // InternalComponentInterface.g:18:9: 'RosSubscribers'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:18:7: ( 'RosSubscribers' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:18:9: 'RosSubscribers'
             {
             match("RosSubscribers"); 
 
@@ -227,8 +227,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:19:7: ( 'RosSrvServers' )
-            // InternalComponentInterface.g:19:9: 'RosSrvServers'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:19:7: ( 'RosSrvServers' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:19:9: 'RosSrvServers'
             {
             match("RosSrvServers"); 
 
@@ -248,8 +248,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:20:7: ( 'RosSrvClients' )
-            // InternalComponentInterface.g:20:9: 'RosSrvClients'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:20:7: ( 'RosSrvClients' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:20:9: 'RosSrvClients'
             {
             match("RosSrvClients"); 
 
@@ -269,8 +269,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:21:7: ( 'RosActionServers' )
-            // InternalComponentInterface.g:21:9: 'RosActionServers'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:21:7: ( 'RosActionServers' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:21:9: 'RosActionServers'
             {
             match("RosActionServers"); 
 
@@ -290,8 +290,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:22:7: ( 'RosActionClients' )
-            // InternalComponentInterface.g:22:9: 'RosActionClients'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:22:7: ( 'RosActionClients' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:22:9: 'RosActionClients'
             {
             match("RosActionClients"); 
 
@@ -311,8 +311,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:23:7: ( 'RosPublisher' )
-            // InternalComponentInterface.g:23:9: 'RosPublisher'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:23:7: ( 'RosPublisher' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:23:9: 'RosPublisher'
             {
             match("RosPublisher"); 
 
@@ -332,8 +332,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:24:7: ( 'ns' )
-            // InternalComponentInterface.g:24:9: 'ns'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:24:7: ( 'ns' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:24:9: 'ns'
             {
             match("ns"); 
 
@@ -353,8 +353,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:25:7: ( 'RefPublisher' )
-            // InternalComponentInterface.g:25:9: 'RefPublisher'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:25:7: ( 'RefPublisher' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:25:9: 'RefPublisher'
             {
             match("RefPublisher"); 
 
@@ -374,8 +374,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:26:7: ( 'RosSubscriber' )
-            // InternalComponentInterface.g:26:9: 'RosSubscriber'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:26:7: ( 'RosSubscriber' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:26:9: 'RosSubscriber'
             {
             match("RosSubscriber"); 
 
@@ -395,8 +395,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:27:7: ( 'RefSubscriber' )
-            // InternalComponentInterface.g:27:9: 'RefSubscriber'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:27:7: ( 'RefSubscriber' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:27:9: 'RefSubscriber'
             {
             match("RefSubscriber"); 
 
@@ -416,8 +416,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:28:7: ( 'RosServiceServer' )
-            // InternalComponentInterface.g:28:9: 'RosServiceServer'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:28:7: ( 'RosServiceServer' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:28:9: 'RosServiceServer'
             {
             match("RosServiceServer"); 
 
@@ -437,8 +437,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:29:7: ( 'RefServer' )
-            // InternalComponentInterface.g:29:9: 'RefServer'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:29:7: ( 'RefServer' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:29:9: 'RefServer'
             {
             match("RefServer"); 
 
@@ -458,8 +458,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:30:7: ( 'RosServiceClient' )
-            // InternalComponentInterface.g:30:9: 'RosServiceClient'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:30:7: ( 'RosServiceClient' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:30:9: 'RosServiceClient'
             {
             match("RosServiceClient"); 
 
@@ -479,8 +479,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:31:7: ( 'RefClient' )
-            // InternalComponentInterface.g:31:9: 'RefClient'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:31:7: ( 'RefClient' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:31:9: 'RefClient'
             {
             match("RefClient"); 
 
@@ -500,8 +500,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:32:7: ( 'RosActionServer' )
-            // InternalComponentInterface.g:32:9: 'RosActionServer'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:32:7: ( 'RosActionServer' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:32:9: 'RosActionServer'
             {
             match("RosActionServer"); 
 
@@ -521,8 +521,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:33:7: ( 'RosActionClient' )
-            // InternalComponentInterface.g:33:9: 'RosActionClient'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:33:7: ( 'RosActionClient' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:33:9: 'RosActionClient'
             {
             match("RosActionClient"); 
 
@@ -542,10 +542,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1136:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalComponentInterface.g:1136:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1136:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1136:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalComponentInterface.g:1136:11: ( '^' )?
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1136:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -554,7 +554,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalComponentInterface.g:1136:11: '^'
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1136:11: '^'
                     {
                     match('^'); 
 
@@ -572,7 +572,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalComponentInterface.g:1136:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1136:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -585,7 +585,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalComponentInterface.g:
+            	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -621,10 +621,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1138:10: ( ( '0' .. '9' )+ )
-            // InternalComponentInterface.g:1138:12: ( '0' .. '9' )+
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1138:10: ( ( '0' .. '9' )+ )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1138:12: ( '0' .. '9' )+
             {
-            // InternalComponentInterface.g:1138:12: ( '0' .. '9' )+
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1138:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -638,7 +638,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalComponentInterface.g:1138:13: '0' .. '9'
+            	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1138:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -670,10 +670,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1140:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalComponentInterface.g:1140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalComponentInterface.g:1140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -691,10 +691,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalComponentInterface.g:1140:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalComponentInterface.g:1140:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -710,7 +710,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:1140:21: '\\\\' .
+                    	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -718,7 +718,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalComponentInterface.g:1140:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -743,10 +743,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:1140:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalComponentInterface.g:1140:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -762,7 +762,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:1140:54: '\\\\' .
+                    	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -770,7 +770,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalComponentInterface.g:1140:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1140:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -813,12 +813,12 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1142:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalComponentInterface.g:1142:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1142:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1142:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalComponentInterface.g:1142:24: ( options {greedy=false; } : . )*
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1142:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -843,7 +843,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalComponentInterface.g:1142:52: .
+            	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1142:52: .
             	    {
             	    matchAny(); 
 
@@ -873,12 +873,12 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1144:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalComponentInterface.g:1144:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalComponentInterface.g:1144:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -891,7 +891,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalComponentInterface.g:1144:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -911,7 +911,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalComponentInterface.g:1144:40: ( ( '\\r' )? '\\n' )?
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -920,9 +920,9 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalComponentInterface.g:1144:41: ( '\\r' )? '\\n'
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:41: ( '\\r' )? '\\n'
                     {
-                    // InternalComponentInterface.g:1144:41: ( '\\r' )?
+                    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -931,7 +931,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalComponentInterface.g:1144:41: '\\r'
+                            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1144:41: '\\r'
                             {
                             match('\r'); 
 
@@ -963,10 +963,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1146:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalComponentInterface.g:1146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1146:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalComponentInterface.g:1146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -980,7 +980,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalComponentInterface.g:
+            	    // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1020,8 +1020,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:1148:16: ( . )
-            // InternalComponentInterface.g:1148:18: .
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1148:16: ( . )
+            // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1148:18: .
             {
             matchAny(); 
 
@@ -1036,215 +1036,215 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalComponentInterface.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=30;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // InternalComponentInterface.g:1:10: T__11
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // InternalComponentInterface.g:1:16: T__12
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // InternalComponentInterface.g:1:22: T__13
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // InternalComponentInterface.g:1:28: T__14
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // InternalComponentInterface.g:1:34: T__15
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // InternalComponentInterface.g:1:40: T__16
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // InternalComponentInterface.g:1:46: T__17
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // InternalComponentInterface.g:1:52: T__18
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // InternalComponentInterface.g:1:58: T__19
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // InternalComponentInterface.g:1:64: T__20
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // InternalComponentInterface.g:1:70: T__21
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // InternalComponentInterface.g:1:76: T__22
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // InternalComponentInterface.g:1:82: T__23
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // InternalComponentInterface.g:1:88: T__24
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // InternalComponentInterface.g:1:94: T__25
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // InternalComponentInterface.g:1:100: T__26
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // InternalComponentInterface.g:1:106: T__27
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // InternalComponentInterface.g:1:112: T__28
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // InternalComponentInterface.g:1:118: T__29
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // InternalComponentInterface.g:1:124: T__30
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // InternalComponentInterface.g:1:130: T__31
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // InternalComponentInterface.g:1:136: T__32
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 23 :
-                // InternalComponentInterface.g:1:142: T__33
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 24 :
-                // InternalComponentInterface.g:1:148: RULE_ID
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:148: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 25 :
-                // InternalComponentInterface.g:1:156: RULE_INT
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:156: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 26 :
-                // InternalComponentInterface.g:1:165: RULE_STRING
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:165: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 27 :
-                // InternalComponentInterface.g:1:177: RULE_ML_COMMENT
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:177: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 28 :
-                // InternalComponentInterface.g:1:193: RULE_SL_COMMENT
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:193: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 29 :
-                // InternalComponentInterface.g:1:209: RULE_WS
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:209: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 30 :
-                // InternalComponentInterface.g:1:217: RULE_ANY_OTHER
+                // ../de.fraunhofer.ipa.componentInterface.xtext/src-gen/de/fraunhofer/ipa/componentInterface/parser/antlr/internal/InternalComponentInterface.g:1:217: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
