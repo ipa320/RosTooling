@@ -12,7 +12,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common.acceleo.aql,
  de.fraunhofer.ipa.ros;bundle-version="0.1.0",
  org.eclipse.ui.workbench,
- org.eclipse.ui.ide;bundle-version="3.13.1"
+ org.eclipse.ui.ide;bundle-version="3.13.1",
+ org.eclipse.sirius.common;bundle-version="6.1.2",
+ org.eclipse.sirius.diagram.ui;bundle-version="6.1.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
