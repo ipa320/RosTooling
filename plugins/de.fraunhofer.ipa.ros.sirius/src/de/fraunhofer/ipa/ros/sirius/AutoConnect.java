@@ -2,15 +2,10 @@ package de.fraunhofer.ipa.ros.sirius;
 
 import java.util.Collection;
 import java.util.Map;
-
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -18,15 +13,20 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
 import componentInterface.ComponentInterface;
+import componentInterface.RosActionClient;
+import componentInterface.RosActionServer;
 import componentInterface.RosPublisher;
+import componentInterface.RosServiceClient;
+import componentInterface.RosServiceServer;
 import componentInterface.RosSubscriber;
+import rossystem.ActionConnection;
 import rossystem.RosSystem;
-import ros.Publisher;
-import ros.impl.PublisherImpl;
-import ros.Node;
+import rossystem.ServiceConnection;
+import rossystem.TopicConnection;
+import rossystem.impl.ActionConnectionImpl;
+import rossystem.impl.ServiceConnectionImpl;
+import rossystem.impl.TopicConnectionImpl;
 
 
 public class AutoConnect implements IExternalJavaAction { 
@@ -62,15 +62,50 @@ public class AutoConnect implements IExternalJavaAction {
 									for (RosSubscriber rossub:component2.getRossubscriber()) {
 										if (rospub.getPublisher().getMessage() == rossub.getSubscriber().getMessage()) {
 											if (rospub.getPublisher().eContainer() != rossub.getSubscriber().eContainer()) {
-												System.out.println("!!!!Matched found");
-												System.out.println(rospub.getName());
-												System.out.println(rossub.getName());
-											}
-										}
-								}
-							}
-		}}}}
-}}}}
+												System.out.println("Connection found");
+												TopicConnection topic_connection = new TopicConnectionImpl();
+												topic_connection.setTopicName(rospub.getName());
+												topic_connection.getFrom().add(rospub);
+												topic_connection.getTo().add(rossub);
+												if (!(((RosSystem)rossystem).getTopicConnections().contains(topic_connection))){
+													((RosSystem)rossystem).getTopicConnections().add(topic_connection);
+												}
+							}}}}}
+							for (RosServiceClient rosscl:component.getRosserviceclient()) {
+								for (ComponentInterface component2:((RosSystem) rossystem).getRosComponent()) {
+									for (RosServiceServer rosss:component2.getRosserviceserver()) {
+										if (rosscl.getSrvclient().getService() == rosss.getSrvserver().getService()) {
+											if (rosscl.getSrvclient().eContainer() != rosss.getSrvserver().eContainer()) {
+												System.out.println("Connection found");
+												ServiceConnection srv_connection = new ServiceConnectionImpl();
+												srv_connection.setServiceName(rosscl.getName());
+												srv_connection.setTo(rosscl);
+												srv_connection.getFrom().add(rosss);
+												if (!(((RosSystem)rossystem).getServiceConnections().contains(srv_connection))){
+													((RosSystem)rossystem).getServiceConnections().add(srv_connection);
+												}
+							}}}}}
+							for (RosActionClient rosac:component.getRosactionclient()) {
+								for (ComponentInterface component2:((RosSystem) rossystem).getRosComponent()) {
+									for (RosActionServer rosas:component2.getRosactionserver()) {
+										if (rosac.getActclient().getAction() == rosas.getActserver().getAction()) {
+											if (rosac.getActclient().eContainer() != rosas.getActserver().eContainer()) {
+												System.out.println("Connection found");
+												ActionConnection action_connection = new ActionConnectionImpl();
+												action_connection.setActionName(rosac.getName());
+												action_connection.setFrom(rosas);
+												action_connection.setTo(rosac);
+												if (!(((RosSystem)rossystem).getActionConnections().contains(action_connection))){
+													((RosSystem)rossystem).getActionConnections().add(action_connection);
+												}
+
+							}}}}}
+					}}}}
+		 }
+	}
+	
+
+}
 
 
 
