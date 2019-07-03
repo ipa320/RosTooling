@@ -74,7 +74,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionConnectionImpl() {
+	public ActionConnectionImpl() {
 		super();
 	}
 

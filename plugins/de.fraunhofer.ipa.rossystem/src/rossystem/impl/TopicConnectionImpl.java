@@ -76,7 +76,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TopicConnectionImpl() {
+	public TopicConnectionImpl() {
 		super();
 	}
 
