@@ -440,6 +440,7 @@
               <firstModelOperations xsi:type="tool_1:RemoveElement"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="AutoConnections" id="de.fraunhofer.ipa.ros.sirius.javaActionsAutoConnect"/>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
