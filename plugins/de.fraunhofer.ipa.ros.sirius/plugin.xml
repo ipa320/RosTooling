@@ -21,4 +21,11 @@
            id="de.fraunhofer.ipa.ros.sirius.javaActionsNewParameter">
      </javaActions>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="de.fraunhofer.ipa.ros.sirius.AutoConnect"
+           id="de.fraunhofer.ipa.ros.sirius.javaActionsAutoConnect">
+     </javaActions>
+  </extension>
 </plugin>
