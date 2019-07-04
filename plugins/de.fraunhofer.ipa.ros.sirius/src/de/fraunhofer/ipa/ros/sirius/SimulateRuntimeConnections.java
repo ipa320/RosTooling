@@ -29,14 +29,14 @@ import rossystem.impl.ServiceConnectionImpl;
 import rossystem.impl.TopicConnectionImpl;
 
 
-public class AutoConnect implements IExternalJavaAction { 
+public class SimulateRuntimeConnections implements IExternalJavaAction { 
 	public IFile modelFile;
 	protected IWorkbench workbench;
 	protected IStructuredSelection selection;
 	//public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(ComponentInterfaceEditorPlugin.INSTANCE.getString("_UI_ComponentInterfaceEditorFilenameExtensions").split("\\s*,\\s*")));
 	protected ExecutionEvent event;
 	
-	public AutoConnect() {
+	public SimulateRuntimeConnections() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -61,17 +61,16 @@ public class AutoConnect implements IExternalJavaAction {
 							for (RosPublisher rospub:component.getRospublisher()) {
 								for (ComponentInterface component2:((RosSystem) rossystem).getRosComponent()) {
 									for (RosSubscriber rossub:component2.getRossubscriber()) {
-										if (rospub.getPublisher().getMessage() == rossub.getSubscriber().getMessage()) {
+										if (rospub.getPublisher().getMessage()==rossub.getSubscriber().getMessage() && rospub.getName().equals(rossub.getName())) {
 											if (rospub.getPublisher().eContainer() != rossub.getSubscriber().eContainer()) {
 												duplicated=false;
-												System.out.println("Possible Topic Connection found ["+rospub.getPublisher().eContainer()+"]"+rospub.getPublisher().getName()+"->["+rossub.getSubscriber().eContainer()+"]"+rossub.getSubscriber().getName());
+												System.out.println("Topic Connection found ["+rospub.getPublisher().eContainer()+"]"+rospub.getPublisher().getName()+"->["+rossub.getSubscriber().eContainer()+"]"+rossub.getSubscriber().getName());
 												//Check if connection already exists
 												for (TopicConnection topic_con:((RosSystem)rossystem).getTopicConnections()){
 													for (RosPublisher pub_con:topic_con.getFrom()) {
 														for(RosSubscriber sub_con:topic_con.getTo()) {
 															if (pub_con.getPublisher()==rospub.getPublisher() && sub_con.getSubscriber()==rossub.getSubscriber()) {
 																duplicated=true;
-																System.out.println("Connection already exits");
 												}}}}
 												if (!duplicated){
 													TopicConnection topic_connection = new TopicConnectionImpl();
@@ -84,16 +83,15 @@ public class AutoConnect implements IExternalJavaAction {
 							for (RosServiceClient rosscl:component.getRosserviceclient()) {
 								for (ComponentInterface component2:((RosSystem) rossystem).getRosComponent()) {
 									for (RosServiceServer rosss:component2.getRosserviceserver()) {
-										if (rosscl.getSrvclient().getService() == rosss.getSrvserver().getService()) {
+										if (rosscl.getSrvclient().getService()==rosss.getSrvserver().getService() && rosscl.getName().equals(rosss.getName())) {
 											if (rosscl.getSrvclient().eContainer() != rosss.getSrvserver().eContainer()) {
 												duplicated=false;
-												System.out.println("Possible Service Connection found ["+rosscl.getSrvclient().eContainer()+"]"+rosscl.getSrvclient().getName()+"->["+rosss.getSrvserver().eContainer()+"]"+rosss.getSrvserver().getName());
+												System.out.println("Service Connection found ["+rosscl.getSrvclient().eContainer()+"]"+rosscl.getSrvclient().getName()+"->["+rosss.getSrvserver().eContainer()+"]"+rosss.getSrvserver().getName());
 												//Check if connection already exists
 												for (ServiceConnection srv_con:((RosSystem)rossystem).getServiceConnections()){
 													for (RosServiceServer srvs_con:srv_con.getFrom()) {
 														if (srvs_con.getSrvserver()==rosss.getSrvserver() && srv_con.getTo()==rosscl.getSrvclient()) {
 																duplicated=true;
-																System.out.println("Connection already exits");
 												}}}}
 												if (!duplicated){
 													ServiceConnection srv_connection = new ServiceConnectionImpl();
@@ -107,15 +105,14 @@ public class AutoConnect implements IExternalJavaAction {
 							for (RosActionClient rosac:component.getRosactionclient()) {
 								for (ComponentInterface component2:((RosSystem) rossystem).getRosComponent()) {
 									for (RosActionServer rosas:component2.getRosactionserver()) {
-										if (rosac.getActclient().getAction() == rosas.getActserver().getAction()) {
+										if (rosac.getActclient().getAction()==rosas.getActserver().getAction() && rosac.getName().equals(rosas.getName())) {
 											if (rosac.getActclient().eContainer() != rosas.getActserver().eContainer()) {
 												duplicated=false;
-												System.out.println("Possible Action Connection found ["+rosac.getActclient().eContainer()+"]"+rosac.getActclient().getName()+"->["+rosas.getActserver().eContainer()+"]"+rosas.getActserver().getName());
+												System.out.println("Action Connection found ["+rosac.getActclient().eContainer()+"]"+rosac.getActclient().getName()+"->["+rosas.getActserver().eContainer()+"]"+rosas.getActserver().getName());
 												//Check if connection already exists
 												for (ActionConnection act_con:((RosSystem)rossystem).getActionConnections()){
 													if (rosac.getActclient().getAction()==act_con.getFrom() && rosas.getActserver()==act_con.getTo()) {
 														duplicated=true;
-														System.out.println("Connection already exits");
 												}}}
 												if (!duplicated){
 												ActionConnection action_connection = new ActionConnectionImpl();
@@ -125,7 +122,6 @@ public class AutoConnect implements IExternalJavaAction {
 												if (!(((RosSystem)rossystem).getActionConnections().contains(action_connection))){
 													((RosSystem)rossystem).getActionConnections().add(action_connection);
 												}
-
 							}}}}}
 					}}}}
 		 }
