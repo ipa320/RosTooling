@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide;bundle-version="3.13.1",
  org.eclipse.sirius.common,
  org.eclipse.sirius.diagram.ui,
- de.fraunhofer.ipa.rossystem;bundle-version="0.1.0"
+ de.fraunhofer.ipa.rossystem;bundle-version="0.1.0",
+ de.fraunhofer.ipa.componentInterface
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
