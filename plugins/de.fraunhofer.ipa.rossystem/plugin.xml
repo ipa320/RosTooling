@@ -11,15 +11,15 @@
       <package
             uri="http://www.ipa.fraunhofer.de/rossystem"
             class="rossystem.RossystemPackage"
-            genModel="model/rosystem.genmodel"/>
+            genModel="model/rossystem.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated RosComponent -->
       <package
-            uri="http://www.ipa.fraunhofer.de/RosComponent"
-            class="RosComponent.RosComponentPackage"
-            genModel="model/RosComponent.genmodel"/>
+            class="componentInterface.ComponentInterfacePackage"
+            genModel="model/rossystem.genmodel"
+            uri="http://www.ipa.fraunhofer.de/RosComponent"/>
    </extension>
 
 </plugin>

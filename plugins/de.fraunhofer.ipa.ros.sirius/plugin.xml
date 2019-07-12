@@ -21,4 +21,26 @@
            id="de.fraunhofer.ipa.ros.sirius.javaActionsNewParameter">
      </javaActions>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="de.fraunhofer.ipa.ros.sirius.AutoConnect"
+           id="de.fraunhofer.ipa.ros.sirius.javaActionsAutoConnect">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="de.fraunhofer.ipa.ros.sirius.SimulateRuntimeConnections"
+           id="de.fraunhofer.ipa.ros.sirius.javaActionsSimulateRuntimeConnections">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="de.fraunhofer.ipa.ros.sirius.RemoveAllConnections"
+           id="de.fraunhofer.ipa.ros.sirius.javaActionsRemoveAllConnections">
+     </javaActions>
+  </extension>
+  
 </plugin>

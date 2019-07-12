@@ -78,7 +78,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceConnectionImpl() {
+	public ServiceConnectionImpl() {
 		super();
 	}
 
