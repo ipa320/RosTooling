@@ -48,6 +48,7 @@ Now that your workspace is setup and the eclipse application running you can sta
 
 * [Create new ROS projects and define ROS nodes](docu/NewProject.md)
 * [Create a ROS model from cpp code](docu/NewRosModel.md)
+* [Generation of code from models](docu/CodeGeneration.md)
 * [Define a ROS system as a composition of components](docu/NewSystem.md)
 * [Compare your model with a Specification](docu/CompareSpec.md)
 * [Add communication objects](docu/NewCommunicationObjects.md)
