@@ -69,7 +69,7 @@ public class AutoConnect implements IExternalJavaAction {
 												for (TopicConnection topic_con:((RosSystem)rossystem).getTopicConnections()){
 													for (RosPublisher pub_con:topic_con.getFrom()) {
 														for(RosSubscriber sub_con:topic_con.getTo()) {
-															if (pub_con.getPublisher()==rospub.getPublisher() && sub_con.getSubscriber()==rossub.getSubscriber()) {
+															if (pub_con==rospub && sub_con==rossub) {
 																duplicated=true;
 																System.out.println("Connection already exits");
 												}}}}
@@ -91,7 +91,7 @@ public class AutoConnect implements IExternalJavaAction {
 												//Check if connection already exists
 												for (ServiceConnection srv_con:((RosSystem)rossystem).getServiceConnections()){
 													for (RosServiceServer srvs_con:srv_con.getFrom()) {
-														if (srvs_con.getSrvserver()==rosss.getSrvserver() && srv_con.getTo()==rosscl.getSrvclient()) {
+														if (srvs_con==rosss && srv_con==rosscl) {
 																duplicated=true;
 																System.out.println("Connection already exits");
 												}}}}
@@ -113,7 +113,7 @@ public class AutoConnect implements IExternalJavaAction {
 												System.out.println("Possible Action Connection found ["+rosac.getActclient().eContainer()+"]"+rosac.getActclient().getName()+"->["+rosas.getActserver().eContainer()+"]"+rosas.getActserver().getName());
 												//Check if connection already exists
 												for (ActionConnection act_con:((RosSystem)rossystem).getActionConnections()){
-													if (rosac.getActclient().getAction()==act_con.getFrom() && rosas.getActserver()==act_con.getTo()) {
+													if (rosac==act_con && rosas==act_con) {
 														duplicated=true;
 														System.out.println("Connection already exits");
 												}}}

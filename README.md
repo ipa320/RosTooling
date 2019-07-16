@@ -53,6 +53,7 @@ Your application toolbar will be automatically configured and you can start crea
 * [Compare your model with a Specification](docu/CompareSpec.md)
 * [Add communication objects](docu/NewCommunicationObjects.md)
 * [Model extraction using introspection at runtime](https://github.com/ipa-led/ros_graph_parser)
+* [Introspection at design-time](docu/simulateRuntime.md)
 
 ## Model examples
 

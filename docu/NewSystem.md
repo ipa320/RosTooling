@@ -129,3 +129,5 @@ And join the diagnostics interfaces with a connection. The resulted launch file 
 
 </launch>
 ```
+
+It is recommended to continue with: [Introspection at design-time](simulateRuntime.md)
