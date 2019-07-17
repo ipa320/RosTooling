@@ -3,16 +3,16 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.rossystem/src" modelPluginID="de.fraunhofer.ipa.rossystem"
     modelName="Rossystem" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../de.fraunhofer.ipa.componentInterface/model/componentInterface.genmodel#//componentInterface ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros"
+    usedGenPackages="../../de.fraunhofer.ipa.componentInterface/model/componentInterface.genmodel#//componentInterface ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//primitives"
     operationReflection="true" importOrganizing="true">
   <foreignModel>rossystem.ecore</foreignModel>
   <genPackages prefix="Rossystem" disposableProviderFactory="true" ecorePackage="rossystem.ecore#/">
     <genClasses ecoreClass="rossystem.ecore#//RosSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/TopicConnections"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ServiceConnections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosSystem/Name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
