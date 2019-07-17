@@ -66,6 +66,7 @@ public class ParameterStructImpl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterStructMember> getValue() {
 		if (value == null) {
 			value = new EObjectContainmentEList<ParameterStructMember>(ParameterStructMember.class, this, RosPackage.PARAMETER_STRUCT__VALUE);

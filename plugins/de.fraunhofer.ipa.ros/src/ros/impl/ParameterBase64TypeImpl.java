@@ -62,6 +62,7 @@ public class ParameterBase64TypeImpl extends ParameterTypeImpl implements Parame
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterBase64 getDefault() {
 		return default_;
 	}
@@ -86,6 +87,7 @@ public class ParameterBase64TypeImpl extends ParameterTypeImpl implements Parame
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterBase64 newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

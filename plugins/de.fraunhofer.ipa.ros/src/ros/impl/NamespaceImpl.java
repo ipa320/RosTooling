@@ -63,6 +63,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getParts() {
 		if (parts == null) {
 			parts = new EDataTypeEList<String>(String.class, this, RosPackage.NAMESPACE__PARTS);
@@ -139,7 +140,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (parts: ");
 		result.append(parts);
 		result.append(')');

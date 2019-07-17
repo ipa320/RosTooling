@@ -2,6 +2,7 @@
  */
 package ros;
 
+import primitives.ServiceSpec;
 
 /**
  * <!-- begin-user-doc -->

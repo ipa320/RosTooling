@@ -10,11 +10,16 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import primitives.AbstractType;
+import primitives.ActionSpec;
 import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
+import primitives.MessageDefinition;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
+import primitives.ServiceSpec;
+import primitives.SpecBase;
+import primitives.TopicSpec;
 import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
@@ -42,7 +47,6 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
-import primitives.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,10 +107,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAbstractType(AbstractType object) {
 				return createAbstractTypeAdapter();
-			}
-			@Override
-			public Adapter caseMessagePart(MessagePart object) {
-				return createMessagePartAdapter();
 			}
 			@Override
 			public Adapter casebool(bool object) {
@@ -213,14 +213,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 				return createstringArrayAdapter();
 			}
 			@Override
-			public Adapter caseTopicSpecRef(TopicSpecRef object) {
-				return createTopicSpecRefAdapter();
-			}
-			@Override
-			public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
-				return createArrayTopicSpecRefAdapter();
-			}
-			@Override
 			public Adapter caseHeader(Header object) {
 				return createHeaderAdapter();
 			}
@@ -231,6 +223,38 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseByteArray(ByteArray object) {
 				return createByteArrayAdapter();
+			}
+			@Override
+			public Adapter caseTopicSpecRef(TopicSpecRef object) {
+				return createTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+				return createArrayTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseMessagePart(MessagePart object) {
+				return createMessagePartAdapter();
+			}
+			@Override
+			public Adapter caseMessageDefinition(MessageDefinition object) {
+				return createMessageDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseSpecBase(SpecBase object) {
+				return createSpecBaseAdapter();
+			}
+			@Override
+			public Adapter caseTopicSpec(TopicSpec object) {
+				return createTopicSpecAdapter();
+			}
+			@Override
+			public Adapter caseServiceSpec(ServiceSpec object) {
+				return createServiceSpecAdapter();
+			}
+			@Override
+			public Adapter caseActionSpec(ActionSpec object) {
+				return createActionSpecAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -251,6 +275,20 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.AbstractType <em>Abstract Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.AbstractType
+	 * @generated
+	 */
+	public Adapter createAbstractTypeAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link primitives.bool <em>bool</em>}'.
@@ -403,20 +441,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createfloat64Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link primitives.AbstractType <em>Abstract Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see primitives.AbstractType
-	 * @generated
-	 */
-	public Adapter createAbstractTypeAdapter() {
 		return null;
 	}
 
@@ -631,34 +655,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link primitives.TopicSpecRef <em>Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see primitives.TopicSpecRef
-	 * @generated
-	 */
-	public Adapter createTopicSpecRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link primitives.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see primitives.ArrayTopicSpecRef
-	 * @generated
-	 */
-	public Adapter createArrayTopicSpecRefAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link primitives.Header <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -701,6 +697,34 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link primitives.TopicSpecRef <em>Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.TopicSpecRef
+	 * @generated
+	 */
+	public Adapter createTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.ArrayTopicSpecRef
+	 * @generated
+	 */
+	public Adapter createArrayTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link primitives.MessagePart <em>Message Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -711,6 +735,76 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessagePartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.MessageDefinition <em>Message Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.MessageDefinition
+	 * @generated
+	 */
+	public Adapter createMessageDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.SpecBase <em>Spec Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.SpecBase
+	 * @generated
+	 */
+	public Adapter createSpecBaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.TopicSpec <em>Topic Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.TopicSpec
+	 * @generated
+	 */
+	public Adapter createTopicSpecAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.ServiceSpec <em>Service Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.ServiceSpec
+	 * @generated
+	 */
+	public Adapter createServiceSpecAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.ActionSpec <em>Action Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.ActionSpec
+	 * @generated
+	 */
+	public Adapter createActionSpecAdapter() {
 		return null;
 	}
 

@@ -5,6 +5,7 @@ package ros;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import primitives.SpecBase;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,8 +54,8 @@ public interface Package extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Spec</b></em>' containment reference list.
-	 * The list contents are of type {@link ros.SpecBase}.
-	 * It is bidirectional and its opposite is '{@link ros.SpecBase#getPackage <em>Package</em>}'.
+	 * The list contents are of type {@link primitives.SpecBase}.
+	 * It is bidirectional and its opposite is '{@link primitives.SpecBase#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Spec</em>' containment reference list isn't clear,
@@ -63,7 +64,7 @@ public interface Package extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Spec</em>' containment reference list.
 	 * @see ros.RosPackage#getPackage_Spec()
-	 * @see ros.SpecBase#getPackage
+	 * @see primitives.SpecBase#getPackage
 	 * @model opposite="package" containment="true"
 	 * @generated
 	 */

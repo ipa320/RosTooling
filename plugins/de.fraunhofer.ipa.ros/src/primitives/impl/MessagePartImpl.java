@@ -2,8 +2,6 @@
  */
 package primitives.impl;
 
-import java.lang.String;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -86,6 +84,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractType getType() {
 		return type;
 	}
@@ -110,6 +109,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(AbstractType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -129,6 +129,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getData() {
 		return data;
 	}
@@ -138,6 +139,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setData(String newData) {
 		String oldData = data;
 		data = newData;
@@ -236,7 +238,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Data: ");
 		result.append(data);
 		result.append(')');

@@ -69,6 +69,7 @@ public class ParameterAnyImpl extends ParameterValueImpl implements ParameterAny
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterAnyImpl extends ParameterValueImpl implements ParameterAny
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
@@ -152,7 +154,7 @@ public class ParameterAnyImpl extends ParameterValueImpl implements ParameterAny
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

@@ -22,18 +22,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import primitives.Message;
 import primitives.PrimitivesPackage;
+import primitives.SpecBase;
 
 import ros.provider.RosEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link primitives.Message} object.
+ * This is the item provider adapter for a {@link primitives.SpecBase} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MessageItemProvider 
+public class SpecBaseItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +47,7 @@ public class MessageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageItemProvider(AdapterFactory adapterFactory) {
+	public SpecBaseItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,26 +62,27 @@ public class MessageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addFullnamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Data feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Message_Data_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Message_Data_feature", "_UI_Message_type"),
-				 null, true,
+				 getString("_UI_SpecBase_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_name_feature", "_UI_SpecBase_type"),
+				 PrimitivesPackage.Literals.SPEC_BASE__NAME,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -90,22 +91,23 @@ public class MessageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Fullname feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addFullnamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Message_Type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Message_Type_feature", "_UI_Message_type"),
-				 null, true,
+				 getString("_UI_SpecBase_fullname_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SpecBase_fullname_feature", "_UI_SpecBase_type"),
+				 PrimitivesPackage.Literals.SPEC_BASE__FULLNAME,
 				 false,
-				 true,
-				 null,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -118,9 +120,54 @@ public class MessageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Message)object).getData();
+		String label = ((SpecBase)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Message_type") :
-			getString("_UI_Message_type") + " " + label;
-	}}
-	
+			getString("_UI_SpecBase_type") :
+			getString("_UI_SpecBase_type") + " " + label;
+	}
+
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(SpecBase.class)) {
+			case PrimitivesPackage.SPEC_BASE__NAME:
+			case PrimitivesPackage.SPEC_BASE__FULLNAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return RosEditPlugin.INSTANCE;
+	}
+
+}

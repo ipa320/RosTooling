@@ -10,12 +10,16 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import primitives.ActionSpec;
 import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
+import primitives.MessageDefinition;
 import primitives.MessagePart;
 import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
+import primitives.ServiceSpec;
+import primitives.TopicSpec;
 import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
@@ -43,7 +47,6 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
-import primitives.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,7 +92,6 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PrimitivesPackage.MESSAGE_PART: return createMessagePart();
 			case PrimitivesPackage.BOOL: return createbool();
 			case PrimitivesPackage.INT8: return createint8();
 			case PrimitivesPackage.UINT8: return createuint8();
@@ -116,11 +118,16 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 			case PrimitivesPackage.FLOAT32_ARRAY: return createfloat32Array();
 			case PrimitivesPackage.FLOAT64_ARRAY: return createfloat64Array();
 			case PrimitivesPackage.STRING_ARRAY: return createstringArray();
-			case PrimitivesPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
-			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
 			case PrimitivesPackage.HEADER: return createHeader();
 			case PrimitivesPackage.BYTE: return createByte();
 			case PrimitivesPackage.BYTE_ARRAY: return createByteArray();
+			case PrimitivesPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
+			case PrimitivesPackage.MESSAGE_PART: return createMessagePart();
+			case PrimitivesPackage.MESSAGE_DEFINITION: return createMessageDefinition();
+			case PrimitivesPackage.TOPIC_SPEC: return createTopicSpec();
+			case PrimitivesPackage.SERVICE_SPEC: return createServiceSpec();
+			case PrimitivesPackage.ACTION_SPEC: return createActionSpec();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +138,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public bool createbool() {
 		boolImpl bool = new boolImpl();
 		return bool;
@@ -141,6 +149,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int8 createint8() {
 		int8Impl int8 = new int8Impl();
 		return int8;
@@ -151,6 +160,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint8 createuint8() {
 		uint8Impl uint8 = new uint8Impl();
 		return uint8;
@@ -161,6 +171,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int16 createint16() {
 		int16Impl int16 = new int16Impl();
 		return int16;
@@ -171,6 +182,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint16 createuint16() {
 		uint16Impl uint16 = new uint16Impl();
 		return uint16;
@@ -181,6 +193,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int32 createint32() {
 		int32Impl int32 = new int32Impl();
 		return int32;
@@ -191,6 +204,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint32 createuint32() {
 		uint32Impl uint32 = new uint32Impl();
 		return uint32;
@@ -201,6 +215,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int64 createint64() {
 		int64Impl int64 = new int64Impl();
 		return int64;
@@ -211,6 +226,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint64 createuint64() {
 		uint64Impl uint64 = new uint64Impl();
 		return uint64;
@@ -221,6 +237,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float32 createfloat32() {
 		float32Impl float32 = new float32Impl();
 		return float32;
@@ -231,6 +248,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float64 createfloat64() {
 		float64Impl float64 = new float64Impl();
 		return float64;
@@ -241,6 +259,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public string createstring() {
 		stringImpl string = new stringImpl();
 		return string;
@@ -251,6 +270,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public time createtime() {
 		timeImpl time = new timeImpl();
 		return time;
@@ -261,6 +281,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public duration createduration() {
 		durationImpl duration = new durationImpl();
 		return duration;
@@ -271,6 +292,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolArray createboolArray() {
 		boolArrayImpl boolArray = new boolArrayImpl();
 		return boolArray;
@@ -281,6 +303,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int8Array createint8Array() {
 		int8ArrayImpl int8Array = new int8ArrayImpl();
 		return int8Array;
@@ -291,6 +314,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint8Array createuint8Array() {
 		uint8ArrayImpl uint8Array = new uint8ArrayImpl();
 		return uint8Array;
@@ -301,6 +325,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int16Array createint16Array() {
 		int16ArrayImpl int16Array = new int16ArrayImpl();
 		return int16Array;
@@ -311,6 +336,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint16Array createuint16Array() {
 		uint16ArrayImpl uint16Array = new uint16ArrayImpl();
 		return uint16Array;
@@ -321,6 +347,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int32Array createint32Array() {
 		int32ArrayImpl int32Array = new int32ArrayImpl();
 		return int32Array;
@@ -331,6 +358,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint32Array createuint32Array() {
 		uint32ArrayImpl uint32Array = new uint32ArrayImpl();
 		return uint32Array;
@@ -341,6 +369,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int64Array createint64Array() {
 		int64ArrayImpl int64Array = new int64ArrayImpl();
 		return int64Array;
@@ -351,6 +380,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public uint64Array createuint64Array() {
 		uint64ArrayImpl uint64Array = new uint64ArrayImpl();
 		return uint64Array;
@@ -361,6 +391,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float32Array createfloat32Array() {
 		float32ArrayImpl float32Array = new float32ArrayImpl();
 		return float32Array;
@@ -371,6 +402,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float64Array createfloat64Array() {
 		float64ArrayImpl float64Array = new float64ArrayImpl();
 		return float64Array;
@@ -381,6 +413,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public stringArray createstringArray() {
 		stringArrayImpl stringArray = new stringArrayImpl();
 		return stringArray;
@@ -391,26 +424,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopicSpecRef createTopicSpecRef() {
-		TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
-		return topicSpecRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArrayTopicSpecRef createArrayTopicSpecRef() {
-		ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
-		return arrayTopicSpecRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public Header createHeader() {
 		HeaderImpl header = new HeaderImpl();
 		return header;
@@ -421,6 +435,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public primitives.Byte createByte() {
 		ByteImpl byte_ = new ByteImpl();
 		return byte_;
@@ -431,6 +446,7 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ByteArray createByteArray() {
 		ByteArrayImpl byteArray = new ByteArrayImpl();
 		return byteArray;
@@ -441,6 +457,29 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TopicSpecRef createTopicSpecRef() {
+		TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
+		return topicSpecRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ArrayTopicSpecRef createArrayTopicSpecRef() {
+		ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
+		return arrayTopicSpecRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MessagePart createMessagePart() {
 		MessagePartImpl messagePart = new MessagePartImpl();
 		return messagePart;
@@ -451,6 +490,51 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public MessageDefinition createMessageDefinition() {
+		MessageDefinitionImpl messageDefinition = new MessageDefinitionImpl();
+		return messageDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TopicSpec createTopicSpec() {
+		TopicSpecImpl topicSpec = new TopicSpecImpl();
+		return topicSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceSpec createServiceSpec() {
+		ServiceSpecImpl serviceSpec = new ServiceSpecImpl();
+		return serviceSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ActionSpec createActionSpec() {
+		ActionSpecImpl actionSpec = new ActionSpecImpl();
+		return actionSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public PrimitivesPackage getPrimitivesPackage() {
 		return (PrimitivesPackage)getEPackage();
 	}

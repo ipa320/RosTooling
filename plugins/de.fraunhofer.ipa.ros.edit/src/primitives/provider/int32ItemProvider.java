@@ -76,7 +76,6 @@ public class int32ItemProvider extends AbstractTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

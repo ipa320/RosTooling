@@ -76,7 +76,6 @@ public class GlobalNamespaceItemProvider extends NamespaceItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

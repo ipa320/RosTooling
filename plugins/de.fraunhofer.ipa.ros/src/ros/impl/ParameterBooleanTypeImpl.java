@@ -62,6 +62,7 @@ public class ParameterBooleanTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterBoolean getDefault() {
 		return default_;
 	}
@@ -86,6 +87,7 @@ public class ParameterBooleanTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterBoolean newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

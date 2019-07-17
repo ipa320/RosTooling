@@ -5,18 +5,22 @@ package primitives.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import primitives.AbstractType;
+import primitives.ActionSpec;
 import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
+import primitives.MessageDefinition;
 import primitives.MessagePart;
 import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
-
+import primitives.ServiceSpec;
+import primitives.SpecBase;
+import primitives.TopicSpec;
 import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
@@ -44,6 +48,7 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
+
 import ros.RosPackage;
 
 import ros.impl.RosPackageImpl;
@@ -55,6 +60,13 @@ import ros.impl.RosPackageImpl;
  * @generated
  */
 public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractTypeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,13 +143,6 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * @generated
 	 */
 	private EClass float64EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,20 +254,6 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass topicSpecRefEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass arrayTopicSpecRefEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass headerEClass = null;
 
 	/**
@@ -284,7 +275,56 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass topicSpecRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arrayTopicSpecRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass messagePartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass specBaseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass topicSpecEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceSpecEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionSpecEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -314,7 +354,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link PrimitivesPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -328,12 +368,14 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		if (isInited) return (PrimitivesPackage)EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PrimitivesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PrimitivesPackageImpl());
+		Object registeredPrimitivesPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		PrimitivesPackageImpl thePrimitivesPackage = registeredPrimitivesPackage instanceof PrimitivesPackageImpl ? (PrimitivesPackageImpl)registeredPrimitivesPackage : new PrimitivesPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		RosPackageImpl theRosPackage = (RosPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI) instanceof RosPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI) : RosPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
+		RosPackageImpl theRosPackage = (RosPackageImpl)(registeredPackage instanceof RosPackageImpl ? registeredPackage : RosPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePrimitivesPackage.createPackageContents();
@@ -346,7 +388,6 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		// Mark meta-data to indicate it can't be changed
 		thePrimitivesPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PrimitivesPackage.eNS_URI, thePrimitivesPackage);
 		return thePrimitivesPackage;
@@ -357,105 +398,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getbool() {
-		return boolEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getint8() {
-		return int8EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getuint8() {
-		return uint8EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getint16() {
-		return int16EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getuint16() {
-		return uint16EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getint32() {
-		return int32EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getuint32() {
-		return uint32EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getint64() {
-		return int64EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getuint64() {
-		return uint64EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getfloat32() {
-		return float32EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getfloat64() {
-		return float64EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getAbstractType() {
 		return abstractTypeEClass;
 	}
@@ -465,6 +408,117 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getbool() {
+		return boolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getint8() {
+		return int8EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getuint8() {
+		return uint8EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getint16() {
+		return int16EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getuint16() {
+		return uint16EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getint32() {
+		return int32EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getuint32() {
+		return uint32EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getint64() {
+		return int64EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getuint64() {
+		return uint64EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getfloat32() {
+		return float32EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getfloat64() {
+		return float64EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getstring() {
 		return stringEClass;
 	}
@@ -474,6 +528,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass gettime() {
 		return timeEClass;
 	}
@@ -483,6 +538,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getduration() {
 		return durationEClass;
 	}
@@ -492,6 +548,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getboolArray() {
 		return boolArrayEClass;
 	}
@@ -501,6 +558,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint8Array() {
 		return int8ArrayEClass;
 	}
@@ -510,6 +568,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint8Array() {
 		return uint8ArrayEClass;
 	}
@@ -519,6 +578,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint16Array() {
 		return int16ArrayEClass;
 	}
@@ -528,6 +588,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint16Array() {
 		return uint16ArrayEClass;
 	}
@@ -537,6 +598,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint32Array() {
 		return int32ArrayEClass;
 	}
@@ -546,6 +608,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint32Array() {
 		return uint32ArrayEClass;
 	}
@@ -555,6 +618,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint64Array() {
 		return int64ArrayEClass;
 	}
@@ -564,6 +628,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint64Array() {
 		return uint64ArrayEClass;
 	}
@@ -573,6 +638,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat32Array() {
 		return float32ArrayEClass;
 	}
@@ -582,6 +648,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat64Array() {
 		return float64ArrayEClass;
 	}
@@ -591,6 +658,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getstringArray() {
 		return stringArrayEClass;
 	}
@@ -600,42 +668,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTopicSpecRef() {
-		return topicSpecRefEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTopicSpecRef_TopicSpec() {
-		return (EReference)topicSpecRefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getArrayTopicSpecRef() {
-		return arrayTopicSpecRefEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArrayTopicSpecRef_TopicSpec() {
-		return (EReference)arrayTopicSpecRefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getHeader() {
 		return headerEClass;
 	}
@@ -645,6 +678,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getByte() {
 		return byteEClass;
 	}
@@ -654,6 +688,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getByteArray() {
 		return byteArrayEClass;
 	}
@@ -663,6 +698,47 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getTopicSpecRef() {
+		return topicSpecRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTopicSpecRef_TopicSpec() {
+		return (EReference)topicSpecRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getArrayTopicSpecRef() {
+		return arrayTopicSpecRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getArrayTopicSpecRef_TopicSpec() {
+		return (EReference)arrayTopicSpecRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMessagePart() {
 		return messagePartEClass;
 	}
@@ -672,6 +748,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessagePart_Type() {
 		return (EReference)messagePartEClass.getEStructuralFeatures().get(0);
 	}
@@ -681,6 +758,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessagePart_Data() {
 		return (EAttribute)messagePartEClass.getEStructuralFeatures().get(1);
 	}
@@ -690,6 +768,157 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getMessageDefinition() {
+		return messageDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageDefinition_MessagePart() {
+		return (EReference)messageDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSpecBase() {
+		return specBaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSpecBase_Name() {
+		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSpecBase_Fullname() {
+		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSpecBase_Package() {
+		return (EReference)specBaseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTopicSpec() {
+		return topicSpecEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTopicSpec_Message() {
+		return (EReference)topicSpecEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceSpec() {
+		return serviceSpecEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getServiceSpec_Request() {
+		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getServiceSpec_Response() {
+		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getActionSpec() {
+		return actionSpecEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActionSpec_Goal() {
+		return (EReference)actionSpecEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActionSpec_Result() {
+		return (EReference)actionSpecEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActionSpec_Feedback() {
+		return (EReference)actionSpecEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public PrimitivesFactory getPrimitivesFactory() {
 		return (PrimitivesFactory)getEFactoryInstance();
 	}
@@ -714,10 +943,6 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 		// Create classes and their features
 		abstractTypeEClass = createEClass(ABSTRACT_TYPE);
-
-		messagePartEClass = createEClass(MESSAGE_PART);
-		createEReference(messagePartEClass, MESSAGE_PART__TYPE);
-		createEAttribute(messagePartEClass, MESSAGE_PART__DATA);
 
 		boolEClass = createEClass(BOOL);
 
@@ -771,17 +996,41 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 		stringArrayEClass = createEClass(STRING_ARRAY);
 
+		headerEClass = createEClass(HEADER);
+
+		byteEClass = createEClass(BYTE);
+
+		byteArrayEClass = createEClass(BYTE_ARRAY);
+
 		topicSpecRefEClass = createEClass(TOPIC_SPEC_REF);
 		createEReference(topicSpecRefEClass, TOPIC_SPEC_REF__TOPIC_SPEC);
 
 		arrayTopicSpecRefEClass = createEClass(ARRAY_TOPIC_SPEC_REF);
 		createEReference(arrayTopicSpecRefEClass, ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC);
 
-		headerEClass = createEClass(HEADER);
+		messagePartEClass = createEClass(MESSAGE_PART);
+		createEReference(messagePartEClass, MESSAGE_PART__TYPE);
+		createEAttribute(messagePartEClass, MESSAGE_PART__DATA);
 
-		byteEClass = createEClass(BYTE);
+		messageDefinitionEClass = createEClass(MESSAGE_DEFINITION);
+		createEReference(messageDefinitionEClass, MESSAGE_DEFINITION__MESSAGE_PART);
 
-		byteArrayEClass = createEClass(BYTE_ARRAY);
+		specBaseEClass = createEClass(SPEC_BASE);
+		createEAttribute(specBaseEClass, SPEC_BASE__NAME);
+		createEAttribute(specBaseEClass, SPEC_BASE__FULLNAME);
+		createEReference(specBaseEClass, SPEC_BASE__PACKAGE);
+
+		topicSpecEClass = createEClass(TOPIC_SPEC);
+		createEReference(topicSpecEClass, TOPIC_SPEC__MESSAGE);
+
+		serviceSpecEClass = createEClass(SERVICE_SPEC);
+		createEReference(serviceSpecEClass, SERVICE_SPEC__REQUEST);
+		createEReference(serviceSpecEClass, SERVICE_SPEC__RESPONSE);
+
+		actionSpecEClass = createEClass(ACTION_SPEC);
+		createEReference(actionSpecEClass, ACTION_SPEC__GOAL);
+		createEReference(actionSpecEClass, ACTION_SPEC__RESULT);
+		createEReference(actionSpecEClass, ACTION_SPEC__FEEDBACK);
 	}
 
 	/**
@@ -841,18 +1090,17 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		float32ArrayEClass.getESuperTypes().add(this.getAbstractType());
 		float64ArrayEClass.getESuperTypes().add(this.getAbstractType());
 		stringArrayEClass.getESuperTypes().add(this.getAbstractType());
-		topicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
-		arrayTopicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
 		headerEClass.getESuperTypes().add(this.getAbstractType());
 		byteEClass.getESuperTypes().add(this.getAbstractType());
 		byteArrayEClass.getESuperTypes().add(this.getAbstractType());
+		topicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
+		arrayTopicSpecRefEClass.getESuperTypes().add(this.getAbstractType());
+		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
+		serviceSpecEClass.getESuperTypes().add(this.getSpecBase());
+		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTypeEClass, AbstractType.class, "AbstractType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(messagePartEClass, MessagePart.class, "MessagePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessagePart_Type(), this.getAbstractType(), null, "Type", null, 1, 1, MessagePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessagePart_Data(), ecorePackage.getEString(), "Data", null, 1, 1, MessagePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(boolEClass, bool.class, "bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -906,17 +1154,41 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 		initEClass(stringArrayEClass, stringArray.class, "stringArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(topicSpecRefEClass, TopicSpecRef.class, "TopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTopicSpecRef_TopicSpec(), theRosPackage.getTopicSpec(), null, "TopicSpec", null, 1, 1, TopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(arrayTopicSpecRefEClass, ArrayTopicSpecRef.class, "ArrayTopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrayTopicSpecRef_TopicSpec(), theRosPackage.getTopicSpec(), null, "TopicSpec", null, 1, 1, ArrayTopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(byteEClass, primitives.Byte.class, "Byte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(byteArrayEClass, ByteArray.class, "ByteArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(topicSpecRefEClass, TopicSpecRef.class, "TopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTopicSpecRef_TopicSpec(), this.getTopicSpec(), null, "TopicSpec", null, 1, 1, TopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arrayTopicSpecRefEClass, ArrayTopicSpecRef.class, "ArrayTopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArrayTopicSpecRef_TopicSpec(), this.getTopicSpec(), null, "TopicSpec", null, 1, 1, ArrayTopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messagePartEClass, MessagePart.class, "MessagePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessagePart_Type(), this.getAbstractType(), null, "Type", null, 1, 1, MessagePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessagePart_Data(), ecorePackage.getEString(), "Data", null, 1, 1, MessagePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageDefinitionEClass, MessageDefinition.class, "MessageDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageDefinition_MessagePart(), this.getMessagePart(), null, "MessagePart", null, 0, -1, MessageDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(specBaseEClass, SpecBase.class, "SpecBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", "", 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecBase_Fullname(), ecorePackage.getEString(), "fullname", "", 1, 1, SpecBase.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecBase_Package(), theRosPackage.getPackage(), theRosPackage.getPackage_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(topicSpecEClass, TopicSpec.class, "TopicSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTopicSpec_Message(), this.getMessageDefinition(), null, "message", null, 0, 1, TopicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceSpecEClass, ServiceSpec.class, "ServiceSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceSpec_Request(), this.getMessageDefinition(), null, "request", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceSpec_Response(), this.getMessageDefinition(), null, "response", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionSpecEClass, ActionSpec.class, "ActionSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActionSpec_Goal(), this.getMessageDefinition(), null, "goal", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionSpec_Result(), this.getMessageDefinition(), null, "result", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionSpec_Feedback(), this.getMessageDefinition(), null, "feedback", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -9,8 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import primitives.ActionSpec;
+
 import ros.ActionClient;
-import ros.ActionSpec;
 import ros.RosPackage;
 
 /**
@@ -61,6 +62,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionSpec getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
@@ -87,6 +89,7 @@ public class ActionClientImpl extends NamespacedElementImpl implements ActionCli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAction(ActionSpec newAction) {
 		ActionSpec oldAction = action;
 		action = newAction;

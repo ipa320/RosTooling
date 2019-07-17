@@ -16,7 +16,7 @@ PackageSet returns PackageSet:
 Package returns Package:
 	Package_Impl | CatkinPackage;
 
-SpecBase returns SpecBase:
+SpecBase returns primitives::SpecBase:
 	ServiceSpec | TopicSpec | ActionSpec;
 
 Dependency returns Dependency:
@@ -65,8 +65,8 @@ CatkinPackage returns CatkinPackage:
 		('dependency' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
 	'}';
 
-ServiceSpec returns ServiceSpec:
-	{ServiceSpec}
+ServiceSpec returns primitives::ServiceSpec:
+	{primitives::ServiceSpec}
 	'ServiceSpec'
 	name=EString
 	'{'
@@ -74,16 +74,16 @@ ServiceSpec returns ServiceSpec:
 		('response' response=MessageDefinition)?
 	'}';
 
-TopicSpec returns TopicSpec:
-	{TopicSpec}
+TopicSpec returns primitives::TopicSpec:
+	{primitives::TopicSpec}
 	'TopicSpec'
 	name=(EString|'Header')
 	'{'
 		('message' message=MessageDefinition)?
 	'}';
 
-ActionSpec returns ActionSpec:
-	{ActionSpec}
+ActionSpec returns primitives::ActionSpec:
+	{primitives::ActionSpec}
 	'ActionSpec'
 	name=EString
 	'{'
@@ -93,8 +93,8 @@ ActionSpec returns ActionSpec:
 	'}';
 
 
-MessageDefinition returns MessageDefinition:
-	{MessageDefinition}
+MessageDefinition returns primitives::MessageDefinition:
+	{primitives::MessageDefinition}
 	'{'
 		( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
 	'}';
@@ -116,7 +116,7 @@ ServiceServer returns ServiceServer:
 	'ServiceServer'
 	'{'
 		'name' name=EString
-		'service' service=[ServiceSpec|EString]
+		'service' service=[primitives::ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -124,7 +124,7 @@ Publisher returns Publisher:
 	'Publisher'
 	'{'
 		'name' name=EString
-		'message' message=[TopicSpec|EString]
+		'message' message=[primitives::TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -132,7 +132,7 @@ Subscriber returns Subscriber:
 	'Subscriber'
 	'{'
 		'name' name=EString
-		'message' message=[TopicSpec|EString]
+		'message' message=[primitives::TopicSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -140,7 +140,7 @@ ServiceClient returns ServiceClient:
 	'ServiceClient'
 	'{'
 		'name' name=EString
-		'service' service=[ServiceSpec|EString]
+		'service' service=[primitives::ServiceSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -148,7 +148,7 @@ ActionServer returns ActionServer:
 	'ActionServer'
 	'{'
 		'name' name=EString
-		'action' action=[ActionSpec|EString]
+		'action' action=[primitives::ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -156,7 +156,7 @@ ActionClient returns ActionClient:
 	'ActionClient'
 	'{'
 		'name' name=EString
-		'action' action=[ActionSpec|EString]
+		'action' action=[primitives::ActionSpec|EString]
 		('namespace' namespace=Namespace)?
 	'}';
 
@@ -535,11 +535,11 @@ Header returns primitives::Header:
 ;
 
 TopicSpecRef returns primitives::TopicSpecRef:
-	TopicSpec=[TopicSpec|EString]
+	TopicSpec=[primitives::TopicSpec|EString]
 ;
 
 ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
-	TopicSpec=[TopicSpec|EString]'[]'
+	TopicSpec=[primitives::TopicSpec|EString]'[]'
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;

@@ -1,6 +1,6 @@
 /**
  */
-package ros.provider;
+package primitives.provider;
 
 
 import java.util.Collection;
@@ -14,24 +14,24 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.RosFactory;
-import ros.RosPackage;
-import ros.TopicSpec;
+import primitives.PrimitivesFactory;
+import primitives.PrimitivesPackage;
+import primitives.ServiceSpec;
 
 /**
- * This is the item provider adapter for a {@link ros.TopicSpec} object.
+ * This is the item provider adapter for a {@link primitives.ServiceSpec} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TopicSpecItemProvider extends SpecBaseItemProvider {
+public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopicSpecItemProvider(AdapterFactory adapterFactory) {
+	public ServiceSpecItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,7 +62,8 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.TOPIC_SPEC__MESSAGE);
+			childrenFeatures.add(PrimitivesPackage.Literals.SERVICE_SPEC__REQUEST);
+			childrenFeatures.add(PrimitivesPackage.Literals.SERVICE_SPEC__RESPONSE);
 		}
 		return childrenFeatures;
 	}
@@ -81,14 +82,14 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 	}
 
 	/**
-	 * This returns TopicSpec.gif.
+	 * This returns ServiceSpec.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TopicSpec"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceSpec"));
 	}
 
 	/**
@@ -99,12 +100,12 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TopicSpec)object).getName();
+		String label = ((ServiceSpec)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TopicSpec_type") :
-			getString("_UI_TopicSpec_type") + " " + label;
+			getString("_UI_ServiceSpec_type") :
+			getString("_UI_ServiceSpec_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -117,8 +118,9 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TopicSpec.class)) {
-			case RosPackage.TOPIC_SPEC__MESSAGE:
+		switch (notification.getFeatureID(ServiceSpec.class)) {
+			case PrimitivesPackage.SERVICE_SPEC__REQUEST:
+			case PrimitivesPackage.SERVICE_SPEC__RESPONSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,8 +140,36 @@ public class TopicSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.TOPIC_SPEC__MESSAGE,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
+				(PrimitivesPackage.Literals.SERVICE_SPEC__REQUEST,
+				 PrimitivesFactory.eINSTANCE.createMessageDefinition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PrimitivesPackage.Literals.SERVICE_SPEC__RESPONSE,
+				 PrimitivesFactory.eINSTANCE.createMessageDefinition()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == PrimitivesPackage.Literals.SERVICE_SPEC__REQUEST ||
+			childFeature == PrimitivesPackage.Literals.SERVICE_SPEC__RESPONSE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

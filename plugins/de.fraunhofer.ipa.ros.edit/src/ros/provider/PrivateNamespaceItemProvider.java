@@ -76,7 +76,6 @@ public class PrivateNamespaceItemProvider extends RelativeNamespaceItemProvider 
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

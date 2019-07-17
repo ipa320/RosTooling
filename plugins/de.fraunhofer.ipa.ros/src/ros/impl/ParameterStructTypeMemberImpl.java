@@ -96,6 +96,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -105,6 +106,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -117,6 +119,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterType getType() {
 		return type;
 	}
@@ -141,6 +144,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ParameterType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -160,6 +164,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterStruct getDefault() {
 		return default_;
 	}
@@ -184,6 +189,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterStruct newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;
@@ -301,7 +307,7 @@ public class ParameterStructTypeMemberImpl extends MinimalEObjectImpl.Container 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

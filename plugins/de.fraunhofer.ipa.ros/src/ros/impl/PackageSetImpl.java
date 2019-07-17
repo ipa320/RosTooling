@@ -67,6 +67,7 @@ public class PackageSetImpl extends MinimalEObjectImpl.Container implements Pack
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ros.Package> getPackage() {
 		if (package_ == null) {
 			package_ = new EObjectContainmentEList<ros.Package>(ros.Package.class, this, RosPackage.PACKAGE_SET__PACKAGE);

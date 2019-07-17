@@ -1,6 +1,6 @@
 /**
  */
-package ros.impl;
+package primitives.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import ros.ActionSpec;
-import ros.MessageDefinition;
-import ros.RosPackage;
+import primitives.ActionSpec;
+import primitives.MessageDefinition;
+import primitives.PrimitivesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +22,9 @@ import ros.RosPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ros.impl.ActionSpecImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link ros.impl.ActionSpecImpl#getResult <em>Result</em>}</li>
- *   <li>{@link ros.impl.ActionSpecImpl#getFeedback <em>Feedback</em>}</li>
+ *   <li>{@link primitives.impl.ActionSpecImpl#getGoal <em>Goal</em>}</li>
+ *   <li>{@link primitives.impl.ActionSpecImpl#getResult <em>Result</em>}</li>
+ *   <li>{@link primitives.impl.ActionSpecImpl#getFeedback <em>Feedback</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,7 +76,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RosPackage.Literals.ACTION_SPEC;
+		return PrimitivesPackage.Literals.ACTION_SPEC;
 	}
 
 	/**
@@ -84,6 +84,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getGoal() {
 		return goal;
 	}
@@ -97,7 +98,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 		MessageDefinition oldGoal = goal;
 		goal = newGoal;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__GOAL, oldGoal, newGoal);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__GOAL, oldGoal, newGoal);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -108,18 +109,19 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGoal(MessageDefinition newGoal) {
 		if (newGoal != goal) {
 			NotificationChain msgs = null;
 			if (goal != null)
-				msgs = ((InternalEObject)goal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__GOAL, null, msgs);
+				msgs = ((InternalEObject)goal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__GOAL, null, msgs);
 			if (newGoal != null)
-				msgs = ((InternalEObject)newGoal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__GOAL, null, msgs);
+				msgs = ((InternalEObject)newGoal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__GOAL, null, msgs);
 			msgs = basicSetGoal(newGoal, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__GOAL, newGoal, newGoal));
+			eNotify(new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__GOAL, newGoal, newGoal));
 	}
 
 	/**
@@ -127,6 +129,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getResult() {
 		return result;
 	}
@@ -140,7 +143,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 		MessageDefinition oldResult = result;
 		result = newResult;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__RESULT, oldResult, newResult);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__RESULT, oldResult, newResult);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -151,18 +154,19 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResult(MessageDefinition newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
 			if (result != null)
-				msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__RESULT, null, msgs);
+				msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__RESULT, null, msgs);
 			if (newResult != null)
-				msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__RESULT, null, msgs);
+				msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__RESULT, null, msgs);
 			msgs = basicSetResult(newResult, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__RESULT, newResult, newResult));
+			eNotify(new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__RESULT, newResult, newResult));
 	}
 
 	/**
@@ -170,6 +174,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getFeedback() {
 		return feedback;
 	}
@@ -183,7 +188,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 		MessageDefinition oldFeedback = feedback;
 		feedback = newFeedback;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__FEEDBACK, oldFeedback, newFeedback);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__FEEDBACK, oldFeedback, newFeedback);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -194,18 +199,19 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFeedback(MessageDefinition newFeedback) {
 		if (newFeedback != feedback) {
 			NotificationChain msgs = null;
 			if (feedback != null)
-				msgs = ((InternalEObject)feedback).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__FEEDBACK, null, msgs);
+				msgs = ((InternalEObject)feedback).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__FEEDBACK, null, msgs);
 			if (newFeedback != null)
-				msgs = ((InternalEObject)newFeedback).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.ACTION_SPEC__FEEDBACK, null, msgs);
+				msgs = ((InternalEObject)newFeedback).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrimitivesPackage.ACTION_SPEC__FEEDBACK, null, msgs);
 			msgs = basicSetFeedback(newFeedback, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.ACTION_SPEC__FEEDBACK, newFeedback, newFeedback));
+			eNotify(new ENotificationImpl(this, Notification.SET, PrimitivesPackage.ACTION_SPEC__FEEDBACK, newFeedback, newFeedback));
 	}
 
 	/**
@@ -216,11 +222,11 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RosPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
 				return basicSetGoal(null, msgs);
-			case RosPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
 				return basicSetResult(null, msgs);
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				return basicSetFeedback(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -234,11 +240,11 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RosPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
 				return getGoal();
-			case RosPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
 				return getResult();
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				return getFeedback();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -252,13 +258,13 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RosPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
 				setGoal((MessageDefinition)newValue);
 				return;
-			case RosPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
 				setResult((MessageDefinition)newValue);
 				return;
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				setFeedback((MessageDefinition)newValue);
 				return;
 		}
@@ -273,13 +279,13 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RosPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
 				setGoal((MessageDefinition)null);
 				return;
-			case RosPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
 				setResult((MessageDefinition)null);
 				return;
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				setFeedback((MessageDefinition)null);
 				return;
 		}
@@ -294,11 +300,11 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RosPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
 				return goal != null;
-			case RosPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
 				return result != null;
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				return feedback != null;
 		}
 		return super.eIsSet(featureID);

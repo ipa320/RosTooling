@@ -118,29 +118,6 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ros.ServiceSpec} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceSpecItemProvider serviceSpecItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.ServiceSpec}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceSpecAdapter() {
-		if (serviceSpecItemProvider == null) {
-			serviceSpecItemProvider = new ServiceSpecItemProvider(this);
-		}
-
-		return serviceSpecItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link ros.ServiceServer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,29 +138,6 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		}
 
 		return serviceServerItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ros.TopicSpec} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TopicSpecItemProvider topicSpecItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.TopicSpec}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTopicSpecAdapter() {
-		if (topicSpecItemProvider == null) {
-			topicSpecItemProvider = new TopicSpecItemProvider(this);
-		}
-
-		return topicSpecItemProvider;
 	}
 
 	/**
@@ -368,29 +322,6 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		}
 
 		return packageSetItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link ros.ActionSpec} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionSpecItemProvider actionSpecItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link ros.ActionSpec}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionSpecAdapter() {
-		if (actionSpecItemProvider == null) {
-			actionSpecItemProvider = new ActionSpecItemProvider(this);
-		}
-
-		return actionSpecItemProvider;
 	}
 
 	/**
@@ -1066,6 +997,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -1076,6 +1008,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -1124,6 +1057,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -1134,6 +1068,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -1144,6 +1079,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -1158,12 +1094,11 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (nodeItemProvider != null) nodeItemProvider.dispose();
 		if (packageItemProvider != null) packageItemProvider.dispose();
-		if (serviceSpecItemProvider != null) serviceSpecItemProvider.dispose();
 		if (serviceServerItemProvider != null) serviceServerItemProvider.dispose();
-		if (topicSpecItemProvider != null) topicSpecItemProvider.dispose();
 		if (packageDependencyItemProvider != null) packageDependencyItemProvider.dispose();
 		if (externalDependencyItemProvider != null) externalDependencyItemProvider.dispose();
 		if (catkinPackageItemProvider != null) catkinPackageItemProvider.dispose();
@@ -1172,7 +1107,6 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		if (subscriberItemProvider != null) subscriberItemProvider.dispose();
 		if (serviceClientItemProvider != null) serviceClientItemProvider.dispose();
 		if (packageSetItemProvider != null) packageSetItemProvider.dispose();
-		if (actionSpecItemProvider != null) actionSpecItemProvider.dispose();
 		if (actionServerItemProvider != null) actionServerItemProvider.dispose();
 		if (actionClientItemProvider != null) actionClientItemProvider.dispose();
 		if (messageDefinitionItemProvider != null) messageDefinitionItemProvider.dispose();

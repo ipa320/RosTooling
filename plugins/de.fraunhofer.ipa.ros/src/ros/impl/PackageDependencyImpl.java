@@ -60,6 +60,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ros.Package getPackage() {
 		if (package_ != null && package_.eIsProxy()) {
 			InternalEObject oldPackage = (InternalEObject)package_;
@@ -86,6 +87,7 @@ public class PackageDependencyImpl extends DependencyImpl implements PackageDepe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPackage(ros.Package newPackage) {
 		ros.Package oldPackage = package_;
 		package_ = newPackage;

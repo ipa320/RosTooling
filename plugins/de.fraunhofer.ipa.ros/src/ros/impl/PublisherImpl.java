@@ -9,9 +9,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import primitives.TopicSpec;
+
 import ros.Publisher;
 import ros.RosPackage;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,6 +62,7 @@ public class PublisherImpl extends NamespacedElementImpl implements Publisher {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicSpec getMessage() {
 		if (message != null && message.eIsProxy()) {
 			InternalEObject oldMessage = (InternalEObject)message;
@@ -87,6 +89,7 @@ public class PublisherImpl extends NamespacedElementImpl implements Publisher {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessage(TopicSpec newMessage) {
 		TopicSpec oldMessage = message;
 		message = newMessage;

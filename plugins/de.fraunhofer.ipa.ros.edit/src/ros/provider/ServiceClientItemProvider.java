@@ -106,7 +106,6 @@ public class ServiceClientItemProvider extends NamespacedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

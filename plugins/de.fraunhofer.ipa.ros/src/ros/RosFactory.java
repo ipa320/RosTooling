@@ -40,15 +40,6 @@ public interface RosFactory extends EFactory {
 	Package createPackage();
 
 	/**
-	 * Returns a new object of class '<em>Service Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Spec</em>'.
-	 * @generated
-	 */
-	ServiceSpec createServiceSpec();
-
-	/**
 	 * Returns a new object of class '<em>Service Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,15 +47,6 @@ public interface RosFactory extends EFactory {
 	 * @generated
 	 */
 	ServiceServer createServiceServer();
-
-	/**
-	 * Returns a new object of class '<em>Topic Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Topic Spec</em>'.
-	 * @generated
-	 */
-	TopicSpec createTopicSpec();
 
 	/**
 	 * Returns a new object of class '<em>Publisher</em>'.
@@ -137,15 +119,6 @@ public interface RosFactory extends EFactory {
 	 * @generated
 	 */
 	PackageSet createPackageSet();
-
-	/**
-	 * Returns a new object of class '<em>Action Spec</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action Spec</em>'.
-	 * @generated
-	 */
-	ActionSpec createActionSpec();
 
 	/**
 	 * Returns a new object of class '<em>Action Server</em>'.

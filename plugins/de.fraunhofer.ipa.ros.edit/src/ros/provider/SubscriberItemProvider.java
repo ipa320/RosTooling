@@ -106,7 +106,6 @@ public class SubscriberItemProvider extends NamespacedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

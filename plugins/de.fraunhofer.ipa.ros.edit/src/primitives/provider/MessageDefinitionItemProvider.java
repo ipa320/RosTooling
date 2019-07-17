@@ -1,6 +1,6 @@
 /**
  */
-package ros.provider;
+package primitives.provider;
 
 
 import java.util.Collection;
@@ -9,29 +9,46 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.ActionSpec;
-import ros.RosFactory;
-import ros.RosPackage;
+import primitives.MessageDefinition;
+import primitives.PrimitivesFactory;
+import primitives.PrimitivesPackage;
+
+import ros.provider.RosEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link ros.ActionSpec} object.
+ * This is the item provider adapter for a {@link primitives.MessageDefinition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionSpecItemProvider extends SpecBaseItemProvider {
+public class MessageDefinitionItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionSpecItemProvider(AdapterFactory adapterFactory) {
+	public MessageDefinitionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,9 +79,7 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__GOAL);
-			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__RESULT);
-			childrenFeatures.add(RosPackage.Literals.ACTION_SPEC__FEEDBACK);
+			childrenFeatures.add(PrimitivesPackage.Literals.MESSAGE_DEFINITION__MESSAGE_PART);
 		}
 		return childrenFeatures;
 	}
@@ -83,14 +98,14 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	}
 
 	/**
-	 * This returns ActionSpec.gif.
+	 * This returns MessageDefinition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionSpec"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MessageDefinition"));
 	}
 
 	/**
@@ -101,12 +116,9 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActionSpec)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ActionSpec_type") :
-			getString("_UI_ActionSpec_type") + " " + label;
+		return getString("_UI_MessageDefinition_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -119,10 +131,8 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ActionSpec.class)) {
-			case RosPackage.ACTION_SPEC__GOAL:
-			case RosPackage.ACTION_SPEC__RESULT:
-			case RosPackage.ACTION_SPEC__FEEDBACK:
+		switch (notification.getFeatureID(MessageDefinition.class)) {
+			case PrimitivesPackage.MESSAGE_DEFINITION__MESSAGE_PART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,42 +152,19 @@ public class ActionSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.ACTION_SPEC__GOAL,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.ACTION_SPEC__RESULT,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.ACTION_SPEC__FEEDBACK,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
+				(PrimitivesPackage.Literals.MESSAGE_DEFINITION__MESSAGE_PART,
+				 PrimitivesFactory.eINSTANCE.createMessagePart()));
 	}
 
 	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == RosPackage.Literals.ACTION_SPEC__GOAL ||
-			childFeature == RosPackage.Literals.ACTION_SPEC__RESULT ||
-			childFeature == RosPackage.Literals.ACTION_SPEC__FEEDBACK;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+	public ResourceLocator getResourceLocator() {
+		return RosEditPlugin.INSTANCE;
 	}
 
 }

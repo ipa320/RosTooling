@@ -256,24 +256,6 @@ public interface PrimitivesFactory extends EFactory {
 	stringArray createstringArray();
 
 	/**
-	 * Returns a new object of class '<em>Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Topic Spec Ref</em>'.
-	 * @generated
-	 */
-	TopicSpecRef createTopicSpecRef();
-
-	/**
-	 * Returns a new object of class '<em>Array Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Array Topic Spec Ref</em>'.
-	 * @generated
-	 */
-	ArrayTopicSpecRef createArrayTopicSpecRef();
-
-	/**
 	 * Returns a new object of class '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -301,6 +283,24 @@ public interface PrimitivesFactory extends EFactory {
 	ByteArray createByteArray();
 
 	/**
+	 * Returns a new object of class '<em>Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Topic Spec Ref</em>'.
+	 * @generated
+	 */
+	TopicSpecRef createTopicSpecRef();
+
+	/**
+	 * Returns a new object of class '<em>Array Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Topic Spec Ref</em>'.
+	 * @generated
+	 */
+	ArrayTopicSpecRef createArrayTopicSpecRef();
+
+	/**
 	 * Returns a new object of class '<em>Message Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,6 +308,42 @@ public interface PrimitivesFactory extends EFactory {
 	 * @generated
 	 */
 	MessagePart createMessagePart();
+
+	/**
+	 * Returns a new object of class '<em>Message Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Definition</em>'.
+	 * @generated
+	 */
+	MessageDefinition createMessageDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Topic Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Topic Spec</em>'.
+	 * @generated
+	 */
+	TopicSpec createTopicSpec();
+
+	/**
+	 * Returns a new object of class '<em>Service Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Spec</em>'.
+	 * @generated
+	 */
+	ServiceSpec createServiceSpec();
+
+	/**
+	 * Returns a new object of class '<em>Action Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action Spec</em>'.
+	 * @generated
+	 */
+	ActionSpec createActionSpec();
 
 	/**
 	 * Returns the package supported by this factory.

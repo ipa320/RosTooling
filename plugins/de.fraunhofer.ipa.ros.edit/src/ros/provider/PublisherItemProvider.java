@@ -106,7 +106,6 @@ public class PublisherItemProvider extends NamespacedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

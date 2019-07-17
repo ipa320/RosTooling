@@ -27,4 +27,5 @@ Import-Package: org.eclipse.core.commands,
  org.eclipse.ui.actions,
  org.eclipse.ui.dialogs,
  org.eclipse.ui.handlers,
+ primitives,
  ros

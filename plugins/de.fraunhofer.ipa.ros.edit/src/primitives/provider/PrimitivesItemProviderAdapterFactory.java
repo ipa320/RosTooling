@@ -807,11 +807,104 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link primitives.MessageDefinition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageDefinitionItemProvider messageDefinitionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.MessageDefinition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageDefinitionAdapter() {
+		if (messageDefinitionItemProvider == null) {
+			messageDefinitionItemProvider = new MessageDefinitionItemProvider(this);
+		}
+
+		return messageDefinitionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.TopicSpec} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TopicSpecItemProvider topicSpecItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.TopicSpec}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTopicSpecAdapter() {
+		if (topicSpecItemProvider == null) {
+			topicSpecItemProvider = new TopicSpecItemProvider(this);
+		}
+
+		return topicSpecItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.ServiceSpec} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServiceSpecItemProvider serviceSpecItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.ServiceSpec}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServiceSpecAdapter() {
+		if (serviceSpecItemProvider == null) {
+			serviceSpecItemProvider = new ServiceSpecItemProvider(this);
+		}
+
+		return serviceSpecItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link primitives.ActionSpec} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActionSpecItemProvider actionSpecItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link primitives.ActionSpec}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActionSpecAdapter() {
+		if (actionSpecItemProvider == null) {
+			actionSpecItemProvider = new ActionSpecItemProvider(this);
+		}
+
+		return actionSpecItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -822,6 +915,7 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -870,6 +964,7 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -880,6 +975,7 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -890,6 +986,7 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 

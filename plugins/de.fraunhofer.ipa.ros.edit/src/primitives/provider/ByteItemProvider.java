@@ -76,7 +76,6 @@ public class ByteItemProvider extends AbstractTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

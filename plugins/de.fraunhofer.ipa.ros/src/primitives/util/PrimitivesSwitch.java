@@ -8,11 +8,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import primitives.AbstractType;
+import primitives.ActionSpec;
 import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
+import primitives.MessageDefinition;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
+import primitives.ServiceSpec;
+import primitives.SpecBase;
+import primitives.TopicSpec;
 import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
@@ -40,7 +45,6 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
-import primitives.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,12 +106,6 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 			case PrimitivesPackage.ABSTRACT_TYPE: {
 				AbstractType abstractType = (AbstractType)theEObject;
 				T result = caseAbstractType(abstractType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrimitivesPackage.MESSAGE_PART: {
-				MessagePart messagePart = (MessagePart)theEObject;
-				T result = caseMessagePart(messagePart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -293,20 +291,6 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PrimitivesPackage.TOPIC_SPEC_REF: {
-				TopicSpecRef topicSpecRef = (TopicSpecRef)theEObject;
-				T result = caseTopicSpecRef(topicSpecRef);
-				if (result == null) result = caseAbstractType(topicSpecRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: {
-				ArrayTopicSpecRef arrayTopicSpecRef = (ArrayTopicSpecRef)theEObject;
-				T result = caseArrayTopicSpecRef(arrayTopicSpecRef);
-				if (result == null) result = caseAbstractType(arrayTopicSpecRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PrimitivesPackage.HEADER: {
 				Header header = (Header)theEObject;
 				T result = caseHeader(header);
@@ -328,8 +312,76 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PrimitivesPackage.TOPIC_SPEC_REF: {
+				TopicSpecRef topicSpecRef = (TopicSpecRef)theEObject;
+				T result = caseTopicSpecRef(topicSpecRef);
+				if (result == null) result = caseAbstractType(topicSpecRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: {
+				ArrayTopicSpecRef arrayTopicSpecRef = (ArrayTopicSpecRef)theEObject;
+				T result = caseArrayTopicSpecRef(arrayTopicSpecRef);
+				if (result == null) result = caseAbstractType(arrayTopicSpecRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.MESSAGE_PART: {
+				MessagePart messagePart = (MessagePart)theEObject;
+				T result = caseMessagePart(messagePart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.MESSAGE_DEFINITION: {
+				MessageDefinition messageDefinition = (MessageDefinition)theEObject;
+				T result = caseMessageDefinition(messageDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.SPEC_BASE: {
+				SpecBase specBase = (SpecBase)theEObject;
+				T result = caseSpecBase(specBase);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.TOPIC_SPEC: {
+				TopicSpec topicSpec = (TopicSpec)theEObject;
+				T result = caseTopicSpec(topicSpec);
+				if (result == null) result = caseSpecBase(topicSpec);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.SERVICE_SPEC: {
+				ServiceSpec serviceSpec = (ServiceSpec)theEObject;
+				T result = caseServiceSpec(serviceSpec);
+				if (result == null) result = caseSpecBase(serviceSpec);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PrimitivesPackage.ACTION_SPEC: {
+				ActionSpec actionSpec = (ActionSpec)theEObject;
+				T result = caseActionSpec(actionSpec);
+				if (result == null) result = caseSpecBase(actionSpec);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractType(AbstractType object) {
+		return null;
 	}
 
 	/**
@@ -494,21 +546,6 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casefloat64(float64 object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractType(AbstractType object) {
 		return null;
 	}
 
@@ -738,36 +775,6 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTopicSpecRef(TopicSpecRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -813,6 +820,36 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTopicSpecRef(TopicSpecRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Message Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -824,6 +861,81 @@ public class PrimitivesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMessagePart(MessagePart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageDefinition(MessageDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Spec Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Spec Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpecBase(SpecBase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Topic Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Topic Spec</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTopicSpec(TopicSpec object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Spec</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceSpec(ServiceSpec object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Spec</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionSpec(ActionSpec object) {
 		return null;
 	}
 

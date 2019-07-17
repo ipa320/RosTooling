@@ -3,11 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="primitives" nsURI="http://www.ipa.fraunhofer.de/primitives"
     nsPrefix="primitives">
   <eClassifiers xsi:type="ecore:EClass" name="AbstractType" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MessagePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" lowerBound="1" eType="#//AbstractType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Data" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="bool" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="int8" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="uint8" eSuperTypes="#//AbstractType"/>
@@ -34,15 +29,52 @@
   <eClassifiers xsi:type="ecore:EClass" name="float32Array" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="float64Array" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="stringArray" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Byte" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ByteArray" eSuperTypes="#//AbstractType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef" eSuperTypes="#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
+        eType="#//TopicSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecRef" eSuperTypes="#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
+        eType="#//TopicSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessagePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" lowerBound="1" eType="#//AbstractType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Data" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MessagePart" upperBound="-1"
+        eType="#//MessagePart" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecBase" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
+        eType="ecore:EClass ros.ecore#//Package" eOpposite="ros.ecore#//Package/spec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopicSpec" eSuperTypes="#//SpecBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//MessageDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceSpec" eSuperTypes="#//SpecBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" eType="#//MessageDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//MessageDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionSpec" eSuperTypes="#//SpecBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//MessageDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//MessageDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" eType="#//MessageDefinition"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

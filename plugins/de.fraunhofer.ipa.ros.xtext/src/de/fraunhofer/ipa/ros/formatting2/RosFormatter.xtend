@@ -9,7 +9,7 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import ros.Artifact
 import ros.PackageSet
-import ros.SpecBase
+import primitives.SpecBase
 
 class RosFormatter extends AbstractFormatter2 {
 	

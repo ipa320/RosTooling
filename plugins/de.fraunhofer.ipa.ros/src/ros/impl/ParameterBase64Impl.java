@@ -69,6 +69,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public byte[] getValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(byte[] newValue) {
 		byte[] oldValue = value;
 		value = newValue;
@@ -152,7 +154,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

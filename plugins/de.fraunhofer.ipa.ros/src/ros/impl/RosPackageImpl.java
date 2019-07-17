@@ -16,7 +16,6 @@ import primitives.PrimitivesPackage;
 import primitives.impl.PrimitivesPackageImpl;
 import ros.ActionClient;
 import ros.ActionServer;
-import ros.ActionSpec;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -59,10 +58,7 @@ import ros.RosFactory;
 import ros.RosPackage;
 import ros.ServiceClient;
 import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.SpecBase;
 import ros.Subscriber;
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,21 +93,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceSpecEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass serviceServerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass topicSpecEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,13 +135,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass specBaseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass subscriberEClass = null;
 
 	/**
@@ -175,13 +150,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	private EClass packageSetEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionSpecEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -442,7 +410,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link RosPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -456,7 +424,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		if (isInited) return (RosPackage)EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
 
 		// Obtain or create and register package
-		RosPackageImpl theRosPackage = (RosPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RosPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RosPackageImpl());
+		Object registeredRosPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		RosPackageImpl theRosPackage = registeredRosPackage instanceof RosPackageImpl ? (RosPackageImpl)registeredRosPackage : new RosPackageImpl();
 
 		isInited = true;
 
@@ -464,7 +433,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		XMLTypePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) instanceof PrimitivesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) : PrimitivesPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI);
+		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(registeredPackage instanceof PrimitivesPackageImpl ? registeredPackage : PrimitivesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRosPackage.createPackageContents();
@@ -477,7 +447,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Mark meta-data to indicate it can't be changed
 		theRosPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RosPackage.eNS_URI, theRosPackage);
 		return theRosPackage;
@@ -488,6 +457,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNode() {
 		return nodeEClass;
 	}
@@ -497,6 +467,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Serviceserver() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
 	}
@@ -506,6 +477,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Publisher() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
 	}
@@ -515,6 +487,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Subscriber() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(2);
 	}
@@ -524,6 +497,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Serviceclient() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(3);
 	}
@@ -533,6 +507,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Actionserver() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(4);
 	}
@@ -542,6 +517,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Actionclient() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(5);
 	}
@@ -551,6 +527,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Name() {
 		return (EAttribute)nodeEClass.getEStructuralFeatures().get(6);
 	}
@@ -560,6 +537,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Parameter() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(7);
 	}
@@ -569,6 +547,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPackage() {
 		return packageEClass;
 	}
@@ -578,6 +557,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPackage_Name() {
 		return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
 	}
@@ -587,6 +567,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPackage_Spec() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(1);
 	}
@@ -596,6 +577,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPackage_Artifact() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(2);
 	}
@@ -605,6 +587,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDependency() {
 		return dependencyEClass;
 	}
@@ -614,33 +597,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getServiceSpec() {
-		return serviceSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceSpec_Request() {
-		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getServiceSpec_Response() {
-		return (EReference)serviceSpecEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getServiceServer() {
 		return serviceServerEClass;
 	}
@@ -650,6 +607,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceServer_Service() {
 		return (EReference)serviceServerEClass.getEStructuralFeatures().get(0);
 	}
@@ -659,24 +617,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTopicSpec() {
-		return topicSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTopicSpec_Message() {
-		return (EReference)topicSpecEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getPublisher() {
 		return publisherEClass;
 	}
@@ -686,6 +627,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPublisher_Message() {
 		return (EReference)publisherEClass.getEStructuralFeatures().get(0);
 	}
@@ -695,6 +637,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPackageDependency() {
 		return packageDependencyEClass;
 	}
@@ -704,6 +647,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPackageDependency_Package() {
 		return (EReference)packageDependencyEClass.getEStructuralFeatures().get(0);
 	}
@@ -713,6 +657,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalDependency() {
 		return externalDependencyEClass;
 	}
@@ -722,6 +667,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExternalDependency_Name() {
 		return (EAttribute)externalDependencyEClass.getEStructuralFeatures().get(0);
 	}
@@ -731,6 +677,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCatkinPackage() {
 		return catkinPackageEClass;
 	}
@@ -740,6 +687,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCatkinPackage_Dependency() {
 		return (EReference)catkinPackageEClass.getEStructuralFeatures().get(0);
 	}
@@ -749,6 +697,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArtifact() {
 		return artifactEClass;
 	}
@@ -758,6 +707,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArtifact_Name() {
 		return (EAttribute)artifactEClass.getEStructuralFeatures().get(0);
 	}
@@ -767,6 +717,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArtifact_Node() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(1);
 	}
@@ -776,42 +727,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSpecBase() {
-		return specBaseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSpecBase_Name() {
-		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSpecBase_Package() {
-		return (EReference)specBaseEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSpecBase_Fullname() {
-		return (EAttribute)specBaseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getSubscriber() {
 		return subscriberEClass;
 	}
@@ -821,6 +737,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSubscriber_Message() {
 		return (EReference)subscriberEClass.getEStructuralFeatures().get(0);
 	}
@@ -830,6 +747,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceClient() {
 		return serviceClientEClass;
 	}
@@ -839,6 +757,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceClient_Service() {
 		return (EReference)serviceClientEClass.getEStructuralFeatures().get(0);
 	}
@@ -848,6 +767,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPackageSet() {
 		return packageSetEClass;
 	}
@@ -857,6 +777,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPackageSet_Package() {
 		return (EReference)packageSetEClass.getEStructuralFeatures().get(0);
 	}
@@ -866,42 +787,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getActionSpec() {
-		return actionSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Goal() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Result() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActionSpec_Feedback() {
-		return (EReference)actionSpecEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getActionServer() {
 		return actionServerEClass;
 	}
@@ -911,6 +797,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActionServer_Action() {
 		return (EReference)actionServerEClass.getEStructuralFeatures().get(0);
 	}
@@ -920,6 +807,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActionClient() {
 		return actionClientEClass;
 	}
@@ -929,6 +817,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActionClient_Action() {
 		return (EReference)actionClientEClass.getEStructuralFeatures().get(0);
 	}
@@ -938,6 +827,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageDefinition() {
 		return messageDefinitionEClass;
 	}
@@ -947,6 +837,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageDefinition_MessagePart() {
 		return (EReference)messageDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -956,6 +847,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamespace() {
 		return namespaceEClass;
 	}
@@ -965,6 +857,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamespace_Parts() {
 		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -974,6 +867,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGlobalNamespace() {
 		return globalNamespaceEClass;
 	}
@@ -983,6 +877,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRelativeNamespace() {
 		return relativeNamespaceEClass;
 	}
@@ -992,6 +887,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPrivateNamespace() {
 		return privateNamespaceEClass;
 	}
@@ -1001,6 +897,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamespacedElement() {
 		return namespacedElementEClass;
 	}
@@ -1010,6 +907,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNamespacedElement_Namespace() {
 		return (EReference)namespacedElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -1019,6 +917,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamespacedElement_Name() {
 		return (EAttribute)namespacedElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -1028,6 +927,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterType() {
 		return parameterTypeEClass;
 	}
@@ -1037,6 +937,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterListType() {
 		return parameterListTypeEClass;
 	}
@@ -1046,6 +947,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterListType_Sequence() {
 		return (EReference)parameterListTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1055,6 +957,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterListType_Default() {
 		return (EReference)parameterListTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1064,6 +967,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStructType() {
 		return parameterStructTypeEClass;
 	}
@@ -1073,6 +977,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStructType_Parameterstructypetmember() {
 		return (EReference)parameterStructTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1082,6 +987,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterIntegerType() {
 		return parameterIntegerTypeEClass;
 	}
@@ -1091,6 +997,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterIntegerType_Default() {
 		return (EReference)parameterIntegerTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1100,6 +1007,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStringType() {
 		return parameterStringTypeEClass;
 	}
@@ -1109,6 +1017,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStringType_Default() {
 		return (EReference)parameterStringTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1118,6 +1027,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterDoubleType() {
 		return parameterDoubleTypeEClass;
 	}
@@ -1127,6 +1037,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterDoubleType_Default() {
 		return (EReference)parameterDoubleTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1136,6 +1047,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -1145,6 +1057,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameter_Type() {
 		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -1154,6 +1067,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterDateType() {
 		return parameterDateTypeEClass;
 	}
@@ -1163,6 +1077,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterDateType_Default() {
 		return (EReference)parameterDateTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1172,6 +1087,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterBooleanType() {
 		return parameterBooleanTypeEClass;
 	}
@@ -1181,6 +1097,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterBooleanType_Default() {
 		return (EReference)parameterBooleanTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1190,6 +1107,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterBase64Type() {
 		return parameterBase64TypeEClass;
 	}
@@ -1199,6 +1117,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterBase64Type_Default() {
 		return (EReference)parameterBase64TypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1208,6 +1127,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterAnyType() {
 		return parameterAnyTypeEClass;
 	}
@@ -1217,6 +1137,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterAnyType_Default() {
 		return (EReference)parameterAnyTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1226,6 +1147,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStructTypeMember() {
 		return parameterStructTypeMemberEClass;
 	}
@@ -1235,6 +1157,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterStructTypeMember_Name() {
 		return (EAttribute)parameterStructTypeMemberEClass.getEStructuralFeatures().get(0);
 	}
@@ -1244,6 +1167,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStructTypeMember_Type() {
 		return (EReference)parameterStructTypeMemberEClass.getEStructuralFeatures().get(1);
 	}
@@ -1253,6 +1177,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStructTypeMember_Default() {
 		return (EReference)parameterStructTypeMemberEClass.getEStructuralFeatures().get(2);
 	}
@@ -1262,6 +1187,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterArrayType() {
 		return parameterArrayTypeEClass;
 	}
@@ -1271,6 +1197,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterArrayType_Type() {
 		return (EReference)parameterArrayTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1280,6 +1207,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterArrayType_Default() {
 		return (EReference)parameterArrayTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1289,6 +1217,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterValue() {
 		return parameterValueEClass;
 	}
@@ -1298,6 +1227,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterAny() {
 		return parameterAnyEClass;
 	}
@@ -1307,6 +1237,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterAny_Value() {
 		return (EAttribute)parameterAnyEClass.getEStructuralFeatures().get(0);
 	}
@@ -1316,6 +1247,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterString() {
 		return parameterStringEClass;
 	}
@@ -1325,6 +1257,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterString_Value() {
 		return (EAttribute)parameterStringEClass.getEStructuralFeatures().get(0);
 	}
@@ -1334,6 +1267,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterBase64() {
 		return parameterBase64EClass;
 	}
@@ -1343,6 +1277,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterBase64_Value() {
 		return (EAttribute)parameterBase64EClass.getEStructuralFeatures().get(0);
 	}
@@ -1352,6 +1287,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterInteger() {
 		return parameterIntegerEClass;
 	}
@@ -1361,6 +1297,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterInteger_Value() {
 		return (EAttribute)parameterIntegerEClass.getEStructuralFeatures().get(0);
 	}
@@ -1370,6 +1307,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterDouble() {
 		return parameterDoubleEClass;
 	}
@@ -1379,6 +1317,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterDouble_Value() {
 		return (EAttribute)parameterDoubleEClass.getEStructuralFeatures().get(0);
 	}
@@ -1388,6 +1327,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterBoolean() {
 		return parameterBooleanEClass;
 	}
@@ -1397,6 +1337,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterBoolean_Value() {
 		return (EAttribute)parameterBooleanEClass.getEStructuralFeatures().get(0);
 	}
@@ -1406,6 +1347,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterSequence() {
 		return parameterSequenceEClass;
 	}
@@ -1415,6 +1357,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSequence_Value() {
 		return (EReference)parameterSequenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1424,6 +1367,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStruct() {
 		return parameterStructEClass;
 	}
@@ -1433,6 +1377,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStruct_Value() {
 		return (EReference)parameterStructEClass.getEStructuralFeatures().get(0);
 	}
@@ -1442,6 +1387,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStructMember() {
 		return parameterStructMemberEClass;
 	}
@@ -1451,6 +1397,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterStructMember_Name() {
 		return (EAttribute)parameterStructMemberEClass.getEStructuralFeatures().get(0);
 	}
@@ -1460,6 +1407,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStructMember_Value() {
 		return (EReference)parameterStructMemberEClass.getEStructuralFeatures().get(1);
 	}
@@ -1469,6 +1417,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterDate() {
 		return parameterDateEClass;
 	}
@@ -1478,6 +1427,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterDate_Value() {
 		return (EAttribute)parameterDateEClass.getEStructuralFeatures().get(0);
 	}
@@ -1487,6 +1437,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getGraphName() {
 		return graphNameEDataType;
 	}
@@ -1496,6 +1447,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosFactory getRosFactory() {
 		return (RosFactory)getEFactoryInstance();
 	}
@@ -1536,15 +1488,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		dependencyEClass = createEClass(DEPENDENCY);
 
-		serviceSpecEClass = createEClass(SERVICE_SPEC);
-		createEReference(serviceSpecEClass, SERVICE_SPEC__REQUEST);
-		createEReference(serviceSpecEClass, SERVICE_SPEC__RESPONSE);
-
 		serviceServerEClass = createEClass(SERVICE_SERVER);
 		createEReference(serviceServerEClass, SERVICE_SERVER__SERVICE);
-
-		topicSpecEClass = createEClass(TOPIC_SPEC);
-		createEReference(topicSpecEClass, TOPIC_SPEC__MESSAGE);
 
 		packageDependencyEClass = createEClass(PACKAGE_DEPENDENCY);
 		createEReference(packageDependencyEClass, PACKAGE_DEPENDENCY__PACKAGE);
@@ -1562,11 +1507,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(artifactEClass, ARTIFACT__NAME);
 		createEReference(artifactEClass, ARTIFACT__NODE);
 
-		specBaseEClass = createEClass(SPEC_BASE);
-		createEAttribute(specBaseEClass, SPEC_BASE__NAME);
-		createEReference(specBaseEClass, SPEC_BASE__PACKAGE);
-		createEAttribute(specBaseEClass, SPEC_BASE__FULLNAME);
-
 		subscriberEClass = createEClass(SUBSCRIBER);
 		createEReference(subscriberEClass, SUBSCRIBER__MESSAGE);
 
@@ -1575,11 +1515,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		packageSetEClass = createEClass(PACKAGE_SET);
 		createEReference(packageSetEClass, PACKAGE_SET__PACKAGE);
-
-		actionSpecEClass = createEClass(ACTION_SPEC);
-		createEReference(actionSpecEClass, ACTION_SPEC__GOAL);
-		createEReference(actionSpecEClass, ACTION_SPEC__RESULT);
-		createEReference(actionSpecEClass, ACTION_SPEC__FEEDBACK);
 
 		actionServerEClass = createEClass(ACTION_SERVER);
 		createEReference(actionServerEClass, ACTION_SERVER__ACTION);
@@ -1714,16 +1649,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		serviceSpecEClass.getESuperTypes().add(this.getSpecBase());
 		serviceServerEClass.getESuperTypes().add(this.getNamespacedElement());
-		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
 		packageDependencyEClass.getESuperTypes().add(this.getDependency());
 		externalDependencyEClass.getESuperTypes().add(this.getDependency());
 		catkinPackageEClass.getESuperTypes().add(this.getPackage());
 		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
 		subscriberEClass.getESuperTypes().add(this.getNamespacedElement());
 		serviceClientEClass.getESuperTypes().add(this.getNamespacedElement());
-		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
 		actionServerEClass.getESuperTypes().add(this.getNamespacedElement());
 		actionClientEClass.getESuperTypes().add(this.getNamespacedElement());
 		globalNamespaceEClass.getESuperTypes().add(this.getNamespace());
@@ -1763,20 +1695,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(packageEClass, ros.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Spec(), thePrimitivesPackage.getSpecBase(), thePrimitivesPackage.getSpecBase_Package(), "spec", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dependencyEClass, Dependency.class, "Dependency", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(serviceSpecEClass, ServiceSpec.class, "ServiceSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceSpec_Request(), this.getMessageDefinition(), null, "request", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceSpec_Response(), this.getMessageDefinition(), null, "response", null, 0, 1, ServiceSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(serviceServerEClass, ServiceServer.class, "ServiceServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceServer_Service(), this.getServiceSpec(), null, "service", null, 1, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(topicSpecEClass, TopicSpec.class, "TopicSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTopicSpec_Message(), this.getMessageDefinition(), null, "message", null, 0, 1, TopicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceServer_Service(), thePrimitivesPackage.getServiceSpec(), null, "service", null, 1, 1, ServiceServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageDependencyEClass, PackageDependency.class, "PackageDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageDependency_Package(), this.getPackage(), null, "package", null, 1, 1, PackageDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1788,36 +1713,26 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEReference(getCatkinPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, CatkinPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPublisher_Message(), thePrimitivesPackage.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Node(), this.getNode(), null, "node", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(specBaseEClass, SpecBase.class, "SpecBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpecBase_Name(), ecorePackage.getEString(), "name", "", 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecBase_Package(), this.getPackage(), this.getPackage_Spec(), "package", null, 1, 1, SpecBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpecBase_Fullname(), ecorePackage.getEString(), "fullname", "", 1, 1, SpecBase.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(subscriberEClass, Subscriber.class, "Subscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubscriber_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriber_Message(), thePrimitivesPackage.getTopicSpec(), null, "message", null, 1, 1, Subscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceClientEClass, ServiceClient.class, "ServiceClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceClient_Service(), this.getServiceSpec(), null, "service", null, 1, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceClient_Service(), thePrimitivesPackage.getServiceSpec(), null, "service", null, 1, 1, ServiceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageSetEClass, PackageSet.class, "PackageSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageSet_Package(), this.getPackage(), null, "package", null, 0, -1, PackageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionSpecEClass, ActionSpec.class, "ActionSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionSpec_Goal(), this.getMessageDefinition(), null, "goal", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionSpec_Result(), this.getMessageDefinition(), null, "result", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionSpec_Feedback(), this.getMessageDefinition(), null, "feedback", null, 0, 1, ActionSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(actionServerEClass, ActionServer.class, "ActionServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionServer_Action(), this.getActionSpec(), null, "action", null, 1, 1, ActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionServer_Action(), thePrimitivesPackage.getActionSpec(), null, "action", null, 1, 1, ActionServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionClientEClass, ActionClient.class, "ActionClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionClient_Action(), this.getActionSpec(), null, "action", null, 1, 1, ActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionClient_Action(), thePrimitivesPackage.getActionSpec(), null, "action", null, 1, 1, ActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageDefinitionEClass, MessageDefinition.class, "MessageDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageDefinition_MessagePart(), thePrimitivesPackage.getMessagePart(), null, "MessagePart", null, 0, -1, MessageDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -62,6 +62,7 @@ public class MessageDefinitionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MessagePart> getMessagePart() {
 		if (messagePart == null) {
 			messagePart = new EObjectContainmentEList<MessagePart>(MessagePart.class, this, RosPackage.MESSAGE_DEFINITION__MESSAGE_PART);

@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import primitives.PrimitivesFactory;
 import ros.RosFactory;
 import ros.RosPackage;
 
@@ -183,17 +184,17 @@ public class PackageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RosPackage.Literals.PACKAGE__SPEC,
-				 RosFactory.eINSTANCE.createServiceSpec()));
+				 PrimitivesFactory.eINSTANCE.createTopicSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RosPackage.Literals.PACKAGE__SPEC,
-				 RosFactory.eINSTANCE.createTopicSpec()));
+				 PrimitivesFactory.eINSTANCE.createServiceSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RosPackage.Literals.PACKAGE__SPEC,
-				 RosFactory.eINSTANCE.createActionSpec()));
+				 PrimitivesFactory.eINSTANCE.createActionSpec()));
 
 		newChildDescriptors.add
 			(createChildParameter

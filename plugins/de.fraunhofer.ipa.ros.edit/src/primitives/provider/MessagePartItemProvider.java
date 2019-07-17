@@ -302,16 +302,6 @@ public class MessagePartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-				 PrimitivesFactory.eINSTANCE.createTopicSpecRef()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-				 PrimitivesFactory.eINSTANCE.createArrayTopicSpecRef()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
 				 PrimitivesFactory.eINSTANCE.createHeader()));
 
 		newChildDescriptors.add
@@ -323,6 +313,16 @@ public class MessagePartItemProvider
 			(createChildParameter
 				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
 				 PrimitivesFactory.eINSTANCE.createByteArray()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
+				 PrimitivesFactory.eINSTANCE.createTopicSpecRef()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
+				 PrimitivesFactory.eINSTANCE.createArrayTopicSpecRef()));
 	}
 
 	/**

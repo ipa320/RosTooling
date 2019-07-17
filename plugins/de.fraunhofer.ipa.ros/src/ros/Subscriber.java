@@ -2,6 +2,7 @@
  */
 package ros;
 
+import primitives.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->

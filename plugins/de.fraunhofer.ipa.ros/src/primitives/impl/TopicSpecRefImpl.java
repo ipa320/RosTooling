@@ -10,9 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import primitives.PrimitivesPackage;
+import primitives.TopicSpec;
 import primitives.TopicSpecRef;
-
-import ros.TopicSpec;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +61,7 @@ public class TopicSpecRefImpl extends AbstractTypeImpl implements TopicSpecRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicSpec getTopicSpec() {
 		if (topicSpec != null && topicSpec.eIsProxy()) {
 			InternalEObject oldTopicSpec = (InternalEObject)topicSpec;
@@ -88,6 +88,7 @@ public class TopicSpecRefImpl extends AbstractTypeImpl implements TopicSpecRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTopicSpec(TopicSpec newTopicSpec) {
 		TopicSpec oldTopicSpec = topicSpec;
 		topicSpec = newTopicSpec;

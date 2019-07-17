@@ -66,6 +66,7 @@ public class ParameterSequenceImpl extends ParameterValueImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterValue> getValue() {
 		if (value == null) {
 			value = new EObjectContainmentEList<ParameterValue>(ParameterValue.class, this, RosPackage.PARAMETER_SEQUENCE__VALUE);

@@ -1,6 +1,6 @@
 /**
  */
-package ros.provider;
+package primitives.provider;
 
 
 import java.util.Collection;
@@ -14,24 +14,24 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.RosFactory;
-import ros.RosPackage;
-import ros.ServiceSpec;
+import primitives.ActionSpec;
+import primitives.PrimitivesFactory;
+import primitives.PrimitivesPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.ServiceSpec} object.
+ * This is the item provider adapter for a {@link primitives.ActionSpec} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceSpecItemProvider extends SpecBaseItemProvider {
+public class ActionSpecItemProvider extends SpecBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceSpecItemProvider(AdapterFactory adapterFactory) {
+	public ActionSpecItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,8 +62,9 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.SERVICE_SPEC__REQUEST);
-			childrenFeatures.add(RosPackage.Literals.SERVICE_SPEC__RESPONSE);
+			childrenFeatures.add(PrimitivesPackage.Literals.ACTION_SPEC__GOAL);
+			childrenFeatures.add(PrimitivesPackage.Literals.ACTION_SPEC__RESULT);
+			childrenFeatures.add(PrimitivesPackage.Literals.ACTION_SPEC__FEEDBACK);
 		}
 		return childrenFeatures;
 	}
@@ -82,14 +83,14 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	}
 
 	/**
-	 * This returns ServiceSpec.gif.
+	 * This returns ActionSpec.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceSpec"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionSpec"));
 	}
 
 	/**
@@ -100,12 +101,12 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceSpec)object).getName();
+		String label = ((ActionSpec)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceSpec_type") :
-			getString("_UI_ServiceSpec_type") + " " + label;
+			getString("_UI_ActionSpec_type") :
+			getString("_UI_ActionSpec_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -118,9 +119,10 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ServiceSpec.class)) {
-			case RosPackage.SERVICE_SPEC__REQUEST:
-			case RosPackage.SERVICE_SPEC__RESPONSE:
+		switch (notification.getFeatureID(ActionSpec.class)) {
+			case PrimitivesPackage.ACTION_SPEC__GOAL:
+			case PrimitivesPackage.ACTION_SPEC__RESULT:
+			case PrimitivesPackage.ACTION_SPEC__FEEDBACK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -140,13 +142,18 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.SERVICE_SPEC__REQUEST,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
+				(PrimitivesPackage.Literals.ACTION_SPEC__GOAL,
+				 PrimitivesFactory.eINSTANCE.createMessageDefinition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.SERVICE_SPEC__RESPONSE,
-				 RosFactory.eINSTANCE.createMessageDefinition()));
+				(PrimitivesPackage.Literals.ACTION_SPEC__RESULT,
+				 PrimitivesFactory.eINSTANCE.createMessageDefinition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PrimitivesPackage.Literals.ACTION_SPEC__FEEDBACK,
+				 PrimitivesFactory.eINSTANCE.createMessageDefinition()));
 	}
 
 	/**
@@ -161,8 +168,9 @@ public class ServiceSpecItemProvider extends SpecBaseItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RosPackage.Literals.SERVICE_SPEC__REQUEST ||
-			childFeature == RosPackage.Literals.SERVICE_SPEC__RESPONSE;
+			childFeature == PrimitivesPackage.Literals.ACTION_SPEC__GOAL ||
+			childFeature == PrimitivesPackage.Literals.ACTION_SPEC__RESULT ||
+			childFeature == PrimitivesPackage.Literals.ACTION_SPEC__FEEDBACK;
 
 		if (qualify) {
 			return getString

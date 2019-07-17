@@ -102,7 +102,6 @@ public class PackageDependencyItemProvider extends DependencyItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

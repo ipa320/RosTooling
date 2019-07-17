@@ -62,6 +62,7 @@ public class ParameterDateTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterDate getDefault() {
 		return default_;
 	}
@@ -86,6 +87,7 @@ public class ParameterDateTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterDate newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

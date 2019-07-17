@@ -21,25 +21,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Package">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" upperBound="-1" eType="#//SpecBase"
-        containment="true" eOpposite="#//SpecBase/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" upperBound="-1" eType="ecore:EClass PrimitivesTypes.ecore#//SpecBase"
+        containment="true" eOpposite="PrimitivesTypes.ecore#//SpecBase/package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
         eType="#//Artifact" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceSpec" eSuperTypes="#//SpecBase">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="request" eType="#//MessageDefinition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//MessageDefinition"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceServer" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
-        eType="#//ServiceSpec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicSpec" eSuperTypes="#//SpecBase">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//MessageDefinition"
-        containment="true"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//ServiceSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageDependency" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
@@ -54,49 +44,31 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
-        eType="#//TopicSpec"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//TopicSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpecBase" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
-        eType="#//Package" eOpposite="#//Package/spec"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
-        volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-        iD="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subscriber" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
-        eType="#//TopicSpec"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//TopicSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceClient" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
-        eType="#//ServiceSpec"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//ServiceSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageSet">
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" upperBound="-1"
         eType="#//Package" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionSpec" eSuperTypes="#//SpecBase">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//MessageDefinition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//MessageDefinition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" eType="#//MessageDefinition"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionServer" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-        eType="#//ActionSpec"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//ActionSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionClient" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-        eType="#//ActionSpec"/>
+        eType="ecore:EClass PrimitivesTypes.ecore#//ActionSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MessagePart" upperBound="-1"

@@ -76,7 +76,6 @@ public class int16ArrayItemProvider extends AbstractTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**
