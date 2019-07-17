@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+        point="org.eclipse.ui.handlers">
+        <handler
+              class="de.fraunhofer.ipa.roscode.generator.RosCodeGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.roscode.generator.GenerationHandler"
+              commandId="de.fraunhofer.ipa.roscode.generator.command">
+     	</handler>
+    </extension>
+ 
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.fraunhofer.ipa.roscode.generator.command"
+            name="Generate ROS code">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+             allPopups="false"
+             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+               commandId="de.fraunhofer.ipa.roscode.generator.command"
+               >
+             <visibleWhen
+                   checkEnabled="false">
+                <and>
+                   <with
+                         variable="selection">
+                      <count
+                            value="1">
+                      </count>
+                   </with>
+                   <iterate
+                         ifEmpty="false">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="ros">
+                           </test>
+                   </iterate>
+                </and>
+             </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+	<extension
+        point="org.eclipse.ui.handlers">
+        <handler
+              class="de.fraunhofer.ipa.roscode.generator.RosCodeGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.roscode.generator.Generation2Handler"
+              commandId="de.fraunhofer.ipa.ros2code.generator.command">
+     	</handler>
+    </extension>
+ 
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.fraunhofer.ipa.ros2code.generator.command"
+            name="Generate ROS2 code">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+             allPopups="false"
+             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+               commandId="de.fraunhofer.ipa.ros2code.generator.command"
+               >
+             <visibleWhen
+                   checkEnabled="false">
+                <and>
+                   <with
+                         variable="selection">
+                      <count
+                            value="1">
+                      </count>
+                   </with>
+                   <iterate
+                         ifEmpty="false">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="ros">
+                           </test>
+                   </iterate>
+                </and>
+             </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+ 
+</plugin>
