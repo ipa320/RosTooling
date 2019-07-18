@@ -7,7 +7,6 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated ros -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -38,7 +37,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated ros -->
       <editor
             id="ros.presentation.RosEditorID"
             name="%_UI_RosEditor_label"
@@ -50,7 +48,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated ros -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -66,7 +63,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated ros -->
       <editor
             id="primitives.presentation.PrimitivesEditorID"
             name="%_UI_PrimitivesEditor_label"
@@ -104,6 +100,15 @@
             icon="icons/full/ros_folder_icon.jpg"
             id="NewProject"
             style="push">
+            <visibleWhen checkEnabled="false">
+              <or>
+               <with variable="activeWorkbenchWindow.activePerspective">
+                <equals
+                  value="de.fraunhofer.ipa.ros.perspective">
+                </equals>
+               </with>
+              </or>
+            </visibleWhen>
          </command>
       </toolbar>
       </menuContribution>
@@ -136,11 +141,21 @@
             icon="icons/full/import_icon.jpg"
             id="ImportRosModel"
             style="push">
+            <visibleWhen
+             checkEnabled="false">
+              <or>
+                 <with variable="activeWorkbenchWindow.activePerspective">
+                <equals
+                  value="de.fraunhofer.ipa.ros.perspective">
+                </equals>
+                 </with>
+              </or>
+            </visibleWhen>
          </command>
       </toolbar>
       </menuContribution>
    </extension>
-   
+
    <!--extension point="org.eclipse.ui.handlers">
       <handler
          class="ros.presentation.AddRosNodeHandler"

@@ -24,4 +24,4 @@ Export-Package: de.fraunhofer.ipa.ros.formatting2,
  de.fraunhofer.ipa.ros.parser.antlr,
  de.fraunhofer.ipa.ros.validation,
  de.fraunhofer.ipa.ros.generator
-
+Import-Package: org.apache.log4j

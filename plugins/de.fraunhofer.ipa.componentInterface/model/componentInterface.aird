@@ -1,349 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_aaUOgMerEeiSp4878RUK1g" selectedViews="_a__ucMerEeiSp4878RUK1g" version="12.1.0.201708031200">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_aaUOgMerEeiSp4878RUK1g" selectedViews="_a__ucMerEeiSp4878RUK1g" version="14.1.0.201810161215">
     <semanticResources>componentInterface.ecore</semanticResources>
     <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
     <semanticResources>componentInterface.genmodel</semanticResources>
     <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_a__ucMerEeiSp4878RUK1g">
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros/model/PrimitivesTypes.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_a__ucMerEeiSp4878RUK1g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_fcThsMerEeiSp4878RUK1g" name="componentInterface class table" repPath="#_fbm-IMerEeiSp4878RUK1g">
-        <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
-        <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
-      </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_vI1r8MhvEei3Nr3U0f9s_g" name="componentInterface class diagram" repPath="#_vHzxMMhvEei3Nr3U0f9s_g">
-        <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
-        <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
-      </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_auP-oMsCEei37OnJdYGUCA" name="componentInterface class diagram" repPath="#_auDxYMsCEei37OnJdYGUCA">
-        <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_vI1r8MhvEei3Nr3U0f9s_g" name="componentInterface class diagram" repPath="#_vIzPsMhvEei3Nr3U0f9s_g">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <table:DTable xmi:id="_fcOpMMerEeiSp4878RUK1g" name="componentInterface class table" uid="_fbm-IMerEeiSp4878RUK1g" headerColumnWidth="330">
-    <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
-    <lines xmi:type="table:DLine" xmi:id="_fcPQQcerEeiSp4878RUK1g" label="ComponentInterface -> NameSpaceComponent">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-      <lines xmi:type="table:DLine" xmi:id="__K3aMN4dEeiXpIsMY_RdvQ" label="rospublisher : RosPublisher">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LYXkN4dEeiXpIsMY_RdvQ" label="rospublisher" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K7EkN4dEeiXpIsMY_RdvQ" label="rossubscriber : RosSubscriber">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LYXkd4dEeiXpIsMY_RdvQ" label="rossubscriber" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K7roN4dEeiXpIsMY_RdvQ" label="rosserviceserver : RosServiceServer">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LY-oN4dEeiXpIsMY_RdvQ" label="rosserviceserver" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K7rod4dEeiXpIsMY_RdvQ" label="rosserviceclient : RosServiceClient">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LZlsN4dEeiXpIsMY_RdvQ" label="rosserviceclient" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="_LdN3QC6cEemALJaVDqqcnA" label="rosactionserver : RosActionServer">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="_LdQ6kC6cEemALJaVDqqcnA" label="rosactionserver" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="_PkvGQC6cEemALJaVDqqcnA" label="rosactionclient : RosActionClient">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="_Pk0l0C6cEemALJaVDqqcnA" label="rosactionclient" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="_fcPQSserEeiSp4878RUK1g" label="ComponentInterface" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__Kx6oN4dEeiXpIsMY_RdvQ" label="RosPublisher">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosPublisher"/>
-      <lines xmi:type="table:DLine" xmi:id="__K8SsN4dEeiXpIsMY_RdvQ" label="publisher : Publisher">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosPublisher/publisher"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosPublisher/publisher"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LZlst4dEeiXpIsMY_RdvQ" label="publisher" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosPublisher/publisher"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosPublisher/publisher"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K85wN4dEeiXpIsMY_RdvQ" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LaMwN4dEeiXpIsMY_RdvQ" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K-u8N4dEeiXpIsMY_RdvQ" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LaMwd4dEeiXpIsMY_RdvQ" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosPublisher/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosPublisher"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__LZlsd4dEeiXpIsMY_RdvQ" label="RosPublisher" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosPublisher"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosPublisher"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__KyhsN4dEeiXpIsMY_RdvQ" label="RosSubscriber">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosSubscriber"/>
-      <lines xmi:type="table:DLine" xmi:id="__K_WAN4dEeiXpIsMY_RdvQ" label="subscriber : Subscriber">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosSubscriber/subscriber"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosSubscriber/subscriber"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__Laz0d4dEeiXpIsMY_RdvQ" label="subscriber" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosSubscriber/subscriber"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosSubscriber/subscriber"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K_WAd4dEeiXpIsMY_RdvQ" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__Laz0t4dEeiXpIsMY_RdvQ" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__K_9EN4dEeiXpIsMY_RdvQ" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__Lba4N4dEeiXpIsMY_RdvQ" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosSubscriber/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosSubscriber"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__Laz0N4dEeiXpIsMY_RdvQ" label="RosSubscriber" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosSubscriber"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosSubscriber"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__Kyhsd4dEeiXpIsMY_RdvQ" label="RosServiceServer">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceServer"/>
-      <lines xmi:type="table:DLine" xmi:id="__LAkIN4dEeiXpIsMY_RdvQ" label="srvserver : ServiceServer">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceServer/srvserver"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceServer/srvserver"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LcB8N4dEeiXpIsMY_RdvQ" label="srvserver" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceServer/srvserver"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceServer/srvserver"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__LBLMN4dEeiXpIsMY_RdvQ" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LcB8d4dEeiXpIsMY_RdvQ" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__LBLMd4dEeiXpIsMY_RdvQ" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__LcpAN4dEeiXpIsMY_RdvQ" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceServer/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceServer"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__Lba4d4dEeiXpIsMY_RdvQ" label="RosServiceServer" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceServer"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceServer"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__KzIwN4dEeiXpIsMY_RdvQ" label="RosServiceClient">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceClient"/>
-      <lines xmi:type="table:DLine" xmi:id="__LByQN4dEeiXpIsMY_RdvQ" label="srvclient : ServiceClient">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceClient/srvclient"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceClient/srvclient"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__MACoN4dEeiXpIsMY_RdvQ" label="srvclient" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceClient/srvclient"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosServiceClient/srvclient"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__LByQd4dEeiXpIsMY_RdvQ" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__MACod4dEeiXpIsMY_RdvQ" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__LCZUN4dEeiXpIsMY_RdvQ" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__MACot4dEeiXpIsMY_RdvQ" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosServiceClient/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceClient"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__L_bkN4dEeiXpIsMY_RdvQ" label="RosServiceClient" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceClient"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosServiceClient"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__qvHsC6bEemALJaVDqqcnA" label="NameSpaceComponent">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//NameSpaceComponent"/>
-      <lines xmi:type="table:DLine" xmi:id="__qyyEC6bEemALJaVDqqcnA" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rANcC6bEemALJaVDqqcnA" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__qyyES6bEemALJaVDqqcnA" label="NameSpace : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/NameSpace"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/NameSpace"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rANcS6bEemALJaVDqqcnA" label="NameSpace" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/NameSpace"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//NameSpaceComponent/NameSpace"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//NameSpaceComponent"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__q_mYC6bEemALJaVDqqcnA" label="NameSpaceComponent" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//NameSpaceComponent"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//NameSpaceComponent"/>
-      </cells>
-      <currentStyle xmi:type="table:DTableElementStyle" xmi:id="__qwV0C6bEemALJaVDqqcnA" labelSize="10">
-        <labelFormat>italic</labelFormat>
-      </currentStyle>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__qw84C6bEemALJaVDqqcnA" label="RosActionServer">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionServer"/>
-      <lines xmi:type="table:DLine" xmi:id="__qyyEi6bEemALJaVDqqcnA" label="actserver : ActionServer">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionServer/actserver"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionServer/actserver"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rANcy6bEemALJaVDqqcnA" label="actserver" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionServer/actserver"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionServer/actserver"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__qzZIC6bEemALJaVDqqcnA" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rANdC6bEemALJaVDqqcnA" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__qzZIS6bEemALJaVDqqcnA" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rANdS6bEemALJaVDqqcnA" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionServer/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionServer"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__rANci6bEemALJaVDqqcnA" label="RosActionServer" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionServer"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionServer"/>
-      </cells>
-    </lines>
-    <lines xmi:type="table:DLine" xmi:id="__qw84S6bEemALJaVDqqcnA" label="RosActionClient">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionClient"/>
-      <lines xmi:type="table:DLine" xmi:id="__qzZIi6bEemALJaVDqqcnA" label="actclient : ActionClient">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionClient/actclient"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionClient/actclient"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rA0gS6bEemALJaVDqqcnA" label="actclient" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionClient/actclient"/>
-          <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//RosActionClient/actclient"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__qzZIy6bEemALJaVDqqcnA" label="name : EString">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/name"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rA0gi6bEemALJaVDqqcnA" label="name" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/name"/>
-        </cells>
-      </lines>
-      <lines xmi:type="table:DLine" xmi:id="__qzZJC6bEemALJaVDqqcnA" label="ns : NS">
-        <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/ns"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/ns"/>
-        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
-        <cells xmi:type="table:DCell" xmi:id="__rA0gy6bEemALJaVDqqcnA" label="ns" column="_fcPQa8erEeiSp4878RUK1g">
-          <target xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/ns"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="componentInterface.ecore#//RosActionClient/ns"/>
-        </cells>
-      </lines>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionClient"/>
-      <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
-      <cells xmi:type="table:DCell" xmi:id="__rA0gC6bEemALJaVDqqcnA" label="RosActionClient" column="_fcPQa8erEeiSp4878RUK1g">
-        <target xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionClient"/>
-        <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//RosActionClient"/>
-      </cells>
-    </lines>
-    <columns xmi:type="table:DFeatureColumn" xmi:id="_fcPQa8erEeiSp4878RUK1g" label="Name" cells="_fcPQSserEeiSp4878RUK1g __LYXkN4dEeiXpIsMY_RdvQ __LYXkd4dEeiXpIsMY_RdvQ __LY-oN4dEeiXpIsMY_RdvQ __LZlsN4dEeiXpIsMY_RdvQ __LZlsd4dEeiXpIsMY_RdvQ __LZlst4dEeiXpIsMY_RdvQ __LaMwN4dEeiXpIsMY_RdvQ __LaMwd4dEeiXpIsMY_RdvQ __Laz0N4dEeiXpIsMY_RdvQ __Laz0d4dEeiXpIsMY_RdvQ __Laz0t4dEeiXpIsMY_RdvQ __Lba4N4dEeiXpIsMY_RdvQ __Lba4d4dEeiXpIsMY_RdvQ __LcB8N4dEeiXpIsMY_RdvQ __LcB8d4dEeiXpIsMY_RdvQ __LcpAN4dEeiXpIsMY_RdvQ __L_bkN4dEeiXpIsMY_RdvQ __MACoN4dEeiXpIsMY_RdvQ __MACod4dEeiXpIsMY_RdvQ __MACot4dEeiXpIsMY_RdvQ __q_mYC6bEemALJaVDqqcnA __rANcC6bEemALJaVDqqcnA __rANcS6bEemALJaVDqqcnA __rANci6bEemALJaVDqqcnA __rANcy6bEemALJaVDqqcnA __rANdC6bEemALJaVDqqcnA __rANdS6bEemALJaVDqqcnA __rA0gC6bEemALJaVDqqcnA __rA0gS6bEemALJaVDqqcnA __rA0gi6bEemALJaVDqqcnA __rA0gy6bEemALJaVDqqcnA _LdQ6kC6cEemALJaVDqqcnA _Pk0l0C6cEemALJaVDqqcnA" featureName="name">
-      <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedColumnMappings[name='Name']"/>
-    </columns>
-    <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
-  </table:DTable>
-  <diagram:DSemanticDiagram xmi:id="_vIzPsMhvEei3Nr3U0f9s_g" name="componentInterface class diagram" uid="_vHzxMMhvEei3Nr3U0f9s_g">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_vIzPschvEei3Nr3U0f9s_g" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_vIzPsshvEei3Nr3U0f9s_g"/>
+  <diagram:DSemanticDiagram uid="_vIzPsMhvEei3Nr3U0f9s_g" name="componentInterface class diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_vIzPschvEei3Nr3U0f9s_g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_vIzPsshvEei3Nr3U0f9s_g"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_vJHYwMhvEei3Nr3U0f9s_g" source="GMF_DIAGRAMS">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_vJHYwMhvEei3Nr3U0f9s_g" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_vJHYwchvEei3Nr3U0f9s_g" type="Sirius" element="_vIzPsMhvEei3Nr3U0f9s_g" measurementUnit="Pixel">
         <children xmi:type="notation:Node" xmi:id="_vsqxwMhvEei3Nr3U0f9s_g" type="2003" element="_vsLCgMhvEei3Nr3U0f9s_g">
           <children xmi:type="notation:Node" xmi:id="_vsrY0MhvEei3Nr3U0f9s_g" type="5007"/>
@@ -381,164 +58,70 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_vJHYwshvEei3Nr3U0f9s_g"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_vsLCgMhvEei3Nr3U0f9s_g" name="ComponentInterface" tooltipText="" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_vsLCgMhvEei3Nr3U0f9s_g" name="ComponentInterface" tooltipText="" width="12" height="10">
       <target xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
       <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_vsMQoMhvEei3Nr3U0f9s_g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_vsMQoMhvEei3Nr3U0f9s_g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Aud68N4eEeiXpIsMY_RdvQ" name=" rospublisher : RosPublisher" tooltipText="">
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Aud68N4eEeiXpIsMY_RdvQ" name=" rospublisher : RosPublisher" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_AugXMN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_AugXMN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Aug-QN4eEeiXpIsMY_RdvQ" name=" rossubscriber : RosSubscriber" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Aug-QN4eEeiXpIsMY_RdvQ" name=" rossubscriber : RosSubscriber" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_AuiMYN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_AuiMYN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_AujagN4eEeiXpIsMY_RdvQ" name=" rosserviceserver : RosServiceServer" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_AujagN4eEeiXpIsMY_RdvQ" name=" rosserviceserver : RosServiceServer" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_AukBkN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_AukBkN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Aul2wN4eEeiXpIsMY_RdvQ" name=" rosserviceclient : RosServiceClient" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Aul2wN4eEeiXpIsMY_RdvQ" name=" rosserviceclient : RosServiceClient" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_AunE4N4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_AunE4N4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LdYPUC6cEemALJaVDqqcnA" name=" rosactionserver : RosActionServer" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_LdYPUC6cEemALJaVDqqcnA" name=" rosactionserver : RosActionServer" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionserver"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_LdY2YC6cEemALJaVDqqcnA" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_LdY2YC6cEemALJaVDqqcnA" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Pk9IsC6cEemALJaVDqqcnA" name=" rosactionclient : RosActionClient" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Pk9IsC6cEemALJaVDqqcnA" name=" rosactionclient : RosActionClient" tooltipText="">
         <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
         <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosactionclient"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Pk9vwC6cEemALJaVDqqcnA" labelAlignment="LEFT" color="114,159,207">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Pk9vwC6cEemALJaVDqqcnA" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_vIzPtshvEei3Nr3U0f9s_g"/>
-    <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
-    <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
-    <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
-    <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
-  </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_auNiYMsCEei37OnJdYGUCA" name="componentInterface class diagram" uid="_auDxYMsCEei37OnJdYGUCA">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_auNiYcsCEei37OnJdYGUCA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_auNiYssCEei37OnJdYGUCA"/>
-    </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_auWFQMsCEei37OnJdYGUCA" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_auWFQcsCEei37OnJdYGUCA" type="Sirius" element="_auNiYMsCEei37OnJdYGUCA" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_bjuOEMsCEei37OnJdYGUCA" type="2003" element="_bjasEMsCEei37OnJdYGUCA">
-          <children xmi:type="notation:Node" xmi:id="_bju1IMsCEei37OnJdYGUCA" type="5007"/>
-          <children xmi:type="notation:Node" xmi:id="_bju1IcsCEei37OnJdYGUCA" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_bjwqU8sCEei37OnJdYGUCA" type="3010" element="_bjjO8MsCEei37OnJdYGUCA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_bjwqVMsCEei37OnJdYGUCA" fontColor="8224125" fontName="Ubuntu" fontHeight="8" italic="true"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_bjwqVcsCEei37OnJdYGUCA"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_FOiz4N4eEeiXpIsMY_RdvQ" type="3010" element="_FOESwN4eEeiXpIsMY_RdvQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_FOiz4d4eEeiXpIsMY_RdvQ" fontName="Ubuntu" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FOiz4t4eEeiXpIsMY_RdvQ"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_FOkCAN4eEeiXpIsMY_RdvQ" type="3010" element="_FOFg4N4eEeiXpIsMY_RdvQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_FOkCAd4eEeiXpIsMY_RdvQ" fontName="Ubuntu" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FOkCAt4eEeiXpIsMY_RdvQ"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_FOkpEN4eEeiXpIsMY_RdvQ" type="3010" element="_FOGvAN4eEeiXpIsMY_RdvQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_FOkpEd4eEeiXpIsMY_RdvQ" fontName="Ubuntu" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FOkpEt4eEeiXpIsMY_RdvQ"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_FOlQIN4eEeiXpIsMY_RdvQ" type="3010" element="_FOH9IN4eEeiXpIsMY_RdvQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_FOlQId4eEeiXpIsMY_RdvQ" fontName="Ubuntu" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FOlQIt4eEeiXpIsMY_RdvQ"/>
-            </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_bju1IssCEei37OnJdYGUCA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_bju1I8sCEei37OnJdYGUCA"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_bjuOEcsCEei37OnJdYGUCA" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bjuOEssCEei37OnJdYGUCA" x="324" y="156"/>
-        </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_auWFQssCEei37OnJdYGUCA"/>
-      </data>
-    </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_bjasEMsCEei37OnJdYGUCA" name="ComponentInterface" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-      <semanticElements xmi:type="ecore:EClass" href="componentInterface.ecore#//ComponentInterface"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_bjbTIMsCEei37OnJdYGUCA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_bjjO8MsCEei37OnJdYGUCA" name=" namespace : Namespace" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement/namespace"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore#//NamespacedElement/namespace"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_bjjO8csCEei37OnJdYGUCA" labelColor="125,125,125" labelAlignment="LEFT">
-          <labelFormat>italic</labelFormat>
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FOESwN4eEeiXpIsMY_RdvQ" name=" rospublisher : RosPublisher" tooltipText="">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rospublisher"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_FOE50N4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FOFg4N4eEeiXpIsMY_RdvQ" name=" rossubscriber : RosSubscriber" tooltipText="">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rossubscriber"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_FOGH8N4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FOGvAN4eEeiXpIsMY_RdvQ" name=" rosserviceserver : RosServiceServer" tooltipText="">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceserver"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_FOHWEN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FOH9IN4eEeiXpIsMY_RdvQ" name=" rosserviceclient : RosServiceClient" tooltipText="">
-        <target xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        <semanticElements xmi:type="ecore:EReference" href="componentInterface.ecore#//ComponentInterface/rosserviceclient"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_FOIkMN4eEeiXpIsMY_RdvQ" labelAlignment="LEFT" color="114,159,207">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
-      </ownedElements>
-    </ownedDiagramElements>
-    <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_auOJcssCEei37OnJdYGUCA"/>
-    <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
-    <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
-    <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_vIzPtshvEei3Nr3U0f9s_g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
     <target xmi:type="ecore:EPackage" href="componentInterface.ecore#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

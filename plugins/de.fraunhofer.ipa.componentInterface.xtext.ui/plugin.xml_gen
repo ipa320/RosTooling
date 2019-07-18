@@ -204,6 +204,15 @@
 			</activeWhen>
 		</handler>
 	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="componentinterface"
+			id="de.fraunhofer.ipa.componentInterface.ComponentInterface.contenttype"
+			name="ComponentInterface File"
+			priority="normal">
+		</content-type>
+	</extension>
 	<!-- adding resource factories -->
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
@@ -388,12 +397,18 @@
 			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="componentinterface">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="de.fraunhofer.ipa.componentInterface.ComponentInterface.contenttype"
+			contentViewerId="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentMergeViewers"
 			class="de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="componentinterface" label="ComponentInterface Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="de.fraunhofer.ipa.componentInterface.ComponentInterface.contenttype"
+			contentMergeViewerId="de.fraunhofer.ipa.componentInterface.ComponentInterface.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="de.fraunhofer.ipa.componentInterface.ComponentInterface.editors.documentProviders"
