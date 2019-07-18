@@ -12,6 +12,9 @@ Workflow {
 			project = StandardProjectConfig {
 				baseName = "de.fraunhofer.ipa.rossystem.xtext"
 				rootPath = rootPath
+				runtimeTest = {
+					enabled = true
+				}
 				eclipsePlugin = {
 					enabled = true
 				}

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.ros.xtext.tests
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.xtext.tests
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
