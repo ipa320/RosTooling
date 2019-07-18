@@ -1,8 +1,8 @@
-/bin/
+bin/
 /.metadata/
 /.recommenders/
 *.xtendbin
-/xtend-gen/
+xtend-gen/
 */bin/
 *.pyc
 
