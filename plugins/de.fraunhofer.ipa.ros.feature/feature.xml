@@ -140,13 +140,6 @@ POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="de.fraunhofer.ipa.ros.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="de.fraunhofer.ipa.rossystem.editor"
          download-size="0"
          install-size="0"

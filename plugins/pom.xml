@@ -24,10 +24,10 @@
 		<module>de.fraunhofer.ipa.ros.edit</module>
 		<module>de.fraunhofer.ipa.ros.editor</module>
 		<module>de.fraunhofer.ipa.ros.model.spec.check</module>
-		<module>de.fraunhofer.ipa.roscode.generator</module>
-		<module>de.fraunhofer.ipa.ros.tests</module>
+		<module>de.fraunhofer.ipa.roscode.generator</module>		
 		<module>de.fraunhofer.ipa.ros.xtext.tests</module>
-	
+		
+
 		<module>de.fraunhofer.ipa.componentInterface</module>
 		<module>de.fraunhofer.ipa.componentInterface.xtext</module>
 		<module>de.fraunhofer.ipa.componentInterface.xtext.ide</module>
