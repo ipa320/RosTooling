@@ -1,6 +1,6 @@
 language: java
 install: true
-script: mvn clean verify -f plugins/pom.xml
+script: mvn clean verify -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
 cache:
   directories:
   - $HOME/.m2

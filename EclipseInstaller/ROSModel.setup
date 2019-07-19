@@ -170,9 +170,9 @@
         <requirement
             name="*"/>
         <sourceLocator
-            rootFolder="${ros-model.location}"
-            locateNestedProjects="true">
-          <excludedPath>examples</excludedPath>
+            rootFolder="${ros-model.location}/plugins/"
+            locateNestedProjects="false">
+          <excludedPath>.</excludedPath>
         </sourceLocator>
       </targlet>
       <implicitDependency
