@@ -10,7 +10,17 @@ For further information about the metamodels, please check the [IRC19 paper](htt
 
 ### Installation
 
-#### Option 1: Using the Eclipse Installer
+#### Option 1: Using the Release version (Recommended)
+
+In Eclipse, go to *Help* > *Install New Software...*. To install the latest version of the ROS tooling, add the update site URL [http://ros-model.seronet-project.de/updatesite/latest/](http://ros-model.seronet-project.de/updatesite/latest/) in the *Work with* section. If you wish to install an earlier version instead, go to the [the update site](http://ros-model.seronet-project.de/updatesite/), choose the desired version and copy its URL.
+
+![alt text](docu/images/install_updatesite.png)
+
+The category *ROS Model* appears in the *Name* area. Check the box in front of *ROS model* and click *Next* to review the list of items to be installed. Click *Next* again to read and accept the terms of the license agreements and afterwards click *Finish*. Eclipse will then start to install the ROS tooling and its dependencies. Click *OK* on the security warning. Finally, when asked, restart Eclipse to complete the installation process.
+
+To start using the ROS tooling continue with the [step 1](#1-switch-to-the-ros-developer-perspective)
+
+#### Option 2: Using the Eclipse Installer - Source installation (ROS tooling developers)
 
 Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended use *2018-12*.
 
@@ -27,30 +37,30 @@ Select the the ROS Model project (under Github Projects -> <User>) and press nex
 
 By default the ROS tooling installation will be saved under the folder *ros-model-master* in your home directory. In case your github credentials are not setup on your machine, change the *Ros model Github repository* to the *HTTPs(read-write)* option.
 
-Follow the installation instructions of the Oompth installer dialog, after the installation eclipse will be restarted to launch the ROS tooling configuration. Finally, when all the startup tasks finished press "Worbench".
+Follow the installation instructions of the Oompth installer dialog, after the installation eclipse will be restarted to launch the ROS tooling configuration. Finally, when all the startup tasks finished press "Workbench".
 
-#### Option 2: Using an update site URL
-
-In Eclipse, go to *Help* > *Install New Software...*. To install the latest version of the ROS tooling, add the update site URL [http://ros-model.seronet-project.de/updatesite/latest/](http://ros-model.seronet-project.de/updatesite/latest/) in the *Work with* section. If you wish to install an earlier version instead, go to the [the update site](http://ros-model.seronet-project.de/updatesite/), choose the desired version and copy its URL.
-
-![alt text](docu/images/install_updatesite.png)
-
-The category *ROS Model* appears in the *Name* area. Check the box in front of *ROS model* and click *Next* to review the list of items to be installed. Click *Next* again to read and accept the terms of the license agreements and afterwards click *Finish*. Eclipse will then start to install the ROS tooling and its dependencies. Click *OK* on the security warning. Finally, when asked, restart Eclipse to complete the installation process.
+To start using the ROS tooling continue with the [step 0](#0-start-the-ros-tooling-application)
 
 ### Setup the environment and start the eclipse application
 
-1. Start the ROS tooling:
-* In case you have installed the tooling using the Eclipse Installer, select de.fraunhofer.ipa.ros.sirius and press the button *Run*
+#### 0: Start the ROS tooling application
+
+:bangbang::bangbang: This is only needed if you installed the toolig from [source](#option-2-using-the-eclipse-installer---source-installation-ros-tooling-developers), if you installed the release version please continue directly with the [step 1](#1-switch-to-the-ros-developer-perspective)
+
+select de.fraunhofer.ipa.ros.plugin and press the button *Run*
 
 ![alt text](docu/images/run_ros_tooling.png)
 
-Otherwise, switch to the "ROS developer" perspective (Menu Window -> Perspective -> Open Perspective -> Other... -> ROS developer). Your application toolbar will be automatically configured.
+#### 1: Switch to the ROS Developer perspective
 
-2. Import the common communication objects project (under the "examples" folder of this repository) to the workbench of your application:
+Go to Menu Window -> Perspective -> Open Perspective -> Other... -> ROS developer. Your application toolbar will be automatically configured.
+
+#### 2: Import the common communication objects project
+
+import the project located under the "examples" folder of this repository to the workbench of your application:
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```
-
 Now that your workspace is setup, you can start creating your [project and defining your ROS system](#Tutorials)
 
 ![alt text](docu/images/eclipse_app_empty.png)
