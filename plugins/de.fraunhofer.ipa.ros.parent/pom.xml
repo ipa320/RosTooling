@@ -73,6 +73,11 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>external-deps</id>
+			<layout>p2</layout>
+			<url>http://ros-model.seronet-project.de/external-dependencies/</url>		
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
