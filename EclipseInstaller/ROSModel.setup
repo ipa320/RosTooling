@@ -50,6 +50,10 @@
         name="org.eclipse.sirius.runtime.ide.xtext.feature.group"/>
     <requirement
         name="org.eclipse.cdt.feature.group"/>
+    <requirement
+        name="de.fraunhofer.ipa.ros.externalDependencies.feature.group"/>
+    <repository
+        url="http://ros-model.seronet-project.de/external-dependencies/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -65,15 +69,15 @@
           name="org.eclipse.cdt.feature.group"/>
       <requirement
           name="org.eclipse.sirius.specifier.feature.group"/>
-        <repositoryList
-            name="2018-12">
-          <repository
-              url="http://download.eclipse.org/releases/photon/"/>
-          <repository
-              url="http://download.eclipse.org/modeling/emf/emf/builds/milestone/latest"/>
-          <repository
-              url="http://download.eclipse.org/sirius/updates/releases/6.1.1/photon/"/>
-        </repositoryList>
+      <repositoryList
+          name="2018-12">
+        <repository
+            url="http://download.eclipse.org/releases/photon/"/>
+        <repository
+            url="http://download.eclipse.org/modeling/emf/emf/builds/milestone/latest"/>
+        <repository
+            url="http://download.eclipse.org/sirius/updates/releases/6.1.1/photon/"/>
+      </repositoryList>
       <repositoryList
           name="Photon">
         <repository
@@ -108,6 +112,17 @@
           name="Juno">
         <repository
             url="http://download.eclipse.org/releases/juno"/>
+      </repositoryList>
+    </targlet>
+    <targlet
+        name="ROS Model Maven dependencies"
+        includeAllRequirements="false">
+      <requirement
+          name="de.fraunhofer.ipa.ros.externalDependencies.feature.group"/>
+      <repositoryList
+          name="ROS Model external dependencies">
+        <repository
+            url="http://ros-model.seronet-project.de/external-dependencies/"/>
       </repositoryList>
     </targlet>
   </setupTask>
