@@ -17,6 +17,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
+import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider
 import ros.Publisher
 import ros.ServiceClient
 import ros.ServiceServer
@@ -27,10 +28,10 @@ import ros.ActionClient
 import componentInterface.RosActionServer
 import componentInterface.RosActionClient
 
-class CustomOutputProvider implements IOutputConfigurationProvider {
+
+class CustomOutputProvider implements IOutputConfigurationProvider, IContextualOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
-	
 
 	override Set<OutputConfiguration> getOutputConfigurations() {
 		var OutputConfiguration cm_config = new OutputConfiguration(CM_CONFIGURATION)
@@ -40,6 +41,7 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 		cm_config.setCreateOutputDirectory(true);
 		cm_config.setCleanUpDerivedResources(false);
 		cm_config.setSetDerivedProperty(false);
+		
 		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
 		default_config.setDescription("DEFAULT_OUTPUT");
 		default_config.setOutputDirectory("./src-gen/");
@@ -47,8 +49,14 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 		default_config.setCreateOutputDirectory(true);
 		default_config.setCleanUpDerivedResources(false);
 		default_config.setSetDerivedProperty(false);
+		
 		return newHashSet(cm_config, default_config)
 	}
+	
+	override Set<OutputConfiguration> getOutputConfigurations(Resource context) {
+		return getOutputConfigurations()
+	}
+			
 }
 
 class RosSystemGenerator extends AbstractGenerator {
