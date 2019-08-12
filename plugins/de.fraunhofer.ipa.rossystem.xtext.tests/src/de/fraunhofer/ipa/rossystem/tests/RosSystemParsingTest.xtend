@@ -7,17 +7,27 @@ import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
+import org.eclipse.xtext.xbase.testing.CompilationTestHelper
 import org.junit.Assert
+import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
 import rossystem.RosSystem
 
-@RunWith(XtextRunner)
-@InjectWith(RosSystemInjectorProvider)
+import static extension org.junit.Assert.*
+
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(RosSystemInjectorProvider))
 class RosSystemParsingTest {
+
+	@Rule
+	@Inject public TemporaryFolder temporaryFolder
+
 	@Inject
 	ParseHelper<RosSystem> parseHelper
-	
+	@Inject extension CompilationTestHelper
+
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
@@ -59,4 +69,71 @@ class RosSystemParsingTest {
 		val errors = result.eResource.errors
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
+
+	@Test
+	def void loadModel2() {
+		val result = parseHelper.parse('''
+	RosSystem { Name 'My' 
+	  RosComponents ( 
+	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
+	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
+	  TopicConnections { 
+	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
+    ''')
+		Assert.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
+	}
+	
+	@Test 
+    def void parseDomainmodel() {
+        val model = parseHelper.parse('''
+	RosSystem { Name 'My' 
+	  RosComponents ( 
+	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
+	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
+	  TopicConnections { 
+	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
+    ''')
+        val ComponentName = model.rosComponent.get(0).name
+       	Assert.assertEquals("scan_front", ComponentName)
+        
+        val TopicConnectionName = model.topicConnections.get(0).topicName
+        Assert.assertEquals("scan_front/diagnostics", TopicConnectionName)
+        
+        val FromTopic = model.topicConnections.get(0).from.get(0).name
+        val diag_Publisher = model.rosComponent.get(0).rospublisher.get(1).name
+        Assert.assertEquals(FromTopic, diag_Publisher)
+        
+        val ToTopic = model.topicConnections.get(0).to.get(0).name
+        val diag_Subscriber = model.rosComponent.get(1).rossubscriber.get(0).name
+        Assert.assertEquals(ToTopic, diag_Subscriber)
+
+    }
+/** 
+	@Test
+    def void testGeneratedCode(){
+    	'''
+	RosSystem { Name 'My' 
+	  RosComponents ( 
+	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
+	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
+	  TopicConnections { 
+	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
+    '''.assertCompilesTo('''
+<?xml version="1.0"?>
+<launch>
+
+	<node pkg="cob_sick_s300" type="cob_sick_s300" name="scan_front" ns="scan_front" cwd="node" respawn="false" output="screen">
+
+	</node>
+
+	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostics" cwd="node" respawn="false" output="screen">
+		<remap from="diagnostics" to="scan_front/diagnostics" />
+
+	</node>
+</launch>'''
+			)
+    	
+    }*/
 }
