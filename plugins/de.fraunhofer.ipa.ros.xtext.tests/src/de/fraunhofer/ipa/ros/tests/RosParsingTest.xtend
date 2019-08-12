@@ -52,6 +52,8 @@ class RosParsingTest {
 		''')
         val packageName = model.package.get(0).name
         val nodeName = model.package.get(0).artifact.get(0).node.name
-        Assert.assertEquals(packageName, nodeName)
+        Assert.assertEquals(packageName, "cob_sick_s300")
+        Assert.assertEquals(nodeName, "cob_sick_s300")
+        
     }
 }
