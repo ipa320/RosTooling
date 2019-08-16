@@ -38,7 +38,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      defaultValue="2018-12"
+      defaultValue="2019-06"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
@@ -65,15 +65,11 @@
           name="org.eclipse.cdt.feature.group"/>
       <requirement
           name="org.eclipse.sirius.specifier.feature.group"/>
-        <repositoryList
-            name="2018-12">
-          <repository
-              url="http://download.eclipse.org/releases/photon/"/>
-          <repository
-              url="http://download.eclipse.org/modeling/emf/emf/builds/milestone/latest"/>
-          <repository
-              url="http://download.eclipse.org/sirius/updates/releases/6.1.1/photon/"/>
-        </repositoryList>
+      <repositoryList
+          name="2019-06">
+        <repository
+            url="https://download.eclipse.org/releases/2019-06"/>
+      </repositoryList>
       <repositoryList
           name="Photon">
         <repository
@@ -83,31 +79,6 @@
           name="Oxygen">
         <repository
             url="http://download.eclipse.org/releases/oxygen"/>
-      </repositoryList>
-      <repositoryList
-          name="Neon">
-        <repository
-            url="http://download.eclipse.org/releases/neon"/>
-      </repositoryList>
-      <repositoryList
-          name="Mars">
-        <repository
-            url="http://download.eclipse.org/releases/mars"/>
-      </repositoryList>
-      <repositoryList
-          name="Luna">
-        <repository
-            url="http://download.eclipse.org/releases/luna"/>
-      </repositoryList>
-      <repositoryList
-          name="Kepler">
-        <repository
-            url="http://download.eclipse.org/releases/kepler"/>
-      </repositoryList>
-      <repositoryList
-          name="Juno">
-        <repository
-            url="http://download.eclipse.org/releases/juno"/>
       </repositoryList>
     </targlet>
   </setupTask>
@@ -199,3 +170,4 @@
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
   <description>ROS Model provides cool stuff.</description>
 </setup:Project>
+
