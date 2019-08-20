@@ -3,6 +3,7 @@
 	<name>de.fraunhofer.ipa.ros.communication.objects</name>
 	<comment></comment>
 	<projects>
+		<project>CommBasicObjects</project>
 		<project>de.fraunhofer.ipa.ros</project>
 	</projects>
 	<buildSpec>

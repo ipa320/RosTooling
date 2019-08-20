@@ -3,6 +3,7 @@
 	<name>scan_system_demo</name>
 	<comment></comment>
 	<projects>
+        <project>de.fraunhofer.ipa.ros.communication.objects</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
