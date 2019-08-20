@@ -21,6 +21,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -37,6 +38,7 @@ import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationComma
 import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.tools.api.command.semantic.AddSemanticResourceCommand;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallbackWithConfimation;
@@ -117,10 +119,6 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		}
 		return true;
 	}
-	
-	/**
-	 * TODO: add dependency to predefined msgs and open automatically the Properties view
-	 */
 
 	private void doFinish( String ProjectName, IProgressMonitor monitor)
 		throws CoreException, GenerationFailedException {
@@ -130,6 +128,8 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		String[] newNatures = new String[natures.length + 1];
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
+		IProject ObjectsProject = ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects");
+		description.setReferencedProjects(new IProject[] {ObjectsProject});
 		description.setNatureIds(newNatures);
 		project.setDescription(description, monitor);
 		
@@ -146,46 +146,53 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		//Add viewpoints to the aird file
 		IFile airdFile = project.getFile("representations.aird");
 		URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
+		URI rosFileURI = URI.createPlatformResourceURI(file.getFullPath().toOSString(), true);
+
 		Session session = SessionManager.INSTANCE.getSession(airdFileURI, monitor);
 		Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
 		Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
 		for(Viewpoint p : availableViewPoints)
 			viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, p));
 		ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();
-		
+
 		//set ros model as root object for the representation
 		@SuppressWarnings("restriction")
 		RecordingCommand command = new ChangeViewpointSelectionCommand( session, callback, viewpoints, new HashSet<Viewpoint>(), true, monitor);
 		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-		domain.getCommandStack().execute(command);
 		EObject rootObject = RosFactory.eINSTANCE.createArtifact();
-		rootObject = session.getSemanticResources().iterator().next().getContents().get(0);
+		session.addSemanticResource(rosFileURI, monitor);
+		domain.getCommandStack().execute(command);
 
-		//TODO: Uncomment
+		//Add resource dependencies to communication objects
+        File[] Objectfiles = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs").listFiles();
+		for (File Ofile:Objectfiles) {
+			if(Ofile.isFile()){
+				IFile Oifile= ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(Path.fromOSString(Ofile.getAbsolutePath()));
+				if (Oifile.getFileExtension().contains("ros")) {
+					System.out.println(Oifile.getFullPath().toOSString());
+					AddSemanticResourceCommand addCommandToSession = new AddSemanticResourceCommand(session, URI.createPlatformResourceURI(Oifile.getFullPath().toOSString(), true), monitor );
+					domain.getCommandStack().execute(addCommandToSession);
+				}
+			}
+		}
+		
 		//create representation
-		/**Collection<RepresentationDescription> descriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false), rootObject);
-		RepresentationDescription description_ = descriptions.iterator().next();
+		rootObject = session.getSemanticResources().iterator().next().getContents().get(0).eContents().get(0).eContents().get(0);
+		System.out.println(rootObject);
+		Collection<RepresentationDescription> representationDescriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(true), rootObject);
+		RepresentationDescription description_ = representationDescriptions.iterator().next();
 		DialectManager viewpointDialectManager = DialectManager.INSTANCE;
-		Command createViewCommand = new CreateRepresentationCommand(session,
-				  description_, rootObject, ProjectName, monitor);
-		session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
 		SessionManager.INSTANCE.notifyRepresentationCreated(session);
+		Command createViewCommand = new CreateRepresentationCommand(session, description_, rootObject, ProjectName, monitor);
+		session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
+		project.open(IResource.BACKGROUND_REFRESH, monitor);
 
 		//open editor 
 		Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
 		DRepresentation myDiagramRepresentation = representations.iterator().next();
-		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);*/
-		
-		project.open(IResource.BACKGROUND_REFRESH, monitor);
+		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
+		session.open(monitor);
 
-		//TODO find a better solution instead of copy-paste the predefined messages and services
-		try {
-	    	File srcFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs");
-	    	File destFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+project.getFullPath().toString()+"/basic_msgs");
-	    	copyDependencies(srcFolder,destFolder);
-		} catch(IOException e){
-        	e.printStackTrace();
-        }
     	ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		monitor.worked(1);
