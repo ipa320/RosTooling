@@ -105,6 +105,7 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.swt"/>
       <import plugin="javax.inject"/>
       <import plugin="org.eclipse.sirius.diagram"/>
+      <import feature="org.eclipse.sirius.specifier"/>
    </requires>
 
    <plugin
