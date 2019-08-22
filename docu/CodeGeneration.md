@@ -2,7 +2,7 @@
 
 ### From ROS model
 
-As complement to the option of extract automatically models from source code, the tooling supports complementary the opposite direction: the generation of code from ROS models. As this step is optional, it will not be performed automatically and the user have to trigger it by a right clicking a right click on the ROS model file (*.ros). The function offer two possibilities: generate ROS1 or ROS2 code.
+As complement to the option of extract automatically models from source code, the tooling supports complementary the opposite direction: the generation of code from ROS models. As this step is optional, it will not be performed automatically and the user have to trigger it by a right click on the ROS model file (*.ros). The function offer two possibilities: generate ROS1 or ROS2 code.
 
 ![alt text](images/generate_roscode.png)
 
