@@ -16,7 +16,7 @@ A dialog will be open and ask you to select a folder to contain your new model, 
 
 To modify easily the model you can use a Sirius representation. Open the file representation.aird with the Aird editor and in the menu representations choose the "RosSystem" option and press "New.." then choose the Ros System entity of your "*.rossystem" model and press finish.
 
-A new window will appear where you can choose and add elements by selecting them on the side toolbar and the properties view. With the toolbar you can add a new component. Press the option "New component", a window will be openned and ask for a new name for you component:
+A new window will appear where you can choose and add elements by selecting them on the side toolbar and the properties view. With the toolbar you can add a new component. Press the option "New component", a window will be opened and ask for a new name for you component:
 
 ![alt text](images/new_component_side_bar.png)
 
@@ -44,7 +44,7 @@ NameSpace:
 RosModel: rosnodes/scan_unifier.ros
 ```
 
-Now that the components are created you can define the desired connections between the components using the tool "Topic Connection", the only imposed rule to create connections is that the information object (message or service type) is the same on both sides. For our exmaple the natural connection to be created are the shown on the following figure:
+Now that the components are created you can define the desired connections between the components using the tool "Topic Connection", the only imposed rule to create connections is that the information object (message or service type) is the same on both sides. For our example the natural connection to be created are the shown on the following figure:
 
 ![alt text](images/rossystem_withconnections.png)
 
