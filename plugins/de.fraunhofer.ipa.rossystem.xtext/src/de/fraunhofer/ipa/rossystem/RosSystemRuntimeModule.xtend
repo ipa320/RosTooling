@@ -5,9 +5,8 @@ package de.fraunhofer.ipa.rossystem
 
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import de.fraunhofer.ipa.rossystem.generator.CustomOutputProvider
-import de.fraunhofer.ipa.rossystem.generator.RosSystemGenerator
 import com.google.inject.Binder
-import org.eclipse.xtext.generator.AbstractGenerator
+
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.

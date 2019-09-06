@@ -12,11 +12,8 @@ import ros.PackageSet
 import org.eclipse.xtext.generator.InMemoryFileSystemAccess
 import org.eclipse.xtext.generator.GeneratorContext
 import de.fraunhofer.ipa.roscode.generator.CustomOutputProvider
-import com.google.inject.Provider
-import org.eclipse.xtext.resource.XtextResourceSet
-import org.eclipse.emf.common.util.URI
-import org.eclipse.xtext.util.StringInputStream
-import org.eclipse.emf.ecore.resource.ResourceSet
+
+
 import de.fraunhofer.ipa.roscode.generator.Ros2CodeGenerator
 
 @RunWith(XtextRunner)
@@ -32,11 +29,11 @@ class RosGeneratorTest {
 	ParseHelper<PackageSet> parseHelper
 
 	@Inject
-	Provider<XtextResourceSet> resourceSetProvider
+	RosTestingUtils rosTestingUtils
 
 	@Test
 	def void testGeneratedRosCode() {
-		val resourceSet = getMessagesResourceSet
+		val resourceSet = rosTestingUtils.getMessagesResourceSet
 		val model = parseHelper.parse('''
 			PackageSet { package { 
 			  CatkinPackage cob_sick_s300 { artifact {
@@ -77,7 +74,7 @@ int main(int argc, char **argv)
 	
 	@Test
 	def void testGeneratedRos2Code() {
-		val resourceSet = getMessagesResourceSet
+		val resourceSet = rosTestingUtils.getMessagesResourceSet
 		
 		val model = parseHelper.parse('''
 			PackageSet { package { 
@@ -174,24 +171,6 @@ int main(int argc, char * argv[])
 }'''.toString, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "cob_sick_s300.cpp").toString.trim)
 	}
 	
-	def ResourceSet getMessagesResourceSet() {
-		val resourceSet = resourceSetProvider.get
-
-		val messages = resourceSet.createResource(URI.createURI("common_msgs.ros"))
-		messages.load(new StringInputStream('''PackageSet{package{
-		    Package diagnostic_msgs{ spec { 
-		      TopicSpec DiagnosticArray{ message { Header header DiagnosticStatus[] status }}  
-		    }},
-		    Package sensor_msgs{ spec { 
-		      TopicSpec LaserScan{ message { Header header float32 angle_min float32 angle_max float32 angle_increment float32 time_increment float32 scan_time float32 range_min float32 range_max float32[] ranges float32[] intensities }}
-		    }},
-		    Package std_msgs{ spec { 
-		    	TopicSpec Bool{ message { bool data }}, 		      
-		    }}
-		  }
-		}'''), emptyMap)
-
-		return resourceSet
-	}
+	
 
 }
