@@ -20,7 +20,9 @@ class Ros2CodeGenerator extends AbstractGenerator {
 
  
 	String resourcepath
-	
+	String import_msgs
+	int char_i
+		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resourcepath = resource.URI.toString();
 		if (! resourcepath.contains("/ros-input")) {
@@ -40,81 +42,82 @@ def compile(Node node) '''
 #include "rclcpp/rclcpp.hpp"
 #include "rcutils/cmdline_parser.h"
             «FOR pub : node.publisher»
-#include <«pub.message.package.name»/msg/«pub.message.name».hpp>
+#include <«pub.message.package.name»/msg/«check_message_include(pub.message.name)».hpp>
             «ENDFOR»
             «FOR sub : node.subscriber»
-#include <«sub.message.package.name»/msg/«sub.message.name».hpp>
+#include <«sub.message.package.name»/msg/«check_message_include(sub.message.name)».hpp>
             «ENDFOR»
             «FOR srvserver : node.serviceserver»
-#include <«srvserver.service.package.name»/srv/«srvserver.service.name».hpp>
+#include <«srvserver.service.package.name»/srv/«check_message_include(srvserver.service.name)».hpp>
             «ENDFOR»
             «FOR srvclient : node.serviceclient»
-#include <«srvclient.service.package.name»/srv/«srvclient.service.name».hpp>
+#include <«srvclient.service.package.name»/srv/«check_message_include(srvclient.service.name)».hpp>
             «ENDFOR»
+
+using namespace std::chrono_literals;
+using std::placeholders::_1;
 
 void print_usage()
 {
-  printf("Usage for «node.name» app:\n");
-  printf("..... \n");
-  printf("..... \n");
-  printf("..... \n");
-
+  	printf("Usage for «node.name» app:\n");
+  	printf("..... \n");
+  	printf("..... \n");
+  	printf("..... \n");
 }
 
   class «node.name» : public rclcpp::Node {
   	public:
-«IF node.publisher.length > 0»
-  	  explicit «node.name»(const std::string & «FOR pub : node.publisher»«pub.name» «ENDFOR») : Node("«node.name»")
-  	  auto publish_message = [this]() -> void {
+  	  «node.name»() : Node("«node.name»") {
       	«FOR pub : node.publisher»
-      	msg_«pub.name»_ = std::make_unique<«pub.message.package.name»::msg::«pub.message.name»>();
-      	«pub.name»_->publish(std::move(msg_«pub.name»_));
+      	«pub.name»_ = this->create_publisher<«pub.message.package.name»::msg::«pub.message.name»>("«pub.name»",10);
         «ENDFOR»
-  	  };
-
-  	  rclcpp::QoS qos(rclcpp::KeepLast(7));
-    «FOR pub : node.publisher»
-  	  «pub.name»_ = this->create_publisher<«pub.message.package.name»::msg::«pub.message.name»>(«pub.name», qos);
-	«ENDFOR»
-  }
-«ENDIF»       
+        «FOR sub : node.subscriber»
+        «sub.name»_ = this->create_subscription<«sub.message.package.name»::msg::«sub.message.name»>("«sub.name»", 10, std::bind(&«node.name»::«sub.name»_callback, this, _1));
+        «ENDFOR»
+        «IF node.publisher.length > 0»
+        timer_ = this->create_wall_timer(500ms, std::bind(&«node.name»::timer_callback, this));
+        «ENDIF»
+  	  }
 
 private:
-  size_t count_ = 1;
-  «FOR pub : node.publisher»
-  std::unique_ptr<«pub.message.package.name»::msg::«pub.message.name»> msg_«pub.name»_;
-  rclcpp::Publisher<«pub.message.package.name»::msg::«pub.message.name»>::SharedPtr «pub.name»_;
-   «ENDFOR»
-  rclcpp::TimerBase::SharedPtr timer_;
+  «FOR sub : node.subscriber»
+  	void «sub.name»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const {
+  	  RCLCPP_INFO(this->get_logger(), "«sub.name» topic got a message");
+  	}
+  	rclcpp::Subscription<«sub.message.package.name»::msg::«sub.message.name»>::SharedPtr «sub.name»_ ;
+   «ENDFOR»«FOR pub : node.publisher»
+    rclcpp::Publisher<«pub.message.package.name»::msg::«pub.message.name»>::SharedPtr «pub.name»_;
+	«ENDFOR»
+
+	«IF node.publisher.length > 0»
+	void timer_callback(){
+   	«FOR pub : node.publisher»
+   	auto «pub.name»_msg = «pub.message.package.name»::msg::«pub.message.name»();
+	 //«pub.name»_msg = ...
+	 «pub.name»_->publish(«pub.name»_msg);
+	 RCLCPP_INFO(this->get_logger(), "«pub.name» publisher active");
+	«ENDFOR»
+	}
+	rclcpp::TimerBase::SharedPtr timer_;
+	«ENDIF»
 };
 
 int main(int argc, char * argv[])
 {
-  setvbuf(stdout, NULL, _IONBF, BUFSIZ);
-
-  if (rcutils_cli_option_exist(argv, argv + argc, "-h")) {
-    print_usage();
-    return 0;
-  }
-
   rclcpp::init(argc, argv);
-  «FOR pub : node.publisher»
-  auto «pub.name» = std::string("«pub.name»");
-  «ENDFOR»
-  char * cli_option = rcutils_cli_get_option(argv, argv + argc, "-t");
-  if (nullptr != cli_option) {
-  «FOR pub : node.publisher»
-    «pub.name» = std::string(cli_option);
-    «ENDFOR»
-  }
-   «FOR pub : node.publisher»
-   auto node = std::make_shared<«node.name»>(«pub.name»)
-   «ENDFOR»
-
-  rclcpp::spin(«node.name»);
-
+  rclcpp::spin(std::make_shared<«node.name»>());
   rclcpp::shutdown();
   return 0;
 }
  '''
+ 
+ def String check_message_include(String message_name){
+ 	import_msgs = message_name.toFirstLower;
+ 	for (char_i =0; char_i < import_msgs.length; char_i++ ){
+		if (Character.isUpperCase(import_msgs.charAt(char_i))){
+			import_msgs = import_msgs.substring(0,char_i)+"_"+Character.toLowerCase(import_msgs.charAt(char_i))+import_msgs.substring(char_i+1);
+		}
+ 	}
+ 	return import_msgs;
+ }
 }
