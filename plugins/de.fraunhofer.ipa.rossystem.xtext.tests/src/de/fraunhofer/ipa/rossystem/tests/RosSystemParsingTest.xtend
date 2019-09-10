@@ -11,15 +11,10 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import rossystem.RosSystem
-import org.eclipse.xtext.testing.validation.ValidationTestHelper
-
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(RosSystemInjectorProvider))
 class RosSystemParsingTest {
-	
-	@Inject
-	ValidationTestHelper validationTestHelper
 
 	@Inject
 	ParseHelper<RosSystem> parseHelper

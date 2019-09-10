@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.xtext.resource.XtextResourceSet
 import com.google.inject.Provider
 import org.eclipse.xtext.util.StringInputStream
+import java.nio.file.Paths;
+import java.nio.file.Files
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(CustomInjectorProvider))
@@ -29,6 +31,9 @@ class RosSystemGeneratorTest {
 	
 	@Inject 
 	RosSystemGenerator generator
+	
+	String RESOURCES_BASE_DIR = 'resources'
+		
 
 	@Test
 	def void testGeneratedCode() {
@@ -67,53 +72,23 @@ class RosSystemGeneratorTest {
 		// Assert that all necessary files exist 
 		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_system.launch"))
 		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh"))
-		Assert.assertTrue(
-			fsa.textFiles.containsKey(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface"))
 		
 		// Test the generated launch file
-		Assert.assertEquals(
-            '''<?xml version="1.0"?>
-<launch>
-
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
-
-	</node>
-</launch>'''.toString, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+"scan_system.launch").toString.trim)
-		
-		
+		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_system.launch'))).trim,
+            fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+"scan_system.launch").toString.trim)
+				
 		// Test the generated install script
-		Assert.assertEquals('''#!/bin/bash
-
-distro=$(echo $ROS_DISTRO)
-
-if [ -z "$distro" ]; then 
-    echo "Ros distro variable not found"
-    read -p "Do you want to install ROS? [Y/N]" choice
-    if [[ "$choice" == "Y" ]]; then
-            read -p "Distro version (e.g. kinetic, melodic): " distro
-            sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-            sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-            sudo apt update
-            sudo apt install ros-$distro-desktop
-    else
-        exit
-    fi
-else
-    echo "Found a ROS installation for the $distro distro"
-    sudo apt update
-fi
-
-for pkg in cob-sick-s300 
-do
-    sudo apt install ros-$distro-$pkg
-done'''.toString, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh").toString.trim)
-	
-	// Test the generated component interface		
-	Assert.assertEquals('''ComponentInterface { name scan_system
+		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_systeminstall.sh'))).trim, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh").toString.trim)
+		
+		// Test the generated component interface					
+		Assert.assertEquals('''ComponentInterface { name scan_system
 RosPublishers{
 	RosPublisher "base_laser_front/scan" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan"},
 	RosPublisher "base_laser_front/diagnostics" { RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics"}
 	}
-}'''.toString, fsa.textFiles.get(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface").toString.trim)	
+}'''.toString, fsa.textFiles.get(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface").toString.trim)
+		
+		// Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_system.componentinterface'))).trim, fsa.textFiles.get(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface").toString.trim)
 	}
 }
