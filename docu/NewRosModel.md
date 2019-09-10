@@ -9,7 +9,7 @@ To extract your model from ROS code ou have 3 options:
 
 ### Cloud
 
-Under the link [Model extractor](http://153.97.4.193/) a web service to extract automatically models from existing open source ROS packages is available. The user only has to give as input the URL address of the repository (for example https://github.com/ipa320/cob_driver), the name of the package that contains the node to be analysed (for example cob_sick_s300) and the name of th node ( for example cob_sick_s300). The resulted model will be displayed on the right side of the window.
+Under the link [Model extractor](http://ros-model.seronet-project.de/) a web service to extract automatically models from existing open source ROS packages is available. The user only has to give as input the URL address of the repository (for example https://github.com/ipa320/cob_driver), the name of the package that contains the node to be analysed (for example cob_sick_s300) and the name of th node ( for example cob_sick_s300). The resulted model will be displayed on the right side of the window.
 
 ![alt text](images/cob_sick_s300_cloud.png)
 
