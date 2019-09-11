@@ -82,6 +82,7 @@ void print_usage()
         «FOR service : node.serviceserver»
         «check_name(service.name)»_ = this->create_service<«service.service.package.name»::srv::«service.service.name»>("«service.name»", std::bind(&«node.name»::«check_name(service.name)»_handle, this, _1, _2, _3));
         «ENDFOR»
+
         «IF node.publisher.length > 0»
         timer_ = this->create_wall_timer(500ms, std::bind(&«node.name»::timer_callback, this));
         «ENDIF»
