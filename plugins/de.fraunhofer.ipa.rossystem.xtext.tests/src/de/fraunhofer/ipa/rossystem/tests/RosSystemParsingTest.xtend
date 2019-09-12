@@ -7,26 +7,17 @@ import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
-import org.eclipse.xtext.xbase.testing.CompilationTestHelper
 import org.junit.Assert
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
 import rossystem.RosSystem
-
-import static extension org.junit.Assert.*
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(RosSystemInjectorProvider))
 class RosSystemParsingTest {
 
-	@Rule
-	@Inject public TemporaryFolder temporaryFolder
-
 	@Inject
 	ParseHelper<RosSystem> parseHelper
-	@Inject extension CompilationTestHelper
 
 	@Test
 	def void loadModel() {
@@ -110,30 +101,4 @@ class RosSystemParsingTest {
         Assert.assertEquals(ToTopic, diag_Subscriber)
 
     }
-/** 
-	@Test
-    def void testGeneratedCode(){
-    	'''
-	RosSystem { Name 'My' 
-	  RosComponents ( 
-	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
-	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
-	  TopicConnections { 
-	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
-    '''.assertCompilesTo('''
-<?xml version="1.0"?>
-<launch>
-
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="scan_front" ns="scan_front" cwd="node" respawn="false" output="screen">
-
-	</node>
-
-	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostics" cwd="node" respawn="false" output="screen">
-		<remap from="diagnostics" to="scan_front/diagnostics" />
-
-	</node>
-</launch>'''
-			)
-    	
-    }*/
 }
