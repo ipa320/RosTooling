@@ -2,10 +2,10 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ros="http://www.ipa.fraunhofer.de/ros" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_0JGDcCibEemuo6R6J7-cnA" selectedViews="_088iQCibEemuo6R6J7-cnA" version="14.1.0.201810161215">
     <semanticResources>rosnodes/diagnostic_aggregator.ros</semanticResources>
-    <semanticResources>basic_msgs/common_msgs.ros</semanticResources>
-    <semanticResources>basic_msgs/ros_core.ros</semanticResources>
     <semanticResources>rosnodes/scan_unifier.ros</semanticResources>
     <semanticResources>rosnodes/sick_s300.ros</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/common_msgs.ros</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/ros_core.ros</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_088iQCibEemuo6R6J7-cnA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/de.fraunhofer.ipa.ros.sirius/description/ros.odesign#//@ownedViewpoints[name='component']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_woDBsIFHEem2v67N4m7PvA" name="diagnostics" repPath="#_wn7F4IFHEem2v67N4m7PvA">
