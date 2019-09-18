@@ -82,7 +82,6 @@
 
    <extension point="org.eclipse.ui.commands">
       <command
-         defaultHandler="ros.presentation.AddRosProjectHandler"
          description="Add new Ros project"
          id="de.fraunhofer.ipa.ros.newRosProject"
          name="Add new Ros Project">
@@ -123,7 +122,6 @@
 
    <extension point="org.eclipse.ui.commands">
       <command
-         defaultHandler="ros.presentation.ImportRosModelHandler"
          description="Import Ros model"
          id="de.fraunhofer.ipa.ros.ImportRosModel"
          name="Import Ros model">
