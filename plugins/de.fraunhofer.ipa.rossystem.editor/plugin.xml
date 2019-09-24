@@ -43,7 +43,6 @@
 
    <extension point="org.eclipse.ui.commands">
       <command
-         defaultHandler="rossystem.presentation.AddRosSystemHandler"
          description="Add new Ros system"
          id="de.fraunhofer.ipa.ros.newRosSystem"
          name="Add new Ros System">
