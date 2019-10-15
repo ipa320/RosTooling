@@ -2,7 +2,7 @@
 
 Please be sure that the tool is installed and your workspace setup, see the [installation guide](../README.md) for further details.
 
-Import the example project scan_system_demo (under the "examples" folder of this repository) to the workbench of your application:
+Import the example project scan_system_demo (from the [ros-model-examples](https://github.com/ipa-nhg/ros-model-examples) repository) to the workbench of your application:
 
 ```
 scan_system_demo

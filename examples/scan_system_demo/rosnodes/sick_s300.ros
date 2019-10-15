@@ -1,8 +1,0 @@
-PackageSet { package {
-	CatkinPackage cob_sick_s300 { artifact {
-		Artifact cob_sick_s300 { node Node { name cob_sick_s300 
-			publisher { 
-			Publisher { name scan message "sensor_msgs.LaserScan" } , 
-			Publisher { name diagnostics message "diagnostic_msgs.DiagnosticArray" 
-			}}}}
-}}}}
