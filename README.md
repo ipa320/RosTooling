@@ -59,7 +59,7 @@ Go to Menu Window -> Perspective -> Open Perspective -> Other... -> ROS develope
 
 #### 2: Import the common communication objects project
 
-import the project located under the "examples" folder of this repository to the workbench of your application:
+import the project located under the "ROSCommonObjects" folder of this repository to the workbench of your application:
 ```
 de.fraunhofer.ipa.ros.communication.objects
 ```

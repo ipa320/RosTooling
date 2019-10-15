@@ -17,7 +17,7 @@ source /opt/ros/kinetic/setup.bash
 Call the script giving as argument the name of the ROS package and save the ouput of the script as a ros file:
 
 ```
-bash ros-model/tools/generate_messages_model_helper.sh *PACKAGE_NAME* > ros-model/examples/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/*PACKAGE_NAME*.ros
+bash ros-model/tools/generate_messages_model_helper.sh *PACKAGE_NAME* > ros-model/ROSCommonObjects/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/*PACKAGE_NAME*.ros
 ```
 
 ## Model extractor using static code analysis
