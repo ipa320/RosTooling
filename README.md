@@ -77,6 +77,7 @@ Now that your workspace is setup, you can start creating your [project and defin
 * [Add communication objects](docu/NewCommunicationObjects.md)
 * [Model extraction using introspection at runtime](https://github.com/ipa-led/ros_graph_parser)
 * [Introspection at design time](docu/simulateRuntime.md)
+* [Connect your ROS project with SeRoNet](docu/ROSSeRoNet.md)
 
 ## Model examples
 
