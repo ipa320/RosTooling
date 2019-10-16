@@ -41,6 +41,7 @@ do
         cout_msg=$((cout_msg-1))
         message=${i/$p\//}
         message_show=$(rosmsg show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
+        message_show="$(echo $message_show | sed -e 's/\s=\s/=/g')"
         final_desc=$(parserToRosModel "$message_show")
 	    echo -n '      TopicSpec '$message'{ message { '$final_desc' }}'
         if (("$cout_msg" >= "1" || "$cout_srv" >= "1" ))
