@@ -42,7 +42,7 @@ And you can import now the project to be transformed, for example [cob_light](ht
 
 ![alt text](images/cob_light_representation.png)
 
-Or you can create a [new project from an empty model](https://github.com/ipa320/ros-model/blob/master/docu/NewProject.md). In case you have an existing ROS package that contains the C++ code of your component we recommend to use the [extractor](https://github.com/ipa320/ros-model/blob/master/docu/NewRosModel.md) instead of start from scratch the model defintion. 
+Or you can create a [new project from an empty model](https://github.com/ipa320/ros-model/blob/master/docu/NewProject.md). In case you have an existing ROS package that contains the C++ code of your component we recommend to use the [extractor](https://github.com/ipa320/ros-model/blob/master/docu/NewRosModel.md) instead of start from scratch the model definition. 
 
 NOTE: all the msgs, srvs or actions used by your node (package dependencies) have to be also described, we made available a model of the most [common ROS interfaces](https://github.com/ipa320/ros-model/tree/master/ROSCommonObjects/de.fraunhofer.ipa.ros.communication.objects/basic_msgs). In case one of your package dependencies is not included in this list you have to create the models usin the following [script](https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md)
 
