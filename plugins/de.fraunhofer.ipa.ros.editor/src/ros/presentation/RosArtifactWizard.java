@@ -128,6 +128,17 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		String[] newNatures = new String[natures.length + 1];
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
 		newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
+
+		//clone, import and add reference to Communication Objects
+		try {
+			ImportCommObjectsHandler.CloneAndImport();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		IProject ObjectsProject = ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects");
 		description.setReferencedProjects(new IProject[] {ObjectsProject});
 		description.setNatureIds(newNatures);
@@ -163,38 +174,41 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		session.addSemanticResource(rosFileURI, monitor);
 		domain.getCommandStack().execute(command);
 
+
+		
 		//Add resource dependencies to communication objects
-        File[] Objectfiles = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs").listFiles();
-		for (File Ofile:Objectfiles) {
-			if(Ofile.isFile()){
-				IFile Oifile= ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(Path.fromOSString(Ofile.getAbsolutePath()));
-				if (Oifile.getFileExtension().contains("ros")) {
-					System.out.println(Oifile.getFullPath().toOSString());
-					AddSemanticResourceCommand addCommandToSession = new AddSemanticResourceCommand(session, URI.createPlatformResourceURI(Oifile.getFullPath().toOSString(), true), monitor );
-					domain.getCommandStack().execute(addCommandToSession);
+		if (ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").exists()) {
+	        File[] Objectfiles = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs").listFiles();
+			for (File Ofile:Objectfiles) {
+				if(Ofile.isFile()){
+					IFile Oifile= ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(Path.fromOSString(Ofile.getAbsolutePath()));
+					if (Oifile.getFileExtension().contains("ros")) {
+						AddSemanticResourceCommand addCommandToSession = new AddSemanticResourceCommand(session, URI.createPlatformResourceURI(Oifile.getFullPath().toOSString(), true), monitor );
+						domain.getCommandStack().execute(addCommandToSession);
+					}
 				}
 			}
 		}
-		
 		//create representation
-		rootObject = session.getSemanticResources().iterator().next().getContents().get(0).eContents().get(0).eContents().get(0);
-		System.out.println(rootObject);
-		Collection<RepresentationDescription> representationDescriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(true), rootObject);
-		RepresentationDescription description_ = representationDescriptions.iterator().next();
-		DialectManager viewpointDialectManager = DialectManager.INSTANCE;
-		SessionManager.INSTANCE.notifyRepresentationCreated(session);
-		Command createViewCommand = new CreateRepresentationCommand(session, description_, rootObject, ProjectName, monitor);
-		session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
-		project.open(IResource.BACKGROUND_REFRESH, monitor);
+		try {
+			rootObject = session.getSemanticResources().iterator().next().getContents().get(0).eContents().get(0).eContents().get(0);
+			Collection<RepresentationDescription> representationDescriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(true), rootObject);
+			SessionManager.INSTANCE.notifyRepresentationCreated(session);			
+			RepresentationDescription description_ = representationDescriptions.iterator().next();
+			Command createViewCommand = new CreateRepresentationCommand(session, description_, rootObject, ProjectName, monitor);
+			session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
+			DialectManager viewpointDialectManager = DialectManager.INSTANCE;
+			project.open(IResource.BACKGROUND_REFRESH, monitor);
+			Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
+			DRepresentation myDiagramRepresentation = representations.iterator().next();
+			DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
 
-		//open editor 
-		Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
-		DRepresentation myDiagramRepresentation = representations.iterator().next();
-		DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
-		session.open(monitor);
+		} finally {
+			session.open(monitor);
+	    	//ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+			//project.open(IResource.BACKGROUND_REFRESH, monitor);
+		}
 
-    	ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		project.open(IResource.BACKGROUND_REFRESH, monitor);
 		monitor.worked(1);
 	}
 	

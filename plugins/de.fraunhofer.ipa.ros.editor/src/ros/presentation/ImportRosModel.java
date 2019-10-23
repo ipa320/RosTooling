@@ -106,7 +106,6 @@ public class ImportRosModel extends Wizard implements INewWizard {
 						byte[] bytes = builder.toString().getBytes();
 						InputStream source = new ByteArrayInputStream(bytes);
 						modelFile.create(source, IResource.FILE, null);
-
 						//Add viewpoints to the aird file
 						/*IFile airdFile = project.getFile("representations.aird");
 						URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
