@@ -113,7 +113,7 @@ Push to this GitHub repository the status
 
 From the menu *File* select *Export* and choose the option *Deployable features* from *Plug-in Development* category. Select the *de.fraunhofer.ipa.ros.feature* Feature and give a path for destination (e.g. ~/Desktop/export)
 
-The resulted folders and files have to be copied to the *updatesite/latest* folder fo the [Update Site server](http://ros-model.seronet-project.de/updatesite/latest/)
+The resulted folders and files have to be copied to the *updatesite/latest* folder fo the [Update Site server](http://ros-model.seronet-project.de/updatesite/latest/) and the [site.xml](http://ros-model.seronet-project.de/updatesite/latest/site.xml) file updated to point the new version.
 
 ### 4. Add a new release on GitHub
 
