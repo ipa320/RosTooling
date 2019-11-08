@@ -66,11 +66,9 @@ de.fraunhofer.ipa.ros.communication.objects
 
 If you have internet a button can clone from GitHub the objects to your workspace and import them automatically:
 
-![alt text](docu/images/run_ros_tooling.png)
+![alt text](docu/images/clone_and_import.png)
 
 Now that your workspace is setup, you can start creating your [project and defining your ROS system](#Tutorials)
-
-![alt text](docu/images/clone_and_import.png)
 
 ## Tutorials
 
