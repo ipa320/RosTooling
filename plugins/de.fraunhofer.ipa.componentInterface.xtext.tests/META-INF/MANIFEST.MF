@@ -3,7 +3,7 @@ Automatic-Module-Name: de.fraunhofer.ipa.componentInterface.xtext.tests
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.componentInterface.xtext.tests
 Bundle-Vendor: Fraunhofer IPA
-Bundle-Version: 1.1.2.qualifier
+Bundle-Version: 1.1.3.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.componentInterface.xtext.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.componentInterface.xtext,
