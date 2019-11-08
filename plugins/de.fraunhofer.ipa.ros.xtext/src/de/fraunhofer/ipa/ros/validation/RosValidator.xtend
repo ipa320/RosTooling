@@ -6,6 +6,11 @@ import org.eclipse.xtext.validation.Check
 import ros.Node
 import ros.Artifact
 import ros.Package
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.parser.antlr.SyntaxErrorMessageProvider
+import ros.Publisher
+import ros.Subscriber
+
 
 /**
  * This class contains custom validation rules. 
@@ -37,11 +42,83 @@ class RosValidator extends AbstractRosValidator {
 		if (Character.isUpperCase(c)){
 			error("The name of a package has to follow the ROS naming conventions: Capital letters are not allowed", null, INVALID_NAME);
 		}
- 	}}
+ 	}
+  }
+  
+  /* Customize Syntax Error Messages */
+  
+  /* For Topics */
+  @Check
+  def void CheckMsgsRefSubscriber(Node node){
+  	for(p : node.subscriber){
+  		if (p.message.eContainer === null){
+          warning("Couldn't resolve reference to TopicSpec \n"+"-generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n-" + "Add the dependency to the project \n",
+            null,INVALID_NAME)
+      }
+  		
+  	}
+      
+  }
+   @Check
+  def void CheckMsgsRefPublisher(Node node){
+  	for(p : node.publisher){
+  		if (p.message.eContainer === null){
+          warning("Couldn't resolve reference to TopicSpec \n" + "- generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n",
+            null,INVALID_NAME)
+      }
+  		
+  	}
+      
+  }
+  
+  /* For Action */
+  @Check
+  def void CheckMsgsRefActionClient(Node node){
+  	  for (p: node.actionclient){
+  	  	if (p.action.eContainer === null){
+  	  		warning("Couldn't resolve reference to TopicSpec \n" + "- generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n" + "- Add the dependency to the project /n",
+            null,INVALID_NAME)
+  	  	}
+  	  	
+  	  }
+      
+  }
+   @Check
+  def void CheckMsgsRefActionServer(Node node){
+  	for(p: node.actionserver)
+      if (p.action.eContainer === null){
+          warning("Couldn't resolve reference to ActionSpec \n"+"- generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n" + "- Add the dependency to the project",
+            null,INVALID_NAME)
+      }
+  }
+  
+  /* For Services */
+   @Check
+  def void CheckMsgsRefServerServer(Node node){
+  	for(p : node.serviceserver){
+  		if (p.service.eContainer === null){
+  			warning("Couldn't resolve reference to ServicerSpec \n"+"- generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n" + "- Add the dependency to the project \n",
+            null,INVALID_NAME)	   
+      }
+  		
+  	}
+      
+  }
+  
+  @Check
+  def void CheckMsgsRefServerClient(Node node){
+  	for(p: node.serviceclient){
+  		if (p.service.eContainer === null){
+          warning("Couldn't resolve reference to ServiceSpec \n"+"- generate them https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md \n" + "- Add the dependency to the project \n" ,
+            null,INVALID_NAME)
+      }
+  		
+  	}
+      
+  }
+  
+ }
 
   //The RULE_ID impose the rest of the ROS naming convention rules : bin/de/fraunhofer/ipa/ros/parser/antlr/internal/InternalRos.g
   // allow the use only of the symbol: "_"
   // allow the use of numbers
-
-	
-}
