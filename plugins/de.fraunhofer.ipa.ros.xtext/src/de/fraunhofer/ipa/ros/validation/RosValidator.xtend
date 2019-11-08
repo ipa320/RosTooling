@@ -6,6 +6,12 @@ import org.eclipse.xtext.validation.Check
 import ros.Node
 import ros.Artifact
 import ros.Package
+import ros.Publisher
+import ros.Subscriber
+import ros.ServiceServer
+import ros.ServiceClient
+import ros.ActionClient
+import ros.ActionServer
 
 /**
  * This class contains custom validation rules. 
@@ -37,11 +43,66 @@ class RosValidator extends AbstractRosValidator {
 		if (Character.isUpperCase(c)){
 			error("The name of a package has to follow the ROS naming conventions: Capital letters are not allowed", null, INVALID_NAME);
 		}
- 	}}
-
-  //The RULE_ID impose the rest of the ROS naming convention rules : bin/de/fraunhofer/ipa/ros/parser/antlr/internal/InternalRos.g
+ 	}
+  }
+  
+  /* Customize Syntax Error Messages */
+  
+   public static val INVALID_SPEC = 'invalidSpecRef'
+   public static String SpecWarning = "## Quick Fixes available ##-
+    - Add the dependency to the specifications project
+    - Generate the .ros model for the specifications
+      ->https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md"
+  
+  /* For Topics */
+  @Check
+  def void CheckMsgsRefPublisher(Publisher pub){
+  	if(pub.message.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+  
+  @Check
+  def void CheckMsgsRefSubscriber(Subscriber sub){
+  	if(sub.message.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+  
+  /* For Actions */
+  @Check
+  def void CheckMsgsRefActionClient(ActionClient act){
+  	if(act.action.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+  
+   @Check
+  def void CheckMsgsRefActionServer(ActionServer act){
+  	if(act.action.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+  
+  /* For Services */
+  @Check
+  def void CheckMsgsRefServiceServer (ServiceServer ser){
+  	if(ser.service.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+  
+  @Check
+  def void CheckMsgsRefServiceClient (ServiceClient ser){
+  	if(ser.service.eContainer === null){
+  		warning( SpecWarning, null, INVALID_SPEC)
+  	}
+  }
+ 
+   //The RULE_ID impose the rest of the ROS naming convention rules : bin/de/fraunhofer/ipa/ros/parser/antlr/internal/InternalRos.g
   // allow the use only of the symbol: "_"
   // allow the use of numbers
+  
+ }
 
-	
-}
+

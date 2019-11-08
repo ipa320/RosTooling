@@ -43,5 +43,5 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				error("Action type not matched", null, NOT_MATCHED_TYPE)
 				return
 			}
-	}}
-
+	}
+}
