@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -23,12 +21,15 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardSelectionPage;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.api.errors.InvalidRemoteException;
+import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
@@ -82,30 +83,49 @@ public class ImportRosModel extends Wizard implements INewWizard {
 				new WorkspaceModifyOperation() {
 					@Override
 					protected void execute(IProgressMonitor progressMonitor) {
-					
-					try {
-						URL url = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/test.sh");
-						File file = new File(FileLocator.resolve(url).toURI());
-						String URLfile = file.getAbsolutePath();
-						
-						URL url_py = new URL("platform:/plugin/de.fraunhofer.ipa.ros/tools/ros_model_extractor.py");
-						File file_py = new File(FileLocator.resolve(url_py).toURI());
-						String URLfile_py = file_py.getAbsolutePath();
-						workspace_path = getHAROSConfigurationPage.getWorkspacePath();
-						workspace_path = workspace_path.replace("build/compile_commands.json", "devel/setup.bash");
-						String args = workspace_path+" "+package_name+" "+node_name+" "+URLfile_py;
-						Process p = Runtime.getRuntime().exec("bash "+URLfile+" "+args);
-						BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-						p.waitFor();
-						StringBuilder builder = new StringBuilder();
-						String line;
-						while ( (line = in.readLine()) != null) {
-							builder.append(line);
-							builder.append(System.getProperty("line.separator"));
+					String download_folder = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/RosCommonObjects/tools";
+
+					if (ResourcesPlugin.getWorkspace().getRoot().getProject("RosCommonObjects").exists()) {
+						System.out.println("Basic Objects already imported");
+					} else {
+						String git_folder = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()+"/RosCommonObjects";
+						File git_file=new File(git_folder);
+						if (!git_file.exists()){
+							try {
+								git_file.mkdirs();
+							} finally {
+								try {
+									Git.cloneRepository()
+									.setURI("https://github.com/ipa320/RosCommonObjects.git")
+									.setDirectory(git_file)
+									.call();
+								} catch (InvalidRemoteException e) {
+									e.printStackTrace();
+								} catch (TransportException e) {
+									System.out.println("no internet conection??");
+									e.printStackTrace();
+								} catch (GitAPIException e) {
+									e.printStackTrace();
+								}
+							}
 						}
-						byte[] bytes = builder.toString().getBytes();
-						InputStream source = new ByteArrayInputStream(bytes);
-						modelFile.create(source, IResource.FILE, null);
+						try {
+
+							workspace_path = getHAROSConfigurationPage.getWorkspacePath();
+							workspace_path = workspace_path.replace("build/compile_commands.json", "devel/setup.bash");
+							String args = workspace_path+" "+package_name+" "+node_name+" "+download_folder+"/ros_model_extractor.py";
+							Process p = Runtime.getRuntime().exec("bash "+download_folder+"/haros_call.sh"+" "+args);
+							BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+							p.waitFor();
+							StringBuilder builder = new StringBuilder();
+							String line;
+							while ( (line = in.readLine()) != null) {
+								builder.append(line);
+								builder.append(System.getProperty("line.separator"));
+							}
+							byte[] bytes = builder.toString().getBytes();
+							InputStream source = new ByteArrayInputStream(bytes);
+							modelFile.create(source, IResource.FILE, null);
 						//Add viewpoints to the aird file
 						/*IFile airdFile = project.getFile("representations.aird");
 						URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
@@ -140,16 +160,13 @@ public class ImportRosModel extends Wizard implements INewWizard {
 					} catch (MalformedURLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (URISyntaxException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (CoreException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}}};
+					}}}};
 		getContainer().run(false, false, operation);
 		return true;
 	}catch (Exception exception) {
