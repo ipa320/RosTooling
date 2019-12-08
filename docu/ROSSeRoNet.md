@@ -5,27 +5,20 @@
 Create a git folder and clone the following repositories:
 
 ```
-git clone https://github.com/ipa320/ros-model && \
 git clone https://github.com/ipa-nhg/ros-model-examples && \
 git clone https://github.com/seronet-project/SeRoNet-examples && \
 git clone https://github.com/Servicerobotics-Ulm/DomainModelsRepositories
 ```
 ### Install SeRoNet Toolchain
 
-Download the Release Version: [SeRoNet toolchain release](https://web2.servicerobotik-ulm.de/files/SeRoNet_Tooling/1.0/SeRoNet-Tooling-v1.0.tar.gz)
+Download the Release Version: [SeRoNet toolchain release](https://web2.servicerobotik-ulm.de/files/SeRoNet_Tooling/1.1/SeRoNet-Tooling-v1.1.tar.gz)
 
 ```
-tar xzvf SeRoNet-Tooling-v1.0.tar.gz
-SeRoNet-Tooling-v1.0/eclipse
+tar xzvf SeRoNet-Tooling-v1.1.tar.gz
+SeRoNet-Tooling-v1.1/eclipse
 ```
 
 The last command will open the toolchain, select a folder for your Workspace and switch to the Workbench view. We recommend to check the latest version of the software using the Help menu -> Check for updates.
-
-Add the ROS Mixed Port plugins to the release. In Eclipse, go to *Help* > *Install New Software...*. To install the latest version of the ROS tooling, add the update site URL [http://ros-model.seronet-project.de/updatesite/RosSeRoNetMixedPort/latest/](http://ros-model.seronet-project.de/updatesite/RosSeRoNetMixedPort/latest/) in the *Work with* section.
-
-![alt text](images/Seronet_mixed_port_install_updatesite.png)
-
-The category *ROS-MixedPort* appears in the *Name* area. Check the box in front of *ROS-MixedPort* and click *Next* to review the list of items to be installed. Click *Next* again to read and accept the terms of the license agreements and afterwards click *Finish*. Eclipse will then start to install the ROS-SeRoNet Mixed Port plugin and its dependencies. If you get a security warning about the authenticity, click OK. Finally, when asked, restart Eclipse to complete the installation process.
 
 ### Import the ROS project that contains the node or the system to be connected to SeRoNet
 
@@ -33,10 +26,9 @@ The previously installed toolchain contains the ROS tooling modules required to 
 
 Go to Menu Window -> Perspective -> Open Perspective -> Other... -> ROS developer. Your application toolbar will be automatically configured.
 
-Before you bring your package you have to import the project located under the "ROSCommonObjects" folder of the ros-model repository (previously cloned) to the workspace of your application:
-```
-de.fraunhofer.ipa.ros.communication.objects
-```
+This example requires the common ROS interfaces, by clicking the button *Import Common ROS Objects* you will get the latest version from GitHub and import them automatically to your workspace, this function button is only available for the ROS developer perspective: menu *Window* => *Perspective* => *Open Perspective* => *ROS developer*.
+
+![alt text](images/01-ImportCommnObjects.png)
 
 And you can import now the project to be transformed, for example [cob_light](https://github.com/ipa-nhg/ros-model-examples/tree/master/RosComponents/cob_light) from the ros-model-examples repository (previously cloned). 
 
@@ -91,7 +83,7 @@ These files are the input for a SeRoNet Domain Model. By creating a [new Domain 
 
 Probably after create the new Domain Models project and add the types and services files you will get an error because some dependencies are missed.
 
-![alt text](images/domainModelsErrror.png)
+![alt text](images/domainModelsError.gif)
 
 For the most common ROS objects the project dependencies are already available. We suggest to import *always* by default the following projects from the GitHub repositories previously cloned:
 
