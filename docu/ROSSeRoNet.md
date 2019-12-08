@@ -79,7 +79,11 @@ For some cases like the cob_light driver, the ROS node definition requires some 
 
 This will generate the file services and the file types under the folder *src-gen*.
 
-![alt text](images/cob_light_obtects_to_SeRoNet.png)
+![alt text](images/cob_light_obtects_to_SeRoNet.gif)
+
+![alt text](images/cob_light_obtects_to_SeRoNet2.gif)
+
+![alt text](images/cob_light_obtects_to_SeRoNet3.gif)
 
 For further information please see: https://github.com/ipa-nhg/SeRoNet-Tooling-ROS-Mixed-Port/tree/M2MCommunicationObjectsReadme/de.seronet_projekt.ros.componentGateway.generator#automatic-transformation-of-communication-objects 
 
