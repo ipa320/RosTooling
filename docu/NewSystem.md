@@ -48,7 +48,7 @@ RosModel: rosnodes/scan_unifier.ros
 
 Now that the components are created you can define the desired connections between the components using the tool "Topic Connection", the only imposed rule to create connections is that the information object (message or service type) is the same on both sides. For our example the natural connection to be created are the shown on the following figure:
 
-![alt text](images/rossystem_withconnections.gif)
+![alt text](images/rossystem_withconnections.png)
 
 If the modifications are correct and after save the changes, two files will be automatically generated 1) a componentinterface file of your full system in the folder "components" and 2) a launch file to start the selected ROS nodes in the correct predefined Namespace (in a new folder "src-gen").
 

@@ -8,7 +8,13 @@ Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammou
 
 This repository holds a family of metamodels defined as ecore models that together with its java and Xtext and Xtend grammar implementations facilitates the use of a set of tools and graphical plugins to create models from ROS code, compose and validate the composition of models, autogenerate deployment artifacts and check the use of standard specifications.
 
-For further information about the metamodels, please check the [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
+### Projects/Links related to this repository:
+
+- Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
+- Source code for the web interface (extract models for non-public available ROS packages): [ros-model-cloud](https://github.com/ipa320/ros-model-cloud)
+- Eclipse Tooling update site: [the update site](http://ros-model.seronet-project.de/updatesite/)
+- Paper: Bootstrapping MDE Development from ROS Manual Code - Part 1: Metamodeling [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
+- Paper: Bootstrapping MDE Development from ROS Manual Code - Part 2: Model Generation [Models paper](https://ieeexplore.ieee.org/document/8906937)
 
 ### Installation
 
