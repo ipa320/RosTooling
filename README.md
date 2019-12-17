@@ -8,6 +8,12 @@ Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammou
 
 This repository holds a family of metamodels defined as ecore models that together with its java and Xtext and Xtend grammar implementations facilitates the use of a set of tools and graphical plugins to create models from ROS code, compose and validate the composition of models, autogenerate deployment artifacts and check the use of standard specifications.
 
+### Documentation shortlinks:
+
+- [Installation](#Installation)
+- [Tutorials](#Tutorials)
+- [Examples](#Model-examples)
+
 ### Projects/Links related to this repository:
 
 - Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
@@ -15,6 +21,9 @@ This repository holds a family of metamodels defined as ecore models that togeth
 - Eclipse Tooling update site: [the update site](http://ros-model.seronet-project.de/updatesite/)
 - Paper: Bootstrapping MDE Development from ROS Manual Code - Part 1: Metamodeling [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
 - Paper: Bootstrapping MDE Development from ROS Manual Code - Part 2: Model Generation [Models paper](https://ieeexplore.ieee.org/document/8906937)
+
+---------------------------------------------------------
+
 
 ### Installation
 
@@ -30,9 +39,9 @@ To start using the ROS tooling continue with the [step 1](#1-switch-to-the-ros-d
 
 #### Option 2: Using the Eclipse Installer - Source installation (ROS tooling developers)
 
-First the java environment have to be setup, for eclipse it is recomended the installation of the version 8:
+First the java environment have to be setup, for eclipse it is recomended the installation of the version 8 (i.e. X=8) for Ubuntu 16.04 and 11 (i.e. X=11) for the 18.04:
 ```
-sudo apt-get install openjdk-8-jre
+sudo apt-get install openjdk-X-jre
 ```
 Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended use *2018-12*.
 
