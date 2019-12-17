@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.fraunhofer.ipa.ros</groupId>
+        <artifactId>de.fraunhofer.ipa.ros.parent</artifactId>
+        <version>1.2.0-SNAPSHOT</version>
+        <relativePath>../de.fraunhofer.ipa.ros.parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>de.fraunhofer.ipa.rossystem.model.combination</artifactId>
+    <packaging>eclipse-plugin</packaging>
+    
+    <build>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<configuration>
+					<dependency-resolution>
+						<extraRequirements>
+							<requirement>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.ui.ide</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+						</extraRequirements>
+					</dependency-resolution>
+				</configuration>
+    		</plugin>
+    	</plugins>
+    </build>
+</project>
