@@ -1556,13 +1556,22 @@ public interface RosPackage extends EPackage {
 	int PARAMETER__TYPE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -3024,6 +3033,17 @@ public interface RosPackage extends EPackage {
 	EReference getParameter_Type();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link ros.Parameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see ros.Parameter#getValue()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Value();
+
+	/**
 	 * Returns the meta object for class '{@link ros.ParameterDateType <em>Parameter Date Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4100,6 +4120,14 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ParameterDateTypeImpl <em>Parameter Date Type</em>}' class.

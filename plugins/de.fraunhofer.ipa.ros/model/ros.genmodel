@@ -106,6 +106,7 @@
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Parameter/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Parameter/value"/>
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//ParameterDateType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//ParameterDateType/default"/>

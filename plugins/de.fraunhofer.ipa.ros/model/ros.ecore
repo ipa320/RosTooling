@@ -141,6 +141,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ParameterType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ParameterValue"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterDateType" eSuperTypes="#//ParameterType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//ParameterDate"

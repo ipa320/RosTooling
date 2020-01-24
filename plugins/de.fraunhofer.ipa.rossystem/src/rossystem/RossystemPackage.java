@@ -85,13 +85,22 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__SERVICE_CONNECTIONS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Action Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SYSTEM__ACTION_CONNECTIONS = 2;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__NAME = 2;
+	int ROS_SYSTEM__NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
@@ -100,16 +109,16 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__ROS_COMPONENT = 3;
+	int ROS_SYSTEM__ROS_COMPONENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Action Connections</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__ACTION_CONNECTIONS = 4;
+	int ROS_SYSTEM__PARAMETER = 5;
 
 	/**
 	 * The number of structural features of the '<em>Ros System</em>' class.
@@ -118,7 +127,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM_FEATURE_COUNT = 5;
+	int ROS_SYSTEM_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Ros System</em>' class.
@@ -351,6 +360,17 @@ public interface RossystemPackage extends EPackage {
 	EReference getRosSystem_RosComponent();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter</em>'.
+	 * @see rossystem.RosSystem#getParameter()
+	 * @see #getRosSystem()
+	 * @generated
+	 */
+	EReference getRosSystem_Parameter();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -554,6 +574,14 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROS_SYSTEM__ROS_COMPONENT = eINSTANCE.getRosSystem_RosComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SYSTEM__PARAMETER = eINSTANCE.getRosSystem_Parameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Action Connections</b></em>' containment reference list feature.

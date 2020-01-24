@@ -233,6 +233,29 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link componentInterface.RosParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosParameterItemProvider rosParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link componentInterface.RosParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosParameterAdapter() {
+		if (rosParameterItemProvider == null) {
+			rosParameterItemProvider = new RosParameterItemProvider(this);
+		}
+
+		return rosParameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,6 +361,7 @@ public class ComponentInterfaceItemProviderAdapterFactory extends ComponentInter
 		if (rosServiceClientItemProvider != null) rosServiceClientItemProvider.dispose();
 		if (rosActionServerItemProvider != null) rosActionServerItemProvider.dispose();
 		if (rosActionClientItemProvider != null) rosActionClientItemProvider.dispose();
+		if (rosParameterItemProvider != null) rosParameterItemProvider.dispose();
 	}
 
 }

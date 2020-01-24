@@ -13,6 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosSystem/Name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/Parameter"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>

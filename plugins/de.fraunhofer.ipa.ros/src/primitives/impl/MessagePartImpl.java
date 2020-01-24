@@ -236,7 +236,7 @@ public class MessagePartImpl extends MinimalEObjectImpl.Container implements Mes
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Data: ");
 		result.append(data);
 		result.append(')');

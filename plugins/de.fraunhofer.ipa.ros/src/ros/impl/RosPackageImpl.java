@@ -442,7 +442,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link RosPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -456,7 +456,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		if (isInited) return (RosPackage)EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
 
 		// Obtain or create and register package
-		RosPackageImpl theRosPackage = (RosPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RosPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RosPackageImpl());
+		Object registeredRosPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		RosPackageImpl theRosPackage = registeredRosPackage instanceof RosPackageImpl ? (RosPackageImpl)registeredRosPackage : new RosPackageImpl();
 
 		isInited = true;
 
@@ -464,7 +465,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		XMLTypePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) instanceof PrimitivesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI) : PrimitivesPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI);
+		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(registeredPackage instanceof PrimitivesPackageImpl ? registeredPackage : PrimitivesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRosPackage.createPackageContents();
@@ -477,7 +479,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		// Mark meta-data to indicate it can't be changed
 		theRosPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RosPackage.eNS_URI, theRosPackage);
 		return theRosPackage;
@@ -1154,6 +1155,15 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getParameter_Value() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getParameterDateType() {
 		return parameterDateTypeEClass;
 	}
@@ -1623,6 +1633,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		parameterEClass = createEClass(PARAMETER);
 		createEReference(parameterEClass, PARAMETER__TYPE);
+		createEReference(parameterEClass, PARAMETER__VALUE);
 
 		parameterDateTypeEClass = createEClass(PARAMETER_DATE_TYPE);
 		createEReference(parameterDateTypeEClass, PARAMETER_DATE_TYPE__DEFAULT);
@@ -1855,6 +1866,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameter_Type(), this.getParameterType(), null, "type", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_Value(), this.getParameterValue(), null, "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterDateTypeEClass, ParameterDateType.class, "ParameterDateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterDateType_Default(), this.getParameterDate(), null, "default", null, 0, 1, ParameterDateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

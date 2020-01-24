@@ -5,6 +5,8 @@ import "http://www.ipa.fraunhofer.de/rossystem"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.ipa.fraunhofer.de/componentInterface" as componentInterface
 import "http://www.ipa.fraunhofer.de/ros" as ros
+import "http://www.eclipse.org/emf/2003/XMLType" as type
+
 
 RosSystem returns RosSystem:
 	{RosSystem}
@@ -15,6 +17,8 @@ RosSystem returns RosSystem:
 		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
 		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
 		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )?
+		('Parameters' '{' (Parameter+=Parameter ( "," Parameter+=Parameter)*)? '}' )?
+		
 
 	'}';
 
@@ -119,3 +123,218 @@ RosActionClient returns componentInterface::RosActionClient:
 		'RefClient' actclient=[ros::ActionClient|EString]
 	'}';
 
+//PARAMETERS DEFINITION
+
+ParameterType returns ros::ParameterType:
+	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterDateType | ParameterBooleanType | ParameterBase64Type | ParameterAnyType | ParameterArrayType;
+
+ParameterValue returns ros::ParameterValue:
+	ParameterAny | ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterSequence | ParameterStruct | ParameterDate;
+
+
+Parameter returns ros::Parameter:
+	'Parameter'
+	'{'
+		'name' name=EString
+		('NameSpace' namespace=Namespace)?
+		('type' type=ParameterType)?
+		('value' value=ParameterValue)?
+	'}';
+
+Namespace returns ros::Namespace:
+	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+
+
+GlobalNamespace returns ros::GlobalNamespace:
+	{ros::GlobalNamespace}
+	'GlobalNamespace'
+	'{'
+		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	'}';
+
+RelativeNamespace_Impl returns ros::RelativeNamespace:
+	{ros::RelativeNamespace}
+	'RelativeNamespace'
+	'{'
+		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	'}';
+
+PrivateNamespace returns ros::PrivateNamespace:
+	{ros::PrivateNamespace}
+	'PrivateNamespace'
+	'{'
+		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	'}';
+
+GraphName returns ros::GraphName:
+	'GraphName' ;
+
+
+ParameterListType returns ros::ParameterListType:
+	{ros::ParameterListType}
+	'ParameterListType'
+	'{'
+		('sequence' '{' sequence+=ParameterType ( "," sequence+=ParameterType)* '}' )?
+		('default' default=ParameterSequence)?
+	'}';
+
+ParameterStructType returns ros::ParameterStructType:
+	{ros::ParameterStructType}
+	'ParameterStructType'
+	'{'
+		('parameterstructypetmember' '{' parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)* '}' )?
+	'}';
+
+ParameterIntegerType returns ros::ParameterIntegerType:
+	{ros::ParameterIntegerType}
+	'ParameterIntegerType'
+	'{'
+		('default' default=ParameterInteger)?
+	'}';
+
+ParameterStringType returns ros::ParameterStringType:
+	{ros::ParameterStringType}
+	'ParameterStringType'
+	'{'
+		('default' default=ParameterString)?
+	'}';
+
+ParameterDoubleType returns ros::ParameterDoubleType:
+	{ros::ParameterDoubleType}
+	'ParameterDoubleType'
+	'{'
+		('default' default=ParameterDouble)?
+	'}';
+
+ParameterDateType returns ros::ParameterDateType:
+	{ros::ParameterDateType}
+	'ParameterDateType'
+	'{'
+		('default' default=ParameterDate)?
+	'}';
+
+ParameterBooleanType returns ros::ParameterBooleanType:
+	{ros::ParameterBooleanType}
+	'ParameterBooleanType'
+	'{'
+		('default' default=ParameterBoolean)?
+	'}';
+
+ParameterBase64Type returns ros::ParameterBase64Type:
+	{ros::ParameterBase64Type}
+	'ParameterBase64Type'
+	'{'
+		('default' default=ParameterBase64)?
+	'}';
+
+ParameterAnyType returns ros::ParameterAnyType:
+	{ros::ParameterAnyType}
+	'ParameterAnyType'
+	'{'
+		('default' default=ParameterAny)?
+	'}';
+
+ParameterArrayType returns ros::ParameterArrayType:
+	'ParameterArrayType'
+	'{'
+		'type' type=ParameterType
+		('default' default=ParameterSequence)?
+	'}';
+
+ParameterSequence returns ros::ParameterSequence:
+	{ros::ParameterSequence}
+	'ParameterSequence'
+	'{'
+		('value' '{' value+=ParameterValue ( "," value+=ParameterValue)* '}' )?
+	'}';
+
+ParameterAny returns ros::ParameterAny:
+	{ros::ParameterAny}
+	'ParameterAny'
+	'{'
+		('value' value=EString)?
+	'}';
+
+ParameterString returns ros::ParameterString:
+	'ParameterString'
+	'{'
+		'value' value=EString
+	'}';
+
+ParameterBase64 returns ros::ParameterBase64:
+	'ParameterBase64'
+	'{'
+		'value' value=Base64Binary
+	'}';
+
+ParameterInteger returns ros::ParameterInteger:
+	'ParameterInteger'
+	'{'
+		'value' value=Int0
+	'}';
+
+ParameterDouble returns ros::ParameterDouble:
+	'ParameterDouble'
+	'{'
+		'value' value=Double
+	'}';
+
+ParameterBoolean returns ros::ParameterBoolean:
+	'ParameterBoolean'
+	'{'
+		'value' value=Boolean
+	'}';
+
+ParameterStruct returns ros::ParameterStruct:
+	{ros::ParameterStruct}
+	'ParameterStruct'
+	'{'
+		('value' '{' value+=ParameterStructMember ( "," value+=ParameterStructMember)* '}' )?
+	'}';
+
+ParameterDate returns ros::ParameterDate:
+	'ParameterDate'
+	'{'
+		'value' value=DateTime
+	'}';
+
+Base64Binary returns type::Base64Binary:
+	'Base64Binary' ;
+
+Int0 returns type::Int:
+	'Int' ;
+
+Double returns type::Double:
+	'Double';
+
+Boolean returns type::Boolean:
+	'Boolean';
+
+ParameterStructMember returns ros::ParameterStructMember:
+	'ParameterStructMember'
+	name=EString
+	'{'
+		'value' value=ParameterValue
+	'}';
+
+DateTime returns type::DateTime:
+	'DateTime' ;
+
+ParameterStructTypeMember returns ros::ParameterStructTypeMember:
+	'ParameterStructTypeMember'
+	name=EString
+	'{'
+		'type' type=ParameterType
+		('default' default=ParameterStruct)?
+	'}';
+
+PackageDependency returns ros::PackageDependency:
+	'PackageDependency'
+	'{'
+		'package' package=[ros::Package|EString]
+	'}';
+
+ExternalDependency returns ros::ExternalDependency:
+	{ros::ExternalDependency}
+	'ExternalDependency'
+	name=EString;

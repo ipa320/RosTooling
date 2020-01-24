@@ -13,6 +13,7 @@ package ros;
  * </p>
  * <ul>
  *   <li>{@link ros.Parameter#getType <em>Type</em>}</li>
+ *   <li>{@link ros.Parameter#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getParameter()
@@ -45,5 +46,27 @@ public interface Parameter extends NamespacedElement {
 	 * @generated
 	 */
 	void setType(ParameterType value);
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' containment reference.
+	 * @see #setValue(ParameterValue)
+	 * @see ros.RosPackage#getParameter_Value()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ParameterValue getValue();
+
+	/**
+	 * Sets the value of the '{@link ros.Parameter#getValue <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' containment reference.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(ParameterValue value);
 
 } // Parameter

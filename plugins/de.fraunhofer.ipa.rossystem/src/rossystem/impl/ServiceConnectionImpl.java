@@ -76,7 +76,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public ServiceConnectionImpl() {
 		super();
@@ -97,6 +97,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosServiceServer> getFrom() {
 		if (from == null) {
 			from = new EObjectResolvingEList<RosServiceServer>(RosServiceServer.class, this, RossystemPackage.SERVICE_CONNECTION__FROM);
@@ -109,6 +110,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosServiceClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
@@ -253,7 +255,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (ServiceName: ");
 		result.append(serviceName);
 		result.append(')');

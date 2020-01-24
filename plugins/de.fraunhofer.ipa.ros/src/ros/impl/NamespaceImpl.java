@@ -139,7 +139,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (parts: ");
 		result.append(parts);
 		result.append(')');

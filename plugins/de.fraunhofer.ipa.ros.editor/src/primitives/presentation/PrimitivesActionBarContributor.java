@@ -165,6 +165,7 @@ public class PrimitivesActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("primitives-settings"));
 		toolBarManager.add(new Separator("primitives-additions"));
 	}
