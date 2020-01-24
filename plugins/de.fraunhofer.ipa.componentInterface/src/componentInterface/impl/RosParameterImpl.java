@@ -3,7 +3,7 @@
 package componentInterface.impl;
 
 import componentInterface.ComponentInterfacePackage;
-import componentInterface.RosActionServer;
+import componentInterface.RosParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,33 +13,33 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import ros.ActionServer;
+import ros.Parameter;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ros Action Server</b></em>'.
+ * An implementation of the model object '<em><b>Ros Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentInterface.impl.RosActionServerImpl#getActserver <em>Actserver</em>}</li>
- *   <li>{@link componentInterface.impl.RosActionServerImpl#getName <em>Name</em>}</li>
- *   <li>{@link componentInterface.impl.RosActionServerImpl#getNs <em>Ns</em>}</li>
+ *   <li>{@link componentInterface.impl.RosParameterImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link componentInterface.impl.RosParameterImpl#getName <em>Name</em>}</li>
+ *   <li>{@link componentInterface.impl.RosParameterImpl#getNs <em>Ns</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RosActionServerImpl extends MinimalEObjectImpl.Container implements RosActionServer {
+public class RosParameterImpl extends MinimalEObjectImpl.Container implements RosParameter {
 	/**
-	 * The cached value of the '{@link #getActserver() <em>Actserver</em>}' reference.
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActserver()
+	 * @see #getParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionServer actserver;
+	protected Parameter parameter;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -69,7 +69,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NS_EDEFAULT = null;
+	protected static final String NS_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
@@ -84,9 +84,9 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public RosActionServerImpl() {
+	protected RosParameterImpl() {
 		super();
 	}
 
@@ -97,7 +97,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentInterfacePackage.Literals.ROS_ACTION_SERVER;
+		return ComponentInterfacePackage.Literals.ROS_PARAMETER;
 	}
 
 	/**
@@ -105,16 +105,17 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionServer getActserver() {
-		if (actserver != null && actserver.eIsProxy()) {
-			InternalEObject oldActserver = (InternalEObject)actserver;
-			actserver = (ActionServer)eResolveProxy(oldActserver);
-			if (actserver != oldActserver) {
+	@Override
+	public Parameter getParameter() {
+		if (parameter != null && parameter.eIsProxy()) {
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (Parameter)eResolveProxy(oldParameter);
+			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER, oldActserver, actserver));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.ROS_PARAMETER__PARAMETER, oldParameter, parameter));
 			}
 		}
-		return actserver;
+		return parameter;
 	}
 
 	/**
@@ -122,8 +123,8 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionServer basicGetActserver() {
-		return actserver;
+	public Parameter basicGetParameter() {
+		return parameter;
 	}
 
 	/**
@@ -131,11 +132,12 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActserver(ActionServer newActserver) {
-		ActionServer oldActserver = actserver;
-		actserver = newActserver;
+	@Override
+	public void setParameter(Parameter newParameter) {
+		Parameter oldParameter = parameter;
+		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER, oldActserver, actserver));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_PARAMETER__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -143,6 +145,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -152,11 +155,12 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_ACTION_SERVER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_PARAMETER__NAME, oldName, name));
 	}
 
 	/**
@@ -164,6 +168,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNs() {
 		return ns;
 	}
@@ -173,11 +178,12 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNs(String newNs) {
 		String oldNs = ns;
 		ns = newNs;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_ACTION_SERVER__NS, oldNs, ns));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_PARAMETER__NS, oldNs, ns));
 	}
 
 	/**
@@ -188,12 +194,12 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER:
-				if (resolve) return getActserver();
-				return basicGetActserver();
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NAME:
+			case ComponentInterfacePackage.ROS_PARAMETER__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
+			case ComponentInterfacePackage.ROS_PARAMETER__NAME:
 				return getName();
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NS:
+			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				return getNs();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -207,13 +213,13 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER:
-				setActserver((ActionServer)newValue);
+			case ComponentInterfacePackage.ROS_PARAMETER__PARAMETER:
+				setParameter((Parameter)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NAME:
+			case ComponentInterfacePackage.ROS_PARAMETER__NAME:
 				setName((String)newValue);
 				return;
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NS:
+			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				setNs((String)newValue);
 				return;
 		}
@@ -228,13 +234,13 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER:
-				setActserver((ActionServer)null);
+			case ComponentInterfacePackage.ROS_PARAMETER__PARAMETER:
+				setParameter((Parameter)null);
 				return;
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NAME:
+			case ComponentInterfacePackage.ROS_PARAMETER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NS:
+			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				setNs(NS_EDEFAULT);
 				return;
 		}
@@ -249,11 +255,11 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__ACTSERVER:
-				return actserver != null;
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NAME:
+			case ComponentInterfacePackage.ROS_PARAMETER__PARAMETER:
+				return parameter != null;
+			case ComponentInterfacePackage.ROS_PARAMETER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ComponentInterfacePackage.ROS_ACTION_SERVER__NS:
+			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 		}
 		return super.eIsSet(featureID);
@@ -277,4 +283,4 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 		return result.toString();
 	}
 
-} //RosActionServerImpl
+} //RosParameterImpl

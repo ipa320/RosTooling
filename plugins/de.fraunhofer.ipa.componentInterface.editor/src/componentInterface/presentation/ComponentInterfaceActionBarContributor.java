@@ -163,6 +163,7 @@ public class ComponentInterfaceActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("componentinterface-settings"));
 		toolBarManager.add(new Separator("componentinterface-additions"));
 	}

@@ -85,6 +85,15 @@ public interface ComponentInterfaceFactory extends EFactory {
 	RosActionClient createRosActionClient();
 
 	/**
+	 * Returns a new object of class '<em>Ros Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Parameter</em>'.
+	 * @generated
+	 */
+	RosParameter createRosParameter();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

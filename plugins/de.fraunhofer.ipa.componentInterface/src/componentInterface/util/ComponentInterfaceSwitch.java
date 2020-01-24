@@ -115,6 +115,12 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentInterfacePackage.ROS_PARAMETER: {
+				RosParameter rosParameter = (RosParameter)theEObject;
+				T result = caseRosParameter(rosParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -236,6 +242,21 @@ public class ComponentInterfaceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRosActionClient(RosActionClient object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosParameter(RosParameter object) {
 		return null;
 	}
 

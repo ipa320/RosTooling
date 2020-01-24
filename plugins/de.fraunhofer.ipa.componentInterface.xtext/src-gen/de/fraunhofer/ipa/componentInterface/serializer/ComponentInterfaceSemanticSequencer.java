@@ -8,6 +8,7 @@ import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
 import componentInterface.RosActionClient;
 import componentInterface.RosActionServer;
+import componentInterface.RosParameter;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -45,6 +46,9 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 			case ComponentInterfacePackage.ROS_ACTION_SERVER:
 				sequence_RosActionServer(context, (RosActionServer) semanticObject); 
 				return; 
+			case ComponentInterfacePackage.ROS_PARAMETER:
+				sequence_RosParameter(context, (RosParameter) semanticObject); 
+				return; 
 			case ComponentInterfacePackage.ROS_PUBLISHER:
 				sequence_RosPublisher(context, (RosPublisher) semanticObject); 
 				return; 
@@ -75,7 +79,8 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
 	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)? 
 	 *         (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*)? 
-	 *         (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*)?
+	 *         (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*)? 
+	 *         (rosparameter+=RosParameter rosparameter+=RosParameter*)?
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
@@ -103,6 +108,18 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     (name=EString? ns=EString? actserver=[ActionServer|EString])
 	 */
 	protected void sequence_RosActionServer(ISerializationContext context, RosActionServer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RosParameter returns RosParameter
+	 *
+	 * Constraint:
+	 *     (name=EString? ns=EString? parameter=[Parameter|EString])
+	 */
+	protected void sequence_RosParameter(ISerializationContext context, RosParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
