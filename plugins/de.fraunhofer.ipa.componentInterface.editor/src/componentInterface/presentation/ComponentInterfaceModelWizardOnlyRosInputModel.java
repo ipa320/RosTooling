@@ -44,12 +44,14 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import componentInterface.ComponentInterface;
 import componentInterface.RosActionClient;
 import componentInterface.RosActionServer;
+import componentInterface.RosParameter;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
 import componentInterface.RosSubscriber;
 import componentInterface.impl.RosActionClientImpl;
 import componentInterface.impl.RosActionServerImpl;
+import componentInterface.impl.RosParameterImpl;
 import componentInterface.impl.RosPublisherImpl;
 import componentInterface.impl.RosServiceClientImpl;
 import componentInterface.impl.RosServiceServerImpl;
@@ -64,6 +66,7 @@ import ros.Publisher;
 import ros.ServiceClient;
 import ros.ServiceServer;
 import ros.Subscriber;
+import ros.Parameter;
 import rossystem.RosSystem;
 
 /**
@@ -124,6 +127,8 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 			EList <ServiceServer> ssrs = (EList<ServiceServer>) rosnode.getServiceserver();
 			EList <ActionClient> acls = (EList<ActionClient>) rosnode.getActionclient();
 			EList <ActionServer> asrs = (EList<ActionServer>) rosnode.getActionserver();
+			EList<Parameter> params = (EList<Parameter>) rosnode.getParameter();
+
 
 			WorkspaceModifyOperation operation =
 				new WorkspaceModifyOperation() {
@@ -184,6 +189,13 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 														rosasr.setNs(ComponentNameSpace);
 														rosasr.setActserver(asr);
 														component.getRosactionserver().add(rosasr);
+													}
+													for (Parameter param:params) {
+														RosParameter rospam = new RosParameterImpl();
+														rospam.setName(NameSpaceInterfaces+param.getName());
+														rospam.setNs(ComponentNameSpace);
+														rospam.setParameter(param);
+														component.getRosparameter().add(rospam);
 													}
 					}}}}}}}catch (Exception exception) {
 						ComponentInterfaceEditorPlugin.INSTANCE.log(exception);

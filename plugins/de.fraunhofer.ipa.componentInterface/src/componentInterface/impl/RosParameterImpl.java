@@ -86,7 +86,7 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RosParameterImpl() {
+	public RosParameterImpl() {
 		super();
 	}
 
