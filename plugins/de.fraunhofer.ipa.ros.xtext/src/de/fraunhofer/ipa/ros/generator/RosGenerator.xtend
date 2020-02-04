@@ -43,6 +43,7 @@ class RosGenerator extends AbstractGenerator {
 	int count_srvc
 	int count_acts
 	int count_actc
+	int count_param
 		
 	String artifact_name
 	String package_name
@@ -68,6 +69,7 @@ def compile (Node node, String package_name, String artifact_name){
 	count_srvc = node.serviceclient.length
 	count_acts = node.actionserver.length
 	count_actc = node.actionclient.length
+	count_param = node.parameter.length
 
 	
 '''
@@ -119,6 +121,15 @@ ComponentInterface { name «node.name»
 		RosActionClient "«actc.name»" { RefClient "«package_name».«artifact_name».«node.name».«actc.name»"}«IF count_actc > 1 »,«ENDIF»
 «ENDFOR»
 	}
+	«ENDIF»
+	
+	«IF !node.parameter.empty»
+		RosParameters{
+	«FOR param:node.parameter»
+	«val count_param=count_param--»
+			RosParameter "«param.name»" { RefParameter "«package_name».«artifact_name».«node.name».«param.name»"}«IF count_param > 1 »,«ENDIF»
+	«ENDFOR»
+		}
 	«ENDIF»
 }
  '''
