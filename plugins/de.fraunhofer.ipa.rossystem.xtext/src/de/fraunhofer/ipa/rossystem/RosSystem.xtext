@@ -66,6 +66,8 @@ ComponentInterface returns componentInterface::ComponentInterface:
 		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
 		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
 		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
+		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?
+		
 	'}';
 
 
@@ -121,6 +123,15 @@ RosActionClient returns componentInterface::RosActionClient:
 	'{'
 		('ns' ns=EString)?
 		'RefClient' actclient=[ros::ActionClient|EString]
+	'}';
+	
+RosParameter returns componentInterface::RosParameter:
+	{componentInterface::RosParameter}
+	'RosParameter'
+	(name=EString)?
+	'{'
+		('ns' ns=EString)?
+		'RefParameter' parameter=[ros::Parameter|EString]
 	'}';
 
 //PARAMETERS DEFINITION
