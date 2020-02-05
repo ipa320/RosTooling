@@ -61,6 +61,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicSpec getMessage() {
 		if (message != null && message.eIsProxy()) {
 			InternalEObject oldMessage = (InternalEObject)message;
@@ -87,6 +88,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessage(TopicSpec newMessage) {
 		TopicSpec oldMessage = message;
 		message = newMessage;

@@ -84,6 +84,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getGoal() {
 		return goal;
 	}
@@ -108,6 +109,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGoal(MessageDefinition newGoal) {
 		if (newGoal != goal) {
 			NotificationChain msgs = null;
@@ -127,6 +129,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getResult() {
 		return result;
 	}
@@ -151,6 +154,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResult(MessageDefinition newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
@@ -170,6 +174,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getFeedback() {
 		return feedback;
 	}
@@ -194,6 +199,7 @@ public class ActionSpecImpl extends SpecBaseImpl implements ActionSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFeedback(MessageDefinition newFeedback) {
 		if (newFeedback != feedback) {
 			NotificationChain msgs = null;

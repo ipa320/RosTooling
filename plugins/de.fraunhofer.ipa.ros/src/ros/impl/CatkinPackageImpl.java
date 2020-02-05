@@ -66,6 +66,7 @@ public class CatkinPackageImpl extends PackageImpl implements CatkinPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Dependency> getDependency() {
 		if (dependency == null) {
 			dependency = new EObjectContainmentEList<Dependency>(Dependency.class, this, RosPackage.CATKIN_PACKAGE__DEPENDENCY);

@@ -33,7 +33,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final Integer VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -43,7 +43,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected Integer value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,8 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
+	@Override
+	public Integer getValue() {
 		return value;
 	}
 
@@ -78,8 +79,9 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
+	@Override
+	public void setValue(Integer newValue) {
+		Integer oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER_INTEGER__VALUE, oldValue, value));
@@ -138,7 +140,7 @@ public class ParameterIntegerImpl extends ParameterValueImpl implements Paramete
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RosPackage.PARAMETER_INTEGER__VALUE:
-				return value != VALUE_EDEFAULT;
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}

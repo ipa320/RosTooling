@@ -304,17 +304,15 @@ ParameterBase64 returns ParameterBase64:
 ;
 
 ParameterInteger returns ParameterInteger:
-	'ParameterInteger'
-	'{'
-		'value' value=Int0
-	'}';
+	value=Eint
+;
 
 ParameterDouble returns ParameterDouble:
-	value=Double
+	value=Double0
 ;
 
 ParameterBoolean returns ParameterBoolean:
-	value=Boolean
+	value=boolean0
 ;
 
 ParameterStruct returns ParameterStruct:
@@ -346,8 +344,48 @@ ParameterStructTypeMember returns ParameterStructTypeMember:
 	'}';
 
 
-//MESSAGE PRIMITIVES DEFINITION
+//PARAMETRRS PRIMITIVES TYPES
 
+terminal BOOLEAN: 'true'|'false';
+terminal fragment DIGIT: '0'..'9';
+terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT)) | INT;  // Use terminal to avoid 'e' turning into a keyword
+terminal DECINT: '0' | ('1'..'9' DIGIT*);
+terminal fragment SIGN :   '+' | '-' ;
+
+
+terminal SIGNED_INT:
+	'-'* INT*;
+
+terminal fragment HEX_DIGIT: (DIGIT|'a'..'f'|'A'..'F');
+
+terminal HEX returns ecore::EIntegerObject: 
+	'0x' HEX_DIGIT*;
+
+terminal fragment BINARY_DIGIT: ('0' | '1');
+
+terminal BINARY returns ecore::EIntegerObject:
+	'0b' (BINARY_DIGIT('_')*)*;
+
+	
+Base64Binary returns type::Base64Binary:
+	BINARY ;
+
+
+boolean0 returns type::Boolean:
+	BOOLEAN
+;
+
+Double0 returns type::Double:
+	DOUBLE;
+
+Eint returns ecore::EInt:
+	INT
+;
+
+DateTime returns type::DateTime:
+	'DateTime' ;
+	
+//MESSAGE PRIMITIVES DEFINITION
 
 MessagePart returns primitives::MessagePart:
 	Type = AbstractType
@@ -517,19 +555,3 @@ ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
-
-Base64Binary returns type::Base64Binary:
-	'Base64Binary' ;
-
-Int0 returns type::Int:
-	'Int' ;
-
-Double returns type::Double:
-	'Double';
-
-Boolean returns type::Boolean:
-	'Boolean';
-
-DateTime returns type::DateTime:
-	'DateTime' ;
-

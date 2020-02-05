@@ -69,6 +69,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterBooleanImpl extends ParameterValueImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(boolean newValue) {
 		boolean oldValue = value;
 		value = newValue;

@@ -74,6 +74,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterType getType() {
 		return type;
 	}
@@ -98,6 +99,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ParameterType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -117,6 +119,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSequence getDefault() {
 		return default_;
 	}
@@ -141,6 +144,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterSequence newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

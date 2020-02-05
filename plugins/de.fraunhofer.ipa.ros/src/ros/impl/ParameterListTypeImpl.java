@@ -81,6 +81,7 @@ public class ParameterListTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterType> getSequence() {
 		if (sequence == null) {
 			sequence = new EObjectContainmentEList<ParameterType>(ParameterType.class, this, RosPackage.PARAMETER_LIST_TYPE__SEQUENCE);
@@ -93,6 +94,7 @@ public class ParameterListTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSequence getDefault() {
 		return default_;
 	}
@@ -117,6 +119,7 @@ public class ParameterListTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterSequence newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

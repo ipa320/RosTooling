@@ -61,6 +61,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceSpec getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject)service;
@@ -87,6 +88,7 @@ public class ServiceServerImpl extends NamespacedElementImpl implements ServiceS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setService(ServiceSpec newService) {
 		ServiceSpec oldService = service;
 		service = newService;

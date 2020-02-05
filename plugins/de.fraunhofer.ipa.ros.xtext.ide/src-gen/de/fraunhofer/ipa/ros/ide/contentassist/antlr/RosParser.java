@@ -139,7 +139,6 @@ public class RosParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParameterSequenceAccess().getGroup_1_2(), "rule__ParameterSequence__Group_1_2__0");
 			builder.put(grammarAccess.getParameterAnyAccess().getGroup(), "rule__ParameterAny__Group__0");
 			builder.put(grammarAccess.getParameterAnyAccess().getGroup_3(), "rule__ParameterAny__Group_3__0");
-			builder.put(grammarAccess.getParameterIntegerAccess().getGroup(), "rule__ParameterInteger__Group__0");
 			builder.put(grammarAccess.getParameterStructAccess().getGroup(), "rule__ParameterStruct__Group__0");
 			builder.put(grammarAccess.getParameterStructAccess().getGroup_3(), "rule__ParameterStruct__Group_3__0");
 			builder.put(grammarAccess.getParameterStructAccess().getGroup_3_3(), "rule__ParameterStruct__Group_3_3__0");
@@ -268,7 +267,7 @@ public class RosParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParameterAnyAccess().getValueAssignment_3_1(), "rule__ParameterAny__ValueAssignment_3_1");
 			builder.put(grammarAccess.getParameterStringAccess().getValueAssignment(), "rule__ParameterString__ValueAssignment");
 			builder.put(grammarAccess.getParameterBase64Access().getValueAssignment(), "rule__ParameterBase64__ValueAssignment");
-			builder.put(grammarAccess.getParameterIntegerAccess().getValueAssignment_3(), "rule__ParameterInteger__ValueAssignment_3");
+			builder.put(grammarAccess.getParameterIntegerAccess().getValueAssignment(), "rule__ParameterInteger__ValueAssignment");
 			builder.put(grammarAccess.getParameterDoubleAccess().getValueAssignment(), "rule__ParameterDouble__ValueAssignment");
 			builder.put(grammarAccess.getParameterBooleanAccess().getValueAssignment(), "rule__ParameterBoolean__ValueAssignment");
 			builder.put(grammarAccess.getParameterStructAccess().getValueAssignment_3_2(), "rule__ParameterStruct__ValueAssignment_3_2");

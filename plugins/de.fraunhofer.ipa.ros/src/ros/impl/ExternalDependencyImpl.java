@@ -69,6 +69,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -78,6 +79,7 @@ public class ExternalDependencyImpl extends DependencyImpl implements ExternalDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

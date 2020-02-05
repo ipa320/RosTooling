@@ -69,6 +69,7 @@ public class ParameterStringImpl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterStringImpl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;

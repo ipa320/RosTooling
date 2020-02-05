@@ -63,6 +63,7 @@ public abstract class NamespaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getParts() {
 		if (parts == null) {
 			parts = new EDataTypeEList<String>(String.class, this, RosPackage.NAMESPACE__PARTS);

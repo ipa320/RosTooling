@@ -66,6 +66,7 @@ public class ParameterStructTypeImpl extends ParameterTypeImpl implements Parame
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterStructTypeMember> getParameterstructypetmember() {
 		if (parameterstructypetmember == null) {
 			parameterstructypetmember = new EObjectContainmentEList<ParameterStructTypeMember>(ParameterStructTypeMember.class, this, RosPackage.PARAMETER_STRUCT_TYPE__PARAMETERSTRUCTYPETMEMBER);

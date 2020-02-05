@@ -69,6 +69,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public byte[] getValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterBase64Impl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(byte[] newValue) {
 		byte[] oldValue = value;
 		value = newValue;

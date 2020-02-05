@@ -2704,71 +2704,48 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ParameterIntegerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ParameterInteger");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cParameterIntegerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueInt0ParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueEintParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ParameterInteger:
-		//	'ParameterInteger'
-		//	'{'
-		//	'value' value=Int0
-		//	'}';
+		//	value=Eint;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ParameterInteger' '{' 'value' value=Int0 '}'
-		public Group getGroup() { return cGroup; }
+		//value=Eint
+		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//'ParameterInteger'
-		public Keyword getParameterIntegerKeyword_0() { return cParameterIntegerKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//'value'
-		public Keyword getValueKeyword_2() { return cValueKeyword_2; }
-		
-		//value=Int0
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
-		
-		//Int0
-		public RuleCall getValueInt0ParserRuleCall_3_0() { return cValueInt0ParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//Eint
+		public RuleCall getValueEintParserRuleCall_0() { return cValueEintParserRuleCall_0; }
 	}
 	public class ParameterDoubleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ParameterDouble");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueDoubleParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueDouble0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ParameterDouble:
-		//	value=Double;
+		//	value=Double0;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=Double
+		//value=Double0
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//Double
-		public RuleCall getValueDoubleParserRuleCall_0() { return cValueDoubleParserRuleCall_0; }
+		//Double0
+		public RuleCall getValueDouble0ParserRuleCall_0() { return cValueDouble0ParserRuleCall_0; }
 	}
 	public class ParameterBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ParameterBoolean");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueBooleanParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueBoolean0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ParameterBoolean:
-		//	value=Boolean;
+		//	value=boolean0;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=Boolean
+		//value=boolean0
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//Boolean
-		public RuleCall getValueBooleanParserRuleCall_0() { return cValueBooleanParserRuleCall_0; }
+		//boolean0
+		public RuleCall getValueBoolean0ParserRuleCall_0() { return cValueBoolean0ParserRuleCall_0; }
 	}
 	public class ParameterStructElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.ParameterStruct");
@@ -2974,6 +2951,61 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class Base64BinaryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Base64Binary");
+		private final RuleCall cBINARYTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Base64Binary type::Base64Binary:
+		//	BINARY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BINARY
+		public RuleCall getBINARYTerminalRuleCall() { return cBINARYTerminalRuleCall; }
+	}
+	public class Boolean0Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.boolean0");
+		private final RuleCall cBOOLEANTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//boolean0 type::Boolean:
+		//	BOOLEAN;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BOOLEAN
+		public RuleCall getBOOLEANTerminalRuleCall() { return cBOOLEANTerminalRuleCall; }
+	}
+	public class Double0Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Double0");
+		private final RuleCall cDOUBLETerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Double0 type::Double:
+		//	DOUBLE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//DOUBLE
+		public RuleCall getDOUBLETerminalRuleCall() { return cDOUBLETerminalRuleCall; }
+	}
+	public class EintElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Eint");
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Eint ecore::EInt:
+		//	INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
+	}
+	public class DateTimeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DateTime");
+		private final Keyword cDateTimeKeyword = (Keyword)rule.eContents().get(1);
+		
+		//DateTime type::DateTime:
+		//	'DateTime';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'DateTime'
+		public Keyword getDateTimeKeyword() { return cDateTimeKeyword; }
 	}
 	public class MessagePartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.MessagePart");
@@ -3836,61 +3868,6 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'time'
 		public Keyword getTimeKeyword_10() { return cTimeKeyword_10; }
 	}
-	public class Base64BinaryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Base64Binary");
-		private final Keyword cBase64BinaryKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Base64Binary type::Base64Binary:
-		//	'Base64Binary';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Base64Binary'
-		public Keyword getBase64BinaryKeyword() { return cBase64BinaryKeyword; }
-	}
-	public class Int0Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Int0");
-		private final Keyword cIntKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Int0 type::Int:
-		//	'Int';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Int'
-		public Keyword getIntKeyword() { return cIntKeyword; }
-	}
-	public class DoubleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Double");
-		private final Keyword cDoubleKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Double type::Double:
-		//	'Double';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Double'
-		public Keyword getDoubleKeyword() { return cDoubleKeyword; }
-	}
-	public class BooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Boolean");
-		private final Keyword cBooleanKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Boolean type::Boolean:
-		//	'Boolean';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Boolean'
-		public Keyword getBooleanKeyword() { return cBooleanKeyword; }
-	}
-	public class DateTimeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DateTime");
-		private final Keyword cDateTimeKeyword = (Keyword)rule.eContents().get(1);
-		
-		//DateTime type::DateTime:
-		//	'DateTime';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'DateTime'
-		public Keyword getDateTimeKeyword() { return cDateTimeKeyword; }
-	}
 	
 	
 	private final PackageSetElements pPackageSet;
@@ -3945,6 +3922,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	private final ParameterDateElements pParameterDate;
 	private final ParameterStructMemberElements pParameterStructMember;
 	private final ParameterStructTypeMemberElements pParameterStructTypeMember;
+	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tDIGIT;
+	private final TerminalRule tDOUBLE;
+	private final TerminalRule tDECINT;
+	private final TerminalRule tSIGN;
+	private final TerminalRule tSIGNED_INT;
+	private final TerminalRule tHEX_DIGIT;
+	private final TerminalRule tHEX;
+	private final TerminalRule tBINARY_DIGIT;
+	private final TerminalRule tBINARY;
+	private final Base64BinaryElements pBase64Binary;
+	private final Boolean0Elements pBoolean0;
+	private final Double0Elements pDouble0;
+	private final EintElements pEint;
+	private final DateTimeElements pDateTime;
 	private final MessagePartElements pMessagePart;
 	private final TerminalRule tMESSAGE_ASIGMENT;
 	private final AbstractTypeElements pAbstractType;
@@ -3980,11 +3972,6 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	private final TopicSpecRefElements pTopicSpecRef;
 	private final ArrayTopicSpecRefElements pArrayTopicSpecRef;
 	private final KEYWORDElements pKEYWORD;
-	private final Base64BinaryElements pBase64Binary;
-	private final Int0Elements pInt0;
-	private final DoubleElements pDouble;
-	private final BooleanElements pBoolean;
-	private final DateTimeElements pDateTime;
 	
 	private final Grammar grammar;
 	
@@ -4047,6 +4034,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		this.pParameterDate = new ParameterDateElements();
 		this.pParameterStructMember = new ParameterStructMemberElements();
 		this.pParameterStructTypeMember = new ParameterStructTypeMemberElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.BOOLEAN");
+		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DIGIT");
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DOUBLE");
+		this.tDECINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DECINT");
+		this.tSIGN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.SIGN");
+		this.tSIGNED_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.SIGNED_INT");
+		this.tHEX_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.HEX_DIGIT");
+		this.tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.HEX");
+		this.tBINARY_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.BINARY_DIGIT");
+		this.tBINARY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.BINARY");
+		this.pBase64Binary = new Base64BinaryElements();
+		this.pBoolean0 = new Boolean0Elements();
+		this.pDouble0 = new Double0Elements();
+		this.pEint = new EintElements();
+		this.pDateTime = new DateTimeElements();
 		this.pMessagePart = new MessagePartElements();
 		this.tMESSAGE_ASIGMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.MESSAGE_ASIGMENT");
 		this.pAbstractType = new AbstractTypeElements();
@@ -4082,11 +4084,6 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTopicSpecRef = new TopicSpecRefElements();
 		this.pArrayTopicSpecRef = new ArrayTopicSpecRefElements();
 		this.pKEYWORD = new KEYWORDElements();
-		this.pBase64Binary = new Base64BinaryElements();
-		this.pInt0 = new Int0Elements();
-		this.pDouble = new DoubleElements();
-		this.pBoolean = new BooleanElements();
-		this.pDateTime = new DateTimeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -4682,10 +4679,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParameterInteger:
-	//	'ParameterInteger'
-	//	'{'
-	//	'value' value=Int0
-	//	'}';
+	//	value=Eint;
 	public ParameterIntegerElements getParameterIntegerAccess() {
 		return pParameterInteger;
 	}
@@ -4695,7 +4689,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParameterDouble:
-	//	value=Double;
+	//	value=Double0;
 	public ParameterDoubleElements getParameterDoubleAccess() {
 		return pParameterDouble;
 	}
@@ -4705,7 +4699,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParameterBoolean:
-	//	value=Boolean;
+	//	value=boolean0;
 	public ParameterBooleanElements getParameterBooleanAccess() {
 		return pParameterBoolean;
 	}
@@ -4764,6 +4758,116 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getParameterStructTypeMemberRule() {
 		return getParameterStructTypeMemberAccess().getRule();
+	}
+	
+	//terminal BOOLEAN:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	}
+	
+	//terminal fragment DIGIT:
+	//	'0'..'9';
+	public TerminalRule getDIGITRule() {
+		return tDIGIT;
+	}
+	
+	//terminal DOUBLE returns ecore::EDouble:
+	//	DECINT ('.' DIGIT* | ('.' DIGIT*)? ('E' | 'e') ('-' | '+')? DECINT) | INT;
+	public TerminalRule getDOUBLERule() {
+		return tDOUBLE;
+	}
+	
+	//terminal DECINT:
+	//	'0' | '1'..'9' DIGIT*;
+	public TerminalRule getDECINTRule() {
+		return tDECINT;
+	}
+	
+	//terminal fragment SIGN:
+	//	'+' | '-';
+	public TerminalRule getSIGNRule() {
+		return tSIGN;
+	}
+	
+	//terminal SIGNED_INT:
+	//	'-'* INT*;
+	public TerminalRule getSIGNED_INTRule() {
+		return tSIGNED_INT;
+	}
+	
+	//terminal fragment HEX_DIGIT:
+	//	DIGIT | 'a'..'f' | 'A'..'F';
+	public TerminalRule getHEX_DIGITRule() {
+		return tHEX_DIGIT;
+	}
+	
+	//terminal HEX returns ecore::EIntegerObject:
+	//	'0x' HEX_DIGIT*;
+	public TerminalRule getHEXRule() {
+		return tHEX;
+	}
+	
+	//terminal fragment BINARY_DIGIT:
+	//	'0' | '1';
+	public TerminalRule getBINARY_DIGITRule() {
+		return tBINARY_DIGIT;
+	}
+	
+	//terminal BINARY returns ecore::EIntegerObject:
+	//	'0b' (BINARY_DIGIT '_'*)*;
+	public TerminalRule getBINARYRule() {
+		return tBINARY;
+	}
+	
+	//Base64Binary type::Base64Binary:
+	//	BINARY;
+	public Base64BinaryElements getBase64BinaryAccess() {
+		return pBase64Binary;
+	}
+	
+	public ParserRule getBase64BinaryRule() {
+		return getBase64BinaryAccess().getRule();
+	}
+	
+	//boolean0 type::Boolean:
+	//	BOOLEAN;
+	public Boolean0Elements getBoolean0Access() {
+		return pBoolean0;
+	}
+	
+	public ParserRule getBoolean0Rule() {
+		return getBoolean0Access().getRule();
+	}
+	
+	//Double0 type::Double:
+	//	DOUBLE;
+	public Double0Elements getDouble0Access() {
+		return pDouble0;
+	}
+	
+	public ParserRule getDouble0Rule() {
+		return getDouble0Access().getRule();
+	}
+	
+	//Eint ecore::EInt:
+	//	INT;
+	public EintElements getEintAccess() {
+		return pEint;
+	}
+	
+	public ParserRule getEintRule() {
+		return getEintAccess().getRule();
+	}
+	
+	//DateTime type::DateTime:
+	//	'DateTime';
+	public DateTimeElements getDateTimeAccess() {
+		return pDateTime;
+	}
+	
+	public ParserRule getDateTimeRule() {
+		return getDateTimeAccess().getRule();
 	}
 	
 	////MESSAGE PRIMITIVES DEFINITION
@@ -5143,56 +5247,6 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getKEYWORDRule() {
 		return getKEYWORDAccess().getRule();
-	}
-	
-	//Base64Binary type::Base64Binary:
-	//	'Base64Binary';
-	public Base64BinaryElements getBase64BinaryAccess() {
-		return pBase64Binary;
-	}
-	
-	public ParserRule getBase64BinaryRule() {
-		return getBase64BinaryAccess().getRule();
-	}
-	
-	//Int0 type::Int:
-	//	'Int';
-	public Int0Elements getInt0Access() {
-		return pInt0;
-	}
-	
-	public ParserRule getInt0Rule() {
-		return getInt0Access().getRule();
-	}
-	
-	//Double type::Double:
-	//	'Double';
-	public DoubleElements getDoubleAccess() {
-		return pDouble;
-	}
-	
-	public ParserRule getDoubleRule() {
-		return getDoubleAccess().getRule();
-	}
-	
-	//Boolean type::Boolean:
-	//	'Boolean';
-	public BooleanElements getBooleanAccess() {
-		return pBoolean;
-	}
-	
-	public ParserRule getBooleanRule() {
-		return getBooleanAccess().getRule();
-	}
-	
-	//DateTime type::DateTime:
-	//	'DateTime';
-	public DateTimeElements getDateTimeAccess() {
-		return pDateTime;
-	}
-	
-	public ParserRule getDateTimeRule() {
-		return getDateTimeAccess().getRule();
 	}
 	
 	//terminal ID:

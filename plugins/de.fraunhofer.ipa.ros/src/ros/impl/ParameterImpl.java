@@ -74,6 +74,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterType getType() {
 		return type;
 	}
@@ -98,6 +99,7 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ParameterType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;

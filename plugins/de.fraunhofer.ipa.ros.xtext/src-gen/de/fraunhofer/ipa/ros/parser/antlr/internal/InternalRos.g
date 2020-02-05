@@ -4021,41 +4021,23 @@ ruleParameterInteger returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ParameterInteger'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getParameterIntegerAccess().getParameterIntegerKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getParameterIntegerAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='value'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getParameterIntegerAccess().getValueKeyword_2());
-		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getParameterIntegerAccess().getValueInt0ParserRuleCall_3_0());
+			{
+				newCompositeNode(grammarAccess.getParameterIntegerAccess().getValueEintParserRuleCall_0());
+			}
+			lv_value_0_0=ruleEint
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getParameterIntegerRule());
 				}
-				lv_value_3_0=ruleInt0
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterIntegerRule());
-					}
-					set(
-						$current,
-						"value",
-						lv_value_3_0,
-						"de.fraunhofer.ipa.ros.Ros.Int0");
-					afterParserOrEnumRuleCall();
-				}
-			)
+				set(
+					$current,
+					"value",
+					lv_value_0_0,
+					"de.fraunhofer.ipa.ros.Ros.Eint");
+				afterParserOrEnumRuleCall();
+			}
 		)
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getParameterIntegerAccess().getRightCurlyBracketKeyword_4());
-		}
 	)
 ;
 
@@ -4077,9 +4059,9 @@ ruleParameterDouble returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getParameterDoubleAccess().getValueDoubleParserRuleCall_0());
+				newCompositeNode(grammarAccess.getParameterDoubleAccess().getValueDouble0ParserRuleCall_0());
 			}
-			lv_value_0_0=ruleDouble
+			lv_value_0_0=ruleDouble0
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getParameterDoubleRule());
@@ -4088,7 +4070,7 @@ ruleParameterDouble returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.Double");
+					"de.fraunhofer.ipa.ros.Ros.Double0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -4113,9 +4095,9 @@ ruleParameterBoolean returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getParameterBooleanAccess().getValueBooleanParserRuleCall_0());
+				newCompositeNode(grammarAccess.getParameterBooleanAccess().getValueBoolean0ParserRuleCall_0());
 			}
-			lv_value_0_0=ruleBoolean
+			lv_value_0_0=ruleboolean0
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getParameterBooleanRule());
@@ -4124,7 +4106,7 @@ ruleParameterBoolean returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.Boolean");
+					"de.fraunhofer.ipa.ros.Ros.boolean0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -4438,6 +4420,124 @@ ruleParameterStructTypeMember returns [EObject current=null]
 			newLeafNode(otherlv_7, grammarAccess.getParameterStructTypeMemberAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
+;
+
+// Entry rule entryRuleBase64Binary
+entryRuleBase64Binary returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getBase64BinaryRule()); }
+	iv_ruleBase64Binary=ruleBase64Binary
+	{ $current=$iv_ruleBase64Binary.current.getText(); }
+	EOF;
+
+// Rule Base64Binary
+ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_BINARY_0=RULE_BINARY
+	{
+		$current.merge(this_BINARY_0);
+	}
+	{
+		newLeafNode(this_BINARY_0, grammarAccess.getBase64BinaryAccess().getBINARYTerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleboolean0
+entryRuleboolean0 returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getBoolean0Rule()); }
+	iv_ruleboolean0=ruleboolean0
+	{ $current=$iv_ruleboolean0.current.getText(); }
+	EOF;
+
+// Rule boolean0
+ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_BOOLEAN_0=RULE_BOOLEAN
+	{
+		$current.merge(this_BOOLEAN_0);
+	}
+	{
+		newLeafNode(this_BOOLEAN_0, grammarAccess.getBoolean0Access().getBOOLEANTerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleDouble0
+entryRuleDouble0 returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDouble0Rule()); }
+	iv_ruleDouble0=ruleDouble0
+	{ $current=$iv_ruleDouble0.current.getText(); }
+	EOF;
+
+// Rule Double0
+ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_DOUBLE_0=RULE_DOUBLE
+	{
+		$current.merge(this_DOUBLE_0);
+	}
+	{
+		newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleEint
+entryRuleEint returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEintRule()); }
+	iv_ruleEint=ruleEint
+	{ $current=$iv_ruleEint.current.getText(); }
+	EOF;
+
+// Rule Eint
+ruleEint returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getEintAccess().getINTTerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleDateTime
+entryRuleDateTime returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDateTimeRule()); }
+	iv_ruleDateTime=ruleDateTime
+	{ $current=$iv_ruleDateTime.current.getText(); }
+	EOF;
+
+// Rule DateTime
+ruleDateTime returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='DateTime'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getDateTimeAccess().getDateTimeKeyword());
+	}
 ;
 
 // Entry rule entryRuleMessagePart
@@ -5853,123 +5953,33 @@ ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	)
 ;
 
-// Entry rule entryRuleBase64Binary
-entryRuleBase64Binary returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getBase64BinaryRule()); }
-	iv_ruleBase64Binary=ruleBase64Binary
-	{ $current=$iv_ruleBase64Binary.current.getText(); }
-	EOF;
-
-// Rule Base64Binary
-ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='Base64Binary'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getBase64BinaryAccess().getBase64BinaryKeyword());
-	}
-;
-
-// Entry rule entryRuleInt0
-entryRuleInt0 returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getInt0Rule()); }
-	iv_ruleInt0=ruleInt0
-	{ $current=$iv_ruleInt0.current.getText(); }
-	EOF;
-
-// Rule Int0
-ruleInt0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='Int'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getInt0Access().getIntKeyword());
-	}
-;
-
-// Entry rule entryRuleDouble
-entryRuleDouble returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getDoubleRule()); }
-	iv_ruleDouble=ruleDouble
-	{ $current=$iv_ruleDouble.current.getText(); }
-	EOF;
-
-// Rule Double
-ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='Double'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getDoubleAccess().getDoubleKeyword());
-	}
-;
-
-// Entry rule entryRuleBoolean
-entryRuleBoolean returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getBooleanRule()); }
-	iv_ruleBoolean=ruleBoolean
-	{ $current=$iv_ruleBoolean.current.getText(); }
-	EOF;
-
-// Rule Boolean
-ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='Boolean'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getBooleanAccess().getBooleanKeyword());
-	}
-;
-
-// Entry rule entryRuleDateTime
-entryRuleDateTime returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getDateTimeRule()); }
-	iv_ruleDateTime=ruleDateTime
-	{ $current=$iv_ruleDateTime.current.getText(); }
-	EOF;
-
-// Rule DateTime
-ruleDateTime returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='DateTime'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getDateTimeAccess().getDateTimeKeyword());
-	}
-;
-
 RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
+
+RULE_BOOLEAN : ('true'|'false');
+
+fragment RULE_DIGIT : '0'..'9';
+
+RULE_DOUBLE : (RULE_DECINT ('.' RULE_DIGIT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DECINT)|RULE_INT);
+
+fragment RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*);
+
+fragment RULE_SIGN : ('+'|'-');
+
+RULE_SIGNED_INT : '-'* RULE_INT*;
+
+fragment RULE_HEX_DIGIT : (RULE_DIGIT|'a'..'f'|'A'..'F');
+
+RULE_HEX : '0x' RULE_HEX_DIGIT*;
+
+fragment RULE_BINARY_DIGIT : ('0'|'1');
+
+RULE_BINARY : '0b' (RULE_BINARY_DIGIT '_'*)*;
 
 RULE_MESSAGE_ASIGMENT : (RULE_ID|RULE_STRING) '=' (RULE_ID|RULE_STRING|RULE_INT|'-' RULE_INT);
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-fragment RULE_INT : ('0'..'9')+;
+RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

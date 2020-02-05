@@ -62,6 +62,7 @@ public class ParameterAnyTypeImpl extends ParameterTypeImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterAny getDefault() {
 		return default_;
 	}
@@ -86,6 +87,7 @@ public class ParameterAnyTypeImpl extends ParameterTypeImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterAny newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

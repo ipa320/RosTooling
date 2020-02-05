@@ -62,6 +62,7 @@ public class TopicSpecImpl extends SpecBaseImpl implements TopicSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getMessage() {
 		return message;
 	}
@@ -86,6 +87,7 @@ public class TopicSpecImpl extends SpecBaseImpl implements TopicSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessage(MessageDefinition newMessage) {
 		if (newMessage != message) {
 			NotificationChain msgs = null;

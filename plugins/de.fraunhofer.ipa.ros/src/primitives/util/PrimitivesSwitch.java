@@ -40,7 +40,6 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
-import primitives.*;
 
 /**
  * <!-- begin-user-doc -->

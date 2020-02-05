@@ -61,6 +61,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionSpec getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
@@ -87,6 +88,7 @@ public class ActionServerImpl extends NamespacedElementImpl implements ActionSer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAction(ActionSpec newAction) {
 		ActionSpec oldAction = action;
 		action = newAction;

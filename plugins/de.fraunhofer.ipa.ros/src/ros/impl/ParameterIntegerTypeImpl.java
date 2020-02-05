@@ -62,6 +62,7 @@ public class ParameterIntegerTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterInteger getDefault() {
 		return default_;
 	}
@@ -86,6 +87,7 @@ public class ParameterIntegerTypeImpl extends ParameterTypeImpl implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(ParameterInteger newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;

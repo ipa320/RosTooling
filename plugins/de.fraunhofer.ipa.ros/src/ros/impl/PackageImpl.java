@@ -103,6 +103,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +113,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -124,6 +126,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SpecBase> getSpec() {
 		if (spec == null) {
 			spec = new EObjectContainmentWithInverseEList<SpecBase>(SpecBase.class, this, RosPackage.PACKAGE__SPEC, RosPackage.SPEC_BASE__PACKAGE);
@@ -136,6 +139,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Artifact> getArtifact() {
 		if (artifact == null) {
 			artifact = new EObjectContainmentEList<Artifact>(Artifact.class, this, RosPackage.PACKAGE__ARTIFACT);

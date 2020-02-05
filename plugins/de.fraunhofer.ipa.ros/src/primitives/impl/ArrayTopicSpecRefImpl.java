@@ -62,6 +62,7 @@ public class ArrayTopicSpecRefImpl extends AbstractTypeImpl implements ArrayTopi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicSpec getTopicSpec() {
 		if (topicSpec != null && topicSpec.eIsProxy()) {
 			InternalEObject oldTopicSpec = (InternalEObject)topicSpec;
@@ -88,6 +89,7 @@ public class ArrayTopicSpecRefImpl extends AbstractTypeImpl implements ArrayTopi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTopicSpec(TopicSpec newTopicSpec) {
 		TopicSpec oldTopicSpec = topicSpec;
 		topicSpec = newTopicSpec;

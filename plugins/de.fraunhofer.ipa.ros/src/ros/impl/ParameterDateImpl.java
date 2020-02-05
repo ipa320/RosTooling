@@ -71,6 +71,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public XMLGregorianCalendar getValue() {
 		return value;
 	}
@@ -80,6 +81,7 @@ public class ParameterDateImpl extends ParameterValueImpl implements ParameterDa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(XMLGregorianCalendar newValue) {
 		XMLGregorianCalendar oldValue = value;
 		value = newValue;

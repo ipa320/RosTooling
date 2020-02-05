@@ -29,12 +29,12 @@ public interface ParameterInteger extends ParameterValue {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
+	 * @see #setValue(Integer)
 	 * @see ros.RosPackage#getParameterInteger_Value()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	int getValue();
+	Integer getValue();
 
 	/**
 	 * Sets the value of the '{@link ros.ParameterInteger#getValue <em>Value</em>}' attribute.
@@ -44,6 +44,6 @@ public interface ParameterInteger extends ParameterValue {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setValue(Integer value);
 
 } // ParameterInteger

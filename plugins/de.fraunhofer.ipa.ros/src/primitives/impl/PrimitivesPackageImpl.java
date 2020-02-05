@@ -358,6 +358,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getbool() {
 		return boolEClass;
 	}
@@ -367,6 +368,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint8() {
 		return int8EClass;
 	}
@@ -376,6 +378,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint8() {
 		return uint8EClass;
 	}
@@ -385,6 +388,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint16() {
 		return int16EClass;
 	}
@@ -394,6 +398,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint16() {
 		return uint16EClass;
 	}
@@ -403,6 +408,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint32() {
 		return int32EClass;
 	}
@@ -412,6 +418,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint32() {
 		return uint32EClass;
 	}
@@ -421,6 +428,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint64() {
 		return int64EClass;
 	}
@@ -430,6 +438,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint64() {
 		return uint64EClass;
 	}
@@ -439,6 +448,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat32() {
 		return float32EClass;
 	}
@@ -448,6 +458,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat64() {
 		return float64EClass;
 	}
@@ -457,6 +468,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractType() {
 		return abstractTypeEClass;
 	}
@@ -466,6 +478,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getstring() {
 		return stringEClass;
 	}
@@ -475,6 +488,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass gettime() {
 		return timeEClass;
 	}
@@ -484,6 +498,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getduration() {
 		return durationEClass;
 	}
@@ -493,6 +508,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getboolArray() {
 		return boolArrayEClass;
 	}
@@ -502,6 +518,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint8Array() {
 		return int8ArrayEClass;
 	}
@@ -511,6 +528,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint8Array() {
 		return uint8ArrayEClass;
 	}
@@ -520,6 +538,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint16Array() {
 		return int16ArrayEClass;
 	}
@@ -529,6 +548,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint16Array() {
 		return uint16ArrayEClass;
 	}
@@ -538,6 +558,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint32Array() {
 		return int32ArrayEClass;
 	}
@@ -547,6 +568,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint32Array() {
 		return uint32ArrayEClass;
 	}
@@ -556,6 +578,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getint64Array() {
 		return int64ArrayEClass;
 	}
@@ -565,6 +588,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getuint64Array() {
 		return uint64ArrayEClass;
 	}
@@ -574,6 +598,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat32Array() {
 		return float32ArrayEClass;
 	}
@@ -583,6 +608,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getfloat64Array() {
 		return float64ArrayEClass;
 	}
@@ -592,6 +618,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getstringArray() {
 		return stringArrayEClass;
 	}
@@ -601,6 +628,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTopicSpecRef() {
 		return topicSpecRefEClass;
 	}
@@ -610,6 +638,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTopicSpecRef_TopicSpec() {
 		return (EReference)topicSpecRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -619,6 +648,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArrayTopicSpecRef() {
 		return arrayTopicSpecRefEClass;
 	}
@@ -628,6 +658,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArrayTopicSpecRef_TopicSpec() {
 		return (EReference)arrayTopicSpecRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -637,6 +668,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHeader() {
 		return headerEClass;
 	}
@@ -646,6 +678,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getByte() {
 		return byteEClass;
 	}
@@ -655,6 +688,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getByteArray() {
 		return byteArrayEClass;
 	}
@@ -664,6 +698,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessagePart() {
 		return messagePartEClass;
 	}
@@ -673,6 +708,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessagePart_Type() {
 		return (EReference)messagePartEClass.getEStructuralFeatures().get(0);
 	}
@@ -682,6 +718,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessagePart_Data() {
 		return (EAttribute)messagePartEClass.getEStructuralFeatures().get(1);
 	}
@@ -691,6 +728,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrimitivesFactory getPrimitivesFactory() {
 		return (PrimitivesFactory)getEFactoryInstance();
 	}

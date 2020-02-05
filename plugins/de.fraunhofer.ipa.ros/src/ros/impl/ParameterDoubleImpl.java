@@ -69,6 +69,7 @@ public class ParameterDoubleImpl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getValue() {
 		return value;
 	}
@@ -78,6 +79,7 @@ public class ParameterDoubleImpl extends ParameterValueImpl implements Parameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(double newValue) {
 		double oldValue = value;
 		value = newValue;

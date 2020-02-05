@@ -73,6 +73,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getRequest() {
 		return request;
 	}
@@ -97,6 +98,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRequest(MessageDefinition newRequest) {
 		if (newRequest != request) {
 			NotificationChain msgs = null;
@@ -116,6 +118,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDefinition getResponse() {
 		return response;
 	}
@@ -140,6 +143,7 @@ public class ServiceSpecImpl extends SpecBaseImpl implements ServiceSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResponse(MessageDefinition newResponse) {
 		if (newResponse != response) {
 			NotificationChain msgs = null;
