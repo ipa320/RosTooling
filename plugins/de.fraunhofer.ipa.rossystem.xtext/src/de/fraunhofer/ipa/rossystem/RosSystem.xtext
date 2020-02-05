@@ -183,7 +183,7 @@ GraphName returns ros::GraphName:
 
 ParameterListType returns ros::ParameterListType:
 	{ros::ParameterListType}
-	'ParameterListType'
+	'List'
 	'{'
 		('sequence' '{' sequence+=ParameterType ( "," sequence+=ParameterType)* '}' )?
 		('default' default=ParameterSequence)?
@@ -191,62 +191,62 @@ ParameterListType returns ros::ParameterListType:
 
 ParameterStructType returns ros::ParameterStructType:
 	{ros::ParameterStructType}
-	'ParameterStructType'
+	'Struct'
 	'{'
 		('parameterstructypetmember' '{' parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)* '}' )?
 	'}';
 
 ParameterIntegerType returns ros::ParameterIntegerType:
 	{ros::ParameterIntegerType}
-	'ParameterIntegerType'
+	'Integer'
 	'{'
 		('default' default=ParameterInteger)?
 	'}';
 
 ParameterStringType returns ros::ParameterStringType:
 	{ros::ParameterStringType}
-	'ParameterStringType'
+	'String'
 	'{'
 		('default' default=ParameterString)?
 	'}';
 
 ParameterDoubleType returns ros::ParameterDoubleType:
 	{ros::ParameterDoubleType}
-	'ParameterDoubleType'
+	'Double'
 	'{'
 		('default' default=ParameterDouble)?
 	'}';
 
 ParameterDateType returns ros::ParameterDateType:
 	{ros::ParameterDateType}
-	'ParameterDateType'
+	'Date'
 	'{'
 		('default' default=ParameterDate)?
 	'}';
 
 ParameterBooleanType returns ros::ParameterBooleanType:
 	{ros::ParameterBooleanType}
-	'ParameterBooleanType'
+	'Boolean'
 	'{'
 		('default' default=ParameterBoolean)?
 	'}';
 
 ParameterBase64Type returns ros::ParameterBase64Type:
 	{ros::ParameterBase64Type}
-	'ParameterBase64Type'
+	'Base64'
 	'{'
 		('default' default=ParameterBase64)?
 	'}';
 
 ParameterAnyType returns ros::ParameterAnyType:
 	{ros::ParameterAnyType}
-	'ParameterAnyType'
+	'Any'
 	'{'
 		('default' default=ParameterAny)?
 	'}';
 
 ParameterArrayType returns ros::ParameterArrayType:
-	'ParameterArrayType'
+	'Array'
 	'{'
 		'type' type=ParameterType
 		('default' default=ParameterSequence)?
@@ -254,10 +254,8 @@ ParameterArrayType returns ros::ParameterArrayType:
 
 ParameterSequence returns ros::ParameterSequence:
 	{ros::ParameterSequence}
-	'ParameterSequence'
-	'{'
-		('value' '{' value+=ParameterValue ( "," value+=ParameterValue)* '}' )?
-	'}';
+		('{' value+=ParameterValue ( "," value+=ParameterValue)* '}' )?
+;
 
 ParameterAny returns ros::ParameterAny:
 	{ros::ParameterAny}
@@ -267,34 +265,24 @@ ParameterAny returns ros::ParameterAny:
 	'}';
 
 ParameterString returns ros::ParameterString:
-	'ParameterString'
-	'{'
-		'value' value=EString
-	'}';
+	value=EString
+;
 
 ParameterBase64 returns ros::ParameterBase64:
-	'ParameterBase64'
-	'{'
-		'value' value=Base64Binary
-	'}';
+	value=Base64Binary
+;
 
 ParameterInteger returns ros::ParameterInteger:
-	'ParameterInteger'
-	'{'
-		'value' value=Int0
-	'}';
+	value=Eint
+;
 
 ParameterDouble returns ros::ParameterDouble:
-	'ParameterDouble'
-	'{'
-		'value' value=Double
-	'}';
+	value=Double0
+;
 
 ParameterBoolean returns ros::ParameterBoolean:
-	'ParameterBoolean'
-	'{'
-		'value' value=Boolean
-	'}';
+	value=boolean0
+;
 
 ParameterStruct returns ros::ParameterStruct:
 	{ros::ParameterStruct}
@@ -304,22 +292,8 @@ ParameterStruct returns ros::ParameterStruct:
 	'}';
 
 ParameterDate returns ros::ParameterDate:
-	'ParameterDate'
-	'{'
-		'value' value=DateTime
-	'}';
-
-Base64Binary returns type::Base64Binary:
-	'Base64Binary' ;
-
-Int0 returns type::Int:
-	'Int' ;
-
-Double returns type::Double:
-	'Double';
-
-Boolean returns type::Boolean:
-	'Boolean';
+	value=DateTime
+;
 
 ParameterStructMember returns ros::ParameterStructMember:
 	'ParameterStructMember'
@@ -328,8 +302,6 @@ ParameterStructMember returns ros::ParameterStructMember:
 		'value' value=ParameterValue
 	'}';
 
-DateTime returns type::DateTime:
-	'DateTime' ;
 
 ParameterStructTypeMember returns ros::ParameterStructTypeMember:
 	'ParameterStructTypeMember'
@@ -338,6 +310,48 @@ ParameterStructTypeMember returns ros::ParameterStructTypeMember:
 		'type' type=ParameterType
 		('default' default=ParameterStruct)?
 	'}';
+
+
+//PARAMETRRS PRIMITIVES TYPES
+
+terminal BOOLEAN: 'true'|'false';
+terminal fragment DIGIT: '0'..'9';
+terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT)) | INT;  // Use terminal to avoid 'e' turning into a keyword
+terminal DECINT: '0' | ('1'..'9' DIGIT*);
+terminal fragment SIGN :   '+' | '-' ;
+
+
+terminal SIGNED_INT:
+	'-'* INT*;
+
+terminal fragment HEX_DIGIT: (DIGIT|'a'..'f'|'A'..'F');
+
+terminal HEX returns ecore::EIntegerObject: 
+	'0x' HEX_DIGIT*;
+
+terminal fragment BINARY_DIGIT: ('0' | '1');
+
+terminal BINARY returns ecore::EIntegerObject:
+	'0b' (BINARY_DIGIT('_')*)*;
+
+	
+Base64Binary returns type::Base64Binary:
+	BINARY ;
+
+
+boolean0 returns type::Boolean:
+	BOOLEAN
+;
+
+Double0 returns type::Double:
+	DOUBLE;
+
+Eint returns ecore::EInt:
+	INT
+;
+
+DateTime returns type::DateTime:
+	'DateTime' ;
 
 PackageDependency returns ros::PackageDependency:
 	'PackageDependency'

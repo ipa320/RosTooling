@@ -360,7 +360,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_BASE64__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -384,7 +384,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterBoolean returns ParameterBoolean
 	 *
 	 * Constraint:
-	 *     value=Boolean
+	 *     value=boolean0
 	 */
 	protected void sequence_ParameterBoolean(ISerializationContext context, ParameterBoolean semanticObject) {
 		if (errorAcceptor != null) {
@@ -392,7 +392,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_BOOLEAN__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterBooleanAccess().getValueBooleanParserRuleCall_3_0(), semanticObject.isValue());
+		feeder.accept(grammarAccess.getParameterBooleanAccess().getValueBoolean0ParserRuleCall_0(), semanticObject.isValue());
 		feeder.finish();
 	}
 	
@@ -424,7 +424,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_DATE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterDateAccess().getValueDateTimeParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterDateAccess().getValueDateTimeParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -448,7 +448,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterDouble returns ParameterDouble
 	 *
 	 * Constraint:
-	 *     value=Double
+	 *     value=Double0
 	 */
 	protected void sequence_ParameterDouble(ISerializationContext context, ParameterDouble semanticObject) {
 		if (errorAcceptor != null) {
@@ -456,7 +456,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_DOUBLE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterDoubleAccess().getValueDoubleParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterDoubleAccess().getValueDouble0ParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -480,7 +480,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterInteger returns ParameterInteger
 	 *
 	 * Constraint:
-	 *     value=Int0
+	 *     value=Eint
 	 */
 	protected void sequence_ParameterInteger(ISerializationContext context, ParameterInteger semanticObject) {
 		if (errorAcceptor != null) {
@@ -488,7 +488,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_INTEGER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterIntegerAccess().getValueInt0ParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterIntegerAccess().getValueEintParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -546,7 +546,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRING__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
