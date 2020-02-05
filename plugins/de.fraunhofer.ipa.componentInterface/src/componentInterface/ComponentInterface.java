@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link componentInterface.ComponentInterface#getRosserviceclient <em>Rosserviceclient</em>}</li>
  *   <li>{@link componentInterface.ComponentInterface#getRosactionserver <em>Rosactionserver</em>}</li>
  *   <li>{@link componentInterface.ComponentInterface#getRosactionclient <em>Rosactionclient</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getRosparameter <em>Rosparameter</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getComponentInterface()
@@ -121,5 +122,17 @@ public interface ComponentInterface extends NameSpaceComponent {
 	 * @generated
 	 */
 	EList<RosActionClient> getRosactionclient();
+
+	/**
+	 * Returns the value of the '<em><b>Rosparameter</b></em>' containment reference list.
+	 * The list contents are of type {@link componentInterface.RosParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rosparameter</em>' containment reference list.
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_Rosparameter()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RosParameter> getRosparameter();
 
 } // ComponentInterface

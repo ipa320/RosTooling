@@ -163,6 +163,7 @@ public class RosActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("ros-settings"));
 		toolBarManager.add(new Separator("ros-additions"));
 	}

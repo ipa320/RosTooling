@@ -64,6 +64,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 			case ComponentInterfacePackage.ROS_SERVICE_CLIENT: return createRosServiceClient();
 			case ComponentInterfacePackage.ROS_ACTION_SERVER: return createRosActionServer();
 			case ComponentInterfacePackage.ROS_ACTION_CLIENT: return createRosActionClient();
+			case ComponentInterfacePackage.ROS_PARAMETER: return createRosParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +105,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInterface createComponentInterface() {
 		ComponentInterfaceImpl componentInterface = new ComponentInterfaceImpl();
 		return componentInterface;
@@ -114,6 +116,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosPublisher createRosPublisher() {
 		RosPublisherImpl rosPublisher = new RosPublisherImpl();
 		return rosPublisher;
@@ -124,6 +127,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosSubscriber createRosSubscriber() {
 		RosSubscriberImpl rosSubscriber = new RosSubscriberImpl();
 		return rosSubscriber;
@@ -134,6 +138,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosServiceServer createRosServiceServer() {
 		RosServiceServerImpl rosServiceServer = new RosServiceServerImpl();
 		return rosServiceServer;
@@ -144,6 +149,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosServiceClient createRosServiceClient() {
 		RosServiceClientImpl rosServiceClient = new RosServiceClientImpl();
 		return rosServiceClient;
@@ -154,6 +160,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosActionServer createRosActionServer() {
 		RosActionServerImpl rosActionServer = new RosActionServerImpl();
 		return rosActionServer;
@@ -164,9 +171,21 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosActionClient createRosActionClient() {
 		RosActionClientImpl rosActionClient = new RosActionClientImpl();
 		return rosActionClient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosParameter createRosParameter() {
+		RosParameterImpl rosParameter = new RosParameterImpl();
+		return rosParameter;
 	}
 
 	/**
@@ -192,6 +211,7 @@ public class ComponentInterfaceFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInterfacePackage getComponentInterfacePackage() {
 		return (ComponentInterfacePackage)getEPackage();
 	}

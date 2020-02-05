@@ -186,13 +186,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int COMPONENT_INTERFACE__ROSACTIONCLIENT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Rosparameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INTERFACE__ROSPARAMETER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Component Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 6;
+	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Component Interface</em>' class.
@@ -534,6 +543,61 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_ACTION_CLIENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link componentInterface.impl.RosParameterImpl <em>Ros Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentInterface.impl.RosParameterImpl
+	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosParameter()
+	 * @generated
+	 */
+	int ROS_PARAMETER = 8;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__PARAMETER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__NS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Ros Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Ros Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>NS</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,7 +605,7 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @see componentInterface.impl.ComponentInterfacePackageImpl#getNS()
 	 * @generated
 	 */
-	int NS = 8;
+	int NS = 9;
 
 
 	/**
@@ -619,6 +683,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInterface_Rosactionclient();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentInterface.ComponentInterface#getRosparameter <em>Rosparameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosparameter</em>'.
+	 * @see componentInterface.ComponentInterface#getRosparameter()
+	 * @see #getComponentInterface()
+	 * @generated
+	 */
+	EReference getComponentInterface_Rosparameter();
 
 	/**
 	 * Returns the meta object for class '{@link componentInterface.RosPublisher <em>Ros Publisher</em>}'.
@@ -911,6 +986,49 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosActionClient_Ns();
 
 	/**
+	 * Returns the meta object for class '{@link componentInterface.RosParameter <em>Ros Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Parameter</em>'.
+	 * @see componentInterface.RosParameter
+	 * @generated
+	 */
+	EClass getRosParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentInterface.RosParameter#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see componentInterface.RosParameter#getParameter()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EReference getRosParameter_Parameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosParameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentInterface.RosParameter#getName()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EAttribute getRosParameter_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentInterface.RosParameter#getNs <em>Ns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ns</em>'.
+	 * @see componentInterface.RosParameter#getNs()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EAttribute getRosParameter_Ns();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>NS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1001,6 +1119,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INTERFACE__ROSACTIONCLIENT = eINSTANCE.getComponentInterface_Rosactionclient();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosparameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INTERFACE__ROSPARAMETER = eINSTANCE.getComponentInterface_Rosparameter();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
@@ -1231,6 +1357,40 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROS_ACTION_CLIENT__NS = eINSTANCE.getRosActionClient_Ns();
+
+		/**
+		 * The meta object literal for the '{@link componentInterface.impl.RosParameterImpl <em>Ros Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentInterface.impl.RosParameterImpl
+		 * @see componentInterface.impl.ComponentInterfacePackageImpl#getRosParameter()
+		 * @generated
+		 */
+		EClass ROS_PARAMETER = eINSTANCE.getRosParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PARAMETER__PARAMETER = eINSTANCE.getRosParameter_Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_PARAMETER__NAME = eINSTANCE.getRosParameter_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Ns</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_PARAMETER__NS = eINSTANCE.getRosParameter_Ns();
 
 		/**
 		 * The meta object literal for the '<em>NS</em>' data type.

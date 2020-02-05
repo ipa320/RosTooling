@@ -168,8 +168,7 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSUBSCRIBER);
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICESERVER);
 			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER);
-			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT);
+			childrenFeatures.add(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSPARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -233,8 +232,7 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER:
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICESERVER:
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT:
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER:
-			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -271,15 +269,11 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			(createChildParameter
 				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSSERVICECLIENT,
 				 ComponentInterfaceFactory.eINSTANCE.createRosServiceClient()));
-		newChildDescriptors.add
-		(createChildParameter
-			(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONSERVER,
-			 ComponentInterfaceFactory.eINSTANCE.createRosActionServer()));
 
-	newChildDescriptors.add
-		(createChildParameter
-			(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT,
-			 ComponentInterfaceFactory.eINSTANCE.createRosActionClient()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSPARAMETER,
+				 ComponentInterfaceFactory.eINSTANCE.createRosParameter()));
 	}
 
 	/**

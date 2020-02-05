@@ -314,7 +314,7 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link PrimitivesPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -328,12 +328,14 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		if (isInited) return (PrimitivesPackage)EPackage.Registry.INSTANCE.getEPackage(PrimitivesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PrimitivesPackageImpl thePrimitivesPackage = (PrimitivesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PrimitivesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PrimitivesPackageImpl());
+		Object registeredPrimitivesPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		PrimitivesPackageImpl thePrimitivesPackage = registeredPrimitivesPackage instanceof PrimitivesPackageImpl ? (PrimitivesPackageImpl)registeredPrimitivesPackage : new PrimitivesPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		RosPackageImpl theRosPackage = (RosPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI) instanceof RosPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI) : RosPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
+		RosPackageImpl theRosPackage = (RosPackageImpl)(registeredPackage instanceof RosPackageImpl ? registeredPackage : RosPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePrimitivesPackage.createPackageContents();
@@ -346,7 +348,6 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
 		// Mark meta-data to indicate it can't be changed
 		thePrimitivesPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PrimitivesPackage.eNS_URI, thePrimitivesPackage);
 		return thePrimitivesPackage;

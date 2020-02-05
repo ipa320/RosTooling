@@ -15,6 +15,8 @@
         eType="#//RosActionServer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rosactionclient" upperBound="-1"
         eType="#//RosActionClient" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosparameter" upperBound="-1"
+        eType="#//RosParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
@@ -51,5 +53,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="actclient" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionClient"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS" defaultValueLiteral=""/>
   </eClassifiers>
 </ecore:EPackage>

@@ -6,6 +6,7 @@ import componentInterface.ComponentInterface;
 import componentInterface.ComponentInterfacePackage;
 import componentInterface.RosActionClient;
 import componentInterface.RosActionServer;
+import componentInterface.RosParameter;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosserviceclient <em>Rosserviceclient</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionserver <em>Rosactionserver</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionclient <em>Rosactionclient</em>}</li>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosparameter <em>Rosparameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,6 +151,16 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<RosActionClient> rosactionclient;
 
 	/**
+	 * The cached value of the '{@link #getRosparameter() <em>Rosparameter</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRosparameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RosParameter> rosparameter;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -172,6 +184,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -181,6 +194,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -193,6 +207,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNameSpace() {
 		return nameSpace;
 	}
@@ -202,6 +217,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNameSpace(String newNameSpace) {
 		String oldNameSpace = nameSpace;
 		nameSpace = newNameSpace;
@@ -214,6 +230,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosPublisher> getRospublisher() {
 		if (rospublisher == null) {
 			rospublisher = new EObjectContainmentEList<RosPublisher>(RosPublisher.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER);
@@ -226,6 +243,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosSubscriber> getRossubscriber() {
 		if (rossubscriber == null) {
 			rossubscriber = new EObjectContainmentEList<RosSubscriber>(RosSubscriber.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSUBSCRIBER);
@@ -238,6 +256,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosServiceServer> getRosserviceserver() {
 		if (rosserviceserver == null) {
 			rosserviceserver = new EObjectContainmentEList<RosServiceServer>(RosServiceServer.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICESERVER);
@@ -250,6 +269,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosServiceClient> getRosserviceclient() {
 		if (rosserviceclient == null) {
 			rosserviceclient = new EObjectContainmentEList<RosServiceClient>(RosServiceClient.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSSERVICECLIENT);
@@ -262,6 +282,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosActionServer> getRosactionserver() {
 		if (rosactionserver == null) {
 			rosactionserver = new EObjectContainmentEList<RosActionServer>(RosActionServer.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONSERVER);
@@ -274,11 +295,25 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosActionClient> getRosactionclient() {
 		if (rosactionclient == null) {
 			rosactionclient = new EObjectContainmentEList<RosActionClient>(RosActionClient.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT);
 		}
 		return rosactionclient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<RosParameter> getRosparameter() {
+		if (rosparameter == null) {
+			rosparameter = new EObjectContainmentEList<RosParameter>(RosParameter.class, this, ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER);
+		}
+		return rosparameter;
 	}
 
 	/**
@@ -301,6 +336,8 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return ((InternalEList<?>)getRosactionserver()).basicRemove(otherEnd, msgs);
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
 				return ((InternalEList<?>)getRosactionclient()).basicRemove(otherEnd, msgs);
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
+				return ((InternalEList<?>)getRosparameter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,6 +366,8 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return getRosactionserver();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
 				return getRosactionclient();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
+				return getRosparameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -372,6 +411,10 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				getRosactionclient().clear();
 				getRosactionclient().addAll((Collection<? extends RosActionClient>)newValue);
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
+				getRosparameter().clear();
+				getRosparameter().addAll((Collection<? extends RosParameter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -408,6 +451,9 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
 				getRosactionclient().clear();
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
+				getRosparameter().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -436,6 +482,8 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return rosactionserver != null && !rosactionserver.isEmpty();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSACTIONCLIENT:
 				return rosactionclient != null && !rosactionclient.isEmpty();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
+				return rosparameter != null && !rosparameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -449,7 +497,7 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", NameSpace: ");

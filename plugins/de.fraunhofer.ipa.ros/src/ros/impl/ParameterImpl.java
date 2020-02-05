@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import ros.Parameter;
 import ros.ParameterType;
+import ros.ParameterValue;
 import ros.RosPackage;
 
 /**
@@ -23,6 +24,7 @@ import ros.RosPackage;
  * </p>
  * <ul>
  *   <li>{@link ros.impl.ParameterImpl#getType <em>Type</em>}</li>
+ *   <li>{@link ros.impl.ParameterImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +39,16 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	 * @ordered
 	 */
 	protected ParameterType type;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected ParameterValue value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,10 +118,57 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
+	public ParameterValue getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValue(ParameterValue newValue, NotificationChain msgs) {
+		ParameterValue oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setValue(ParameterValue newValue) {
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.PARAMETER__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PARAMETER__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RosPackage.PARAMETER__TYPE:
 				return basicSetType(null, msgs);
+			case RosPackage.PARAMETER__VALUE:
+				return basicSetValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -124,6 +183,8 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 		switch (featureID) {
 			case RosPackage.PARAMETER__TYPE:
 				return getType();
+			case RosPackage.PARAMETER__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,6 +199,9 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 		switch (featureID) {
 			case RosPackage.PARAMETER__TYPE:
 				setType((ParameterType)newValue);
+				return;
+			case RosPackage.PARAMETER__VALUE:
+				setValue((ParameterValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,6 +218,9 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 			case RosPackage.PARAMETER__TYPE:
 				setType((ParameterType)null);
 				return;
+			case RosPackage.PARAMETER__VALUE:
+				setValue((ParameterValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -168,6 +235,8 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 		switch (featureID) {
 			case RosPackage.PARAMETER__TYPE:
 				return type != null;
+			case RosPackage.PARAMETER__VALUE:
+				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}

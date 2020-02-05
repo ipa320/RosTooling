@@ -8,6 +8,7 @@ import componentInterface.ComponentInterfacePackage;
 import componentInterface.NameSpaceComponent;
 import componentInterface.RosActionClient;
 import componentInterface.RosActionServer;
+import componentInterface.RosParameter;
 import componentInterface.RosPublisher;
 import componentInterface.RosServiceClient;
 import componentInterface.RosServiceServer;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import primitives.PrimitivesPackage;
 import ros.RosPackage;
 
 /**
@@ -91,6 +93,13 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass rosParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType nsEDataType = null;
 
 	/**
@@ -121,7 +130,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ComponentInterfacePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -135,12 +144,14 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		if (isInited) return (ComponentInterfacePackage)EPackage.Registry.INSTANCE.getEPackage(ComponentInterfacePackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentInterfacePackageImpl theComponentInterfacePackage = (ComponentInterfacePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentInterfacePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentInterfacePackageImpl());
+		Object registeredComponentInterfacePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ComponentInterfacePackageImpl theComponentInterfacePackage = registeredComponentInterfacePackage instanceof ComponentInterfacePackageImpl ? (ComponentInterfacePackageImpl)registeredComponentInterfacePackage : new ComponentInterfacePackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		RosPackage.eINSTANCE.eClass();
+		PrimitivesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentInterfacePackage.createPackageContents();
@@ -151,7 +162,6 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		// Mark meta-data to indicate it can't be changed
 		theComponentInterfacePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ComponentInterfacePackage.eNS_URI, theComponentInterfacePackage);
 		return theComponentInterfacePackage;
@@ -162,6 +172,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInterface() {
 		return componentInterfaceEClass;
 	}
@@ -171,6 +182,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rospublisher() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -180,6 +192,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rossubscriber() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -189,6 +202,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rosserviceserver() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -198,6 +212,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rosserviceclient() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(3);
 	}
@@ -207,6 +222,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rosactionserver() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(4);
 	}
@@ -216,6 +232,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInterface_Rosactionclient() {
 		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(5);
 	}
@@ -225,6 +242,17 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getComponentInterface_Rosparameter() {
+		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRosPublisher() {
 		return rosPublisherEClass;
 	}
@@ -234,6 +262,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosPublisher_Publisher() {
 		return (EReference)rosPublisherEClass.getEStructuralFeatures().get(0);
 	}
@@ -243,6 +272,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosPublisher_Name() {
 		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(1);
 	}
@@ -252,6 +282,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosPublisher_Ns() {
 		return (EAttribute)rosPublisherEClass.getEStructuralFeatures().get(2);
 	}
@@ -261,6 +292,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRosSubscriber() {
 		return rosSubscriberEClass;
 	}
@@ -270,6 +302,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosSubscriber_Subscriber() {
 		return (EReference)rosSubscriberEClass.getEStructuralFeatures().get(0);
 	}
@@ -279,6 +312,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosSubscriber_Name() {
 		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(1);
 	}
@@ -288,6 +322,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosSubscriber_Ns() {
 		return (EAttribute)rosSubscriberEClass.getEStructuralFeatures().get(2);
 	}
@@ -297,6 +332,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRosServiceServer() {
 		return rosServiceServerEClass;
 	}
@@ -306,6 +342,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosServiceServer_Srvserver() {
 		return (EReference)rosServiceServerEClass.getEStructuralFeatures().get(0);
 	}
@@ -315,6 +352,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosServiceServer_Name() {
 		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(1);
 	}
@@ -324,6 +362,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosServiceServer_Ns() {
 		return (EAttribute)rosServiceServerEClass.getEStructuralFeatures().get(2);
 	}
@@ -333,6 +372,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRosServiceClient() {
 		return rosServiceClientEClass;
 	}
@@ -342,6 +382,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosServiceClient_Srvclient() {
 		return (EReference)rosServiceClientEClass.getEStructuralFeatures().get(0);
 	}
@@ -351,6 +392,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosServiceClient_Name() {
 		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(1);
 	}
@@ -360,6 +402,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosServiceClient_Ns() {
 		return (EAttribute)rosServiceClientEClass.getEStructuralFeatures().get(2);
 	}
@@ -369,6 +412,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNameSpaceComponent() {
 		return nameSpaceComponentEClass;
 	}
@@ -378,6 +422,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNameSpaceComponent_Name() {
 		return (EAttribute)nameSpaceComponentEClass.getEStructuralFeatures().get(0);
 	}
@@ -387,6 +432,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNameSpaceComponent_NameSpace() {
 		return (EAttribute)nameSpaceComponentEClass.getEStructuralFeatures().get(1);
 	}
@@ -396,6 +442,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRosActionServer() {
 		return rosActionServerEClass;
 	}
@@ -405,6 +452,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosActionServer_Actserver() {
 		return (EReference)rosActionServerEClass.getEStructuralFeatures().get(0);
 	}
@@ -414,6 +462,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosActionServer_Name() {
 		return (EAttribute)rosActionServerEClass.getEStructuralFeatures().get(1);
 	}
@@ -423,6 +472,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosActionServer_Ns() {
 		return (EAttribute)rosActionServerEClass.getEStructuralFeatures().get(2);
 	}
@@ -432,6 +482,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRosActionClient() {
 		return rosActionClientEClass;
 	}
@@ -441,6 +492,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRosActionClient_Actclient() {
 		return (EReference)rosActionClientEClass.getEStructuralFeatures().get(0);
 	}
@@ -450,6 +502,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosActionClient_Name() {
 		return (EAttribute)rosActionClientEClass.getEStructuralFeatures().get(1);
 	}
@@ -459,6 +512,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRosActionClient_Ns() {
 		return (EAttribute)rosActionClientEClass.getEStructuralFeatures().get(2);
 	}
@@ -468,6 +522,47 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getRosParameter() {
+		return rosParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosParameter_Parameter() {
+		return (EReference)rosParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRosParameter_Name() {
+		return (EAttribute)rosParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRosParameter_Ns() {
+		return (EAttribute)rosParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getNS() {
 		return nsEDataType;
 	}
@@ -477,6 +572,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInterfaceFactory getComponentInterfaceFactory() {
 		return (ComponentInterfaceFactory)getEFactoryInstance();
 	}
@@ -507,6 +603,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSSERVICECLIENT);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONSERVER);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONCLIENT);
+		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSPARAMETER);
 
 		rosPublisherEClass = createEClass(ROS_PUBLISHER);
 		createEReference(rosPublisherEClass, ROS_PUBLISHER__PUBLISHER);
@@ -541,6 +638,11 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(rosActionClientEClass, ROS_ACTION_CLIENT__ACTCLIENT);
 		createEAttribute(rosActionClientEClass, ROS_ACTION_CLIENT__NAME);
 		createEAttribute(rosActionClientEClass, ROS_ACTION_CLIENT__NS);
+
+		rosParameterEClass = createEClass(ROS_PARAMETER);
+		createEReference(rosParameterEClass, ROS_PARAMETER__PARAMETER);
+		createEAttribute(rosParameterEClass, ROS_PARAMETER__NAME);
+		createEAttribute(rosParameterEClass, ROS_PARAMETER__NS);
 
 		// Create data types
 		nsEDataType = createEDataType(NS);
@@ -587,6 +689,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentInterface_Rosserviceclient(), this.getRosServiceClient(), null, "rosserviceclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosactionserver(), this.getRosActionServer(), null, "rosactionserver", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosactionclient(), this.getRosActionClient(), null, "rosactionclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_Rosparameter(), this.getRosParameter(), null, "rosparameter", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosPublisherEClass, RosPublisher.class, "RosPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosPublisher_Publisher(), theRosPackage.getPublisher(), null, "publisher", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -621,6 +724,11 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getRosActionClient_Actclient(), theRosPackage.getActionClient(), null, "actclient", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosActionClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosActionClient_Ns(), this.getNS(), "ns", null, 0, 1, RosActionClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosParameterEClass, RosParameter.class, "RosParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosParameter_Parameter(), theRosPackage.getParameter(), null, "parameter", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosParameter_Ns(), this.getNS(), "ns", "", 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(nsEDataType, String.class, "NS", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

@@ -72,7 +72,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public ActionConnectionImpl() {
 		super();
@@ -275,7 +275,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (ActionName: ");
 		result.append(actionName);
 		result.append(')');
