@@ -7,7 +7,7 @@ Bundle-Vendor: Fraunhofer IPA
 Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.navigator,
  org.eclipse.core.runtime,
- de.fraunhofer.ipa.ros.editor;bundle-version="1.0.0"
+ de.fraunhofer.ipa.ros.editor
 Automatic-Module-Name: de.fraunhofer.ipa.ros.plugin
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -13,6 +13,6 @@ Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.fraunhofer.ipa.roscode.generator.Activator
 Require-Bundle: org.eclipse.xtext.builder,
  org.eclipse.xtext.ui,
- de.fraunhofer.ipa.ros;bundle-version="0.1.0",
- de.fraunhofer.ipa.ros.xtext.ide;bundle-version="1.0.0",
- de.fraunhofer.ipa.ros.xtext.ui;bundle-version="1.0.0"
+ de.fraunhofer.ipa.ros,
+ de.fraunhofer.ipa.ros.xtext.ide,
+ de.fraunhofer.ipa.ros.xtext.ui

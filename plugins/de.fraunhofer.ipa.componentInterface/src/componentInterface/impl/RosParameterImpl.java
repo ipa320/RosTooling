@@ -7,6 +7,7 @@ import componentInterface.RosParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ros.Parameter;
+import ros.ParameterValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,7 @@ import ros.Parameter;
  *   <li>{@link componentInterface.impl.RosParameterImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link componentInterface.impl.RosParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.impl.RosParameterImpl#getNs <em>Ns</em>}</li>
+ *   <li>{@link componentInterface.impl.RosParameterImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,9 +85,19 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 	protected String ns = NS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getValue()
 	 * @generated
+	 * @ordered
+	 */
+	protected ParameterValue value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public RosParameterImpl() {
 		super();
@@ -192,6 +205,65 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	@Override
+	public ParameterValue getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValue(ParameterValue newValue, NotificationChain msgs) {
+		ParameterValue oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_PARAMETER__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setValue(ParameterValue newValue) {
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentInterfacePackage.ROS_PARAMETER__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentInterfacePackage.ROS_PARAMETER__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.ROS_PARAMETER__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentInterfacePackage.ROS_PARAMETER__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentInterfacePackage.ROS_PARAMETER__PARAMETER:
@@ -201,6 +273,8 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 				return getName();
 			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				return getNs();
+			case ComponentInterfacePackage.ROS_PARAMETER__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,6 +295,9 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 				return;
 			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				setNs((String)newValue);
+				return;
+			case ComponentInterfacePackage.ROS_PARAMETER__VALUE:
+				setValue((ParameterValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +320,9 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				setNs(NS_EDEFAULT);
 				return;
+			case ComponentInterfacePackage.ROS_PARAMETER__VALUE:
+				setValue((ParameterValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,6 +341,8 @@ public class RosParameterImpl extends MinimalEObjectImpl.Container implements Ro
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentInterfacePackage.ROS_PARAMETER__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
+			case ComponentInterfacePackage.ROS_PARAMETER__VALUE:
+				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}

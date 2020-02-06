@@ -58,5 +58,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="#//NS" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ParameterValue"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

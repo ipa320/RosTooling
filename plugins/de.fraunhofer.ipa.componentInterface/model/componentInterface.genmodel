@@ -55,6 +55,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosParameter/parameter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosParameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentInterface.ecore#//RosParameter/ns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosParameter/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

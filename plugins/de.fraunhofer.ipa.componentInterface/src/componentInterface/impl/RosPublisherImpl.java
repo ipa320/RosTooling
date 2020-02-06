@@ -101,6 +101,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Publisher getPublisher() {
 		if (publisher != null && publisher.eIsProxy()) {
 			InternalEObject oldPublisher = (InternalEObject)publisher;
@@ -127,6 +128,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPublisher(Publisher newPublisher) {
 		Publisher oldPublisher = publisher;
 		publisher = newPublisher;
@@ -162,6 +164,7 @@ public class RosPublisherImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

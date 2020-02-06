@@ -580,13 +580,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int ROS_PARAMETER__NS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__VALUE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Ros Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER_FEATURE_COUNT = 3;
+	int ROS_PARAMETER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Ros Parameter</em>' class.
@@ -1029,6 +1038,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	EAttribute getRosParameter_Ns();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link componentInterface.RosParameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see componentInterface.RosParameter#getValue()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EReference getRosParameter_Value();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>NS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1391,6 +1411,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROS_PARAMETER__NS = eINSTANCE.getRosParameter_Ns();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PARAMETER__VALUE = eINSTANCE.getRosParameter_Value();
 
 		/**
 		 * The meta object literal for the '<em>NS</em>' data type.

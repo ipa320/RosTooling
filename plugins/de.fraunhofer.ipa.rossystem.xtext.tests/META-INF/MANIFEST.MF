@@ -8,10 +8,10 @@ Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.xtext.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  de.fraunhofer.ipa.rossystem,
- org.junit;bundle-version="4.12.0",
+ org.junit,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing,
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.xbase.lib,
  de.fraunhofer.ipa.componentInterface.xtext.tests,
  de.fraunhofer.ipa.ros.xtext.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

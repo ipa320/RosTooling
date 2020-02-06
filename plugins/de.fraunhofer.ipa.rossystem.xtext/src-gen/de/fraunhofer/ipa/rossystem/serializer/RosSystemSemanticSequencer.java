@@ -24,9 +24,7 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import ros.ExternalDependency;
 import ros.GlobalNamespace;
-import ros.PackageDependency;
 import ros.ParameterAny;
 import ros.ParameterAnyType;
 import ros.ParameterArrayType;
@@ -98,14 +96,8 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 			}
 		else if (epackage == RosPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RosPackage.EXTERNAL_DEPENDENCY:
-				sequence_ExternalDependency(context, (ExternalDependency) semanticObject); 
-				return; 
 			case RosPackage.GLOBAL_NAMESPACE:
 				sequence_GlobalNamespace(context, (GlobalNamespace) semanticObject); 
-				return; 
-			case RosPackage.PACKAGE_DEPENDENCY:
-				sequence_PackageDependency(context, (PackageDependency) semanticObject); 
 				return; 
 			case RosPackage.PARAMETER:
 				sequence_Parameter(context, (ros.Parameter) semanticObject); 
@@ -153,7 +145,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				sequence_ParameterListType(context, (ParameterListType) semanticObject); 
 				return; 
 			case RosPackage.PARAMETER_SEQUENCE:
-				sequence_ParameterSequence(context, (ParameterSequence) semanticObject); 
+				sequence_ParameterList(context, (ParameterSequence) semanticObject); 
 				return; 
 			case RosPackage.PARAMETER_STRING:
 				sequence_ParameterString(context, (ParameterString) semanticObject); 
@@ -247,24 +239,6 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     ExternalDependency returns ExternalDependency
-	 *
-	 * Constraint:
-	 *     name=EString
-	 */
-	protected void sequence_ExternalDependency(ISerializationContext context, ExternalDependency semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.EXTERNAL_DEPENDENCY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.EXTERNAL_DEPENDENCY__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExternalDependencyAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Namespace returns GlobalNamespace
 	 *     GlobalNamespace returns GlobalNamespace
 	 *
@@ -278,25 +252,6 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     PackageDependency returns PackageDependency
-	 *
-	 * Constraint:
-	 *     package=[Package|EString]
-	 */
-	protected void sequence_PackageDependency(ISerializationContext context, PackageDependency semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPackageDependencyAccess().getPackagePackageEStringParserRuleCall_3_0_1(), semanticObject.eGet(RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ParameterType returns ParameterAnyType
 	 *     ParameterAnyType returns ParameterAnyType
 	 *
 	 * Constraint:
@@ -309,7 +264,6 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     ParameterValue returns ParameterAny
 	 *     ParameterAny returns ParameterAny
 	 *
 	 * Constraint:
@@ -326,7 +280,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterArrayType returns ParameterArrayType
 	 *
 	 * Constraint:
-	 *     (type=ParameterType default=ParameterSequence?)
+	 *     (type=ParameterType default=ParameterList?)
 	 */
 	protected void sequence_ParameterArrayType(ISerializationContext context, ParameterArrayType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -399,7 +353,6 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     ParameterType returns ParameterDateType
 	 *     ParameterDateType returns ParameterDateType
 	 *
 	 * Constraint:
@@ -412,11 +365,10 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     ParameterValue returns ParameterDate
 	 *     ParameterDate returns ParameterDate
 	 *
 	 * Constraint:
-	 *     value=DateTime
+	 *     value=DateTime0
 	 */
 	protected void sequence_ParameterDate(ISerializationContext context, ParameterDate semanticObject) {
 		if (errorAcceptor != null) {
@@ -424,7 +376,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_DATE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterDateAccess().getValueDateTimeParserRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterDateAccess().getValueDateTime0ParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -480,7 +432,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterInteger returns ParameterInteger
 	 *
 	 * Constraint:
-	 *     value=Eint
+	 *     value=Integer0
 	 */
 	protected void sequence_ParameterInteger(ISerializationContext context, ParameterInteger semanticObject) {
 		if (errorAcceptor != null) {
@@ -488,7 +440,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_INTEGER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterIntegerAccess().getValueEintParserRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterIntegerAccess().getValueInteger0ParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -499,7 +451,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterListType returns ParameterListType
 	 *
 	 * Constraint:
-	 *     ((sequence+=ParameterType sequence+=ParameterType*)? default=ParameterSequence?)
+	 *     (sequence+=ParameterType sequence+=ParameterType*)
 	 */
 	protected void sequence_ParameterListType(ISerializationContext context, ParameterListType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -509,12 +461,12 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Contexts:
 	 *     ParameterValue returns ParameterSequence
-	 *     ParameterSequence returns ParameterSequence
+	 *     ParameterList returns ParameterSequence
 	 *
 	 * Constraint:
-	 *     (value+=ParameterValue value+=ParameterValue*)?
+	 *     (value+=ParameterValue value+=ParameterValue*)
 	 */
-	protected void sequence_ParameterSequence(ISerializationContext context, ParameterSequence semanticObject) {
+	protected void sequence_ParameterList(ISerializationContext context, ParameterSequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -566,8 +518,8 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -577,10 +529,19 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterStructTypeMember returns ParameterStructTypeMember
 	 *
 	 * Constraint:
-	 *     (name=EString type=ParameterType default=ParameterStruct?)
+	 *     (name=EString type=ParameterType)
 	 */
 	protected void sequence_ParameterStructTypeMember(ISerializationContext context, ParameterStructTypeMember semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_TYPE_MEMBER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_TYPE_MEMBER__NAME));
+			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_TYPE_MEMBER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_TYPE_MEMBER__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParameterStructTypeMemberAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParameterStructTypeMemberAccess().getTypeParameterTypeParserRuleCall_1_0(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
@@ -590,7 +551,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ParameterStructType returns ParameterStructType
 	 *
 	 * Constraint:
-	 *     (parameterstructypetmember+=ParameterStructTypeMember parameterstructypetmember+=ParameterStructTypeMember*)?
+	 *     (parameterstructypetmember+=ParameterStructTypeMember parameterstructypetmember+=ParameterStructTypeMember*)
 	 */
 	protected void sequence_ParameterStructType(ISerializationContext context, ParameterStructType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -677,7 +638,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     RosParameter returns RosParameter
 	 *
 	 * Constraint:
-	 *     (name=EString? ns=EString? parameter=[Parameter|EString])
+	 *     (name=EString? ns=EString? parameter=[Parameter|EString] value=ParameterValue?)
 	 */
 	protected void sequence_RosParameter(ISerializationContext context, RosParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

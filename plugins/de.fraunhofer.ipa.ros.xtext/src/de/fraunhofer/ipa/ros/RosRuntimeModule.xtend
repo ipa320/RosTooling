@@ -4,8 +4,9 @@
 package de.fraunhofer.ipa.ros
 
 import com.google.inject.Binder
-import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import de.fraunhofer.ipa.ros.generator.CustomOutputProvider
+import org.eclipse.xtext.conversion.IValueConverterService
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -16,4 +17,5 @@ class RosRuntimeModule extends AbstractRosRuntimeModule {
 		super.configure(binder)
 		binder.bind(IOutputConfigurationProvider).to(CustomOutputProvider).asEagerSingleton()
 	}
+		
 }

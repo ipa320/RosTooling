@@ -102,6 +102,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceClient getSrvclient() {
 		if (srvclient != null && srvclient.eIsProxy()) {
 			InternalEObject oldSrvclient = (InternalEObject)srvclient;
@@ -128,6 +129,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSrvclient(ServiceClient newSrvclient) {
 		ServiceClient oldSrvclient = srvclient;
 		srvclient = newSrvclient;
@@ -163,6 +165,7 @@ public class RosServiceClientImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

@@ -105,6 +105,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionServer getActserver() {
 		if (actserver != null && actserver.eIsProxy()) {
 			InternalEObject oldActserver = (InternalEObject)actserver;
@@ -131,6 +132,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActserver(ActionServer newActserver) {
 		ActionServer oldActserver = actserver;
 		actserver = newActserver;
@@ -143,6 +145,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -152,6 +155,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -164,6 +168,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNs() {
 		return ns;
 	}
@@ -173,6 +178,7 @@ public class RosActionServerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNs(String newNs) {
 		String oldNs = ns;
 		ns = newNs;

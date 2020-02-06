@@ -5,6 +5,7 @@ package componentInterface;
 import org.eclipse.emf.ecore.EObject;
 
 import ros.Parameter;
+import ros.ParameterValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +19,7 @@ import ros.Parameter;
  *   <li>{@link componentInterface.RosParameter#getParameter <em>Parameter</em>}</li>
  *   <li>{@link componentInterface.RosParameter#getName <em>Name</em>}</li>
  *   <li>{@link componentInterface.RosParameter#getNs <em>Ns</em>}</li>
+ *   <li>{@link componentInterface.RosParameter#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getRosParameter()
@@ -91,5 +93,27 @@ public interface RosParameter extends EObject {
 	 * @generated
 	 */
 	void setNs(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' containment reference.
+	 * @see #setValue(ParameterValue)
+	 * @see componentInterface.ComponentInterfacePackage#getRosParameter_Value()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ParameterValue getValue();
+
+	/**
+	 * Sets the value of the '{@link componentInterface.RosParameter#getValue <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' containment reference.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(ParameterValue value);
 
 } // RosParameter

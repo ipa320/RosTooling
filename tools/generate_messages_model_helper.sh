@@ -55,8 +55,8 @@ do
         cout_srv=$((cout_srv-1))
         service=${i/$p\//}
         service_show=$(rossrv show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
-        request="$(echo $service_show | sed 's/---.*//')"
-        response="$(echo $service_show | sed -e 's#.*---\(\)#\1#')"
+        request="$(echo $service_show | sed 's/---.*//' | sed -e 's/\s=\s/=/g')"
+        response="$(echo $service_show | sed -e 's#.*---\(\)#\1#'| sed -e 's/\s=\s/=/g')"
         final_request=$(parserToRosModel "$request")
         final_response=$(parserToRosModel "$response")   
 	    echo -n '      ServiceSpec '$service'{ request { '$final_request' } response { '$final_response' } }'

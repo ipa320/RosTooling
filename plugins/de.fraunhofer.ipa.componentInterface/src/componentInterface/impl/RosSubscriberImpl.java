@@ -102,6 +102,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Subscriber getSubscriber() {
 		if (subscriber != null && subscriber.eIsProxy()) {
 			InternalEObject oldSubscriber = (InternalEObject)subscriber;
@@ -128,6 +129,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubscriber(Subscriber newSubscriber) {
 		Subscriber oldSubscriber = subscriber;
 		subscriber = newSubscriber;
@@ -163,6 +165,7 @@ public class RosSubscriberImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

@@ -7,6 +7,10 @@ import org.eclipse.xtext.validation.Check
 import rossystem.ServiceConnection
 import rossystem.TopicConnection
 import rossystem.ActionConnection
+import java.util.List
+import org.eclipse.emf.ecore.EObject
+import componentInterface.RosParameter
+import ros.Parameter
 
 /**
  * This class contains custom validation rules. 
@@ -43,5 +47,147 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				error("Action type not matched", null, NOT_MATCHED_TYPE)
 				return
 			}
+	}
+	
+	/*Check parameter assignments */
+	String expected_type = null;
+	String value_type = null;
+	List<EObject> expected_sub_types;
+	List<EObject> value_sub_type;
+	public static val INVALID_TYPE = 'invalidType'
+	public static val INVALID_NAME = 'invalidName'
+	public static val INVALID_LENGHT = "invalidLeght"
+	
+	int i;
+	String name_struc_element
+	String name_given_element
+	
+	@Check
+	def void CheckParameterValue (RosParameter rosparam){
+		expected_type = rosparam.parameter.type.eClass.name;
+		value_type = rosparam.value.eClass.name;
+	
+		if (expected_type.contains("ParameterListType") || expected_type.contains("ParameterSequence")){
+	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList
+	if (rosparam.value.class.toString.contains("ParameterSequence")){
+		value_sub_type = rosparam.value.eContents.toList
+		if (value_sub_type.length==expected_sub_types.length){
+			for (i=0;i<value_sub_type.length;i++){
+				if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
+					error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+				}
+			}
+		} else {
+			error( "Expect a list of "+expected_sub_types.length+" elements", null, INVALID_LENGHT)
+		}
+	} else {
+		error( "Expect a list of elements; format { , ,...}", null, INVALID_LENGHT)
+		}
+	
+	}
+	
+	else if (expected_type.contains("ParameterArrayType")){
+	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList
+	if (rosparam.value.class.toString.contains("ParameterSequence")){
+		value_sub_type = rosparam.value.eContents.toList
+			for (i=0;i<value_sub_type.length;i++){
+				if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
+					error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+				}
+			}
+		} 
+	else {
+		error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
+		}
+	}
+	
+  	else if (expected_type.contains("ParameterStruc")){
+	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList;
+	value_sub_type = rosparam.value.eContents.toList
+	for (i=0; i<expected_sub_types.length;i++){  		
+		name_struc_element = getName(expected_sub_types.get(i).toString)
+		name_given_element= getName(value_sub_type.get(i).eContents.get(0).toString)
+		if (!(name_struc_element==name_given_element)){
+			error("Element expected name: "+name_struc_element+ "  instead of: "+name_given_element,null, INVALID_NAME)
+			info("Struc format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
+		}
+		else if (!check_matched_type(expected_sub_types.get(i).eContents.get(0).eClass.name,value_sub_type.get(i).eContents.get(0).eContents.get(0).eClass.name)){
+			error( "Element "+name_struc_element+" , expected type: "+expected_sub_types.get(i).eContents.get(0).eClass.name+
+			" given type "+value_sub_type.get(i).eContents.get(0).eContents.get(0).eClass.name, null, INVALID_TYPE)
+			info("Struc format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)
+		}
+	}} else {
+	if(!check_matched_type(expected_type,value_type)){
+  		error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
+	}}
+	
+	/**else if (expected_type.contains("ParameterStruc")){
+		expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList;
+		value_sub_type = rosparam.value.eContents.toList
+		for (i=0; i<expected_sub_types.length;i++){
+			if (!value_sub_type.get(i).eContents.empty){
+				name_struc_element = getName(expected_sub_types.get(i).toString)
+				name_given_element= getValue(value_sub_type.get(i).eContents.get(0).toString)
+				if (!(name_struc_element==name_given_element)){
+					error("Element expected name: "+name_struc_element+ "  instead of: "+name_given_element,null, INVALID_NAME)
+				}
+				if (!check_matched_type(expected_sub_types.get(i).eContents.get(0).eClass.name,value_sub_type.get(i).eContents.get(1).eClass.name)){
+					error( "Element "+name_struc_element+" , expected type: "+expected_sub_types.get(i).eContents.get(0).eClass.name+
+					" given type "+value_sub_type.get(i).eContents.get(1).eClass.name, null, INVALID_TYPE)
+				}
+			}
+		}} else {
+		if(!check_matched_type(expected_type,value_type)){
+			error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
+				}
+			}*/
+		
+	}
+
+	def boolean check_matched_type(String expected_type,String given_type){
+		if (expected_type.contains(given_type)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	def String getName(String Element){
+		return Element.substring(Element.indexOf("name:")+5,Element.indexOf(")"))
+	}
+	
+	def String getValue(String Element){
+		return Element.substring(Element.indexOf("value:")+6,Element.indexOf(")"))
+	}
+
+	/*Parameters Helper*/
+	public static val PARAMETER_HELP = 'paramInfo'
+	
+	@Check
+	def void BinaryHelp (Parameter param){
+		if(param.type.toString.contains("Base64") && !(param.toString.contains('0b') ||param.toString.contains('0B'))){
+			info("HELP: A binary value must start with '0b'", null, PARAMETER_HELP)
+		}
+	}
+	
+	@Check
+	def void ArrayHelp (Parameter param){
+		if(param.type.toString.contains("Array")){
+			info("HELP: Array parameter format:\n { type TYPE {default {VALUE, VALUE} }\n example:\n type Boolean default {true, true}} ", null, PARAMETER_HELP)
+		}
+	}
+	
+	@Check
+	def void ListHelp (Parameter param){
+		if(param.type.toString.contains("List")){
+			info("HELP: List parameter format:\n { TYPE {default VALUE},TYPE {default VALUE} }\n example:\n Integer {default 5}, Boolean {default true} ", null, PARAMETER_HELP)
+		}
+	}
+	
+	@Check
+	def void StrucHelp (Parameter param){
+		if(param.type.toString.contains("Struc")){
+			info("HELP: Struc parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
+		}
 	}
 }

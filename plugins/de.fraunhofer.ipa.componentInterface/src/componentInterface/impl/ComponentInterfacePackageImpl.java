@@ -563,6 +563,16 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	@Override
+	public EReference getRosParameter_Value() {
+		return (EReference)rosParameterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getNS() {
 		return nsEDataType;
 	}
@@ -643,6 +653,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(rosParameterEClass, ROS_PARAMETER__PARAMETER);
 		createEAttribute(rosParameterEClass, ROS_PARAMETER__NAME);
 		createEAttribute(rosParameterEClass, ROS_PARAMETER__NS);
+		createEReference(rosParameterEClass, ROS_PARAMETER__VALUE);
 
 		// Create data types
 		nsEDataType = createEDataType(NS);
@@ -729,6 +740,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getRosParameter_Parameter(), theRosPackage.getParameter(), null, "parameter", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRosParameter_Ns(), this.getNS(), "ns", "", 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosParameter_Value(), theRosPackage.getParameterValue(), null, "value", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(nsEDataType, String.class, "NS", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
