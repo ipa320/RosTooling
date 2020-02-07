@@ -635,6 +635,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
 		private final RuleCall cNameEStringParserRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
 		private final Keyword cNameHeaderKeyword_2_0_1 = (Keyword)cNameAlternatives_2_0.eContents().get(1);
+		private final Keyword cNameStringKeyword_2_0_2 = (Keyword)cNameAlternatives_2_0.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cMessageKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
@@ -645,12 +646,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//TopicSpec:
 		//	{TopicSpec}
 		//	'TopicSpec'
-		//	name=(EString | 'Header')
+		//	name=(EString | 'Header' | 'String')
 		//	'{' ('message' message=MessageDefinition)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TopicSpec} 'TopicSpec' name=(EString | 'Header') '{' ('message' message=MessageDefinition)? '}'
+		//{TopicSpec} 'TopicSpec' name=(EString | 'Header' | 'String') '{' ('message' message=MessageDefinition)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{TopicSpec}
@@ -659,10 +660,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'TopicSpec'
 		public Keyword getTopicSpecKeyword_1() { return cTopicSpecKeyword_1; }
 		
-		//name=(EString | 'Header')
+		//name=(EString | 'Header' | 'String')
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//(EString | 'Header')
+		//(EString | 'Header' | 'String')
 		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
 		
 		//EString
@@ -670,6 +671,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'Header'
 		public Keyword getNameHeaderKeyword_2_0_1() { return cNameHeaderKeyword_2_0_1; }
+		
+		//'String'
+		public Keyword getNameStringKeyword_2_0_2() { return cNameStringKeyword_2_0_2; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -4382,7 +4386,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//TopicSpec:
 	//	{TopicSpec}
 	//	'TopicSpec'
-	//	name=(EString | 'Header')
+	//	name=(EString | 'Header' | 'String')
 	//	'{' ('message' message=MessageDefinition)?
 	//	'}';
 	public TopicSpecElements getTopicSpecAccess() {

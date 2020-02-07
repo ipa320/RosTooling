@@ -1035,6 +1035,17 @@ ruleTopicSpec returns [EObject current=null]
 						}
 						setWithLastConsumed($current, "name", lv_name_2_2, null);
 					}
+					    |
+					lv_name_2_3='String'
+					{
+						newLeafNode(lv_name_2_3, grammarAccess.getTopicSpecAccess().getNameStringKeyword_2_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTopicSpecRule());
+						}
+						setWithLastConsumed($current, "name", lv_name_2_3, null);
+					}
 				)
 			)
 		)

@@ -988,7 +988,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TopicSpec returns TopicSpec
 	 *
 	 * Constraint:
-	 *     ((name=EString | name='Header') message=MessageDefinition?)
+	 *     ((name=EString | name='Header' | name='String') message=MessageDefinition?)
 	 */
 	protected void sequence_TopicSpec(ISerializationContext context, TopicSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

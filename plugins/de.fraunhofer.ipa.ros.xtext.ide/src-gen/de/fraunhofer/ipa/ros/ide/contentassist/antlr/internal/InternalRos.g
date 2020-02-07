@@ -2453,6 +2453,12 @@ rule__TopicSpec__NameAlternatives_2_0
 		'Header'
 		{ after(grammarAccess.getTopicSpecAccess().getNameHeaderKeyword_2_0_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getTopicSpecAccess().getNameStringKeyword_2_0_2()); }
+		'String'
+		{ after(grammarAccess.getTopicSpecAccess().getNameStringKeyword_2_0_2()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

@@ -77,7 +77,7 @@ ServiceSpec returns ServiceSpec:
 TopicSpec returns TopicSpec:
 	{TopicSpec}
 	'TopicSpec'
-	name=(EString|'Header')
+	name=(EString|'Header'|'String')
 	'{'
 		('message' message=MessageDefinition)?
 	'}';
