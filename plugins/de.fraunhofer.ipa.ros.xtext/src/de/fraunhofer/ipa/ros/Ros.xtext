@@ -52,7 +52,7 @@ terminal ROS_CONVENTION_A:
 	( ('/' ID ) | ( ID '/' ) )* ;
 
 terminal ROS_CONVENTION_PARAM:
-	( ('/' ID ) | ( ID '/' ) | ('~' ID ) )* ;
+	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
 	
 Artifact returns Artifact:
 	{Artifact}
@@ -207,7 +207,7 @@ PrivateNamespace returns PrivateNamespace:
 Parameter returns Parameter:
 	'Parameter'
 	'{'
-		'name' name=RosParamNames
+		'name' name=EString
 		('namespace' namespace=Namespace)?
 		'type' type=ParameterType
 	'}';

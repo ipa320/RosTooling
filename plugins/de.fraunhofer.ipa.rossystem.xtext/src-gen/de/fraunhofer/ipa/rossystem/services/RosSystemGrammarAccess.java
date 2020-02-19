@@ -2326,23 +2326,25 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueParameterStructMemberParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
-		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-		private final Assignment cValueAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-		private final RuleCall cValueParameterStructMemberParserRuleCall_1_2_1_0 = (RuleCall)cValueAssignment_1_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
+		private final Keyword cCommaKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
+		private final Assignment cValueAssignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
+		private final RuleCall cValueParameterStructMemberParserRuleCall_1_3_2_0 = (RuleCall)cValueAssignment_1_3_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//ParameterStruct ros::ParameterStruct:
-		//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?;
+		//	{ros::ParameterStruct} ('{' value+=ParameterStructMember '}' ("," '{' value+=ParameterStructMember)* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?
+		//{ros::ParameterStruct} ('{' value+=ParameterStructMember '}' ("," '{' value+=ParameterStructMember)* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//{ros::ParameterStruct}
 		public Action getParameterStructAction_0() { return cParameterStructAction_0; }
 		
-		//('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?
+		//('{' value+=ParameterStructMember '}' ("," '{' value+=ParameterStructMember)* '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
@@ -2354,20 +2356,26 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//ParameterStructMember
 		public RuleCall getValueParameterStructMemberParserRuleCall_1_1_0() { return cValueParameterStructMemberParserRuleCall_1_1_0; }
 		
-		//("," value+=ParameterStructMember)*
-		public Group getGroup_1_2() { return cGroup_1_2; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
+		
+		//("," '{' value+=ParameterStructMember)*
+		public Group getGroup_1_3() { return cGroup_1_3; }
 		
 		//","
-		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
+		public Keyword getCommaKeyword_1_3_0() { return cCommaKeyword_1_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_3_1() { return cLeftCurlyBracketKeyword_1_3_1; }
 		
 		//value+=ParameterStructMember
-		public Assignment getValueAssignment_1_2_1() { return cValueAssignment_1_2_1; }
+		public Assignment getValueAssignment_1_3_2() { return cValueAssignment_1_3_2; }
 		
 		//ParameterStructMember
-		public RuleCall getValueParameterStructMemberParserRuleCall_1_2_1_0() { return cValueParameterStructMemberParserRuleCall_1_2_1_0; }
+		public RuleCall getValueParameterStructMemberParserRuleCall_1_3_2_0() { return cValueParameterStructMemberParserRuleCall_1_3_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class ParameterStructMemberElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.ParameterStructMember");
@@ -3338,7 +3346,7 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParameterStruct ros::ParameterStruct:
-	//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?;
+	//	{ros::ParameterStruct} ('{' value+=ParameterStructMember '}' ("," '{' value+=ParameterStructMember)* '}')?;
 	public ParameterStructElements getParameterStructAccess() {
 		return pParameterStruct;
 	}

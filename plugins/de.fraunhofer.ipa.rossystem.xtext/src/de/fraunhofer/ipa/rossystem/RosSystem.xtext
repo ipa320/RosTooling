@@ -250,7 +250,7 @@ ParameterDate returns ros::ParameterDate:
 
 ParameterStruct returns ros::ParameterStruct:
 	{ros::ParameterStruct}
-		('{' value+=ParameterStructMember ( "," value+=ParameterStructMember)* '}' )?
+		('{' value+=ParameterStructMember '}' ( "," '{' value+=ParameterStructMember)* '}' )?
 ;
 
 ParameterStructMember returns ros::ParameterStructMember:

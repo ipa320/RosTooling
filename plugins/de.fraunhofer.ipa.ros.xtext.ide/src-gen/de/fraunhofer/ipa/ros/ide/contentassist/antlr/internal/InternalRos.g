@@ -249,31 +249,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleRosParamNames
-entryRuleRosParamNames
-:
-{ before(grammarAccess.getRosParamNamesRule()); }
-	 ruleRosParamNames
-{ after(grammarAccess.getRosParamNamesRule()); } 
-	 EOF 
-;
-
-// Rule RosParamNames
-ruleRosParamNames 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getRosParamNamesAccess().getAlternatives()); }
-		(rule__RosParamNames__Alternatives)
-		{ after(grammarAccess.getRosParamNamesAccess().getAlternatives()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleArtifact
 entryRuleArtifact
 :
@@ -2406,27 +2381,6 @@ rule__RosNames__Alternatives
 		{ before(grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1()); }
 		RULE_ID
 		{ after(grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__RosParamNames__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getRosParamNamesAccess().getROS_CONVENTION_PARAMTerminalRuleCall_0()); }
-		RULE_ROS_CONVENTION_PARAM
-		{ after(grammarAccess.getRosParamNamesAccess().getROS_CONVENTION_PARAMTerminalRuleCall_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getRosParamNamesAccess().getIDTerminalRuleCall_1()); }
-		RULE_ID
-		{ after(grammarAccess.getRosParamNamesAccess().getIDTerminalRuleCall_1()); }
 	)
 ;
 finally {
@@ -15664,9 +15618,9 @@ rule__Parameter__NameAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getParameterAccess().getNameRosParamNamesParserRuleCall_3_0()); }
-		ruleRosParamNames
-		{ after(grammarAccess.getParameterAccess().getNameRosParamNamesParserRuleCall_3_0()); }
+		{ before(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -16163,7 +16117,7 @@ finally {
 
 RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
 
-RULE_ROS_CONVENTION_PARAM : ('/' RULE_ID|RULE_ID '/'|'~' RULE_ID)*;
+RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
 
 fragment RULE_DIGIT : '0'..'9';
 

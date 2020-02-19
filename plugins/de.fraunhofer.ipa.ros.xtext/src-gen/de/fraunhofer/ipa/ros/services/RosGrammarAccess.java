@@ -1898,7 +1898,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameRosParamNamesParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cNamespaceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNamespaceAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -1912,12 +1912,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Parameter:
 		//	'Parameter'
 		//	'{'
-		//	'name' name=RosParamNames ('namespace' namespace=Namespace)?
+		//	'name' name=EString ('namespace' namespace=Namespace)?
 		//	'type' type=ParameterType
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Parameter' '{' 'name' name=RosParamNames ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
+		//'Parameter' '{' 'name' name=EString ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Parameter'
@@ -1929,11 +1929,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'name'
 		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
-		//name=RosParamNames
+		//name=EString
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//RosParamNames
-		public RuleCall getNameRosParamNamesParserRuleCall_3_0() { return cNameRosParamNamesParserRuleCall_3_0; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//('namespace' namespace=Namespace)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -4102,7 +4102,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ROS_CONVENTION_PARAM:
-	//	'/' ID | ID '/' | '~' ID*;
+	//	'/' STRING | STRING '/' | '~' STRING*;
 	public TerminalRule getROS_CONVENTION_PARAMRule() {
 		return tROS_CONVENTION_PARAM;
 	}
@@ -4370,7 +4370,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	//Parameter:
 	//	'Parameter'
 	//	'{'
-	//	'name' name=RosParamNames ('namespace' namespace=Namespace)?
+	//	'name' name=EString ('namespace' namespace=Namespace)?
 	//	'type' type=ParameterType
 	//	'}';
 	public ParameterElements getParameterAccess() {

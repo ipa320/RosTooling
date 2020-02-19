@@ -874,7 +874,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (name=RosParamNames namespace=Namespace? type=ParameterType)
+	 *     (name=EString namespace=Namespace? type=ParameterType)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
