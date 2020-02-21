@@ -4,7 +4,7 @@ package rossystem;
 
 import componentInterface.ComponentInterface;
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import ros.Parameter;
 
@@ -131,5 +131,6 @@ public interface RosSystem extends EObject {
 	 * @generated
 	 */
 	EList<ActionConnection> getActionConnections();
+
 
 } // RosSystem
