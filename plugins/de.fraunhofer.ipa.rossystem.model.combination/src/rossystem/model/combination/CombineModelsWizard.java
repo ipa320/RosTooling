@@ -5,26 +5,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardSelectionPage;
@@ -42,13 +36,6 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
-import rossystem.TopicConnection;
-import rossystem.impl.RosSystemImpl;
-import rossystem.ServiceConnection;
-import rossystem.ActionConnection;
-import rossystem.RosSystem;
-import rossystem.RossystemFactory;
-import rossystem.RossystemPackage;
 import componentInterface.ComponentInterface;
 import componentInterface.RosActionClient;
 import componentInterface.RosActionServer;
@@ -58,17 +45,7 @@ import componentInterface.RosServiceServer;
 import componentInterface.RosSubscriber;
 import componentInterface.impl.ComponentInterfaceImpl;
 import componentInterface.impl.RosPublisherImpl;
-import componentInterface.impl.RosPublisherImpl;
-import ros.ActionClient;
-import ros.ActionServer;
-import ros.Artifact;
-import ros.Node;
-import ros.Package;
-import ros.PackageSet;
-import ros.Publisher;
-import ros.ServiceClient;
-import ros.ServiceServer;
-import ros.Subscriber;
+import rossystem.RosSystem;
 
 /**
  * This is a simple wizard for creating a new model file.
@@ -220,8 +197,8 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 	public ComponentInterface computeInterfaces (ComponentInterface comp, ComponentInterface comp2) {
 		ComponentInterface component_ = new ComponentInterfaceImpl();
 		component_.setName(comp.getName());
-		component_.setNameSpace(comp.getNameSpace());
-
+		//component_.setNameSpace(comp.getNameSpace());
+		System.out.println(component_);
 		EList <RosPublisher> pubs_input = (EList<RosPublisher>) comp.getRospublisher();
 		EList <RosSubscriber> subs_input = (EList<RosSubscriber>) comp.getRossubscriber();
 		EList <RosServiceClient> scls_input = (EList<RosServiceClient>) comp.getRosserviceclient();
@@ -237,7 +214,7 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 		EList <RosActionServer> asrs_input2 = (EList<RosActionServer>) comp2.getRosactionserver();
 		
 		//PUBLISHERS
-		/**List<RosPublisher> pubs_input_ = new ArrayList<>();
+		List<RosPublisher> pubs_input_ = new ArrayList<>();
 		pubs_input_.addAll(pubs_input);
 		
 		List<RosPublisher> pubs_input2_ = new ArrayList<>();
@@ -247,10 +224,10 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 			for (RosPublisher pub_i:pubs_input_) {
 				if (pub_i.getName().equals(pub.getName())){
 					pub_found=true;
-					component_.getRospublisher().add(NewPub(pub_i));
+					component_.getRospublisher().add(pub_i);
 			}}
 			if (!pub_found) {
-				component_.getRospublisher().add(NewPub(pub));													
+				component_.getRospublisher().add(pub);													
 			}
 		}
 		for(RosPublisher pub:pubs_input_) {
@@ -260,11 +237,149 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 					pub_found=true;
 			}}
 			if (!pub_found) {
-				component_.getRospublisher().add(NewPub(pub));													
+				component_.getRospublisher().add(pub);													
 			}
-		}*/
+		}
+		//SUBSCRIBERS
+		List<RosSubscriber> subs_input_ = new ArrayList<>();
+		subs_input_.addAll(subs_input);
+		
+		List<RosSubscriber> subs_input2_ = new ArrayList<>();
+		subs_input2_.addAll(subs_input2);
+		for(RosSubscriber sub:subs_input2_) {
+			boolean sub_found = false;
+			for (RosSubscriber sub_i:subs_input_) {
+				if (sub_i.getName().equals(sub.getName())){
+					sub_found=true;
+					component_.getRossubscriber().add(sub_i);
+			}}
+			if (!sub_found) {
+				component_.getRossubscriber().add(sub);													
+			}
+		}
+		for(RosSubscriber sub:subs_input_) {
+			boolean sub_found = false;
+			for (RosSubscriber sub_i:subs_input2_) {
+				if (sub_i.getName().equals(sub.getName())){
+					sub_found=true;
+			}}
+			if (!sub_found) {
+				component_.getRossubscriber().add(sub);													
+			}
+		}
 
-
+		//SERVICE SERVER
+		List<RosServiceServer> ssrs_input_ = new ArrayList<>();
+		ssrs_input_.addAll(ssrs_input);
+		
+		List<RosServiceServer> ssrs_input2_ = new ArrayList<>();
+		ssrs_input2_.addAll(ssrs_input2);
+		for(RosServiceServer srv:ssrs_input2_) {
+			boolean srv_found = false;
+			for (RosServiceServer srv_i:ssrs_input_) {
+				if (srv_i.getName().equals(srv.getName())){
+					srv_found=true;
+					component_.getRosserviceserver().add(srv_i);
+			}}
+			if (!srv_found) {
+				component_.getRosserviceserver().add(srv);													
+			}
+		}
+		for(RosServiceServer srv:ssrs_input_) {
+			boolean srv_found = false;
+			for (RosServiceServer srv_i:ssrs_input2_) {
+				if (srv_i.getName().equals(srv.getName())){
+					srv_found=true;
+			}}
+			if (!srv_found) {
+				component_.getRosserviceserver().add(srv);													
+			}
+		}
+		
+		//SERVICE CLIENT
+		List<RosServiceClient> scls_input_ = new ArrayList<>();
+		scls_input_.addAll(scls_input);
+		
+		List<RosServiceClient> scls_input2_ = new ArrayList<>();
+		scls_input2_.addAll(scls_input2);
+		for(RosServiceClient cli:scls_input2_) {
+			boolean cli_found = false;
+			for (RosServiceClient cli_i:scls_input_) {
+				if (cli_i.getName().equals(cli.getName())){
+					cli_found=true;
+					component_.getRosserviceclient().add(cli_i);
+			}}
+			if (!cli_found) {
+				component_.getRosserviceclient().add(cli);													
+			}
+		}
+		for(RosServiceClient cli:scls_input_) {
+			boolean cli_found = false;
+			for (RosServiceClient cli_i:scls_input2_) {
+				if (cli_i.getName().equals(cli.getName())){
+					cli_found=true;
+			}}
+			if (!cli_found) {
+				component_.getRosserviceclient().add(cli);													
+			}
+		}
+		
+		//SERVICE SERVER
+		List<RosActionServer> asrs_input_ = new ArrayList<>();
+		asrs_input_.addAll(asrs_input);
+		
+		List<RosActionServer> asrs_input2_ = new ArrayList<>();
+		asrs_input2_.addAll(asrs_input2);
+		for(RosActionServer srv:asrs_input2_) {
+			boolean srv_found = false;
+			for (RosActionServer srv_i:asrs_input_) {
+				if (srv_i.getName().equals(srv.getName())){
+					srv_found=true;
+					component_.getRosactionserver().add(srv_i);
+			}}
+			if (!srv_found) {
+				component_.getRosactionserver().add(srv);													
+			}
+		}
+		for(RosActionServer srv:asrs_input_) {
+			boolean srv_found = false;
+			for (RosActionServer srv_i:asrs_input2_) {
+				if (srv_i.getName().equals(srv.getName())){
+					srv_found=true;
+			}}
+			if (!srv_found) {
+				component_.getRosactionserver().add(srv);													
+			}
+		}
+		
+		//ACTION CLIENT
+		List<RosActionClient> acls_input_ = new ArrayList<>();
+		acls_input_.addAll(acls_input);
+		
+		List<RosActionClient> acls_input2_ = new ArrayList<>();
+		acls_input2_.addAll(acls_input2);
+		for(RosActionClient cli:acls_input2_) {
+			boolean cli_found = false;
+			for (RosActionClient cli_i:acls_input_) {
+				if (cli_i.getName().equals(cli.getName())){
+					cli_found=true;
+					component_.getRosactionclient().add(cli_i);
+			}}
+			if (!cli_found) {
+				component_.getRosactionclient().add(cli);													
+			}
+		}
+		for(RosActionClient cli:acls_input_) {
+			boolean cli_found = false;
+			for (RosActionClient cli_i:acls_input2_) {
+				if (cli_i.getName().equals(cli.getName())){
+					cli_found=true;
+			}}
+			if (!cli_found) {
+				component_.getRosactionclient().add(cli);													
+			}
+		}
+		
 		return component_;
 	}
 

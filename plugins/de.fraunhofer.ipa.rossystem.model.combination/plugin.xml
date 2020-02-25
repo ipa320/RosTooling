@@ -32,7 +32,7 @@
          label="Combine System Models">
           <command
             commandId="de.fraunhofer.ipa.rossystem.model.combination.CombineModel"
-            icon="icons/ros_compare_model.png"
+            icon="icons/merge-documents_icon.png"
             id="newComponent"
             style="push">
 				<visibleWhen
