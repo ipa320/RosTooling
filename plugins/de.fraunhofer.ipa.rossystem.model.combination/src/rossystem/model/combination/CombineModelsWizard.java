@@ -92,7 +92,6 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 		try {
 			resource_result2.save(null);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
@@ -109,6 +108,8 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		try {
+			ArrayList<String> Report = new ArrayList<>();
+
 			IFile InputFile = getInputFileCreationPage.getInputFile();
 			String RelativePath = InputFile.getProject().getName()+"/"+InputFile.getProjectRelativePath();
 			ResourceSet rs_input = new ResourceSetImpl();
@@ -122,11 +123,14 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 			Resource resource_input2 = rs_spec.getResource(URI.createPlatformResourceURI(InputFile2RelativePath,true),true);
 			RosSystem RosSystemInput2 = (RosSystem) resource_input2.getContents().get(0);
 			EList<ComponentInterface> components_input2 = (EList<ComponentInterface>) RosSystemInput2.getRosComponent();
-
+			Report.add("Combine the system model "+RosSystemInput.getName()+" from file:\n "+ InputFile.getName() + 
+					"\nwith the system model "+RosSystemInput2.getName()+" from :\n"+ InputFile2.getName()+"\n");
 			
+			Report.add(RosSystemInput.getName()+": "+components_input.size()+" components");
+			Report.add(RosSystemInput2.getName()+": "+components_input2.size()+" components");
+
 			final IFile modelFile = getInputFileCreationPage.getResultFile();
 
-			ArrayList<String> Report = new ArrayList<>();
 			
 			WorkspaceModifyOperation operation =
 				new WorkspaceModifyOperation() {
@@ -154,23 +158,28 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 							Resource resource_result2= rs_result.getResource(URI.createPlatformResourceURI(ResultFileRelativePath,true),true);
 							RosSystem RosSystemResult = (RosSystem) resource_result2.getContents().get(0);
 
+							List<ComponentInterface> components1_ = new ArrayList<>();
+							components1_.addAll(components_input);
+							
+							List<ComponentInterface> components2_ = new ArrayList<>();
+							components2_.addAll(components_input2);
+
 							boolean component_found;
-							for(int i = 0; i < components_input2.size(); i++) {
-								ComponentInterface comp2 = components_input2.get(i);
+							for(int i = 0; i < components2_.size(); i++) {
+								ComponentInterface comp2 = components2_.get(i);
 								component_found=false;
-								for (int j = 0; j < components_input.size(); j++) {
-									ComponentInterface comp = components_input.get(j);
+								for (int j = 0; j < components1_.size(); j++) {
+									ComponentInterface comp = components1_.get(j);
 									if (comp2.getName().contains(comp.getName())) {component_found=true;}}
 									if (!component_found) {
 										addComponentAndSave(RosSystemResult,comp2,resource_result2);
 									}
 							}
-
-							for (int i = 0; i < components_input.size(); i++) {
-								ComponentInterface comp = components_input.get(i);
+							for (int i = 0; i < components1_.size(); i++) {
+								ComponentInterface comp = components1_.get(i);
 								component_found=false;
-								for (int j = 0; j < components_input2.size(); j++) {
-									ComponentInterface comp2 = components_input2.get(j);
+								for (int j = 0; j < components2_.size(); j++) {
+									ComponentInterface comp2 = components2_.get(j);
 									if (comp2.getName().contains(comp.getName())) {
 										component_found = true;
 										addComponentAndSave(RosSystemResult,computeInterfaces(comp, comp2),resource_result2);
@@ -178,24 +187,20 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 								if (!component_found) {
 									addComponentAndSave(RosSystemResult,comp,resource_result2);
 								}
-						}
 
-						try {
-							resource_result2.save(null);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}}
+						}
+							Report.add("Result model: "+RosSystemResult.getRosComponent().size()+" components");
+						}
 
 						finally {
 							// create a dialog with ok and cancel buttons and a question icon
+							String message = null;
+
 							MessageBox dialog;
-							String message ="Combine the file:\n "+ InputFile2.getName() + "\nwith the model:\n"+ InputFile.getName()+"\n";
 							if (!Report.isEmpty()) {
-								dialog = new MessageBox(getShell(), SWT.ICON_ERROR | SWT.OK);
+								dialog = new MessageBox(getShell(), SWT.ICON_WORKING | SWT.OK);
 								for (String s:Report) {
-									//message+=s+"\n";
-									System.out.println(s);
+									message+=s+"\n";
 								}
 							} else {
 								dialog = new MessageBox(getShell(), SWT.ICON_WORKING | SWT.OK);
@@ -231,9 +236,15 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 		EList <RosActionClient> acls_input2 = (EList<RosActionClient>) comp2.getRosactionclient();
 		EList <RosActionServer> asrs_input2 = (EList<RosActionServer>) comp2.getRosactionserver();
 		
-		for(RosPublisher pub:pubs_input2) {
+		//PUBLISHERS
+		/**List<RosPublisher> pubs_input_ = new ArrayList<>();
+		pubs_input_.addAll(pubs_input);
+		
+		List<RosPublisher> pubs_input2_ = new ArrayList<>();
+		pubs_input2_.addAll(pubs_input2);
+		for(RosPublisher pub:pubs_input2_) {
 			boolean pub_found = false;
-			for (RosPublisher pub_i:pubs_input) {
+			for (RosPublisher pub_i:pubs_input_) {
 				if (pub_i.getName().equals(pub.getName())){
 					pub_found=true;
 					component_.getRospublisher().add(NewPub(pub_i));
@@ -242,16 +253,18 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 				component_.getRospublisher().add(NewPub(pub));													
 			}
 		}
-		for(RosPublisher pub:pubs_input) {
+		for(RosPublisher pub:pubs_input_) {
 			boolean pub_found = false;
-			for (RosPublisher pub_i:pubs_input2) {
+			for (RosPublisher pub_i:pubs_input2_) {
 				if (pub_i.getName().equals(pub.getName())){
 					pub_found=true;
 			}}
 			if (!pub_found) {
 				component_.getRospublisher().add(NewPub(pub));													
 			}
-		}
+		}*/
+
+
 		return component_;
 	}
 
