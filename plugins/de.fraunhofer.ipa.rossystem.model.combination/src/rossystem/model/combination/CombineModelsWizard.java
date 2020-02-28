@@ -107,6 +107,8 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 			Report.add(RosSystemInput2.getName()+": "+components_input2.size()+" components");
 
 			final IFile modelFile = getInputFileCreationPage.getResultFile();
+			
+			final boolean minimal_model_combination = getInputFileCreationPage.get_minimal_model();
 
 			
 			WorkspaceModifyOperation operation =
@@ -142,22 +144,29 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 							components2_.addAll(components_input2);
 
 							boolean component_found;
-							for(int i = 0; i < components2_.size(); i++) {
-								ComponentInterface comp2 = components2_.get(i);
-								component_found=false;
-								for (int j = 0; j < components1_.size(); j++) {
-									ComponentInterface comp = components1_.get(j);
-									if (comp2.getName().contains(comp.getName())) {component_found=true;}}
-									if (!component_found) {
-										addComponentAndSave(RosSystemResult,comp2,resource_result2);
-									}
+							
+							if (!minimal_model_combination) {
+								for(int i = 0; i < components2_.size(); i++) {
+									ComponentInterface comp2 = components2_.get(i);
+									component_found=false;
+									for (int j = 0; j < components1_.size(); j++) {
+										ComponentInterface comp = components1_.get(j);
+										if (comp2.getName().equals(comp.getName())) {component_found=true;}}
+										if (!component_found) {
+											addComponentAndSave(RosSystemResult,comp2,resource_result2);
+										}
+								}
 							}
+							int count=0;
+
 							for (int i = 0; i < components1_.size(); i++) {
 								ComponentInterface comp = components1_.get(i);
 								component_found=false;
 								for (int j = 0; j < components2_.size(); j++) {
 									ComponentInterface comp2 = components2_.get(j);
-									if (comp2.getName().contains(comp.getName())) {
+									if (comp2.getName().equals(comp.getName())) {
+										count++;
+										System.out.println(count);
 										component_found = true;
 										addComponentAndSave(RosSystemResult,computeInterfaces(comp, comp2),resource_result2);
 								}}
@@ -194,10 +203,11 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 			return false;
 		} }
 
+	
 	public ComponentInterface computeInterfaces (ComponentInterface comp, ComponentInterface comp2) {
 		ComponentInterface component_ = new ComponentInterfaceImpl();
 		component_.setName(comp.getName());
-		//component_.setNameSpace(comp.getNameSpace());
+		component_.setNameSpace(comp.getNameSpace());
 		System.out.println(component_);
 		EList <RosPublisher> pubs_input = (EList<RosPublisher>) comp.getRospublisher();
 		EList <RosSubscriber> subs_input = (EList<RosSubscriber>) comp.getRossubscriber();
@@ -392,6 +402,10 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 		private Button browseButton1;
 		private Button browseButton2;
 		private Button browseButton3;
+		private Button browseButton4;
+		
+		private boolean minimal_model;
+
 
 		protected IFile SpecFile;
 		protected IFile InputFile;
@@ -469,6 +483,23 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 						locationPathField3.setText(ResultFolder.getName());
 					}
 			});
+			
+			Label label4 = new Label(container, SWT.NONE);
+			//label4.setText("Mininal model");
+			GridData gd4 = new GridData (GridData.FILL_HORIZONTAL);
+			gd4.grabExcessHorizontalSpace = true;
+			gd4.horizontalAlignment = GridData.FILL;
+			browseButton4 = new Button(container, SWT.CHECK);
+			browseButton4.setText("Combine to the minimal model (restrictive strategy)");
+			browseButton4.addSelectionListener(new SelectionListener() {
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+					public void widgetSelected(SelectionEvent e) {
+						minimal_model = browseButton4.getSelection();
+
+					}
+			});
+			
 			setControl(container);
 			setPageComplete(true);
 			}
@@ -481,6 +512,10 @@ public class CombineModelsWizard extends Wizard implements INewWizard {
 		}
 		public IFile getResultFile() {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(ResultFolder.getFullPath().append("result.rossystem"));
+		}
+		
+		public boolean get_minimal_model() {
+			return minimal_model;
 		}
 	}
 
