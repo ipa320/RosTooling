@@ -163,9 +163,9 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ComponentInterfaceImpl() {
+	public ComponentInterfaceImpl() {
 		super();
 	}
 
