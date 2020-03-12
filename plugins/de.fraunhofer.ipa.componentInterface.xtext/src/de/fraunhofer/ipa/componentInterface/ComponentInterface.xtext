@@ -131,8 +131,8 @@ ParameterArray returns ros::ParameterSequence:
 
 
 ParameterStruct returns ros::ParameterStruct:
-	{ros::ParameterStruct}
-		('{' value+=ParameterStructMember ( "," value+=ParameterStructMember)* '}' )?
+	{ros::ParameterStruct} 
+		('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
 ;
 
 ParameterStructMember returns ros::ParameterStructMember:
@@ -149,7 +149,7 @@ terminal BINARY: ('0b'|'0B')('0'|'1')+;
 
 terminal BOOLEAN: 'true'|'false';
 terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT));  // Use terminal to avoid 'e' turning into a keyword
-terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''1'..'9' DIGIT*) ;
+terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
 terminal DAY:'1'..'9' | '1'..'3' '0'..'9';
 terminal MONTH:'1'..'9' | '1' '0'..'2';
 terminal YEAR:'0'..'2' '0'..'9' '0'..'9' '0'..'9';

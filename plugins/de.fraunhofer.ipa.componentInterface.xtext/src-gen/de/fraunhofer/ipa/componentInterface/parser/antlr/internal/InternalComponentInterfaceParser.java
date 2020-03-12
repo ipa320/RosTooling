@@ -3922,27 +3922,29 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterStruct"
-    // InternalComponentInterface.g:1668:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )? ) ;
+    // InternalComponentInterface.g:1668:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) ;
     public final EObject ruleParameterStruct() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token otherlv_5=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
         EObject lv_value_2_0 = null;
 
-        EObject lv_value_4_0 = null;
+        EObject lv_value_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1674:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )? ) )
-            // InternalComponentInterface.g:1675:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )? )
+            // InternalComponentInterface.g:1674:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) )
+            // InternalComponentInterface.g:1675:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
             {
-            // InternalComponentInterface.g:1675:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )? )
-            // InternalComponentInterface.g:1676:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )?
+            // InternalComponentInterface.g:1675:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
+            // InternalComponentInterface.g:1676:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
             {
             // InternalComponentInterface.g:1676:3: ()
             // InternalComponentInterface.g:1677:4: 
@@ -3955,7 +3957,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            // InternalComponentInterface.g:1683:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}' )?
+            // InternalComponentInterface.g:1683:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -3964,7 +3966,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
             }
             switch (alt35) {
                 case 1 :
-                    // InternalComponentInterface.g:1684:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )* otherlv_5= '}'
+                    // InternalComponentInterface.g:1684:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}'
                     {
                     otherlv_1=(Token)match(input,23,FOLLOW_5); 
 
@@ -4001,7 +4003,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // InternalComponentInterface.g:1707:4: (otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) ) )*
+                    // InternalComponentInterface.g:1707:4: (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )*
                     loop34:
                     do {
                         int alt34=2;
@@ -4014,23 +4016,27 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
                         switch (alt34) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:1708:5: otherlv_3= ',' ( (lv_value_4_0= ruleParameterStructMember ) )
+                    	    // InternalComponentInterface.g:1708:5: otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}'
                     	    {
-                    	    otherlv_3=(Token)match(input,27,FOLLOW_5); 
+                    	    otherlv_3=(Token)match(input,27,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getParameterStructAccess().getCommaKeyword_1_2_0());
                     	    				
-                    	    // InternalComponentInterface.g:1712:5: ( (lv_value_4_0= ruleParameterStructMember ) )
-                    	    // InternalComponentInterface.g:1713:6: (lv_value_4_0= ruleParameterStructMember )
+                    	    otherlv_4=(Token)match(input,23,FOLLOW_5); 
+
+                    	    					newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_2_1());
+                    	    				
+                    	    // InternalComponentInterface.g:1716:5: ( (lv_value_5_0= ruleParameterStructMember ) )
+                    	    // InternalComponentInterface.g:1717:6: (lv_value_5_0= ruleParameterStructMember )
                     	    {
-                    	    // InternalComponentInterface.g:1713:6: (lv_value_4_0= ruleParameterStructMember )
-                    	    // InternalComponentInterface.g:1714:7: lv_value_4_0= ruleParameterStructMember
+                    	    // InternalComponentInterface.g:1717:6: (lv_value_5_0= ruleParameterStructMember )
+                    	    // InternalComponentInterface.g:1718:7: lv_value_5_0= ruleParameterStructMember
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_1_0());
+                    	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_2_0());
                     	    						
-                    	    pushFollow(FOLLOW_9);
-                    	    lv_value_4_0=ruleParameterStructMember();
+                    	    pushFollow(FOLLOW_22);
+                    	    lv_value_5_0=ruleParameterStructMember();
 
                     	    state._fsp--;
 
@@ -4041,7 +4047,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     	    							add(
                     	    								current,
                     	    								"value",
-                    	    								lv_value_4_0,
+                    	    								lv_value_5_0,
                     	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.ParameterStructMember");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -4051,6 +4057,10 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
                     	    }
 
+                    	    otherlv_6=(Token)match(input,28,FOLLOW_9); 
+
+                    	    					newLeafNode(otherlv_6, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_2_3());
+                    	    				
 
                     	    }
                     	    break;
@@ -4060,9 +4070,9 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,28,FOLLOW_2); 
+                    otherlv_7=(Token)match(input,28,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_3());
+                    				newLeafNode(otherlv_7, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_3());
                     			
 
                     }
@@ -4093,7 +4103,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterStructMember"
-    // InternalComponentInterface.g:1741:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
+    // InternalComponentInterface.g:1749:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
     public final EObject entryRuleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -4101,8 +4111,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1741:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
-            // InternalComponentInterface.g:1742:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
+            // InternalComponentInterface.g:1749:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
+            // InternalComponentInterface.g:1750:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -4129,7 +4139,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterStructMember"
-    // InternalComponentInterface.g:1748:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) ;
+    // InternalComponentInterface.g:1756:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -4145,17 +4155,17 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1754:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) )
-            // InternalComponentInterface.g:1755:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
+            // InternalComponentInterface.g:1762:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) )
+            // InternalComponentInterface.g:1763:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
             {
-            // InternalComponentInterface.g:1755:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
-            // InternalComponentInterface.g:1756:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}'
+            // InternalComponentInterface.g:1763:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
+            // InternalComponentInterface.g:1764:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}'
             {
-            // InternalComponentInterface.g:1756:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalComponentInterface.g:1757:4: (lv_name_0_0= ruleEString )
+            // InternalComponentInterface.g:1764:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalComponentInterface.g:1765:4: (lv_name_0_0= ruleEString )
             {
-            // InternalComponentInterface.g:1757:4: (lv_name_0_0= ruleEString )
-            // InternalComponentInterface.g:1758:5: lv_name_0_0= ruleEString
+            // InternalComponentInterface.g:1765:4: (lv_name_0_0= ruleEString )
+            // InternalComponentInterface.g:1766:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0());
@@ -4190,11 +4200,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructMemberAccess().getValueKeyword_2());
             		
-            // InternalComponentInterface.g:1783:3: ( (lv_value_3_0= ruleParameterValue ) )
-            // InternalComponentInterface.g:1784:4: (lv_value_3_0= ruleParameterValue )
+            // InternalComponentInterface.g:1791:3: ( (lv_value_3_0= ruleParameterValue ) )
+            // InternalComponentInterface.g:1792:4: (lv_value_3_0= ruleParameterValue )
             {
-            // InternalComponentInterface.g:1784:4: (lv_value_3_0= ruleParameterValue )
-            // InternalComponentInterface.g:1785:5: lv_value_3_0= ruleParameterValue
+            // InternalComponentInterface.g:1792:4: (lv_value_3_0= ruleParameterValue )
+            // InternalComponentInterface.g:1793:5: lv_value_3_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0());
@@ -4248,7 +4258,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleBase64Binary"
-    // InternalComponentInterface.g:1810:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
+    // InternalComponentInterface.g:1818:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
     public final String entryRuleBase64Binary() throws RecognitionException {
         String current = null;
 
@@ -4256,8 +4266,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1810:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
-            // InternalComponentInterface.g:1811:2: iv_ruleBase64Binary= ruleBase64Binary EOF
+            // InternalComponentInterface.g:1818:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
+            // InternalComponentInterface.g:1819:2: iv_ruleBase64Binary= ruleBase64Binary EOF
             {
              newCompositeNode(grammarAccess.getBase64BinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -4284,7 +4294,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleBase64Binary"
-    // InternalComponentInterface.g:1817:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
+    // InternalComponentInterface.g:1825:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
     public final AntlrDatatypeRuleToken ruleBase64Binary() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4294,8 +4304,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1823:2: (this_BINARY_0= RULE_BINARY )
-            // InternalComponentInterface.g:1824:2: this_BINARY_0= RULE_BINARY
+            // InternalComponentInterface.g:1831:2: (this_BINARY_0= RULE_BINARY )
+            // InternalComponentInterface.g:1832:2: this_BINARY_0= RULE_BINARY
             {
             this_BINARY_0=(Token)match(input,RULE_BINARY,FOLLOW_2); 
 
@@ -4324,7 +4334,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleboolean0"
-    // InternalComponentInterface.g:1834:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
+    // InternalComponentInterface.g:1842:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
     public final String entryRuleboolean0() throws RecognitionException {
         String current = null;
 
@@ -4332,8 +4342,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1834:48: (iv_ruleboolean0= ruleboolean0 EOF )
-            // InternalComponentInterface.g:1835:2: iv_ruleboolean0= ruleboolean0 EOF
+            // InternalComponentInterface.g:1842:48: (iv_ruleboolean0= ruleboolean0 EOF )
+            // InternalComponentInterface.g:1843:2: iv_ruleboolean0= ruleboolean0 EOF
             {
              newCompositeNode(grammarAccess.getBoolean0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4360,7 +4370,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleboolean0"
-    // InternalComponentInterface.g:1841:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
+    // InternalComponentInterface.g:1849:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
     public final AntlrDatatypeRuleToken ruleboolean0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4370,8 +4380,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1847:2: (this_BOOLEAN_0= RULE_BOOLEAN )
-            // InternalComponentInterface.g:1848:2: this_BOOLEAN_0= RULE_BOOLEAN
+            // InternalComponentInterface.g:1855:2: (this_BOOLEAN_0= RULE_BOOLEAN )
+            // InternalComponentInterface.g:1856:2: this_BOOLEAN_0= RULE_BOOLEAN
             {
             this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); 
 
@@ -4400,7 +4410,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalComponentInterface.g:1858:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalComponentInterface.g:1866:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -4408,8 +4418,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1858:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalComponentInterface.g:1859:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalComponentInterface.g:1866:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalComponentInterface.g:1867:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4436,7 +4446,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalComponentInterface.g:1865:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalComponentInterface.g:1873:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4446,8 +4456,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1871:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalComponentInterface.g:1872:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalComponentInterface.g:1879:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalComponentInterface.g:1880:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
 
@@ -4476,7 +4486,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalComponentInterface.g:1882:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalComponentInterface.g:1890:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -4484,8 +4494,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1882:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalComponentInterface.g:1883:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalComponentInterface.g:1890:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalComponentInterface.g:1891:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4512,7 +4522,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalComponentInterface.g:1889:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalComponentInterface.g:1897:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4522,8 +4532,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1895:2: (this_DECINT_0= RULE_DECINT )
-            // InternalComponentInterface.g:1896:2: this_DECINT_0= RULE_DECINT
+            // InternalComponentInterface.g:1903:2: (this_DECINT_0= RULE_DECINT )
+            // InternalComponentInterface.g:1904:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
 

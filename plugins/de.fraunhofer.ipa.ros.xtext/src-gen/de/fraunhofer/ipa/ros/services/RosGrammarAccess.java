@@ -4667,7 +4667,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal DECINT:
-	//	'0' | '1'..'9' DIGIT* | '-' '1'..'9' DIGIT*;
+	//	'0' | '1'..'9' DIGIT* | '-' '0'..'9' DIGIT*;
 	public TerminalRule getDECINTRule() {
 		return tDECINT;
 	}

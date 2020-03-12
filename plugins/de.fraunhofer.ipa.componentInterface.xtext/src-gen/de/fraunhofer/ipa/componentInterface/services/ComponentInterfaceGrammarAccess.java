@@ -1151,21 +1151,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cValueParameterStructMemberParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
 		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-		private final Assignment cValueAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-		private final RuleCall cValueParameterStructMemberParserRuleCall_1_2_1_0 = (RuleCall)cValueAssignment_1_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cValueAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cValueParameterStructMemberParserRuleCall_1_2_2_0 = (RuleCall)cValueAssignment_1_2_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
 		//ParameterStruct ros::ParameterStruct:
-		//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?;
+		//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?
+		//{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//{ros::ParameterStruct}
 		public Action getParameterStructAction_0() { return cParameterStructAction_0; }
 		
-		//('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?
+		//('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
@@ -1177,17 +1179,23 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 		//ParameterStructMember
 		public RuleCall getValueParameterStructMemberParserRuleCall_1_1_0() { return cValueParameterStructMemberParserRuleCall_1_1_0; }
 		
-		//("," value+=ParameterStructMember)*
+		//("," '{' value+=ParameterStructMember '}')*
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//","
 		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_2_1() { return cLeftCurlyBracketKeyword_1_2_1; }
+		
 		//value+=ParameterStructMember
-		public Assignment getValueAssignment_1_2_1() { return cValueAssignment_1_2_1; }
+		public Assignment getValueAssignment_1_2_2() { return cValueAssignment_1_2_2; }
 		
 		//ParameterStructMember
-		public RuleCall getValueParameterStructMemberParserRuleCall_1_2_1_0() { return cValueParameterStructMemberParserRuleCall_1_2_1_0; }
+		public RuleCall getValueParameterStructMemberParserRuleCall_1_2_2_0() { return cValueParameterStructMemberParserRuleCall_1_2_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_2_3() { return cRightCurlyBracketKeyword_1_2_3; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
@@ -1632,7 +1640,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterStruct ros::ParameterStruct:
-	//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," value+=ParameterStructMember)* '}')?;
+	//	{ros::ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?;
 	public ParameterStructElements getParameterStructAccess() {
 		return pParameterStruct;
 	}
@@ -1679,7 +1687,7 @@ public class ComponentInterfaceGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//terminal DECINT:
-	//	'0' | '1'..'9' DIGIT* | '-' '1'..'9' DIGIT*;
+	//	'0' | '1'..'9' DIGIT* | '-' '0'..'9' DIGIT*;
 	public TerminalRule getDECINTRule() {
 		return tDECINT;
 	}

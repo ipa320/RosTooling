@@ -1709,12 +1709,16 @@ ruleParameterStruct returns [EObject current=null]
 				{
 					newLeafNode(otherlv_3, grammarAccess.getParameterStructAccess().getCommaKeyword_1_2_0());
 				}
+				otherlv_4='{'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_2_1());
+				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_1_0());
+							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_2_0());
 						}
-						lv_value_4_0=ruleParameterStructMember
+						lv_value_5_0=ruleParameterStructMember
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getParameterStructRule());
@@ -1722,16 +1726,20 @@ ruleParameterStruct returns [EObject current=null]
 							add(
 								$current,
 								"value",
-								lv_value_4_0,
+								lv_value_5_0,
 								"de.fraunhofer.ipa.componentInterface.ComponentInterface.ParameterStructMember");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
+				otherlv_6='}'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_2_3());
+				}
 			)*
-			otherlv_5='}'
+			otherlv_7='}'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_3());
+				newLeafNode(otherlv_7, grammarAccess.getParameterStructAccess().getRightCurlyBracketKeyword_1_3());
 			}
 		)?
 	)
@@ -1910,7 +1918,7 @@ RULE_BOOLEAN : ('true'|'false');
 
 RULE_DOUBLE : RULE_DECINT ('.' RULE_DIGIT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DECINT);
 
-RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '1'..'9' RULE_DIGIT*);
+RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 
 fragment RULE_DAY : ('1'..'9'|'1'..'3' '0'..'9');
 

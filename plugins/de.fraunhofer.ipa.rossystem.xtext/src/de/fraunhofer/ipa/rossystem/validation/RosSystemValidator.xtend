@@ -3,14 +3,15 @@
  */
 package de.fraunhofer.ipa.rossystem.validation
 
-import org.eclipse.xtext.validation.Check
-import rossystem.ServiceConnection
-import rossystem.TopicConnection
-import rossystem.ActionConnection
+import componentInterface.RosParameter
+import java.util.ArrayList
 import java.util.List
 import org.eclipse.emf.ecore.EObject
-import componentInterface.RosParameter
+import org.eclipse.xtext.validation.Check
 import ros.Parameter
+import rossystem.ActionConnection
+import rossystem.ServiceConnection
+import rossystem.TopicConnection
 
 /**
  * This class contains custom validation rules. 
@@ -53,96 +54,116 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	String expected_type = null;
 	String value_type = null;
 	List<EObject> expected_sub_types;
+	ArrayList<String> expected_sub_names;
 	List<EObject> value_sub_type;
 	public static val INVALID_TYPE = 'invalidType'
 	public static val INVALID_NAME = 'invalidName'
 	public static val INVALID_LENGHT = "invalidLeght"
 	
 	int i;
-	String name_struc_element
-	String name_given_element
+	int j;
+	String name_given_element;
+	String sub_element_type;
+	boolean sub_element;
 	
 	@Check
-	def void CheckParameterValue (RosParameter rosparam){
-		expected_type = rosparam.parameter.type.eClass.name;
-		value_type = rosparam.value.eClass.name;
+	def void CheckParameter (RosParameter rosparam){
+		CheckParameterValue(rosparam.parameter,rosparam.value);
+	}
 	
+	def void CheckParameterValue (EObject expected_parameter, EObject given_parameter){
+		if (expected_parameter.eClass.name=="Parameter"){
+			expected_type = (expected_parameter as Parameter).type.eClass.name;
+			expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
+			sub_element = false;
+			
+		} else {			
+			expected_type = expected_parameter.eClass.name;
+			expected_sub_types = expected_parameter.eContents.toList
+			sub_element = true;
+		}
+		value_type = given_parameter.eClass.name;
+
+		// LIST
 		if (expected_type.contains("ParameterListType") || expected_type.contains("ParameterSequence")){
-	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList
-	if (rosparam.value.class.toString.contains("ParameterSequence")){
-		value_sub_type = rosparam.value.eContents.toList
-		if (value_sub_type.length==expected_sub_types.length){
-			for (i=0;i<value_sub_type.length;i++){
-				if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
-					error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+			//expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
+			if (given_parameter.class.toString.contains("ParameterSequence")){
+				value_sub_type = given_parameter.eContents.toList
+				if (value_sub_type.length==expected_sub_types.length){
+					for (i=0;i<value_sub_type.length;i++){
+						if (expected_sub_types.get(i).eClass.name.matches("ParameterStrucType|ParameterListType|ParameterSequence")){
+								CheckParameterValue((expected_sub_types.get(i).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
+						}
+						if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
+							error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+						}
+					}
+				} else {
+					error( "Expect a list of "+expected_sub_types.length+" elements", null, INVALID_LENGHT)
 				}
+			} else {
+				error( "Expect a list of elements; format { , ,...}", null, INVALID_LENGHT)
+				}
+			
+		}
+		// ARRAY
+		else if (expected_type.contains("ParameterArrayType")){
+			//expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
+			if (given_parameter.class.toString.contains("ParameterSequence")){
+				value_sub_type = given_parameter.eContents.toList
+					for (i=0;i<value_sub_type.length;i++){
+						if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
+							error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+						}
+					}
+				} 
+			else {
+				error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
+				}
+		}
+		// STRUC
+	  	else if (expected_type.contains("ParameterStruc")){
+			value_sub_type = given_parameter.eContents.toList;
+			expected_sub_names = new ArrayList<String>();
+
+			for (i=0; i<expected_sub_types.length;i++){	
+				expected_sub_names.add(i,getName(expected_sub_types.get(i).toString));
 			}
-		} else {
-			error( "Expect a list of "+expected_sub_types.length+" elements", null, INVALID_LENGHT)
-		}
-	} else {
-		error( "Expect a list of elements; format { , ,...}", null, INVALID_LENGHT)
-		}
-	
-	}
-	
-	else if (expected_type.contains("ParameterArrayType")){
-	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList
-	if (rosparam.value.class.toString.contains("ParameterSequence")){
-		value_sub_type = rosparam.value.eContents.toList
-			for (i=0;i<value_sub_type.length;i++){
-				if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
-					error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
-				}
+
+			for (i=0; i<value_sub_type.length;i++){	
+				if (sub_element){
+					name_given_element = getName(value_sub_type.get(i).eContents.toString)
+				}else {
+					name_given_element = getName(value_sub_type.get(i).eContents.get(0).toString)
+				}	
+				sub_element_type = value_sub_type.get(i).eContents.get(0).eContents.get(0).eClass.name
+				
+				if (!(expected_sub_names.contains(name_given_element))){
+					error("Element expected names: "+expected_sub_names+ "  instead of: "+name_given_element,null, INVALID_NAME)
+					info("Struc format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
+				} else {
+					for (j=0;j<expected_sub_types.length;j++){						
+						if ( ((getName(expected_sub_types.get(j).toString))==name_given_element) ){
+							if (expected_sub_types.get(j).eContents.get(0).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){								
+								CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
+							}
+							if (expected_sub_types.get(j).eContents.size > 0){
+								if (!check_matched_type(expected_sub_types.get(j).eContents.get(0).eClass.name,sub_element_type)){
+									error( "Element "+getName(expected_sub_types.get(j).toString)+" , expected type: "+expected_sub_types.get(j).eContents.get(0).eClass.name+
+									" given type "+sub_element_type, null, INVALID_TYPE)
+									info("Struc format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)}
+					}}
+		}}}}
+		
+		// INT, BOOL, DOUBLE, BASE64, STRING
+	  	else {
+	  	  	if(!check_matched_type(expected_type,value_type)){
+	  	  	  	error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
 			}
-		} 
-	else {
-		error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
 		}
-	}
-	
-  	else if (expected_type.contains("ParameterStruc")){
-	expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList;
-	value_sub_type = rosparam.value.eContents.toList
-	for (i=0; i<expected_sub_types.length;i++){  		
-		name_struc_element = getName(expected_sub_types.get(i).toString)
-		name_given_element= getName(value_sub_type.get(i).eContents.get(0).toString)
-		if (!(name_struc_element==name_given_element)){
-			error("Element expected name: "+name_struc_element+ "  instead of: "+name_given_element,null, INVALID_NAME)
-			info("Struc format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
-		}
-		else if (!check_matched_type(expected_sub_types.get(i).eContents.get(0).eClass.name,value_sub_type.get(i).eContents.get(0).eContents.get(0).eClass.name)){
-			error( "Element "+name_struc_element+" , expected type: "+expected_sub_types.get(i).eContents.get(0).eClass.name+
-			" given type "+value_sub_type.get(i).eContents.get(0).eContents.get(0).eClass.name, null, INVALID_TYPE)
-			info("Struc format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)
-		}
-	}} else {
-	if(!check_matched_type(expected_type,value_type)){
-  		error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
-	}}
-	
-	/**else if (expected_type.contains("ParameterStruc")){
-		expected_sub_types = rosparam.parameter.eContents.get(0).eContents.toList;
-		value_sub_type = rosparam.value.eContents.toList
-		for (i=0; i<expected_sub_types.length;i++){
-			if (!value_sub_type.get(i).eContents.empty){
-				name_struc_element = getName(expected_sub_types.get(i).toString)
-				name_given_element= getValue(value_sub_type.get(i).eContents.get(0).toString)
-				if (!(name_struc_element==name_given_element)){
-					error("Element expected name: "+name_struc_element+ "  instead of: "+name_given_element,null, INVALID_NAME)
-				}
-				if (!check_matched_type(expected_sub_types.get(i).eContents.get(0).eClass.name,value_sub_type.get(i).eContents.get(1).eClass.name)){
-					error( "Element "+name_struc_element+" , expected type: "+expected_sub_types.get(i).eContents.get(0).eClass.name+
-					" given type "+value_sub_type.get(i).eContents.get(1).eClass.name, null, INVALID_TYPE)
-				}
-			}
-		}} else {
-		if(!check_matched_type(expected_type,value_type)){
-			error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
-				}
-			}*/
 		
 	}
+
 
 	def boolean check_matched_type(String expected_type,String given_type){
 		if (expected_type.contains(given_type)){
@@ -162,7 +183,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 
 	/*Parameters Helper*/
 	public static val PARAMETER_HELP = 'paramInfo'
-	
+			
 	@Check
 	def void BinaryHelp (Parameter param){
 		if(param.type.toString.contains("Base64") && !(param.toString.contains('0b') ||param.toString.contains('0B'))){

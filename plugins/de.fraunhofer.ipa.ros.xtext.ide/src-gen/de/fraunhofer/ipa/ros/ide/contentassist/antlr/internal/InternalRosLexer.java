@@ -2436,7 +2436,10 @@ public class InternalRosLexer extends Lexer {
                     if ( (LA9_0=='-') ) {
                         int LA9_1 = input.LA(2);
 
-                        if ( (LA9_1=='-'||(LA9_1>='0' && LA9_1<='9')) ) {
+                        if ( (LA9_1=='0') ) {
+                            alt9=1;
+                        }
+                        else if ( (LA9_1=='-'||(LA9_1>='1' && LA9_1<='9')) ) {
                             alt9=1;
                         }
                     }
@@ -2485,10 +2488,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_DECINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:16130:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '1' .. '9' ( RULE_DIGIT )* ) )
-            // InternalRos.g:16130:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '1' .. '9' ( RULE_DIGIT )* )
+            // InternalRos.g:16130:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
+            // InternalRos.g:16130:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalRos.g:16130:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '1' .. '9' ( RULE_DIGIT )* )
+            // InternalRos.g:16130:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             int alt13=3;
             switch ( input.LA(1) ) {
             case '0':
@@ -2562,10 +2565,10 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:16130:41: '-' '1' .. '9' ( RULE_DIGIT )*
+                    // InternalRos.g:16130:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
                     match('-'); 
-                    matchRange('1','9'); 
+                    matchRange('0','9'); 
                     // InternalRos.g:16130:54: ( RULE_DIGIT )*
                     loop12:
                     do {
@@ -4310,7 +4313,7 @@ public class InternalRosLexer extends Lexer {
     static final String DFA30_eofS =
         "\u0256\uffff";
     static final String DFA30_minS =
-        "\1\0\16\57\2\uffff\1\57\1\uffff\15\57\1\135\1\42\1\101\1\57\1\uffff\2\0\1\42\2\56\1\61\1\56\2\uffff\3\57\2\uffff\33\57\2\uffff\2\57\1\uffff\20\57\4\uffff\1\57\2\0\1\57\2\0\1\57\4\uffff\3\56\1\uffff\64\57\1\0\1\uffff\1\0\2\56\72\57\1\55\7\57\1\uffff\10\57\2\uffff\2\57\1\uffff\2\57\3\uffff\22\57\1\uffff\2\57\1\uffff\4\57\6\uffff\13\57\1\uffff\12\57\1\uffff\16\57\1\uffff\2\57\1\uffff\11\57\10\uffff\5\57\2\uffff\3\57\1\uffff\10\57\2\uffff\2\57\1\uffff\23\57\1\uffff\1\57\7\uffff\5\57\1\uffff\1\57\1\uffff\1\57\4\uffff\3\57\1\uffff\6\57\1\uffff\2\57\1\uffff\3\57\1\uffff\12\57\2\uffff\6\57\2\uffff\6\57\2\uffff\10\57\1\uffff\7\57\1\uffff\5\57\1\uffff\12\57\2\uffff\1\57\2\uffff\4\57\1\uffff\6\57\1\uffff\2\57\1\uffff\2\57\2\uffff\4\57\1\uffff\6\57\1\uffff\24\57\2\uffff\1\57\1\uffff\2\57\2\uffff\4\57\4\uffff\3\57\1\uffff\10\57\1\uffff\7\57\1\uffff\2\57\1\uffff\2\57\1\uffff\1\57\1\uffff\2\57\1\uffff";
+        "\1\0\16\57\2\uffff\1\57\1\uffff\15\57\1\135\1\42\1\101\1\57\1\uffff\2\0\1\42\2\56\1\60\1\56\2\uffff\3\57\2\uffff\33\57\2\uffff\2\57\1\uffff\20\57\4\uffff\1\57\2\0\1\57\2\0\1\57\4\uffff\3\56\1\uffff\64\57\1\0\1\uffff\1\0\2\56\72\57\1\55\7\57\1\uffff\10\57\2\uffff\2\57\1\uffff\2\57\3\uffff\22\57\1\uffff\2\57\1\uffff\4\57\6\uffff\13\57\1\uffff\12\57\1\uffff\16\57\1\uffff\2\57\1\uffff\11\57\10\uffff\5\57\2\uffff\3\57\1\uffff\10\57\2\uffff\2\57\1\uffff\23\57\1\uffff\1\57\7\uffff\5\57\1\uffff\1\57\1\uffff\1\57\4\uffff\3\57\1\uffff\6\57\1\uffff\2\57\1\uffff\3\57\1\uffff\12\57\2\uffff\6\57\2\uffff\6\57\2\uffff\10\57\1\uffff\7\57\1\uffff\5\57\1\uffff\12\57\2\uffff\1\57\2\uffff\4\57\1\uffff\6\57\1\uffff\2\57\1\uffff\2\57\2\uffff\4\57\1\uffff\6\57\1\uffff\24\57\2\uffff\1\57\1\uffff\2\57\2\uffff\4\57\4\uffff\3\57\1\uffff\10\57\1\uffff\7\57\1\uffff\2\57\1\uffff\2\57\1\uffff\1\57\1\uffff\2\57\1\uffff";
     static final String DFA30_maxS =
         "\1\uffff\16\172\2\uffff\1\172\1\uffff\15\172\1\135\3\172\1\uffff\2\uffff\1\47\2\145\1\71\1\145\2\uffff\3\172\2\uffff\33\172\2\uffff\2\172\1\uffff\20\172\4\uffff\1\172\2\uffff\1\75\2\uffff\1\75\4\uffff\3\145\1\uffff\64\172\1\uffff\1\uffff\1\uffff\2\145\72\172\1\145\7\172\1\uffff\10\172\2\uffff\2\172\1\uffff\2\172\3\uffff\22\172\1\uffff\2\172\1\uffff\4\172\6\uffff\13\172\1\uffff\12\172\1\uffff\16\172\1\uffff\2\172\1\uffff\11\172\10\uffff\5\172\2\uffff\3\172\1\uffff\10\172\2\uffff\2\172\1\uffff\23\172\1\uffff\1\172\7\uffff\5\172\1\uffff\1\172\1\uffff\1\172\4\uffff\3\172\1\uffff\6\172\1\uffff\2\172\1\uffff\3\172\1\uffff\12\172\2\uffff\6\172\2\uffff\6\172\2\uffff\10\172\1\uffff\7\172\1\uffff\5\172\1\uffff\12\172\2\uffff\1\172\2\uffff\4\172\1\uffff\6\172\1\uffff\2\172\1\uffff\2\172\2\uffff\4\172\1\uffff\6\172\1\uffff\24\172\2\uffff\1\172\1\uffff\2\172\2\uffff\4\172\4\uffff\3\172\1\uffff\10\172\1\uffff\7\172\1\uffff\2\172\1\uffff\2\172\1\uffff\1\172\1\uffff\2\172\1\uffff";
     static final String DFA30_acceptS =
@@ -4360,7 +4363,7 @@ public class InternalRosLexer extends Lexer {
             "\1\146\4\uffff\1\146",
             "\1\161\1\uffff\12\157\10\uffff\1\156\2\uffff\1\161\34\uffff\1\156\2\uffff\1\161",
             "\1\161\1\uffff\12\162\13\uffff\1\161\37\uffff\1\161",
-            "\11\163",
+            "\12\163",
             "\1\161\1\uffff\12\164\13\uffff\1\161\37\uffff\1\161",
             "",
             "",

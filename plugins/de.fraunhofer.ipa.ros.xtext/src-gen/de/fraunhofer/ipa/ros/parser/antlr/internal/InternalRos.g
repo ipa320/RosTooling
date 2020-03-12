@@ -5698,7 +5698,7 @@ RULE_BOOLEAN : ('true'|'false');
 
 RULE_DOUBLE : RULE_DECINT ('.' RULE_DIGIT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DECINT);
 
-RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '1'..'9' RULE_DIGIT*);
+RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 
 fragment RULE_DAY : ('1'..'9'|'1'..'3' '0'..'9');
 
