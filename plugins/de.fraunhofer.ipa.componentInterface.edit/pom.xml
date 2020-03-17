@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.fraunhofer.ipa.ros</groupId>
         <artifactId>de.fraunhofer.ipa.ros.parent</artifactId>
-        <version>1.2.0-SNAPSHOT</version>
+        <version>1.2.1-SNAPSHOT</version>
         <relativePath>../de.fraunhofer.ipa.ros.parent/pom.xml</relativePath>
     </parent>
     <artifactId>de.fraunhofer.ipa.componentInterface.edit</artifactId>

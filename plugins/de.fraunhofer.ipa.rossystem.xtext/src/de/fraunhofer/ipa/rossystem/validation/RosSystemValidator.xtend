@@ -65,6 +65,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	String name_given_element;
 	String sub_element_type;
 	boolean sub_element;
+	EObject expected_sub_type = null;
 	
 	@Check
 	def void CheckParameter (RosParameter rosparam){
@@ -72,6 +73,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	}
 	
 	def void CheckParameterValue (EObject expected_parameter, EObject given_parameter){
+
 		if (expected_parameter.eClass.name=="Parameter"){
 			expected_type = (expected_parameter as Parameter).type.eClass.name;
 			expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
@@ -92,7 +94,11 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				if (value_sub_type.length==expected_sub_types.length){
 					for (i=0;i<value_sub_type.length;i++){
 						if (expected_sub_types.get(i).eClass.name.matches("ParameterStrucType|ParameterListType|ParameterSequence")){
+							try{
 								CheckParameterValue((expected_sub_types.get(i).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
+							} catch (IndexOutOfBoundsException error) {
+					            // Output expected IndexOutOfBoundsExceptions.								
+							}
 						}
 						if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
 							error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
@@ -147,26 +153,33 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 							if (expected_sub_types.get(j).eContents.get(0).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){								
 								CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
 							}
-							if (expected_sub_types.get(j).eContents.size > 0){
+							try{
+								expected_sub_type = expected_sub_types.get(j);
+								if (expected_sub_type.eContents.size > 0){
 								if (!check_matched_type(expected_sub_types.get(j).eContents.get(0).eClass.name,sub_element_type)){
 									error( "Element "+getName(expected_sub_types.get(j).toString)+" , expected type: "+expected_sub_types.get(j).eContents.get(0).eClass.name+
 									" given type "+sub_element_type, null, INVALID_TYPE)
 									info("Struc format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)}
-					}}
-		}}}}
+									}
+							} catch (IndexOutOfBoundsException error) {
+					            // Output expected IndexOutOfBoundsExceptions.								
+							}
+		}}}}}
 		
 		// INT, BOOL, DOUBLE, BASE64, STRING
 	  	else {
-	  	  	if(!check_matched_type(expected_type,value_type)){
+	  	   if(!check_matched_type(expected_type,value_type)){
 	  	  	  	error("Mismatched input "+value_type+ " expecting "+ expected_type, null, INVALID_TYPE)
 			}
 		}
-		
 	}
 
 
 	def boolean check_matched_type(String expected_type,String given_type){
-		if (expected_type.contains(given_type)){
+		if (given_type.contains("ParameterSequence") && expected_type.contains("ParameterList")){
+			return true;
+		}
+		else if (expected_type.contains(given_type)){
 			return true;
 		} else {
 			return false;

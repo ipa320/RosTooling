@@ -309,7 +309,7 @@ ParameterBoolean returns ParameterBoolean:
 
 ParameterStruct returns ParameterStruct:
 	{ParameterStruct}
-		('{' value+=ParameterStructMember ( "," value+=ParameterStructMember)* '}' )?
+		('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
 ;
 
 ParameterDate returns ParameterDate:

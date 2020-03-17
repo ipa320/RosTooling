@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.fraunhofer.ipa.ros</groupId>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>1.2.1-SNAPSHOT</version>
 	<artifactId>de.fraunhofer.ipa.ros.parent</artifactId>
 	<packaging>pom</packaging>
 
@@ -47,6 +47,7 @@
 		
 		<module>../de.fraunhofer.ipa.ros.plugin</module>
 		<module>../de.fraunhofer.ipa.ros.sirius</module>
+		<module>../de.fraunhofer.ipa.rossystem.model.combination</module>
 		<module>../de.fraunhofer.ipa.ros.feature</module>
 	</modules>
 
