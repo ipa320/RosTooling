@@ -47,7 +47,6 @@
 		
 		<module>../de.fraunhofer.ipa.ros.plugin</module>
 		<module>../de.fraunhofer.ipa.ros.sirius</module>
-		<module>../de.fraunhofer.ipa.rossystem.model.combination</module>
 		<module>../de.fraunhofer.ipa.ros.feature</module>
 	</modules>
 
