@@ -26,6 +26,8 @@ import ros.ActionServer
 import ros.ActionClient
 import componentInterface.RosActionServer
 import componentInterface.RosActionClient
+import ros.ParameterValue
+
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -90,6 +92,11 @@ class RosSystemGenerator extends AbstractGenerator {
 	
 	String node_name
 	
+	String param_value
+	String value_return
+	ParameterValue ParamValue
+	
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
@@ -110,6 +117,21 @@ class RosSystemGenerator extends AbstractGenerator {
 	def compile_tolaunch(RosSystem system) '''«init()»
 <?xml version="1.0"?>
 <launch>
+		«FOR ROSParameter:system.parameter»«IF ROSParameter.type.toString.contains("ParameterStructType")»
+		<rosparam>
+			«IF ROSParameter.value!==null»«FOR ParamMember:ROSParameter.value.eContents»
+			«getParamName(ParamMember.eContents.get(0).toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+			«ENDFOR»«ELSE»
+			«FOR ParamMember:ROSParameter.eContents.get(0).eContents»«IF !(ParamMember.eContents.get(0).eContents.empty)»
+			«getParamName(ParamMember.toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»«ENDIF»
+			«ENDFOR»«ENDIF»
+		</rosparam>
+		«ELSEIF ROSParameter.type.toString.contains("ParameterListType") || ROSParameter.type.toString.contains("ParameterArrayType")»
+		<rosparam param="list">«IF ROSParameter.value!==null»«compile_param_value(ROSParameter.value)»«ENDIF»</rosparam>
+		«ELSE»
+		<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
+		«ENDIF»
+	«ENDFOR»
 	«FOR component:system.rosComponent»
 		«FOR rosPublisher:component.rospublisher»
 				«IF component.hasNS»
@@ -247,9 +269,18 @@ class RosSystemGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ENDFOR»
 		«ENDFOR»
-
+		«FOR rosParameter:component.rosparameter»
+			«IF rosParameter.parameter.type.toString.contains("ParameterStructType")»
+				«FOR ParamMember:rosParameter.value.eContents»
+						<param name=«getParamName(ParamMember.eContents.get(0).toString)» value=«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))» />
+				«ENDFOR»
+			«ELSE»
+						«IF rosParameter.value!==null»<param name=«rosParameter.parameter.name» value=«compile_param_value(rosParameter.value)» />«ENDIF»
+			«ENDIF»
+		«ENDFOR»
 	</node>
 	«ENDFOR»
+
 </launch>
 	'''
 
@@ -348,8 +379,6 @@ RosActionClients{
 }
 '''
 }
-	
-
 
 def boolean hasNS(ComponentInterface component){
 	if(!component.nameSpace.nullOrEmpty){
@@ -460,7 +489,6 @@ def compile_pkg(ComponentInterface component)
 		return node_name;
 	}
 	
-
 	def compile_topic_name(Publisher publisher, String NS){
 		return NS+"/"+publisher.name;
 	}
@@ -478,6 +506,34 @@ def compile_pkg(ComponentInterface component)
 	}
 	def compile_action_name(ActionClient actionclient, String NS){
 		return NS+"/"+actionclient.name;
+	}
+	
+	def compile_param_value(ParameterValue paramValue){
+		 value_return =""
+		 param_value = paramValue.toString
+		 if (param_value.contains("(value:")){
+		 	value_return= param_value.substring(param_value.indexOf("value:")+6,param_value.indexOf(")"))
+		 } else if(param_value.contains("ParameterSequenceImpl")){
+		 		value_return+="["
+		 	for(param: paramValue.eContents){
+		 		if (param.toString.contains("(value:")){
+		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+6,param.toString.indexOf(")"))
+		 			value_return+=","
+		 			
+		 	}}
+		 	value_return = value_return.substring(0, value_return.length() - 1);
+		 	value_return+="]"
+		 	}
+		 return value_return
+ 	}
+ 	
+ 	def getParamName (String paramdef){
+ 		return paramdef.substring(paramdef.indexOf("name:")+6,paramdef.indexOf(")"))
+ 	}
+ 	
+	def convertParamValue (Object ParamMember){
+		ParamValue=ParamMember as ParameterValue
+		return ParamValue
 	}
 	
 	def compile_toIntallScript(RosSystem system) '''«init()»
