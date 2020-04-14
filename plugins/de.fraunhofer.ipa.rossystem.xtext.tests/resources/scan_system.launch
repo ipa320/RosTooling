@@ -2,6 +2,6 @@
 <launch>
 
 	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
-
 	</node>
+
 </launch>
