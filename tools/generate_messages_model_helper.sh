@@ -40,6 +40,7 @@ do
     do
         cout_msg=$((cout_msg-1))
         message=${i/$p\//}
+	MsgsArray+=$message' '
         message_show=$(rosmsg show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
         message_show="$(echo $message_show | sed -e 's/\s=\s/=/g')"
         final_desc=$(parserToRosModel "$message_show")
@@ -65,6 +66,28 @@ do
             echo ','
         fi
     done
+
+	for i in $MsgsArray
+	do
+		if [[ "$i" =~ "ActionGoal" ]];then
+			ActionName=${i//'ActionGoal'/}
+			if [[ "${MsgsArray[@]}" =~ "${ActionName}ActionResult" ]] && [[ "${MsgsArray[@]}" =~ "${ActionName}ActionFeedback" ]]; then
+				arr_act+=$ActionName' '
+			fi
+		fi	
+	done
+	cout_act=${#arr_act[@]}
+    for i in $arr_act
+    do
+        cout_act=$((cout_act-1))
+	    echo -n '      ActionSpec '$i'{ goal { '$i'ActionGoal action_goal} result {'$i'ActionResult action_result} feedback {'$i'ActionFeedback action_feedback}}
+'
+        if (("$cout_act" >= "1"))
+        then
+            echo ','
+        fi
+    done
+
     echo -n $'\n    }}'
     if (("$cout_pkg" >= "1"))
     then
