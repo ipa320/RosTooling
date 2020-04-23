@@ -2,7 +2,7 @@
 
 ### Autogeneration tools
 
-We facilitate a couple of tools to auto generate the corresponding model (these tools work only for messages and services, the action types have to be unfortunately implemented manually):
+We facilitate a couple of tools to auto generate the corresponding model (these tools work only for messages and services, the action types, in the majority of the cases, have to be unfortunately implemented manually):
 
 - Use our cloud facilities : [ROS Model Extractor](http://ros-model.seronet-project.de/) and navigate to the tag "Specification Analysis". There, if the package that contains the message types is released for Melodic you just have to give the name of the package and press **Submit**. Otherwise please specify first the name of the Git repository that hold the package
 
@@ -100,5 +100,17 @@ PackageSet { package {
     }}
 }}
 ```
+:bangbang::bangbang: This model doesn't allow the creation of 2 specification with the same name, although they have different types. That means a ROS model like the following one is not allow:
+
+```
+PackageSet { package {
+    Package my_msgs { spec { 
+      TopicSpec hello { message { String data }},
+      ServiceSpec hello { request {  } response { String data }},
+    }}
+}}
+```
+The reason is that when one of these objects have to be referenced during the definition of a node it will be imposible for the model to distinguish which is the correct one (both are defined as my_msgs.Hello and whitin the dame model file). For these cases we recommend to split the objects into two different model files.
+
 The repository [RosCommonObjects](https://github.com/ipa320/RosCommonObjects) holds further examples.
 
