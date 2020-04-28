@@ -27,7 +27,9 @@ import ros.ActionClient
 import componentInterface.RosActionServer
 import componentInterface.RosActionClient
 import ros.ParameterValue
-
+import componentInterface.RosParameter
+import ros.Parameter
+import ros.impl.ParameterStructMemberImpl
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -73,6 +75,7 @@ class RosSystemGenerator extends AbstractGenerator {
 	List<RosServiceClient> svrc
 	List<RosActionServer> acts
 	List<RosActionClient> actc
+	List<RosParameter> rosparams
 	
 	List<String> pubs_names
 	List<String> subs_names
@@ -87,6 +90,7 @@ class RosSystemGenerator extends AbstractGenerator {
 	int count_srvs
 	int count_acts
 	int count_actc
+	int count_param
 	
 	String node_impl
 	
@@ -299,6 +303,7 @@ def compile_toComponentInterface(RosSystem system){
 	svrc = new ArrayList()
 	acts = new ArrayList()
 	actc = new ArrayList()
+	rosparams = new ArrayList()
 	
 	pubs_names = new ArrayList()
 	subs_names = new ArrayList()
@@ -316,6 +321,7 @@ def compile_toComponentInterface(RosSystem system){
 		for ( cl: component.rosserviceclient){if (!svrc_names.contains(cl.name)) svrc.add(cl); svrc_names.add(cl.name)}
 		for ( act:component.rosactionserver){if (!acts_names.contains(act.name)) acts.add(act); acts_names.add(act.name)}
 		for ( acl: component.rosactionclient){if (!actc_names.contains(acl.name)) actc.add(acl); actc_names.add(acl.name)}
+		for ( param: component.rosparameter){ rosparams.add(param)}
 	}
 
 	count_pub = pubs.length
@@ -324,6 +330,7 @@ def compile_toComponentInterface(RosSystem system){
 	count_srvc = svrc.length
 	count_acts = acts.length
 	count_actc = actc.length
+	count_param = rosparams.length+system.parameter.length
 
 	
 	'''
@@ -376,6 +383,17 @@ RosActionClients{
 	«ENDFOR»
 	}
 «ENDIF»
+«IF count_param>0»
+RosParameters{
+	«FOR param:rosparams»
+	«val count_param=count_param--»
+	RosParameter "«compile_param_name(param.parameter,"")»" { RefParameter "«param.parameter.package_rosparam».«param.parameter.artifact_rosparam».«param.parameter.node_rosparam».«param.parameter.name»"«IF param.value!==null » value «compile_rosparam_value(param.value)»«ENDIF» }«IF count_param > 1»,«ENDIF»
+	«ENDFOR»«FOR param:system.parameter»
+	«val count_param=count_param--»
+	RosParameter "«param.name»" { RefParameter "«param.name»"«IF param.value!==null » value «compile_rosparam_value(param.value)»«ENDIF» }«IF count_param > 1»,«ENDIF»
+	«ENDFOR»
+	}
+«ENDIF»
 }
 '''
 }
@@ -422,6 +440,11 @@ def compile_pkg(ComponentInterface component)
 		package_impl = actionclient.eContainer.eContainer.eContainer.toString;
 		return package_impl.getPackage;
 	}
+	def getPackage_rosparam (Parameter param){
+		package_impl = param.eContainer.eContainer.eContainer.toString;
+		return package_impl.getPackage;
+	}
+
 	def getPackage(String package_impl){
 			package_name = package_impl.substring(package_impl.indexOf("name")+6,package_impl.length-1)
 			PackageSet=true;
@@ -454,6 +477,10 @@ def compile_pkg(ComponentInterface component)
 		artifact_impl = actionclient.eContainer.eContainer.toString;
 		return artifact_impl.getArtifact;
 	}
+	def getArtifact_rosparam(Parameter param){
+		artifact_impl = param.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
 	def getArtifact(String artifact_impl){
 		artifact_name = artifact_impl.substring(artifact_impl.indexOf("name")+6,artifact_impl.length-1)
 		ArtifactSet=true;
@@ -484,6 +511,10 @@ def compile_pkg(ComponentInterface component)
 		node_impl = actionclient.eContainer.toString;
 		return node_impl.getNode;
 	}
+	def getNode_rosparam(Parameter param){
+		node_impl = param.eContainer.toString;
+		return node_impl.getNode;
+	}
 	def getNode(String node_impl){
 		node_name = node_impl.substring(node_impl.indexOf("name")+6,node_impl.length-1)
 		return node_name;
@@ -507,6 +538,37 @@ def compile_pkg(ComponentInterface component)
 	def compile_action_name(ActionClient actionclient, String NS){
 		return NS+"/"+actionclient.name;
 	}
+	def compile_param_name(Parameter param, String NS){
+		return NS+"/"+param.name;
+	}
+	
+	def compile_rosparam_value(ParameterValue paramValue){
+		 value_return =""
+		 param_value = paramValue.toString
+		 if (param_value.contains("(value:")){
+		 	value_return= param_value.substring(param_value.indexOf("value:")+6,param_value.indexOf(")"))
+		 } else if(param_value.contains("ParameterSequenceImpl")){
+		 	value_return+="{"
+		 	for(param: paramValue.eContents){
+		 		if (param.toString.contains("(value:")){
+		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+6,param.toString.indexOf(")"))
+			 	} else {
+			 		for(subparam: param.eContents){
+				 		if (subparam.toString.contains("ParameterStructMemberImpl")){
+				 			value_return+=getStructValue(subparam as ParameterStructMemberImpl)
+			 	}}
+		 }
+		 value_return+=","
+		 }
+		 value_return = value_return.substring(0, value_return.length() - 1);
+		 value_return+="}"
+		 return value_return
+ 	}}
+ 	
+ 	def getStructValue(ParameterStructMemberImpl Param_member){
+ 		return "\n          { "+ Param_member.name + " { value " + compile_rosparam_value(Param_member.value) + " }}"
+ 		
+ 	}
 	
 	def compile_param_value(ParameterValue paramValue){
 		 value_return =""
