@@ -70,16 +70,20 @@ class RosSystemGeneratorTest {
 		generator.doGenerate(model.eResource, fsa, new GeneratorContext)
 		
 		// Assert that all necessary files exist 
-		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_system.launch"))
-		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_system/launch/scan_system.launch"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_system/package.xml"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_system/CMakeLists.txt"))
+		
+		
+		//Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh"))
 		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::CM_CONFIGURATION + "scan_system.componentinterface"))
 		
 		// Test the generated launch file
-		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_system.launch'))).trim,
-            fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+"scan_system.launch").toString.trim)
+		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/scan_system/launch/', 'scan_system.launch'))).trim,
+            fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'scan_system/launch/scan_system.launch').toString.trim)
 				
 		// Test the generated install script
-		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_systeminstall.sh'))).trim, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh").toString.trim)
+		//Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'scan_systeminstall.sh'))).trim, fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "scan_systeminstall.sh").toString.trim)
 		
 		// Test the generated component interface					
 		Assert.assertEquals('''ComponentInterface { name scan_system

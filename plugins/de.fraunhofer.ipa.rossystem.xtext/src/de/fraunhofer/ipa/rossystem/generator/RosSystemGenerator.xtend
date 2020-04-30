@@ -104,17 +104,22 @@ class RosSystemGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName()+".launch",system.compile_tolaunch)
+				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_tolaunch)
+				}
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName().toLowerCase+"/package.xml",system.compile_package_xml)
+				}
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",system.compile_CMakeLists)
 				}
 	
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName()+".componentinterface",CustomOutputProvider::CM_CONFIGURATION,system.compile_toComponentInterface)
 				}
-				
-	
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName()+"install.sh",system.compile_toIntallScript)
-				}
+
+//		for (system : resource.allContents.toIterable.filter(RosSystem)){
+//				fsa.generateFile(system.getName()+"install.sh",system.compile_toIntallScript)
+//				}
 			}
 	
 	
@@ -287,6 +292,44 @@ class RosSystemGenerator extends AbstractGenerator {
 
 </launch>
 	'''
+
+	def compile_package_xml(RosSystem system) '''«init()»
+<package format="2">
+  <name>«system.name.toLowerCase»</name>
+  <version>0.0.1</version>
+  <description>This package provides launch file for operating «system.name»</description>
+
+  <license>Apache 2.0</license>
+
+  <url type="website">http://wiki.ros.org/</url>
+
+
+  <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
+  <author email="jane.doe@example.com">Jane Doe</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  «FOR pkg:system.getPkgsDependencies»
+  <exec_depend>«pkg»</exec_depend>
+  «ENDFOR»
+  <test_depend>roslaunch</test_depend>
+
+</package>'''
+
+	def compile_CMakeLists(RosSystem system) '''«init()»
+cmake_minimum_required(VERSION 2.8.3)
+project(«system.name.toLowerCase»)
+
+find_package(catkin REQUIRED)
+
+catkin_package()
+
+
+### INSTALL ###
+install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)'''
+
 
 def List InterfaceDef(String name, String type){
 	ListInterfaceDef = new ArrayList()
@@ -598,7 +641,7 @@ def compile_pkg(ComponentInterface component)
 		return ParamValue
 	}
 	
-	def compile_toIntallScript(RosSystem system) '''«init()»
+/**	def compile_toIntallScript(RosSystem system) '''«init()»
 #!/bin/bash
 
 distro=$(echo $ROS_DISTRO)
@@ -623,7 +666,7 @@ fi
 for pkg in «FOR pkg:system.getPkgsDependencies»«pkg» «ENDFOR»
 do
     sudo apt install ros-$distro-$pkg
-done'''
+done'''*/
 		
 	def <String> getPkgsDependencies(RosSystem rossystem){
 		PkgsList = new ArrayList()
@@ -631,7 +674,7 @@ done'''
 			init()
 			Pkg = component.compile_pkg.toString()
 			if (!PkgsList.contains(Pkg)){
-				PkgsList.add(Pkg.replace("_","-"))
+				PkgsList.add(Pkg)
 			}
 		}
 		return PkgsList;
