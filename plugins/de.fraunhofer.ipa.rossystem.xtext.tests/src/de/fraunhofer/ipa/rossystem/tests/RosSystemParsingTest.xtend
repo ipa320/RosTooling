@@ -11,6 +11,8 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import rossystem.RosSystem
+import java.nio.file.Files
+import java.nio.file.Paths
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(RosSystemInjectorProvider))
@@ -18,87 +20,37 @@ class RosSystemParsingTest {
 
 	@Inject
 	ParseHelper<RosSystem> parseHelper
+	String RESOURCES_BASE_DIR = 'resources'
 
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			RosSystem { Name multisim
-			    RosComponents ( 
-			        ComponentInterface { name '/turtlesim1/sim' NameSpace '/turtlesim1/' 
-			            RosPublishers{
-			                RosPublisher '/turtlesim1/pose' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.pose'},
-			                RosPublisher '/turtlesim1/color_sensor' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.color_sensor'}}
-			            RosSubscribers{
-			                RosSubscriber '/turtlesim1/cmd_vel' { RefSubscriber 'turtlesim.turtlesim_node.turtlesim_node.cmd_vel'}}
-			            RosSrvServers{
-			                RosServiceServer '/turtlesim1/set_pen' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.set_pen'},
-			                RosServiceServer '/turtlesim1/teleport_relative' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_relative'},
-			                RosServiceServer '/turtlesim1/teleport_absolute' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_absolute'},
-			                RosServiceServer '/turtlesim1/clear' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.clear'},
-			                RosServiceServer '/turtlesim1/reset' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.reset'},
-			                RosServiceServer '/turtlesim1/spawn' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.spawn'},
-			                RosServiceServer '/turtlesim1/kill' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.kill'}}
-			},
-			        ComponentInterface { name '/turtlesim2/sim' NameSpace '/turtlesim2/' 
-			            RosPublishers{
-			                RosPublisher '/turtlesim2/pose' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.pose'},
-			                RosPublisher '/turtlesim2/color_sensor' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.color_sensor'}}
-			            RosSubscribers{
-			                RosSubscriber '/turtlesim2/cmd_vel' { RefSubscriber 'turtlesim.turtlesim_node.turtlesim_node.cmd_vel'}}
-			            RosSrvServers{
-			                RosServiceServer '/turtlesim2/set_pen' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.set_pen'},
-			                RosServiceServer '/turtlesim2/teleport_relative' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_relative'},
-			                RosServiceServer '/turtlesim2/teleport_absolute' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_absolute'},
-			                RosServiceServer '/turtlesim2/clear' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.clear'},
-			                RosServiceServer '/turtlesim2/reset' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.reset'},
-			                RosServiceServer '/turtlesim2/spawn' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.spawn'},
-			                RosServiceServer '/turtlesim2/kill' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.kill'}}
-			}
-			)}
-		''')
-		Assert.assertNotNull(result)
-		val errors = result.eResource.errors
+	    val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.rossystem')))
+	    val model = parseHelper.parse(fileContent)
+
+		Assert.assertNotNull(model)
+		val errors = model.eResource.errors
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
 
-	@Test
-	def void loadModel2() {
-		val result = parseHelper.parse('''
-	RosSystem { Name 'My' 
-	  RosComponents ( 
-	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
-	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
-	  TopicConnections { 
-	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
-    ''')
-		Assert.assertNotNull(result)
-		val errors = result.eResource.errors
-		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
-	}
 	
 	@Test 
     def void parseDomainmodel() {
-        val model = parseHelper.parse('''
-	RosSystem { Name 'My' 
-	  RosComponents ( 
-	    ComponentInterface { name scan_front NameSpace scan_front RosPublishers { RosPublisher "scan_front/scan" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.scan" } , RosPublisher "scan_front/diagnostics" { ns scan_front RefPublisher "cob_sick_s300.cob_sick_s300.cob_sick_s300.diagnostics" } } } , 
-	    ComponentInterface { name diagnostics RosPublishers { RosPublisher diagnostics_toplevel_state { RefPublisher "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics_toplevel_state" } } RosSubscribers { RosSubscriber diagnostics { RefSubscriber "diagnostic_aggregator.aggregator_node.aggregator_node.diagnostics" } } } ) 
-	  TopicConnections { 
-	    TopicConnection "scan_front/diagnostics" { From ( "scan_front.scan_front/diagnostics" ) To ( "diagnostics.diagnostics" )}}}
-    ''')
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.rossystem')))
+		val model = parseHelper.parse(fileContent)
+    	
         val ComponentName = model.rosComponent.get(0).name
-       	Assert.assertEquals("scan_front", ComponentName)
+       	Assert.assertEquals("test_node", ComponentName)
         
         val TopicConnectionName = model.topicConnections.get(0).topicName
-        Assert.assertEquals("scan_front/diagnostics", TopicConnectionName)
+        Assert.assertEquals("scan", TopicConnectionName)
         
         val FromTopic = model.topicConnections.get(0).from.get(0).name
-        val diag_Publisher = model.rosComponent.get(0).rospublisher.get(1).name
-        Assert.assertEquals(FromTopic, diag_Publisher)
+        val Publisher = model.rosComponent.get(0).rospublisher.get(0).name
+        Assert.assertEquals(FromTopic, Publisher)
         
         val ToTopic = model.topicConnections.get(0).to.get(0).name
-        val diag_Subscriber = model.rosComponent.get(1).rossubscriber.get(0).name
-        Assert.assertEquals(ToTopic, diag_Subscriber)
+        val Subscriber = model.rosComponent.get(2).rossubscriber.get(0).name
+        Assert.assertEquals(ToTopic, Subscriber)
 
     }
 }

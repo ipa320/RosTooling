@@ -1,0 +1,44 @@
+ComponentInterface { name test_system
+RosPublishers{
+	RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"},
+	RosPublisher "test2/scan" { RefPublisher "test_pkg.test_node.test_node.scan"},
+	RosPublisher "power_state" { RefPublisher "test_pkg.test_node.test_node.power_state"}
+	}
+RosSubscribers{
+	RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"},
+	RosSubscriber "test2/power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"},
+	RosSubscriber "scan" { RefSubscriber "test_pkg.test_node.test_node.scan"}
+	}
+RosSrvServers{
+	RosServiceServer "setBool" { RefServer "test_pkg.test_node.test_node.setBool"},
+	RosServiceServer "test2/setBool" { RefServer "test_pkg.test_node.test_node.setBool"},
+	RosServiceServer "init" { RefServer "test_pkg.test_node.test_node.init"}
+	}
+RosSrvClients{
+	RosServiceClient "init" { RefClient "test_pkg.test_node.test_node.init"},
+	RosServiceClient "test2/init" { RefClient "test_pkg.test_node.test_node.init"},
+	RosServiceClient "SetBool" { RefClient "test_pkg.test_node.test_node.SetBool"}
+	}
+RosParameters{
+	RosParameter "/string_test" { RefParameter "test_pkg.test_node.test_node.string_test" },
+	RosParameter "/bool_tets" { RefParameter "test_pkg.test_node.test_node.bool_tets" },
+	RosParameter "/array_tets" { RefParameter "test_pkg.test_node.test_node.array_tets" },
+	RosParameter "/base64_test" { RefParameter "test_pkg.test_node.test_node.base64_test" },
+	RosParameter "/double_test" { RefParameter "test_pkg.test_node.test_node.double_test" },
+	RosParameter "/int_test" { RefParameter "test_pkg.test_node.test_node.int_test" },
+	RosParameter "/list_test" { RefParameter "test_pkg.test_node.test_node.list_test" },
+	RosParameter "/string_test" { RefParameter "test_pkg.test_node.test_node.string_test" },
+	RosParameter "/bool_tets" { RefParameter "test_pkg.test_node.test_node.bool_tets" },
+	RosParameter "/array_tets" { RefParameter "test_pkg.test_node.test_node.array_tets" },
+	RosParameter "/base64_test" { RefParameter "test_pkg.test_node.test_node.base64_test" },
+	RosParameter "/double_test" { RefParameter "test_pkg.test_node.test_node.double_test" },
+	RosParameter "/int_test" { RefParameter "test_pkg.test_node.test_node.int_test" },
+	RosParameter "/list_test" { RefParameter "test_pkg.test_node.test_node.list_test" },
+	RosParameter "param1" { RefParameter "param1" value  hello },
+	RosParameter "list_test" { RefParameter "list_test" value { 1, 2, a} },
+	RosParameter "array_test" { RefParameter "array_test" value { 1, 3} },
+	RosParameter "struc_test" { RefParameter "struc_test" value {
+	          { first_element { value  8 }},
+	          { third_element { value  dsd }}} }
+	}
+}

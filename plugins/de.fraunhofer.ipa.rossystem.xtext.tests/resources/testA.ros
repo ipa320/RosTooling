@@ -1,0 +1,12 @@
+PackageSet { package {
+	CatkinPackage test_pkg { artifact {
+		Artifact test_node { node Node { name test_node 
+			serviceserver {
+				ServiceServer {name init service "std_srvs.Trigger"}}
+			publisher { 
+				Publisher { name power_state message  "sensor_msgs.BatteryState"}}
+			subscriber {
+				Subscriber { name scan message "sensor_msgs.LaserScan" }}
+			serviceclient {
+				ServiceClient { name SetBool service "std_srvs.SetBool"}}
+			}}}}}}

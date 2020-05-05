@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(scan_system)
+project(test_system)
 
 find_package(catkin REQUIRED)
 

@@ -1,0 +1,27 @@
+PackageSet { package {
+	CatkinPackage test_pkg { artifact {
+		Artifact test_node { node Node { name test_node 
+			serviceserver {
+				ServiceServer {name setBool service "std_srvs.SetBool"}}
+			publisher { 
+				Publisher { name scan message "sensor_msgs.LaserScan" }}
+			subscriber {
+				Subscriber { name power_state message "sensor_msgs.BatteryState"}}
+			serviceclient {
+				ServiceClient { name init service "std_srvs.Trigger"}}
+			parameter { 
+				Parameter { name string_test type String {default test}},
+				Parameter { name bool_tets type Boolean },
+				Parameter { name array_tets type Array {type String}},
+				Parameter { name base64_test type Base64},
+				Parameter { name double_test type Double},
+				Parameter {name int_test type Integer},
+				Parameter {name list_test type List {Integer,Integer,String}},
+				Parameter {name struc_test type Struc 
+					{first_element Integer ,
+					second_element List { Integer, String},
+					third_element String ,
+					last_element Struc { hola Integer, what String}}
+				}
+			}}
+}}}}}

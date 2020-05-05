@@ -11,34 +11,31 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.nio.file.Files
+import java.nio.file.Paths
 
 @RunWith(XtextRunner)
-@InjectWith(ComponentInterfaceInjectorProvider)
+@InjectWith(CustomInjectorProvider)
 class ComponentInterfaceParsingTest {
 	@Inject
 	ParseHelper<ComponentInterface> parseHelper
-	
+	String RESOURCES_BASE_DIR = 'resources'
+
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			ComponentInterface { name '/turtlesim1/sim' NameSpace '/turtlesim1/' 
-			            RosPublishers{
-			                RosPublisher '/turtlesim1/pose' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.pose'},
-			                RosPublisher '/turtlesim1/color_sensor' { RefPublisher 'turtlesim.turtlesim_node.turtlesim_node.color_sensor'}}
-			            RosSubscribers{
-			                RosSubscriber '/turtlesim1/cmd_vel' { RefSubscriber 'turtlesim.turtlesim_node.turtlesim_node.cmd_vel'}}
-			            RosSrvServers{
-			                RosServiceServer '/turtlesim1/set_pen' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.set_pen'},
-			                RosServiceServer '/turtlesim1/teleport_relative' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_relative'},
-			                RosServiceServer '/turtlesim1/teleport_absolute' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.teleport_absolute'},
-			                RosServiceServer '/turtlesim1/clear' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.clear'},
-			                RosServiceServer '/turtlesim1/reset' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.reset'},
-			                RosServiceServer '/turtlesim1/spawn' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.spawn'},
-			                RosServiceServer '/turtlesim1/kill' { RefServer 'turtlesim.turtlesim_node.turtlesim_node.kill'}}
-			}
-		''')
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.componentinterface')))
+		val result = parseHelper.parse(fileContent)
 		Assert.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
+
+	@Test 
+    def void parseDomainmodel() {
+    	val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.componentinterface')))
+		val model = parseHelper.parse(fileContent)
+        val ComponentName = model.name
+        Assert.assertEquals(ComponentName, "test_component")        
+    }
+
 }
