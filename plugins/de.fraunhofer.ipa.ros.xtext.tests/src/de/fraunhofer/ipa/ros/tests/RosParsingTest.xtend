@@ -4,6 +4,8 @@
 package de.fraunhofer.ipa.ros.tests
 
 import com.google.inject.Inject
+import java.nio.file.Files
+import java.nio.file.Paths
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -17,43 +19,26 @@ import ros.PackageSet
 class RosParsingTest {
 	@Inject
 	ParseHelper<PackageSet> parseHelper
-	
+	String RESOURCES_BASE_DIR = 'resources'
+
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			PackageSet { package { 
-			  CatkinPackage cob_sick_s300 { artifact {
-			    Artifact cob_sick_s300 {
-			      node Node { name cob_sick_s300
-			        publisher {
-			          Publisher { name 'scan' message 'sensor_msgs.LaserScan'},
-			          Publisher { name 'scan_standby' message 'std_msgs.Bool'},
-			          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}
-			}}}}}}
-		''')
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val result = parseHelper.parse(fileContent)
 		Assert.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
-	
-	
+
 	@Test 
     def void parseDomainmodel() {
-        val model = parseHelper.parse('''
-			PackageSet { package { 
-			  CatkinPackage cob_sick_s300 { artifact {
-			    Artifact cob_sick_s300 {
-			      node Node { name cob_sick_s300
-			        publisher {
-			          Publisher { name 'scan' message 'sensor_msgs.LaserScan'},
-			          Publisher { name 'scan_standby' message 'std_msgs.Bool'},
-			          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}
-			}}}}}}
-		''')
+    	val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val model = parseHelper.parse(fileContent)
         val packageName = model.package.get(0).name
         val nodeName = model.package.get(0).artifact.get(0).node.name
-        Assert.assertEquals(packageName, "cob_sick_s300")
-        Assert.assertEquals(nodeName, "cob_sick_s300")
+        Assert.assertEquals(packageName, "test_pkg")
+        Assert.assertEquals(nodeName, "test_node")
         
     }
+
 }

@@ -12,6 +12,8 @@ import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.eclipse.xtext.diagnostics.Diagnostic
 import ros.RosPackage
 import de.fraunhofer.ipa.ros.validation.RosValidator
+import java.nio.file.Files
+import java.nio.file.Paths
 
 @RunWith(XtextRunner)
 @InjectWith(RosInjectorProvider)
@@ -26,38 +28,23 @@ class RosValidationTest {
 	@Inject
 	RosTestingUtils rosTestingUtils
 	
+	String RESOURCES_BASE_DIR = 'resources'
+	
 	@Test
 	def void successfulValidationTest(){
 		val resourceSet = rosTestingUtils.getMessagesResourceSet
-		val model = parseHelper.parse('''
-			PackageSet { package { 
-			  CatkinPackage cob_sick_s300 { artifact {
-			    Artifact cob_sick_s300 {
-			      node Node { name cob_sick_s300
-			        publisher {
-			          Publisher { name 'scan' message 'sensor_msgs.LaserScan'},
-			          Publisher { name 'scan_standby' message 'std_msgs.Bool'},
-			          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}
-			}}}}}}
-		''', resourceSet)
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val model = parseHelper.parse(fileContent, resourceSet)
 		Assert.assertNotNull(model) 
-		validationTester.assertNoIssues(model)	
+		validationTester.assertNoErrors(model)
 	}
 	
 	@Test
 	def void validationErrorsTest(){
-		val model = parseHelper.parse('''
-		PackageSet { package { 
-		  CatkinPackage rplidar_ros { artifact {
-		    Artifact rplidarNode {
-		      node Node { name rplidarNode
-		        serviceserver {
-		          ServiceServer { name 'stop_motor' service 'std_srvs.Empty'},
-		          ServiceServer { name 'start_motor' service 'std_srvs.Empty'}}
-		        publisher {
-		          Publisher { name 'scan' message 'sensor_msgs.LaserScan'}}
-		}}}}}}
-	''')
+		//val resourceSet = rosTestingUtils.getMessagesResourceSet
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test_error.ros')))
+		val model = parseHelper.parse(fileContent)//, resourceSet)
+
 		Assert.assertNotNull(model)
 		
 		// Assert that the validation fails if the needed messages are not present

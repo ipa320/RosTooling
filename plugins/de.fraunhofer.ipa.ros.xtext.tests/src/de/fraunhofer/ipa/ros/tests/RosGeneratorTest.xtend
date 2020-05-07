@@ -38,49 +38,31 @@ class RosGeneratorTest {
 	def void testGeneratedRosCode() {
 
 		val resourceSet = rosTestingUtils.getMessagesResourceSet
-		val model = parseHelper.parse('''
-			PackageSet { package { 
-			  CatkinPackage cob_sick_s300 { artifact {
-			    Artifact cob_sick_s300 {
-			      node Node { name cob_sick_s300
-			        publisher {
-			          Publisher { name 'scan' message 'sensor_msgs.LaserScan'},
-			          Publisher { name 'scan_standby' message 'std_msgs.Bool'},
-			          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}
-			}}}}}}
-		''', resourceSet)
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		
+		val model = parseHelper.parse(fileContent, resourceSet)
 
 		val fsa = new InMemoryFileSystemAccess
 		rosGenerator.doGenerate(model.eResource, fsa, new GeneratorContext)
 
-		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "cob_sick_s300.cpp"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp"))
 		Assert.assertEquals(
-			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'rosgenerator', 'cob_sick_s300.cpp'))).trim,
-			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "cob_sick_s300.cpp").toString.trim)
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'rosgenerator', 'test_node.cpp'))).trim,
+			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp").toString.trim)
 	}
 
 	@Test
 	def void testGeneratedRos2Code() {
 		val resourceSet = rosTestingUtils.getMessagesResourceSet
-
-		val model = parseHelper.parse('''
-			PackageSet { package { 
-			  CatkinPackage cob_sick_s300 { artifact {
-			    Artifact cob_sick_s300 {
-			      node Node { name cob_sick_s300
-			        publisher {
-			          Publisher { name 'scan' message 'sensor_msgs.LaserScan'},
-			          Publisher { name 'scan_standby' message 'std_msgs.Bool'},
-			          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}
-			}}}}}}
-		''', resourceSet)
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val model = parseHelper.parse(fileContent, resourceSet)
 
 		val fsa = new InMemoryFileSystemAccess
 		ros2Generator.doGenerate(model.eResource, fsa, new GeneratorContext)
-		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "cob_sick_s300.cpp"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp"))
 		Assert.assertEquals(
-			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator', 'cob_sick_s300.cpp'))).trim,
-			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "cob_sick_s300.cpp").toString.trim)
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator', 'test_node.cpp'))).trim,
+			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp").toString.trim)
 	}
 
 }

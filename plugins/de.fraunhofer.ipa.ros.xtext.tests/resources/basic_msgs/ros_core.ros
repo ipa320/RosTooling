@@ -1,0 +1,41 @@
+PackageSet{package{
+    Package std_msgs{ spec { 
+      TopicSpec Bool{ message { bool data }},
+      TopicSpec Byte{ message { byte data }},
+      TopicSpec ByteMultiArray{ message { MultiArrayLayout layout byte[] data }},
+      TopicSpec ColorRGBA{ message { float32 r float32 g float32 b float32 a }},
+      TopicSpec Duration{ message { duration data }},
+      TopicSpec Empty{ message {  }},
+      TopicSpec Float32{ message { float32 data }},
+      TopicSpec Float32MultiArray{ message { MultiArrayLayout layout float32[] data }},
+      TopicSpec Float64{ message { float64 data }},
+      TopicSpec Float64MultiArray{ message { MultiArrayLayout layout float64[] data }},
+      TopicSpec Header{ message { uint32 seq time stamp string frame_id }},
+      TopicSpec Int16{ message { int16 data }},
+      TopicSpec Int16MultiArray{ message { MultiArrayLayout layout int16[] data }},
+      TopicSpec Int32{ message { int32 data }},
+      TopicSpec Int32MultiArray{ message { MultiArrayLayout layout int32[] data }},
+      TopicSpec Int64{ message { int64 data }},
+      TopicSpec Int64MultiArray{ message { MultiArrayLayout layout int64[] data }},
+      TopicSpec Int8{ message { int8 data }},
+      TopicSpec Int8MultiArray{ message { MultiArrayLayout layout int8[] data }},
+      TopicSpec MultiArrayDimension{ message { string label uint32 size uint32 stride }},
+      TopicSpec MultiArrayLayout{ message { MultiArrayDimension[] dim uint32 data_offset }},
+      TopicSpec String{ message { string data }},
+      TopicSpec Time{ message { time data }},
+      TopicSpec UInt16{ message { uint16 data }},
+      TopicSpec UInt16MultiArray{ message { MultiArrayLayout layout uint16[] data }},
+      TopicSpec UInt32{ message { uint32 data }},
+      TopicSpec UInt32MultiArray{ message { MultiArrayLayout layout uint32[] data }},
+      TopicSpec UInt64{ message { uint64 data }},
+      TopicSpec UInt64MultiArray{ message { MultiArrayLayout layout uint64[] data }},
+      TopicSpec UInt8{ message { uint8 data }},
+      TopicSpec UInt8MultiArray{ message { MultiArrayLayout layout uint8[] data }}
+    }},
+    Package std_srvs{ spec { 
+      ServiceSpec Empty{ request {  } response {  } },
+      ServiceSpec SetBool{ request { bool data } response { bool success string message } },
+      ServiceSpec Trigger{ request {  } response { bool success string message } }
+    }}
+  }
+}
