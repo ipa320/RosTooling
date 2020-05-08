@@ -44,7 +44,7 @@ from «sub.message.package.name».msg import «sub.message.name»
 from diagnostic_msgs.msg import DiagnosticStatus, KeyValue
 
 
-class QualityObserver(TopicObserver):
+class «node.name.replace("_","").replace("/","").toFirstUpper»(TopicObserver):
     def __init__(self, name):
     	
         topics = [
@@ -52,7 +52,7 @@ class QualityObserver(TopicObserver):
         ("«sub.name»", «sub.message.name»)«IF count_sub > 1 »,«ENDIF»«ENDFOR»
         ]
 
-        super(QualityObserver, self).__init__(
+        super(«node.name.replace("_","").replace("/","").toFirstUpper», self).__init__(
             name, 10, topics)
 
     def calculate_attr(self, msgs):
