@@ -34,6 +34,7 @@ Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammou
   - [Create new ROS components](docu/NewProject.md)
   - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md)
   - [Generation of code from models](docu/CodeGeneration.md)
+  - [Parameters definition](docu/Parameters.md)
 
 - Combine components to form a ROS System
 
