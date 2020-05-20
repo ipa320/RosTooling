@@ -281,10 +281,10 @@ class RosSystemGenerator extends AbstractGenerator {
 		«FOR rosParameter:component.rosparameter»
 			«IF rosParameter.parameter.type.toString.contains("ParameterStructType")»
 				«FOR ParamMember:rosParameter.value.eContents»
-						<param name=«getParamName(ParamMember.eContents.get(0).toString)» value=«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))» />
+						<param name="«getParamName(ParamMember.eContents.get(0).toString)»" value="«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»" />
 				«ENDFOR»
 			«ELSE»
-						«IF rosParameter.value!==null»<param name=«rosParameter.parameter.name» value=«compile_param_value(rosParameter.value)» />«ENDIF»
+						«IF rosParameter.value!==null»<param name="«rosParameter.parameter.name»" value="«compile_param_value(rosParameter.value)»" />«ENDIF»
 			«ENDIF»
 		«ENDFOR»
 	</node>
@@ -589,12 +589,12 @@ def compile_pkg(ComponentInterface component)
 		 value_return =""
 		 param_value = paramValue.toString
 		 if (param_value.contains("(value:")){
-		 	value_return= param_value.substring(param_value.indexOf("value:")+6,param_value.indexOf(")"))
+		 	value_return= param_value.substring(param_value.indexOf("value:")+7,param_value.indexOf(")"))
 		 } else if(param_value.contains("ParameterSequenceImpl")){
 		 	value_return+="{"
 		 	for(param: paramValue.eContents){
 		 		if (param.toString.contains("(value:")){
-		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+6,param.toString.indexOf(")"))
+		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+7,param.toString.indexOf(")"))
 			 	} else {
 			 		for(subparam: param.eContents){
 				 		if (subparam.toString.contains("ParameterStructMemberImpl")){
@@ -617,12 +617,12 @@ def compile_pkg(ComponentInterface component)
 		 value_return =""
 		 param_value = paramValue.toString
 		 if (param_value.contains("(value:")){
-		 	value_return= param_value.substring(param_value.indexOf("value:")+6,param_value.indexOf(")"))
+		 	value_return= param_value.substring(param_value.indexOf("value:")+7,param_value.indexOf(")"))
 		 } else if(param_value.contains("ParameterSequenceImpl")){
 		 		value_return+="["
 		 	for(param: paramValue.eContents){
 		 		if (param.toString.contains("(value:")){
-		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+6,param.toString.indexOf(")"))
+		 			value_return+=param.toString.substring(param.toString.indexOf("value:")+7,param.toString.indexOf(")"))
 		 			value_return+=","
 		 			
 		 	}}
