@@ -34,11 +34,12 @@ RosParameters{
 	RosParameter "/double_test" { RefParameter "test_pkg.test_node.test_node.double_test" },
 	RosParameter "/int_test" { RefParameter "test_pkg.test_node.test_node.int_test" },
 	RosParameter "/list_test" { RefParameter "test_pkg.test_node.test_node.list_test" },
-	RosParameter "param1" { RefParameter "param1" value  hello },
-	RosParameter "list_test" { RefParameter "list_test" value { 1, 2, a} },
-	RosParameter "array_test" { RefParameter "array_test" value { 1, 3} },
+	RosParameter "param1" { RefParameter "param1" value hello },
+	RosParameter "list_test" { RefParameter "list_test" value {1,2,a} },
+	RosParameter "array_test" { RefParameter "array_test" value {1,3} },
 	RosParameter "struc_test" { RefParameter "struc_test" value {
-	          { first_element { value  8 }},
-	          { third_element { value  dsd }}} }
+	          { first_element { value 8 }},
+	          { third_element { value dsd }}} }
 	}
 }
+
