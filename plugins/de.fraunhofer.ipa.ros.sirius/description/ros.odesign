@@ -4,7 +4,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Artifact diagram" domainClass="ros::Artifact" enablePopupBars="true">
       <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="Node" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Node">
+        <containerMappings name="Node" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Node" childrenPresentation="List">
           <borderedNodeMappings name="RosPublisher" semanticCandidatesExpression="feature:eAllContents" domainClass="ros::Publisher">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -71,8 +71,8 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
             </style>
           </borderedNodeMappings>
-          <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" domainClass="ros::Parameter">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png" tooltipExpression="ComponentParameters" sizeComputationExpression="5" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/parameters_scale.png">
+          <subNodeMappings name="ParametersNode" semanticCandidatesExpression="feature:parameter" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ParametersConfiguratorDoubleClick']" synchronizationLock="true" domainClass="ros::Parameter">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="10" iconPath="/de.fraunhofer.ipa.ros.sirius/icons/parameters.png" labelAlignment="LEFT" tooltipExpression="ComponentParameters" hideLabelByDefault="true" sizeComputationExpression="5" resizeKind="NSEW" workspacePath="/de.fraunhofer.ipa.ros.sirius/icons/parameters_scale.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -199,6 +199,16 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewParameter" id="de.fraunhofer.ipa.ros.sirius.javaActionsNewParameter"/>
+          <!--ownedTools xsi:type="tool:DoubleClickDescription" name="ParametersConfiguratorDoubleClick" mappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@containerMappings[name='Node']/@subNodeMappings[name='ParametersNode']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="Parameter Configurator" forceRefresh="true" elementsToSelect="var:element" icon="/de.fraunhofer.ipa.ros.sirius/icons/parameters_scale.png" action="//@ownedViewpoints[name='component']/@ownedRepresentations[name='Artifact%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ParameterEditor']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="ParameterEditor" elementsToSelect="var:self" id="de.fraunhofer.ipa.ros.sirius.javaActionsParameterEditor"/-->
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>

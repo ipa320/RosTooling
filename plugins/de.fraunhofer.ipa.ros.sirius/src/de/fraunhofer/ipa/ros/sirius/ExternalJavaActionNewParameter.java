@@ -1,28 +1,17 @@
 package de.fraunhofer.ipa.ros.sirius;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.swing.JOptionPane;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -35,7 +24,6 @@ import ros.impl.ParameterBooleanTypeImpl;
 import ros.impl.ParameterDateTypeImpl;
 import ros.impl.ParameterDoubleTypeImpl;
 import ros.impl.ParameterIntegerTypeImpl;
-import ros.impl.ParameterListTypeImpl;
 import ros.impl.ParameterStringTypeImpl;
 
 
@@ -48,6 +36,8 @@ public class ExternalJavaActionNewParameter implements IExternalJavaAction {
 	protected ExecutionEvent event;
 	EList<ParameterType> subtypes;
 	EList<String> subtypes_;
+	EList<Combo> combos;
+	EList<String> subtypes_string;
 
 	
 	public ExternalJavaActionNewParameter() {
@@ -71,12 +61,11 @@ public class ExternalJavaActionNewParameter implements IExternalJavaAction {
 		Parameter param = param_collection.iterator().next();
 		ParameterType type = null;
 
-		dlg.setElements( new Object[] {"Boolean","String","Integer","Date","Double","Base64", "List", "Array","Struc"});
+		dlg.setElements( new Object[] {"Boolean","String","Integer","Double","Base64", "Array"});/** "List","Struc","Date"*/
 		dlg.open();
 		
 		Object selected_type = dlg.getFirstResult();
 		type = GetSelectedType(selected_type.toString(), activeShell);
-
 		/**if (selected_type.toString() == "List") {
 			type = new ParameterListTypeImpl();
 		}
@@ -85,16 +74,6 @@ public class ExternalJavaActionNewParameter implements IExternalJavaAction {
 		}*/
 		param.setType(type);
 	}
-	
-	public void AddTotheList (String newType) {
-	    System.out.println(newType);
-	    subtypes_.add(newType);
-		//subtypes.add(GetSelectedType(newType,activeShell));
-		System.out.println("!!!!!!!!");
-		System.out.println(subtypes_);
-	}
-	
-	
 	
 	@SuppressWarnings("null")
 	public ParameterType GetSelectedType(String selected_type, Shell activeShell) {
@@ -108,9 +87,9 @@ public class ExternalJavaActionNewParameter implements IExternalJavaAction {
 		if (selected_type == "Integer") {
 			type = new ParameterIntegerTypeImpl();
 		}
-		if (selected_type == "Date") {
+		/**if (selected_type == "Date") {
 			type = new ParameterDateTypeImpl();
-		}
+		}*/
 		if (selected_type.toString() == "Double") {
 			type = new ParameterDoubleTypeImpl();
 		}
@@ -129,63 +108,51 @@ public class ExternalJavaActionNewParameter implements IExternalJavaAction {
 			subtype = GetSelectedType(selected_subtype.toString(), activeShell);
 			((ParameterArrayTypeImpl) type).setType(subtype);
 		}
-		if (selected_type.toString() == "List") {
-
+		/**if (selected_type.toString() == "List") {
+			EList<Combo> combos = null;
 			type = new ParameterListTypeImpl();
 
 			InputDialog dlg = new InputDialog(activeShell, "Lenght of the list parameter", null, "2",null);
-	    	int lenght;
+	    	int lenght = 0;
 		    if (dlg.open() == 0) {
 		    	String param = dlg.getValue();
 		    	try {
 		    		lenght = Integer.parseInt(param);
 		    	} catch (NumberFormatException e){
-		    		   lenght = 1;
+		    		 lenght = 1;
 		    	}
-		    	//activeShell.setSize(250,250);
-		        GridLayout gridLayout = new GridLayout();
-		        gridLayout.numColumns = 1;
-		        activeShell.setLayout(gridLayout);
-	    	    new Label(activeShell, SWT.NULL).setText("List parameter definition: ");
-
-		    	for (int i=1;i<lenght+1;i++) {
-				   String items[] = { "Boolean","String","Integer","Date","Double","Base64"};
-				   GridData gridData = new GridData(GridData.CENTER);
-				   gridData.horizontalSpan = 1;
-	    	       new Label(activeShell, SWT.NULL).setText("Type element "+ i +" :");
-		    	   Combo c = new Combo(activeShell, SWT.NULL);
-			       c.setItems(items);
-	    	       c.setLayoutData(gridData);
-	    	       c.addSelectionListener(new SelectionAdapter() {
-	    	    	      public void widgetSelected(SelectionEvent e) {
-	    	 			     System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-	    	 		    	 //subtypes.add(GetSelectedType(c.getText(),activeShell));
-	    	 			    AddTotheList(c.getText());
-
-	    	    	      }
-	    	    	});
-		    	}
+		    }	
+	    	for (int i=1;i<lenght+1;i++) {
+	    		subtypes.add(GetSelectedType("String",activeShell));
+	    	}
 		    	
-			     activeShell.pack();
-			     activeShell.open();
-			     while (!activeShell.isDisposed()) {
-			    	if (!activeShell.getDisplay().readAndDispatch ()) 
-			    		activeShell.getDisplay().sleep ();
+	        GridLayout gridLayout = new GridLayout();
+	        gridLayout.numColumns = 1;
+	        activeShell.setLayout(gridLayout);
+    	    new Label(activeShell, SWT.NULL).setText("List parameter definition: ");
+    		Combo combo = new Combo(activeShell, SWT.DOWN);
 
-			     }
+	    	for (int i=1;i<lenght+1;i++) {
+	    		String items[] = { "Boolean","String","Integer","Date","Double","Base64"};
+	    		GridData gridData = new GridData(GridData.CENTER);
+	    		gridData.horizontalSpan = 1;
+	    	    new Label(activeShell, SWT.NULL).setText("Type element "+ i +" :");
+	    		combo.setItems(items);
+	    		combo.setLayoutData(gridData);
+			    activeShell.pack();
+			    activeShell.open();
+	    	}
 
-			     activeShell.getDisplay().dispose();
+		    while (!activeShell.isDisposed()) {
+		    	if (!activeShell.getDisplay().readAndDispatch ()) 
+		    		activeShell.getDisplay().sleep ();
+		     }
 
-		    	//subtypes.add(GetSelectedType(c.getText(),activeShell));
-		        //activeShell.setText("Set types for a List Parameter");
-
-		        //c1.getText();
-		    	//new SetListParameterTypesDialog(activeShell);
-		    }
 		    for (int i=0; i<subtypes.size(); i++) {
 		    	((ParameterListTypeImpl) type).getSequence().add(subtypes.get(i));
 		    }
-		}
+		}*/
+
 		return type;
 	}
 }
