@@ -185,7 +185,7 @@
          label="Import Common ROS Objects">
           <command
             commandId="de.fraunhofer.ipa.ros.editor.ImportCommObjects"
-            icon="icons/full/ImportCommObjects.png"
+            icon="icons/full/ImportCommObjects_icon.jpg"
             id="ImportCommObjects"
             style="push">
 				<visibleWhen
