@@ -110,13 +110,13 @@ Node returns Node:
 	'Node'
 	'{'
 		'name' name=RosNames
-		('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )?
-		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )?
-		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )?
-		('serviceclient' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}' )?
-		('actionserver' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}' )?
-		('actionclient' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )?
-		('parameter' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?
+		(('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )? &
+		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )? &
+		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )? &
+		('serviceclient' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}' )? &
+		('actionserver' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}' )? &
+		('actionclient' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )? &
+		('parameter' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?)
 	'}';
 
 ServiceServer returns ServiceServer:
