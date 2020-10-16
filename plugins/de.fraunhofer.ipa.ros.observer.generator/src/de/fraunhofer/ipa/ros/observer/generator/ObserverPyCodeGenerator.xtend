@@ -24,9 +24,15 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 	}
 }
 
+
 class ObserverPyCodeGenerator extends AbstractGenerator {
 
 	int count_sub
+	
+	def void createXtextGenerationFolder (IFileSystemAccess2 fsa, IGeneratorContext context) {
+		fsa.generateFile("lock",CustomOutputProvider::OBSERVER_OUTPUT,'''''');
+		fsa.deleteFile("lock",CustomOutputProvider::OBSERVER_OUTPUT);
+	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 			for (node : resource.allContents.toIterable.filter(Node)){

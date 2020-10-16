@@ -106,14 +106,17 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 
 			dialogSelect.setElements(ListofInterfaces);
 			dialogSelect.setTitle("Select the ROS interfaces to observe");
+			dialogSelect.setMessage("!!! This features requires that the option: Project -> Build Automatilly is enable !!!");
 			dialogSelect.setMultipleSelection(true);
 			dialogSelect.open();
-			Object[] results = dialogSelect.getResult();
-			String observer_name = "my_observer";
-			String RelativePathToObserverModel = "src-gen/"+observer_name+".ros";
 
+			Object[] results = dialogSelect.getResult();
+
+			String observer_name = "my_observer";
+			String RelativePathTogenerationFolder = "src-gen/observers/";
+			String RelativePathToObserverModel = RelativePathTogenerationFolder+observer_name+".ros";
 			IFile ObserverModelFile = project.getFile(RelativePathToObserverModel);
-			
+
 			String ros_model =  
 					"PackageSet { package { \n" + 
 					"  CatkinPackage rosgraph_monitor { artifact {\n" + 
@@ -147,7 +150,17 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 
 
 			byte[] bytes = (ros_model).getBytes();
-				
+
+			// prepare the Xtext generation environment
+			ObserverPyCodeGenerator generator = new ObserverPyCodeGenerator();
+			final EclipseResourceFileSystemAccess2 fsa = fileAccessProvider.get();
+			fsa.setProject(project);
+			fsa.setOutputConfigurations(getOutputConfigurationsAsMap(new CustomOutputProvider()));
+			fsa.setMonitor(new NullProgressMonitor());
+			GeneratorContext generatorContext = new GeneratorContext();
+			if (!project.getFolder(RelativePathTogenerationFolder).exists()) {
+				generator.createXtextGenerationFolder(fsa, generatorContext);
+			}
 			InputStream source = new ByteArrayInputStream(bytes);
 			try {
 				if (!ObserverModelFile.exists()) {
@@ -158,23 +171,20 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 					outputStream.write(bytes);
 				}
 
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			final EclipseResourceFileSystemAccess2 fsa = fileAccessProvider.get();
-			fsa.setProject(project);
-			fsa.setOutputConfigurations(getOutputConfigurationsAsMap(new CustomOutputProvider()));
-			fsa.setMonitor(new NullProgressMonitor()); 
 
 			URI uriObserverFile = URI.createPlatformResourceURI(ObserverModelFile.getFullPath().toString(), true);
+			
+			// Call the python code generator
 			ResourceSet rs2 = resourceSetProvider.get(project);
 			Resource r2 = rs2.getResource(uriObserverFile, true);
-			ObserverPyCodeGenerator generator = new ObserverPyCodeGenerator();
-			generator.doGenerate(r2, fsa, new GeneratorContext());
+			generator.doGenerate(r2, fsa, generatorContext);
 		}}
 		return null;
 	}
@@ -211,7 +221,7 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 				getInterfaceName(RosInterface);
 		return name;
 	}
-	
+
 	@Override
 	  public boolean isEnabled() {
 		return true;
