@@ -312,7 +312,7 @@ class RosSystemGenerator extends AbstractGenerator {
   «FOR pkg:system.getPkgsDependencies»
   <exec_depend>«pkg»</exec_depend>
   «ENDFOR»
-  <test_depend>roslaunch</test_depend>
+  <!--test_depend>roslaunch</test_depend-->
 
 </package>'''
 
