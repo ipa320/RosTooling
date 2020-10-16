@@ -639,8 +639,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5730:21: ( '0' .. '9' )
-            // InternalComponentInterface.g:5730:23: '0' .. '9'
+            // InternalComponentInterface.g:5786:21: ( '0' .. '9' )
+            // InternalComponentInterface.g:5786:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -657,10 +657,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_BINARY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5732:13: ( ( '0b' | '0B' ) ( '0' | '1' )+ )
-            // InternalComponentInterface.g:5732:15: ( '0b' | '0B' ) ( '0' | '1' )+
+            // InternalComponentInterface.g:5788:13: ( ( '0b' | '0B' ) ( '0' | '1' )+ )
+            // InternalComponentInterface.g:5788:15: ( '0b' | '0B' ) ( '0' | '1' )+
             {
-            // InternalComponentInterface.g:5732:15: ( '0b' | '0B' )
+            // InternalComponentInterface.g:5788:15: ( '0b' | '0B' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -688,7 +688,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalComponentInterface.g:5732:16: '0b'
+                    // InternalComponentInterface.g:5788:16: '0b'
                     {
                     match("0b"); 
 
@@ -696,7 +696,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5732:21: '0B'
+                    // InternalComponentInterface.g:5788:21: '0B'
                     {
                     match("0B"); 
 
@@ -706,7 +706,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
             }
 
-            // InternalComponentInterface.g:5732:27: ( '0' | '1' )+
+            // InternalComponentInterface.g:5788:27: ( '0' | '1' )+
             int cnt2=0;
             loop2:
             do {
@@ -760,10 +760,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5734:14: ( ( 'true' | 'false' ) )
-            // InternalComponentInterface.g:5734:16: ( 'true' | 'false' )
+            // InternalComponentInterface.g:5790:14: ( ( 'true' | 'false' ) )
+            // InternalComponentInterface.g:5790:16: ( 'true' | 'false' )
             {
-            // InternalComponentInterface.g:5734:16: ( 'true' | 'false' )
+            // InternalComponentInterface.g:5790:16: ( 'true' | 'false' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -781,7 +781,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalComponentInterface.g:5734:17: 'true'
+                    // InternalComponentInterface.g:5790:17: 'true'
                     {
                     match("true"); 
 
@@ -789,7 +789,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5734:24: 'false'
+                    // InternalComponentInterface.g:5790:24: 'false'
                     {
                     match("false"); 
 
@@ -815,19 +815,19 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5736:13: ( RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT ) )
-            // InternalComponentInterface.g:5736:15: RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
+            // InternalComponentInterface.g:5792:13: ( RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT ) )
+            // InternalComponentInterface.g:5792:15: RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
             {
             mRULE_DECINT(); 
-            // InternalComponentInterface.g:5736:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
+            // InternalComponentInterface.g:5792:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
             int alt8=2;
             alt8 = dfa8.predict(input);
             switch (alt8) {
                 case 1 :
-                    // InternalComponentInterface.g:5736:28: '.' ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5792:28: '.' ( RULE_DIGIT )*
                     {
                     match('.'); 
-                    // InternalComponentInterface.g:5736:32: ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5792:32: ( RULE_DIGIT )*
                     loop4:
                     do {
                         int alt4=2;
@@ -840,7 +840,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:5736:32: RULE_DIGIT
+                    	    // InternalComponentInterface.g:5792:32: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -856,9 +856,9 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5736:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT
+                    // InternalComponentInterface.g:5792:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT
                     {
-                    // InternalComponentInterface.g:5736:44: ( '.' ( RULE_DIGIT )* )?
+                    // InternalComponentInterface.g:5792:44: ( '.' ( RULE_DIGIT )* )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -867,10 +867,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalComponentInterface.g:5736:45: '.' ( RULE_DIGIT )*
+                            // InternalComponentInterface.g:5792:45: '.' ( RULE_DIGIT )*
                             {
                             match('.'); 
-                            // InternalComponentInterface.g:5736:49: ( RULE_DIGIT )*
+                            // InternalComponentInterface.g:5792:49: ( RULE_DIGIT )*
                             loop5:
                             do {
                                 int alt5=2;
@@ -883,7 +883,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                                 switch (alt5) {
                             	case 1 :
-                            	    // InternalComponentInterface.g:5736:49: RULE_DIGIT
+                            	    // InternalComponentInterface.g:5792:49: RULE_DIGIT
                             	    {
                             	    mRULE_DIGIT(); 
 
@@ -910,7 +910,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalComponentInterface.g:5736:73: ( '-' | '+' )?
+                    // InternalComponentInterface.g:5792:73: ( '-' | '+' )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -969,10 +969,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_DECINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5738:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
-            // InternalComponentInterface.g:5738:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalComponentInterface.g:5794:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
+            // InternalComponentInterface.g:5794:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalComponentInterface.g:5738:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalComponentInterface.g:5794:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             int alt11=3;
             switch ( input.LA(1) ) {
             case '0':
@@ -1007,17 +1007,17 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
             switch (alt11) {
                 case 1 :
-                    // InternalComponentInterface.g:5738:16: '0'
+                    // InternalComponentInterface.g:5794:16: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5738:20: '1' .. '9' ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5794:20: '1' .. '9' ( RULE_DIGIT )*
                     {
                     matchRange('1','9'); 
-                    // InternalComponentInterface.g:5738:29: ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5794:29: ( RULE_DIGIT )*
                     loop9:
                     do {
                         int alt9=2;
@@ -1030,7 +1030,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:5738:29: RULE_DIGIT
+                    	    // InternalComponentInterface.g:5794:29: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1046,11 +1046,11 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalComponentInterface.g:5738:41: '-' '0' .. '9' ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5794:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
                     match('-'); 
                     matchRange('0','9'); 
-                    // InternalComponentInterface.g:5738:54: ( RULE_DIGIT )*
+                    // InternalComponentInterface.g:5794:54: ( RULE_DIGIT )*
                     loop10:
                     do {
                         int alt10=2;
@@ -1063,7 +1063,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:5738:54: RULE_DIGIT
+                    	    // InternalComponentInterface.g:5794:54: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1095,10 +1095,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_DAY"
     public final void mRULE_DAY() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5740:19: ( ( '1' .. '9' | '1' .. '3' '0' .. '9' ) )
-            // InternalComponentInterface.g:5740:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
+            // InternalComponentInterface.g:5796:19: ( ( '1' .. '9' | '1' .. '3' '0' .. '9' ) )
+            // InternalComponentInterface.g:5796:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
             {
-            // InternalComponentInterface.g:5740:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
+            // InternalComponentInterface.g:5796:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1122,14 +1122,14 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalComponentInterface.g:5740:22: '1' .. '9'
+                    // InternalComponentInterface.g:5796:22: '1' .. '9'
                     {
                     matchRange('1','9'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5740:31: '1' .. '3' '0' .. '9'
+                    // InternalComponentInterface.g:5796:31: '1' .. '3' '0' .. '9'
                     {
                     matchRange('1','3'); 
                     matchRange('0','9'); 
@@ -1151,10 +1151,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_MONTH"
     public final void mRULE_MONTH() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5742:21: ( ( '1' .. '9' | '1' '0' .. '2' ) )
-            // InternalComponentInterface.g:5742:23: ( '1' .. '9' | '1' '0' .. '2' )
+            // InternalComponentInterface.g:5798:21: ( ( '1' .. '9' | '1' '0' .. '2' ) )
+            // InternalComponentInterface.g:5798:23: ( '1' .. '9' | '1' '0' .. '2' )
             {
-            // InternalComponentInterface.g:5742:23: ( '1' .. '9' | '1' '0' .. '2' )
+            // InternalComponentInterface.g:5798:23: ( '1' .. '9' | '1' '0' .. '2' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1178,14 +1178,14 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalComponentInterface.g:5742:24: '1' .. '9'
+                    // InternalComponentInterface.g:5798:24: '1' .. '9'
                     {
                     matchRange('1','9'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5742:33: '1' '0' .. '2'
+                    // InternalComponentInterface.g:5798:33: '1' '0' .. '2'
                     {
                     match('1'); 
                     matchRange('0','2'); 
@@ -1207,8 +1207,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_YEAR"
     public final void mRULE_YEAR() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5744:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalComponentInterface.g:5744:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalComponentInterface.g:5800:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalComponentInterface.g:5800:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             matchRange('0','2'); 
             matchRange('0','9'); 
@@ -1226,10 +1226,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_HOUR"
     public final void mRULE_HOUR() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5746:20: ( ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' ) )
-            // InternalComponentInterface.g:5746:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
+            // InternalComponentInterface.g:5802:20: ( ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' ) )
+            // InternalComponentInterface.g:5802:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
             {
-            // InternalComponentInterface.g:5746:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
+            // InternalComponentInterface.g:5802:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1247,7 +1247,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalComponentInterface.g:5746:23: '0' .. '1' '0' .. '9'
+                    // InternalComponentInterface.g:5802:23: '0' .. '1' '0' .. '9'
                     {
                     matchRange('0','1'); 
                     matchRange('0','9'); 
@@ -1255,7 +1255,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5746:41: '2' '0' .. '3'
+                    // InternalComponentInterface.g:5802:41: '2' '0' .. '3'
                     {
                     match('2'); 
                     matchRange('0','3'); 
@@ -1277,8 +1277,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
     // $ANTLR start "RULE_MIN_SEC"
     public final void mRULE_MIN_SEC() throws RecognitionException {
         try {
-            // InternalComponentInterface.g:5748:23: ( '0' .. '5' '0' .. '9' )
-            // InternalComponentInterface.g:5748:25: '0' .. '5' '0' .. '9'
+            // InternalComponentInterface.g:5804:23: ( '0' .. '5' '0' .. '9' )
+            // InternalComponentInterface.g:5804:25: '0' .. '5' '0' .. '9'
             {
             matchRange('0','5'); 
             matchRange('0','9'); 
@@ -1296,8 +1296,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_DATE_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5750:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
-            // InternalComponentInterface.g:5750:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
+            // InternalComponentInterface.g:5806:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
+            // InternalComponentInterface.g:5806:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
             {
             mRULE_YEAR(); 
             match('-'); 
@@ -1326,10 +1326,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5752:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalComponentInterface.g:5752:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalComponentInterface.g:5808:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalComponentInterface.g:5808:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalComponentInterface.g:5752:11: ( '^' )?
+            // InternalComponentInterface.g:5808:11: ( '^' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1338,7 +1338,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalComponentInterface.g:5752:11: '^'
+                    // InternalComponentInterface.g:5808:11: '^'
                     {
                     match('^'); 
 
@@ -1356,7 +1356,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalComponentInterface.g:5752:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalComponentInterface.g:5808:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop16:
             do {
                 int alt16=2;
@@ -1405,10 +1405,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5754:10: ( ( '0' .. '9' )+ )
-            // InternalComponentInterface.g:5754:12: ( '0' .. '9' )+
+            // InternalComponentInterface.g:5810:10: ( ( '0' .. '9' )+ )
+            // InternalComponentInterface.g:5810:12: ( '0' .. '9' )+
             {
-            // InternalComponentInterface.g:5754:12: ( '0' .. '9' )+
+            // InternalComponentInterface.g:5810:12: ( '0' .. '9' )+
             int cnt17=0;
             loop17:
             do {
@@ -1422,7 +1422,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalComponentInterface.g:5754:13: '0' .. '9'
+            	    // InternalComponentInterface.g:5810:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1454,10 +1454,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5756:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalComponentInterface.g:5756:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalComponentInterface.g:5812:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalComponentInterface.g:5812:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalComponentInterface.g:5756:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalComponentInterface.g:5812:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1475,10 +1475,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalComponentInterface.g:5756:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalComponentInterface.g:5812:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalComponentInterface.g:5756:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalComponentInterface.g:5812:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop18:
                     do {
                         int alt18=3;
@@ -1494,7 +1494,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:5756:21: '\\\\' .
+                    	    // InternalComponentInterface.g:5812:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1502,7 +1502,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalComponentInterface.g:5756:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalComponentInterface.g:5812:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1527,10 +1527,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:5756:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalComponentInterface.g:5812:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalComponentInterface.g:5756:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalComponentInterface.g:5812:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop19:
                     do {
                         int alt19=3;
@@ -1546,7 +1546,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:5756:54: '\\\\' .
+                    	    // InternalComponentInterface.g:5812:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1554,7 +1554,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalComponentInterface.g:5756:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalComponentInterface.g:5812:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1597,12 +1597,12 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5758:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalComponentInterface.g:5758:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalComponentInterface.g:5814:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalComponentInterface.g:5814:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalComponentInterface.g:5758:24: ( options {greedy=false; } : . )*
+            // InternalComponentInterface.g:5814:24: ( options {greedy=false; } : . )*
             loop21:
             do {
                 int alt21=2;
@@ -1627,7 +1627,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalComponentInterface.g:5758:52: .
+            	    // InternalComponentInterface.g:5814:52: .
             	    {
             	    matchAny(); 
 
@@ -1657,12 +1657,12 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5760:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalComponentInterface.g:5760:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalComponentInterface.g:5816:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalComponentInterface.g:5816:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalComponentInterface.g:5760:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalComponentInterface.g:5816:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop22:
             do {
                 int alt22=2;
@@ -1675,7 +1675,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
 
                 switch (alt22) {
             	case 1 :
-            	    // InternalComponentInterface.g:5760:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalComponentInterface.g:5816:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1695,7 +1695,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalComponentInterface.g:5760:40: ( ( '\\r' )? '\\n' )?
+            // InternalComponentInterface.g:5816:40: ( ( '\\r' )? '\\n' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -1704,9 +1704,9 @@ public class InternalComponentInterfaceLexer extends Lexer {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalComponentInterface.g:5760:41: ( '\\r' )? '\\n'
+                    // InternalComponentInterface.g:5816:41: ( '\\r' )? '\\n'
                     {
-                    // InternalComponentInterface.g:5760:41: ( '\\r' )?
+                    // InternalComponentInterface.g:5816:41: ( '\\r' )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -1715,7 +1715,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
                     }
                     switch (alt23) {
                         case 1 :
-                            // InternalComponentInterface.g:5760:41: '\\r'
+                            // InternalComponentInterface.g:5816:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1747,10 +1747,10 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5762:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalComponentInterface.g:5762:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalComponentInterface.g:5818:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalComponentInterface.g:5818:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalComponentInterface.g:5762:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalComponentInterface.g:5818:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt25=0;
             loop25:
             do {
@@ -1804,8 +1804,8 @@ public class InternalComponentInterfaceLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalComponentInterface.g:5764:16: ( . )
-            // InternalComponentInterface.g:5764:18: .
+            // InternalComponentInterface.g:5820:16: ( . )
+            // InternalComponentInterface.g:5820:18: .
             {
             matchAny(); 
 
@@ -2155,7 +2155,7 @@ public class InternalComponentInterfaceLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "5736:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )";
+            return "5792:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )";
         }
     }
     static final String DFA26_eotS =
