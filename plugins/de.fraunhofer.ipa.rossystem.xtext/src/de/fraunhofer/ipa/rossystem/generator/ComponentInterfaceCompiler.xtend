@@ -48,6 +48,8 @@ class ComponentInterfaceCompiler {
 	int count_actc
 	int count_param
 	boolean ArtifactSet
+	boolean PackageSet
+	
 	String artifact_impl
 	Object artifact_name
 	String node_impl
@@ -93,8 +95,7 @@ class ComponentInterfaceCompiler {
 	count_param = rosparams.length+system.parameter.length
 
 	
-	'''
-	
+	'''«init_comp()»
 ComponentInterface { name «system.name»
 «IF !pubs.empty»
 RosPublishers{
@@ -158,6 +159,12 @@ RosParameters{
 }
 '''
 }
+
+	def void init_comp(){
+		ArtifactSet=false
+		PackageSet=false
+	}
+	
 	def compile_art(ComponentInterface component)
 '''«IF !ArtifactSet && !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«IF !ArtifactSet»«Rospublisher.publisher.getArtifact_pub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«IF !ArtifactSet»«Rossubscriber.subscriber.getArtifact_sub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«IF !ArtifactSet»«Rosserviceserver.srvserver.getArtifact_srvserv()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«IF !ArtifactSet»«Rosserviceclient.srvclient.getArtifact_srvcli()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosparameter.empty»«FOR RosParameter:component.rosparameter»«IF !ArtifactSet»«RosParameter.parameter.getArtifact_rosparam()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionserver.empty»«FOR Rosactionserver:component.rosactionserver»«IF !ArtifactSet»«Rosactionserver.actserver.getArtifact_actserver()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionclient.empty»«FOR Rosactionclient:component.rosactionclient»«IF !ArtifactSet»«Rosactionclient.actclient.getArtifact_actclient()»«ENDIF»«ENDFOR»«ENDIF»'''
 	def getArtifact_pub(Publisher publisher){

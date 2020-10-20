@@ -15,22 +15,20 @@ import java.util.List
 class GeneratorHelpers {
 	
 	boolean PackageSet
-	boolean ArtifactSet
 	
 	String package_impl
 	List<CharSequence> PkgsList
 	String package_name
 	String Pkg
-	
-	def void init(){
+
+	def void init_pkg(){
 		PackageSet=false
-		ArtifactSet=false
 	}
-	
+
 	def <String> getPkgsDependencies(RosSystem rossystem){
 		PkgsList = new ArrayList()
 		for (component:rossystem.rosComponent){
-			init()
+			init_pkg()
 			Pkg = component.compile_pkg.toString()
 			if (!PkgsList.contains(Pkg)){
 				PkgsList.add(Pkg)
@@ -39,7 +37,7 @@ class GeneratorHelpers {
 		return PkgsList;
 	}
 	
-	def compile_pkg(ComponentInterface component) 
+	def compile_pkg(ComponentInterface component)
 '''«IF !PackageSet && !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«IF !PackageSet»«Rospublisher.publisher.getPackage_pub()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«IF !PackageSet»«Rossubscriber.subscriber.getPackage_sub()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«IF !PackageSet»«Rosserviceserver.srvserver.getPackage_srvserv()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«IF !PackageSet»«Rosserviceclient.srvclient.getPackage_srvcli()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosparameter.empty»«FOR Rosparameter:component.rosparameter»«IF !PackageSet»«Rosparameter.parameter.getPackage_rosparam()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosactionserver.empty»«FOR RosActionSever:component.rosactionserver»«IF !PackageSet»«RosActionSever.actserver.getPackage_actserver()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosactionclient.empty»«FOR RosActionClient:component.rosactionclient»«IF !PackageSet»«RosActionClient.actclient.getPackage_actclient()»«ENDIF»«ENDFOR»«ENDIF»'''
 	
 

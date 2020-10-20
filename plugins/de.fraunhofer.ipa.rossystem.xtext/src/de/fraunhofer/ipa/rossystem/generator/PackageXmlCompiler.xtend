@@ -8,7 +8,7 @@ class PackageXmlCompiler{
 	@Inject extension GeneratorHelpers
 	
 	
-		def compile_package_xml(RosSystem system) '''«init()»
+		def compile_package_xml(RosSystem system) '''«init_pkg()»
 <package format="2">
   <name>«system.name.toLowerCase»</name>
   <version>0.0.1</version>

@@ -19,7 +19,7 @@ class LaunchFileCompiler {
 	String tab_tmp=""
 	
 	
-	def compile_tolaunch(RosSystem system) '''«init()»
+	def compile_tolaunch(RosSystem system) '''«init_comp()»
 <?xml version="1.0"?>
 <launch>
 		«FOR ROSParameter:system.parameter»«IF ROSParameter.type.toString.contains("ParameterStructType")»
@@ -83,7 +83,7 @@ class LaunchFileCompiler {
 	«ENDFOR»
 	«FOR component:system.rosComponent»
 
-	<node pkg="«component.compile_pkg»" type="«component.compile_art»«init()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init()»
+	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
 			«FOR topicConnection:system.topicConnections»
 				«IF topicConnection.from.contains(rosPublisher)»
