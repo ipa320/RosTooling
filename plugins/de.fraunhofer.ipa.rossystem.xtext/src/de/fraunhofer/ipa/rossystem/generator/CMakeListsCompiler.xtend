@@ -8,7 +8,7 @@ class CMakeListsCompiler {
 	@Inject extension GeneratorHelpers
 	
 	
-	def compile_CMakeLists(RosSystem system) '''«init()»
+	def compile_CMakeLists(RosSystem system) '''«init_pkg()»
 cmake_minimum_required(VERSION 2.8.3)
 project(«system.name.toLowerCase»)
 

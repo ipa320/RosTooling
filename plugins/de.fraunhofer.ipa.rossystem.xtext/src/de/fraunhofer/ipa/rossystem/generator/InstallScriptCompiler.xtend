@@ -7,7 +7,7 @@ class InstallScriptCompiler {
 		
 	@Inject extension GeneratorHelpers
 		
- def compile_toIntallScript(RosSystem system) '''«init()»
+ def compile_toIntallScript(RosSystem system) '''«init_pkg()»
 #!/bin/bash
 
 distro=$(echo $ROS_DISTRO)
