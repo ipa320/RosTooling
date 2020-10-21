@@ -17,6 +17,8 @@ class LaunchFileCompiler {
 	ParameterValue ParamValue
 	String str_output=""
 	String tab_tmp=""
+	Boolean is_seq=false
+	
 	
 	
 	def compile_tolaunch(RosSystem system) '''«init_comp()»
@@ -178,9 +180,11 @@ class LaunchFileCompiler {
 			«IF rosParameter.parameter.type.toString.contains("ParameterStructType")»«str_output=""»
 			<rosparam>
         «rosParameter.name»:
+        «IF rosParameter.value.eContents !== null»
 		«FOR ParamMember:rosParameter.value.eContents»
         «compile_struc_param(ParamMember,"          ")»
 		«ENDFOR»
+		«ENDIF»
 			</rosparam>
 			«ELSE»
 		«IF rosParameter.value!==null»<param name="«rosParameter.parameter.name»" value="«compile_param_value(rosParameter.value)»" />«ENDIF»
@@ -193,7 +197,17 @@ class LaunchFileCompiler {
 	'''
 
 	def compile_struc_param(EObject paramMember, String tab){
-		if(paramMember.eContents.get(0).eContents.toString.contains("value")){
+		tab_tmp=tab
+		//if sequence:
+		if(is_seq){
+			str_output+=tab+getParamName(paramMember.toString)+":"+compile_param_value(convertParamValue(paramMember.eContents.get(0)))
+			str_output+="\n"
+			tab_tmp=tab
+			is_seq=false
+			return str_output.replace("null","")
+		}
+		else if(paramMember.eContents.get(0).eContents.toString.contains("value")){
+			is_seq=false
 			//tab+="  "
 			str_output+=tab+getParamName(paramMember.eContents.get(0).toString)+":"+compile_param_value(convertParamValue(paramMember.eContents.get(0).eContents.get(0)))
 			str_output+="\n"
@@ -201,14 +215,18 @@ class LaunchFileCompiler {
 			return str_output.replace("null","")
 		}else{
 			if(paramMember.eContents.get(0).toString.contains("name")){
-			    tab_tmp=tab+"  "
-				str_output+=tab+getParamName(paramMember.eContents.get(0).toString)+":"+"\n"
+			    tab_tmp+="  "
+				str_output+=tab_tmp+getParamName(paramMember.eContents.get(0).toString)+":"+"\n"
 			    tab_tmp+="  "
 			}
 			for (paramSubMember: paramMember.eContents){
+				if (paramSubMember.eContents.toString.contains("ParameterSequenceImpl")){
+					if(!paramSubMember.eContents.get(0).eContents.toString.contains("ParameterStructImpl")){
+						is_seq=true
+					}
+				}
 				compile_struc_param(paramSubMember,tab_tmp)
 			}
-
 		}
 	}
 

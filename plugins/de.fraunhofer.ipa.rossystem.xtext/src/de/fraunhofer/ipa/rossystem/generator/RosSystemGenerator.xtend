@@ -58,11 +58,9 @@ class RosSystemGenerator extends AbstractGenerator {
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",system.compile_CMakeLists)
 				}
-	
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName()+".componentinterface",CustomOutputProvider::CM_CONFIGURATION,system.compile_toComponentInterface)
 				}
-
 //		for (system : resource.allContents.toIterable.filter(RosSystem)){
 //				fsa.generateFile(system.getName()+"install.sh",system.compile_toIntallScript)
 //				}
