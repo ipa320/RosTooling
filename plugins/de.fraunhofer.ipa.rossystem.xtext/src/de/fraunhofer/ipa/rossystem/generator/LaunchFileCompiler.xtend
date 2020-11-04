@@ -18,7 +18,7 @@ class LaunchFileCompiler {
 	String str_output=""
 	String tab_tmp=""
 	Boolean is_seq=false
-	
+	Boolean last_element=true
 	
 	
 	def compile_tolaunch(RosSystem system) '''«init_comp()»
@@ -182,7 +182,7 @@ class LaunchFileCompiler {
         «rosParameter.name»:
         «IF rosParameter.value.eContents !== null»
 		«FOR ParamMember:rosParameter.value.eContents»
-        «compile_struc_param(ParamMember,"          ")»
+        	«compile_struc_param(ParamMember,"          ")»
 		«ENDFOR»
 		«ENDIF»
 			</rosparam>
@@ -196,29 +196,33 @@ class LaunchFileCompiler {
 </launch>
 	'''
 
-	def compile_struc_param(EObject paramMember, String tab){
-		tab_tmp=tab
-		//if sequence:
+	def String compile_struc_param(EObject paramMember, String tab){
 		if(is_seq){
-			str_output+=tab+getParamName(paramMember.toString)+":"+compile_param_value(convertParamValue(paramMember.eContents.get(0)))
+			str_output=str_output.replaceAll("\\s+$", "");
+			str_output+=compile_param_value(convertParamValue(paramMember.eContents.get(0)))
 			str_output+="\n"
-			tab_tmp=tab
 			is_seq=false
+			tab_tmp=tab_tmp.replaceFirst("  ","");
 			return str_output.replace("null","")
 		}
-		else if(paramMember.eContents.get(0).eContents.toString.contains("value")){
-			is_seq=false
-			//tab+="  "
-			str_output+=tab+getParamName(paramMember.eContents.get(0).toString)+":"+compile_param_value(convertParamValue(paramMember.eContents.get(0).eContents.get(0)))
+		else if(paramMember.eContents.length > 0 && paramMember.eContents.get(0).eContents.toString.contains("value")){
+			str_output+=tab+getParamName(paramMember.eContents.get(0).toString)+": "+compile_param_value(convertParamValue(paramMember.eContents.get(0).eContents.get(0)))
 			str_output+="\n"
-			tab_tmp=tab
+			is_seq=false
+			tab_tmp=tab_tmp.replaceFirst("  ","");
 			return str_output.replace("null","")
 		}else{
-			if(paramMember.eContents.get(0).toString.contains("name")){
-			    tab_tmp+="  "
-				str_output+=tab_tmp+getParamName(paramMember.eContents.get(0).toString)+":"+"\n"
+			if(last_element && paramMember.toString.contains("name")){
+				is_seq=false
+				str_output+=tab+getParamName(paramMember.toString)+": "+"\n"
 			    tab_tmp+="  "
 			}
+			else if(paramMember.eContents.length > 0 && paramMember.eContents.get(0).toString.contains("name")){
+				is_seq=false
+				str_output+=tab+getParamName(paramMember.eContents.get(0).toString)+": "+"\n"
+			    tab_tmp+="  "
+			}
+
 			for (paramSubMember: paramMember.eContents){
 				if (paramSubMember.eContents.toString.contains("ParameterSequenceImpl")){
 					if(!paramSubMember.eContents.get(0).eContents.toString.contains("ParameterStructImpl")){
@@ -230,7 +234,7 @@ class LaunchFileCompiler {
 		}
 	}
 
-	def List InterfaceDef(String name, String type){
+	def List<String> InterfaceDef(String name, String type){
 		ListInterfaceDef = new ArrayList()
 		ListInterfaceDef.add(name.replace("/","_"))
 		ListInterfaceDef.add(name)
