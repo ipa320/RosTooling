@@ -120,15 +120,13 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     (
 	 *         name=EString 
 	 *         NameSpace=EString? 
-	 *         (
-	 *             (rospublisher+=RosPublisher rospublisher+=RosPublisher*) | 
-	 *             (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*) | 
-	 *             (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*) | 
-	 *             (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*) | 
-	 *             (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*) | 
-	 *             (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*) | 
-	 *             (rosparameter+=RosParameter rosparameter+=RosParameter*)
-	 *         )*
+	 *         (rospublisher+=RosPublisher rospublisher+=RosPublisher*)? 
+	 *         (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? 
+	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
+	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)? 
+	 *         (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*)? 
+	 *         (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*)? 
+	 *         (rosparameter+=RosParameter rosparameter+=RosParameter*)?
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
