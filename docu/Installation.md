@@ -16,7 +16,7 @@ First the java environment have to be setup, for eclipse it is recomended the in
 ```
 sudo apt-get install openjdk-X-jre
 ```
-Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended use *2018-12*.
+Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended use *2019-09*.
 
 ![alt text](images/eclipse_installer1.png)
 

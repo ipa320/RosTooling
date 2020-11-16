@@ -24,7 +24,7 @@ Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammou
 ## Installation
 
 - [(Recommended) From release version](docu/Installation.md#option-1-using-the-release-version-recommended)
-- [Install the entire SeRoNet toolchain](https://www.seronet-projekt.de/platform/tooling.html)
+- [Install the entire SeRoNet toolchain](https://www.seronet-projekt.de/plattform/tooling.html)
 - [From Source code](docu/Installation.md#option-2-using-the-eclipse-installer---source-installation-ros-tooling-developers)
 
 ## Tutorials
