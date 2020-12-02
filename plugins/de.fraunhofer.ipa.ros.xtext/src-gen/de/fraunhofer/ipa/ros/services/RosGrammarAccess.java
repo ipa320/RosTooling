@@ -323,12 +323,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cROS_CONVENTION_ATerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Keyword cNodeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//RosNames:
-		//	ROS_CONVENTION_A | ID;
+		//	ROS_CONVENTION_A | ID | 'node';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ROS_CONVENTION_A | ID
+		//ROS_CONVENTION_A | ID | 'node'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ROS_CONVENTION_A
@@ -336,6 +337,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		
+		//'node'
+		public Keyword getNodeKeyword_2() { return cNodeKeyword_2; }
 	}
 	public class RosParamNamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.RosParamNames");
@@ -4084,7 +4088,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RosNames:
-	//	ROS_CONVENTION_A | ID;
+	//	ROS_CONVENTION_A | ID | 'node';
 	public RosNamesElements getRosNamesAccess() {
 		return pRosNames;
 	}

@@ -148,7 +148,9 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 					error("Element expected names: "+expected_sub_names+ "  instead of: "+name_given_element,null, INVALID_NAME)
 					info("Struc format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
 				} else {
-					for (j=0;j<expected_sub_types.length;j++){						
+
+					for (j=0;j<expected_sub_types.length;j++){
+						if (expected_sub_types.get(j).toString.contains("name")){	
 						if ( ((getName(expected_sub_types.get(j).toString))==name_given_element) ){
 							if (expected_sub_types.get(j).eContents.get(0).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){								
 								CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
@@ -164,7 +166,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 							} catch (IndexOutOfBoundsException error) {
 					            // Output expected IndexOutOfBoundsExceptions.								
 							}
-		}}}}}
+		}}}}}}
 		
 		// INT, BOOL, DOUBLE, BASE64, STRING
 	  	else {
@@ -187,7 +189,9 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	}
 	
 	def String getName(String Element){
-		return Element.substring(Element.indexOf("name:")+5,Element.indexOf(")"))
+		if (Element.length()>0){
+			return Element.substring(Element.indexOf("name:")+5,Element.indexOf(")"))
+		}
 	}
 	
 	def String getValue(String Element){

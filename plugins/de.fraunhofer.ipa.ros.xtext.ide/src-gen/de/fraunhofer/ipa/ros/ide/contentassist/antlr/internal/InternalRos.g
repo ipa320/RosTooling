@@ -2382,6 +2382,12 @@ rule__RosNames__Alternatives
 		RULE_ID
 		{ after(grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getRosNamesAccess().getNodeKeyword_2()); }
+		'node'
+		{ after(grammarAccess.getRosNamesAccess().getNodeKeyword_2()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

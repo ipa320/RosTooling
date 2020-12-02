@@ -41,7 +41,7 @@ EString returns ecore::EString:
 	STRING | ID;
 	
 RosNames returns ecore::EString:
-	ROS_CONVENTION_A | ID
+	ROS_CONVENTION_A | ID | 'node'
 ;
 
 RosParamNames returns ecore::EString:
