@@ -50,7 +50,7 @@ class RosSystemGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_tolaunch)
+				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_tolaunch.toString().replace("\t","  "))
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/package.xml",system.compile_package_xml)
