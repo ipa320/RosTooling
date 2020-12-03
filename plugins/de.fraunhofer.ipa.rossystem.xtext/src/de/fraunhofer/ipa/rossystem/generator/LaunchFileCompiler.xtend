@@ -26,20 +26,27 @@ class LaunchFileCompiler {
 	def compile_tolaunch(RosSystem system) '''«init_comp()»
 <?xml version="1.0"?>
 <launch>
-		«FOR ROSParameter:system.parameter»«IF ROSParameter.type.toString.contains("ParameterStructType")»
-		<rosparam>
-			«IF ROSParameter.value!==null»«FOR ParamMember:ROSParameter.value.eContents»
+  «FOR ROSParameter:system.parameter»
+  	«IF ROSParameter.type.toString.contains("ParameterStructType")»
+  	<rosparam>
+		  «IF ROSParameter.value!==null»
+			  «FOR ParamMember:ROSParameter.value.eContents»
 			«getParamName(ParamMember.eContents.get(0).toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
-			«ENDFOR»«ELSE»
-			«FOR ParamMember:ROSParameter.eContents.get(0).eContents»«IF !(ParamMember.eContents.get(0).eContents.empty)»
-			«getParamName(ParamMember.toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»«ENDIF»
-			«ENDFOR»«ENDIF»
-		</rosparam>
-		«ELSEIF ROSParameter.type.toString.contains("ParameterListType") || ROSParameter.type.toString.contains("ParameterArrayType")»
-		<rosparam param="list">«IF ROSParameter.value!==null»«compile_param_value(ROSParameter.value)»«ENDIF»</rosparam>
-		«ELSE»	<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
-		«ENDIF»
-	«ENDFOR»
+			  «ENDFOR»
+		  «ELSE»
+			  «FOR ParamMember:ROSParameter.eContents.get(0).eContents»
+				  «IF !(ParamMember.eContents.get(0).eContents.empty)»
+				«getParamName(ParamMember.toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+				  «ENDIF»
+			  «ENDFOR»
+		  «ENDIF»
+  	</rosparam>
+  	«ELSEIF ROSParameter.type.toString.contains("ParameterListType") || ROSParameter.type.toString.contains("ParameterArrayType")»
+  	<rosparam param="list">«IF ROSParameter.value!==null»«compile_param_value(ROSParameter.value)»«ENDIF»</rosparam>
+  	«ELSE»
+  		<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
+  	«ENDIF»
+  «ENDFOR»
 	«FOR component:system.rosComponent»
 		«FOR rosPublisher:component.rospublisher»
 				«IF component.hasNS»
