@@ -3,7 +3,6 @@
 package rossystem.provider;
 
 
-import componentInterface.ComponentInterfaceFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,17 +25,17 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.RosFactory;
-import rossystem.RosSystem;
-import rossystem.RossystemFactory;
+
+import rossystem.QualityAttribute;
 import rossystem.RossystemPackage;
 
 /**
- * This is the item provider adapter for a {@link rossystem.RosSystem} object.
+ * This is the item provider adapter for a {@link rossystem.QualityAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RosSystemItemProvider 
+public class QualityAttributeItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -50,7 +49,7 @@ public class RosSystemItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosSystemItemProvider(AdapterFactory adapterFactory) {
+	public QualityAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,6 +65,7 @@ public class RosSystemItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,13 +81,35 @@ public class RosSystemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSystem_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_Name_feature", "_UI_RosSystem_type"),
-				 RossystemPackage.Literals.ROS_SYSTEM__NAME,
+				 getString("_UI_QualityAttribute_Name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QualityAttribute_Name_feature", "_UI_QualityAttribute_type"),
+				 RossystemPackage.Literals.QUALITY_ATTRIBUTE__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QualityAttribute_Value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QualityAttribute_Value_feature", "_UI_QualityAttribute_type"),
+				 RossystemPackage.Literals.QUALITY_ATTRIBUTE__VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -104,12 +126,7 @@ public class RosSystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT);
+			childrenFeatures.add(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -128,14 +145,14 @@ public class RosSystemItemProvider
 	}
 
 	/**
-	 * This returns RosSystem.gif.
+	 * This returns QualityAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RosSystem"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/QualityAttribute"));
 	}
 
 	/**
@@ -146,12 +163,12 @@ public class RosSystemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RosSystem)object).getName();
+		String label = ((QualityAttribute)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RosSystem_type") :
-			getString("_UI_RosSystem_type") + " " + label;
+			getString("_UI_QualityAttribute_type") :
+			getString("_UI_QualityAttribute_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -164,16 +181,11 @@ public class RosSystemItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RosSystem.class)) {
-			case RossystemPackage.ROS_SYSTEM__NAME:
+		switch (notification.getFeatureID(QualityAttribute.class)) {
+			case RossystemPackage.QUALITY_ATTRIBUTE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__COMPONENT_STACK:
-			case RossystemPackage.ROS_SYSTEM__PARAMETER:
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+			case RossystemPackage.QUALITY_ATTRIBUTE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,33 +205,53 @@ public class RosSystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createTopicConnection()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterListType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createServiceConnection()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterStructType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createActionConnection()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterIntegerType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK,
-				 RossystemFactory.eINSTANCE.createComponentStack()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterStringType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER,
-				 RosFactory.eINSTANCE.createParameter()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterDoubleType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
-				 ComponentInterfaceFactory.eINSTANCE.createComponentInterface()));
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterDateType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterBooleanType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterBase64Type()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterAnyType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
+				 RosFactory.eINSTANCE.createParameterArrayType()));
 	}
 
 	/**

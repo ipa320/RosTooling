@@ -12,8 +12,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ServiceConnections"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosSystem/Name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ComponentStack"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/Parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
@@ -29,6 +30,16 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/From"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/To"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ActionConnection/ActionName"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//ComponentStack">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ComponentStack/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/RosComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/QualityAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//QualityAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//QualityAttribute/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//QualityAttribute/Type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//QualityAttribute/Value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
