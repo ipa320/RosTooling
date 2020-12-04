@@ -4,6 +4,7 @@ package rossystem.provider;
 
 
 import componentInterface.ComponentInterfaceFactory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -25,18 +26,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.RosFactory;
-import rossystem.RosSystem;
+import rossystem.ComponentStack;
 import rossystem.RossystemFactory;
 import rossystem.RossystemPackage;
 
 /**
- * This is the item provider adapter for a {@link rossystem.RosSystem} object.
+ * This is the item provider adapter for a {@link rossystem.ComponentStack} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RosSystemItemProvider 
+public class ComponentStackItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -50,7 +50,7 @@ public class RosSystemItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosSystemItemProvider(AdapterFactory adapterFactory) {
+	public ComponentStackItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -81,9 +81,9 @@ public class RosSystemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RosSystem_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RosSystem_Name_feature", "_UI_RosSystem_type"),
-				 RossystemPackage.Literals.ROS_SYSTEM__NAME,
+				 getString("_UI_ComponentStack_Name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStack_Name_feature", "_UI_ComponentStack_type"),
+				 RossystemPackage.Literals.COMPONENT_STACK__NAME,
 				 true,
 				 false,
 				 false,
@@ -104,12 +104,8 @@ public class RosSystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT);
+			childrenFeatures.add(RossystemPackage.Literals.COMPONENT_STACK__ROS_COMPONENT);
+			childrenFeatures.add(RossystemPackage.Literals.COMPONENT_STACK__QUALITY_ATTRIBUTE);
 		}
 		return childrenFeatures;
 	}
@@ -128,14 +124,14 @@ public class RosSystemItemProvider
 	}
 
 	/**
-	 * This returns RosSystem.gif.
+	 * This returns ComponentStack.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RosSystem"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStack"));
 	}
 
 	/**
@@ -146,12 +142,12 @@ public class RosSystemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RosSystem)object).getName();
+		String label = ((ComponentStack)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RosSystem_type") :
-			getString("_UI_RosSystem_type") + " " + label;
+			getString("_UI_ComponentStack_type") :
+			getString("_UI_ComponentStack_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -164,16 +160,12 @@ public class RosSystemItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RosSystem.class)) {
-			case RossystemPackage.ROS_SYSTEM__NAME:
+		switch (notification.getFeatureID(ComponentStack.class)) {
+			case RossystemPackage.COMPONENT_STACK__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__COMPONENT_STACK:
-			case RossystemPackage.ROS_SYSTEM__PARAMETER:
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+			case RossystemPackage.COMPONENT_STACK__ROS_COMPONENT:
+			case RossystemPackage.COMPONENT_STACK__QUALITY_ATTRIBUTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,33 +185,13 @@ public class RosSystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createTopicConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createServiceConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createActionConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK,
-				 RossystemFactory.eINSTANCE.createComponentStack()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER,
-				 RosFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
+				(RossystemPackage.Literals.COMPONENT_STACK__ROS_COMPONENT,
 				 ComponentInterfaceFactory.eINSTANCE.createComponentInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.COMPONENT_STACK__QUALITY_ATTRIBUTE,
+				 RossystemFactory.eINSTANCE.createQualityAttribute()));
 	}
 
 	/**

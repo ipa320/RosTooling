@@ -60,6 +60,8 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 			case RossystemPackage.TOPIC_CONNECTION: return createTopicConnection();
 			case RossystemPackage.SERVICE_CONNECTION: return createServiceConnection();
 			case RossystemPackage.ACTION_CONNECTION: return createActionConnection();
+			case RossystemPackage.COMPONENT_STACK: return createComponentStack();
+			case RossystemPackage.QUALITY_ATTRIBUTE: return createQualityAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +72,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosSystem createRosSystem() {
 		RosSystemImpl rosSystem = new RosSystemImpl();
 		return rosSystem;
@@ -80,6 +83,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicConnection createTopicConnection() {
 		TopicConnectionImpl topicConnection = new TopicConnectionImpl();
 		return topicConnection;
@@ -90,6 +94,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceConnection createServiceConnection() {
 		ServiceConnectionImpl serviceConnection = new ServiceConnectionImpl();
 		return serviceConnection;
@@ -100,6 +105,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionConnection createActionConnection() {
 		ActionConnectionImpl actionConnection = new ActionConnectionImpl();
 		return actionConnection;
@@ -110,6 +116,29 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ComponentStack createComponentStack() {
+		ComponentStackImpl componentStack = new ComponentStackImpl();
+		return componentStack;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QualityAttribute createQualityAttribute() {
+		QualityAttributeImpl qualityAttribute = new QualityAttributeImpl();
+		return qualityAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RossystemPackage getRossystemPackage() {
 		return (RossystemPackage)getEPackage();
 	}

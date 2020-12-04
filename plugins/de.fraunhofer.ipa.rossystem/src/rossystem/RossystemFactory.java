@@ -58,6 +58,24 @@ public interface RossystemFactory extends EFactory {
 	ActionConnection createActionConnection();
 
 	/**
+	 * Returns a new object of class '<em>Component Stack</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Stack</em>'.
+	 * @generated
+	 */
+	ComponentStack createComponentStack();
+
+	/**
+	 * Returns a new object of class '<em>Quality Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Quality Attribute</em>'.
+	 * @generated
+	 */
+	QualityAttribute createQualityAttribute();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

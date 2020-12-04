@@ -95,6 +95,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosPublisher> getFrom() {
 		if (from == null) {
 			from = new EObjectResolvingEList<RosPublisher>(RosPublisher.class, this, RossystemPackage.TOPIC_CONNECTION__FROM);
@@ -107,6 +108,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RosSubscriber> getTo() {
 		if (to == null) {
 			to = new EObjectResolvingEList<RosSubscriber>(RosSubscriber.class, this, RossystemPackage.TOPIC_CONNECTION__TO);
@@ -119,6 +121,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTopicName() {
 		return topicName;
 	}
@@ -128,6 +131,7 @@ public class TopicConnectionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTopicName(String newTopicName) {
 		String oldTopicName = topicName;
 		topicName = newTopicName;
