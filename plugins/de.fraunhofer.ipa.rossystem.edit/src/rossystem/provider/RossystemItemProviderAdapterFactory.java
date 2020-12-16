@@ -164,11 +164,58 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.ComponentStack} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentStackItemProvider componentStackItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.ComponentStack}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentStackAdapter() {
+		if (componentStackItemProvider == null) {
+			componentStackItemProvider = new ComponentStackItemProvider(this);
+		}
+
+		return componentStackItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.QualityAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QualityAttributeItemProvider qualityAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.QualityAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQualityAttributeAdapter() {
+		if (qualityAttributeItemProvider == null) {
+			qualityAttributeItemProvider = new QualityAttributeItemProvider(this);
+		}
+
+		return qualityAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -179,6 +226,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -227,6 +275,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -237,6 +286,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -247,6 +297,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -261,11 +312,14 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (rosSystemItemProvider != null) rosSystemItemProvider.dispose();
 		if (topicConnectionItemProvider != null) topicConnectionItemProvider.dispose();
 		if (serviceConnectionItemProvider != null) serviceConnectionItemProvider.dispose();
 		if (actionConnectionItemProvider != null) actionConnectionItemProvider.dispose();
+		if (componentStackItemProvider != null) componentStackItemProvider.dispose();
+		if (qualityAttributeItemProvider != null) qualityAttributeItemProvider.dispose();
 	}
 
 }

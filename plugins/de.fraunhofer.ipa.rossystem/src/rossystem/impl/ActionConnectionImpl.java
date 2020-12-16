@@ -93,6 +93,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosActionServer getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
@@ -119,6 +120,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrom(RosActionServer newFrom) {
 		RosActionServer oldFrom = from;
 		from = newFrom;
@@ -131,6 +133,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosActionClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
@@ -157,6 +160,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(RosActionClient newTo) {
 		RosActionClient oldTo = to;
 		to = newTo;
@@ -169,6 +173,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getActionName() {
 		return actionName;
 	}
@@ -178,6 +183,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActionName(String newActionName) {
 		String oldActionName = actionName;
 		actionName = newActionName;

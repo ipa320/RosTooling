@@ -90,6 +90,18 @@ public class RossystemSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RossystemPackage.COMPONENT_STACK: {
+				ComponentStack componentStack = (ComponentStack)theEObject;
+				T result = caseComponentStack(componentStack);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.QUALITY_ATTRIBUTE: {
+				QualityAttribute qualityAttribute = (QualityAttribute)theEObject;
+				T result = caseQualityAttribute(qualityAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -151,6 +163,36 @@ public class RossystemSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActionConnection(ActionConnection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Stack</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Stack</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentStack(ComponentStack object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Quality Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Quality Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQualityAttribute(QualityAttribute object) {
 		return null;
 	}
 

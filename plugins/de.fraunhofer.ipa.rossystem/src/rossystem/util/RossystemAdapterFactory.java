@@ -84,6 +84,14 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 				return createActionConnectionAdapter();
 			}
 			@Override
+			public Adapter caseComponentStack(ComponentStack object) {
+				return createComponentStackAdapter();
+			}
+			@Override
+			public Adapter caseQualityAttribute(QualityAttribute object) {
+				return createQualityAttributeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -156,6 +164,34 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.ComponentStack <em>Component Stack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.ComponentStack
+	 * @generated
+	 */
+	public Adapter createComponentStackAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.QualityAttribute <em>Quality Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.QualityAttribute
+	 * @generated
+	 */
+	public Adapter createQualityAttributeAdapter() {
 		return null;
 	}
 
