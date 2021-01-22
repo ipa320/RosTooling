@@ -1720,7 +1720,7 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.ParameterStructType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cParameterStructTypeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStrucKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStructKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cParameterstructypetmemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_0 = (RuleCall)cParameterstructypetmemberAssignment_3.eContents().get(0);
@@ -1732,21 +1732,21 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ParameterStructType ros::ParameterStructType:
 		//	{ros::ParameterStructType}
-		//	'Struc'
+		//	'Struct'
 		//	'{'
 		//	parameterstructypetmember+=ParameterStructTypeMember ("," parameterstructypetmember+=ParameterStructTypeMember)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ros::ParameterStructType} 'Struc' '{' parameterstructypetmember+=ParameterStructTypeMember (","
+		//{ros::ParameterStructType} 'Struct' '{' parameterstructypetmember+=ParameterStructTypeMember (","
 		//parameterstructypetmember+=ParameterStructTypeMember)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ros::ParameterStructType}
 		public Action getParameterStructTypeAction_0() { return cParameterStructTypeAction_0; }
 		
-		//'Struc'
-		public Keyword getStrucKeyword_1() { return cStrucKeyword_1; }
+		//'Struct'
+		public Keyword getStructKeyword_1() { return cStructKeyword_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -3159,7 +3159,7 @@ public class RosSystemGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ParameterStructType ros::ParameterStructType:
 	//	{ros::ParameterStructType}
-	//	'Struc'
+	//	'Struct'
 	//	'{'
 	//	parameterstructypetmember+=ParameterStructTypeMember ("," parameterstructypetmember+=ParameterStructTypeMember)*
 	//	'}';

@@ -3139,9 +3139,9 @@ ruleParameterStructType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Struc'
+		otherlv_1='Struct'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getParameterStructTypeAccess().getStructKeyword_1());
 		}
 		otherlv_2='{'
 		{

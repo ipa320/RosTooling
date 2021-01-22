@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRosSystemParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_STRING", "RULE_ID", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GraphName'", "'RosSystem'", "'{'", "'Name'", "'}'", "'RosComponents'", "'('", "')'", "','", "'TopicConnections'", "'ServiceConnections'", "'ActionConnections'", "'Parameters'", "'TopicConnection'", "'From'", "'To'", "'ServiceConnection'", "'ActionConnection'", "'ComponentInterface'", "'name'", "'NameSpace'", "'RosPublishers'", "'RosSubscribers'", "'RosSrvServers'", "'RosSrvClients'", "'RosActionServers'", "'RosActionClients'", "'RosParameters'", "'RosPublisher'", "'RefPublisher'", "'ns'", "'RosSubscriber'", "'RefSubscriber'", "'RosServiceServer'", "'RefServer'", "'RosServiceClient'", "'RefClient'", "'RosActionServer'", "'RosActionClient'", "'RosParameter'", "'RefParameter'", "'value'", "'Parameter'", "'type'", "'List'", "'Struc'", "'Integer'", "'default'", "'String'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_STRING", "RULE_ID", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GraphName'", "'RosSystem'", "'{'", "'Name'", "'}'", "'RosComponents'", "'('", "')'", "','", "'TopicConnections'", "'ServiceConnections'", "'ActionConnections'", "'Parameters'", "'TopicConnection'", "'From'", "'To'", "'ServiceConnection'", "'ActionConnection'", "'ComponentInterface'", "'name'", "'NameSpace'", "'RosPublishers'", "'RosSubscribers'", "'RosSrvServers'", "'RosSrvClients'", "'RosActionServers'", "'RosActionClients'", "'RosParameters'", "'RosPublisher'", "'RefPublisher'", "'ns'", "'RosSubscriber'", "'RefSubscriber'", "'RosServiceServer'", "'RefServer'", "'RosServiceClient'", "'RefClient'", "'RosActionServer'", "'RosActionClient'", "'RosParameter'", "'RefParameter'", "'value'", "'Parameter'", "'type'", "'List'", "'Struct'", "'Integer'", "'default'", "'String'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'"
     };
     public static final int T__50=50;
     public static final int RULE_DAY=12;
@@ -24406,21 +24406,21 @@ public class InternalRosSystemParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__ParameterStructType__Group__1__Impl"
-    // InternalRosSystem.g:8095:1: rule__ParameterStructType__Group__1__Impl : ( 'Struc' ) ;
+    // InternalRosSystem.g:8095:1: rule__ParameterStructType__Group__1__Impl : ( 'Struct' ) ;
     public final void rule__ParameterStructType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRosSystem.g:8099:1: ( ( 'Struc' ) )
-            // InternalRosSystem.g:8100:1: ( 'Struc' )
+            // InternalRosSystem.g:8099:1: ( ( 'Struct' ) )
+            // InternalRosSystem.g:8100:1: ( 'Struct' )
             {
-            // InternalRosSystem.g:8100:1: ( 'Struc' )
-            // InternalRosSystem.g:8101:2: 'Struc'
+            // InternalRosSystem.g:8100:1: ( 'Struct' )
+            // InternalRosSystem.g:8101:2: 'Struct'
             {
-             before(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); 
+             before(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); 
             match(input,67,FOLLOW_2); 
-             after(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); 
+             after(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); 
 
             }
 

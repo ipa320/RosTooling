@@ -163,7 +163,7 @@ ParameterListType returns ros::ParameterListType:
 
 ParameterStructType returns ros::ParameterStructType:
 	{ros::ParameterStructType}
-	'Struc'
+	'Struct'
 	'{'
 		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
 	'}';

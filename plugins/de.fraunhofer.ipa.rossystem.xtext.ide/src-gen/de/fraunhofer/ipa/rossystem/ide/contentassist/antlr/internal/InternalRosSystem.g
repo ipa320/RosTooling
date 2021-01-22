@@ -8098,9 +8098,9 @@ rule__ParameterStructType__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); }
-	'Struc'
-	{ after(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); }
+	{ before(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); }
+	'Struct'
+	{ after(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); }
 )
 ;
 finally {

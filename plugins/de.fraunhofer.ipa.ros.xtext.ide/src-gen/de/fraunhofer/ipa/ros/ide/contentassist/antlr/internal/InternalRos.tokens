@@ -28,7 +28,7 @@
 'ServiceServer'=64
 'ServiceSpec'=51
 'String'=28
-'Struc'=79
+'Struct'=79
 'Subscriber'=67
 'TopicSpec'=54
 '[]'=114

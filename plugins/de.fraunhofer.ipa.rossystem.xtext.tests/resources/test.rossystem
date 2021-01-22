@@ -39,7 +39,7 @@ RosSystem { Name 'test_system'  RosComponents (
 		Parameter {name list_test type List {Integer,Integer,String} value {1,2,a}},
 		Parameter {name array_test type Array { type Integer } value {1,3}},
 		
-		Parameter {name struc_test type Struc 
+		Parameter {name struct_test type Struct 
 			{first_element Integer {default 7 },
 			third_element String } value { 
 				{first_element {value 8}}, 

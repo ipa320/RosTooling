@@ -228,7 +228,7 @@ ParameterListType returns ParameterListType:
 
 ParameterStructType returns ParameterStructType:
 	{ParameterStructType}
-	'Struc'
+	'Struct'
 	'{'
 		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
 	'}';

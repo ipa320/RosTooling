@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRosParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_STRING", "RULE_ID", "RULE_ROS_CONVENTION_A", "RULE_MESSAGE_ASIGMENT", "RULE_ROS_CONVENTION_PARAM", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GraphName'", "'node'", "'Header'", "'String'", "'goal'", "'message'", "'result'", "'feedback'", "'name'", "'value'", "'service'", "'type'", "'action'", "'duration'", "'time'", "'PackageSet'", "'{'", "'}'", "'package'", "','", "'Package'", "'spec'", "'artifact'", "'Artifact'", "'CatkinPackage'", "'dependency'", "'ServiceSpec'", "'request'", "'response'", "'TopicSpec'", "'ActionSpec'", "'Node'", "'serviceserver'", "'publisher'", "'subscriber'", "'serviceclient'", "'actionserver'", "'actionclient'", "'parameter'", "'ServiceServer'", "'namespace'", "'Publisher'", "'Subscriber'", "'ServiceClient'", "'ActionServer'", "'ActionClient'", "'PackageDependency'", "'ExternalDependency'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'", "'Parameter'", "'List'", "'Struc'", "'Integer'", "'default'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'ParameterStructMember'", "'bool'", "'int8'", "'uint8'", "'int16'", "'uint16'", "'int32'", "'uint32'", "'int64'", "'uint64'", "'float32'", "'float64'", "'string'", "'byte'", "'bool[]'", "'int8[]'", "'uint8[]'", "'int16[]'", "'uint16[]'", "'int32[]'", "'uint32[]'", "'int64[]'", "'uint64[]'", "'float32[]'", "'float64[]'", "'string[]'", "'byte[]'", "'[]'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_STRING", "RULE_ID", "RULE_ROS_CONVENTION_A", "RULE_MESSAGE_ASIGMENT", "RULE_ROS_CONVENTION_PARAM", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GraphName'", "'node'", "'Header'", "'String'", "'goal'", "'message'", "'result'", "'feedback'", "'name'", "'value'", "'service'", "'type'", "'action'", "'duration'", "'time'", "'PackageSet'", "'{'", "'}'", "'package'", "','", "'Package'", "'spec'", "'artifact'", "'Artifact'", "'CatkinPackage'", "'dependency'", "'ServiceSpec'", "'request'", "'response'", "'TopicSpec'", "'ActionSpec'", "'Node'", "'serviceserver'", "'publisher'", "'subscriber'", "'serviceclient'", "'actionserver'", "'actionclient'", "'parameter'", "'ServiceServer'", "'namespace'", "'Publisher'", "'Subscriber'", "'ServiceClient'", "'ActionServer'", "'ActionClient'", "'PackageDependency'", "'ExternalDependency'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'", "'Parameter'", "'List'", "'Struct'", "'Integer'", "'default'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'ParameterStructMember'", "'bool'", "'int8'", "'uint8'", "'int16'", "'uint16'", "'int32'", "'uint32'", "'int64'", "'uint64'", "'float32'", "'float64'", "'string'", "'byte'", "'bool[]'", "'int8[]'", "'uint8[]'", "'int16[]'", "'uint16[]'", "'int32[]'", "'uint32[]'", "'int64[]'", "'uint64[]'", "'float32[]'", "'float64[]'", "'string[]'", "'byte[]'", "'[]'"
     };
     public static final int T__50=50;
     public static final int RULE_DATE_TIME=8;
@@ -32497,21 +32497,21 @@ public class InternalRosParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterStructType__Group__1__Impl"
-    // InternalRos.g:10751:1: rule__ParameterStructType__Group__1__Impl : ( 'Struc' ) ;
+    // InternalRos.g:10751:1: rule__ParameterStructType__Group__1__Impl : ( 'Struct' ) ;
     public final void rule__ParameterStructType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos.g:10755:1: ( ( 'Struc' ) )
-            // InternalRos.g:10756:1: ( 'Struc' )
+            // InternalRos.g:10755:1: ( ( 'Struct' ) )
+            // InternalRos.g:10756:1: ( 'Struct' )
             {
-            // InternalRos.g:10756:1: ( 'Struc' )
-            // InternalRos.g:10757:2: 'Struc'
+            // InternalRos.g:10756:1: ( 'Struct' )
+            // InternalRos.g:10757:2: 'Struct'
             {
-             before(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); 
+             before(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); 
             match(input,79,FOLLOW_2); 
-             after(grammarAccess.getParameterStructTypeAccess().getStrucKeyword_1()); 
+             after(grammarAccess.getParameterStructTypeAccess().getStructKeyword_1()); 
 
             }
 
