@@ -93,7 +93,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				value_sub_type = given_parameter.eContents.toList
 				if (value_sub_type.length==expected_sub_types.length){
 					for (i=0;i<value_sub_type.length;i++){
-						if (expected_sub_types.get(i).eClass.name.matches("ParameterStrucType|ParameterListType|ParameterSequence")){
+						if (expected_sub_types.get(i).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){
 							try{
 								CheckParameterValue((expected_sub_types.get(i).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
 							} catch (IndexOutOfBoundsException error) {
@@ -127,8 +127,8 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
 				}
 		}
-		// STRUC
-	  	else if (expected_type.contains("ParameterStruc")){
+		// STRUCT
+	  	else if (expected_type.contains("ParameterStruct")){
 			value_sub_type = given_parameter.eContents.toList;
 			expected_sub_names = new ArrayList<String>();
 
@@ -146,7 +146,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 				
 				if (!(expected_sub_names.contains(name_given_element))){
 					error("Element expected names: "+expected_sub_names+ "  instead of: "+name_given_element,null, INVALID_NAME)
-					info("Struc format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
+					info("Struct format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
 				} else {
 
 					for (j=0;j<expected_sub_types.length;j++){
@@ -161,7 +161,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 								if (!check_matched_type(expected_sub_types.get(j).eContents.get(0).eClass.name,sub_element_type)){
 									error( "Element "+getName(expected_sub_types.get(j).toString)+" , expected type: "+expected_sub_types.get(j).eContents.get(0).eClass.name+
 									" given type "+sub_element_type, null, INVALID_TYPE)
-									info("Struc format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)}
+									info("Struct format: value { {FIRST {value VALUE_FIRST}}, {SECOND {value VALUE_SECOND}}}",null, INVALID_NAME)}
 									}
 							} catch (IndexOutOfBoundsException error) {
 					            // Output expected IndexOutOfBoundsExceptions.								
@@ -223,9 +223,9 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 	}
 	
 	@Check
-	def void StrucHelp (Parameter param){
+	def void StructHelp (Parameter param){
 		if(param.type.toString.contains("Struc")){
-			info("HELP: Struc parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
+			info("HELP: Struct parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
 		}
 	}
 }

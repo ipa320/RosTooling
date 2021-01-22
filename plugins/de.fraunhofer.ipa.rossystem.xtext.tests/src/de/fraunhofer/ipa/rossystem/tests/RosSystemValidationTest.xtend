@@ -62,11 +62,11 @@ class RosSystemValidationTest {
 						Parameter { name double_test type Double},
 						Parameter {name int_test type Integer},
 						Parameter {name list_test type List {Integer,Integer,String}},
-						Parameter {name struc_test type Struc 
+						Parameter {name struc_test type Struct 
 							{first_element Integer ,
 							second_element List { Integer, String},
 							third_element String ,
-							last_element Struc { hola Integer, what String}}
+							last_element Struct { hola Integer, what String}}
 						}
 					}}}}},
 				CatkinPackage test_pkg { artifact {
@@ -119,11 +119,11 @@ class RosSystemValidationTest {
 						Parameter { name double_test type Double},
 						Parameter {name int_test type Integer},
 						Parameter {name list_test type List {Integer,Integer,String}},
-						Parameter {name struc_test type Struc 
+						Parameter {name struc_test type Struct 
 							{first_element Integer ,
 							second_element List { Integer, String},
 							third_element String ,
-							last_element Struc { hola Integer, what String}}
+							last_element Struct { hola Integer, what String}}
 						}
 					}}}}},
 				CatkinPackage test_pkg { artifact {
