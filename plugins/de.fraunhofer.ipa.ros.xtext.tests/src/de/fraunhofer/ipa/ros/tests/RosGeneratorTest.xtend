@@ -12,10 +12,11 @@ import ros.PackageSet
 import org.eclipse.xtext.generator.InMemoryFileSystemAccess
 import org.eclipse.xtext.generator.GeneratorContext
 import de.fraunhofer.ipa.roscode.generator.CustomOutputProvider
-
 import de.fraunhofer.ipa.roscode.generator.Ros2CodeGenerator
 import java.nio.file.Files
 import java.nio.file.Paths
+import de.fraunhofer.ipa.ros.generator.RosGenerator
+import de.fraunhofer.ipa.ros.generator.CICustomOutputProvider
 
 @RunWith(XtextRunner)
 @InjectWith(RosInjectorProvider)
@@ -25,6 +26,9 @@ class RosGeneratorTest {
 
 	@Inject
 	Ros2CodeGenerator ros2Generator
+	
+	@Inject
+	RosGenerator CIGenerator
 
 	@Inject
 	ParseHelper<PackageSet> parseHelper
@@ -63,6 +67,20 @@ class RosGeneratorTest {
 		Assert.assertEquals(
 			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator', 'test_node.cpp'))).trim,
 			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp").toString.trim)
+	}
+	
+	@Test
+	def void testGeneratedCI() {
+		val resourceSet = rosTestingUtils.getMessagesResourceSet
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val model = parseHelper.parse(fileContent, resourceSet)
+
+		val fsa = new InMemoryFileSystemAccess
+		CIGenerator.doGenerate(model.eResource, fsa, new GeneratorContext)
+		Assert.assertTrue(fsa.textFiles.containsKey(CICustomOutputProvider::COM_OUTPUT + "test_node.componentinterface"))
+		Assert.assertEquals(
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'components', 'test_node.componentinterface'))).trim,
+			fsa.textFiles.get(CICustomOutputProvider::COM_OUTPUT + "test_node.componentinterface").toString.trim)
 	}
 
 }

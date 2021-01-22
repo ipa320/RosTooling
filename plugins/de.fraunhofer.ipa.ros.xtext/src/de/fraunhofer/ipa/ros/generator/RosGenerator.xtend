@@ -13,7 +13,7 @@ import org.eclipse.xtext.generator.OutputConfiguration
 import ros.Node
 import ros.Package
 
-class CustomOutputProvider implements IOutputConfigurationProvider {
+class CICustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String COM_OUTPUT = "COM_OUTPUT"
 	
 
@@ -57,7 +57,7 @@ class RosGenerator extends AbstractGenerator {
 			}
 		}
 		for (node : resource.allContents.toIterable.filter(Node)){
-			fsa.generateFile(node.getName()+".componentinterface",CustomOutputProvider::COM_OUTPUT,compile(node,package_name,artifact_name))
+			fsa.generateFile(node.getName()+".componentinterface",CICustomOutputProvider::COM_OUTPUT,compile(node,package_name,artifact_name))
 		}
 	}
 
