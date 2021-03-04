@@ -253,6 +253,16 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	@Override
+	public EReference getComponentInterface_FromRosNode() {
+		return (EReference)componentInterfaceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRosPublisher() {
 		return rosPublisherEClass;
 	}
@@ -614,6 +624,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONSERVER);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSACTIONCLIENT);
 		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__ROSPARAMETER);
+		createEReference(componentInterfaceEClass, COMPONENT_INTERFACE__FROM_ROS_NODE);
 
 		rosPublisherEClass = createEClass(ROS_PUBLISHER);
 		createEReference(rosPublisherEClass, ROS_PUBLISHER__PUBLISHER);
@@ -701,6 +712,7 @@ public class ComponentInterfacePackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentInterface_Rosactionserver(), this.getRosActionServer(), null, "rosactionserver", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosactionclient(), this.getRosActionClient(), null, "rosactionclient", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInterface_Rosparameter(), this.getRosParameter(), null, "rosparameter", null, 0, -1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInterface_FromRosNode(), theRosPackage.getNode(), null, "FromRosNode", null, 0, 1, ComponentInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosPublisherEClass, RosPublisher.class, "RosPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRosPublisher_Publisher(), theRosPackage.getPublisher(), null, "publisher", null, 0, 1, RosPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

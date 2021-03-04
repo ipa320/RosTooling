@@ -60,6 +60,7 @@ ComponentInterface returns componentInterface::ComponentInterface:
 	'{'
 		'name' name=EString
 		('NameSpace' NameSpace=EString)?
+		('FromRosNode' FromRosNode=[ros::Node|EString])?
 		('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )?
 		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
 		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?

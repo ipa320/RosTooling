@@ -17,6 +17,7 @@
         eType="#//RosActionClient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rosparameter" upperBound="-1"
         eType="#//RosParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FromRosNode" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosPublisher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>

@@ -60,6 +60,7 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 			addNameSpacePropertyDescriptor(object);
 			addRosactionserverPropertyDescriptor(object);
 			addRosactionclientPropertyDescriptor(object);
+			addFromRosNodePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -144,6 +145,28 @@ public class ComponentInterfaceItemProvider extends ItemProviderAdapter implemen
 				 getString("_UI_ComponentInterface_rosactionclient_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_rosactionclient_feature", "_UI_ComponentInterface_type"),
 				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__ROSACTIONCLIENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the From Ros Node feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromRosNodePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInterface_FromRosNode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInterface_FromRosNode_feature", "_UI_ComponentInterface_type"),
+				 ComponentInterfacePackage.Literals.COMPONENT_INTERFACE__FROM_ROS_NODE,
 				 true,
 				 false,
 				 true,

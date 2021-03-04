@@ -120,6 +120,7 @@ public class ComponentInterfaceSemanticSequencer extends AbstractDelegatingSeman
 	 *     (
 	 *         name=EString 
 	 *         NameSpace=EString? 
+	 *         FromRosNode=[Node|EString]? 
 	 *         (rospublisher+=RosPublisher rospublisher+=RosPublisher*)? 
 	 *         (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? 
 	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
