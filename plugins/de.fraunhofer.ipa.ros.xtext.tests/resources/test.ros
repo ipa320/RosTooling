@@ -1,15 +1,15 @@
-PackageSet { package {
-	CatkinPackage test_pkg { artifact {
-		Artifact test_node { node Node { name test_node 
-			serviceserver {
+PackageSet {
+	CatkinPackage test_pkg { 
+		Artifact test_node { Node { name test_node 
+			ServiceServers {
 				ServiceServer {name setBool service "std_srvs.SetBool"}}
-			publisher { 
+			Publishers { 
 				Publisher { name scan message "sensor_msgs.LaserScan" }}
-			subscriber {
+			Subscribers {
 				Subscriber { name power_state message "sensor_msgs.BatteryState"}}
-			serviceclient {
+			ServiceClients {
 				ServiceClient { name init service "std_srvs.Trigger"}}
-			parameter { 
+			Parameters { 
 				Parameter { name string_test type String {default test}},
 				Parameter { name bool_tets type Boolean },
 				Parameter { name array_tets type Array {type String}},
@@ -24,4 +24,4 @@ PackageSet { package {
 					last_element Struct { hola Integer, what String}}
 				}
 			}}
-}}}}}
+}}}
