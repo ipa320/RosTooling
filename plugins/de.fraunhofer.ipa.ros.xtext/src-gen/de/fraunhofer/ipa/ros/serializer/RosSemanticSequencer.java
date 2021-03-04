@@ -394,7 +394,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
-	 *     (name=RosNames (node=Node | node=Node)?)
+	 *     (name=RosNames node=Node?)
 	 */
 	protected void sequence_Artifact(ISerializationContext context, Artifact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -407,12 +407,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CatkinPackage returns CatkinPackage
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=RosNames 
-	 *         ((spec+=SpecBase spec+=SpecBase*) | (spec+=SpecBase spec+=SpecBase*))? 
-	 *         ((artifact+=Artifact artifact+=Artifact*) | (artifact+=Artifact artifact+=Artifact*))? 
-	 *         ((dependency+=Dependency dependency+=Dependency*) | (dependency+=Dependency dependency+=Dependency*))?
-	 *     )
+	 *     (name=RosNames (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)? (dependency+=Dependency dependency+=Dependency*)?)
 	 */
 	protected void sequence_CatkinPackage(ISerializationContext context, CatkinPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -495,13 +490,13 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=RosNames 
-	 *         ((serviceserver+=ServiceServer serviceserver+=ServiceServer*) | (serviceserver+=ServiceServer serviceserver+=ServiceServer*))? 
-	 *         ((publisher+=Publisher publisher+=Publisher*) | (publisher+=Publisher publisher+=Publisher*))? 
-	 *         ((subscriber+=Subscriber subscriber+=Subscriber*) | (subscriber+=Subscriber subscriber+=Subscriber*))? 
-	 *         ((serviceclient+=ServiceClient serviceclient+=ServiceClient*) | (serviceclient+=ServiceClient serviceclient+=ServiceClient*))? 
-	 *         ((actionserver+=ActionServer actionserver+=ActionServer*) | (actionserver+=ActionServer actionserver+=ActionServer*))? 
-	 *         ((actionclient+=ActionClient actionclient+=ActionClient*) | (actionclient+=ActionClient actionclient+=ActionClient*))? 
-	 *         ((parameter+=Parameter parameter+=Parameter*) | (parameter+=Parameter parameter+=Parameter*))?
+	 *         (serviceserver+=ServiceServer serviceserver+=ServiceServer*)? 
+	 *         (publisher+=Publisher publisher+=Publisher*)? 
+	 *         (subscriber+=Subscriber subscriber+=Subscriber*)? 
+	 *         (serviceclient+=ServiceClient serviceclient+=ServiceClient*)? 
+	 *         (actionserver+=ActionServer actionserver+=ActionServer*)? 
+	 *         (actionclient+=ActionClient actionclient+=ActionClient*)? 
+	 *         (parameter+=Parameter parameter+=Parameter*)?
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {
@@ -533,7 +528,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PackageSet returns PackageSet
 	 *
 	 * Constraint:
-	 *     ((package+=Package package+=Package*) | (package+=Package package+=Package*))?
+	 *     (package+=Package package+=Package*)?
 	 */
 	protected void sequence_PackageSet(ISerializationContext context, PackageSet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -546,11 +541,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Package_Impl returns Package
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         ((spec+=SpecBase spec+=SpecBase*) | (spec+=SpecBase spec+=SpecBase*))? 
-	 *         ((artifact+=Artifact artifact+=Artifact*) | (artifact+=Artifact artifact+=Artifact*))?
-	 *     )
+	 *     (name=EString (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)?)
 	 */
 	protected void sequence_Package_Impl(ISerializationContext context, ros.Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

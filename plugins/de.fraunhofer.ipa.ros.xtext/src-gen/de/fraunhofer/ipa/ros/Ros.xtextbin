@@ -29,163 +29,151 @@ NegatedTokencardinality*	terminal
 ANY_OTHER@U@V@W@X\00!http://www.ipa.fraunhofer.de/ros/@Y@Z\00(http://www.ipa.fraunhofer.de/primitives/primitives@[ecore@\@]\00(http://www.eclipse.org/emf/2003/XMLType/type@j@^ParserRulenamePackageSettype@_@W@`EClass\00
 //PackageSet
 alternatives@a@b
-Actiontype@c@W@`@dPackageSet@e{@f?@g@hpackage@i{@jAssignmentfeaturepackage	operator+=	terminal@k	RuleCallrule@lPackage@m@W@n\00
-//Package@o@p@q
-Package_Impl@r@W@n@s@t
-@u@W@n@vPackage@wname=@x@yEString@z@[@{@|;@}@~{@?@\80@\81spec@\82{@\83spec+=@\84@\85	SpecBase@\86@W@\87\00//SpecBase@\88@\89@\8AServiceSpec@\8B@W@\8C\00//ServiceSpec@\8D@\8E
-@\8F@W@\8C@\90ServiceSpec@\91name=@\92@y@\93{@\94?@\95request@\96request=@\97@\98MessageDefinition@\99@W@\9A\00//MessageDefinition@\9B@\9C
-@\9D@W@\9A@\9E{@\9F?@\A0MessagePart+=@\A1@\A2MessagePart@\A3@Y@\A4\00//MessagePart@\A5@\A6Type=@\A7@\A8
-AbstractType@\A9@Y@\AA\00//AbstractType@\AB @\AC@\ADbool@\AE@Y@\AF\00//bool@\B0@\B1
-@\B2@Y@\AF@\B3bool@\B4@\B5int8@\B6@Y@\B7\00//int8@\B8@\B9
-@\BA@Y@\B7@\BBint8@\BC@\BDuint8@\BE@Y@\BF\00//uint8@\C0@\C1
-@\C2@Y@\BF@\C3uint8@\C4@\C5int16@\C6@Y@\C7\00//int16@\C8@\C9
-@\CA@Y@\C7@\CBint16@\CC@\CDuint16@\CE@Y@\CF\00	//uint16@\D0@\D1
-@\D2@Y@\CF@\D3uint16@\D4@\D5int32@\D6@Y@\D7\00//int32@\D8@\D9
-@\DA@Y@\D7@\DBint32@\DC@\DDuint32@\DE@Y@\DF\00	//uint32@\E0@\E1
-@\E2@Y@\DF@\E3uint32@\E4@\E5int64@\E6@Y@\E7\00//int64@\E8@\E9
-@\EA@Y@\E7@\EBint64@\EC@\EDuint64@\EE@Y@\EF\00	//uint64@\F0@\F1
-@\F2@Y@\EF@\F3uint64@\F4@\F5float32@\F6@Y@\F7\00
-//float32@\F8@\F9
-@\FA@Y@\F7@\FBfloat32@\FC@\FDfloat64@\FE@Y@\FF\00
-//float64A\00A
-A@Y@\FFAfloat64AAstring0A@YA\00	//stringAA	
-A
-@YAAstringAA
-byteA@YA\00//ByteAA
-A@YAAbyteAAtimeA@YA\00//timeAA
-A@YAAtimeAA	durationA@YA\00//durationA A!
-A"@YAA#	durationA$A%HeaderA&@YA'\00	//HeaderA(A)
-A*@YA'A+HeaderA,A-
-boolArrayA.@YA/\00//boolArrayA0A1
-A2@YA/A3bool[]A4A5
-int8ArrayA6@YA7\00//int8ArrayA8A9
-A:@YA7A;int8[]A<A=uint8ArrayA>@YA?\00
-//uint8ArrayA@AA
-AB@YA?ACuint8[]ADAEint16ArrayAF@YAG\00
-//int16ArrayAHAI
-AJ@YAGAKint16[]ALAMuint16ArrayAN@YAO\00//uint16ArrayAPAQ
-AR@YAOAS	uint16[]ATAUint32ArrayAV@YAW\00
-//int32ArrayAXAY
-AZ@YAWA[int32[]A\A]uint32ArrayA^@YA_\00//uint32ArrayA`Aa
-Ab@YA_Ac	uint32[]AdAeint64ArrayAf@YAg\00
-//int64ArrayAhAi
-Aj@YAgAkint64[]AlAmuint64ArrayAn@YAo\00//uint64ArrayApAq
-Ar@YAoAs	uint64[]AtAu
-float32ArrayAv@YAw\00//float32ArrayAxAy
-Az@YAwA{
-float32[]A|A}
-float64ArrayA~@YA\00//float64ArrayA\80A\81
-A\82@YAA\83
-float64[]A\84A\85
-string0ArrayA\86@YA\87\00//stringArrayA\88A\89
-A\8A@YA\87A\8B	string[]A\8CA\8D
-byteArrayA\8E@YA\8F\00//ByteArrayA\90A\91
-A\92@YA\8FA\93byte[]A\94A\95
-TopicSpecRefA\96@YA\97\00//TopicSpecRefA\98
-TopicSpec=A\99CrossReferencetypeA\9A@WA\9B\00//TopicSpec	terminalA\9C@yA\9DA\9EArrayTopicSpecRefA\9F@YA\A0\00//ArrayTopicSpecRefA\A1A\A2
-TopicSpec=A\A3A\A4@WA\9BA\A5@yA\A6[]A\A7Data=A\A8A\A9A\AAKEYWORDA\AB@[A\ACA\ADgoalA\AEmessageA\AFresultA\B0	feedbackA\B1nameA\B2valueA\B3serviceA\B4typeA\B5actionA\B6	durationA\B7timeA\B8A\B9MESSAGE_ASIGMENTA\BA@[A\BBA\BCA\BDA\BE;A\BF=A\C0A\C1A\C2;A\C35A\C4A\C5-A\C65A\C7@yA\C8cardinality*MessagePart+=A\C9@\A2A\CA}A\CB?A\CC	responseA\CD	response=A\CE@\98A\CF}A\D0A\D1
-TopicSpecA\D2@WA\9BA\D3A\D4
-A\D5@WA\9BA\D6
-TopicSpecA\D7name=A\D8A\D9@yA\DAHeaderA\DBStringA\DC{A\DD?A\DEmessageA\DFmessage=A\E0@\98A\E1}A\E2A\E3ActionSpecA\E4@WA\E5\00
-//ActionSpecA\E6	A\E7
-A\E8@WA\E5A\E9ActionSpecA\EAname=A\EB@yA\EC{A\ED?A\EEgoalA\EFgoal=A\F0@\98A\F1?A\F2resultA\F3result=A\F4@\98A\F5?A\F6	feedbackA\F7	feedback=A\F8@\98A\F9}A\FA*A\FB,A\FCspec+=A\FD@\85A\FE}A\FFB\00SpecsB{Bspec+=B@\85B*B,Bspec+=B@\85B}B	?B
-B	artifactB{B
-	artifact+=BB	ArtifactB@WB\00//ArtifactBB
-B@WBB	ArtifactBname=BB	RosNamesB@[BBBROS_CONVENTION_AB@[B*BB /B!B"B#B$/B%B&nodeB'{B(?B)B*nodeB+node=B,B-NodeB.@WB/\00//NodeB0
-B1NodeB2{B3nameB4name=B5BB6?B7B8serviceserverB9{B:serviceserver+=B;B<ServiceServerB=@WB>\00//ServiceServerB?	B@ServiceServerBA{BBnameBCname=BD@yBEserviceBFservice=BGBH@W@\8CBI@yBJ?BK
-namespaceBL
-namespace=BMBN
-NamespaceBO@WBP\00//NamespaceBQBRBSGlobalNamespaceBT@WBU\00//GlobalNamespaceBVBW
-BX@WBUBYGlobalNamespaceBZ{B[?B\partsB]{B^parts+=B_B`
-GraphNameBa@WBb\00//GraphNameBc
-GraphNameBd*Be,Bfparts+=BgB`Bh}Bi}BjBkRelativeNamespace_ImplBl@WBm\00//RelativeNamespaceBnBo
-Bp@WBmBqRelativeNamespaceBr{Bs?BtpartsBu{Bvparts+=BwB`Bx*By,Bzparts+=B{B`B|}B}}B~BPrivateNamespaceB\80@WB\81\00//PrivateNamespaceB\82B\83
-B\84@WB\81B\85PrivateNamespaceB\86{B\87?B\88partsB\89{B\8Aparts+=B\8BB`B\8C*B\8D,B\8Eparts+=B\8FB`B\90}B\91}B\92}B\93*B\94,B\95serviceserver+=B\96B<B\97}B\98B\99ServiceServersB\9A{B\9Bserviceserver+=B\9CB<B\9D*B\9E,B\9Fserviceserver+=B\A0B<B\A1}B\A2?B\A3B\A4
-publisherB\A5{B\A6
-publisher+=B\A7B\A8
-PublisherB\A9@WB\AA\00//PublisherB\AB	B\AC
-PublisherB\AD{B\AEnameB\AFname=B\B0@yB\B1messageB\B2message=B\B3B\B4@WA\9BB\B5@yB\B6?B\B7
-namespaceB\B8
-namespace=B\B9BNB\BA}B\BB*B\BC,B\BD
-publisher+=B\BEB\A8B\BF}B\C0B\C1PublishersB\C2{B\C3
-publisher+=B\C4B\A8B\C5*B\C6,B\C7
-publisher+=B\C8B\A8B\C9}B\CA?B\CBB\CCsubscriberB\CD{B\CEsubscriber+=B\CFB\D0SubscriberB\D1@WB\D2\00
-//SubscriberB\D3	B\D4SubscriberB\D5{B\D6nameB\D7name=B\D8@yB\D9messageB\DAmessage=B\DBB\DC@WA\9BB\DD@yB\DE?B\DF
-namespaceB\E0
-namespace=B\E1BNB\E2}B\E3*B\E4,B\E5subscriber+=B\E6B\D0B\E7}B\E8B\E9SubscribersB\EA{B\EBsubscriber+=B\ECB\D0B\ED*B\EE,B\EFsubscriber+=B\F0B\D0B\F1}B\F2?B\F3B\F4serviceclientB\F5{B\F6serviceclient+=B\F7B\F8ServiceClientB\F9@WB\FA\00//ServiceClientB\FB	B\FCServiceClientB\FD{B\FEnameB\FFname=C\00@yCserviceCservice=CC@W@\8CC@yC?C
-namespaceC
-namespace=C	BNC
-}C*C,C
-serviceclient+=CB\F8C}CCServiceClientsC{Cserviceclient+=CB\F8C*C,Cserviceclient+=CB\F8C}C?CC
-actionserverC{C
-actionserver+=CC 
-ActionServerC!@WC"\00//ActionServerC#	C$
-ActionServerC%{C&nameC'name=C(@yC)actionC*action=C+C,@WA\E5C-@yC.?C/
-namespaceC0
-namespace=C1BNC2}C3*C4,C5
-actionserver+=C6C C7}C8C9ActionServersC:{C;
-actionserver+=C<C C=*C>,C?
-actionserver+=C@C CA}CB?CCCD
-actionclientCE{CF
-actionclient+=CGCH
-ActionClientCI@WCJ\00//ActionClientCK	CL
-ActionClientCM{CNnameCOname=CP@yCQactionCRaction=CSCT@WA\E5CU@yCV?CW
-namespaceCX
-namespace=CYBNCZ}C[*C\,C]
-actionclient+=C^CHC_}C`CaActionClientsCb{Cc
-actionclient+=CdCHCe*Cf,Cg
-actionclient+=ChCHCi}Cj?CkCl
-parameterCm{Cn
-parameter+=CoCp
-ParameterCq@WCr\00//ParameterCs	Ct
-ParameterCu{CvnameCwname=Cx@yCy?Cz
-namespaceC{
-namespace=C|BNC}typeC~type=CC\80ParameterTypeC\81@WC\82\00//ParameterTypeC\83	C\84C\85ParameterListTypeC\86@WC\87\00//ParameterListTypeC\88C\89
-C\8A@WC\87C\8BListC\8C{C\8D	sequence+=C\8EC\80C\8F*C\90,C\91	sequence+=C\92C\80C\93}C\94C\95ParameterStructTypeC\96@WC\97\00//ParameterStructTypeC\98C\99
-C\9A@WC\97C\9BStructC\9C{C\9Dparameterstructypetmember+=C\9EC\9FParameterStructTypeMemberC\A0@WC\A1\00//ParameterStructTypeMemberC\A2C\A3name=C\A4@yC\A5type=C\A6C\80C\A7*C\A8,C\A9parameterstructypetmember+=C\AAC\9FC\AB}C\ACC\ADParameterIntegerTypeC\AE@WC\AF\00//ParameterIntegerTypeC\B0C\B1
-C\B2@WC\AFC\B3IntegerC\B4?C\B5{C\B6defaultC\B7default=C\B8C\B9ParameterIntegerC\BA@WC\BB\00//ParameterIntegerC\BCvalue=C\BDC\BE	Integer0C\BF@\C\C0\00//IntC\C1C\C2DECINTC\C3@[C\C4C\C50C\C6C\C7
-C\C81C\C99C\CAcardinality*C\CBDIGITC\CC@[C\CD
-C\CE0C\CF9	fragmentC\D0C\D1-C\D2
-C\D30C\D49C\D5*C\CBC\D6}C\D7C\D8ParameterStringTypeC\D9@WC\DA\00//ParameterStringTypeC\DBC\DC
-C\DD@WC\DAC\DEStringC\DF?C\E0{C\E1defaultC\E2default=C\E3C\E4ParameterStringC\E5@WC\E6\00//ParameterStringC\E7value=C\E8@yC\E9}C\EAC\EBParameterDoubleTypeC\EC@WC\ED\00//ParameterDoubleTypeC\EEC\EF
-C\F0@WC\EDC\F1DoubleC\F2?C\F3{C\F4defaultC\F5default=C\F6C\F7ParameterDoubleC\F8@WC\F9\00//ParameterDoubleC\FAvalue=C\FBC\FCDouble0C\FD@\C\FE\00	//DoubleC\FFD\00DOUBLED@[D\00
-//EDoubleDDC\C2DDD.D*C\CBD	D
-?D.D*C\CBD
-DEDeD?D-D+DC\C2D}DDParameterBooleanTypeD@WD\00//ParameterBooleanTypeDD
-D@WDDBooleanD?D{DdefaultD default=D!D"ParameterBooleanD#@WD$\00//ParameterBooleanD%value=D&D'	boolean0D(@\D)\00
-//BooleanD*D+BOOLEAND,@[D-D.trueD/falseD0}D1D2ParameterBase64TypeD3@WD4\00//ParameterBase64TypeD5D6
-D7@WD4D8Base64D9?D:{D;defaultD<default=D=D>ParameterBase64D?@WD@\00//ParameterBase64DAvalue=DBDC
-Base64BinaryDD@\DE\00//Base64BinaryDFDGBINARYDH@[DIDJDK0bDL0BDM+DN0DO1DP}DQDRParameterArrayTypeDS@WDT\00//ParameterArrayTypeDUDVArrayDW{DXtypeDYtype=DZC\80D[?D\defaultD]default=D^D_ParameterListD`@WDa\00//ParameterSequenceDbDc
-Dd@WDaDe{Dfvalue+=DgDhParameterValueDi@WDj\00//ParameterValueDkDlC\E4DmD>DnC\B9DoC\F7DpD"DqD_DrDsParameterStructDt@WDu\00//ParameterStructDvDw
-Dx@WDuDy?Dz{D{value+=D|D}ParameterStructMemberD~@WD\00//ParameterStructMemberD\80D\81ParameterStructMemberD\82name=D\83@yD\84{D\85valueD\86value=D\87DhD\88}D\89*D\8A,D\8B{D\8Cvalue+=D\8DD}D\8E}D\8F}D\90*D\91,D\92value+=D\93DhD\94}D\95}D\96}D\97*D\98,D\99
-parameter+=D\9ACpD\9B}D\9CD\9DParametersD\9E{D\9F
-parameter+=D\A0CpD\A1*D\A2,D\A3
-parameter+=D\A4CpD\A5}D\A6}D\A7node=D\A8B-D\A9}D\AA*D\AB,D\AC	artifact+=D\ADBD\AE}D\AFD\B0	artifact+=D\B1BD\B2*D\B3,D\B4	artifact+=D\B5BD\B6}D\B7D\B8CatkinPackageD\B9@WD\BA\00//CatkinPackageD\BB	D\BC
-D\BD@WD\BAD\BECatkinPackageD\BFname=D\C0BD\C1{D\C2?D\C3D\C4specD\C5{D\C6spec+=D\C7@\85D\C8*D\C9,D\CAspec+=D\CB@\85D\CC}D\CDD\CESpecsD\CF{D\D0spec+=D\D1@\85D\D2*D\D3,D\D4spec+=D\D5@\85D\D6}D\D7?D\D8D\D9	artifactD\DA{D\DB	artifact+=D\DCBD\DD*D\DE,D\DF	artifact+=D\E0BD\E1}D\E2D\E3	artifact+=D\E4BD\E5*D\E6,D\E7	artifact+=D\E8BD\E9?D\EAD\EBdependencyD\EC{D\EDdependency+=D\EED\EFDependencyD\F0@WD\F1\00
-//DependencyD\F2D\F3D\F4PackageDependencyD\F5@WD\F6\00//PackageDependencyD\F7D\F8PackageDependencyD\F9package=D\FAD\FB@W@nD\FC@yD\FDD\FEExternalDependencyD\FF@WE\00\00//ExternalDependencyEE
-E@WE\00EExternalDependencyEname=E@yE*E,E	dependency+=E
-D\EFE}EE
-
-DependenciesE{Edependency+=ED\EFE*E,Edependency+=ED\EFE}E}E*E,Epackage+=E@lE}EEpackage+=E@lE*E ,E!package+=E"@lE#}@l@\85D\EFBN@q@yBE$RosParamNamesE%@[E&E'E(ROS_CONVENTION_PARAME)@[E**E+E,/E-;E.E/;E0/E1E2~E3;E4BE(BD\B8@\8AA\D1A\E3@\98B-B<B\A8B\D0B\F8C CHB`D\F4D\FEBSBkBCpC\80DhC\85C\95C\ADC\D8C\EBE5ParameterDateTypeE6@WE7\00//ParameterDateTypeE8E9
-E:@WE7E;DateE<?E={E>defaultE?default=E@EAParameterDateEB@WEC\00//ParameterDateEDvalue=EEEF
-DateTime0EG@\EH\00//DateTimeEIEJ
-DATE_TIMEEK@[ELEMENYEAREO@[EPEQ
-ER0ES2ET
-EU0EV9EW
-EX0EY9EZ
-E[0E\9E]-E^E_MONTHE`@[EaEb
-Ec1Ed9EeEf1Eg
-Eh0Ei2Ej-EkElDAYEm@[EnEo
-Ep1Eq9ErEs
-Et1Eu3Ev
-Ew0Ex9EyTEzE{HOURE|@[E}E~E
-E\800E\811E\82
-E\830E\849E\85E\862E\87
-E\880E\893E\8A:E\8BE\8CMIN_SECE\8D@[E\8EE\8F
-E\900E\915E\92
-E\930E\949E\95:E\96E\8CE\97}DD2E\98ParameterAnyTypeE\99@WE\9A\00//ParameterAnyTypeE\9BE\9C
-E\9D@WE\9AE\9EAnyE\9F?E\A0{E\A1defaultE\A2default=E\A3E\A4
-ParameterAnyE\A5@WE\A6\00//ParameterAnyE\A7E\A8
-E\A9@WE\A6E\AA
-ParameterAnyE\AB{E\AC?E\ADvalueE\AEvalue=E\AF@yE\B0}E\B1}DRD_E\A4C\E4D>C\B9C\F7D"DsEAD}C\9FC\CBDGD+D\00C\C2ElE_ENE{E\8CEJDCD'C\FCC\BEEF@\A2A\B9@\A8@\AD@\B5@\BD@\C5@\CD@\D5@\DD@\E5@\ED@\F5@\FDAA
-AAA-A5A=AEAMAUA]AeAmAuA}A\85A\8DA%A\95A\9EA\AA
+Actiontype@c@W@`@dPackageSet@e{@f?@gAssignmentfeaturepackage	operator+=	terminal@h	RuleCallrule@iPackage@j@W@k\00
+//Package@l@m@n
+Package_Impl@o@W@k@p@q
+@r@W@k@sPackage@tname=@u@vEString@w@[@x@y;@z@{{@|?@}Specs@~{@spec+=@\80@\81	SpecBase@\82@W@\83\00//SpecBase@\84@\85@\86ServiceSpec@\87@W@\88\00//ServiceSpec@\89@\8A
+@\8B@W@\88@\8CServiceSpec@\8Dname=@\8E@v@\8F{@\90?@\91request@\92request=@\93@\94MessageDefinition@\95@W@\96\00//MessageDefinition@\97@\98
+@\99@W@\96@\9A{@\9B?@\9CMessagePart+=@\9D@\9EMessagePart@\9F@Y@\A0\00//MessagePart@\A1@\A2Type=@\A3@\A4
+AbstractType@\A5@Y@\A6\00//AbstractType@\A7 @\A8@\A9bool@\AA@Y@\AB\00//bool@\AC@\AD
+@\AE@Y@\AB@\AFbool@\B0@\B1int8@\B2@Y@\B3\00//int8@\B4@\B5
+@\B6@Y@\B3@\B7int8@\B8@\B9uint8@\BA@Y@\BB\00//uint8@\BC@\BD
+@\BE@Y@\BB@\BFuint8@\C0@\C1int16@\C2@Y@\C3\00//int16@\C4@\C5
+@\C6@Y@\C3@\C7int16@\C8@\C9uint16@\CA@Y@\CB\00	//uint16@\CC@\CD
+@\CE@Y@\CB@\CFuint16@\D0@\D1int32@\D2@Y@\D3\00//int32@\D4@\D5
+@\D6@Y@\D3@\D7int32@\D8@\D9uint32@\DA@Y@\DB\00	//uint32@\DC@\DD
+@\DE@Y@\DB@\DFuint32@\E0@\E1int64@\E2@Y@\E3\00//int64@\E4@\E5
+@\E6@Y@\E3@\E7int64@\E8@\E9uint64@\EA@Y@\EB\00	//uint64@\EC@\ED
+@\EE@Y@\EB@\EFuint64@\F0@\F1float32@\F2@Y@\F3\00
+//float32@\F4@\F5
+@\F6@Y@\F3@\F7float32@\F8@\F9float64@\FA@Y@\FB\00
+//float64@\FC@\FD
+@\FE@Y@\FB@\FFfloat64A\00Astring0A@YA\00	//stringAA
+A@YAAstringAA	byteA
+@YA\00//ByteAA
+
+A@YAAbyteAAtimeA@YA\00//timeAA
+A@YAAtimeAA	durationA@YA\00//durationAA
+A@YAA	durationA A!HeaderA"@YA#\00	//HeaderA$A%
+A&@YA#A'HeaderA(A)
+boolArrayA*@YA+\00//boolArrayA,A-
+A.@YA+A/bool[]A0A1
+int8ArrayA2@YA3\00//int8ArrayA4A5
+A6@YA3A7int8[]A8A9uint8ArrayA:@YA;\00
+//uint8ArrayA<A=
+A>@YA;A?uint8[]A@AAint16ArrayAB@YAC\00
+//int16ArrayADAE
+AF@YACAGint16[]AHAIuint16ArrayAJ@YAK\00//uint16ArrayALAM
+AN@YAKAO	uint16[]APAQint32ArrayAR@YAS\00
+//int32ArrayATAU
+AV@YASAWint32[]AXAYuint32ArrayAZ@YA[\00//uint32ArrayA\A]
+A^@YA[A_	uint32[]A`Aaint64ArrayAb@YAc\00
+//int64ArrayAdAe
+Af@YAcAgint64[]AhAiuint64ArrayAj@YAk\00//uint64ArrayAlAm
+An@YAkAo	uint64[]ApAq
+float32ArrayAr@YAs\00//float32ArrayAtAu
+Av@YAsAw
+float32[]AxAy
+float64ArrayAz@YA{\00//float64ArrayA|A}
+A~@YA{A
+float64[]A\80A\81
+string0ArrayA\82@YA\83\00//stringArrayA\84A\85
+A\86@YA\83A\87	string[]A\88A\89
+byteArrayA\8A@YA\8B\00//ByteArrayA\8CA\8D
+A\8E@YA\8BA\8Fbyte[]A\90A\91
+TopicSpecRefA\92@YA\93\00//TopicSpecRefA\94
+TopicSpec=A\95CrossReferencetypeA\96@WA\97\00//TopicSpec	terminalA\98@vA\99A\9AArrayTopicSpecRefA\9B@YA\9C\00//ArrayTopicSpecRefA\9DA\9E
+TopicSpec=A\9FA\A0@WA\97A\A1@vA\A2[]A\A3Data=A\A4A\A5A\A6KEYWORDA\A7@[A\A8A\A9goalA\AAmessageA\ABresultA\AC	feedbackA\ADnameA\AEvalueA\AFserviceA\B0typeA\B1actionA\B2	durationA\B3timeA\B4A\B5MESSAGE_ASIGMENTA\B6@[A\B7A\B8A\B9A\BA;A\BB=A\BCA\BDA\BE;A\BF5A\C0A\C1-A\C25A\C3@vA\C4cardinality*MessagePart+=A\C5@\9EA\C6}A\C7?A\C8	responseA\C9	response=A\CA@\94A\CB}A\CCA\CD
+TopicSpecA\CE@WA\97A\CFA\D0
+A\D1@WA\97A\D2
+TopicSpecA\D3name=A\D4A\D5@vA\D6HeaderA\D7StringA\D8{A\D9?A\DAmessageA\DBmessage=A\DC@\94A\DD}A\DEA\DFActionSpecA\E0@WA\E1\00
+//ActionSpecA\E2	A\E3
+A\E4@WA\E1A\E5ActionSpecA\E6name=A\E7@vA\E8{A\E9?A\EAgoalA\EBgoal=A\EC@\94A\ED?A\EEresultA\EFresult=A\F0@\94A\F1?A\F2	feedbackA\F3	feedback=A\F4@\94A\F5}A\F6*A\F7,A\F8spec+=A\F9@\81A\FA}A\FB?A\FC	artifact+=A\FDA\FE	ArtifactA\FF@WB\00\00//ArtifactBB
+B@WB\00B	ArtifactBname=BB	RosNamesB@[B	B
+BROS_CONVENTION_AB@[B
+*BB/BBBB/BBnodeB{B?node=BBNodeB@WB\00//NodeB
+BNodeB{BnameB name=B!BB"?B#ServiceServersB${B%serviceserver+=B&B'ServiceServerB(@WB)\00//ServiceServerB*	B+ServiceServerB,{B-nameB.name=B/@vB0serviceB1service=B2B3@W@\88B4@vB5?B6
+namespaceB7
+namespace=B8B9
+NamespaceB:@WB;\00//NamespaceB<B=B>GlobalNamespaceB?@WB@\00//GlobalNamespaceBABB
+BC@WB@BDGlobalNamespaceBE{BF?BGpartsBH{BIparts+=BJBK
+GraphNameBL@WBM\00//GraphNameBN
+GraphNameBO*BP,BQparts+=BRBKBS}BT}BUBVRelativeNamespace_ImplBW@WBX\00//RelativeNamespaceBYBZ
+B[@WBXB\RelativeNamespaceB]{B^?B_partsB`{Baparts+=BbBKBc*Bd,Beparts+=BfBKBg}Bh}BiBjPrivateNamespaceBk@WBl\00//PrivateNamespaceBmBn
+Bo@WBlBpPrivateNamespaceBq{Br?BspartsBt{Buparts+=BvBKBw*Bx,Byparts+=BzBKB{}B|}B}}B~*B,B\80serviceserver+=B\81B'B\82}B\83?B\84PublishersB\85{B\86
+publisher+=B\87B\88
+PublisherB\89@WB\8A\00//PublisherB\8B	B\8C
+PublisherB\8D{B\8EnameB\8Fname=B\90@vB\91messageB\92message=B\93B\94@WA\97B\95@vB\96?B\97
+namespaceB\98
+namespace=B\99B9B\9A}B\9B*B\9C,B\9D
+publisher+=B\9EB\88B\9F}B\A0?B\A1SubscribersB\A2{B\A3subscriber+=B\A4B\A5SubscriberB\A6@WB\A7\00
+//SubscriberB\A8	B\A9SubscriberB\AA{B\ABnameB\ACname=B\AD@vB\AEmessageB\AFmessage=B\B0B\B1@WA\97B\B2@vB\B3?B\B4
+namespaceB\B5
+namespace=B\B6B9B\B7}B\B8*B\B9,B\BAsubscriber+=B\BBB\A5B\BC}B\BD?B\BEServiceClientsB\BF{B\C0serviceclient+=B\C1B\C2ServiceClientB\C3@WB\C4\00//ServiceClientB\C5	B\C6ServiceClientB\C7{B\C8nameB\C9name=B\CA@vB\CBserviceB\CCservice=B\CDB\CE@W@\88B\CF@vB\D0?B\D1
+namespaceB\D2
+namespace=B\D3B9B\D4}B\D5*B\D6,B\D7serviceclient+=B\D8B\C2B\D9}B\DA?B\DBActionServersB\DC{B\DD
+actionserver+=B\DEB\DF
+ActionServerB\E0@WB\E1\00//ActionServerB\E2	B\E3
+ActionServerB\E4{B\E5nameB\E6name=B\E7@vB\E8actionB\E9action=B\EAB\EB@WA\E1B\EC@vB\ED?B\EE
+namespaceB\EF
+namespace=B\F0B9B\F1}B\F2*B\F3,B\F4
+actionserver+=B\F5B\DFB\F6}B\F7?B\F8ActionClientsB\F9{B\FA
+actionclient+=B\FBB\FC
+ActionClientB\FD@WB\FE\00//ActionClientB\FF	C\00
+ActionClientC{CnameCname=C@vCactionCaction=CC@WA\E1C	@vC
+?C
+namespaceC
+namespace=C
+B9C}C*C,C
+actionclient+=CB\FCC}C?CParametersC{C
+parameter+=CC
+ParameterC@WC\00//ParameterC	C
+ParameterC{CnameC name=C!@vC"?C#
+namespaceC$
+namespace=C%B9C&typeC'type=C(C)ParameterTypeC*@WC+\00//ParameterTypeC,	C-C.ParameterListTypeC/@WC0\00//ParameterListTypeC1C2
+C3@WC0C4ListC5{C6	sequence+=C7C)C8*C9,C:	sequence+=C;C)C<}C=C>ParameterStructTypeC?@WC@\00//ParameterStructTypeCACB
+CC@WC@CDStrucCE{CFparameterstructypetmember+=CGCHParameterStructTypeMemberCI@WCJ\00//ParameterStructTypeMemberCKCLname=CM@vCNtype=COC)CP*CQ,CRparameterstructypetmember+=CSCHCT}CUCVParameterIntegerTypeCW@WCX\00//ParameterIntegerTypeCYCZ
+C[@WCXC\IntegerC]?C^{C_defaultC`default=CaCbParameterIntegerCc@WCd\00//ParameterIntegerCevalue=CfCg	Integer0Ch@\Ci\00//IntCjCkDECINTCl@[CmCn0CoCp
+Cq1Cr9Cscardinality*CtDIGITCu@[Cv
+Cw0Cx9	fragmentCyCz-C{
+C|0C}9C~*CtC}C\80C\81ParameterStringTypeC\82@WC\83\00//ParameterStringTypeC\84C\85
+C\86@WC\83C\87StringC\88?C\89{C\8AdefaultC\8Bdefault=C\8CC\8DParameterStringC\8E@WC\8F\00//ParameterStringC\90value=C\91@vC\92}C\93C\94ParameterDoubleTypeC\95@WC\96\00//ParameterDoubleTypeC\97C\98
+C\99@WC\96C\9ADoubleC\9B?C\9C{C\9DdefaultC\9Edefault=C\9FC\A0ParameterDoubleC\A1@WC\A2\00//ParameterDoubleC\A3value=C\A4C\A5Double0C\A6@\C\A7\00	//DoubleC\A8C\A9DOUBLEC\AA@[C\AB\00
+//EDoubleC\ACC\ADCkC\AEC\AFC\B0.C\B1*CtC\B2C\B3?C\B4.C\B5*CtC\B6C\B7EC\B8eC\B9?C\BA-C\BB+C\BCCkC\BD}C\BEC\BFParameterBooleanTypeC\C0@WC\C1\00//ParameterBooleanTypeC\C2C\C3
+C\C4@WC\C1C\C5BooleanC\C6?C\C7{C\C8defaultC\C9default=C\CAC\CBParameterBooleanC\CC@WC\CD\00//ParameterBooleanC\CEvalue=C\CFC\D0	boolean0C\D1@\C\D2\00
+//BooleanC\D3C\D4BOOLEANC\D5@[C\D6C\D7trueC\D8falseC\D9}C\DAC\DBParameterBase64TypeC\DC@WC\DD\00//ParameterBase64TypeC\DEC\DF
+C\E0@WC\DDC\E1Base64C\E2?C\E3{C\E4defaultC\E5default=C\E6C\E7ParameterBase64C\E8@WC\E9\00//ParameterBase64C\EAvalue=C\EBC\EC
+Base64BinaryC\ED@\C\EE\00//Base64BinaryC\EFC\F0BINARYC\F1@[C\F2C\F3C\F40bC\F50BC\F6+C\F70C\F81C\F9}C\FAC\FBParameterArrayTypeC\FC@WC\FD\00//ParameterArrayTypeC\FEC\FFArrayD\00{DtypeDtype=DC)D?DdefaultDdefault=DDParameterListD	@WD
+\00//ParameterSequenceDD
+D
+@WD
+D{Dvalue+=DDParameterValueD@WD\00//ParameterValueDDC\8DDC\E7DCbDC\A0DC\CBDDDDParameterStructD@WD\00//ParameterStructDD 
+D!@WDD"?D#{D$value+=D%D&ParameterStructMemberD'@WD(\00//ParameterStructMemberD)D*ParameterStructMemberD+name=D,@vD-{D.valueD/value=D0DD1}D2*D3,D4{D5value+=D6D&D7}D8}D9*D:,D;value+=D<DD=}D>}D?}D@*DA,DB
+parameter+=DCCDD}DE}DF}DG*DH,DI	artifact+=DJA\FEDK}DLDMCatkinPackageDN@WDO\00//CatkinPackageDP	DQ
+DR@WDODSCatkinPackageDTname=DUBDV{DW?DXSpecsDY{DZspec+=D[@\81D\*D],D^spec+=D_@\81D`}Da?Db	artifact+=DcA\FEDd*De,Df	artifact+=DgA\FEDh?Di
+DependenciesDj{Dkdependency+=DlDmDependencyDn@WDo\00
+//DependencyDpDqDrPackageDependencyDs@WDt\00//PackageDependencyDuDvPackageDependencyDwpackage=DxDy@W@kDz@vD{D|ExternalDependencyD}@WD~\00//ExternalDependencyDD\80
+D\81@WD~D\82ExternalDependencyD\83name=D\84@vD\85*D\86,D\87dependency+=D\88DmD\89}D\8A}D\8B*D\8C,D\8Dpackage+=D\8E@iD\8F}@i@\81DmB9@n@vBD\90RosParamNamesD\91@[D\92D\93D\94ROS_CONVENTION_PARAMD\95@[D\96*D\97D\98/D\99;D\9AD\9B;D\9C/D\9DD\9E~D\9F;D\A0BD\94A\FEDM@\86A\CDA\DF@\94BB'B\88B\A5B\C2B\DFB\FCBKDrD|B>BVBjCC)DC.C>CVC\81C\94D\A1ParameterDateTypeD\A2@WD\A3\00//ParameterDateTypeD\A4D\A5
+D\A6@WD\A3D\A7DateD\A8?D\A9{D\AAdefaultD\ABdefault=D\ACD\ADParameterDateD\AE@WD\AF\00//ParameterDateD\B0value=D\B1D\B2
+DateTime0D\B3@\D\B4\00//DateTimeD\B5D\B6
+DATE_TIMED\B7@[D\B8D\B9D\BAYEARD\BB@[D\BCD\BD
+D\BE0D\BF2D\C0
+D\C10D\C29D\C3
+D\C40D\C59D\C6
+D\C70D\C89D\C9-D\CAD\CBMONTHD\CC@[D\CDD\CE
+D\CF1D\D09D\D1D\D21D\D3
+D\D40D\D52D\D6-D\D7D\D8DAYD\D9@[D\DAD\DB
+D\DC1D\DD9D\DED\DF
+D\E01D\E13D\E2
+D\E30D\E49D\E5TD\E6D\E7HOURD\E8@[D\E9D\EAD\EB
+D\EC0D\ED1D\EE
+D\EF0D\F09D\F1D\F22D\F3
+D\F40D\F53D\F6:D\F7D\F8MIN_SECD\F9@[D\FAD\FB
+D\FC0D\FD5D\FE
+D\FF0E\009E:ED\F8E}C\BFC\DBEParameterAnyTypeE@WE\00//ParameterAnyTypeEE
+E	@WEE
+AnyE?E{E
+defaultEdefault=EE
+ParameterAnyE@WE\00//ParameterAnyEE
+E@WEE
+ParameterAnyE{E?EvalueEvalue=E@vE}E}C\FBDEC\8DC\E7CbC\A0C\CBDD\ADD&CHCtC\F0C\D4C\A9CkD\D8D\CBD\BAD\E7D\F8D\B6C\ECC\D0C\A5CgD\B2@\9EA\B5@\A4@\A9@\B1@\B9@\C1@\C9@\D1@\D9@\E1@\E9@\F1@\F9AA	AAA)A1A9AAAIAQAYAaAiAqAyA\81A\89A!A\91A\9AA\A6
