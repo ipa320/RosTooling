@@ -1,5 +1,6 @@
 RosSystem { Name 'test_system'  RosComponents ( 
     ComponentInterface { name test_node 
+    	FromRosNode "test_pkg.test_node.test_node"
     	RosPublishers{ RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"} } 
     	RosSubscribers{ RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"} } 
     	RosSrvServers{ RosServiceServer "setBool" { RefServer "test_pkg.test_node.test_node.setBool"} } 
@@ -13,6 +14,7 @@ RosSystem { Name 'test_system'  RosComponents (
     		RosParameter "list_test" { RefParameter "test_pkg.test_node.test_node.list_test"} 
     	}
     } , ComponentInterface { name test_node2 NameSpace test2 
+    	FromRosNode "test_pkg.test_node.test_node"
     	RosPublishers { RosPublisher "test2/scan" { ns test2 RefPublisher "test_pkg.test_node.test_node.scan" } } 
     	RosSubscribers { RosSubscriber "test2/power_state" { ns test2 RefSubscriber "test_pkg.test_node.test_node.power_state" } } 
     	RosSrvServers { RosServiceServer "test2/setBool" { ns test2 RefServer "test_pkg.test_node.test_node.setBool" } } 
