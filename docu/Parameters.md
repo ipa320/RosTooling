@@ -26,11 +26,11 @@ This format is also valid for a ROSsystem file, case of ROS where a new paramete
 For example (for a .ros file):
 
 ```
-PackageSet { package {
-  CatkinPackage test_parameters{ artifact {
+PackageSet {
+  CatkinPackage test_parameters{
     Artifact  test_parameters {
-       node Node  { name test
-         parameter { 
+      Node  { name test
+         Parameters { 
            Parameter { name string_test type String },
            Parameter { name bool_tets type Boolean },
            Parameter { name array_tets type Array {type String}},
@@ -44,7 +44,7 @@ PackageSet { package {
                third_element String ,
                last_element Struc { hello Integer, what String}}
            }}}
-}}}}}
+}}}
 ```
 These parameters can be re-set at Rossystem level (that means for ROS developers, the case of the set of a new parameter value within a node include on a ROS launch file). For the tooling the format is the following:
 

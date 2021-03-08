@@ -80,8 +80,8 @@ Additionally the definition of constants with its value is also supported and fo
 The following extract shows the ROS model description correspondent to the [nav_msgs](http://wiki.ros.org/nav_msgs) package:
 
 ```
-PackageSet { package {
-    Package nav_msgs{ spec { 
+PackageSet {
+    Package nav_msgs{ Specs { 
       TopicSpec GetMapAction{ message { GetMapActionGoal action_goal GetMapActionResult action_result GetMapActionFeedback action_feedback }},
       TopicSpec GetMapActionFeedback{ message { Header header "actionlib_msgs.GoalStatus" status GetMapFeedback feedback }},
       TopicSpec GetMapActionGoal{ message { Header header "actionlib_msgs.GoalID" goal_id GetMapGoal goal }},
@@ -103,8 +103,8 @@ PackageSet { package {
 :bangbang::bangbang: This model doesn't allow the creation of 2 specification with the same name, although they have different types. That means a ROS model like the following one is not allow:
 
 ```
-PackageSet { package {
-    Package my_msgs { spec { 
+PackageSet {
+    Package my_msgs { Specs { 
       TopicSpec hello { message { String data }},
       ServiceSpec hello { request {  } response { String data }},
     }}
