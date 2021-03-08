@@ -323,6 +323,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_0_4() { return cRightCurlyBracketKeyword_4_0_4; }
 		
+		////to be deprecated
 		//'Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}'
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
@@ -675,6 +676,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_0_4() { return cRightCurlyBracketKeyword_4_0_4; }
 		
+		////to be deprecated
 		//'Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}'
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
@@ -794,6 +796,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_0_4() { return cRightCurlyBracketKeyword_6_0_4; }
 		
+		////to be deprecated
 		//'Dependencies' '{' dependency+=Dependency ("," dependency+=Dependency)* '}'
 		public Group getGroup_6_1() { return cGroup_6_1; }
 		
