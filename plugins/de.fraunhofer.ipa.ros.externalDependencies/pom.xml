@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001 XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.fraunhofer.ipa.ros.externalDependencies</groupId>
+	<artifactId>de.fraunhofer.ipa.ros.externalDependencies</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<sprottyVersion>0.7.0-SNAPSHOT</sprottyVersion>
+		<elkVersion>0.5.0</elkVersion>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>sonatype-oss</id>
+			<name>sonatype-oss</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.reficio</groupId>
+				<artifactId>p2-maven-plugin</artifactId>
+				<version>1.3.0</version>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<configuration>
+							<featureDefinitions>
+								<feature>
+									<id>de.fraunhofer.ipa.ros.externalDependencies</id>
+									<version>${project.version}</version>
+									<label>ROS Model Maven dependencies</label>
+									<providerName>${project.groupId}</providerName>
+									<description>${project.description}</description>					
+									<artifacts>
+										<!-- specify your dependencies here -->
+										<!-- groupId:artifactId:version -->
+										<artifact>
+											<id>org.ow2.asm:asm:7.0</id>
+											<transitive>false</transitive>						
+										</artifact>
+										<artifact>
+											<id>org.ow2.asm:asm-commons:7.0</id>
+											<transitive>false</transitive>					 
+										</artifact>
+										<artifact>
+											<id>org.ow2.asm:asm-tree:7.0</id>
+											<transitive>false</transitive>				 
+										</artifact>
+										<artifact>
+											<id>org.eclipse.sprotty:org.eclipse.sprotty:${sprottyVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.sprotty:org.eclipse.sprotty.server:${sprottyVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.sprotty:org.eclipse.sprotty.xtext:${sprottyVersion}</id>
+											<transitive>false</transitive> 
+										</artifact>
+										<artifact>
+											<id>org.eclipse.sprotty:org.eclipse.sprotty.layout:${sprottyVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.elk:org.eclipse.elk.alg.layered:${elkVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.elk:org.eclipse.elk.alg.common:${elkVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.elk:org.eclipse.elk.core:${elkVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>org.eclipse.elk:org.eclipse.elk.graph:${elkVersion}</id>
+											<transitive>false</transitive>
+										</artifact>
+										<artifact>
+											<id>com.google.code.gson:gson:2.8.5</id>
+											<transitive>false</transitive>
+										</artifact>
+									</artifacts>
+								</feature>
+							</featureDefinitions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.5.v20120716</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppSourceDirectory>${project.build.directory}/repository/</webAppSourceDirectory>
+					<webApp>
+						<contextPath>/site</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

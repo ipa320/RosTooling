@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="de.fraunhofer.ipa.ros.feature">
+      <category name="ros-model"/>
+   </feature>
+   <category-def name="ros-model" label="ROS Model">
+      <description>
+         This feature holds a family of metamodels defined as ecore models
+that together with its java and Xtext and Xtend grammar implementations
+facilitates the use of a set of tools and graphical plugins to
+create models from ROS code, compose and validate the composition
+of models, autogenerate deployment artifacts and check the use
+of standard specifications.
+      </description>
+   </category-def>
+</site>
