@@ -11,13 +11,14 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
+ import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider
 import rossystem.RosSystem
 import componentInterface.ComponentInterface
 import java.util.ArrayList
 import rossystem.ComponentStack
 import java.util.Collections
 
-class CustomOutputProvider implements IOutputConfigurationProvider {
+class CustomOutputProvider implements IOutputConfigurationProvider, IContextualOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
 	
@@ -38,6 +39,10 @@ class CustomOutputProvider implements IOutputConfigurationProvider {
 		default_config.setCleanUpDerivedResources(false);
 		default_config.setSetDerivedProperty(false);
 		return newHashSet(cm_config, default_config)
+	}
+	
+	override Set<OutputConfiguration> getOutputConfigurations(Resource context) {
+		return getOutputConfigurations()
 	}
 }
 

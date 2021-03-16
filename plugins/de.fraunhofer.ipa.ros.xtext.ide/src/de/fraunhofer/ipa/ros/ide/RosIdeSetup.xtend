@@ -7,14 +7,14 @@ import com.google.inject.Guice
 import de.fraunhofer.ipa.ros.RosRuntimeModule
 import de.fraunhofer.ipa.ros.RosStandaloneSetup
 import org.eclipse.xtext.util.Modules2
-
+import de.fraunhofer.ipa.ros.ide.diagram.RosDiagramModule
 /**
  * Initialization support for running Xtext languages as language servers.
  */
 class RosIdeSetup extends RosStandaloneSetup {
 
 	override createInjector() {
-		Guice.createInjector(Modules2.mixin(new RosRuntimeModule, new RosIdeModule))
+		Guice.createInjector(Modules2.mixin(new RosRuntimeModule, new RosIdeModule, new RosDiagramModule))
 	}
 	
 }

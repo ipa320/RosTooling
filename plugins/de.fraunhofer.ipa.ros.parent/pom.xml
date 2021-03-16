@@ -50,6 +50,7 @@
 		<module>../de.fraunhofer.ipa.ros.plugin</module>
 		<module>../de.fraunhofer.ipa.ros.sirius</module>
 		<module>../de.fraunhofer.ipa.ros.feature</module>
+
 	</modules>
 
 	<repositories>
@@ -75,6 +76,11 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</repository>
+		<repository>
+			<id>external-deps</id>
+			<layout>p2</layout>
+			<url>http://ros-model.seronet-project.de/external-dependencies/</url>		
 		</repository>
 	</repositories>
 	<pluginRepositories>

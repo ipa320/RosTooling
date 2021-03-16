@@ -4,6 +4,7 @@
 package de.fraunhofer.ipa.rossystem
 
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider
 import de.fraunhofer.ipa.rossystem.generator.CustomOutputProvider
 import com.google.inject.Binder
 
@@ -16,6 +17,8 @@ class RosSystemRuntimeModule extends AbstractRosSystemRuntimeModule {
 	override void configure(Binder binder) {
 		super.configure(binder)
 		binder.bind(IOutputConfigurationProvider).to(CustomOutputProvider).asEagerSingleton()
+		binder.bind(IContextualOutputConfigurationProvider).to(CustomOutputProvider).asEagerSingleton()
+	
 	}
 
 }
