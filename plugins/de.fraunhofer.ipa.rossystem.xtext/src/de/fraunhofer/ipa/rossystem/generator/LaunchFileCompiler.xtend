@@ -22,6 +22,8 @@ class LaunchFileCompiler {
 	
 	int i=0;
 	int k=0;
+	
+	List<ComponentInterface> ComponentsList = new ArrayList<ComponentInterface>();
 
 	def compile_tolaunch(RosSystem system) '''«init_comp()»
 <?xml version="1.0"?>
@@ -46,8 +48,8 @@ class LaunchFileCompiler {
   	«ELSE»
   		<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
   	«ENDIF»
-  «ENDFOR»
-	«FOR component:system.rosComponent»
+   «ENDFOR»«ComponentsList.clear()»«extract_components(system)»
+	«FOR component:ComponentsList»
 		«FOR rosPublisher:component.rospublisher»
 				«IF component.hasNS»
 				«IF !rosPublisher.name.equals(compile_topic_name(rosPublisher.publisher,component.get_ns))»
@@ -91,7 +93,7 @@ class LaunchFileCompiler {
 				«ENDIF»
 		«ENDFOR»
 	«ENDFOR»
-	«FOR component:system.rosComponent»
+	«FOR component:ComponentsList»
 
 	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
@@ -259,6 +261,17 @@ class LaunchFileCompiler {
 		}
 		if (sizes_list.isEmpty){
 			return str_output.replace("null","");
+		}
+	}
+	
+	def extract_components(RosSystem system){
+		for(stack: system.componentStack){
+			for (component: stack.rosComponent){
+				ComponentsList.add(component)
+			}
+		} 
+		for (component: system.rosComponent){
+			ComponentsList.add(component)
 		}
 	}
 
