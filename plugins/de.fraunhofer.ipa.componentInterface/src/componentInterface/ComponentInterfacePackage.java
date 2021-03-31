@@ -195,13 +195,22 @@ public interface ComponentInterfacePackage extends EPackage {
 	int COMPONENT_INTERFACE__ROSPARAMETER = NAME_SPACE_COMPONENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>From Ros Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INTERFACE__FROM_ROS_NODE = NAME_SPACE_COMPONENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Component Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 7;
+	int COMPONENT_INTERFACE_FEATURE_COUNT = NAME_SPACE_COMPONENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Component Interface</em>' class.
@@ -705,6 +714,17 @@ public interface ComponentInterfacePackage extends EPackage {
 	EReference getComponentInterface_Rosparameter();
 
 	/**
+	 * Returns the meta object for the reference '{@link componentInterface.ComponentInterface#getFromRosNode <em>From Ros Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From Ros Node</em>'.
+	 * @see componentInterface.ComponentInterface#getFromRosNode()
+	 * @see #getComponentInterface()
+	 * @generated
+	 */
+	EReference getComponentInterface_FromRosNode();
+
+	/**
 	 * Returns the meta object for class '{@link componentInterface.RosPublisher <em>Ros Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1147,6 +1167,14 @@ public interface ComponentInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INTERFACE__ROSPARAMETER = eINSTANCE.getComponentInterface_Rosparameter();
+
+		/**
+		 * The meta object literal for the '<em><b>From Ros Node</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INTERFACE__FROM_ROS_NODE = eINSTANCE.getComponentInterface_FromRosNode();
 
 		/**
 		 * The meta object literal for the '{@link componentInterface.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.

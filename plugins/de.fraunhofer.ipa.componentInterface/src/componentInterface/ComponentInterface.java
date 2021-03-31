@@ -3,6 +3,7 @@
 package componentInterface;
 
 import org.eclipse.emf.common.util.EList;
+import ros.Node;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link componentInterface.ComponentInterface#getRosactionserver <em>Rosactionserver</em>}</li>
  *   <li>{@link componentInterface.ComponentInterface#getRosactionclient <em>Rosactionclient</em>}</li>
  *   <li>{@link componentInterface.ComponentInterface#getRosparameter <em>Rosparameter</em>}</li>
+ *   <li>{@link componentInterface.ComponentInterface#getFromRosNode <em>From Ros Node</em>}</li>
  * </ul>
  *
  * @see componentInterface.ComponentInterfacePackage#getComponentInterface()
@@ -134,5 +136,27 @@ public interface ComponentInterface extends NameSpaceComponent {
 	 * @generated
 	 */
 	EList<RosParameter> getRosparameter();
+
+	/**
+	 * Returns the value of the '<em><b>From Ros Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Ros Node</em>' reference.
+	 * @see #setFromRosNode(Node)
+	 * @see componentInterface.ComponentInterfacePackage#getComponentInterface_FromRosNode()
+	 * @model
+	 * @generated
+	 */
+	Node getFromRosNode();
+
+	/**
+	 * Sets the value of the '{@link componentInterface.ComponentInterface#getFromRosNode <em>From Ros Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Ros Node</em>' reference.
+	 * @see #getFromRosNode()
+	 * @generated
+	 */
+	void setFromRosNode(Node value);
 
 } // ComponentInterface

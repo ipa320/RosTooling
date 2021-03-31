@@ -74,6 +74,7 @@ def compile (Node node, String package_name, String artifact_name){
 	
 '''
 ComponentInterface { name «node.name»
+	FromRosNode "«package_name».«artifact_name».«node.name»"
 	«IF !node.publisher.empty»
 	RosPublishers{
 «FOR pub:node.publisher»

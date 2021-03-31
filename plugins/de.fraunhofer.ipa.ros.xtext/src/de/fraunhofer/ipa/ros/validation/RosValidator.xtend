@@ -137,9 +137,9 @@ class RosValidator extends AbstractRosValidator {
   }
   
   @Check
-  def void StrucHelp (Parameter param){
-  	if(param.type.toString.contains("Struc")){
-  		info("HELP: Struc parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
+  def void StructHelp (Parameter param){
+  	if(param.type.toString.contains("Struct")){
+  		info("HELP: Struct parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
   	}
   }
   

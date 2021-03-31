@@ -148,6 +148,7 @@ public class ComponentInterfaceModelWizardOnlyRosInputModel extends Wizard imple
 													NameSpaceInterfaces = "";
 													if (!(ComponentNameSpace.length()==0))
 														NameSpaceInterfaces = ComponentNameSpace + "/";
+													component.setFromRosNode(rosnode);
 													for (Publisher pub:pubs) {
 														RosPublisher rospub = new RosPublisherImpl();
 														rospub.setName(NameSpaceInterfaces+pub.getName());

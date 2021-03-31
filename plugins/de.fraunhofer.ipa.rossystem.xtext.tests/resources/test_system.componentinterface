@@ -37,9 +37,8 @@ RosParameters{
 	RosParameter "param1" { RefParameter "param1" value hello },
 	RosParameter "list_test" { RefParameter "list_test" value {1,2,a} },
 	RosParameter "array_test" { RefParameter "array_test" value {1,3} },
-	RosParameter "struc_test" { RefParameter "struc_test" value {
+	RosParameter "struct_test" { RefParameter "struct_test" value {
 	          { first_element { value 8 }},
 	          { third_element { value dsd }}} }
 	}
 }
-

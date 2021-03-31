@@ -21,6 +21,7 @@ import ros.Subscriber
 import rossystem.RosSystem
 import ros.ParameterValue
 import ros.impl.ParameterStructMemberImpl
+import ros.Node
 
 class ComponentInterfaceCompiler {
 	@Inject extension GeneratorHelpers
@@ -166,7 +167,7 @@ RosParameters{
 	}
 	
 	def compile_art(ComponentInterface component)
-'''«IF !ArtifactSet && !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«IF !ArtifactSet»«Rospublisher.publisher.getArtifact_pub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«IF !ArtifactSet»«Rossubscriber.subscriber.getArtifact_sub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«IF !ArtifactSet»«Rosserviceserver.srvserver.getArtifact_srvserv()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«IF !ArtifactSet»«Rosserviceclient.srvclient.getArtifact_srvcli()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosparameter.empty»«FOR RosParameter:component.rosparameter»«IF !ArtifactSet»«RosParameter.parameter.getArtifact_rosparam()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionserver.empty»«FOR Rosactionserver:component.rosactionserver»«IF !ArtifactSet»«Rosactionserver.actserver.getArtifact_actserver()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionclient.empty»«FOR Rosactionclient:component.rosactionclient»«IF !ArtifactSet»«Rosactionclient.actclient.getArtifact_actclient()»«ENDIF»«ENDFOR»«ENDIF»'''
+'''«IF ! (component.fromRosNode===null)»«component.fromRosNode.getArtifact_rosnode»«ELSEIF !ArtifactSet && !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«IF !ArtifactSet»«Rospublisher.publisher.getArtifact_pub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«IF !ArtifactSet»«Rossubscriber.subscriber.getArtifact_sub()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«IF !ArtifactSet»«Rosserviceserver.srvserver.getArtifact_srvserv()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«IF !ArtifactSet»«Rosserviceclient.srvclient.getArtifact_srvcli()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosparameter.empty»«FOR RosParameter:component.rosparameter»«IF !ArtifactSet»«RosParameter.parameter.getArtifact_rosparam()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionserver.empty»«FOR Rosactionserver:component.rosactionserver»«IF !ArtifactSet»«Rosactionserver.actserver.getArtifact_actserver()»«ENDIF»«ENDFOR»«ELSEIF !ArtifactSet && !component.rosactionclient.empty»«FOR Rosactionclient:component.rosactionclient»«IF !ArtifactSet»«Rosactionclient.actclient.getArtifact_actclient()»«ENDIF»«ENDFOR»«ENDIF»'''
 	def getArtifact_pub(Publisher publisher){
 		artifact_impl = publisher.eContainer.eContainer.toString;
 		return artifact_impl.getArtifact;
@@ -193,6 +194,10 @@ RosParameters{
 	}
 	def getArtifact_rosparam(Parameter param){
 		artifact_impl = param.eContainer.eContainer.toString;
+		return artifact_impl.getArtifact;
+	}
+	def getArtifact_rosnode(Node node){
+		artifact_impl = node.eContainer.toString;
 		return artifact_impl.getArtifact;
 	}
 	def getArtifact(String artifact_impl){

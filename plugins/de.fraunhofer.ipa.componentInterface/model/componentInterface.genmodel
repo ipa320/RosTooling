@@ -16,6 +16,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosactionserver"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosactionclient"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/rosparameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//ComponentInterface/FromRosNode"/>
     </genClasses>
     <genClasses ecoreClass="componentInterface.ecore#//RosPublisher">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentInterface.ecore#//RosPublisher/publisher"/>

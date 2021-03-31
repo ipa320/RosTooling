@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import ros.Node;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionserver <em>Rosactionserver</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosactionclient <em>Rosactionclient</em>}</li>
  *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getRosparameter <em>Rosparameter</em>}</li>
+ *   <li>{@link componentInterface.impl.ComponentInterfaceImpl#getFromRosNode <em>From Ros Node</em>}</li>
  * </ul>
  *
  * @generated
@@ -159,6 +161,16 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<RosParameter> rosparameter;
+
+	/**
+	 * The cached value of the '{@link #getFromRosNode() <em>From Ros Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromRosNode()
+	 * @generated
+	 * @ordered
+	 */
+	protected Node fromRosNode;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,6 +334,46 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public Node getFromRosNode() {
+		if (fromRosNode != null && fromRosNode.eIsProxy()) {
+			InternalEObject oldFromRosNode = (InternalEObject)fromRosNode;
+			fromRosNode = (Node)eResolveProxy(oldFromRosNode);
+			if (fromRosNode != oldFromRosNode) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE, oldFromRosNode, fromRosNode));
+			}
+		}
+		return fromRosNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Node basicGetFromRosNode() {
+		return fromRosNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFromRosNode(Node newFromRosNode) {
+		Node oldFromRosNode = fromRosNode;
+		fromRosNode = newFromRosNode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE, oldFromRosNode, fromRosNode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPUBLISHER:
@@ -368,6 +420,9 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return getRosactionclient();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
 				return getRosparameter();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE:
+				if (resolve) return getFromRosNode();
+				return basicGetFromRosNode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,6 +470,9 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				getRosparameter().clear();
 				getRosparameter().addAll((Collection<? extends RosParameter>)newValue);
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE:
+				setFromRosNode((Node)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -454,6 +512,9 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
 				getRosparameter().clear();
 				return;
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE:
+				setFromRosNode((Node)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -484,6 +545,8 @@ public class ComponentInterfaceImpl extends MinimalEObjectImpl.Container impleme
 				return rosactionclient != null && !rosactionclient.isEmpty();
 			case ComponentInterfacePackage.COMPONENT_INTERFACE__ROSPARAMETER:
 				return rosparameter != null && !rosparameter.isEmpty();
+			case ComponentInterfacePackage.COMPONENT_INTERFACE__FROM_ROS_NODE:
+				return fromRosNode != null;
 		}
 		return super.eIsSet(featureID);
 	}

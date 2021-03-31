@@ -304,7 +304,7 @@ public class ComponentInterfaceModelWizard extends Wizard implements INewWizard 
 							}
 							in.close();
 							String outString = sb.toString();
-
+							model_output.append("        FromRosNode "+pkg_name+"."+artifact_name+"."+node_name);
 							if (pubs.size() > 0) {
 								int cout_pub = pubs.size();
 								model_output.append("    RosPublishers{\n");

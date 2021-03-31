@@ -1,5 +1,5 @@
-PackageSet{package{
-    Package geometry_msgs{ spec { 
+PackageSet{
+    Package geometry_msgs{ Specs { 
       TopicSpec Accel{ message { Vector3 linear Vector3 angular }},
       TopicSpec AccelStamped{ message { Header header Accel accel }},
       TopicSpec AccelWithCovariance{ message { Accel accel float64[] covariance }},
@@ -30,19 +30,19 @@ PackageSet{package{
       TopicSpec Wrench{ message { Vector3 force Vector3 torque }},
       TopicSpec WrenchStamped{ message { Header header Wrench wrench }}
     }},
-    Package actionlib_msgs{ spec { 
+    Package actionlib_msgs{ Specs { 
       TopicSpec GoalID{ message { time stamp string id }},
       TopicSpec GoalStatus{ message { GoalID goal_id uint8 status uint8 PENDING=0 uint8 ACTIVE=1 uint8 PREEMPTED=2 uint8 SUCCEEDED=3 uint8 ABORTED=4 uint8 REJECTED=5 uint8 PREEMPTING=6 uint8 RECALLING=7 uint8 RECALLED=8 uint8 LOST=9 string text }},
       TopicSpec GoalStatusArray{ message { Header header GoalStatus[] status_list }}
     }},
-    Package diagnostic_msgs{ spec { 
+    Package diagnostic_msgs{ Specs { 
       TopicSpec DiagnosticArray{ message { Header header DiagnosticStatus[] status }},
       TopicSpec DiagnosticStatus{ message { byte OK=0 byte WARN=1 byte ERROR=2 byte STALE=3 byte level string name string message string hardware_id KeyValue[] values }},
       TopicSpec KeyValue{ message { string key string value }},
       ServiceSpec AddDiagnostics{ request { string load_namespace } response { bool success string message } },
       ServiceSpec SelfTest{ request {  } response { string id byte passed DiagnosticStatus[] status } }
     }},
-    Package nav_msgs{ spec { 
+    Package nav_msgs{ Specs { 
       TopicSpec GetMapAction{ message { GetMapActionGoal action_goal GetMapActionResult action_result GetMapActionFeedback action_feedback }},
       TopicSpec GetMapActionFeedback{ message { Header header "actionlib_msgs.GoalStatus" status GetMapFeedback feedback }},
       TopicSpec GetMapActionGoal{ message { Header header "actionlib_msgs.GoalID" goal_id GetMapGoal goal }},
@@ -59,7 +59,7 @@ PackageSet{package{
       ServiceSpec GetPlan{ request { "geometry_msgs.PoseStamped" start "geometry_msgs.PoseStamped" goal float32 tolerance } response { "nav_msgs.Path" plan } },
       ServiceSpec SetMap{ request { "nav_msgs.OccupancyGrid" map "geometry_msgs.PoseWithCovarianceStamped" initial_pose } response { bool success } }
     }},
-    Package sensor_msgs{ spec { 
+    Package sensor_msgs{ Specs { 
       TopicSpec BatteryState{ message { uint8 POWER_SUPPLY_STATUS_UNKNOWN=0 uint8 POWER_SUPPLY_STATUS_CHARGING=1 uint8 POWER_SUPPLY_STATUS_DISCHARGING=2 uint8 POWER_SUPPLY_STATUS_NOT_CHARGING=3 uint8 POWER_SUPPLY_STATUS_FULL=4 uint8 POWER_SUPPLY_HEALTH_UNKNOWN=0 uint8 POWER_SUPPLY_HEALTH_GOOD=1 uint8 POWER_SUPPLY_HEALTH_OVERHEAT=2 uint8 POWER_SUPPLY_HEALTH_DEAD=3 uint8 POWER_SUPPLY_HEALTH_OVERVOLTAGE=4 uint8 POWER_SUPPLY_HEALTH_UNSPEC_FAILURE=5 uint8 POWER_SUPPLY_HEALTH_COLD=6 uint8 POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE=7 uint8 POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE=8 uint8 POWER_SUPPLY_TECHNOLOGY_UNKNOWN=0 uint8 POWER_SUPPLY_TECHNOLOGY_NIMH=1 uint8 POWER_SUPPLY_TECHNOLOGY_LION=2 uint8 POWER_SUPPLY_TECHNOLOGY_LIPO=3 uint8 POWER_SUPPLY_TECHNOLOGY_LIFE=4 uint8 POWER_SUPPLY_TECHNOLOGY_NICD=5 uint8 POWER_SUPPLY_TECHNOLOGY_LIMN=6 Header header float32 voltage float32 current float32 charge float32 capacity float32 design_capacity float32 percentage uint8 power_supply_status uint8 power_supply_health uint8 power_supply_technology bool present float32[] cell_voltage string location string serial_number }},
       TopicSpec CameraInfo{ message { Header header uint32 height uint32 width string distortion_model float64[] D float64[] K float64[] R float64[] P uint32 binning_x uint32 binning_y RegionOfInterest roi }},
       TopicSpec ChannelFloat32{ message { string name float32[] values }},
@@ -89,22 +89,22 @@ PackageSet{package{
       TopicSpec TimeReference{ message { Header header time time_ref string source }},
       ServiceSpec SetCameraInfo{ request { "sensor_msgs.CameraInfo" camera_info } response { bool success string status_message } }
     }},
-    Package shape_msgs{ spec { 
+    Package shape_msgs{ Specs { 
       TopicSpec Mesh{ message { MeshTriangle[] triangles "geometry_msgs.Point"[] vertices }},
       TopicSpec MeshTriangle{ message { uint32[] vertex_indices }},
       TopicSpec Plane{ message { float64[] coef }},
       TopicSpec SolidPrimitive{ message { uint8 BOX=1 uint8 SPHERE=2 uint8 CYLINDER=3 uint8 CONE=4 uint8 type float64[] dimensions uint8 BOX_X=0 uint8 BOX_Y=1 uint8 BOX_Z=2 uint8 SPHERE_RADIUS=0 uint8 CYLINDER_HEIGHT=0 uint8 CYLINDER_RADIUS=1 uint8 CONE_HEIGHT=0 uint8 CONE_RADIUS=1 }}
     }},
-    Package stereo_msgs{ spec { 
+    Package stereo_msgs{ Specs { 
       TopicSpec DisparityImage{ message { Header header "sensor_msgs.Image" image float32 f float32 T "sensor_msgs.RegionOfInterest" valid_window float32 min_disparity float32 max_disparity float32 delta_d }}
     }},
-    Package trajectory_msgs{ spec { 
+    Package trajectory_msgs{ Specs { 
       TopicSpec JointTrajectory{ message { Header header string[] joint_names JointTrajectoryPoint[] points }},
       TopicSpec JointTrajectoryPoint{ message { float64[] positions float64[] velocities float64[] accelerations float64[] effort duration time_from_start }},
       TopicSpec MultiDOFJointTrajectory{ message { Header header string[] joint_names MultiDOFJointTrajectoryPoint[] points }},
       TopicSpec MultiDOFJointTrajectoryPoint{ message { "geometry_msgs.Transform"[] transforms "geometry_msgs.Twist"[] velocities "geometry_msgs.Twist"[] accelerations duration time_from_start }}
     }},
-    Package visualization_msgs{ spec { 
+    Package visualization_msgs{ Specs { 
       TopicSpec ImageMarker{ message { uint8 CIRCLE=0 uint8 LINE_STRIP=1 uint8 LINE_LIST=2 uint8 POLYGON=3 uint8 POINTS=4 uint8 ADD=0 uint8 REMOVE=1 Header header string ns int32 id int32 type int32 action "geometry_msgs.Point" position float32 scale "std_msgs.ColorRGBA" outline_color uint8 filled "std_msgs.ColorRGBA" fill_color duration lifetime "geometry_msgs.Point"[] points "std_msgs.ColorRGBA"[] outline_colors }},
       TopicSpec InteractiveMarker{ message { Header header "geometry_msgs.Pose" pose string name string description float32 scale MenuEntry[] menu_entries InteractiveMarkerControl[] controls }},
       TopicSpec InteractiveMarkerControl{ message { string name "geometry_msgs.Quaternion" orientation uint8 INHERIT=0 uint8 FIXED=1 uint8 VIEW_FACING=2 uint8 orientation_mode uint8 NONE=0 uint8 MENU=1 uint8 BUTTON=2 uint8 MOVE_AXIS=3 uint8 MOVE_PLANE=4 uint8 ROTATE_AXIS=5 uint8 MOVE_ROTATE=6 uint8 MOVE_3D=7 uint8 ROTATE_3D=8 uint8 MOVE_ROTATE_3D=9 uint8 interaction_mode bool always_visible Marker[] markers bool independent_marker_orientation string description }},
@@ -116,5 +116,4 @@ PackageSet{package{
       TopicSpec MarkerArray{ message { Marker[] markers }},
       TopicSpec MenuEntry{ message { uint32 id uint32 parent_id string title string command uint8 FEEDBACK=0 uint8 ROSRUN=1 uint8 ROSLAUNCH=2 uint8 command_type }}
     }}
-  }
 }

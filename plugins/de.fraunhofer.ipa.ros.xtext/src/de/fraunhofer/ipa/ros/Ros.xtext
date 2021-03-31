@@ -12,7 +12,9 @@ PackageSet returns PackageSet:
 	{PackageSet}
 	'PackageSet'
 	'{'
-		('package' '{' package+=Package ( "," package+=Package)* '}' )?
+		(('package' '{' package+=Package ( "," package+=Package)* '}' ) | //to be deprecated
+		(package+=Package ( "," package+=Package)* )
+		)?
 	'}';
 
 Package returns Package:
@@ -33,8 +35,14 @@ Package_Impl returns Package:
 	'Package'
 	name=EString
 	'{'
-		('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}' )?
-		('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}' )?
+		(
+			('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')  | //to be deprecated
+			('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')
+		)?
+		(
+			('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}') | //to be deprecated
+			(artifact+=Artifact ( "," artifact+=Artifact)*)
+		)?
 	'}';
 
 EString returns ecore::EString:
@@ -59,7 +67,8 @@ Artifact returns Artifact:
 	'Artifact'
 	name=RosNames
 	'{'
-		('node' node=Node)?
+		(('node' node=Node) | //to be deprecated
+		(node=Node))?
 	'}';
 
 CatkinPackage returns CatkinPackage:
@@ -67,9 +76,18 @@ CatkinPackage returns CatkinPackage:
 	'CatkinPackage'
 	name=RosNames
 	'{'
-		('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}' )?
-		('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}' )?
-		('dependency' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
+		(
+			('spec' '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')  | //to be deprecated
+			('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')
+		)?
+		(
+			('artifact' '{' artifact+=Artifact ( "," artifact+=Artifact)* '}') | //to be deprecated
+		 	(artifact+=Artifact ( "," artifact+=Artifact)*)
+		)?
+		(
+			('dependency' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' ) | //to be deprecated
+			('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' ) 
+		)?
 	'}';
 
 ServiceSpec returns ServiceSpec:
@@ -110,13 +128,34 @@ Node returns Node:
 	'Node'
 	'{'
 		'name' name=RosNames
-		('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}' )?
-		('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}' )?
-		('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}' )?
-		('serviceclient' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}' )?
-		('actionserver' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}' )?
-		('actionclient' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )?
-		('parameter' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?
+		(
+			('serviceserver' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}') | //to be deprecated
+			('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}')
+		)?
+		(
+			('publisher' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}') | //to be deprecated
+			('Publishers' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}') 
+		)?
+		(
+			('subscriber' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}') | //to be deprecated
+			('Subscribers' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}')
+		)?
+		(
+			('serviceclient' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}') | //to be deprecated
+			('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}')
+		)?
+		(
+			('actionserver' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}') | //to be deprecated
+			('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}')
+		)?
+		(
+			('actionclient' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' ) | //to be deprecated
+			('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )
+		)?
+		(
+			('parameter' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' ) | //to be deprecated
+			('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )
+		)?
 	'}';
 
 ServiceServer returns ServiceServer:
@@ -173,9 +212,8 @@ GraphName returns GraphName:
 
 PackageDependency returns PackageDependency:
 	'PackageDependency'
-	'{'
-		'package' package=[Package|EString]
-	'}';
+		package=[Package|EString]
+;
 
 ExternalDependency returns ExternalDependency:
 	{ExternalDependency}
@@ -228,7 +266,7 @@ ParameterListType returns ParameterListType:
 
 ParameterStructType returns ParameterStructType:
 	{ParameterStructType}
-	'Struc'
+	'Struct'
 	'{'
 		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
 	'}';

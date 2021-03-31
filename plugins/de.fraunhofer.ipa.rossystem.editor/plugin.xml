@@ -75,4 +75,51 @@
       </menuContribution>
    </extension>
 
+	<!--Right click to re-load the ros models-->
+	<extension
+        point="org.eclipse.ui.handlers">
+        <handler
+              class="rossystem.presentation.ReloadHandler"
+              commandId="de.fraunhofer.ipa.rossystem.ReloadNodes">
+     	</handler>
+    </extension>
+ 
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.fraunhofer.ipa.rossystem.ReloadNodes"
+            name="Reload ROS nodes">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+             allPopups="false"
+             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+               commandId="de.fraunhofer.ipa.rossystem.ReloadNodes"
+               >
+             <visibleWhen
+                   checkEnabled="false">
+                <and>
+                   <with
+                         variable="selection">
+                      <count
+                            value="1">
+                      </count>
+                   </with>
+                   <iterate
+                         ifEmpty="false">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="rossystem">
+                           </test>
+                   </iterate>
+                </and>
+             </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+
 </plugin>
