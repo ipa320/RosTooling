@@ -2,11 +2,21 @@
 
 ### Option 1: Using the Release version (Recommended)
 
-In Eclipse, go to *Help* > *Install New Software...*. To install the latest version of the ROS tooling, add the update site URL [http://ros-model.seronet-project.de/updatesite/latest/](http://ros-model.seronet-project.de/updatesite/latest/) in the *Work with* section. If you wish to install an earlier version instead, go to the [the update site](http://ros-model.seronet-project.de/updatesite/), choose the desired version and copy its URL.
+In Eclipse, go to *Help* > *Install New Software...*. To install the latest version of the ROS tooling, add the update site URL [http://ros-model.seronet-project.de/updatesite/latest/](http://ros-model.seronet-project.de/updatesite/latest/)(*) in the *Work with* section. If you wish to install an earlier version instead, go to the [the update site](http://ros-model.seronet-project.de/updatesite/), choose the desired version and copy its URL.
 
 ![alt text](images/install_updatesite.png)
 
 If none package is listed, please uncheck the option *Group items by category*. The category *ROS Model* appears in the *Name* area. Check the box in front of *ROS model* and click *Next* to review the list of items to be installed. Click *Next* again to read and accept the terms of the license agreements and afterwards click *Finish*. Eclipse will then start to install the ROS tooling and its dependencies. If you get a security warning about the authenticity, click OK. Finally, when asked, restart Eclipse to complete the installation process.
+
+
+(*) Apart of the latest stable release of the tooling, some pre-releases for new feautures are available. See the following list of current pre-releases:
+
+| Name | Code version | Update Site Link | Description |
+|---|---|---|---|
+|TestComponentStack|https://github.com/ipa320/ros-model/tree/1.4.0_TestComponentStacks|http://ros-model.seronet-project.de/updatesite/TestComponentStacks/latest/| Added to the RosSystem metamodel the option to group components forming components stacks. This pre-release is backward compatible for the models, but the validators and generators are **not** updated. If Xtext report errors, please ignore them. |
+| v1.5 | https://github.com/ipa320/ros-model/tree/1.5.0_pre-release |http://ros-model.seronet-project.de/updatesite/pre-release/latest/| Long term version of the grammar (simplified for the 1.4 release). **This version is not backwards compatible with 1.3 and earlier releases**|
+
+
 
 To start using the ROS tooling continue with the [step 1](#1-switch-to-the-ros-developer-perspective)
 
