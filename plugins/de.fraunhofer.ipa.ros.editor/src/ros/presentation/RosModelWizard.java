@@ -226,7 +226,7 @@ public class RosModelWizard extends Wizard implements INewWizard {
 							//
 							//ResourceSet resourceSet = new ResourceSetImpl();
 
-							byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +project.getName()+ "{ artifact {\n" +"		Artifact  "+project.getName()+" {}}}}}").getBytes();
+							byte[] bytes = ("PackageSet {\n" +"	CatkinPackage " +project.getName()+ " {\n" +"		Artifact  "+project.getName()+" {}}}").getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
 							modelFile.create(source, IResource.NONE, null);
 							
