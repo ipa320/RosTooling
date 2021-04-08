@@ -10,10 +10,8 @@ third_element:dsd
 
   <node pkg="test_pkg" type="test_node" name="test_node" cwd="node" respawn="false" output="screen">
   </node>
-
   <node pkg="test_pkg" type="test_node" name="test_node2" ns="test2" cwd="node" respawn="false" output="screen">
   </node>
-
   <node pkg="test_pkg" type="test_node" name="test_nodea" cwd="node" respawn="false" output="screen">
   </node>
 

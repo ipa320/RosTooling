@@ -239,26 +239,34 @@ RosParameters{
 		return node_name;
 	}
 	
+	def prefix(String NS){
+		if(NS===""){
+			return NS
+		} else {
+			return NS+"/"
+		}
+	}
+	
 	def compile_topic_name(Publisher publisher, String NS){
-		return NS+"/"+publisher.name;
+		return prefix(NS)+publisher.name;
 	}
 	def compile_topic_name(Subscriber subscriber, String NS){
-		return NS+"/"+subscriber.name;
+		return prefix(NS)+subscriber.name;
 	}
 	def compile_service_name(ServiceServer serviceserver, String NS){
-		return NS+"/"+serviceserver.name;
+		return prefix(NS)+serviceserver.name;
 	}
 	def compile_service_name(ServiceClient serviceclient, String NS){
-		return NS+"/"+serviceclient.name;
+		return prefix(NS)+serviceclient.name;
 	}
 	def compile_action_name(ActionServer actionserver, String NS){
-		return NS+"/"+actionserver.name;
+		return prefix(NS)+actionserver.name;
 	}
 	def compile_action_name(ActionClient actionclient, String NS){
-		return NS+"/"+actionclient.name;
+		return prefix(NS)+actionclient.name;
 	}
 	def compile_param_name(Parameter param, String NS){
-		return NS+"/"+param.name;
+		return prefix(NS)+param.name;
 	}
 
 	def compile_rosparam_value(ParameterValue paramValue){

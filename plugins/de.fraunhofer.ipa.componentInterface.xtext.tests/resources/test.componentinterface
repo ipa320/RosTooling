@@ -1,4 +1,5 @@
-ComponentInterface { name test_component
+ComponentInterface { name test_node
+	FromRosNode "test_pkg.test_node.test_node"
 	RosPublishers{
 		RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"}
 	}
