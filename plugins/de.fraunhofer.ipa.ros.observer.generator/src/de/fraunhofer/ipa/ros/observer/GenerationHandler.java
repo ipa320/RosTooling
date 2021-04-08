@@ -118,11 +118,11 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			IFile ObserverModelFile = project.getFile(RelativePathToObserverModel);
 
 			String ros_model =  
-					"PackageSet { package { \n" + 
-					"  CatkinPackage rosgraph_monitor { artifact {\n" + 
+					"PackageSet { \n" + 
+					"  CatkinPackage rosgraph_monitor {" + 
 					"    Artifact "+observer_name+" {\n" + 
-					"      node Node { name /"+observer_name+"\n";
-			ros_model+="        publisher { \n"+
+					"      Node { name /"+observer_name+"\n";
+			ros_model+="        Publishers { \n"+
 					"          Publisher { name '/diagnostics' message 'diagnostic_msgs.DiagnosticArray'}}\n";
 			List<Subscriber> rossubscribers = new ArrayList<Subscriber>();
 
@@ -139,14 +139,14 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 						}
 					}}}
 			if (!rossubscribers.isEmpty()) {
-				ros_model+="        subscriber {\n";
+				ros_model+="        Subscribers {\n";
 				for(int i=0;i<rossubscribers.size();i++) {
 					ros_model+="          Subscriber { name '"+rossubscribers.get(i).getName()+"' message '"+rossubscribers.get(i).getMessage().getFullname().replace("/", ".")+"'},\n";
 				}
 				ros_model=ros_model.substring(0, ros_model.length() - 2);
 				ros_model+="}";
 			}
-			ros_model+="}}}}}}";
+			ros_model+="}}}}";
 
 
 			byte[] bytes = (ros_model).getBytes();
