@@ -52,7 +52,9 @@ public final class ConnectionsCheckUtils {
 	}
 
 	static boolean containEqualCommunicationObjects(SpecBase message1, SpecBase message2) {
-
+		if (message1==null | message2==null) {
+			return false;
+		}
 		boolean haveEqualName = false;
 		if (message1.isSetFullname() && message2.isSetFullname()) {
 			if (message1.getFullname().equals(message2.getFullname())) {
