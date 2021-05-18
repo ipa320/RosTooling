@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject
 import ros.ParameterValue
 import rossystem.RosSystem
 
-class LaunchFileCompiler {
+class LaunchFileCompiler_ROS1 {
 	@Inject extension GeneratorHelpers
 	@Inject extension ComponentInterfaceCompiler
 
@@ -22,7 +22,7 @@ class LaunchFileCompiler {
 	int i=0;
 	int k=0;
 
-	def compile_tolaunch(RosSystem system) '''«init_comp()»
+	def compile_toROS1launch(RosSystem system) '''«init_comp()»
 <?xml version="1.0"?>
 <launch>
   «FOR ROSParameter:system.parameter»
