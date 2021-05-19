@@ -3249,20 +3249,16 @@ ruleParameterIntegerType returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getParameterIntegerTypeAccess().getIntegerKeyword_1());
 		}
 		(
-			otherlv_2='{'
+			otherlv_2='default'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParameterIntegerTypeAccess().getLeftCurlyBracketKeyword_2_0());
-			}
-			otherlv_3='default'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterIntegerTypeAccess().getDefaultKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getParameterIntegerTypeAccess().getDefaultKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterIntegerTypeAccess().getDefaultParameterIntegerParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getParameterIntegerTypeAccess().getDefaultParameterIntegerParserRuleCall_2_1_0());
 					}
-					lv_default_4_0=ruleParameterInteger
+					lv_default_3_0=ruleParameterInteger
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterIntegerTypeRule());
@@ -3270,16 +3266,12 @@ ruleParameterIntegerType returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_3_0,
 							"de.fraunhofer.ipa.ros.Ros.ParameterInteger");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterIntegerTypeAccess().getRightCurlyBracketKeyword_2_3());
-			}
 		)?
 	)
 ;
@@ -3312,20 +3304,16 @@ ruleParameterStringType returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getParameterStringTypeAccess().getStringKeyword_1());
 		}
 		(
-			otherlv_2='{'
+			otherlv_2='default'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParameterStringTypeAccess().getLeftCurlyBracketKeyword_2_0());
-			}
-			otherlv_3='default'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterStringTypeAccess().getDefaultKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getParameterStringTypeAccess().getDefaultKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterStringTypeAccess().getDefaultParameterStringParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getParameterStringTypeAccess().getDefaultParameterStringParserRuleCall_2_1_0());
 					}
-					lv_default_4_0=ruleParameterString
+					lv_default_3_0=ruleParameterString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterStringTypeRule());
@@ -3333,16 +3321,12 @@ ruleParameterStringType returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_3_0,
 							"de.fraunhofer.ipa.ros.Ros.ParameterString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterStringTypeAccess().getRightCurlyBracketKeyword_2_3());
-			}
 		)?
 	)
 ;
@@ -3375,20 +3359,16 @@ ruleParameterDoubleType returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getParameterDoubleTypeAccess().getDoubleKeyword_1());
 		}
 		(
-			otherlv_2='{'
+			otherlv_2='default'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParameterDoubleTypeAccess().getLeftCurlyBracketKeyword_2_0());
-			}
-			otherlv_3='default'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterDoubleTypeAccess().getDefaultKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getParameterDoubleTypeAccess().getDefaultKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterDoubleTypeAccess().getDefaultParameterDoubleParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getParameterDoubleTypeAccess().getDefaultParameterDoubleParserRuleCall_2_1_0());
 					}
-					lv_default_4_0=ruleParameterDouble
+					lv_default_3_0=ruleParameterDouble
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterDoubleTypeRule());
@@ -3396,16 +3376,12 @@ ruleParameterDoubleType returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_3_0,
 							"de.fraunhofer.ipa.ros.Ros.ParameterDouble");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterDoubleTypeAccess().getRightCurlyBracketKeyword_2_3());
-			}
 		)?
 	)
 ;
@@ -3438,20 +3414,16 @@ ruleParameterBooleanType returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getParameterBooleanTypeAccess().getBooleanKeyword_1());
 		}
 		(
-			otherlv_2='{'
+			otherlv_2='default'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParameterBooleanTypeAccess().getLeftCurlyBracketKeyword_2_0());
-			}
-			otherlv_3='default'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterBooleanTypeAccess().getDefaultKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getParameterBooleanTypeAccess().getDefaultKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterBooleanTypeAccess().getDefaultParameterBooleanParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getParameterBooleanTypeAccess().getDefaultParameterBooleanParserRuleCall_2_1_0());
 					}
-					lv_default_4_0=ruleParameterBoolean
+					lv_default_3_0=ruleParameterBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterBooleanTypeRule());
@@ -3459,16 +3431,12 @@ ruleParameterBooleanType returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_3_0,
 							"de.fraunhofer.ipa.ros.Ros.ParameterBoolean");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterBooleanTypeAccess().getRightCurlyBracketKeyword_2_3());
-			}
 		)?
 	)
 ;
@@ -3501,20 +3469,16 @@ ruleParameterBase64Type returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getParameterBase64TypeAccess().getBase64Keyword_1());
 		}
 		(
-			otherlv_2='{'
+			otherlv_2='default'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParameterBase64TypeAccess().getLeftCurlyBracketKeyword_2_0());
-			}
-			otherlv_3='default'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterBase64TypeAccess().getDefaultKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getParameterBase64TypeAccess().getDefaultKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterBase64TypeAccess().getDefaultParameterBase64ParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getParameterBase64TypeAccess().getDefaultParameterBase64ParserRuleCall_2_1_0());
 					}
-					lv_default_4_0=ruleParameterBase64
+					lv_default_3_0=ruleParameterBase64
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterBase64TypeRule());
@@ -3522,16 +3486,12 @@ ruleParameterBase64Type returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_3_0,
 							"de.fraunhofer.ipa.ros.Ros.ParameterBase64");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getParameterBase64TypeAccess().getRightCurlyBracketKeyword_2_3());
-			}
 		)?
 	)
 ;

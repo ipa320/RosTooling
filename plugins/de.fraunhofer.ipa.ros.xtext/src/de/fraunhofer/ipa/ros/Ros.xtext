@@ -236,37 +236,37 @@ ParameterStructType returns ParameterStructType:
 ParameterIntegerType returns ParameterIntegerType:
 	{ParameterIntegerType}
 	'Integer'
-	('{''default' default=ParameterInteger'}')?;
+	('default' default=ParameterInteger)?;
 
 ParameterStringType returns ParameterStringType:
 	{ParameterStringType}
 	'String'
-	('{''default' default=ParameterString'}')?;
+	('default' default=ParameterString)?;
 
 ParameterDoubleType returns ParameterDoubleType:
 	{ParameterDoubleType}
 	'Double'
-	('{''default' default=ParameterDouble'}')?;
+	('default' default=ParameterDouble)?;
 
 ParameterDateType returns ParameterDateType:
 	{ParameterDateType}
 	'Date'
-	('{''default' default=ParameterDate'}')?;
+	('default' default=ParameterDate)?;
 
 ParameterBooleanType returns ParameterBooleanType:
 	{ParameterBooleanType}
 	'Boolean'
-	('{''default' default=ParameterBoolean'}')?;
+	('default' default=ParameterBoolean)?;
 
 ParameterBase64Type returns ParameterBase64Type:
 	{ParameterBase64Type}
 	'Base64'
-	('{''default' default=ParameterBase64 '}')?;
+	('default' default=ParameterBase64)?;
 
 ParameterAnyType returns ParameterAnyType:
 	{ParameterAnyType}
 	'Any'
-	('{''default' default=ParameterAny'}')?;
+	('default' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
 	'Array'

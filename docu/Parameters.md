@@ -19,7 +19,7 @@ The definition of a parameter at ROS model level means that the ROS original nod
 
 For the complete definition of parameters the user has to open the ROS model editor, where the language format is the following:
 
-**Parameter** {**name** NAMEforPARAMETER **type** TYPEfromTHElistABOVE {**default** DEFAULTVALUE}}
+**Parameter** {**name** NAMEforPARAMETER **type** TYPEfromTHElistABOVE **default** DEFAULTVALUE}
 
 This format is also valid for a ROSsystem file, case of ROS where a new parameter is created within a launch file.
 
