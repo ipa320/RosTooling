@@ -32,7 +32,9 @@ def generate_launch_description():
 	«FOR component:system.rosComponent»
 	«component.name» = Node(
 		package="«component.compile_pkg»«init_pkg»",
-		executable="«component.compile_art»«init_comp()»"
+		executable="«component.compile_art»«init_comp()»",
+		name="«component.name»"«IF component.hasNS»,
+		namespace="«component.get_ns»"«ENDIF»
 	)
 	«ENDFOR»
 
