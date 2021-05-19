@@ -125,21 +125,21 @@ class RosValidator extends AbstractRosValidator {
    @Check
   def void ArrayHelp (Parameter param){
   	if(param.type.toString.contains("Array")){
-  		info("HELP: Array parameter format:\n { type TYPE {default {VALUE, VALUE} }\n example:\n type Boolean default {true, true}} ", null, PARAMETER_HELP)
+  		info("HELP: Array parameter format:\n { type TYPE default {VALUE, VALUE} \n example:\n type Boolean default true, true} ", null, PARAMETER_HELP)
   	}
   }
    
   @Check
   def void ListHelp (Parameter param){
   	if(param.type.toString.contains("List")){
-  		info("HELP: List parameter format:\n { TYPE {default VALUE},TYPE {default VALUE} }\n example:\n Integer {default 5}, Boolean {default true} ", null, PARAMETER_HELP)
+  		info("HELP: List parameter format:\n { TYPE default VALUE,TYPE default VALUE }\n example:\n Integer default 5, Boolean default true ", null, PARAMETER_HELP)
   	}
   }
   
   @Check
   def void StructHelp (Parameter param){
   	if(param.type.toString.contains("Struct")){
-  		info("HELP: Struct parameter format:\n { NAME TYPE {default VALUE}, NAME TYPE {default VALUE} }\n example:\n my_int Integer {default 5}, my_bool Boolean {default true} ", null, PARAMETER_HELP)
+  		info("HELP: Struct parameter format:\n { NAME TYPE default VALUE, NAME TYPE default VALUE }\n example:\n my_int Integer {default 5}, my_bool Boolean default true ", null, PARAMETER_HELP)
   	}
   }
   

@@ -1986,10 +1986,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_ROS_CONVENTION_A;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5726:23: ( ( '/' RULE_ID | RULE_ID '/' )* )
-            // InternalRos.g:5726:25: ( '/' RULE_ID | RULE_ID '/' )*
+            // InternalRos.g:5686:23: ( ( '/' RULE_ID | RULE_ID '/' )* )
+            // InternalRos.g:5686:25: ( '/' RULE_ID | RULE_ID '/' )*
             {
-            // InternalRos.g:5726:25: ( '/' RULE_ID | RULE_ID '/' )*
+            // InternalRos.g:5686:25: ( '/' RULE_ID | RULE_ID '/' )*
             loop1:
             do {
                 int alt1=3;
@@ -2005,7 +2005,7 @@ public class InternalRosLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalRos.g:5726:26: '/' RULE_ID
+            	    // InternalRos.g:5686:26: '/' RULE_ID
             	    {
             	    match('/'); 
             	    mRULE_ID(); 
@@ -2013,7 +2013,7 @@ public class InternalRosLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRos.g:5726:38: RULE_ID '/'
+            	    // InternalRos.g:5686:38: RULE_ID '/'
             	    {
             	    mRULE_ID(); 
             	    match('/'); 
@@ -2042,10 +2042,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_ROS_CONVENTION_PARAM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5728:27: ( ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )* )
-            // InternalRos.g:5728:29: ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )*
+            // InternalRos.g:5688:27: ( ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )* )
+            // InternalRos.g:5688:29: ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )*
             {
-            // InternalRos.g:5728:29: ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )*
+            // InternalRos.g:5688:29: ( '/' RULE_STRING | RULE_STRING '/' | '~' RULE_STRING )*
             loop2:
             do {
                 int alt2=4;
@@ -2071,7 +2071,7 @@ public class InternalRosLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalRos.g:5728:30: '/' RULE_STRING
+            	    // InternalRos.g:5688:30: '/' RULE_STRING
             	    {
             	    match('/'); 
             	    mRULE_STRING(); 
@@ -2079,7 +2079,7 @@ public class InternalRosLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRos.g:5728:46: RULE_STRING '/'
+            	    // InternalRos.g:5688:46: RULE_STRING '/'
             	    {
             	    mRULE_STRING(); 
             	    match('/'); 
@@ -2087,7 +2087,7 @@ public class InternalRosLexer extends Lexer {
             	    }
             	    break;
             	case 3 :
-            	    // InternalRos.g:5728:62: '~' RULE_STRING
+            	    // InternalRos.g:5688:62: '~' RULE_STRING
             	    {
             	    match('~'); 
             	    mRULE_STRING(); 
@@ -2114,8 +2114,8 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalRos.g:5730:21: ( '0' .. '9' )
-            // InternalRos.g:5730:23: '0' .. '9'
+            // InternalRos.g:5690:21: ( '0' .. '9' )
+            // InternalRos.g:5690:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -2132,10 +2132,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_BINARY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5732:13: ( ( '0b' | '0B' ) ( '0' | '1' )+ )
-            // InternalRos.g:5732:15: ( '0b' | '0B' ) ( '0' | '1' )+
+            // InternalRos.g:5692:13: ( ( '0b' | '0B' ) ( '0' | '1' )+ )
+            // InternalRos.g:5692:15: ( '0b' | '0B' ) ( '0' | '1' )+
             {
-            // InternalRos.g:5732:15: ( '0b' | '0B' )
+            // InternalRos.g:5692:15: ( '0b' | '0B' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2163,7 +2163,7 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalRos.g:5732:16: '0b'
+                    // InternalRos.g:5692:16: '0b'
                     {
                     match("0b"); 
 
@@ -2171,7 +2171,7 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5732:21: '0B'
+                    // InternalRos.g:5692:21: '0B'
                     {
                     match("0B"); 
 
@@ -2181,7 +2181,7 @@ public class InternalRosLexer extends Lexer {
 
             }
 
-            // InternalRos.g:5732:27: ( '0' | '1' )+
+            // InternalRos.g:5692:27: ( '0' | '1' )+
             int cnt4=0;
             loop4:
             do {
@@ -2235,10 +2235,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5734:14: ( ( 'true' | 'false' ) )
-            // InternalRos.g:5734:16: ( 'true' | 'false' )
+            // InternalRos.g:5694:14: ( ( 'true' | 'false' ) )
+            // InternalRos.g:5694:16: ( 'true' | 'false' )
             {
-            // InternalRos.g:5734:16: ( 'true' | 'false' )
+            // InternalRos.g:5694:16: ( 'true' | 'false' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2256,7 +2256,7 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalRos.g:5734:17: 'true'
+                    // InternalRos.g:5694:17: 'true'
                     {
                     match("true"); 
 
@@ -2264,7 +2264,7 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5734:24: 'false'
+                    // InternalRos.g:5694:24: 'false'
                     {
                     match("false"); 
 
@@ -2290,19 +2290,19 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5736:13: ( RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT ) )
-            // InternalRos.g:5736:15: RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
+            // InternalRos.g:5696:13: ( RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT ) )
+            // InternalRos.g:5696:15: RULE_DECINT ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
             {
             mRULE_DECINT(); 
-            // InternalRos.g:5736:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
+            // InternalRos.g:5696:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )
             int alt10=2;
             alt10 = dfa10.predict(input);
             switch (alt10) {
                 case 1 :
-                    // InternalRos.g:5736:28: '.' ( RULE_DIGIT )*
+                    // InternalRos.g:5696:28: '.' ( RULE_DIGIT )*
                     {
                     match('.'); 
-                    // InternalRos.g:5736:32: ( RULE_DIGIT )*
+                    // InternalRos.g:5696:32: ( RULE_DIGIT )*
                     loop6:
                     do {
                         int alt6=2;
@@ -2315,7 +2315,7 @@ public class InternalRosLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalRos.g:5736:32: RULE_DIGIT
+                    	    // InternalRos.g:5696:32: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -2331,9 +2331,9 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5736:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT
+                    // InternalRos.g:5696:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT
                     {
-                    // InternalRos.g:5736:44: ( '.' ( RULE_DIGIT )* )?
+                    // InternalRos.g:5696:44: ( '.' ( RULE_DIGIT )* )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2342,10 +2342,10 @@ public class InternalRosLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // InternalRos.g:5736:45: '.' ( RULE_DIGIT )*
+                            // InternalRos.g:5696:45: '.' ( RULE_DIGIT )*
                             {
                             match('.'); 
-                            // InternalRos.g:5736:49: ( RULE_DIGIT )*
+                            // InternalRos.g:5696:49: ( RULE_DIGIT )*
                             loop7:
                             do {
                                 int alt7=2;
@@ -2358,7 +2358,7 @@ public class InternalRosLexer extends Lexer {
 
                                 switch (alt7) {
                             	case 1 :
-                            	    // InternalRos.g:5736:49: RULE_DIGIT
+                            	    // InternalRos.g:5696:49: RULE_DIGIT
                             	    {
                             	    mRULE_DIGIT(); 
 
@@ -2385,7 +2385,7 @@ public class InternalRosLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalRos.g:5736:73: ( '-' | '+' )?
+                    // InternalRos.g:5696:73: ( '-' | '+' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2444,10 +2444,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_DECINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5738:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
-            // InternalRos.g:5738:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalRos.g:5698:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
+            // InternalRos.g:5698:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalRos.g:5738:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalRos.g:5698:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             int alt13=3;
             switch ( input.LA(1) ) {
             case '0':
@@ -2482,17 +2482,17 @@ public class InternalRosLexer extends Lexer {
 
             switch (alt13) {
                 case 1 :
-                    // InternalRos.g:5738:16: '0'
+                    // InternalRos.g:5698:16: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5738:20: '1' .. '9' ( RULE_DIGIT )*
+                    // InternalRos.g:5698:20: '1' .. '9' ( RULE_DIGIT )*
                     {
                     matchRange('1','9'); 
-                    // InternalRos.g:5738:29: ( RULE_DIGIT )*
+                    // InternalRos.g:5698:29: ( RULE_DIGIT )*
                     loop11:
                     do {
                         int alt11=2;
@@ -2505,7 +2505,7 @@ public class InternalRosLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalRos.g:5738:29: RULE_DIGIT
+                    	    // InternalRos.g:5698:29: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -2521,11 +2521,11 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:5738:41: '-' '0' .. '9' ( RULE_DIGIT )*
+                    // InternalRos.g:5698:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
                     match('-'); 
                     matchRange('0','9'); 
-                    // InternalRos.g:5738:54: ( RULE_DIGIT )*
+                    // InternalRos.g:5698:54: ( RULE_DIGIT )*
                     loop12:
                     do {
                         int alt12=2;
@@ -2538,7 +2538,7 @@ public class InternalRosLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalRos.g:5738:54: RULE_DIGIT
+                    	    // InternalRos.g:5698:54: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -2570,10 +2570,10 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_DAY"
     public final void mRULE_DAY() throws RecognitionException {
         try {
-            // InternalRos.g:5740:19: ( ( '1' .. '9' | '1' .. '3' '0' .. '9' ) )
-            // InternalRos.g:5740:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
+            // InternalRos.g:5700:19: ( ( '1' .. '9' | '1' .. '3' '0' .. '9' ) )
+            // InternalRos.g:5700:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
             {
-            // InternalRos.g:5740:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
+            // InternalRos.g:5700:21: ( '1' .. '9' | '1' .. '3' '0' .. '9' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2597,14 +2597,14 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalRos.g:5740:22: '1' .. '9'
+                    // InternalRos.g:5700:22: '1' .. '9'
                     {
                     matchRange('1','9'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5740:31: '1' .. '3' '0' .. '9'
+                    // InternalRos.g:5700:31: '1' .. '3' '0' .. '9'
                     {
                     matchRange('1','3'); 
                     matchRange('0','9'); 
@@ -2626,10 +2626,10 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_MONTH"
     public final void mRULE_MONTH() throws RecognitionException {
         try {
-            // InternalRos.g:5742:21: ( ( '1' .. '9' | '1' '0' .. '2' ) )
-            // InternalRos.g:5742:23: ( '1' .. '9' | '1' '0' .. '2' )
+            // InternalRos.g:5702:21: ( ( '1' .. '9' | '1' '0' .. '2' ) )
+            // InternalRos.g:5702:23: ( '1' .. '9' | '1' '0' .. '2' )
             {
-            // InternalRos.g:5742:23: ( '1' .. '9' | '1' '0' .. '2' )
+            // InternalRos.g:5702:23: ( '1' .. '9' | '1' '0' .. '2' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2653,14 +2653,14 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalRos.g:5742:24: '1' .. '9'
+                    // InternalRos.g:5702:24: '1' .. '9'
                     {
                     matchRange('1','9'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5742:33: '1' '0' .. '2'
+                    // InternalRos.g:5702:33: '1' '0' .. '2'
                     {
                     match('1'); 
                     matchRange('0','2'); 
@@ -2682,8 +2682,8 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_YEAR"
     public final void mRULE_YEAR() throws RecognitionException {
         try {
-            // InternalRos.g:5744:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalRos.g:5744:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalRos.g:5704:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalRos.g:5704:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
             {
             matchRange('0','2'); 
             matchRange('0','9'); 
@@ -2701,10 +2701,10 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_HOUR"
     public final void mRULE_HOUR() throws RecognitionException {
         try {
-            // InternalRos.g:5746:20: ( ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' ) )
-            // InternalRos.g:5746:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
+            // InternalRos.g:5706:20: ( ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' ) )
+            // InternalRos.g:5706:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
             {
-            // InternalRos.g:5746:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
+            // InternalRos.g:5706:22: ( '0' .. '1' '0' .. '9' | '2' '0' .. '3' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2722,7 +2722,7 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalRos.g:5746:23: '0' .. '1' '0' .. '9'
+                    // InternalRos.g:5706:23: '0' .. '1' '0' .. '9'
                     {
                     matchRange('0','1'); 
                     matchRange('0','9'); 
@@ -2730,7 +2730,7 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5746:41: '2' '0' .. '3'
+                    // InternalRos.g:5706:41: '2' '0' .. '3'
                     {
                     match('2'); 
                     matchRange('0','3'); 
@@ -2752,8 +2752,8 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_MIN_SEC"
     public final void mRULE_MIN_SEC() throws RecognitionException {
         try {
-            // InternalRos.g:5748:23: ( '0' .. '5' '0' .. '9' )
-            // InternalRos.g:5748:25: '0' .. '5' '0' .. '9'
+            // InternalRos.g:5708:23: ( '0' .. '5' '0' .. '9' )
+            // InternalRos.g:5708:25: '0' .. '5' '0' .. '9'
             {
             matchRange('0','5'); 
             matchRange('0','9'); 
@@ -2771,8 +2771,8 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_DATE_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5750:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
-            // InternalRos.g:5750:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
+            // InternalRos.g:5710:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
+            // InternalRos.g:5710:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
             {
             mRULE_YEAR(); 
             match('-'); 
@@ -2801,10 +2801,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_MESSAGE_ASIGMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5752:23: ( ( RULE_ID | RULE_STRING ) '=' ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT ) )
-            // InternalRos.g:5752:25: ( RULE_ID | RULE_STRING ) '=' ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT )
+            // InternalRos.g:5712:23: ( ( RULE_ID | RULE_STRING ) '=' ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT ) )
+            // InternalRos.g:5712:25: ( RULE_ID | RULE_STRING ) '=' ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT )
             {
-            // InternalRos.g:5752:25: ( RULE_ID | RULE_STRING )
+            // InternalRos.g:5712:25: ( RULE_ID | RULE_STRING )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2822,14 +2822,14 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalRos.g:5752:26: RULE_ID
+                    // InternalRos.g:5712:26: RULE_ID
                     {
                     mRULE_ID(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5752:34: RULE_STRING
+                    // InternalRos.g:5712:34: RULE_STRING
                     {
                     mRULE_STRING(); 
 
@@ -2839,7 +2839,7 @@ public class InternalRosLexer extends Lexer {
             }
 
             match('='); 
-            // InternalRos.g:5752:51: ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT )
+            // InternalRos.g:5712:51: ( RULE_ID | RULE_STRING | RULE_INT | '-' RULE_INT )
             int alt18=4;
             switch ( input.LA(1) ) {
             case 'A':
@@ -2934,28 +2934,28 @@ public class InternalRosLexer extends Lexer {
 
             switch (alt18) {
                 case 1 :
-                    // InternalRos.g:5752:52: RULE_ID
+                    // InternalRos.g:5712:52: RULE_ID
                     {
                     mRULE_ID(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5752:60: RULE_STRING
+                    // InternalRos.g:5712:60: RULE_STRING
                     {
                     mRULE_STRING(); 
 
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:5752:72: RULE_INT
+                    // InternalRos.g:5712:72: RULE_INT
                     {
                     mRULE_INT(); 
 
                     }
                     break;
                 case 4 :
-                    // InternalRos.g:5752:81: '-' RULE_INT
+                    // InternalRos.g:5712:81: '-' RULE_INT
                     {
                     match('-'); 
                     mRULE_INT(); 
@@ -2981,10 +2981,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5754:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalRos.g:5754:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRos.g:5714:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalRos.g:5714:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalRos.g:5754:11: ( '^' )?
+            // InternalRos.g:5714:11: ( '^' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2993,7 +2993,7 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalRos.g:5754:11: '^'
+                    // InternalRos.g:5714:11: '^'
                     {
                     match('^'); 
 
@@ -3011,7 +3011,7 @@ public class InternalRosLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRos.g:5754:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRos.g:5714:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop20:
             do {
                 int alt20=2;
@@ -3058,10 +3058,10 @@ public class InternalRosLexer extends Lexer {
     // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
-            // InternalRos.g:5756:19: ( ( '0' .. '9' )+ )
-            // InternalRos.g:5756:21: ( '0' .. '9' )+
+            // InternalRos.g:5716:19: ( ( '0' .. '9' )+ )
+            // InternalRos.g:5716:21: ( '0' .. '9' )+
             {
-            // InternalRos.g:5756:21: ( '0' .. '9' )+
+            // InternalRos.g:5716:21: ( '0' .. '9' )+
             int cnt21=0;
             loop21:
             do {
@@ -3075,7 +3075,7 @@ public class InternalRosLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalRos.g:5756:22: '0' .. '9'
+            	    // InternalRos.g:5716:22: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3105,10 +3105,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5758:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalRos.g:5758:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRos.g:5718:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalRos.g:5718:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalRos.g:5758:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRos.g:5718:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -3126,10 +3126,10 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalRos.g:5758:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalRos.g:5718:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalRos.g:5758:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRos.g:5718:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop22:
                     do {
                         int alt22=3;
@@ -3145,7 +3145,7 @@ public class InternalRosLexer extends Lexer {
 
                         switch (alt22) {
                     	case 1 :
-                    	    // InternalRos.g:5758:21: '\\\\' .
+                    	    // InternalRos.g:5718:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3153,7 +3153,7 @@ public class InternalRosLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRos.g:5758:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRos.g:5718:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3178,10 +3178,10 @@ public class InternalRosLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5758:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalRos.g:5718:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalRos.g:5758:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRos.g:5718:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop23:
                     do {
                         int alt23=3;
@@ -3197,7 +3197,7 @@ public class InternalRosLexer extends Lexer {
 
                         switch (alt23) {
                     	case 1 :
-                    	    // InternalRos.g:5758:54: '\\\\' .
+                    	    // InternalRos.g:5718:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3205,7 +3205,7 @@ public class InternalRosLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRos.g:5758:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRos.g:5718:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3248,12 +3248,12 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5760:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRos.g:5760:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRos.g:5720:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRos.g:5720:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRos.g:5760:24: ( options {greedy=false; } : . )*
+            // InternalRos.g:5720:24: ( options {greedy=false; } : . )*
             loop25:
             do {
                 int alt25=2;
@@ -3278,7 +3278,7 @@ public class InternalRosLexer extends Lexer {
 
                 switch (alt25) {
             	case 1 :
-            	    // InternalRos.g:5760:52: .
+            	    // InternalRos.g:5720:52: .
             	    {
             	    matchAny(); 
 
@@ -3308,12 +3308,12 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5762:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRos.g:5762:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRos.g:5722:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRos.g:5722:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRos.g:5762:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRos.g:5722:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -3326,7 +3326,7 @@ public class InternalRosLexer extends Lexer {
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalRos.g:5762:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRos.g:5722:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3346,7 +3346,7 @@ public class InternalRosLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRos.g:5762:40: ( ( '\\r' )? '\\n' )?
+            // InternalRos.g:5722:40: ( ( '\\r' )? '\\n' )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -3355,9 +3355,9 @@ public class InternalRosLexer extends Lexer {
             }
             switch (alt28) {
                 case 1 :
-                    // InternalRos.g:5762:41: ( '\\r' )? '\\n'
+                    // InternalRos.g:5722:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRos.g:5762:41: ( '\\r' )?
+                    // InternalRos.g:5722:41: ( '\\r' )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -3366,7 +3366,7 @@ public class InternalRosLexer extends Lexer {
                     }
                     switch (alt27) {
                         case 1 :
-                            // InternalRos.g:5762:41: '\\r'
+                            // InternalRos.g:5722:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3398,10 +3398,10 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5764:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRos.g:5764:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRos.g:5724:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRos.g:5724:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRos.g:5764:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRos.g:5724:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt29=0;
             loop29:
             do {
@@ -3455,8 +3455,8 @@ public class InternalRosLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRos.g:5766:16: ( . )
-            // InternalRos.g:5766:18: .
+            // InternalRos.g:5726:16: ( . )
+            // InternalRos.g:5726:18: .
             {
             matchAny(); 
 
@@ -4247,7 +4247,7 @@ public class InternalRosLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "5736:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )";
+            return "5696:27: ( '.' ( RULE_DIGIT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DECINT )";
         }
     }
     static final String DFA30_eotS =

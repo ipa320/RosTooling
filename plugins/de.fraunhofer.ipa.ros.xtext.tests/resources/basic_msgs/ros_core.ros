@@ -32,7 +32,7 @@ PackageSet{
       TopicSpec UInt8{ message { uint8 data }},
       TopicSpec UInt8MultiArray{ message { MultiArrayLayout layout uint8[] data }}
     }},
-    Package std_srvs{ spec { 
+    Package std_srvs{ Specs {  
       ServiceSpec Empty{ request {  } response {  } },
       ServiceSpec SetBool{ request { bool data } response { bool success string message } },
       ServiceSpec Trigger{ request {  } response { bool success string message } }
