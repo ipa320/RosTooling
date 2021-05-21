@@ -13,11 +13,11 @@ RosSystem returns RosSystem:
 	'RosSystem'
 	'{'
 		'Name' Name=EString
-		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
-		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
-		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
-		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )?
-		('Parameters' '{' (Parameter+=Parameter ( "," Parameter+=Parameter)*)? '}' )?
+		(('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )? &
+		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )? &
+		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )? &
+		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )? &
+		('Parameters' '{' (Parameter+=Parameter ( "," Parameter+=Parameter)*)? '}' )?)
 		
 
 	'}';
@@ -28,7 +28,6 @@ TopicConnection returns TopicConnection:
 	'{'
 		'From' '(' From+=[componentInterface::RosPublisher|EString] (',' From+=[componentInterface::RosPublisher|EString])* ')'
 		'To' '(' To+=[componentInterface::RosSubscriber|EString] ( ',' To+=[componentInterface::RosSubscriber|EString])* ')'
-
 	'}';
 
 ServiceConnection returns ServiceConnection:
@@ -45,7 +44,6 @@ ActionConnection returns ActionConnection:
 	'{'
 		'From' From=[componentInterface::RosActionServer|EString]
 		'To'  To=[componentInterface::RosActionClient|EString] 
-
 	'}';
 
 
@@ -61,13 +59,14 @@ ComponentInterface returns componentInterface::ComponentInterface:
 		'name' name=EString
 		('NameSpace' NameSpace=EString)?
 		('FromRosNode' FromRosNode=[ros::Node|EString])?
-		('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )?
-		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
-		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?
-		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
-		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
-		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
-		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?
+		
+		(('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )? &
+		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )? &
+		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )? &
+		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )? &
+		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )? &
+		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )? &
+		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?)
 		
 	'}';
 
@@ -172,37 +171,37 @@ ParameterStructType returns ros::ParameterStructType:
 ParameterIntegerType returns ros::ParameterIntegerType:
 	{ros::ParameterIntegerType}
 	'Integer'
-	('{''default' default=ParameterInteger'}')?;
+	('default' default=ParameterInteger)?;
 
 ParameterStringType returns ros::ParameterStringType:
 	{ros::ParameterStringType}
 	'String'
-	('{''default' default=ParameterString'}')?;
+	('default' default=ParameterString)?;
 
 ParameterDoubleType returns ros::ParameterDoubleType:
 	{ros::ParameterDoubleType}
 	'Double'
-	('{''default' default=ParameterDouble'}')?;
+	('default' default=ParameterDouble)?;
 
 ParameterDateType returns ros::ParameterDateType:
 	{ros::ParameterDateType}
 	'Date'
-	('{''default' default=ParameterDate'}')?;
+	('default' default=ParameterDate)?;
 
 ParameterBooleanType returns ros::ParameterBooleanType:
 	{ros::ParameterBooleanType}
 	'Boolean'
-	('{''default' default=ParameterBoolean'}')?;
+	('default' default=ParameterBoolean)?;
 
 ParameterBase64Type returns ros::ParameterBase64Type:
 	{ros::ParameterBase64Type}
 	'Base64'
-	('{''default' default=ParameterBase64 '}')?;
+	('default' default=ParameterBase64)?;
 
 ParameterAnyType returns ros::ParameterAnyType:
 	{ros::ParameterAnyType}
 	'Any'
-	('{''default' default=ParameterAny'}')?;
+	('default' default=ParameterAny)?;
 
 ParameterArrayType returns ros::ParameterArrayType:
 	'Array'

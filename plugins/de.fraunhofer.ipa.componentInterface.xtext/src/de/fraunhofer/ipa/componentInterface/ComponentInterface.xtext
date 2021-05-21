@@ -12,13 +12,13 @@ ComponentInterface returns ComponentInterface:
 		'name' name=EString
 		('NameSpace' NameSpace=EString)?
 		('FromRosNode' FromRosNode=[ros::Node|EString])?
-		('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )?
-		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
-		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?
-		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
-		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
-		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
-		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?
+		(('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )? &
+		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )? &
+		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )? &
+		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )? &
+		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )? &
+		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )? &
+		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?)
 	'}';
 
 

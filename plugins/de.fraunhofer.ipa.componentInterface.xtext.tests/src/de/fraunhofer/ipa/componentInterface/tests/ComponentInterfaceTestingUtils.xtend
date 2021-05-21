@@ -44,7 +44,7 @@ class ComponentInterfaceTestingUtils {
 					ServiceClients {
 						ServiceClient { name init service "std_srvs.Trigger"}}
 					Parameters { 
-						Parameter { name string_test type String {default test}},
+						Parameter { name string_test type String default test},
 						Parameter { name bool_tets type Boolean },
 						Parameter { name array_tets type Array {type String}},
 						Parameter { name base64_test type Base64},
