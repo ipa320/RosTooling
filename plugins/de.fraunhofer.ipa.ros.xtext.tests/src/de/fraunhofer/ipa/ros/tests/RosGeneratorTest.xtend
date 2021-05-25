@@ -63,10 +63,16 @@ class RosGeneratorTest {
 
 		val fsa = new InMemoryFileSystemAccess
 		ros2Generator.doGenerate(model.eResource, fsa, new GeneratorContext)
-		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CustomOutputProvider::DEFAULT_OUTPUT + "test_pkg/package.xml"))
 		Assert.assertEquals(
-			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator', 'test_node.cpp'))).trim,
-			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_node.cpp").toString.trim)
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator/test_pkg/src/','test_node.cpp'))).trim,
+			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_pkg/src/test_node.cpp").toString.trim)
+		Assert.assertEquals(
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator/test_pkg/','CMakeLists.txt'))).trim,
+			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_pkg/CMakeLists.txt").toString.trim)
+		Assert.assertEquals(
+			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros2generator/test_pkg/','package.xml'))).trim,
+			fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT + "test_pkg/package.xml").toString.trim)
 	}
 	
 	@Test
