@@ -1,16 +1,15 @@
 package de.fraunhofer.ipa.roscode.generator
 
+import java.util.ArrayList
+import java.util.HashSet
+import java.util.List
+import java.util.Set
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.eclipse.xtext.generator.IOutputConfigurationProvider
-import org.eclipse.xtext.generator.OutputConfiguration
-import java.util.Set
-import ros.*
-import java.util.List
-import java.util.ArrayList
-import java.util.HashSet
+import ros.Node
+import ros.Package
 
 /**
  * Generates code from your model files on save.
@@ -95,7 +94,7 @@ find_package(«depend_pkg» REQUIRED)
 
 «FOR art:pkg.artifact»
 add_executable(«art.name» src/«art.node.name».cpp)
-ament_target_dependencies(«art.name» «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»)
+ament_target_dependencies(«art.name» rclcpp «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»)
 
 install(TARGETS
   «art.name»
