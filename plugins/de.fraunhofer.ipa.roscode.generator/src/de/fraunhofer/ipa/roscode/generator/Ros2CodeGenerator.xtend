@@ -94,22 +94,29 @@ find_package(rclcpp_components REQUIRED)
 find_package(«depend_pkg» REQUIRED)
   «ENDFOR»
 
-add_library(composition_nodes SHARED
-	«FOR art:pkg.artifact»
-	src/«art.node.name».cpp
-«ENDFOR»)
-ament_target_dependencies(composition_nodes
+# create ament index resource which references the libraries in the binary dir
+set(node_plugins "")
+
+«FOR art:pkg.artifact»
+add_library(«art.node.name»_component SHARED
+	src/«art.node.name».cpp)
+ament_target_dependencies(«art.node.name»_component
 	rclcpp
 	rclcpp_components
 	«FOR depend_pkg:pkg.getPkgDependencies»
 	«depend_pkg»
 «ENDFOR»)
+rclcpp_components_register_nodes(«art.node.name»_component "«art.node.name»")
+set(node_plugins "${node_plugins}«art.node.name»;$<TARGET_FILE:«art.node.name»_component>\n")
 
+  «ENDFOR»
 install(TARGETS
-  composition_nodes
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin)
+    «FOR art:pkg.artifact»
+    «art.node.name»_component
+    «ENDFOR»
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin)
 
 ament_package()
 '''
@@ -186,7 +193,7 @@ void print_«node.name»_usage()
       «FOR sub : node.subscriber»
       // Subscriber callback
       void «check_name(sub.name)»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const {
-      	(void)msg;	// supress warnings for unused variables
+        (void)msg;	// supress warnings for unused variables
         RCLCPP_INFO(this->get_logger(), "«sub.name» topic got a message");
       }
 
