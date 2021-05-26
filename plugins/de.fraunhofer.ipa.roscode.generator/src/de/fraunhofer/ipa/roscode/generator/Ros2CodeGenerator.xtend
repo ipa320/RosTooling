@@ -59,6 +59,7 @@ def compile_package_xml(Package pkg)'''
   
   <depend>boost</depend>
   <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
   «FOR depend_pkg:pkg.getPkgDependencies»
   <depend>«depend_pkg»</depend>
   «ENDFOR»
@@ -88,18 +89,27 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(Boost REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
   «FOR depend_pkg:pkg.getPkgDependencies»
 find_package(«depend_pkg» REQUIRED)
   «ENDFOR»
 
-«FOR art:pkg.artifact»
-add_executable(«art.name» src/«art.node.name».cpp)
-ament_target_dependencies(«art.name» «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»)
+add_library(composition_nodes SHARED
+	«FOR art:pkg.artifact»
+	src/«art.node.name».cpp
+«ENDFOR»)
+ament_target_dependencies(composition_nodes
+	rclcpp
+	rclcpp_components
+	«FOR depend_pkg:pkg.getPkgDependencies»
+	«depend_pkg»
+«ENDFOR»)
 
 install(TARGETS
-  «art.name»
-  DESTINATION lib/${PROJECT_NAME})
-«ENDFOR»
+  composition_nodes
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
 
 ament_package()
 '''
@@ -131,7 +141,7 @@ using std::placeholders::_1;
 using std::placeholders::_2;
 using std::placeholders::_3;
 
-void print_usage()
+void print_«node.name»_usage()
 {
   printf("Usage for «node.name» app:\n");
   printf("..... \n");
@@ -139,9 +149,9 @@ void print_usage()
   printf("..... \n");
 }
 
-  class «node.name» : public rclcpp::Node {
+  class «node.name»  : public rclcpp::Node {
     public:
-      «node.name»() : Node("«node.name»") {
+      «node.name»(rclcpp::NodeOptions options) : Node("«node.name»", options) {
         «FOR pub : node.publisher»  
         «check_name(pub.name)»_ = this->create_publisher<«pub.message.package.name»::msg::«pub.message.name»>("«pub.name»",10);
         «ENDFOR»
@@ -176,6 +186,7 @@ void print_usage()
       «FOR sub : node.subscriber»
       // Subscriber callback
       void «check_name(sub.name)»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const {
+      	(void)msg;	// supress warnings for unused variables
         RCLCPP_INFO(this->get_logger(), "«sub.name» topic got a message");
       }
 
@@ -212,13 +223,9 @@ void print_usage()
 	«ENDFOR»
 };
 
-int main(int argc, char * argv[])
-{
-  rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<«node.name»>());
-  rclcpp::shutdown();
-  return 0;
-}
+#include "rclcpp_components/register_node_macro.hpp"
+
+RCLCPP_COMPONENTS_REGISTER_NODE(«node.name»)
  '''
  
  def List<String> getPkgDependencies(Package pkg){
