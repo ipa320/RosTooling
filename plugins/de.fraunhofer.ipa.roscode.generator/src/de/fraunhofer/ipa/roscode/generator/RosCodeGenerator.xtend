@@ -1,13 +1,21 @@
 package de.fraunhofer.ipa.roscode.generator
 
+import java.util.ArrayList
+import java.util.HashSet
+import java.util.List
+import java.util.Set
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import ros.Node
+import ros.Package
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
-import java.util.Set
-import ros.*
+import ros.Publisher
+import ros.Subscriber
+import ros.ServiceServer
+import ros.ServiceClient
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
@@ -34,17 +42,79 @@ class RosCodeGenerator extends AbstractGenerator {
 
  
 	String resourcepath
+	Node node
+	List<String> PkgsList
+	Set<String> set
+	
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resourcepath = resource.URI.toString();
 		if (! resourcepath.contains("/ros-input")) {
-			for (node : resource.allContents.toIterable.filter(Node)){
-				fsa.generateFile(node.getName()+".cpp",node.compile)
+			for (pkg : resource.allContents.toIterable.filter(Package)){
+				fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
+				fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
+				 for (art : pkg.artifact){
+				 	node = art.node
+					fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
+
+				 	}
+				 }
 				}
-			}
 		}
 
-def compile(Node node) '''
+def compile_package_xml(Package pkg)'''
+<?xml version="1.0"?>
+<?xml-model
+   href="http://download.ros.org/schema/package_format3.xsd"
+   schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+ <name>«pkg.name»</name>
+ <version>0.0.0</version>
+ <description>This package contains the implementation of the node «pkg.artifact.get(0).node.name»</description>
+  <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
+  <author email="jane.doe@example.com">Jane Doe</author>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>boost</depend>
+  <depend>roscpp</depend>
+  «FOR depend_pkg:pkg.getPkgDependencies»
+  <depend>«depend_pkg»</depend>
+  «ENDFOR»
+
+</package>
+'''
+
+def compile_CMakeLists(Package pkg)'''
+cmake_minimum_required(VERSION 3.0.2)
+project(«pkg.name»)
+
+find_package(catkin REQUIRED COMPONENTS roscpp «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»)
+
+catkin_package(
+  CATKIN_DEPENDS roscpp «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»
+)
+
+### Build ###
+
+include_directories(${catkin_INCLUDE_DIRS})
+
+«FOR art:pkg.artifact»
+add_executable(«art.name» src/«art.node.name».cpp)
+add_dependencies(«art.name» ${catkin_EXPORTED_TARGETS})
+target_link_libraries(«art.name» ${catkin_LIBRARIES})
+
+«ENDFOR»
+### Install ###
+install(TARGETS «FOR art:pkg.artifact»«art.name»«ENDFOR»
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+'''
+
+def compile_node(Node node) '''
 #include <ros/ros.h>
             «FOR pub : node.publisher»
 #include <«pub.message.package.name»/«pub.message.name».h>
@@ -102,4 +172,20 @@ def compile(ServiceServer srvserver)
 def compile(ServiceClient srvclient)       
 '''  ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
 
-}
+
+ def List<String> getPkgDependencies(Package pkg){
+ 	set=new HashSet<String>()
+	PkgsList = new ArrayList()
+	for (art:pkg.artifact){
+		node=art.node
+		for (pub:node.publisher){set.add(pub.message.package.name)}
+		for (sub:node.subscriber){set.add(sub.message.package.name)}
+		for (srvserver:node.serviceserver){set.add(srvserver.service.package.name)}
+		for (srvclient:node.serviceclient){set.add(srvclient.service.package.name)}
+	}
+	PkgsList.addAll(set)
+	return PkgsList
+ }
+ 
+ }
+
