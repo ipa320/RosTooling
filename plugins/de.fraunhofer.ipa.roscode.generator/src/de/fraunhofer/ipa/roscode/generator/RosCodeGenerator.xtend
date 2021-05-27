@@ -8,14 +8,15 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import ros.Node
-import ros.Package
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
+import ros.Node
+import ros.Package
 import ros.Publisher
-import ros.Subscriber
-import ros.ServiceServer
 import ros.ServiceClient
+import ros.ServiceServer
+import ros.Subscriber
+import ros.impl.ParameterStructTypeImpl
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
@@ -45,8 +46,18 @@ class RosCodeGenerator extends AbstractGenerator {
 	Node node
 	List<String> PkgsList
 	Set<String> set
-	
-	
+	ParameterGeneratorHelpers parameter_helper = new ParameterGeneratorHelpers() {
+
+		override get_param_declaration_str(String param_type, String param_name, String delim, Boolean has_value) {
+			var struct_str = "";
+ 			struct_str += param_type + " " + param_name.replace(delim, "_") + "_;\n";
+			struct_str += "n.param(\"" + param_name.replace(delim, "/") + "\", " + param_name.replace(delim, "_") + "_);\n\n";
+
+ 			return struct_str;
+		}
+
+	};
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resourcepath = resource.URI.toString();
 		if (! resourcepath.contains("/ros-input")) {
@@ -141,36 +152,46 @@ void  «sub.name»_cb (const «sub.message.package.name»::«sub.message.name» 
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "«node.name»");
-  ros::NodeHandle n;
-  
-            «FOR pub : node.publisher»
-  «pub.compile»
-            «ENDFOR»
-            «FOR sub : node.subscriber»
-  «sub.compile»
-            «ENDFOR»
-            «FOR srvserver : node.serviceserver»
-  «srvserver.compile»
-            «ENDFOR»
-            «FOR srvclient : node.serviceclient»
-  «srvclient.compile»
-            «ENDFOR»
+	ros::init(argc, argv, "«node.name»");
+	ros::NodeHandle n;
+	«FOR param : node.parameter»
+	«IF (param.type instanceof ParameterStructTypeImpl)»
+	«parameter_helper.compile_struct(param.type as ParameterStructTypeImpl, param.name).getKey()»
+	«ELSE»
+	«var param_pair = parameter_helper.get_param_type(param.type)»
+	«IF !(param_pair.getKey().empty)»
+	«param_pair.getKey()» «param.name»_;
+	n.param«IF!(param_pair.getValue().empty)»<«param_pair.getKey()»>«ENDIF»("«param.name»", «param.name»_«param_pair.getValue()»);
+	«ENDIF»
+	«ENDIF»
+«ENDFOR»
+«FOR pub : node.publisher»
+«pub.compile»
+«ENDFOR»
+«FOR sub : node.subscriber»
+«sub.compile»
+«ENDFOR»
+«FOR srvserver : node.serviceserver»
+«srvserver.compile»
+«ENDFOR»
+«FOR srvclient : node.serviceclient»
+«srvclient.compile»
+«ENDFOR»
 
-  ros::spin();
+	ros::spin();
 
-  return 0;
+  	return 0;
 }
             '''
             
 def compile(Publisher pub)       
-'''  ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
+'''	ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
 def compile(Subscriber sub)       
-'''  ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
+'''	ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
 def compile(ServiceServer srvserver)       
-'''  ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
+'''	ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
 def compile(ServiceClient srvclient)       
-'''  ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
+'''	ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
 
 
  def List<String> getPkgDependencies(Package pkg){
@@ -187,5 +208,4 @@ def compile(ServiceClient srvclient)
 	return PkgsList
  }
  
- }
-
+}

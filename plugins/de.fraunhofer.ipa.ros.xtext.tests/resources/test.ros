@@ -19,7 +19,7 @@ PackageSet {
 				Parameter {name list_test type List {Integer,Integer,String}},
 				Parameter {name struc_test type Struct 
 					{first_element Integer ,
-					second_element List { Integer, String},
+					second_element List { String, String},
 					third_element String ,
 					last_element Struct { hola Integer, what String}}
 				}
