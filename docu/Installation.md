@@ -22,11 +22,11 @@ To start using the ROS tooling continue with the [step 1](#1-switch-to-the-ros-d
 
 ### Option 2: Using the Eclipse Installer - Source installation (ROS tooling developers)
 
-First the java environment have to be setup, for eclipse it is recomended the installation of the version 8 (i.e. X=8) for Ubuntu 16.04 and 11 (i.e. X=11) for the 18.04:
+First the java environment have to be setup, for eclipse it is recomended the installation of the version 8 (i.e. X=8) for Ubuntu 16.04 and 11 (i.e. X=11) for the 18.04 and 20.04:
 ```
-sudo apt-get install openjdk-X-jre
+sudo apt-get install openjdk-11-jre
 ```
-Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended *2019-09*.
+Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended *2020-12*.
 
 ![alt text](images/eclipse_installer1.png)
 
