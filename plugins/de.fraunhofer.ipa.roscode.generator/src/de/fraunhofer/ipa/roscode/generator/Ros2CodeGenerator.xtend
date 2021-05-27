@@ -22,6 +22,7 @@ class Ros2CodeGenerator extends AbstractGenerator {
 	String import_msgs
 	int char_i
 	Node node
+	String pkg_name
 	List<String> PkgsList
 	Set<String> set
 	
@@ -34,8 +35,9 @@ class Ros2CodeGenerator extends AbstractGenerator {
 				fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
 				 for (art : pkg.artifact){
 				 	node = art.node
-					fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
-
+				 	pkg_name = pkg.getName().toLowerCase
+					fsa.generateFile(pkg_name+"/src/"+node.name+"_component.cpp",node.compile_node(pkg_name))
+					fsa.generateFile(pkg_name+"/include/"+pkg_name+"/"+node.name+"_component.hpp",node.compile_node_header(pkg_name))
 				 	}
 				 }
 				}
@@ -94,20 +96,22 @@ find_package(rclcpp_components REQUIRED)
 find_package(«depend_pkg» REQUIRED)
   «ENDFOR»
 
+include_directories(include)
+
 # create ament index resource which references the libraries in the binary dir
 set(node_plugins "")
 
 «FOR art:pkg.artifact»
 add_library(«art.node.name»_component SHARED
-	src/«art.node.name».cpp)
+	src/«art.node.name»_component.cpp)
 ament_target_dependencies(«art.node.name»_component
 	rclcpp
 	rclcpp_components
 	«FOR depend_pkg:pkg.getPkgDependencies»
 	«depend_pkg»
 «ENDFOR»)
-rclcpp_components_register_nodes(«art.node.name»_component "«art.node.name»")
-set(node_plugins "${node_plugins}«art.node.name»;$<TARGET_FILE:«art.node.name»_component>\n")
+rclcpp_components_register_nodes(«art.node.name»_component "«pkg.name»::«art.node.name»")
+set(node_plugins "${node_plugins}«pkg.name»::«art.node.name»;$<TARGET_FILE:«art.node.name»_component>\n")
 
   «ENDFOR»
 install(TARGETS
@@ -121,15 +125,11 @@ install(TARGETS
 ament_package()
 '''
 
-def compile_node(Node node) '''
-#include <chrono>
-#include <cstdio>
-#include <memory>
-#include <string>
-#include <utility>
+def compile_node_header(Node node, String pkg_name) '''
+#ifndef «pkg_name.toUpperCase»__«node.name.toUpperCase»_COMPONENT_HPP_
+#define «pkg_name.toUpperCase»__«node.name.toUpperCase»_COMPONENT_HPP_
 
 #include "rclcpp/rclcpp.hpp"
-#include "rcutils/cmdline_parser.h"
             «FOR pub : node.publisher»
 #include <«pub.message.package.name»/msg/«check_message_include(pub.message.name)».hpp>
             «ENDFOR»
@@ -143,75 +143,25 @@ def compile_node(Node node) '''
 #include <«srvclient.service.package.name»/srv/«check_message_include(srvclient.service.name)».hpp>
             «ENDFOR»
 
-using namespace std::chrono_literals;
-using std::placeholders::_1;
-using std::placeholders::_2;
-using std::placeholders::_3;
-
-void print_«node.name»_usage()
-{
-  printf("Usage for «node.name» app:\n");
-  printf("..... \n");
-  printf("..... \n");
-  printf("..... \n");
-}
+namespace «pkg_name» {
 
   class «node.name»  : public rclcpp::Node {
     public:
-      «node.name»(rclcpp::NodeOptions options) : Node("«node.name»", options) {
-        «FOR pub : node.publisher»  
-        «check_name(pub.name)»_ = this->create_publisher<«pub.message.package.name»::msg::«pub.message.name»>("«pub.name»",10);
-        «ENDFOR»
-        «FOR sub : node.subscriber»
-        «check_name(sub.name)»_ = this->create_subscription<«sub.message.package.name»::msg::«sub.message.name»>("«sub.name»", 10, std::bind(&«node.name»::«check_name(sub.name)»_callback, this, _1));
-        «ENDFOR»
-        «FOR client : node.serviceclient»
-        «check_name(client.name)»_ = this->create_client<«client.service.package.name»::srv::«client.service.name»>("«client.name»");
-        «ENDFOR»
-        «FOR service : node.serviceserver»
-        «check_name(service.name)»_ = this->create_service<«service.service.package.name»::srv::«service.service.name»>("«service.name»", std::bind(&«node.name»::«check_name(service.name)»_handle, this, _1, _2, _3));
-        «ENDFOR»
-
-        «IF node.publisher.length > 0»
-        timer_ = this->create_wall_timer(500ms, std::bind(&«node.name»::timer_callback, this));
-        «ENDIF»
-
-      	«FOR client : node.serviceclient»    
-      	// Service client
-        while (!«check_name(client.name)»_->wait_for_service(std::chrono::seconds(10))){
-          RCLCPP_ERROR(this->get_logger(), "Client interrupted while waiting for service '%s' to appear.", "«client.name»");
-        }
-        auto request = std::make_shared<«client.service.package.name»::srv::«client.service.name»::Request>();
-        // request-> ... = ....;
-        auto result_future = «check_name(client.name)»_->async_send_request(request);
-        auto result = result_future.get();
-        RCLCPP_INFO(this->get_logger(), "Service called, service: '%s'", "«client.name»");
-        «ENDFOR»
-      }
+      «node.name»(rclcpp::NodeOptions options);
 
     private:
       «FOR sub : node.subscriber»
       // Subscriber callback
-      void «check_name(sub.name)»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const {
-        (void)msg;	// supress warnings for unused variables
-        RCLCPP_INFO(this->get_logger(), "«sub.name» topic got a message");
-      }
-
+      void «check_name(sub.name)»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const;
       rclcpp::Subscription<«sub.message.package.name»::msg::«sub.message.name»>::SharedPtr «check_name(sub.name)»_ ;
+
       «ENDFOR»
       «FOR pub : node.publisher»
       rclcpp::Publisher<«pub.message.package.name»::msg::«pub.message.name»>::SharedPtr «check_name(pub.name)»_;
       «ENDFOR»
       «IF node.publisher.length > 0»
       // Timer Callback
-      void timer_callback(){
-        «FOR pub : node.publisher»
-        auto «check_name(pub.name)»_msg = «pub.message.package.name»::msg::«pub.message.name»();
-        //«check_name(pub.name)»_msg = ...
-        «check_name(pub.name)»_->publish(«check_name(pub.name)»_msg);
-        RCLCPP_INFO(this->get_logger(), "«pub.name» publisher active");
-        «ENDFOR»
-      }
+      void timer_callback();
       rclcpp::TimerBase::SharedPtr timer_;
 	«ENDIF»
 
@@ -230,9 +180,101 @@ void print_«node.name»_usage()
 	«ENDFOR»
 };
 
+}	// namespace «pkg_name»
+
+#endif	// «pkg_name.toUpperCase»__«node.name.toUpperCase»_COMPONENT_HPP_
+'''
+
+def compile_node(Node node, String pkg_name) '''
+#include <chrono>
+#include <cstdio>
+#include <memory>
+#include <string>
+#include <utility>
+
+#include "«pkg_name»/«node.name»_component.hpp"
+
+using namespace std::chrono_literals;
+using std::placeholders::_1;
+using std::placeholders::_2;
+using std::placeholders::_3;
+
+void print_usage()
+{
+	printf("Usage for «node.name» app:\n");
+	printf("..... \n");
+	printf("..... \n");
+	printf("..... \n");
+}
+
+namespace «pkg_name» {
+
+«node.name»::«node.name»(rclcpp::NodeOptions options) : Node("«node.name»", options) {
+    «FOR pub : node.publisher»
+    «check_name(pub.name)»_ = this->create_publisher<«pub.message.package.name»::msg::«pub.message.name»>("«pub.name»",10);
+    «ENDFOR»
+    «FOR sub : node.subscriber»
+    «check_name(sub.name)»_ = this->create_subscription<«sub.message.package.name»::msg::«sub.message.name»>("«sub.name»", 10, std::bind(&«node.name»::«check_name(sub.name)»_callback, this, _1));
+    «ENDFOR»
+    «FOR client : node.serviceclient»
+    «check_name(client.name)»_ = this->create_client<«client.service.package.name»::srv::«client.service.name»>("«client.name»");
+    «ENDFOR»
+    «FOR service : node.serviceserver»
+    «check_name(service.name)»_ = this->create_service<«service.service.package.name»::srv::«service.service.name»>("«service.name»", std::bind(&«node.name»::«check_name(service.name)»_handle, this, _1, _2, _3));
+    «ENDFOR»
+
+    «IF node.publisher.length > 0»
+    timer_ = this->create_wall_timer(500ms, std::bind(&«node.name»::timer_callback, this));
+    «ENDIF»
+
+	«FOR client : node.serviceclient»
+	// Service client
+	while (!«check_name(client.name)»_->wait_for_service(std::chrono::seconds(10))){
+		RCLCPP_ERROR(this->get_logger(), "Client interrupted while waiting for service '%s' to appear.", "«client.name»");
+	}
+	auto request = std::make_shared<«client.service.package.name»::srv::«client.service.name»::Request>();
+	// request-> ... = ....;
+	auto result_future = «check_name(client.name)»_->async_send_request(request);
+	auto result = result_future.get();
+	RCLCPP_INFO(this->get_logger(), "Service called, service: '%s'", "«client.name»");
+«ENDFOR»
+}
+
+«FOR sub : node.subscriber»
+// Subscriber callback
+void «node.name»::«check_name(sub.name)»_callback(const «sub.message.package.name»::msg::«sub.message.name»::SharedPtr msg) const {
+	(void)msg;	// supress warnings for unused variables
+    RCLCPP_INFO(this->get_logger(), "«sub.name» topic got a message");
+}
+
+«ENDFOR»
+«IF node.publisher.length > 0»
+// Timer Callback
+void «node.name»::timer_callback(){
+	«FOR pub : node.publisher»
+	auto «check_name(pub.name)»_msg = «pub.message.package.name»::msg::«pub.message.name»();
+	//«check_name(pub.name)»_msg = ...
+	«check_name(pub.name)»_->publish(«check_name(pub.name)»_msg);
+	RCLCPP_INFO(this->get_logger(), "«pub.name» publisher active");
+«ENDFOR»
+}
+«ENDIF»
+
+«FOR service : node.serviceserver»
+// Service Handler
+void «node.name»::«check_name(service.name)»_handle( const std::shared_ptr<rmw_request_id_t> request_header,
+    const std::shared_ptr<«service.service.package.name»::srv::«service.service.name»::Request> request_,
+    const std::shared_ptr<«service.service.package.name»::srv::«service.service.name»::Response> response_){
+    (void)request_header;
+    RCLCPP_INFO( this->get_logger(), "trigger service '%s'","«service.name»");
+}
+«ENDFOR»
+
+}	// namespace «pkg_name»
+
 #include "rclcpp_components/register_node_macro.hpp"
 
-RCLCPP_COMPONENTS_REGISTER_NODE(«node.name»)
+RCLCPP_COMPONENTS_REGISTER_NODE(«pkg_name»::«node.name»)
  '''
  
  def List<String> getPkgDependencies(Package pkg){
