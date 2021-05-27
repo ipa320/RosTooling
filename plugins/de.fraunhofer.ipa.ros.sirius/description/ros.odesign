@@ -234,7 +234,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ComponentInterface" semanticCandidatesExpression="feature:RosComponent" domainClass="componentInterface::ComponentInterface">
+        <containerMappings name="ComponentInterface" deletionDescription="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='RemoveComponent']" semanticCandidatesExpression="feature:RosComponent" domainClass="componentInterface::ComponentInterface">
           <borderedNodeMappings name="Publisher" semanticCandidatesExpression="feature:rospublisher" domainClass="componentInterface::RosPublisher">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" tooltipExpression="Topic" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -421,7 +421,7 @@
                       <controls xsi:type="properties:ButtonDescription" name="Browser" labelExpression="RosModel" helpExpression="Select ROS model input" buttonLabelExpression="Browse..">
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                            <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="BrowserROSFile" action="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='NewComponent']"/>
+                             <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="BrowserROSFile" action="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='NewComponent']"/>
                           </firstModelOperations>
                         </initialOperation>
                       </controls>
@@ -443,6 +443,17 @@
               <firstModelOperations xsi:type="tool_1:RemoveElement"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="RemoveComponent">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="RemoveComponentsWithConnections" action="//@ownedViewpoints[name='RosSystem']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@toolSections.0/@ownedTools[name='RemoveComponentsWithConnections']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="RemoveComponentsWithConnections" id="de.fraunhofer.ipa.ros.sirius.javaActionsRemoveComponentsWithConnections"/>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
