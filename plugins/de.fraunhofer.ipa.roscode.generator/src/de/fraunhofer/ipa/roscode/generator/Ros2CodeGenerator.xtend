@@ -1,15 +1,15 @@
 package de.fraunhofer.ipa.roscode.generator
 
+import java.util.ArrayList
+import java.util.HashSet
+import java.util.List
+import java.util.Set
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.eclipse.xtext.generator.IOutputConfigurationProvider
-import org.eclipse.xtext.generator.OutputConfiguration
-import java.util.Set
-import ros.*
-
-
+import ros.Node
+import ros.Package
 
 /**
  * Generates code from your model files on save.
@@ -17,22 +17,94 @@ import ros.*
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class Ros2CodeGenerator extends AbstractGenerator {
-
  
 	String resourcepath
 	String import_msgs
 	int char_i
+	Node node
+	List<String> PkgsList
+	Set<String> set
+	
 		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resourcepath = resource.URI.toString();
 		if (! resourcepath.contains("/ros-input")) {
-			for (node : resource.allContents.toIterable.filter(Node)){
-				fsa.generateFile(node.getName()+".cpp",node.compile)
+			for (pkg : resource.allContents.toIterable.filter(Package)){
+				fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
+				fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
+				 for (art : pkg.artifact){
+				 	node = art.node
+					fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
+
+				 	}
+				 }
 				}
 			}
-		}
 
-def compile(Node node) '''
+
+def compile_package_xml(Package pkg)'''
+<?xml version="1.0"?>
+<?xml-model
+   href="http://download.ros.org/schema/package_format3.xsd"
+   schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+ <name>«pkg.name»</name>
+ <version>0.0.0</version>
+ <description>This package contains the implementation of the node «pkg.artifact.get(0).node.name»</description>
+  <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
+  <author email="jane.doe@example.com">Jane Doe</author>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <depend>boost</depend>
+  <depend>rclcpp</depend>
+  «FOR depend_pkg:pkg.getPkgDependencies»
+  <depend>«depend_pkg»</depend>
+  «ENDFOR»
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+'''
+
+def compile_CMakeLists(Package pkg)'''
+cmake_minimum_required(VERSION 3.5)
+project(«pkg.name»)
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(Boost REQUIRED)
+find_package(rclcpp REQUIRED)
+  «FOR depend_pkg:pkg.getPkgDependencies»
+find_package(«depend_pkg» REQUIRED)
+  «ENDFOR»
+
+«FOR art:pkg.artifact»
+add_executable(«art.name» src/«art.node.name».cpp)
+ament_target_dependencies(«art.name» rclcpp «FOR depend_pkg:pkg.getPkgDependencies»«depend_pkg» «ENDFOR»)
+
+install(TARGETS
+  «art.name»
+  DESTINATION lib/${PROJECT_NAME})
+«ENDFOR»
+
+ament_package()
+'''
+
+def compile_node(Node node) '''
 #include <chrono>
 #include <cstdio>
 #include <memory>
@@ -148,6 +220,20 @@ int main(int argc, char * argv[])
   return 0;
 }
  '''
+ 
+ def List<String> getPkgDependencies(Package pkg){
+ 	set=new HashSet<String>()
+	PkgsList = new ArrayList()
+	for (art:pkg.artifact){
+		node=art.node
+		for (pub:node.publisher){set.add(pub.message.package.name)}
+		for (sub:node.subscriber){set.add(sub.message.package.name)}
+		for (srvserver:node.serviceserver){set.add(srvserver.service.package.name)}
+		for (srvclient:node.serviceclient){set.add(srvclient.service.package.name)}
+	}
+	PkgsList.addAll(set)
+	return PkgsList
+ }
  
  def String check_message_include(String message_name){
  	import_msgs = message_name.toFirstLower;
