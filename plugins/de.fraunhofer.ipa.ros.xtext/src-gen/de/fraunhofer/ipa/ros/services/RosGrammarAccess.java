@@ -17,13 +17,12 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.UnorderedGroup;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.service.AbstractElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
 @Singleton
-public class RosGrammarAccess extends AbstractGrammarElementFinder {
+public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
 	public class PackageSetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.PackageSet");
@@ -40,14 +39,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackagePackageParserRuleCall_3_1_1_0 = (RuleCall)cPackageAssignment_3_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//PackageSet:
-		//	{PackageSet}
-		//	'PackageSet'
-		//	'{' (package+=Package ("," package+=Package)*)?
-		//	'}';
+		//PackageSet returns PackageSet:
+		//    {PackageSet}
+		//    'PackageSet'
+		//    '{'
+		//        (package+=Package ( "," package+=Package)* )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{PackageSet} 'PackageSet' '{' (package+=Package ("," package+=Package)*)? '}'
+		//{PackageSet}
+		//'PackageSet'
+		//'{'
+		//    (package+=Package ( "," package+=Package)* )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{PackageSet}
@@ -59,7 +63,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(package+=Package ("," package+=Package)*)?
+		//(package+=Package ( "," package+=Package)* )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//package+=Package
@@ -68,7 +72,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Package
 		public RuleCall getPackagePackageParserRuleCall_3_0_0() { return cPackagePackageParserRuleCall_3_0_0; }
 		
-		//("," package+=Package)*
+		//( "," package+=Package)*
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//","
@@ -89,8 +93,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackage_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCatkinPackageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Package:
-		//	Package_Impl | CatkinPackage;
+		//Package returns Package:
+		//    Package_Impl | CatkinPackage;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Package_Impl | CatkinPackage
@@ -109,8 +113,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTopicSpecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cActionSpecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//SpecBase:
-		//	ServiceSpec | TopicSpec | ActionSpec;
+		//SpecBase returns SpecBase:
+		//    ServiceSpec | TopicSpec | ActionSpec;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ServiceSpec | TopicSpec | ActionSpec
@@ -131,8 +135,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackageDependencyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExternalDependencyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Dependency:
-		//	PackageDependency | ExternalDependency;
+		//Dependency returns Dependency:
+		//    PackageDependency | ExternalDependency;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//PackageDependency | ExternalDependency
@@ -151,8 +155,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRelativeNamespace_ImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cPrivateNamespaceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Namespace:
-		//	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+		//Namespace returns Namespace:
+		//    GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace
@@ -194,16 +198,23 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArtifactArtifactParserRuleCall_5_1_1_0 = (RuleCall)cArtifactAssignment_5_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Package_Impl Package:
-		//	{Package}
-		//	'Package'
-		//	name=EString
-		//	'{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')? (artifact+=Artifact ("," artifact+=Artifact)*)?
-		//	'}';
+		//Package_Impl returns Package:
+		//    {Package}
+		//    'Package'
+		//    name=EString
+		//    '{'
+		//        ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+		//        (artifact+=Artifact ( "," artifact+=Artifact)*)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Package} 'Package' name=EString '{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')? (artifact+=Artifact (","
-		//artifact+=Artifact)*)? '}'
+		//{Package}
+		//'Package'
+		//name=EString
+		//'{'
+		//    ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+		//    (artifact+=Artifact ( "," artifact+=Artifact)*)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Package}
@@ -221,7 +232,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')?
+		//('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'Specs'
@@ -236,7 +247,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecBase
 		public RuleCall getSpecSpecBaseParserRuleCall_4_2_0() { return cSpecSpecBaseParserRuleCall_4_2_0; }
 		
-		//("," spec+=SpecBase)*
+		//( "," spec+=SpecBase)*
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//","
@@ -251,7 +262,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 		
-		//(artifact+=Artifact ("," artifact+=Artifact)*)?
+		//(artifact+=Artifact ( "," artifact+=Artifact)*)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//artifact+=Artifact
@@ -260,7 +271,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Artifact
 		public RuleCall getArtifactArtifactParserRuleCall_5_0_0() { return cArtifactArtifactParserRuleCall_5_0_0; }
 		
-		//("," artifact+=Artifact)*
+		//( "," artifact+=Artifact)*
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//","
@@ -281,8 +292,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//EString:
-		//	STRING | ID;
+		//EString returns ecore::EString:
+		//    STRING | ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//STRING | ID
@@ -301,8 +312,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final Keyword cNodeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
-		//RosNames:
-		//	ROS_CONVENTION_A | ID | 'node';
+		//RosNames returns ecore::EString:
+		//    ROS_CONVENTION_A | ID | 'node'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ROS_CONVENTION_A | ID | 'node'
@@ -323,8 +335,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cROS_CONVENTION_PARAMTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//RosParamNames:
-		//	ROS_CONVENTION_PARAM | ID;
+		//RosParamNames returns ecore::EString:
+		//    ROS_CONVENTION_PARAM | ID
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ROS_CONVENTION_PARAM | ID
@@ -348,16 +361,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNodeNodeParserRuleCall_4_0 = (RuleCall)cNodeAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Artifact:
-		//	{Artifact}
-		//	'Artifact'
-		//	name=RosNames
-		//	'{'
-		//	node=Node?
-		//	'}';
+		//Artifact returns Artifact:
+		//    {Artifact}
+		//    'Artifact'
+		//    name=RosNames
+		//    '{'
+		//        (node=Node)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Artifact} 'Artifact' name=RosNames '{' node=Node? '}'
+		//{Artifact}
+		//'Artifact'
+		//name=RosNames
+		//'{'
+		//    (node=Node)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Artifact}
@@ -375,7 +393,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//node=Node?
+		//(node=Node)?
 		public Assignment getNodeAssignment_4() { return cNodeAssignment_4; }
 		
 		//Node
@@ -421,18 +439,25 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//CatkinPackage:
-		//	{CatkinPackage}
-		//	'CatkinPackage'
-		//	name=RosNames
-		//	'{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')? (artifact+=Artifact ("," artifact+=Artifact)*)?
-		//	('Dependencies' '{' dependency+=Dependency ("," dependency+=Dependency)* '}')?
-		//	'}';
+		//CatkinPackage returns CatkinPackage:
+		//    {CatkinPackage}
+		//    'CatkinPackage'
+		//    name=RosNames
+		//    '{'
+		//        ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+		//        (artifact+=Artifact ( "," artifact+=Artifact)*)?
+		//        ('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{CatkinPackage} 'CatkinPackage' name=RosNames '{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')?
-		//(artifact+=Artifact ("," artifact+=Artifact)*)? ('Dependencies' '{' dependency+=Dependency (","
-		//dependency+=Dependency)* '}')? '}'
+		//{CatkinPackage}
+		//'CatkinPackage'
+		//name=RosNames
+		//'{'
+		//    ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+		//    (artifact+=Artifact ( "," artifact+=Artifact)*)?
+		//    ('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{CatkinPackage}
@@ -450,7 +475,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')?
+		//('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'Specs'
@@ -465,7 +490,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecBase
 		public RuleCall getSpecSpecBaseParserRuleCall_4_2_0() { return cSpecSpecBaseParserRuleCall_4_2_0; }
 		
-		//("," spec+=SpecBase)*
+		//( "," spec+=SpecBase)*
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//","
@@ -480,7 +505,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 		
-		//(artifact+=Artifact ("," artifact+=Artifact)*)?
+		//(artifact+=Artifact ( "," artifact+=Artifact)*)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//artifact+=Artifact
@@ -489,7 +514,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Artifact
 		public RuleCall getArtifactArtifactParserRuleCall_5_0_0() { return cArtifactArtifactParserRuleCall_5_0_0; }
 		
-		//("," artifact+=Artifact)*
+		//( "," artifact+=Artifact)*
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//","
@@ -501,7 +526,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Artifact
 		public RuleCall getArtifactArtifactParserRuleCall_5_1_1_0() { return cArtifactArtifactParserRuleCall_5_1_1_0; }
 		
-		//('Dependencies' '{' dependency+=Dependency ("," dependency+=Dependency)* '}')?
+		//('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'Dependencies'
@@ -516,7 +541,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Dependency
 		public RuleCall getDependencyDependencyParserRuleCall_6_2_0() { return cDependencyDependencyParserRuleCall_6_2_0; }
 		
-		//("," dependency+=Dependency)*
+		//( "," dependency+=Dependency)*
 		public Group getGroup_6_3() { return cGroup_6_3; }
 		
 		//","
@@ -552,16 +577,23 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cResponseMessageDefinitionParserRuleCall_5_1_0 = (RuleCall)cResponseAssignment_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//ServiceSpec:
-		//	{ServiceSpec}
-		//	'ServiceSpec'
-		//	name=EString
-		//	'{' ('request' request=MessageDefinition)? ('response' response=MessageDefinition)?
-		//	'}';
+		//ServiceSpec returns ServiceSpec:
+		//    {ServiceSpec}
+		//    'ServiceSpec'
+		//    name=EString
+		//    '{'
+		//        ('request' request=MessageDefinition)?
+		//        ('response' response=MessageDefinition)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ServiceSpec} 'ServiceSpec' name=EString '{' ('request' request=MessageDefinition)? ('response'
-		//response=MessageDefinition)? '}'
+		//{ServiceSpec}
+		//'ServiceSpec'
+		//name=EString
+		//'{'
+		//    ('request' request=MessageDefinition)?
+		//    ('response' response=MessageDefinition)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ServiceSpec}
@@ -623,15 +655,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMessageMessageDefinitionParserRuleCall_4_1_0 = (RuleCall)cMessageAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//TopicSpec:
-		//	{TopicSpec}
-		//	'TopicSpec'
-		//	name=(EString | 'Header' | 'String')
-		//	'{' ('message' message=MessageDefinition)?
-		//	'}';
+		//TopicSpec returns TopicSpec:
+		//    {TopicSpec}
+		//    'TopicSpec'
+		//    name=(EString|'Header'|'String')
+		//    '{'
+		//        ('message' message=MessageDefinition)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TopicSpec} 'TopicSpec' name=(EString | 'Header' | 'String') '{' ('message' message=MessageDefinition)? '}'
+		//{TopicSpec}
+		//'TopicSpec'
+		//name=(EString|'Header'|'String')
+		//'{'
+		//    ('message' message=MessageDefinition)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{TopicSpec}
@@ -640,10 +678,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'TopicSpec'
 		public Keyword getTopicSpecKeyword_1() { return cTopicSpecKeyword_1; }
 		
-		//name=(EString | 'Header' | 'String')
+		//name=(EString|'Header'|'String')
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//(EString | 'Header' | 'String')
+		//(EString|'Header'|'String')
 		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
 		
 		//EString
@@ -695,16 +733,25 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFeedbackMessageDefinitionParserRuleCall_6_1_0 = (RuleCall)cFeedbackAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ActionSpec:
-		//	{ActionSpec}
-		//	'ActionSpec'
-		//	name=EString
-		//	'{' ('goal' goal=MessageDefinition)? ('result' result=MessageDefinition)? ('feedback' feedback=MessageDefinition)?
-		//	'}';
+		//ActionSpec returns ActionSpec:
+		//    {ActionSpec}
+		//    'ActionSpec'
+		//    name=EString
+		//    '{'
+		//        ('goal' goal=MessageDefinition)?
+		//        ('result' result=MessageDefinition)?
+		//        ('feedback' feedback=MessageDefinition)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ActionSpec} 'ActionSpec' name=EString '{' ('goal' goal=MessageDefinition)? ('result' result=MessageDefinition)?
-		//('feedback' feedback=MessageDefinition)? '}'
+		//{ActionSpec}
+		//'ActionSpec'
+		//name=EString
+		//'{'
+		//    ('goal' goal=MessageDefinition)?
+		//    ('result' result=MessageDefinition)?
+		//    ('feedback' feedback=MessageDefinition)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ActionSpec}
@@ -773,13 +820,17 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMessagePartMessagePartParserRuleCall_2_1_0 = (RuleCall)cMessagePartAssignment_2_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//MessageDefinition:
-		//	{MessageDefinition}
-		//	'{' (MessagePart+=MessagePart MessagePart+=MessagePart*)?
-		//	'}';
+		//MessageDefinition returns MessageDefinition:
+		//    {MessageDefinition}
+		//    '{'
+		//        ( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MessageDefinition} '{' (MessagePart+=MessagePart MessagePart+=MessagePart*)? '}'
+		//{MessageDefinition}
+		//'{'
+		//    ( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{MessageDefinition}
@@ -788,7 +839,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//(MessagePart+=MessagePart MessagePart+=MessagePart*)?
+		//( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//MessagePart+=MessagePart
@@ -797,7 +848,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//MessagePart
 		public RuleCall getMessagePartMessagePartParserRuleCall_2_0_0() { return cMessagePartMessagePartParserRuleCall_2_0_0; }
 		
-		//MessagePart+=MessagePart*
+		//( MessagePart+=MessagePart)*
 		public Assignment getMessagePartAssignment_2_1() { return cMessagePartAssignment_2_1; }
 		
 		//MessagePart
@@ -814,28 +865,30 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameRosNamesParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
 		private final Keyword cPublishersKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
-		private final Assignment cPublisherAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
-		private final RuleCall cPublisherPublisherParserRuleCall_4_0_2_0 = (RuleCall)cPublisherAssignment_4_0_2.eContents().get(0);
-		private final Group cGroup_4_0_3 = (Group)cGroup_4_0.eContents().get(3);
-		private final Keyword cCommaKeyword_4_0_3_0 = (Keyword)cGroup_4_0_3.eContents().get(0);
-		private final Assignment cPublisherAssignment_4_0_3_1 = (Assignment)cGroup_4_0_3.eContents().get(1);
-		private final RuleCall cPublisherPublisherParserRuleCall_4_0_3_1_0 = (RuleCall)cPublisherAssignment_4_0_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_0_4 = (Keyword)cGroup_4_0.eContents().get(4);
-		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
+		private final Group cGroup_4_0_2 = (Group)cGroup_4_0.eContents().get(2);
+		private final Assignment cPublisherAssignment_4_0_2_0 = (Assignment)cGroup_4_0_2.eContents().get(0);
+		private final RuleCall cPublisherPublisherParserRuleCall_4_0_2_0_0 = (RuleCall)cPublisherAssignment_4_0_2_0.eContents().get(0);
+		private final Group cGroup_4_0_2_1 = (Group)cGroup_4_0_2.eContents().get(1);
+		private final Keyword cCommaKeyword_4_0_2_1_0 = (Keyword)cGroup_4_0_2_1.eContents().get(0);
+		private final Assignment cPublisherAssignment_4_0_2_1_1 = (Assignment)cGroup_4_0_2_1.eContents().get(1);
+		private final RuleCall cPublisherPublisherParserRuleCall_4_0_2_1_1_0 = (RuleCall)cPublisherAssignment_4_0_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_0_3 = (Keyword)cGroup_4_0.eContents().get(3);
+		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
 		private final Keyword cSubscribersKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_1_1 = (Keyword)cGroup_4_1.eContents().get(1);
-		private final Assignment cSubscriberAssignment_4_1_2 = (Assignment)cGroup_4_1.eContents().get(2);
-		private final RuleCall cSubscriberSubscriberParserRuleCall_4_1_2_0 = (RuleCall)cSubscriberAssignment_4_1_2.eContents().get(0);
-		private final Group cGroup_4_1_3 = (Group)cGroup_4_1.eContents().get(3);
-		private final Keyword cCommaKeyword_4_1_3_0 = (Keyword)cGroup_4_1_3.eContents().get(0);
-		private final Assignment cSubscriberAssignment_4_1_3_1 = (Assignment)cGroup_4_1_3.eContents().get(1);
-		private final RuleCall cSubscriberSubscriberParserRuleCall_4_1_3_1_0 = (RuleCall)cSubscriberAssignment_4_1_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_1_4 = (Keyword)cGroup_4_1.eContents().get(4);
-		private final Group cGroup_4_2 = (Group)cUnorderedGroup_4.eContents().get(2);
+		private final Group cGroup_4_1_2 = (Group)cGroup_4_1.eContents().get(2);
+		private final Assignment cSubscriberAssignment_4_1_2_0 = (Assignment)cGroup_4_1_2.eContents().get(0);
+		private final RuleCall cSubscriberSubscriberParserRuleCall_4_1_2_0_0 = (RuleCall)cSubscriberAssignment_4_1_2_0.eContents().get(0);
+		private final Group cGroup_4_1_2_1 = (Group)cGroup_4_1_2.eContents().get(1);
+		private final Keyword cCommaKeyword_4_1_2_1_0 = (Keyword)cGroup_4_1_2_1.eContents().get(0);
+		private final Assignment cSubscriberAssignment_4_1_2_1_1 = (Assignment)cGroup_4_1_2_1.eContents().get(1);
+		private final RuleCall cSubscriberSubscriberParserRuleCall_4_1_2_1_1_0 = (RuleCall)cSubscriberAssignment_4_1_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_1_3 = (Keyword)cGroup_4_1.eContents().get(3);
+		private final Group cGroup_4_2 = (Group)cAlternatives_4.eContents().get(2);
 		private final Keyword cServiceServersKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_2_1 = (Keyword)cGroup_4_2.eContents().get(1);
 		private final Assignment cServiceserverAssignment_4_2_2 = (Assignment)cGroup_4_2.eContents().get(2);
@@ -845,7 +898,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cServiceserverAssignment_4_2_3_1 = (Assignment)cGroup_4_2_3.eContents().get(1);
 		private final RuleCall cServiceserverServiceServerParserRuleCall_4_2_3_1_0 = (RuleCall)cServiceserverAssignment_4_2_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_2_4 = (Keyword)cGroup_4_2.eContents().get(4);
-		private final Group cGroup_4_3 = (Group)cUnorderedGroup_4.eContents().get(3);
+		private final Group cGroup_4_3 = (Group)cAlternatives_4.eContents().get(3);
 		private final Keyword cServiceClientsKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_3_1 = (Keyword)cGroup_4_3.eContents().get(1);
 		private final Assignment cServiceclientAssignment_4_3_2 = (Assignment)cGroup_4_3.eContents().get(2);
@@ -855,7 +908,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cServiceclientAssignment_4_3_3_1 = (Assignment)cGroup_4_3_3.eContents().get(1);
 		private final RuleCall cServiceclientServiceClientParserRuleCall_4_3_3_1_0 = (RuleCall)cServiceclientAssignment_4_3_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_3_4 = (Keyword)cGroup_4_3.eContents().get(4);
-		private final Group cGroup_4_4 = (Group)cUnorderedGroup_4.eContents().get(4);
+		private final Group cGroup_4_4 = (Group)cAlternatives_4.eContents().get(4);
 		private final Keyword cActionServersKeyword_4_4_0 = (Keyword)cGroup_4_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_4_1 = (Keyword)cGroup_4_4.eContents().get(1);
 		private final Assignment cActionserverAssignment_4_4_2 = (Assignment)cGroup_4_4.eContents().get(2);
@@ -865,7 +918,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cActionserverAssignment_4_4_3_1 = (Assignment)cGroup_4_4_3.eContents().get(1);
 		private final RuleCall cActionserverActionServerParserRuleCall_4_4_3_1_0 = (RuleCall)cActionserverAssignment_4_4_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_4_4 = (Keyword)cGroup_4_4.eContents().get(4);
-		private final Group cGroup_4_5 = (Group)cUnorderedGroup_4.eContents().get(5);
+		private final Group cGroup_4_5 = (Group)cAlternatives_4.eContents().get(5);
 		private final Keyword cActionClientsKeyword_4_5_0 = (Keyword)cGroup_4_5.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_5_1 = (Keyword)cGroup_4_5.eContents().get(1);
 		private final Assignment cActionclientAssignment_4_5_2 = (Assignment)cGroup_4_5.eContents().get(2);
@@ -875,7 +928,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cActionclientAssignment_4_5_3_1 = (Assignment)cGroup_4_5_3.eContents().get(1);
 		private final RuleCall cActionclientActionClientParserRuleCall_4_5_3_1_0 = (RuleCall)cActionclientAssignment_4_5_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_5_4 = (Keyword)cGroup_4_5.eContents().get(4);
-		private final Group cGroup_4_6 = (Group)cUnorderedGroup_4.eContents().get(6);
+		private final Group cGroup_4_6 = (Group)cAlternatives_4.eContents().get(6);
 		private final Keyword cParametersKeyword_4_6_0 = (Keyword)cGroup_4_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_6_1 = (Keyword)cGroup_4_6.eContents().get(1);
 		private final Assignment cParameterAssignment_4_6_2 = (Assignment)cGroup_4_6.eContents().get(2);
@@ -887,24 +940,33 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4_6_4 = (Keyword)cGroup_4_6.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Node:
-		//	'Node'
-		//	'{'
-		//	'name' name=RosNames (('Publishers' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? & ('Subscribers' '{'
-		//	subscriber+=Subscriber ("," subscriber+=Subscriber)* '}')? & ('ServiceServers' '{' serviceserver+=ServiceServer (","
-		//	serviceserver+=ServiceServer)* '}')? & ('ServiceClients' '{' serviceclient+=ServiceClient (","
-		//	serviceclient+=ServiceClient)* '}')? & ('ActionServers' '{' actionserver+=ActionServer (","
-		//	actionserver+=ActionServer)* '}')? & ('ActionClients' '{' actionclient+=ActionClient ("," actionclient+=ActionClient)*
-		//	'}')? & ('Parameters' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?)
-		//	'}';
+		//Node returns Node:
+		//    'Node'
+		//    '{'
+		//    'name' name=RosNames
+		//    (('Publishers' '{' (publisher+=Publisher ( "," publisher+=Publisher)*)? '}') |
+		//    ('Subscribers' '{' (subscriber+=Subscriber ( "," subscriber+=Subscriber)*)? '}') |
+		//    ('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}') |
+		//    ('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}') |
+		//    ('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}') |
+		//    ('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}') |
+		//    ('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}')
+		//    )*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Node' '{' 'name' name=RosNames (('Publishers' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? &
-		//('Subscribers' '{' subscriber+=Subscriber ("," subscriber+=Subscriber)* '}')? & ('ServiceServers' '{'
-		//serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')? & ('ServiceClients' '{'
-		//serviceclient+=ServiceClient ("," serviceclient+=ServiceClient)* '}')? & ('ActionServers' '{'
-		//actionserver+=ActionServer ("," actionserver+=ActionServer)* '}')? & ('ActionClients' '{' actionclient+=ActionClient
-		//("," actionclient+=ActionClient)* '}')? & ('Parameters' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?) '}'
+		//'Node'
+		//'{'
+		//'name' name=RosNames
+		//(('Publishers' '{' (publisher+=Publisher ( "," publisher+=Publisher)*)? '}') |
+		//('Subscribers' '{' (subscriber+=Subscriber ( "," subscriber+=Subscriber)*)? '}') |
+		//('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}') |
+		//('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}') |
+		//('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}') |
+		//('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}') |
+		//('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}')
+		//)*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Node'
@@ -922,15 +984,17 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//RosNames
 		public RuleCall getNameRosNamesParserRuleCall_3_0() { return cNameRosNamesParserRuleCall_3_0; }
 		
-		//('Publishers' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? & ('Subscribers' '{' subscriber+=Subscriber
-		//("," subscriber+=Subscriber)* '}')? & ('ServiceServers' '{' serviceserver+=ServiceServer (","
-		//serviceserver+=ServiceServer)* '}')? & ('ServiceClients' '{' serviceclient+=ServiceClient (","
-		//serviceclient+=ServiceClient)* '}')? & ('ActionServers' '{' actionserver+=ActionServer (","
-		//actionserver+=ActionServer)* '}')? & ('ActionClients' '{' actionclient+=ActionClient ("," actionclient+=ActionClient)*
-		//'}')? & ('Parameters' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?
-		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
+		//(('Publishers' '{' (publisher+=Publisher ( "," publisher+=Publisher)*)? '}') |
+		//('Subscribers' '{' (subscriber+=Subscriber ( "," subscriber+=Subscriber)*)? '}') |
+		//('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}') |
+		//('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}') |
+		//('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}') |
+		//('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}') |
+		//('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}')
+		//)*
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
-		//('Publishers' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')?
+		//('Publishers' '{' (publisher+=Publisher ( "," publisher+=Publisher)*)? '}')
 		public Group getGroup_4_0() { return cGroup_4_0; }
 		
 		//'Publishers'
@@ -939,28 +1003,31 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_0_1() { return cLeftCurlyBracketKeyword_4_0_1; }
 		
+		//(publisher+=Publisher ( "," publisher+=Publisher)*)?
+		public Group getGroup_4_0_2() { return cGroup_4_0_2; }
+		
 		//publisher+=Publisher
-		public Assignment getPublisherAssignment_4_0_2() { return cPublisherAssignment_4_0_2; }
+		public Assignment getPublisherAssignment_4_0_2_0() { return cPublisherAssignment_4_0_2_0; }
 		
 		//Publisher
-		public RuleCall getPublisherPublisherParserRuleCall_4_0_2_0() { return cPublisherPublisherParserRuleCall_4_0_2_0; }
+		public RuleCall getPublisherPublisherParserRuleCall_4_0_2_0_0() { return cPublisherPublisherParserRuleCall_4_0_2_0_0; }
 		
-		//("," publisher+=Publisher)*
-		public Group getGroup_4_0_3() { return cGroup_4_0_3; }
+		//( "," publisher+=Publisher)*
+		public Group getGroup_4_0_2_1() { return cGroup_4_0_2_1; }
 		
 		//","
-		public Keyword getCommaKeyword_4_0_3_0() { return cCommaKeyword_4_0_3_0; }
+		public Keyword getCommaKeyword_4_0_2_1_0() { return cCommaKeyword_4_0_2_1_0; }
 		
 		//publisher+=Publisher
-		public Assignment getPublisherAssignment_4_0_3_1() { return cPublisherAssignment_4_0_3_1; }
+		public Assignment getPublisherAssignment_4_0_2_1_1() { return cPublisherAssignment_4_0_2_1_1; }
 		
 		//Publisher
-		public RuleCall getPublisherPublisherParserRuleCall_4_0_3_1_0() { return cPublisherPublisherParserRuleCall_4_0_3_1_0; }
+		public RuleCall getPublisherPublisherParserRuleCall_4_0_2_1_1_0() { return cPublisherPublisherParserRuleCall_4_0_2_1_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_0_4() { return cRightCurlyBracketKeyword_4_0_4; }
+		public Keyword getRightCurlyBracketKeyword_4_0_3() { return cRightCurlyBracketKeyword_4_0_3; }
 		
-		//('Subscribers' '{' subscriber+=Subscriber ("," subscriber+=Subscriber)* '}')?
+		//('Subscribers' '{' (subscriber+=Subscriber ( "," subscriber+=Subscriber)*)? '}')
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//'Subscribers'
@@ -969,28 +1036,31 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1_1() { return cLeftCurlyBracketKeyword_4_1_1; }
 		
+		//(subscriber+=Subscriber ( "," subscriber+=Subscriber)*)?
+		public Group getGroup_4_1_2() { return cGroup_4_1_2; }
+		
 		//subscriber+=Subscriber
-		public Assignment getSubscriberAssignment_4_1_2() { return cSubscriberAssignment_4_1_2; }
+		public Assignment getSubscriberAssignment_4_1_2_0() { return cSubscriberAssignment_4_1_2_0; }
 		
 		//Subscriber
-		public RuleCall getSubscriberSubscriberParserRuleCall_4_1_2_0() { return cSubscriberSubscriberParserRuleCall_4_1_2_0; }
+		public RuleCall getSubscriberSubscriberParserRuleCall_4_1_2_0_0() { return cSubscriberSubscriberParserRuleCall_4_1_2_0_0; }
 		
-		//("," subscriber+=Subscriber)*
-		public Group getGroup_4_1_3() { return cGroup_4_1_3; }
+		//( "," subscriber+=Subscriber)*
+		public Group getGroup_4_1_2_1() { return cGroup_4_1_2_1; }
 		
 		//","
-		public Keyword getCommaKeyword_4_1_3_0() { return cCommaKeyword_4_1_3_0; }
+		public Keyword getCommaKeyword_4_1_2_1_0() { return cCommaKeyword_4_1_2_1_0; }
 		
 		//subscriber+=Subscriber
-		public Assignment getSubscriberAssignment_4_1_3_1() { return cSubscriberAssignment_4_1_3_1; }
+		public Assignment getSubscriberAssignment_4_1_2_1_1() { return cSubscriberAssignment_4_1_2_1_1; }
 		
 		//Subscriber
-		public RuleCall getSubscriberSubscriberParserRuleCall_4_1_3_1_0() { return cSubscriberSubscriberParserRuleCall_4_1_3_1_0; }
+		public RuleCall getSubscriberSubscriberParserRuleCall_4_1_2_1_1_0() { return cSubscriberSubscriberParserRuleCall_4_1_2_1_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_1_4() { return cRightCurlyBracketKeyword_4_1_4; }
+		public Keyword getRightCurlyBracketKeyword_4_1_3() { return cRightCurlyBracketKeyword_4_1_3; }
 		
-		//('ServiceServers' '{' serviceserver+=ServiceServer ("," serviceserver+=ServiceServer)* '}')?
+		//('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}')
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//'ServiceServers'
@@ -1005,7 +1075,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ServiceServer
 		public RuleCall getServiceserverServiceServerParserRuleCall_4_2_2_0() { return cServiceserverServiceServerParserRuleCall_4_2_2_0; }
 		
-		//("," serviceserver+=ServiceServer)*
+		//( "," serviceserver+=ServiceServer)*
 		public Group getGroup_4_2_3() { return cGroup_4_2_3; }
 		
 		//","
@@ -1020,7 +1090,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_2_4() { return cRightCurlyBracketKeyword_4_2_4; }
 		
-		//('ServiceClients' '{' serviceclient+=ServiceClient ("," serviceclient+=ServiceClient)* '}')?
+		//('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}')
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//'ServiceClients'
@@ -1035,7 +1105,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ServiceClient
 		public RuleCall getServiceclientServiceClientParserRuleCall_4_3_2_0() { return cServiceclientServiceClientParserRuleCall_4_3_2_0; }
 		
-		//("," serviceclient+=ServiceClient)*
+		//( "," serviceclient+=ServiceClient)*
 		public Group getGroup_4_3_3() { return cGroup_4_3_3; }
 		
 		//","
@@ -1050,7 +1120,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_3_4() { return cRightCurlyBracketKeyword_4_3_4; }
 		
-		//('ActionServers' '{' actionserver+=ActionServer ("," actionserver+=ActionServer)* '}')?
+		//('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}')
 		public Group getGroup_4_4() { return cGroup_4_4; }
 		
 		//'ActionServers'
@@ -1065,7 +1135,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionServer
 		public RuleCall getActionserverActionServerParserRuleCall_4_4_2_0() { return cActionserverActionServerParserRuleCall_4_4_2_0; }
 		
-		//("," actionserver+=ActionServer)*
+		//( "," actionserver+=ActionServer)*
 		public Group getGroup_4_4_3() { return cGroup_4_4_3; }
 		
 		//","
@@ -1080,7 +1150,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_4_4() { return cRightCurlyBracketKeyword_4_4_4; }
 		
-		//('ActionClients' '{' actionclient+=ActionClient ("," actionclient+=ActionClient)* '}')?
+		//('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}')
 		public Group getGroup_4_5() { return cGroup_4_5; }
 		
 		//'ActionClients'
@@ -1095,7 +1165,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionClient
 		public RuleCall getActionclientActionClientParserRuleCall_4_5_2_0() { return cActionclientActionClientParserRuleCall_4_5_2_0; }
 		
-		//("," actionclient+=ActionClient)*
+		//( "," actionclient+=ActionClient)*
 		public Group getGroup_4_5_3() { return cGroup_4_5_3; }
 		
 		//","
@@ -1110,7 +1180,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_5_4() { return cRightCurlyBracketKeyword_4_5_4; }
 		
-		//('Parameters' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?
+		//('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}')
 		public Group getGroup_4_6() { return cGroup_4_6; }
 		
 		//'Parameters'
@@ -1125,7 +1195,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//Parameter
 		public RuleCall getParameterParameterParserRuleCall_4_6_2_0() { return cParameterParameterParserRuleCall_4_6_2_0; }
 		
-		//("," parameter+=Parameter)*
+		//( "," parameter+=Parameter)*
 		public Group getGroup_4_6_3() { return cGroup_4_6_3; }
 		
 		//","
@@ -1161,15 +1231,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ServiceServer:
-		//	'ServiceServer'
-		//	'{'
-		//	'name' name=EString
-		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//ServiceServer returns ServiceServer:
+		//    'ServiceServer'
+		//    '{'
+		//        'name' name=EString
+		//        'service' service=[ServiceSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceServer' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ServiceServer'
+		//'{'
+		//    'name' name=EString
+		//    'service' service=[ServiceSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceServer'
@@ -1232,15 +1308,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//Publisher:
-		//	'Publisher'
-		//	'{'
-		//	'name' name=EString
-		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//Publisher returns Publisher:
+		//    'Publisher'
+		//    '{'
+		//        'name' name=EString
+		//        'message' message=[TopicSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Publisher' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Publisher'
+		//'{'
+		//    'name' name=EString
+		//    'message' message=[TopicSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Publisher'
@@ -1303,15 +1385,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//Subscriber:
-		//	'Subscriber'
-		//	'{'
-		//	'name' name=EString
-		//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//Subscriber returns Subscriber:
+		//    'Subscriber'
+		//    '{'
+		//        'name' name=EString
+		//        'message' message=[TopicSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Subscriber' '{' 'name' name=EString 'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'Subscriber'
+		//'{'
+		//    'name' name=EString
+		//    'message' message=[TopicSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Subscriber'
@@ -1374,15 +1462,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ServiceClient:
-		//	'ServiceClient'
-		//	'{'
-		//	'name' name=EString
-		//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//ServiceClient returns ServiceClient:
+		//    'ServiceClient'
+		//    '{'
+		//        'name' name=EString
+		//        'service' service=[ServiceSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceClient' '{' 'name' name=EString 'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ServiceClient'
+		//'{'
+		//    'name' name=EString
+		//    'service' service=[ServiceSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceClient'
@@ -1445,15 +1539,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ActionServer:
-		//	'ActionServer'
-		//	'{'
-		//	'name' name=EString
-		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//ActionServer returns ActionServer:
+		//    'ActionServer'
+		//    '{'
+		//        'name' name=EString
+		//        'action' action=[ActionSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionServer' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionServer'
+		//'{'
+		//    'name' name=EString
+		//    'action' action=[ActionSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionServer'
@@ -1516,15 +1616,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ActionClient:
-		//	'ActionClient'
-		//	'{'
-		//	'name' name=EString
-		//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
-		//	'}';
+		//ActionClient returns ActionClient:
+		//    'ActionClient'
+		//    '{'
+		//        'name' name=EString
+		//        'action' action=[ActionSpec|EString]
+		//        ('namespace' namespace=Namespace)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ActionClient' '{' 'name' name=EString 'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)? '}'
+		//'ActionClient'
+		//'{'
+		//    'name' name=EString
+		//    'action' action=[ActionSpec|EString]
+		//    ('namespace' namespace=Namespace)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ActionClient'
@@ -1573,8 +1679,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.GraphName");
 		private final Keyword cGraphNameKeyword = (Keyword)rule.eContents().get(1);
 		
-		//GraphName GraphName:
-		//	'GraphName';
+		//GraphName returns GraphName:
+		//    'GraphName' ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'GraphName'
@@ -1588,12 +1694,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cPackagePackageCrossReference_1_0 = (CrossReference)cPackageAssignment_1.eContents().get(0);
 		private final RuleCall cPackagePackageEStringParserRuleCall_1_0_1 = (RuleCall)cPackagePackageCrossReference_1_0.eContents().get(1);
 		
-		//PackageDependency:
-		//	'PackageDependency'
-		//	package=[Package|EString];
+		//PackageDependency returns PackageDependency:
+		//    'PackageDependency'
+		//        package=[Package|EString]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PackageDependency' package=[Package|EString]
+		//'PackageDependency'
+		//    package=[Package|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//'PackageDependency'
@@ -1616,13 +1724,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
-		//ExternalDependency:
-		//	{ExternalDependency}
-		//	'ExternalDependency'
-		//	name=EString;
+		//ExternalDependency returns ExternalDependency:
+		//    {ExternalDependency}
+		//    'ExternalDependency'
+		//    name=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ExternalDependency} 'ExternalDependency' name=EString
+		//{ExternalDependency}
+		//'ExternalDependency'
+		//name=EString
 		public Group getGroup() { return cGroup; }
 		
 		//{ExternalDependency}
@@ -1655,14 +1765,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//GlobalNamespace:
-		//	{GlobalNamespace}
-		//	'GlobalNamespace'
-		//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-		//	'}';
+		//GlobalNamespace returns GlobalNamespace:
+		//    {GlobalNamespace}
+		//    'GlobalNamespace'
+		//    '{'
+		//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GlobalNamespace} 'GlobalNamespace' '{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')? '}'
+		//{GlobalNamespace}
+		//'GlobalNamespace'
+		//'{'
+		//    ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{GlobalNamespace}
@@ -1674,7 +1789,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
+		//('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'parts'
@@ -1689,7 +1804,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//GraphName
 		public RuleCall getPartsGraphNameParserRuleCall_3_2_0() { return cPartsGraphNameParserRuleCall_3_2_0; }
 		
-		//("," parts+=GraphName)*
+		//( "," parts+=GraphName)*
 		public Group getGroup_3_3() { return cGroup_3_3; }
 		
 		//","
@@ -1725,14 +1840,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//RelativeNamespace_Impl RelativeNamespace:
-		//	{RelativeNamespace}
-		//	'RelativeNamespace'
-		//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-		//	'}';
+		//RelativeNamespace_Impl returns RelativeNamespace:
+		//    {RelativeNamespace}
+		//    'RelativeNamespace'
+		//    '{'
+		//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RelativeNamespace} 'RelativeNamespace' '{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')? '}'
+		//{RelativeNamespace}
+		//'RelativeNamespace'
+		//'{'
+		//    ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{RelativeNamespace}
@@ -1744,7 +1864,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
+		//('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'parts'
@@ -1759,7 +1879,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//GraphName
 		public RuleCall getPartsGraphNameParserRuleCall_3_2_0() { return cPartsGraphNameParserRuleCall_3_2_0; }
 		
-		//("," parts+=GraphName)*
+		//( "," parts+=GraphName)*
 		public Group getGroup_3_3() { return cGroup_3_3; }
 		
 		//","
@@ -1795,14 +1915,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//PrivateNamespace:
-		//	{PrivateNamespace}
-		//	'PrivateNamespace'
-		//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-		//	'}';
+		//PrivateNamespace returns PrivateNamespace:
+		//    {PrivateNamespace}
+		//    'PrivateNamespace'
+		//    '{'
+		//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{PrivateNamespace} 'PrivateNamespace' '{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')? '}'
+		//{PrivateNamespace}
+		//'PrivateNamespace'
+		//'{'
+		//    ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{PrivateNamespace}
@@ -1814,7 +1939,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
+		//('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'parts'
@@ -1829,7 +1954,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//GraphName
 		public RuleCall getPartsGraphNameParserRuleCall_3_2_0() { return cPartsGraphNameParserRuleCall_3_2_0; }
 		
-		//("," parts+=GraphName)*
+		//( "," parts+=GraphName)*
 		public Group getGroup_3_3() { return cGroup_3_3; }
 		
 		//","
@@ -1865,15 +1990,21 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		////PARAMETERS DEFINITION
-		//Parameter:
-		//	'Parameter'
-		//	'{'
-		//	'name' name=EString ('namespace' namespace=Namespace)?
-		//	'type' type=ParameterType
-		//	'}';
+		//Parameter returns Parameter:
+		//    'Parameter'
+		//    '{'
+		//        'name' name=EString
+		//        ('namespace' namespace=Namespace)?
+		//        'type' type=ParameterType
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Parameter' '{' 'name' name=EString ('namespace' namespace=Namespace)? 'type' type=ParameterType '}'
+		//'Parameter'
+		//'{'
+		//    'name' name=EString
+		//    ('namespace' namespace=Namespace)?
+		//    'type' type=ParameterType
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Parameter'
@@ -1927,13 +2058,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterBase64TypeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cParameterArrayTypeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
-		//ParameterType:
-		//	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType |
-		//	ParameterBooleanType | ParameterBase64Type | ParameterArrayType;
+		//ParameterType returns ParameterType:
+		//    ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterBooleanType | ParameterBase64Type | ParameterArrayType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType |
-		//ParameterBooleanType | ParameterBase64Type | ParameterArrayType
+		//ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterBooleanType | ParameterBase64Type | ParameterArrayType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ParameterListType
@@ -1971,14 +2100,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterListParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cParameterStructParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
-		//// | ParameterDateType;
-		//ParameterValue:
-		//	ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList |
-		//	ParameterStruct;
+		// // | ParameterDateType;
+		//ParameterValue returns ParameterValue:
+		//    ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList | ParameterStruct;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList |
-		//ParameterStruct
+		//ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList | ParameterStruct
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ParameterString
@@ -2016,16 +2143,20 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSequenceParameterTypeParserRuleCall_4_1_0 = (RuleCall)cSequenceAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//// | ParameterDate;
-		//ParameterListType:
-		//	{ParameterListType}
-		//	'List'
-		//	'{'
-		//	sequence+=ParameterType (',' sequence+=ParameterType)*
-		//	'}';
+		// // | ParameterDate;
+		//ParameterListType returns ParameterListType:
+		//    {ParameterListType}
+		//    'List'
+		//    '{'
+		//        sequence+=ParameterType ( ',' sequence+=ParameterType )*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterListType} 'List' '{' sequence+=ParameterType (',' sequence+=ParameterType)* '}'
+		//{ParameterListType}
+		//'List'
+		//'{'
+		//    sequence+=ParameterType ( ',' sequence+=ParameterType )*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterListType}
@@ -2043,7 +2174,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ParameterType
 		public RuleCall getSequenceParameterTypeParserRuleCall_3_0() { return cSequenceParameterTypeParserRuleCall_3_0; }
 		
-		//(',' sequence+=ParameterType)*
+		//( ',' sequence+=ParameterType )*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
@@ -2072,16 +2203,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterstructypetmemberParameterStructTypeMemberParserRuleCall_4_1_0 = (RuleCall)cParameterstructypetmemberAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ParameterStructType:
-		//	{ParameterStructType}
-		//	'Struct'
-		//	'{'
-		//	parameterstructypetmember+=ParameterStructTypeMember ("," parameterstructypetmember+=ParameterStructTypeMember)*
-		//	'}';
+		//ParameterStructType returns ParameterStructType:
+		//    {ParameterStructType}
+		//    'Struct'
+		//    '{'
+		//        parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterStructType} 'Struct' '{' parameterstructypetmember+=ParameterStructTypeMember (","
-		//parameterstructypetmember+=ParameterStructTypeMember)* '}'
+		//{ParameterStructType}
+		//'Struct'
+		//'{'
+		//    parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterStructType}
@@ -2099,7 +2233,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ParameterStructTypeMember
 		public RuleCall getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_0() { return cParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_0; }
 		
-		//("," parameterstructypetmember+=ParameterStructTypeMember)*
+		//( "," parameterstructypetmember+=ParameterStructTypeMember)*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//","
@@ -2124,12 +2258,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterIntegerParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterIntegerType:
-		//	{ParameterIntegerType}
-		//	'Integer' ('default' default=ParameterInteger)?;
+		//ParameterIntegerType returns ParameterIntegerType:
+		//    {ParameterIntegerType}
+		//    'Integer'
+		//    ('default' default=ParameterInteger)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterIntegerType} 'Integer' ('default' default=ParameterInteger)?
+		//{ParameterIntegerType}
+		//'Integer'
+		//('default' default=ParameterInteger)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterIntegerType}
@@ -2160,12 +2297,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterStringParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterStringType:
-		//	{ParameterStringType}
-		//	'String' ('default' default=ParameterString)?;
+		//ParameterStringType returns ParameterStringType:
+		//    {ParameterStringType}
+		//    'String'
+		//    ('default' default=ParameterString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterStringType} 'String' ('default' default=ParameterString)?
+		//{ParameterStringType}
+		//'String'
+		//('default' default=ParameterString)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterStringType}
@@ -2196,12 +2336,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterDoubleParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterDoubleType:
-		//	{ParameterDoubleType}
-		//	'Double' ('default' default=ParameterDouble)?;
+		//ParameterDoubleType returns ParameterDoubleType:
+		//    {ParameterDoubleType}
+		//    'Double'
+		//    ('default' default=ParameterDouble)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterDoubleType} 'Double' ('default' default=ParameterDouble)?
+		//{ParameterDoubleType}
+		//'Double'
+		//('default' default=ParameterDouble)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterDoubleType}
@@ -2232,12 +2375,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterDateParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterDateType:
-		//	{ParameterDateType}
-		//	'Date' ('default' default=ParameterDate)?;
+		//ParameterDateType returns ParameterDateType:
+		//    {ParameterDateType}
+		//    'Date'
+		//    ('default' default=ParameterDate)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterDateType} 'Date' ('default' default=ParameterDate)?
+		//{ParameterDateType}
+		//'Date'
+		//('default' default=ParameterDate)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterDateType}
@@ -2268,12 +2414,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterBooleanParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterBooleanType:
-		//	{ParameterBooleanType}
-		//	'Boolean' ('default' default=ParameterBoolean)?;
+		//ParameterBooleanType returns ParameterBooleanType:
+		//    {ParameterBooleanType}
+		//    'Boolean'
+		//    ('default' default=ParameterBoolean)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterBooleanType} 'Boolean' ('default' default=ParameterBoolean)?
+		//{ParameterBooleanType}
+		//'Boolean'
+		//('default' default=ParameterBoolean)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterBooleanType}
@@ -2304,12 +2453,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterBase64ParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterBase64Type:
-		//	{ParameterBase64Type}
-		//	'Base64' ('default' default=ParameterBase64)?;
+		//ParameterBase64Type returns ParameterBase64Type:
+		//    {ParameterBase64Type}
+		//    'Base64'
+		//    ('default' default=ParameterBase64)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterBase64Type} 'Base64' ('default' default=ParameterBase64)?
+		//{ParameterBase64Type}
+		//'Base64'
+		//('default' default=ParameterBase64)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterBase64Type}
@@ -2340,12 +2492,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDefaultParameterAnyParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
-		//ParameterAnyType:
-		//	{ParameterAnyType}
-		//	'Any' ('default' default=ParameterAny)?;
+		//ParameterAnyType returns ParameterAnyType:
+		//    {ParameterAnyType}
+		//    'Any'
+		//    ('default' default=ParameterAny)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterAnyType} 'Any' ('default' default=ParameterAny)?
+		//{ParameterAnyType}
+		//'Any'
+		//('default' default=ParameterAny)?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterAnyType}
@@ -2380,14 +2535,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefaultParameterListParserRuleCall_4_1_0 = (RuleCall)cDefaultAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ParameterArrayType:
-		//	'Array'
-		//	'{'
-		//	'type' type=ParameterType ('default' default=ParameterList)?
-		//	'}';
+		//ParameterArrayType returns ParameterArrayType:
+		//    'Array'
+		//    '{'
+		//        'type' type=ParameterType
+		//        ('default' default=ParameterList)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Array' '{' 'type' type=ParameterType ('default' default=ParameterList)? '}'
+		//'Array'
+		//'{'
+		//    'type' type=ParameterType
+		//    ('default' default=ParameterList)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Array'
@@ -2433,12 +2593,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueParameterValueParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ParameterList ParameterSequence:
-		//	{ParameterSequence}
-		//	'{' value+=ParameterValue (',' value+=ParameterValue)* '}';
+		//ParameterList returns ParameterSequence:
+		//    {ParameterSequence}
+		//        '{'    value+=ParameterValue ( ',' value+=ParameterValue )* '}'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterSequence} '{' value+=ParameterValue (',' value+=ParameterValue)* '}'
+		//{ParameterSequence}
+		//    '{'    value+=ParameterValue ( ',' value+=ParameterValue )* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterSequence}
@@ -2453,7 +2615,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ParameterValue
 		public RuleCall getValueParameterValueParserRuleCall_2_0() { return cValueParameterValueParserRuleCall_2_0; }
 		
-		//(',' value+=ParameterValue)*
+		//( ',' value+=ParameterValue )*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//','
@@ -2480,14 +2642,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueEStringParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ParameterAny:
-		//	{ParameterAny}
-		//	'ParameterAny'
-		//	'{' ('value' value=EString)?
-		//	'}';
+		//ParameterAny returns ParameterAny:
+		//    {ParameterAny}
+		//    'ParameterAny'
+		//    '{'
+		//        ('value' value=EString)?
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterAny} 'ParameterAny' '{' ('value' value=EString)? '}'
+		//{ParameterAny}
+		//'ParameterAny'
+		//'{'
+		//    ('value' value=EString)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterAny}
@@ -2519,8 +2686,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterString:
-		//	value=EString;
+		//ParameterString returns ParameterString:
+		//    value=EString
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=EString
@@ -2534,8 +2702,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueBase64BinaryParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterBase64:
-		//	value=Base64Binary;
+		//ParameterBase64 returns ParameterBase64:
+		//    value=Base64Binary
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=Base64Binary
@@ -2549,8 +2718,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueInteger0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterInteger:
-		//	value=Integer0;
+		//ParameterInteger returns ParameterInteger:
+		//    value=Integer0
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=Integer0
@@ -2564,8 +2734,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueDouble0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterDouble:
-		//	value=Double0;
+		//ParameterDouble returns ParameterDouble:
+		//    value=Double0
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=Double0
@@ -2579,8 +2750,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueBoolean0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterBoolean:
-		//	value=boolean0;
+		//ParameterBoolean returns ParameterBoolean:
+		//    value=boolean0
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=boolean0
@@ -2605,17 +2777,20 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
-		//ParameterStruct:
-		//	{ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?;
+		//ParameterStruct returns ParameterStruct:
+		//    {ParameterStruct}
+		//        ('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?
+		//{ParameterStruct}
+		//    ('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterStruct}
 		public Action getParameterStructAction_0() { return cParameterStructAction_0; }
 		
-		//('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?
+		//('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
@@ -2627,7 +2802,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		//ParameterStructMember
 		public RuleCall getValueParameterStructMemberParserRuleCall_1_1_0() { return cValueParameterStructMemberParserRuleCall_1_1_0; }
 		
-		//("," '{' value+=ParameterStructMember '}')*
+		//( "," '{' value+=ParameterStructMember '}')*
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
 		//","
@@ -2653,8 +2828,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueDateTime0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//ParameterDate:
-		//	value=DateTime0;
+		//ParameterDate returns ParameterDate:
+		//    value=DateTime0
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=DateTime0
@@ -2675,15 +2851,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueParameterValueParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ParameterStructMember:
-		//	'ParameterStructMember'
-		//	name=EString
-		//	'{'
-		//	'value' value=ParameterValue
-		//	'}';
+		//ParameterStructMember returns ParameterStructMember:
+		//    'ParameterStructMember'
+		//    name=EString
+		//    '{'
+		//        'value' value=ParameterValue
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ParameterStructMember' name=EString '{' 'value' value=ParameterValue '}'
+		//'ParameterStructMember'
+		//name=EString
+		//'{'
+		//    'value' value=ParameterValue
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ParameterStructMember'
@@ -2718,12 +2898,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTypeParameterTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		
-		//ParameterStructTypeMember:
-		//	name=EString
-		//	type=ParameterType;
+		//ParameterStructTypeMember returns ParameterStructTypeMember:
+		//        name=EString
+		//        type=ParameterType
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString type=ParameterType
+		//name=EString
+		//type=ParameterType
 		public Group getGroup() { return cGroup; }
 		
 		//name=EString
@@ -2742,8 +2924,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Base64Binary");
 		private final RuleCall cBINARYTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Base64Binary type::Base64Binary:
-		//	BINARY;
+		//Base64Binary returns type::Base64Binary:
+		//    BINARY ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//BINARY
@@ -2753,8 +2935,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.boolean0");
 		private final RuleCall cBOOLEANTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//boolean0 type::Boolean:
-		//	BOOLEAN;
+		//boolean0 returns type::Boolean:
+		//    BOOLEAN;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//BOOLEAN
@@ -2764,8 +2946,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Double0");
 		private final RuleCall cDOUBLETerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Double0 type::Double:
-		//	DOUBLE;
+		//Double0 returns type::Double:
+		//    DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//DOUBLE
@@ -2775,8 +2957,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.Integer0");
 		private final RuleCall cDECINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Integer0 type::Int:
-		//	DECINT;
+		//Integer0 returns type::Int:
+		//    DECINT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//DECINT
@@ -2786,8 +2968,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Ros.DateTime0");
 		private final RuleCall cDATE_TIMETerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//DateTime0 type::DateTime:
-		//	DATE_TIME;
+		//DateTime0 returns type::DateTime:
+		//    DATE_TIME;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//DATE_TIME
@@ -2805,21 +2987,23 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDataEStringParserRuleCall_1_0_2 = (RuleCall)cDataAlternatives_1_0.eContents().get(2);
 		
 		////MESSAGE PRIMITIVES DEFINITION
-		//MessagePart primitives::MessagePart:
-		//	Type=AbstractType
-		//	Data=(KEYWORD | MESSAGE_ASIGMENT | EString);
+		//MessagePart returns primitives::MessagePart:
+		//    Type = AbstractType
+		//    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Type=AbstractType Data=(KEYWORD | MESSAGE_ASIGMENT | EString)
+		//Type = AbstractType
+		//Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
 		public Group getGroup() { return cGroup; }
 		
-		//Type=AbstractType
+		//Type = AbstractType
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
 		//AbstractType
 		public RuleCall getTypeAbstractTypeParserRuleCall_0_0() { return cTypeAbstractTypeParserRuleCall_0_0; }
 		
-		//Data=(KEYWORD | MESSAGE_ASIGMENT | EString)
+		//Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
 		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
 		
 		//(KEYWORD | MESSAGE_ASIGMENT | EString)
@@ -2869,15 +3053,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTopicSpecRefParserRuleCall_29 = (RuleCall)cAlternatives.eContents().get(29);
 		private final RuleCall cArrayTopicSpecRefParserRuleCall_30 = (RuleCall)cAlternatives.eContents().get(30);
 		
-		//AbstractType primitives::AbstractType:
-		//	bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time |
-		//	duration | Header | boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array |
-		//	int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | TopicSpecRef | ArrayTopicSpecRef;
+		//AbstractType returns primitives::AbstractType:
+		//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
+		//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
+		//    TopicSpecRef | ArrayTopicSpecRef ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time |
-		//duration | Header | boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array |
-		//int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | TopicSpecRef | ArrayTopicSpecRef
+		//bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
+		//boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
+		//TopicSpecRef | ArrayTopicSpecRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//bool
@@ -2979,12 +3163,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cBoolAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBoolKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//bool primitives::bool:
-		//	{primitives::bool}
-		//	'bool';
+		//bool returns primitives::bool:
+		//    {primitives::bool}
+		//    'bool'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::bool} 'bool'
+		//{primitives::bool}
+		//'bool'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::bool}
@@ -2999,12 +3185,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt8Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt8Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int8 primitives::int8:
-		//	{primitives::int8}
-		//	'int8';
+		//int8 returns primitives::int8:
+		//    {primitives::int8}
+		//    'int8'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int8} 'int8'
+		//{primitives::int8}
+		//'int8'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int8}
@@ -3019,12 +3207,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint8Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint8Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint8 primitives::uint8:
-		//	{primitives::uint8}
-		//	'uint8';
+		//uint8 returns primitives::uint8:
+		//    {primitives::uint8}
+		//    'uint8'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint8} 'uint8'
+		//{primitives::uint8}
+		//'uint8'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint8}
@@ -3039,12 +3229,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt16Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt16Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int16 primitives::int16:
-		//	{primitives::int16}
-		//	'int16';
+		//int16 returns primitives::int16:
+		//    {primitives::int16}
+		//    'int16'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int16} 'int16'
+		//{primitives::int16}
+		//'int16'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int16}
@@ -3059,12 +3251,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint16Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint16Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint16 primitives::uint16:
-		//	{primitives::uint16}
-		//	'uint16';
+		//uint16 returns primitives::uint16:
+		//    {primitives::uint16}
+		//    'uint16'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint16} 'uint16'
+		//{primitives::uint16}
+		//'uint16'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint16}
@@ -3079,12 +3273,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt32Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int32 primitives::int32:
-		//	{primitives::int32}
-		//	'int32';
+		//int32 returns primitives::int32:
+		//    {primitives::int32}
+		//    'int32'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int32} 'int32'
+		//{primitives::int32}
+		//'int32'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int32}
@@ -3099,12 +3295,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint32Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint32 primitives::uint32:
-		//	{primitives::uint32}
-		//	'uint32';
+		//uint32 returns primitives::uint32:
+		//    {primitives::uint32}
+		//    'uint32'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint32} 'uint32'
+		//{primitives::uint32}
+		//'uint32'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint32}
@@ -3119,12 +3317,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt64Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int64 primitives::int64:
-		//	{primitives::int64}
-		//	'int64';
+		//int64 returns primitives::int64:
+		//    {primitives::int64}
+		//    'int64'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int64} 'int64'
+		//{primitives::int64}
+		//'int64'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int64}
@@ -3139,12 +3339,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint64Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint64 primitives::uint64:
-		//	{primitives::uint64}
-		//	'uint64';
+		//uint64 returns primitives::uint64:
+		//    {primitives::uint64}
+		//    'uint64'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint64} 'uint64'
+		//{primitives::uint64}
+		//'uint64'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint64}
@@ -3159,12 +3361,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cFloat32Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFloat32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//float32 primitives::float32:
-		//	{primitives::float32}
-		//	'float32';
+		//float32 returns primitives::float32:
+		//    {primitives::float32}
+		//    'float32'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::float32} 'float32'
+		//{primitives::float32}
+		//'float32'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::float32}
@@ -3179,12 +3383,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cFloat64Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFloat64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//float64 primitives::float64:
-		//	{primitives::float64}
-		//	'float64';
+		//float64 returns primitives::float64:
+		//    {primitives::float64}
+		//    'float64'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::float64} 'float64'
+		//{primitives::float64}
+		//'float64'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::float64}
@@ -3199,12 +3405,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cStringAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStringKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//string0 primitives::string:
-		//	{primitives::string}
-		//	'string';
+		//string0 returns primitives::string:
+		//    {primitives::string}
+		//    'string'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::string} 'string'
+		//{primitives::string}
+		//'string'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::string}
@@ -3219,12 +3427,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cByteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cByteKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//byte primitives::Byte:
-		//	{primitives::Byte}
-		//	'byte';
+		//byte returns primitives::Byte:
+		//    {primitives::Byte}
+		//    'byte'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::Byte} 'byte'
+		//{primitives::Byte}
+		//'byte'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::Byte}
@@ -3239,12 +3449,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cTimeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTimeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//time primitives::time:
-		//	{primitives::time}
-		//	'time';
+		//time returns primitives::time:
+		//    {primitives::time}
+		//    'time'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::time} 'time'
+		//{primitives::time}
+		//'time'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::time}
@@ -3259,12 +3471,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDurationKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//duration primitives::duration:
-		//	{primitives::duration}
-		//	'duration';
+		//duration returns primitives::duration:
+		//    {primitives::duration}
+		//    'duration'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::duration} 'duration'
+		//{primitives::duration}
+		//'duration'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::duration}
@@ -3279,12 +3493,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cBoolArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBoolKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//boolArray primitives::boolArray:
-		//	{primitives::boolArray}
-		//	'bool[]';
+		//boolArray returns primitives::boolArray:
+		//    {primitives::boolArray}
+		//    'bool[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::boolArray} 'bool[]'
+		//{primitives::boolArray}
+		//'bool[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::boolArray}
@@ -3299,12 +3515,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt8ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt8Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int8Array primitives::int8Array:
-		//	{primitives::int8Array}
-		//	'int8[]';
+		//int8Array returns primitives::int8Array:
+		//    {primitives::int8Array}
+		//    'int8[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int8Array} 'int8[]'
+		//{primitives::int8Array}
+		//'int8[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int8Array}
@@ -3319,12 +3537,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint8ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint8Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint8Array primitives::uint8Array:
-		//	{primitives::uint8Array}
-		//	'uint8[]';
+		//uint8Array returns primitives::uint8Array:
+		//    {primitives::uint8Array}
+		//    'uint8[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint8Array} 'uint8[]'
+		//{primitives::uint8Array}
+		//'uint8[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint8Array}
@@ -3339,12 +3559,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt16ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt16Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int16Array primitives::int16Array:
-		//	{primitives::int16Array}
-		//	'int16[]';
+		//int16Array returns primitives::int16Array:
+		//    {primitives::int16Array}
+		//    'int16[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int16Array} 'int16[]'
+		//{primitives::int16Array}
+		//'int16[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int16Array}
@@ -3359,12 +3581,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint16ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint16Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint16Array primitives::uint16Array:
-		//	{primitives::uint16Array}
-		//	'uint16[]';
+		//uint16Array returns primitives::uint16Array:
+		//    {primitives::uint16Array}
+		//    'uint16[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint16Array} 'uint16[]'
+		//{primitives::uint16Array}
+		//'uint16[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint16Array}
@@ -3379,12 +3603,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt32ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int32Array primitives::int32Array:
-		//	{primitives::int32Array}
-		//	'int32[]';
+		//int32Array returns primitives::int32Array:
+		//    {primitives::int32Array}
+		//    'int32[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int32Array} 'int32[]'
+		//{primitives::int32Array}
+		//'int32[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int32Array}
@@ -3399,12 +3625,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint32ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint32Array primitives::uint32Array:
-		//	{primitives::uint32Array}
-		//	'uint32[]';
+		//uint32Array returns primitives::uint32Array:
+		//    {primitives::uint32Array}
+		//    'uint32[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint32Array} 'uint32[]'
+		//{primitives::uint32Array}
+		//'uint32[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint32Array}
@@ -3419,12 +3647,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInt64ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInt64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//int64Array primitives::int64Array:
-		//	{primitives::int64Array}
-		//	'int64[]';
+		//int64Array returns primitives::int64Array:
+		//    {primitives::int64Array}
+		//    'int64[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::int64Array} 'int64[]'
+		//{primitives::int64Array}
+		//'int64[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::int64Array}
@@ -3439,12 +3669,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cUint64ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUint64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//uint64Array primitives::uint64Array:
-		//	{primitives::uint64Array}
-		//	'uint64[]';
+		//uint64Array returns primitives::uint64Array:
+		//    {primitives::uint64Array}
+		//    'uint64[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::uint64Array} 'uint64[]'
+		//{primitives::uint64Array}
+		//'uint64[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::uint64Array}
@@ -3459,12 +3691,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cFloat32ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFloat32Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//float32Array primitives::float32Array:
-		//	{primitives::float32Array}
-		//	'float32[]';
+		//float32Array returns primitives::float32Array:
+		//    {primitives::float32Array}
+		//    'float32[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::float32Array} 'float32[]'
+		//{primitives::float32Array}
+		//'float32[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::float32Array}
@@ -3479,12 +3713,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cFloat64ArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFloat64Keyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//float64Array primitives::float64Array:
-		//	{primitives::float64Array}
-		//	'float64[]';
+		//float64Array returns primitives::float64Array:
+		//    {primitives::float64Array}
+		//    'float64[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::float64Array} 'float64[]'
+		//{primitives::float64Array}
+		//'float64[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::float64Array}
@@ -3499,12 +3735,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cStringArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStringKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//string0Array primitives::stringArray:
-		//	{primitives::stringArray}
-		//	'string[]';
+		//string0Array returns primitives::stringArray:
+		//    {primitives::stringArray}
+		//    'string[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::stringArray} 'string[]'
+		//{primitives::stringArray}
+		//'string[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::stringArray}
@@ -3519,12 +3757,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cByteArrayAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cByteKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//byteArray primitives::ByteArray:
-		//	{primitives::ByteArray}
-		//	'byte[]';
+		//byteArray returns primitives::ByteArray:
+		//    {primitives::ByteArray}
+		//    'byte[]'
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::ByteArray} 'byte[]'
+		//{primitives::ByteArray}
+		//'byte[]'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::ByteArray}
@@ -3539,12 +3779,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cHeaderAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cHeaderKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//Header primitives::Header:
-		//	{primitives::Header}
-		//	'Header';
+		//Header returns primitives::Header:
+		//    {primitives::Header}
+		//    'Header'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{primitives::Header} 'Header'
+		//{primitives::Header}
+		//'Header'
 		public Group getGroup() { return cGroup; }
 		
 		//{primitives::Header}
@@ -3559,8 +3801,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTopicSpecTopicSpecCrossReference_0 = (CrossReference)cTopicSpecAssignment.eContents().get(0);
 		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0.eContents().get(1);
 		
-		//TopicSpecRef primitives::TopicSpecRef:
-		//	TopicSpec=[TopicSpec|EString];
+		//TopicSpecRef returns primitives::TopicSpecRef:
+		//    TopicSpec=[TopicSpec|EString]
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//TopicSpec=[TopicSpec|EString]
@@ -3580,11 +3823,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//ArrayTopicSpecRef primitives::ArrayTopicSpecRef:
-		//	TopicSpec=[TopicSpec|EString] '[]';
+		//ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+		//    TopicSpec=[TopicSpec|EString]'[]'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TopicSpec=[TopicSpec|EString] '[]'
+		//TopicSpec=[TopicSpec|EString]'[]'
 		public Group getGroup() { return cGroup; }
 		
 		//TopicSpec=[TopicSpec|EString]
@@ -3614,8 +3858,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDurationKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
 		private final Keyword cTimeKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
 		
-		//KEYWORD:
-		//	'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time';
+		//KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'
@@ -3905,11 +4148,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//PackageSet:
-	//	{PackageSet}
-	//	'PackageSet'
-	//	'{' (package+=Package ("," package+=Package)*)?
-	//	'}';
+	//PackageSet returns PackageSet:
+	//    {PackageSet}
+	//    'PackageSet'
+	//    '{'
+	//        (package+=Package ( "," package+=Package)* )?
+	//    '}';
 	public PackageSetElements getPackageSetAccess() {
 		return pPackageSet;
 	}
@@ -3918,8 +4162,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getPackageSetAccess().getRule();
 	}
 	
-	//Package:
-	//	Package_Impl | CatkinPackage;
+	//Package returns Package:
+	//    Package_Impl | CatkinPackage;
 	public PackageElements getPackageAccess() {
 		return pPackage;
 	}
@@ -3928,8 +4172,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getPackageAccess().getRule();
 	}
 	
-	//SpecBase:
-	//	ServiceSpec | TopicSpec | ActionSpec;
+	//SpecBase returns SpecBase:
+	//    ServiceSpec | TopicSpec | ActionSpec;
 	public SpecBaseElements getSpecBaseAccess() {
 		return pSpecBase;
 	}
@@ -3938,8 +4182,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getSpecBaseAccess().getRule();
 	}
 	
-	//Dependency:
-	//	PackageDependency | ExternalDependency;
+	//Dependency returns Dependency:
+	//    PackageDependency | ExternalDependency;
 	public DependencyElements getDependencyAccess() {
 		return pDependency;
 	}
@@ -3948,8 +4192,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getDependencyAccess().getRule();
 	}
 	
-	//Namespace:
-	//	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+	//Namespace returns Namespace:
+	//    GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 	public NamespaceElements getNamespaceAccess() {
 		return pNamespace;
 	}
@@ -3958,12 +4202,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getNamespaceAccess().getRule();
 	}
 	
-	//Package_Impl Package:
-	//	{Package}
-	//	'Package'
-	//	name=EString
-	//	'{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')? (artifact+=Artifact ("," artifact+=Artifact)*)?
-	//	'}';
+	//Package_Impl returns Package:
+	//    {Package}
+	//    'Package'
+	//    name=EString
+	//    '{'
+	//        ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+	//        (artifact+=Artifact ( "," artifact+=Artifact)*)?
+	//    '}';
 	public Package_ImplElements getPackage_ImplAccess() {
 		return pPackage_Impl;
 	}
@@ -3972,8 +4218,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getPackage_ImplAccess().getRule();
 	}
 	
-	//EString:
-	//	STRING | ID;
+	//EString returns ecore::EString:
+	//    STRING | ID;
 	public EStringElements getEStringAccess() {
 		return pEString;
 	}
@@ -3982,8 +4228,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 	
-	//RosNames:
-	//	ROS_CONVENTION_A | ID | 'node';
+	//RosNames returns ecore::EString:
+	//    ROS_CONVENTION_A | ID | 'node'
+	//;
 	public RosNamesElements getRosNamesAccess() {
 		return pRosNames;
 	}
@@ -3992,8 +4239,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getRosNamesAccess().getRule();
 	}
 	
-	//RosParamNames:
-	//	ROS_CONVENTION_PARAM | ID;
+	//RosParamNames returns ecore::EString:
+	//    ROS_CONVENTION_PARAM | ID
+	//;
 	public RosParamNamesElements getRosParamNamesAccess() {
 		return pRosParamNames;
 	}
@@ -4003,24 +4251,24 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ROS_CONVENTION_A:
-	//	'/' ID | ID '/'*;
+	//    ( ('/' ID ) | ( ID '/' ) )* ;
 	public TerminalRule getROS_CONVENTION_ARule() {
 		return tROS_CONVENTION_A;
 	}
 	
 	//terminal ROS_CONVENTION_PARAM:
-	//	'/' STRING | STRING '/' | '~' STRING*;
+	//    ( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
 	public TerminalRule getROS_CONVENTION_PARAMRule() {
 		return tROS_CONVENTION_PARAM;
 	}
 	
-	//Artifact:
-	//	{Artifact}
-	//	'Artifact'
-	//	name=RosNames
-	//	'{'
-	//	node=Node?
-	//	'}';
+	//Artifact returns Artifact:
+	//    {Artifact}
+	//    'Artifact'
+	//    name=RosNames
+	//    '{'
+	//        (node=Node)?
+	//    '}';
 	public ArtifactElements getArtifactAccess() {
 		return pArtifact;
 	}
@@ -4029,13 +4277,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getArtifactAccess().getRule();
 	}
 	
-	//CatkinPackage:
-	//	{CatkinPackage}
-	//	'CatkinPackage'
-	//	name=RosNames
-	//	'{' ('Specs' '{' spec+=SpecBase ("," spec+=SpecBase)* '}')? (artifact+=Artifact ("," artifact+=Artifact)*)?
-	//	('Dependencies' '{' dependency+=Dependency ("," dependency+=Dependency)* '}')?
-	//	'}';
+	//CatkinPackage returns CatkinPackage:
+	//    {CatkinPackage}
+	//    'CatkinPackage'
+	//    name=RosNames
+	//    '{'
+	//        ('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+	//        (artifact+=Artifact ( "," artifact+=Artifact)*)?
+	//        ('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
+	//    '}';
 	public CatkinPackageElements getCatkinPackageAccess() {
 		return pCatkinPackage;
 	}
@@ -4044,12 +4294,14 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getCatkinPackageAccess().getRule();
 	}
 	
-	//ServiceSpec:
-	//	{ServiceSpec}
-	//	'ServiceSpec'
-	//	name=EString
-	//	'{' ('request' request=MessageDefinition)? ('response' response=MessageDefinition)?
-	//	'}';
+	//ServiceSpec returns ServiceSpec:
+	//    {ServiceSpec}
+	//    'ServiceSpec'
+	//    name=EString
+	//    '{'
+	//        ('request' request=MessageDefinition)?
+	//        ('response' response=MessageDefinition)?
+	//    '}';
 	public ServiceSpecElements getServiceSpecAccess() {
 		return pServiceSpec;
 	}
@@ -4058,12 +4310,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getServiceSpecAccess().getRule();
 	}
 	
-	//TopicSpec:
-	//	{TopicSpec}
-	//	'TopicSpec'
-	//	name=(EString | 'Header' | 'String')
-	//	'{' ('message' message=MessageDefinition)?
-	//	'}';
+	//TopicSpec returns TopicSpec:
+	//    {TopicSpec}
+	//    'TopicSpec'
+	//    name=(EString|'Header'|'String')
+	//    '{'
+	//        ('message' message=MessageDefinition)?
+	//    '}';
 	public TopicSpecElements getTopicSpecAccess() {
 		return pTopicSpec;
 	}
@@ -4072,12 +4325,15 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getTopicSpecAccess().getRule();
 	}
 	
-	//ActionSpec:
-	//	{ActionSpec}
-	//	'ActionSpec'
-	//	name=EString
-	//	'{' ('goal' goal=MessageDefinition)? ('result' result=MessageDefinition)? ('feedback' feedback=MessageDefinition)?
-	//	'}';
+	//ActionSpec returns ActionSpec:
+	//    {ActionSpec}
+	//    'ActionSpec'
+	//    name=EString
+	//    '{'
+	//        ('goal' goal=MessageDefinition)?
+	//        ('result' result=MessageDefinition)?
+	//        ('feedback' feedback=MessageDefinition)?
+	//    '}';
 	public ActionSpecElements getActionSpecAccess() {
 		return pActionSpec;
 	}
@@ -4086,10 +4342,11 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionSpecAccess().getRule();
 	}
 	
-	//MessageDefinition:
-	//	{MessageDefinition}
-	//	'{' (MessagePart+=MessagePart MessagePart+=MessagePart*)?
-	//	'}';
+	//MessageDefinition returns MessageDefinition:
+	//    {MessageDefinition}
+	//    '{'
+	//        ( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
+	//    '}';
 	public MessageDefinitionElements getMessageDefinitionAccess() {
 		return pMessageDefinition;
 	}
@@ -4098,16 +4355,19 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageDefinitionAccess().getRule();
 	}
 	
-	//Node:
-	//	'Node'
-	//	'{'
-	//	'name' name=RosNames (('Publishers' '{' publisher+=Publisher ("," publisher+=Publisher)* '}')? & ('Subscribers' '{'
-	//	subscriber+=Subscriber ("," subscriber+=Subscriber)* '}')? & ('ServiceServers' '{' serviceserver+=ServiceServer (","
-	//	serviceserver+=ServiceServer)* '}')? & ('ServiceClients' '{' serviceclient+=ServiceClient (","
-	//	serviceclient+=ServiceClient)* '}')? & ('ActionServers' '{' actionserver+=ActionServer (","
-	//	actionserver+=ActionServer)* '}')? & ('ActionClients' '{' actionclient+=ActionClient ("," actionclient+=ActionClient)*
-	//	'}')? & ('Parameters' '{' parameter+=Parameter ("," parameter+=Parameter)* '}')?)
-	//	'}';
+	//Node returns Node:
+	//    'Node'
+	//    '{'
+	//    'name' name=RosNames
+	//    (('Publishers' '{' (publisher+=Publisher ( "," publisher+=Publisher)*)? '}') |
+	//    ('Subscribers' '{' (subscriber+=Subscriber ( "," subscriber+=Subscriber)*)? '}') |
+	//    ('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}') |
+	//    ('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}') |
+	//    ('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}') |
+	//    ('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}') |
+	//    ('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}')
+	//    )*
+	//    '}';
 	public NodeElements getNodeAccess() {
 		return pNode;
 	}
@@ -4116,12 +4376,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeAccess().getRule();
 	}
 	
-	//ServiceServer:
-	//	'ServiceServer'
-	//	'{'
-	//	'name' name=EString
-	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//ServiceServer returns ServiceServer:
+	//    'ServiceServer'
+	//    '{'
+	//        'name' name=EString
+	//        'service' service=[ServiceSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public ServiceServerElements getServiceServerAccess() {
 		return pServiceServer;
 	}
@@ -4130,12 +4391,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getServiceServerAccess().getRule();
 	}
 	
-	//Publisher:
-	//	'Publisher'
-	//	'{'
-	//	'name' name=EString
-	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//Publisher returns Publisher:
+	//    'Publisher'
+	//    '{'
+	//        'name' name=EString
+	//        'message' message=[TopicSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public PublisherElements getPublisherAccess() {
 		return pPublisher;
 	}
@@ -4144,12 +4406,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getPublisherAccess().getRule();
 	}
 	
-	//Subscriber:
-	//	'Subscriber'
-	//	'{'
-	//	'name' name=EString
-	//	'message' message=[TopicSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//Subscriber returns Subscriber:
+	//    'Subscriber'
+	//    '{'
+	//        'name' name=EString
+	//        'message' message=[TopicSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public SubscriberElements getSubscriberAccess() {
 		return pSubscriber;
 	}
@@ -4158,12 +4421,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getSubscriberAccess().getRule();
 	}
 	
-	//ServiceClient:
-	//	'ServiceClient'
-	//	'{'
-	//	'name' name=EString
-	//	'service' service=[ServiceSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//ServiceClient returns ServiceClient:
+	//    'ServiceClient'
+	//    '{'
+	//        'name' name=EString
+	//        'service' service=[ServiceSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public ServiceClientElements getServiceClientAccess() {
 		return pServiceClient;
 	}
@@ -4172,12 +4436,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getServiceClientAccess().getRule();
 	}
 	
-	//ActionServer:
-	//	'ActionServer'
-	//	'{'
-	//	'name' name=EString
-	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//ActionServer returns ActionServer:
+	//    'ActionServer'
+	//    '{'
+	//        'name' name=EString
+	//        'action' action=[ActionSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public ActionServerElements getActionServerAccess() {
 		return pActionServer;
 	}
@@ -4186,12 +4451,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionServerAccess().getRule();
 	}
 	
-	//ActionClient:
-	//	'ActionClient'
-	//	'{'
-	//	'name' name=EString
-	//	'action' action=[ActionSpec|EString] ('namespace' namespace=Namespace)?
-	//	'}';
+	//ActionClient returns ActionClient:
+	//    'ActionClient'
+	//    '{'
+	//        'name' name=EString
+	//        'action' action=[ActionSpec|EString]
+	//        ('namespace' namespace=Namespace)?
+	//    '}';
 	public ActionClientElements getActionClientAccess() {
 		return pActionClient;
 	}
@@ -4200,8 +4466,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionClientAccess().getRule();
 	}
 	
-	//GraphName GraphName:
-	//	'GraphName';
+	//GraphName returns GraphName:
+	//    'GraphName' ;
 	public GraphNameElements getGraphNameAccess() {
 		return pGraphName;
 	}
@@ -4210,9 +4476,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getGraphNameAccess().getRule();
 	}
 	
-	//PackageDependency:
-	//	'PackageDependency'
-	//	package=[Package|EString];
+	//PackageDependency returns PackageDependency:
+	//    'PackageDependency'
+	//        package=[Package|EString]
+	//;
 	public PackageDependencyElements getPackageDependencyAccess() {
 		return pPackageDependency;
 	}
@@ -4221,10 +4488,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getPackageDependencyAccess().getRule();
 	}
 	
-	//ExternalDependency:
-	//	{ExternalDependency}
-	//	'ExternalDependency'
-	//	name=EString;
+	//ExternalDependency returns ExternalDependency:
+	//    {ExternalDependency}
+	//    'ExternalDependency'
+	//    name=EString;
 	public ExternalDependencyElements getExternalDependencyAccess() {
 		return pExternalDependency;
 	}
@@ -4233,11 +4500,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getExternalDependencyAccess().getRule();
 	}
 	
-	//GlobalNamespace:
-	//	{GlobalNamespace}
-	//	'GlobalNamespace'
-	//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-	//	'}';
+	//GlobalNamespace returns GlobalNamespace:
+	//    {GlobalNamespace}
+	//    'GlobalNamespace'
+	//    '{'
+	//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	//    '}';
 	public GlobalNamespaceElements getGlobalNamespaceAccess() {
 		return pGlobalNamespace;
 	}
@@ -4246,11 +4514,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getGlobalNamespaceAccess().getRule();
 	}
 	
-	//RelativeNamespace_Impl RelativeNamespace:
-	//	{RelativeNamespace}
-	//	'RelativeNamespace'
-	//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-	//	'}';
+	//RelativeNamespace_Impl returns RelativeNamespace:
+	//    {RelativeNamespace}
+	//    'RelativeNamespace'
+	//    '{'
+	//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	//    '}';
 	public RelativeNamespace_ImplElements getRelativeNamespace_ImplAccess() {
 		return pRelativeNamespace_Impl;
 	}
@@ -4259,11 +4528,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelativeNamespace_ImplAccess().getRule();
 	}
 	
-	//PrivateNamespace:
-	//	{PrivateNamespace}
-	//	'PrivateNamespace'
-	//	'{' ('parts' '{' parts+=GraphName ("," parts+=GraphName)* '}')?
-	//	'}';
+	//PrivateNamespace returns PrivateNamespace:
+	//    {PrivateNamespace}
+	//    'PrivateNamespace'
+	//    '{'
+	//        ('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
+	//    '}';
 	public PrivateNamespaceElements getPrivateNamespaceAccess() {
 		return pPrivateNamespace;
 	}
@@ -4273,12 +4543,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////PARAMETERS DEFINITION
-	//Parameter:
-	//	'Parameter'
-	//	'{'
-	//	'name' name=EString ('namespace' namespace=Namespace)?
-	//	'type' type=ParameterType
-	//	'}';
+	//Parameter returns Parameter:
+	//    'Parameter'
+	//    '{'
+	//        'name' name=EString
+	//        ('namespace' namespace=Namespace)?
+	//        'type' type=ParameterType
+	//    '}';
 	public ParameterElements getParameterAccess() {
 		return pParameter;
 	}
@@ -4287,9 +4558,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterAccess().getRule();
 	}
 	
-	//ParameterType:
-	//	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType |
-	//	ParameterBooleanType | ParameterBase64Type | ParameterArrayType;
+	//ParameterType returns ParameterType:
+	//    ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterBooleanType | ParameterBase64Type | ParameterArrayType;
 	public ParameterTypeElements getParameterTypeAccess() {
 		return pParameterType;
 	}
@@ -4298,10 +4568,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterTypeAccess().getRule();
 	}
 	
-	//// | ParameterDateType;
-	//ParameterValue:
-	//	ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList |
-	//	ParameterStruct;
+	// // | ParameterDateType;
+	//ParameterValue returns ParameterValue:
+	//    ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList | ParameterStruct;
 	public ParameterValueElements getParameterValueAccess() {
 		return pParameterValue;
 	}
@@ -4310,13 +4579,13 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterValueAccess().getRule();
 	}
 	
-	//// | ParameterDate;
-	//ParameterListType:
-	//	{ParameterListType}
-	//	'List'
-	//	'{'
-	//	sequence+=ParameterType (',' sequence+=ParameterType)*
-	//	'}';
+	// // | ParameterDate;
+	//ParameterListType returns ParameterListType:
+	//    {ParameterListType}
+	//    'List'
+	//    '{'
+	//        sequence+=ParameterType ( ',' sequence+=ParameterType )*
+	//    '}';
 	public ParameterListTypeElements getParameterListTypeAccess() {
 		return pParameterListType;
 	}
@@ -4325,12 +4594,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterListTypeAccess().getRule();
 	}
 	
-	//ParameterStructType:
-	//	{ParameterStructType}
-	//	'Struct'
-	//	'{'
-	//	parameterstructypetmember+=ParameterStructTypeMember ("," parameterstructypetmember+=ParameterStructTypeMember)*
-	//	'}';
+	//ParameterStructType returns ParameterStructType:
+	//    {ParameterStructType}
+	//    'Struct'
+	//    '{'
+	//        parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
+	//    '}';
 	public ParameterStructTypeElements getParameterStructTypeAccess() {
 		return pParameterStructType;
 	}
@@ -4339,9 +4608,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStructTypeAccess().getRule();
 	}
 	
-	//ParameterIntegerType:
-	//	{ParameterIntegerType}
-	//	'Integer' ('default' default=ParameterInteger)?;
+	//ParameterIntegerType returns ParameterIntegerType:
+	//    {ParameterIntegerType}
+	//    'Integer'
+	//    ('default' default=ParameterInteger)?;
 	public ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
 		return pParameterIntegerType;
 	}
@@ -4350,9 +4620,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterIntegerTypeAccess().getRule();
 	}
 	
-	//ParameterStringType:
-	//	{ParameterStringType}
-	//	'String' ('default' default=ParameterString)?;
+	//ParameterStringType returns ParameterStringType:
+	//    {ParameterStringType}
+	//    'String'
+	//    ('default' default=ParameterString)?;
 	public ParameterStringTypeElements getParameterStringTypeAccess() {
 		return pParameterStringType;
 	}
@@ -4361,9 +4632,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStringTypeAccess().getRule();
 	}
 	
-	//ParameterDoubleType:
-	//	{ParameterDoubleType}
-	//	'Double' ('default' default=ParameterDouble)?;
+	//ParameterDoubleType returns ParameterDoubleType:
+	//    {ParameterDoubleType}
+	//    'Double'
+	//    ('default' default=ParameterDouble)?;
 	public ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
 		return pParameterDoubleType;
 	}
@@ -4372,9 +4644,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterDoubleTypeAccess().getRule();
 	}
 	
-	//ParameterDateType:
-	//	{ParameterDateType}
-	//	'Date' ('default' default=ParameterDate)?;
+	//ParameterDateType returns ParameterDateType:
+	//    {ParameterDateType}
+	//    'Date'
+	//    ('default' default=ParameterDate)?;
 	public ParameterDateTypeElements getParameterDateTypeAccess() {
 		return pParameterDateType;
 	}
@@ -4383,9 +4656,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterDateTypeAccess().getRule();
 	}
 	
-	//ParameterBooleanType:
-	//	{ParameterBooleanType}
-	//	'Boolean' ('default' default=ParameterBoolean)?;
+	//ParameterBooleanType returns ParameterBooleanType:
+	//    {ParameterBooleanType}
+	//    'Boolean'
+	//    ('default' default=ParameterBoolean)?;
 	public ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
 		return pParameterBooleanType;
 	}
@@ -4394,9 +4668,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterBooleanTypeAccess().getRule();
 	}
 	
-	//ParameterBase64Type:
-	//	{ParameterBase64Type}
-	//	'Base64' ('default' default=ParameterBase64)?;
+	//ParameterBase64Type returns ParameterBase64Type:
+	//    {ParameterBase64Type}
+	//    'Base64'
+	//    ('default' default=ParameterBase64)?;
 	public ParameterBase64TypeElements getParameterBase64TypeAccess() {
 		return pParameterBase64Type;
 	}
@@ -4405,9 +4680,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterBase64TypeAccess().getRule();
 	}
 	
-	//ParameterAnyType:
-	//	{ParameterAnyType}
-	//	'Any' ('default' default=ParameterAny)?;
+	//ParameterAnyType returns ParameterAnyType:
+	//    {ParameterAnyType}
+	//    'Any'
+	//    ('default' default=ParameterAny)?;
 	public ParameterAnyTypeElements getParameterAnyTypeAccess() {
 		return pParameterAnyType;
 	}
@@ -4416,11 +4692,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterAnyTypeAccess().getRule();
 	}
 	
-	//ParameterArrayType:
-	//	'Array'
-	//	'{'
-	//	'type' type=ParameterType ('default' default=ParameterList)?
-	//	'}';
+	//ParameterArrayType returns ParameterArrayType:
+	//    'Array'
+	//    '{'
+	//        'type' type=ParameterType
+	//        ('default' default=ParameterList)?
+	//    '}';
 	public ParameterArrayTypeElements getParameterArrayTypeAccess() {
 		return pParameterArrayType;
 	}
@@ -4429,9 +4706,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterArrayTypeAccess().getRule();
 	}
 	
-	//ParameterList ParameterSequence:
-	//	{ParameterSequence}
-	//	'{' value+=ParameterValue (',' value+=ParameterValue)* '}';
+	//ParameterList returns ParameterSequence:
+	//    {ParameterSequence}
+	//        '{'    value+=ParameterValue ( ',' value+=ParameterValue )* '}'
+	//;
 	public ParameterListElements getParameterListAccess() {
 		return pParameterList;
 	}
@@ -4440,11 +4718,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterListAccess().getRule();
 	}
 	
-	//ParameterAny:
-	//	{ParameterAny}
-	//	'ParameterAny'
-	//	'{' ('value' value=EString)?
-	//	'}';
+	//ParameterAny returns ParameterAny:
+	//    {ParameterAny}
+	//    'ParameterAny'
+	//    '{'
+	//        ('value' value=EString)?
+	//    '}';
 	public ParameterAnyElements getParameterAnyAccess() {
 		return pParameterAny;
 	}
@@ -4453,8 +4732,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterAnyAccess().getRule();
 	}
 	
-	//ParameterString:
-	//	value=EString;
+	//ParameterString returns ParameterString:
+	//    value=EString
+	//;
 	public ParameterStringElements getParameterStringAccess() {
 		return pParameterString;
 	}
@@ -4463,8 +4743,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStringAccess().getRule();
 	}
 	
-	//ParameterBase64:
-	//	value=Base64Binary;
+	//ParameterBase64 returns ParameterBase64:
+	//    value=Base64Binary
+	//;
 	public ParameterBase64Elements getParameterBase64Access() {
 		return pParameterBase64;
 	}
@@ -4473,8 +4754,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterBase64Access().getRule();
 	}
 	
-	//ParameterInteger:
-	//	value=Integer0;
+	//ParameterInteger returns ParameterInteger:
+	//    value=Integer0
+	//;
 	public ParameterIntegerElements getParameterIntegerAccess() {
 		return pParameterInteger;
 	}
@@ -4483,8 +4765,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterIntegerAccess().getRule();
 	}
 	
-	//ParameterDouble:
-	//	value=Double0;
+	//ParameterDouble returns ParameterDouble:
+	//    value=Double0
+	//;
 	public ParameterDoubleElements getParameterDoubleAccess() {
 		return pParameterDouble;
 	}
@@ -4493,8 +4776,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterDoubleAccess().getRule();
 	}
 	
-	//ParameterBoolean:
-	//	value=boolean0;
+	//ParameterBoolean returns ParameterBoolean:
+	//    value=boolean0
+	//;
 	public ParameterBooleanElements getParameterBooleanAccess() {
 		return pParameterBoolean;
 	}
@@ -4503,8 +4787,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterBooleanAccess().getRule();
 	}
 	
-	//ParameterStruct:
-	//	{ParameterStruct} ('{' value+=ParameterStructMember ("," '{' value+=ParameterStructMember '}')* '}')?;
+	//ParameterStruct returns ParameterStruct:
+	//    {ParameterStruct}
+	//        ('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
+	//;
 	public ParameterStructElements getParameterStructAccess() {
 		return pParameterStruct;
 	}
@@ -4513,8 +4799,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStructAccess().getRule();
 	}
 	
-	//ParameterDate:
-	//	value=DateTime0;
+	//ParameterDate returns ParameterDate:
+	//    value=DateTime0
+	//    ;
 	public ParameterDateElements getParameterDateAccess() {
 		return pParameterDate;
 	}
@@ -4523,12 +4810,12 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterDateAccess().getRule();
 	}
 	
-	//ParameterStructMember:
-	//	'ParameterStructMember'
-	//	name=EString
-	//	'{'
-	//	'value' value=ParameterValue
-	//	'}';
+	//ParameterStructMember returns ParameterStructMember:
+	//    'ParameterStructMember'
+	//    name=EString
+	//    '{'
+	//        'value' value=ParameterValue
+	//    '}';
 	public ParameterStructMemberElements getParameterStructMemberAccess() {
 		return pParameterStructMember;
 	}
@@ -4537,9 +4824,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStructMemberAccess().getRule();
 	}
 	
-	//ParameterStructTypeMember:
-	//	name=EString
-	//	type=ParameterType;
+	//ParameterStructTypeMember returns ParameterStructTypeMember:
+	//        name=EString
+	//        type=ParameterType
+	//    ;
 	public ParameterStructTypeMemberElements getParameterStructTypeMemberAccess() {
 		return pParameterStructTypeMember;
 	}
@@ -4548,74 +4836,65 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterStructTypeMemberAccess().getRule();
 	}
 	
-	//terminal fragment DIGIT:
-	//	'0'..'9';
+	////PARAMETERS PRIMITIVES TYPES
+	//terminal fragment DIGIT: '0'..'9';
 	public TerminalRule getDIGITRule() {
 		return tDIGIT;
 	}
 	
-	//terminal BINARY:
-	//	('0b' | '0B') ('0' | '1')+;
+	//terminal BINARY: ('0b'|'0B')('0'|'1')+;
 	public TerminalRule getBINARYRule() {
 		return tBINARY;
 	}
 	
-	//terminal BOOLEAN:
-	//	'true' | 'false';
+	//terminal BOOLEAN: 'true'|'false';
 	public TerminalRule getBOOLEANRule() {
 		return tBOOLEAN;
 	}
 	
-	//terminal DOUBLE returns ecore::EDouble:
-	//	DECINT ('.' DIGIT* | ('.' DIGIT*)? ('E' | 'e') ('-' | '+')? DECINT);
+	//terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT));
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	}
 	
-	//terminal DECINT:
-	//	'0' | '1'..'9' DIGIT* | '-' '0'..'9' DIGIT*;
+	//  // Use terminal to avoid 'e' turning into a keyword
+	//terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
 	public TerminalRule getDECINTRule() {
 		return tDECINT;
 	}
 	
-	//terminal DAY:
-	//	'1'..'9' | '1'..'3' '0'..'9';
+	//terminal DAY:'1'..'9' | '1'..'3' '0'..'9';
 	public TerminalRule getDAYRule() {
 		return tDAY;
 	}
 	
-	//terminal MONTH:
-	//	'1'..'9' | '1' '0'..'2';
+	//terminal MONTH:'1'..'9' | '1' '0'..'2';
 	public TerminalRule getMONTHRule() {
 		return tMONTH;
 	}
 	
-	//terminal YEAR:
-	//	'0'..'2' '0'..'9' '0'..'9' '0'..'9';
+	//terminal YEAR:'0'..'2' '0'..'9' '0'..'9' '0'..'9';
 	public TerminalRule getYEARRule() {
 		return tYEAR;
 	}
 	
-	//terminal HOUR:
-	//	'0'..'1' '0'..'9' | '2' '0'..'3';
+	//terminal HOUR: ('0'..'1')('0'..'9') | ('2')('0'..'3');
 	public TerminalRule getHOURRule() {
 		return tHOUR;
 	}
 	
-	//terminal MIN_SEC:
-	//	'0'..'5' '0'..'9';
+	//terminal MIN_SEC:('0'..'5')('0'..'9');
 	public TerminalRule getMIN_SECRule() {
 		return tMIN_SEC;
 	}
 	
-	//terminal DATE_TIME:
-	//	YEAR '-' MONTH '-' DAY 'T' HOUR ':' MIN_SEC ':' MIN_SEC;
+	//terminal DATE_TIME: YEAR'-'MONTH'-'DAY'T'HOUR':'MIN_SEC':'MIN_SEC;
 	public TerminalRule getDATE_TIMERule() {
 		return tDATE_TIME;
 	}
 	
-	//Base64Binary type::Base64Binary:
-	//	BINARY;
+	//Base64Binary returns type::Base64Binary:
+	//    BINARY ;
 	public Base64BinaryElements getBase64BinaryAccess() {
 		return pBase64Binary;
 	}
@@ -4624,8 +4903,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getBase64BinaryAccess().getRule();
 	}
 	
-	//boolean0 type::Boolean:
-	//	BOOLEAN;
+	//boolean0 returns type::Boolean:
+	//    BOOLEAN;
 	public Boolean0Elements getBoolean0Access() {
 		return pBoolean0;
 	}
@@ -4634,8 +4913,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getBoolean0Access().getRule();
 	}
 	
-	//Double0 type::Double:
-	//	DOUBLE;
+	//Double0 returns type::Double:
+	//    DOUBLE;
 	public Double0Elements getDouble0Access() {
 		return pDouble0;
 	}
@@ -4644,8 +4923,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getDouble0Access().getRule();
 	}
 	
-	//Integer0 type::Int:
-	//	DECINT;
+	//Integer0 returns type::Int:
+	//    DECINT;
 	public Integer0Elements getInteger0Access() {
 		return pInteger0;
 	}
@@ -4654,8 +4933,8 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInteger0Access().getRule();
 	}
 	
-	//DateTime0 type::DateTime:
-	//	DATE_TIME;
+	//DateTime0 returns type::DateTime:
+	//    DATE_TIME;
 	public DateTime0Elements getDateTime0Access() {
 		return pDateTime0;
 	}
@@ -4665,9 +4944,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////MESSAGE PRIMITIVES DEFINITION
-	//MessagePart primitives::MessagePart:
-	//	Type=AbstractType
-	//	Data=(KEYWORD | MESSAGE_ASIGMENT | EString);
+	//MessagePart returns primitives::MessagePart:
+	//    Type = AbstractType
+	//    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
+	//;
 	public MessagePartElements getMessagePartAccess() {
 		return pMessagePart;
 	}
@@ -4677,15 +4957,16 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal MESSAGE_ASIGMENT:
-	//	(ID | STRING) '=' (ID | STRING | INT | '-' INT);
+	//    ((ID|STRING)'='(ID|STRING|INT|'-'INT))
+	//;
 	public TerminalRule getMESSAGE_ASIGMENTRule() {
 		return tMESSAGE_ASIGMENT;
 	}
 	
-	//AbstractType primitives::AbstractType:
-	//	bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time |
-	//	duration | Header | boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array |
-	//	int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | TopicSpecRef | ArrayTopicSpecRef;
+	//AbstractType returns primitives::AbstractType:
+	//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
+	//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
+	//    TopicSpecRef | ArrayTopicSpecRef ;
 	public AbstractTypeElements getAbstractTypeAccess() {
 		return pAbstractType;
 	}
@@ -4694,9 +4975,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractTypeAccess().getRule();
 	}
 	
-	//bool primitives::bool:
-	//	{primitives::bool}
-	//	'bool';
+	//bool returns primitives::bool:
+	//    {primitives::bool}
+	//    'bool'
+	//    ;
 	public BoolElements getBoolAccess() {
 		return pBool;
 	}
@@ -4705,9 +4987,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getBoolAccess().getRule();
 	}
 	
-	//int8 primitives::int8:
-	//	{primitives::int8}
-	//	'int8';
+	//int8 returns primitives::int8:
+	//    {primitives::int8}
+	//    'int8'
+	//    ;
 	public Int8Elements getInt8Access() {
 		return pInt8;
 	}
@@ -4716,9 +4999,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt8Access().getRule();
 	}
 	
-	//uint8 primitives::uint8:
-	//	{primitives::uint8}
-	//	'uint8';
+	//uint8 returns primitives::uint8:
+	//    {primitives::uint8}
+	//    'uint8'
+	//    ;
 	public Uint8Elements getUint8Access() {
 		return pUint8;
 	}
@@ -4727,9 +5011,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint8Access().getRule();
 	}
 	
-	//int16 primitives::int16:
-	//	{primitives::int16}
-	//	'int16';
+	//int16 returns primitives::int16:
+	//    {primitives::int16}
+	//    'int16'
+	//    ;
 	public Int16Elements getInt16Access() {
 		return pInt16;
 	}
@@ -4738,9 +5023,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt16Access().getRule();
 	}
 	
-	//uint16 primitives::uint16:
-	//	{primitives::uint16}
-	//	'uint16';
+	//uint16 returns primitives::uint16:
+	//    {primitives::uint16}
+	//    'uint16'
+	//    ;
 	public Uint16Elements getUint16Access() {
 		return pUint16;
 	}
@@ -4749,9 +5035,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint16Access().getRule();
 	}
 	
-	//int32 primitives::int32:
-	//	{primitives::int32}
-	//	'int32';
+	//int32 returns primitives::int32:
+	//    {primitives::int32}
+	//    'int32'
+	//    ;
 	public Int32Elements getInt32Access() {
 		return pInt32;
 	}
@@ -4760,9 +5047,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt32Access().getRule();
 	}
 	
-	//uint32 primitives::uint32:
-	//	{primitives::uint32}
-	//	'uint32';
+	//uint32 returns primitives::uint32:
+	//    {primitives::uint32}
+	//    'uint32'
+	//    ;
 	public Uint32Elements getUint32Access() {
 		return pUint32;
 	}
@@ -4771,9 +5059,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint32Access().getRule();
 	}
 	
-	//int64 primitives::int64:
-	//	{primitives::int64}
-	//	'int64';
+	//int64 returns primitives::int64:
+	//    {primitives::int64}
+	//    'int64'
+	//    ;
 	public Int64Elements getInt64Access() {
 		return pInt64;
 	}
@@ -4782,9 +5071,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt64Access().getRule();
 	}
 	
-	//uint64 primitives::uint64:
-	//	{primitives::uint64}
-	//	'uint64';
+	//uint64 returns primitives::uint64:
+	//    {primitives::uint64}
+	//    'uint64'
+	//    ;
 	public Uint64Elements getUint64Access() {
 		return pUint64;
 	}
@@ -4793,9 +5083,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint64Access().getRule();
 	}
 	
-	//float32 primitives::float32:
-	//	{primitives::float32}
-	//	'float32';
+	//float32 returns primitives::float32:
+	//    {primitives::float32}
+	//    'float32'
+	//    ;
 	public Float32Elements getFloat32Access() {
 		return pFloat32;
 	}
@@ -4804,9 +5095,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getFloat32Access().getRule();
 	}
 	
-	//float64 primitives::float64:
-	//	{primitives::float64}
-	//	'float64';
+	//float64 returns primitives::float64:
+	//    {primitives::float64}
+	//    'float64'
+	//    ;
 	public Float64Elements getFloat64Access() {
 		return pFloat64;
 	}
@@ -4815,9 +5107,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getFloat64Access().getRule();
 	}
 	
-	//string0 primitives::string:
-	//	{primitives::string}
-	//	'string';
+	//string0 returns primitives::string:
+	//    {primitives::string}
+	//    'string'
+	//    ;
 	public String0Elements getString0Access() {
 		return pString0;
 	}
@@ -4826,9 +5119,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getString0Access().getRule();
 	}
 	
-	//byte primitives::Byte:
-	//	{primitives::Byte}
-	//	'byte';
+	//byte returns primitives::Byte:
+	//    {primitives::Byte}
+	//    'byte'
+	//    ;
 	public ByteElements getByteAccess() {
 		return pByte;
 	}
@@ -4837,9 +5131,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getByteAccess().getRule();
 	}
 	
-	//time primitives::time:
-	//	{primitives::time}
-	//	'time';
+	//time returns primitives::time:
+	//    {primitives::time}
+	//    'time'
+	//    ;
 	public TimeElements getTimeAccess() {
 		return pTime;
 	}
@@ -4848,9 +5143,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getTimeAccess().getRule();
 	}
 	
-	//duration primitives::duration:
-	//	{primitives::duration}
-	//	'duration';
+	//duration returns primitives::duration:
+	//    {primitives::duration}
+	//    'duration'
+	//    ;
 	public DurationElements getDurationAccess() {
 		return pDuration;
 	}
@@ -4859,9 +5155,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getDurationAccess().getRule();
 	}
 	
-	//boolArray primitives::boolArray:
-	//	{primitives::boolArray}
-	//	'bool[]';
+	//boolArray returns primitives::boolArray:
+	//    {primitives::boolArray}
+	//    'bool[]'
+	//    ;
 	public BoolArrayElements getBoolArrayAccess() {
 		return pBoolArray;
 	}
@@ -4870,9 +5167,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getBoolArrayAccess().getRule();
 	}
 	
-	//int8Array primitives::int8Array:
-	//	{primitives::int8Array}
-	//	'int8[]';
+	//int8Array returns primitives::int8Array:
+	//    {primitives::int8Array}
+	//    'int8[]'
+	//    ;
 	public Int8ArrayElements getInt8ArrayAccess() {
 		return pInt8Array;
 	}
@@ -4881,9 +5179,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt8ArrayAccess().getRule();
 	}
 	
-	//uint8Array primitives::uint8Array:
-	//	{primitives::uint8Array}
-	//	'uint8[]';
+	//uint8Array returns primitives::uint8Array:
+	//    {primitives::uint8Array}
+	//    'uint8[]'
+	//    ;
 	public Uint8ArrayElements getUint8ArrayAccess() {
 		return pUint8Array;
 	}
@@ -4892,9 +5191,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint8ArrayAccess().getRule();
 	}
 	
-	//int16Array primitives::int16Array:
-	//	{primitives::int16Array}
-	//	'int16[]';
+	//int16Array returns primitives::int16Array:
+	//    {primitives::int16Array}
+	//    'int16[]'
+	//    ;
 	public Int16ArrayElements getInt16ArrayAccess() {
 		return pInt16Array;
 	}
@@ -4903,9 +5203,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt16ArrayAccess().getRule();
 	}
 	
-	//uint16Array primitives::uint16Array:
-	//	{primitives::uint16Array}
-	//	'uint16[]';
+	//uint16Array returns primitives::uint16Array:
+	//    {primitives::uint16Array}
+	//    'uint16[]'
+	//    ;
 	public Uint16ArrayElements getUint16ArrayAccess() {
 		return pUint16Array;
 	}
@@ -4914,9 +5215,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint16ArrayAccess().getRule();
 	}
 	
-	//int32Array primitives::int32Array:
-	//	{primitives::int32Array}
-	//	'int32[]';
+	//int32Array returns primitives::int32Array:
+	//    {primitives::int32Array}
+	//    'int32[]'
+	//    ;
 	public Int32ArrayElements getInt32ArrayAccess() {
 		return pInt32Array;
 	}
@@ -4925,9 +5227,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt32ArrayAccess().getRule();
 	}
 	
-	//uint32Array primitives::uint32Array:
-	//	{primitives::uint32Array}
-	//	'uint32[]';
+	//uint32Array returns primitives::uint32Array:
+	//    {primitives::uint32Array}
+	//    'uint32[]'
+	//    ;
 	public Uint32ArrayElements getUint32ArrayAccess() {
 		return pUint32Array;
 	}
@@ -4936,9 +5239,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint32ArrayAccess().getRule();
 	}
 	
-	//int64Array primitives::int64Array:
-	//	{primitives::int64Array}
-	//	'int64[]';
+	//int64Array returns primitives::int64Array:
+	//    {primitives::int64Array}
+	//    'int64[]'
+	//    ;
 	public Int64ArrayElements getInt64ArrayAccess() {
 		return pInt64Array;
 	}
@@ -4947,9 +5251,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getInt64ArrayAccess().getRule();
 	}
 	
-	//uint64Array primitives::uint64Array:
-	//	{primitives::uint64Array}
-	//	'uint64[]';
+	//uint64Array returns primitives::uint64Array:
+	//    {primitives::uint64Array}
+	//    'uint64[]'
+	//    ;
 	public Uint64ArrayElements getUint64ArrayAccess() {
 		return pUint64Array;
 	}
@@ -4958,9 +5263,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getUint64ArrayAccess().getRule();
 	}
 	
-	//float32Array primitives::float32Array:
-	//	{primitives::float32Array}
-	//	'float32[]';
+	//float32Array returns primitives::float32Array:
+	//    {primitives::float32Array}
+	//    'float32[]'
+	//    ;
 	public Float32ArrayElements getFloat32ArrayAccess() {
 		return pFloat32Array;
 	}
@@ -4969,9 +5275,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getFloat32ArrayAccess().getRule();
 	}
 	
-	//float64Array primitives::float64Array:
-	//	{primitives::float64Array}
-	//	'float64[]';
+	//float64Array returns primitives::float64Array:
+	//    {primitives::float64Array}
+	//    'float64[]'
+	//    ;
 	public Float64ArrayElements getFloat64ArrayAccess() {
 		return pFloat64Array;
 	}
@@ -4980,9 +5287,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getFloat64ArrayAccess().getRule();
 	}
 	
-	//string0Array primitives::stringArray:
-	//	{primitives::stringArray}
-	//	'string[]';
+	//string0Array returns primitives::stringArray:
+	//    {primitives::stringArray}
+	//    'string[]'
+	//    ;
 	public String0ArrayElements getString0ArrayAccess() {
 		return pString0Array;
 	}
@@ -4991,9 +5299,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getString0ArrayAccess().getRule();
 	}
 	
-	//byteArray primitives::ByteArray:
-	//	{primitives::ByteArray}
-	//	'byte[]';
+	//byteArray returns primitives::ByteArray:
+	//    {primitives::ByteArray}
+	//    'byte[]'
+	//    ;
 	public ByteArrayElements getByteArrayAccess() {
 		return pByteArray;
 	}
@@ -5002,9 +5311,10 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getByteArrayAccess().getRule();
 	}
 	
-	//Header primitives::Header:
-	//	{primitives::Header}
-	//	'Header';
+	//Header returns primitives::Header:
+	//    {primitives::Header}
+	//    'Header'
+	//;
 	public HeaderElements getHeaderAccess() {
 		return pHeader;
 	}
@@ -5013,8 +5323,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getHeaderAccess().getRule();
 	}
 	
-	//TopicSpecRef primitives::TopicSpecRef:
-	//	TopicSpec=[TopicSpec|EString];
+	//TopicSpecRef returns primitives::TopicSpecRef:
+	//    TopicSpec=[TopicSpec|EString]
+	//;
 	public TopicSpecRefElements getTopicSpecRefAccess() {
 		return pTopicSpecRef;
 	}
@@ -5023,8 +5334,9 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getTopicSpecRefAccess().getRule();
 	}
 	
-	//ArrayTopicSpecRef primitives::ArrayTopicSpecRef:
-	//	TopicSpec=[TopicSpec|EString] '[]';
+	//ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+	//    TopicSpec=[TopicSpec|EString]'[]'
+	//;
 	public ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {
 		return pArrayTopicSpecRef;
 	}
@@ -5033,8 +5345,7 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getArrayTopicSpecRefAccess().getRule();
 	}
 	
-	//KEYWORD:
-	//	'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time';
+	//KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
 	public KEYWORDElements getKEYWORDAccess() {
 		return pKEYWORD;
 	}
@@ -5043,45 +5354,40 @@ public class RosGrammarAccess extends AbstractGrammarElementFinder {
 		return getKEYWORDAccess().getRule();
 	}
 	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	}
 	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//        ;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
 	}

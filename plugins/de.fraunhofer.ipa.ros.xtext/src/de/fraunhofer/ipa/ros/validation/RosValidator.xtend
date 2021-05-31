@@ -3,20 +3,19 @@
  */
 package de.fraunhofer.ipa.ros.validation
 
+import org.eclipse.xtend2.lib.StringConcatenation
 import org.eclipse.xtext.validation.Check
 import ros.ActionClient
 import ros.ActionServer
 import ros.Artifact
 import ros.Node
 import ros.Package
+import ros.PackageSet
+import ros.Parameter
 import ros.Publisher
 import ros.ServiceClient
 import ros.ServiceServer
 import ros.Subscriber
-import ros.Parameter
-import ros.ParameterValue
-import ros.ParameterBase64Type
-import ros.ParameterDate
 
 /**
  * This class contains custom validation rules. 
@@ -27,7 +26,117 @@ class RosValidator extends AbstractRosValidator {
 
   public static val INVALID_NAME = 'invalidName'
   public static val PARAMETER_HELP = 'paramInfo'
+  public static val SORT_INTERFACES = 'softInterfaces'
+  StringConcatenation _builder;
+  Boolean UnOrganizedAttributes;
+  String helper_string;
   
+  @Check
+  def void UnOrganizedAttributes (PackageSet packageset) {
+  		UnOrganizedAttributes=false
+  		_builder = new StringConcatenation();
+  		_builder.append("PackageSet {");
+  		_builder.newLine;
+  		for(pkg: packageset.package){
+  			_builder.append("  CatkinPackage "+pkg.name+" {")
+  			_builder.newLine;
+  			for (art: pkg.artifact){
+	  			_builder.append("    Artifact "+art.name+" {")
+	  			_builder.newLine;
+	  			_builder.append("      Node { name "+art.node.name)
+	  			_builder.newLine;
+	  			if ((art.node.publisher.length>2 || art.node.subscriber.length>2  ||  art.node.serviceclient.length>2
+	  				|| art.node.serviceserver.length>2 || art.node.actionclient.length>2  ||  art.node.actionserver.length>2) &&
+	  				art.node.parameter.empty){ UnOrganizedAttributes=true }
+	  				if(!art.node.publisher.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        Publishers {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (pub: art.node.publisher){
+	  						helper_string+="          Publisher { name "+pub.name+" message '"+pub.message.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+	  				if(!art.node.subscriber.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        Subscribers {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (sub: art.node.subscriber){
+	  						helper_string+="          Subscriber { name "+sub.name+" message '"+sub.message.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+	  				if(!art.node.serviceclient.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        ServiceClients {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (srvc: art.node.serviceclient){
+	  						helper_string+="          ServiceClient { name "+srvc.name+" service '"+srvc.service.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+	  				if(!art.node.serviceserver.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        ServiceServers {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (srvs: art.node.serviceserver){
+	  						helper_string+="          ServiceServer { name "+srvs.name+" service '"+srvs.service.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+	  				if(!art.node.actionclient.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        ActionClients {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (actc: art.node.actionclient){
+	  						helper_string+="          ActionClient { name "+actc.name+" action '"+actc.action.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+	  				if(!art.node.actionserver.empty){
+	  					_builder.newLineIfNotEmpty;
+	  					_builder.append("        ActionServers {");
+	  					_builder.newLine;
+	  					helper_string="";
+	  					for (acts: art.node.actionserver){
+	  						helper_string+="          ActionServer { name "+acts.name+" action '"+acts.action.fullname.replace("/",".")+"' },\n";
+	  					}
+	  					helper_string= helper_string.substring(0, helper_string.length() - 2);
+	  					_builder.append(helper_string);
+	  					_builder.newLine;
+	  					_builder.append("        }");
+	  				}
+		_builder.newLineIfNotEmpty;
+  		_builder.append("      }")
+		}
+		_builder.append("}")
+		}
+		_builder.append("}}")
+		if (UnOrganizedAttributes) {
+			warning("Organize and clean the model", null, SORT_INTERFACES, _builder.toString);
+		}
+  }
+		
   /* CAPITAL LETTERS */
   @Check
   def void checkNameConventionsNode (Node node) {
