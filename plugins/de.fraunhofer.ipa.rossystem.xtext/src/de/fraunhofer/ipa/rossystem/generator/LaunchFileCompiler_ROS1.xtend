@@ -7,6 +7,7 @@ import java.util.List
 import org.eclipse.emf.ecore.EObject
 import ros.ParameterValue
 import rossystem.RosSystem
+import ros.impl.ParameterStructMemberImpl
 
 class LaunchFileCompiler_ROS1 {
 	@Inject extension GeneratorHelpers
@@ -30,12 +31,12 @@ class LaunchFileCompiler_ROS1 {
   	<rosparam>
 		  «IF ROSParameter.value!==null»
 			  «FOR ParamMember:ROSParameter.value.eContents»
-			«getParamName(ParamMember.eContents.get(0).toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+			«getParamName(ParamMember.eContents.get(0))»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
 			  «ENDFOR»
 		  «ELSE»
 			  «FOR ParamMember:ROSParameter.eContents.get(0).eContents»
 				  «IF !(ParamMember.eContents.get(0).eContents.empty)»
-				«getParamName(ParamMember.toString)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+				«getParamName(ParamMember)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
 				  «ENDIF»
 			  «ENDFOR»
 		  «ENDIF»
@@ -190,7 +191,7 @@ class LaunchFileCompiler_ROS1 {
 					for(i=1;i<sizes_list.size;i++){
 						tab_tmp+="  ";
 					}
-					str_output+=tab_tmp+getParamName(SubParamMember.toString)+": \n";
+					str_output+=tab_tmp+getParamName(SubParamMember)+": \n";
 					param_list.clear;
 					param_list.add(SubParamMember);
 					compile_struct_param(param_list,true);
@@ -258,8 +259,8 @@ class LaunchFileCompiler_ROS1 {
 		return component.nameSpace.replaceFirst("/","");
 	}
 
- 	def getParamName (String paramdef){
- 		return paramdef.substring(paramdef.indexOf("name:")+6,paramdef.indexOf(")"))
+ 	def getParamName (EObject paramdef){
+ 		return (paramdef as ParameterStructMemberImpl).name;
  	}
  	
 	def convertParamValue (Object ParamMember){
