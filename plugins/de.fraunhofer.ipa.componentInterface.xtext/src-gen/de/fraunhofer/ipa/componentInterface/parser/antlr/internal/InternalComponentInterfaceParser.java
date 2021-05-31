@@ -147,7 +147,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComponentInterface"
-    // InternalComponentInterface.g:71:1: ruleComponentInterface returns [EObject current=null] : (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) ) otherlv_51= '}' ) ;
+    // InternalComponentInterface.g:71:1: ruleComponentInterface returns [EObject current=null] : (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )? (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )? (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )? (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )? (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )? (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )? (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )? otherlv_50= '}' ) ;
     public final EObject ruleComponentInterface() throws RecognitionException {
         EObject current = null;
 
@@ -156,77 +156,77 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
+        Token otherlv_8=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
+        Token otherlv_11=null;
+        Token otherlv_13=null;
         Token otherlv_14=null;
         Token otherlv_15=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
+        Token otherlv_17=null;
+        Token otherlv_19=null;
         Token otherlv_20=null;
         Token otherlv_21=null;
-        Token otherlv_22=null;
-        Token otherlv_24=null;
+        Token otherlv_23=null;
+        Token otherlv_25=null;
         Token otherlv_26=null;
         Token otherlv_27=null;
-        Token otherlv_28=null;
-        Token otherlv_30=null;
+        Token otherlv_29=null;
+        Token otherlv_31=null;
         Token otherlv_32=null;
         Token otherlv_33=null;
-        Token otherlv_34=null;
-        Token otherlv_36=null;
+        Token otherlv_35=null;
+        Token otherlv_37=null;
         Token otherlv_38=null;
         Token otherlv_39=null;
-        Token otherlv_40=null;
-        Token otherlv_42=null;
+        Token otherlv_41=null;
+        Token otherlv_43=null;
         Token otherlv_44=null;
         Token otherlv_45=null;
-        Token otherlv_46=null;
-        Token otherlv_48=null;
+        Token otherlv_47=null;
+        Token otherlv_49=null;
         Token otherlv_50=null;
-        Token otherlv_51=null;
         AntlrDatatypeRuleToken lv_name_3_0 = null;
 
         AntlrDatatypeRuleToken lv_NameSpace_5_0 = null;
 
-        EObject lv_rospublisher_11_0 = null;
+        EObject lv_rospublisher_10_0 = null;
 
-        EObject lv_rospublisher_13_0 = null;
+        EObject lv_rospublisher_12_0 = null;
 
-        EObject lv_rossubscriber_17_0 = null;
+        EObject lv_rossubscriber_16_0 = null;
 
-        EObject lv_rossubscriber_19_0 = null;
+        EObject lv_rossubscriber_18_0 = null;
 
-        EObject lv_rosserviceserver_23_0 = null;
+        EObject lv_rosserviceserver_22_0 = null;
 
-        EObject lv_rosserviceserver_25_0 = null;
+        EObject lv_rosserviceserver_24_0 = null;
 
-        EObject lv_rosserviceclient_29_0 = null;
+        EObject lv_rosserviceclient_28_0 = null;
 
-        EObject lv_rosserviceclient_31_0 = null;
+        EObject lv_rosserviceclient_30_0 = null;
 
-        EObject lv_rosactionserver_35_0 = null;
+        EObject lv_rosactionserver_34_0 = null;
 
-        EObject lv_rosactionserver_37_0 = null;
+        EObject lv_rosactionserver_36_0 = null;
 
-        EObject lv_rosactionclient_41_0 = null;
+        EObject lv_rosactionclient_40_0 = null;
 
-        EObject lv_rosactionclient_43_0 = null;
+        EObject lv_rosactionclient_42_0 = null;
 
-        EObject lv_rosparameter_47_0 = null;
+        EObject lv_rosparameter_46_0 = null;
 
-        EObject lv_rosparameter_49_0 = null;
+        EObject lv_rosparameter_48_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:77:2: ( (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) ) otherlv_51= '}' ) )
-            // InternalComponentInterface.g:78:2: (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) ) otherlv_51= '}' )
+            // InternalComponentInterface.g:77:2: ( (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )? (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )? (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )? (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )? (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )? (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )? (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )? otherlv_50= '}' ) )
+            // InternalComponentInterface.g:78:2: (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )? (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )? (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )? (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )? (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )? (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )? (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )? otherlv_50= '}' )
             {
-            // InternalComponentInterface.g:78:2: (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) ) otherlv_51= '}' )
-            // InternalComponentInterface.g:79:3: otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) ) otherlv_51= '}'
+            // InternalComponentInterface.g:78:2: (otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )? (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )? (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )? (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )? (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )? (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )? (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )? otherlv_50= '}' )
+            // InternalComponentInterface.g:79:3: otherlv_0= 'ComponentInterface' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'NameSpace' ( (lv_NameSpace_5_0= ruleEString ) ) )? (otherlv_6= 'FromRosNode' ( ( ruleEString ) ) )? (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )? (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )? (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )? (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )? (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )? (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )? (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )? otherlv_50= '}'
             {
             otherlv_0=(Token)match(input,22,FOLLOW_3); 
 
@@ -372,1077 +372,842 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            // InternalComponentInterface.g:157:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) ) )
-            // InternalComponentInterface.g:158:4: ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) )
-            {
-            // InternalComponentInterface.g:158:4: ( ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* ) )
-            // InternalComponentInterface.g:159:5: ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* )
-            {
-             
-            				  getUnorderedGroupHelper().enter(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            				
-            // InternalComponentInterface.g:162:5: ( ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )* )
-            // InternalComponentInterface.g:163:6: ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )*
-            {
-            // InternalComponentInterface.g:163:6: ( ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) ) )*
-            loop10:
-            do {
-                int alt10=8;
-                int LA10_0 = input.LA(1);
+            // InternalComponentInterface.g:157:3: (otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}' )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==27) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalComponentInterface.g:158:4: otherlv_8= 'RosPublishers' otherlv_9= '{' ( (lv_rospublisher_10_0= ruleRosPublisher ) ) (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )* otherlv_13= '}'
+                    {
+                    otherlv_8=(Token)match(input,27,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_8, grammarAccess.getComponentInterfaceAccess().getRosPublishersKeyword_6_0());
+                    			
+                    otherlv_9=(Token)match(input,23,FOLLOW_9); 
+
+                    				newLeafNode(otherlv_9, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_1());
+                    			
+                    // InternalComponentInterface.g:166:4: ( (lv_rospublisher_10_0= ruleRosPublisher ) )
+                    // InternalComponentInterface.g:167:5: (lv_rospublisher_10_0= ruleRosPublisher )
+                    {
+                    // InternalComponentInterface.g:167:5: (lv_rospublisher_10_0= ruleRosPublisher )
+                    // InternalComponentInterface.g:168:6: lv_rospublisher_10_0= ruleRosPublisher
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRospublisherRosPublisherParserRuleCall_6_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rospublisher_10_0=ruleRosPublisher();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rospublisher",
+                    							lv_rospublisher_10_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosPublisher");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:185:4: (otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) ) )*
+                    loop3:
+                    do {
+                        int alt3=2;
+                        int LA3_0 = input.LA(1);
+
+                        if ( (LA3_0==28) ) {
+                            alt3=1;
+                        }
+
+
+                        switch (alt3) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:186:5: otherlv_11= ',' ( (lv_rospublisher_12_0= ruleRosPublisher ) )
+                    	    {
+                    	    otherlv_11=(Token)match(input,28,FOLLOW_9); 
+
+                    	    					newLeafNode(otherlv_11, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:190:5: ( (lv_rospublisher_12_0= ruleRosPublisher ) )
+                    	    // InternalComponentInterface.g:191:6: (lv_rospublisher_12_0= ruleRosPublisher )
+                    	    {
+                    	    // InternalComponentInterface.g:191:6: (lv_rospublisher_12_0= ruleRosPublisher )
+                    	    // InternalComponentInterface.g:192:7: lv_rospublisher_12_0= ruleRosPublisher
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRospublisherRosPublisherParserRuleCall_6_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rospublisher_12_0=ruleRosPublisher();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rospublisher",
+                    	    								lv_rospublisher_12_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosPublisher");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
 
-                if ( LA10_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 0) ) {
-                    alt10=1;
-                }
-                else if ( LA10_0 == 30 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 1) ) {
-                    alt10=2;
-                }
-                else if ( LA10_0 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 2) ) {
-                    alt10=3;
-                }
-                else if ( LA10_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 3) ) {
-                    alt10=4;
-                }
-                else if ( LA10_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 4) ) {
-                    alt10=5;
-                }
-                else if ( LA10_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 5) ) {
-                    alt10=6;
-                }
-                else if ( LA10_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 6) ) {
-                    alt10=7;
-                }
+                    	default :
+                    	    break loop3;
+                        }
+                    } while (true);
 
+                    otherlv_13=(Token)match(input,29,FOLLOW_11); 
 
-                switch (alt10) {
-            	case 1 :
-            	    // InternalComponentInterface.g:164:4: ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:164:4: ({...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) ) )
-            	    // InternalComponentInterface.g:165:5: {...}? => ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 0)");
-            	    }
-            	    // InternalComponentInterface.g:165:115: ( ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) ) )
-            	    // InternalComponentInterface.g:166:6: ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) )
-            	    {
+                    				newLeafNode(otherlv_13, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_4());
+                    			
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 0);
-            	    					
-            	    // InternalComponentInterface.g:169:9: ({...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' ) )
-            	    // InternalComponentInterface.g:169:10: {...}? => (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:169:19: (otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}' )
-            	    // InternalComponentInterface.g:169:20: otherlv_9= 'RosPublishers' otherlv_10= '{' ( (lv_rospublisher_11_0= ruleRosPublisher ) ) (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )* otherlv_14= '}'
-            	    {
-            	    otherlv_9=(Token)match(input,27,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_9, grammarAccess.getComponentInterfaceAccess().getRosPublishersKeyword_6_0_0());
-            	    								
-            	    otherlv_10=(Token)match(input,23,FOLLOW_9); 
-
-            	    									newLeafNode(otherlv_10, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_0_1());
-            	    								
-            	    // InternalComponentInterface.g:177:9: ( (lv_rospublisher_11_0= ruleRosPublisher ) )
-            	    // InternalComponentInterface.g:178:10: (lv_rospublisher_11_0= ruleRosPublisher )
-            	    {
-            	    // InternalComponentInterface.g:178:10: (lv_rospublisher_11_0= ruleRosPublisher )
-            	    // InternalComponentInterface.g:179:11: lv_rospublisher_11_0= ruleRosPublisher
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRospublisherRosPublisherParserRuleCall_6_0_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rospublisher_11_0=ruleRosPublisher();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rospublisher",
-            	    												lv_rospublisher_11_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosPublisher");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:196:9: (otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) ) )*
-            	    loop3:
-            	    do {
-            	        int alt3=2;
-            	        int LA3_0 = input.LA(1);
-
-            	        if ( (LA3_0==28) ) {
-            	            alt3=1;
-            	        }
-
-
-            	        switch (alt3) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:197:10: otherlv_12= ',' ( (lv_rospublisher_13_0= ruleRosPublisher ) )
-            	    	    {
-            	    	    otherlv_12=(Token)match(input,28,FOLLOW_9); 
-
-            	    	    										newLeafNode(otherlv_12, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_0_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:201:10: ( (lv_rospublisher_13_0= ruleRosPublisher ) )
-            	    	    // InternalComponentInterface.g:202:11: (lv_rospublisher_13_0= ruleRosPublisher )
-            	    	    {
-            	    	    // InternalComponentInterface.g:202:11: (lv_rospublisher_13_0= ruleRosPublisher )
-            	    	    // InternalComponentInterface.g:203:12: lv_rospublisher_13_0= ruleRosPublisher
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRospublisherRosPublisherParserRuleCall_6_0_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rospublisher_13_0=ruleRosPublisher();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rospublisher",
-            	    	    													lv_rospublisher_13_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosPublisher");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop3;
-            	        }
-            	    } while (true);
-
-            	    otherlv_14=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_14, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_0_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalComponentInterface.g:231:4: ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:231:4: ({...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) ) )
-            	    // InternalComponentInterface.g:232:5: {...}? => ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 1)");
-            	    }
-            	    // InternalComponentInterface.g:232:115: ( ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) ) )
-            	    // InternalComponentInterface.g:233:6: ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 1);
-            	    					
-            	    // InternalComponentInterface.g:236:9: ({...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' ) )
-            	    // InternalComponentInterface.g:236:10: {...}? => (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:236:19: (otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}' )
-            	    // InternalComponentInterface.g:236:20: otherlv_15= 'RosSubscribers' otherlv_16= '{' ( (lv_rossubscriber_17_0= ruleRosSubscriber ) ) (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )* otherlv_20= '}'
-            	    {
-            	    otherlv_15=(Token)match(input,30,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_15, grammarAccess.getComponentInterfaceAccess().getRosSubscribersKeyword_6_1_0());
-            	    								
-            	    otherlv_16=(Token)match(input,23,FOLLOW_11); 
-
-            	    									newLeafNode(otherlv_16, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_1_1());
-            	    								
-            	    // InternalComponentInterface.g:244:9: ( (lv_rossubscriber_17_0= ruleRosSubscriber ) )
-            	    // InternalComponentInterface.g:245:10: (lv_rossubscriber_17_0= ruleRosSubscriber )
-            	    {
-            	    // InternalComponentInterface.g:245:10: (lv_rossubscriber_17_0= ruleRosSubscriber )
-            	    // InternalComponentInterface.g:246:11: lv_rossubscriber_17_0= ruleRosSubscriber
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRossubscriberRosSubscriberParserRuleCall_6_1_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rossubscriber_17_0=ruleRosSubscriber();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rossubscriber",
-            	    												lv_rossubscriber_17_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosSubscriber");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:263:9: (otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) ) )*
-            	    loop4:
-            	    do {
-            	        int alt4=2;
-            	        int LA4_0 = input.LA(1);
-
-            	        if ( (LA4_0==28) ) {
-            	            alt4=1;
-            	        }
-
-
-            	        switch (alt4) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:264:10: otherlv_18= ',' ( (lv_rossubscriber_19_0= ruleRosSubscriber ) )
-            	    	    {
-            	    	    otherlv_18=(Token)match(input,28,FOLLOW_11); 
-
-            	    	    										newLeafNode(otherlv_18, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_1_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:268:10: ( (lv_rossubscriber_19_0= ruleRosSubscriber ) )
-            	    	    // InternalComponentInterface.g:269:11: (lv_rossubscriber_19_0= ruleRosSubscriber )
-            	    	    {
-            	    	    // InternalComponentInterface.g:269:11: (lv_rossubscriber_19_0= ruleRosSubscriber )
-            	    	    // InternalComponentInterface.g:270:12: lv_rossubscriber_19_0= ruleRosSubscriber
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRossubscriberRosSubscriberParserRuleCall_6_1_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rossubscriber_19_0=ruleRosSubscriber();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rossubscriber",
-            	    	    													lv_rossubscriber_19_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosSubscriber");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop4;
-            	        }
-            	    } while (true);
-
-            	    otherlv_20=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_20, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_1_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // InternalComponentInterface.g:298:4: ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:298:4: ({...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) ) )
-            	    // InternalComponentInterface.g:299:5: {...}? => ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 2)");
-            	    }
-            	    // InternalComponentInterface.g:299:115: ( ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) ) )
-            	    // InternalComponentInterface.g:300:6: ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 2);
-            	    					
-            	    // InternalComponentInterface.g:303:9: ({...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' ) )
-            	    // InternalComponentInterface.g:303:10: {...}? => (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:303:19: (otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}' )
-            	    // InternalComponentInterface.g:303:20: otherlv_21= 'RosSrvServers' otherlv_22= '{' ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) ) (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )* otherlv_26= '}'
-            	    {
-            	    otherlv_21=(Token)match(input,31,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_21, grammarAccess.getComponentInterfaceAccess().getRosSrvServersKeyword_6_2_0());
-            	    								
-            	    otherlv_22=(Token)match(input,23,FOLLOW_12); 
-
-            	    									newLeafNode(otherlv_22, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_2_1());
-            	    								
-            	    // InternalComponentInterface.g:311:9: ( (lv_rosserviceserver_23_0= ruleRosServiceServer ) )
-            	    // InternalComponentInterface.g:312:10: (lv_rosserviceserver_23_0= ruleRosServiceServer )
-            	    {
-            	    // InternalComponentInterface.g:312:10: (lv_rosserviceserver_23_0= ruleRosServiceServer )
-            	    // InternalComponentInterface.g:313:11: lv_rosserviceserver_23_0= ruleRosServiceServer
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceserverRosServiceServerParserRuleCall_6_2_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rosserviceserver_23_0=ruleRosServiceServer();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rosserviceserver",
-            	    												lv_rosserviceserver_23_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceServer");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:330:9: (otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) ) )*
-            	    loop5:
-            	    do {
-            	        int alt5=2;
-            	        int LA5_0 = input.LA(1);
-
-            	        if ( (LA5_0==28) ) {
-            	            alt5=1;
-            	        }
-
-
-            	        switch (alt5) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:331:10: otherlv_24= ',' ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) )
-            	    	    {
-            	    	    otherlv_24=(Token)match(input,28,FOLLOW_12); 
-
-            	    	    										newLeafNode(otherlv_24, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_2_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:335:10: ( (lv_rosserviceserver_25_0= ruleRosServiceServer ) )
-            	    	    // InternalComponentInterface.g:336:11: (lv_rosserviceserver_25_0= ruleRosServiceServer )
-            	    	    {
-            	    	    // InternalComponentInterface.g:336:11: (lv_rosserviceserver_25_0= ruleRosServiceServer )
-            	    	    // InternalComponentInterface.g:337:12: lv_rosserviceserver_25_0= ruleRosServiceServer
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceserverRosServiceServerParserRuleCall_6_2_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rosserviceserver_25_0=ruleRosServiceServer();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rosserviceserver",
-            	    	    													lv_rosserviceserver_25_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceServer");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop5;
-            	        }
-            	    } while (true);
-
-            	    otherlv_26=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_26, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_2_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 4 :
-            	    // InternalComponentInterface.g:365:4: ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:365:4: ({...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) ) )
-            	    // InternalComponentInterface.g:366:5: {...}? => ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 3) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 3)");
-            	    }
-            	    // InternalComponentInterface.g:366:115: ( ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) ) )
-            	    // InternalComponentInterface.g:367:6: ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 3);
-            	    					
-            	    // InternalComponentInterface.g:370:9: ({...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' ) )
-            	    // InternalComponentInterface.g:370:10: {...}? => (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:370:19: (otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}' )
-            	    // InternalComponentInterface.g:370:20: otherlv_27= 'RosSrvClients' otherlv_28= '{' ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) ) (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )* otherlv_32= '}'
-            	    {
-            	    otherlv_27=(Token)match(input,32,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_27, grammarAccess.getComponentInterfaceAccess().getRosSrvClientsKeyword_6_3_0());
-            	    								
-            	    otherlv_28=(Token)match(input,23,FOLLOW_13); 
-
-            	    									newLeafNode(otherlv_28, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_3_1());
-            	    								
-            	    // InternalComponentInterface.g:378:9: ( (lv_rosserviceclient_29_0= ruleRosServiceClient ) )
-            	    // InternalComponentInterface.g:379:10: (lv_rosserviceclient_29_0= ruleRosServiceClient )
-            	    {
-            	    // InternalComponentInterface.g:379:10: (lv_rosserviceclient_29_0= ruleRosServiceClient )
-            	    // InternalComponentInterface.g:380:11: lv_rosserviceclient_29_0= ruleRosServiceClient
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceclientRosServiceClientParserRuleCall_6_3_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rosserviceclient_29_0=ruleRosServiceClient();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rosserviceclient",
-            	    												lv_rosserviceclient_29_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceClient");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:397:9: (otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) ) )*
-            	    loop6:
-            	    do {
-            	        int alt6=2;
-            	        int LA6_0 = input.LA(1);
-
-            	        if ( (LA6_0==28) ) {
-            	            alt6=1;
-            	        }
-
-
-            	        switch (alt6) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:398:10: otherlv_30= ',' ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) )
-            	    	    {
-            	    	    otherlv_30=(Token)match(input,28,FOLLOW_13); 
-
-            	    	    										newLeafNode(otherlv_30, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_3_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:402:10: ( (lv_rosserviceclient_31_0= ruleRosServiceClient ) )
-            	    	    // InternalComponentInterface.g:403:11: (lv_rosserviceclient_31_0= ruleRosServiceClient )
-            	    	    {
-            	    	    // InternalComponentInterface.g:403:11: (lv_rosserviceclient_31_0= ruleRosServiceClient )
-            	    	    // InternalComponentInterface.g:404:12: lv_rosserviceclient_31_0= ruleRosServiceClient
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceclientRosServiceClientParserRuleCall_6_3_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rosserviceclient_31_0=ruleRosServiceClient();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rosserviceclient",
-            	    	    													lv_rosserviceclient_31_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceClient");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop6;
-            	        }
-            	    } while (true);
-
-            	    otherlv_32=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_32, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_3_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 5 :
-            	    // InternalComponentInterface.g:432:4: ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:432:4: ({...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) ) )
-            	    // InternalComponentInterface.g:433:5: {...}? => ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 4) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 4)");
-            	    }
-            	    // InternalComponentInterface.g:433:115: ( ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) ) )
-            	    // InternalComponentInterface.g:434:6: ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 4);
-            	    					
-            	    // InternalComponentInterface.g:437:9: ({...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' ) )
-            	    // InternalComponentInterface.g:437:10: {...}? => (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:437:19: (otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}' )
-            	    // InternalComponentInterface.g:437:20: otherlv_33= 'RosActionServers' otherlv_34= '{' ( (lv_rosactionserver_35_0= ruleRosActionServer ) ) (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )* otherlv_38= '}'
-            	    {
-            	    otherlv_33=(Token)match(input,33,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_33, grammarAccess.getComponentInterfaceAccess().getRosActionServersKeyword_6_4_0());
-            	    								
-            	    otherlv_34=(Token)match(input,23,FOLLOW_14); 
-
-            	    									newLeafNode(otherlv_34, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_4_1());
-            	    								
-            	    // InternalComponentInterface.g:445:9: ( (lv_rosactionserver_35_0= ruleRosActionServer ) )
-            	    // InternalComponentInterface.g:446:10: (lv_rosactionserver_35_0= ruleRosActionServer )
-            	    {
-            	    // InternalComponentInterface.g:446:10: (lv_rosactionserver_35_0= ruleRosActionServer )
-            	    // InternalComponentInterface.g:447:11: lv_rosactionserver_35_0= ruleRosActionServer
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionserverRosActionServerParserRuleCall_6_4_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rosactionserver_35_0=ruleRosActionServer();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rosactionserver",
-            	    												lv_rosactionserver_35_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionServer");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:464:9: (otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) ) )*
-            	    loop7:
-            	    do {
-            	        int alt7=2;
-            	        int LA7_0 = input.LA(1);
-
-            	        if ( (LA7_0==28) ) {
-            	            alt7=1;
-            	        }
-
-
-            	        switch (alt7) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:465:10: otherlv_36= ',' ( (lv_rosactionserver_37_0= ruleRosActionServer ) )
-            	    	    {
-            	    	    otherlv_36=(Token)match(input,28,FOLLOW_14); 
-
-            	    	    										newLeafNode(otherlv_36, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_4_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:469:10: ( (lv_rosactionserver_37_0= ruleRosActionServer ) )
-            	    	    // InternalComponentInterface.g:470:11: (lv_rosactionserver_37_0= ruleRosActionServer )
-            	    	    {
-            	    	    // InternalComponentInterface.g:470:11: (lv_rosactionserver_37_0= ruleRosActionServer )
-            	    	    // InternalComponentInterface.g:471:12: lv_rosactionserver_37_0= ruleRosActionServer
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionserverRosActionServerParserRuleCall_6_4_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rosactionserver_37_0=ruleRosActionServer();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rosactionserver",
-            	    	    													lv_rosactionserver_37_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionServer");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop7;
-            	        }
-            	    } while (true);
-
-            	    otherlv_38=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_38, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_4_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 6 :
-            	    // InternalComponentInterface.g:499:4: ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:499:4: ({...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) ) )
-            	    // InternalComponentInterface.g:500:5: {...}? => ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 5) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 5)");
-            	    }
-            	    // InternalComponentInterface.g:500:115: ( ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) ) )
-            	    // InternalComponentInterface.g:501:6: ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 5);
-            	    					
-            	    // InternalComponentInterface.g:504:9: ({...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' ) )
-            	    // InternalComponentInterface.g:504:10: {...}? => (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:504:19: (otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}' )
-            	    // InternalComponentInterface.g:504:20: otherlv_39= 'RosActionClients' otherlv_40= '{' ( (lv_rosactionclient_41_0= ruleRosActionClient ) ) (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )* otherlv_44= '}'
-            	    {
-            	    otherlv_39=(Token)match(input,34,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_39, grammarAccess.getComponentInterfaceAccess().getRosActionClientsKeyword_6_5_0());
-            	    								
-            	    otherlv_40=(Token)match(input,23,FOLLOW_15); 
-
-            	    									newLeafNode(otherlv_40, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_5_1());
-            	    								
-            	    // InternalComponentInterface.g:512:9: ( (lv_rosactionclient_41_0= ruleRosActionClient ) )
-            	    // InternalComponentInterface.g:513:10: (lv_rosactionclient_41_0= ruleRosActionClient )
-            	    {
-            	    // InternalComponentInterface.g:513:10: (lv_rosactionclient_41_0= ruleRosActionClient )
-            	    // InternalComponentInterface.g:514:11: lv_rosactionclient_41_0= ruleRosActionClient
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionclientRosActionClientParserRuleCall_6_5_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rosactionclient_41_0=ruleRosActionClient();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rosactionclient",
-            	    												lv_rosactionclient_41_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionClient");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:531:9: (otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) ) )*
-            	    loop8:
-            	    do {
-            	        int alt8=2;
-            	        int LA8_0 = input.LA(1);
-
-            	        if ( (LA8_0==28) ) {
-            	            alt8=1;
-            	        }
-
-
-            	        switch (alt8) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:532:10: otherlv_42= ',' ( (lv_rosactionclient_43_0= ruleRosActionClient ) )
-            	    	    {
-            	    	    otherlv_42=(Token)match(input,28,FOLLOW_15); 
-
-            	    	    										newLeafNode(otherlv_42, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_5_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:536:10: ( (lv_rosactionclient_43_0= ruleRosActionClient ) )
-            	    	    // InternalComponentInterface.g:537:11: (lv_rosactionclient_43_0= ruleRosActionClient )
-            	    	    {
-            	    	    // InternalComponentInterface.g:537:11: (lv_rosactionclient_43_0= ruleRosActionClient )
-            	    	    // InternalComponentInterface.g:538:12: lv_rosactionclient_43_0= ruleRosActionClient
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionclientRosActionClientParserRuleCall_6_5_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rosactionclient_43_0=ruleRosActionClient();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rosactionclient",
-            	    	    													lv_rosactionclient_43_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionClient");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop8;
-            	        }
-            	    } while (true);
-
-            	    otherlv_44=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_44, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_5_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 7 :
-            	    // InternalComponentInterface.g:566:4: ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) )
-            	    {
-            	    // InternalComponentInterface.g:566:4: ({...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) ) )
-            	    // InternalComponentInterface.g:567:5: {...}? => ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 6) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 6)");
-            	    }
-            	    // InternalComponentInterface.g:567:115: ( ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) ) )
-            	    // InternalComponentInterface.g:568:6: ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6(), 6);
-            	    					
-            	    // InternalComponentInterface.g:571:9: ({...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' ) )
-            	    // InternalComponentInterface.g:571:10: {...}? => (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentInterface", "true");
-            	    }
-            	    // InternalComponentInterface.g:571:19: (otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}' )
-            	    // InternalComponentInterface.g:571:20: otherlv_45= 'RosParameters' otherlv_46= '{' ( (lv_rosparameter_47_0= ruleRosParameter ) ) (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )* otherlv_50= '}'
-            	    {
-            	    otherlv_45=(Token)match(input,35,FOLLOW_3); 
-
-            	    									newLeafNode(otherlv_45, grammarAccess.getComponentInterfaceAccess().getRosParametersKeyword_6_6_0());
-            	    								
-            	    otherlv_46=(Token)match(input,23,FOLLOW_16); 
-
-            	    									newLeafNode(otherlv_46, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_6_6_1());
-            	    								
-            	    // InternalComponentInterface.g:579:9: ( (lv_rosparameter_47_0= ruleRosParameter ) )
-            	    // InternalComponentInterface.g:580:10: (lv_rosparameter_47_0= ruleRosParameter )
-            	    {
-            	    // InternalComponentInterface.g:580:10: (lv_rosparameter_47_0= ruleRosParameter )
-            	    // InternalComponentInterface.g:581:11: lv_rosparameter_47_0= ruleRosParameter
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosparameterRosParameterParserRuleCall_6_6_2_0());
-            	    										
-            	    pushFollow(FOLLOW_10);
-            	    lv_rosparameter_47_0=ruleRosParameter();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    											}
-            	    											add(
-            	    												current,
-            	    												"rosparameter",
-            	    												lv_rosparameter_47_0,
-            	    												"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosParameter");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-            	    // InternalComponentInterface.g:598:9: (otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) ) )*
-            	    loop9:
-            	    do {
-            	        int alt9=2;
-            	        int LA9_0 = input.LA(1);
-
-            	        if ( (LA9_0==28) ) {
-            	            alt9=1;
-            	        }
-
-
-            	        switch (alt9) {
-            	    	case 1 :
-            	    	    // InternalComponentInterface.g:599:10: otherlv_48= ',' ( (lv_rosparameter_49_0= ruleRosParameter ) )
-            	    	    {
-            	    	    otherlv_48=(Token)match(input,28,FOLLOW_16); 
-
-            	    	    										newLeafNode(otherlv_48, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_6_6_3_0());
-            	    	    									
-            	    	    // InternalComponentInterface.g:603:10: ( (lv_rosparameter_49_0= ruleRosParameter ) )
-            	    	    // InternalComponentInterface.g:604:11: (lv_rosparameter_49_0= ruleRosParameter )
-            	    	    {
-            	    	    // InternalComponentInterface.g:604:11: (lv_rosparameter_49_0= ruleRosParameter )
-            	    	    // InternalComponentInterface.g:605:12: lv_rosparameter_49_0= ruleRosParameter
-            	    	    {
-
-            	    	    												newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosparameterRosParameterParserRuleCall_6_6_3_1_0());
-            	    	    											
-            	    	    pushFollow(FOLLOW_10);
-            	    	    lv_rosparameter_49_0=ruleRosParameter();
-
-            	    	    state._fsp--;
-
-
-            	    	    												if (current==null) {
-            	    	    													current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
-            	    	    												}
-            	    	    												add(
-            	    	    													current,
-            	    	    													"rosparameter",
-            	    	    													lv_rosparameter_49_0,
-            	    	    													"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosParameter");
-            	    	    												afterParserOrEnumRuleCall();
-            	    	    											
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    break loop9;
-            	        }
-            	    } while (true);
-
-            	    otherlv_50=(Token)match(input,29,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_50, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_6_6_4());
-            	    								
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
+                    }
+                    break;
 
             }
 
+            // InternalComponentInterface.g:215:3: (otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==30) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalComponentInterface.g:216:4: otherlv_14= 'RosSubscribers' otherlv_15= '{' ( (lv_rossubscriber_16_0= ruleRosSubscriber ) ) (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )* otherlv_19= '}'
+                    {
+                    otherlv_14=(Token)match(input,30,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_14, grammarAccess.getComponentInterfaceAccess().getRosSubscribersKeyword_7_0());
+                    			
+                    otherlv_15=(Token)match(input,23,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_15, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_7_1());
+                    			
+                    // InternalComponentInterface.g:224:4: ( (lv_rossubscriber_16_0= ruleRosSubscriber ) )
+                    // InternalComponentInterface.g:225:5: (lv_rossubscriber_16_0= ruleRosSubscriber )
+                    {
+                    // InternalComponentInterface.g:225:5: (lv_rossubscriber_16_0= ruleRosSubscriber )
+                    // InternalComponentInterface.g:226:6: lv_rossubscriber_16_0= ruleRosSubscriber
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRossubscriberRosSubscriberParserRuleCall_7_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rossubscriber_16_0=ruleRosSubscriber();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rossubscriber",
+                    							lv_rossubscriber_16_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosSubscriber");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:243:4: (otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) ) )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0==28) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:244:5: otherlv_17= ',' ( (lv_rossubscriber_18_0= ruleRosSubscriber ) )
+                    	    {
+                    	    otherlv_17=(Token)match(input,28,FOLLOW_12); 
+
+                    	    					newLeafNode(otherlv_17, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_7_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:248:5: ( (lv_rossubscriber_18_0= ruleRosSubscriber ) )
+                    	    // InternalComponentInterface.g:249:6: (lv_rossubscriber_18_0= ruleRosSubscriber )
+                    	    {
+                    	    // InternalComponentInterface.g:249:6: (lv_rossubscriber_18_0= ruleRosSubscriber )
+                    	    // InternalComponentInterface.g:250:7: lv_rossubscriber_18_0= ruleRosSubscriber
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRossubscriberRosSubscriberParserRuleCall_7_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rossubscriber_18_0=ruleRosSubscriber();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rossubscriber",
+                    	    								lv_rossubscriber_18_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosSubscriber");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+                    otherlv_19=(Token)match(input,29,FOLLOW_13); 
+
+                    				newLeafNode(otherlv_19, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_7_4());
+                    			
+
+                    }
+                    break;
 
             }
 
-             
-            				  getUnorderedGroupHelper().leave(grammarAccess.getComponentInterfaceAccess().getUnorderedGroup_6());
-            				
+            // InternalComponentInterface.g:273:3: (otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}' )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==31) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalComponentInterface.g:274:4: otherlv_20= 'RosSrvServers' otherlv_21= '{' ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) ) (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )* otherlv_25= '}'
+                    {
+                    otherlv_20=(Token)match(input,31,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_20, grammarAccess.getComponentInterfaceAccess().getRosSrvServersKeyword_8_0());
+                    			
+                    otherlv_21=(Token)match(input,23,FOLLOW_14); 
+
+                    				newLeafNode(otherlv_21, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_8_1());
+                    			
+                    // InternalComponentInterface.g:282:4: ( (lv_rosserviceserver_22_0= ruleRosServiceServer ) )
+                    // InternalComponentInterface.g:283:5: (lv_rosserviceserver_22_0= ruleRosServiceServer )
+                    {
+                    // InternalComponentInterface.g:283:5: (lv_rosserviceserver_22_0= ruleRosServiceServer )
+                    // InternalComponentInterface.g:284:6: lv_rosserviceserver_22_0= ruleRosServiceServer
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceserverRosServiceServerParserRuleCall_8_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rosserviceserver_22_0=ruleRosServiceServer();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rosserviceserver",
+                    							lv_rosserviceserver_22_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceServer");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:301:4: (otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) ) )*
+                    loop7:
+                    do {
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
+
+                        if ( (LA7_0==28) ) {
+                            alt7=1;
+                        }
+
+
+                        switch (alt7) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:302:5: otherlv_23= ',' ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) )
+                    	    {
+                    	    otherlv_23=(Token)match(input,28,FOLLOW_14); 
+
+                    	    					newLeafNode(otherlv_23, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_8_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:306:5: ( (lv_rosserviceserver_24_0= ruleRosServiceServer ) )
+                    	    // InternalComponentInterface.g:307:6: (lv_rosserviceserver_24_0= ruleRosServiceServer )
+                    	    {
+                    	    // InternalComponentInterface.g:307:6: (lv_rosserviceserver_24_0= ruleRosServiceServer )
+                    	    // InternalComponentInterface.g:308:7: lv_rosserviceserver_24_0= ruleRosServiceServer
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceserverRosServiceServerParserRuleCall_8_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rosserviceserver_24_0=ruleRosServiceServer();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rosserviceserver",
+                    	    								lv_rosserviceserver_24_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceServer");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop7;
+                        }
+                    } while (true);
+
+                    otherlv_25=(Token)match(input,29,FOLLOW_15); 
+
+                    				newLeafNode(otherlv_25, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_8_4());
+                    			
+
+                    }
+                    break;
 
             }
 
-            otherlv_51=(Token)match(input,29,FOLLOW_2); 
+            // InternalComponentInterface.g:331:3: (otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            			newLeafNode(otherlv_51, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_7());
+            if ( (LA10_0==32) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalComponentInterface.g:332:4: otherlv_26= 'RosSrvClients' otherlv_27= '{' ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) ) (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )* otherlv_31= '}'
+                    {
+                    otherlv_26=(Token)match(input,32,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_26, grammarAccess.getComponentInterfaceAccess().getRosSrvClientsKeyword_9_0());
+                    			
+                    otherlv_27=(Token)match(input,23,FOLLOW_16); 
+
+                    				newLeafNode(otherlv_27, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_9_1());
+                    			
+                    // InternalComponentInterface.g:340:4: ( (lv_rosserviceclient_28_0= ruleRosServiceClient ) )
+                    // InternalComponentInterface.g:341:5: (lv_rosserviceclient_28_0= ruleRosServiceClient )
+                    {
+                    // InternalComponentInterface.g:341:5: (lv_rosserviceclient_28_0= ruleRosServiceClient )
+                    // InternalComponentInterface.g:342:6: lv_rosserviceclient_28_0= ruleRosServiceClient
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceclientRosServiceClientParserRuleCall_9_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rosserviceclient_28_0=ruleRosServiceClient();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rosserviceclient",
+                    							lv_rosserviceclient_28_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceClient");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:359:4: (otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) ) )*
+                    loop9:
+                    do {
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
+
+                        if ( (LA9_0==28) ) {
+                            alt9=1;
+                        }
+
+
+                        switch (alt9) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:360:5: otherlv_29= ',' ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) )
+                    	    {
+                    	    otherlv_29=(Token)match(input,28,FOLLOW_16); 
+
+                    	    					newLeafNode(otherlv_29, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_9_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:364:5: ( (lv_rosserviceclient_30_0= ruleRosServiceClient ) )
+                    	    // InternalComponentInterface.g:365:6: (lv_rosserviceclient_30_0= ruleRosServiceClient )
+                    	    {
+                    	    // InternalComponentInterface.g:365:6: (lv_rosserviceclient_30_0= ruleRosServiceClient )
+                    	    // InternalComponentInterface.g:366:7: lv_rosserviceclient_30_0= ruleRosServiceClient
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosserviceclientRosServiceClientParserRuleCall_9_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rosserviceclient_30_0=ruleRosServiceClient();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rosserviceclient",
+                    	    								lv_rosserviceclient_30_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosServiceClient");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop9;
+                        }
+                    } while (true);
+
+                    otherlv_31=(Token)match(input,29,FOLLOW_17); 
+
+                    				newLeafNode(otherlv_31, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_9_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalComponentInterface.g:389:3: (otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}' )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==33) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalComponentInterface.g:390:4: otherlv_32= 'RosActionServers' otherlv_33= '{' ( (lv_rosactionserver_34_0= ruleRosActionServer ) ) (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )* otherlv_37= '}'
+                    {
+                    otherlv_32=(Token)match(input,33,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_32, grammarAccess.getComponentInterfaceAccess().getRosActionServersKeyword_10_0());
+                    			
+                    otherlv_33=(Token)match(input,23,FOLLOW_18); 
+
+                    				newLeafNode(otherlv_33, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_10_1());
+                    			
+                    // InternalComponentInterface.g:398:4: ( (lv_rosactionserver_34_0= ruleRosActionServer ) )
+                    // InternalComponentInterface.g:399:5: (lv_rosactionserver_34_0= ruleRosActionServer )
+                    {
+                    // InternalComponentInterface.g:399:5: (lv_rosactionserver_34_0= ruleRosActionServer )
+                    // InternalComponentInterface.g:400:6: lv_rosactionserver_34_0= ruleRosActionServer
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionserverRosActionServerParserRuleCall_10_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rosactionserver_34_0=ruleRosActionServer();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rosactionserver",
+                    							lv_rosactionserver_34_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionServer");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:417:4: (otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) ) )*
+                    loop11:
+                    do {
+                        int alt11=2;
+                        int LA11_0 = input.LA(1);
+
+                        if ( (LA11_0==28) ) {
+                            alt11=1;
+                        }
+
+
+                        switch (alt11) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:418:5: otherlv_35= ',' ( (lv_rosactionserver_36_0= ruleRosActionServer ) )
+                    	    {
+                    	    otherlv_35=(Token)match(input,28,FOLLOW_18); 
+
+                    	    					newLeafNode(otherlv_35, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_10_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:422:5: ( (lv_rosactionserver_36_0= ruleRosActionServer ) )
+                    	    // InternalComponentInterface.g:423:6: (lv_rosactionserver_36_0= ruleRosActionServer )
+                    	    {
+                    	    // InternalComponentInterface.g:423:6: (lv_rosactionserver_36_0= ruleRosActionServer )
+                    	    // InternalComponentInterface.g:424:7: lv_rosactionserver_36_0= ruleRosActionServer
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionserverRosActionServerParserRuleCall_10_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rosactionserver_36_0=ruleRosActionServer();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rosactionserver",
+                    	    								lv_rosactionserver_36_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionServer");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop11;
+                        }
+                    } while (true);
+
+                    otherlv_37=(Token)match(input,29,FOLLOW_19); 
+
+                    				newLeafNode(otherlv_37, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_10_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalComponentInterface.g:447:3: (otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}' )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==34) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalComponentInterface.g:448:4: otherlv_38= 'RosActionClients' otherlv_39= '{' ( (lv_rosactionclient_40_0= ruleRosActionClient ) ) (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )* otherlv_43= '}'
+                    {
+                    otherlv_38=(Token)match(input,34,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_38, grammarAccess.getComponentInterfaceAccess().getRosActionClientsKeyword_11_0());
+                    			
+                    otherlv_39=(Token)match(input,23,FOLLOW_20); 
+
+                    				newLeafNode(otherlv_39, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_11_1());
+                    			
+                    // InternalComponentInterface.g:456:4: ( (lv_rosactionclient_40_0= ruleRosActionClient ) )
+                    // InternalComponentInterface.g:457:5: (lv_rosactionclient_40_0= ruleRosActionClient )
+                    {
+                    // InternalComponentInterface.g:457:5: (lv_rosactionclient_40_0= ruleRosActionClient )
+                    // InternalComponentInterface.g:458:6: lv_rosactionclient_40_0= ruleRosActionClient
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionclientRosActionClientParserRuleCall_11_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rosactionclient_40_0=ruleRosActionClient();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rosactionclient",
+                    							lv_rosactionclient_40_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionClient");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:475:4: (otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) ) )*
+                    loop13:
+                    do {
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
+
+                        if ( (LA13_0==28) ) {
+                            alt13=1;
+                        }
+
+
+                        switch (alt13) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:476:5: otherlv_41= ',' ( (lv_rosactionclient_42_0= ruleRosActionClient ) )
+                    	    {
+                    	    otherlv_41=(Token)match(input,28,FOLLOW_20); 
+
+                    	    					newLeafNode(otherlv_41, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_11_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:480:5: ( (lv_rosactionclient_42_0= ruleRosActionClient ) )
+                    	    // InternalComponentInterface.g:481:6: (lv_rosactionclient_42_0= ruleRosActionClient )
+                    	    {
+                    	    // InternalComponentInterface.g:481:6: (lv_rosactionclient_42_0= ruleRosActionClient )
+                    	    // InternalComponentInterface.g:482:7: lv_rosactionclient_42_0= ruleRosActionClient
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosactionclientRosActionClientParserRuleCall_11_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rosactionclient_42_0=ruleRosActionClient();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rosactionclient",
+                    	    								lv_rosactionclient_42_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosActionClient");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop13;
+                        }
+                    } while (true);
+
+                    otherlv_43=(Token)match(input,29,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_43, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_11_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalComponentInterface.g:505:3: (otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}' )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==35) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalComponentInterface.g:506:4: otherlv_44= 'RosParameters' otherlv_45= '{' ( (lv_rosparameter_46_0= ruleRosParameter ) ) (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )* otherlv_49= '}'
+                    {
+                    otherlv_44=(Token)match(input,35,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_44, grammarAccess.getComponentInterfaceAccess().getRosParametersKeyword_12_0());
+                    			
+                    otherlv_45=(Token)match(input,23,FOLLOW_22); 
+
+                    				newLeafNode(otherlv_45, grammarAccess.getComponentInterfaceAccess().getLeftCurlyBracketKeyword_12_1());
+                    			
+                    // InternalComponentInterface.g:514:4: ( (lv_rosparameter_46_0= ruleRosParameter ) )
+                    // InternalComponentInterface.g:515:5: (lv_rosparameter_46_0= ruleRosParameter )
+                    {
+                    // InternalComponentInterface.g:515:5: (lv_rosparameter_46_0= ruleRosParameter )
+                    // InternalComponentInterface.g:516:6: lv_rosparameter_46_0= ruleRosParameter
+                    {
+
+                    						newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosparameterRosParameterParserRuleCall_12_2_0());
+                    					
+                    pushFollow(FOLLOW_10);
+                    lv_rosparameter_46_0=ruleRosParameter();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rosparameter",
+                    							lv_rosparameter_46_0,
+                    							"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosParameter");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalComponentInterface.g:533:4: (otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) ) )*
+                    loop15:
+                    do {
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
+
+                        if ( (LA15_0==28) ) {
+                            alt15=1;
+                        }
+
+
+                        switch (alt15) {
+                    	case 1 :
+                    	    // InternalComponentInterface.g:534:5: otherlv_47= ',' ( (lv_rosparameter_48_0= ruleRosParameter ) )
+                    	    {
+                    	    otherlv_47=(Token)match(input,28,FOLLOW_22); 
+
+                    	    					newLeafNode(otherlv_47, grammarAccess.getComponentInterfaceAccess().getCommaKeyword_12_3_0());
+                    	    				
+                    	    // InternalComponentInterface.g:538:5: ( (lv_rosparameter_48_0= ruleRosParameter ) )
+                    	    // InternalComponentInterface.g:539:6: (lv_rosparameter_48_0= ruleRosParameter )
+                    	    {
+                    	    // InternalComponentInterface.g:539:6: (lv_rosparameter_48_0= ruleRosParameter )
+                    	    // InternalComponentInterface.g:540:7: lv_rosparameter_48_0= ruleRosParameter
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getComponentInterfaceAccess().getRosparameterRosParameterParserRuleCall_12_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_rosparameter_48_0=ruleRosParameter();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getComponentInterfaceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rosparameter",
+                    	    								lv_rosparameter_48_0,
+                    	    								"de.fraunhofer.ipa.componentInterface.ComponentInterface.RosParameter");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop15;
+                        }
+                    } while (true);
+
+                    otherlv_49=(Token)match(input,29,FOLLOW_23); 
+
+                    				newLeafNode(otherlv_49, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_12_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_50=(Token)match(input,29,FOLLOW_2); 
+
+            			newLeafNode(otherlv_50, grammarAccess.getComponentInterfaceAccess().getRightCurlyBracketKeyword_13());
             		
 
             }
@@ -1467,7 +1232,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosPublisher"
-    // InternalComponentInterface.g:648:1: entryRuleRosPublisher returns [EObject current=null] : iv_ruleRosPublisher= ruleRosPublisher EOF ;
+    // InternalComponentInterface.g:571:1: entryRuleRosPublisher returns [EObject current=null] : iv_ruleRosPublisher= ruleRosPublisher EOF ;
     public final EObject entryRuleRosPublisher() throws RecognitionException {
         EObject current = null;
 
@@ -1475,8 +1240,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:648:53: (iv_ruleRosPublisher= ruleRosPublisher EOF )
-            // InternalComponentInterface.g:649:2: iv_ruleRosPublisher= ruleRosPublisher EOF
+            // InternalComponentInterface.g:571:53: (iv_ruleRosPublisher= ruleRosPublisher EOF )
+            // InternalComponentInterface.g:572:2: iv_ruleRosPublisher= ruleRosPublisher EOF
             {
              newCompositeNode(grammarAccess.getRosPublisherRule()); 
             pushFollow(FOLLOW_1);
@@ -1503,7 +1268,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosPublisher"
-    // InternalComponentInterface.g:655:1: ruleRosPublisher returns [EObject current=null] : ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:578:1: ruleRosPublisher returns [EObject current=null] : ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosPublisher() throws RecognitionException {
         EObject current = null;
 
@@ -1521,14 +1286,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:661:2: ( ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:662:2: ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:584:2: ( ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:585:2: ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:662:2: ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:663:3: () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:585:2: ( () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:586:3: () otherlv_1= 'RosPublisher' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefPublisher' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:663:3: ()
-            // InternalComponentInterface.g:664:4: 
+            // InternalComponentInterface.g:586:3: ()
+            // InternalComponentInterface.g:587:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1538,23 +1303,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_17); 
+            otherlv_1=(Token)match(input,36,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosPublisherAccess().getRosPublisherKeyword_1());
             		
-            // InternalComponentInterface.g:674:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalComponentInterface.g:597:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA11_0>=RULE_STRING && LA11_0<=RULE_ID)) ) {
-                alt11=1;
+            if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_ID)) ) {
+                alt17=1;
             }
-            switch (alt11) {
+            switch (alt17) {
                 case 1 :
-                    // InternalComponentInterface.g:675:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:598:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:675:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:676:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:598:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:599:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosPublisherAccess().getNameEStringParserRuleCall_2_0());
@@ -1584,35 +1349,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_18); 
+            otherlv_3=(Token)match(input,23,FOLLOW_25); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosPublisherAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:697:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalComponentInterface.g:620:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA12_0==37) ) {
-                alt12=1;
+            if ( (LA18_0==37) ) {
+                alt18=1;
             }
-            switch (alt12) {
+            switch (alt18) {
                 case 1 :
-                    // InternalComponentInterface.g:698:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:621:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosPublisherAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:702:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:703:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:625:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:626:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:703:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:704:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:626:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:627:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosPublisherAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_19);
+                    pushFollow(FOLLOW_26);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -1644,11 +1409,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosPublisherAccess().getRefPublisherKeyword_5());
             		
-            // InternalComponentInterface.g:726:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:727:4: ( ruleEString )
+            // InternalComponentInterface.g:649:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:650:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:727:4: ( ruleEString )
-            // InternalComponentInterface.g:728:5: ruleEString
+            // InternalComponentInterface.g:650:4: ( ruleEString )
+            // InternalComponentInterface.g:651:5: ruleEString
             {
 
             					if (current==null) {
@@ -1658,7 +1423,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosPublisherAccess().getPublisherPublisherCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -1699,7 +1464,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosSubscriber"
-    // InternalComponentInterface.g:750:1: entryRuleRosSubscriber returns [EObject current=null] : iv_ruleRosSubscriber= ruleRosSubscriber EOF ;
+    // InternalComponentInterface.g:673:1: entryRuleRosSubscriber returns [EObject current=null] : iv_ruleRosSubscriber= ruleRosSubscriber EOF ;
     public final EObject entryRuleRosSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -1707,8 +1472,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:750:54: (iv_ruleRosSubscriber= ruleRosSubscriber EOF )
-            // InternalComponentInterface.g:751:2: iv_ruleRosSubscriber= ruleRosSubscriber EOF
+            // InternalComponentInterface.g:673:54: (iv_ruleRosSubscriber= ruleRosSubscriber EOF )
+            // InternalComponentInterface.g:674:2: iv_ruleRosSubscriber= ruleRosSubscriber EOF
             {
              newCompositeNode(grammarAccess.getRosSubscriberRule()); 
             pushFollow(FOLLOW_1);
@@ -1735,7 +1500,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosSubscriber"
-    // InternalComponentInterface.g:757:1: ruleRosSubscriber returns [EObject current=null] : ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:680:1: ruleRosSubscriber returns [EObject current=null] : ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -1753,14 +1518,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:763:2: ( ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:764:2: ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:686:2: ( ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:687:2: ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:764:2: ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:765:3: () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:687:2: ( () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:688:3: () otherlv_1= 'RosSubscriber' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefSubscriber' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:765:3: ()
-            // InternalComponentInterface.g:766:4: 
+            // InternalComponentInterface.g:688:3: ()
+            // InternalComponentInterface.g:689:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1770,23 +1535,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_17); 
+            otherlv_1=(Token)match(input,39,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosSubscriberAccess().getRosSubscriberKeyword_1());
             		
-            // InternalComponentInterface.g:776:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalComponentInterface.g:699:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( ((LA13_0>=RULE_STRING && LA13_0<=RULE_ID)) ) {
-                alt13=1;
+            if ( ((LA19_0>=RULE_STRING && LA19_0<=RULE_ID)) ) {
+                alt19=1;
             }
-            switch (alt13) {
+            switch (alt19) {
                 case 1 :
-                    // InternalComponentInterface.g:777:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:700:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:777:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:778:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:700:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:701:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosSubscriberAccess().getNameEStringParserRuleCall_2_0());
@@ -1816,35 +1581,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_21); 
+            otherlv_3=(Token)match(input,23,FOLLOW_27); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosSubscriberAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:799:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalComponentInterface.g:722:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA14_0==37) ) {
-                alt14=1;
+            if ( (LA20_0==37) ) {
+                alt20=1;
             }
-            switch (alt14) {
+            switch (alt20) {
                 case 1 :
-                    // InternalComponentInterface.g:800:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:723:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosSubscriberAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:804:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:805:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:727:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:728:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:805:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:806:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:728:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:729:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosSubscriberAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_22);
+                    pushFollow(FOLLOW_28);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -1876,11 +1641,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosSubscriberAccess().getRefSubscriberKeyword_5());
             		
-            // InternalComponentInterface.g:828:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:829:4: ( ruleEString )
+            // InternalComponentInterface.g:751:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:752:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:829:4: ( ruleEString )
-            // InternalComponentInterface.g:830:5: ruleEString
+            // InternalComponentInterface.g:752:4: ( ruleEString )
+            // InternalComponentInterface.g:753:5: ruleEString
             {
 
             					if (current==null) {
@@ -1890,7 +1655,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosSubscriberAccess().getSubscriberSubscriberCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -1931,7 +1696,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosServiceServer"
-    // InternalComponentInterface.g:852:1: entryRuleRosServiceServer returns [EObject current=null] : iv_ruleRosServiceServer= ruleRosServiceServer EOF ;
+    // InternalComponentInterface.g:775:1: entryRuleRosServiceServer returns [EObject current=null] : iv_ruleRosServiceServer= ruleRosServiceServer EOF ;
     public final EObject entryRuleRosServiceServer() throws RecognitionException {
         EObject current = null;
 
@@ -1939,8 +1704,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:852:57: (iv_ruleRosServiceServer= ruleRosServiceServer EOF )
-            // InternalComponentInterface.g:853:2: iv_ruleRosServiceServer= ruleRosServiceServer EOF
+            // InternalComponentInterface.g:775:57: (iv_ruleRosServiceServer= ruleRosServiceServer EOF )
+            // InternalComponentInterface.g:776:2: iv_ruleRosServiceServer= ruleRosServiceServer EOF
             {
              newCompositeNode(grammarAccess.getRosServiceServerRule()); 
             pushFollow(FOLLOW_1);
@@ -1967,7 +1732,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosServiceServer"
-    // InternalComponentInterface.g:859:1: ruleRosServiceServer returns [EObject current=null] : ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:782:1: ruleRosServiceServer returns [EObject current=null] : ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosServiceServer() throws RecognitionException {
         EObject current = null;
 
@@ -1985,14 +1750,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:865:2: ( ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:866:2: ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:788:2: ( ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:789:2: ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:866:2: ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:867:3: () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:789:2: ( () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:790:3: () otherlv_1= 'RosServiceServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:867:3: ()
-            // InternalComponentInterface.g:868:4: 
+            // InternalComponentInterface.g:790:3: ()
+            // InternalComponentInterface.g:791:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2002,23 +1767,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,41,FOLLOW_17); 
+            otherlv_1=(Token)match(input,41,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosServiceServerAccess().getRosServiceServerKeyword_1());
             		
-            // InternalComponentInterface.g:878:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalComponentInterface.g:801:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( ((LA15_0>=RULE_STRING && LA15_0<=RULE_ID)) ) {
-                alt15=1;
+            if ( ((LA21_0>=RULE_STRING && LA21_0<=RULE_ID)) ) {
+                alt21=1;
             }
-            switch (alt15) {
+            switch (alt21) {
                 case 1 :
-                    // InternalComponentInterface.g:879:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:802:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:879:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:880:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:802:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:803:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosServiceServerAccess().getNameEStringParserRuleCall_2_0());
@@ -2048,35 +1813,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_23); 
+            otherlv_3=(Token)match(input,23,FOLLOW_29); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosServiceServerAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:901:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalComponentInterface.g:824:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA16_0==37) ) {
-                alt16=1;
+            if ( (LA22_0==37) ) {
+                alt22=1;
             }
-            switch (alt16) {
+            switch (alt22) {
                 case 1 :
-                    // InternalComponentInterface.g:902:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:825:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosServiceServerAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:906:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:907:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:829:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:830:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:907:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:908:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:830:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:831:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosServiceServerAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_24);
+                    pushFollow(FOLLOW_30);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -2108,11 +1873,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosServiceServerAccess().getRefServerKeyword_5());
             		
-            // InternalComponentInterface.g:930:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:931:4: ( ruleEString )
+            // InternalComponentInterface.g:853:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:854:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:931:4: ( ruleEString )
-            // InternalComponentInterface.g:932:5: ruleEString
+            // InternalComponentInterface.g:854:4: ( ruleEString )
+            // InternalComponentInterface.g:855:5: ruleEString
             {
 
             					if (current==null) {
@@ -2122,7 +1887,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosServiceServerAccess().getSrvserverServiceServerCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -2163,7 +1928,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosServiceClient"
-    // InternalComponentInterface.g:954:1: entryRuleRosServiceClient returns [EObject current=null] : iv_ruleRosServiceClient= ruleRosServiceClient EOF ;
+    // InternalComponentInterface.g:877:1: entryRuleRosServiceClient returns [EObject current=null] : iv_ruleRosServiceClient= ruleRosServiceClient EOF ;
     public final EObject entryRuleRosServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -2171,8 +1936,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:954:57: (iv_ruleRosServiceClient= ruleRosServiceClient EOF )
-            // InternalComponentInterface.g:955:2: iv_ruleRosServiceClient= ruleRosServiceClient EOF
+            // InternalComponentInterface.g:877:57: (iv_ruleRosServiceClient= ruleRosServiceClient EOF )
+            // InternalComponentInterface.g:878:2: iv_ruleRosServiceClient= ruleRosServiceClient EOF
             {
              newCompositeNode(grammarAccess.getRosServiceClientRule()); 
             pushFollow(FOLLOW_1);
@@ -2199,7 +1964,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosServiceClient"
-    // InternalComponentInterface.g:961:1: ruleRosServiceClient returns [EObject current=null] : ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:884:1: ruleRosServiceClient returns [EObject current=null] : ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -2217,14 +1982,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:967:2: ( ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:968:2: ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:890:2: ( ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:891:2: ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:968:2: ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:969:3: () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:891:2: ( () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:892:3: () otherlv_1= 'RosServiceClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:969:3: ()
-            // InternalComponentInterface.g:970:4: 
+            // InternalComponentInterface.g:892:3: ()
+            // InternalComponentInterface.g:893:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2234,23 +1999,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,43,FOLLOW_17); 
+            otherlv_1=(Token)match(input,43,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosServiceClientAccess().getRosServiceClientKeyword_1());
             		
-            // InternalComponentInterface.g:980:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalComponentInterface.g:903:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_ID)) ) {
-                alt17=1;
+            if ( ((LA23_0>=RULE_STRING && LA23_0<=RULE_ID)) ) {
+                alt23=1;
             }
-            switch (alt17) {
+            switch (alt23) {
                 case 1 :
-                    // InternalComponentInterface.g:981:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:904:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:981:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:982:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:904:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:905:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosServiceClientAccess().getNameEStringParserRuleCall_2_0());
@@ -2280,35 +2045,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_25); 
+            otherlv_3=(Token)match(input,23,FOLLOW_31); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosServiceClientAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:1003:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalComponentInterface.g:926:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA18_0==37) ) {
-                alt18=1;
+            if ( (LA24_0==37) ) {
+                alt24=1;
             }
-            switch (alt18) {
+            switch (alt24) {
                 case 1 :
-                    // InternalComponentInterface.g:1004:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:927:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosServiceClientAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:1008:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:1009:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:931:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:932:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1009:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:1010:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:932:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:933:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosServiceClientAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_26);
+                    pushFollow(FOLLOW_32);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -2340,11 +2105,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosServiceClientAccess().getRefClientKeyword_5());
             		
-            // InternalComponentInterface.g:1032:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:1033:4: ( ruleEString )
+            // InternalComponentInterface.g:955:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:956:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:1033:4: ( ruleEString )
-            // InternalComponentInterface.g:1034:5: ruleEString
+            // InternalComponentInterface.g:956:4: ( ruleEString )
+            // InternalComponentInterface.g:957:5: ruleEString
             {
 
             					if (current==null) {
@@ -2354,7 +2119,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosServiceClientAccess().getSrvclientServiceClientCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -2395,7 +2160,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosActionServer"
-    // InternalComponentInterface.g:1056:1: entryRuleRosActionServer returns [EObject current=null] : iv_ruleRosActionServer= ruleRosActionServer EOF ;
+    // InternalComponentInterface.g:979:1: entryRuleRosActionServer returns [EObject current=null] : iv_ruleRosActionServer= ruleRosActionServer EOF ;
     public final EObject entryRuleRosActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -2403,8 +2168,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1056:56: (iv_ruleRosActionServer= ruleRosActionServer EOF )
-            // InternalComponentInterface.g:1057:2: iv_ruleRosActionServer= ruleRosActionServer EOF
+            // InternalComponentInterface.g:979:56: (iv_ruleRosActionServer= ruleRosActionServer EOF )
+            // InternalComponentInterface.g:980:2: iv_ruleRosActionServer= ruleRosActionServer EOF
             {
              newCompositeNode(grammarAccess.getRosActionServerRule()); 
             pushFollow(FOLLOW_1);
@@ -2431,7 +2196,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosActionServer"
-    // InternalComponentInterface.g:1063:1: ruleRosActionServer returns [EObject current=null] : ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:986:1: ruleRosActionServer returns [EObject current=null] : ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -2449,14 +2214,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1069:2: ( ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:1070:2: ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:992:2: ( ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:993:2: ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:1070:2: ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:1071:3: () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:993:2: ( () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:994:3: () otherlv_1= 'RosActionServer' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefServer' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:1071:3: ()
-            // InternalComponentInterface.g:1072:4: 
+            // InternalComponentInterface.g:994:3: ()
+            // InternalComponentInterface.g:995:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2466,23 +2231,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,45,FOLLOW_17); 
+            otherlv_1=(Token)match(input,45,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosActionServerAccess().getRosActionServerKeyword_1());
             		
-            // InternalComponentInterface.g:1082:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalComponentInterface.g:1005:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( ((LA19_0>=RULE_STRING && LA19_0<=RULE_ID)) ) {
-                alt19=1;
+            if ( ((LA25_0>=RULE_STRING && LA25_0<=RULE_ID)) ) {
+                alt25=1;
             }
-            switch (alt19) {
+            switch (alt25) {
                 case 1 :
-                    // InternalComponentInterface.g:1083:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1006:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1083:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:1084:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:1006:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1007:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosActionServerAccess().getNameEStringParserRuleCall_2_0());
@@ -2512,35 +2277,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_23); 
+            otherlv_3=(Token)match(input,23,FOLLOW_29); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosActionServerAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:1105:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalComponentInterface.g:1028:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA20_0==37) ) {
-                alt20=1;
+            if ( (LA26_0==37) ) {
+                alt26=1;
             }
-            switch (alt20) {
+            switch (alt26) {
                 case 1 :
-                    // InternalComponentInterface.g:1106:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1029:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosActionServerAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:1110:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:1111:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1033:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1034:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1111:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:1112:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:1034:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1035:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosActionServerAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_24);
+                    pushFollow(FOLLOW_30);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -2572,11 +2337,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosActionServerAccess().getRefServerKeyword_5());
             		
-            // InternalComponentInterface.g:1134:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:1135:4: ( ruleEString )
+            // InternalComponentInterface.g:1057:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:1058:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:1135:4: ( ruleEString )
-            // InternalComponentInterface.g:1136:5: ruleEString
+            // InternalComponentInterface.g:1058:4: ( ruleEString )
+            // InternalComponentInterface.g:1059:5: ruleEString
             {
 
             					if (current==null) {
@@ -2586,7 +2351,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosActionServerAccess().getActserverActionServerCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -2627,7 +2392,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosActionClient"
-    // InternalComponentInterface.g:1158:1: entryRuleRosActionClient returns [EObject current=null] : iv_ruleRosActionClient= ruleRosActionClient EOF ;
+    // InternalComponentInterface.g:1081:1: entryRuleRosActionClient returns [EObject current=null] : iv_ruleRosActionClient= ruleRosActionClient EOF ;
     public final EObject entryRuleRosActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -2635,8 +2400,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1158:56: (iv_ruleRosActionClient= ruleRosActionClient EOF )
-            // InternalComponentInterface.g:1159:2: iv_ruleRosActionClient= ruleRosActionClient EOF
+            // InternalComponentInterface.g:1081:56: (iv_ruleRosActionClient= ruleRosActionClient EOF )
+            // InternalComponentInterface.g:1082:2: iv_ruleRosActionClient= ruleRosActionClient EOF
             {
              newCompositeNode(grammarAccess.getRosActionClientRule()); 
             pushFollow(FOLLOW_1);
@@ -2663,7 +2428,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosActionClient"
-    // InternalComponentInterface.g:1165:1: ruleRosActionClient returns [EObject current=null] : ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) ;
+    // InternalComponentInterface.g:1088:1: ruleRosActionClient returns [EObject current=null] : ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) ;
     public final EObject ruleRosActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -2681,14 +2446,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1171:2: ( ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) )
-            // InternalComponentInterface.g:1172:2: ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:1094:2: ( ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' ) )
+            // InternalComponentInterface.g:1095:2: ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
             {
-            // InternalComponentInterface.g:1172:2: ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
-            // InternalComponentInterface.g:1173:3: () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}'
+            // InternalComponentInterface.g:1095:2: ( () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}' )
+            // InternalComponentInterface.g:1096:3: () otherlv_1= 'RosActionClient' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefClient' ( ( ruleEString ) ) otherlv_8= '}'
             {
-            // InternalComponentInterface.g:1173:3: ()
-            // InternalComponentInterface.g:1174:4: 
+            // InternalComponentInterface.g:1096:3: ()
+            // InternalComponentInterface.g:1097:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2698,23 +2463,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,46,FOLLOW_17); 
+            otherlv_1=(Token)match(input,46,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosActionClientAccess().getRosActionClientKeyword_1());
             		
-            // InternalComponentInterface.g:1184:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalComponentInterface.g:1107:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( ((LA21_0>=RULE_STRING && LA21_0<=RULE_ID)) ) {
-                alt21=1;
+            if ( ((LA27_0>=RULE_STRING && LA27_0<=RULE_ID)) ) {
+                alt27=1;
             }
-            switch (alt21) {
+            switch (alt27) {
                 case 1 :
-                    // InternalComponentInterface.g:1185:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1108:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1185:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:1186:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:1108:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1109:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosActionClientAccess().getNameEStringParserRuleCall_2_0());
@@ -2744,35 +2509,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_25); 
+            otherlv_3=(Token)match(input,23,FOLLOW_31); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosActionClientAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:1207:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalComponentInterface.g:1130:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA22_0==37) ) {
-                alt22=1;
+            if ( (LA28_0==37) ) {
+                alt28=1;
             }
-            switch (alt22) {
+            switch (alt28) {
                 case 1 :
-                    // InternalComponentInterface.g:1208:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1131:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosActionClientAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:1212:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:1213:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1135:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1136:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1213:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:1214:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:1136:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1137:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosActionClientAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_26);
+                    pushFollow(FOLLOW_32);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -2804,11 +2569,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosActionClientAccess().getRefClientKeyword_5());
             		
-            // InternalComponentInterface.g:1236:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:1237:4: ( ruleEString )
+            // InternalComponentInterface.g:1159:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:1160:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:1237:4: ( ruleEString )
-            // InternalComponentInterface.g:1238:5: ruleEString
+            // InternalComponentInterface.g:1160:4: ( ruleEString )
+            // InternalComponentInterface.g:1161:5: ruleEString
             {
 
             					if (current==null) {
@@ -2818,7 +2583,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosActionClientAccess().getActclientActionClientCrossReference_6_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             ruleEString();
 
             state._fsp--;
@@ -2859,7 +2624,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRosParameter"
-    // InternalComponentInterface.g:1260:1: entryRuleRosParameter returns [EObject current=null] : iv_ruleRosParameter= ruleRosParameter EOF ;
+    // InternalComponentInterface.g:1183:1: entryRuleRosParameter returns [EObject current=null] : iv_ruleRosParameter= ruleRosParameter EOF ;
     public final EObject entryRuleRosParameter() throws RecognitionException {
         EObject current = null;
 
@@ -2867,8 +2632,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1260:53: (iv_ruleRosParameter= ruleRosParameter EOF )
-            // InternalComponentInterface.g:1261:2: iv_ruleRosParameter= ruleRosParameter EOF
+            // InternalComponentInterface.g:1183:53: (iv_ruleRosParameter= ruleRosParameter EOF )
+            // InternalComponentInterface.g:1184:2: iv_ruleRosParameter= ruleRosParameter EOF
             {
              newCompositeNode(grammarAccess.getRosParameterRule()); 
             pushFollow(FOLLOW_1);
@@ -2895,7 +2660,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRosParameter"
-    // InternalComponentInterface.g:1267:1: ruleRosParameter returns [EObject current=null] : ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' ) ;
+    // InternalComponentInterface.g:1190:1: ruleRosParameter returns [EObject current=null] : ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' ) ;
     public final EObject ruleRosParameter() throws RecognitionException {
         EObject current = null;
 
@@ -2916,14 +2681,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1273:2: ( ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' ) )
-            // InternalComponentInterface.g:1274:2: ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' )
+            // InternalComponentInterface.g:1196:2: ( ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' ) )
+            // InternalComponentInterface.g:1197:2: ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' )
             {
-            // InternalComponentInterface.g:1274:2: ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' )
-            // InternalComponentInterface.g:1275:3: () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}'
+            // InternalComponentInterface.g:1197:2: ( () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}' )
+            // InternalComponentInterface.g:1198:3: () otherlv_1= 'RosParameter' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )? otherlv_6= 'RefParameter' ( ( ruleEString ) ) (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )? otherlv_10= '}'
             {
-            // InternalComponentInterface.g:1275:3: ()
-            // InternalComponentInterface.g:1276:4: 
+            // InternalComponentInterface.g:1198:3: ()
+            // InternalComponentInterface.g:1199:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2933,23 +2698,23 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,47,FOLLOW_17); 
+            otherlv_1=(Token)match(input,47,FOLLOW_24); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRosParameterAccess().getRosParameterKeyword_1());
             		
-            // InternalComponentInterface.g:1286:3: ( (lv_name_2_0= ruleEString ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalComponentInterface.g:1209:3: ( (lv_name_2_0= ruleEString ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( ((LA23_0>=RULE_STRING && LA23_0<=RULE_ID)) ) {
-                alt23=1;
+            if ( ((LA29_0>=RULE_STRING && LA29_0<=RULE_ID)) ) {
+                alt29=1;
             }
-            switch (alt23) {
+            switch (alt29) {
                 case 1 :
-                    // InternalComponentInterface.g:1287:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1210:4: (lv_name_2_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1287:4: (lv_name_2_0= ruleEString )
-                    // InternalComponentInterface.g:1288:5: lv_name_2_0= ruleEString
+                    // InternalComponentInterface.g:1210:4: (lv_name_2_0= ruleEString )
+                    // InternalComponentInterface.g:1211:5: lv_name_2_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_2_0());
@@ -2979,35 +2744,35 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_27); 
+            otherlv_3=(Token)match(input,23,FOLLOW_33); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRosParameterAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentInterface.g:1309:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalComponentInterface.g:1232:3: (otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) ) )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA24_0==37) ) {
-                alt24=1;
+            if ( (LA30_0==37) ) {
+                alt30=1;
             }
-            switch (alt24) {
+            switch (alt30) {
                 case 1 :
-                    // InternalComponentInterface.g:1310:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1233:4: otherlv_4= 'ns' ( (lv_ns_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,37,FOLLOW_5); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRosParameterAccess().getNsKeyword_4_0());
                     			
-                    // InternalComponentInterface.g:1314:4: ( (lv_ns_5_0= ruleEString ) )
-                    // InternalComponentInterface.g:1315:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1237:4: ( (lv_ns_5_0= ruleEString ) )
+                    // InternalComponentInterface.g:1238:5: (lv_ns_5_0= ruleEString )
                     {
-                    // InternalComponentInterface.g:1315:5: (lv_ns_5_0= ruleEString )
-                    // InternalComponentInterface.g:1316:6: lv_ns_5_0= ruleEString
+                    // InternalComponentInterface.g:1238:5: (lv_ns_5_0= ruleEString )
+                    // InternalComponentInterface.g:1239:6: lv_ns_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRosParameterAccess().getNsEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_34);
                     lv_ns_5_0=ruleEString();
 
                     state._fsp--;
@@ -3039,11 +2804,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             			newLeafNode(otherlv_6, grammarAccess.getRosParameterAccess().getRefParameterKeyword_5());
             		
-            // InternalComponentInterface.g:1338:3: ( ( ruleEString ) )
-            // InternalComponentInterface.g:1339:4: ( ruleEString )
+            // InternalComponentInterface.g:1261:3: ( ( ruleEString ) )
+            // InternalComponentInterface.g:1262:4: ( ruleEString )
             {
-            // InternalComponentInterface.g:1339:4: ( ruleEString )
-            // InternalComponentInterface.g:1340:5: ruleEString
+            // InternalComponentInterface.g:1262:4: ( ruleEString )
+            // InternalComponentInterface.g:1263:5: ruleEString
             {
 
             					if (current==null) {
@@ -3053,7 +2818,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             					newCompositeNode(grammarAccess.getRosParameterAccess().getParameterParameterCrossReference_6_0());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_35);
             ruleEString();
 
             state._fsp--;
@@ -3067,31 +2832,31 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            // InternalComponentInterface.g:1354:3: (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalComponentInterface.g:1277:3: (otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) ) )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA25_0==49) ) {
-                alt25=1;
+            if ( (LA31_0==49) ) {
+                alt31=1;
             }
-            switch (alt25) {
+            switch (alt31) {
                 case 1 :
-                    // InternalComponentInterface.g:1355:4: otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) )
+                    // InternalComponentInterface.g:1278:4: otherlv_8= 'value' ( (lv_value_9_0= ruleParameterValue ) )
                     {
-                    otherlv_8=(Token)match(input,49,FOLLOW_30); 
+                    otherlv_8=(Token)match(input,49,FOLLOW_36); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getRosParameterAccess().getValueKeyword_7_0());
                     			
-                    // InternalComponentInterface.g:1359:4: ( (lv_value_9_0= ruleParameterValue ) )
-                    // InternalComponentInterface.g:1360:5: (lv_value_9_0= ruleParameterValue )
+                    // InternalComponentInterface.g:1282:4: ( (lv_value_9_0= ruleParameterValue ) )
+                    // InternalComponentInterface.g:1283:5: (lv_value_9_0= ruleParameterValue )
                     {
-                    // InternalComponentInterface.g:1360:5: (lv_value_9_0= ruleParameterValue )
-                    // InternalComponentInterface.g:1361:6: lv_value_9_0= ruleParameterValue
+                    // InternalComponentInterface.g:1283:5: (lv_value_9_0= ruleParameterValue )
+                    // InternalComponentInterface.g:1284:6: lv_value_9_0= ruleParameterValue
                     {
 
                     						newCompositeNode(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_7_1_0());
                     					
-                    pushFollow(FOLLOW_20);
+                    pushFollow(FOLLOW_23);
                     lv_value_9_0=ruleParameterValue();
 
                     state._fsp--;
@@ -3146,7 +2911,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalComponentInterface.g:1387:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalComponentInterface.g:1310:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -3154,8 +2919,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1387:47: (iv_ruleEString= ruleEString EOF )
-            // InternalComponentInterface.g:1388:2: iv_ruleEString= ruleEString EOF
+            // InternalComponentInterface.g:1310:47: (iv_ruleEString= ruleEString EOF )
+            // InternalComponentInterface.g:1311:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -3182,7 +2947,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleEString"
-    // InternalComponentInterface.g:1394:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalComponentInterface.g:1317:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3193,28 +2958,28 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1400:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalComponentInterface.g:1401:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalComponentInterface.g:1323:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalComponentInterface.g:1324:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalComponentInterface.g:1401:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalComponentInterface.g:1324:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_STRING) ) {
-                alt26=1;
+            if ( (LA32_0==RULE_STRING) ) {
+                alt32=1;
             }
-            else if ( (LA26_0==RULE_ID) ) {
-                alt26=2;
+            else if ( (LA32_0==RULE_ID) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt26) {
+            switch (alt32) {
                 case 1 :
-                    // InternalComponentInterface.g:1402:3: this_STRING_0= RULE_STRING
+                    // InternalComponentInterface.g:1325:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -3227,7 +2992,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:1410:3: this_ID_1= RULE_ID
+                    // InternalComponentInterface.g:1333:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3262,7 +3027,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterValue"
-    // InternalComponentInterface.g:1421:1: entryRuleParameterValue returns [EObject current=null] : iv_ruleParameterValue= ruleParameterValue EOF ;
+    // InternalComponentInterface.g:1344:1: entryRuleParameterValue returns [EObject current=null] : iv_ruleParameterValue= ruleParameterValue EOF ;
     public final EObject entryRuleParameterValue() throws RecognitionException {
         EObject current = null;
 
@@ -3270,8 +3035,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1421:55: (iv_ruleParameterValue= ruleParameterValue EOF )
-            // InternalComponentInterface.g:1422:2: iv_ruleParameterValue= ruleParameterValue EOF
+            // InternalComponentInterface.g:1344:55: (iv_ruleParameterValue= ruleParameterValue EOF )
+            // InternalComponentInterface.g:1345:2: iv_ruleParameterValue= ruleParameterValue EOF
             {
              newCompositeNode(grammarAccess.getParameterValueRule()); 
             pushFollow(FOLLOW_1);
@@ -3298,7 +3063,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterValue"
-    // InternalComponentInterface.g:1428:1: ruleParameterValue returns [EObject current=null] : (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString ) ;
+    // InternalComponentInterface.g:1351:1: ruleParameterValue returns [EObject current=null] : (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString ) ;
     public final EObject ruleParameterValue() throws RecognitionException {
         EObject current = null;
 
@@ -3321,15 +3086,15 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1434:2: ( (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString ) )
-            // InternalComponentInterface.g:1435:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )
+            // InternalComponentInterface.g:1357:2: ( (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString ) )
+            // InternalComponentInterface.g:1358:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )
             {
-            // InternalComponentInterface.g:1435:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )
-            int alt27=7;
-            alt27 = dfa27.predict(input);
-            switch (alt27) {
+            // InternalComponentInterface.g:1358:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )
+            int alt33=7;
+            alt33 = dfa33.predict(input);
+            switch (alt33) {
                 case 1 :
-                    // InternalComponentInterface.g:1436:3: this_ParameterDouble_0= ruleParameterDouble
+                    // InternalComponentInterface.g:1359:3: this_ParameterDouble_0= ruleParameterDouble
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterDoubleParserRuleCall_0());
@@ -3347,7 +3112,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // InternalComponentInterface.g:1445:3: this_ParameterBoolean_1= ruleParameterBoolean
+                    // InternalComponentInterface.g:1368:3: this_ParameterBoolean_1= ruleParameterBoolean
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterBooleanParserRuleCall_1());
@@ -3365,7 +3130,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // InternalComponentInterface.g:1454:3: this_ParameterInteger_2= ruleParameterInteger
+                    // InternalComponentInterface.g:1377:3: this_ParameterInteger_2= ruleParameterInteger
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterIntegerParserRuleCall_2());
@@ -3383,7 +3148,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // InternalComponentInterface.g:1463:3: this_ParameterBase64_3= ruleParameterBase64
+                    // InternalComponentInterface.g:1386:3: this_ParameterBase64_3= ruleParameterBase64
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterBase64ParserRuleCall_3());
@@ -3401,7 +3166,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 5 :
-                    // InternalComponentInterface.g:1472:3: this_ParameterList_4= ruleParameterList
+                    // InternalComponentInterface.g:1395:3: this_ParameterList_4= ruleParameterList
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterListParserRuleCall_4());
@@ -3419,7 +3184,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 6 :
-                    // InternalComponentInterface.g:1481:3: this_ParameterStruct_5= ruleParameterStruct
+                    // InternalComponentInterface.g:1404:3: this_ParameterStruct_5= ruleParameterStruct
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterStructParserRuleCall_5());
@@ -3437,7 +3202,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 7 :
-                    // InternalComponentInterface.g:1490:3: this_ParameterString_6= ruleParameterString
+                    // InternalComponentInterface.g:1413:3: this_ParameterString_6= ruleParameterString
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterStringParserRuleCall_6());
@@ -3477,7 +3242,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterString"
-    // InternalComponentInterface.g:1502:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
+    // InternalComponentInterface.g:1425:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
     public final EObject entryRuleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -3485,8 +3250,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1502:56: (iv_ruleParameterString= ruleParameterString EOF )
-            // InternalComponentInterface.g:1503:2: iv_ruleParameterString= ruleParameterString EOF
+            // InternalComponentInterface.g:1425:56: (iv_ruleParameterString= ruleParameterString EOF )
+            // InternalComponentInterface.g:1426:2: iv_ruleParameterString= ruleParameterString EOF
             {
              newCompositeNode(grammarAccess.getParameterStringRule()); 
             pushFollow(FOLLOW_1);
@@ -3513,7 +3278,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterString"
-    // InternalComponentInterface.g:1509:1: ruleParameterString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalComponentInterface.g:1432:1: ruleParameterString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject ruleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -3524,14 +3289,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1515:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalComponentInterface.g:1516:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalComponentInterface.g:1438:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalComponentInterface.g:1439:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalComponentInterface.g:1516:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalComponentInterface.g:1517:3: (lv_value_0_0= ruleEString )
+            // InternalComponentInterface.g:1439:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalComponentInterface.g:1440:3: (lv_value_0_0= ruleEString )
             {
-            // InternalComponentInterface.g:1517:3: (lv_value_0_0= ruleEString )
-            // InternalComponentInterface.g:1518:4: lv_value_0_0= ruleEString
+            // InternalComponentInterface.g:1440:3: (lv_value_0_0= ruleEString )
+            // InternalComponentInterface.g:1441:4: lv_value_0_0= ruleEString
             {
 
             				newCompositeNode(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_0());
@@ -3578,7 +3343,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterBase64"
-    // InternalComponentInterface.g:1538:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
+    // InternalComponentInterface.g:1461:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
     public final EObject entryRuleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -3586,8 +3351,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1538:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
-            // InternalComponentInterface.g:1539:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
+            // InternalComponentInterface.g:1461:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
+            // InternalComponentInterface.g:1462:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
             {
              newCompositeNode(grammarAccess.getParameterBase64Rule()); 
             pushFollow(FOLLOW_1);
@@ -3614,7 +3379,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterBase64"
-    // InternalComponentInterface.g:1545:1: ruleParameterBase64 returns [EObject current=null] : ( (lv_value_0_0= ruleBase64Binary ) ) ;
+    // InternalComponentInterface.g:1468:1: ruleParameterBase64 returns [EObject current=null] : ( (lv_value_0_0= ruleBase64Binary ) ) ;
     public final EObject ruleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -3625,14 +3390,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1551:2: ( ( (lv_value_0_0= ruleBase64Binary ) ) )
-            // InternalComponentInterface.g:1552:2: ( (lv_value_0_0= ruleBase64Binary ) )
+            // InternalComponentInterface.g:1474:2: ( ( (lv_value_0_0= ruleBase64Binary ) ) )
+            // InternalComponentInterface.g:1475:2: ( (lv_value_0_0= ruleBase64Binary ) )
             {
-            // InternalComponentInterface.g:1552:2: ( (lv_value_0_0= ruleBase64Binary ) )
-            // InternalComponentInterface.g:1553:3: (lv_value_0_0= ruleBase64Binary )
+            // InternalComponentInterface.g:1475:2: ( (lv_value_0_0= ruleBase64Binary ) )
+            // InternalComponentInterface.g:1476:3: (lv_value_0_0= ruleBase64Binary )
             {
-            // InternalComponentInterface.g:1553:3: (lv_value_0_0= ruleBase64Binary )
-            // InternalComponentInterface.g:1554:4: lv_value_0_0= ruleBase64Binary
+            // InternalComponentInterface.g:1476:3: (lv_value_0_0= ruleBase64Binary )
+            // InternalComponentInterface.g:1477:4: lv_value_0_0= ruleBase64Binary
             {
 
             				newCompositeNode(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_0());
@@ -3679,7 +3444,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterInteger"
-    // InternalComponentInterface.g:1574:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
+    // InternalComponentInterface.g:1497:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
     public final EObject entryRuleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -3687,8 +3452,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1574:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
-            // InternalComponentInterface.g:1575:2: iv_ruleParameterInteger= ruleParameterInteger EOF
+            // InternalComponentInterface.g:1497:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
+            // InternalComponentInterface.g:1498:2: iv_ruleParameterInteger= ruleParameterInteger EOF
             {
              newCompositeNode(grammarAccess.getParameterIntegerRule()); 
             pushFollow(FOLLOW_1);
@@ -3715,7 +3480,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterInteger"
-    // InternalComponentInterface.g:1581:1: ruleParameterInteger returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
+    // InternalComponentInterface.g:1504:1: ruleParameterInteger returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
     public final EObject ruleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -3726,14 +3491,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1587:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
-            // InternalComponentInterface.g:1588:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalComponentInterface.g:1510:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
+            // InternalComponentInterface.g:1511:2: ( (lv_value_0_0= ruleInteger0 ) )
             {
-            // InternalComponentInterface.g:1588:2: ( (lv_value_0_0= ruleInteger0 ) )
-            // InternalComponentInterface.g:1589:3: (lv_value_0_0= ruleInteger0 )
+            // InternalComponentInterface.g:1511:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalComponentInterface.g:1512:3: (lv_value_0_0= ruleInteger0 )
             {
-            // InternalComponentInterface.g:1589:3: (lv_value_0_0= ruleInteger0 )
-            // InternalComponentInterface.g:1590:4: lv_value_0_0= ruleInteger0
+            // InternalComponentInterface.g:1512:3: (lv_value_0_0= ruleInteger0 )
+            // InternalComponentInterface.g:1513:4: lv_value_0_0= ruleInteger0
             {
 
             				newCompositeNode(grammarAccess.getParameterIntegerAccess().getValueInteger0ParserRuleCall_0());
@@ -3780,7 +3545,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterDouble"
-    // InternalComponentInterface.g:1610:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
+    // InternalComponentInterface.g:1533:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
     public final EObject entryRuleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -3788,8 +3553,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1610:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
-            // InternalComponentInterface.g:1611:2: iv_ruleParameterDouble= ruleParameterDouble EOF
+            // InternalComponentInterface.g:1533:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
+            // InternalComponentInterface.g:1534:2: iv_ruleParameterDouble= ruleParameterDouble EOF
             {
              newCompositeNode(grammarAccess.getParameterDoubleRule()); 
             pushFollow(FOLLOW_1);
@@ -3816,7 +3581,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterDouble"
-    // InternalComponentInterface.g:1617:1: ruleParameterDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
+    // InternalComponentInterface.g:1540:1: ruleParameterDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
     public final EObject ruleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -3827,14 +3592,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1623:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
-            // InternalComponentInterface.g:1624:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalComponentInterface.g:1546:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
+            // InternalComponentInterface.g:1547:2: ( (lv_value_0_0= ruleDouble0 ) )
             {
-            // InternalComponentInterface.g:1624:2: ( (lv_value_0_0= ruleDouble0 ) )
-            // InternalComponentInterface.g:1625:3: (lv_value_0_0= ruleDouble0 )
+            // InternalComponentInterface.g:1547:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalComponentInterface.g:1548:3: (lv_value_0_0= ruleDouble0 )
             {
-            // InternalComponentInterface.g:1625:3: (lv_value_0_0= ruleDouble0 )
-            // InternalComponentInterface.g:1626:4: lv_value_0_0= ruleDouble0
+            // InternalComponentInterface.g:1548:3: (lv_value_0_0= ruleDouble0 )
+            // InternalComponentInterface.g:1549:4: lv_value_0_0= ruleDouble0
             {
 
             				newCompositeNode(grammarAccess.getParameterDoubleAccess().getValueDouble0ParserRuleCall_0());
@@ -3881,7 +3646,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterBoolean"
-    // InternalComponentInterface.g:1646:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
+    // InternalComponentInterface.g:1569:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
     public final EObject entryRuleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -3889,8 +3654,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1646:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
-            // InternalComponentInterface.g:1647:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
+            // InternalComponentInterface.g:1569:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
+            // InternalComponentInterface.g:1570:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
             {
              newCompositeNode(grammarAccess.getParameterBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -3917,7 +3682,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterBoolean"
-    // InternalComponentInterface.g:1653:1: ruleParameterBoolean returns [EObject current=null] : ( (lv_value_0_0= ruleboolean0 ) ) ;
+    // InternalComponentInterface.g:1576:1: ruleParameterBoolean returns [EObject current=null] : ( (lv_value_0_0= ruleboolean0 ) ) ;
     public final EObject ruleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -3928,14 +3693,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1659:2: ( ( (lv_value_0_0= ruleboolean0 ) ) )
-            // InternalComponentInterface.g:1660:2: ( (lv_value_0_0= ruleboolean0 ) )
+            // InternalComponentInterface.g:1582:2: ( ( (lv_value_0_0= ruleboolean0 ) ) )
+            // InternalComponentInterface.g:1583:2: ( (lv_value_0_0= ruleboolean0 ) )
             {
-            // InternalComponentInterface.g:1660:2: ( (lv_value_0_0= ruleboolean0 ) )
-            // InternalComponentInterface.g:1661:3: (lv_value_0_0= ruleboolean0 )
+            // InternalComponentInterface.g:1583:2: ( (lv_value_0_0= ruleboolean0 ) )
+            // InternalComponentInterface.g:1584:3: (lv_value_0_0= ruleboolean0 )
             {
-            // InternalComponentInterface.g:1661:3: (lv_value_0_0= ruleboolean0 )
-            // InternalComponentInterface.g:1662:4: lv_value_0_0= ruleboolean0
+            // InternalComponentInterface.g:1584:3: (lv_value_0_0= ruleboolean0 )
+            // InternalComponentInterface.g:1585:4: lv_value_0_0= ruleboolean0
             {
 
             				newCompositeNode(grammarAccess.getParameterBooleanAccess().getValueBoolean0ParserRuleCall_0());
@@ -3982,7 +3747,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterList"
-    // InternalComponentInterface.g:1682:1: entryRuleParameterList returns [EObject current=null] : iv_ruleParameterList= ruleParameterList EOF ;
+    // InternalComponentInterface.g:1605:1: entryRuleParameterList returns [EObject current=null] : iv_ruleParameterList= ruleParameterList EOF ;
     public final EObject entryRuleParameterList() throws RecognitionException {
         EObject current = null;
 
@@ -3990,8 +3755,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1682:54: (iv_ruleParameterList= ruleParameterList EOF )
-            // InternalComponentInterface.g:1683:2: iv_ruleParameterList= ruleParameterList EOF
+            // InternalComponentInterface.g:1605:54: (iv_ruleParameterList= ruleParameterList EOF )
+            // InternalComponentInterface.g:1606:2: iv_ruleParameterList= ruleParameterList EOF
             {
              newCompositeNode(grammarAccess.getParameterListRule()); 
             pushFollow(FOLLOW_1);
@@ -4018,7 +3783,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterList"
-    // InternalComponentInterface.g:1689:1: ruleParameterList returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) ;
+    // InternalComponentInterface.g:1612:1: ruleParameterList returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleParameterList() throws RecognitionException {
         EObject current = null;
 
@@ -4034,14 +3799,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1695:2: ( ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) )
-            // InternalComponentInterface.g:1696:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
+            // InternalComponentInterface.g:1618:2: ( ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) )
+            // InternalComponentInterface.g:1619:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
             {
-            // InternalComponentInterface.g:1696:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
-            // InternalComponentInterface.g:1697:3: () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}'
+            // InternalComponentInterface.g:1619:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
+            // InternalComponentInterface.g:1620:3: () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}'
             {
-            // InternalComponentInterface.g:1697:3: ()
-            // InternalComponentInterface.g:1698:4: 
+            // InternalComponentInterface.g:1620:3: ()
+            // InternalComponentInterface.g:1621:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4051,15 +3816,15 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_30); 
+            otherlv_1=(Token)match(input,23,FOLLOW_36); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterListAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalComponentInterface.g:1708:3: ( (lv_value_2_0= ruleParameterValue ) )
-            // InternalComponentInterface.g:1709:4: (lv_value_2_0= ruleParameterValue )
+            // InternalComponentInterface.g:1631:3: ( (lv_value_2_0= ruleParameterValue ) )
+            // InternalComponentInterface.g:1632:4: (lv_value_2_0= ruleParameterValue )
             {
-            // InternalComponentInterface.g:1709:4: (lv_value_2_0= ruleParameterValue )
-            // InternalComponentInterface.g:1710:5: lv_value_2_0= ruleParameterValue
+            // InternalComponentInterface.g:1632:4: (lv_value_2_0= ruleParameterValue )
+            // InternalComponentInterface.g:1633:5: lv_value_2_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterListAccess().getValueParameterValueParserRuleCall_2_0());
@@ -4086,30 +3851,30 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            // InternalComponentInterface.g:1727:3: (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )*
-            loop28:
+            // InternalComponentInterface.g:1650:3: (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )*
+            loop34:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA28_0==28) ) {
-                    alt28=1;
+                if ( (LA34_0==28) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt34) {
             	case 1 :
-            	    // InternalComponentInterface.g:1728:4: otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) )
+            	    // InternalComponentInterface.g:1651:4: otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) )
             	    {
-            	    otherlv_3=(Token)match(input,28,FOLLOW_30); 
+            	    otherlv_3=(Token)match(input,28,FOLLOW_36); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getParameterListAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalComponentInterface.g:1732:4: ( (lv_value_4_0= ruleParameterValue ) )
-            	    // InternalComponentInterface.g:1733:5: (lv_value_4_0= ruleParameterValue )
+            	    // InternalComponentInterface.g:1655:4: ( (lv_value_4_0= ruleParameterValue ) )
+            	    // InternalComponentInterface.g:1656:5: (lv_value_4_0= ruleParameterValue )
             	    {
-            	    // InternalComponentInterface.g:1733:5: (lv_value_4_0= ruleParameterValue )
-            	    // InternalComponentInterface.g:1734:6: lv_value_4_0= ruleParameterValue
+            	    // InternalComponentInterface.g:1656:5: (lv_value_4_0= ruleParameterValue )
+            	    // InternalComponentInterface.g:1657:6: lv_value_4_0= ruleParameterValue
             	    {
 
             	    						newCompositeNode(grammarAccess.getParameterListAccess().getValueParameterValueParserRuleCall_3_1_0());
@@ -4141,7 +3906,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop34;
                 }
             } while (true);
 
@@ -4172,7 +3937,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterStruct"
-    // InternalComponentInterface.g:1760:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
+    // InternalComponentInterface.g:1683:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
     public final EObject entryRuleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -4180,8 +3945,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1760:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
-            // InternalComponentInterface.g:1761:2: iv_ruleParameterStruct= ruleParameterStruct EOF
+            // InternalComponentInterface.g:1683:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
+            // InternalComponentInterface.g:1684:2: iv_ruleParameterStruct= ruleParameterStruct EOF
             {
              newCompositeNode(grammarAccess.getParameterStructRule()); 
             pushFollow(FOLLOW_1);
@@ -4208,7 +3973,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterStruct"
-    // InternalComponentInterface.g:1767:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) ;
+    // InternalComponentInterface.g:1690:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) ;
     public final EObject ruleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -4226,14 +3991,14 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1773:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) )
-            // InternalComponentInterface.g:1774:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
+            // InternalComponentInterface.g:1696:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) )
+            // InternalComponentInterface.g:1697:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
             {
-            // InternalComponentInterface.g:1774:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
-            // InternalComponentInterface.g:1775:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
+            // InternalComponentInterface.g:1697:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
+            // InternalComponentInterface.g:1698:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
             {
-            // InternalComponentInterface.g:1775:3: ()
-            // InternalComponentInterface.g:1776:4: 
+            // InternalComponentInterface.g:1698:3: ()
+            // InternalComponentInterface.g:1699:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4243,26 +4008,26 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            // InternalComponentInterface.g:1782:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalComponentInterface.g:1705:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA30_0==23) ) {
-                alt30=1;
+            if ( (LA36_0==23) ) {
+                alt36=1;
             }
-            switch (alt30) {
+            switch (alt36) {
                 case 1 :
-                    // InternalComponentInterface.g:1783:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}'
+                    // InternalComponentInterface.g:1706:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}'
                     {
                     otherlv_1=(Token)match(input,23,FOLLOW_5); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_0());
                     			
-                    // InternalComponentInterface.g:1787:4: ( (lv_value_2_0= ruleParameterStructMember ) )
-                    // InternalComponentInterface.g:1788:5: (lv_value_2_0= ruleParameterStructMember )
+                    // InternalComponentInterface.g:1710:4: ( (lv_value_2_0= ruleParameterStructMember ) )
+                    // InternalComponentInterface.g:1711:5: (lv_value_2_0= ruleParameterStructMember )
                     {
-                    // InternalComponentInterface.g:1788:5: (lv_value_2_0= ruleParameterStructMember )
-                    // InternalComponentInterface.g:1789:6: lv_value_2_0= ruleParameterStructMember
+                    // InternalComponentInterface.g:1711:5: (lv_value_2_0= ruleParameterStructMember )
+                    // InternalComponentInterface.g:1712:6: lv_value_2_0= ruleParameterStructMember
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_1_0());
@@ -4289,20 +4054,20 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // InternalComponentInterface.g:1806:4: (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )*
-                    loop29:
+                    // InternalComponentInterface.g:1729:4: (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )*
+                    loop35:
                     do {
-                        int alt29=2;
-                        int LA29_0 = input.LA(1);
+                        int alt35=2;
+                        int LA35_0 = input.LA(1);
 
-                        if ( (LA29_0==28) ) {
-                            alt29=1;
+                        if ( (LA35_0==28) ) {
+                            alt35=1;
                         }
 
 
-                        switch (alt29) {
+                        switch (alt35) {
                     	case 1 :
-                    	    // InternalComponentInterface.g:1807:5: otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}'
+                    	    // InternalComponentInterface.g:1730:5: otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}'
                     	    {
                     	    otherlv_3=(Token)match(input,28,FOLLOW_3); 
 
@@ -4312,16 +4077,16 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
                     	    					newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_2_1());
                     	    				
-                    	    // InternalComponentInterface.g:1815:5: ( (lv_value_5_0= ruleParameterStructMember ) )
-                    	    // InternalComponentInterface.g:1816:6: (lv_value_5_0= ruleParameterStructMember )
+                    	    // InternalComponentInterface.g:1738:5: ( (lv_value_5_0= ruleParameterStructMember ) )
+                    	    // InternalComponentInterface.g:1739:6: (lv_value_5_0= ruleParameterStructMember )
                     	    {
-                    	    // InternalComponentInterface.g:1816:6: (lv_value_5_0= ruleParameterStructMember )
-                    	    // InternalComponentInterface.g:1817:7: lv_value_5_0= ruleParameterStructMember
+                    	    // InternalComponentInterface.g:1739:6: (lv_value_5_0= ruleParameterStructMember )
+                    	    // InternalComponentInterface.g:1740:7: lv_value_5_0= ruleParameterStructMember
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_2_0());
                     	    						
-                    	    pushFollow(FOLLOW_20);
+                    	    pushFollow(FOLLOW_23);
                     	    lv_value_5_0=ruleParameterStructMember();
 
                     	    state._fsp--;
@@ -4352,7 +4117,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
                     	    break;
 
                     	default :
-                    	    break loop29;
+                    	    break loop35;
                         }
                     } while (true);
 
@@ -4389,7 +4154,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleParameterStructMember"
-    // InternalComponentInterface.g:1848:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
+    // InternalComponentInterface.g:1771:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
     public final EObject entryRuleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -4397,8 +4162,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1848:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
-            // InternalComponentInterface.g:1849:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
+            // InternalComponentInterface.g:1771:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
+            // InternalComponentInterface.g:1772:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -4425,7 +4190,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleParameterStructMember"
-    // InternalComponentInterface.g:1855:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) ;
+    // InternalComponentInterface.g:1778:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) ;
     public final EObject ruleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -4441,17 +4206,17 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1861:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) )
-            // InternalComponentInterface.g:1862:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
+            // InternalComponentInterface.g:1784:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' ) )
+            // InternalComponentInterface.g:1785:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
             {
-            // InternalComponentInterface.g:1862:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
-            // InternalComponentInterface.g:1863:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}'
+            // InternalComponentInterface.g:1785:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}' )
+            // InternalComponentInterface.g:1786:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' otherlv_2= 'value' ( (lv_value_3_0= ruleParameterValue ) ) otherlv_4= '}'
             {
-            // InternalComponentInterface.g:1863:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalComponentInterface.g:1864:4: (lv_name_0_0= ruleEString )
+            // InternalComponentInterface.g:1786:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalComponentInterface.g:1787:4: (lv_name_0_0= ruleEString )
             {
-            // InternalComponentInterface.g:1864:4: (lv_name_0_0= ruleEString )
-            // InternalComponentInterface.g:1865:5: lv_name_0_0= ruleEString
+            // InternalComponentInterface.g:1787:4: (lv_name_0_0= ruleEString )
+            // InternalComponentInterface.g:1788:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0());
@@ -4478,24 +4243,24 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_31); 
+            otherlv_1=(Token)match(input,23,FOLLOW_37); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStructMemberAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,49,FOLLOW_30); 
+            otherlv_2=(Token)match(input,49,FOLLOW_36); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructMemberAccess().getValueKeyword_2());
             		
-            // InternalComponentInterface.g:1890:3: ( (lv_value_3_0= ruleParameterValue ) )
-            // InternalComponentInterface.g:1891:4: (lv_value_3_0= ruleParameterValue )
+            // InternalComponentInterface.g:1813:3: ( (lv_value_3_0= ruleParameterValue ) )
+            // InternalComponentInterface.g:1814:4: (lv_value_3_0= ruleParameterValue )
             {
-            // InternalComponentInterface.g:1891:4: (lv_value_3_0= ruleParameterValue )
-            // InternalComponentInterface.g:1892:5: lv_value_3_0= ruleParameterValue
+            // InternalComponentInterface.g:1814:4: (lv_value_3_0= ruleParameterValue )
+            // InternalComponentInterface.g:1815:5: lv_value_3_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             lv_value_3_0=ruleParameterValue();
 
             state._fsp--;
@@ -4544,7 +4309,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleBase64Binary"
-    // InternalComponentInterface.g:1917:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
+    // InternalComponentInterface.g:1840:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
     public final String entryRuleBase64Binary() throws RecognitionException {
         String current = null;
 
@@ -4552,8 +4317,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1917:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
-            // InternalComponentInterface.g:1918:2: iv_ruleBase64Binary= ruleBase64Binary EOF
+            // InternalComponentInterface.g:1840:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
+            // InternalComponentInterface.g:1841:2: iv_ruleBase64Binary= ruleBase64Binary EOF
             {
              newCompositeNode(grammarAccess.getBase64BinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -4580,7 +4345,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleBase64Binary"
-    // InternalComponentInterface.g:1924:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
+    // InternalComponentInterface.g:1847:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
     public final AntlrDatatypeRuleToken ruleBase64Binary() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4590,8 +4355,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1930:2: (this_BINARY_0= RULE_BINARY )
-            // InternalComponentInterface.g:1931:2: this_BINARY_0= RULE_BINARY
+            // InternalComponentInterface.g:1853:2: (this_BINARY_0= RULE_BINARY )
+            // InternalComponentInterface.g:1854:2: this_BINARY_0= RULE_BINARY
             {
             this_BINARY_0=(Token)match(input,RULE_BINARY,FOLLOW_2); 
 
@@ -4620,7 +4385,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleboolean0"
-    // InternalComponentInterface.g:1941:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
+    // InternalComponentInterface.g:1864:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
     public final String entryRuleboolean0() throws RecognitionException {
         String current = null;
 
@@ -4628,8 +4393,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1941:48: (iv_ruleboolean0= ruleboolean0 EOF )
-            // InternalComponentInterface.g:1942:2: iv_ruleboolean0= ruleboolean0 EOF
+            // InternalComponentInterface.g:1864:48: (iv_ruleboolean0= ruleboolean0 EOF )
+            // InternalComponentInterface.g:1865:2: iv_ruleboolean0= ruleboolean0 EOF
             {
              newCompositeNode(grammarAccess.getBoolean0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4656,7 +4421,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleboolean0"
-    // InternalComponentInterface.g:1948:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
+    // InternalComponentInterface.g:1871:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
     public final AntlrDatatypeRuleToken ruleboolean0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4666,8 +4431,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1954:2: (this_BOOLEAN_0= RULE_BOOLEAN )
-            // InternalComponentInterface.g:1955:2: this_BOOLEAN_0= RULE_BOOLEAN
+            // InternalComponentInterface.g:1877:2: (this_BOOLEAN_0= RULE_BOOLEAN )
+            // InternalComponentInterface.g:1878:2: this_BOOLEAN_0= RULE_BOOLEAN
             {
             this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); 
 
@@ -4696,7 +4461,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalComponentInterface.g:1965:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalComponentInterface.g:1888:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -4704,8 +4469,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1965:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalComponentInterface.g:1966:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalComponentInterface.g:1888:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalComponentInterface.g:1889:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4732,7 +4497,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalComponentInterface.g:1972:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalComponentInterface.g:1895:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4742,8 +4507,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:1978:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalComponentInterface.g:1979:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalComponentInterface.g:1901:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalComponentInterface.g:1902:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
 
@@ -4772,7 +4537,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalComponentInterface.g:1989:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalComponentInterface.g:1912:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -4780,8 +4545,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentInterface.g:1989:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalComponentInterface.g:1990:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalComponentInterface.g:1912:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalComponentInterface.g:1913:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4808,7 +4573,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalComponentInterface.g:1996:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalComponentInterface.g:1919:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4818,8 +4583,8 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentInterface.g:2002:2: (this_DECINT_0= RULE_DECINT )
-            // InternalComponentInterface.g:2003:2: this_DECINT_0= RULE_DECINT
+            // InternalComponentInterface.g:1925:2: (this_DECINT_0= RULE_DECINT )
+            // InternalComponentInterface.g:1926:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
 
@@ -4849,7 +4614,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
     // Delegated rules
 
 
-    protected DFA27 dfa27 = new DFA27(this);
+    protected DFA33 dfa33 = new DFA33(this);
     static final String dfa_1s = "\13\uffff";
     static final String dfa_2s = "\1\6\12\uffff";
     static final String dfa_3s = "\1\4\4\uffff\1\4\3\uffff\2\27";
@@ -4878,11 +4643,11 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA27 extends DFA {
+    class DFA33 extends DFA {
 
-        public DFA27(BaseRecognizer recognizer) {
+        public DFA33(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 27;
+            this.decisionNumber = 33;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -4892,7 +4657,7 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1435:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )";
+            return "1358:2: (this_ParameterDouble_0= ruleParameterDouble | this_ParameterBoolean_1= ruleParameterBoolean | this_ParameterInteger_2= ruleParameterInteger | this_ParameterBase64_3= ruleParameterBase64 | this_ParameterList_4= ruleParameterList | this_ParameterStruct_5= ruleParameterStruct | this_ParameterString_6= ruleParameterString )";
         }
     }
  
@@ -4907,26 +4672,32 @@ public class InternalComponentInterfaceParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000FE8000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800030L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000006000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000012000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000042000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000102000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0001002000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0002000020000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x00000000008003F0L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000FE0000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000FA0000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000F20000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000E20000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000C20000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000820000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000800030L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000006000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000012000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000042000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000102000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0001002000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0002000020000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00000000008003F0L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0002000000000000L});
 
 }

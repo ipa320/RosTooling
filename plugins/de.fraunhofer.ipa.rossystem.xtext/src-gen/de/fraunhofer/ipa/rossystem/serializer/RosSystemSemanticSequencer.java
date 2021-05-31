@@ -224,15 +224,13 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         name=EString 
 	 *         NameSpace=EString? 
 	 *         FromRosNode=[Node|EString]? 
-	 *         (
-	 *             (rospublisher+=RosPublisher rospublisher+=RosPublisher*) | 
-	 *             (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*) | 
-	 *             (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*) | 
-	 *             (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*) | 
-	 *             (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*) | 
-	 *             (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*) | 
-	 *             (rosparameter+=RosParameter rosparameter+=RosParameter*)
-	 *         )*
+	 *         (rospublisher+=RosPublisher rospublisher+=RosPublisher*)? 
+	 *         (rossubscriber+=RosSubscriber rossubscriber+=RosSubscriber*)? 
+	 *         (rosserviceserver+=RosServiceServer rosserviceserver+=RosServiceServer*)? 
+	 *         (rosserviceclient+=RosServiceClient rosserviceclient+=RosServiceClient*)? 
+	 *         (rosactionserver+=RosActionServer rosactionserver+=RosActionServer*)? 
+	 *         (rosactionclient+=RosActionClient rosactionclient+=RosActionClient*)? 
+	 *         (rosparameter+=RosParameter rosparameter+=RosParameter*)?
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
@@ -703,13 +701,11 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         Name=EString 
-	 *         (
-	 *             (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*) | 
-	 *             (TopicConnections+=TopicConnection TopicConnections+=TopicConnection*) | 
-	 *             (ServiceConnections+=ServiceConnection ServiceConnections+=ServiceConnection*) | 
-	 *             (ActionConnections+=ActionConnection ActionConnections+=ActionConnection*) | 
-	 *             (Parameter+=Parameter Parameter+=Parameter*)
-	 *         )*
+	 *         (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*)? 
+	 *         (TopicConnections+=TopicConnection TopicConnections+=TopicConnection*)? 
+	 *         (ServiceConnections+=ServiceConnection ServiceConnections+=ServiceConnection*)? 
+	 *         (ActionConnections+=ActionConnection ActionConnections+=ActionConnection*)? 
+	 *         (Parameter+=Parameter Parameter+=Parameter*)?
 	 *     )
 	 */
 	protected void sequence_RosSystem(ISerializationContext context, RosSystem semanticObject) {
