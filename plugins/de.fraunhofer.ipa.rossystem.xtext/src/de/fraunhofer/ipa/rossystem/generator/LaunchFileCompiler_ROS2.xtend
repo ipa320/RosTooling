@@ -15,6 +15,7 @@ import ros.impl.ParameterBooleanImpl
 import ros.impl.ParameterSequenceImpl
 import ros.impl.ParameterStructImpl
 import ros.impl.ParameterStructMemberImpl
+import ros.impl.ParameterStructTypeImpl
 
 class LaunchFileCompiler_ROS2 {
 	@Inject extension GeneratorHelpers
@@ -82,13 +83,31 @@ def generate_launch_description():
 		var param_str = "";
 		for (rosParameter : rosParameters) {
 			val param_count=param_count--;
-			param_str += "{ \"" + rosParameter.parameter.name + "\" : " + get_param_value(rosParameter.value);
-			param_str += (param_count > 1) ? "},\n" : "}\n";
+			if (rosParameter.parameter.type instanceof ParameterStructTypeImpl) {
+				param_str += compile_struct_str(rosParameter.value, rosParameter.parameter.name);
+			} else {
+				param_str += "{ \"" + rosParameter.parameter.name + "\" : " + get_param_value(rosParameter.value, rosParameter.parameter.name);
+			}
+			param_str += (param_count > 1) ? " },\n" : " }\n";
 		}
 		return param_str;
 	}
 
-	def String get_param_value(ParameterValue value) {
+	def String compile_struct_str(ParameterValue value, String name) {
+		var param_str = "";
+		var elem_count = (value as ParameterSequenceImpl).eContents.length;
+
+		for (elem : ((value as ParameterSequenceImpl).eContents)) {
+			var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
+			param_str += "{ \"" + name + "/" + member.getName() + "\" : " + get_param_value(member.getValue(), member.getName());
+			elem_count--;
+			param_str += (elem_count > 0) ? " },\n" : "";
+		}
+
+		return param_str;
+	}
+
+	def String get_param_value(ParameterValue value, String name) {
 		var param_val = "";
 		if (value instanceof ParameterStringImpl) {
 			param_val = "\"" + (value as ParameterStringImpl).getValue() + "\"";
@@ -102,21 +121,11 @@ def generate_launch_description():
 			param_val += "[";
 			var elem_count = (value as ParameterSequenceImpl).eContents.length;
 			for (elem : (value as ParameterSequenceImpl).eContents) {
-				param_val += get_param_value(elem as ParameterValue);
+				param_val += get_param_value(elem as ParameterValue, name);
 				elem_count--;
 				param_val += (elem_count > 0) ? ", " : "";
 			}
 			param_val += "]";
-		} else if (value instanceof ParameterStructImpl) {
-			var elem_count = (value as ParameterStructImpl).eContents.length;
-			param_val = "\n\t{ ";
-			for (elem : ((value as ParameterStructImpl).eContents)) {
-				var member = (elem as ParameterStructMemberImpl);
-				param_val += "\"" + member.getName() + "\" : " + get_param_value(member.getValue());
-				elem_count--;
-				param_val += (elem_count > 0) ? ",\n" : "";
-			}
-			param_val += " }";
 		}
 		return param_val;
 	 }
