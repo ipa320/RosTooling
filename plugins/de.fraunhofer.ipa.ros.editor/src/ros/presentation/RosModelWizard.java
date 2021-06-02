@@ -3,8 +3,7 @@
 package ros.presentation;
 
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,64 +12,57 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.IProgressMonitor;
-
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.dialogs.MessageDialog;
-
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
-
 import org.eclipse.swt.SWT;
-
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.ModifyEvent;
-
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.ISetSelectionTarget;
-
-import ros.RosFactory;
-import ros.RosPackage;
-import ros.provider.RosEditPlugin;
-
-
-import org.eclipse.core.runtime.Path;
-
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.ISetSelectionTarget;
+
+import ros.Artifact;
+import ros.CatkinPackage;
+import ros.PackageSet;
+import ros.RosFactory;
+import ros.RosPackage;
+import ros.impl.ArtifactImpl;
+import ros.impl.CatkinPackageImpl;
+import ros.impl.PackageSetImpl;
+import ros.provider.RosEditPlugin;
 
 
 /**
@@ -224,32 +216,32 @@ public class RosModelWizard extends Wizard implements INewWizard {
 						try {
 							// Create a resource set
 							//
-							//ResourceSet resourceSet = new ResourceSetImpl();
+							ResourceSet resourceSet = new ResourceSetImpl();
+							Resource resource = resourceSet.createResource(URI.createPlatformResourceURI(modelFile.getFullPath().toOSString(),true));
+							EObject PackageSetRootObject = RosFactory.eINSTANCE.createPackageSet();
 
-							byte[] bytes = ("PackageSet {\n" +"	CatkinPackage " +project.getName()+ " {\n" +"		Artifact  "+project.getName()+" {}}}").getBytes();
+							if (PackageSetRootObject != null) {
+								resource.getContents().add(PackageSetRootObject);
+							}
+							PackageSet packageSet_model = (PackageSetImpl) resource.getContents().get(0);
+
+							CatkinPackage pkg = new CatkinPackageImpl();
+							Artifact artifact = new ArtifactImpl();
+							artifact.setName(project.getName());
+							pkg.setName(project.getName());
+							pkg.getArtifact().add(artifact);
+							packageSet_model.getPackage().add(pkg);
+							try {
+								resource.save(null);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+							/**byte[] bytes = ("PackageSet {\n" +"	CatkinPackage " +project.getName()+ " {\n" +"		Artifact  "+project.getName()+" {}}}").getBytes();
 							InputStream source = new ByteArrayInputStream(bytes);
-							modelFile.create(source, IResource.NONE, null);
-							
-							// Get the URI of the model file.
-							//
-							//URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							modelFile.create(source, IResource.NONE, null);*/
 
-							// Create a resource for this file.
-							//
-							//Resource resource = resourceSet.createResource(fileURI);
-
-							// Add the initial model object to the contents.
-							//
-							//EObject rootObject = createInitialModel();
-							//if (rootObject != null) {
-								//resource.getContents().add(rootObject);
-							//}
-
-							// Save the contents of the resource to the file system.
-							//
-							//Map<Object, Object> options = new HashMap<Object, Object>();
-							//options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							//resource.save(options);
 						}
 						catch (Exception exception) {
 							RosEditorPlugin.INSTANCE.log(exception);
