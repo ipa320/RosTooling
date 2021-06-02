@@ -72,13 +72,19 @@ class RosSystemGenerator extends AbstractGenerator {
 
 		//ROS2 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch",system.compile_toROS2launch.toString().replace("\t","  "))
+				fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",system.compile_toROS2launch.toString().replace("\t","  "))
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",system.compile_package_xml_format3)
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
+				}
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
+				}
+		for (system : resource.allContents.toIterable.filter(RosSystem)){
+				fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
 				}
 //		for (system : resource.allContents.toIterable.filter(RosSystem)){
 //				fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",system.compile_CMakeLists_ROS2)
