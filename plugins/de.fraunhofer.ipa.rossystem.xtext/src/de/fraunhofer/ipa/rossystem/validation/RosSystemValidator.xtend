@@ -117,11 +117,12 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 			//expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
 			if (given_parameter.class.toString.contains("ParameterSequence")){
 				value_sub_type = given_parameter.eContents.toList
-					for (i=0;i<value_sub_type.length;i++){
-						if(!check_matched_type(expected_sub_types.get(i).eClass.name,value_sub_type.get(i).eClass.name)){
-							error( "Element "+i+" , expected type: "+expected_sub_types.get(i).eClass.name+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
-						}
+				expected_type=expected_sub_types.get(0).eClass.name
+				for (i=0;i<value_sub_type.length;i++){
+					if(!check_matched_type(expected_type,value_sub_type.get(i).eClass.name)){
+						error( "Element "+i+" , expected type: "+expected_type+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
 					}
+				}
 				} 
 			else {
 				error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
