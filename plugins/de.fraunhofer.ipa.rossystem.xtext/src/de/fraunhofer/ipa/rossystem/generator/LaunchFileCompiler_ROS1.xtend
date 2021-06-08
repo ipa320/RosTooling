@@ -8,6 +8,16 @@ import org.eclipse.emf.ecore.EObject
 import ros.ParameterValue
 import rossystem.RosSystem
 import ros.impl.ParameterStructMemberImpl
+import componentInterface.RosPublisher
+import org.eclipse.emf.common.util.EList
+import rossystem.TopicConnection
+import componentInterface.RosSubscriber
+import componentInterface.RosServiceServer
+import rossystem.ServiceConnection
+import componentInterface.RosServiceClient
+import componentInterface.RosActionClient
+import rossystem.ActionConnection
+import componentInterface.RosActionServer
 
 class LaunchFileCompiler_ROS1 {
 	@Inject extension GeneratorHelpers
@@ -22,7 +32,7 @@ class LaunchFileCompiler_ROS1 {
 	
 	int i=0;
 	int k=0;
-
+	
 	def compile_toROS1launch(RosSystem system) '''«init_comp()»
 <?xml version="1.0"?>
 <launch>
@@ -47,112 +57,58 @@ class LaunchFileCompiler_ROS1 {
   		<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
   	«ENDIF»
   «ENDFOR»
-	«FOR component:system.rosComponent»
-		«FOR rosPublisher:component.rospublisher»
-				«IF component.hasNS»«IF !rosPublisher.name.equals(compile_topic_name(rosPublisher.publisher,component.get_ns()))»
-				<remap from=«compile_topic_name(rosPublisher.publisher,component.get_ns())» to=«rosPublisher.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-		«FOR rosSubscriber:component.rossubscriber»
-				«IF component.hasNS»«IF !rosSubscriber.name.equals(compile_topic_name(rosSubscriber.subscriber,component.get_ns()))»
-				<remap from=«compile_topic_name(rosSubscriber.subscriber,component.get_ns())» to=«rosSubscriber.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-		«FOR rosServiceServer:component.rosserviceserver»
-				«IF component.hasNS»«IF !rosServiceServer.name.equals(compile_service_name(rosServiceServer.srvserver,component.get_ns()))»
-				<remap from=«compile_service_name(rosServiceServer.srvserver,component.get_ns())» to=«rosServiceServer.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-		«FOR rosServiceClient:component.rosserviceclient»
-				«IF component.hasNS»«IF !rosServiceClient.name.equals(compile_service_name(rosServiceClient.srvclient,component.get_ns()))»
-				<remap from=«compile_service_name(rosServiceClient.srvclient,component.get_ns())» to=«rosServiceClient.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-		«FOR rosActionServer:component.rosactionserver»
-				«IF component.hasNS»«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.get_ns()))»
-				<remap from=«compile_action_name(rosActionServer.actserver,component.get_ns())» to=«rosActionServer.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-		«FOR rosActionClient:component.rosactionclient»
-				«IF component.hasNS»«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.get_ns()))»
-				<remap from=«compile_action_name(rosActionClient.actclient,component.get_ns())» to=«rosActionClient.name» />
-				«ENDIF»«ENDIF»
-		«ENDFOR»
-	«ENDFOR»
+«««	«FOR component:system.rosComponent»
+ «««		«FOR rosPublisher:component.rospublisher»
+ «««				«IF component.hasNS»«IF !rosPublisher.name.equals(compile_topic_name(rosPublisher.publisher,component.get_ns()))»
+ «««				<remap from=«compile_topic_name(rosPublisher.publisher,component.get_ns())» to=«rosPublisher.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««		«FOR rosSubscriber:component.rossubscriber»
+ «««				«IF component.hasNS»«IF !rosSubscriber.name.equals(compile_topic_name(rosSubscriber.subscriber,component.get_ns()))»
+ «««				<remap from=«compile_topic_name(rosSubscriber.subscriber,component.get_ns())» to=«rosSubscriber.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««		«FOR rosServiceServer:component.rosserviceserver»
+ «««				«IF component.hasNS»«IF !rosServiceServer.name.equals(compile_service_name(rosServiceServer.srvserver,component.get_ns()))»
+ «««				<remap from=«compile_service_name(rosServiceServer.srvserver,component.get_ns())» to=«rosServiceServer.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««		«FOR rosServiceClient:component.rosserviceclient»
+ «««				«IF component.hasNS»«IF !rosServiceClient.name.equals(compile_service_name(rosServiceClient.srvclient,component.get_ns()))»
+ «««				<remap from=«compile_service_name(rosServiceClient.srvclient,component.get_ns())» to=«rosServiceClient.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««		«FOR rosActionServer:component.rosactionserver»
+ «««				«IF component.hasNS»«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.get_ns()))»
+ «««				<remap from=«compile_action_name(rosActionServer.actserver,component.get_ns())» to=«rosActionServer.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««		«FOR rosActionClient:component.rosactionclient»
+ «««				«IF component.hasNS»«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.get_ns()))»
+ «««				<remap from=«compile_action_name(rosActionClient.actclient,component.get_ns())» to=«rosActionClient.name» />
+ «««				«ENDIF»«ENDIF»
+ «««		«ENDFOR»
+ «««	«ENDFOR» 
 
 	«FOR component:system.rosComponent»
 	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
-			«IF !rosPublisher.name.equals(compile_topic_name(rosPublisher.publisher,component.check_ns))»
-				<remap from="«rosPublisher.publisher.name»" to="«rosPublisher.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosPublisher)»
-					«IF !topicConnection.topicName.equals(rosPublisher.name)»
-					<remap from="«rosPublisher.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-			«ENDIF»
-		«ENDFOR»
+			«remapping_function_pub(rosPublisher, component.hasNS, inTopicFromConnection(rosPublisher, system.topicConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosSubscriber:component.rossubscriber»
-			«IF !rosSubscriber.name.equals(compile_topic_name(rosSubscriber.subscriber,component.check_ns))»
-				<remap from="«rosSubscriber.subscriber.name»" to="«rosSubscriber.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosSubscriber)»
-					«IF !topicConnection.topicName.equals(rosSubscriber.name)»
-					<remap from="«rosSubscriber.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-				«ENDIF»
-			«ENDFOR»
+			«remapping_function_sub(rosSubscriber, component.hasNS, inTopicToConnection(rosSubscriber, system.topicConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosServiceServer:component.rosserviceserver»
-			«IF !rosServiceServer.name.equals(compile_service_name(rosServiceServer.srvserver,component.check_ns))»
-				<remap from="«rosServiceServer.srvserver.name»" to="«rosServiceServer.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosServiceServer)»
-					«IF !topicConnection.topicName.equals(rosServiceServer.name)»
-					<remap from="«rosServiceServer.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-				«ENDIF»
-			«ENDFOR»
+			«remapping_function_srv(rosServiceServer, component.hasNS, inServiceFromConnection(rosServiceServer, system.serviceConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosServiceClient:component.rosserviceclient»
-			«IF !rosServiceClient.name.equals(compile_service_name(rosServiceClient.srvclient,component.check_ns))»
-				<remap from="«rosServiceClient.srvclient.name»" to="«rosServiceClient.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosServiceClient)»
-					«IF !topicConnection.topicName.equals(rosServiceClient.name)»
-					<remap from="«rosServiceClient.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-				«ENDIF»
-			«ENDFOR»
+			«remapping_function_client(rosServiceClient, component.hasNS, inServiceToConnection(rosServiceClient, system.serviceConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosActionServer:component.rosactionserver»
-			«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.check_ns))»
-				<remap from="«rosActionServer.actserver.name»" to="«rosActionServer.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosActionServer)»
-					«IF !topicConnection.topicName.equals(rosActionServer.name)»
-					<remap from="«rosActionServer.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-				«ENDIF»
-			«ENDFOR»
+			«remapping_function_acts(rosActionServer, component.hasNS, inActionFromConnection(rosActionServer, system.actionConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosActionClient:component.rosactionclient»
-			«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.check_ns))»
-				<remap from="«rosActionClient.actclient.name»" to="«rosActionClient.name»" />
-			«ENDIF»
-			«FOR topicConnection:system.topicConnections»
-				«IF topicConnection.from.contains(rosActionClient)»
-					«IF !topicConnection.topicName.equals(rosActionClient.name)»
-					<remap from="«rosActionClient.name»" to="«topicConnection.topicName»" />
-					«ENDIF»
-				«ENDIF»
-			«ENDFOR»
+			«remapping_function_actc(rosActionClient, component.hasNS, inActionToConnection(rosActionClient, system.actionConnections),component.check_ns)»
 		«ENDFOR»
 		«FOR rosParameter:component.rosparameter»
 			«IF rosParameter.parameter.type.toString.contains("ParameterStructType")»«str_output=""»
@@ -171,6 +127,133 @@ class LaunchFileCompiler_ROS1 {
 
 </launch>
 	'''
+	
+	// TOPICS REMAP
+	def String remapping_function_pub(RosPublisher rosPublisher, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (!(prefix(NS)+rosPublisher.publisher.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosPublisher.publisher.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosPublisher.publisher.name+"' to='"+inConnection+"' />"
+				}
+		}}else if (!((prefix(NS)+rosPublisher.name).equals(compile_topic_name(rosPublisher.publisher, NS)))){
+				return "<remap from='"+rosPublisher.publisher.name+"' to='"+rosPublisher.name+"' />";
+		}
+	}
+	def String remapping_function_sub(RosSubscriber rosSubscriber, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (! (prefix(NS)+rosSubscriber.subscriber.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosSubscriber.subscriber.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosSubscriber.subscriber.name+"' to='"+inConnection+"' />"
+				}
+		}} else if (!((prefix(NS)+rosSubscriber.name).equals(compile_topic_name(rosSubscriber.subscriber, NS)))){
+				return "<remap from='"+rosSubscriber.subscriber.name+"' to='"+rosSubscriber.name+"' />";
+		}
+	}
+	def String inTopicFromConnection(RosPublisher publisher, EList<TopicConnection> list) {
+		for (topicConnection:list){
+			if (topicConnection.from.contains(publisher)){
+				return topicConnection.topicName
+			} 
+		}
+		return null ;
+	}
+	def String inTopicToConnection(RosSubscriber subscriber, EList<TopicConnection> list) {
+		for (topicConnection:list){
+			if (topicConnection.to.contains(subscriber)){
+				return topicConnection.topicName
+			} 
+		}
+		return null ;
+	}
+	
+	// SERVICES REMAP
+	def String remapping_function_srv(RosServiceServer rosServiceServer, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (! (prefix(NS)+rosServiceServer.srvserver.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosServiceServer.srvserver.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosServiceServer.srvserver.name+"' to='"+inConnection+"' />"
+				}
+		}} else if (!((prefix(NS)+rosServiceServer.name).equals(compile_service_name(rosServiceServer.srvserver, NS)))){
+				return "<remap from='"+rosServiceServer.srvserver.name+"' to='"+rosServiceServer.name+"' />";
+		}
+	}
+	def String remapping_function_client(RosServiceClient rosServiceClient, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (! (prefix(NS)+rosServiceClient.srvclient.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosServiceClient.srvclient.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosServiceClient.srvclient.name+"' to='"+inConnection+"' />"
+				}
+		}} else if (!((prefix(NS)+rosServiceClient.name).equals(compile_service_name(rosServiceClient.srvclient, NS)))){
+				return "<remap from='"+rosServiceClient.srvclient.name+"' to='"+rosServiceClient.name+"' />";
+		}
+	}
+	def String inServiceFromConnection(RosServiceServer service, EList<ServiceConnection> list) {
+		for (serviceConnection:list){
+			if (serviceConnection.from.contains(service)){
+				return serviceConnection.serviceName
+			}
+		}
+		return null ;
+	}
+	def String inServiceToConnection(RosServiceClient client, EList<ServiceConnection> list) {
+		for (serviceConnection:list){
+			if (serviceConnection.to.equals(client)){
+				return serviceConnection.serviceName
+			}
+		}
+		return null ;
+	}
+	
+	// ACTIONS REMAP
+	def String remapping_function_acts(RosActionServer rosActionService, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (! (prefix(NS)+rosActionService.actserver.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosActionService.actserver.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosActionService.actserver.name+"' to='"+inConnection+"' />"
+				}
+		}} else if (!((prefix(NS)+rosActionService.name).equals(compile_action_name(rosActionService.actserver, NS)))){
+				return "<remap from='"+rosActionService.actserver.name+"' to='"+rosActionService.name+"' />";
+		}
+	}
+	def String remapping_function_actc(RosActionClient rosActionClient, boolean HasNS, String inConnection, String NS) {
+		if(inConnection!==null){
+			if (! (prefix(NS)+rosActionClient.actclient.name).equals(inConnection)){
+				if(HasNS){
+					return "<remap from='"+rosActionClient.actclient.name+"' to='/"+inConnection+"' />"
+				} else {
+					return "<remap from='"+rosActionClient.actclient.name+"' to='"+inConnection+"' />"
+				}
+		}} else if (!((prefix(NS)+rosActionClient.name).equals(compile_action_name(rosActionClient.actclient, NS)))){
+				return "<remap from='"+rosActionClient.actclient.name+"' to='"+rosActionClient.name+"' />";
+		}
+	}
+	def String inActionFromConnection(RosActionServer service, EList<ActionConnection> list) {
+		for (actionConnection:list){
+			if (actionConnection.from.equals(service)){
+				return actionConnection.actionName
+			}
+		}
+		return null ;
+	}
+	def String inActionToConnection(RosActionClient client, EList<ActionConnection> list) {
+		for (actionConnection:list){
+			if (actionConnection.to.equals(client)){
+				return actionConnection.actionName
+			}
+		}
+		return null ;
+	}
+	//
 
 	def check_ns(ComponentInterface component){
 		if (component.hasNS){
