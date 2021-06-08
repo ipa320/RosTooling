@@ -1,6 +1,5 @@
 package ros.presentation;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,11 +19,13 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -51,7 +52,13 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 
+import ros.Artifact;
+import ros.CatkinPackage;
+import ros.PackageSet;
 import ros.RosFactory;
+import ros.impl.ArtifactImpl;
+import ros.impl.CatkinPackageImpl;
+import ros.impl.PackageSetImpl;
 
 /**
  * This is a sample new wizard. Its role is to create a new file 
@@ -149,10 +156,34 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 		IFolder dir2 = project.getFolder("components");
 		dir2.create(true, true, null);
 		IFile file = project.getFile("rosnodes/"+ProjectName+".ros");
+		System.out.println(file.getFullPath());
 		project.open(IResource.BACKGROUND_REFRESH, monitor);
-		byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +ProjectName+ "{ artifact {\n" +"		Artifact  "+ProjectName+" {}}}}}").getBytes();
-		InputStream source = new ByteArrayInputStream(bytes);
-		file.create(source, IResource.NONE, null);
+		
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource resource = resourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toOSString(),true));
+		EObject PackageSetRootObject = RosFactory.eINSTANCE.createPackageSet();
+
+		if (PackageSetRootObject != null) {
+			resource.getContents().add(PackageSetRootObject);
+		}
+		PackageSet packageSet_model = (PackageSetImpl) resource.getContents().get(0);
+
+		CatkinPackage pkg = new CatkinPackageImpl();
+		Artifact artifact = new ArtifactImpl();
+		artifact.setName(project.getName());
+		pkg.setName(project.getName());
+		pkg.getArtifact().add(artifact);
+		packageSet_model.getPackage().add(pkg);
+		try {
+			resource.save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//byte[] bytes = ("PackageSet { package {\n" +"	CatkinPackage " +ProjectName+ "{ artifact {\n" +"		Artifact  "+ProjectName+" {}}}}}").getBytes();
+		//InputStream source = new ByteArrayInputStream(bytes);
+		//file.create(source, IResource.NONE, null);
 		
 		//Add viewpoints to the aird file
 		IFile airdFile = project.getFile("representations.aird");

@@ -46,9 +46,9 @@ public class PackageSetImpl extends MinimalEObjectImpl.Container implements Pack
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected PackageSetImpl() {
+	public PackageSetImpl() {
 		super();
 	}
 
