@@ -41,12 +41,12 @@ class LaunchFileCompiler_ROS1 {
   	<rosparam>
 		  «IF ROSParameter.value!==null»
 			  «FOR ParamMember:ROSParameter.value.eContents»
-			«getParamName(ParamMember.eContents.get(0))»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+			«getParamName(ParamMember.eContents.get(0))»: «compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
 			  «ENDFOR»
 		  «ELSE»
 			  «FOR ParamMember:ROSParameter.eContents.get(0).eContents»
 				  «IF !(ParamMember.eContents.get(0).eContents.empty)»
-				«getParamName(ParamMember)»:«compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
+				«getParamName(ParamMember)»: «compile_param_value(convertParamValue(ParamMember.eContents.get(0).eContents.get(0)))»
 				  «ENDIF»
 			  «ENDFOR»
 		  «ENDIF»
