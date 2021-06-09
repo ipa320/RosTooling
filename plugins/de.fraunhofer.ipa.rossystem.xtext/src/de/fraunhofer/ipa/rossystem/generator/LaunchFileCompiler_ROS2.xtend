@@ -39,8 +39,7 @@ def generate_launch_description():
 		namespace="«component.get_ns»"«ENDIF»«IF !component.rosparameter.empty»,
 		parameters=[
 			«component.rosparameter.compile_parameters_str»
-		]«ENDIF»
-		«component.compile_remappings_str»
+		]«ENDIF»«component.compile_remappings_str»
 	)
 	«ENDFOR»
 
@@ -78,63 +77,41 @@ def generate_launch_description():
 		return component.nameSpace.replaceFirst("/","");
 	}
 
-	def String is_comma(Integer count) {
-		return (count > 0) ? ",\n" : "\n"
-	}
-
 	def String compile_remappings_str(ComponentInterface component) {
 		var remap_str = "";
-		var count = component.rospublisher.length
-					+ component.rossubscriber.length
-					+ component.rosserviceserver.length
-					+ component.rosserviceclient.length
-					+ component.rosactionserver.length
-					+ component.rosactionclient.length;
 		val NS = component.check_ns();
 		for (rosPublisher : component.rospublisher) {
 			if (!((prefix(NS)+rosPublisher.name).equals(compile_topic_name(rosPublisher.publisher, NS)))) {
-				remap_str += "\t(\"" + rosPublisher.publisher.name + "\", \"" + rosPublisher.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosPublisher.publisher.name + "\", \"" + rosPublisher.name + "\"),\n";
 			}
 		}
 		for (rosSubscriber : component.rossubscriber) {
 			if (!((prefix(NS)+rosSubscriber.name).equals(compile_topic_name(rosSubscriber.subscriber, NS)))) {
-				remap_str += "\t(\"" + rosSubscriber.subscriber.name + "\", \"" + rosSubscriber.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosSubscriber.subscriber.name + "\", \"" + rosSubscriber.name + "\"),\n";
 			}
 		}
 		for (rosServiceServer : component.rosserviceserver) {
 			if (!((prefix(NS)+rosServiceServer.name).equals(compile_service_name(rosServiceServer.srvserver, NS)))) {
-				remap_str += "\t(\"" + rosServiceServer.srvserver.name + "\", \"" + rosServiceServer.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosServiceServer.srvserver.name + "\", \"" + rosServiceServer.name + "\"),\n";
 			}
 		}
 		for (rosServiceClient : component.rosserviceclient) {
 			if (!((prefix(NS)+rosServiceClient.name).equals(compile_service_name(rosServiceClient.srvclient, NS)))) {
-				remap_str += "\t(\"" + rosServiceClient.srvclient.name + "\", \"" + rosServiceClient.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosServiceClient.srvclient.name + "\", \"" + rosServiceClient.name + "\"),\n";
 			}
 		}
 		for (rosActionServer : component.rosactionserver) {
 			if (!((prefix(NS)+rosActionServer.name).equals(compile_action_name(rosActionServer.actserver, NS)))) {
-				remap_str += "\t(\"" + rosActionServer.actserver.name + "\", \"" + rosActionServer.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosActionServer.actserver.name + "\", \"" + rosActionServer.name + "\"),\n";
 			}
 		}
 		for (rosActionClient : component.rosactionclient) {
 			if (!((prefix(NS)+rosActionClient.name).equals(compile_action_name(rosActionClient.actclient, NS)))) {
-				remap_str += "\t(\"" + rosActionClient.actclient.name + "\", \"" + rosActionClient.name + "\")";
-				count--;
-				remap_str += is_comma(count);
+				remap_str += "\t(\"" + rosActionClient.actclient.name + "\", \"" + rosActionClient.name + "\"),\n";
 			}
 		}
 		if (!remap_str.empty) {
-			remap_str = ",\nremappings=[\n" + remap_str + "]\n";
+			remap_str = ",\nremappings=[\n" + remap_str.substring(0,remap_str.length-2) + "]\n";
 		}
 		return remap_str;
 	}
