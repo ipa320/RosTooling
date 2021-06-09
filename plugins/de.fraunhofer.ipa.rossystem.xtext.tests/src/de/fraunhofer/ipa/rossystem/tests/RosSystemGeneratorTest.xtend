@@ -102,7 +102,15 @@ class RosSystemGeneratorTest {
 		
 		// Test the generated launch file
 		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/launch/', 'test_system.launch'))).trim,
-        fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/launch/test_system.launch').toString.trim)
+		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/launch/test_system.launch').toString.trim)
+        
+		// Test the generated package.xml file
+		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/', 'package.xml'))).trim,
+		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/package.xml').toString.trim)
+        
+		// Test the generated CMakeLists.txt file
+		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/', 'CMakeLists.txt'))).trim,
+		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/CMakeLists.txt').toString.trim)
 
 		// Test the generated component interface					
 		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system.componentinterface'))).trim,

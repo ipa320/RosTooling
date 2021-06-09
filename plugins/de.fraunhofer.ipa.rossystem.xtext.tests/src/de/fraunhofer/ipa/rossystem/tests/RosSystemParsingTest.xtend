@@ -42,7 +42,7 @@ class RosSystemParsingTest {
        	Assert.assertEquals("test_node", ComponentName)
         
         val TopicConnectionName = model.topicConnections.get(0).topicName
-        Assert.assertEquals("scan", TopicConnectionName)
+        Assert.assertEquals("scan_rename", TopicConnectionName)
         
         val FromTopic = model.topicConnections.get(0).from.get(0).name
         val Publisher = model.rosComponent.get(0).rospublisher.get(0).name
