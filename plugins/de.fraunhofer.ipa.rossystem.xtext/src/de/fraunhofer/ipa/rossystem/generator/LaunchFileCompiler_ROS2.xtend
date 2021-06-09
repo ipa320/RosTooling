@@ -126,7 +126,11 @@ def generate_launch_description():
 			} else {
 				param_str += "{ \"" + rosParameter.parameter.name + "\" : " + get_param_value(rosParameter.value, rosParameter.parameter.name);
 			}
-			param_str += (param_count > 1) ? " },\n" : " }\n";
+			if (param_count > 1){ 
+				param_str +=" },\n"
+			} else {
+				param_str +=" }\n";
+			}
 		}
 		return param_str;
 	}
@@ -139,7 +143,9 @@ def generate_launch_description():
 			var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
 			param_str += "{ \"" + name + "/" + member.getName() + "\" : " + get_param_value(member.getValue(), member.getName());
 			elem_count--;
-			param_str += (elem_count > 0) ? " },\n" : "";
+			if (elem_count > 0){ 
+				param_str +=" },\n"
+			}
 		}
 
 		return param_str;
@@ -161,8 +167,10 @@ def generate_launch_description():
 			for (elem : (value as ParameterSequenceImpl).eContents) {
 				param_val += get_param_value(elem as ParameterValue, name);
 				elem_count--;
-				param_val += (elem_count > 0) ? ", " : "";
-			}
+				if (elem_count > 0){ 
+					param_val +=", "
+				}
+			} 
 			param_val += "]";
 		}
 		return param_val;
