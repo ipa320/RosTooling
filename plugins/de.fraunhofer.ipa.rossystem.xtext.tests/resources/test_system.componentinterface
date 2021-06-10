@@ -1,22 +1,18 @@
 ComponentInterface { name test_system
 RosPublishers{
 	RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"},
-	RosPublisher "test2/scan" { RefPublisher "test_pkg.test_node.test_node.scan"},
 	RosPublisher "power_state" { RefPublisher "test_pkg.test_node.test_node.power_state"}
 	}
 RosSubscribers{
 	RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"},
-	RosSubscriber "test2/power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"},
 	RosSubscriber "scan" { RefSubscriber "test_pkg.test_node.test_node.scan"}
 	}
 RosSrvServers{
 	RosServiceServer "setBool" { RefServer "test_pkg.test_node.test_node.setBool"},
-	RosServiceServer "test2/setBool" { RefServer "test_pkg.test_node.test_node.setBool"},
 	RosServiceServer "init" { RefServer "test_pkg.test_node.test_node.init"}
 	}
 RosSrvClients{
 	RosServiceClient "init" { RefClient "test_pkg.test_node.test_node.init"},
-	RosServiceClient "test2/init" { RefClient "test_pkg.test_node.test_node.init"},
 	RosServiceClient "SetBool" { RefClient "test_pkg.test_node.test_node.SetBool"}
 	}
 RosParameters{

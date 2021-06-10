@@ -12,14 +12,14 @@ import ros.Subscriber
 import rossystem.RosSystem
 import java.util.List
 import ros.Node
+import ros.impl.PackageImpl
 
 class GeneratorHelpers {
 	
 	boolean PackageSet
 	
-	String package_impl
+	PackageImpl package_impl
 	List<CharSequence> PkgsList
-	String package_name
 	String Pkg
 
 	def void init_pkg(){
@@ -40,44 +40,38 @@ class GeneratorHelpers {
 	
 	def compile_pkg(ComponentInterface component)
 '''«IF !(component.fromRosNode===null) »«component.fromRosNode.getPackage_node»«ELSEIF !PackageSet && !component.rospublisher.empty»«FOR Rospublisher:component.rospublisher»«IF !PackageSet»«Rospublisher.publisher.getPackage_pub()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rossubscriber.empty»«FOR Rossubscriber:component.rossubscriber»«IF !PackageSet»«Rossubscriber.subscriber.getPackage_sub()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosserviceserver.empty»«FOR Rosserviceserver:component.rosserviceserver»«IF !PackageSet»«Rosserviceserver.srvserver.getPackage_srvserv()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosserviceclient.empty»«FOR Rosserviceclient:component.rosserviceclient»«IF !PackageSet»«Rosserviceclient.srvclient.getPackage_srvcli()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosparameter.empty»«FOR Rosparameter:component.rosparameter»«IF !PackageSet»«Rosparameter.parameter.getPackage_rosparam()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosactionserver.empty»«FOR RosActionSever:component.rosactionserver»«IF !PackageSet»«RosActionSever.actserver.getPackage_actserver()»«ENDIF»«ENDFOR»«ELSEIF !PackageSet && !component.rosactionclient.empty»«FOR RosActionClient:component.rosactionclient»«IF !PackageSet»«RosActionClient.actclient.getPackage_actclient()»«ENDIF»«ENDFOR»«ENDIF»'''
-	
 
 	def getPackage_pub(Publisher publisher){
-		package_impl = publisher.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = publisher.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_sub(Subscriber subscriber){
-		package_impl = subscriber.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = subscriber.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_srvserv(ServiceServer serviceserver){
-		package_impl = serviceserver.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = serviceserver.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_srvcli(ServiceClient serviceclient){
-		package_impl = serviceclient.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = serviceclient.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_actserver(ActionServer actionserver){
-		package_impl = actionserver.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = actionserver.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_actclient(ActionClient actionclient){
-		package_impl = actionclient.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = actionclient.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_rosparam (Parameter param){
-		package_impl = param.eContainer.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = param.eContainer.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 	def getPackage_node (Node node){
-		package_impl = node.eContainer.eContainer.toString;
-		return package_impl.getPackage;
+		package_impl = node.eContainer.eContainer as PackageImpl;
+		return package_impl.name;
 	}
 
-	def getPackage(String package_impl){
-			package_name = package_impl.substring(package_impl.indexOf("name")+6,package_impl.length-1)
-			PackageSet=true;
-			return package_name;
-	}
 }
