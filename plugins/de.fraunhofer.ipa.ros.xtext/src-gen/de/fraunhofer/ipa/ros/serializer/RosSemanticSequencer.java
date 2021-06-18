@@ -490,13 +490,15 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=RosNames 
-	 *         (serviceserver+=ServiceServer serviceserver+=ServiceServer*)? 
-	 *         (publisher+=Publisher publisher+=Publisher*)? 
-	 *         (subscriber+=Subscriber subscriber+=Subscriber*)? 
-	 *         (serviceclient+=ServiceClient serviceclient+=ServiceClient*)? 
-	 *         (actionserver+=ActionServer actionserver+=ActionServer*)? 
-	 *         (actionclient+=ActionClient actionclient+=ActionClient*)? 
-	 *         (parameter+=Parameter parameter+=Parameter*)?
+	 *         (
+	 *             (publisher+=Publisher publisher+=Publisher*) | 
+	 *             (subscriber+=Subscriber subscriber+=Subscriber*) | 
+	 *             (serviceserver+=ServiceServer serviceserver+=ServiceServer*) | 
+	 *             (serviceclient+=ServiceClient serviceclient+=ServiceClient*) | 
+	 *             (actionserver+=ActionServer actionserver+=ActionServer*) | 
+	 *             (actionclient+=ActionClient actionclient+=ActionClient*) | 
+	 *             (parameter+=Parameter parameter+=Parameter*)
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {

@@ -10,6 +10,7 @@ import org.eclipse.xtext.formatting2.IFormattableDocument
 import ros.Artifact
 import ros.PackageSet
 import ros.SpecBase
+import ros.Publisher
 
 class RosFormatter extends AbstractFormatter2 {
 	
@@ -29,7 +30,13 @@ class RosFormatter extends AbstractFormatter2 {
 		}
 		for (Artifact artifact : _package.getArtifact()) {
 			artifact.format;
+			artifact.node.format;
+			for (Publisher pub: artifact.node.publisher ){
+				pub.format;
+			}
 		}
+		
+		
 	}
 	
 	// TODO: implement for Artifact, CatkinPackage, ServiceSpec, TopicSpec, ActionSpec, Node, ServiceServer, Publisher, Subscriber, ServiceClient, ActionServer, ActionClient, Parameter, ParameterListType, ParameterStructType, ParameterIntegerType, ParameterStringType, ParameterDoubleType, ParameterDateType, ParameterBooleanType, ParameterBase64Type, ParameterAnyType, ParameterArrayType, ParameterSequence, ParameterStruct, ParameterStructMember, ParameterStructTypeMember

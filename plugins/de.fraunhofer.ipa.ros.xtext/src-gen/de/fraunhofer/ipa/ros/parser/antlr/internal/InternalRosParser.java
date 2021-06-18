@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRosParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_ROS_CONVENTION_A", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_MESSAGE_ASIGMENT", "RULE_ROS_CONVENTION_PARAM", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PackageSet'", "'{'", "','", "'}'", "'Package'", "'Specs'", "'node'", "'Artifact'", "'CatkinPackage'", "'Dependencies'", "'ServiceSpec'", "'request'", "'response'", "'TopicSpec'", "'Header'", "'String'", "'message'", "'ActionSpec'", "'goal'", "'result'", "'feedback'", "'Node'", "'name'", "'ServiceServers'", "'Publishers'", "'Subscribers'", "'ServiceClients'", "'ActionServers'", "'ActionClients'", "'Parameters'", "'ServiceServer'", "'service'", "'namespace'", "'Publisher'", "'Subscriber'", "'ServiceClient'", "'ActionServer'", "'action'", "'ActionClient'", "'GraphName'", "'PackageDependency'", "'ExternalDependency'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'", "'Parameter'", "'type'", "'List'", "'Struct'", "'Integer'", "'default'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'value'", "'ParameterStructMember'", "'bool'", "'int8'", "'uint8'", "'int16'", "'uint16'", "'int32'", "'uint32'", "'int64'", "'uint64'", "'float32'", "'float64'", "'string'", "'byte'", "'time'", "'duration'", "'bool[]'", "'int8[]'", "'uint8[]'", "'int16[]'", "'uint16[]'", "'int32[]'", "'uint32[]'", "'int64[]'", "'uint64[]'", "'float32[]'", "'float64[]'", "'string[]'", "'byte[]'", "'[]'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_ROS_CONVENTION_A", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_DECINT", "RULE_DATE_TIME", "RULE_MESSAGE_ASIGMENT", "RULE_ROS_CONVENTION_PARAM", "RULE_DIGIT", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PackageSet'", "'{'", "','", "'}'", "'Package'", "'Specs'", "'node'", "'Artifact'", "'CatkinPackage'", "'Dependencies'", "'ServiceSpec'", "'request'", "'response'", "'TopicSpec'", "'Header'", "'String'", "'message'", "'ActionSpec'", "'goal'", "'result'", "'feedback'", "'Node'", "'name'", "'Publishers'", "'Subscribers'", "'ServiceServers'", "'ServiceClients'", "'ActionServers'", "'ActionClients'", "'Parameters'", "'ServiceServer'", "'service'", "'namespace'", "'Publisher'", "'Subscriber'", "'ServiceClient'", "'ActionServer'", "'action'", "'ActionClient'", "'GraphName'", "'PackageDependency'", "'ExternalDependency'", "'GlobalNamespace'", "'parts'", "'RelativeNamespace'", "'PrivateNamespace'", "'Parameter'", "'type'", "'List'", "'Struct'", "'Integer'", "'default'", "'Double'", "'Boolean'", "'Base64'", "'Array'", "'ParameterAny'", "'value'", "'ParameterStructMember'", "'bool'", "'int8'", "'uint8'", "'int16'", "'uint16'", "'int32'", "'uint32'", "'int64'", "'uint64'", "'float32'", "'float64'", "'string'", "'byte'", "'time'", "'duration'", "'bool[]'", "'int8[]'", "'uint8[]'", "'int16[]'", "'uint16[]'", "'int32[]'", "'uint32[]'", "'int64[]'", "'uint64[]'", "'float32[]'", "'float64[]'", "'string[]'", "'byte[]'", "'[]'"
     };
     public static final int T__50=50;
     public static final int RULE_DATE_TIME=11;
@@ -3288,7 +3288,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNode"
-    // InternalRos.g:1266:1: ruleNode returns [EObject current=null] : (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )? (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )? (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )? (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )? (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )? (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )? (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )? otherlv_46= '}' ) ;
+    // InternalRos.g:1266:1: ruleNode returns [EObject current=null] : (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )* otherlv_46= '}' ) ;
     public final EObject ruleNode() throws RecognitionException {
         EObject current = null;
 
@@ -3326,17 +3326,17 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         Token otherlv_46=null;
         AntlrDatatypeRuleToken lv_name_3_0 = null;
 
-        EObject lv_serviceserver_6_0 = null;
+        EObject lv_publisher_6_0 = null;
 
-        EObject lv_serviceserver_8_0 = null;
+        EObject lv_publisher_8_0 = null;
 
-        EObject lv_publisher_12_0 = null;
+        EObject lv_subscriber_12_0 = null;
 
-        EObject lv_publisher_14_0 = null;
+        EObject lv_subscriber_14_0 = null;
 
-        EObject lv_subscriber_18_0 = null;
+        EObject lv_serviceserver_18_0 = null;
 
-        EObject lv_subscriber_20_0 = null;
+        EObject lv_serviceserver_20_0 = null;
 
         EObject lv_serviceclient_24_0 = null;
 
@@ -3359,11 +3359,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:1272:2: ( (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )? (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )? (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )? (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )? (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )? (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )? (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )? otherlv_46= '}' ) )
-            // InternalRos.g:1273:2: (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )? (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )? (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )? (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )? (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )? (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )? (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )? otherlv_46= '}' )
+            // InternalRos.g:1272:2: ( (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )* otherlv_46= '}' ) )
+            // InternalRos.g:1273:2: (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )* otherlv_46= '}' )
             {
-            // InternalRos.g:1273:2: (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )? (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )? (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )? (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )? (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )? (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )? (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )? otherlv_46= '}' )
-            // InternalRos.g:1274:3: otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )? (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )? (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )? (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )? (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )? (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )? (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )? otherlv_46= '}'
+            // InternalRos.g:1273:2: (otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )* otherlv_46= '}' )
+            // InternalRos.g:1274:3: otherlv_0= 'Node' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleRosNames ) ) ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )* otherlv_46= '}'
             {
             otherlv_0=(Token)match(input,46,FOLLOW_3); 
 
@@ -3408,842 +3408,891 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:1305:3: (otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}' )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
-
-            if ( (LA30_0==48) ) {
-                alt30=1;
-            }
-            switch (alt30) {
-                case 1 :
-                    // InternalRos.g:1306:4: otherlv_4= 'ServiceServers' otherlv_5= '{' ( (lv_serviceserver_6_0= ruleServiceServer ) ) (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )* otherlv_9= '}'
+            // InternalRos.g:1305:3: ( (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' ) | (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' ) | (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' ) | (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' ) | (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' ) | (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' ) | (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' ) )*
+            loop38:
+            do {
+                int alt38=8;
+                switch ( input.LA(1) ) {
+                case 48:
                     {
-                    otherlv_4=(Token)match(input,48,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getNodeAccess().getServiceServersKeyword_4_0());
-                    			
-                    otherlv_5=(Token)match(input,26,FOLLOW_29); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_1());
-                    			
-                    // InternalRos.g:1314:4: ( (lv_serviceserver_6_0= ruleServiceServer ) )
-                    // InternalRos.g:1315:5: (lv_serviceserver_6_0= ruleServiceServer )
-                    {
-                    // InternalRos.g:1315:5: (lv_serviceserver_6_0= ruleServiceServer )
-                    // InternalRos.g:1316:6: lv_serviceserver_6_0= ruleServiceServer
-                    {
-
-                    						newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_serviceserver_6_0=ruleServiceServer();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"serviceserver",
-                    							lv_serviceserver_6_0,
-                    							"de.fraunhofer.ipa.ros.Ros.ServiceServer");
-                    						afterParserOrEnumRuleCall();
-                    					
-
+                    alt38=1;
                     }
-
-
+                    break;
+                case 49:
+                    {
+                    alt38=2;
                     }
-
-                    // InternalRos.g:1333:4: (otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) ) )*
-                    loop29:
-                    do {
-                        int alt29=2;
-                        int LA29_0 = input.LA(1);
-
-                        if ( (LA29_0==27) ) {
-                            alt29=1;
-                        }
-
-
-                        switch (alt29) {
-                    	case 1 :
-                    	    // InternalRos.g:1334:5: otherlv_7= ',' ( (lv_serviceserver_8_0= ruleServiceServer ) )
-                    	    {
-                    	    otherlv_7=(Token)match(input,27,FOLLOW_29); 
-
-                    	    					newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalRos.g:1338:5: ( (lv_serviceserver_8_0= ruleServiceServer ) )
-                    	    // InternalRos.g:1339:6: (lv_serviceserver_8_0= ruleServiceServer )
-                    	    {
-                    	    // InternalRos.g:1339:6: (lv_serviceserver_8_0= ruleServiceServer )
-                    	    // InternalRos.g:1340:7: lv_serviceserver_8_0= ruleServiceServer
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_serviceserver_8_0=ruleServiceServer();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"serviceserver",
-                    	    								lv_serviceserver_8_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.ServiceServer");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop29;
-                        }
-                    } while (true);
-
-                    otherlv_9=(Token)match(input,28,FOLLOW_30); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_4());
-                    			
-
+                    break;
+                case 50:
+                    {
+                    alt38=3;
+                    }
+                    break;
+                case 51:
+                    {
+                    alt38=4;
+                    }
+                    break;
+                case 52:
+                    {
+                    alt38=5;
+                    }
+                    break;
+                case 53:
+                    {
+                    alt38=6;
+                    }
+                    break;
+                case 54:
+                    {
+                    alt38=7;
                     }
                     break;
 
-            }
-
-            // InternalRos.g:1363:3: (otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}' )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
-
-            if ( (LA32_0==49) ) {
-                alt32=1;
-            }
-            switch (alt32) {
-                case 1 :
-                    // InternalRos.g:1364:4: otherlv_10= 'Publishers' otherlv_11= '{' ( (lv_publisher_12_0= rulePublisher ) ) (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )* otherlv_15= '}'
-                    {
-                    otherlv_10=(Token)match(input,49,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getPublishersKeyword_5_0());
-                    			
-                    otherlv_11=(Token)match(input,26,FOLLOW_31); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_5_1());
-                    			
-                    // InternalRos.g:1372:4: ( (lv_publisher_12_0= rulePublisher ) )
-                    // InternalRos.g:1373:5: (lv_publisher_12_0= rulePublisher )
-                    {
-                    // InternalRos.g:1373:5: (lv_publisher_12_0= rulePublisher )
-                    // InternalRos.g:1374:6: lv_publisher_12_0= rulePublisher
-                    {
+                }
+
+                switch (alt38) {
+            	case 1 :
+            	    // InternalRos.g:1306:4: (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' )
+            	    {
+            	    // InternalRos.g:1306:4: (otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}' )
+            	    // InternalRos.g:1307:5: otherlv_4= 'Publishers' otherlv_5= '{' ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )? otherlv_9= '}'
+            	    {
+            	    otherlv_4=(Token)match(input,48,FOLLOW_3); 
+
+            	    					newLeafNode(otherlv_4, grammarAccess.getNodeAccess().getPublishersKeyword_4_0_0());
+            	    				
+            	    otherlv_5=(Token)match(input,26,FOLLOW_29); 
+
+            	    					newLeafNode(otherlv_5, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_0_1());
+            	    				
+            	    // InternalRos.g:1315:5: ( ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )* )?
+            	    int alt30=2;
+            	    int LA30_0 = input.LA(1);
+
+            	    if ( (LA30_0==58) ) {
+            	        alt30=1;
+            	    }
+            	    switch (alt30) {
+            	        case 1 :
+            	            // InternalRos.g:1316:6: ( (lv_publisher_6_0= rulePublisher ) ) (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )*
+            	            {
+            	            // InternalRos.g:1316:6: ( (lv_publisher_6_0= rulePublisher ) )
+            	            // InternalRos.g:1317:7: (lv_publisher_6_0= rulePublisher )
+            	            {
+            	            // InternalRos.g:1317:7: (lv_publisher_6_0= rulePublisher )
+            	            // InternalRos.g:1318:8: lv_publisher_6_0= rulePublisher
+            	            {
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_5_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_publisher_12_0=rulePublisher();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"publisher",
-                    							lv_publisher_12_0,
-                    							"de.fraunhofer.ipa.ros.Ros.Publisher");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalRos.g:1391:4: (otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) ) )*
-                    loop31:
-                    do {
-                        int alt31=2;
-                        int LA31_0 = input.LA(1);
-
-                        if ( (LA31_0==27) ) {
-                            alt31=1;
-                        }
-
-
-                        switch (alt31) {
-                    	case 1 :
-                    	    // InternalRos.g:1392:5: otherlv_13= ',' ( (lv_publisher_14_0= rulePublisher ) )
-                    	    {
-                    	    otherlv_13=(Token)match(input,27,FOLLOW_31); 
-
-                    	    					newLeafNode(otherlv_13, grammarAccess.getNodeAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalRos.g:1396:5: ( (lv_publisher_14_0= rulePublisher ) )
-                    	    // InternalRos.g:1397:6: (lv_publisher_14_0= rulePublisher )
-                    	    {
-                    	    // InternalRos.g:1397:6: (lv_publisher_14_0= rulePublisher )
-                    	    // InternalRos.g:1398:7: lv_publisher_14_0= rulePublisher
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_publisher_14_0=rulePublisher();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"publisher",
-                    	    								lv_publisher_14_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.Publisher");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
+            	            								newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_4_0_2_0_0());
+            	            							
+            	            pushFollow(FOLLOW_5);
+            	            lv_publisher_6_0=rulePublisher();
+
+            	            state._fsp--;
+
+
+            	            								if (current==null) {
+            	            									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	            								}
+            	            								add(
+            	            									current,
+            	            									"publisher",
+            	            									lv_publisher_6_0,
+            	            									"de.fraunhofer.ipa.ros.Ros.Publisher");
+            	            								afterParserOrEnumRuleCall();
+            	            							
+
+            	            }
+
+
+            	            }
+
+            	            // InternalRos.g:1335:6: (otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) ) )*
+            	            loop29:
+            	            do {
+            	                int alt29=2;
+            	                int LA29_0 = input.LA(1);
+
+            	                if ( (LA29_0==27) ) {
+            	                    alt29=1;
+            	                }
+
+
+            	                switch (alt29) {
+            	            	case 1 :
+            	            	    // InternalRos.g:1336:7: otherlv_7= ',' ( (lv_publisher_8_0= rulePublisher ) )
+            	            	    {
+            	            	    otherlv_7=(Token)match(input,27,FOLLOW_30); 
+
+            	            	    							newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getCommaKeyword_4_0_2_1_0());
+            	            	    						
+            	            	    // InternalRos.g:1340:7: ( (lv_publisher_8_0= rulePublisher ) )
+            	            	    // InternalRos.g:1341:8: (lv_publisher_8_0= rulePublisher )
+            	            	    {
+            	            	    // InternalRos.g:1341:8: (lv_publisher_8_0= rulePublisher )
+            	            	    // InternalRos.g:1342:9: lv_publisher_8_0= rulePublisher
+            	            	    {
+
+            	            	    									newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_4_0_2_1_1_0());
+            	            	    								
+            	            	    pushFollow(FOLLOW_5);
+            	            	    lv_publisher_8_0=rulePublisher();
+
+            	            	    state._fsp--;
+
+
+            	            	    									if (current==null) {
+            	            	    										current = createModelElementForParent(grammarAccess.getNodeRule());
+            	            	    									}
+            	            	    									add(
+            	            	    										current,
+            	            	    										"publisher",
+            	            	    										lv_publisher_8_0,
+            	            	    										"de.fraunhofer.ipa.ros.Ros.Publisher");
+            	            	    									afterParserOrEnumRuleCall();
+            	            	    								
 
-                    	default :
-                    	    break loop31;
-                        }
-                    } while (true);
-
-                    otherlv_15=(Token)match(input,28,FOLLOW_32); 
-
-                    				newLeafNode(otherlv_15, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_5_4());
-                    			
-
-                    }
-                    break;
-
-            }
+            	            	    }
 
-            // InternalRos.g:1421:3: (otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}' )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
 
-            if ( (LA34_0==50) ) {
-                alt34=1;
-            }
-            switch (alt34) {
-                case 1 :
-                    // InternalRos.g:1422:4: otherlv_16= 'Subscribers' otherlv_17= '{' ( (lv_subscriber_18_0= ruleSubscriber ) ) (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )* otherlv_21= '}'
-                    {
-                    otherlv_16=(Token)match(input,50,FOLLOW_3); 
+            	            	    }
 
-                    				newLeafNode(otherlv_16, grammarAccess.getNodeAccess().getSubscribersKeyword_6_0());
-                    			
-                    otherlv_17=(Token)match(input,26,FOLLOW_33); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_6_1());
-                    			
-                    // InternalRos.g:1430:4: ( (lv_subscriber_18_0= ruleSubscriber ) )
-                    // InternalRos.g:1431:5: (lv_subscriber_18_0= ruleSubscriber )
-                    {
-                    // InternalRos.g:1431:5: (lv_subscriber_18_0= ruleSubscriber )
-                    // InternalRos.g:1432:6: lv_subscriber_18_0= ruleSubscriber
-                    {
+            	            	    }
+            	            	    break;
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_6_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_subscriber_18_0=ruleSubscriber();
+            	            	default :
+            	            	    break loop29;
+            	                }
+            	            } while (true);
 
-                    state._fsp--;
 
+            	            }
+            	            break;
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"subscriber",
-                    							lv_subscriber_18_0,
-                    							"de.fraunhofer.ipa.ros.Ros.Subscriber");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
+            	    }
 
+            	    otherlv_9=(Token)match(input,28,FOLLOW_28); 
 
-                    }
-
-                    // InternalRos.g:1449:4: (otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) ) )*
-                    loop33:
-                    do {
-                        int alt33=2;
-                        int LA33_0 = input.LA(1);
+            	    					newLeafNode(otherlv_9, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_0_3());
+            	    				
 
-                        if ( (LA33_0==27) ) {
-                            alt33=1;
-                        }
+            	    }
 
-
-                        switch (alt33) {
-                    	case 1 :
-                    	    // InternalRos.g:1450:5: otherlv_19= ',' ( (lv_subscriber_20_0= ruleSubscriber ) )
-                    	    {
-                    	    otherlv_19=(Token)match(input,27,FOLLOW_33); 
 
-                    	    					newLeafNode(otherlv_19, grammarAccess.getNodeAccess().getCommaKeyword_6_3_0());
-                    	    				
-                    	    // InternalRos.g:1454:5: ( (lv_subscriber_20_0= ruleSubscriber ) )
-                    	    // InternalRos.g:1455:6: (lv_subscriber_20_0= ruleSubscriber )
-                    	    {
-                    	    // InternalRos.g:1455:6: (lv_subscriber_20_0= ruleSubscriber )
-                    	    // InternalRos.g:1456:7: lv_subscriber_20_0= ruleSubscriber
-                    	    {
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalRos.g:1367:4: (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' )
+            	    {
+            	    // InternalRos.g:1367:4: (otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}' )
+            	    // InternalRos.g:1368:5: otherlv_10= 'Subscribers' otherlv_11= '{' ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )? otherlv_15= '}'
+            	    {
+            	    otherlv_10=(Token)match(input,49,FOLLOW_3); 
 
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_6_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_subscriber_20_0=ruleSubscriber();
+            	    					newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getSubscribersKeyword_4_1_0());
+            	    				
+            	    otherlv_11=(Token)match(input,26,FOLLOW_31); 
 
-                    	    state._fsp--;
+            	    					newLeafNode(otherlv_11, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_1_1());
+            	    				
+            	    // InternalRos.g:1376:5: ( ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )* )?
+            	    int alt32=2;
+            	    int LA32_0 = input.LA(1);
 
+            	    if ( (LA32_0==59) ) {
+            	        alt32=1;
+            	    }
+            	    switch (alt32) {
+            	        case 1 :
+            	            // InternalRos.g:1377:6: ( (lv_subscriber_12_0= ruleSubscriber ) ) (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )*
+            	            {
+            	            // InternalRos.g:1377:6: ( (lv_subscriber_12_0= ruleSubscriber ) )
+            	            // InternalRos.g:1378:7: (lv_subscriber_12_0= ruleSubscriber )
+            	            {
+            	            // InternalRos.g:1378:7: (lv_subscriber_12_0= ruleSubscriber )
+            	            // InternalRos.g:1379:8: lv_subscriber_12_0= ruleSubscriber
+            	            {
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"subscriber",
-                    	    								lv_subscriber_20_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.Subscriber");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
+            	            								newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_4_1_2_0_0());
+            	            							
+            	            pushFollow(FOLLOW_5);
+            	            lv_subscriber_12_0=ruleSubscriber();
 
-                    	default :
-                    	    break loop33;
-                        }
-                    } while (true);
-
-                    otherlv_21=(Token)match(input,28,FOLLOW_34); 
-
-                    				newLeafNode(otherlv_21, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_6_4());
-                    			
-
-                    }
-                    break;
-
-            }
+            	            state._fsp--;
 
-            // InternalRos.g:1479:3: (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==51) ) {
-                alt36=1;
-            }
-            switch (alt36) {
-                case 1 :
-                    // InternalRos.g:1480:4: otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}'
-                    {
-                    otherlv_22=(Token)match(input,51,FOLLOW_3); 
+            	            								if (current==null) {
+            	            									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	            								}
+            	            								add(
+            	            									current,
+            	            									"subscriber",
+            	            									lv_subscriber_12_0,
+            	            									"de.fraunhofer.ipa.ros.Ros.Subscriber");
+            	            								afterParserOrEnumRuleCall();
+            	            							
 
-                    				newLeafNode(otherlv_22, grammarAccess.getNodeAccess().getServiceClientsKeyword_7_0());
-                    			
-                    otherlv_23=(Token)match(input,26,FOLLOW_35); 
+            	            }
 
-                    				newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_7_1());
-                    			
-                    // InternalRos.g:1488:4: ( (lv_serviceclient_24_0= ruleServiceClient ) )
-                    // InternalRos.g:1489:5: (lv_serviceclient_24_0= ruleServiceClient )
-                    {
-                    // InternalRos.g:1489:5: (lv_serviceclient_24_0= ruleServiceClient )
-                    // InternalRos.g:1490:6: lv_serviceclient_24_0= ruleServiceClient
-                    {
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_7_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_serviceclient_24_0=ruleServiceClient();
+            	            }
 
-                    state._fsp--;
+            	            // InternalRos.g:1396:6: (otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) ) )*
+            	            loop31:
+            	            do {
+            	                int alt31=2;
+            	                int LA31_0 = input.LA(1);
 
+            	                if ( (LA31_0==27) ) {
+            	                    alt31=1;
+            	                }
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"serviceclient",
-                    							lv_serviceclient_24_0,
-                    							"de.fraunhofer.ipa.ros.Ros.ServiceClient");
-                    						afterParserOrEnumRuleCall();
-                    					
 
-                    }
+            	                switch (alt31) {
+            	            	case 1 :
+            	            	    // InternalRos.g:1397:7: otherlv_13= ',' ( (lv_subscriber_14_0= ruleSubscriber ) )
+            	            	    {
+            	            	    otherlv_13=(Token)match(input,27,FOLLOW_32); 
 
+            	            	    							newLeafNode(otherlv_13, grammarAccess.getNodeAccess().getCommaKeyword_4_1_2_1_0());
+            	            	    						
+            	            	    // InternalRos.g:1401:7: ( (lv_subscriber_14_0= ruleSubscriber ) )
+            	            	    // InternalRos.g:1402:8: (lv_subscriber_14_0= ruleSubscriber )
+            	            	    {
+            	            	    // InternalRos.g:1402:8: (lv_subscriber_14_0= ruleSubscriber )
+            	            	    // InternalRos.g:1403:9: lv_subscriber_14_0= ruleSubscriber
+            	            	    {
 
-                    }
-
-                    // InternalRos.g:1507:4: (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )*
-                    loop35:
-                    do {
-                        int alt35=2;
-                        int LA35_0 = input.LA(1);
+            	            	    									newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_4_1_2_1_1_0());
+            	            	    								
+            	            	    pushFollow(FOLLOW_5);
+            	            	    lv_subscriber_14_0=ruleSubscriber();
 
-                        if ( (LA35_0==27) ) {
-                            alt35=1;
-                        }
+            	            	    state._fsp--;
 
 
-                        switch (alt35) {
-                    	case 1 :
-                    	    // InternalRos.g:1508:5: otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) )
-                    	    {
-                    	    otherlv_25=(Token)match(input,27,FOLLOW_35); 
+            	            	    									if (current==null) {
+            	            	    										current = createModelElementForParent(grammarAccess.getNodeRule());
+            	            	    									}
+            	            	    									add(
+            	            	    										current,
+            	            	    										"subscriber",
+            	            	    										lv_subscriber_14_0,
+            	            	    										"de.fraunhofer.ipa.ros.Ros.Subscriber");
+            	            	    									afterParserOrEnumRuleCall();
+            	            	    								
 
-                    	    					newLeafNode(otherlv_25, grammarAccess.getNodeAccess().getCommaKeyword_7_3_0());
-                    	    				
-                    	    // InternalRos.g:1512:5: ( (lv_serviceclient_26_0= ruleServiceClient ) )
-                    	    // InternalRos.g:1513:6: (lv_serviceclient_26_0= ruleServiceClient )
-                    	    {
-                    	    // InternalRos.g:1513:6: (lv_serviceclient_26_0= ruleServiceClient )
-                    	    // InternalRos.g:1514:7: lv_serviceclient_26_0= ruleServiceClient
-                    	    {
+            	            	    }
 
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_7_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_serviceclient_26_0=ruleServiceClient();
 
-                    	    state._fsp--;
+            	            	    }
 
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"serviceclient",
-                    	    								lv_serviceclient_26_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.ServiceClient");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
+            	            	    }
+            	            	    break;
 
-
-                    	    }
-
+            	            	default :
+            	            	    break loop31;
+            	                }
+            	            } while (true);
 
-                    	    }
-                    	    break;
 
-                    	default :
-                    	    break loop35;
-                        }
-                    } while (true);
+            	            }
+            	            break;
 
-                    otherlv_27=(Token)match(input,28,FOLLOW_36); 
-
-                    				newLeafNode(otherlv_27, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_7_4());
-                    			
-
-                    }
-                    break;
+            	    }
 
-            }
+            	    otherlv_15=(Token)match(input,28,FOLLOW_28); 
 
-            // InternalRos.g:1537:3: (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            	    					newLeafNode(otherlv_15, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_1_3());
+            	    				
 
-            if ( (LA38_0==52) ) {
-                alt38=1;
-            }
-            switch (alt38) {
-                case 1 :
-                    // InternalRos.g:1538:4: otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}'
-                    {
-                    otherlv_28=(Token)match(input,52,FOLLOW_3); 
+            	    }
 
-                    				newLeafNode(otherlv_28, grammarAccess.getNodeAccess().getActionServersKeyword_8_0());
-                    			
-                    otherlv_29=(Token)match(input,26,FOLLOW_37); 
 
-                    				newLeafNode(otherlv_29, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_8_1());
-                    			
-                    // InternalRos.g:1546:4: ( (lv_actionserver_30_0= ruleActionServer ) )
-                    // InternalRos.g:1547:5: (lv_actionserver_30_0= ruleActionServer )
-                    {
-                    // InternalRos.g:1547:5: (lv_actionserver_30_0= ruleActionServer )
-                    // InternalRos.g:1548:6: lv_actionserver_30_0= ruleActionServer
-                    {
+            	    }
+            	    break;
+            	case 3 :
+            	    // InternalRos.g:1428:4: (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' )
+            	    {
+            	    // InternalRos.g:1428:4: (otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}' )
+            	    // InternalRos.g:1429:5: otherlv_16= 'ServiceServers' otherlv_17= '{' ( (lv_serviceserver_18_0= ruleServiceServer ) ) (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )* otherlv_21= '}'
+            	    {
+            	    otherlv_16=(Token)match(input,50,FOLLOW_3); 
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_8_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_actionserver_30_0=ruleActionServer();
+            	    					newLeafNode(otherlv_16, grammarAccess.getNodeAccess().getServiceServersKeyword_4_2_0());
+            	    				
+            	    otherlv_17=(Token)match(input,26,FOLLOW_33); 
 
-                    state._fsp--;
+            	    					newLeafNode(otherlv_17, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_2_1());
+            	    				
+            	    // InternalRos.g:1437:5: ( (lv_serviceserver_18_0= ruleServiceServer ) )
+            	    // InternalRos.g:1438:6: (lv_serviceserver_18_0= ruleServiceServer )
+            	    {
+            	    // InternalRos.g:1438:6: (lv_serviceserver_18_0= ruleServiceServer )
+            	    // InternalRos.g:1439:7: lv_serviceserver_18_0= ruleServiceServer
+            	    {
 
+            	    							newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_2_2_0());
+            	    						
+            	    pushFollow(FOLLOW_5);
+            	    lv_serviceserver_18_0=ruleServiceServer();
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"actionserver",
-                    							lv_actionserver_30_0,
-                    							"de.fraunhofer.ipa.ros.Ros.ActionServer");
-                    						afterParserOrEnumRuleCall();
-                    					
+            	    state._fsp--;
 
-                    }
 
+            	    							if (current==null) {
+            	    								current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    							}
+            	    							add(
+            	    								current,
+            	    								"serviceserver",
+            	    								lv_serviceserver_18_0,
+            	    								"de.fraunhofer.ipa.ros.Ros.ServiceServer");
+            	    							afterParserOrEnumRuleCall();
+            	    						
 
-                    }
+            	    }
 
-                    // InternalRos.g:1565:4: (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )*
-                    loop37:
-                    do {
-                        int alt37=2;
-                        int LA37_0 = input.LA(1);
 
-                        if ( (LA37_0==27) ) {
-                            alt37=1;
-                        }
+            	    }
 
+            	    // InternalRos.g:1456:5: (otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) ) )*
+            	    loop33:
+            	    do {
+            	        int alt33=2;
+            	        int LA33_0 = input.LA(1);
 
-                        switch (alt37) {
-                    	case 1 :
-                    	    // InternalRos.g:1566:5: otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) )
-                    	    {
-                    	    otherlv_31=(Token)match(input,27,FOLLOW_37); 
+            	        if ( (LA33_0==27) ) {
+            	            alt33=1;
+            	        }
 
-                    	    					newLeafNode(otherlv_31, grammarAccess.getNodeAccess().getCommaKeyword_8_3_0());
-                    	    				
-                    	    // InternalRos.g:1570:5: ( (lv_actionserver_32_0= ruleActionServer ) )
-                    	    // InternalRos.g:1571:6: (lv_actionserver_32_0= ruleActionServer )
-                    	    {
-                    	    // InternalRos.g:1571:6: (lv_actionserver_32_0= ruleActionServer )
-                    	    // InternalRos.g:1572:7: lv_actionserver_32_0= ruleActionServer
-                    	    {
 
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_8_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_actionserver_32_0=ruleActionServer();
+            	        switch (alt33) {
+            	    	case 1 :
+            	    	    // InternalRos.g:1457:6: otherlv_19= ',' ( (lv_serviceserver_20_0= ruleServiceServer ) )
+            	    	    {
+            	    	    otherlv_19=(Token)match(input,27,FOLLOW_33); 
 
-                    	    state._fsp--;
+            	    	    						newLeafNode(otherlv_19, grammarAccess.getNodeAccess().getCommaKeyword_4_2_3_0());
+            	    	    					
+            	    	    // InternalRos.g:1461:6: ( (lv_serviceserver_20_0= ruleServiceServer ) )
+            	    	    // InternalRos.g:1462:7: (lv_serviceserver_20_0= ruleServiceServer )
+            	    	    {
+            	    	    // InternalRos.g:1462:7: (lv_serviceserver_20_0= ruleServiceServer )
+            	    	    // InternalRos.g:1463:8: lv_serviceserver_20_0= ruleServiceServer
+            	    	    {
 
+            	    	    								newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_4_2_3_1_0());
+            	    	    							
+            	    	    pushFollow(FOLLOW_5);
+            	    	    lv_serviceserver_20_0=ruleServiceServer();
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"actionserver",
-                    	    								lv_actionserver_32_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.ActionServer");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
+            	    	    state._fsp--;
 
 
-                    	    }
-
+            	    	    								if (current==null) {
+            	    	    									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    	    								}
+            	    	    								add(
+            	    	    									current,
+            	    	    									"serviceserver",
+            	    	    									lv_serviceserver_20_0,
+            	    	    									"de.fraunhofer.ipa.ros.Ros.ServiceServer");
+            	    	    								afterParserOrEnumRuleCall();
+            	    	    							
 
-                    	    }
-                    	    break;
+            	    	    }
 
-                    	default :
-                    	    break loop37;
-                        }
-                    } while (true);
 
-                    otherlv_33=(Token)match(input,28,FOLLOW_38); 
-
-                    				newLeafNode(otherlv_33, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_8_4());
-                    			
-
-                    }
-                    break;
+            	    	    }
 
-            }
 
-            // InternalRos.g:1595:3: (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            	    	    }
+            	    	    break;
 
-            if ( (LA40_0==53) ) {
-                alt40=1;
-            }
-            switch (alt40) {
-                case 1 :
-                    // InternalRos.g:1596:4: otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}'
-                    {
-                    otherlv_34=(Token)match(input,53,FOLLOW_3); 
+            	    	default :
+            	    	    break loop33;
+            	        }
+            	    } while (true);
 
-                    				newLeafNode(otherlv_34, grammarAccess.getNodeAccess().getActionClientsKeyword_9_0());
-                    			
-                    otherlv_35=(Token)match(input,26,FOLLOW_39); 
+            	    otherlv_21=(Token)match(input,28,FOLLOW_28); 
 
-                    				newLeafNode(otherlv_35, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_9_1());
-                    			
-                    // InternalRos.g:1604:4: ( (lv_actionclient_36_0= ruleActionClient ) )
-                    // InternalRos.g:1605:5: (lv_actionclient_36_0= ruleActionClient )
-                    {
-                    // InternalRos.g:1605:5: (lv_actionclient_36_0= ruleActionClient )
-                    // InternalRos.g:1606:6: lv_actionclient_36_0= ruleActionClient
-                    {
+            	    					newLeafNode(otherlv_21, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_2_4());
+            	    				
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_9_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_actionclient_36_0=ruleActionClient();
+            	    }
 
-                    state._fsp--;
 
+            	    }
+            	    break;
+            	case 4 :
+            	    // InternalRos.g:1487:4: (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )
+            	    {
+            	    // InternalRos.g:1487:4: (otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}' )
+            	    // InternalRos.g:1488:5: otherlv_22= 'ServiceClients' otherlv_23= '{' ( (lv_serviceclient_24_0= ruleServiceClient ) ) (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )* otherlv_27= '}'
+            	    {
+            	    otherlv_22=(Token)match(input,51,FOLLOW_3); 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"actionclient",
-                    							lv_actionclient_36_0,
-                    							"de.fraunhofer.ipa.ros.Ros.ActionClient");
-                    						afterParserOrEnumRuleCall();
-                    					
+            	    					newLeafNode(otherlv_22, grammarAccess.getNodeAccess().getServiceClientsKeyword_4_3_0());
+            	    				
+            	    otherlv_23=(Token)match(input,26,FOLLOW_34); 
 
-                    }
+            	    					newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_3_1());
+            	    				
+            	    // InternalRos.g:1496:5: ( (lv_serviceclient_24_0= ruleServiceClient ) )
+            	    // InternalRos.g:1497:6: (lv_serviceclient_24_0= ruleServiceClient )
+            	    {
+            	    // InternalRos.g:1497:6: (lv_serviceclient_24_0= ruleServiceClient )
+            	    // InternalRos.g:1498:7: lv_serviceclient_24_0= ruleServiceClient
+            	    {
 
+            	    							newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_4_3_2_0());
+            	    						
+            	    pushFollow(FOLLOW_5);
+            	    lv_serviceclient_24_0=ruleServiceClient();
 
-                    }
+            	    state._fsp--;
 
-                    // InternalRos.g:1623:4: (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )*
-                    loop39:
-                    do {
-                        int alt39=2;
-                        int LA39_0 = input.LA(1);
 
-                        if ( (LA39_0==27) ) {
-                            alt39=1;
-                        }
+            	    							if (current==null) {
+            	    								current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    							}
+            	    							add(
+            	    								current,
+            	    								"serviceclient",
+            	    								lv_serviceclient_24_0,
+            	    								"de.fraunhofer.ipa.ros.Ros.ServiceClient");
+            	    							afterParserOrEnumRuleCall();
+            	    						
 
+            	    }
 
-                        switch (alt39) {
-                    	case 1 :
-                    	    // InternalRos.g:1624:5: otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) )
-                    	    {
-                    	    otherlv_37=(Token)match(input,27,FOLLOW_39); 
 
-                    	    					newLeafNode(otherlv_37, grammarAccess.getNodeAccess().getCommaKeyword_9_3_0());
-                    	    				
-                    	    // InternalRos.g:1628:5: ( (lv_actionclient_38_0= ruleActionClient ) )
-                    	    // InternalRos.g:1629:6: (lv_actionclient_38_0= ruleActionClient )
-                    	    {
-                    	    // InternalRos.g:1629:6: (lv_actionclient_38_0= ruleActionClient )
-                    	    // InternalRos.g:1630:7: lv_actionclient_38_0= ruleActionClient
-                    	    {
+            	    }
 
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_9_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_actionclient_38_0=ruleActionClient();
+            	    // InternalRos.g:1515:5: (otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) ) )*
+            	    loop34:
+            	    do {
+            	        int alt34=2;
+            	        int LA34_0 = input.LA(1);
 
-                    	    state._fsp--;
+            	        if ( (LA34_0==27) ) {
+            	            alt34=1;
+            	        }
 
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"actionclient",
-                    	    								lv_actionclient_38_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.ActionClient");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
+            	        switch (alt34) {
+            	    	case 1 :
+            	    	    // InternalRos.g:1516:6: otherlv_25= ',' ( (lv_serviceclient_26_0= ruleServiceClient ) )
+            	    	    {
+            	    	    otherlv_25=(Token)match(input,27,FOLLOW_34); 
 
-                    	    }
+            	    	    						newLeafNode(otherlv_25, grammarAccess.getNodeAccess().getCommaKeyword_4_3_3_0());
+            	    	    					
+            	    	    // InternalRos.g:1520:6: ( (lv_serviceclient_26_0= ruleServiceClient ) )
+            	    	    // InternalRos.g:1521:7: (lv_serviceclient_26_0= ruleServiceClient )
+            	    	    {
+            	    	    // InternalRos.g:1521:7: (lv_serviceclient_26_0= ruleServiceClient )
+            	    	    // InternalRos.g:1522:8: lv_serviceclient_26_0= ruleServiceClient
+            	    	    {
 
+            	    	    								newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_4_3_3_1_0());
+            	    	    							
+            	    	    pushFollow(FOLLOW_5);
+            	    	    lv_serviceclient_26_0=ruleServiceClient();
 
-                    	    }
-
+            	    	    state._fsp--;
 
-                    	    }
-                    	    break;
 
-                    	default :
-                    	    break loop39;
-                        }
-                    } while (true);
+            	    	    								if (current==null) {
+            	    	    									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    	    								}
+            	    	    								add(
+            	    	    									current,
+            	    	    									"serviceclient",
+            	    	    									lv_serviceclient_26_0,
+            	    	    									"de.fraunhofer.ipa.ros.Ros.ServiceClient");
+            	    	    								afterParserOrEnumRuleCall();
+            	    	    							
 
-                    otherlv_39=(Token)match(input,28,FOLLOW_40); 
+            	    	    }
 
-                    				newLeafNode(otherlv_39, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_9_4());
-                    			
-
-                    }
-                    break;
 
-            }
+            	    	    }
 
-            // InternalRos.g:1653:3: (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==54) ) {
-                alt42=1;
-            }
-            switch (alt42) {
-                case 1 :
-                    // InternalRos.g:1654:4: otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}'
-                    {
-                    otherlv_40=(Token)match(input,54,FOLLOW_3); 
+            	    	    }
+            	    	    break;
 
-                    				newLeafNode(otherlv_40, grammarAccess.getNodeAccess().getParametersKeyword_10_0());
-                    			
-                    otherlv_41=(Token)match(input,26,FOLLOW_41); 
+            	    	default :
+            	    	    break loop34;
+            	        }
+            	    } while (true);
 
-                    				newLeafNode(otherlv_41, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_10_1());
-                    			
-                    // InternalRos.g:1662:4: ( (lv_parameter_42_0= ruleParameter ) )
-                    // InternalRos.g:1663:5: (lv_parameter_42_0= ruleParameter )
-                    {
-                    // InternalRos.g:1663:5: (lv_parameter_42_0= ruleParameter )
-                    // InternalRos.g:1664:6: lv_parameter_42_0= ruleParameter
-                    {
+            	    otherlv_27=(Token)match(input,28,FOLLOW_28); 
 
-                    						newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_10_2_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_parameter_42_0=ruleParameter();
+            	    					newLeafNode(otherlv_27, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_3_4());
+            	    				
 
-                    state._fsp--;
+            	    }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNodeRule());
-                    						}
-                    						add(
-                    							current,
-                    							"parameter",
-                    							lv_parameter_42_0,
-                    							"de.fraunhofer.ipa.ros.Ros.Parameter");
-                    						afterParserOrEnumRuleCall();
-                    					
+            	    }
+            	    break;
+            	case 5 :
+            	    // InternalRos.g:1546:4: (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )
+            	    {
+            	    // InternalRos.g:1546:4: (otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}' )
+            	    // InternalRos.g:1547:5: otherlv_28= 'ActionServers' otherlv_29= '{' ( (lv_actionserver_30_0= ruleActionServer ) ) (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )* otherlv_33= '}'
+            	    {
+            	    otherlv_28=(Token)match(input,52,FOLLOW_3); 
 
-                    }
+            	    					newLeafNode(otherlv_28, grammarAccess.getNodeAccess().getActionServersKeyword_4_4_0());
+            	    				
+            	    otherlv_29=(Token)match(input,26,FOLLOW_35); 
 
+            	    					newLeafNode(otherlv_29, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_4_1());
+            	    				
+            	    // InternalRos.g:1555:5: ( (lv_actionserver_30_0= ruleActionServer ) )
+            	    // InternalRos.g:1556:6: (lv_actionserver_30_0= ruleActionServer )
+            	    {
+            	    // InternalRos.g:1556:6: (lv_actionserver_30_0= ruleActionServer )
+            	    // InternalRos.g:1557:7: lv_actionserver_30_0= ruleActionServer
+            	    {
 
-                    }
+            	    							newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_4_4_2_0());
+            	    						
+            	    pushFollow(FOLLOW_5);
+            	    lv_actionserver_30_0=ruleActionServer();
 
-                    // InternalRos.g:1681:4: (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )*
-                    loop41:
-                    do {
-                        int alt41=2;
-                        int LA41_0 = input.LA(1);
+            	    state._fsp--;
 
-                        if ( (LA41_0==27) ) {
-                            alt41=1;
-                        }
 
+            	    							if (current==null) {
+            	    								current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    							}
+            	    							add(
+            	    								current,
+            	    								"actionserver",
+            	    								lv_actionserver_30_0,
+            	    								"de.fraunhofer.ipa.ros.Ros.ActionServer");
+            	    							afterParserOrEnumRuleCall();
+            	    						
 
-                        switch (alt41) {
-                    	case 1 :
-                    	    // InternalRos.g:1682:5: otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) )
-                    	    {
-                    	    otherlv_43=(Token)match(input,27,FOLLOW_41); 
+            	    }
 
-                    	    					newLeafNode(otherlv_43, grammarAccess.getNodeAccess().getCommaKeyword_10_3_0());
-                    	    				
-                    	    // InternalRos.g:1686:5: ( (lv_parameter_44_0= ruleParameter ) )
-                    	    // InternalRos.g:1687:6: (lv_parameter_44_0= ruleParameter )
-                    	    {
-                    	    // InternalRos.g:1687:6: (lv_parameter_44_0= ruleParameter )
-                    	    // InternalRos.g:1688:7: lv_parameter_44_0= ruleParameter
-                    	    {
 
-                    	    							newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_10_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_5);
-                    	    lv_parameter_44_0=ruleParameter();
+            	    }
 
-                    	    state._fsp--;
+            	    // InternalRos.g:1574:5: (otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) ) )*
+            	    loop35:
+            	    do {
+            	        int alt35=2;
+            	        int LA35_0 = input.LA(1);
 
+            	        if ( (LA35_0==27) ) {
+            	            alt35=1;
+            	        }
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNodeRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"parameter",
-                    	    								lv_parameter_44_0,
-                    	    								"de.fraunhofer.ipa.ros.Ros.Parameter");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
 
-                    	    }
+            	        switch (alt35) {
+            	    	case 1 :
+            	    	    // InternalRos.g:1575:6: otherlv_31= ',' ( (lv_actionserver_32_0= ruleActionServer ) )
+            	    	    {
+            	    	    otherlv_31=(Token)match(input,27,FOLLOW_35); 
 
+            	    	    						newLeafNode(otherlv_31, grammarAccess.getNodeAccess().getCommaKeyword_4_4_3_0());
+            	    	    					
+            	    	    // InternalRos.g:1579:6: ( (lv_actionserver_32_0= ruleActionServer ) )
+            	    	    // InternalRos.g:1580:7: (lv_actionserver_32_0= ruleActionServer )
+            	    	    {
+            	    	    // InternalRos.g:1580:7: (lv_actionserver_32_0= ruleActionServer )
+            	    	    // InternalRos.g:1581:8: lv_actionserver_32_0= ruleActionServer
+            	    	    {
 
-                    	    }
+            	    	    								newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_4_4_3_1_0());
+            	    	    							
+            	    	    pushFollow(FOLLOW_5);
+            	    	    lv_actionserver_32_0=ruleActionServer();
 
+            	    	    state._fsp--;
 
-                    	    }
-                    	    break;
 
-                    	default :
-                    	    break loop41;
-                        }
-                    } while (true);
+            	    	    								if (current==null) {
+            	    	    									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    	    								}
+            	    	    								add(
+            	    	    									current,
+            	    	    									"actionserver",
+            	    	    									lv_actionserver_32_0,
+            	    	    									"de.fraunhofer.ipa.ros.Ros.ActionServer");
+            	    	    								afterParserOrEnumRuleCall();
+            	    	    							
 
-                    otherlv_45=(Token)match(input,28,FOLLOW_14); 
+            	    	    }
 
-                    				newLeafNode(otherlv_45, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_10_4());
-                    			
 
-                    }
-                    break;
+            	    	    }
 
-            }
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop35;
+            	        }
+            	    } while (true);
+
+            	    otherlv_33=(Token)match(input,28,FOLLOW_28); 
+
+            	    					newLeafNode(otherlv_33, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_4_4());
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 6 :
+            	    // InternalRos.g:1605:4: (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )
+            	    {
+            	    // InternalRos.g:1605:4: (otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}' )
+            	    // InternalRos.g:1606:5: otherlv_34= 'ActionClients' otherlv_35= '{' ( (lv_actionclient_36_0= ruleActionClient ) ) (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )* otherlv_39= '}'
+            	    {
+            	    otherlv_34=(Token)match(input,53,FOLLOW_3); 
+
+            	    					newLeafNode(otherlv_34, grammarAccess.getNodeAccess().getActionClientsKeyword_4_5_0());
+            	    				
+            	    otherlv_35=(Token)match(input,26,FOLLOW_36); 
+
+            	    					newLeafNode(otherlv_35, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_5_1());
+            	    				
+            	    // InternalRos.g:1614:5: ( (lv_actionclient_36_0= ruleActionClient ) )
+            	    // InternalRos.g:1615:6: (lv_actionclient_36_0= ruleActionClient )
+            	    {
+            	    // InternalRos.g:1615:6: (lv_actionclient_36_0= ruleActionClient )
+            	    // InternalRos.g:1616:7: lv_actionclient_36_0= ruleActionClient
+            	    {
+
+            	    							newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_4_5_2_0());
+            	    						
+            	    pushFollow(FOLLOW_5);
+            	    lv_actionclient_36_0=ruleActionClient();
+
+            	    state._fsp--;
+
+
+            	    							if (current==null) {
+            	    								current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    							}
+            	    							add(
+            	    								current,
+            	    								"actionclient",
+            	    								lv_actionclient_36_0,
+            	    								"de.fraunhofer.ipa.ros.Ros.ActionClient");
+            	    							afterParserOrEnumRuleCall();
+            	    						
+
+            	    }
+
+
+            	    }
+
+            	    // InternalRos.g:1633:5: (otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) ) )*
+            	    loop36:
+            	    do {
+            	        int alt36=2;
+            	        int LA36_0 = input.LA(1);
+
+            	        if ( (LA36_0==27) ) {
+            	            alt36=1;
+            	        }
+
+
+            	        switch (alt36) {
+            	    	case 1 :
+            	    	    // InternalRos.g:1634:6: otherlv_37= ',' ( (lv_actionclient_38_0= ruleActionClient ) )
+            	    	    {
+            	    	    otherlv_37=(Token)match(input,27,FOLLOW_36); 
+
+            	    	    						newLeafNode(otherlv_37, grammarAccess.getNodeAccess().getCommaKeyword_4_5_3_0());
+            	    	    					
+            	    	    // InternalRos.g:1638:6: ( (lv_actionclient_38_0= ruleActionClient ) )
+            	    	    // InternalRos.g:1639:7: (lv_actionclient_38_0= ruleActionClient )
+            	    	    {
+            	    	    // InternalRos.g:1639:7: (lv_actionclient_38_0= ruleActionClient )
+            	    	    // InternalRos.g:1640:8: lv_actionclient_38_0= ruleActionClient
+            	    	    {
+
+            	    	    								newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_4_5_3_1_0());
+            	    	    							
+            	    	    pushFollow(FOLLOW_5);
+            	    	    lv_actionclient_38_0=ruleActionClient();
+
+            	    	    state._fsp--;
+
+
+            	    	    								if (current==null) {
+            	    	    									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    	    								}
+            	    	    								add(
+            	    	    									current,
+            	    	    									"actionclient",
+            	    	    									lv_actionclient_38_0,
+            	    	    									"de.fraunhofer.ipa.ros.Ros.ActionClient");
+            	    	    								afterParserOrEnumRuleCall();
+            	    	    							
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop36;
+            	        }
+            	    } while (true);
+
+            	    otherlv_39=(Token)match(input,28,FOLLOW_28); 
+
+            	    					newLeafNode(otherlv_39, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_5_4());
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 7 :
+            	    // InternalRos.g:1664:4: (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )
+            	    {
+            	    // InternalRos.g:1664:4: (otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}' )
+            	    // InternalRos.g:1665:5: otherlv_40= 'Parameters' otherlv_41= '{' ( (lv_parameter_42_0= ruleParameter ) ) (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )* otherlv_45= '}'
+            	    {
+            	    otherlv_40=(Token)match(input,54,FOLLOW_3); 
+
+            	    					newLeafNode(otherlv_40, grammarAccess.getNodeAccess().getParametersKeyword_4_6_0());
+            	    				
+            	    otherlv_41=(Token)match(input,26,FOLLOW_37); 
+
+            	    					newLeafNode(otherlv_41, grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_4_6_1());
+            	    				
+            	    // InternalRos.g:1673:5: ( (lv_parameter_42_0= ruleParameter ) )
+            	    // InternalRos.g:1674:6: (lv_parameter_42_0= ruleParameter )
+            	    {
+            	    // InternalRos.g:1674:6: (lv_parameter_42_0= ruleParameter )
+            	    // InternalRos.g:1675:7: lv_parameter_42_0= ruleParameter
+            	    {
+
+            	    							newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_4_6_2_0());
+            	    						
+            	    pushFollow(FOLLOW_5);
+            	    lv_parameter_42_0=ruleParameter();
+
+            	    state._fsp--;
+
+
+            	    							if (current==null) {
+            	    								current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    							}
+            	    							add(
+            	    								current,
+            	    								"parameter",
+            	    								lv_parameter_42_0,
+            	    								"de.fraunhofer.ipa.ros.Ros.Parameter");
+            	    							afterParserOrEnumRuleCall();
+            	    						
+
+            	    }
+
+
+            	    }
+
+            	    // InternalRos.g:1692:5: (otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) ) )*
+            	    loop37:
+            	    do {
+            	        int alt37=2;
+            	        int LA37_0 = input.LA(1);
+
+            	        if ( (LA37_0==27) ) {
+            	            alt37=1;
+            	        }
+
+
+            	        switch (alt37) {
+            	    	case 1 :
+            	    	    // InternalRos.g:1693:6: otherlv_43= ',' ( (lv_parameter_44_0= ruleParameter ) )
+            	    	    {
+            	    	    otherlv_43=(Token)match(input,27,FOLLOW_37); 
+
+            	    	    						newLeafNode(otherlv_43, grammarAccess.getNodeAccess().getCommaKeyword_4_6_3_0());
+            	    	    					
+            	    	    // InternalRos.g:1697:6: ( (lv_parameter_44_0= ruleParameter ) )
+            	    	    // InternalRos.g:1698:7: (lv_parameter_44_0= ruleParameter )
+            	    	    {
+            	    	    // InternalRos.g:1698:7: (lv_parameter_44_0= ruleParameter )
+            	    	    // InternalRos.g:1699:8: lv_parameter_44_0= ruleParameter
+            	    	    {
+
+            	    	    								newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_4_6_3_1_0());
+            	    	    							
+            	    	    pushFollow(FOLLOW_5);
+            	    	    lv_parameter_44_0=ruleParameter();
+
+            	    	    state._fsp--;
+
+
+            	    	    								if (current==null) {
+            	    	    									current = createModelElementForParent(grammarAccess.getNodeRule());
+            	    	    								}
+            	    	    								add(
+            	    	    									current,
+            	    	    									"parameter",
+            	    	    									lv_parameter_44_0,
+            	    	    									"de.fraunhofer.ipa.ros.Ros.Parameter");
+            	    	    								afterParserOrEnumRuleCall();
+            	    	    							
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop37;
+            	        }
+            	    } while (true);
+
+            	    otherlv_45=(Token)match(input,28,FOLLOW_28); 
+
+            	    					newLeafNode(otherlv_45, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_4_6_4());
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop38;
+                }
+            } while (true);
 
             otherlv_46=(Token)match(input,28,FOLLOW_2); 
 
-            			newLeafNode(otherlv_46, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_11());
+            			newLeafNode(otherlv_46, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -4268,7 +4317,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleServiceServer"
-    // InternalRos.g:1719:1: entryRuleServiceServer returns [EObject current=null] : iv_ruleServiceServer= ruleServiceServer EOF ;
+    // InternalRos.g:1731:1: entryRuleServiceServer returns [EObject current=null] : iv_ruleServiceServer= ruleServiceServer EOF ;
     public final EObject entryRuleServiceServer() throws RecognitionException {
         EObject current = null;
 
@@ -4276,8 +4325,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:1719:54: (iv_ruleServiceServer= ruleServiceServer EOF )
-            // InternalRos.g:1720:2: iv_ruleServiceServer= ruleServiceServer EOF
+            // InternalRos.g:1731:54: (iv_ruleServiceServer= ruleServiceServer EOF )
+            // InternalRos.g:1732:2: iv_ruleServiceServer= ruleServiceServer EOF
             {
              newCompositeNode(grammarAccess.getServiceServerRule()); 
             pushFollow(FOLLOW_1);
@@ -4304,7 +4353,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceServer"
-    // InternalRos.g:1726:1: ruleServiceServer returns [EObject current=null] : (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:1738:1: ruleServiceServer returns [EObject current=null] : (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleServiceServer() throws RecognitionException {
         EObject current = null;
 
@@ -4323,11 +4372,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:1732:2: ( (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:1733:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1744:2: ( (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:1745:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:1733:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:1734:3: otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:1745:2: (otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1746:3: otherlv_0= 'ServiceServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,55,FOLLOW_3); 
 
@@ -4341,16 +4390,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getServiceServerAccess().getNameKeyword_2());
             		
-            // InternalRos.g:1746:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:1747:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1758:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:1759:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:1747:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:1748:5: lv_name_3_0= ruleEString
+            // InternalRos.g:1759:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1760:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getServiceServerAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_38);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -4376,11 +4425,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getServiceServerAccess().getServiceKeyword_4());
             		
-            // InternalRos.g:1769:3: ( ( ruleEString ) )
-            // InternalRos.g:1770:4: ( ruleEString )
+            // InternalRos.g:1781:3: ( ( ruleEString ) )
+            // InternalRos.g:1782:4: ( ruleEString )
             {
-            // InternalRos.g:1770:4: ( ruleEString )
-            // InternalRos.g:1771:5: ruleEString
+            // InternalRos.g:1782:4: ( ruleEString )
+            // InternalRos.g:1783:5: ruleEString
             {
 
             					if (current==null) {
@@ -4390,7 +4439,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getServiceServerAccess().getServiceServiceSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -4404,26 +4453,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:1785:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalRos.g:1797:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA43_0==57) ) {
-                alt43=1;
+            if ( (LA39_0==57) ) {
+                alt39=1;
             }
-            switch (alt43) {
+            switch (alt39) {
                 case 1 :
-                    // InternalRos.g:1786:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:1798:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getServiceServerAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:1790:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:1791:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:1802:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:1803:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:1791:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:1792:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:1803:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:1804:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getServiceServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -4483,7 +4532,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePublisher"
-    // InternalRos.g:1818:1: entryRulePublisher returns [EObject current=null] : iv_rulePublisher= rulePublisher EOF ;
+    // InternalRos.g:1830:1: entryRulePublisher returns [EObject current=null] : iv_rulePublisher= rulePublisher EOF ;
     public final EObject entryRulePublisher() throws RecognitionException {
         EObject current = null;
 
@@ -4491,8 +4540,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:1818:50: (iv_rulePublisher= rulePublisher EOF )
-            // InternalRos.g:1819:2: iv_rulePublisher= rulePublisher EOF
+            // InternalRos.g:1830:50: (iv_rulePublisher= rulePublisher EOF )
+            // InternalRos.g:1831:2: iv_rulePublisher= rulePublisher EOF
             {
              newCompositeNode(grammarAccess.getPublisherRule()); 
             pushFollow(FOLLOW_1);
@@ -4519,7 +4568,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePublisher"
-    // InternalRos.g:1825:1: rulePublisher returns [EObject current=null] : (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:1837:1: rulePublisher returns [EObject current=null] : (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject rulePublisher() throws RecognitionException {
         EObject current = null;
 
@@ -4538,11 +4587,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:1831:2: ( (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:1832:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1843:2: ( (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:1844:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:1832:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:1833:3: otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:1844:2: (otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1845:3: otherlv_0= 'Publisher' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,58,FOLLOW_3); 
 
@@ -4556,16 +4605,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getPublisherAccess().getNameKeyword_2());
             		
-            // InternalRos.g:1845:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:1846:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1857:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:1858:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:1846:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:1847:5: lv_name_3_0= ruleEString
+            // InternalRos.g:1858:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1859:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getPublisherAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_41);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -4591,11 +4640,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getPublisherAccess().getMessageKeyword_4());
             		
-            // InternalRos.g:1868:3: ( ( ruleEString ) )
-            // InternalRos.g:1869:4: ( ruleEString )
+            // InternalRos.g:1880:3: ( ( ruleEString ) )
+            // InternalRos.g:1881:4: ( ruleEString )
             {
-            // InternalRos.g:1869:4: ( ruleEString )
-            // InternalRos.g:1870:5: ruleEString
+            // InternalRos.g:1881:4: ( ruleEString )
+            // InternalRos.g:1882:5: ruleEString
             {
 
             					if (current==null) {
@@ -4605,7 +4654,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getPublisherAccess().getMessageTopicSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -4619,26 +4668,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:1884:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalRos.g:1896:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA44_0==57) ) {
-                alt44=1;
+            if ( (LA40_0==57) ) {
+                alt40=1;
             }
-            switch (alt44) {
+            switch (alt40) {
                 case 1 :
-                    // InternalRos.g:1885:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:1897:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getPublisherAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:1889:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:1890:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:1901:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:1902:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:1890:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:1891:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:1902:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:1903:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getPublisherAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -4698,7 +4747,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubscriber"
-    // InternalRos.g:1917:1: entryRuleSubscriber returns [EObject current=null] : iv_ruleSubscriber= ruleSubscriber EOF ;
+    // InternalRos.g:1929:1: entryRuleSubscriber returns [EObject current=null] : iv_ruleSubscriber= ruleSubscriber EOF ;
     public final EObject entryRuleSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -4706,8 +4755,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:1917:51: (iv_ruleSubscriber= ruleSubscriber EOF )
-            // InternalRos.g:1918:2: iv_ruleSubscriber= ruleSubscriber EOF
+            // InternalRos.g:1929:51: (iv_ruleSubscriber= ruleSubscriber EOF )
+            // InternalRos.g:1930:2: iv_ruleSubscriber= ruleSubscriber EOF
             {
              newCompositeNode(grammarAccess.getSubscriberRule()); 
             pushFollow(FOLLOW_1);
@@ -4734,7 +4783,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubscriber"
-    // InternalRos.g:1924:1: ruleSubscriber returns [EObject current=null] : (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:1936:1: ruleSubscriber returns [EObject current=null] : (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleSubscriber() throws RecognitionException {
         EObject current = null;
 
@@ -4753,11 +4802,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:1930:2: ( (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:1931:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1942:2: ( (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:1943:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:1931:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:1932:3: otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:1943:2: (otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:1944:3: otherlv_0= 'Subscriber' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'message' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,59,FOLLOW_3); 
 
@@ -4771,16 +4820,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getSubscriberAccess().getNameKeyword_2());
             		
-            // InternalRos.g:1944:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:1945:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1956:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:1957:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:1945:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:1946:5: lv_name_3_0= ruleEString
+            // InternalRos.g:1957:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:1958:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSubscriberAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_41);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -4806,11 +4855,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getSubscriberAccess().getMessageKeyword_4());
             		
-            // InternalRos.g:1967:3: ( ( ruleEString ) )
-            // InternalRos.g:1968:4: ( ruleEString )
+            // InternalRos.g:1979:3: ( ( ruleEString ) )
+            // InternalRos.g:1980:4: ( ruleEString )
             {
-            // InternalRos.g:1968:4: ( ruleEString )
-            // InternalRos.g:1969:5: ruleEString
+            // InternalRos.g:1980:4: ( ruleEString )
+            // InternalRos.g:1981:5: ruleEString
             {
 
             					if (current==null) {
@@ -4820,7 +4869,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getSubscriberAccess().getMessageTopicSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -4834,26 +4883,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:1983:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalRos.g:1995:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA45_0==57) ) {
-                alt45=1;
+            if ( (LA41_0==57) ) {
+                alt41=1;
             }
-            switch (alt45) {
+            switch (alt41) {
                 case 1 :
-                    // InternalRos.g:1984:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:1996:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getSubscriberAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:1988:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:1989:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2000:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2001:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:1989:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:1990:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:2001:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2002:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getSubscriberAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -4913,7 +4962,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleServiceClient"
-    // InternalRos.g:2016:1: entryRuleServiceClient returns [EObject current=null] : iv_ruleServiceClient= ruleServiceClient EOF ;
+    // InternalRos.g:2028:1: entryRuleServiceClient returns [EObject current=null] : iv_ruleServiceClient= ruleServiceClient EOF ;
     public final EObject entryRuleServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -4921,8 +4970,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2016:54: (iv_ruleServiceClient= ruleServiceClient EOF )
-            // InternalRos.g:2017:2: iv_ruleServiceClient= ruleServiceClient EOF
+            // InternalRos.g:2028:54: (iv_ruleServiceClient= ruleServiceClient EOF )
+            // InternalRos.g:2029:2: iv_ruleServiceClient= ruleServiceClient EOF
             {
              newCompositeNode(grammarAccess.getServiceClientRule()); 
             pushFollow(FOLLOW_1);
@@ -4949,7 +4998,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceClient"
-    // InternalRos.g:2023:1: ruleServiceClient returns [EObject current=null] : (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:2035:1: ruleServiceClient returns [EObject current=null] : (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleServiceClient() throws RecognitionException {
         EObject current = null;
 
@@ -4968,11 +5017,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2029:2: ( (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:2030:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2041:2: ( (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:2042:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:2030:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:2031:3: otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:2042:2: (otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2043:3: otherlv_0= 'ServiceClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'service' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,60,FOLLOW_3); 
 
@@ -4986,16 +5035,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getServiceClientAccess().getNameKeyword_2());
             		
-            // InternalRos.g:2043:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:2044:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2055:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:2056:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:2044:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:2045:5: lv_name_3_0= ruleEString
+            // InternalRos.g:2056:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2057:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getServiceClientAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_38);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -5021,11 +5070,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getServiceClientAccess().getServiceKeyword_4());
             		
-            // InternalRos.g:2066:3: ( ( ruleEString ) )
-            // InternalRos.g:2067:4: ( ruleEString )
+            // InternalRos.g:2078:3: ( ( ruleEString ) )
+            // InternalRos.g:2079:4: ( ruleEString )
             {
-            // InternalRos.g:2067:4: ( ruleEString )
-            // InternalRos.g:2068:5: ruleEString
+            // InternalRos.g:2079:4: ( ruleEString )
+            // InternalRos.g:2080:5: ruleEString
             {
 
             					if (current==null) {
@@ -5035,7 +5084,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getServiceClientAccess().getServiceServiceSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -5049,26 +5098,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:2082:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalRos.g:2094:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA46_0==57) ) {
-                alt46=1;
+            if ( (LA42_0==57) ) {
+                alt42=1;
             }
-            switch (alt46) {
+            switch (alt42) {
                 case 1 :
-                    // InternalRos.g:2083:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2095:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getServiceClientAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:2087:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:2088:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2099:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2100:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:2088:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:2089:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:2100:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2101:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getServiceClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -5128,7 +5177,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionServer"
-    // InternalRos.g:2115:1: entryRuleActionServer returns [EObject current=null] : iv_ruleActionServer= ruleActionServer EOF ;
+    // InternalRos.g:2127:1: entryRuleActionServer returns [EObject current=null] : iv_ruleActionServer= ruleActionServer EOF ;
     public final EObject entryRuleActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -5136,8 +5185,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2115:53: (iv_ruleActionServer= ruleActionServer EOF )
-            // InternalRos.g:2116:2: iv_ruleActionServer= ruleActionServer EOF
+            // InternalRos.g:2127:53: (iv_ruleActionServer= ruleActionServer EOF )
+            // InternalRos.g:2128:2: iv_ruleActionServer= ruleActionServer EOF
             {
              newCompositeNode(grammarAccess.getActionServerRule()); 
             pushFollow(FOLLOW_1);
@@ -5164,7 +5213,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionServer"
-    // InternalRos.g:2122:1: ruleActionServer returns [EObject current=null] : (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:2134:1: ruleActionServer returns [EObject current=null] : (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleActionServer() throws RecognitionException {
         EObject current = null;
 
@@ -5183,11 +5232,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2128:2: ( (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:2129:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2140:2: ( (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:2141:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:2129:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:2130:3: otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:2141:2: (otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2142:3: otherlv_0= 'ActionServer' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,61,FOLLOW_3); 
 
@@ -5201,16 +5250,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getActionServerAccess().getNameKeyword_2());
             		
-            // InternalRos.g:2142:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:2143:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2154:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:2155:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:2143:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:2144:5: lv_name_3_0= ruleEString
+            // InternalRos.g:2155:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2156:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getActionServerAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_42);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -5236,11 +5285,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getActionServerAccess().getActionKeyword_4());
             		
-            // InternalRos.g:2165:3: ( ( ruleEString ) )
-            // InternalRos.g:2166:4: ( ruleEString )
+            // InternalRos.g:2177:3: ( ( ruleEString ) )
+            // InternalRos.g:2178:4: ( ruleEString )
             {
-            // InternalRos.g:2166:4: ( ruleEString )
-            // InternalRos.g:2167:5: ruleEString
+            // InternalRos.g:2178:4: ( ruleEString )
+            // InternalRos.g:2179:5: ruleEString
             {
 
             					if (current==null) {
@@ -5250,7 +5299,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getActionServerAccess().getActionActionSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -5264,26 +5313,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:2181:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // InternalRos.g:2193:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA47_0==57) ) {
-                alt47=1;
+            if ( (LA43_0==57) ) {
+                alt43=1;
             }
-            switch (alt47) {
+            switch (alt43) {
                 case 1 :
-                    // InternalRos.g:2182:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2194:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getActionServerAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:2186:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:2187:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2198:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2199:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:2187:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:2188:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:2199:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2200:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getActionServerAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -5343,7 +5392,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionClient"
-    // InternalRos.g:2214:1: entryRuleActionClient returns [EObject current=null] : iv_ruleActionClient= ruleActionClient EOF ;
+    // InternalRos.g:2226:1: entryRuleActionClient returns [EObject current=null] : iv_ruleActionClient= ruleActionClient EOF ;
     public final EObject entryRuleActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -5351,8 +5400,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2214:53: (iv_ruleActionClient= ruleActionClient EOF )
-            // InternalRos.g:2215:2: iv_ruleActionClient= ruleActionClient EOF
+            // InternalRos.g:2226:53: (iv_ruleActionClient= ruleActionClient EOF )
+            // InternalRos.g:2227:2: iv_ruleActionClient= ruleActionClient EOF
             {
              newCompositeNode(grammarAccess.getActionClientRule()); 
             pushFollow(FOLLOW_1);
@@ -5379,7 +5428,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionClient"
-    // InternalRos.g:2221:1: ruleActionClient returns [EObject current=null] : (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
+    // InternalRos.g:2233:1: ruleActionClient returns [EObject current=null] : (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleActionClient() throws RecognitionException {
         EObject current = null;
 
@@ -5398,11 +5447,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2227:2: ( (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
-            // InternalRos.g:2228:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2239:2: ( (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' ) )
+            // InternalRos.g:2240:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
             {
-            // InternalRos.g:2228:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
-            // InternalRos.g:2229:3: otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
+            // InternalRos.g:2240:2: (otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}' )
+            // InternalRos.g:2241:3: otherlv_0= 'ActionClient' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'action' ( ( ruleEString ) ) (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,63,FOLLOW_3); 
 
@@ -5416,16 +5465,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getActionClientAccess().getNameKeyword_2());
             		
-            // InternalRos.g:2241:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:2242:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2253:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:2254:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:2242:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:2243:5: lv_name_3_0= ruleEString
+            // InternalRos.g:2254:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2255:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getActionClientAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_42);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -5451,11 +5500,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getActionClientAccess().getActionKeyword_4());
             		
-            // InternalRos.g:2264:3: ( ( ruleEString ) )
-            // InternalRos.g:2265:4: ( ruleEString )
+            // InternalRos.g:2276:3: ( ( ruleEString ) )
+            // InternalRos.g:2277:4: ( ruleEString )
             {
-            // InternalRos.g:2265:4: ( ruleEString )
-            // InternalRos.g:2266:5: ruleEString
+            // InternalRos.g:2277:4: ( ruleEString )
+            // InternalRos.g:2278:5: ruleEString
             {
 
             					if (current==null) {
@@ -5465,7 +5514,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getActionClientAccess().getActionActionSpecCrossReference_5_0());
             				
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_39);
             ruleEString();
 
             state._fsp--;
@@ -5479,26 +5528,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:2280:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // InternalRos.g:2292:3: (otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) ) )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA48_0==57) ) {
-                alt48=1;
+            if ( (LA44_0==57) ) {
+                alt44=1;
             }
-            switch (alt48) {
+            switch (alt44) {
                 case 1 :
-                    // InternalRos.g:2281:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2293:4: otherlv_6= 'namespace' ( (lv_namespace_7_0= ruleNamespace ) )
                     {
-                    otherlv_6=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_6=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getActionClientAccess().getNamespaceKeyword_6_0());
                     			
-                    // InternalRos.g:2285:4: ( (lv_namespace_7_0= ruleNamespace ) )
-                    // InternalRos.g:2286:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2297:4: ( (lv_namespace_7_0= ruleNamespace ) )
+                    // InternalRos.g:2298:5: (lv_namespace_7_0= ruleNamespace )
                     {
-                    // InternalRos.g:2286:5: (lv_namespace_7_0= ruleNamespace )
-                    // InternalRos.g:2287:6: lv_namespace_7_0= ruleNamespace
+                    // InternalRos.g:2298:5: (lv_namespace_7_0= ruleNamespace )
+                    // InternalRos.g:2299:6: lv_namespace_7_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getActionClientAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
@@ -5558,7 +5607,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphName"
-    // InternalRos.g:2313:1: entryRuleGraphName returns [String current=null] : iv_ruleGraphName= ruleGraphName EOF ;
+    // InternalRos.g:2325:1: entryRuleGraphName returns [String current=null] : iv_ruleGraphName= ruleGraphName EOF ;
     public final String entryRuleGraphName() throws RecognitionException {
         String current = null;
 
@@ -5566,8 +5615,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2313:49: (iv_ruleGraphName= ruleGraphName EOF )
-            // InternalRos.g:2314:2: iv_ruleGraphName= ruleGraphName EOF
+            // InternalRos.g:2325:49: (iv_ruleGraphName= ruleGraphName EOF )
+            // InternalRos.g:2326:2: iv_ruleGraphName= ruleGraphName EOF
             {
              newCompositeNode(grammarAccess.getGraphNameRule()); 
             pushFollow(FOLLOW_1);
@@ -5594,7 +5643,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphName"
-    // InternalRos.g:2320:1: ruleGraphName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'GraphName' ;
+    // InternalRos.g:2332:1: ruleGraphName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'GraphName' ;
     public final AntlrDatatypeRuleToken ruleGraphName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5604,8 +5653,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2326:2: (kw= 'GraphName' )
-            // InternalRos.g:2327:2: kw= 'GraphName'
+            // InternalRos.g:2338:2: (kw= 'GraphName' )
+            // InternalRos.g:2339:2: kw= 'GraphName'
             {
             kw=(Token)match(input,64,FOLLOW_2); 
 
@@ -5632,7 +5681,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePackageDependency"
-    // InternalRos.g:2335:1: entryRulePackageDependency returns [EObject current=null] : iv_rulePackageDependency= rulePackageDependency EOF ;
+    // InternalRos.g:2347:1: entryRulePackageDependency returns [EObject current=null] : iv_rulePackageDependency= rulePackageDependency EOF ;
     public final EObject entryRulePackageDependency() throws RecognitionException {
         EObject current = null;
 
@@ -5640,8 +5689,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2335:58: (iv_rulePackageDependency= rulePackageDependency EOF )
-            // InternalRos.g:2336:2: iv_rulePackageDependency= rulePackageDependency EOF
+            // InternalRos.g:2347:58: (iv_rulePackageDependency= rulePackageDependency EOF )
+            // InternalRos.g:2348:2: iv_rulePackageDependency= rulePackageDependency EOF
             {
              newCompositeNode(grammarAccess.getPackageDependencyRule()); 
             pushFollow(FOLLOW_1);
@@ -5668,7 +5717,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePackageDependency"
-    // InternalRos.g:2342:1: rulePackageDependency returns [EObject current=null] : (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) ) ;
+    // InternalRos.g:2354:1: rulePackageDependency returns [EObject current=null] : (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) ) ;
     public final EObject rulePackageDependency() throws RecognitionException {
         EObject current = null;
 
@@ -5678,21 +5727,21 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2348:2: ( (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) ) )
-            // InternalRos.g:2349:2: (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) )
+            // InternalRos.g:2360:2: ( (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) ) )
+            // InternalRos.g:2361:2: (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) )
             {
-            // InternalRos.g:2349:2: (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) )
-            // InternalRos.g:2350:3: otherlv_0= 'PackageDependency' ( ( ruleEString ) )
+            // InternalRos.g:2361:2: (otherlv_0= 'PackageDependency' ( ( ruleEString ) ) )
+            // InternalRos.g:2362:3: otherlv_0= 'PackageDependency' ( ( ruleEString ) )
             {
             otherlv_0=(Token)match(input,65,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPackageDependencyAccess().getPackageDependencyKeyword_0());
             		
-            // InternalRos.g:2354:3: ( ( ruleEString ) )
-            // InternalRos.g:2355:4: ( ruleEString )
+            // InternalRos.g:2366:3: ( ( ruleEString ) )
+            // InternalRos.g:2367:4: ( ruleEString )
             {
-            // InternalRos.g:2355:4: ( ruleEString )
-            // InternalRos.g:2356:5: ruleEString
+            // InternalRos.g:2367:4: ( ruleEString )
+            // InternalRos.g:2368:5: ruleEString
             {
 
             					if (current==null) {
@@ -5739,7 +5788,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExternalDependency"
-    // InternalRos.g:2374:1: entryRuleExternalDependency returns [EObject current=null] : iv_ruleExternalDependency= ruleExternalDependency EOF ;
+    // InternalRos.g:2386:1: entryRuleExternalDependency returns [EObject current=null] : iv_ruleExternalDependency= ruleExternalDependency EOF ;
     public final EObject entryRuleExternalDependency() throws RecognitionException {
         EObject current = null;
 
@@ -5747,8 +5796,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2374:59: (iv_ruleExternalDependency= ruleExternalDependency EOF )
-            // InternalRos.g:2375:2: iv_ruleExternalDependency= ruleExternalDependency EOF
+            // InternalRos.g:2386:59: (iv_ruleExternalDependency= ruleExternalDependency EOF )
+            // InternalRos.g:2387:2: iv_ruleExternalDependency= ruleExternalDependency EOF
             {
              newCompositeNode(grammarAccess.getExternalDependencyRule()); 
             pushFollow(FOLLOW_1);
@@ -5775,7 +5824,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExternalDependency"
-    // InternalRos.g:2381:1: ruleExternalDependency returns [EObject current=null] : ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalRos.g:2393:1: ruleExternalDependency returns [EObject current=null] : ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleExternalDependency() throws RecognitionException {
         EObject current = null;
 
@@ -5787,14 +5836,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2387:2: ( ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalRos.g:2388:2: ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalRos.g:2399:2: ( ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalRos.g:2400:2: ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalRos.g:2388:2: ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalRos.g:2389:3: () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) )
+            // InternalRos.g:2400:2: ( () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalRos.g:2401:3: () otherlv_1= 'ExternalDependency' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalRos.g:2389:3: ()
-            // InternalRos.g:2390:4: 
+            // InternalRos.g:2401:3: ()
+            // InternalRos.g:2402:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5808,11 +5857,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getExternalDependencyAccess().getExternalDependencyKeyword_1());
             		
-            // InternalRos.g:2400:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalRos.g:2401:4: (lv_name_2_0= ruleEString )
+            // InternalRos.g:2412:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalRos.g:2413:4: (lv_name_2_0= ruleEString )
             {
-            // InternalRos.g:2401:4: (lv_name_2_0= ruleEString )
-            // InternalRos.g:2402:5: lv_name_2_0= ruleEString
+            // InternalRos.g:2413:4: (lv_name_2_0= ruleEString )
+            // InternalRos.g:2414:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getExternalDependencyAccess().getNameEStringParserRuleCall_2_0());
@@ -5862,7 +5911,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGlobalNamespace"
-    // InternalRos.g:2423:1: entryRuleGlobalNamespace returns [EObject current=null] : iv_ruleGlobalNamespace= ruleGlobalNamespace EOF ;
+    // InternalRos.g:2435:1: entryRuleGlobalNamespace returns [EObject current=null] : iv_ruleGlobalNamespace= ruleGlobalNamespace EOF ;
     public final EObject entryRuleGlobalNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -5870,8 +5919,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2423:56: (iv_ruleGlobalNamespace= ruleGlobalNamespace EOF )
-            // InternalRos.g:2424:2: iv_ruleGlobalNamespace= ruleGlobalNamespace EOF
+            // InternalRos.g:2435:56: (iv_ruleGlobalNamespace= ruleGlobalNamespace EOF )
+            // InternalRos.g:2436:2: iv_ruleGlobalNamespace= ruleGlobalNamespace EOF
             {
              newCompositeNode(grammarAccess.getGlobalNamespaceRule()); 
             pushFollow(FOLLOW_1);
@@ -5898,7 +5947,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGlobalNamespace"
-    // InternalRos.g:2430:1: ruleGlobalNamespace returns [EObject current=null] : ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRos.g:2442:1: ruleGlobalNamespace returns [EObject current=null] : ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleGlobalNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -5918,14 +5967,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2436:2: ( ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRos.g:2437:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2448:2: ( ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRos.g:2449:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRos.g:2437:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRos.g:2438:3: () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRos.g:2449:2: ( () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2450:3: () otherlv_1= 'GlobalNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRos.g:2438:3: ()
-            // InternalRos.g:2439:4: 
+            // InternalRos.g:2450:3: ()
+            // InternalRos.g:2451:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5939,34 +5988,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getGlobalNamespaceAccess().getGlobalNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_47); 
+            otherlv_2=(Token)match(input,26,FOLLOW_43); 
 
             			newLeafNode(otherlv_2, grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:2453:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalRos.g:2465:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA50_0==68) ) {
-                alt50=1;
+            if ( (LA46_0==68) ) {
+                alt46=1;
             }
-            switch (alt50) {
+            switch (alt46) {
                 case 1 :
-                    // InternalRos.g:2454:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRos.g:2466:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,68,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getGlobalNamespaceAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,26,FOLLOW_48); 
+                    otherlv_4=(Token)match(input,26,FOLLOW_44); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getGlobalNamespaceAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRos.g:2462:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRos.g:2463:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2474:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRos.g:2475:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRos.g:2463:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRos.g:2464:6: lv_parts_5_0= ruleGraphName
+                    // InternalRos.g:2475:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2476:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -5993,30 +6042,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRos.g:2481:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop49:
+                    // InternalRos.g:2493:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop45:
                     do {
-                        int alt49=2;
-                        int LA49_0 = input.LA(1);
+                        int alt45=2;
+                        int LA45_0 = input.LA(1);
 
-                        if ( (LA49_0==27) ) {
-                            alt49=1;
+                        if ( (LA45_0==27) ) {
+                            alt45=1;
                         }
 
 
-                        switch (alt49) {
+                        switch (alt45) {
                     	case 1 :
-                    	    // InternalRos.g:2482:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2494:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,27,FOLLOW_48); 
+                    	    otherlv_6=(Token)match(input,27,FOLLOW_44); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getGlobalNamespaceAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRos.g:2486:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRos.g:2487:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2498:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2499:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRos.g:2487:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRos.g:2488:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRos.g:2499:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2500:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGlobalNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -6048,7 +6097,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop49;
+                    	    break loop45;
                         }
                     } while (true);
 
@@ -6089,7 +6138,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelativeNamespace_Impl"
-    // InternalRos.g:2519:1: entryRuleRelativeNamespace_Impl returns [EObject current=null] : iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF ;
+    // InternalRos.g:2531:1: entryRuleRelativeNamespace_Impl returns [EObject current=null] : iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF ;
     public final EObject entryRuleRelativeNamespace_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -6097,8 +6146,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2519:63: (iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF )
-            // InternalRos.g:2520:2: iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF
+            // InternalRos.g:2531:63: (iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF )
+            // InternalRos.g:2532:2: iv_ruleRelativeNamespace_Impl= ruleRelativeNamespace_Impl EOF
             {
              newCompositeNode(grammarAccess.getRelativeNamespace_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -6125,7 +6174,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelativeNamespace_Impl"
-    // InternalRos.g:2526:1: ruleRelativeNamespace_Impl returns [EObject current=null] : ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRos.g:2538:1: ruleRelativeNamespace_Impl returns [EObject current=null] : ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject ruleRelativeNamespace_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -6145,14 +6194,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2532:2: ( ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRos.g:2533:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2544:2: ( ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRos.g:2545:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRos.g:2533:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRos.g:2534:3: () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRos.g:2545:2: ( () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2546:3: () otherlv_1= 'RelativeNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRos.g:2534:3: ()
-            // InternalRos.g:2535:4: 
+            // InternalRos.g:2546:3: ()
+            // InternalRos.g:2547:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6166,34 +6215,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRelativeNamespace_ImplAccess().getRelativeNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_47); 
+            otherlv_2=(Token)match(input,26,FOLLOW_43); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:2549:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalRos.g:2561:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA52_0==68) ) {
-                alt52=1;
+            if ( (LA48_0==68) ) {
+                alt48=1;
             }
-            switch (alt52) {
+            switch (alt48) {
                 case 1 :
-                    // InternalRos.g:2550:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRos.g:2562:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,68,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getRelativeNamespace_ImplAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,26,FOLLOW_48); 
+                    otherlv_4=(Token)match(input,26,FOLLOW_44); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getRelativeNamespace_ImplAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRos.g:2558:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRos.g:2559:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2570:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRos.g:2571:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRos.g:2559:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRos.g:2560:6: lv_parts_5_0= ruleGraphName
+                    // InternalRos.g:2571:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2572:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -6220,30 +6269,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRos.g:2577:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop51:
+                    // InternalRos.g:2589:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop47:
                     do {
-                        int alt51=2;
-                        int LA51_0 = input.LA(1);
+                        int alt47=2;
+                        int LA47_0 = input.LA(1);
 
-                        if ( (LA51_0==27) ) {
-                            alt51=1;
+                        if ( (LA47_0==27) ) {
+                            alt47=1;
                         }
 
 
-                        switch (alt51) {
+                        switch (alt47) {
                     	case 1 :
-                    	    // InternalRos.g:2578:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2590:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,27,FOLLOW_48); 
+                    	    otherlv_6=(Token)match(input,27,FOLLOW_44); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getRelativeNamespace_ImplAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRos.g:2582:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRos.g:2583:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2594:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2595:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRos.g:2583:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRos.g:2584:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRos.g:2595:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2596:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getRelativeNamespace_ImplAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -6275,7 +6324,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop51;
+                    	    break loop47;
                         }
                     } while (true);
 
@@ -6316,7 +6365,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrivateNamespace"
-    // InternalRos.g:2615:1: entryRulePrivateNamespace returns [EObject current=null] : iv_rulePrivateNamespace= rulePrivateNamespace EOF ;
+    // InternalRos.g:2627:1: entryRulePrivateNamespace returns [EObject current=null] : iv_rulePrivateNamespace= rulePrivateNamespace EOF ;
     public final EObject entryRulePrivateNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -6324,8 +6373,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2615:57: (iv_rulePrivateNamespace= rulePrivateNamespace EOF )
-            // InternalRos.g:2616:2: iv_rulePrivateNamespace= rulePrivateNamespace EOF
+            // InternalRos.g:2627:57: (iv_rulePrivateNamespace= rulePrivateNamespace EOF )
+            // InternalRos.g:2628:2: iv_rulePrivateNamespace= rulePrivateNamespace EOF
             {
              newCompositeNode(grammarAccess.getPrivateNamespaceRule()); 
             pushFollow(FOLLOW_1);
@@ -6352,7 +6401,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrivateNamespace"
-    // InternalRos.g:2622:1: rulePrivateNamespace returns [EObject current=null] : ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalRos.g:2634:1: rulePrivateNamespace returns [EObject current=null] : ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
     public final EObject rulePrivateNamespace() throws RecognitionException {
         EObject current = null;
 
@@ -6372,14 +6421,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2628:2: ( ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalRos.g:2629:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2640:2: ( ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
+            // InternalRos.g:2641:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
             {
-            // InternalRos.g:2629:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalRos.g:2630:3: () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalRos.g:2641:2: ( () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalRos.g:2642:3: () otherlv_1= 'PrivateNamespace' otherlv_2= '{' (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )? otherlv_9= '}'
             {
-            // InternalRos.g:2630:3: ()
-            // InternalRos.g:2631:4: 
+            // InternalRos.g:2642:3: ()
+            // InternalRos.g:2643:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6393,34 +6442,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPrivateNamespaceAccess().getPrivateNamespaceKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_47); 
+            otherlv_2=(Token)match(input,26,FOLLOW_43); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:2645:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // InternalRos.g:2657:3: (otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}' )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA54_0==68) ) {
-                alt54=1;
+            if ( (LA50_0==68) ) {
+                alt50=1;
             }
-            switch (alt54) {
+            switch (alt50) {
                 case 1 :
-                    // InternalRos.g:2646:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
+                    // InternalRos.g:2658:4: otherlv_3= 'parts' otherlv_4= '{' ( (lv_parts_5_0= ruleGraphName ) ) (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )* otherlv_8= '}'
                     {
                     otherlv_3=(Token)match(input,68,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPrivateNamespaceAccess().getPartsKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,26,FOLLOW_48); 
+                    otherlv_4=(Token)match(input,26,FOLLOW_44); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getPrivateNamespaceAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalRos.g:2654:4: ( (lv_parts_5_0= ruleGraphName ) )
-                    // InternalRos.g:2655:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2666:4: ( (lv_parts_5_0= ruleGraphName ) )
+                    // InternalRos.g:2667:5: (lv_parts_5_0= ruleGraphName )
                     {
-                    // InternalRos.g:2655:5: (lv_parts_5_0= ruleGraphName )
-                    // InternalRos.g:2656:6: lv_parts_5_0= ruleGraphName
+                    // InternalRos.g:2667:5: (lv_parts_5_0= ruleGraphName )
+                    // InternalRos.g:2668:6: lv_parts_5_0= ruleGraphName
                     {
 
                     						newCompositeNode(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_2_0());
@@ -6447,30 +6496,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRos.g:2673:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
-                    loop53:
+                    // InternalRos.g:2685:4: (otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) ) )*
+                    loop49:
                     do {
-                        int alt53=2;
-                        int LA53_0 = input.LA(1);
+                        int alt49=2;
+                        int LA49_0 = input.LA(1);
 
-                        if ( (LA53_0==27) ) {
-                            alt53=1;
+                        if ( (LA49_0==27) ) {
+                            alt49=1;
                         }
 
 
-                        switch (alt53) {
+                        switch (alt49) {
                     	case 1 :
-                    	    // InternalRos.g:2674:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2686:5: otherlv_6= ',' ( (lv_parts_7_0= ruleGraphName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,27,FOLLOW_48); 
+                    	    otherlv_6=(Token)match(input,27,FOLLOW_44); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getPrivateNamespaceAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalRos.g:2678:5: ( (lv_parts_7_0= ruleGraphName ) )
-                    	    // InternalRos.g:2679:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2690:5: ( (lv_parts_7_0= ruleGraphName ) )
+                    	    // InternalRos.g:2691:6: (lv_parts_7_0= ruleGraphName )
                     	    {
-                    	    // InternalRos.g:2679:6: (lv_parts_7_0= ruleGraphName )
-                    	    // InternalRos.g:2680:7: lv_parts_7_0= ruleGraphName
+                    	    // InternalRos.g:2691:6: (lv_parts_7_0= ruleGraphName )
+                    	    // InternalRos.g:2692:7: lv_parts_7_0= ruleGraphName
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getPrivateNamespaceAccess().getPartsGraphNameParserRuleCall_3_3_1_0());
@@ -6502,7 +6551,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop53;
+                    	    break loop49;
                         }
                     } while (true);
 
@@ -6543,7 +6592,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameter"
-    // InternalRos.g:2711:1: entryRuleParameter returns [EObject current=null] : iv_ruleParameter= ruleParameter EOF ;
+    // InternalRos.g:2723:1: entryRuleParameter returns [EObject current=null] : iv_ruleParameter= ruleParameter EOF ;
     public final EObject entryRuleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -6551,8 +6600,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2711:50: (iv_ruleParameter= ruleParameter EOF )
-            // InternalRos.g:2712:2: iv_ruleParameter= ruleParameter EOF
+            // InternalRos.g:2723:50: (iv_ruleParameter= ruleParameter EOF )
+            // InternalRos.g:2724:2: iv_ruleParameter= ruleParameter EOF
             {
              newCompositeNode(grammarAccess.getParameterRule()); 
             pushFollow(FOLLOW_1);
@@ -6579,7 +6628,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameter"
-    // InternalRos.g:2718:1: ruleParameter returns [EObject current=null] : (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) ;
+    // InternalRos.g:2730:1: ruleParameter returns [EObject current=null] : (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) ;
     public final EObject ruleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -6600,11 +6649,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2724:2: ( (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) )
-            // InternalRos.g:2725:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
+            // InternalRos.g:2736:2: ( (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' ) )
+            // InternalRos.g:2737:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
             {
-            // InternalRos.g:2725:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
-            // InternalRos.g:2726:3: otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}'
+            // InternalRos.g:2737:2: (otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}' )
+            // InternalRos.g:2738:3: otherlv_0= 'Parameter' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )? otherlv_6= 'type' ( (lv_type_7_0= ruleParameterType ) ) otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,71,FOLLOW_3); 
 
@@ -6618,16 +6667,16 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterAccess().getNameKeyword_2());
             		
-            // InternalRos.g:2738:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalRos.g:2739:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2750:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalRos.g:2751:4: (lv_name_3_0= ruleEString )
             {
-            // InternalRos.g:2739:4: (lv_name_3_0= ruleEString )
-            // InternalRos.g:2740:5: lv_name_3_0= ruleEString
+            // InternalRos.g:2751:4: (lv_name_3_0= ruleEString )
+            // InternalRos.g:2752:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_45);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -6649,31 +6698,31 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:2757:3: (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )?
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // InternalRos.g:2769:3: (otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA55_0==57) ) {
-                alt55=1;
+            if ( (LA51_0==57) ) {
+                alt51=1;
             }
-            switch (alt55) {
+            switch (alt51) {
                 case 1 :
-                    // InternalRos.g:2758:4: otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) )
+                    // InternalRos.g:2770:4: otherlv_4= 'namespace' ( (lv_namespace_5_0= ruleNamespace ) )
                     {
-                    otherlv_4=(Token)match(input,57,FOLLOW_44); 
+                    otherlv_4=(Token)match(input,57,FOLLOW_40); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getNamespaceKeyword_4_0());
                     			
-                    // InternalRos.g:2762:4: ( (lv_namespace_5_0= ruleNamespace ) )
-                    // InternalRos.g:2763:5: (lv_namespace_5_0= ruleNamespace )
+                    // InternalRos.g:2774:4: ( (lv_namespace_5_0= ruleNamespace ) )
+                    // InternalRos.g:2775:5: (lv_namespace_5_0= ruleNamespace )
                     {
-                    // InternalRos.g:2763:5: (lv_namespace_5_0= ruleNamespace )
-                    // InternalRos.g:2764:6: lv_namespace_5_0= ruleNamespace
+                    // InternalRos.g:2775:5: (lv_namespace_5_0= ruleNamespace )
+                    // InternalRos.g:2776:6: lv_namespace_5_0= ruleNamespace
                     {
 
                     						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_50);
+                    pushFollow(FOLLOW_46);
                     lv_namespace_5_0=ruleNamespace();
 
                     state._fsp--;
@@ -6701,15 +6750,15 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,72,FOLLOW_51); 
+            otherlv_6=(Token)match(input,72,FOLLOW_47); 
 
             			newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getTypeKeyword_5());
             		
-            // InternalRos.g:2786:3: ( (lv_type_7_0= ruleParameterType ) )
-            // InternalRos.g:2787:4: (lv_type_7_0= ruleParameterType )
+            // InternalRos.g:2798:3: ( (lv_type_7_0= ruleParameterType ) )
+            // InternalRos.g:2799:4: (lv_type_7_0= ruleParameterType )
             {
-            // InternalRos.g:2787:4: (lv_type_7_0= ruleParameterType )
-            // InternalRos.g:2788:5: lv_type_7_0= ruleParameterType
+            // InternalRos.g:2799:4: (lv_type_7_0= ruleParameterType )
+            // InternalRos.g:2800:5: lv_type_7_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0());
@@ -6763,7 +6812,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterType"
-    // InternalRos.g:2813:1: entryRuleParameterType returns [EObject current=null] : iv_ruleParameterType= ruleParameterType EOF ;
+    // InternalRos.g:2825:1: entryRuleParameterType returns [EObject current=null] : iv_ruleParameterType= ruleParameterType EOF ;
     public final EObject entryRuleParameterType() throws RecognitionException {
         EObject current = null;
 
@@ -6771,8 +6820,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2813:54: (iv_ruleParameterType= ruleParameterType EOF )
-            // InternalRos.g:2814:2: iv_ruleParameterType= ruleParameterType EOF
+            // InternalRos.g:2825:54: (iv_ruleParameterType= ruleParameterType EOF )
+            // InternalRos.g:2826:2: iv_ruleParameterType= ruleParameterType EOF
             {
              newCompositeNode(grammarAccess.getParameterTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6799,7 +6848,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterType"
-    // InternalRos.g:2820:1: ruleParameterType returns [EObject current=null] : (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType ) ;
+    // InternalRos.g:2832:1: ruleParameterType returns [EObject current=null] : (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType ) ;
     public final EObject ruleParameterType() throws RecognitionException {
         EObject current = null;
 
@@ -6824,62 +6873,62 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2826:2: ( (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType ) )
-            // InternalRos.g:2827:2: (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType )
+            // InternalRos.g:2838:2: ( (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType ) )
+            // InternalRos.g:2839:2: (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType )
             {
-            // InternalRos.g:2827:2: (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType )
-            int alt56=8;
+            // InternalRos.g:2839:2: (this_ParameterListType_0= ruleParameterListType | this_ParameterStructType_1= ruleParameterStructType | this_ParameterIntegerType_2= ruleParameterIntegerType | this_ParameterStringType_3= ruleParameterStringType | this_ParameterDoubleType_4= ruleParameterDoubleType | this_ParameterBooleanType_5= ruleParameterBooleanType | this_ParameterBase64Type_6= ruleParameterBase64Type | this_ParameterArrayType_7= ruleParameterArrayType )
+            int alt52=8;
             switch ( input.LA(1) ) {
             case 73:
                 {
-                alt56=1;
+                alt52=1;
                 }
                 break;
             case 74:
                 {
-                alt56=2;
+                alt52=2;
                 }
                 break;
             case 75:
                 {
-                alt56=3;
+                alt52=3;
                 }
                 break;
             case 40:
                 {
-                alt56=4;
+                alt52=4;
                 }
                 break;
             case 77:
                 {
-                alt56=5;
+                alt52=5;
                 }
                 break;
             case 78:
                 {
-                alt56=6;
+                alt52=6;
                 }
                 break;
             case 79:
                 {
-                alt56=7;
+                alt52=7;
                 }
                 break;
             case 80:
                 {
-                alt56=8;
+                alt52=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 56, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt56) {
+            switch (alt52) {
                 case 1 :
-                    // InternalRos.g:2828:3: this_ParameterListType_0= ruleParameterListType
+                    // InternalRos.g:2840:3: this_ParameterListType_0= ruleParameterListType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterListTypeParserRuleCall_0());
@@ -6897,7 +6946,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:2837:3: this_ParameterStructType_1= ruleParameterStructType
+                    // InternalRos.g:2849:3: this_ParameterStructType_1= ruleParameterStructType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterStructTypeParserRuleCall_1());
@@ -6915,7 +6964,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:2846:3: this_ParameterIntegerType_2= ruleParameterIntegerType
+                    // InternalRos.g:2858:3: this_ParameterIntegerType_2= ruleParameterIntegerType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterIntegerTypeParserRuleCall_2());
@@ -6933,7 +6982,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRos.g:2855:3: this_ParameterStringType_3= ruleParameterStringType
+                    // InternalRos.g:2867:3: this_ParameterStringType_3= ruleParameterStringType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterStringTypeParserRuleCall_3());
@@ -6951,7 +7000,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRos.g:2864:3: this_ParameterDoubleType_4= ruleParameterDoubleType
+                    // InternalRos.g:2876:3: this_ParameterDoubleType_4= ruleParameterDoubleType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterDoubleTypeParserRuleCall_4());
@@ -6969,7 +7018,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRos.g:2873:3: this_ParameterBooleanType_5= ruleParameterBooleanType
+                    // InternalRos.g:2885:3: this_ParameterBooleanType_5= ruleParameterBooleanType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterBooleanTypeParserRuleCall_5());
@@ -6987,7 +7036,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRos.g:2882:3: this_ParameterBase64Type_6= ruleParameterBase64Type
+                    // InternalRos.g:2894:3: this_ParameterBase64Type_6= ruleParameterBase64Type
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterBase64TypeParserRuleCall_6());
@@ -7005,7 +7054,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRos.g:2891:3: this_ParameterArrayType_7= ruleParameterArrayType
+                    // InternalRos.g:2903:3: this_ParameterArrayType_7= ruleParameterArrayType
                     {
 
                     			newCompositeNode(grammarAccess.getParameterTypeAccess().getParameterArrayTypeParserRuleCall_7());
@@ -7045,7 +7094,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterValue"
-    // InternalRos.g:2903:1: entryRuleParameterValue returns [EObject current=null] : iv_ruleParameterValue= ruleParameterValue EOF ;
+    // InternalRos.g:2915:1: entryRuleParameterValue returns [EObject current=null] : iv_ruleParameterValue= ruleParameterValue EOF ;
     public final EObject entryRuleParameterValue() throws RecognitionException {
         EObject current = null;
 
@@ -7053,8 +7102,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2903:55: (iv_ruleParameterValue= ruleParameterValue EOF )
-            // InternalRos.g:2904:2: iv_ruleParameterValue= ruleParameterValue EOF
+            // InternalRos.g:2915:55: (iv_ruleParameterValue= ruleParameterValue EOF )
+            // InternalRos.g:2916:2: iv_ruleParameterValue= ruleParameterValue EOF
             {
              newCompositeNode(grammarAccess.getParameterValueRule()); 
             pushFollow(FOLLOW_1);
@@ -7081,7 +7130,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterValue"
-    // InternalRos.g:2910:1: ruleParameterValue returns [EObject current=null] : (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct ) ;
+    // InternalRos.g:2922:1: ruleParameterValue returns [EObject current=null] : (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct ) ;
     public final EObject ruleParameterValue() throws RecognitionException {
         EObject current = null;
 
@@ -7104,51 +7153,51 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2916:2: ( (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct ) )
-            // InternalRos.g:2917:2: (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct )
+            // InternalRos.g:2928:2: ( (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct ) )
+            // InternalRos.g:2929:2: (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct )
             {
-            // InternalRos.g:2917:2: (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct )
-            int alt57=7;
+            // InternalRos.g:2929:2: (this_ParameterString_0= ruleParameterString | this_ParameterBase64_1= ruleParameterBase64 | this_ParameterInteger_2= ruleParameterInteger | this_ParameterDouble_3= ruleParameterDouble | this_ParameterBoolean_4= ruleParameterBoolean | this_ParameterList_5= ruleParameterList | this_ParameterStruct_6= ruleParameterStruct )
+            int alt53=7;
             switch ( input.LA(1) ) {
             case RULE_STRING:
             case RULE_ID:
                 {
-                alt57=1;
+                alt53=1;
                 }
                 break;
             case RULE_BINARY:
                 {
-                alt57=2;
+                alt53=2;
                 }
                 break;
             case RULE_DECINT:
                 {
-                alt57=3;
+                alt53=3;
                 }
                 break;
             case RULE_DOUBLE:
                 {
-                alt57=4;
+                alt53=4;
                 }
                 break;
             case RULE_BOOLEAN:
                 {
-                alt57=5;
+                alt53=5;
                 }
                 break;
             case 26:
                 {
-                int LA57_6 = input.LA(2);
+                int LA53_6 = input.LA(2);
 
-                if ( ((LA57_6>=RULE_STRING && LA57_6<=RULE_ID)||(LA57_6>=RULE_BINARY && LA57_6<=RULE_DECINT)||(LA57_6>=26 && LA57_6<=28)) ) {
-                    alt57=6;
+                if ( ((LA53_6>=RULE_STRING && LA53_6<=RULE_ID)||(LA53_6>=RULE_BINARY && LA53_6<=RULE_DECINT)||(LA53_6>=26 && LA53_6<=28)) ) {
+                    alt53=6;
                 }
-                else if ( (LA57_6==83) ) {
-                    alt57=7;
+                else if ( (LA53_6==83) ) {
+                    alt53=7;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 57, 6, input);
+                        new NoViableAltException("", 53, 6, input);
 
                     throw nvae;
                 }
@@ -7158,19 +7207,19 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             case 27:
             case 28:
                 {
-                alt57=7;
+                alt53=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 57, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt57) {
+            switch (alt53) {
                 case 1 :
-                    // InternalRos.g:2918:3: this_ParameterString_0= ruleParameterString
+                    // InternalRos.g:2930:3: this_ParameterString_0= ruleParameterString
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterStringParserRuleCall_0());
@@ -7188,7 +7237,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:2927:3: this_ParameterBase64_1= ruleParameterBase64
+                    // InternalRos.g:2939:3: this_ParameterBase64_1= ruleParameterBase64
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterBase64ParserRuleCall_1());
@@ -7206,7 +7255,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:2936:3: this_ParameterInteger_2= ruleParameterInteger
+                    // InternalRos.g:2948:3: this_ParameterInteger_2= ruleParameterInteger
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterIntegerParserRuleCall_2());
@@ -7224,7 +7273,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRos.g:2945:3: this_ParameterDouble_3= ruleParameterDouble
+                    // InternalRos.g:2957:3: this_ParameterDouble_3= ruleParameterDouble
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterDoubleParserRuleCall_3());
@@ -7242,7 +7291,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRos.g:2954:3: this_ParameterBoolean_4= ruleParameterBoolean
+                    // InternalRos.g:2966:3: this_ParameterBoolean_4= ruleParameterBoolean
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterBooleanParserRuleCall_4());
@@ -7260,7 +7309,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRos.g:2963:3: this_ParameterList_5= ruleParameterList
+                    // InternalRos.g:2975:3: this_ParameterList_5= ruleParameterList
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterListParserRuleCall_5());
@@ -7278,7 +7327,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRos.g:2972:3: this_ParameterStruct_6= ruleParameterStruct
+                    // InternalRos.g:2984:3: this_ParameterStruct_6= ruleParameterStruct
                     {
 
                     			newCompositeNode(grammarAccess.getParameterValueAccess().getParameterStructParserRuleCall_6());
@@ -7318,7 +7367,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterListType"
-    // InternalRos.g:2984:1: entryRuleParameterListType returns [EObject current=null] : iv_ruleParameterListType= ruleParameterListType EOF ;
+    // InternalRos.g:2996:1: entryRuleParameterListType returns [EObject current=null] : iv_ruleParameterListType= ruleParameterListType EOF ;
     public final EObject entryRuleParameterListType() throws RecognitionException {
         EObject current = null;
 
@@ -7326,8 +7375,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:2984:58: (iv_ruleParameterListType= ruleParameterListType EOF )
-            // InternalRos.g:2985:2: iv_ruleParameterListType= ruleParameterListType EOF
+            // InternalRos.g:2996:58: (iv_ruleParameterListType= ruleParameterListType EOF )
+            // InternalRos.g:2997:2: iv_ruleParameterListType= ruleParameterListType EOF
             {
              newCompositeNode(grammarAccess.getParameterListTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7354,7 +7403,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterListType"
-    // InternalRos.g:2991:1: ruleParameterListType returns [EObject current=null] : ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' ) ;
+    // InternalRos.g:3003:1: ruleParameterListType returns [EObject current=null] : ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleParameterListType() throws RecognitionException {
         EObject current = null;
 
@@ -7371,14 +7420,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:2997:2: ( ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' ) )
-            // InternalRos.g:2998:2: ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' )
+            // InternalRos.g:3009:2: ( ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' ) )
+            // InternalRos.g:3010:2: ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' )
             {
-            // InternalRos.g:2998:2: ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' )
-            // InternalRos.g:2999:3: () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}'
+            // InternalRos.g:3010:2: ( () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}' )
+            // InternalRos.g:3011:3: () otherlv_1= 'List' otherlv_2= '{' ( (lv_sequence_3_0= ruleParameterType ) ) (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )* otherlv_6= '}'
             {
-            // InternalRos.g:2999:3: ()
-            // InternalRos.g:3000:4: 
+            // InternalRos.g:3011:3: ()
+            // InternalRos.g:3012:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7392,15 +7441,15 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterListTypeAccess().getListKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_51); 
+            otherlv_2=(Token)match(input,26,FOLLOW_47); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterListTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:3014:3: ( (lv_sequence_3_0= ruleParameterType ) )
-            // InternalRos.g:3015:4: (lv_sequence_3_0= ruleParameterType )
+            // InternalRos.g:3026:3: ( (lv_sequence_3_0= ruleParameterType ) )
+            // InternalRos.g:3027:4: (lv_sequence_3_0= ruleParameterType )
             {
-            // InternalRos.g:3015:4: (lv_sequence_3_0= ruleParameterType )
-            // InternalRos.g:3016:5: lv_sequence_3_0= ruleParameterType
+            // InternalRos.g:3027:4: (lv_sequence_3_0= ruleParameterType )
+            // InternalRos.g:3028:5: lv_sequence_3_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_3_0());
@@ -7427,30 +7476,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:3033:3: (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )*
-            loop58:
+            // InternalRos.g:3045:3: (otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) ) )*
+            loop54:
             do {
-                int alt58=2;
-                int LA58_0 = input.LA(1);
+                int alt54=2;
+                int LA54_0 = input.LA(1);
 
-                if ( (LA58_0==27) ) {
-                    alt58=1;
+                if ( (LA54_0==27) ) {
+                    alt54=1;
                 }
 
 
-                switch (alt58) {
+                switch (alt54) {
             	case 1 :
-            	    // InternalRos.g:3034:4: otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) )
+            	    // InternalRos.g:3046:4: otherlv_4= ',' ( (lv_sequence_5_0= ruleParameterType ) )
             	    {
-            	    otherlv_4=(Token)match(input,27,FOLLOW_51); 
+            	    otherlv_4=(Token)match(input,27,FOLLOW_47); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getParameterListTypeAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalRos.g:3038:4: ( (lv_sequence_5_0= ruleParameterType ) )
-            	    // InternalRos.g:3039:5: (lv_sequence_5_0= ruleParameterType )
+            	    // InternalRos.g:3050:4: ( (lv_sequence_5_0= ruleParameterType ) )
+            	    // InternalRos.g:3051:5: (lv_sequence_5_0= ruleParameterType )
             	    {
-            	    // InternalRos.g:3039:5: (lv_sequence_5_0= ruleParameterType )
-            	    // InternalRos.g:3040:6: lv_sequence_5_0= ruleParameterType
+            	    // InternalRos.g:3051:5: (lv_sequence_5_0= ruleParameterType )
+            	    // InternalRos.g:3052:6: lv_sequence_5_0= ruleParameterType
             	    {
 
             	    						newCompositeNode(grammarAccess.getParameterListTypeAccess().getSequenceParameterTypeParserRuleCall_4_1_0());
@@ -7482,7 +7531,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop58;
+            	    break loop54;
                 }
             } while (true);
 
@@ -7513,7 +7562,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructType"
-    // InternalRos.g:3066:1: entryRuleParameterStructType returns [EObject current=null] : iv_ruleParameterStructType= ruleParameterStructType EOF ;
+    // InternalRos.g:3078:1: entryRuleParameterStructType returns [EObject current=null] : iv_ruleParameterStructType= ruleParameterStructType EOF ;
     public final EObject entryRuleParameterStructType() throws RecognitionException {
         EObject current = null;
 
@@ -7521,8 +7570,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3066:60: (iv_ruleParameterStructType= ruleParameterStructType EOF )
-            // InternalRos.g:3067:2: iv_ruleParameterStructType= ruleParameterStructType EOF
+            // InternalRos.g:3078:60: (iv_ruleParameterStructType= ruleParameterStructType EOF )
+            // InternalRos.g:3079:2: iv_ruleParameterStructType= ruleParameterStructType EOF
             {
              newCompositeNode(grammarAccess.getParameterStructTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7549,7 +7598,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructType"
-    // InternalRos.g:3073:1: ruleParameterStructType returns [EObject current=null] : ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' ) ;
+    // InternalRos.g:3085:1: ruleParameterStructType returns [EObject current=null] : ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleParameterStructType() throws RecognitionException {
         EObject current = null;
 
@@ -7566,14 +7615,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3079:2: ( ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' ) )
-            // InternalRos.g:3080:2: ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' )
+            // InternalRos.g:3091:2: ( ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' ) )
+            // InternalRos.g:3092:2: ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' )
             {
-            // InternalRos.g:3080:2: ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' )
-            // InternalRos.g:3081:3: () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}'
+            // InternalRos.g:3092:2: ( () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}' )
+            // InternalRos.g:3093:3: () otherlv_1= 'Struct' otherlv_2= '{' ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) ) (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )* otherlv_6= '}'
             {
-            // InternalRos.g:3081:3: ()
-            // InternalRos.g:3082:4: 
+            // InternalRos.g:3093:3: ()
+            // InternalRos.g:3094:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7591,11 +7640,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructTypeAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:3096:3: ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) )
-            // InternalRos.g:3097:4: (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember )
+            // InternalRos.g:3108:3: ( (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember ) )
+            // InternalRos.g:3109:4: (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember )
             {
-            // InternalRos.g:3097:4: (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember )
-            // InternalRos.g:3098:5: lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember
+            // InternalRos.g:3109:4: (lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember )
+            // InternalRos.g:3110:5: lv_parameterstructypetmember_3_0= ruleParameterStructTypeMember
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_3_0());
@@ -7622,30 +7671,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:3115:3: (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )*
-            loop59:
+            // InternalRos.g:3127:3: (otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) ) )*
+            loop55:
             do {
-                int alt59=2;
-                int LA59_0 = input.LA(1);
+                int alt55=2;
+                int LA55_0 = input.LA(1);
 
-                if ( (LA59_0==27) ) {
-                    alt59=1;
+                if ( (LA55_0==27) ) {
+                    alt55=1;
                 }
 
 
-                switch (alt59) {
+                switch (alt55) {
             	case 1 :
-            	    // InternalRos.g:3116:4: otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
+            	    // InternalRos.g:3128:4: otherlv_4= ',' ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
             	    {
             	    otherlv_4=(Token)match(input,27,FOLLOW_7); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getParameterStructTypeAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalRos.g:3120:4: ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
-            	    // InternalRos.g:3121:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
+            	    // InternalRos.g:3132:4: ( (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember ) )
+            	    // InternalRos.g:3133:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
             	    {
-            	    // InternalRos.g:3121:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
-            	    // InternalRos.g:3122:6: lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember
+            	    // InternalRos.g:3133:5: (lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember )
+            	    // InternalRos.g:3134:6: lv_parameterstructypetmember_5_0= ruleParameterStructTypeMember
             	    {
 
             	    						newCompositeNode(grammarAccess.getParameterStructTypeAccess().getParameterstructypetmemberParameterStructTypeMemberParserRuleCall_4_1_0());
@@ -7677,7 +7726,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop59;
+            	    break loop55;
                 }
             } while (true);
 
@@ -7708,7 +7757,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterIntegerType"
-    // InternalRos.g:3148:1: entryRuleParameterIntegerType returns [EObject current=null] : iv_ruleParameterIntegerType= ruleParameterIntegerType EOF ;
+    // InternalRos.g:3160:1: entryRuleParameterIntegerType returns [EObject current=null] : iv_ruleParameterIntegerType= ruleParameterIntegerType EOF ;
     public final EObject entryRuleParameterIntegerType() throws RecognitionException {
         EObject current = null;
 
@@ -7716,8 +7765,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3148:61: (iv_ruleParameterIntegerType= ruleParameterIntegerType EOF )
-            // InternalRos.g:3149:2: iv_ruleParameterIntegerType= ruleParameterIntegerType EOF
+            // InternalRos.g:3160:61: (iv_ruleParameterIntegerType= ruleParameterIntegerType EOF )
+            // InternalRos.g:3161:2: iv_ruleParameterIntegerType= ruleParameterIntegerType EOF
             {
              newCompositeNode(grammarAccess.getParameterIntegerTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7744,7 +7793,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterIntegerType"
-    // InternalRos.g:3155:1: ruleParameterIntegerType returns [EObject current=null] : ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? ) ;
+    // InternalRos.g:3167:1: ruleParameterIntegerType returns [EObject current=null] : ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? ) ;
     public final EObject ruleParameterIntegerType() throws RecognitionException {
         EObject current = null;
 
@@ -7757,14 +7806,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3161:2: ( ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? ) )
-            // InternalRos.g:3162:2: ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? )
+            // InternalRos.g:3173:2: ( ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? ) )
+            // InternalRos.g:3174:2: ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? )
             {
-            // InternalRos.g:3162:2: ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? )
-            // InternalRos.g:3163:3: () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )?
+            // InternalRos.g:3174:2: ( () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )? )
+            // InternalRos.g:3175:3: () otherlv_1= 'Integer' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )?
             {
-            // InternalRos.g:3163:3: ()
-            // InternalRos.g:3164:4: 
+            // InternalRos.g:3175:3: ()
+            // InternalRos.g:3176:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7774,34 +7823,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,75,FOLLOW_52); 
+            otherlv_1=(Token)match(input,75,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterIntegerTypeAccess().getIntegerKeyword_1());
             		
-            // InternalRos.g:3174:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )?
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            // InternalRos.g:3186:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) ) )?
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA60_0==76) ) {
-                int LA60_1 = input.LA(2);
+            if ( (LA56_0==76) ) {
+                int LA56_1 = input.LA(2);
 
-                if ( (LA60_1==RULE_DECINT) ) {
-                    alt60=1;
+                if ( (LA56_1==RULE_DECINT) ) {
+                    alt56=1;
                 }
             }
-            switch (alt60) {
+            switch (alt56) {
                 case 1 :
-                    // InternalRos.g:3175:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) )
+                    // InternalRos.g:3187:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterInteger ) )
                     {
-                    otherlv_2=(Token)match(input,76,FOLLOW_53); 
+                    otherlv_2=(Token)match(input,76,FOLLOW_49); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterIntegerTypeAccess().getDefaultKeyword_2_0());
                     			
-                    // InternalRos.g:3179:4: ( (lv_default_3_0= ruleParameterInteger ) )
-                    // InternalRos.g:3180:5: (lv_default_3_0= ruleParameterInteger )
+                    // InternalRos.g:3191:4: ( (lv_default_3_0= ruleParameterInteger ) )
+                    // InternalRos.g:3192:5: (lv_default_3_0= ruleParameterInteger )
                     {
-                    // InternalRos.g:3180:5: (lv_default_3_0= ruleParameterInteger )
-                    // InternalRos.g:3181:6: lv_default_3_0= ruleParameterInteger
+                    // InternalRos.g:3192:5: (lv_default_3_0= ruleParameterInteger )
+                    // InternalRos.g:3193:6: lv_default_3_0= ruleParameterInteger
                     {
 
                     						newCompositeNode(grammarAccess.getParameterIntegerTypeAccess().getDefaultParameterIntegerParserRuleCall_2_1_0());
@@ -7857,7 +7906,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStringType"
-    // InternalRos.g:3203:1: entryRuleParameterStringType returns [EObject current=null] : iv_ruleParameterStringType= ruleParameterStringType EOF ;
+    // InternalRos.g:3215:1: entryRuleParameterStringType returns [EObject current=null] : iv_ruleParameterStringType= ruleParameterStringType EOF ;
     public final EObject entryRuleParameterStringType() throws RecognitionException {
         EObject current = null;
 
@@ -7865,8 +7914,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3203:60: (iv_ruleParameterStringType= ruleParameterStringType EOF )
-            // InternalRos.g:3204:2: iv_ruleParameterStringType= ruleParameterStringType EOF
+            // InternalRos.g:3215:60: (iv_ruleParameterStringType= ruleParameterStringType EOF )
+            // InternalRos.g:3216:2: iv_ruleParameterStringType= ruleParameterStringType EOF
             {
              newCompositeNode(grammarAccess.getParameterStringTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7893,7 +7942,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStringType"
-    // InternalRos.g:3210:1: ruleParameterStringType returns [EObject current=null] : ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? ) ;
+    // InternalRos.g:3222:1: ruleParameterStringType returns [EObject current=null] : ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? ) ;
     public final EObject ruleParameterStringType() throws RecognitionException {
         EObject current = null;
 
@@ -7906,14 +7955,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3216:2: ( ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? ) )
-            // InternalRos.g:3217:2: ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? )
+            // InternalRos.g:3228:2: ( ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? ) )
+            // InternalRos.g:3229:2: ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? )
             {
-            // InternalRos.g:3217:2: ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? )
-            // InternalRos.g:3218:3: () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )?
+            // InternalRos.g:3229:2: ( () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )? )
+            // InternalRos.g:3230:3: () otherlv_1= 'String' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )?
             {
-            // InternalRos.g:3218:3: ()
-            // InternalRos.g:3219:4: 
+            // InternalRos.g:3230:3: ()
+            // InternalRos.g:3231:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7923,34 +7972,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,40,FOLLOW_52); 
+            otherlv_1=(Token)match(input,40,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStringTypeAccess().getStringKeyword_1());
             		
-            // InternalRos.g:3229:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )?
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            // InternalRos.g:3241:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) ) )?
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( (LA61_0==76) ) {
-                int LA61_1 = input.LA(2);
+            if ( (LA57_0==76) ) {
+                int LA57_1 = input.LA(2);
 
-                if ( ((LA61_1>=RULE_STRING && LA61_1<=RULE_ID)) ) {
-                    alt61=1;
+                if ( ((LA57_1>=RULE_STRING && LA57_1<=RULE_ID)) ) {
+                    alt57=1;
                 }
             }
-            switch (alt61) {
+            switch (alt57) {
                 case 1 :
-                    // InternalRos.g:3230:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) )
+                    // InternalRos.g:3242:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterString ) )
                     {
                     otherlv_2=(Token)match(input,76,FOLLOW_7); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterStringTypeAccess().getDefaultKeyword_2_0());
                     			
-                    // InternalRos.g:3234:4: ( (lv_default_3_0= ruleParameterString ) )
-                    // InternalRos.g:3235:5: (lv_default_3_0= ruleParameterString )
+                    // InternalRos.g:3246:4: ( (lv_default_3_0= ruleParameterString ) )
+                    // InternalRos.g:3247:5: (lv_default_3_0= ruleParameterString )
                     {
-                    // InternalRos.g:3235:5: (lv_default_3_0= ruleParameterString )
-                    // InternalRos.g:3236:6: lv_default_3_0= ruleParameterString
+                    // InternalRos.g:3247:5: (lv_default_3_0= ruleParameterString )
+                    // InternalRos.g:3248:6: lv_default_3_0= ruleParameterString
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStringTypeAccess().getDefaultParameterStringParserRuleCall_2_1_0());
@@ -8006,7 +8055,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDoubleType"
-    // InternalRos.g:3258:1: entryRuleParameterDoubleType returns [EObject current=null] : iv_ruleParameterDoubleType= ruleParameterDoubleType EOF ;
+    // InternalRos.g:3270:1: entryRuleParameterDoubleType returns [EObject current=null] : iv_ruleParameterDoubleType= ruleParameterDoubleType EOF ;
     public final EObject entryRuleParameterDoubleType() throws RecognitionException {
         EObject current = null;
 
@@ -8014,8 +8063,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3258:60: (iv_ruleParameterDoubleType= ruleParameterDoubleType EOF )
-            // InternalRos.g:3259:2: iv_ruleParameterDoubleType= ruleParameterDoubleType EOF
+            // InternalRos.g:3270:60: (iv_ruleParameterDoubleType= ruleParameterDoubleType EOF )
+            // InternalRos.g:3271:2: iv_ruleParameterDoubleType= ruleParameterDoubleType EOF
             {
              newCompositeNode(grammarAccess.getParameterDoubleTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8042,7 +8091,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDoubleType"
-    // InternalRos.g:3265:1: ruleParameterDoubleType returns [EObject current=null] : ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? ) ;
+    // InternalRos.g:3277:1: ruleParameterDoubleType returns [EObject current=null] : ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? ) ;
     public final EObject ruleParameterDoubleType() throws RecognitionException {
         EObject current = null;
 
@@ -8055,14 +8104,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3271:2: ( ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? ) )
-            // InternalRos.g:3272:2: ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? )
+            // InternalRos.g:3283:2: ( ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? ) )
+            // InternalRos.g:3284:2: ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? )
             {
-            // InternalRos.g:3272:2: ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? )
-            // InternalRos.g:3273:3: () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )?
+            // InternalRos.g:3284:2: ( () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )? )
+            // InternalRos.g:3285:3: () otherlv_1= 'Double' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )?
             {
-            // InternalRos.g:3273:3: ()
-            // InternalRos.g:3274:4: 
+            // InternalRos.g:3285:3: ()
+            // InternalRos.g:3286:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8072,34 +8121,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,77,FOLLOW_52); 
+            otherlv_1=(Token)match(input,77,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDoubleTypeAccess().getDoubleKeyword_1());
             		
-            // InternalRos.g:3284:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // InternalRos.g:3296:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) ) )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA62_0==76) ) {
-                int LA62_1 = input.LA(2);
+            if ( (LA58_0==76) ) {
+                int LA58_1 = input.LA(2);
 
-                if ( (LA62_1==RULE_DOUBLE) ) {
-                    alt62=1;
+                if ( (LA58_1==RULE_DOUBLE) ) {
+                    alt58=1;
                 }
             }
-            switch (alt62) {
+            switch (alt58) {
                 case 1 :
-                    // InternalRos.g:3285:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) )
+                    // InternalRos.g:3297:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterDouble ) )
                     {
-                    otherlv_2=(Token)match(input,76,FOLLOW_54); 
+                    otherlv_2=(Token)match(input,76,FOLLOW_50); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterDoubleTypeAccess().getDefaultKeyword_2_0());
                     			
-                    // InternalRos.g:3289:4: ( (lv_default_3_0= ruleParameterDouble ) )
-                    // InternalRos.g:3290:5: (lv_default_3_0= ruleParameterDouble )
+                    // InternalRos.g:3301:4: ( (lv_default_3_0= ruleParameterDouble ) )
+                    // InternalRos.g:3302:5: (lv_default_3_0= ruleParameterDouble )
                     {
-                    // InternalRos.g:3290:5: (lv_default_3_0= ruleParameterDouble )
-                    // InternalRos.g:3291:6: lv_default_3_0= ruleParameterDouble
+                    // InternalRos.g:3302:5: (lv_default_3_0= ruleParameterDouble )
+                    // InternalRos.g:3303:6: lv_default_3_0= ruleParameterDouble
                     {
 
                     						newCompositeNode(grammarAccess.getParameterDoubleTypeAccess().getDefaultParameterDoubleParserRuleCall_2_1_0());
@@ -8155,7 +8204,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBooleanType"
-    // InternalRos.g:3313:1: entryRuleParameterBooleanType returns [EObject current=null] : iv_ruleParameterBooleanType= ruleParameterBooleanType EOF ;
+    // InternalRos.g:3325:1: entryRuleParameterBooleanType returns [EObject current=null] : iv_ruleParameterBooleanType= ruleParameterBooleanType EOF ;
     public final EObject entryRuleParameterBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -8163,8 +8212,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3313:61: (iv_ruleParameterBooleanType= ruleParameterBooleanType EOF )
-            // InternalRos.g:3314:2: iv_ruleParameterBooleanType= ruleParameterBooleanType EOF
+            // InternalRos.g:3325:61: (iv_ruleParameterBooleanType= ruleParameterBooleanType EOF )
+            // InternalRos.g:3326:2: iv_ruleParameterBooleanType= ruleParameterBooleanType EOF
             {
              newCompositeNode(grammarAccess.getParameterBooleanTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8191,7 +8240,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBooleanType"
-    // InternalRos.g:3320:1: ruleParameterBooleanType returns [EObject current=null] : ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? ) ;
+    // InternalRos.g:3332:1: ruleParameterBooleanType returns [EObject current=null] : ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? ) ;
     public final EObject ruleParameterBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -8204,14 +8253,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3326:2: ( ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? ) )
-            // InternalRos.g:3327:2: ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? )
+            // InternalRos.g:3338:2: ( ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? ) )
+            // InternalRos.g:3339:2: ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? )
             {
-            // InternalRos.g:3327:2: ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? )
-            // InternalRos.g:3328:3: () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )?
+            // InternalRos.g:3339:2: ( () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )? )
+            // InternalRos.g:3340:3: () otherlv_1= 'Boolean' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )?
             {
-            // InternalRos.g:3328:3: ()
-            // InternalRos.g:3329:4: 
+            // InternalRos.g:3340:3: ()
+            // InternalRos.g:3341:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8221,34 +8270,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,78,FOLLOW_52); 
+            otherlv_1=(Token)match(input,78,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBooleanTypeAccess().getBooleanKeyword_1());
             		
-            // InternalRos.g:3339:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )?
-            int alt63=2;
-            int LA63_0 = input.LA(1);
+            // InternalRos.g:3351:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) ) )?
+            int alt59=2;
+            int LA59_0 = input.LA(1);
 
-            if ( (LA63_0==76) ) {
-                int LA63_1 = input.LA(2);
+            if ( (LA59_0==76) ) {
+                int LA59_1 = input.LA(2);
 
-                if ( (LA63_1==RULE_BOOLEAN) ) {
-                    alt63=1;
+                if ( (LA59_1==RULE_BOOLEAN) ) {
+                    alt59=1;
                 }
             }
-            switch (alt63) {
+            switch (alt59) {
                 case 1 :
-                    // InternalRos.g:3340:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) )
+                    // InternalRos.g:3352:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBoolean ) )
                     {
-                    otherlv_2=(Token)match(input,76,FOLLOW_55); 
+                    otherlv_2=(Token)match(input,76,FOLLOW_51); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterBooleanTypeAccess().getDefaultKeyword_2_0());
                     			
-                    // InternalRos.g:3344:4: ( (lv_default_3_0= ruleParameterBoolean ) )
-                    // InternalRos.g:3345:5: (lv_default_3_0= ruleParameterBoolean )
+                    // InternalRos.g:3356:4: ( (lv_default_3_0= ruleParameterBoolean ) )
+                    // InternalRos.g:3357:5: (lv_default_3_0= ruleParameterBoolean )
                     {
-                    // InternalRos.g:3345:5: (lv_default_3_0= ruleParameterBoolean )
-                    // InternalRos.g:3346:6: lv_default_3_0= ruleParameterBoolean
+                    // InternalRos.g:3357:5: (lv_default_3_0= ruleParameterBoolean )
+                    // InternalRos.g:3358:6: lv_default_3_0= ruleParameterBoolean
                     {
 
                     						newCompositeNode(grammarAccess.getParameterBooleanTypeAccess().getDefaultParameterBooleanParserRuleCall_2_1_0());
@@ -8304,7 +8353,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBase64Type"
-    // InternalRos.g:3368:1: entryRuleParameterBase64Type returns [EObject current=null] : iv_ruleParameterBase64Type= ruleParameterBase64Type EOF ;
+    // InternalRos.g:3380:1: entryRuleParameterBase64Type returns [EObject current=null] : iv_ruleParameterBase64Type= ruleParameterBase64Type EOF ;
     public final EObject entryRuleParameterBase64Type() throws RecognitionException {
         EObject current = null;
 
@@ -8312,8 +8361,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3368:60: (iv_ruleParameterBase64Type= ruleParameterBase64Type EOF )
-            // InternalRos.g:3369:2: iv_ruleParameterBase64Type= ruleParameterBase64Type EOF
+            // InternalRos.g:3380:60: (iv_ruleParameterBase64Type= ruleParameterBase64Type EOF )
+            // InternalRos.g:3381:2: iv_ruleParameterBase64Type= ruleParameterBase64Type EOF
             {
              newCompositeNode(grammarAccess.getParameterBase64TypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8340,7 +8389,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBase64Type"
-    // InternalRos.g:3375:1: ruleParameterBase64Type returns [EObject current=null] : ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? ) ;
+    // InternalRos.g:3387:1: ruleParameterBase64Type returns [EObject current=null] : ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? ) ;
     public final EObject ruleParameterBase64Type() throws RecognitionException {
         EObject current = null;
 
@@ -8353,14 +8402,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3381:2: ( ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? ) )
-            // InternalRos.g:3382:2: ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? )
+            // InternalRos.g:3393:2: ( ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? ) )
+            // InternalRos.g:3394:2: ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? )
             {
-            // InternalRos.g:3382:2: ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? )
-            // InternalRos.g:3383:3: () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )?
+            // InternalRos.g:3394:2: ( () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )? )
+            // InternalRos.g:3395:3: () otherlv_1= 'Base64' (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )?
             {
-            // InternalRos.g:3383:3: ()
-            // InternalRos.g:3384:4: 
+            // InternalRos.g:3395:3: ()
+            // InternalRos.g:3396:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8370,34 +8419,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,79,FOLLOW_52); 
+            otherlv_1=(Token)match(input,79,FOLLOW_48); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterBase64TypeAccess().getBase64Keyword_1());
             		
-            // InternalRos.g:3394:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
+            // InternalRos.g:3406:3: (otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) ) )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA64_0==76) ) {
-                int LA64_1 = input.LA(2);
+            if ( (LA60_0==76) ) {
+                int LA60_1 = input.LA(2);
 
-                if ( (LA64_1==RULE_BINARY) ) {
-                    alt64=1;
+                if ( (LA60_1==RULE_BINARY) ) {
+                    alt60=1;
                 }
             }
-            switch (alt64) {
+            switch (alt60) {
                 case 1 :
-                    // InternalRos.g:3395:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) )
+                    // InternalRos.g:3407:4: otherlv_2= 'default' ( (lv_default_3_0= ruleParameterBase64 ) )
                     {
-                    otherlv_2=(Token)match(input,76,FOLLOW_56); 
+                    otherlv_2=(Token)match(input,76,FOLLOW_52); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterBase64TypeAccess().getDefaultKeyword_2_0());
                     			
-                    // InternalRos.g:3399:4: ( (lv_default_3_0= ruleParameterBase64 ) )
-                    // InternalRos.g:3400:5: (lv_default_3_0= ruleParameterBase64 )
+                    // InternalRos.g:3411:4: ( (lv_default_3_0= ruleParameterBase64 ) )
+                    // InternalRos.g:3412:5: (lv_default_3_0= ruleParameterBase64 )
                     {
-                    // InternalRos.g:3400:5: (lv_default_3_0= ruleParameterBase64 )
-                    // InternalRos.g:3401:6: lv_default_3_0= ruleParameterBase64
+                    // InternalRos.g:3412:5: (lv_default_3_0= ruleParameterBase64 )
+                    // InternalRos.g:3413:6: lv_default_3_0= ruleParameterBase64
                     {
 
                     						newCompositeNode(grammarAccess.getParameterBase64TypeAccess().getDefaultParameterBase64ParserRuleCall_2_1_0());
@@ -8453,7 +8502,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterArrayType"
-    // InternalRos.g:3423:1: entryRuleParameterArrayType returns [EObject current=null] : iv_ruleParameterArrayType= ruleParameterArrayType EOF ;
+    // InternalRos.g:3435:1: entryRuleParameterArrayType returns [EObject current=null] : iv_ruleParameterArrayType= ruleParameterArrayType EOF ;
     public final EObject entryRuleParameterArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -8461,8 +8510,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3423:59: (iv_ruleParameterArrayType= ruleParameterArrayType EOF )
-            // InternalRos.g:3424:2: iv_ruleParameterArrayType= ruleParameterArrayType EOF
+            // InternalRos.g:3435:59: (iv_ruleParameterArrayType= ruleParameterArrayType EOF )
+            // InternalRos.g:3436:2: iv_ruleParameterArrayType= ruleParameterArrayType EOF
             {
              newCompositeNode(grammarAccess.getParameterArrayTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8489,7 +8538,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterArrayType"
-    // InternalRos.g:3430:1: ruleParameterArrayType returns [EObject current=null] : (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' ) ;
+    // InternalRos.g:3442:1: ruleParameterArrayType returns [EObject current=null] : (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' ) ;
     public final EObject ruleParameterArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -8507,34 +8556,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3436:2: ( (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' ) )
-            // InternalRos.g:3437:2: (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' )
+            // InternalRos.g:3448:2: ( (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' ) )
+            // InternalRos.g:3449:2: (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' )
             {
-            // InternalRos.g:3437:2: (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' )
-            // InternalRos.g:3438:3: otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}'
+            // InternalRos.g:3449:2: (otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}' )
+            // InternalRos.g:3450:3: otherlv_0= 'Array' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleParameterType ) ) (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )? otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,80,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0());
             		
-            otherlv_1=(Token)match(input,26,FOLLOW_50); 
+            otherlv_1=(Token)match(input,26,FOLLOW_46); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,72,FOLLOW_51); 
+            otherlv_2=(Token)match(input,72,FOLLOW_47); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterArrayTypeAccess().getTypeKeyword_2());
             		
-            // InternalRos.g:3450:3: ( (lv_type_3_0= ruleParameterType ) )
-            // InternalRos.g:3451:4: (lv_type_3_0= ruleParameterType )
+            // InternalRos.g:3462:3: ( (lv_type_3_0= ruleParameterType ) )
+            // InternalRos.g:3463:4: (lv_type_3_0= ruleParameterType )
             {
-            // InternalRos.g:3451:4: (lv_type_3_0= ruleParameterType )
-            // InternalRos.g:3452:5: lv_type_3_0= ruleParameterType
+            // InternalRos.g:3463:4: (lv_type_3_0= ruleParameterType )
+            // InternalRos.g:3464:5: lv_type_3_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_53);
             lv_type_3_0=ruleParameterType();
 
             state._fsp--;
@@ -8556,26 +8605,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:3469:3: (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )?
-            int alt65=2;
-            int LA65_0 = input.LA(1);
+            // InternalRos.g:3481:3: (otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) ) )?
+            int alt61=2;
+            int LA61_0 = input.LA(1);
 
-            if ( (LA65_0==76) ) {
-                alt65=1;
+            if ( (LA61_0==76) ) {
+                alt61=1;
             }
-            switch (alt65) {
+            switch (alt61) {
                 case 1 :
-                    // InternalRos.g:3470:4: otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) )
+                    // InternalRos.g:3482:4: otherlv_4= 'default' ( (lv_default_5_0= ruleParameterList ) )
                     {
                     otherlv_4=(Token)match(input,76,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0());
                     			
-                    // InternalRos.g:3474:4: ( (lv_default_5_0= ruleParameterList ) )
-                    // InternalRos.g:3475:5: (lv_default_5_0= ruleParameterList )
+                    // InternalRos.g:3486:4: ( (lv_default_5_0= ruleParameterList ) )
+                    // InternalRos.g:3487:5: (lv_default_5_0= ruleParameterList )
                     {
-                    // InternalRos.g:3475:5: (lv_default_5_0= ruleParameterList )
-                    // InternalRos.g:3476:6: lv_default_5_0= ruleParameterList
+                    // InternalRos.g:3487:5: (lv_default_5_0= ruleParameterList )
+                    // InternalRos.g:3488:6: lv_default_5_0= ruleParameterList
                     {
 
                     						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_4_1_0());
@@ -8635,7 +8684,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterList"
-    // InternalRos.g:3502:1: entryRuleParameterList returns [EObject current=null] : iv_ruleParameterList= ruleParameterList EOF ;
+    // InternalRos.g:3514:1: entryRuleParameterList returns [EObject current=null] : iv_ruleParameterList= ruleParameterList EOF ;
     public final EObject entryRuleParameterList() throws RecognitionException {
         EObject current = null;
 
@@ -8643,8 +8692,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3502:54: (iv_ruleParameterList= ruleParameterList EOF )
-            // InternalRos.g:3503:2: iv_ruleParameterList= ruleParameterList EOF
+            // InternalRos.g:3514:54: (iv_ruleParameterList= ruleParameterList EOF )
+            // InternalRos.g:3515:2: iv_ruleParameterList= ruleParameterList EOF
             {
              newCompositeNode(grammarAccess.getParameterListRule()); 
             pushFollow(FOLLOW_1);
@@ -8671,7 +8720,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterList"
-    // InternalRos.g:3509:1: ruleParameterList returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) ;
+    // InternalRos.g:3521:1: ruleParameterList returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleParameterList() throws RecognitionException {
         EObject current = null;
 
@@ -8687,14 +8736,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3515:2: ( ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) )
-            // InternalRos.g:3516:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
+            // InternalRos.g:3527:2: ( ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' ) )
+            // InternalRos.g:3528:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
             {
-            // InternalRos.g:3516:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
-            // InternalRos.g:3517:3: () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}'
+            // InternalRos.g:3528:2: ( () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}' )
+            // InternalRos.g:3529:3: () otherlv_1= '{' ( (lv_value_2_0= ruleParameterValue ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )* otherlv_5= '}'
             {
-            // InternalRos.g:3517:3: ()
-            // InternalRos.g:3518:4: 
+            // InternalRos.g:3529:3: ()
+            // InternalRos.g:3530:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8704,15 +8753,15 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_58); 
+            otherlv_1=(Token)match(input,26,FOLLOW_54); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterListAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRos.g:3528:3: ( (lv_value_2_0= ruleParameterValue ) )
-            // InternalRos.g:3529:4: (lv_value_2_0= ruleParameterValue )
+            // InternalRos.g:3540:3: ( (lv_value_2_0= ruleParameterValue ) )
+            // InternalRos.g:3541:4: (lv_value_2_0= ruleParameterValue )
             {
-            // InternalRos.g:3529:4: (lv_value_2_0= ruleParameterValue )
-            // InternalRos.g:3530:5: lv_value_2_0= ruleParameterValue
+            // InternalRos.g:3541:4: (lv_value_2_0= ruleParameterValue )
+            // InternalRos.g:3542:5: lv_value_2_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterListAccess().getValueParameterValueParserRuleCall_2_0());
@@ -8739,30 +8788,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:3547:3: (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )*
-            loop66:
+            // InternalRos.g:3559:3: (otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) ) )*
+            loop62:
             do {
-                int alt66=2;
-                int LA66_0 = input.LA(1);
+                int alt62=2;
+                int LA62_0 = input.LA(1);
 
-                if ( (LA66_0==27) ) {
-                    alt66=1;
+                if ( (LA62_0==27) ) {
+                    alt62=1;
                 }
 
 
-                switch (alt66) {
+                switch (alt62) {
             	case 1 :
-            	    // InternalRos.g:3548:4: otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) )
+            	    // InternalRos.g:3560:4: otherlv_3= ',' ( (lv_value_4_0= ruleParameterValue ) )
             	    {
-            	    otherlv_3=(Token)match(input,27,FOLLOW_58); 
+            	    otherlv_3=(Token)match(input,27,FOLLOW_54); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getParameterListAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalRos.g:3552:4: ( (lv_value_4_0= ruleParameterValue ) )
-            	    // InternalRos.g:3553:5: (lv_value_4_0= ruleParameterValue )
+            	    // InternalRos.g:3564:4: ( (lv_value_4_0= ruleParameterValue ) )
+            	    // InternalRos.g:3565:5: (lv_value_4_0= ruleParameterValue )
             	    {
-            	    // InternalRos.g:3553:5: (lv_value_4_0= ruleParameterValue )
-            	    // InternalRos.g:3554:6: lv_value_4_0= ruleParameterValue
+            	    // InternalRos.g:3565:5: (lv_value_4_0= ruleParameterValue )
+            	    // InternalRos.g:3566:6: lv_value_4_0= ruleParameterValue
             	    {
 
             	    						newCompositeNode(grammarAccess.getParameterListAccess().getValueParameterValueParserRuleCall_3_1_0());
@@ -8794,7 +8843,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop66;
+            	    break loop62;
                 }
             } while (true);
 
@@ -8825,7 +8874,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterAny"
-    // InternalRos.g:3580:1: entryRuleParameterAny returns [EObject current=null] : iv_ruleParameterAny= ruleParameterAny EOF ;
+    // InternalRos.g:3592:1: entryRuleParameterAny returns [EObject current=null] : iv_ruleParameterAny= ruleParameterAny EOF ;
     public final EObject entryRuleParameterAny() throws RecognitionException {
         EObject current = null;
 
@@ -8833,8 +8882,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3580:53: (iv_ruleParameterAny= ruleParameterAny EOF )
-            // InternalRos.g:3581:2: iv_ruleParameterAny= ruleParameterAny EOF
+            // InternalRos.g:3592:53: (iv_ruleParameterAny= ruleParameterAny EOF )
+            // InternalRos.g:3593:2: iv_ruleParameterAny= ruleParameterAny EOF
             {
              newCompositeNode(grammarAccess.getParameterAnyRule()); 
             pushFollow(FOLLOW_1);
@@ -8861,7 +8910,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterAny"
-    // InternalRos.g:3587:1: ruleParameterAny returns [EObject current=null] : ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
+    // InternalRos.g:3599:1: ruleParameterAny returns [EObject current=null] : ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleParameterAny() throws RecognitionException {
         EObject current = null;
 
@@ -8876,14 +8925,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3593:2: ( ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
-            // InternalRos.g:3594:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalRos.g:3605:2: ( ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
+            // InternalRos.g:3606:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
             {
-            // InternalRos.g:3594:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
-            // InternalRos.g:3595:3: () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}'
+            // InternalRos.g:3606:2: ( () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalRos.g:3607:3: () otherlv_1= 'ParameterAny' otherlv_2= '{' (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )? otherlv_5= '}'
             {
-            // InternalRos.g:3595:3: ()
-            // InternalRos.g:3596:4: 
+            // InternalRos.g:3607:3: ()
+            // InternalRos.g:3608:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8897,30 +8946,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterAnyAccess().getParameterAnyKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_59); 
+            otherlv_2=(Token)match(input,26,FOLLOW_55); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterAnyAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRos.g:3610:3: (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // InternalRos.g:3622:3: (otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) ) )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA67_0==82) ) {
-                alt67=1;
+            if ( (LA63_0==82) ) {
+                alt63=1;
             }
-            switch (alt67) {
+            switch (alt63) {
                 case 1 :
-                    // InternalRos.g:3611:4: otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) )
+                    // InternalRos.g:3623:4: otherlv_3= 'value' ( (lv_value_4_0= ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,82,FOLLOW_7); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterAnyAccess().getValueKeyword_3_0());
                     			
-                    // InternalRos.g:3615:4: ( (lv_value_4_0= ruleEString ) )
-                    // InternalRos.g:3616:5: (lv_value_4_0= ruleEString )
+                    // InternalRos.g:3627:4: ( (lv_value_4_0= ruleEString ) )
+                    // InternalRos.g:3628:5: (lv_value_4_0= ruleEString )
                     {
-                    // InternalRos.g:3616:5: (lv_value_4_0= ruleEString )
-                    // InternalRos.g:3617:6: lv_value_4_0= ruleEString
+                    // InternalRos.g:3628:5: (lv_value_4_0= ruleEString )
+                    // InternalRos.g:3629:6: lv_value_4_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getParameterAnyAccess().getValueEStringParserRuleCall_3_1_0());
@@ -8980,7 +9029,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterString"
-    // InternalRos.g:3643:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
+    // InternalRos.g:3655:1: entryRuleParameterString returns [EObject current=null] : iv_ruleParameterString= ruleParameterString EOF ;
     public final EObject entryRuleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -8988,8 +9037,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3643:56: (iv_ruleParameterString= ruleParameterString EOF )
-            // InternalRos.g:3644:2: iv_ruleParameterString= ruleParameterString EOF
+            // InternalRos.g:3655:56: (iv_ruleParameterString= ruleParameterString EOF )
+            // InternalRos.g:3656:2: iv_ruleParameterString= ruleParameterString EOF
             {
              newCompositeNode(grammarAccess.getParameterStringRule()); 
             pushFollow(FOLLOW_1);
@@ -9016,7 +9065,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterString"
-    // InternalRos.g:3650:1: ruleParameterString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalRos.g:3662:1: ruleParameterString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject ruleParameterString() throws RecognitionException {
         EObject current = null;
 
@@ -9027,14 +9076,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3656:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalRos.g:3657:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalRos.g:3668:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalRos.g:3669:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalRos.g:3657:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalRos.g:3658:3: (lv_value_0_0= ruleEString )
+            // InternalRos.g:3669:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalRos.g:3670:3: (lv_value_0_0= ruleEString )
             {
-            // InternalRos.g:3658:3: (lv_value_0_0= ruleEString )
-            // InternalRos.g:3659:4: lv_value_0_0= ruleEString
+            // InternalRos.g:3670:3: (lv_value_0_0= ruleEString )
+            // InternalRos.g:3671:4: lv_value_0_0= ruleEString
             {
 
             				newCompositeNode(grammarAccess.getParameterStringAccess().getValueEStringParserRuleCall_0());
@@ -9081,7 +9130,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBase64"
-    // InternalRos.g:3679:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
+    // InternalRos.g:3691:1: entryRuleParameterBase64 returns [EObject current=null] : iv_ruleParameterBase64= ruleParameterBase64 EOF ;
     public final EObject entryRuleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -9089,8 +9138,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3679:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
-            // InternalRos.g:3680:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
+            // InternalRos.g:3691:56: (iv_ruleParameterBase64= ruleParameterBase64 EOF )
+            // InternalRos.g:3692:2: iv_ruleParameterBase64= ruleParameterBase64 EOF
             {
              newCompositeNode(grammarAccess.getParameterBase64Rule()); 
             pushFollow(FOLLOW_1);
@@ -9117,7 +9166,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBase64"
-    // InternalRos.g:3686:1: ruleParameterBase64 returns [EObject current=null] : ( (lv_value_0_0= ruleBase64Binary ) ) ;
+    // InternalRos.g:3698:1: ruleParameterBase64 returns [EObject current=null] : ( (lv_value_0_0= ruleBase64Binary ) ) ;
     public final EObject ruleParameterBase64() throws RecognitionException {
         EObject current = null;
 
@@ -9128,14 +9177,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3692:2: ( ( (lv_value_0_0= ruleBase64Binary ) ) )
-            // InternalRos.g:3693:2: ( (lv_value_0_0= ruleBase64Binary ) )
+            // InternalRos.g:3704:2: ( ( (lv_value_0_0= ruleBase64Binary ) ) )
+            // InternalRos.g:3705:2: ( (lv_value_0_0= ruleBase64Binary ) )
             {
-            // InternalRos.g:3693:2: ( (lv_value_0_0= ruleBase64Binary ) )
-            // InternalRos.g:3694:3: (lv_value_0_0= ruleBase64Binary )
+            // InternalRos.g:3705:2: ( (lv_value_0_0= ruleBase64Binary ) )
+            // InternalRos.g:3706:3: (lv_value_0_0= ruleBase64Binary )
             {
-            // InternalRos.g:3694:3: (lv_value_0_0= ruleBase64Binary )
-            // InternalRos.g:3695:4: lv_value_0_0= ruleBase64Binary
+            // InternalRos.g:3706:3: (lv_value_0_0= ruleBase64Binary )
+            // InternalRos.g:3707:4: lv_value_0_0= ruleBase64Binary
             {
 
             				newCompositeNode(grammarAccess.getParameterBase64Access().getValueBase64BinaryParserRuleCall_0());
@@ -9182,7 +9231,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterInteger"
-    // InternalRos.g:3715:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
+    // InternalRos.g:3727:1: entryRuleParameterInteger returns [EObject current=null] : iv_ruleParameterInteger= ruleParameterInteger EOF ;
     public final EObject entryRuleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -9190,8 +9239,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3715:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
-            // InternalRos.g:3716:2: iv_ruleParameterInteger= ruleParameterInteger EOF
+            // InternalRos.g:3727:57: (iv_ruleParameterInteger= ruleParameterInteger EOF )
+            // InternalRos.g:3728:2: iv_ruleParameterInteger= ruleParameterInteger EOF
             {
              newCompositeNode(grammarAccess.getParameterIntegerRule()); 
             pushFollow(FOLLOW_1);
@@ -9218,7 +9267,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterInteger"
-    // InternalRos.g:3722:1: ruleParameterInteger returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
+    // InternalRos.g:3734:1: ruleParameterInteger returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
     public final EObject ruleParameterInteger() throws RecognitionException {
         EObject current = null;
 
@@ -9229,14 +9278,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3728:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
-            // InternalRos.g:3729:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalRos.g:3740:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
+            // InternalRos.g:3741:2: ( (lv_value_0_0= ruleInteger0 ) )
             {
-            // InternalRos.g:3729:2: ( (lv_value_0_0= ruleInteger0 ) )
-            // InternalRos.g:3730:3: (lv_value_0_0= ruleInteger0 )
+            // InternalRos.g:3741:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalRos.g:3742:3: (lv_value_0_0= ruleInteger0 )
             {
-            // InternalRos.g:3730:3: (lv_value_0_0= ruleInteger0 )
-            // InternalRos.g:3731:4: lv_value_0_0= ruleInteger0
+            // InternalRos.g:3742:3: (lv_value_0_0= ruleInteger0 )
+            // InternalRos.g:3743:4: lv_value_0_0= ruleInteger0
             {
 
             				newCompositeNode(grammarAccess.getParameterIntegerAccess().getValueInteger0ParserRuleCall_0());
@@ -9283,7 +9332,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDouble"
-    // InternalRos.g:3751:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
+    // InternalRos.g:3763:1: entryRuleParameterDouble returns [EObject current=null] : iv_ruleParameterDouble= ruleParameterDouble EOF ;
     public final EObject entryRuleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -9291,8 +9340,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3751:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
-            // InternalRos.g:3752:2: iv_ruleParameterDouble= ruleParameterDouble EOF
+            // InternalRos.g:3763:56: (iv_ruleParameterDouble= ruleParameterDouble EOF )
+            // InternalRos.g:3764:2: iv_ruleParameterDouble= ruleParameterDouble EOF
             {
              newCompositeNode(grammarAccess.getParameterDoubleRule()); 
             pushFollow(FOLLOW_1);
@@ -9319,7 +9368,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDouble"
-    // InternalRos.g:3758:1: ruleParameterDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
+    // InternalRos.g:3770:1: ruleParameterDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
     public final EObject ruleParameterDouble() throws RecognitionException {
         EObject current = null;
 
@@ -9330,14 +9379,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3764:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
-            // InternalRos.g:3765:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalRos.g:3776:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
+            // InternalRos.g:3777:2: ( (lv_value_0_0= ruleDouble0 ) )
             {
-            // InternalRos.g:3765:2: ( (lv_value_0_0= ruleDouble0 ) )
-            // InternalRos.g:3766:3: (lv_value_0_0= ruleDouble0 )
+            // InternalRos.g:3777:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalRos.g:3778:3: (lv_value_0_0= ruleDouble0 )
             {
-            // InternalRos.g:3766:3: (lv_value_0_0= ruleDouble0 )
-            // InternalRos.g:3767:4: lv_value_0_0= ruleDouble0
+            // InternalRos.g:3778:3: (lv_value_0_0= ruleDouble0 )
+            // InternalRos.g:3779:4: lv_value_0_0= ruleDouble0
             {
 
             				newCompositeNode(grammarAccess.getParameterDoubleAccess().getValueDouble0ParserRuleCall_0());
@@ -9384,7 +9433,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterBoolean"
-    // InternalRos.g:3787:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
+    // InternalRos.g:3799:1: entryRuleParameterBoolean returns [EObject current=null] : iv_ruleParameterBoolean= ruleParameterBoolean EOF ;
     public final EObject entryRuleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -9392,8 +9441,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3787:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
-            // InternalRos.g:3788:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
+            // InternalRos.g:3799:57: (iv_ruleParameterBoolean= ruleParameterBoolean EOF )
+            // InternalRos.g:3800:2: iv_ruleParameterBoolean= ruleParameterBoolean EOF
             {
              newCompositeNode(grammarAccess.getParameterBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -9420,7 +9469,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterBoolean"
-    // InternalRos.g:3794:1: ruleParameterBoolean returns [EObject current=null] : ( (lv_value_0_0= ruleboolean0 ) ) ;
+    // InternalRos.g:3806:1: ruleParameterBoolean returns [EObject current=null] : ( (lv_value_0_0= ruleboolean0 ) ) ;
     public final EObject ruleParameterBoolean() throws RecognitionException {
         EObject current = null;
 
@@ -9431,14 +9480,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3800:2: ( ( (lv_value_0_0= ruleboolean0 ) ) )
-            // InternalRos.g:3801:2: ( (lv_value_0_0= ruleboolean0 ) )
+            // InternalRos.g:3812:2: ( ( (lv_value_0_0= ruleboolean0 ) ) )
+            // InternalRos.g:3813:2: ( (lv_value_0_0= ruleboolean0 ) )
             {
-            // InternalRos.g:3801:2: ( (lv_value_0_0= ruleboolean0 ) )
-            // InternalRos.g:3802:3: (lv_value_0_0= ruleboolean0 )
+            // InternalRos.g:3813:2: ( (lv_value_0_0= ruleboolean0 ) )
+            // InternalRos.g:3814:3: (lv_value_0_0= ruleboolean0 )
             {
-            // InternalRos.g:3802:3: (lv_value_0_0= ruleboolean0 )
-            // InternalRos.g:3803:4: lv_value_0_0= ruleboolean0
+            // InternalRos.g:3814:3: (lv_value_0_0= ruleboolean0 )
+            // InternalRos.g:3815:4: lv_value_0_0= ruleboolean0
             {
 
             				newCompositeNode(grammarAccess.getParameterBooleanAccess().getValueBoolean0ParserRuleCall_0());
@@ -9485,7 +9534,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStruct"
-    // InternalRos.g:3823:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
+    // InternalRos.g:3835:1: entryRuleParameterStruct returns [EObject current=null] : iv_ruleParameterStruct= ruleParameterStruct EOF ;
     public final EObject entryRuleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -9493,8 +9542,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3823:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
-            // InternalRos.g:3824:2: iv_ruleParameterStruct= ruleParameterStruct EOF
+            // InternalRos.g:3835:56: (iv_ruleParameterStruct= ruleParameterStruct EOF )
+            // InternalRos.g:3836:2: iv_ruleParameterStruct= ruleParameterStruct EOF
             {
              newCompositeNode(grammarAccess.getParameterStructRule()); 
             pushFollow(FOLLOW_1);
@@ -9521,7 +9570,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStruct"
-    // InternalRos.g:3830:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) ;
+    // InternalRos.g:3842:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) ;
     public final EObject ruleParameterStruct() throws RecognitionException {
         EObject current = null;
 
@@ -9539,14 +9588,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3836:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) )
-            // InternalRos.g:3837:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
+            // InternalRos.g:3848:2: ( ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? ) )
+            // InternalRos.g:3849:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
             {
-            // InternalRos.g:3837:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
-            // InternalRos.g:3838:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
+            // InternalRos.g:3849:2: ( () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )? )
+            // InternalRos.g:3850:3: () (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
             {
-            // InternalRos.g:3838:3: ()
-            // InternalRos.g:3839:4: 
+            // InternalRos.g:3850:3: ()
+            // InternalRos.g:3851:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9556,26 +9605,26 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:3845:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            // InternalRos.g:3857:3: (otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}' )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA69_0==26) ) {
-                alt69=1;
+            if ( (LA65_0==26) ) {
+                alt65=1;
             }
-            switch (alt69) {
+            switch (alt65) {
                 case 1 :
-                    // InternalRos.g:3846:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}'
+                    // InternalRos.g:3858:4: otherlv_1= '{' ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )* otherlv_7= '}'
                     {
-                    otherlv_1=(Token)match(input,26,FOLLOW_60); 
+                    otherlv_1=(Token)match(input,26,FOLLOW_56); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_0());
                     			
-                    // InternalRos.g:3850:4: ( (lv_value_2_0= ruleParameterStructMember ) )
-                    // InternalRos.g:3851:5: (lv_value_2_0= ruleParameterStructMember )
+                    // InternalRos.g:3862:4: ( (lv_value_2_0= ruleParameterStructMember ) )
+                    // InternalRos.g:3863:5: (lv_value_2_0= ruleParameterStructMember )
                     {
-                    // InternalRos.g:3851:5: (lv_value_2_0= ruleParameterStructMember )
-                    // InternalRos.g:3852:6: lv_value_2_0= ruleParameterStructMember
+                    // InternalRos.g:3863:5: (lv_value_2_0= ruleParameterStructMember )
+                    // InternalRos.g:3864:6: lv_value_2_0= ruleParameterStructMember
                     {
 
                     						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_1_0());
@@ -9602,34 +9651,34 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalRos.g:3869:4: (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )*
-                    loop68:
+                    // InternalRos.g:3881:4: (otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}' )*
+                    loop64:
                     do {
-                        int alt68=2;
-                        int LA68_0 = input.LA(1);
+                        int alt64=2;
+                        int LA64_0 = input.LA(1);
 
-                        if ( (LA68_0==27) ) {
-                            alt68=1;
+                        if ( (LA64_0==27) ) {
+                            alt64=1;
                         }
 
 
-                        switch (alt68) {
+                        switch (alt64) {
                     	case 1 :
-                    	    // InternalRos.g:3870:5: otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}'
+                    	    // InternalRos.g:3882:5: otherlv_3= ',' otherlv_4= '{' ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= '}'
                     	    {
                     	    otherlv_3=(Token)match(input,27,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getParameterStructAccess().getCommaKeyword_1_2_0());
                     	    				
-                    	    otherlv_4=(Token)match(input,26,FOLLOW_60); 
+                    	    otherlv_4=(Token)match(input,26,FOLLOW_56); 
 
                     	    					newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftCurlyBracketKeyword_1_2_1());
                     	    				
-                    	    // InternalRos.g:3878:5: ( (lv_value_5_0= ruleParameterStructMember ) )
-                    	    // InternalRos.g:3879:6: (lv_value_5_0= ruleParameterStructMember )
+                    	    // InternalRos.g:3890:5: ( (lv_value_5_0= ruleParameterStructMember ) )
+                    	    // InternalRos.g:3891:6: (lv_value_5_0= ruleParameterStructMember )
                     	    {
-                    	    // InternalRos.g:3879:6: (lv_value_5_0= ruleParameterStructMember )
-                    	    // InternalRos.g:3880:7: lv_value_5_0= ruleParameterStructMember
+                    	    // InternalRos.g:3891:6: (lv_value_5_0= ruleParameterStructMember )
+                    	    // InternalRos.g:3892:7: lv_value_5_0= ruleParameterStructMember
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_2_0());
@@ -9665,7 +9714,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop68;
+                    	    break loop64;
                         }
                     } while (true);
 
@@ -9702,7 +9751,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDate"
-    // InternalRos.g:3911:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
+    // InternalRos.g:3923:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
     public final EObject entryRuleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -9710,8 +9759,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3911:54: (iv_ruleParameterDate= ruleParameterDate EOF )
-            // InternalRos.g:3912:2: iv_ruleParameterDate= ruleParameterDate EOF
+            // InternalRos.g:3923:54: (iv_ruleParameterDate= ruleParameterDate EOF )
+            // InternalRos.g:3924:2: iv_ruleParameterDate= ruleParameterDate EOF
             {
              newCompositeNode(grammarAccess.getParameterDateRule()); 
             pushFollow(FOLLOW_1);
@@ -9738,7 +9787,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDate"
-    // InternalRos.g:3918:1: ruleParameterDate returns [EObject current=null] : ( (lv_value_0_0= ruleDateTime0 ) ) ;
+    // InternalRos.g:3930:1: ruleParameterDate returns [EObject current=null] : ( (lv_value_0_0= ruleDateTime0 ) ) ;
     public final EObject ruleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -9749,14 +9798,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3924:2: ( ( (lv_value_0_0= ruleDateTime0 ) ) )
-            // InternalRos.g:3925:2: ( (lv_value_0_0= ruleDateTime0 ) )
+            // InternalRos.g:3936:2: ( ( (lv_value_0_0= ruleDateTime0 ) ) )
+            // InternalRos.g:3937:2: ( (lv_value_0_0= ruleDateTime0 ) )
             {
-            // InternalRos.g:3925:2: ( (lv_value_0_0= ruleDateTime0 ) )
-            // InternalRos.g:3926:3: (lv_value_0_0= ruleDateTime0 )
+            // InternalRos.g:3937:2: ( (lv_value_0_0= ruleDateTime0 ) )
+            // InternalRos.g:3938:3: (lv_value_0_0= ruleDateTime0 )
             {
-            // InternalRos.g:3926:3: (lv_value_0_0= ruleDateTime0 )
-            // InternalRos.g:3927:4: lv_value_0_0= ruleDateTime0
+            // InternalRos.g:3938:3: (lv_value_0_0= ruleDateTime0 )
+            // InternalRos.g:3939:4: lv_value_0_0= ruleDateTime0
             {
 
             				newCompositeNode(grammarAccess.getParameterDateAccess().getValueDateTime0ParserRuleCall_0());
@@ -9803,7 +9852,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructMember"
-    // InternalRos.g:3947:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
+    // InternalRos.g:3959:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
     public final EObject entryRuleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -9811,8 +9860,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:3947:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
-            // InternalRos.g:3948:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
+            // InternalRos.g:3959:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
+            // InternalRos.g:3960:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -9839,7 +9888,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructMember"
-    // InternalRos.g:3954:1: ruleParameterStructMember returns [EObject current=null] : (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) ;
+    // InternalRos.g:3966:1: ruleParameterStructMember returns [EObject current=null] : (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) ;
     public final EObject ruleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -9856,21 +9905,21 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:3960:2: ( (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) )
-            // InternalRos.g:3961:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
+            // InternalRos.g:3972:2: ( (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' ) )
+            // InternalRos.g:3973:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
             {
-            // InternalRos.g:3961:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
-            // InternalRos.g:3962:3: otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}'
+            // InternalRos.g:3973:2: (otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}' )
+            // InternalRos.g:3974:3: otherlv_0= 'ParameterStructMember' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'value' ( (lv_value_4_0= ruleParameterValue ) ) otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,83,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParameterStructMemberAccess().getParameterStructMemberKeyword_0());
             		
-            // InternalRos.g:3966:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalRos.g:3967:4: (lv_name_1_0= ruleEString )
+            // InternalRos.g:3978:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalRos.g:3979:4: (lv_name_1_0= ruleEString )
             {
-            // InternalRos.g:3967:4: (lv_name_1_0= ruleEString )
-            // InternalRos.g:3968:5: lv_name_1_0= ruleEString
+            // InternalRos.g:3979:4: (lv_name_1_0= ruleEString )
+            // InternalRos.g:3980:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0());
@@ -9897,19 +9946,19 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,26,FOLLOW_61); 
+            otherlv_2=(Token)match(input,26,FOLLOW_57); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterStructMemberAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,82,FOLLOW_58); 
+            otherlv_3=(Token)match(input,82,FOLLOW_54); 
 
             			newLeafNode(otherlv_3, grammarAccess.getParameterStructMemberAccess().getValueKeyword_3());
             		
-            // InternalRos.g:3993:3: ( (lv_value_4_0= ruleParameterValue ) )
-            // InternalRos.g:3994:4: (lv_value_4_0= ruleParameterValue )
+            // InternalRos.g:4005:3: ( (lv_value_4_0= ruleParameterValue ) )
+            // InternalRos.g:4006:4: (lv_value_4_0= ruleParameterValue )
             {
-            // InternalRos.g:3994:4: (lv_value_4_0= ruleParameterValue )
-            // InternalRos.g:3995:5: lv_value_4_0= ruleParameterValue
+            // InternalRos.g:4006:4: (lv_value_4_0= ruleParameterValue )
+            // InternalRos.g:4007:5: lv_value_4_0= ruleParameterValue
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0());
@@ -9963,7 +10012,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructTypeMember"
-    // InternalRos.g:4020:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
+    // InternalRos.g:4032:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
     public final EObject entryRuleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -9971,8 +10020,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4020:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
-            // InternalRos.g:4021:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
+            // InternalRos.g:4032:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
+            // InternalRos.g:4033:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructTypeMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -9999,7 +10048,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructTypeMember"
-    // InternalRos.g:4027:1: ruleParameterStructTypeMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) ;
+    // InternalRos.g:4039:1: ruleParameterStructTypeMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) ;
     public final EObject ruleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -10012,22 +10061,22 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4033:2: ( ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) )
-            // InternalRos.g:4034:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
+            // InternalRos.g:4045:2: ( ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) )
+            // InternalRos.g:4046:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
             {
-            // InternalRos.g:4034:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
-            // InternalRos.g:4035:3: ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) )
+            // InternalRos.g:4046:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
+            // InternalRos.g:4047:3: ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) )
             {
-            // InternalRos.g:4035:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalRos.g:4036:4: (lv_name_0_0= ruleEString )
+            // InternalRos.g:4047:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalRos.g:4048:4: (lv_name_0_0= ruleEString )
             {
-            // InternalRos.g:4036:4: (lv_name_0_0= ruleEString )
-            // InternalRos.g:4037:5: lv_name_0_0= ruleEString
+            // InternalRos.g:4048:4: (lv_name_0_0= ruleEString )
+            // InternalRos.g:4049:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getNameEStringParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_47);
             lv_name_0_0=ruleEString();
 
             state._fsp--;
@@ -10049,11 +10098,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:4054:3: ( (lv_type_1_0= ruleParameterType ) )
-            // InternalRos.g:4055:4: (lv_type_1_0= ruleParameterType )
+            // InternalRos.g:4066:3: ( (lv_type_1_0= ruleParameterType ) )
+            // InternalRos.g:4067:4: (lv_type_1_0= ruleParameterType )
             {
-            // InternalRos.g:4055:4: (lv_type_1_0= ruleParameterType )
-            // InternalRos.g:4056:5: lv_type_1_0= ruleParameterType
+            // InternalRos.g:4067:4: (lv_type_1_0= ruleParameterType )
+            // InternalRos.g:4068:5: lv_type_1_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getTypeParameterTypeParserRuleCall_1_0());
@@ -10103,7 +10152,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBase64Binary"
-    // InternalRos.g:4077:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
+    // InternalRos.g:4089:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
     public final String entryRuleBase64Binary() throws RecognitionException {
         String current = null;
 
@@ -10111,8 +10160,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4077:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
-            // InternalRos.g:4078:2: iv_ruleBase64Binary= ruleBase64Binary EOF
+            // InternalRos.g:4089:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
+            // InternalRos.g:4090:2: iv_ruleBase64Binary= ruleBase64Binary EOF
             {
              newCompositeNode(grammarAccess.getBase64BinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -10139,7 +10188,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBase64Binary"
-    // InternalRos.g:4084:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
+    // InternalRos.g:4096:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
     public final AntlrDatatypeRuleToken ruleBase64Binary() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10149,8 +10198,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4090:2: (this_BINARY_0= RULE_BINARY )
-            // InternalRos.g:4091:2: this_BINARY_0= RULE_BINARY
+            // InternalRos.g:4102:2: (this_BINARY_0= RULE_BINARY )
+            // InternalRos.g:4103:2: this_BINARY_0= RULE_BINARY
             {
             this_BINARY_0=(Token)match(input,RULE_BINARY,FOLLOW_2); 
 
@@ -10179,7 +10228,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleboolean0"
-    // InternalRos.g:4101:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
+    // InternalRos.g:4113:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
     public final String entryRuleboolean0() throws RecognitionException {
         String current = null;
 
@@ -10187,8 +10236,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4101:48: (iv_ruleboolean0= ruleboolean0 EOF )
-            // InternalRos.g:4102:2: iv_ruleboolean0= ruleboolean0 EOF
+            // InternalRos.g:4113:48: (iv_ruleboolean0= ruleboolean0 EOF )
+            // InternalRos.g:4114:2: iv_ruleboolean0= ruleboolean0 EOF
             {
              newCompositeNode(grammarAccess.getBoolean0Rule()); 
             pushFollow(FOLLOW_1);
@@ -10215,7 +10264,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleboolean0"
-    // InternalRos.g:4108:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
+    // InternalRos.g:4120:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
     public final AntlrDatatypeRuleToken ruleboolean0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10225,8 +10274,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4114:2: (this_BOOLEAN_0= RULE_BOOLEAN )
-            // InternalRos.g:4115:2: this_BOOLEAN_0= RULE_BOOLEAN
+            // InternalRos.g:4126:2: (this_BOOLEAN_0= RULE_BOOLEAN )
+            // InternalRos.g:4127:2: this_BOOLEAN_0= RULE_BOOLEAN
             {
             this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); 
 
@@ -10255,7 +10304,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalRos.g:4125:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalRos.g:4137:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -10263,8 +10312,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4125:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalRos.g:4126:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalRos.g:4137:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalRos.g:4138:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule()); 
             pushFollow(FOLLOW_1);
@@ -10291,7 +10340,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalRos.g:4132:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalRos.g:4144:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10301,8 +10350,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4138:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalRos.g:4139:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalRos.g:4150:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalRos.g:4151:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
 
@@ -10331,7 +10380,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalRos.g:4149:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalRos.g:4161:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -10339,8 +10388,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4149:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalRos.g:4150:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalRos.g:4161:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalRos.g:4162:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule()); 
             pushFollow(FOLLOW_1);
@@ -10367,7 +10416,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalRos.g:4156:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalRos.g:4168:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10377,8 +10426,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4162:2: (this_DECINT_0= RULE_DECINT )
-            // InternalRos.g:4163:2: this_DECINT_0= RULE_DECINT
+            // InternalRos.g:4174:2: (this_DECINT_0= RULE_DECINT )
+            // InternalRos.g:4175:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
 
@@ -10407,7 +10456,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDateTime0"
-    // InternalRos.g:4173:1: entryRuleDateTime0 returns [String current=null] : iv_ruleDateTime0= ruleDateTime0 EOF ;
+    // InternalRos.g:4185:1: entryRuleDateTime0 returns [String current=null] : iv_ruleDateTime0= ruleDateTime0 EOF ;
     public final String entryRuleDateTime0() throws RecognitionException {
         String current = null;
 
@@ -10415,8 +10464,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4173:49: (iv_ruleDateTime0= ruleDateTime0 EOF )
-            // InternalRos.g:4174:2: iv_ruleDateTime0= ruleDateTime0 EOF
+            // InternalRos.g:4185:49: (iv_ruleDateTime0= ruleDateTime0 EOF )
+            // InternalRos.g:4186:2: iv_ruleDateTime0= ruleDateTime0 EOF
             {
              newCompositeNode(grammarAccess.getDateTime0Rule()); 
             pushFollow(FOLLOW_1);
@@ -10443,7 +10492,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDateTime0"
-    // InternalRos.g:4180:1: ruleDateTime0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DATE_TIME_0= RULE_DATE_TIME ;
+    // InternalRos.g:4192:1: ruleDateTime0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DATE_TIME_0= RULE_DATE_TIME ;
     public final AntlrDatatypeRuleToken ruleDateTime0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10453,8 +10502,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4186:2: (this_DATE_TIME_0= RULE_DATE_TIME )
-            // InternalRos.g:4187:2: this_DATE_TIME_0= RULE_DATE_TIME
+            // InternalRos.g:4198:2: (this_DATE_TIME_0= RULE_DATE_TIME )
+            // InternalRos.g:4199:2: this_DATE_TIME_0= RULE_DATE_TIME
             {
             this_DATE_TIME_0=(Token)match(input,RULE_DATE_TIME,FOLLOW_2); 
 
@@ -10483,7 +10532,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessagePart"
-    // InternalRos.g:4197:1: entryRuleMessagePart returns [EObject current=null] : iv_ruleMessagePart= ruleMessagePart EOF ;
+    // InternalRos.g:4209:1: entryRuleMessagePart returns [EObject current=null] : iv_ruleMessagePart= ruleMessagePart EOF ;
     public final EObject entryRuleMessagePart() throws RecognitionException {
         EObject current = null;
 
@@ -10491,8 +10540,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4197:52: (iv_ruleMessagePart= ruleMessagePart EOF )
-            // InternalRos.g:4198:2: iv_ruleMessagePart= ruleMessagePart EOF
+            // InternalRos.g:4209:52: (iv_ruleMessagePart= ruleMessagePart EOF )
+            // InternalRos.g:4210:2: iv_ruleMessagePart= ruleMessagePart EOF
             {
              newCompositeNode(grammarAccess.getMessagePartRule()); 
             pushFollow(FOLLOW_1);
@@ -10519,7 +10568,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessagePart"
-    // InternalRos.g:4204:1: ruleMessagePart returns [EObject current=null] : ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) ) ;
+    // InternalRos.g:4216:1: ruleMessagePart returns [EObject current=null] : ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) ) ;
     public final EObject ruleMessagePart() throws RecognitionException {
         EObject current = null;
 
@@ -10535,22 +10584,22 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4210:2: ( ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) ) )
-            // InternalRos.g:4211:2: ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) )
+            // InternalRos.g:4222:2: ( ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) ) )
+            // InternalRos.g:4223:2: ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) )
             {
-            // InternalRos.g:4211:2: ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) )
-            // InternalRos.g:4212:3: ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) )
+            // InternalRos.g:4223:2: ( ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) ) )
+            // InternalRos.g:4224:3: ( (lv_Type_0_0= ruleAbstractType ) ) ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) )
             {
-            // InternalRos.g:4212:3: ( (lv_Type_0_0= ruleAbstractType ) )
-            // InternalRos.g:4213:4: (lv_Type_0_0= ruleAbstractType )
+            // InternalRos.g:4224:3: ( (lv_Type_0_0= ruleAbstractType ) )
+            // InternalRos.g:4225:4: (lv_Type_0_0= ruleAbstractType )
             {
-            // InternalRos.g:4213:4: (lv_Type_0_0= ruleAbstractType )
-            // InternalRos.g:4214:5: lv_Type_0_0= ruleAbstractType
+            // InternalRos.g:4225:4: (lv_Type_0_0= ruleAbstractType )
+            // InternalRos.g:4226:5: lv_Type_0_0= ruleAbstractType
             {
 
             					newCompositeNode(grammarAccess.getMessagePartAccess().getTypeAbstractTypeParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_62);
+            pushFollow(FOLLOW_58);
             lv_Type_0_0=ruleAbstractType();
 
             state._fsp--;
@@ -10572,14 +10621,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRos.g:4231:3: ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) )
-            // InternalRos.g:4232:4: ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) )
+            // InternalRos.g:4243:3: ( ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) ) )
+            // InternalRos.g:4244:4: ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) )
             {
-            // InternalRos.g:4232:4: ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) )
-            // InternalRos.g:4233:5: (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString )
+            // InternalRos.g:4244:4: ( (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString ) )
+            // InternalRos.g:4245:5: (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString )
             {
-            // InternalRos.g:4233:5: (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString )
-            int alt70=3;
+            // InternalRos.g:4245:5: (lv_Data_1_1= ruleKEYWORD | lv_Data_1_2= RULE_MESSAGE_ASIGMENT | lv_Data_1_3= ruleEString )
+            int alt66=3;
             switch ( input.LA(1) ) {
             case 41:
             case 43:
@@ -10593,30 +10642,30 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             case 97:
             case 98:
                 {
-                alt70=1;
+                alt66=1;
                 }
                 break;
             case RULE_MESSAGE_ASIGMENT:
                 {
-                alt70=2;
+                alt66=2;
                 }
                 break;
             case RULE_STRING:
             case RULE_ID:
                 {
-                alt70=3;
+                alt66=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 70, 0, input);
+                    new NoViableAltException("", 66, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt70) {
+            switch (alt66) {
                 case 1 :
-                    // InternalRos.g:4234:6: lv_Data_1_1= ruleKEYWORD
+                    // InternalRos.g:4246:6: lv_Data_1_1= ruleKEYWORD
                     {
 
                     						newCompositeNode(grammarAccess.getMessagePartAccess().getDataKEYWORDParserRuleCall_1_0_0());
@@ -10641,7 +10690,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:4250:6: lv_Data_1_2= RULE_MESSAGE_ASIGMENT
+                    // InternalRos.g:4262:6: lv_Data_1_2= RULE_MESSAGE_ASIGMENT
                     {
                     lv_Data_1_2=(Token)match(input,RULE_MESSAGE_ASIGMENT,FOLLOW_2); 
 
@@ -10661,7 +10710,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:4265:6: lv_Data_1_3= ruleEString
+                    // InternalRos.g:4277:6: lv_Data_1_3= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getMessagePartAccess().getDataEStringParserRuleCall_1_0_2());
@@ -10717,7 +10766,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractType"
-    // InternalRos.g:4287:1: entryRuleAbstractType returns [EObject current=null] : iv_ruleAbstractType= ruleAbstractType EOF ;
+    // InternalRos.g:4299:1: entryRuleAbstractType returns [EObject current=null] : iv_ruleAbstractType= ruleAbstractType EOF ;
     public final EObject entryRuleAbstractType() throws RecognitionException {
         EObject current = null;
 
@@ -10725,8 +10774,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4287:53: (iv_ruleAbstractType= ruleAbstractType EOF )
-            // InternalRos.g:4288:2: iv_ruleAbstractType= ruleAbstractType EOF
+            // InternalRos.g:4299:53: (iv_ruleAbstractType= ruleAbstractType EOF )
+            // InternalRos.g:4300:2: iv_ruleAbstractType= ruleAbstractType EOF
             {
              newCompositeNode(grammarAccess.getAbstractTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -10753,7 +10802,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractType"
-    // InternalRos.g:4294:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) ;
+    // InternalRos.g:4306:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) ;
     public final EObject ruleAbstractType() throws RecognitionException {
         EObject current = null;
 
@@ -10824,15 +10873,15 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4300:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) )
-            // InternalRos.g:4301:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
+            // InternalRos.g:4312:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) )
+            // InternalRos.g:4313:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
             {
-            // InternalRos.g:4301:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
-            int alt71=31;
-            alt71 = dfa71.predict(input);
-            switch (alt71) {
+            // InternalRos.g:4313:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
+            int alt67=31;
+            alt67 = dfa67.predict(input);
+            switch (alt67) {
                 case 1 :
-                    // InternalRos.g:4302:3: this_bool_0= rulebool
+                    // InternalRos.g:4314:3: this_bool_0= rulebool
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getBoolParserRuleCall_0());
@@ -10850,7 +10899,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:4311:3: this_int8_1= ruleint8
+                    // InternalRos.g:4323:3: this_int8_1= ruleint8
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt8ParserRuleCall_1());
@@ -10868,7 +10917,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:4320:3: this_uint8_2= ruleuint8
+                    // InternalRos.g:4332:3: this_uint8_2= ruleuint8
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint8ParserRuleCall_2());
@@ -10886,7 +10935,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRos.g:4329:3: this_int16_3= ruleint16
+                    // InternalRos.g:4341:3: this_int16_3= ruleint16
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt16ParserRuleCall_3());
@@ -10904,7 +10953,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRos.g:4338:3: this_uint16_4= ruleuint16
+                    // InternalRos.g:4350:3: this_uint16_4= ruleuint16
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint16ParserRuleCall_4());
@@ -10922,7 +10971,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRos.g:4347:3: this_int32_5= ruleint32
+                    // InternalRos.g:4359:3: this_int32_5= ruleint32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt32ParserRuleCall_5());
@@ -10940,7 +10989,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRos.g:4356:3: this_uint32_6= ruleuint32
+                    // InternalRos.g:4368:3: this_uint32_6= ruleuint32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint32ParserRuleCall_6());
@@ -10958,7 +11007,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRos.g:4365:3: this_int64_7= ruleint64
+                    // InternalRos.g:4377:3: this_int64_7= ruleint64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt64ParserRuleCall_7());
@@ -10976,7 +11025,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalRos.g:4374:3: this_uint64_8= ruleuint64
+                    // InternalRos.g:4386:3: this_uint64_8= ruleuint64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint64ParserRuleCall_8());
@@ -10994,7 +11043,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalRos.g:4383:3: this_float32_9= rulefloat32
+                    // InternalRos.g:4395:3: this_float32_9= rulefloat32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat32ParserRuleCall_9());
@@ -11012,7 +11061,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalRos.g:4392:3: this_float64_10= rulefloat64
+                    // InternalRos.g:4404:3: this_float64_10= rulefloat64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat64ParserRuleCall_10());
@@ -11030,7 +11079,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalRos.g:4401:3: this_string0_11= rulestring0
+                    // InternalRos.g:4413:3: this_string0_11= rulestring0
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getString0ParserRuleCall_11());
@@ -11048,7 +11097,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalRos.g:4410:3: this_byte_12= rulebyte
+                    // InternalRos.g:4422:3: this_byte_12= rulebyte
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getByteParserRuleCall_12());
@@ -11066,7 +11115,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalRos.g:4419:3: this_time_13= ruletime
+                    // InternalRos.g:4431:3: this_time_13= ruletime
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getTimeParserRuleCall_13());
@@ -11084,7 +11133,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalRos.g:4428:3: this_duration_14= ruleduration
+                    // InternalRos.g:4440:3: this_duration_14= ruleduration
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getDurationParserRuleCall_14());
@@ -11102,7 +11151,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalRos.g:4437:3: this_Header_15= ruleHeader
+                    // InternalRos.g:4449:3: this_Header_15= ruleHeader
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getHeaderParserRuleCall_15());
@@ -11120,7 +11169,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalRos.g:4446:3: this_boolArray_16= ruleboolArray
+                    // InternalRos.g:4458:3: this_boolArray_16= ruleboolArray
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getBoolArrayParserRuleCall_16());
@@ -11138,7 +11187,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalRos.g:4455:3: this_int8Array_17= ruleint8Array
+                    // InternalRos.g:4467:3: this_int8Array_17= ruleint8Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt8ArrayParserRuleCall_17());
@@ -11156,7 +11205,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalRos.g:4464:3: this_uint8Array_18= ruleuint8Array
+                    // InternalRos.g:4476:3: this_uint8Array_18= ruleuint8Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint8ArrayParserRuleCall_18());
@@ -11174,7 +11223,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalRos.g:4473:3: this_int16Array_19= ruleint16Array
+                    // InternalRos.g:4485:3: this_int16Array_19= ruleint16Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt16ArrayParserRuleCall_19());
@@ -11192,7 +11241,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalRos.g:4482:3: this_uint16Array_20= ruleuint16Array
+                    // InternalRos.g:4494:3: this_uint16Array_20= ruleuint16Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint16ArrayParserRuleCall_20());
@@ -11210,7 +11259,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalRos.g:4491:3: this_int32Array_21= ruleint32Array
+                    // InternalRos.g:4503:3: this_int32Array_21= ruleint32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt32ArrayParserRuleCall_21());
@@ -11228,7 +11277,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalRos.g:4500:3: this_uint32Array_22= ruleuint32Array
+                    // InternalRos.g:4512:3: this_uint32Array_22= ruleuint32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint32ArrayParserRuleCall_22());
@@ -11246,7 +11295,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalRos.g:4509:3: this_int64Array_23= ruleint64Array
+                    // InternalRos.g:4521:3: this_int64Array_23= ruleint64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt64ArrayParserRuleCall_23());
@@ -11264,7 +11313,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalRos.g:4518:3: this_uint64Array_24= ruleuint64Array
+                    // InternalRos.g:4530:3: this_uint64Array_24= ruleuint64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint64ArrayParserRuleCall_24());
@@ -11282,7 +11331,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalRos.g:4527:3: this_float32Array_25= rulefloat32Array
+                    // InternalRos.g:4539:3: this_float32Array_25= rulefloat32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat32ArrayParserRuleCall_25());
@@ -11300,7 +11349,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalRos.g:4536:3: this_float64Array_26= rulefloat64Array
+                    // InternalRos.g:4548:3: this_float64Array_26= rulefloat64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat64ArrayParserRuleCall_26());
@@ -11318,7 +11367,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalRos.g:4545:3: this_string0Array_27= rulestring0Array
+                    // InternalRos.g:4557:3: this_string0Array_27= rulestring0Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getString0ArrayParserRuleCall_27());
@@ -11336,7 +11385,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalRos.g:4554:3: this_byteArray_28= rulebyteArray
+                    // InternalRos.g:4566:3: this_byteArray_28= rulebyteArray
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getByteArrayParserRuleCall_28());
@@ -11354,7 +11403,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalRos.g:4563:3: this_TopicSpecRef_29= ruleTopicSpecRef
+                    // InternalRos.g:4575:3: this_TopicSpecRef_29= ruleTopicSpecRef
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getTopicSpecRefParserRuleCall_29());
@@ -11372,7 +11421,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalRos.g:4572:3: this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef
+                    // InternalRos.g:4584:3: this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArrayTopicSpecRefParserRuleCall_30());
@@ -11412,7 +11461,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebool"
-    // InternalRos.g:4584:1: entryRulebool returns [EObject current=null] : iv_rulebool= rulebool EOF ;
+    // InternalRos.g:4596:1: entryRulebool returns [EObject current=null] : iv_rulebool= rulebool EOF ;
     public final EObject entryRulebool() throws RecognitionException {
         EObject current = null;
 
@@ -11420,8 +11469,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4584:45: (iv_rulebool= rulebool EOF )
-            // InternalRos.g:4585:2: iv_rulebool= rulebool EOF
+            // InternalRos.g:4596:45: (iv_rulebool= rulebool EOF )
+            // InternalRos.g:4597:2: iv_rulebool= rulebool EOF
             {
              newCompositeNode(grammarAccess.getBoolRule()); 
             pushFollow(FOLLOW_1);
@@ -11448,7 +11497,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebool"
-    // InternalRos.g:4591:1: rulebool returns [EObject current=null] : ( () otherlv_1= 'bool' ) ;
+    // InternalRos.g:4603:1: rulebool returns [EObject current=null] : ( () otherlv_1= 'bool' ) ;
     public final EObject rulebool() throws RecognitionException {
         EObject current = null;
 
@@ -11458,14 +11507,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4597:2: ( ( () otherlv_1= 'bool' ) )
-            // InternalRos.g:4598:2: ( () otherlv_1= 'bool' )
+            // InternalRos.g:4609:2: ( ( () otherlv_1= 'bool' ) )
+            // InternalRos.g:4610:2: ( () otherlv_1= 'bool' )
             {
-            // InternalRos.g:4598:2: ( () otherlv_1= 'bool' )
-            // InternalRos.g:4599:3: () otherlv_1= 'bool'
+            // InternalRos.g:4610:2: ( () otherlv_1= 'bool' )
+            // InternalRos.g:4611:3: () otherlv_1= 'bool'
             {
-            // InternalRos.g:4599:3: ()
-            // InternalRos.g:4600:4: 
+            // InternalRos.g:4611:3: ()
+            // InternalRos.g:4612:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11502,7 +11551,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint8"
-    // InternalRos.g:4614:1: entryRuleint8 returns [EObject current=null] : iv_ruleint8= ruleint8 EOF ;
+    // InternalRos.g:4626:1: entryRuleint8 returns [EObject current=null] : iv_ruleint8= ruleint8 EOF ;
     public final EObject entryRuleint8() throws RecognitionException {
         EObject current = null;
 
@@ -11510,8 +11559,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4614:45: (iv_ruleint8= ruleint8 EOF )
-            // InternalRos.g:4615:2: iv_ruleint8= ruleint8 EOF
+            // InternalRos.g:4626:45: (iv_ruleint8= ruleint8 EOF )
+            // InternalRos.g:4627:2: iv_ruleint8= ruleint8 EOF
             {
              newCompositeNode(grammarAccess.getInt8Rule()); 
             pushFollow(FOLLOW_1);
@@ -11538,7 +11587,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint8"
-    // InternalRos.g:4621:1: ruleint8 returns [EObject current=null] : ( () otherlv_1= 'int8' ) ;
+    // InternalRos.g:4633:1: ruleint8 returns [EObject current=null] : ( () otherlv_1= 'int8' ) ;
     public final EObject ruleint8() throws RecognitionException {
         EObject current = null;
 
@@ -11548,14 +11597,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4627:2: ( ( () otherlv_1= 'int8' ) )
-            // InternalRos.g:4628:2: ( () otherlv_1= 'int8' )
+            // InternalRos.g:4639:2: ( ( () otherlv_1= 'int8' ) )
+            // InternalRos.g:4640:2: ( () otherlv_1= 'int8' )
             {
-            // InternalRos.g:4628:2: ( () otherlv_1= 'int8' )
-            // InternalRos.g:4629:3: () otherlv_1= 'int8'
+            // InternalRos.g:4640:2: ( () otherlv_1= 'int8' )
+            // InternalRos.g:4641:3: () otherlv_1= 'int8'
             {
-            // InternalRos.g:4629:3: ()
-            // InternalRos.g:4630:4: 
+            // InternalRos.g:4641:3: ()
+            // InternalRos.g:4642:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11592,7 +11641,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint8"
-    // InternalRos.g:4644:1: entryRuleuint8 returns [EObject current=null] : iv_ruleuint8= ruleuint8 EOF ;
+    // InternalRos.g:4656:1: entryRuleuint8 returns [EObject current=null] : iv_ruleuint8= ruleuint8 EOF ;
     public final EObject entryRuleuint8() throws RecognitionException {
         EObject current = null;
 
@@ -11600,8 +11649,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4644:46: (iv_ruleuint8= ruleuint8 EOF )
-            // InternalRos.g:4645:2: iv_ruleuint8= ruleuint8 EOF
+            // InternalRos.g:4656:46: (iv_ruleuint8= ruleuint8 EOF )
+            // InternalRos.g:4657:2: iv_ruleuint8= ruleuint8 EOF
             {
              newCompositeNode(grammarAccess.getUint8Rule()); 
             pushFollow(FOLLOW_1);
@@ -11628,7 +11677,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint8"
-    // InternalRos.g:4651:1: ruleuint8 returns [EObject current=null] : ( () otherlv_1= 'uint8' ) ;
+    // InternalRos.g:4663:1: ruleuint8 returns [EObject current=null] : ( () otherlv_1= 'uint8' ) ;
     public final EObject ruleuint8() throws RecognitionException {
         EObject current = null;
 
@@ -11638,14 +11687,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4657:2: ( ( () otherlv_1= 'uint8' ) )
-            // InternalRos.g:4658:2: ( () otherlv_1= 'uint8' )
+            // InternalRos.g:4669:2: ( ( () otherlv_1= 'uint8' ) )
+            // InternalRos.g:4670:2: ( () otherlv_1= 'uint8' )
             {
-            // InternalRos.g:4658:2: ( () otherlv_1= 'uint8' )
-            // InternalRos.g:4659:3: () otherlv_1= 'uint8'
+            // InternalRos.g:4670:2: ( () otherlv_1= 'uint8' )
+            // InternalRos.g:4671:3: () otherlv_1= 'uint8'
             {
-            // InternalRos.g:4659:3: ()
-            // InternalRos.g:4660:4: 
+            // InternalRos.g:4671:3: ()
+            // InternalRos.g:4672:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11682,7 +11731,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint16"
-    // InternalRos.g:4674:1: entryRuleint16 returns [EObject current=null] : iv_ruleint16= ruleint16 EOF ;
+    // InternalRos.g:4686:1: entryRuleint16 returns [EObject current=null] : iv_ruleint16= ruleint16 EOF ;
     public final EObject entryRuleint16() throws RecognitionException {
         EObject current = null;
 
@@ -11690,8 +11739,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4674:46: (iv_ruleint16= ruleint16 EOF )
-            // InternalRos.g:4675:2: iv_ruleint16= ruleint16 EOF
+            // InternalRos.g:4686:46: (iv_ruleint16= ruleint16 EOF )
+            // InternalRos.g:4687:2: iv_ruleint16= ruleint16 EOF
             {
              newCompositeNode(grammarAccess.getInt16Rule()); 
             pushFollow(FOLLOW_1);
@@ -11718,7 +11767,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint16"
-    // InternalRos.g:4681:1: ruleint16 returns [EObject current=null] : ( () otherlv_1= 'int16' ) ;
+    // InternalRos.g:4693:1: ruleint16 returns [EObject current=null] : ( () otherlv_1= 'int16' ) ;
     public final EObject ruleint16() throws RecognitionException {
         EObject current = null;
 
@@ -11728,14 +11777,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4687:2: ( ( () otherlv_1= 'int16' ) )
-            // InternalRos.g:4688:2: ( () otherlv_1= 'int16' )
+            // InternalRos.g:4699:2: ( ( () otherlv_1= 'int16' ) )
+            // InternalRos.g:4700:2: ( () otherlv_1= 'int16' )
             {
-            // InternalRos.g:4688:2: ( () otherlv_1= 'int16' )
-            // InternalRos.g:4689:3: () otherlv_1= 'int16'
+            // InternalRos.g:4700:2: ( () otherlv_1= 'int16' )
+            // InternalRos.g:4701:3: () otherlv_1= 'int16'
             {
-            // InternalRos.g:4689:3: ()
-            // InternalRos.g:4690:4: 
+            // InternalRos.g:4701:3: ()
+            // InternalRos.g:4702:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11772,7 +11821,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint16"
-    // InternalRos.g:4704:1: entryRuleuint16 returns [EObject current=null] : iv_ruleuint16= ruleuint16 EOF ;
+    // InternalRos.g:4716:1: entryRuleuint16 returns [EObject current=null] : iv_ruleuint16= ruleuint16 EOF ;
     public final EObject entryRuleuint16() throws RecognitionException {
         EObject current = null;
 
@@ -11780,8 +11829,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4704:47: (iv_ruleuint16= ruleuint16 EOF )
-            // InternalRos.g:4705:2: iv_ruleuint16= ruleuint16 EOF
+            // InternalRos.g:4716:47: (iv_ruleuint16= ruleuint16 EOF )
+            // InternalRos.g:4717:2: iv_ruleuint16= ruleuint16 EOF
             {
              newCompositeNode(grammarAccess.getUint16Rule()); 
             pushFollow(FOLLOW_1);
@@ -11808,7 +11857,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint16"
-    // InternalRos.g:4711:1: ruleuint16 returns [EObject current=null] : ( () otherlv_1= 'uint16' ) ;
+    // InternalRos.g:4723:1: ruleuint16 returns [EObject current=null] : ( () otherlv_1= 'uint16' ) ;
     public final EObject ruleuint16() throws RecognitionException {
         EObject current = null;
 
@@ -11818,14 +11867,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4717:2: ( ( () otherlv_1= 'uint16' ) )
-            // InternalRos.g:4718:2: ( () otherlv_1= 'uint16' )
+            // InternalRos.g:4729:2: ( ( () otherlv_1= 'uint16' ) )
+            // InternalRos.g:4730:2: ( () otherlv_1= 'uint16' )
             {
-            // InternalRos.g:4718:2: ( () otherlv_1= 'uint16' )
-            // InternalRos.g:4719:3: () otherlv_1= 'uint16'
+            // InternalRos.g:4730:2: ( () otherlv_1= 'uint16' )
+            // InternalRos.g:4731:3: () otherlv_1= 'uint16'
             {
-            // InternalRos.g:4719:3: ()
-            // InternalRos.g:4720:4: 
+            // InternalRos.g:4731:3: ()
+            // InternalRos.g:4732:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11862,7 +11911,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint32"
-    // InternalRos.g:4734:1: entryRuleint32 returns [EObject current=null] : iv_ruleint32= ruleint32 EOF ;
+    // InternalRos.g:4746:1: entryRuleint32 returns [EObject current=null] : iv_ruleint32= ruleint32 EOF ;
     public final EObject entryRuleint32() throws RecognitionException {
         EObject current = null;
 
@@ -11870,8 +11919,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4734:46: (iv_ruleint32= ruleint32 EOF )
-            // InternalRos.g:4735:2: iv_ruleint32= ruleint32 EOF
+            // InternalRos.g:4746:46: (iv_ruleint32= ruleint32 EOF )
+            // InternalRos.g:4747:2: iv_ruleint32= ruleint32 EOF
             {
              newCompositeNode(grammarAccess.getInt32Rule()); 
             pushFollow(FOLLOW_1);
@@ -11898,7 +11947,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint32"
-    // InternalRos.g:4741:1: ruleint32 returns [EObject current=null] : ( () otherlv_1= 'int32' ) ;
+    // InternalRos.g:4753:1: ruleint32 returns [EObject current=null] : ( () otherlv_1= 'int32' ) ;
     public final EObject ruleint32() throws RecognitionException {
         EObject current = null;
 
@@ -11908,14 +11957,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4747:2: ( ( () otherlv_1= 'int32' ) )
-            // InternalRos.g:4748:2: ( () otherlv_1= 'int32' )
+            // InternalRos.g:4759:2: ( ( () otherlv_1= 'int32' ) )
+            // InternalRos.g:4760:2: ( () otherlv_1= 'int32' )
             {
-            // InternalRos.g:4748:2: ( () otherlv_1= 'int32' )
-            // InternalRos.g:4749:3: () otherlv_1= 'int32'
+            // InternalRos.g:4760:2: ( () otherlv_1= 'int32' )
+            // InternalRos.g:4761:3: () otherlv_1= 'int32'
             {
-            // InternalRos.g:4749:3: ()
-            // InternalRos.g:4750:4: 
+            // InternalRos.g:4761:3: ()
+            // InternalRos.g:4762:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11952,7 +12001,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint32"
-    // InternalRos.g:4764:1: entryRuleuint32 returns [EObject current=null] : iv_ruleuint32= ruleuint32 EOF ;
+    // InternalRos.g:4776:1: entryRuleuint32 returns [EObject current=null] : iv_ruleuint32= ruleuint32 EOF ;
     public final EObject entryRuleuint32() throws RecognitionException {
         EObject current = null;
 
@@ -11960,8 +12009,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4764:47: (iv_ruleuint32= ruleuint32 EOF )
-            // InternalRos.g:4765:2: iv_ruleuint32= ruleuint32 EOF
+            // InternalRos.g:4776:47: (iv_ruleuint32= ruleuint32 EOF )
+            // InternalRos.g:4777:2: iv_ruleuint32= ruleuint32 EOF
             {
              newCompositeNode(grammarAccess.getUint32Rule()); 
             pushFollow(FOLLOW_1);
@@ -11988,7 +12037,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint32"
-    // InternalRos.g:4771:1: ruleuint32 returns [EObject current=null] : ( () otherlv_1= 'uint32' ) ;
+    // InternalRos.g:4783:1: ruleuint32 returns [EObject current=null] : ( () otherlv_1= 'uint32' ) ;
     public final EObject ruleuint32() throws RecognitionException {
         EObject current = null;
 
@@ -11998,14 +12047,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4777:2: ( ( () otherlv_1= 'uint32' ) )
-            // InternalRos.g:4778:2: ( () otherlv_1= 'uint32' )
+            // InternalRos.g:4789:2: ( ( () otherlv_1= 'uint32' ) )
+            // InternalRos.g:4790:2: ( () otherlv_1= 'uint32' )
             {
-            // InternalRos.g:4778:2: ( () otherlv_1= 'uint32' )
-            // InternalRos.g:4779:3: () otherlv_1= 'uint32'
+            // InternalRos.g:4790:2: ( () otherlv_1= 'uint32' )
+            // InternalRos.g:4791:3: () otherlv_1= 'uint32'
             {
-            // InternalRos.g:4779:3: ()
-            // InternalRos.g:4780:4: 
+            // InternalRos.g:4791:3: ()
+            // InternalRos.g:4792:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12042,7 +12091,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint64"
-    // InternalRos.g:4794:1: entryRuleint64 returns [EObject current=null] : iv_ruleint64= ruleint64 EOF ;
+    // InternalRos.g:4806:1: entryRuleint64 returns [EObject current=null] : iv_ruleint64= ruleint64 EOF ;
     public final EObject entryRuleint64() throws RecognitionException {
         EObject current = null;
 
@@ -12050,8 +12099,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4794:46: (iv_ruleint64= ruleint64 EOF )
-            // InternalRos.g:4795:2: iv_ruleint64= ruleint64 EOF
+            // InternalRos.g:4806:46: (iv_ruleint64= ruleint64 EOF )
+            // InternalRos.g:4807:2: iv_ruleint64= ruleint64 EOF
             {
              newCompositeNode(grammarAccess.getInt64Rule()); 
             pushFollow(FOLLOW_1);
@@ -12078,7 +12127,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint64"
-    // InternalRos.g:4801:1: ruleint64 returns [EObject current=null] : ( () otherlv_1= 'int64' ) ;
+    // InternalRos.g:4813:1: ruleint64 returns [EObject current=null] : ( () otherlv_1= 'int64' ) ;
     public final EObject ruleint64() throws RecognitionException {
         EObject current = null;
 
@@ -12088,14 +12137,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4807:2: ( ( () otherlv_1= 'int64' ) )
-            // InternalRos.g:4808:2: ( () otherlv_1= 'int64' )
+            // InternalRos.g:4819:2: ( ( () otherlv_1= 'int64' ) )
+            // InternalRos.g:4820:2: ( () otherlv_1= 'int64' )
             {
-            // InternalRos.g:4808:2: ( () otherlv_1= 'int64' )
-            // InternalRos.g:4809:3: () otherlv_1= 'int64'
+            // InternalRos.g:4820:2: ( () otherlv_1= 'int64' )
+            // InternalRos.g:4821:3: () otherlv_1= 'int64'
             {
-            // InternalRos.g:4809:3: ()
-            // InternalRos.g:4810:4: 
+            // InternalRos.g:4821:3: ()
+            // InternalRos.g:4822:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12132,7 +12181,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint64"
-    // InternalRos.g:4824:1: entryRuleuint64 returns [EObject current=null] : iv_ruleuint64= ruleuint64 EOF ;
+    // InternalRos.g:4836:1: entryRuleuint64 returns [EObject current=null] : iv_ruleuint64= ruleuint64 EOF ;
     public final EObject entryRuleuint64() throws RecognitionException {
         EObject current = null;
 
@@ -12140,8 +12189,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4824:47: (iv_ruleuint64= ruleuint64 EOF )
-            // InternalRos.g:4825:2: iv_ruleuint64= ruleuint64 EOF
+            // InternalRos.g:4836:47: (iv_ruleuint64= ruleuint64 EOF )
+            // InternalRos.g:4837:2: iv_ruleuint64= ruleuint64 EOF
             {
              newCompositeNode(grammarAccess.getUint64Rule()); 
             pushFollow(FOLLOW_1);
@@ -12168,7 +12217,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint64"
-    // InternalRos.g:4831:1: ruleuint64 returns [EObject current=null] : ( () otherlv_1= 'uint64' ) ;
+    // InternalRos.g:4843:1: ruleuint64 returns [EObject current=null] : ( () otherlv_1= 'uint64' ) ;
     public final EObject ruleuint64() throws RecognitionException {
         EObject current = null;
 
@@ -12178,14 +12227,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4837:2: ( ( () otherlv_1= 'uint64' ) )
-            // InternalRos.g:4838:2: ( () otherlv_1= 'uint64' )
+            // InternalRos.g:4849:2: ( ( () otherlv_1= 'uint64' ) )
+            // InternalRos.g:4850:2: ( () otherlv_1= 'uint64' )
             {
-            // InternalRos.g:4838:2: ( () otherlv_1= 'uint64' )
-            // InternalRos.g:4839:3: () otherlv_1= 'uint64'
+            // InternalRos.g:4850:2: ( () otherlv_1= 'uint64' )
+            // InternalRos.g:4851:3: () otherlv_1= 'uint64'
             {
-            // InternalRos.g:4839:3: ()
-            // InternalRos.g:4840:4: 
+            // InternalRos.g:4851:3: ()
+            // InternalRos.g:4852:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12222,7 +12271,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat32"
-    // InternalRos.g:4854:1: entryRulefloat32 returns [EObject current=null] : iv_rulefloat32= rulefloat32 EOF ;
+    // InternalRos.g:4866:1: entryRulefloat32 returns [EObject current=null] : iv_rulefloat32= rulefloat32 EOF ;
     public final EObject entryRulefloat32() throws RecognitionException {
         EObject current = null;
 
@@ -12230,8 +12279,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4854:48: (iv_rulefloat32= rulefloat32 EOF )
-            // InternalRos.g:4855:2: iv_rulefloat32= rulefloat32 EOF
+            // InternalRos.g:4866:48: (iv_rulefloat32= rulefloat32 EOF )
+            // InternalRos.g:4867:2: iv_rulefloat32= rulefloat32 EOF
             {
              newCompositeNode(grammarAccess.getFloat32Rule()); 
             pushFollow(FOLLOW_1);
@@ -12258,7 +12307,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat32"
-    // InternalRos.g:4861:1: rulefloat32 returns [EObject current=null] : ( () otherlv_1= 'float32' ) ;
+    // InternalRos.g:4873:1: rulefloat32 returns [EObject current=null] : ( () otherlv_1= 'float32' ) ;
     public final EObject rulefloat32() throws RecognitionException {
         EObject current = null;
 
@@ -12268,14 +12317,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4867:2: ( ( () otherlv_1= 'float32' ) )
-            // InternalRos.g:4868:2: ( () otherlv_1= 'float32' )
+            // InternalRos.g:4879:2: ( ( () otherlv_1= 'float32' ) )
+            // InternalRos.g:4880:2: ( () otherlv_1= 'float32' )
             {
-            // InternalRos.g:4868:2: ( () otherlv_1= 'float32' )
-            // InternalRos.g:4869:3: () otherlv_1= 'float32'
+            // InternalRos.g:4880:2: ( () otherlv_1= 'float32' )
+            // InternalRos.g:4881:3: () otherlv_1= 'float32'
             {
-            // InternalRos.g:4869:3: ()
-            // InternalRos.g:4870:4: 
+            // InternalRos.g:4881:3: ()
+            // InternalRos.g:4882:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12312,7 +12361,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat64"
-    // InternalRos.g:4884:1: entryRulefloat64 returns [EObject current=null] : iv_rulefloat64= rulefloat64 EOF ;
+    // InternalRos.g:4896:1: entryRulefloat64 returns [EObject current=null] : iv_rulefloat64= rulefloat64 EOF ;
     public final EObject entryRulefloat64() throws RecognitionException {
         EObject current = null;
 
@@ -12320,8 +12369,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4884:48: (iv_rulefloat64= rulefloat64 EOF )
-            // InternalRos.g:4885:2: iv_rulefloat64= rulefloat64 EOF
+            // InternalRos.g:4896:48: (iv_rulefloat64= rulefloat64 EOF )
+            // InternalRos.g:4897:2: iv_rulefloat64= rulefloat64 EOF
             {
              newCompositeNode(grammarAccess.getFloat64Rule()); 
             pushFollow(FOLLOW_1);
@@ -12348,7 +12397,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat64"
-    // InternalRos.g:4891:1: rulefloat64 returns [EObject current=null] : ( () otherlv_1= 'float64' ) ;
+    // InternalRos.g:4903:1: rulefloat64 returns [EObject current=null] : ( () otherlv_1= 'float64' ) ;
     public final EObject rulefloat64() throws RecognitionException {
         EObject current = null;
 
@@ -12358,14 +12407,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4897:2: ( ( () otherlv_1= 'float64' ) )
-            // InternalRos.g:4898:2: ( () otherlv_1= 'float64' )
+            // InternalRos.g:4909:2: ( ( () otherlv_1= 'float64' ) )
+            // InternalRos.g:4910:2: ( () otherlv_1= 'float64' )
             {
-            // InternalRos.g:4898:2: ( () otherlv_1= 'float64' )
-            // InternalRos.g:4899:3: () otherlv_1= 'float64'
+            // InternalRos.g:4910:2: ( () otherlv_1= 'float64' )
+            // InternalRos.g:4911:3: () otherlv_1= 'float64'
             {
-            // InternalRos.g:4899:3: ()
-            // InternalRos.g:4900:4: 
+            // InternalRos.g:4911:3: ()
+            // InternalRos.g:4912:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12402,7 +12451,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestring0"
-    // InternalRos.g:4914:1: entryRulestring0 returns [EObject current=null] : iv_rulestring0= rulestring0 EOF ;
+    // InternalRos.g:4926:1: entryRulestring0 returns [EObject current=null] : iv_rulestring0= rulestring0 EOF ;
     public final EObject entryRulestring0() throws RecognitionException {
         EObject current = null;
 
@@ -12410,8 +12459,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4914:48: (iv_rulestring0= rulestring0 EOF )
-            // InternalRos.g:4915:2: iv_rulestring0= rulestring0 EOF
+            // InternalRos.g:4926:48: (iv_rulestring0= rulestring0 EOF )
+            // InternalRos.g:4927:2: iv_rulestring0= rulestring0 EOF
             {
              newCompositeNode(grammarAccess.getString0Rule()); 
             pushFollow(FOLLOW_1);
@@ -12438,7 +12487,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestring0"
-    // InternalRos.g:4921:1: rulestring0 returns [EObject current=null] : ( () otherlv_1= 'string' ) ;
+    // InternalRos.g:4933:1: rulestring0 returns [EObject current=null] : ( () otherlv_1= 'string' ) ;
     public final EObject rulestring0() throws RecognitionException {
         EObject current = null;
 
@@ -12448,14 +12497,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4927:2: ( ( () otherlv_1= 'string' ) )
-            // InternalRos.g:4928:2: ( () otherlv_1= 'string' )
+            // InternalRos.g:4939:2: ( ( () otherlv_1= 'string' ) )
+            // InternalRos.g:4940:2: ( () otherlv_1= 'string' )
             {
-            // InternalRos.g:4928:2: ( () otherlv_1= 'string' )
-            // InternalRos.g:4929:3: () otherlv_1= 'string'
+            // InternalRos.g:4940:2: ( () otherlv_1= 'string' )
+            // InternalRos.g:4941:3: () otherlv_1= 'string'
             {
-            // InternalRos.g:4929:3: ()
-            // InternalRos.g:4930:4: 
+            // InternalRos.g:4941:3: ()
+            // InternalRos.g:4942:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12492,7 +12541,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebyte"
-    // InternalRos.g:4944:1: entryRulebyte returns [EObject current=null] : iv_rulebyte= rulebyte EOF ;
+    // InternalRos.g:4956:1: entryRulebyte returns [EObject current=null] : iv_rulebyte= rulebyte EOF ;
     public final EObject entryRulebyte() throws RecognitionException {
         EObject current = null;
 
@@ -12500,8 +12549,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4944:45: (iv_rulebyte= rulebyte EOF )
-            // InternalRos.g:4945:2: iv_rulebyte= rulebyte EOF
+            // InternalRos.g:4956:45: (iv_rulebyte= rulebyte EOF )
+            // InternalRos.g:4957:2: iv_rulebyte= rulebyte EOF
             {
              newCompositeNode(grammarAccess.getByteRule()); 
             pushFollow(FOLLOW_1);
@@ -12528,7 +12577,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebyte"
-    // InternalRos.g:4951:1: rulebyte returns [EObject current=null] : ( () otherlv_1= 'byte' ) ;
+    // InternalRos.g:4963:1: rulebyte returns [EObject current=null] : ( () otherlv_1= 'byte' ) ;
     public final EObject rulebyte() throws RecognitionException {
         EObject current = null;
 
@@ -12538,14 +12587,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4957:2: ( ( () otherlv_1= 'byte' ) )
-            // InternalRos.g:4958:2: ( () otherlv_1= 'byte' )
+            // InternalRos.g:4969:2: ( ( () otherlv_1= 'byte' ) )
+            // InternalRos.g:4970:2: ( () otherlv_1= 'byte' )
             {
-            // InternalRos.g:4958:2: ( () otherlv_1= 'byte' )
-            // InternalRos.g:4959:3: () otherlv_1= 'byte'
+            // InternalRos.g:4970:2: ( () otherlv_1= 'byte' )
+            // InternalRos.g:4971:3: () otherlv_1= 'byte'
             {
-            // InternalRos.g:4959:3: ()
-            // InternalRos.g:4960:4: 
+            // InternalRos.g:4971:3: ()
+            // InternalRos.g:4972:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12582,7 +12631,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletime"
-    // InternalRos.g:4974:1: entryRuletime returns [EObject current=null] : iv_ruletime= ruletime EOF ;
+    // InternalRos.g:4986:1: entryRuletime returns [EObject current=null] : iv_ruletime= ruletime EOF ;
     public final EObject entryRuletime() throws RecognitionException {
         EObject current = null;
 
@@ -12590,8 +12639,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:4974:45: (iv_ruletime= ruletime EOF )
-            // InternalRos.g:4975:2: iv_ruletime= ruletime EOF
+            // InternalRos.g:4986:45: (iv_ruletime= ruletime EOF )
+            // InternalRos.g:4987:2: iv_ruletime= ruletime EOF
             {
              newCompositeNode(grammarAccess.getTimeRule()); 
             pushFollow(FOLLOW_1);
@@ -12618,7 +12667,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletime"
-    // InternalRos.g:4981:1: ruletime returns [EObject current=null] : ( () otherlv_1= 'time' ) ;
+    // InternalRos.g:4993:1: ruletime returns [EObject current=null] : ( () otherlv_1= 'time' ) ;
     public final EObject ruletime() throws RecognitionException {
         EObject current = null;
 
@@ -12628,14 +12677,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:4987:2: ( ( () otherlv_1= 'time' ) )
-            // InternalRos.g:4988:2: ( () otherlv_1= 'time' )
+            // InternalRos.g:4999:2: ( ( () otherlv_1= 'time' ) )
+            // InternalRos.g:5000:2: ( () otherlv_1= 'time' )
             {
-            // InternalRos.g:4988:2: ( () otherlv_1= 'time' )
-            // InternalRos.g:4989:3: () otherlv_1= 'time'
+            // InternalRos.g:5000:2: ( () otherlv_1= 'time' )
+            // InternalRos.g:5001:3: () otherlv_1= 'time'
             {
-            // InternalRos.g:4989:3: ()
-            // InternalRos.g:4990:4: 
+            // InternalRos.g:5001:3: ()
+            // InternalRos.g:5002:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12672,7 +12721,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleduration"
-    // InternalRos.g:5004:1: entryRuleduration returns [EObject current=null] : iv_ruleduration= ruleduration EOF ;
+    // InternalRos.g:5016:1: entryRuleduration returns [EObject current=null] : iv_ruleduration= ruleduration EOF ;
     public final EObject entryRuleduration() throws RecognitionException {
         EObject current = null;
 
@@ -12680,8 +12729,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5004:49: (iv_ruleduration= ruleduration EOF )
-            // InternalRos.g:5005:2: iv_ruleduration= ruleduration EOF
+            // InternalRos.g:5016:49: (iv_ruleduration= ruleduration EOF )
+            // InternalRos.g:5017:2: iv_ruleduration= ruleduration EOF
             {
              newCompositeNode(grammarAccess.getDurationRule()); 
             pushFollow(FOLLOW_1);
@@ -12708,7 +12757,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleduration"
-    // InternalRos.g:5011:1: ruleduration returns [EObject current=null] : ( () otherlv_1= 'duration' ) ;
+    // InternalRos.g:5023:1: ruleduration returns [EObject current=null] : ( () otherlv_1= 'duration' ) ;
     public final EObject ruleduration() throws RecognitionException {
         EObject current = null;
 
@@ -12718,14 +12767,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5017:2: ( ( () otherlv_1= 'duration' ) )
-            // InternalRos.g:5018:2: ( () otherlv_1= 'duration' )
+            // InternalRos.g:5029:2: ( ( () otherlv_1= 'duration' ) )
+            // InternalRos.g:5030:2: ( () otherlv_1= 'duration' )
             {
-            // InternalRos.g:5018:2: ( () otherlv_1= 'duration' )
-            // InternalRos.g:5019:3: () otherlv_1= 'duration'
+            // InternalRos.g:5030:2: ( () otherlv_1= 'duration' )
+            // InternalRos.g:5031:3: () otherlv_1= 'duration'
             {
-            // InternalRos.g:5019:3: ()
-            // InternalRos.g:5020:4: 
+            // InternalRos.g:5031:3: ()
+            // InternalRos.g:5032:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12762,7 +12811,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleboolArray"
-    // InternalRos.g:5034:1: entryRuleboolArray returns [EObject current=null] : iv_ruleboolArray= ruleboolArray EOF ;
+    // InternalRos.g:5046:1: entryRuleboolArray returns [EObject current=null] : iv_ruleboolArray= ruleboolArray EOF ;
     public final EObject entryRuleboolArray() throws RecognitionException {
         EObject current = null;
 
@@ -12770,8 +12819,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5034:50: (iv_ruleboolArray= ruleboolArray EOF )
-            // InternalRos.g:5035:2: iv_ruleboolArray= ruleboolArray EOF
+            // InternalRos.g:5046:50: (iv_ruleboolArray= ruleboolArray EOF )
+            // InternalRos.g:5047:2: iv_ruleboolArray= ruleboolArray EOF
             {
              newCompositeNode(grammarAccess.getBoolArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -12798,7 +12847,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleboolArray"
-    // InternalRos.g:5041:1: ruleboolArray returns [EObject current=null] : ( () otherlv_1= 'bool[]' ) ;
+    // InternalRos.g:5053:1: ruleboolArray returns [EObject current=null] : ( () otherlv_1= 'bool[]' ) ;
     public final EObject ruleboolArray() throws RecognitionException {
         EObject current = null;
 
@@ -12808,14 +12857,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5047:2: ( ( () otherlv_1= 'bool[]' ) )
-            // InternalRos.g:5048:2: ( () otherlv_1= 'bool[]' )
+            // InternalRos.g:5059:2: ( ( () otherlv_1= 'bool[]' ) )
+            // InternalRos.g:5060:2: ( () otherlv_1= 'bool[]' )
             {
-            // InternalRos.g:5048:2: ( () otherlv_1= 'bool[]' )
-            // InternalRos.g:5049:3: () otherlv_1= 'bool[]'
+            // InternalRos.g:5060:2: ( () otherlv_1= 'bool[]' )
+            // InternalRos.g:5061:3: () otherlv_1= 'bool[]'
             {
-            // InternalRos.g:5049:3: ()
-            // InternalRos.g:5050:4: 
+            // InternalRos.g:5061:3: ()
+            // InternalRos.g:5062:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12852,7 +12901,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint8Array"
-    // InternalRos.g:5064:1: entryRuleint8Array returns [EObject current=null] : iv_ruleint8Array= ruleint8Array EOF ;
+    // InternalRos.g:5076:1: entryRuleint8Array returns [EObject current=null] : iv_ruleint8Array= ruleint8Array EOF ;
     public final EObject entryRuleint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -12860,8 +12909,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5064:50: (iv_ruleint8Array= ruleint8Array EOF )
-            // InternalRos.g:5065:2: iv_ruleint8Array= ruleint8Array EOF
+            // InternalRos.g:5076:50: (iv_ruleint8Array= ruleint8Array EOF )
+            // InternalRos.g:5077:2: iv_ruleint8Array= ruleint8Array EOF
             {
              newCompositeNode(grammarAccess.getInt8ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -12888,7 +12937,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint8Array"
-    // InternalRos.g:5071:1: ruleint8Array returns [EObject current=null] : ( () otherlv_1= 'int8[]' ) ;
+    // InternalRos.g:5083:1: ruleint8Array returns [EObject current=null] : ( () otherlv_1= 'int8[]' ) ;
     public final EObject ruleint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -12898,14 +12947,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5077:2: ( ( () otherlv_1= 'int8[]' ) )
-            // InternalRos.g:5078:2: ( () otherlv_1= 'int8[]' )
+            // InternalRos.g:5089:2: ( ( () otherlv_1= 'int8[]' ) )
+            // InternalRos.g:5090:2: ( () otherlv_1= 'int8[]' )
             {
-            // InternalRos.g:5078:2: ( () otherlv_1= 'int8[]' )
-            // InternalRos.g:5079:3: () otherlv_1= 'int8[]'
+            // InternalRos.g:5090:2: ( () otherlv_1= 'int8[]' )
+            // InternalRos.g:5091:3: () otherlv_1= 'int8[]'
             {
-            // InternalRos.g:5079:3: ()
-            // InternalRos.g:5080:4: 
+            // InternalRos.g:5091:3: ()
+            // InternalRos.g:5092:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12942,7 +12991,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint8Array"
-    // InternalRos.g:5094:1: entryRuleuint8Array returns [EObject current=null] : iv_ruleuint8Array= ruleuint8Array EOF ;
+    // InternalRos.g:5106:1: entryRuleuint8Array returns [EObject current=null] : iv_ruleuint8Array= ruleuint8Array EOF ;
     public final EObject entryRuleuint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -12950,8 +12999,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5094:51: (iv_ruleuint8Array= ruleuint8Array EOF )
-            // InternalRos.g:5095:2: iv_ruleuint8Array= ruleuint8Array EOF
+            // InternalRos.g:5106:51: (iv_ruleuint8Array= ruleuint8Array EOF )
+            // InternalRos.g:5107:2: iv_ruleuint8Array= ruleuint8Array EOF
             {
              newCompositeNode(grammarAccess.getUint8ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -12978,7 +13027,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint8Array"
-    // InternalRos.g:5101:1: ruleuint8Array returns [EObject current=null] : ( () otherlv_1= 'uint8[]' ) ;
+    // InternalRos.g:5113:1: ruleuint8Array returns [EObject current=null] : ( () otherlv_1= 'uint8[]' ) ;
     public final EObject ruleuint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -12988,14 +13037,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5107:2: ( ( () otherlv_1= 'uint8[]' ) )
-            // InternalRos.g:5108:2: ( () otherlv_1= 'uint8[]' )
+            // InternalRos.g:5119:2: ( ( () otherlv_1= 'uint8[]' ) )
+            // InternalRos.g:5120:2: ( () otherlv_1= 'uint8[]' )
             {
-            // InternalRos.g:5108:2: ( () otherlv_1= 'uint8[]' )
-            // InternalRos.g:5109:3: () otherlv_1= 'uint8[]'
+            // InternalRos.g:5120:2: ( () otherlv_1= 'uint8[]' )
+            // InternalRos.g:5121:3: () otherlv_1= 'uint8[]'
             {
-            // InternalRos.g:5109:3: ()
-            // InternalRos.g:5110:4: 
+            // InternalRos.g:5121:3: ()
+            // InternalRos.g:5122:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13032,7 +13081,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint16Array"
-    // InternalRos.g:5124:1: entryRuleint16Array returns [EObject current=null] : iv_ruleint16Array= ruleint16Array EOF ;
+    // InternalRos.g:5136:1: entryRuleint16Array returns [EObject current=null] : iv_ruleint16Array= ruleint16Array EOF ;
     public final EObject entryRuleint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -13040,8 +13089,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5124:51: (iv_ruleint16Array= ruleint16Array EOF )
-            // InternalRos.g:5125:2: iv_ruleint16Array= ruleint16Array EOF
+            // InternalRos.g:5136:51: (iv_ruleint16Array= ruleint16Array EOF )
+            // InternalRos.g:5137:2: iv_ruleint16Array= ruleint16Array EOF
             {
              newCompositeNode(grammarAccess.getInt16ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13068,7 +13117,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint16Array"
-    // InternalRos.g:5131:1: ruleint16Array returns [EObject current=null] : ( () otherlv_1= 'int16[]' ) ;
+    // InternalRos.g:5143:1: ruleint16Array returns [EObject current=null] : ( () otherlv_1= 'int16[]' ) ;
     public final EObject ruleint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -13078,14 +13127,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5137:2: ( ( () otherlv_1= 'int16[]' ) )
-            // InternalRos.g:5138:2: ( () otherlv_1= 'int16[]' )
+            // InternalRos.g:5149:2: ( ( () otherlv_1= 'int16[]' ) )
+            // InternalRos.g:5150:2: ( () otherlv_1= 'int16[]' )
             {
-            // InternalRos.g:5138:2: ( () otherlv_1= 'int16[]' )
-            // InternalRos.g:5139:3: () otherlv_1= 'int16[]'
+            // InternalRos.g:5150:2: ( () otherlv_1= 'int16[]' )
+            // InternalRos.g:5151:3: () otherlv_1= 'int16[]'
             {
-            // InternalRos.g:5139:3: ()
-            // InternalRos.g:5140:4: 
+            // InternalRos.g:5151:3: ()
+            // InternalRos.g:5152:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13122,7 +13171,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint16Array"
-    // InternalRos.g:5154:1: entryRuleuint16Array returns [EObject current=null] : iv_ruleuint16Array= ruleuint16Array EOF ;
+    // InternalRos.g:5166:1: entryRuleuint16Array returns [EObject current=null] : iv_ruleuint16Array= ruleuint16Array EOF ;
     public final EObject entryRuleuint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -13130,8 +13179,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5154:52: (iv_ruleuint16Array= ruleuint16Array EOF )
-            // InternalRos.g:5155:2: iv_ruleuint16Array= ruleuint16Array EOF
+            // InternalRos.g:5166:52: (iv_ruleuint16Array= ruleuint16Array EOF )
+            // InternalRos.g:5167:2: iv_ruleuint16Array= ruleuint16Array EOF
             {
              newCompositeNode(grammarAccess.getUint16ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13158,7 +13207,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint16Array"
-    // InternalRos.g:5161:1: ruleuint16Array returns [EObject current=null] : ( () otherlv_1= 'uint16[]' ) ;
+    // InternalRos.g:5173:1: ruleuint16Array returns [EObject current=null] : ( () otherlv_1= 'uint16[]' ) ;
     public final EObject ruleuint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -13168,14 +13217,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5167:2: ( ( () otherlv_1= 'uint16[]' ) )
-            // InternalRos.g:5168:2: ( () otherlv_1= 'uint16[]' )
+            // InternalRos.g:5179:2: ( ( () otherlv_1= 'uint16[]' ) )
+            // InternalRos.g:5180:2: ( () otherlv_1= 'uint16[]' )
             {
-            // InternalRos.g:5168:2: ( () otherlv_1= 'uint16[]' )
-            // InternalRos.g:5169:3: () otherlv_1= 'uint16[]'
+            // InternalRos.g:5180:2: ( () otherlv_1= 'uint16[]' )
+            // InternalRos.g:5181:3: () otherlv_1= 'uint16[]'
             {
-            // InternalRos.g:5169:3: ()
-            // InternalRos.g:5170:4: 
+            // InternalRos.g:5181:3: ()
+            // InternalRos.g:5182:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13212,7 +13261,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint32Array"
-    // InternalRos.g:5184:1: entryRuleint32Array returns [EObject current=null] : iv_ruleint32Array= ruleint32Array EOF ;
+    // InternalRos.g:5196:1: entryRuleint32Array returns [EObject current=null] : iv_ruleint32Array= ruleint32Array EOF ;
     public final EObject entryRuleint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13220,8 +13269,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5184:51: (iv_ruleint32Array= ruleint32Array EOF )
-            // InternalRos.g:5185:2: iv_ruleint32Array= ruleint32Array EOF
+            // InternalRos.g:5196:51: (iv_ruleint32Array= ruleint32Array EOF )
+            // InternalRos.g:5197:2: iv_ruleint32Array= ruleint32Array EOF
             {
              newCompositeNode(grammarAccess.getInt32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13248,7 +13297,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint32Array"
-    // InternalRos.g:5191:1: ruleint32Array returns [EObject current=null] : ( () otherlv_1= 'int32[]' ) ;
+    // InternalRos.g:5203:1: ruleint32Array returns [EObject current=null] : ( () otherlv_1= 'int32[]' ) ;
     public final EObject ruleint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13258,14 +13307,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5197:2: ( ( () otherlv_1= 'int32[]' ) )
-            // InternalRos.g:5198:2: ( () otherlv_1= 'int32[]' )
+            // InternalRos.g:5209:2: ( ( () otherlv_1= 'int32[]' ) )
+            // InternalRos.g:5210:2: ( () otherlv_1= 'int32[]' )
             {
-            // InternalRos.g:5198:2: ( () otherlv_1= 'int32[]' )
-            // InternalRos.g:5199:3: () otherlv_1= 'int32[]'
+            // InternalRos.g:5210:2: ( () otherlv_1= 'int32[]' )
+            // InternalRos.g:5211:3: () otherlv_1= 'int32[]'
             {
-            // InternalRos.g:5199:3: ()
-            // InternalRos.g:5200:4: 
+            // InternalRos.g:5211:3: ()
+            // InternalRos.g:5212:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13302,7 +13351,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint32Array"
-    // InternalRos.g:5214:1: entryRuleuint32Array returns [EObject current=null] : iv_ruleuint32Array= ruleuint32Array EOF ;
+    // InternalRos.g:5226:1: entryRuleuint32Array returns [EObject current=null] : iv_ruleuint32Array= ruleuint32Array EOF ;
     public final EObject entryRuleuint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13310,8 +13359,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5214:52: (iv_ruleuint32Array= ruleuint32Array EOF )
-            // InternalRos.g:5215:2: iv_ruleuint32Array= ruleuint32Array EOF
+            // InternalRos.g:5226:52: (iv_ruleuint32Array= ruleuint32Array EOF )
+            // InternalRos.g:5227:2: iv_ruleuint32Array= ruleuint32Array EOF
             {
              newCompositeNode(grammarAccess.getUint32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13338,7 +13387,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint32Array"
-    // InternalRos.g:5221:1: ruleuint32Array returns [EObject current=null] : ( () otherlv_1= 'uint32[]' ) ;
+    // InternalRos.g:5233:1: ruleuint32Array returns [EObject current=null] : ( () otherlv_1= 'uint32[]' ) ;
     public final EObject ruleuint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13348,14 +13397,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5227:2: ( ( () otherlv_1= 'uint32[]' ) )
-            // InternalRos.g:5228:2: ( () otherlv_1= 'uint32[]' )
+            // InternalRos.g:5239:2: ( ( () otherlv_1= 'uint32[]' ) )
+            // InternalRos.g:5240:2: ( () otherlv_1= 'uint32[]' )
             {
-            // InternalRos.g:5228:2: ( () otherlv_1= 'uint32[]' )
-            // InternalRos.g:5229:3: () otherlv_1= 'uint32[]'
+            // InternalRos.g:5240:2: ( () otherlv_1= 'uint32[]' )
+            // InternalRos.g:5241:3: () otherlv_1= 'uint32[]'
             {
-            // InternalRos.g:5229:3: ()
-            // InternalRos.g:5230:4: 
+            // InternalRos.g:5241:3: ()
+            // InternalRos.g:5242:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13392,7 +13441,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint64Array"
-    // InternalRos.g:5244:1: entryRuleint64Array returns [EObject current=null] : iv_ruleint64Array= ruleint64Array EOF ;
+    // InternalRos.g:5256:1: entryRuleint64Array returns [EObject current=null] : iv_ruleint64Array= ruleint64Array EOF ;
     public final EObject entryRuleint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13400,8 +13449,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5244:51: (iv_ruleint64Array= ruleint64Array EOF )
-            // InternalRos.g:5245:2: iv_ruleint64Array= ruleint64Array EOF
+            // InternalRos.g:5256:51: (iv_ruleint64Array= ruleint64Array EOF )
+            // InternalRos.g:5257:2: iv_ruleint64Array= ruleint64Array EOF
             {
              newCompositeNode(grammarAccess.getInt64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13428,7 +13477,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint64Array"
-    // InternalRos.g:5251:1: ruleint64Array returns [EObject current=null] : ( () otherlv_1= 'int64[]' ) ;
+    // InternalRos.g:5263:1: ruleint64Array returns [EObject current=null] : ( () otherlv_1= 'int64[]' ) ;
     public final EObject ruleint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13438,14 +13487,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5257:2: ( ( () otherlv_1= 'int64[]' ) )
-            // InternalRos.g:5258:2: ( () otherlv_1= 'int64[]' )
+            // InternalRos.g:5269:2: ( ( () otherlv_1= 'int64[]' ) )
+            // InternalRos.g:5270:2: ( () otherlv_1= 'int64[]' )
             {
-            // InternalRos.g:5258:2: ( () otherlv_1= 'int64[]' )
-            // InternalRos.g:5259:3: () otherlv_1= 'int64[]'
+            // InternalRos.g:5270:2: ( () otherlv_1= 'int64[]' )
+            // InternalRos.g:5271:3: () otherlv_1= 'int64[]'
             {
-            // InternalRos.g:5259:3: ()
-            // InternalRos.g:5260:4: 
+            // InternalRos.g:5271:3: ()
+            // InternalRos.g:5272:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13482,7 +13531,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint64Array"
-    // InternalRos.g:5274:1: entryRuleuint64Array returns [EObject current=null] : iv_ruleuint64Array= ruleuint64Array EOF ;
+    // InternalRos.g:5286:1: entryRuleuint64Array returns [EObject current=null] : iv_ruleuint64Array= ruleuint64Array EOF ;
     public final EObject entryRuleuint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13490,8 +13539,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5274:52: (iv_ruleuint64Array= ruleuint64Array EOF )
-            // InternalRos.g:5275:2: iv_ruleuint64Array= ruleuint64Array EOF
+            // InternalRos.g:5286:52: (iv_ruleuint64Array= ruleuint64Array EOF )
+            // InternalRos.g:5287:2: iv_ruleuint64Array= ruleuint64Array EOF
             {
              newCompositeNode(grammarAccess.getUint64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13518,7 +13567,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint64Array"
-    // InternalRos.g:5281:1: ruleuint64Array returns [EObject current=null] : ( () otherlv_1= 'uint64[]' ) ;
+    // InternalRos.g:5293:1: ruleuint64Array returns [EObject current=null] : ( () otherlv_1= 'uint64[]' ) ;
     public final EObject ruleuint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13528,14 +13577,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5287:2: ( ( () otherlv_1= 'uint64[]' ) )
-            // InternalRos.g:5288:2: ( () otherlv_1= 'uint64[]' )
+            // InternalRos.g:5299:2: ( ( () otherlv_1= 'uint64[]' ) )
+            // InternalRos.g:5300:2: ( () otherlv_1= 'uint64[]' )
             {
-            // InternalRos.g:5288:2: ( () otherlv_1= 'uint64[]' )
-            // InternalRos.g:5289:3: () otherlv_1= 'uint64[]'
+            // InternalRos.g:5300:2: ( () otherlv_1= 'uint64[]' )
+            // InternalRos.g:5301:3: () otherlv_1= 'uint64[]'
             {
-            // InternalRos.g:5289:3: ()
-            // InternalRos.g:5290:4: 
+            // InternalRos.g:5301:3: ()
+            // InternalRos.g:5302:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13572,7 +13621,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat32Array"
-    // InternalRos.g:5304:1: entryRulefloat32Array returns [EObject current=null] : iv_rulefloat32Array= rulefloat32Array EOF ;
+    // InternalRos.g:5316:1: entryRulefloat32Array returns [EObject current=null] : iv_rulefloat32Array= rulefloat32Array EOF ;
     public final EObject entryRulefloat32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13580,8 +13629,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5304:53: (iv_rulefloat32Array= rulefloat32Array EOF )
-            // InternalRos.g:5305:2: iv_rulefloat32Array= rulefloat32Array EOF
+            // InternalRos.g:5316:53: (iv_rulefloat32Array= rulefloat32Array EOF )
+            // InternalRos.g:5317:2: iv_rulefloat32Array= rulefloat32Array EOF
             {
              newCompositeNode(grammarAccess.getFloat32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13608,7 +13657,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat32Array"
-    // InternalRos.g:5311:1: rulefloat32Array returns [EObject current=null] : ( () otherlv_1= 'float32[]' ) ;
+    // InternalRos.g:5323:1: rulefloat32Array returns [EObject current=null] : ( () otherlv_1= 'float32[]' ) ;
     public final EObject rulefloat32Array() throws RecognitionException {
         EObject current = null;
 
@@ -13618,14 +13667,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5317:2: ( ( () otherlv_1= 'float32[]' ) )
-            // InternalRos.g:5318:2: ( () otherlv_1= 'float32[]' )
+            // InternalRos.g:5329:2: ( ( () otherlv_1= 'float32[]' ) )
+            // InternalRos.g:5330:2: ( () otherlv_1= 'float32[]' )
             {
-            // InternalRos.g:5318:2: ( () otherlv_1= 'float32[]' )
-            // InternalRos.g:5319:3: () otherlv_1= 'float32[]'
+            // InternalRos.g:5330:2: ( () otherlv_1= 'float32[]' )
+            // InternalRos.g:5331:3: () otherlv_1= 'float32[]'
             {
-            // InternalRos.g:5319:3: ()
-            // InternalRos.g:5320:4: 
+            // InternalRos.g:5331:3: ()
+            // InternalRos.g:5332:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13662,7 +13711,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat64Array"
-    // InternalRos.g:5334:1: entryRulefloat64Array returns [EObject current=null] : iv_rulefloat64Array= rulefloat64Array EOF ;
+    // InternalRos.g:5346:1: entryRulefloat64Array returns [EObject current=null] : iv_rulefloat64Array= rulefloat64Array EOF ;
     public final EObject entryRulefloat64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13670,8 +13719,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5334:53: (iv_rulefloat64Array= rulefloat64Array EOF )
-            // InternalRos.g:5335:2: iv_rulefloat64Array= rulefloat64Array EOF
+            // InternalRos.g:5346:53: (iv_rulefloat64Array= rulefloat64Array EOF )
+            // InternalRos.g:5347:2: iv_rulefloat64Array= rulefloat64Array EOF
             {
              newCompositeNode(grammarAccess.getFloat64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13698,7 +13747,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat64Array"
-    // InternalRos.g:5341:1: rulefloat64Array returns [EObject current=null] : ( () otherlv_1= 'float64[]' ) ;
+    // InternalRos.g:5353:1: rulefloat64Array returns [EObject current=null] : ( () otherlv_1= 'float64[]' ) ;
     public final EObject rulefloat64Array() throws RecognitionException {
         EObject current = null;
 
@@ -13708,14 +13757,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5347:2: ( ( () otherlv_1= 'float64[]' ) )
-            // InternalRos.g:5348:2: ( () otherlv_1= 'float64[]' )
+            // InternalRos.g:5359:2: ( ( () otherlv_1= 'float64[]' ) )
+            // InternalRos.g:5360:2: ( () otherlv_1= 'float64[]' )
             {
-            // InternalRos.g:5348:2: ( () otherlv_1= 'float64[]' )
-            // InternalRos.g:5349:3: () otherlv_1= 'float64[]'
+            // InternalRos.g:5360:2: ( () otherlv_1= 'float64[]' )
+            // InternalRos.g:5361:3: () otherlv_1= 'float64[]'
             {
-            // InternalRos.g:5349:3: ()
-            // InternalRos.g:5350:4: 
+            // InternalRos.g:5361:3: ()
+            // InternalRos.g:5362:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13752,7 +13801,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestring0Array"
-    // InternalRos.g:5364:1: entryRulestring0Array returns [EObject current=null] : iv_rulestring0Array= rulestring0Array EOF ;
+    // InternalRos.g:5376:1: entryRulestring0Array returns [EObject current=null] : iv_rulestring0Array= rulestring0Array EOF ;
     public final EObject entryRulestring0Array() throws RecognitionException {
         EObject current = null;
 
@@ -13760,8 +13809,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5364:53: (iv_rulestring0Array= rulestring0Array EOF )
-            // InternalRos.g:5365:2: iv_rulestring0Array= rulestring0Array EOF
+            // InternalRos.g:5376:53: (iv_rulestring0Array= rulestring0Array EOF )
+            // InternalRos.g:5377:2: iv_rulestring0Array= rulestring0Array EOF
             {
              newCompositeNode(grammarAccess.getString0ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13788,7 +13837,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestring0Array"
-    // InternalRos.g:5371:1: rulestring0Array returns [EObject current=null] : ( () otherlv_1= 'string[]' ) ;
+    // InternalRos.g:5383:1: rulestring0Array returns [EObject current=null] : ( () otherlv_1= 'string[]' ) ;
     public final EObject rulestring0Array() throws RecognitionException {
         EObject current = null;
 
@@ -13798,14 +13847,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5377:2: ( ( () otherlv_1= 'string[]' ) )
-            // InternalRos.g:5378:2: ( () otherlv_1= 'string[]' )
+            // InternalRos.g:5389:2: ( ( () otherlv_1= 'string[]' ) )
+            // InternalRos.g:5390:2: ( () otherlv_1= 'string[]' )
             {
-            // InternalRos.g:5378:2: ( () otherlv_1= 'string[]' )
-            // InternalRos.g:5379:3: () otherlv_1= 'string[]'
+            // InternalRos.g:5390:2: ( () otherlv_1= 'string[]' )
+            // InternalRos.g:5391:3: () otherlv_1= 'string[]'
             {
-            // InternalRos.g:5379:3: ()
-            // InternalRos.g:5380:4: 
+            // InternalRos.g:5391:3: ()
+            // InternalRos.g:5392:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13842,7 +13891,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebyteArray"
-    // InternalRos.g:5394:1: entryRulebyteArray returns [EObject current=null] : iv_rulebyteArray= rulebyteArray EOF ;
+    // InternalRos.g:5406:1: entryRulebyteArray returns [EObject current=null] : iv_rulebyteArray= rulebyteArray EOF ;
     public final EObject entryRulebyteArray() throws RecognitionException {
         EObject current = null;
 
@@ -13850,8 +13899,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5394:50: (iv_rulebyteArray= rulebyteArray EOF )
-            // InternalRos.g:5395:2: iv_rulebyteArray= rulebyteArray EOF
+            // InternalRos.g:5406:50: (iv_rulebyteArray= rulebyteArray EOF )
+            // InternalRos.g:5407:2: iv_rulebyteArray= rulebyteArray EOF
             {
              newCompositeNode(grammarAccess.getByteArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -13878,7 +13927,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebyteArray"
-    // InternalRos.g:5401:1: rulebyteArray returns [EObject current=null] : ( () otherlv_1= 'byte[]' ) ;
+    // InternalRos.g:5413:1: rulebyteArray returns [EObject current=null] : ( () otherlv_1= 'byte[]' ) ;
     public final EObject rulebyteArray() throws RecognitionException {
         EObject current = null;
 
@@ -13888,14 +13937,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5407:2: ( ( () otherlv_1= 'byte[]' ) )
-            // InternalRos.g:5408:2: ( () otherlv_1= 'byte[]' )
+            // InternalRos.g:5419:2: ( ( () otherlv_1= 'byte[]' ) )
+            // InternalRos.g:5420:2: ( () otherlv_1= 'byte[]' )
             {
-            // InternalRos.g:5408:2: ( () otherlv_1= 'byte[]' )
-            // InternalRos.g:5409:3: () otherlv_1= 'byte[]'
+            // InternalRos.g:5420:2: ( () otherlv_1= 'byte[]' )
+            // InternalRos.g:5421:3: () otherlv_1= 'byte[]'
             {
-            // InternalRos.g:5409:3: ()
-            // InternalRos.g:5410:4: 
+            // InternalRos.g:5421:3: ()
+            // InternalRos.g:5422:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13932,7 +13981,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeader"
-    // InternalRos.g:5424:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
+    // InternalRos.g:5436:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
     public final EObject entryRuleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -13940,8 +13989,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5424:47: (iv_ruleHeader= ruleHeader EOF )
-            // InternalRos.g:5425:2: iv_ruleHeader= ruleHeader EOF
+            // InternalRos.g:5436:47: (iv_ruleHeader= ruleHeader EOF )
+            // InternalRos.g:5437:2: iv_ruleHeader= ruleHeader EOF
             {
              newCompositeNode(grammarAccess.getHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -13968,7 +14017,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // InternalRos.g:5431:1: ruleHeader returns [EObject current=null] : ( () otherlv_1= 'Header' ) ;
+    // InternalRos.g:5443:1: ruleHeader returns [EObject current=null] : ( () otherlv_1= 'Header' ) ;
     public final EObject ruleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -13978,14 +14027,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5437:2: ( ( () otherlv_1= 'Header' ) )
-            // InternalRos.g:5438:2: ( () otherlv_1= 'Header' )
+            // InternalRos.g:5449:2: ( ( () otherlv_1= 'Header' ) )
+            // InternalRos.g:5450:2: ( () otherlv_1= 'Header' )
             {
-            // InternalRos.g:5438:2: ( () otherlv_1= 'Header' )
-            // InternalRos.g:5439:3: () otherlv_1= 'Header'
+            // InternalRos.g:5450:2: ( () otherlv_1= 'Header' )
+            // InternalRos.g:5451:3: () otherlv_1= 'Header'
             {
-            // InternalRos.g:5439:3: ()
-            // InternalRos.g:5440:4: 
+            // InternalRos.g:5451:3: ()
+            // InternalRos.g:5452:4: 
             {
 
             				current = forceCreateModelElement(
@@ -14022,7 +14071,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTopicSpecRef"
-    // InternalRos.g:5454:1: entryRuleTopicSpecRef returns [EObject current=null] : iv_ruleTopicSpecRef= ruleTopicSpecRef EOF ;
+    // InternalRos.g:5466:1: entryRuleTopicSpecRef returns [EObject current=null] : iv_ruleTopicSpecRef= ruleTopicSpecRef EOF ;
     public final EObject entryRuleTopicSpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -14030,8 +14079,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5454:53: (iv_ruleTopicSpecRef= ruleTopicSpecRef EOF )
-            // InternalRos.g:5455:2: iv_ruleTopicSpecRef= ruleTopicSpecRef EOF
+            // InternalRos.g:5466:53: (iv_ruleTopicSpecRef= ruleTopicSpecRef EOF )
+            // InternalRos.g:5467:2: iv_ruleTopicSpecRef= ruleTopicSpecRef EOF
             {
              newCompositeNode(grammarAccess.getTopicSpecRefRule()); 
             pushFollow(FOLLOW_1);
@@ -14058,7 +14107,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTopicSpecRef"
-    // InternalRos.g:5461:1: ruleTopicSpecRef returns [EObject current=null] : ( ( ruleEString ) ) ;
+    // InternalRos.g:5473:1: ruleTopicSpecRef returns [EObject current=null] : ( ( ruleEString ) ) ;
     public final EObject ruleTopicSpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -14066,14 +14115,14 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5467:2: ( ( ( ruleEString ) ) )
-            // InternalRos.g:5468:2: ( ( ruleEString ) )
+            // InternalRos.g:5479:2: ( ( ( ruleEString ) ) )
+            // InternalRos.g:5480:2: ( ( ruleEString ) )
             {
-            // InternalRos.g:5468:2: ( ( ruleEString ) )
-            // InternalRos.g:5469:3: ( ruleEString )
+            // InternalRos.g:5480:2: ( ( ruleEString ) )
+            // InternalRos.g:5481:3: ( ruleEString )
             {
-            // InternalRos.g:5469:3: ( ruleEString )
-            // InternalRos.g:5470:4: ruleEString
+            // InternalRos.g:5481:3: ( ruleEString )
+            // InternalRos.g:5482:4: ruleEString
             {
 
             				if (current==null) {
@@ -14117,7 +14166,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayTopicSpecRef"
-    // InternalRos.g:5487:1: entryRuleArrayTopicSpecRef returns [EObject current=null] : iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF ;
+    // InternalRos.g:5499:1: entryRuleArrayTopicSpecRef returns [EObject current=null] : iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF ;
     public final EObject entryRuleArrayTopicSpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -14125,8 +14174,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5487:58: (iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF )
-            // InternalRos.g:5488:2: iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF
+            // InternalRos.g:5499:58: (iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF )
+            // InternalRos.g:5500:2: iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF
             {
              newCompositeNode(grammarAccess.getArrayTopicSpecRefRule()); 
             pushFollow(FOLLOW_1);
@@ -14153,7 +14202,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayTopicSpecRef"
-    // InternalRos.g:5494:1: ruleArrayTopicSpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '[]' ) ;
+    // InternalRos.g:5506:1: ruleArrayTopicSpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '[]' ) ;
     public final EObject ruleArrayTopicSpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -14163,17 +14212,17 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5500:2: ( ( ( ( ruleEString ) ) otherlv_1= '[]' ) )
-            // InternalRos.g:5501:2: ( ( ( ruleEString ) ) otherlv_1= '[]' )
+            // InternalRos.g:5512:2: ( ( ( ( ruleEString ) ) otherlv_1= '[]' ) )
+            // InternalRos.g:5513:2: ( ( ( ruleEString ) ) otherlv_1= '[]' )
             {
-            // InternalRos.g:5501:2: ( ( ( ruleEString ) ) otherlv_1= '[]' )
-            // InternalRos.g:5502:3: ( ( ruleEString ) ) otherlv_1= '[]'
+            // InternalRos.g:5513:2: ( ( ( ruleEString ) ) otherlv_1= '[]' )
+            // InternalRos.g:5514:3: ( ( ruleEString ) ) otherlv_1= '[]'
             {
-            // InternalRos.g:5502:3: ( ( ruleEString ) )
-            // InternalRos.g:5503:4: ( ruleEString )
+            // InternalRos.g:5514:3: ( ( ruleEString ) )
+            // InternalRos.g:5515:4: ( ruleEString )
             {
-            // InternalRos.g:5503:4: ( ruleEString )
-            // InternalRos.g:5504:5: ruleEString
+            // InternalRos.g:5515:4: ( ruleEString )
+            // InternalRos.g:5516:5: ruleEString
             {
 
             					if (current==null) {
@@ -14183,7 +14232,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0_0());
             				
-            pushFollow(FOLLOW_63);
+            pushFollow(FOLLOW_59);
             ruleEString();
 
             state._fsp--;
@@ -14224,7 +14273,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKEYWORD"
-    // InternalRos.g:5526:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
+    // InternalRos.g:5538:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
     public final String entryRuleKEYWORD() throws RecognitionException {
         String current = null;
 
@@ -14232,8 +14281,8 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRos.g:5526:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
-            // InternalRos.g:5527:2: iv_ruleKEYWORD= ruleKEYWORD EOF
+            // InternalRos.g:5538:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
+            // InternalRos.g:5539:2: iv_ruleKEYWORD= ruleKEYWORD EOF
             {
              newCompositeNode(grammarAccess.getKEYWORDRule()); 
             pushFollow(FOLLOW_1);
@@ -14260,7 +14309,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKEYWORD"
-    // InternalRos.g:5533:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' ) ;
+    // InternalRos.g:5545:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' ) ;
     public final AntlrDatatypeRuleToken ruleKEYWORD() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -14270,77 +14319,77 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRos.g:5539:2: ( (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' ) )
-            // InternalRos.g:5540:2: (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' )
+            // InternalRos.g:5551:2: ( (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' ) )
+            // InternalRos.g:5552:2: (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' )
             {
-            // InternalRos.g:5540:2: (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' )
-            int alt72=11;
+            // InternalRos.g:5552:2: (kw= 'goal' | kw= 'message' | kw= 'result' | kw= 'feedback' | kw= 'name' | kw= 'value' | kw= 'service' | kw= 'type' | kw= 'action' | kw= 'duration' | kw= 'time' )
+            int alt68=11;
             switch ( input.LA(1) ) {
             case 43:
                 {
-                alt72=1;
+                alt68=1;
                 }
                 break;
             case 41:
                 {
-                alt72=2;
+                alt68=2;
                 }
                 break;
             case 44:
                 {
-                alt72=3;
+                alt68=3;
                 }
                 break;
             case 45:
                 {
-                alt72=4;
+                alt68=4;
                 }
                 break;
             case 47:
                 {
-                alt72=5;
+                alt68=5;
                 }
                 break;
             case 82:
                 {
-                alt72=6;
+                alt68=6;
                 }
                 break;
             case 56:
                 {
-                alt72=7;
+                alt68=7;
                 }
                 break;
             case 72:
                 {
-                alt72=8;
+                alt68=8;
                 }
                 break;
             case 62:
                 {
-                alt72=9;
+                alt68=9;
                 }
                 break;
             case 98:
                 {
-                alt72=10;
+                alt68=10;
                 }
                 break;
             case 97:
                 {
-                alt72=11;
+                alt68=11;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 72, 0, input);
+                    new NoViableAltException("", 68, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt72) {
+            switch (alt68) {
                 case 1 :
-                    // InternalRos.g:5541:3: kw= 'goal'
+                    // InternalRos.g:5553:3: kw= 'goal'
                     {
                     kw=(Token)match(input,43,FOLLOW_2); 
 
@@ -14351,7 +14400,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRos.g:5547:3: kw= 'message'
+                    // InternalRos.g:5559:3: kw= 'message'
                     {
                     kw=(Token)match(input,41,FOLLOW_2); 
 
@@ -14362,7 +14411,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRos.g:5553:3: kw= 'result'
+                    // InternalRos.g:5565:3: kw= 'result'
                     {
                     kw=(Token)match(input,44,FOLLOW_2); 
 
@@ -14373,7 +14422,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRos.g:5559:3: kw= 'feedback'
+                    // InternalRos.g:5571:3: kw= 'feedback'
                     {
                     kw=(Token)match(input,45,FOLLOW_2); 
 
@@ -14384,7 +14433,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRos.g:5565:3: kw= 'name'
+                    // InternalRos.g:5577:3: kw= 'name'
                     {
                     kw=(Token)match(input,47,FOLLOW_2); 
 
@@ -14395,7 +14444,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRos.g:5571:3: kw= 'value'
+                    // InternalRos.g:5583:3: kw= 'value'
                     {
                     kw=(Token)match(input,82,FOLLOW_2); 
 
@@ -14406,7 +14455,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRos.g:5577:3: kw= 'service'
+                    // InternalRos.g:5589:3: kw= 'service'
                     {
                     kw=(Token)match(input,56,FOLLOW_2); 
 
@@ -14417,7 +14466,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRos.g:5583:3: kw= 'type'
+                    // InternalRos.g:5595:3: kw= 'type'
                     {
                     kw=(Token)match(input,72,FOLLOW_2); 
 
@@ -14428,7 +14477,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalRos.g:5589:3: kw= 'action'
+                    // InternalRos.g:5601:3: kw= 'action'
                     {
                     kw=(Token)match(input,62,FOLLOW_2); 
 
@@ -14439,7 +14488,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalRos.g:5595:3: kw= 'duration'
+                    // InternalRos.g:5607:3: kw= 'duration'
                     {
                     kw=(Token)match(input,98,FOLLOW_2); 
 
@@ -14450,7 +14499,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalRos.g:5601:3: kw= 'time'
+                    // InternalRos.g:5613:3: kw= 'time'
                     {
                     kw=(Token)match(input,97,FOLLOW_2); 
 
@@ -14484,7 +14533,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA71 dfa71 = new DFA71(this);
+    protected DFA67 dfa67 = new DFA67(this);
     static final String dfa_1s = "\42\uffff";
     static final String dfa_2s = "\36\uffff\2\41\2\uffff";
     static final String dfa_3s = "\1\4\35\uffff\2\4\2\uffff";
@@ -14536,11 +14585,11 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA71 extends DFA {
+    class DFA67 extends DFA {
 
-        public DFA71(BaseRecognizer recognizer) {
+        public DFA67(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 71;
+            this.decisionNumber = 67;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -14550,7 +14599,7 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "4301:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )";
+            return "4313:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )";
         }
     }
  
@@ -14583,40 +14632,36 @@ public class InternalRosParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000008010000030L,0x0000FFFFFFF00000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x007F000010000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x007E000010000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x007C000010000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0078000010000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0070000010000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0060000010000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0040000010000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0200000010000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000068L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000010000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0200000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000010000000000L,0x000000000001EE00L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000010000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x00000000040007B0L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000010000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x4100BA0000001030L,0x0000000600040100L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0400000010000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0800000010000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0200000010000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000068L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000010000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0200000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000010000000000L,0x000000000001EE00L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000010000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x00000000040007B0L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000010000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x4100BA0000001030L,0x0000000600040100L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
 
 }

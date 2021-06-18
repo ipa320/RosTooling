@@ -3,7 +3,14 @@
  */
 package de.fraunhofer.ipa.ros.ui.quickfix
 
+import de.fraunhofer.ipa.ros.validation.RosValidator
+import java.util.ArrayList
+import java.util.List
+import org.eclipse.xtext.ui.editor.model.IXtextDocument
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.validation.Issue
 
 /**
  * Custom quickfixes.
@@ -12,7 +19,16 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
  */
 class RosQuickfixProvider extends DefaultQuickfixProvider {
 
-//	@Fix(RosValidator.INVALID_NAME)
+		
+	@Fix(RosValidator.SORT_INTERFACES)
+	def SortInterfaces (Issue issue, IssueResolutionAcceptor acceptor){
+		acceptor.accept(issue, 'Organize interfaces and clean the model', 'Sort Interfaces.', 'upcase.png') [
+			context |
+			val model = context.xtextDocument
+			model.replace(0, model.length,issue.data.get(0).toString);
+		]	
+	}
+
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 //		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [
 //			context |
