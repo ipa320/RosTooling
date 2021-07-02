@@ -141,13 +141,18 @@ def generate_launch_description():
 
 		for (elem : ((value as ParameterSequenceImpl).eContents)) {
 			var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
-			param_str += "{ \"" + name + "/" + member.getName() + "\" : " + get_param_value(member.getValue(), member.getName());
+			println(member + ", " + elem + ", " + (elem as ParameterStructImpl).eContents.get(0) + ", " + value);
+			val param_val = get_param_value(member.getValue(), name + "/" + member.getName());
+			if (param_val.startsWith("{")) {
+				param_str += param_val;
+			} else {
+				param_str += "{ \"" + name + "/" + member.getName() + "\" : " + param_val;
+			}
 			elem_count--;
 			if (elem_count > 0){ 
 				param_str +=" },\n"
 			}
 		}
-
 		return param_str;
 	}
 
@@ -162,16 +167,20 @@ def generate_launch_description():
 		} else if (value instanceof ParameterBooleanImpl) {
 			param_val = (value as ParameterBooleanImpl).isValue().toString;
 		} else if (value instanceof ParameterSequenceImpl) {
-			param_val += "[";
 			var elem_count = (value as ParameterSequenceImpl).eContents.length;
-			for (elem : (value as ParameterSequenceImpl).eContents) {
-				param_val += get_param_value(elem as ParameterValue, name);
-				elem_count--;
-				if (elem_count > 0){ 
-					param_val +=", "
+			if ((value as ParameterSequenceImpl).eContents.get(0) instanceof ParameterStructImpl) {
+				param_val = compile_struct_str(value, name);
+			} else {
+				param_val += "[";
+				for (elem : (value as ParameterSequenceImpl).eContents) {
+					param_val += get_param_value(elem as ParameterValue, name);
+					elem_count--;
+					if (elem_count > 0){
+						param_val +=", "
+					}
 				}
-			} 
-			param_val += "]";
+				param_val += "]";
+			}
 		}
 		return param_val;
 	 }
