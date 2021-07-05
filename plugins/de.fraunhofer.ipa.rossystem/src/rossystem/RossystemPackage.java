@@ -103,13 +103,13 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__NAME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Component Stack</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__ROS_COMPONENT = 4;
+	int ROS_SYSTEM__COMPONENT_STACK = 4;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -121,13 +121,22 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__PARAMETER = 5;
 
 	/**
+	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SYSTEM__ROS_COMPONENT = 6;
+
+	/**
 	 * The number of structural features of the '<em>Ros System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM_FEATURE_COUNT = 6;
+	int ROS_SYSTEM_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Ros System</em>' class.
@@ -139,6 +148,116 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link rossystem.impl.ComponentStackImpl <em>Component Stack</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.ComponentStackImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getComponentStack()
+	 * @generated
+	 */
+	int COMPONENT_STACK = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK__ROS_COMPONENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Quality Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK__QUALITY_ATTRIBUTE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Component Stack</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Component Stack</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.QualityAttributeImpl <em>Quality Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.QualityAttributeImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getQualityAttribute()
+	 * @generated
+	 */
+	int QUALITY_ATTRIBUTE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_ATTRIBUTE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_ATTRIBUTE__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_ATTRIBUTE__VALUE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Quality Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_ATTRIBUTE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Quality Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_ATTRIBUTE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link rossystem.impl.TopicConnectionImpl <em>Topic Connection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,7 +265,7 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getTopicConnection()
 	 * @generated
 	 */
-	int TOPIC_CONNECTION = 1;
+	int TOPIC_CONNECTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference list.
@@ -201,7 +320,7 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getServiceConnection()
 	 * @generated
 	 */
-	int SERVICE_CONNECTION = 2;
+	int SERVICE_CONNECTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference list.
@@ -257,7 +376,7 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getActionConnection()
 	 * @generated
 	 */
-	int ACTION_CONNECTION = 3;
+	int ACTION_CONNECTION = 5;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -349,6 +468,17 @@ public interface RossystemPackage extends EPackage {
 	EAttribute getRosSystem_Name();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getComponentStack <em>Component Stack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Component Stack</em>'.
+	 * @see rossystem.RosSystem#getComponentStack()
+	 * @see #getRosSystem()
+	 * @generated
+	 */
+	EReference getRosSystem_ComponentStack();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,6 +488,92 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRosSystem_RosComponent();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.ComponentStack <em>Component Stack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Stack</em>'.
+	 * @see rossystem.ComponentStack
+	 * @generated
+	 */
+	EClass getComponentStack();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.ComponentStack#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.ComponentStack#getName()
+	 * @see #getComponentStack()
+	 * @generated
+	 */
+	EAttribute getComponentStack_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.ComponentStack#getRosComponent <em>Ros Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ros Component</em>'.
+	 * @see rossystem.ComponentStack#getRosComponent()
+	 * @see #getComponentStack()
+	 * @generated
+	 */
+	EReference getComponentStack_RosComponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.ComponentStack#getQualityAttribute <em>Quality Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Quality Attribute</em>'.
+	 * @see rossystem.ComponentStack#getQualityAttribute()
+	 * @see #getComponentStack()
+	 * @generated
+	 */
+	EReference getComponentStack_QualityAttribute();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.QualityAttribute <em>Quality Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Quality Attribute</em>'.
+	 * @see rossystem.QualityAttribute
+	 * @generated
+	 */
+	EClass getQualityAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.QualityAttribute#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.QualityAttribute#getName()
+	 * @see #getQualityAttribute()
+	 * @generated
+	 */
+	EAttribute getQualityAttribute_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link rossystem.QualityAttribute#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see rossystem.QualityAttribute#getType()
+	 * @see #getQualityAttribute()
+	 * @generated
+	 */
+	EReference getQualityAttribute_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link rossystem.QualityAttribute#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see rossystem.QualityAttribute#getValue()
+	 * @see #getQualityAttribute()
+	 * @generated
+	 */
+	EReference getQualityAttribute_Value();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getParameter <em>Parameter</em>}'.
@@ -568,12 +784,88 @@ public interface RossystemPackage extends EPackage {
 		EAttribute ROS_SYSTEM__NAME = eINSTANCE.getRosSystem_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Component Stack</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SYSTEM__COMPONENT_STACK = eINSTANCE.getRosSystem_ComponentStack();
+
+		/**
 		 * The meta object literal for the '<em><b>Ros Component</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ROS_SYSTEM__ROS_COMPONENT = eINSTANCE.getRosSystem_RosComponent();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.ComponentStackImpl <em>Component Stack</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.ComponentStackImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getComponentStack()
+		 * @generated
+		 */
+		EClass COMPONENT_STACK = eINSTANCE.getComponentStack();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_STACK__NAME = eINSTANCE.getComponentStack_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Ros Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_STACK__ROS_COMPONENT = eINSTANCE.getComponentStack_RosComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Quality Attribute</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_STACK__QUALITY_ATTRIBUTE = eINSTANCE.getComponentStack_QualityAttribute();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.QualityAttributeImpl <em>Quality Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.QualityAttributeImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getQualityAttribute()
+		 * @generated
+		 */
+		EClass QUALITY_ATTRIBUTE = eINSTANCE.getQualityAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_ATTRIBUTE__NAME = eINSTANCE.getQualityAttribute_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITY_ATTRIBUTE__TYPE = eINSTANCE.getQualityAttribute_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUALITY_ATTRIBUTE__VALUE = eINSTANCE.getQualityAttribute_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.

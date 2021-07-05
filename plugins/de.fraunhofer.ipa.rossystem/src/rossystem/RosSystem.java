@@ -4,7 +4,6 @@ package rossystem;
 
 import componentInterface.ComponentInterface;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import ros.Parameter;
 
@@ -21,8 +20,9 @@ import ros.Parameter;
  *   <li>{@link rossystem.RosSystem#getServiceConnections <em>Service Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getName <em>Name</em>}</li>
- *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getComponentStack <em>Component Stack</em>}</li>
  *   <li>{@link rossystem.RosSystem#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()
@@ -87,6 +87,18 @@ public interface RosSystem extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Component Stack</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.ComponentStack}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Stack</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_ComponentStack()
+	 * @model containment="true" derived="true"
+	 * @generated
+	 */
+	EList<ComponentStack> getComponentStack();
 
 	/**
 	 * Returns the value of the '<em><b>Ros Component</b></em>' containment reference list.

@@ -31,6 +31,24 @@ public interface RossystemFactory extends EFactory {
 	RosSystem createRosSystem();
 
 	/**
+	 * Returns a new object of class '<em>Component Stack</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Stack</em>'.
+	 * @generated
+	 */
+	ComponentStack createComponentStack();
+
+	/**
+	 * Returns a new object of class '<em>Quality Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Quality Attribute</em>'.
+	 * @generated
+	 */
+	QualityAttribute createQualityAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Topic Connection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

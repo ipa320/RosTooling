@@ -21,20 +21,26 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RosSystemGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_RosSystem___ActionConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q;
-	protected AbstractElementAlias match_RosSystem___ParametersKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q;
+	protected AbstractElementAlias match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
+	protected AbstractElementAlias match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q;
+	protected AbstractElementAlias match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q;
+	protected AbstractElementAlias match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q;
+	protected AbstractElementAlias match_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q;
 	protected AbstractElementAlias match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
-	protected AbstractElementAlias match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
-	protected AbstractElementAlias match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
+	protected AbstractElementAlias match_RosSystem___ServiceConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q;
+	protected AbstractElementAlias match_RosSystem___TopicConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RosSystemGrammarAccess) access;
-		match_RosSystem___ActionConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getActionConnectionsKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_8_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_8_3()));
-		match_RosSystem___ParametersKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_9_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_9_3()));
+		match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getQualityAttributesKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_5_3()));
+		match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRosComponentsKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_4_3()));
+		match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getActionConnectionsKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_9_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_9_3()));
+		match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_10_3()));
+		match_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRosComponentStacksKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftParenthesisKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightParenthesisKeyword_6_3()));
 		match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRosComponentsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightParenthesisKeyword_5_3()));
-		match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getServiceConnectionsKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_7_3()));
-		match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getTopicConnectionsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_6_3()));
+		match_RosSystem___ServiceConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getServiceConnectionsKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_8_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_8_3()));
+		match_RosSystem___TopicConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getTopicConnectionsKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_7_3()));
 	}
 	
 	@Override
@@ -49,35 +55,67 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_RosSystem___ActionConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q.equals(syntax))
-				emit_RosSystem___ActionConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RosSystem___ParametersKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q.equals(syntax))
-				emit_RosSystem___ParametersKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
+				emit_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q.equals(syntax))
+				emit_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q.equals(syntax))
+				emit_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q.equals(syntax))
+				emit_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q.equals(syntax))
+				emit_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
 				emit_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
-				emit_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q.equals(syntax))
-				emit_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ServiceConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q.equals(syntax))
+				emit_RosSystem___ServiceConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___TopicConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
+				emit_RosSystem___TopicConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
+	 *     ('QualityAttributes' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('RosComponents' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString (ambiguity) 'QualityAttributes' '(' QualityAttribute+=QualityAttribute
+	 *     Name=EString (ambiguity) ('QualityAttributes' '(' ')')? '}' (rule end)
+	 */
+	protected void emit_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('ActionConnections' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
 	 *     ServiceConnections+=ServiceConnection '}' (ambiguity) 'Parameters' '{' Parameter+=Parameter
 	 *     ServiceConnections+=ServiceConnection '}' (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
 	 *     TopicConnections+=TopicConnection '}' ('ServiceConnections' '{' '}')? (ambiguity) 'Parameters' '{' Parameter+=Parameter
 	 *     TopicConnections+=TopicConnection '}' ('ServiceConnections' '{' '}')? (ambiguity) ('Parameters' '{' '}')? '}' (rule end)
 	 */
-	protected void emit_RosSystem___ActionConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -87,12 +125,33 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     ActionConnections+=ActionConnection '}' (ambiguity) '}' (rule end)
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
 	 *     ServiceConnections+=ServiceConnection '}' ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
 	 *     TopicConnections+=TopicConnection '}' ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? (ambiguity) '}' (rule end)
 	 */
-	protected void emit_RosSystem___ParametersKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('RosComponentStacks' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) 'TopicConnections' '{' TopicConnections+=TopicConnection
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('TopicConnections' '{' '}')? 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) 'TopicConnections' '{' TopicConnections+=TopicConnection
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('TopicConnections' '{' '}')? 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 */
+	protected void emit_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -101,11 +160,12 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('RosComponents' '(' ')')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Name=EString (ambiguity) 'TopicConnections' '{' TopicConnections+=TopicConnection
-	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
-	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
-	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
-	 *     Name=EString (ambiguity) ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     Name=EString (ambiguity) 'RosComponentStacks' '(' ComponentStack+=ComponentStack
+	 *     Name=EString (ambiguity) ('RosComponentStacks' '(' ')')? 'TopicConnections' '{' TopicConnections+=TopicConnection
+	 *     Name=EString (ambiguity) ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     Name=EString (ambiguity) ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     Name=EString (ambiguity) ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     Name=EString (ambiguity) ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
 	 */
 	protected void emit_RosSystem___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -116,17 +176,20 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('ServiceConnections' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
-	 *     Name=EString ('RosComponents' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
-	 *     RosComponent+=ComponentInterface ')' ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     ComponentStack+=ComponentStack ')' ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? ('TopicConnections' '{' '}')? (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
 	 *     TopicConnections+=TopicConnection '}' (ambiguity) 'ActionConnections' '{' ActionConnections+=ActionConnection
 	 *     TopicConnections+=TopicConnection '}' (ambiguity) ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
 	 *     TopicConnections+=TopicConnection '}' (ambiguity) ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
 	 */
-	protected void emit_RosSystem___ServiceConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RosSystem___ServiceConnectionsKeyword_8_0_LeftCurlyBracketKeyword_8_1_RightCurlyBracketKeyword_8_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -135,16 +198,20 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('TopicConnections' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
-	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
-	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
-	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
-	 *     RosComponent+=ComponentInterface ')' (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
-	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
-	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
-	 *     RosComponent+=ComponentInterface ')' (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     ComponentStack+=ComponentStack ')' (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     ComponentStack+=ComponentStack ')' (ambiguity) ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     ComponentStack+=ComponentStack ')' (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     ComponentStack+=ComponentStack ')' (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     Name=EString ('RosComponents' '(' ')')? ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? (ambiguity) 'ServiceConnections' '{' ServiceConnections+=ServiceConnection
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? 'ActionConnections' '{' ActionConnections+=ActionConnection
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? 'Parameters' '{' Parameter+=Parameter
+	 *     RosComponent+=ComponentInterface ')' ('RosComponentStacks' '(' ')')? (ambiguity) ('ServiceConnections' '{' '}')? ('ActionConnections' '{' '}')? ('Parameters' '{' '}')? '}' (rule end)
 	 */
-	protected void emit_RosSystem___TopicConnectionsKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RosSystem___TopicConnectionsKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

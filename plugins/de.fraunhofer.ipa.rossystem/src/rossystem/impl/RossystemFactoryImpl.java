@@ -57,6 +57,8 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RossystemPackage.ROS_SYSTEM: return createRosSystem();
+			case RossystemPackage.COMPONENT_STACK: return createComponentStack();
+			case RossystemPackage.QUALITY_ATTRIBUTE: return createQualityAttribute();
 			case RossystemPackage.TOPIC_CONNECTION: return createTopicConnection();
 			case RossystemPackage.SERVICE_CONNECTION: return createServiceConnection();
 			case RossystemPackage.ACTION_CONNECTION: return createActionConnection();
@@ -73,6 +75,26 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	public RosSystem createRosSystem() {
 		RosSystemImpl rosSystem = new RosSystemImpl();
 		return rosSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentStack createComponentStack() {
+		ComponentStackImpl componentStack = new ComponentStackImpl();
+		return componentStack;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QualityAttribute createQualityAttribute() {
+		QualityAttributeImpl qualityAttribute = new QualityAttributeImpl();
+		return qualityAttribute;
 	}
 
 	/**

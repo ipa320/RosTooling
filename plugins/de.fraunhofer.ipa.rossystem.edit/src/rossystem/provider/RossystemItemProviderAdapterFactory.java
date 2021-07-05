@@ -95,6 +95,52 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.ComponentStack} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentStackItemProvider componentStackItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.ComponentStack}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentStackAdapter() {
+		if (componentStackItemProvider == null) {
+			componentStackItemProvider = new ComponentStackItemProvider(this);
+		}
+
+		return componentStackItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.QualityAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QualityAttributeItemProvider qualityAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.QualityAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQualityAttributeAdapter() {
+		if (qualityAttributeItemProvider == null) {
+			qualityAttributeItemProvider = new QualityAttributeItemProvider(this);
+		}
+
+		return qualityAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link rossystem.TopicConnection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,6 +309,8 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 */
 	public void dispose() {
 		if (rosSystemItemProvider != null) rosSystemItemProvider.dispose();
+		if (componentStackItemProvider != null) componentStackItemProvider.dispose();
+		if (qualityAttributeItemProvider != null) qualityAttributeItemProvider.dispose();
 		if (topicConnectionItemProvider != null) topicConnectionItemProvider.dispose();
 		if (serviceConnectionItemProvider != null) serviceConnectionItemProvider.dispose();
 		if (actionConnectionItemProvider != null) actionConnectionItemProvider.dispose();

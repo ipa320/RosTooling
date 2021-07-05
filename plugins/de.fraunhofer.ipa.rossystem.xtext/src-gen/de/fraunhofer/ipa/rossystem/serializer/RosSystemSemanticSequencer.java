@@ -50,6 +50,8 @@ import ros.PrivateNamespace;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import rossystem.ActionConnection;
+import rossystem.ComponentStack;
+import rossystem.QualityAttribute;
 import rossystem.RosSystem;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
@@ -177,6 +179,12 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case RossystemPackage.ACTION_CONNECTION:
 				sequence_ActionConnection(context, (ActionConnection) semanticObject); 
 				return; 
+			case RossystemPackage.COMPONENT_STACK:
+				sequence_ComponentStack(context, (ComponentStack) semanticObject); 
+				return; 
+			case RossystemPackage.QUALITY_ATTRIBUTE:
+				sequence_QualityAttribute(context, (QualityAttribute) semanticObject); 
+				return; 
 			case RossystemPackage.ROS_SYSTEM:
 				sequence_RosSystem(context, (RosSystem) semanticObject); 
 				return; 
@@ -234,6 +242,22 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     )
 	 */
 	protected void sequence_ComponentInterface(ISerializationContext context, ComponentInterface semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ComponentStack returns ComponentStack
+	 *
+	 * Constraint:
+	 *     (
+	 *         Name=EString 
+	 *         (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*)? 
+	 *         (QualityAttribute+=QualityAttribute QualityAttribute+=QualityAttribute*)?
+	 *     )
+	 */
+	protected void sequence_ComponentStack(ISerializationContext context, ComponentStack semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -599,6 +623,18 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     QualityAttribute returns QualityAttribute
+	 *
+	 * Constraint:
+	 *     (Name=EString Type=ParameterType? Value=ParameterValue?)
+	 */
+	protected void sequence_QualityAttribute(ISerializationContext context, QualityAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Namespace returns RelativeNamespace
 	 *     RelativeNamespace_Impl returns RelativeNamespace
 	 *
@@ -702,6 +738,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (
 	 *         Name=EString 
 	 *         (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*)? 
+	 *         (ComponentStack+=ComponentStack ComponentStack+=ComponentStack*)? 
 	 *         (TopicConnections+=TopicConnection TopicConnections+=TopicConnection*)? 
 	 *         (ServiceConnections+=ServiceConnection ServiceConnections+=ServiceConnection*)? 
 	 *         (ActionConnections+=ActionConnection ActionConnections+=ActionConnection*)? 
