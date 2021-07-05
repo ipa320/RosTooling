@@ -14,6 +14,7 @@ RosSystem returns RosSystem:
 	'{'
 		'Name' Name=EString
 		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
+		('RosComponentStacks' '(' (ComponentStack+=ComponentStack ( "," ComponentStack+=ComponentStack)*)? ')' )?
 		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
 		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
 		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )?
@@ -50,7 +51,21 @@ ActionConnection returns ActionConnection:
 EString returns ecore::EString:
 	STRING | ID;
 
-
+ComponentStack returns ComponentStack:
+	'ComponentStack'
+	'{'
+		'name' Name=EString
+		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
+		('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
+		
+	'}';
+	
+QualityAttribute returns QualityAttribute:
+	'QualityAttribute'
+		Name=EString
+		('type' Type=ParameterType)?
+		('value' Value=ParameterValue)?;
+	
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ComponentInterface returns componentInterface::ComponentInterface:
