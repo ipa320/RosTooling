@@ -41,9 +41,9 @@ public class TopicSpecImpl extends SpecBaseImpl implements TopicSpec {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected TopicSpecImpl() {
+	public TopicSpecImpl() {
 		super();
 	}
 

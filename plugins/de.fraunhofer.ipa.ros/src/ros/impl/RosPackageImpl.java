@@ -427,9 +427,9 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see ros.RosPackage#eNS_URI
 	 * @see #init()
-	 * @generated
+	 * @generated NOT
 	 */
-	private RosPackageImpl() {
+	public RosPackageImpl() {
 		super(eNS_URI, RosFactory.eINSTANCE);
 	}
 
