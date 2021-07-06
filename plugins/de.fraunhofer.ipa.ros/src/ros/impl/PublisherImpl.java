@@ -40,9 +40,9 @@ public class PublisherImpl extends NamespacedElementImpl implements Publisher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected PublisherImpl() {
+	public PublisherImpl() {
 		super();
 	}
 

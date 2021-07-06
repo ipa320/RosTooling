@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+        point="org.eclipse.ui.handlers">
+		<!-- de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory: -->
+        <handler
+              class="de.fraunhofer.ipa.ros.araig.plugin.AraigExecutableExtensionFactory:de.fraunhofer.ipa.ros.araig.plugin.GenerationHandler"
+              commandId="de.fraunhofer.ipa.ros.araig.plugin.generator.command">
+     	</handler>
+    </extension>
+ 
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.fraunhofer.ipa.ros.araig.plugin.generator.command"
+            name="Generate ARAIG test artifacts">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+             allPopups="false"
+             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+               commandId="de.fraunhofer.ipa.ros.araig.plugin.generator.command"
+               >
+             <visibleWhen
+                   checkEnabled="false">
+                <and>
+                   <with
+                         variable="selection">
+                      <count
+                            value="1">
+                      </count>
+                   </with>
+                   <iterate
+                         ifEmpty="false">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="rossystem">
+                           </test>
+                   </iterate>
+                </and>
+             </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+ 
+</plugin>

@@ -142,9 +142,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected NodeImpl() {
+	public NodeImpl() {
 		super();
 	}
 
