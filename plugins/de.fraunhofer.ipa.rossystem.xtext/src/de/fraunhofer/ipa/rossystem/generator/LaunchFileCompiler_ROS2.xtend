@@ -141,7 +141,6 @@ def generate_launch_description():
 
 		for (elem : ((value as ParameterSequenceImpl).eContents)) {
 			var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
-			println(member + ", " + elem + ", " + (elem as ParameterStructImpl).eContents.get(0) + ", " + value);
 			val param_val = get_param_value(member.getValue(), name + "/" + member.getName());
 			if (param_val.startsWith("{")) {
 				param_str += param_val;
