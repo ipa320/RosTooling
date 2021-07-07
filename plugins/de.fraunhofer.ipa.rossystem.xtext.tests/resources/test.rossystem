@@ -1,5 +1,5 @@
 RosSystem { Name 'test_system'  RosComponents ( 
-    ComponentInterface { name test_node 
+    ComponentInterface { name test_node
     	FromRosNode "test_pkg.test_node.test_node"
     	RosPublishers{ RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"} } 
     	RosSubscribers{ RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"} } 

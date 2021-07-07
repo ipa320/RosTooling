@@ -33,6 +33,7 @@ Package_Impl returns Package:
 	'Package'
 	name=EString
 	'{'
+		('FromGitRepo' fromGitRepo=EString)?
 		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
 		(artifact+=Artifact ( "," artifact+=Artifact)*)?
 	'}';
@@ -67,9 +68,10 @@ CatkinPackage returns CatkinPackage:
 	'CatkinPackage'
 	name=RosNames
 	'{'
+		('FromGitRepo' fromGitRepo=EString)?
+		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
 		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
 		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
 	'}';
 
 ServiceSpec returns ServiceSpec:
@@ -172,8 +174,7 @@ GraphName returns GraphName:
 
 
 PackageDependency returns PackageDependency:
-	'PackageDependency'
-		package=[Package|EString]
+	package=[Package|EString]
 ;
 
 ExternalDependency returns ExternalDependency:

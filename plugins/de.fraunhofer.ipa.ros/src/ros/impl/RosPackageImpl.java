@@ -620,6 +620,26 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPackage_FromGitRepo() {
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPackage_Dependency() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDependency() {
 		return dependencyEClass;
 	}
@@ -762,16 +782,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	@Override
 	public EClass getCatkinPackage() {
 		return catkinPackageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCatkinPackage_Dependency() {
-		return (EReference)catkinPackageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1657,6 +1667,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(packageEClass, PACKAGE__NAME);
 		createEReference(packageEClass, PACKAGE__SPEC);
 		createEReference(packageEClass, PACKAGE__ARTIFACT);
+		createEAttribute(packageEClass, PACKAGE__FROM_GIT_REPO);
+		createEReference(packageEClass, PACKAGE__DEPENDENCY);
 
 		dependencyEClass = createEClass(DEPENDENCY);
 
@@ -1677,7 +1689,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(externalDependencyEClass, EXTERNAL_DEPENDENCY__NAME);
 
 		catkinPackageEClass = createEClass(CATKIN_PACKAGE);
-		createEReference(catkinPackageEClass, CATKIN_PACKAGE__DEPENDENCY);
 
 		publisherEClass = createEClass(PUBLISHER);
 		createEReference(publisherEClass, PUBLISHER__MESSAGE);
@@ -1890,6 +1901,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Spec(), this.getSpecBase(), this.getSpecBase_Package(), "spec", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPackage_FromGitRepo(), ecorePackage.getEString(), "fromGitRepo", null, 0, 1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, ros.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dependencyEClass, Dependency.class, "Dependency", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1910,7 +1923,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getExternalDependency_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExternalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(catkinPackageEClass, CatkinPackage.class, "CatkinPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCatkinPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, CatkinPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(publisherEClass, Publisher.class, "Publisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPublisher_Message(), this.getTopicSpec(), null, "message", null, 1, 1, Publisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

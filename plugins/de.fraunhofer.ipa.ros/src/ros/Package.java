@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ros.Package#getName <em>Name</em>}</li>
  *   <li>{@link ros.Package#getSpec <em>Spec</em>}</li>
  *   <li>{@link ros.Package#getArtifact <em>Artifact</em>}</li>
+ *   <li>{@link ros.Package#getFromGitRepo <em>From Git Repo</em>}</li>
+ *   <li>{@link ros.Package#getDependency <em>Dependency</em>}</li>
  * </ul>
  *
  * @see ros.RosPackage#getPackage()
@@ -84,5 +86,39 @@ public interface Package extends EObject {
 	 * @generated
 	 */
 	EList<Artifact> getArtifact();
+
+	/**
+	 * Returns the value of the '<em><b>From Git Repo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Git Repo</em>' attribute.
+	 * @see #setFromGitRepo(String)
+	 * @see ros.RosPackage#getPackage_FromGitRepo()
+	 * @model
+	 * @generated
+	 */
+	String getFromGitRepo();
+
+	/**
+	 * Sets the value of the '{@link ros.Package#getFromGitRepo <em>From Git Repo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Git Repo</em>' attribute.
+	 * @see #getFromGitRepo()
+	 * @generated
+	 */
+	void setFromGitRepo(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Dependency</b></em>' containment reference list.
+	 * The list contents are of type {@link ros.Dependency}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dependency</em>' containment reference list.
+	 * @see ros.RosPackage#getPackage_Dependency()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Dependency> getDependency();
 
 } // Package

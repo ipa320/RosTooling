@@ -103,7 +103,7 @@ ComponentInterface { name «system.name»
 RosPublishers{
 	«FOR pub:pubs»
 	«val count_pub=count_pub--»
-	RosPublisher "«pub.name»" { RefPublisher "«pub.publisher.package_pub».«pub.publisher.getArtifact».«pub.publisher.getNode».«pub.publisher.name»"}«IF count_pub > 1 »,«ENDIF»
+	RosPublisher "«pub.name»" { RefPublisher "«pub.publisher.package_pub.name».«pub.publisher.getArtifact».«pub.publisher.getNode».«pub.publisher.name»"}«IF count_pub > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -111,7 +111,7 @@ RosPublishers{
 RosSubscribers{
 	«FOR sub:subs»
 	«val count_sub=count_sub--»
-	RosSubscriber "«sub.name»" { RefSubscriber "«sub.subscriber.package_sub».«sub.subscriber.getArtifact».«sub.subscriber.getNode».«sub.subscriber.name»"}«IF count_sub > 1 »,«ENDIF»
+	RosSubscriber "«sub.name»" { RefSubscriber "«sub.subscriber.package_sub.name».«sub.subscriber.getArtifact».«sub.subscriber.getNode».«sub.subscriber.name»"}«IF count_sub > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -119,7 +119,7 @@ RosSubscribers{
 RosSrvServers{
 	«FOR svrs:svrs»
 	«val count_srvs=count_srvs--»
-	RosServiceServer "«svrs.name»" { RefServer "«svrs.srvserver.package_srvserv».«svrs.srvserver.getArtifact».«svrs.srvserver.getNode».«svrs.srvserver.name»"}«IF count_srvs > 1 »,«ENDIF»
+	RosServiceServer "«svrs.name»" { RefServer "«svrs.srvserver.package_srvserv.name».«svrs.srvserver.getArtifact».«svrs.srvserver.getNode».«svrs.srvserver.name»"}«IF count_srvs > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -127,7 +127,7 @@ RosSrvServers{
 RosSrvClients{
 	«FOR svrc:svrc»
 	«val count_srvc=count_srvc--»
-	RosServiceClient "«svrc.name»" { RefClient "«svrc.srvclient.package_srvcli».«svrc.srvclient.getArtifact».«svrc.srvclient.getNode».«svrc.srvclient.name»"}«IF count_srvc > 1 »,«ENDIF»
+	RosServiceClient "«svrc.name»" { RefClient "«svrc.srvclient.package_srvcli.name».«svrc.srvclient.getArtifact».«svrc.srvclient.getNode».«svrc.srvclient.name»"}«IF count_srvc > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -135,7 +135,7 @@ RosSrvClients{
 RosActionServers{
 	«FOR acts:acts»
 	«val count_acts=count_acts--»
-	RosActionServer "«acts.name»" { RefServer "«acts.actserver.package_actserver».«acts.actserver.getArtifact».«acts.actserver.getNode».«acts.actserver.name»"}«IF count_acts > 1 »,«ENDIF»
+	RosActionServer "«acts.name»" { RefServer "«acts.actserver.package_actserver.name».«acts.actserver.getArtifact».«acts.actserver.getNode».«acts.actserver.name»"}«IF count_acts > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -143,7 +143,7 @@ RosActionServers{
 RosActionClients{
 	«FOR actc:actc»
 	«val count_actc=count_actc--»
-	RosActionClient "«actc.name»" { RefClient "«actc.actclient.package_actclient».«actc.actclient.getArtifact».«actc.actclient.getNode».«actc.actclient.name»"}«IF count_actc > 1 »,«ENDIF»
+	RosActionClient "«actc.name»" { RefClient "«actc.actclient.package_actclient.name».«actc.actclient.getArtifact».«actc.actclient.getNode».«actc.actclient.name»"}«IF count_actc > 1 »,«ENDIF»
 	«ENDFOR»
 	}
 «ENDIF»
@@ -151,7 +151,7 @@ RosActionClients{
 RosParameters{
 	«FOR param:rosparams»
 	«val count_param=count_param--»
-	RosParameter "«compile_param_name(param.parameter,"")»" { RefParameter "«param.parameter.package_rosparam».«param.parameter.getArtifact».«param.parameter.getNode».«param.parameter.name»"«IF param.value!==null » value «compile_rosparam_value(param.value)»«ENDIF» }«IF count_param > 1»,«ENDIF»
+	RosParameter "«compile_param_name(param.parameter,"")»" { RefParameter "«param.parameter.package_rosparam.name».«param.parameter.getArtifact».«param.parameter.getNode».«param.parameter.name»"«IF param.value!==null » value «compile_rosparam_value(param.value)»«ENDIF» }«IF count_param > 1»,«ENDIF»
 	«ENDFOR»«FOR param:system.parameter»
 	«val count_param=count_param--»
 	RosParameter "«param.name»" { RefParameter "«param.name»"«IF param.value!==null » value «compile_rosparam_value(param.value)»«ENDIF» }«IF count_param > 1»,«ENDIF»

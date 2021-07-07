@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.Artifact;
+import ros.Dependency;
 import ros.RosPackage;
 import ros.SpecBase;
 
@@ -34,6 +35,8 @@ import ros.SpecBase;
  *   <li>{@link ros.impl.PackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link ros.impl.PackageImpl#getSpec <em>Spec</em>}</li>
  *   <li>{@link ros.impl.PackageImpl#getArtifact <em>Artifact</em>}</li>
+ *   <li>{@link ros.impl.PackageImpl#getFromGitRepo <em>From Git Repo</em>}</li>
+ *   <li>{@link ros.impl.PackageImpl#getDependency <em>Dependency</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +81,36 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * @ordered
 	 */
 	protected EList<Artifact> artifact;
+
+	/**
+	 * The default value of the '{@link #getFromGitRepo() <em>From Git Repo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromGitRepo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FROM_GIT_REPO_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFromGitRepo() <em>From Git Repo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromGitRepo()
+	 * @generated
+	 * @ordered
+	 */
+	protected String fromGitRepo = FROM_GIT_REPO_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDependency() <em>Dependency</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDependency()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Dependency> dependency;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,6 +185,42 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getFromGitRepo() {
+		return fromGitRepo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFromGitRepo(String newFromGitRepo) {
+		String oldFromGitRepo = fromGitRepo;
+		fromGitRepo = newFromGitRepo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.PACKAGE__FROM_GIT_REPO, oldFromGitRepo, fromGitRepo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Dependency> getDependency() {
+		if (dependency == null) {
+			dependency = new EObjectContainmentEList<Dependency>(Dependency.class, this, RosPackage.PACKAGE__DEPENDENCY);
+		}
+		return dependency;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -174,6 +243,8 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 				return ((InternalEList<?>)getSpec()).basicRemove(otherEnd, msgs);
 			case RosPackage.PACKAGE__ARTIFACT:
 				return ((InternalEList<?>)getArtifact()).basicRemove(otherEnd, msgs);
+			case RosPackage.PACKAGE__DEPENDENCY:
+				return ((InternalEList<?>)getDependency()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,6 +263,10 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 				return getSpec();
 			case RosPackage.PACKAGE__ARTIFACT:
 				return getArtifact();
+			case RosPackage.PACKAGE__FROM_GIT_REPO:
+				return getFromGitRepo();
+			case RosPackage.PACKAGE__DEPENDENCY:
+				return getDependency();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +291,13 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 				getArtifact().clear();
 				getArtifact().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case RosPackage.PACKAGE__FROM_GIT_REPO:
+				setFromGitRepo((String)newValue);
+				return;
+			case RosPackage.PACKAGE__DEPENDENCY:
+				getDependency().clear();
+				getDependency().addAll((Collection<? extends Dependency>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,6 +319,12 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 			case RosPackage.PACKAGE__ARTIFACT:
 				getArtifact().clear();
 				return;
+			case RosPackage.PACKAGE__FROM_GIT_REPO:
+				setFromGitRepo(FROM_GIT_REPO_EDEFAULT);
+				return;
+			case RosPackage.PACKAGE__DEPENDENCY:
+				getDependency().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,6 +343,10 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 				return spec != null && !spec.isEmpty();
 			case RosPackage.PACKAGE__ARTIFACT:
 				return artifact != null && !artifact.isEmpty();
+			case RosPackage.PACKAGE__FROM_GIT_REPO:
+				return FROM_GIT_REPO_EDEFAULT == null ? fromGitRepo != null : !FROM_GIT_REPO_EDEFAULT.equals(fromGitRepo);
+			case RosPackage.PACKAGE__DEPENDENCY:
+				return dependency != null && !dependency.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,6 +363,8 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ros.Pac
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", fromGitRepo: ");
+		result.append(fromGitRepo);
 		result.append(')');
 		return result.toString();
 	}

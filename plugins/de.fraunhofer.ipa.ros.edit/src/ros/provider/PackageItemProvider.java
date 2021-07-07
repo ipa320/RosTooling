@@ -63,6 +63,7 @@ public class PackageItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addFromGitRepoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class PackageItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the From Git Repo feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFromGitRepoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Package_fromGitRepo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Package_fromGitRepo_feature", "_UI_Package_type"),
+				 RosPackage.Literals.PACKAGE__FROM_GIT_REPO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -103,6 +126,7 @@ public class PackageItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RosPackage.Literals.PACKAGE__SPEC);
 			childrenFeatures.add(RosPackage.Literals.PACKAGE__ARTIFACT);
+			childrenFeatures.add(RosPackage.Literals.PACKAGE__DEPENDENCY);
 		}
 		return childrenFeatures;
 	}
@@ -159,10 +183,12 @@ public class PackageItemProvider
 
 		switch (notification.getFeatureID(ros.Package.class)) {
 			case RosPackage.PACKAGE__NAME:
+			case RosPackage.PACKAGE__FROM_GIT_REPO:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RosPackage.PACKAGE__SPEC:
 			case RosPackage.PACKAGE__ARTIFACT:
+			case RosPackage.PACKAGE__DEPENDENCY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,6 +225,16 @@ public class PackageItemProvider
 			(createChildParameter
 				(RosPackage.Literals.PACKAGE__ARTIFACT,
 				 RosFactory.eINSTANCE.createArtifact()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RosPackage.Literals.PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createPackageDependency()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RosPackage.Literals.PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createExternalDependency()));
 	}
 
 	/**
