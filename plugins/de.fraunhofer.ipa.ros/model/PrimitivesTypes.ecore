@@ -1,48 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="primitives" nsURI="http://www.ipa.fraunhofer.de/primitives"
-    nsPrefix="primitives">
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractType" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MessagePart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" lowerBound="1" eType="#//AbstractType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Data" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="bool" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int8" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint8" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int16" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint16" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int32" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint32" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int64" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint64" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="float32" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="float64" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="string" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="time" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="duration" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="boolArray" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int8Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint8Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int16Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint16Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int32Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint32Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="int64Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="uint64Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="float32Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="float64Array" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="stringArray" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Byte" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ByteArray" eSuperTypes="#//AbstractType"/>
+<ecore:EPackage xmi:version="2.0"
+	xmlns:xmi="http://www.omg.org/XMI"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="primitives"
+	nsURI="http://www.ipa.fraunhofer.de/primitives" nsPrefix="primitives">
+	<eClassifiers xsi:type="ecore:EClass" name="AbstractType"
+		abstract="true" />
+	<eClassifiers xsi:type="ecore:EClass" name="MessagePart">
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="Type" lowerBound="1" eType="#//AbstractType" containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EAttribute"
+			name="Data" lowerBound="1"
+			eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" />
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="bool"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int8"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint8"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int16"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint16"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int32"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint32"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int64"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint64"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="float32"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="float64"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="string"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="time"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="duration"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="boolArray"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int8Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint8Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int16Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint16Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int32Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint32Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="int64Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="uint64Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="float32Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="float64Array"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="stringArray"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef"
+		eSuperTypes="#//AbstractType">
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="TopicSpec" lowerBound="1"
+			eType="ecore:EClass ros.ecore#//TopicSpec" />
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass"
+		name="ArrayTopicSpecRef" eSuperTypes="#//AbstractType">
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="TopicSpec" lowerBound="1"
+			eType="ecore:EClass ros.ecore#//TopicSpec" />
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="Header"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="Byte"
+		eSuperTypes="#//AbstractType" />
+	<eClassifiers xsi:type="ecore:EClass" name="ByteArray"
+		eSuperTypes="#//AbstractType" />
 </ecore:EPackage>
