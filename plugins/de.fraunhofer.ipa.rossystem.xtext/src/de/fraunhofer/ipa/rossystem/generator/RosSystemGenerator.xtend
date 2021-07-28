@@ -63,15 +63,27 @@ class RosSystemGenerator extends AbstractGenerator {
 		// ROS1 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_toROS1launch.toString().replace("\t","  "))
+				for (stack : system.getComponentStack()){
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "launch", stack.getName()+".launch"), compile_toROS1launch(stack, system).toString().replace("\t","  "))
+					}
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/package.xml",system.compile_package_xml_format2)
+				for (stack : system.getComponentStack()){
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "package.xml"),compile_package_xml_format2(stack, system))
+					}
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",system.compile_CMakeLists_ROS1)
+				for (stack : system.getComponentStack()){
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "CMakeLists.txt"),compile_CMakeLists_ROS1(stack,system))
+					}
 				}
  		for (system : resource.allContents.toIterable.filter(RosSystem)){
  				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",system.compile_toDockerContainer)
+				for (stack : system.getComponentStack()){
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "Dockerfile"),compile_toDockerContainer(stack, system))
+					}
  				}
 
 		//ROS2 package

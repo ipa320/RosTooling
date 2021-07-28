@@ -18,6 +18,7 @@ import componentInterface.RosServiceClient
 import componentInterface.RosActionClient
 import rossystem.ActionConnection
 import componentInterface.RosActionServer
+import rossystem.ComponentStack
 
 class LaunchFileCompiler_ROS1 {
 	@Inject extension GeneratorHelpers
@@ -91,6 +92,47 @@ class LaunchFileCompiler_ROS1 {
  «««	«ENDFOR» 
 
 	«FOR component:system.rosComponent»
+	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
+		«FOR rosPublisher:component.rospublisher»
+			«remapping_function_pub(rosPublisher, component.hasNS, inTopicFromConnection(rosPublisher, system.topicConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosSubscriber:component.rossubscriber»
+			«remapping_function_sub(rosSubscriber, component.hasNS, inTopicToConnection(rosSubscriber, system.topicConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosServiceServer:component.rosserviceserver»
+			«remapping_function_srv(rosServiceServer, component.hasNS, inServiceFromConnection(rosServiceServer, system.serviceConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosServiceClient:component.rosserviceclient»
+			«remapping_function_client(rosServiceClient, component.hasNS, inServiceToConnection(rosServiceClient, system.serviceConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosActionServer:component.rosactionserver»
+			«remapping_function_acts(rosActionServer, component.hasNS, inActionFromConnection(rosActionServer, system.actionConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosActionClient:component.rosactionclient»
+			«remapping_function_actc(rosActionClient, component.hasNS, inActionToConnection(rosActionClient, system.actionConnections),component.check_ns)»
+		«ENDFOR»
+		«FOR rosParameter:component.rosparameter»
+			«IF rosParameter.parameter.type.toString.contains("ParameterStructType")»«str_output=""»
+			<rosparam>
+«rosParameter.name»:
+        «IF rosParameter.value.eContents !== null»
+		«compile_struct_param(rosParameter.value.eContents,false)»
+		«ENDIF»
+			</rosparam>
+			«ELSE»
+		«IF rosParameter.value!==null»<param name="«rosParameter.parameter.name»" value="«compile_param_value(rosParameter.value)»" />«ENDIF»
+			«ENDIF»
+		«ENDFOR»
+	</node>
+	«ENDFOR»
+
+</launch>
+	'''
+	
+		def compile_toROS1launch(ComponentStack stack, RosSystem system) '''«init_comp()»
+<?xml version="1.0"?>
+<launch>
+	«FOR component:stack.rosComponent»
 	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
 			«remapping_function_pub(rosPublisher, component.hasNS, inTopicFromConnection(rosPublisher, system.topicConnections),component.check_ns)»
