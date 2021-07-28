@@ -2,12 +2,13 @@ package de.fraunhofer.ipa.rossystem.generator
 
 import com.google.inject.Inject
 import rossystem.RosSystem
+import rossystem.ComponentStack
 
 class DockerContainerCompiler {
 		
 	@Inject extension GeneratorHelpers
 		
- def compile_toDockerContainer(RosSystem system) '''«init_pkg()»
+ def compile_toDockerContainer(RosSystem system, ComponentStack stack) '''«init_pkg()»
 # syntax=docker/dockerfile:experimental
 ARG SUFFIX=
 ARG PREFIX=
@@ -15,7 +16,7 @@ FROM ros:melodic-ros-core as base
 FROM ${PREFIX}builder${SUFFIX} as builder
 
 FROM base as build
-COPY . /root/ws/src/«system.name.toLowerCase»/
+COPY . /root/ws/src/«IF stack===null»«system.name.toLowerCase»«ELSE»«system.name.toLowerCase»_«stack.name.toLowerCase»«ENDIF»/
 RUN --mount=type=bind,from=builder,target=/builder \
     apt-get update -qq && \
     /builder/workspace.bash build_workspace /root/ws && \
@@ -47,7 +48,7 @@ RUN --mount=type=bind,from=builder,target=/builder --mount=type=bind,target=/roo
 COPY --from=install /opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
 
 FROM deploy as launch
-CMD ["roslaunch", "«system.name»", "«system.name».launch"]
+«IF stack===null»CMD ["roslaunch", "«system.name»", "«system.name».launch"]«ELSE»CMD ["roslaunch", "«system.name.toLowerCase»_«stack.name.toLowerCase»", "«stack.name.toLowerCase».launch"]«ENDIF»
 '''
 
 }

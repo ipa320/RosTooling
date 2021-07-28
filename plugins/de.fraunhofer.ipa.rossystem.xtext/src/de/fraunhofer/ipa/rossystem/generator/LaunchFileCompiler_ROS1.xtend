@@ -18,6 +18,7 @@ import componentInterface.RosServiceClient
 import componentInterface.RosActionClient
 import rossystem.ActionConnection
 import componentInterface.RosActionServer
+import rossystem.ComponentStack
 
 class LaunchFileCompiler_ROS1 {
 	@Inject extension GeneratorHelpers
@@ -29,13 +30,16 @@ class LaunchFileCompiler_ROS1 {
 	String tab_tmp=""	
 	List<Integer> sizes_list = new ArrayList<Integer>();
 	List<EObject> param_list = new ArrayList<EObject>();
+	List<ComponentInterface> components = new ArrayList<ComponentInterface>();
+	
 	
 	int i=0;
 	int k=0;
 	
-	def compile_toROS1launch(RosSystem system) '''«init_comp()»
+	def compile_toROS1launch(RosSystem system, ComponentStack stack) '''«init_comp()»
 <?xml version="1.0"?>
 <launch>
+«IF stack===null»
   «FOR ROSParameter:system.parameter»
   	«IF ROSParameter.type.toString.contains("ParameterStructType")»
   	<rosparam>
@@ -56,41 +60,11 @@ class LaunchFileCompiler_ROS1 {
   	«ELSE»
   		<param name="«ROSParameter.name»" value="«compile_param_value(ROSParameter.value)»"/>
   	«ENDIF»
-  «ENDFOR»
-«««	«FOR component:system.rosComponent»
- «««		«FOR rosPublisher:component.rospublisher»
- «««				«IF component.hasNS»«IF !rosPublisher.name.equals(compile_topic_name(rosPublisher.publisher,component.get_ns()))»
- «««				<remap from=«compile_topic_name(rosPublisher.publisher,component.get_ns())» to=«rosPublisher.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««		«FOR rosSubscriber:component.rossubscriber»
- «««				«IF component.hasNS»«IF !rosSubscriber.name.equals(compile_topic_name(rosSubscriber.subscriber,component.get_ns()))»
- «««				<remap from=«compile_topic_name(rosSubscriber.subscriber,component.get_ns())» to=«rosSubscriber.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««		«FOR rosServiceServer:component.rosserviceserver»
- «««				«IF component.hasNS»«IF !rosServiceServer.name.equals(compile_service_name(rosServiceServer.srvserver,component.get_ns()))»
- «««				<remap from=«compile_service_name(rosServiceServer.srvserver,component.get_ns())» to=«rosServiceServer.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««		«FOR rosServiceClient:component.rosserviceclient»
- «««				«IF component.hasNS»«IF !rosServiceClient.name.equals(compile_service_name(rosServiceClient.srvclient,component.get_ns()))»
- «««				<remap from=«compile_service_name(rosServiceClient.srvclient,component.get_ns())» to=«rosServiceClient.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««		«FOR rosActionServer:component.rosactionserver»
- «««				«IF component.hasNS»«IF !rosActionServer.name.equals(compile_action_name(rosActionServer.actserver,component.get_ns()))»
- «««				<remap from=«compile_action_name(rosActionServer.actserver,component.get_ns())» to=«rosActionServer.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««		«FOR rosActionClient:component.rosactionclient»
- «««				«IF component.hasNS»«IF !rosActionClient.name.equals(compile_action_name(rosActionClient.actclient,component.get_ns()))»
- «««				<remap from=«compile_action_name(rosActionClient.actclient,component.get_ns())» to=«rosActionClient.name» />
- «««				«ENDIF»«ENDIF»
- «««		«ENDFOR»
- «««	«ENDFOR» 
+  «ENDFOR»«ELSE»«FOR qa:stack.qualityAttribute»
+		<param name="«qa.name»" value="«compile_param_value(qa.value)»"/>
+«ENDFOR»«ENDIF»
 
-	«FOR component:system.rosComponent»
+	«FOR component:compile_list_of_components(system,stack)»
 	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
 			«remapping_function_pub(rosPublisher, component.hasNS, inTopicFromConnection(rosPublisher, system.topicConnections),component.check_ns)»
@@ -128,6 +102,16 @@ class LaunchFileCompiler_ROS1 {
 </launch>
 	'''
 	
+	def List<ComponentInterface> compile_list_of_components(RosSystem system, ComponentStack stack) {
+		components=null;
+		if (stack === null){
+			components = system.rosComponent;
+		} else {
+			components =  stack.rosComponent;
+		}
+		return components;
+	}
+		
 	// TOPICS REMAP
 	def String remapping_function_pub(RosPublisher rosPublisher, boolean HasNS, String inConnection, String NS) {
 		if(inConnection!==null){

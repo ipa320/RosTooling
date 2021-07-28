@@ -2,15 +2,16 @@ package de.fraunhofer.ipa.rossystem.generator
 
 import com.google.inject.Inject
 import rossystem.RosSystem
+import rossystem.ComponentStack
 
 class CMakeListsCompiler {
 	
 	@Inject extension GeneratorHelpers
 	
 	
-	def compile_CMakeLists_ROS1(RosSystem system) '''«init_pkg()»
+	def compile_CMakeLists_ROS1(RosSystem system, ComponentStack stack) '''«init_pkg()»
 cmake_minimum_required(VERSION 2.8.3)
-project(«system.name.toLowerCase»)
+project(«IF stack===null»«system.name.toLowerCase»«ELSE»«system.name.toLowerCase»_«stack.name.toLowerCase»«ENDIF»)
 
 find_package(catkin REQUIRED)
 

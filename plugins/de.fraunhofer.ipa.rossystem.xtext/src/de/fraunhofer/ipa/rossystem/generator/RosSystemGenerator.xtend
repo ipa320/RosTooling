@@ -46,8 +46,8 @@ class RosSystemGenerator extends AbstractGenerator {
 	@Inject extension LaunchFileCompiler_ROS1
 	@Inject extension LaunchFileCompiler_ROS2
 	@Inject extension SetupPyCompile
+	@Inject extension DockerComposeCompiler
 	@Inject extension DockerContainerCompiler
-	
 	//@Inject extension InstallScriptCompiler
 	
 
@@ -60,41 +60,33 @@ class RosSystemGenerator extends AbstractGenerator {
 //				}
 
 
-		// ROS1 package
+		// ROS1 package with docker composition for component Stacks
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_toROS1launch.toString().replace("\t","  "))
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/package.xml",system.compile_package_xml_format2)
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",system.compile_CMakeLists_ROS1)
-				}
- 		for (system : resource.allContents.toIterable.filter(RosSystem)){
- 				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",system.compile_toDockerContainer)
- 				}
+			if (system.componentStack.size==0){
+				fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
+				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
+				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
+				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",compile_toDockerContainer(system, null))
+			} else {
+				for (stack : system.componentStack){
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "Dockerfile"),compile_toDockerContainer(system, stack))
+			}
+				fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),compile_toDockerCompose(system))
+			}
+		}
 
 		//ROS2 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",system.compile_toROS2launch.toString().replace("\t","  "))
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",system.compile_package_xml_format3)
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
-				}
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
-				}
-//		for (system : resource.allContents.toIterable.filter(RosSystem)){
-//				fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",system.compile_CMakeLists_ROS2)
-//				}
-
-
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",system.compile_toROS2launch.toString().replace("\t","  "))
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",system.compile_package_xml_format3)
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
+			fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",system.compile_CMakeLists_ROS2)
+		}
 	}
 }
 

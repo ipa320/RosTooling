@@ -13,6 +13,7 @@ import rossystem.RosSystem
 import java.util.List
 import ros.Node
 import ros.impl.PackageImpl
+import rossystem.ComponentStack
 
 class GeneratorHelpers {
 	
@@ -21,14 +22,30 @@ class GeneratorHelpers {
 	PackageImpl package_impl
 	List<CharSequence> PkgsList
 	String Pkg
+	List<ComponentInterface> ComponentsList
 
 	def void init_pkg(){
 		PackageSet=false
 	}
+	
+	def <String> getPkgsDependencies (RosSystem rossystem, ComponentStack stack){
+		if (stack===null){
+			return getPkgsDependencies(rossystem)
+		} else {
+			return getPkgsDependencies(stack)
+		}
+	}
 
-	def <String> getPkgsDependencies(RosSystem rossystem){
+	def <String> getPkgsDependencies(Object subsystem){
 		PkgsList = new ArrayList()
-		for (component:rossystem.rosComponent){
+		ComponentsList = new ArrayList<ComponentInterface>();
+		
+		if (subsystem.class.toString.contains("RosSystemImpl")){
+			ComponentsList = (subsystem as RosSystem).rosComponent
+		} else if (subsystem.class.toString.contains("ComponentStackImpl")) {
+			ComponentsList = (subsystem as ComponentStack).rosComponent
+		}
+		for (component:ComponentsList){
 			init_pkg()
 			Pkg = component.compile_pkg.toString()
 			if (!PkgsList.contains(Pkg)){
