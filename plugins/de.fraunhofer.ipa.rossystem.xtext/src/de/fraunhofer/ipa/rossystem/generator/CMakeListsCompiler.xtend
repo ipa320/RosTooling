@@ -9,23 +9,9 @@ class CMakeListsCompiler {
 	@Inject extension GeneratorHelpers
 	
 	
-	def compile_CMakeLists_ROS1(RosSystem system) '''«init_pkg()»
+	def compile_CMakeLists_ROS1(RosSystem system, ComponentStack stack) '''«init_pkg()»
 cmake_minimum_required(VERSION 2.8.3)
-project(«system.name.toLowerCase»)
-
-find_package(catkin REQUIRED)
-
-catkin_package()
-
-
-### INSTALL ###
-install(DIRECTORY launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)'''
-
-	def compile_CMakeLists_ROS1(ComponentStack stack, RosSystem system) '''«init_pkg()»
-cmake_minimum_required(VERSION 2.8.3)
-project(«system.name.toLowerCase»_«stack.name.toLowerCase»)
+project(«IF stack===null»«system.name.toLowerCase»«ELSE»«system.name.toLowerCase»_«stack.name.toLowerCase»«ENDIF»)
 
 find_package(catkin REQUIRED)
 

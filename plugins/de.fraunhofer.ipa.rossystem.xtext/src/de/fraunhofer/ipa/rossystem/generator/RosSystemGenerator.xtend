@@ -64,25 +64,25 @@ class RosSystemGenerator extends AbstractGenerator {
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",system.compile_toROS1launch.toString().replace("\t","  "))
 				for (stack : system.getComponentStack()){
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "launch", stack.getName()+".launch"), compile_toROS1launch(stack, system).toString().replace("\t","  "))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(stack, system).toString().replace("\t","  "))
 					}
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/package.xml",system.compile_package_xml_format2)
+				fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
 				for (stack : system.getComponentStack()){
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "package.xml"),compile_package_xml_format2(stack, system))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
 					}
 				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",system.compile_CMakeLists_ROS1)
+				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
 				for (stack : system.getComponentStack()){
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "CMakeLists.txt"),compile_CMakeLists_ROS1(stack,system))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
 					}
 				}
  		for (system : resource.allContents.toIterable.filter(RosSystem)){
- 				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",system.compile_toDockerContainer)
+ 				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",compile_toDockerContainer(system, null))
 				for (stack : system.getComponentStack()){
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, stack.getName()+"_stack", "Dockerfile"),compile_toDockerContainer(stack, system))
+					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "Dockerfile"),compile_toDockerContainer(system, stack))
 					}
  				}
 		for (system : resource.allContents.toIterable.filter(RosSystem)){

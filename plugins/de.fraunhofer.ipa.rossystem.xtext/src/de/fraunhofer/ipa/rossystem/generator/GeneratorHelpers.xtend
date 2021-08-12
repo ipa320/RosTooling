@@ -22,26 +22,30 @@ class GeneratorHelpers {
 	PackageImpl package_impl
 	List<CharSequence> PkgsList
 	String Pkg
+	List<ComponentInterface> ComponentsList
 
 	def void init_pkg(){
 		PackageSet=false
 	}
-
-	def <String> getPkgsDependencies(RosSystem rossystem){
-		PkgsList = new ArrayList()
-		for (component:rossystem.rosComponent){
-			init_pkg()
-			Pkg = component.compile_pkg.toString()
-			if (!PkgsList.contains(Pkg)){
-				PkgsList.add(Pkg)
-			}
-		}
-		return PkgsList;
-	}
 	
-	def <String> getPkgsDependencies(ComponentStack compstack){
+	def <String> getPkgsDependencies (RosSystem rossystem, ComponentStack stack){
+		if (stack===null){
+			return getPkgsDependencies(rossystem)
+		} else {
+			return getPkgsDependencies(stack)
+		}
+	}
+
+	def <String> getPkgsDependencies(Object subsystem){
 		PkgsList = new ArrayList()
-		for (component:compstack.rosComponent){
+		ComponentsList = new ArrayList<ComponentInterface>();
+		
+		if (subsystem.class.toString.contains("RosSystemImpl")){
+			ComponentsList = (subsystem as RosSystem).rosComponent
+		} else if (subsystem.class.toString.contains("ComponentStackImpl")) {
+			ComponentsList = (subsystem as ComponentStack).rosComponent
+		}
+		for (component:ComponentsList){
 			init_pkg()
 			Pkg = component.compile_pkg.toString()
 			if (!PkgsList.contains(Pkg)){
