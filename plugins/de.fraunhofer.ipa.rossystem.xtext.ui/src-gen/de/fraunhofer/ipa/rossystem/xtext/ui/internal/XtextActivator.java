@@ -6,6 +6,8 @@ package de.fraunhofer.ipa.rossystem.xtext.ui.internal;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import de.fraunhofer.ipa.ros.RosRuntimeModule;
+import de.fraunhofer.ipa.ros.ui.RosUiModule;
 import de.fraunhofer.ipa.rossystem.RosSystemRuntimeModule;
 import de.fraunhofer.ipa.rossystem.ui.RosSystemUiModule;
 import java.util.Collections;
@@ -24,6 +26,7 @@ public class XtextActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "de.fraunhofer.ipa.rossystem.xtext.ui";
 	public static final String DE_FRAUNHOFER_IPA_ROSSYSTEM_ROSSYSTEM = "de.fraunhofer.ipa.rossystem.RosSystem";
+	public static final String DE_FRAUNHOFER_IPA_ROS_ROS = "de.fraunhofer.ipa.ros.Ros";
 	
 	private static final Logger logger = Logger.getLogger(XtextActivator.class);
 	
@@ -76,12 +79,18 @@ public class XtextActivator extends AbstractUIPlugin {
 		if (DE_FRAUNHOFER_IPA_ROSSYSTEM_ROSSYSTEM.equals(grammar)) {
 			return new RosSystemRuntimeModule();
 		}
+		if (DE_FRAUNHOFER_IPA_ROS_ROS.equals(grammar)) {
+			return new RosRuntimeModule();
+		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
 		if (DE_FRAUNHOFER_IPA_ROSSYSTEM_ROSSYSTEM.equals(grammar)) {
 			return new RosSystemUiModule(this);
+		}
+		if (DE_FRAUNHOFER_IPA_ROS_ROS.equals(grammar)) {
+			return new RosUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}

@@ -7,7 +7,7 @@ import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider
 import de.fraunhofer.ipa.rossystem.generator.CustomOutputProvider
 import com.google.inject.Binder
-
+import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -21,4 +21,7 @@ class RosSystemRuntimeModule extends AbstractRosSystemRuntimeModule {
 	
 	}
 
+	/**override Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+        return RosSystemQNP;
+      }*/
 }

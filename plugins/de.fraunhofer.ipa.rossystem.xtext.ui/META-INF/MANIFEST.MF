@@ -22,5 +22,7 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.fraunhofer.ipa.rossystem.ui.contentassist,
  de.fraunhofer.ipa.rossystem.xtext.ui.internal,
- de.fraunhofer.ipa.rossystem.ui.quickfix
+ de.fraunhofer.ipa.rossystem.ui.quickfix,
+ de.fraunhofer.ipa.ros.ui.contentassist,
+ de.fraunhofer.ipa.ros.ui.quickfix
 Bundle-Activator: de.fraunhofer.ipa.rossystem.xtext.ui.internal.XtextActivator

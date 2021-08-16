@@ -44,5 +44,24 @@ Workflow {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
 		}
+		language = StandardLanguage {
+			name = "de.fraunhofer.ipa.rossystem.Ros"
+			fileExtensions = "ros"
+			referencedResource = "platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel"
+			
+			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
+
+			formatter = {
+				generateStub = true
+			}
+
+			serializer = {
+				generateStub = false
+			}
+			validator = {
+				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			}}
+		
+		
 	}
 }
