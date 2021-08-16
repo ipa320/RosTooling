@@ -10,7 +10,7 @@ import primitives.PrimitivesPackage
 
 import rossystem.RossystemPackage;
 import componentInterface.ComponentInterfacePackage
-
+//import de.fraunhofer.ipa.ros.RosStandaloneSetup
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
@@ -18,6 +18,7 @@ class RosSystemStandaloneSetup extends RosSystemStandaloneSetupGenerated {
 
 	def static void doSetup() {
 		new RosSystemStandaloneSetup().createInjectorAndDoEMFRegistration()
+		//new RosStandaloneSetup().createInjectorAndDoEMFRegistration()
 	}
 	
 	override register(Injector injector) {

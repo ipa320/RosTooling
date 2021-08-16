@@ -12,22 +12,35 @@ import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
 import ros.Node
 import ros.Package
+import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider
 
-class CICustomOutputProvider implements IOutputConfigurationProvider {
-	public final static String COM_OUTPUT = "COM_OUTPUT"
-	
+class CICustomOutputProvider implements IOutputConfigurationProvider, IContextualOutputConfigurationProvider {
+	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
+	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
 
 	override Set<OutputConfiguration> getOutputConfigurations() {
 
-		var OutputConfiguration default_config = new OutputConfiguration(COM_OUTPUT)
-		default_config.setDescription("COM_OUTPUT");
-		default_config.setOutputDirectory("./components/");
+		var OutputConfiguration cm_config = new OutputConfiguration(CM_CONFIGURATION)
+		cm_config.setDescription("CM_CONFIGURATION");
+		cm_config.setOutputDirectory("./components/");
+		cm_config.setOverrideExistingResources(true);
+		cm_config.setCreateOutputDirectory(true);
+		cm_config.setCleanUpDerivedResources(false);
+		cm_config.setSetDerivedProperty(false);
+		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
+		default_config.setDescription("DEFAULT_OUTPUT");
+		default_config.setOutputDirectory("./src-gen/");
 		default_config.setOverrideExistingResources(true);
 		default_config.setCreateOutputDirectory(true);
 		default_config.setCleanUpDerivedResources(false);
 		default_config.setSetDerivedProperty(false);
-		return newHashSet(default_config)
+		return newHashSet(cm_config, default_config)
 	}
+	
+	override Set<OutputConfiguration> getOutputConfigurations(Resource context) {
+		return getOutputConfigurations()
+	}
+	
 }
 
 /**
@@ -57,7 +70,8 @@ class RosGenerator extends AbstractGenerator {
 			}
 		}
 		for (node : resource.allContents.toIterable.filter(Node)){
-			fsa.generateFile(node.getName()+".componentinterface",CICustomOutputProvider::COM_OUTPUT,compile(node,package_name,artifact_name))
+			fsa.generateFile(node.getName()+".componentinterface",CICustomOutputProvider::CM_CONFIGURATION,compile(node,package_name,artifact_name))
+			
 		}
 	}
 

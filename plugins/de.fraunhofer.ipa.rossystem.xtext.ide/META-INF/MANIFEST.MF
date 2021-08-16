@@ -7,9 +7,28 @@ Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.xtext.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  de.fraunhofer.ipa.rossystem,
+ de.fraunhofer.ipa.ros.xtext,
+ de.fraunhofer.ipa.ros,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.eclipse.sprotty,
+ org.eclipse.sprotty.layout,
+ org.eclipse.sprotty.server,
+ org.eclipse.sprotty.xtext,
+ org.eclipse.lsp4j,
+ org.eclipse.elk.graph,
+ com.google.gson,
+ org.objectweb.asm,
+ org.objectweb.asm.commons,
+ org.objectweb.asm.tree,
+ org.apache.log4j,
+ org.eclipse.elk.alg.common,
+ org.eclipse.elk.alg.layered,
+ org.eclipse.elk.core,
+ org.eclipse.lsp4j.jsonrpc,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.internal,
- de.fraunhofer.ipa.rossystem.ide.contentassist.antlr
+ de.fraunhofer.ipa.rossystem.ide.contentassist.antlr,
+ de.fraunhofer.ipa.ros.ide.contentassist.antlr,
+ de.fraunhofer.ipa.ros.ide.contentassist.antlr.internal

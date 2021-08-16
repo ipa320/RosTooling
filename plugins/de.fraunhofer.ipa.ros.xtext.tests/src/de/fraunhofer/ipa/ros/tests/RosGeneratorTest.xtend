@@ -87,10 +87,10 @@ class RosGeneratorTest {
 
 		val fsa = new InMemoryFileSystemAccess
 		CIGenerator.doGenerate(model.eResource, fsa, new GeneratorContext)
-		Assert.assertTrue(fsa.textFiles.containsKey(CICustomOutputProvider::COM_OUTPUT + "test_node.componentinterface"))
+		Assert.assertTrue(fsa.textFiles.containsKey(CICustomOutputProvider::CM_CONFIGURATION + "test_node.componentinterface"))
 		Assert.assertEquals(
 			new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'components', 'test_node.componentinterface'))).trim,
-			fsa.textFiles.get(CICustomOutputProvider::COM_OUTPUT + "test_node.componentinterface").toString.trim)
+			fsa.textFiles.get(CICustomOutputProvider::CM_CONFIGURATION + "test_node.componentinterface").toString.trim)
 	}
 
 }
