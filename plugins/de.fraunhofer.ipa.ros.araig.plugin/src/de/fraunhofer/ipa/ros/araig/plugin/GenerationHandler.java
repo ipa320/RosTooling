@@ -71,12 +71,14 @@ import ros.impl.ArtifactImpl;
 import ros.impl.NodeImpl;
 import ros.impl.PackageImpl;
 import ros.impl.PackageSetImpl;
+import ros.impl.ParameterImpl;
 import ros.impl.PublisherImpl;
 import ros.impl.SubscriberImpl;
 import ros.impl.TopicSpecImpl;
 import rossystem.RosSystem;
 import rossystem.impl.RosSystemImpl;
-
+import ros.impl.ParameterBooleanTypeImpl;
+import ros.impl.ParameterDoubleTypeImpl;
 public class GenerationHandler extends AbstractHandler implements IHandler {
 	
 	@Inject
@@ -159,7 +161,7 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 	
 	private void create_calculator_ui(Shell shell, List<EObject> RosInterfaces, IProject project) {
 		List<Subscriber> CalculatorSubscribers = new ArrayList<Subscriber>();		
-		List<RosParameter> CalculatorParameters = new ArrayList<RosParameter>();	
+		List<ParameterImpl> CalculatorParameters = new ArrayList<ParameterImpl>();	
 		List<Publisher> CalculatorPublishers = new ArrayList<Publisher>();
 
 		Map<String, TopicSpec> msg_map= new HashMap<String, TopicSpec>() {{
@@ -287,8 +289,9 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			if (source_case == 4) {
 				InputDialog param_dialog = new InputDialog(shell,"Set name to the parameter", "Set name to the parameter", null, null);
 				param_dialog.open();
-				RosParameter param = new RosParameterImpl();
+				ParameterImpl param = new ParameterImpl();
 				param.setName(dialogInput.getValue());
+				param.setType(new ParameterDoubleTypeImpl());
 				CalculatorParameters.add(param);
 			}
 			
@@ -371,7 +374,7 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 		}		
 		CalculatorLogicFactory shapeFactory = new CalculatorLogicFactory();
 		CalculatorLogic logic_class = shapeFactory.create(logic.get_class_name());
-		create_calculator_model(project, CalculatorName, "calculator", CalculatorPublishers, CalculatorSubscribers, logic_class);		
+		create_calculator_model(project, CalculatorName, "calculator", CalculatorPublishers, CalculatorSubscribers, CalculatorParameters, logic_class);		
 	}
 	
 	private TopicSpec check_if_costume_msg(TopicSpec msg, Map<String,TopicSpec> costume_msg_map) {
@@ -389,6 +392,7 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			String node_type, 
 			List<Publisher> publishers, 
 			List<Subscriber> subscribers, 
+			List<ParameterImpl> Parameters,
 			CalculatorLogic clazz,
 			String parent_folder, 
 			Boolean generate_code) {
@@ -414,6 +418,10 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			result_model_node.getSubscriber().add(sub);
 		}
 		
+		for (ParameterImpl param: Parameters) {
+			result_model_node.getParameter().add(param);
+		}
+		
 		result_model_artifact.setNode(result_model_node);
 		result_model_package.getArtifact().add(result_model_artifact);
 		ROSModelResult.getPackage().add(result_model_package);
@@ -431,8 +439,9 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			String node_type, 
 			List<Publisher> publishers, 
 			List<Subscriber> subscribers, 
+			List<ParameterImpl> Parameters,
 			CalculatorLogic clazz) {
-		create_calculator_model(project, node_name, node_type, publishers, subscribers, clazz, "src-gen", true);
+		create_calculator_model(project, node_name, node_type, publishers, subscribers, Parameters, clazz, "src-gen", true);
 	}
 
 	private void create_msg_model(IProject project, String msg_pkg_name, Map<String, TopicSpec> msg_map) {

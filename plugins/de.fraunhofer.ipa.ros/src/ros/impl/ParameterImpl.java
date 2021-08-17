@@ -53,9 +53,9 @@ public class ParameterImpl extends NamespacedElementImpl implements Parameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected ParameterImpl() {
+	public ParameterImpl() {
 		super();
 	}
 
