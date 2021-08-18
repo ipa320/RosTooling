@@ -9,7 +9,7 @@ class DockerComposeCompiler {
 	@Inject extension GeneratorHelpers
 		
  def compile_toDockerCompose(RosSystem system) '''«init_pkg()»
-version: "3.9"
+version: "3.3"
 networks:
   ros:
     driver: bridge
@@ -22,7 +22,7 @@ services:
       - ros
 
 «FOR stack:system.componentStack»
-«"  "»«stack.name.toLowerCase»:
+«"  "»«system.name.toLowerCase»_«stack.name.toLowerCase»:
     image: "«system.name.toLowerCase»_«stack.name.toLowerCase»:latest"
     depends_on:
       - ros-master
@@ -31,6 +31,9 @@ services:
       - "ROS_HOSTNAME=«stack.name.toLowerCase»"
     networks:
       - ros
+    command: stdbuf -o L roslaunch «system.name.toLowerCase»_«stack.name.toLowerCase» «stack.name.toLowerCase».launch --wait
+    
 «ENDFOR»
+
 '''
 }
