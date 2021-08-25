@@ -1,0 +1,43 @@
+RosSystem { Name 'test_stacks' 
+	RosComponentStacks (
+		ComponentStack {
+			name stack1 
+		    RosComponents (
+		    	ComponentInterface { name test_node 
+			    	FromRosNode "test_pkg.test_node.test_node"
+			    	RosPublishers{ RosPublisher "scan" { RefPublisher "test_pkg.test_node.test_node.scan"} } 
+			    	RosSubscribers{ RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state"} } 
+			    	RosSrvServers{ RosServiceServer "setBool" { RefServer "test_pkg.test_node.test_node.setBool"} } 
+			    	RosSrvClients{ RosServiceClient "init" { RefClient "test_pkg.test_node.test_node.init"} } 
+			    	RosParameters{ RosParameter "string_test" { RefParameter "test_pkg.test_node.test_node.string_test"}, 
+			    		RosParameter "bool_tets" { RefParameter "test_pkg.test_node.test_node.bool_tets"}, 
+			    		RosParameter "array_tets" { RefParameter "test_pkg.test_node.test_node.array_tets"}, 
+			    		RosParameter "base64_test" { RefParameter "test_pkg.test_node.test_node.base64_test"}, 
+			    		RosParameter "double_test" { RefParameter "test_pkg.test_node.test_node.double_test"}, 
+			    		RosParameter "int_test" { RefParameter "test_pkg.test_node.test_node.int_test"}, 
+			    		RosParameter "list_test" { RefParameter "test_pkg.test_node.test_node.list_test"}}}, 
+			    ComponentInterface { name test_node2 NameSpace test2 
+			    	FromRosNode "test_pkg.test_node.test_node"
+			    	RosPublishers { RosPublisher "scan" {  RefPublisher "test_pkg.test_node.test_node.scan" } } 
+			    	RosSubscribers { RosSubscriber "power_state" { RefSubscriber "test_pkg.test_node.test_node.power_state" } } 
+			    	RosSrvServers { RosServiceServer "setBool" { RefServer "test_pkg.test_node.test_node.setBool" } } 
+			    	RosSrvClients { RosServiceClient "init" { RefClient "test_pkg.test_node.test_node.init" } } 
+			    	RosParameters { RosParameter "string_test" { RefParameter "test_pkg.test_node.test_node.string_test" } , 
+			    		RosParameter "bool_tets" { RefParameter "test_pkg.test_node.test_node.bool_tets" } , 
+			    		RosParameter "array_tets" { RefParameter "test_pkg.test_node.test_node.array_tets" } , 
+			    		RosParameter "base64_test" { RefParameter "test_pkg.test_node.test_node.base64_test" } , 
+			    		RosParameter "double_test" { RefParameter "test_pkg.test_node.test_node.double_test" } , 
+			    		RosParameter "int_test" { RefParameter "test_pkg.test_node.test_node.int_test" } , 
+			    		RosParameter "list_test" { RefParameter "test_pkg.test_node.test_node.list_test" }}})},
+		ComponentStack {
+			name stack2 
+			RosComponents ( 
+        		ComponentInterface { name test_nodea 
+		    	RosPublishers { RosPublisher power_state { RefPublisher "test_pkg.test_node.test_node.power_state" } } 
+		    	RosSubscribers { RosSubscriber scan { RefSubscriber "test_pkg.test_node.test_node.scan" } } 
+		    	RosSrvServers { RosServiceServer init { RefServer "test_pkg.test_node.test_node.init" } } 
+		    	RosSrvClients { RosServiceClient SetBool { RefClient "test_pkg.test_node.test_node.SetBool" }}}
+		    )
+		}		
+	)
+}

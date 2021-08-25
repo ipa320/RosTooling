@@ -68,8 +68,7 @@ class RosSystemValidationTest {
 							third_element String ,
 							last_element Struct { hola Integer, what String}}
 						}
-					}}}},
-				CatkinPackage test_pkg {
+					}}},
 					Artifact test_node { Node { name test_node 
 						ServiceServers {
 							ServiceServer {name init service "std_srvs.Trigger"}}
@@ -87,6 +86,7 @@ class RosSystemValidationTest {
 				  ServiceSpec SetBool{ request { bool data } response { bool success string message } },
 				  ServiceSpec Trigger{ request {  } response { bool success string message }}}}
 		}
+		
 		'''), emptyMap)
 		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.rossystem')))
 		val model = parseHelper.parse(fileContent, resourceSet)

@@ -31,6 +31,16 @@ class RosSystemParsingTest {
 		val errors = model.eResource.errors
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
+	
+	@Test
+	def void loadModel_stack() {
+	    val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test_stacks.rossystem')))
+	    val model = parseHelper.parse(fileContent)
+
+		Assert.assertNotNull(model)
+		val errors = model.eResource.errors
+		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
+	}
 
 	
 	@Test 
@@ -51,6 +61,20 @@ class RosSystemParsingTest {
         val ToTopic = model.topicConnections.get(0).to.get(0).name
         val Subscriber = model.rosComponent.get(2).rossubscriber.get(0).name
         Assert.assertEquals(ToTopic, Subscriber)
-
+    }
+ 
+    @Test 
+    def void parseDomainmodel_stacks() {
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test_stacks.rossystem')))
+		val model = parseHelper.parse(fileContent)
+    	
+        val ComponentStackName = model.componentStack.get(0).name
+       	Assert.assertEquals("stack1", ComponentStackName)
+       	
+        val ComponentStackName2 = model.componentStack.get(1).name
+       	Assert.assertEquals("stack2", ComponentStackName2)
+       	
+       	val ComponentName = model.componentStack.get(0).rosComponent.get(0).name
+        Assert.assertEquals("test_node", ComponentName)
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="test_pkg" type="test_node" name="test_node" cwd="node" respawn="false" output="screen">
+  </node>
+  <node pkg="test_pkg" type="test_node" name="test_node2" ns="test2" cwd="node" respawn="false" output="screen">
+  </node>
+
+</launch>

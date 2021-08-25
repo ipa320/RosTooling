@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-  <param name="param1" value="hello"/>
-  <rosparam param="list">[1,2,a]</rosparam>
-  <rosparam param="list">[1,3]</rosparam>
-  <rosparam>
+<param name="param1" value="hello"/>
+<rosparam param="list">[1,2,a]</rosparam>
+<rosparam param="list">[1,3]</rosparam>
+<rosparam>
 first_element: 8
 third_element: dsd
-  </rosparam>
-                               
+</rosparam>
+
   <node pkg="test_pkg" type="test_node" name="test_node" cwd="node" respawn="false" output="screen">
     <remap from='scan' to='scan_rename' />
   </node>
