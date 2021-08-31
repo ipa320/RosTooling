@@ -15,9 +15,9 @@ Under the link [Model extractor](http://ros-model.seronet-project.de/) a web ser
 
 ### Docker container
 
-Clone the repository [ros-model-cloud](https://github.com/ipa320/ros-model-cloud) and follow its [documentation instructions](https://github.com/ipa320/ros-model-cloud/tree/master/extractor-interface)
+Clone the repository [ros-model-extractors](https://github.com/ipa320/ros-model-extractors) and follow its [documentation instructions](https://github.com/ipa320/ros-model-extractors#ros-model-extractors).
 
-Save the result content of the extraction as a ".ros" file in your tooling workspace.
+Save the result content of the extraction as a ".ros" file in your tooling workspace. You can also contribute by sending us your generated files to be added to our database of models [RosCommonModels](https://github.com/ipa320/RosCommonModels).
 
 To check the created model open the file representation.aird with the Aird editor and in the menu representations choose the "component" option and press "New.." then choose the Artifact entity of your "*.ros" model and press finish.
 

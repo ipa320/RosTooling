@@ -38,8 +38,9 @@ Publications:
 - Create a model from your code:
 
   - (Prerequisite) [Add communication objects](docu/NewCommunicationObjects.md)
-  - [Create new ROS components](docu/NewProject.md)
   - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md)
+  - [Create a ROS model from a deployed robot using our introspection at runtime tool](docu/Introspection.md)
+  - [Create new ROS components](docu/NewProject.md)
   - [Generation of code from models](docu/CodeGeneration.md)
   - [Parameters definition](docu/Parameters.md)
 

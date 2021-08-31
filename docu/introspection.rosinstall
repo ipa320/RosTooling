@@ -1,0 +1,8 @@
+- git:
+    local-name: ros_model_parser
+    uri: https://github.com/ipa-nhg/ros_model_parser.git
+    version: fix-value
+- git:
+    local-name: rosgraph_monitor
+    uri: https://github.com/ipa-nhg/rosgraph_monitor.git
+    version: rossystem_snapshot
