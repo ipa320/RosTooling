@@ -1,0 +1,189 @@
+name: test_system
+on:
+  push:
+    paths:
+      - 'test_system/**'
+env:
+  PREFIX: "${{ secrets.DOCKER_USERNAME }}/"
+  SUFFIX: ""
+  BUILDER_SUFFIX: melodic
+jobs:
+  builder:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: network=host
+      -
+        name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+      -
+        name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ github.job }}
+          tags: |
+            type=raw,value=${{ env.BUILDER_SUFFIX }}
+            type=raw,value=latest
+      -
+        name: Get Branch
+        id: extract_branch
+        run: echo ::set-output name=branch::$(echo ${GITHUB_REF} | cut -d'/' -f3)
+      -
+        name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./builder
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          build-args: |
+            SUFFIX=:${{ steps.extract_branch.outputs.branch }}
+            BUILDER_SUFFIX=:${{ env.BUILDER_SUFFIX }}
+            PREFIX=${{ env.PREFIX }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+      -
+        name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+  extra_layer_test_system:
+    runs-on: ubuntu-latest
+    needs: builder
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: network=host
+      -
+        name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+      -
+        name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ github.job }}
+          tags: |
+            type=ref,event=branch
+            type=raw,value=latest
+      -
+        name: Get Branch
+        id: extract_branch
+        run: echo ::set-output name=branch::$(echo ${GITHUB_REF} | cut -d'/' -f3)
+      -
+        name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./test_system/extra_layer
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          build-args: |
+            SUFFIX=:${{ steps.extract_branch.outputs.branch }}
+            BUILDER_SUFFIX=:${{ env.BUILDER_SUFFIX }}
+            PREFIX=${{ env.PREFIX }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+      -
+        name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+  test_system:
+    runs-on: ubuntu-latest
+    needs: extra_layer_test_system
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: network=host
+      -
+        name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+      -
+        name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ github.job }}
+          tags: |
+            type=ref,event=branch
+            type=raw,value=latest
+      -
+        name: Get Branch
+        id: extract_branch
+        run: echo ::set-output name=branch::$(echo ${GITHUB_REF} | cut -d'/' -f3)
+      -
+        name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./test_system
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          build-args: |
+            SUFFIX=:${{ steps.extract_branch.outputs.branch }}
+            BUILDER_SUFFIX=:${{ env.BUILDER_SUFFIX }}
+            PREFIX=${{ env.PREFIX }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+      -
+        name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache

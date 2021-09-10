@@ -1,8 +1,9 @@
 # syntax=docker/dockerfile:experimental
 ARG SUFFIX=
+ARG BUILDER_SUFFIX=:melodic
 ARG PREFIX=
-FROM ros:melodic-ros-core as base
-FROM ${PREFIX}builder${SUFFIX} as builder
+FROM ${PREFIX}extra_layer_stack1${SUFFIX} as base
+FROM ${PREFIX}builder${BUILDER_SUFFIX} as builder
 
 FROM base as build
 COPY . /root/ws/src/test_stacks_stack1/
