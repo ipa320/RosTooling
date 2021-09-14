@@ -11,7 +11,10 @@ import org.eclipse.sprotty.SLabel
 import org.eclipse.sprotty.SNode
 import org.eclipse.sprotty.xtext.IDiagramGenerator
 import org.eclipse.sprotty.SModelElement
-
+import ros.ServiceServer
+import ros.ServiceClient
+import ros.ActionServer
+import ros.ActionClient
 
 class RosDiagramGenerator implements IDiagramGenerator {
 
@@ -39,6 +42,10 @@ class RosDiagramGenerator implements IDiagramGenerator {
 			// #[] creates an immutable list
 			children = (node.publisher.map[toSPublisher(context) as SModelElement] 
 				+ node.subscriber.map[toSSubscriber(context) as SModelElement] 
+				+ node.serviceserver.map[toSServiceServer(context) as SModelElement]
+				+ node.serviceclient.map[toSServiceClient(context) as SModelElement]
+				+ node.actionserver.map[toSActionServer(context) as SModelElement]
+				+ node.actionclient.map[toSActionClient(context) as SModelElement]
 				+ #[new SLabel[
 					id = idCache.uniqueId(theId + '.label')
 					text = node.name 
@@ -65,6 +72,31 @@ class RosDiagramGenerator implements IDiagramGenerator {
 		new SSubscriber [
 			id = idCache.uniqueId(subscriber, subscriber.name + '.subscriber')
 			text = subscriber.name
+		]
+	}
+	
+	def SServiceServer toSServiceServer(ServiceServer server, extension Context context) {
+		new SServiceServer [
+			id = idCache.uniqueId(server, server.name + '.serviceserver')
+			text = server.name
+		]
+	}
+	def SServiceClient toSServiceClient(ServiceClient client, extension Context context) {
+		new SServiceClient [
+			id = idCache.uniqueId(client, client.name + '.serviceclient')
+			text = client.name
+		]
+	}
+	def SActionServer toSActionServer(ActionServer server, extension Context context) {
+		new SActionServer [
+			id = idCache.uniqueId(server, server.name + '.actionserver')
+			text = server.name
+		]
+	}
+	def SActionClient toSActionClient(ActionClient client, extension Context context) {
+		new SActionClient [
+			id = idCache.uniqueId(client, client.name + '.actionclient')
+			text = client.name
 		]
 	}
 

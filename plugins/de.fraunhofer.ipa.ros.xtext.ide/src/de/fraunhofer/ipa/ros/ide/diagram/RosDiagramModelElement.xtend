@@ -32,3 +32,59 @@ class SSubscriber extends SShapeElement {
 		initializer.accept(this)
 	}
 }
+
+@Accessors
+@ToString(skipNulls = true)
+class SServiceServer extends SShapeElement {
+	String text
+	
+	new() {
+		type = 'serviceserver'
+	}
+	new(Consumer<SServiceServer> initializer) {
+		this()
+		initializer.accept(this)
+	}
+}
+
+@Accessors
+@ToString(skipNulls = true)
+class SServiceClient extends SShapeElement {
+	String text
+	
+	new() {
+		type = 'serviceclient'
+	}
+	new(Consumer<SServiceClient> initializer) {
+		this()
+		initializer.accept(this)
+	}
+}
+
+@Accessors
+@ToString(skipNulls = true)
+class SActionServer extends SShapeElement {
+	String text
+	
+	new() {
+		type = 'actionserver'
+	}
+	new(Consumer<SActionServer> initializer) {
+		this()
+		initializer.accept(this)
+	}
+}
+
+@Accessors
+@ToString(skipNulls = true)
+class SActionClient extends SShapeElement {
+	String text
+	
+	new() {
+		type = 'actionclient'
+	}
+	new(Consumer<SActionClient> initializer) {
+		this()
+		initializer.accept(this)
+	}
+}
