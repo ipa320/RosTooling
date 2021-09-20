@@ -1,14 +1,13 @@
-package de.fraunhofer.ipa.rossystem.generator
+package de.fraunhofer.ipa.rossystem.deployment
 
-import com.google.inject.Inject
 import rossystem.RosSystem
-import rossystem.ComponentStack
+import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
 
 class DockerComposeCompiler {
 		
-	@Inject extension GeneratorHelpers
+ GeneratorHelpers generator_helper = new GeneratorHelpers() 
 		
- def compile_toDockerCompose(RosSystem system) '''«init_pkg()»
+ def compile_toDockerCompose(RosSystem system) '''«generator_helper.init_pkg()»
 version: "3.3"
 networks:
   ros:

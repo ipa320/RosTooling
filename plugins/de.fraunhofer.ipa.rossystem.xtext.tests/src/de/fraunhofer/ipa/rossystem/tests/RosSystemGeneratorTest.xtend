@@ -113,14 +113,6 @@ class RosSystemGeneratorTest {
 		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/', 'CMakeLists.txt'))).trim,
 		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/CMakeLists.txt').toString.trim)
 		
-		// Test the generated Dockerfile file
-		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/', 'Dockerfile'))).trim,
-		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/Dockerfile').toString.trim)
-		
-		// Test the generated .rosinstall file
-		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system/', '.rosinstall'))).trim,
-		fsa.textFiles.get(CustomOutputProvider::DEFAULT_OUTPUT+'test_system/.rosinstall').toString.trim)
-
 		// Test the generated component interface
 		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR+'/test_system.componentinterface'))).trim,
 		fsa.textFiles.get(CustomOutputProvider::CM_CONFIGURATION + "test_system.componentinterface").toString.trim)
@@ -144,8 +136,7 @@ class RosSystemGeneratorTest {
 			Assert.assertTrue(fsa.textFiles.containsKey(String.format("%s/launch/%s.launch", gen_stack_prefix, name)))
 			Assert.assertTrue(fsa.textFiles.containsKey(String.format("%s/package.xml", gen_stack_prefix)))
 			Assert.assertTrue(fsa.textFiles.containsKey(String.format("%s/CMakeLists.txt", gen_stack_prefix)))
-			Assert.assertTrue(fsa.textFiles.containsKey(String.format("%s/Dockerfile", gen_stack_prefix)))
-			
+						
 			// Test the generated launch file
 			Assert.assertEquals(new String(Files.readAllBytes(Paths.get(String.format("%s/launch/%s.launch", stack_prefix, name)))).trim,
 			fsa.textFiles.get(String.format("%s/launch/%s.launch", gen_stack_prefix, name)).toString.trim)
@@ -158,17 +149,8 @@ class RosSystemGeneratorTest {
 			Assert.assertEquals(new String(Files.readAllBytes(Paths.get(stack_prefix, 'CMakeLists.txt'))).trim,
 			fsa.textFiles.get(String.format("%s/CMakeLists.txt", gen_stack_prefix)).toString.trim)
 
-			// Test the generated component interface
-			Assert.assertEquals(new String(Files.readAllBytes(Paths.get(stack_prefix, 'Dockerfile'))).trim,
-			fsa.textFiles.get(String.format("%s/Dockerfile", gen_stack_prefix)).toString.trim)
-			
-			// Test the generated component interface
-			Assert.assertEquals(new String(Files.readAllBytes(Paths.get(stack_prefix, '.rosinstall'))).trim,
-			fsa.textFiles.get(String.format("%s/.rosinstall", gen_stack_prefix)).toString.trim)
 
 		}
-		Assert.assertTrue(fsa.textFiles.containsKey(String.format("%s/docker-compose.yml", gen_system_prefix)))
-		Assert.assertEquals(new String(Files.readAllBytes(Paths.get(system_prefix, 'docker-compose.yml'))).trim,
-		fsa.textFiles.get(String.format("%s/docker-compose.yml", gen_system_prefix)).toString.trim)
+
 	}
 }

@@ -46,10 +46,6 @@ class RosSystemGenerator extends AbstractGenerator {
 	@Inject extension LaunchFileCompiler_ROS1
 	@Inject extension LaunchFileCompiler_ROS2
 	@Inject extension SetupPyCompile
-	@Inject extension DockerComposeCompiler
-	@Inject extension DockerContainerCompiler
-	@Inject extension RosInstallCompiler
-	@Inject extension GitActionCompiler
 	//@Inject extension InstallScriptCompiler
 
 
@@ -68,26 +64,14 @@ class RosSystemGenerator extends AbstractGenerator {
 				fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
 				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
 				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
-				fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",compile_toDockerContainer(system, null))
- 				fsa.generateFile(system.getName().toLowerCase+"/extra_layer/" + system.getName().toLowerCase + ".rosinstall",compile_toRosInstall(system,null))
-				fsa.generateFile(system.getName().toLowerCase+"/extra_layer/Dockerfile",compile_toDockerImageExtraLayer(system, null)) 				
 			} else {
 				for (stack : system.componentStack){
 					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
 					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
 					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "Dockerfile"),compile_toDockerContainer(system, stack))
-			 		fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "extra_layer", stack.name.toLowerCase+".rosinstall"),compile_toRosInstall(system,stack))
-			 		fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "extra_layer", "Dockerfile"),compile_toDockerImageExtraLayer(system,stack))
 			}
-				fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),compile_toDockerCompose(system))
 			}
 		}
-
-		// git action workflow
- 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			fsa.generateFile(String.join("/", system.getName().toLowerCase, system.getName().toLowerCase + "_workflow.yml") ,compile_toGitAction(system))
-			}
 
 		//ROS2 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){

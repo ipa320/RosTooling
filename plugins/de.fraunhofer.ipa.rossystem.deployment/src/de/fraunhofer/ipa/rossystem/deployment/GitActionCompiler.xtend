@@ -1,10 +1,12 @@
-package de.fraunhofer.ipa.rossystem.generator
+package de.fraunhofer.ipa.rossystem.deployment
 
-import com.google.inject.Inject
 import rossystem.RosSystem
+import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
 
 class GitActionCompiler {
-	@Inject extension GeneratorHelpers
+	
+	GeneratorHelpers generator_helper = new GeneratorHelpers()
+ 
  def default_part(String layer, String context_path, String needed_layer, String tag)'''
 «layer»:
   runs-on: ubuntu-latest
@@ -89,7 +91,7 @@ class GitActionCompiler {
 	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "builder", "type=ref,event=branch")»
 	«ENDIF»
 ''' 	
- def compile_toGitAction(RosSystem system) '''«init_pkg()»
+ def compile_toGitAction(RosSystem system) '''«generator_helper.init_pkg()»
 name: «system.name.toLowerCase»
 on:
   push:
@@ -103,13 +105,13 @@ env:
 jobs:
   «build_layer()»
   «IF system.getComponentStack().isEmpty()»
-  «IF !system.listOfRepos.isEmpty()»
+  «IF !generator_helper.listOfRepos(system).isEmpty()»
   «extra_layer(system.name.toLowerCase, system.name.toLowerCase)»
   «system_layer(system.name.toLowerCase, true)»
 	«ELSE»
   «system_layer(system.name.toLowerCase, false)»
 «ENDIF»
-«ELSE»«FOR stack : system.getComponentStack()»«IF !stack.listOfRepos.isEmpty()»
+«ELSE»«FOR stack : system.getComponentStack()»«IF !generator_helper.listOfRepos(stack).isEmpty()»
   «extra_layer(stack.name.toLowerCase, String.join("/", system.name.toLowerCase, system.name.toLowerCase + "_" + stack.name.toLowerCase))»
   «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, true)»
  «ELSE»
