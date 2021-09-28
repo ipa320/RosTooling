@@ -35,15 +35,15 @@ class PackageXmlCompiler{
 </package>'''
 
 
-		def compile_package_xml_format3(RosSystem system) '''«init_pkg()»
+		def compile_package_xml_format3(RosSystem system,ComponentStack stack) '''«init_pkg()»
 <?xml version="1.0"?>
 <?xml-model
    href="http://download.ros.org/schema/package_format3.xsd"
    schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
- <name>«system.name.toLowerCase»</name>
+ <name>«IF stack===null»«system.name.toLowerCase»«ELSE»«system.name.toLowerCase»_«stack.name.toLowerCase»«ENDIF»</name>
  <version>0.0.1</version>
- <description>This package provides launch file for operating «system.name»</description>
+ <description>This package provides launch file for operating «IF stack===null»«system.name»«ELSE»«system.name.toLowerCase»_«stack.name»«ENDIF»</description>
   <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
   <author email="jane.doe@example.com">Jane Doe</author>
   <license>Apache 2.0</license>

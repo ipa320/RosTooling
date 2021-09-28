@@ -32,6 +32,8 @@ class LaunchFileCompiler_ROS1 {
 	List<Integer> sizes_list = new ArrayList<Integer>();
 	List<EObject> param_list = new ArrayList<EObject>();
 	List<ComponentInterface> components = new ArrayList<ComponentInterface>();
+	List<ComponentInterface> Ros1components = new ArrayList<ComponentInterface>();
+	
 	
 	
 	int i=0;
@@ -108,13 +110,19 @@ class LaunchFileCompiler_ROS1 {
 	'''
 	
 	def List<ComponentInterface> compile_list_of_components(RosSystem system, ComponentStack stack) {
-		components=null;
+		components.clear;
+		Ros1components.clear;		
 		if (stack === null){
 			components = system.rosComponent;
 		} else {
 			components =  stack.rosComponent;
 		}
-		return components;
+		for(ComponentInterface component:components){
+			if (component.compile_pkg_type.toString.contains("CatkinPackage")){
+				Ros1components.add(component);
+			}
+		}
+		return Ros1components;
 	}
 		
 	// TOPICS REMAP
