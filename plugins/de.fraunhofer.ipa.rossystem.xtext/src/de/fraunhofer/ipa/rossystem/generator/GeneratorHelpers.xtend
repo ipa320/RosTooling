@@ -91,4 +91,23 @@ class GeneratorHelpers {
 		return package_impl.name;
 	}
 
+	//Launch files generators
+	def check_ns(ComponentInterface component){
+		if (component.hasNS){
+			return component.get_ns();
+		}else {
+			return "";
+		}
+	}
+	def boolean hasNS(ComponentInterface component){
+		if(!component.nameSpace.nullOrEmpty){
+			return true;
+		}else{
+			return false
+		}
+	}
+	def String get_ns(ComponentInterface component){
+		return component.nameSpace.replaceFirst("/","");
+	}
+
 }

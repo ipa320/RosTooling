@@ -50,14 +50,6 @@ def generate_launch_description():
 	return ld
 	'''
 
-	def check_ns(ComponentInterface component){
-		if (component.hasNS){
-			return component.get_ns();
-		}else {
-			return "";
-		}
-	}
-
 	def List<String> InterfaceDef(String name, String type){
 		ListInterfaceDef = new ArrayList()
 		ListInterfaceDef.add(name.replace("/","_"))
@@ -66,16 +58,6 @@ def generate_launch_description():
 		return ListInterfaceDef
 	}
 
-	def boolean hasNS(ComponentInterface component){
-		if(!component.nameSpace.nullOrEmpty){
-			return true;
-		}else{
-			return false
-		}
-	}
-	def String get_ns(ComponentInterface component){
-		return component.nameSpace.replaceFirst("/","");
-	}
 
 	def String compile_remappings_str(ComponentInterface component) {
 		var remap_str = "";

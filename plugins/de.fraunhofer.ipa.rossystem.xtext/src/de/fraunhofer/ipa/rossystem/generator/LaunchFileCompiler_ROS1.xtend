@@ -244,13 +244,7 @@ class LaunchFileCompiler_ROS1 {
 	}
 	//
 
-	def check_ns(ComponentInterface component){
-		if (component.hasNS){
-			return component.get_ns();
-		}else {
-			return "";
-		}
-	}
+
 
 	def String compile_struct_param(List<EObject> paramMembers,Boolean sub){
 		if (!sub){
@@ -320,16 +314,6 @@ class LaunchFileCompiler_ROS1 {
 		return ListInterfaceDef
 	}
 
-	def boolean hasNS(ComponentInterface component){
-		if(!component.nameSpace.nullOrEmpty){
-			return true;
-		}else{
-			return false
-		}
-	}
-	def String get_ns(ComponentInterface component){
-		return component.nameSpace.replaceFirst("/","");
-	}
 
  	def getParamName (EObject paramdef){
  		return (paramdef as ParameterStructMemberImpl).name;
