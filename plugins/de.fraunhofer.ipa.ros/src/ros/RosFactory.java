@@ -409,6 +409,15 @@ public interface RosFactory extends EFactory {
 	ParameterDate createParameterDate();
 
 	/**
+	 * Returns a new object of class '<em>Ament Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ament Package</em>'.
+	 * @generated
+	 */
+	AmentPackage createAmentPackage();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

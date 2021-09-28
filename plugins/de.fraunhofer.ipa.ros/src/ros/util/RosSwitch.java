@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
+import ros.AmentPackage;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -433,6 +434,13 @@ public class RosSwitch<T> extends Switch<T> {
 				ParameterDate parameterDate = (ParameterDate)theEObject;
 				T result = caseParameterDate(parameterDate);
 				if (result == null) result = caseParameterValue(parameterDate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.AMENT_PACKAGE: {
+				AmentPackage amentPackage = (AmentPackage)theEObject;
+				T result = caseAmentPackage(amentPackage);
+				if (result == null) result = casePackage(amentPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1157,6 +1165,21 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterDate(ParameterDate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ament Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ament Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAmentPackage(AmentPackage object) {
 		return null;
 	}
 

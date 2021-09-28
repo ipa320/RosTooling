@@ -2266,6 +2266,70 @@ public interface RosPackage extends EPackage {
 	int PARAMETER_DATE_OPERATION_COUNT = PARAMETER_VALUE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ros.impl.AmentPackageImpl <em>Ament Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.AmentPackageImpl
+	 * @see ros.impl.RosPackageImpl#getAmentPackage()
+	 * @generated
+	 */
+	int AMENT_PACKAGE = 48;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE__NAME = PACKAGE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Spec</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE__SPEC = PACKAGE__SPEC;
+
+	/**
+	 * The feature id for the '<em><b>Artifact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE__ARTIFACT = PACKAGE__ARTIFACT;
+
+	/**
+	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE__DEPENDENCY = PACKAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ament Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ament Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Graph Name</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2273,7 +2337,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
-	int GRAPH_NAME = 48;
+	int GRAPH_NAME = 49;
 
 
 	/**
@@ -3472,6 +3536,27 @@ public interface RosPackage extends EPackage {
 	EAttribute getParameterDate_Value();
 
 	/**
+	 * Returns the meta object for class '{@link ros.AmentPackage <em>Ament Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ament Package</em>'.
+	 * @see ros.AmentPackage
+	 * @generated
+	 */
+	EClass getAmentPackage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ros.AmentPackage#getDependency <em>Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
+	 * @see ros.AmentPackage#getDependency()
+	 * @see #getAmentPackage()
+	 * @generated
+	 */
+	EReference getAmentPackage_Dependency();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Graph Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4504,6 +4589,24 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER_DATE__VALUE = eINSTANCE.getParameterDate_Value();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.AmentPackageImpl <em>Ament Package</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.AmentPackageImpl
+		 * @see ros.impl.RosPackageImpl#getAmentPackage()
+		 * @generated
+		 */
+		EClass AMENT_PACKAGE = eINSTANCE.getAmentPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependency</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AMENT_PACKAGE__DEPENDENCY = eINSTANCE.getAmentPackage_Dependency();
 
 		/**
 		 * The meta object literal for the '<em>Graph Name</em>' data type.

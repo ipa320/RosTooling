@@ -9,44 +9,29 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.PackageSet;
+import ros.AmentPackage;
 import ros.RosFactory;
 import ros.RosPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.PackageSet} object.
+ * This is the item provider adapter for a {@link ros.AmentPackage} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageSetItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class AmentPackageItemProvider extends PackageItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageSetItemProvider(AdapterFactory adapterFactory) {
+	public AmentPackageItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,7 +62,7 @@ public class PackageSetItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.PACKAGE_SET__PACKAGE);
+			childrenFeatures.add(RosPackage.Literals.AMENT_PACKAGE__DEPENDENCY);
 		}
 		return childrenFeatures;
 	}
@@ -96,14 +81,14 @@ public class PackageSetItemProvider
 	}
 
 	/**
-	 * This returns PackageSet.gif.
+	 * This returns AmentPackage.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PackageSet"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AmentPackage"));
 	}
 
 	/**
@@ -114,9 +99,12 @@ public class PackageSetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PackageSet_type");
+		String label = ((AmentPackage)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AmentPackage_type") :
+			getString("_UI_AmentPackage_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -129,8 +117,8 @@ public class PackageSetItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PackageSet.class)) {
-			case RosPackage.PACKAGE_SET__PACKAGE:
+		switch (notification.getFeatureID(AmentPackage.class)) {
+			case RosPackage.AMENT_PACKAGE__DEPENDENCY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,29 +138,13 @@ public class PackageSetItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
-				 RosFactory.eINSTANCE.createPackage()));
+				(RosPackage.Literals.AMENT_PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createPackageDependency()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
-				 RosFactory.eINSTANCE.createCatkinPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
-				 RosFactory.eINSTANCE.createAmentPackage()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return RosEditPlugin.INSTANCE;
+				(RosPackage.Literals.AMENT_PACKAGE__DEPENDENCY,
+				 RosFactory.eINSTANCE.createExternalDependency()));
 	}
 
 }

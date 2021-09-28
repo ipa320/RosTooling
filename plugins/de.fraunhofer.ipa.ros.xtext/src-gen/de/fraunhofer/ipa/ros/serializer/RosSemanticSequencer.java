@@ -50,6 +50,7 @@ import primitives.uint8Array;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
+import ros.AmentPackage;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -211,6 +212,9 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case RosPackage.ACTION_SPEC:
 				sequence_ActionSpec(context, (ActionSpec) semanticObject); 
 				return; 
+			case RosPackage.AMENT_PACKAGE:
+				sequence_AmentPackage(context, (AmentPackage) semanticObject); 
+				return; 
 			case RosPackage.ARTIFACT:
 				sequence_Artifact(context, (Artifact) semanticObject); 
 				return; 
@@ -366,6 +370,19 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=EString goal=MessageDefinition? result=MessageDefinition? feedback=MessageDefinition?)
 	 */
 	protected void sequence_ActionSpec(ISerializationContext context, ActionSpec semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Package returns AmentPackage
+	 *     AmentPackage returns AmentPackage
+	 *
+	 * Constraint:
+	 *     (name=RosNames (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)? (dependency+=Dependency dependency+=Dependency*)?)
+	 */
+	protected void sequence_AmentPackage(ISerializationContext context, AmentPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

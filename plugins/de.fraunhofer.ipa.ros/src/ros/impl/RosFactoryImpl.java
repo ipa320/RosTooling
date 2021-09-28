@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
+import ros.AmentPackage;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -143,6 +144,7 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.PARAMETER_STRUCT: return createParameterStruct();
 			case RosPackage.PARAMETER_STRUCT_MEMBER: return createParameterStructMember();
 			case RosPackage.PARAMETER_DATE: return createParameterDate();
+			case RosPackage.AMENT_PACKAGE: return createAmentPackage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -649,6 +651,17 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public ParameterDate createParameterDate() {
 		ParameterDateImpl parameterDate = new ParameterDateImpl();
 		return parameterDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AmentPackage createAmentPackage() {
+		AmentPackageImpl amentPackage = new AmentPackageImpl();
+		return amentPackage;
 	}
 
 	/**

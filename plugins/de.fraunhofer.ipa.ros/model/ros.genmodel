@@ -161,6 +161,9 @@
     <genClasses ecoreClass="ros.ecore#//ParameterDate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDate/value"/>
     </genClasses>
+    <genClasses ecoreClass="ros.ecore#//AmentPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//AmentPackage/dependency"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Primitives" ecorePackage="PrimitivesTypes.ecore#/">
     <genClasses image="false" ecoreClass="PrimitivesTypes.ecore#//AbstractType"/>

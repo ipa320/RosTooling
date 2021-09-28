@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
+import ros.AmentPackage;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -304,6 +305,10 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseParameterDate(ParameterDate object) {
 				return createParameterDateAdapter();
+			}
+			@Override
+			public Adapter caseAmentPackage(AmentPackage object) {
+				return createAmentPackageAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -994,6 +999,20 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterDateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.AmentPackage <em>Ament Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.AmentPackage
+	 * @generated
+	 */
+	public Adapter createAmentPackageAdapter() {
 		return null;
 	}
 

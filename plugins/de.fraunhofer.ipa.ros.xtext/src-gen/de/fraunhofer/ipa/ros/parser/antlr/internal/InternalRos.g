@@ -177,6 +177,15 @@ rulePackage returns [EObject current=null]
 			$current = $this_CatkinPackage_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPackageAccess().getAmentPackageParserRuleCall_2());
+		}
+		this_AmentPackage_2=ruleAmentPackage
+		{
+			$current = $this_AmentPackage_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -882,6 +891,225 @@ ruleCatkinPackage returns [EObject current=null]
 		otherlv_21='}'
 		{
 			newLeafNode(otherlv_21, grammarAccess.getCatkinPackageAccess().getRightCurlyBracketKeyword_8());
+		}
+	)
+;
+
+// Entry rule entryRuleAmentPackage
+entryRuleAmentPackage returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAmentPackageRule()); }
+	iv_ruleAmentPackage=ruleAmentPackage
+	{ $current=$iv_ruleAmentPackage.current; }
+	EOF;
+
+// Rule AmentPackage
+ruleAmentPackage returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getAmentPackageAccess().getAmentPackageAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='AmentPackage'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAmentPackageAccess().getAmentPackageKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAmentPackageAccess().getNameRosNamesParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleRosNames
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.fraunhofer.ipa.ros.Ros.RosNames");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			otherlv_4='Specs'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getAmentPackageAccess().getSpecsKeyword_4_0());
+			}
+			otherlv_5='{'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_4_2_0());
+					}
+					lv_spec_6_0=ruleSpecBase
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+						}
+						add(
+							$current,
+							"spec",
+							lv_spec_6_0,
+							"de.fraunhofer.ipa.ros.Ros.SpecBase");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getAmentPackageAccess().getCommaKeyword_4_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_4_3_1_0());
+						}
+						lv_spec_8_0=ruleSpecBase
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+							}
+							add(
+								$current,
+								"spec",
+								lv_spec_8_0,
+								"de.fraunhofer.ipa.ros.Ros.SpecBase");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_9='}'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_4_4());
+			}
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_5_0_0());
+					}
+					lv_artifact_10_0=ruleArtifact
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+						}
+						add(
+							$current,
+							"artifact",
+							lv_artifact_10_0,
+							"de.fraunhofer.ipa.ros.Ros.Artifact");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_11=','
+				{
+					newLeafNode(otherlv_11, grammarAccess.getAmentPackageAccess().getCommaKeyword_5_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_5_1_1_0());
+						}
+						lv_artifact_12_0=ruleArtifact
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+							}
+							add(
+								$current,
+								"artifact",
+								lv_artifact_12_0,
+								"de.fraunhofer.ipa.ros.Ros.Artifact");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)?
+		(
+			otherlv_13='Dependencies'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getAmentPackageAccess().getDependenciesKeyword_6_0());
+			}
+			otherlv_14='{'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_6_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_6_2_0());
+					}
+					lv_dependency_15_0=ruleDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+						}
+						add(
+							$current,
+							"dependency",
+							lv_dependency_15_0,
+							"de.fraunhofer.ipa.ros.Ros.Dependency");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_16=','
+				{
+					newLeafNode(otherlv_16, grammarAccess.getAmentPackageAccess().getCommaKeyword_6_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_6_3_1_0());
+						}
+						lv_dependency_17_0=ruleDependency
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+							}
+							add(
+								$current,
+								"dependency",
+								lv_dependency_17_0,
+								"de.fraunhofer.ipa.ros.Ros.Dependency");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_18='}'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_6_4());
+			}
+		)?
+		otherlv_19='}'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
