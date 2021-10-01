@@ -2303,13 +2303,22 @@ public interface RosPackage extends EPackage {
 	int AMENT_PACKAGE__ARTIFACT = PACKAGE__ARTIFACT;
 
 	/**
+	 * The feature id for the '<em><b>From Git Repo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMENT_PACKAGE__FROM_GIT_REPO = PACKAGE__FROM_GIT_REPO;
+
+	/**
 	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AMENT_PACKAGE__DEPENDENCY = PACKAGE_FEATURE_COUNT + 0;
+	int AMENT_PACKAGE__DEPENDENCY = PACKAGE__DEPENDENCY;
 
 	/**
 	 * The number of structural features of the '<em>Ament Package</em>' class.
@@ -2318,7 +2327,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AMENT_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
+	int AMENT_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Ament Package</em>' class.
@@ -3546,17 +3555,6 @@ public interface RosPackage extends EPackage {
 	EClass getAmentPackage();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ros.AmentPackage#getDependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
-	 * @see ros.AmentPackage#getDependency()
-	 * @see #getAmentPackage()
-	 * @generated
-	 */
-	EReference getAmentPackage_Dependency();
-
-	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Graph Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4599,14 +4597,6 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AMENT_PACKAGE = eINSTANCE.getAmentPackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependency</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AMENT_PACKAGE__DEPENDENCY = eINSTANCE.getAmentPackage_Dependency();
 
 		/**
 		 * The meta object literal for the '<em>Graph Name</em>' data type.

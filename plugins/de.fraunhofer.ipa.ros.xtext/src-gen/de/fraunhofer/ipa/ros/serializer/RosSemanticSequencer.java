@@ -380,7 +380,13 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AmentPackage returns AmentPackage
 	 *
 	 * Constraint:
-	 *     (name=RosNames (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)? (dependency+=Dependency dependency+=Dependency*)?)
+	 *     (
+	 *         name=RosNames 
+	 *         fromGitRepo=EString? 
+	 *         (dependency+=Dependency dependency+=Dependency*)? 
+	 *         (spec+=SpecBase spec+=SpecBase*)? 
+	 *         (artifact+=Artifact artifact+=Artifact*)?
+	 *     )
 	 */
 	protected void sequence_AmentPackage(ISerializationContext context, AmentPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

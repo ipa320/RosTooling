@@ -946,124 +946,45 @@ ruleAmentPackage returns [EObject current=null]
 			newLeafNode(otherlv_3, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
-			otherlv_4='Specs'
+			otherlv_4='FromGitRepo'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAmentPackageAccess().getSpecsKeyword_4_0());
-			}
-			otherlv_5='{'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_4, grammarAccess.getAmentPackageAccess().getFromGitRepoKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getFromGitRepoEStringParserRuleCall_4_1_0());
 					}
-					lv_spec_6_0=ruleSpecBase
+					lv_fromGitRepo_5_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
 						}
-						add(
+						set(
 							$current,
-							"spec",
-							lv_spec_6_0,
-							"de.fraunhofer.ipa.ros.Ros.SpecBase");
+							"fromGitRepo",
+							lv_fromGitRepo_5_0,
+							"de.fraunhofer.ipa.ros.Ros.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_7=','
-				{
-					newLeafNode(otherlv_7, grammarAccess.getAmentPackageAccess().getCommaKeyword_4_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_4_3_1_0());
-						}
-						lv_spec_8_0=ruleSpecBase
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
-							}
-							add(
-								$current,
-								"spec",
-								lv_spec_8_0,
-								"de.fraunhofer.ipa.ros.Ros.SpecBase");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_9='}'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_4_4());
-			}
 		)?
 		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_5_0_0());
-					}
-					lv_artifact_10_0=ruleArtifact
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
-						}
-						add(
-							$current,
-							"artifact",
-							lv_artifact_10_0,
-							"de.fraunhofer.ipa.ros.Ros.Artifact");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_11=','
-				{
-					newLeafNode(otherlv_11, grammarAccess.getAmentPackageAccess().getCommaKeyword_5_1_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_5_1_1_0());
-						}
-						lv_artifact_12_0=ruleArtifact
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
-							}
-							add(
-								$current,
-								"artifact",
-								lv_artifact_12_0,
-								"de.fraunhofer.ipa.ros.Ros.Artifact");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)?
-		(
-			otherlv_13='Dependencies'
+			otherlv_6='Dependencies'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getAmentPackageAccess().getDependenciesKeyword_6_0());
+				newLeafNode(otherlv_6, grammarAccess.getAmentPackageAccess().getDependenciesKeyword_5_0());
 			}
-			otherlv_14='{'
+			otherlv_7='{'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_6_1());
+				newLeafNode(otherlv_7, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_5_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_5_2_0());
 					}
-					lv_dependency_15_0=ruleDependency
+					lv_dependency_8_0=ruleDependency
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
@@ -1071,23 +992,23 @@ ruleAmentPackage returns [EObject current=null]
 						add(
 							$current,
 							"dependency",
-							lv_dependency_15_0,
+							lv_dependency_8_0,
 							"de.fraunhofer.ipa.ros.Ros.Dependency");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_16=','
+				otherlv_9=','
 				{
-					newLeafNode(otherlv_16, grammarAccess.getAmentPackageAccess().getCommaKeyword_6_3_0());
+					newLeafNode(otherlv_9, grammarAccess.getAmentPackageAccess().getCommaKeyword_5_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getDependencyDependencyParserRuleCall_5_3_1_0());
 						}
-						lv_dependency_17_0=ruleDependency
+						lv_dependency_10_0=ruleDependency
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
@@ -1095,21 +1016,125 @@ ruleAmentPackage returns [EObject current=null]
 							add(
 								$current,
 								"dependency",
-								lv_dependency_17_0,
+								lv_dependency_10_0,
 								"de.fraunhofer.ipa.ros.Ros.Dependency");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_18='}'
+			otherlv_11='}'
 			{
-				newLeafNode(otherlv_18, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_6_4());
+				newLeafNode(otherlv_11, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_5_4());
 			}
 		)?
-		otherlv_19='}'
+		(
+			otherlv_12='Specs'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getAmentPackageAccess().getSpecsKeyword_6_0());
+			}
+			otherlv_13='{'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getAmentPackageAccess().getLeftCurlyBracketKeyword_6_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_6_2_0());
+					}
+					lv_spec_14_0=ruleSpecBase
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+						}
+						add(
+							$current,
+							"spec",
+							lv_spec_14_0,
+							"de.fraunhofer.ipa.ros.Ros.SpecBase");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_15=','
+				{
+					newLeafNode(otherlv_15, grammarAccess.getAmentPackageAccess().getCommaKeyword_6_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getSpecSpecBaseParserRuleCall_6_3_1_0());
+						}
+						lv_spec_16_0=ruleSpecBase
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+							}
+							add(
+								$current,
+								"spec",
+								lv_spec_16_0,
+								"de.fraunhofer.ipa.ros.Ros.SpecBase");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_17='}'
+			{
+				newLeafNode(otherlv_17, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_6_4());
+			}
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_7_0_0());
+					}
+					lv_artifact_18_0=ruleArtifact
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+						}
+						add(
+							$current,
+							"artifact",
+							lv_artifact_18_0,
+							"de.fraunhofer.ipa.ros.Ros.Artifact");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_19=','
+				{
+					newLeafNode(otherlv_19, grammarAccess.getAmentPackageAccess().getCommaKeyword_7_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAmentPackageAccess().getArtifactArtifactParserRuleCall_7_1_1_0());
+						}
+						lv_artifact_20_0=ruleArtifact
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAmentPackageRule());
+							}
+							add(
+								$current,
+								"artifact",
+								lv_artifact_20_0,
+								"de.fraunhofer.ipa.ros.Ros.Artifact");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)?
+		otherlv_21='}'
 		{
-			newLeafNode(otherlv_19, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_21, grammarAccess.getAmentPackageAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;

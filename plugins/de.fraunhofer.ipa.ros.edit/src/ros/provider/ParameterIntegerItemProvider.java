@@ -67,7 +67,7 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -91,8 +91,11 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		ParameterInteger parameterInteger = (ParameterInteger)object;
-		return getString("_UI_ParameterInteger_type") + " " + parameterInteger.getValue();
+		Integer labelValue = ((ParameterInteger)object).getValue();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ParameterInteger_type") :
+			getString("_UI_ParameterInteger_type") + " " + label;
 	}
 	
 

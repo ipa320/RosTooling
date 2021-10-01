@@ -79,9 +79,10 @@ AmentPackage returns AmentPackage:
 	'AmentPackage'
 	name=RosNames
 	'{'
+		('FromGitRepo' fromGitRepo=EString)?
+		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
 		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
 		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?
 	'}';
 
 ServiceSpec returns ServiceSpec:

@@ -1638,16 +1638,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAmentPackage_Dependency() {
-		return (EReference)amentPackageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EDataType getGraphName() {
 		return graphNameEDataType;
 	}
@@ -1843,7 +1833,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		createEAttribute(parameterDateEClass, PARAMETER_DATE__VALUE);
 
 		amentPackageEClass = createEClass(AMENT_PACKAGE);
-		createEReference(amentPackageEClass, AMENT_PACKAGE__DEPENDENCY);
 
 		// Create data types
 		graphNameEDataType = createEDataType(GRAPH_NAME);
@@ -2081,7 +2070,6 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getParameterDate_Value(), theXMLTypePackage.getDateTime(), "value", null, 1, 1, ParameterDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(amentPackageEClass, AmentPackage.class, "AmentPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAmentPackage_Dependency(), this.getDependency(), null, "dependency", null, 0, -1, AmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(graphNameEDataType, String.class, "GraphName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
