@@ -55,8 +55,8 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 			 		fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "extra_layer", stack.name.toLowerCase+".rosinstall"),rosintall_compiler.compile_toRosInstall(system,stack))
 			 		fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "extra_layer", "Dockerfile"),docker_compiler.compile_toDockerImageExtraLayer(system,stack))
 			}
-				fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system))
 			}
+			fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system))
 		}
 
 		// git action workflow

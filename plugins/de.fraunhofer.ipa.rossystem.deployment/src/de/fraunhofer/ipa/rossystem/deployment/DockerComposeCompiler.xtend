@@ -20,6 +20,18 @@ services:
     networks:
       - ros
 
+«IF system.getComponentStack().isEmpty()»
+«"  "»«system.name.toLowerCase»:
+    image: "«system.name.toLowerCase»:latest"
+    depends_on:
+      - ros-master
+    environment:
+      - "ROS_MASTER_URI=http://ros-master:11311"
+      - "ROS_HOSTNAME=«system.name.toLowerCase»"
+    networks:
+      - ros
+    command: stdbuf -o L roslaunch «system.name.toLowerCase» «system.name.toLowerCase».launch --wait
+«ELSE»
 «FOR stack:system.componentStack»
 «"  "»«system.name.toLowerCase»_«stack.name.toLowerCase»:
     image: "«system.name.toLowerCase»_«stack.name.toLowerCase»:latest"
@@ -33,6 +45,7 @@ services:
     command: stdbuf -o L roslaunch «system.name.toLowerCase»_«stack.name.toLowerCase» «stack.name.toLowerCase».launch --wait
     
 «ENDFOR»
+«ENDIF»
 
 '''
 }
