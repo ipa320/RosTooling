@@ -13,9 +13,9 @@ import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
 import rossystem.RosSystem
 import componentInterface.ComponentInterface
-import java.util.List
 import java.util.ArrayList
 import rossystem.ComponentStack
+import java.util.Collections
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
@@ -50,8 +50,6 @@ class RosSystemGenerator extends AbstractGenerator {
 	@Inject extension LaunchFileCompiler_ROS1
 	@Inject extension LaunchFileCompiler_ROS2
 	@Inject extension SetupPyCompile
-	@Inject extension DockerComposeCompiler
-	@Inject extension DockerContainerCompiler
 	//@Inject extension InstallScriptCompiler
 	
 	ArrayList<ComponentInterface> Ros1Components = new ArrayList<ComponentInterface>();
@@ -89,49 +87,44 @@ class RosSystemGenerator extends AbstractGenerator {
 				}}
 			}
 
-			//ROS1 package
-			if (Ros1Components.size()>0){
-				if (system.componentStack.size()==0){
-					fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
-					fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
-					fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
-					fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",compile_toDockerContainer(system, null))
-				} else {
-					for (stack : system.componentStack){
-						fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "Dockerfile"),compile_toDockerContainer(system, stack))
+			if (system.componentStack.size()==0){
+				// ROS1 for systems
+				if (Ros1Components.size()>0){
+						fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
+					}
+				// ROS2 for systems
+				if (Ros2Components.size()>0){
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",compile_package_xml_format3 (system, null))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",compile_CMakeLists_ROS2(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch",compile_toROS2launch(system, null).toString().replace("\t","  "))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
 				}
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),compile_toDockerCompose(system))
+			} else {
+					for (stack : system.componentStack){
+						// ROS1 for stacks
+						if (!Collections.disjoint(stack.rosComponent, Ros1Components)) {
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
+						}
+						// ROS2 for stacks
+						if (!Collections.disjoint(stack.rosComponent, Ros2Components)) {
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format3(system, stack))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS2(system, stack))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "setup.py"),system.compile_setup_py)
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "resource/" + system.name.toLowerCase+'_'+stack.name.toLowerCase.toLowerCase), "")
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "/__init__.py"), "")
+						}
+					
+					}
 				}
 			}
-			//ROS2 package
-			if (Ros2Components.size()>0){
-				if (system.componentStack.size()==0){
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",compile_package_xml_format3 (system, null))
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",compile_CMakeLists_ROS2(system, null))
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch",compile_toROS2launch(system, null).toString().replace("\t","  "))
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
-					fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
-					//fsa.generateFile(system.getName().toLowerCase+"/Dockerfile",compile_toDockerContainer(system, null))
-				} else {
-					for (stack : system.componentStack){
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format3(system, stack))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS2(system, stack))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "setup.py"),system.compile_setup_py)
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "resource/" + system.name.toLowerCase+'_'+stack.name.toLowerCase.toLowerCase), "")
-						fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "/__init__.py"), "")
-						//fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "Dockerfile"),compile_toDockerContainer(system, stack))
-				}
-					//fsa.generateFile(String.join("/", system.getName().toLowerCase, "docker-compose.yml"),compile_toDockerCompose(system))
-				}
 
-			}
 		}
 	}
-
-}
 

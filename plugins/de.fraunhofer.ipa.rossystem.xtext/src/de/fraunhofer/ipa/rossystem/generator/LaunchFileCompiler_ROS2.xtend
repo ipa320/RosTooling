@@ -24,7 +24,7 @@ class LaunchFileCompiler_ROS2 {
 
 	List<String> ListInterfaceDef
 	int param_count
-	List<ComponentInterface> components = new ArrayList<ComponentInterface>();
+	List<ComponentInterface> components_tmp_ = new ArrayList<ComponentInterface>();
 	List<ComponentInterface> Ros2components = new ArrayList<ComponentInterface>();
 	
 
@@ -33,9 +33,9 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-	ld = LaunchDescription()
+	ld = LaunchDescription()«compile_list_of_ROS2components(system,stack)»
 
-	«FOR component:compile_list_of_components(system,stack)»
+	«FOR component:Ros2components»
 	«component.name» = Node(
 		package="«component.compile_pkg»«init_pkg»",
 		executable="«component.compile_art»«init_comp()»",
@@ -47,27 +47,26 @@ def generate_launch_description():
 	)
 	«ENDFOR»
 
-	«FOR component:compile_list_of_components(system,stack)»
+	«FOR component:Ros2components»
 	ld.add_action(«component.name»)
 	«ENDFOR»
 
 	return ld
 	'''
 
-	def List<ComponentInterface> compile_list_of_components(RosSystem system, ComponentStack stack) {
-		components.clear;
+	def void compile_list_of_ROS2components(RosSystem system, ComponentStack stack) {
+		components_tmp_.clear;
 		Ros2components.clear;		
 		if (stack === null){
-			components = system.rosComponent;
+			components_tmp_ = system.rosComponent;
 		} else {
-			components =  stack.rosComponent;
+			components_tmp_ =  stack.rosComponent;
 		}
-		for(ComponentInterface component:components){
+		for(ComponentInterface component:components_tmp_){
 			if (component.compile_pkg_type.toString.contains("AmentPackage")){
 				Ros2components.add(component);
 			}
 		}
-		return Ros2components;
 	}
 
 	def check_ns(ComponentInterface component){

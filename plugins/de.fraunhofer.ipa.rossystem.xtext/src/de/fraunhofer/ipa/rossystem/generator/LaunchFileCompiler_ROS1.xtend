@@ -31,7 +31,7 @@ class LaunchFileCompiler_ROS1 {
 	String tab_tmp=""	
 	List<Integer> sizes_list = new ArrayList<Integer>();
 	List<EObject> param_list = new ArrayList<EObject>();
-	List<ComponentInterface> components = new ArrayList<ComponentInterface>();
+	List<ComponentInterface> components_tmp = new ArrayList<ComponentInterface>();
 	List<ComponentInterface> Ros1components = new ArrayList<ComponentInterface>();
 	
 	
@@ -67,7 +67,7 @@ class LaunchFileCompiler_ROS1 {
 		<param name="«qa.name»" value="«compile_param_value(qa.value)»"/>
 «ENDFOR»«ENDIF»
 
-	«FOR component:compile_list_of_components(system,stack)»
+	«FOR component:compile_list_of_ROS1components(system,stack)»
 	<node pkg="«component.compile_pkg»«init_pkg»" type="«component.compile_art»«init_comp()»" name="«component.name»"«IF component.hasNS» ns="«component.get_ns»"«ENDIF» cwd="node" respawn="false" output="screen">«init_comp()»«init_pkg»
 		«FOR rosPublisher:component.rospublisher»
 			«remapping_function_pub(rosPublisher, component.hasNS, inTopicFromConnection(rosPublisher, system.topicConnections),component.check_ns)»
@@ -109,15 +109,15 @@ class LaunchFileCompiler_ROS1 {
 </launch>
 	'''
 	
-	def List<ComponentInterface> compile_list_of_components(RosSystem system, ComponentStack stack) {
-		components.clear;
+	def List<ComponentInterface> compile_list_of_ROS1components(RosSystem system, ComponentStack stack) {
+		components_tmp.clear;
 		Ros1components.clear;		
 		if (stack === null){
-			components = system.rosComponent;
+			components_tmp = system.rosComponent;
 		} else {
-			components =  stack.rosComponent;
+			components_tmp =  stack.rosComponent;
 		}
-		for(ComponentInterface component:components){
+		for(ComponentInterface component:components_tmp){
 			if (component.compile_pkg_type.toString.contains("CatkinPackage")){
 				Ros1components.add(component);
 			}
