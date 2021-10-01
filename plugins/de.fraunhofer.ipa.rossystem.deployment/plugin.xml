@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+        point="org.eclipse.ui.handlers">
+        <handler
+              class="de.fraunhofer.ipa.rossystem.deployment.DeploymentArtifactsGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.rossystem.deployment.GenerationHandler"
+              commandId="de.fraunhofer.ipa.rossystem.deployment.command">
+     	</handler>
+    </extension>
+ 
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.fraunhofer.ipa.rossystem.deployment.command"
+            name="Deployment artifacts generator">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+             allPopups="false"
+             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+               commandId="de.fraunhofer.ipa.rossystem.deployment.command" >
+             <visibleWhen
+                   checkEnabled="false">
+                <and>
+                   <with
+                         variable="selection">
+                      <count
+                            value="1">
+                      </count>
+                   </with>
+                   <iterate
+                         ifEmpty="false">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="rossystem">
+                           </test>
+                   </iterate>
+                </and>
+             </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+ 
+ 
+</plugin>

@@ -25,6 +25,9 @@
         containment="true" eOpposite="#//SpecBase/package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
         eType="#//Artifact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromGitRepo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceSpec" eSuperTypes="#//SpecBase">
@@ -48,10 +51,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalDependency" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CatkinPackage" eSuperTypes="#//Package">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" upperBound="-1"
-        eType="#//Dependency" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CatkinPackage" eSuperTypes="#//Package"/>
   <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//NamespacedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//TopicSpec"/>

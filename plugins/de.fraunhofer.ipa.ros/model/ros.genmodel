@@ -21,6 +21,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Package/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Package/spec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Package/artifact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Package/fromGitRepo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Package/dependency"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ros.ecore#//Dependency"/>
     <genClasses ecoreClass="ros.ecore#//ServiceSpec">
@@ -39,9 +41,7 @@
     <genClasses ecoreClass="ros.ecore#//ExternalDependency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ExternalDependency/name"/>
     </genClasses>
-    <genClasses ecoreClass="ros.ecore#//CatkinPackage">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//CatkinPackage/dependency"/>
-    </genClasses>
+    <genClasses ecoreClass="ros.ecore#//CatkinPackage"/>
     <genClasses ecoreClass="ros.ecore#//Publisher">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//Publisher/message"/>
     </genClasses>

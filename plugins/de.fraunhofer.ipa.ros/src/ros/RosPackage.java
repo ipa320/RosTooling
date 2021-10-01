@@ -195,13 +195,31 @@ public interface RosPackage extends EPackage {
 	int PACKAGE__ARTIFACT = 2;
 
 	/**
+	 * The feature id for the '<em><b>From Git Repo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__FROM_GIT_REPO = 3;
+
+	/**
+	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__DEPENDENCY = 4;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = 3;
+	int PACKAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -765,13 +783,22 @@ public interface RosPackage extends EPackage {
 	int CATKIN_PACKAGE__ARTIFACT = PACKAGE__ARTIFACT;
 
 	/**
+	 * The feature id for the '<em><b>From Git Repo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATKIN_PACKAGE__FROM_GIT_REPO = PACKAGE__FROM_GIT_REPO;
+
+	/**
 	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATKIN_PACKAGE__DEPENDENCY = PACKAGE_FEATURE_COUNT + 0;
+	int CATKIN_PACKAGE__DEPENDENCY = PACKAGE__DEPENDENCY;
 
 	/**
 	 * The number of structural features of the '<em>Catkin Package</em>' class.
@@ -780,7 +807,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATKIN_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
+	int CATKIN_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Catkin Package</em>' class.
@@ -2391,6 +2418,28 @@ public interface RosPackage extends EPackage {
 	EReference getPackage_Artifact();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ros.Package#getFromGitRepo <em>From Git Repo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From Git Repo</em>'.
+	 * @see ros.Package#getFromGitRepo()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EAttribute getPackage_FromGitRepo();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ros.Package#getDependency <em>Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
+	 * @see ros.Package#getDependency()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Dependency();
+
+	/**
 	 * Returns the meta object for class '{@link ros.Dependency <em>Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2546,17 +2595,6 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCatkinPackage();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ros.CatkinPackage#getDependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
-	 * @see ros.CatkinPackage#getDependency()
-	 * @see #getCatkinPackage()
-	 * @generated
-	 */
-	EReference getCatkinPackage_Dependency();
 
 	/**
 	 * Returns the meta object for class '{@link ros.Artifact <em>Artifact</em>}'.
@@ -3576,6 +3614,22 @@ public interface RosPackage extends EPackage {
 		EReference PACKAGE__ARTIFACT = eINSTANCE.getPackage_Artifact();
 
 		/**
+		 * The meta object literal for the '<em><b>From Git Repo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PACKAGE__FROM_GIT_REPO = eINSTANCE.getPackage_FromGitRepo();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependency</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__DEPENDENCY = eINSTANCE.getPackage_Dependency();
+
+		/**
 		 * The meta object literal for the '{@link ros.impl.DependencyImpl <em>Dependency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3710,14 +3764,6 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CATKIN_PACKAGE = eINSTANCE.getCatkinPackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependency</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CATKIN_PACKAGE__DEPENDENCY = eINSTANCE.getCatkinPackage_Dependency();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ArtifactImpl <em>Artifact</em>}' class.

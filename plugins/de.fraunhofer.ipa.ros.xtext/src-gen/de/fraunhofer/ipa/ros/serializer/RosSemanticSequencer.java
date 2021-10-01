@@ -407,7 +407,13 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CatkinPackage returns CatkinPackage
 	 *
 	 * Constraint:
-	 *     (name=RosNames (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)? (dependency+=Dependency dependency+=Dependency*)?)
+	 *     (
+	 *         name=RosNames 
+	 *         fromGitRepo=EString? 
+	 *         (dependency+=Dependency dependency+=Dependency*)? 
+	 *         (spec+=SpecBase spec+=SpecBase*)? 
+	 *         (artifact+=Artifact artifact+=Artifact*)?
+	 *     )
 	 */
 	protected void sequence_CatkinPackage(ISerializationContext context, CatkinPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -518,7 +524,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPackageDependencyAccess().getPackagePackageEStringParserRuleCall_1_0_1(), semanticObject.eGet(RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE, false));
+		feeder.accept(grammarAccess.getPackageDependencyAccess().getPackagePackageEStringParserRuleCall_0_1(), semanticObject.eGet(RosPackage.Literals.PACKAGE_DEPENDENCY__PACKAGE, false));
 		feeder.finish();
 	}
 	
@@ -541,7 +547,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Package_Impl returns Package
 	 *
 	 * Constraint:
-	 *     (name=EString (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)?)
+	 *     (name=EString fromGitRepo=EString? (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)?)
 	 */
 	protected void sequence_Package_Impl(ISerializationContext context, ros.Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
