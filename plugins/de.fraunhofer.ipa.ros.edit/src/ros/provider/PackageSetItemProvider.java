@@ -157,6 +157,11 @@ public class PackageSetItemProvider
 			(createChildParameter
 				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
 				 RosFactory.eINSTANCE.createCatkinPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RosPackage.Literals.PACKAGE_SET__PACKAGE,
+				 RosFactory.eINSTANCE.createAmentPackage()));
 	}
 
 	/**

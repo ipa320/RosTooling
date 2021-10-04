@@ -40,7 +40,7 @@ public class SubscriberImpl extends NamespacedElementImpl implements Subscriber 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public SubscriberImpl() {
 		super();

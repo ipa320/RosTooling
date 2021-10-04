@@ -8,29 +8,23 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import ros.ParameterInteger;
-import ros.RosPackage;
+import ros.AmentPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.ParameterInteger} object.
+ * This is the item provider adapter for a {@link ros.AmentPackage} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
+public class AmentPackageItemProvider extends PackageItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterIntegerItemProvider(AdapterFactory adapterFactory) {
+	public AmentPackageItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,42 +39,19 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ParameterInteger_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterInteger_value_feature", "_UI_ParameterInteger_type"),
-				 RosPackage.Literals.PARAMETER_INTEGER__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ParameterInteger.gif.
+	 * This returns AmentPackage.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterInteger"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AmentPackage"));
 	}
 
 	/**
@@ -91,13 +62,12 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Integer labelValue = ((ParameterInteger)object).getValue();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((AmentPackage)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ParameterInteger_type") :
-			getString("_UI_ParameterInteger_type") + " " + label;
+			getString("_UI_AmentPackage_type") :
+			getString("_UI_AmentPackage_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -109,12 +79,6 @@ public class ParameterIntegerItemProvider extends ParameterValueItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ParameterInteger.class)) {
-			case RosPackage.PARAMETER_INTEGER__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

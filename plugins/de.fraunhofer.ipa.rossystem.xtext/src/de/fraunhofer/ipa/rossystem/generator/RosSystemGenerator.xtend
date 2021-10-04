@@ -12,11 +12,15 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
 import org.eclipse.xtext.generator.OutputConfiguration
 import rossystem.RosSystem
+import componentInterface.ComponentInterface
+import java.util.ArrayList
+import rossystem.ComponentStack
+import java.util.Collections
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String CM_CONFIGURATION = "CM_CONFIGURATION"
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
-
+	
 
 	override Set<OutputConfiguration> getOutputConfigurations() {
 		var OutputConfiguration cm_config = new OutputConfiguration(CM_CONFIGURATION)
@@ -47,7 +51,9 @@ class RosSystemGenerator extends AbstractGenerator {
 	@Inject extension LaunchFileCompiler_ROS2
 	@Inject extension SetupPyCompile
 	//@Inject extension InstallScriptCompiler
-
+	
+	ArrayList<ComponentInterface> Ros1Components = new ArrayList<ComponentInterface>();
+	ArrayList<ComponentInterface> Ros2Components = new ArrayList<ComponentInterface>();
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
@@ -58,29 +64,67 @@ class RosSystemGenerator extends AbstractGenerator {
 //				}
 
 
-		// ROS1 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			if (system.componentStack.size==0){
-				fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
-				fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
-				fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
-			} else {
-				for (stack : system.componentStack){
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
-					fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
-			}
-			}
-		}
+			Ros1Components.clear;
+			Ros2Components.clear;
+			for ( ComponentInterface component:system.rosComponent){
+				if (component.compile_pkg_type.toString.contains("CatkinPackage")){
+					Ros1Components.add(component)
 
-		//ROS2 package
-		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",system.compile_toROS2launch.toString().replace("\t","  "))
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",system.compile_package_xml_format3)
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
-			fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",system.compile_CMakeLists_ROS2)
+				} else if (component.compile_pkg_type.toString.contains("AmentPackage")) {
+					Ros2Components.add(component)
+				}
+			} 
+			if (system.componentStack.size!==0){
+				for ( ComponentStack stack:system.componentStack){
+					for (ComponentInterface component:stack.rosComponent){
+						if (component.compile_pkg_type.toString.contains("CatkinPackage")){
+							Ros1Components.add(component)
+		
+						} else if (component.compile_pkg_type.toString.contains("AmentPackage")) {
+							Ros2Components.add(component)
+						}
+				}}
+			}
+
+			if (system.componentStack.size()==0){
+				// ROS1 for systems
+				if (Ros1Components.size()>0){
+						fsa.generateFile(system.getName().toLowerCase+"/package.xml",compile_package_xml_format2(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"/CMakeLists.txt",compile_CMakeLists_ROS1(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"/launch/"+system.getName()+".launch",compile_toROS1launch(system, null).toString().replace("\t","  "))
+					}
+				// ROS2 for systems
+				if (Ros2Components.size()>0){
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",compile_package_xml_format3 (system, null))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",compile_CMakeLists_ROS2(system, null))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch",compile_toROS2launch(system, null).toString().replace("\t","  "))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
+				}
+			} else {
+					for (stack : system.componentStack){
+						// ROS1 for stacks
+						if (!Collections.disjoint(stack.rosComponent, Ros1Components)) {
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format2(system, stack))
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS1(system, stack))
+							fsa.generateFile(String.join("/", system.getName().toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS1launch(system, stack).toString().replace("\t","  "))
+						}
+						// ROS2 for stacks
+						if (!Collections.disjoint(stack.rosComponent, Ros2Components)) {
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format3(system, stack))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS2(system, stack))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "setup.py"),system.compile_setup_py)
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "resource/" + system.name.toLowerCase+'_'+stack.name.toLowerCase.toLowerCase), "")
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "/__init__.py"), "")
+						}
+					
+					}
+				}
+			}
+
 		}
 	}
-}
+

@@ -16,6 +16,7 @@ import ros.impl.ParameterSequenceImpl
 import ros.impl.ParameterStructImpl
 import ros.impl.ParameterStructMemberImpl
 import ros.impl.ParameterStructTypeImpl
+import rossystem.ComponentStack
 
 class LaunchFileCompiler_ROS2 {
 	@Inject extension GeneratorHelpers
@@ -23,15 +24,18 @@ class LaunchFileCompiler_ROS2 {
 
 	List<String> ListInterfaceDef
 	int param_count
+	List<ComponentInterface> components_tmp_ = new ArrayList<ComponentInterface>();
+	List<ComponentInterface> Ros2components = new ArrayList<ComponentInterface>();
+	
 
-	def compile_toROS2launch(RosSystem system) '''«init_comp()»
+	def compile_toROS2launch(RosSystem system, ComponentStack stack) '''«init_comp()»
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-	ld = LaunchDescription()
+	ld = LaunchDescription()«compile_list_of_ROS2components(system,stack)»
 
-	«FOR component:system.rosComponent»
+	«FOR component:Ros2components»
 	«component.name» = Node(
 		package="«component.compile_pkg»«init_pkg»",
 		executable="«component.compile_art»«init_comp()»",
@@ -43,12 +47,35 @@ def generate_launch_description():
 	)
 	«ENDFOR»
 
-	«FOR component:system.rosComponent»
+	«FOR component:Ros2components»
 	ld.add_action(«component.name»)
 	«ENDFOR»
 
 	return ld
 	'''
+
+	def void compile_list_of_ROS2components(RosSystem system, ComponentStack stack) {
+		components_tmp_.clear;
+		Ros2components.clear;		
+		if (stack === null){
+			components_tmp_ = system.rosComponent;
+		} else {
+			components_tmp_ =  stack.rosComponent;
+		}
+		for(ComponentInterface component:components_tmp_){
+			if (component.compile_pkg_type.toString.contains("AmentPackage")){
+				Ros2components.add(component);
+			}
+		}
+	}
+
+	def check_ns(ComponentInterface component){
+		if (component.hasNS){
+			return component.get_ns();
+		}else {
+			return "";
+		}
+	}
 
 	def List<String> InterfaceDef(String name, String type){
 		ListInterfaceDef = new ArrayList()
@@ -58,6 +85,16 @@ def generate_launch_description():
 		return ListInterfaceDef
 	}
 
+	def boolean hasNS(ComponentInterface component){
+		if(!component.nameSpace.nullOrEmpty){
+			return true;
+		}else{
+			return false
+		}
+	}
+	def String get_ns(ComponentInterface component){
+		return component.nameSpace.replaceFirst("/","");
+	}
 
 	def String compile_remappings_str(ComponentInterface component) {
 		var remap_str = "";

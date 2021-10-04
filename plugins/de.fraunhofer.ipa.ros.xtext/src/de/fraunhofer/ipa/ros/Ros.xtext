@@ -16,7 +16,7 @@ PackageSet returns PackageSet:
 	'}';
 
 Package returns Package:
-	Package_Impl | CatkinPackage;
+	Package_Impl | CatkinPackage | AmentPackage;
 
 SpecBase returns SpecBase:
 	ServiceSpec | TopicSpec | ActionSpec;
@@ -66,6 +66,17 @@ Artifact returns Artifact:
 CatkinPackage returns CatkinPackage:
 	{CatkinPackage}
 	'CatkinPackage'
+	name=RosNames
+	'{'
+		('FromGitRepo' fromGitRepo=EString)?
+		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
+		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
+		(artifact+=Artifact ( "," artifact+=Artifact)*)?
+	'}';
+	
+AmentPackage returns AmentPackage:
+	{AmentPackage}
+	'AmentPackage'
 	name=RosNames
 	'{'
 		('FromGitRepo' fromGitRepo=EString)?

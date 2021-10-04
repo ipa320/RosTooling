@@ -208,4 +208,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="ParameterDate" eSuperTypes="#//ParameterValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AmentPackage" eSuperTypes="#//Package"/>
 </ecore:EPackage>
