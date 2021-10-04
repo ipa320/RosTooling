@@ -2,6 +2,7 @@
  */
 package ros;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ament Package</b></em>'.
@@ -13,5 +14,4 @@ package ros;
  * @generated
  */
 public interface AmentPackage extends ros.Package {
-
 } // AmentPackage

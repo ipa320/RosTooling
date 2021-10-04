@@ -3,6 +3,7 @@
 package ros.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import ros.AmentPackage;
 import ros.RosPackage;
 

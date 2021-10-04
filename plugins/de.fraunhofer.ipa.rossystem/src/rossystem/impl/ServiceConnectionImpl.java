@@ -137,6 +137,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(RosServiceClient newTo) {
 		RosServiceClient oldTo = to;
 		to = newTo;
@@ -149,6 +150,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getServiceName() {
 		return serviceName;
 	}
@@ -158,6 +160,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setServiceName(String newServiceName) {
 		String oldServiceName = serviceName;
 		serviceName = newServiceName;
