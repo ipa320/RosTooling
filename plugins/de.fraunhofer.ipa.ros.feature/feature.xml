@@ -281,4 +281,11 @@ POSSIBILITY OF SUCH DAMAGE.
          version="2.0.0.qualifier"
          unpack="false"/>
 
+   <plugin
+         id="de.fraunhofer.ipa.rossystem.deployment"
+         download-size="0"
+         install-size="0"
+         version="2.0.0.qualifier"
+         unpack="false"/>
+
 </feature>

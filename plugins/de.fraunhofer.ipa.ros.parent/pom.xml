@@ -45,6 +45,7 @@
 		<module>../de.fraunhofer.ipa.rossystem.edit</module>
 		<module>../de.fraunhofer.ipa.rossystem.editor</module>
 		<module>../de.fraunhofer.ipa.rossystem.xtext.tests</module>
+		<module>../de.fraunhofer.ipa.rossystem.deployment</module>
 		
 		<module>../de.fraunhofer.ipa.ros.plugin</module>
 		<module>../de.fraunhofer.ipa.ros.sirius</module>
