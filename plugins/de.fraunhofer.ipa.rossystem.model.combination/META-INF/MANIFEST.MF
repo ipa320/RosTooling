@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Check
 Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.model.combination;singleton:=true
-Bundle-Version: 1.5.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Automatic-Module-Name: de.fraunhofer.ipa.rossystem.model.combination
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: componentInterface.presentation,

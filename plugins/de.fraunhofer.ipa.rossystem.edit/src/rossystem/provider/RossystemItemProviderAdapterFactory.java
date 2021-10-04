@@ -215,6 +215,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -225,6 +226,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -273,6 +275,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -283,6 +286,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -293,6 +297,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -307,6 +312,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (rosSystemItemProvider != null) rosSystemItemProvider.dispose();
 		if (componentStackItemProvider != null) componentStackItemProvider.dispose();

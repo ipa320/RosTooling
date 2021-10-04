@@ -2,17 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.xtext
 Bundle-Vendor: Fraunhofer IPA
-Bundle-Version: 1.5.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common,
- org.eclipse.xtext.xbase.lib,
- org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.util,
- org.eclipse.xtend.lib
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.fraunhofer.ipa.ros.formatting2,
  de.fraunhofer.ipa.ros,

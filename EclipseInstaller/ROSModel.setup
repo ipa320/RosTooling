@@ -50,7 +50,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      defaultValue="2020-12"
+      defaultValue="2021-12"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
@@ -58,8 +58,6 @@
         name="org.eclipse.xtext.sdk.feature.group"/>
     <requirement
         name="org.eclipse.sirius.specifier.feature.group"/>
-    <requirement
-        name="org.eclipse.sirius.runtime.ide.xtext.feature.group"/>
     <requirement
         name="org.eclipse.cdt.feature.group"/>
       <requirement
@@ -80,9 +78,9 @@
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <repositoryList
-          name="2020-12">
+          name="2021-12">
         <repository
-            url="https://download.eclipse.org/releases/2020-12"/>
+            url="https://download.eclipse.org/releases/2021-12"/>
       </repositoryList>
     </targlet>
   </setupTask>

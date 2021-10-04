@@ -72,6 +72,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RosSystem createRosSystem() {
 		RosSystemImpl rosSystem = new RosSystemImpl();
 		return rosSystem;
@@ -82,6 +83,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentStack createComponentStack() {
 		ComponentStackImpl componentStack = new ComponentStackImpl();
 		return componentStack;
@@ -92,6 +94,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualityAttribute createQualityAttribute() {
 		QualityAttributeImpl qualityAttribute = new QualityAttributeImpl();
 		return qualityAttribute;
@@ -102,6 +105,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TopicConnection createTopicConnection() {
 		TopicConnectionImpl topicConnection = new TopicConnectionImpl();
 		return topicConnection;
@@ -112,6 +116,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceConnection createServiceConnection() {
 		ServiceConnectionImpl serviceConnection = new ServiceConnectionImpl();
 		return serviceConnection;
@@ -122,6 +127,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionConnection createActionConnection() {
 		ActionConnectionImpl actionConnection = new ActionConnectionImpl();
 		return actionConnection;
@@ -132,6 +138,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RossystemPackage getRossystemPackage() {
 		return (RossystemPackage)getEPackage();
 	}
