@@ -19,13 +19,21 @@ class RosInstallCompiler {
 	List<CharSequence> PkgsList
 	List<ComponentInterface> ComponentsList
 	GeneratorHelpers generator_helper = new GeneratorHelpers()
-	
+
+ def create_repo_link (String repo)'''
+«IF repo.indexOf(":", repo.indexOf(":") + 1) > 1»
+- git: {local-name: «repo.substring(0,repo.lastIndexOf(':')).substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: «repo.substring(0,repo.lastIndexOf(':'))», version: «repo.substring(repo.lastIndexOf(':') + 1)»}
+«ELSE»
+- git: {local-name: «repo.substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: «repo»}
+«ENDIF»
+ '''
+ 
  def compile_toRosInstall (RosSystem system,ComponentStack stack) '''«generator_helper.init_pkg()»
 «IF stack===null»«FOR repo:system.listOfRepos»
-- git: {local-name: «repo.substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: '«repo»'}
+«create_repo_link(repo)»
 «ENDFOR»
 «ELSE»«FOR repo:stack.listOfRepos»
-- git: {local-name: «repo.substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: '«repo»'}
+«create_repo_link(repo)»
 «ENDFOR»
 «ENDIF»
 '''
