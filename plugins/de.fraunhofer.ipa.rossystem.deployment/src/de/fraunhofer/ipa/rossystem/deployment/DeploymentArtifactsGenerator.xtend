@@ -14,6 +14,8 @@ import de.fraunhofer.ipa.rossystem.deployment.GitActionCompiler
 import rossystem.RosSystem;
 import java.util.HashMap
 import java.util.Map
+import java.util.List
+import componentInterface.RosParameter
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
 	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
@@ -42,19 +44,21 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 	RosInstallCompiler rosintall_compiler = new RosInstallCompiler()
 	DockerComposeCompiler dockercompose_compiler = new DockerComposeCompiler()
 	GitActionCompiler gitaction_compiler = new GitActionCompiler()
-	
+
 
 	String ros_distro
 	Integer ros_version
-	String system_prefix 
+	String system_prefix
 	String stack_prefix
+	Map<String, List<String>> device_map = new HashMap<String, List<String>>
+
 	def get_ros_distro(String distro) {
 		ros_distro = distro
-	}	
+	}
 	def get_ros_version(Integer version){
 		ros_version = version
 	}
-	
+
 	def create_system_prefix(RosSystem system){
 		if (ros_version == 2) {
 			return system.getName().toLowerCase + "_ros2"
@@ -62,6 +66,16 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 			return system.getName().toLowerCase
 		}
 	}
+	def get_portt_list(Map<String, Map<RosParameter, String>> ports_map){
+		for (key: ports_map.keySet()){
+			val values = newArrayList()
+			for (k: ports_map.get(key).keySet()){
+				values.add(ports_map.get(key).get(k))
+			}
+			device_map.put(key, values);
+		}
+	}
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// ROS1 package
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
@@ -78,7 +92,7 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 			 		fsa.generateFile(String.join("/", stack_prefix, "extra_layer", "Dockerfile"),docker_compiler.compile_toDockerImageExtraLayer(system,stack, ros_distro, ros_version))
 			}
 			}
-			fsa.generateFile(String.join("/", system_prefix, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system, ros_distro, ros_version))
+			fsa.generateFile(String.join("/", system_prefix, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system, ros_distro, ros_version, device_map))
 		}
 
 		// git action workflow
