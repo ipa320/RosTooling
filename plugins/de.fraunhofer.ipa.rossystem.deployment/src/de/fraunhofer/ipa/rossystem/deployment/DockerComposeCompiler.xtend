@@ -7,7 +7,8 @@ class DockerComposeCompiler {
 		
  GeneratorHelpers generator_helper = new GeneratorHelpers() 
 		
- def compile_toDockerCompose(RosSystem system) '''«generator_helper.init_pkg()»
+ def compile_toDockerCompose(RosSystem system, String ros_distro, Integer ros_version) '''«generator_helper.init_pkg()»
+«IF ros_version == 1»
 version: "3.3"
 networks:
   ros:
@@ -15,7 +16,7 @@ networks:
     
 services:
   ros-master:
-    image: ros:melodic-ros-core
+    image: ros:«ros_distro»-ros-core
     command: stdbuf -o L roscore
     networks:
       - ros
@@ -45,6 +46,9 @@ services:
     command: stdbuf -o L roslaunch «system.name.toLowerCase»_«stack.name.toLowerCase» «stack.name.toLowerCase».launch --wait
     
 «ENDFOR»
+«ENDIF»
+«ELSE»
+Todo: complete docker compose file for ros2
 «ENDIF»
 
 '''

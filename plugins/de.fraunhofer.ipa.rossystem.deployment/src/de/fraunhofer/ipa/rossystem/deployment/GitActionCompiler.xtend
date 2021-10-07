@@ -91,7 +91,7 @@ class GitActionCompiler {
 	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "builder", "type=ref,event=branch")»
 	«ENDIF»
 ''' 	
- def compile_toGitAction(RosSystem system) '''«generator_helper.init_pkg()»
+ def compile_toGitAction(RosSystem system, Integer ros_version) '''«generator_helper.init_pkg()»
 name: «system.name.toLowerCase»
 on:
   push:
@@ -101,7 +101,7 @@ env:
   PREFIX: "${{ secrets.DOCKER_USERNAME }}/"
   SUFFIX: ""
 «««  Todo: get distro from model
-  BUILDER_SUFFIX: melodic
+  BUILDER_SUFFIX: ros«ros_version»
 jobs:
   «build_layer()»
   «IF system.getComponentStack().isEmpty()»

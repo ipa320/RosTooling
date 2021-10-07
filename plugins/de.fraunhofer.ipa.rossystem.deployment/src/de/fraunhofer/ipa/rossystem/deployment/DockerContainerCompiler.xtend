@@ -6,21 +6,24 @@ import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
 
 class DockerContainerCompiler {
 	GeneratorHelpers generator_helper = new GeneratorHelpers() 
-
-    def compile_toDockerContainer(RosSystem system, ComponentStack stack) '''«generator_helper.init_pkg()»
+	
+	def dockerfile_header(Integer ros_version) '''
 # syntax=docker/dockerfile:experimental
 ARG SUFFIX=
-ARG BUILDER_SUFFIX=:melodic
-ARG PREFIX=
+ARG BUILDER_SUFFIX=:ros«ros_version»
+ARG PREFIX=	
+	'''
+    def compile_toDockerContainer(RosSystem system, ComponentStack stack, String ros_distro, Integer ros_version) '''«generator_helper.init_pkg()»
+«dockerfile_header(ros_version)»
 «IF stack===null»
     «IF generator_helper.listOfRepos(system).isEmpty()»
-FROM ros:melodic-ros-core as base
+FROM ros:«ros_distro»-ros-core as base
     «ELSE»
 FROM ${PREFIX}extra_layer_«system.name.toLowerCase»${SUFFIX} as base
     «ENDIF»
 «ELSE»
     «IF generator_helper.listOfRepos(stack).isEmpty()»
-FROM ros:melodic-ros-core as base
+FROM ros:«ros_distro»-ros-core as base
     «ELSE»
 FROM ${PREFIX}extra_layer_«stack.name.toLowerCase»${SUFFIX} as base
     «ENDIF»
@@ -63,14 +66,10 @@ FROM deploy as launch
 «IF stack===null»CMD ["roslaunch", "«system.name»", "«system.name».launch"]«ELSE»CMD ["roslaunch", "«system.name.toLowerCase»_«stack.name.toLowerCase»", "«stack.name.toLowerCase».launch"]«ENDIF»
 '''
 
-    def compile_toDockerImageExtraLayer(RosSystem system, ComponentStack stack) '''«generator_helper.init_pkg()»
+    def compile_toDockerImageExtraLayer(RosSystem system, ComponentStack stack, String ros_distro, Integer ros_version) '''«generator_helper.init_pkg()»
 «IF (stack===null && !generator_helper.listOfRepos(system).isEmpty()) || (stack !==null && !generator_helper.listOfRepos(stack).isEmpty()) »
-# syntax=docker/dockerfile:experimental
-ARG SUFFIX=
-ARG PREFIX=
-«««Todo: get distro from model
-ARG BUILDER_SUFFIX=:melodic
-FROM ros:melodic-ros-core as base
+«dockerfile_header(ros_version)»
+FROM ros:«ros_distro»-ros-core as base
 FROM ${PREFIX}builder${BUILDER_SUFFIX} as builder
 
 FROM base as pre_build
