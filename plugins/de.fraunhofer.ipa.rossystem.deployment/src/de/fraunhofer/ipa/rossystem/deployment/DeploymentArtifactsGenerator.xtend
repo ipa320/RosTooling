@@ -70,14 +70,20 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 		for (key: ports_map.keySet()){
 			val values = newArrayList()
 			for (k: ports_map.get(key).keySet()){
+				val v = ports_map.get(key).get(k);
 				values.add(ports_map.get(key).get(k))
 			}
 			device_map.put(key, values);
 		}
 	}
-
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// ROS1 package
+		device_map.keySet().forEach[String key|
+	    	if (device_map.get(key).contains(null)) {
+	    			throw new IllegalArgumentException("Values of some device ports are not defined.")
+	        	}
+		]
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
 			system_prefix = create_system_prefix(system)
 			if (system.componentStack.size==0){
@@ -90,8 +96,9 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 					fsa.generateFile(String.join("/", stack_prefix, "Dockerfile"),docker_compiler.compile_toDockerContainer(system, stack, ros_distro, ros_version))
 			 		fsa.generateFile(String.join("/", stack_prefix, "extra_layer", stack.name.toLowerCase+".rosinstall"),rosintall_compiler.compile_toRosInstall(system,stack))
 			 		fsa.generateFile(String.join("/", stack_prefix, "extra_layer", "Dockerfile"),docker_compiler.compile_toDockerImageExtraLayer(system,stack, ros_distro, ros_version))
+				}
 			}
-			}
+
 			fsa.generateFile(String.join("/", system_prefix, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system, ros_distro, ros_version, device_map))
 		}
 
@@ -99,7 +106,6 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
  		for (system : resource.allContents.toIterable.filter(RosSystem)){
 			fsa.generateFile(String.join("/", system_prefix, system.getName().toLowerCase + "_workflow.yml") ,gitaction_compiler.compile_toGitAction(system, ros_version))
 			}
-
 		}
 
 }

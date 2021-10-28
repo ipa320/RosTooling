@@ -157,16 +157,29 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			  dialog.open();
 
 			  for(Object param_name : dialog.getResult()) {
-				  if(param_name_map.get(param_name.toString()) != null) {
-					  String raw_value = param_name_map.get(param_name.toString()).getValue().toString().replace(" ", "");
-					  String value = raw_value.substring(raw_value.lastIndexOf(":")+1, raw_value.lastIndexOf(")"));
-					  InputDialog dialog_set_port = new InputDialog(shell,
-							  String.format("Check ports' values in %s", label),
-							  String.format("The value of %s: ", param_name.toString()),
-							  value,
-							  null);
-					  dialog_set_port.open();
-					  param_portvalue_map.put(param_name_map.get(param_name.toString()), value);
+				  RosParameter tmp_value = param_name_map.get(param_name.toString());
+				  if(tmp_value != null) {
+					  if(tmp_value.getValue() != null) {
+						  String raw_value = tmp_value.getValue().toString().replace(" ", "");
+						  String value = raw_value.substring(raw_value.lastIndexOf(":")+1, raw_value.lastIndexOf(")"));
+						  InputDialog dialog_set_port = new InputDialog(shell,
+								  String.format("Check ports' values in %s", label),
+								  String.format("The value of %s: ", param_name.toString()),
+								  value,
+								  null);
+						  dialog_set_port.open();
+						  param_portvalue_map.put(tmp_value, value);
+					  }
+					  else {
+						  String value = "Null. Didn't find value for this parameter. Please set a value.";
+						  InputDialog dialog_set_port = new InputDialog(shell,
+								  String.format("Check ports' values in %s", label),
+								  String.format("The value of %s: ", param_name.toString()),
+								  value,
+								  null);
+						  dialog_set_port.open();
+						  param_portvalue_map.put(tmp_value, null);
+					  }
 				  }
 			  }
 		  }
