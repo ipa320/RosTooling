@@ -9,6 +9,15 @@ class DockerComposeCompiler {
 
  GeneratorHelpers generator_helper = new GeneratorHelpers()
 
+def get_name(String prefix, String ros_distro) {
+ 	if(ros_distro=="foxy") {
+ 		return prefix + "_ros2"
+ 	}
+ 	else{
+ 		return prefix + ros_distro
+ 	}
+ }	
+
 def create_devices(List<String> ports)'''
 «IF ports.size() > 0»
 devices:
@@ -59,8 +68,22 @@ services:
 «ENDFOR»
 «ENDIF»
 «ELSE»
-Todo: complete docker compose file for ros2
-«ENDIF»
+version: "3.3"
+services:
+«IF system.getComponentStack().isEmpty()»
+«"  "»«system.name.toLowerCase»:
+    image: "«get_name(system.name.toLowerCase, ros_distro)»:latest"
+    «create_devices(device_map.get(system.name))»
+    command: stdbuf -o L ros2 launch «system.name.toLowerCase» «system.name.toLowerCase».launch.py
+«ELSE»
+«FOR stack:system.componentStack»
+«"  "»«system.name.toLowerCase»_«stack.name.toLowerCase»:
+    image: "«get_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»:latest"
+    «create_devices(device_map.get(stack.name))»
+    command: stdbuf -o L ros2 launch «system.name.toLowerCase»_«stack.name.toLowerCase» «stack.name.toLowerCase».launch.py
 
+«ENDFOR»
+«ENDIF»
+«ENDIF»
 '''
 }
