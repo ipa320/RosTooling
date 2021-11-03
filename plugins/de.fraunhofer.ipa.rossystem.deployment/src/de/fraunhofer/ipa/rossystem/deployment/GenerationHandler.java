@@ -163,12 +163,9 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 					  if(tmp_value.getValue() != null) {
 						  String raw_value = tmp_value.getValue().toString().replace(" ", "");
 						  String value = raw_value.substring(raw_value.lastIndexOf(":")+1, raw_value.lastIndexOf(")"));
-						  InputDialog dialog_set_port = new InputDialog(shell,
-								  String.format("Check ports' values in %s", label),
-								  String.format("The value of %s: ", param_name.toString()),
-								  value,
-								  null);
-						  dialog_set_port.open();
+						  MessageDialog dialog_check_port = new MessageDialog(shell, String.format("Check ports' values in %s", label), null,
+								  String.format("The value of \"%s\" is \"%s\"", param_name.toString(), value), MessageDialog.INFORMATION, new String[] { "OK" }, 0);
+						  dialog_check_port.open();
 						  param_portvalue_map.put(tmp_value, value);
 					  }
 					  else {
