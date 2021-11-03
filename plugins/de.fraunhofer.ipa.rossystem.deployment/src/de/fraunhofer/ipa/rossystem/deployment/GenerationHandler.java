@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -171,13 +172,10 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 						  param_portvalue_map.put(tmp_value, value);
 					  }
 					  else {
-						  String value = "Null. Didn't find value for this parameter. Please set a value.";
-						  InputDialog dialog_set_port = new InputDialog(shell,
-								  String.format("Check ports' values in %s", label),
-								  String.format("The value of %s: ", param_name.toString()),
-								  value,
-								  null);
-						  dialog_set_port.open();
+						  String value = "Deployment Artifacts couldn't be generated. The selected parameter ("+param_name.toString()+") doesn't have a value set, please define it on the rossystem file and try again.";
+						  MessageDialog error_dialog = new MessageDialog(shell, "ERROR", null,
+								  	value, MessageDialog.ERROR, new String[] { "Cancel" }, 0);
+						  error_dialog.open();
 						  param_portvalue_map.put(tmp_value, null);
 					  }
 				  }
