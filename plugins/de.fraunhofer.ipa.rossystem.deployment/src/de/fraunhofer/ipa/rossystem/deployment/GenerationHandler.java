@@ -154,26 +154,29 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 			  ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new LabelProvider());
 			  dialog.setElements(param_names.toArray());
 			  dialog.setTitle(String.format("%s: Select parameters for setting ports", label));
+			  dialog.setMessage("If your robot setup has devices connected through ports that have to be configure, please select their parameters. Otherwise, press cancel ");
 			  dialog.setMultipleSelection(true);
 			  dialog.open();
 
-			  for(Object param_name : dialog.getResult()) {
-				  RosParameter tmp_value = param_name_map.get(param_name.toString());
-				  if(tmp_value != null) {
-					  if(tmp_value.getValue() != null) {
-						  String raw_value = tmp_value.getValue().toString().replace(" ", "");
-						  String value = raw_value.substring(raw_value.lastIndexOf(":")+1, raw_value.lastIndexOf(")"));
-						  MessageDialog dialog_check_port = new MessageDialog(shell, String.format("Check ports' values in %s", label), null,
-								  String.format("The value of \"%s\" is \"%s\"", param_name.toString(), value), MessageDialog.INFORMATION, new String[] { "OK" }, 0);
-						  dialog_check_port.open();
-						  param_portvalue_map.put(tmp_value, value);
-					  }
-					  else {
-						  String value = "Deployment Artifacts couldn't be generated. The selected parameter ("+param_name.toString()+") doesn't have a value set, please define it on the rossystem file and try again.";
-						  MessageDialog error_dialog = new MessageDialog(shell, "ERROR", null,
-								  	value, MessageDialog.ERROR, new String[] { "Cancel" }, 0);
-						  error_dialog.open();
-						  param_portvalue_map.put(tmp_value, null);
+			  if(dialog.getResult() != null) {
+				  for(Object param_name : dialog.getResult()) {
+					  RosParameter tmp_value = param_name_map.get(param_name.toString());
+					  if(tmp_value != null) {
+						  if(tmp_value.getValue() != null) {
+							  String raw_value = tmp_value.getValue().toString().replace(" ", "");
+							  String value = raw_value.substring(raw_value.lastIndexOf(":")+1, raw_value.lastIndexOf(")"));
+							  MessageDialog dialog_check_port = new MessageDialog(shell, String.format("Check ports' values in %s", label), null,
+									  String.format("The value of \"%s\" is \"%s\"", param_name.toString(), value), MessageDialog.INFORMATION, new String[] { "OK" }, 0);
+							  dialog_check_port.open();
+							  param_portvalue_map.put(tmp_value, value);
+						  }
+						  else {
+							  String value = "Deployment Artifacts couldn't be generated. The selected parameter ("+param_name.toString()+") doesn't have a value set, please define it on the rossystem file and try again.";
+							  MessageDialog error_dialog = new MessageDialog(shell, "ERROR", null,
+									  	value, MessageDialog.ERROR, new String[] { "Cancel" }, 0);
+							  error_dialog.open();
+							  param_portvalue_map.put(tmp_value, null);
+						  }
 					  }
 				  }
 			  }
