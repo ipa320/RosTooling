@@ -15,6 +15,7 @@ class RosDiagramModule extends DefaultDiagramModule {
 	}
 	
 	override bindILayoutEngine() {
-		ElkLayoutEngine
+		//ElkLayoutEngine
+		RosLayoutEngine
 	}
 }

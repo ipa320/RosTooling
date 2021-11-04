@@ -3,11 +3,17 @@ package de.fraunhofer.ipa.ros.ide.diagram
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.xtend.lib.annotations.ToString
 import org.eclipse.sprotty.SShapeElement
+
+//import io.typefox.sprotty.api.SEdge
+//import io.typefox.sprotty.api.SGraph
+//import io.typefox.sprotty.api.SNode
+
 import java.util.function.Consumer
+import org.eclipse.sprotty.SPort
 
 @Accessors
 @ToString(skipNulls = true)
-class SPublisher extends SShapeElement {
+class SPublisher extends SPort {
 	String text
 	
 	new() {
@@ -21,7 +27,7 @@ class SPublisher extends SShapeElement {
 
 @Accessors
 @ToString(skipNulls = true)
-class SSubscriber extends SShapeElement {
+class SSubscriber extends SPort {
 	String text
 	
 	new() {
@@ -35,7 +41,7 @@ class SSubscriber extends SShapeElement {
 
 @Accessors
 @ToString(skipNulls = true)
-class SServiceServer extends SShapeElement {
+class SServiceServer extends SPort {
 	String text
 	
 	new() {
@@ -49,7 +55,7 @@ class SServiceServer extends SShapeElement {
 
 @Accessors
 @ToString(skipNulls = true)
-class SServiceClient extends SShapeElement {
+class SServiceClient extends SPort {
 	String text
 	
 	new() {
@@ -63,7 +69,7 @@ class SServiceClient extends SShapeElement {
 
 @Accessors
 @ToString(skipNulls = true)
-class SActionServer extends SShapeElement {
+class SActionServer extends SPort {
 	String text
 	
 	new() {
@@ -77,7 +83,7 @@ class SActionServer extends SShapeElement {
 
 @Accessors
 @ToString(skipNulls = true)
-class SActionClient extends SShapeElement {
+class SActionClient extends SPort {
 	String text
 	
 	new() {
