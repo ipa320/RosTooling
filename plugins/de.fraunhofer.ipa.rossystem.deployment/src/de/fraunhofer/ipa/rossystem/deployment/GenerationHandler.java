@@ -148,9 +148,6 @@ public class GenerationHandler extends AbstractHandler implements IHandler {
 		  }
 
 		  if (param_names.size() > 0) {
-			  String empty_msg = "No parameters for setting ports";
-			  param_names.add(empty_msg);
-			  param_name_map.put(empty_msg, null);
 			  ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new LabelProvider());
 			  dialog.setElements(param_names.toArray());
 			  dialog.setTitle(String.format("%s: Select parameters for setting ports", label));
