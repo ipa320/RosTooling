@@ -104,7 +104,7 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 
 		// git action workflow
  		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			fsa.generateFile(String.join("/", system_prefix, system.getName().toLowerCase + "_workflow.yml") ,gitaction_compiler.compile_toGitAction(system, ros_version))
+			fsa.generateFile(String.join("/", system_prefix, system_prefix + "_workflow.yml") ,gitaction_compiler.compile_toGitAction(system, ros_version, ros_distro))
 			}
 		}
 

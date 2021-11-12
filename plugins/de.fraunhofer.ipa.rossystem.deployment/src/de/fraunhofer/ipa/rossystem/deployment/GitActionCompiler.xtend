@@ -7,6 +7,15 @@ class GitActionCompiler {
 	
 	GeneratorHelpers generator_helper = new GeneratorHelpers()
  
+ def get_name(String prefix, String ros_distro) {
+ 	if(ros_distro=="foxy") {
+ 		return prefix + "_ros2"
+ 	}
+ 	else{
+ 		return prefix + ros_distro
+ 	}
+ }
+ 
  def default_part(String layer, String context_path, String needed_layer, String tag)'''
 «layer»:
   runs-on: ubuntu-latest
@@ -41,7 +50,7 @@ class GitActionCompiler {
     -
       name: Get Branch
       id: extract_branch
-      run: echo ::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/} | sed 's/[^a-zA-Z0-9-]/-/g')
+      run: echo ::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/} | sed 's/[^a-zA-Z0-9-]/_/g')
     -
       name: Docker meta
       id: docker_meta
@@ -50,7 +59,7 @@ class GitActionCompiler {
         images: ${{ secrets.DOCKER_USERNAME }}/${{ github.job }}
         tags: |
           «tag»
-          type=raw,value=latest      
+          type=raw,value=latest
     -
       name: Build and Push Docker Image
       uses: docker/build-push-action@v2
@@ -84,19 +93,19 @@ class GitActionCompiler {
 	«default_part(sys_name, "./"+sys_name, null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 	''' 	
- def stack_layer(String sys_name, String stack_name, Boolean need_extra)'''
+ def stack_layer(String sys_name, String stack_name, String ros_distro, Boolean need_extra)'''
 	«IF need_extra» 
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "extra_layer_"+stack_name, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+	«default_part(get_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",get_name(sys_name, ros_distro), sys_name+"_"+stack_name), "extra_layer_"+get_name(stack_name, ros_distro), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ELSE»
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+	«default_part(get_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",get_name(sys_name, ros_distro), sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 ''' 	
- def compile_toGitAction(RosSystem system, Integer ros_version) '''«generator_helper.init_pkg()»
-name: «system.name.toLowerCase»
+ def compile_toGitAction(RosSystem system, Integer ros_version, String ros_distro) '''«generator_helper.init_pkg()»
+name: «get_name(system.name.toLowerCase, ros_distro)»
 on:
   push:
     paths:
-      - '«system.name.toLowerCase»/**'
+      - '«get_name(system.name.toLowerCase, ros_distro)»/**'
 env:
   PREFIX: "${{ secrets.DOCKER_USERNAME }}/"
   SUFFIX: ""
@@ -105,16 +114,16 @@ env:
 jobs:
   «IF system.getComponentStack().isEmpty()»
   «IF !generator_helper.listOfRepos(system).isEmpty()»
-  «extra_layer(system.name.toLowerCase, system.name.toLowerCase)»
-  «system_layer(system.name.toLowerCase, true)»
+  «extra_layer(get_name(system.name.toLowerCase, ros_distro), get_name(system.name.toLowerCase, ros_distro))»
+  «system_layer(get_name(system.name.toLowerCase, ros_distro), true)»
 	«ELSE»
-  «system_layer(system.name.toLowerCase, false)»
+  «system_layer(get_name(system.name.toLowerCase, ros_distro), false)»
 «ENDIF»
 «ELSE»«FOR stack : system.getComponentStack()»«IF !generator_helper.listOfRepos(stack).isEmpty()»
-  «extra_layer(stack.name.toLowerCase, String.join("/", system.name.toLowerCase, system.name.toLowerCase + "_" + stack.name.toLowerCase))»
-  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, true)»
+  «extra_layer(get_name(stack.name.toLowerCase, ros_distro), String.join("/", get_name(system.name.toLowerCase, ros_distro), system.name.toLowerCase + "_" + stack.name.toLowerCase))»
+  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro, true)»
  «ELSE»
-  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, false)»
+  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro, false)»
 «ENDIF»
  «ENDFOR»
 «ENDIF»           
