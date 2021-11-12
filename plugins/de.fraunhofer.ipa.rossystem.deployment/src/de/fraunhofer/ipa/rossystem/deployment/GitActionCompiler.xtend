@@ -39,6 +39,10 @@ class GitActionCompiler {
         restore-keys: |
           ${{ runner.os }}-buildx-
     -
+      name: Get Branch
+      id: extract_branch
+      run: echo ::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/} | sed 's/[^a-zA-Z0-9-]/-/g')
+    -
       name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v3
@@ -46,11 +50,7 @@ class GitActionCompiler {
         images: ${{ secrets.DOCKER_USERNAME }}/${{ github.job }}
         tags: |
           «tag»
-          type=raw,value=latest
-    -
-      name: Get Branch
-      id: extract_branch
-      run: echo ::set-output name=branch::$(echo ${GITHUB_REF} | cut -d'/' -f3)
+          type=raw,value=latest      
     -
       name: Build and Push Docker Image
       uses: docker/build-push-action@v2
@@ -75,20 +75,20 @@ class GitActionCompiler {
 	«default_part("builder", "./builder", null, "type=raw,value=${{ env.BUILDER_SUFFIX }}")» 
 '''
  def extra_layer(String name, String path)'''
-	«default_part("extra_layer_"+name, String.join("/", ".",path,"extra_layer"), "builder", "type=ref,event=branch")»
+	«default_part("extra_layer_"+name, String.join("/", ".",path,"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 ''' 
  def system_layer(String sys_name, Boolean need_extra)'''
 	«IF need_extra» 
-	«default_part(sys_name, "./"+sys_name, "extra_layer_"+sys_name, "type=ref,event=branch")»
+	«default_part(sys_name, "./"+sys_name, "extra_layer_"+sys_name, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ELSE»
-	«default_part(sys_name, "./"+sys_name, "builder", "type=ref,event=branch")»
+	«default_part(sys_name, "./"+sys_name, null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 	''' 	
  def stack_layer(String sys_name, String stack_name, Boolean need_extra)'''
 	«IF need_extra» 
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "extra_layer_"+stack_name, "type=ref,event=branch")»
+	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "extra_layer_"+stack_name, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ELSE»
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "builder", "type=ref,event=branch")»
+	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 ''' 	
  def compile_toGitAction(RosSystem system, Integer ros_version) '''«generator_helper.init_pkg()»
@@ -103,7 +103,6 @@ env:
 «««  Todo: get distro from model
   BUILDER_SUFFIX: ros«ros_version»
 jobs:
-  «build_layer()»
   «IF system.getComponentStack().isEmpty()»
   «IF !generator_helper.listOfRepos(system).isEmpty()»
   «extra_layer(system.name.toLowerCase, system.name.toLowerCase)»
