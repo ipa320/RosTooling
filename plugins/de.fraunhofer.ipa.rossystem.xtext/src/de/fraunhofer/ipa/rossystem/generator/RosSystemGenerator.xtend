@@ -98,7 +98,7 @@ class RosSystemGenerator extends AbstractGenerator {
 				if (Ros2Components.size()>0){
 						fsa.generateFile(system.getName().toLowerCase+"_ros2/package.xml",compile_package_xml_format3 (system, null))
 						fsa.generateFile(system.getName().toLowerCase+"_ros2/CMakeLists.txt",compile_CMakeLists_ROS2(system, null))
-						fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch",compile_toROS2launch(system, null).toString().replace("\t","  "))
+						fsa.generateFile(system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",compile_toROS2launch(system, null).toString().replace("\t","  "))
 						fsa.generateFile(system.getName().toLowerCase+"_ros2/setup.py",system.compile_setup_py)
 						fsa.generateFile(system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase, "")
 						fsa.generateFile(system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py", "")
@@ -115,7 +115,7 @@ class RosSystemGenerator extends AbstractGenerator {
 						if (!Collections.disjoint(stack.rosComponent, Ros2Components)) {
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "package.xml"),compile_package_xml_format3(system, stack))
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "CMakeLists.txt"),compile_CMakeLists_ROS2(system, stack))
-								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch.py"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "setup.py"),system.compile_setup_py)
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "resource/" + system.name.toLowerCase+'_'+stack.name.toLowerCase.toLowerCase), "")
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "/__init__.py"), "")
