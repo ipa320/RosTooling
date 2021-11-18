@@ -118,7 +118,7 @@ class RosSystemGenerator extends AbstractGenerator {
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "launch", stack.getName()+".launch.py"), compile_toROS2launch(system, stack).toString().replace("\t","  "))
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "setup.py"),compile_setup_py(system, stack))
 								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "resource/" + system.name.toLowerCase+'_'+stack.name.toLowerCase.toLowerCase), "")
-								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, "/__init__.py"), "")
+								fsa.generateFile(String.join("/", system.getName().toLowerCase+"_ros2", system.name.toLowerCase+'_'+stack.name.toLowerCase, system.name.toLowerCase+'_'+stack.name.toLowerCase, "__init__.py"), "")
 						}
 					
 					}
