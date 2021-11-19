@@ -28,8 +28,6 @@ class GeneratorHelpers {
 	List<CharSequence> PkgsList
 	String Pkg
 	List<ComponentInterface> ComponentsList
-	PackageImpl component_package
-	Set<String> Repos
 
 	def void init_pkg(){
 		PackageSet=false
@@ -122,37 +120,6 @@ class GeneratorHelpers {
 		package_impl = node.eContainer.eContainer as PackageImpl;
 		return package_impl;
 	}
-	
-	
-def Set<String> listOfRepos(Object subsystem) {
-	PkgsList = new ArrayList()
-	ComponentsList = new ArrayList<ComponentInterface>();
-	if (subsystem.class.toString.contains("RosSystemImpl")){
-		ComponentsList = (subsystem as RosSystem).rosComponent
-	} else if (subsystem.class.toString.contains("ComponentStackImpl")) {
-		ComponentsList = (subsystem as ComponentStack).rosComponent
-	}
-	
-	
-	Repos = new HashSet<String>();
-	for (ComponentInterface component: ComponentsList){
-		component_package = null;
-		component_package = get_pkg(component);
-		if (component_package !== null){
-			if (component_package.fromGitRepo !== null){
-				Repos.add(component_package.fromGitRepo);
-			}
-			if (!component_package.dependency.empty){
-				for (Dependency depend: component_package.dependency){
-					if ((depend as PackageDependency).package !== null){
-						if ((depend as PackageDependency).package.fromGitRepo !== null){
-							Repos.add((depend as PackageDependency).package.fromGitRepo);					
-				}
-			}
-		}
-	}}}
-	return Repos;
-}
 
 	//Launch files generators
 	def check_ns(ComponentInterface component){
