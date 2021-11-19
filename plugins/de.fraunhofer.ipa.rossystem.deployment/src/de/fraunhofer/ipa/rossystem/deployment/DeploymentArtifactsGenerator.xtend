@@ -11,6 +11,7 @@ import de.fraunhofer.ipa.rossystem.deployment.RosInstallCompiler
 import de.fraunhofer.ipa.rossystem.deployment.DockerComposeCompiler
 import de.fraunhofer.ipa.rossystem.deployment.DockerContainerCompiler
 import de.fraunhofer.ipa.rossystem.deployment.GitActionCompiler
+import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 import rossystem.RosSystem;
 import java.util.HashMap
 import java.util.Map
@@ -44,12 +45,12 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 	RosInstallCompiler rosintall_compiler = new RosInstallCompiler()
 	DockerComposeCompiler dockercompose_compiler = new DockerComposeCompiler()
 	GitActionCompiler gitaction_compiler = new GitActionCompiler()
-
+	
+	DeploymentHelpers generator_helper = new DeploymentHelpers()
 
 	String ros_distro
+	String system_folder_prefix
 	Integer ros_version
-	String system_prefix
-	String stack_prefix
 	Map<String, List<String>> device_map = new HashMap<String, List<String>>
 
 	def get_ros_distro(String distro) {
@@ -85,26 +86,26 @@ class DeploymentArtifactsGenerator extends AbstractGenerator {
 	        	}
 		]
 		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			system_prefix = create_system_prefix(system)
+			system_folder_prefix = create_system_prefix(system)
 			if (system.componentStack.size==0){
-				fsa.generateFile(system_prefix +"/Dockerfile",docker_compiler.compile_toDockerContainer(system, null, ros_distro, ros_version))
- 				fsa.generateFile(system_prefix +"/extra_layer/" + system.getName().toLowerCase + ".rosinstall",rosintall_compiler.compile_toRosInstall(system,null))
-				fsa.generateFile(system_prefix +"/extra_layer/Dockerfile",docker_compiler.compile_toDockerImageExtraLayer(system, null,ros_distro, ros_version))
+				fsa.generateFile(system_folder_prefix +"/Dockerfile",docker_compiler.compile_toDockerContainer(system, null, ros_distro, ros_version))
+ 				fsa.generateFile(system_folder_prefix +"/extra_layer/" + system.getName().toLowerCase + ".rosinstall",rosintall_compiler.compile_toRosInstall(system,null))
+				fsa.generateFile(system_folder_prefix +"/extra_layer/Dockerfile",docker_compiler.compile_toDockerImageExtraLayer(system, null,ros_distro, ros_version))
 			} else {
 				for (stack : system.componentStack){
-					stack_prefix = String.join("/", system_prefix, system.name.toLowerCase+'_'+stack.name.toLowerCase)
-					fsa.generateFile(String.join("/", stack_prefix, "Dockerfile"),docker_compiler.compile_toDockerContainer(system, stack, ros_distro, ros_version))
-			 		fsa.generateFile(String.join("/", stack_prefix, "extra_layer", stack.name.toLowerCase+".rosinstall"),rosintall_compiler.compile_toRosInstall(system,stack))
-			 		fsa.generateFile(String.join("/", stack_prefix, "extra_layer", "Dockerfile"),docker_compiler.compile_toDockerImageExtraLayer(system,stack, ros_distro, ros_version))
+					val stack_folder_prefix = String.join("/", system_folder_prefix, system.name.toLowerCase+'_'+stack.name.toLowerCase)
+					fsa.generateFile(String.join("/", stack_folder_prefix, "Dockerfile"),docker_compiler.compile_toDockerContainer(system, stack, ros_distro, ros_version))
+			 		fsa.generateFile(String.join("/", stack_folder_prefix, "extra_layer", stack.name.toLowerCase+".rosinstall"),rosintall_compiler.compile_toRosInstall(system,stack))
+			 		fsa.generateFile(String.join("/", stack_folder_prefix, "extra_layer", "Dockerfile"),docker_compiler.compile_toDockerImageExtraLayer(system,stack, ros_distro, ros_version))
 				}
 			}
 
-			fsa.generateFile(String.join("/", system_prefix, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system, ros_distro, ros_version, device_map))
+			fsa.generateFile(String.join("/", system_folder_prefix, "docker-compose.yml"),dockercompose_compiler.compile_toDockerCompose(system, ros_distro, ros_version, device_map))
 		}
 
 		// git action workflow
  		for (system : resource.allContents.toIterable.filter(RosSystem)){
-			fsa.generateFile(String.join("/", system_prefix, system_prefix + "_workflow.yml") ,gitaction_compiler.compile_toGitAction(system, ros_version, ros_distro))
+			fsa.generateFile(String.join("/", system_folder_prefix, generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro) + "_workflow.yml") ,gitaction_compiler.compile_toGitAction(system, ros_version, ros_distro))
 			}
 		}
 
