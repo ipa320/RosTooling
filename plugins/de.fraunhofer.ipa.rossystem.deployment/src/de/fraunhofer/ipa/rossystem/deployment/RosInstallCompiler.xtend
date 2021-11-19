@@ -1,71 +1,42 @@
 package de.fraunhofer.ipa.rossystem.deployment
 
-import rossystem.RosSystem
-import java.util.List
-import componentInterface.ComponentInterface
-import ros.impl.PackageImpl
-import ros.Dependency
-import ros.PackageDependency
-import java.util.ArrayList
-import java.util.Set
-import java.util.HashSet
 import rossystem.ComponentStack
-import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
+import rossystem.RosSystem
+import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 
 class RosInstallCompiler {
-		
-	PackageImpl component_package;
-	Set<String> Repos;
-	List<CharSequence> PkgsList
-	List<ComponentInterface> ComponentsList
-	GeneratorHelpers generator_helper = new GeneratorHelpers()
+	DeploymentHelpers generator_helper = new DeploymentHelpers()
+	val repo_info = newLinkedHashMap('local_name' -> null, 'branch' -> null, 'uri' -> null)
 
- def create_repo_link (String repo)'''
-«IF repo.indexOf(":", repo.indexOf(":") + 1) > 1»
-- git: {local-name: «repo.substring(0,repo.lastIndexOf(':')).substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: «repo.substring(0,repo.lastIndexOf(':'))», version: «repo.substring(repo.lastIndexOf(':') + 1)»}
-«ELSE»
-- git: {local-name: «repo.substring(repo.lastIndexOf("/") + 1).replace(".git","")», uri: «repo»}
-«ENDIF»
+def get_repo_info(String repo){
+	repo_info.put('branch', null)
+	repo_info.put('local_name', null)
+	repo_info.put('uri', null)
+	if(repo.indexOf(":", repo.indexOf(":") + 1) > 1) {
+		repo_info.put('branch', repo.substring(repo.lastIndexOf(':')+ 1))
+		val uri = repo.substring(0,repo.lastIndexOf(':'))
+		repo_info.put('uri', uri)
+		repo_info.put('local_name',  uri.substring(uri.lastIndexOf("/") + 1).replace(".git",""))
+	}
+	else {
+		repo_info.put('branch', null)
+		repo_info.put('uri', repo)
+		repo_info.put('local_name', repo.substring(repo.lastIndexOf("/") + 1).replace(".git",""))
+	}
+}
+
+ def create_repo_link (String repo)
+ '''«get_repo_info(repo)»
+- git: {local-name: «repo_info.get('local_name')», uri: «repo_info.get('uri')»«IF repo_info.get('branch')!==null», version: «repo_info.get('branch')»«ENDIF»}
  '''
  
  def compile_toRosInstall (RosSystem system,ComponentStack stack) '''«generator_helper.init_pkg()»
-«IF stack===null»«FOR repo:system.listOfRepos»
+«IF stack===null»«FOR repo: generator_helper.listOfRepos(system)»
 «create_repo_link(repo)»
 «ENDFOR»
-«ELSE»«FOR repo:stack.listOfRepos»
+«ELSE»«FOR repo: generator_helper.listOfRepos(stack)»
 «create_repo_link(repo)»
 «ENDFOR»
 «ENDIF»
 '''
-
-	def Set<String> listOfRepos(Object subsystem) {
-		PkgsList = new ArrayList()
-		ComponentsList = new ArrayList<ComponentInterface>();
-		if (subsystem.class.toString.contains("RosSystemImpl")){
-			ComponentsList = (subsystem as RosSystem).rosComponent
-		} else if (subsystem.class.toString.contains("ComponentStackImpl")) {
-			ComponentsList = (subsystem as ComponentStack).rosComponent
-		}
-		
-		
-		Repos = new HashSet<String>();
-		for (ComponentInterface component: ComponentsList){
-			component_package = null;
-			component_package = generator_helper.get_pkg(component);
-			if (component_package !== null){
-				if (component_package.fromGitRepo !== null){
-					Repos.add(component_package.fromGitRepo);
-				}
-				if (!component_package.dependency.empty){
-					for (Dependency depend: component_package.dependency){
-						if ((depend as PackageDependency).package !== null){
-							if ((depend as PackageDependency).package.fromGitRepo !== null){
-								Repos.add((depend as PackageDependency).package.fromGitRepo);					
-					}
-				}
-			}
-		}}}
-		return Repos;
-	}
-
 }
