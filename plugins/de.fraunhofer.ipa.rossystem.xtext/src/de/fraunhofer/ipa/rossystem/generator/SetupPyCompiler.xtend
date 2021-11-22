@@ -2,18 +2,19 @@ package de.fraunhofer.ipa.rossystem.generator
 
 import rossystem.RosSystem
 import com.google.inject.Inject
+import rossystem.ComponentStack
 
 class SetupPyCompile{
 	
 	@Inject extension GeneratorHelpers
 	
 	
-		def compile_setup_py(RosSystem system) '''«init_pkg()»
+		def compile_setup_py(RosSystem system,ComponentStack stack) '''«init_pkg()»
 import os
 from glob import glob
 from setuptools import setup
 
-PACKAGE_NAME = '«system.name.toLowerCase»'
+PACKAGE_NAME = '«IF stack===null»«system.name.toLowerCase»«ELSE»«system.name.toLowerCase»_«stack.name.toLowerCase»«ENDIF»'
 
 setup(
     name=PACKAGE_NAME,
