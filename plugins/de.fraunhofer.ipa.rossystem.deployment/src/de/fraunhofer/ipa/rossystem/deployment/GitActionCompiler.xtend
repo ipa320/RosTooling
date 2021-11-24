@@ -1,11 +1,11 @@
 package de.fraunhofer.ipa.rossystem.deployment
 
 import rossystem.RosSystem
-import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
+import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 
 class GitActionCompiler {
 	
-	GeneratorHelpers generator_helper = new GeneratorHelpers()
+	DeploymentHelpers generator_helper = new DeploymentHelpers()
  
  def default_part(String layer, String context_path, String needed_layer, String tag)'''
 «layer»:
@@ -39,6 +39,10 @@ class GitActionCompiler {
         restore-keys: |
           ${{ runner.os }}-buildx-
     -
+      name: Get Branch
+      id: extract_branch
+      run: echo ::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/} | sed 's/[^a-zA-Z0-9-]/_/g')
+    -
       name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v3
@@ -47,10 +51,6 @@ class GitActionCompiler {
         tags: |
           «tag»
           type=raw,value=latest
-    -
-      name: Get Branch
-      id: extract_branch
-      run: echo ::set-output name=branch::$(echo ${GITHUB_REF} | cut -d'/' -f3)
     -
       name: Build and Push Docker Image
       uses: docker/build-push-action@v2
@@ -74,48 +74,52 @@ class GitActionCompiler {
  def build_layer()'''
 	«default_part("builder", "./builder", null, "type=raw,value=${{ env.BUILDER_SUFFIX }}")» 
 '''
- def extra_layer(String name, String path)'''
-	«default_part("extra_layer_"+name, String.join("/", ".",path,"extra_layer"), "builder", "type=ref,event=branch")»
+ def extra_layer(String sys_name, String ros_distro)
+'''
+	«default_part("extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+'''
+ def extra_layer(String sys_name, String stack_name,String ros_distro)
+'''
+	«default_part(String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), String.join("_", sys_name, stack_name),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 ''' 
- def system_layer(String sys_name, Boolean need_extra)'''
+ def system_layer(String sys_name, Boolean need_extra, String ros_distro)'''
 	«IF need_extra» 
-	«default_part(sys_name, "./"+sys_name, "extra_layer_"+sys_name, "type=ref,event=branch")»
+	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), "extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ELSE»
-	«default_part(sys_name, "./"+sys_name, "builder", "type=ref,event=branch")»
+	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 	''' 	
- def stack_layer(String sys_name, String stack_name, Boolean need_extra)'''
+ def stack_layer(String sys_name, String stack_name, String ros_distro, Boolean need_extra)'''
 	«IF need_extra» 
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "extra_layer_"+stack_name, "type=ref,event=branch")»
+	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ELSE»
-	«default_part(sys_name+"_"+stack_name, String.join("/", ".",sys_name, sys_name+"_"+stack_name), "builder", "type=ref,event=branch")»
+	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 	«ENDIF»
 ''' 	
- def compile_toGitAction(RosSystem system, Integer ros_version) '''«generator_helper.init_pkg()»
-name: «system.name.toLowerCase»
+ def compile_toGitAction(RosSystem system, Integer ros_version, String ros_distro) '''«generator_helper.init_pkg()»
+name: «generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»
 on:
   push:
     paths:
-      - '«system.name.toLowerCase»/**'
+      - '«generator_helper.get_folder_name(system.name.toLowerCase, ros_distro)»/**'
 env:
   PREFIX: "${{ secrets.DOCKER_USERNAME }}/"
   SUFFIX: ""
 «««  Todo: get distro from model
   BUILDER_SUFFIX: ros«ros_version»
 jobs:
-  «build_layer()»
   «IF system.getComponentStack().isEmpty()»
   «IF !generator_helper.listOfRepos(system).isEmpty()»
-  «extra_layer(system.name.toLowerCase, system.name.toLowerCase)»
-  «system_layer(system.name.toLowerCase, true)»
+  «extra_layer(system.name.toLowerCase, ros_distro)»
+  «system_layer(system.name.toLowerCase, true, ros_distro)»
 	«ELSE»
-  «system_layer(system.name.toLowerCase, false)»
+  «system_layer(system.name.toLowerCase, false, ros_distro)»
 «ENDIF»
 «ELSE»«FOR stack : system.getComponentStack()»«IF !generator_helper.listOfRepos(stack).isEmpty()»
-  «extra_layer(stack.name.toLowerCase, String.join("/", system.name.toLowerCase, system.name.toLowerCase + "_" + stack.name.toLowerCase))»
-  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, true)»
+  «extra_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro)»
+  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro, true)»
  «ELSE»
-  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, false)»
+  «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro, false)»
 «ENDIF»
  «ENDFOR»
 «ENDIF»           

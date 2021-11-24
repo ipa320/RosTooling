@@ -1,13 +1,13 @@
 package de.fraunhofer.ipa.rossystem.deployment
 
 import rossystem.RosSystem
-import de.fraunhofer.ipa.rossystem.generator.GeneratorHelpers
+import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 import java.util.Map
 import java.util.List
 
 class DockerComposeCompiler {
 
- GeneratorHelpers generator_helper = new GeneratorHelpers()
+ DeploymentHelpers generator_helper = new DeploymentHelpers()
 
 def create_devices(List<String> ports)'''
 «IF ports.size() > 0»
@@ -31,8 +31,8 @@ services:
       - ros
 
 «IF system.getComponentStack().isEmpty()»
-«"  "»«system.name.toLowerCase»:
-    image: "«system.name.toLowerCase»:latest"
+«"  "»«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»:
+    image: "«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»:latest"
     depends_on:
       - ros-master
     environment:
@@ -44,8 +44,8 @@ services:
     command: stdbuf -o L roslaunch «system.name.toLowerCase» «system.name.toLowerCase».launch --wait
 «ELSE»
 «FOR stack:system.componentStack»
-«"  "»«system.name.toLowerCase»_«stack.name.toLowerCase»:
-    image: "«system.name.toLowerCase»_«stack.name.toLowerCase»:latest"
+«"  "»«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»:
+    image: "«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»:latest"
     depends_on:
       - ros-master
     environment:
@@ -59,8 +59,22 @@ services:
 «ENDFOR»
 «ENDIF»
 «ELSE»
-Todo: complete docker compose file for ros2
-«ENDIF»
+version: "3.3"
+services:
+«IF system.getComponentStack().isEmpty()»
+«"  "»«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»:
+    image: "«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»:latest"
+    «create_devices(device_map.get(system.name))»
+    command: stdbuf -o L ros2 launch «system.name.toLowerCase» «system.name.toLowerCase».launch.py
+«ELSE»
+«FOR stack:system.componentStack»
+«"  "»«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»:
+    image: "«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»:latest"
+    «create_devices(device_map.get(stack.name))»
+    command: stdbuf -o L ros2 launch «system.name.toLowerCase»_«stack.name.toLowerCase» «stack.name.toLowerCase».launch.py
 
+«ENDFOR»
+«ENDIF»
+«ENDIF»
 '''
 }
