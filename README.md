@@ -52,6 +52,7 @@ Publications:
 
 - Features
 
+  - [Deployment features](docu/deployment.md)
   - [Compare your model with a Specification](docu/CompareSpec.md)
   - [Introspection at design time](docu/simulateRuntime.md)
   - [Models combination](docu/ModelCombine.md)
