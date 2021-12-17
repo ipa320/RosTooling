@@ -37,7 +37,7 @@ services:
       - ros-master
     environment:
       - "ROS_MASTER_URI=http://ros-master:11311"
-      - "ROS_HOSTNAME=«system.name.toLowerCase»"
+      - "ROS_HOSTNAME=«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»"
     networks:
       - ros
     «create_devices(device_map.get(system.name))»
@@ -50,7 +50,7 @@ services:
       - ros-master
     environment:
       - "ROS_MASTER_URI=http://ros-master:11311"
-      - "ROS_HOSTNAME=«stack.name.toLowerCase»"
+      - "ROS_HOSTNAME=«generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»_«stack.name.toLowerCase»"
     networks:
       - ros
     «create_devices(device_map.get(stack.name))»
