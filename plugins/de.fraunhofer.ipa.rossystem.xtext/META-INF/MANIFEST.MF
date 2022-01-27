@@ -28,7 +28,6 @@ Export-Package: de.fraunhofer.ipa.rossystem.scoping,
  de.fraunhofer.ipa.ros.generator,
  de.fraunhofer.ipa.ros.parser.antlr,
  de.fraunhofer.ipa.ros.validation,
- de.fraunhofer.ipa.ros.formatting2,
  de.fraunhofer.ipa.ros.scoping,
  de.fraunhofer.ipa.ros.parser.antlr.internal,
  de.fraunhofer.ipa.ros.services
