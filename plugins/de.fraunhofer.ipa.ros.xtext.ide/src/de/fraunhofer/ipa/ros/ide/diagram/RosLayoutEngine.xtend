@@ -10,6 +10,7 @@ import org.eclipse.elk.core.options.Direction
 import org.eclipse.elk.core.options.PortSide
 import org.eclipse.elk.core.options.PortAlignment
 import org.eclipse.elk.core.options.PortConstraints
+import org.eclipse.elk.core.options.SizeConstraint
 
 class RosLayoutEngine extends ElkLayoutEngine {
 
@@ -21,11 +22,28 @@ class RosLayoutEngine extends ElkLayoutEngine {
 				.setProperty(CoreOptions.SPACING_NODE_NODE, 30.0)
 				.setProperty(LayeredOptions.SPACING_EDGE_NODE_BETWEEN_LAYERS, 30.0)
 			configurator.configureByType('node')
-				.setProperty(CoreOptions.PORT_ALIGNMENT_DEFAULT, PortAlignment.CENTER)
-				.setProperty(CoreOptions.PORT_CONSTRAINTS, PortConstraints.FIXED_SIDE)
-			configurator.configureByType('port')
+				.setProperty(CoreOptions.PORT_CONSTRAINTS, PortConstraints.FIXED_ORDER)
+				.setProperty(CoreOptions.PORT_ALIGNMENT_DEFAULT, PortAlignment.JUSTIFIED)
+				.setProperty(CoreOptions.NODE_SIZE_CONSTRAINTS, SizeConstraint.free());
+			configurator.configureByType('publisher_port')
 				.setProperty(CoreOptions.PORT_SIDE, PortSide.EAST)
 				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+			configurator.configureByType('subscriber_port')
+				.setProperty(CoreOptions.PORT_SIDE, PortSide.WEST)
+				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+			configurator.configureByType('service_server_port')
+				.setProperty(CoreOptions.PORT_SIDE, PortSide.EAST)
+				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+			configurator.configureByType('service_client_port')
+				.setProperty(CoreOptions.PORT_SIDE, PortSide.WEST)
+				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+			configurator.configureByType('action_server_port')
+				.setProperty(CoreOptions.PORT_SIDE, PortSide.EAST)
+				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+			configurator.configureByType('action_client_port')
+				.setProperty(CoreOptions.PORT_SIDE, PortSide.WEST)
+				.setProperty((CoreOptions.PORT_BORDER_OFFSET), 3.0)
+				
 			layout(root, configurator)
 		}
 	}

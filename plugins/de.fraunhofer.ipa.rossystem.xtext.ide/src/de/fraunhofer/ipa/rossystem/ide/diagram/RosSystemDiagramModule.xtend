@@ -1,21 +1,23 @@
-package de.fraunhofer.ipa.ros.ide.diagram
+package de.fraunhofer.ipa.rossystem.ide.diagram
 
 import org.eclipse.sprotty.xtext.DefaultDiagramModule
 import org.eclipse.sprotty.xtext.IDiagramGenerator
-import org.eclipse.sprotty.layout.ElkLayoutEngine
 
-class RosDiagramModule extends DefaultDiagramModule {
+class RosSystemDiagramModule extends DefaultDiagramModule {
 
 	def Class<? extends IDiagramGenerator> bindIDiagramGenerator() {
-		RosDiagramGenerator
+		RosSystemDiagramGenerator
 	} 
 
 	override bindIDiagramServerFactory() {
-		RosDiagramServerFactory
+		RosSystemDiagramServerFactory
 	}
 	
 	override bindILayoutEngine() {
-		//ElkLayoutEngine
-		RosLayoutEngine
+		RosSystemLayoutEngine
 	}
+	
+	override bindIDiagramServer() {
+		RosSystemDiagramServer
+	}	
 }
