@@ -185,13 +185,22 @@ public interface RossystemPackage extends EPackage {
 	int COMPONENT_STACK__QUALITY_ATTRIBUTE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Safety Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STACK__SAFETY_LEVEL = 3;
+
+	/**
 	 * The number of structural features of the '<em>Component Stack</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK_FEATURE_COUNT = 3;
+	int COMPONENT_STACK_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Component Stack</em>' class.
@@ -533,6 +542,17 @@ public interface RossystemPackage extends EPackage {
 	EReference getComponentStack_QualityAttribute();
 
 	/**
+	 * Returns the meta object for the attribute '{@link rossystem.ComponentStack#getSafetyLevel <em>Safety Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Safety Level</em>'.
+	 * @see rossystem.ComponentStack#getSafetyLevel()
+	 * @see #getComponentStack()
+	 * @generated
+	 */
+	EAttribute getComponentStack_SafetyLevel();
+
+	/**
 	 * Returns the meta object for class '{@link rossystem.QualityAttribute <em>Quality Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -832,6 +852,14 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_STACK__QUALITY_ATTRIBUTE = eINSTANCE.getComponentStack_QualityAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Safety Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_STACK__SAFETY_LEVEL = eINSTANCE.getComponentStack_SafetyLevel();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.QualityAttributeImpl <em>Quality Attribute</em>}' class.

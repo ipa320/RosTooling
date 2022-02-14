@@ -66,6 +66,7 @@ public class ComponentStackItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSafetyLevelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +85,28 @@ public class ComponentStackItemProvider
 				 getString("_UI_ComponentStack_Name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStack_Name_feature", "_UI_ComponentStack_type"),
 				 RossystemPackage.Literals.COMPONENT_STACK__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Safety Level feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSafetyLevelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentStack_SafetyLevel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStack_SafetyLevel_feature", "_UI_ComponentStack_type"),
+				 RossystemPackage.Literals.COMPONENT_STACK__SAFETY_LEVEL,
 				 true,
 				 false,
 				 false,
@@ -162,6 +185,7 @@ public class ComponentStackItemProvider
 
 		switch (notification.getFeatureID(ComponentStack.class)) {
 			case RossystemPackage.COMPONENT_STACK__NAME:
+			case RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RossystemPackage.COMPONENT_STACK__ROS_COMPONENT:

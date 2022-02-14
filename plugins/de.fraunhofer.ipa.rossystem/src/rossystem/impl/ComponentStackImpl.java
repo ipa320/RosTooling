@@ -35,6 +35,7 @@ import rossystem.RossystemPackage;
  *   <li>{@link rossystem.impl.ComponentStackImpl#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.impl.ComponentStackImpl#getRosComponent <em>Ros Component</em>}</li>
  *   <li>{@link rossystem.impl.ComponentStackImpl#getQualityAttribute <em>Quality Attribute</em>}</li>
+ *   <li>{@link rossystem.impl.ComponentStackImpl#getSafetyLevel <em>Safety Level</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +80,26 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<QualityAttribute> qualityAttribute;
+
+	/**
+	 * The default value of the '{@link #getSafetyLevel() <em>Safety Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafetyLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SAFETY_LEVEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSafetyLevel() <em>Safety Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafetyLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String safetyLevel = SAFETY_LEVEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +175,29 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public String getSafetyLevel() {
+		return safetyLevel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSafetyLevel(String newSafetyLevel) {
+		String oldSafetyLevel = safetyLevel;
+		safetyLevel = newSafetyLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL, oldSafetyLevel, safetyLevel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RossystemPackage.COMPONENT_STACK__ROS_COMPONENT:
@@ -178,6 +222,8 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 				return getRosComponent();
 			case RossystemPackage.COMPONENT_STACK__QUALITY_ATTRIBUTE:
 				return getQualityAttribute();
+			case RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL:
+				return getSafetyLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +248,9 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 				getQualityAttribute().clear();
 				getQualityAttribute().addAll((Collection<? extends QualityAttribute>)newValue);
 				return;
+			case RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL:
+				setSafetyLevel((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,6 +272,9 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 			case RossystemPackage.COMPONENT_STACK__QUALITY_ATTRIBUTE:
 				getQualityAttribute().clear();
 				return;
+			case RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL:
+				setSafetyLevel(SAFETY_LEVEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +293,8 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 				return rosComponent != null && !rosComponent.isEmpty();
 			case RossystemPackage.COMPONENT_STACK__QUALITY_ATTRIBUTE:
 				return qualityAttribute != null && !qualityAttribute.isEmpty();
+			case RossystemPackage.COMPONENT_STACK__SAFETY_LEVEL:
+				return SAFETY_LEVEL_EDEFAULT == null ? safetyLevel != null : !SAFETY_LEVEL_EDEFAULT.equals(safetyLevel);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -257,6 +311,8 @@ public class ComponentStackImpl extends MinimalEObjectImpl.Container implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
+		result.append(", SafetyLevel: ");
+		result.append(safetyLevel);
 		result.append(')');
 		return result.toString();
 	}
