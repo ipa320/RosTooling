@@ -26,7 +26,7 @@ First the java environment have to be setup, for eclipse it is recomended the in
 ```
 sudo apt-get install openjdk-11-jre
 ```
-Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended *2020-12*.
+Download the official [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer) for your preferred operating system. Execute the installer and choose the advanced mode (menu on the right-up corner). Select the Product *Eclipse Modeling tools* package, for the version it is recommended *2021-12*.
 
 ![alt text](images/eclipse_installer1.png)
 
@@ -35,6 +35,12 @@ Press *Next* and add a new *User project* pressing the green button *+*:
 Catalog: Github Projects
 Resource URIs: https://raw.githubusercontent.com/ipa320/ros-model/master/EclipseInstaller/ROSModel.setup
 ```
+Sometimes eclipse is not able to find the file, for those cases we recommend to download the file to the local memory of the machine and import it:
+
+```
+wget https://raw.githubusercontent.com/ipa320/ros-model/master/EclipseInstaller/ROSModel.setup
+```
+
 ![alt text](images/eclipse_installer2.png)
 
 Select the the ROS Model project (under Github Projects -> <User>) and press next. 
