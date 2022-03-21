@@ -45,7 +45,9 @@ wget https://raw.githubusercontent.com/ipa320/ros-model/master/EclipseInstaller/
 
 Select the the ROS Model project (under Github Projects -> <User>) and press next. 
 
-By default the ROS tooling installation will be saved under the folder *ros-model-master* in your home directory. In case your github credentials are not setup on your machine, change the *Ros model Github repository* to the *HTTPs(read-write)* option.
+By default the ROS tooling installation will be saved under the folder *ros-model-master* in your home directory. To ensure that you have access to get the source code from GitHub, select the check box *Show all variable* and change the *Ros model Github repository* to the *HTTPs(read-write)* option, verify that the option *Github user ID* is set to "anonymous". 
+
+![alt text](images/eclipse_installer3.png)
 
 Follow the installation instructions of the Oompth installer dialog, after the installation eclipse will be restarted to launch the ROS tooling configuration. Finally, when all the startup tasks finished press "Workbench".
 
