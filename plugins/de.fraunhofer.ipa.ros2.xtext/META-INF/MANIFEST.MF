@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.ros2.xtext
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros2.xtext
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Fraunhofer IPA
+Bundle-Version: 2.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.ros2.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,

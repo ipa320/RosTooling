@@ -20,7 +20,13 @@
 		<module>../de.fraunhofer.ipa.ros</module>
 		<module>../de.fraunhofer.ipa.ros.xtext</module>
 		<module>../de.fraunhofer.ipa.ros.xtext.ide</module>
-		<module>../de.fraunhofer.ipa.ros.xtext.ui</module>		
+		<module>../de.fraunhofer.ipa.ros.xtext.ui</module>
+		<module>../de.fraunhofer.ipa.ros1.xtext</module>
+		<module>../de.fraunhofer.ipa.ros1.xtext.ide</module>
+		<module>../de.fraunhofer.ipa.ros1.xtext.ui</module>	
+		<module>../de.fraunhofer.ipa.ros2.xtext</module>
+		<module>../de.fraunhofer.ipa.ros2.xtext.ide</module>
+		<module>../de.fraunhofer.ipa.ros2.xtext.ui</module>	
 		<module>../de.fraunhofer.ipa.ros.edit</module>
 		<module>../de.fraunhofer.ipa.ros.editor</module>
 		<module>../de.fraunhofer.ipa.rossystem.model.combination</module>
