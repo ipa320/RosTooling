@@ -8,7 +8,7 @@ import com.google.inject.Provider;
 import com.google.inject.name.Names;
 import de.fraunhofer.ipa.ros.ide.contentassist.antlr.PartialRosContentAssistParser;
 import de.fraunhofer.ipa.ros.ide.contentassist.antlr.RosParser;
-import de.fraunhofer.ipa.ros.ide.contentassist.antlr.internal.InternalRosLexer;
+import de.fraunhofer.ipa.ros.ide.contentassist.antlr.lexer.InternalRosLexer;
 import de.fraunhofer.ipa.ros.ui.contentassist.RosProposalProvider;
 import de.fraunhofer.ipa.ros.ui.labeling.RosDescriptionLabelProvider;
 import de.fraunhofer.ipa.ros.ui.labeling.RosLabelProvider;
@@ -29,6 +29,8 @@ import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess;
 import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider;
 import org.eclipse.xtext.ide.LexerIdeBindings;
+import org.eclipse.xtext.ide.editor.contentassist.CompletionPrefixProvider;
+import org.eclipse.xtext.ide.editor.contentassist.IndentationAwareCompletionPrefixProvider;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.ide.editor.partialEditing.IPartialEditingContentAssistParser;
@@ -110,7 +112,7 @@ public abstract class AbstractRosUiModule extends DefaultUiModule {
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(de.fraunhofer.ipa.ros.parser.antlr.internal.InternalRosLexer.class);
+			.to(de.fraunhofer.ipa.ros.parser.antlr.lexer.InternalRosLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
@@ -133,6 +135,11 @@ public abstract class AbstractRosUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexerProvider(Binder binder) {
 		binder.bind(InternalRosLexer.class).toProvider(LexerProvider.create(InternalRosLexer.class));
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
+		return IndentationAwareCompletionPrefixProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2

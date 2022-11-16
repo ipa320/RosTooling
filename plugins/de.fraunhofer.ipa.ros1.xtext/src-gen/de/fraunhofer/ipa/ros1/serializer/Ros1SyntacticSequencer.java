@@ -22,17 +22,27 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected Ros1GrammarAccess grammarAccess;
 	protected AbstractElementAlias match_CatkinPackage___ArtifactsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q;
-	protected AbstractElementAlias match_Node___ParametersKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q;
+	protected AbstractElementAlias match_Node___ActionclientKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q;
+	protected AbstractElementAlias match_Node___ActionserverKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q;
+	protected AbstractElementAlias match_Node___ParametersKeyword_9_0_BEGINTerminalRuleCall_9_1_ENDTerminalRuleCall_9_3__q;
 	protected AbstractElementAlias match_Node___PublishersKeyword_3_0_BEGINTerminalRuleCall_3_1_ENDTerminalRuleCall_3_3__q;
+	protected AbstractElementAlias match_Node___ServiceclientKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q;
+	protected AbstractElementAlias match_Node___ServiceserverKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q;
 	protected AbstractElementAlias match_Node___SubscribersKeyword_4_0_BEGINTerminalRuleCall_4_1_ENDTerminalRuleCall_4_3__q;
+	protected AbstractElementAlias match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (Ros1GrammarAccess) access;
 		match_CatkinPackage___ArtifactsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCatkinPackageAccess().getArtifactsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getCatkinPackageAccess().getBEGINTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getCatkinPackageAccess().getENDTerminalRuleCall_5_3()));
-		match_Node___ParametersKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_5_3()));
+		match_Node___ActionclientKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_8_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_8_3()));
+		match_Node___ActionserverKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_7_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_7_3()));
+		match_Node___ParametersKeyword_9_0_BEGINTerminalRuleCall_9_1_ENDTerminalRuleCall_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_9_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_9_3()));
 		match_Node___PublishersKeyword_3_0_BEGINTerminalRuleCall_3_1_ENDTerminalRuleCall_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3()));
+		match_Node___ServiceclientKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_6_3()));
+		match_Node___ServiceserverKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_5_3()));
 		match_Node___SubscribersKeyword_4_0_BEGINTerminalRuleCall_4_1_ENDTerminalRuleCall_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_4_3()));
+		match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSpecsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_5_3()));
 	}
 	
 	@Override
@@ -64,12 +74,22 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_CatkinPackage___ArtifactsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q.equals(syntax))
 				emit_CatkinPackage___ArtifactsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Node___ParametersKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q.equals(syntax))
-				emit_Node___ParametersKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___ActionclientKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q.equals(syntax))
+				emit_Node___ActionclientKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___ActionserverKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q.equals(syntax))
+				emit_Node___ActionserverKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___ParametersKeyword_9_0_BEGINTerminalRuleCall_9_1_ENDTerminalRuleCall_9_3__q.equals(syntax))
+				emit_Node___ParametersKeyword_9_0_BEGINTerminalRuleCall_9_1_ENDTerminalRuleCall_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Node___PublishersKeyword_3_0_BEGINTerminalRuleCall_3_1_ENDTerminalRuleCall_3_3__q.equals(syntax))
 				emit_Node___PublishersKeyword_3_0_BEGINTerminalRuleCall_3_1_ENDTerminalRuleCall_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___ServiceclientKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q.equals(syntax))
+				emit_Node___ServiceclientKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___ServiceserverKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q.equals(syntax))
+				emit_Node___ServiceserverKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Node___SubscribersKeyword_4_0_BEGINTerminalRuleCall_4_1_ENDTerminalRuleCall_4_3__q.equals(syntax))
 				emit_Node___SubscribersKeyword_4_0_BEGINTerminalRuleCall_4_1_ENDTerminalRuleCall_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q.equals(syntax))
+				emit_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -90,14 +110,125 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('actionclient:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     actionserver+=ActionServer END (ambiguity) 'parameters:' BEGIN parameter+=Parameter
+	 *     actionserver+=ActionServer END (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) 'parameters:' BEGIN parameter+=Parameter
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 *     serviceclient+=ServiceClient END ('actionserver:' BEGIN END)? (ambiguity) 'parameters:' BEGIN parameter+=Parameter
+	 *     serviceclient+=ServiceClient END ('actionserver:' BEGIN END)? (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) 'parameters:' BEGIN parameter+=Parameter
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) 'parameters:' BEGIN parameter+=Parameter
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 */
+	protected void emit_Node___ActionclientKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('actionserver:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     serviceclient+=ServiceClient END (ambiguity) 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     serviceclient+=ServiceClient END (ambiguity) ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     serviceclient+=ServiceClient END (ambiguity) ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? (ambiguity) 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? (ambiguity) ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 */
+	protected void emit_Node___ActionserverKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('parameters:' BEGIN END)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? (ambiguity) END (rule end)
-	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) END (rule end)
-	 *     subscriber+=Subscriber END (ambiguity) END (rule end)
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     actionclient+=ActionClient END (ambiguity) END (rule end)
+	 *     actionserver+=ActionServer END ('actionclient:' BEGIN END)? (ambiguity) END (rule end)
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? (ambiguity) END (rule end)
+	 *     serviceclient+=ServiceClient END ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? (ambiguity) END (rule end)
+	 *     serviceserver+=ServiceServer END ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? (ambiguity) END (rule end)
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? (ambiguity) END (rule end)
 	 */
-	protected void emit_Node___ParametersKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Node___ParametersKeyword_9_0_BEGINTerminalRuleCall_9_1_ENDTerminalRuleCall_9_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -106,11 +237,138 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('publishers:' BEGIN END)?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         (ambiguity) 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         (ambiguity) 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
 	 *     name=RosNames BEGIN (ambiguity) 'subscribers:' BEGIN subscriber+=Subscriber
-	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
-	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? 'serviceserver:' BEGIN serviceserver+=ServiceServer
+	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     name=RosNames BEGIN (ambiguity) ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
 	 */
 	protected void emit_Node___PublishersKeyword_3_0_BEGINTerminalRuleCall_3_1_ENDTerminalRuleCall_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('serviceclient:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     serviceserver+=ServiceServer END (ambiguity) 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     serviceserver+=ServiceServer END (ambiguity) ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     serviceserver+=ServiceServer END (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     serviceserver+=ServiceServer END (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? (ambiguity) 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     subscriber+=Subscriber END ('serviceserver:' BEGIN END)? (ambiguity) ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 */
+	protected void emit_Node___ServiceclientKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('serviceserver:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         ('subscribers:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? (ambiguity) 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     publisher+=Publisher END ('subscribers:' BEGIN END)? (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 *     subscriber+=Subscriber END (ambiguity) 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     subscriber+=Subscriber END (ambiguity) ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     subscriber+=Subscriber END (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     subscriber+=Subscriber END (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     subscriber+=Subscriber END (ambiguity) ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
+	 */
+	protected void emit_Node___ServiceserverKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -119,12 +377,58 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('subscribers:' BEGIN END)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) 'parameters:' BEGIN parameter+=Parameter
-	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) ('parameters:' BEGIN END)? END (rule end)
-	 *     publisher+=Publisher END (ambiguity) 'parameters:' BEGIN parameter+=Parameter
-	 *     publisher+=Publisher END (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         'parameters:' 
+	 *         BEGIN 
+	 *         parameter+=Parameter
+	 *     )
+	 *     (
+	 *         name=RosNames 
+	 *         BEGIN 
+	 *         ('publishers:' BEGIN END)? 
+	 *         (ambiguity) 
+	 *         ('serviceserver:' BEGIN END)? 
+	 *         ('serviceclient:' BEGIN END)? 
+	 *         ('actionserver:' BEGIN END)? 
+	 *         ('actionclient:' BEGIN END)? 
+	 *         ('parameters:' BEGIN END)? 
+	 *         END 
+	 *         (rule end)
+	 *     )
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) 'serviceserver:' BEGIN serviceserver+=ServiceServer
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) ('serviceserver:' BEGIN END)? 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     name=RosNames BEGIN ('publishers:' BEGIN END)? (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END (ambiguity) 'serviceserver:' BEGIN serviceserver+=ServiceServer
+	 *     publisher+=Publisher END (ambiguity) ('serviceserver:' BEGIN END)? 'serviceclient:' BEGIN serviceclient+=ServiceClient
+	 *     publisher+=Publisher END (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? 'actionserver:' BEGIN actionserver+=ActionServer
+	 *     publisher+=Publisher END (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? 'actionclient:' BEGIN actionclient+=ActionClient
+	 *     publisher+=Publisher END (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? 'parameters:' BEGIN parameter+=Parameter
+	 *     publisher+=Publisher END (ambiguity) ('serviceserver:' BEGIN END)? ('serviceclient:' BEGIN END)? ('actionserver:' BEGIN END)? ('actionclient:' BEGIN END)? ('parameters:' BEGIN END)? END (rule end)
 	 */
 	protected void emit_Node___SubscribersKeyword_4_0_BEGINTerminalRuleCall_4_1_ENDTerminalRuleCall_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('specs:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     fromGitRepo=EString (ambiguity) 'dependencies:' '[' dependency+=Dependency
+	 *     fromGitRepo=EString (ambiguity) END (rule end)
+	 *     name=RosNames ':' BEGIN (ambiguity) 'dependencies:' '[' dependency+=Dependency
+	 *     name=RosNames ':' BEGIN (ambiguity) END (rule end)
+	 */
+	protected void emit_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -42,7 +42,7 @@ public class Ros1Parser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "CatkinPackage";
+		return "Package";
 	}
 
 	public Ros1GrammarAccess getGrammarAccess() {

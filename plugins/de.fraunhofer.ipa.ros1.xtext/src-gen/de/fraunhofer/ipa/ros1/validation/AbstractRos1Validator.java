@@ -3,17 +3,18 @@
  */
 package de.fraunhofer.ipa.ros1.validation;
 
+import de.fraunhofer.ipa.ros.validation.RosValidator;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
-public abstract class AbstractRos1Validator extends AbstractDeclarativeValidator {
+public abstract class AbstractRos1Validator extends RosValidator {
 	
 	@Override
 	protected List<EPackage> getEPackages() {
-		List<EPackage> result = new ArrayList<EPackage>();
+		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ros"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/primitives"));
 		return result;
 	}
 }

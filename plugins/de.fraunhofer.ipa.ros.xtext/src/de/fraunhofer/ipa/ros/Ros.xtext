@@ -6,37 +6,73 @@ import "http://www.ipa.fraunhofer.de/primitives" as primitives
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/emf/2003/XMLType" as type
 
-
-
 PackageSet returns PackageSet:
 	{PackageSet}
-	'PackageSet'
-	'{'
-		(package+=Package ( "," package+=Package)* )?
-	'}';
+	package+=Package_Impl*
+	;
+	
+// YAML format
+terminal BEGIN: 'synthetic:BEGIN';
+terminal END: 'synthetic:END';
+
+@Override 
+terminal SL_COMMENT: '#' !('\n'|'\r')*;
+//
 
 Package returns Package:
-	Package_Impl | CatkinPackage | AmentPackage;
+	Package_Impl //|
+	//CatkinPackage | 
+	//AmentPackage
+	;
+
+CatkinPackage returns CatkinPackage:
+	{CatkinPackage}
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('artifacts:' 
+			BEGIN 
+			artifact+=Artifact*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
+	
+Package_Impl returns Package:
+	{Package}
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('specs:' 
+			BEGIN
+			spec+=SpecBase*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
+	
+AmentPackage returns AmentPackage:
+	{AmentPackage}
+	'AmentPackage'
+	name=RosNames
+;
 
 SpecBase returns SpecBase:
-	ServiceSpec | TopicSpec | ActionSpec;
+	TopicSpec | ServiceSpec | ActionSpec;
 
 Dependency returns Dependency:
 	PackageDependency | ExternalDependency;
 
-
 Namespace returns Namespace:
 	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 
-Package_Impl returns Package:
-	{Package}
-	'Package'
-	name=EString
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
+Artifact returns Artifact:
+	{Artifact}
+		name=RosNames':'
+		BEGIN
+		(node=Node)?
+		END
+	;
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -54,131 +90,130 @@ terminal ROS_CONVENTION_A:
 
 terminal ROS_CONVENTION_PARAM:
 	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
-	
-Artifact returns Artifact:
-	{Artifact}
-	'Artifact'
-	name=RosNames
-	'{'
-		(node=Node)?
-	'}';
-
-CatkinPackage returns CatkinPackage:
-	{CatkinPackage}
-	'CatkinPackage'
-	name=RosNames
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
-	
-AmentPackage returns AmentPackage:
-	{AmentPackage}
-	'AmentPackage'
-	name=RosNames
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
-
-ServiceSpec returns ServiceSpec:
-	{ServiceSpec}
-	'ServiceSpec'
-	name=EString
-	'{'
-		('request' request=MessageDefinition)?
-		('response' response=MessageDefinition)?
-	'}';
 
 TopicSpec returns TopicSpec:
 	{TopicSpec}
-	'TopicSpec'
-	name=(EString|'Header'|'String')
-	'{'
-		('message' message=MessageDefinition)?
-	'}';
+	'msg:'name=(EString|'Header'|'String')
+	BEGIN
+		('message:' BEGIN message=MessageDefinition END)?
+	END;
 
+ServiceSpec returns ServiceSpec:
+	{ServiceSpec}
+	'srv:'name=EString
+	BEGIN
+		('request:' BEGIN request=MessageDefinition END)?
+		('response:' BEGIN response=MessageDefinition END)?
+	END;
+	
 ActionSpec returns ActionSpec:
 	{ActionSpec}
-	'ActionSpec'
-	name=EString
-	'{'
-		('goal' goal=MessageDefinition)?
-		('result' result=MessageDefinition)?
-		('feedback' feedback=MessageDefinition)?
-	'}';
+	'action:'name=EString
+	BEGIN
+		('goal:' BEGIN goal=MessageDefinition END)?
+		('result:' BEGIN result=MessageDefinition END)?
+		('feedback:' BEGIN feedback=MessageDefinition END)?
+	END;
 
 
 MessageDefinition returns MessageDefinition:
 	{MessageDefinition}
-	'{'
-		( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
-	'}';
+		MessagePart+=MessagePart*;
+
 
 Node returns Node:
-	'Node'
-	'{'
-		'name' name=RosNames
-		('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}')?
-		('Publishers' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}')?
-		('Subscribers' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}')?
-		('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}')?
-		('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}')?
-		('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )?
-		('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?
-	'}';
-
-ServiceServer returns ServiceServer:
-	'ServiceServer'
-	'{'
-		'name' name=EString
-		'service' service=[ServiceSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	'node:' name=RosNames
+	BEGIN
+		('publishers:' 
+			BEGIN 
+			publisher+=Publisher*
+			END
+		)?
+		('subscribers:' 
+			BEGIN 
+			subscriber+=Subscriber*
+			END
+		)?
+		('serviceserver:' 
+			BEGIN 
+			serviceserver+=ServiceServer*
+			END
+		)?
+		('serviceclient:' 
+			BEGIN 
+			serviceclient+=ServiceClient*
+			END
+		)?
+		('actionserver:' 
+			BEGIN 
+			actionserver+=ActionServer*
+			END
+		)?
+		('actionclient:' 
+			BEGIN 
+			actionclient+=ActionClient*
+			END
+		)?
+		('parameters:'
+			BEGIN
+			parameter+=Parameter*
+			END
+		)?
+	END;
 
 Publisher returns Publisher:
-	'Publisher'
-	'{'
-		'name' name=EString
-		'message' message=[TopicSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{Publisher}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 Subscriber returns Subscriber:
-	'Subscriber'
-	'{'
-		'name' name=EString
-		'message' message=[TopicSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{Subscriber}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
+
+ServiceServer returns ServiceServer:
+	{ServiceServer}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ServiceClient returns ServiceClient:
-	'ServiceClient'
-	'{'
-		'name' name=EString
-		'service' service=[ServiceSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ServiceClient}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ActionServer returns ActionServer:
-	'ActionServer'
-	'{'
-		'name' name=EString
-		'action' action=[ActionSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ActionServer}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ActionClient returns ActionClient:
-	'ActionClient'
-	'{'
-		'name' name=EString
-		'action' action=[ActionSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ActionClient}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 GraphName returns GraphName:
 	'GraphName' ;
@@ -196,31 +231,26 @@ ExternalDependency returns ExternalDependency:
 GlobalNamespace returns GlobalNamespace:
 	{GlobalNamespace}
 	'GlobalNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 RelativeNamespace_Impl returns RelativeNamespace:
 	{RelativeNamespace}
 	'RelativeNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 PrivateNamespace returns PrivateNamespace:
 	{PrivateNamespace}
 	'PrivateNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 //PARAMETERS DEFINITION
 Parameter returns Parameter:
-	'Parameter'
-	'{'
-		'name' name=EString
-		('namespace' namespace=Namespace)?
+	{Parameter}
+		name=EString':'
+		BEGIN
 		'type' type=ParameterType
+		('ns:' namespace=Namespace)?
+		END
 	'}';
 	
 ParameterType returns ParameterType:
@@ -233,16 +263,16 @@ ParameterValue returns ParameterValue:
 ParameterListType returns ParameterListType:
 	{ParameterListType}
 	'List'
-	'{'	
+	'['	
 		sequence+=ParameterType ( ',' sequence+=ParameterType )*
-	'}';
+	']';
 
 ParameterStructType returns ParameterStructType:
 	{ParameterStructType}
 	'Struct'
-	'{'
+	'['
 		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
-	'}';
+	']';
 
 ParameterIntegerType returns ParameterIntegerType:
 	{ParameterIntegerType}
@@ -280,23 +310,22 @@ ParameterAnyType returns ParameterAnyType:
 	('default' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
-	'Array'
-	'{'
+	'Array:'
+	BEGIN
 		'type' type=ParameterType
 		('default' default=ParameterList)?
-	'}';
+	END;
 
 ParameterList returns ParameterSequence:
 	{ParameterSequence}
-		'{'	value+=ParameterValue ( ',' value+=ParameterValue )* '}'
+		'['	value+=ParameterValue ( ',' value+=ParameterValue )* ']'
 ;
 
 ParameterAny returns ParameterAny:
 	{ParameterAny}
 	'ParameterAny'
-	'{'
 		('value' value=EString)?
-	'}';
+	;
 
 ParameterString returns ParameterString:
 	value=EString
@@ -320,7 +349,7 @@ ParameterBoolean returns ParameterBoolean:
 
 ParameterStruct returns ParameterStruct:
 	{ParameterStruct}
-		('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
+		('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
 ;
 
 ParameterDate returns ParameterDate:
@@ -330,10 +359,10 @@ ParameterDate returns ParameterDate:
 
 ParameterStructMember returns ParameterStructMember:
 	'ParameterStructMember'
-	name=EString
-	'{'
-		'value' value=ParameterValue
-	'}';
+	name=EString':'
+	BEGIN
+		value=ParameterValue
+	END;
 
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
@@ -343,12 +372,12 @@ ParameterStructTypeMember returns ParameterStructTypeMember:
 
 
 //PARAMETERS PRIMITIVES TYPES
-terminal fragment DIGIT: '0'..'9';
+terminal DIGIT: '0'..'9';
 
 terminal BINARY: ('0b'|'0B')('0'|'1')+;
 
 terminal BOOLEAN: 'true'|'false';
-terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT));  // Use terminal to avoid 'e' turning into a keyword
+terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));  // Use terminal to avoid 'e' turning into a keyword
 terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
 terminal DAY:'1'..'9' | '1'..'3' '0'..'9';
 terminal MONTH:'1'..'9' | '1' '0'..'2';

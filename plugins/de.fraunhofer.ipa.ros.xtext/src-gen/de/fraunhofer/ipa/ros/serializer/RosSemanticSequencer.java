@@ -376,20 +376,19 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Package returns AmentPackage
 	 *     AmentPackage returns AmentPackage
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=RosNames 
-	 *         fromGitRepo=EString? 
-	 *         (dependency+=Dependency dependency+=Dependency*)? 
-	 *         (spec+=SpecBase spec+=SpecBase*)? 
-	 *         (artifact+=Artifact artifact+=Artifact*)?
-	 *     )
+	 *     name=RosNames
 	 */
 	protected void sequence_AmentPackage(ISerializationContext context, AmentPackage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.PACKAGE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PACKAGE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAmentPackageAccess().getNameRosNamesParserRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -426,17 +425,10 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Package returns CatkinPackage
 	 *     CatkinPackage returns CatkinPackage
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=RosNames 
-	 *         fromGitRepo=EString? 
-	 *         (dependency+=Dependency dependency+=Dependency*)? 
-	 *         (spec+=SpecBase spec+=SpecBase*)? 
-	 *         (artifact+=Artifact artifact+=Artifact*)?
-	 *     )
+	 *     (name=RosNames fromGitRepo=EString? artifact+=Artifact* (dependency+=Dependency dependency+=Dependency*)?)
 	 */
 	protected void sequence_CatkinPackage(ISerializationContext context, CatkinPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -493,7 +485,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MessageDefinition returns MessageDefinition
 	 *
 	 * Constraint:
-	 *     (MessagePart+=MessagePart MessagePart+=MessagePart*)?
+	 *     MessagePart+=MessagePart*
 	 */
 	protected void sequence_MessageDefinition(ISerializationContext context, MessageDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -519,13 +511,13 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=RosNames 
-	 *         (serviceserver+=ServiceServer serviceserver+=ServiceServer*)? 
-	 *         (publisher+=Publisher publisher+=Publisher*)? 
-	 *         (subscriber+=Subscriber subscriber+=Subscriber*)? 
-	 *         (serviceclient+=ServiceClient serviceclient+=ServiceClient*)? 
-	 *         (actionserver+=ActionServer actionserver+=ActionServer*)? 
-	 *         (actionclient+=ActionClient actionclient+=ActionClient*)? 
-	 *         (parameter+=Parameter parameter+=Parameter*)?
+	 *         publisher+=Publisher* 
+	 *         subscriber+=Subscriber* 
+	 *         serviceserver+=ServiceServer* 
+	 *         serviceclient+=ServiceClient* 
+	 *         actionserver+=ActionServer* 
+	 *         actionclient+=ActionClient* 
+	 *         parameter+=Parameter*
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {
@@ -557,7 +549,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PackageSet returns PackageSet
 	 *
 	 * Constraint:
-	 *     (package+=Package package+=Package*)?
+	 *     package+=Package_Impl*
 	 */
 	protected void sequence_PackageSet(ISerializationContext context, PackageSet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -570,7 +562,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Package_Impl returns Package
 	 *
 	 * Constraint:
-	 *     (name=EString fromGitRepo=EString? (spec+=SpecBase spec+=SpecBase*)? (artifact+=Artifact artifact+=Artifact*)?)
+	 *     (name=RosNames fromGitRepo=EString? spec+=SpecBase* (dependency+=Dependency dependency+=Dependency*)?)
 	 */
 	protected void sequence_Package_Impl(ISerializationContext context, ros.Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -903,7 +895,7 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (name=EString namespace=Namespace? type=ParameterType)
+	 *     (name=EString type=ParameterType namespace=Namespace?)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
