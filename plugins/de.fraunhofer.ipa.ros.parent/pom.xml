@@ -33,7 +33,7 @@
 		<module>../de.fraunhofer.ipa.ros.model.spec.check</module>
 		<module>../de.fraunhofer.ipa.roscode.generator</module>		
 		<module>../de.fraunhofer.ipa.ros.observer.generator</module>
-		<module>../de.fraunhofer.ipa.ros.xtext.tests</module>
+		<!--module>../de.fraunhofer.ipa.ros.xtext.tests</module-->
 		
 
 		<module>../de.fraunhofer.ipa.componentInterface</module>
@@ -42,7 +42,7 @@
 		<module>../de.fraunhofer.ipa.componentInterface.xtext.ui</module>
 		<module>../de.fraunhofer.ipa.componentInterface.edit</module>
 		<module>../de.fraunhofer.ipa.componentInterface.editor</module>
-		<module>../de.fraunhofer.ipa.componentInterface.xtext.tests</module>
+		<!--module>../de.fraunhofer.ipa.componentInterface.xtext.tests</module-->
 
 		<module>../de.fraunhofer.ipa.rossystem</module>
 		<module>../de.fraunhofer.ipa.rossystem.xtext</module>
@@ -50,7 +50,7 @@
 		<module>../de.fraunhofer.ipa.rossystem.xtext.ui</module>
 		<module>../de.fraunhofer.ipa.rossystem.edit</module>
 		<module>../de.fraunhofer.ipa.rossystem.editor</module>
-		<module>../de.fraunhofer.ipa.rossystem.xtext.tests</module>
+		<!--module>../de.fraunhofer.ipa.rossystem.xtext.tests</module-->
 		<module>../de.fraunhofer.ipa.rossystem.deployment</module>
 		
 		<module>../de.fraunhofer.ipa.ros.plugin</module>
