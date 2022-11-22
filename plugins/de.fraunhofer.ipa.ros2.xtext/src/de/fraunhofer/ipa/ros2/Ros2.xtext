@@ -23,4 +23,96 @@ AmentPackage returns AmentPackage:
 		)?
 		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
 	END;
+	
+///////////////////
+// Quality of Service
+///////////////////
 
+QualityOfService returns QualityOfService:
+	{QualityOfService}
+		('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))?
+		('history:' History=('keep_last'|'keep_all'))?
+		('depth:' Depth=Integer0)?
+		('reliability:' Reliability=('best_effort'|'reliable'))?
+		('durability:' Durability=('transient_local'|'volatile'))?
+	;
+
+///////////////////
+//INTERFACES
+///////////////////
+@Override 
+Publisher returns Publisher:
+	{Publisher}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' BEGIN qos=QualityOfService END)?
+		END
+	;
+
+@Override 
+Subscriber returns Subscriber:
+	{Subscriber}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' qos=QualityOfService)?
+		END
+	;
+
+@Override 
+ServiceServer returns ServiceServer:
+	{ServiceServer}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' qos=QualityOfService)?
+		END
+	;
+
+@Override 
+ServiceClient returns ServiceClient:
+	{ServiceClient}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' qos=QualityOfService)?
+		END
+	;
+
+@Override 
+ActionServer returns ActionServer:
+	{ActionServer}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' qos=QualityOfService)?
+		END
+	;
+
+@Override 
+ActionClient returns ActionClient:
+	{ActionClient}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+			('qos:' qos=QualityOfService)?
+		END
+	;
+	
+@Override 
+Parameter returns Parameter:
+	{Parameter}
+		name=EString':'
+		BEGIN
+		'type' type=ParameterType
+		('ns:' namespace=Namespace)?
+		('qos:' qos=QualityOfService)?
+		END
+	'}';

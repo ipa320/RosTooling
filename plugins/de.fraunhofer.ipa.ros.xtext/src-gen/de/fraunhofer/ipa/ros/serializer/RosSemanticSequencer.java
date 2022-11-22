@@ -379,16 +379,10 @@ public class RosSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AmentPackage returns AmentPackage
 	 *
 	 * Constraint:
-	 *     name=RosNames
+	 *     (name=RosNames fromGitRepo=EString? artifact+=Artifact* (dependency+=Dependency dependency+=Dependency*)?)
 	 */
 	protected void sequence_AmentPackage(ISerializationContext context, AmentPackage semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.PACKAGE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PACKAGE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAmentPackageAccess().getNameRosNamesParserRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

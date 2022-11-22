@@ -21,6 +21,8 @@ PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
+Transient_local : 'transient_local';
+
 Serviceclient : 'serviceclient:';
 
 Serviceserver : 'serviceserver:';
@@ -31,17 +33,31 @@ Actionserver : 'actionserver:';
 
 Dependencies : 'dependencies:';
 
+Parameter_qos : 'parameter_qos';
+
 ParameterAny : 'ParameterAny';
 
 FromGitRepo : 'fromGitRepo:';
 
+Reliability : 'reliability:';
+
+Services_qos : 'services_qos';
+
 Subscribers : 'subscribers:';
+
+Best_effort : 'best_effort';
+
+Default_qos : 'default_qos';
+
+Durability : 'durability:';
 
 Parameters : 'parameters:';
 
 Publishers : 'publishers:';
 
 Artifacts : 'artifacts:';
+
+Sensor_qos : 'sensor_qos';
 
 GraphName : 'GraphName';
 
@@ -51,13 +67,23 @@ Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
 
+Keep_last : 'keep_last';
+
 Response : 'response:';
 
 Duration : 'duration';
 
 Feedback : 'feedback';
 
+History : 'history:';
+
+Keep_all : 'keep_all';
+
 Message_1 : 'message:';
+
+Profile : 'profile:';
+
+Reliable : 'reliable';
 
 Request : 'request:';
 
@@ -68,6 +94,8 @@ Uint16_1 : 'uint16[]';
 Uint32_1 : 'uint32[]';
 
 Uint64_1 : 'uint64[]';
+
+Volatile : 'volatile';
 
 Boolean : 'Boolean';
 
@@ -112,6 +140,8 @@ Action : 'action';
 Bool_1 : 'bool[]';
 
 Byte_1 : 'byte[]';
+
+Depth : 'depth:';
 
 Int8_1 : 'int8[]';
 
@@ -160,6 +190,8 @@ Msg : 'msg:';
 Name : 'name';
 
 Node : 'node';
+
+Qos : 'qos:';
 
 Srv : 'srv:';
 

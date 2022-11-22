@@ -80,6 +80,7 @@ import ros.ParameterStructType;
 import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
 import ros.Publisher;
+import ros.QualityOfService;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import ros.ServiceClient;
@@ -312,6 +313,9 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 			case RosPackage.PUBLISHER:
 				sequence_Publisher(context, (Publisher) semanticObject); 
 				return; 
+			case RosPackage.QUALITY_OF_SERVICE:
+				sequence_QualityOfService(context, (QualityOfService) semanticObject); 
+				return; 
 			case RosPackage.RELATIVE_NAMESPACE:
 				sequence_RelativeNamespace_Impl(context, (RelativeNamespace) semanticObject); 
 				return; 
@@ -337,6 +341,30 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     ActionClient returns ActionClient
+	 *
+	 * Constraint:
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_ActionClient(ISerializationContext context, ActionClient semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ActionServer returns ActionServer
+	 *
+	 * Constraint:
+	 *     (name=EString action=[ActionSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_ActionServer(ISerializationContext context, ActionServer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Package returns AmentPackage
 	 *     AmentPackage returns AmentPackage
 	 *
@@ -344,6 +372,84 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 	 *     (name=RosNames fromGitRepo=EString? artifact+=Artifact* (dependency+=Dependency dependency+=Dependency*)?)
 	 */
 	protected void sequence_AmentPackage(ISerializationContext context, AmentPackage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Parameter returns Parameter
+	 *
+	 * Constraint:
+	 *     (name=EString type=ParameterType namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Publisher returns Publisher
+	 *
+	 * Constraint:
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_Publisher(ISerializationContext context, Publisher semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     QualityOfService returns QualityOfService
+	 *
+	 * Constraint:
+	 *     (
+	 *         (QoSProfile='default_qos' | QoSProfile='services_qos' | QoSProfile='sensor_qos' | QoSProfile='parameter_qos')? 
+	 *         (History='keep_last' | History='keep_all')? 
+	 *         Depth=Integer0? 
+	 *         (Reliability='best_effort' | Reliability='reliable')? 
+	 *         (Durability='transient_local' | Durability='volatile')?
+	 *     )
+	 */
+	protected void sequence_QualityOfService(ISerializationContext context, QualityOfService semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ServiceClient returns ServiceClient
+	 *
+	 * Constraint:
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_ServiceClient(ISerializationContext context, ServiceClient semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ServiceServer returns ServiceServer
+	 *
+	 * Constraint:
+	 *     (name=EString service=[ServiceSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_ServiceServer(ISerializationContext context, ServiceServer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Subscriber returns Subscriber
+	 *
+	 * Constraint:
+	 *     (name=EString message=[TopicSpec|EString] namespace=Namespace? qos=QualityOfService?)
+	 */
+	protected void sequence_Subscriber(ISerializationContext context, Subscriber semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1084,6 +1084,29 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link ros.QualityOfService} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QualityOfServiceItemProvider qualityOfServiceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ros.QualityOfService}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQualityOfServiceAdapter() {
+		if (qualityOfServiceItemProvider == null) {
+			qualityOfServiceItemProvider = new QualityOfServiceItemProvider(this);
+		}
+
+		return qualityOfServiceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1232,6 +1255,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		if (parameterStructMemberItemProvider != null) parameterStructMemberItemProvider.dispose();
 		if (parameterDateItemProvider != null) parameterDateItemProvider.dispose();
 		if (amentPackageItemProvider != null) amentPackageItemProvider.dispose();
+		if (qualityOfServiceItemProvider != null) qualityOfServiceItemProvider.dispose();
 	}
 
 }
