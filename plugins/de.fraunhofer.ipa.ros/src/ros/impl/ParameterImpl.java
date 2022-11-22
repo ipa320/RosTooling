@@ -29,7 +29,7 @@ import ros.RosPackage;
  *
  * @generated
  */
-public class ParameterImpl extends NamespacedElementImpl implements Parameter {
+public class ParameterImpl extends InterfaceTypeImpl implements Parameter {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->

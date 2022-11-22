@@ -11,25 +11,27 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import ros.InterfaceType;
 import ros.Namespace;
-import ros.NamespacedElement;
+import ros.QualityOfService;
 import ros.RosPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Namespaced Element</b></em>'.
+ * An implementation of the model object '<em><b>Interface Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ros.impl.NamespacedElementImpl#getNamespace <em>Namespace</em>}</li>
- *   <li>{@link ros.impl.NamespacedElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ros.impl.InterfaceTypeImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link ros.impl.InterfaceTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ros.impl.InterfaceTypeImpl#getQos <em>Qos</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NamespacedElementImpl extends MinimalEObjectImpl.Container implements NamespacedElement {
+public class InterfaceTypeImpl extends MinimalEObjectImpl.Container implements InterfaceType {
 	/**
 	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -61,11 +63,21 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getQos() <em>Qos</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQos()
+	 * @generated
+	 * @ordered
+	 */
+	protected QualityOfService qos;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamespacedElementImpl() {
+	protected InterfaceTypeImpl() {
 		super();
 	}
 
@@ -76,7 +88,7 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RosPackage.Literals.NAMESPACED_ELEMENT;
+		return RosPackage.Literals.INTERFACE_TYPE;
 	}
 
 	/**
@@ -98,7 +110,7 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 		Namespace oldNamespace = namespace;
 		namespace = newNamespace;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.NAMESPACED_ELEMENT__NAMESPACE, oldNamespace, newNamespace);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.INTERFACE_TYPE__NAMESPACE, oldNamespace, newNamespace);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -114,14 +126,14 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 		if (newNamespace != namespace) {
 			NotificationChain msgs = null;
 			if (namespace != null)
-				msgs = ((InternalEObject)namespace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.NAMESPACED_ELEMENT__NAMESPACE, null, msgs);
+				msgs = ((InternalEObject)namespace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.INTERFACE_TYPE__NAMESPACE, null, msgs);
 			if (newNamespace != null)
-				msgs = ((InternalEObject)newNamespace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.NAMESPACED_ELEMENT__NAMESPACE, null, msgs);
+				msgs = ((InternalEObject)newNamespace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.INTERFACE_TYPE__NAMESPACE, null, msgs);
 			msgs = basicSetNamespace(newNamespace, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.NAMESPACED_ELEMENT__NAMESPACE, newNamespace, newNamespace));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.INTERFACE_TYPE__NAMESPACE, newNamespace, newNamespace));
 	}
 
 	/**
@@ -144,7 +156,52 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.NAMESPACED_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.INTERFACE_TYPE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QualityOfService getQos() {
+		return qos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetQos(QualityOfService newQos, NotificationChain msgs) {
+		QualityOfService oldQos = qos;
+		qos = newQos;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RosPackage.INTERFACE_TYPE__QOS, oldQos, newQos);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setQos(QualityOfService newQos) {
+		if (newQos != qos) {
+			NotificationChain msgs = null;
+			if (qos != null)
+				msgs = ((InternalEObject)qos).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RosPackage.INTERFACE_TYPE__QOS, null, msgs);
+			if (newQos != null)
+				msgs = ((InternalEObject)newQos).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RosPackage.INTERFACE_TYPE__QOS, null, msgs);
+			msgs = basicSetQos(newQos, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.INTERFACE_TYPE__QOS, newQos, newQos));
 	}
 
 	/**
@@ -155,8 +212,10 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				return basicSetNamespace(null, msgs);
+			case RosPackage.INTERFACE_TYPE__QOS:
+				return basicSetQos(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,10 +228,12 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				return getNamespace();
-			case RosPackage.NAMESPACED_ELEMENT__NAME:
+			case RosPackage.INTERFACE_TYPE__NAME:
 				return getName();
+			case RosPackage.INTERFACE_TYPE__QOS:
+				return getQos();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,11 +246,14 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				setNamespace((Namespace)newValue);
 				return;
-			case RosPackage.NAMESPACED_ELEMENT__NAME:
+			case RosPackage.INTERFACE_TYPE__NAME:
 				setName((String)newValue);
+				return;
+			case RosPackage.INTERFACE_TYPE__QOS:
+				setQos((QualityOfService)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,11 +267,14 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				setNamespace((Namespace)null);
 				return;
-			case RosPackage.NAMESPACED_ELEMENT__NAME:
+			case RosPackage.INTERFACE_TYPE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case RosPackage.INTERFACE_TYPE__QOS:
+				setQos((QualityOfService)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -221,10 +288,12 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				return namespace != null;
-			case RosPackage.NAMESPACED_ELEMENT__NAME:
+			case RosPackage.INTERFACE_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RosPackage.INTERFACE_TYPE__QOS:
+				return qos != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -245,4 +314,4 @@ public class NamespacedElementImpl extends MinimalEObjectImpl.Container implemen
 		return result.toString();
 	}
 
-} //NamespacedElementImpl
+} //InterfaceTypeImpl

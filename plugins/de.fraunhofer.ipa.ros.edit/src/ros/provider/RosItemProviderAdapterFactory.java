@@ -532,26 +532,26 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ros.NamespacedElement} instances.
+	 * This keeps track of the one adapter used for all {@link ros.InterfaceType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamespacedElementItemProvider namespacedElementItemProvider;
+	protected InterfaceTypeItemProvider interfaceTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ros.NamespacedElement}.
+	 * This creates an adapter for a {@link ros.InterfaceType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createNamespacedElementAdapter() {
-		if (namespacedElementItemProvider == null) {
-			namespacedElementItemProvider = new NamespacedElementItemProvider(this);
+	public Adapter createInterfaceTypeAdapter() {
+		if (interfaceTypeItemProvider == null) {
+			interfaceTypeItemProvider = new InterfaceTypeItemProvider(this);
 		}
 
-		return namespacedElementItemProvider;
+		return interfaceTypeItemProvider;
 	}
 
 	/**
@@ -1208,7 +1208,7 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
 		if (globalNamespaceItemProvider != null) globalNamespaceItemProvider.dispose();
 		if (relativeNamespaceItemProvider != null) relativeNamespaceItemProvider.dispose();
 		if (privateNamespaceItemProvider != null) privateNamespaceItemProvider.dispose();
-		if (namespacedElementItemProvider != null) namespacedElementItemProvider.dispose();
+		if (interfaceTypeItemProvider != null) interfaceTypeItemProvider.dispose();
 		if (parameterListTypeItemProvider != null) parameterListTypeItemProvider.dispose();
 		if (parameterStructTypeItemProvider != null) parameterStructTypeItemProvider.dispose();
 		if (parameterIntegerTypeItemProvider != null) parameterIntegerTypeItemProvider.dispose();

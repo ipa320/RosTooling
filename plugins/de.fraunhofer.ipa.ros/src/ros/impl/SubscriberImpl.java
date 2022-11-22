@@ -26,7 +26,7 @@ import ros.TopicSpec;
  *
  * @generated
  */
-public class SubscriberImpl extends NamespacedElementImpl implements Subscriber {
+public class SubscriberImpl extends InterfaceTypeImpl implements Subscriber {
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference.
 	 * <!-- begin-user-doc -->

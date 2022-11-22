@@ -15,9 +15,9 @@ import ros.CatkinPackage;
 import ros.Dependency;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
+import ros.InterfaceType;
 import ros.MessageDefinition;
 import ros.Namespace;
-import ros.NamespacedElement;
 import ros.Node;
 import ros.PackageDependency;
 import ros.PackageSet;
@@ -47,6 +47,7 @@ import ros.ParameterType;
 import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
+import ros.QualityOfService;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import ros.ServiceClient;
@@ -141,7 +142,7 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.SERVICE_SERVER: {
 				ServiceServer serviceServer = (ServiceServer)theEObject;
 				T result = caseServiceServer(serviceServer);
-				if (result == null) result = caseNamespacedElement(serviceServer);
+				if (result == null) result = caseInterfaceType(serviceServer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,7 +177,7 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.PUBLISHER: {
 				Publisher publisher = (Publisher)theEObject;
 				T result = casePublisher(publisher);
-				if (result == null) result = caseNamespacedElement(publisher);
+				if (result == null) result = caseInterfaceType(publisher);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,14 +196,14 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.SUBSCRIBER: {
 				Subscriber subscriber = (Subscriber)theEObject;
 				T result = caseSubscriber(subscriber);
-				if (result == null) result = caseNamespacedElement(subscriber);
+				if (result == null) result = caseInterfaceType(subscriber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RosPackage.SERVICE_CLIENT: {
 				ServiceClient serviceClient = (ServiceClient)theEObject;
 				T result = caseServiceClient(serviceClient);
-				if (result == null) result = caseNamespacedElement(serviceClient);
+				if (result == null) result = caseInterfaceType(serviceClient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,14 +223,14 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.ACTION_SERVER: {
 				ActionServer actionServer = (ActionServer)theEObject;
 				T result = caseActionServer(actionServer);
-				if (result == null) result = caseNamespacedElement(actionServer);
+				if (result == null) result = caseInterfaceType(actionServer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RosPackage.ACTION_CLIENT: {
 				ActionClient actionClient = (ActionClient)theEObject;
 				T result = caseActionClient(actionClient);
-				if (result == null) result = caseNamespacedElement(actionClient);
+				if (result == null) result = caseInterfaceType(actionClient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -267,9 +268,9 @@ public class RosSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RosPackage.NAMESPACED_ELEMENT: {
-				NamespacedElement namespacedElement = (NamespacedElement)theEObject;
-				T result = caseNamespacedElement(namespacedElement);
+			case RosPackage.INTERFACE_TYPE: {
+				InterfaceType interfaceType = (InterfaceType)theEObject;
+				T result = caseInterfaceType(interfaceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -317,7 +318,7 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
-				if (result == null) result = caseNamespacedElement(parameter);
+				if (result == null) result = caseInterfaceType(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -441,6 +442,12 @@ public class RosSwitch<T> extends Switch<T> {
 				AmentPackage amentPackage = (AmentPackage)theEObject;
 				T result = caseAmentPackage(amentPackage);
 				if (result == null) result = casePackage(amentPackage);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.QUALITY_OF_SERVICE: {
+				QualityOfService qualityOfService = (QualityOfService)theEObject;
+				T result = caseQualityOfService(qualityOfService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -794,17 +801,17 @@ public class RosSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Namespaced Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Interface Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Namespaced Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Interface Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNamespacedElement(NamespacedElement object) {
+	public T caseInterfaceType(InterfaceType object) {
 		return null;
 	}
 
@@ -1180,6 +1187,21 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAmentPackage(AmentPackage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Quality Of Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Quality Of Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQualityOfService(QualityOfService object) {
 		return null;
 	}
 

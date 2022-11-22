@@ -19,7 +19,7 @@ package ros;
  * @model
  * @generated
  */
-public interface ServiceServer extends NamespacedElement {
+public interface ServiceServer extends InterfaceType {
 	/**
 	 * Returns the value of the '<em><b>Service</b></em>' reference.
 	 * <!-- begin-user-doc -->

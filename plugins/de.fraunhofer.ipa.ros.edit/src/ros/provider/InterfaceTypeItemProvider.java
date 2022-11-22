@@ -24,17 +24,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import ros.NamespacedElement;
+import ros.InterfaceType;
 import ros.RosFactory;
 import ros.RosPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.NamespacedElement} object.
+ * This is the item provider adapter for a {@link ros.InterfaceType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class NamespacedElementItemProvider 
+public class InterfaceTypeItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +48,7 @@ public class NamespacedElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamespacedElementItemProvider(AdapterFactory adapterFactory) {
+	public InterfaceTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,6 +64,7 @@ public class NamespacedElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addQosPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,13 +80,35 @@ public class NamespacedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamespacedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamespacedElement_name_feature", "_UI_NamespacedElement_type"),
-				 RosPackage.Literals.NAMESPACED_ELEMENT__NAME,
+				 getString("_UI_InterfaceType_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceType_name_feature", "_UI_InterfaceType_type"),
+				 RosPackage.Literals.INTERFACE_TYPE__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Qos feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addQosPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceType_qos_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceType_qos_feature", "_UI_InterfaceType_type"),
+				 RosPackage.Literals.INTERFACE_TYPE__QOS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -102,7 +125,7 @@ public class NamespacedElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE);
+			childrenFeatures.add(RosPackage.Literals.INTERFACE_TYPE__NAMESPACE);
 		}
 		return childrenFeatures;
 	}
@@ -121,14 +144,14 @@ public class NamespacedElementItemProvider
 	}
 
 	/**
-	 * This returns NamespacedElement.gif.
+	 * This returns InterfaceType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/NamespacedElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/InterfaceType"));
 	}
 
 	/**
@@ -139,12 +162,12 @@ public class NamespacedElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((NamespacedElement)object).getName();
+		String label = ((InterfaceType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_NamespacedElement_type") :
-			getString("_UI_NamespacedElement_type") + " " + label;
+			getString("_UI_InterfaceType_type") :
+			getString("_UI_InterfaceType_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -157,11 +180,11 @@ public class NamespacedElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(NamespacedElement.class)) {
-			case RosPackage.NAMESPACED_ELEMENT__NAME:
+		switch (notification.getFeatureID(InterfaceType.class)) {
+			case RosPackage.INTERFACE_TYPE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RosPackage.NAMESPACED_ELEMENT__NAMESPACE:
+			case RosPackage.INTERFACE_TYPE__NAMESPACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,17 +204,17 @@ public class NamespacedElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				(RosPackage.Literals.INTERFACE_TYPE__NAMESPACE,
 				 RosFactory.eINSTANCE.createGlobalNamespace()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				(RosPackage.Literals.INTERFACE_TYPE__NAMESPACE,
 				 RosFactory.eINSTANCE.createRelativeNamespace()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RosPackage.Literals.NAMESPACED_ELEMENT__NAMESPACE,
+				(RosPackage.Literals.INTERFACE_TYPE__NAMESPACE,
 				 RosFactory.eINSTANCE.createPrivateNamespace()));
 	}
 
