@@ -274,7 +274,9 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getPackageSetAccess().getRule();
 	}
 	
+	/////////////////////
 	//// YAML format
+	/////////////////////
 	//terminal BEGIN: 'synthetic:BEGIN';
 	public TerminalRule getBEGINRule() {
 		return gaRos.getBEGINRule();
@@ -289,6 +291,42 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//terminal SL_COMMENT: '#' !('\n'|'\r')*;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaRos.getSL_COMMENTRule();
+	}
+	
+	/////////////////////
+	//// CONVENTIONS AND NAMES
+	/////////////////////
+	//EString returns ecore::EString:
+	//    STRING | ID;
+	public RosGrammarAccess.EStringElements getEStringAccess() {
+		return gaRos.getEStringAccess();
+	}
+	
+	public ParserRule getEStringRule() {
+		return getEStringAccess().getRule();
+	}
+	
+	//RosNames returns ecore::EString:
+	//    ROS_CONVENTION_A | ID | 'node'
+	//;
+	public RosGrammarAccess.RosNamesElements getRosNamesAccess() {
+		return gaRos.getRosNamesAccess();
+	}
+	
+	public ParserRule getRosNamesRule() {
+		return getRosNamesAccess().getRule();
+	}
+	
+	//terminal ROS_CONVENTION_A:
+	//    ( ('/' ID ) | ( ID '/' ) )* ;
+	public TerminalRule getROS_CONVENTION_ARule() {
+		return gaRos.getROS_CONVENTION_ARule();
+	}
+	
+	//terminal ROS_CONVENTION_PARAM:
+	//    ( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
+	public TerminalRule getROS_CONVENTION_PARAMRule() {
+		return gaRos.getROS_CONVENTION_PARAMRule();
 	}
 	
 	//Package_Impl returns Package:
@@ -314,8 +352,16 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//AmentPackage returns AmentPackage:
 	//    {AmentPackage}
 	//    'AmentPackage'
-	//    name=RosNames
-	//;
+	//    name=RosNames':'
+	//    BEGIN
+	//        ('fromGitRepo:' fromGitRepo=EString)?
+	//        ('artifacts:'
+	//            BEGIN
+	//            artifact+=Artifact*
+	//            END
+	//        )?
+	//        ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	//    END;
 	public RosGrammarAccess.AmentPackageElements getAmentPackageAccess() {
 		return gaRos.getAmentPackageAccess();
 	}
@@ -324,149 +370,21 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getAmentPackageAccess().getRule();
 	}
 	
-	//SpecBase returns SpecBase:
-	//    TopicSpec | ServiceSpec | ActionSpec;
-	public RosGrammarAccess.SpecBaseElements getSpecBaseAccess() {
-		return gaRos.getSpecBaseAccess();
-	}
-	
-	public ParserRule getSpecBaseRule() {
-		return getSpecBaseAccess().getRule();
-	}
-	
-	//Dependency returns Dependency:
-	//    PackageDependency | ExternalDependency;
-	public RosGrammarAccess.DependencyElements getDependencyAccess() {
-		return gaRos.getDependencyAccess();
-	}
-	
-	public ParserRule getDependencyRule() {
-		return getDependencyAccess().getRule();
-	}
-	
-	//Namespace returns Namespace:
-	//    GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
-	public RosGrammarAccess.NamespaceElements getNamespaceAccess() {
-		return gaRos.getNamespaceAccess();
-	}
-	
-	public ParserRule getNamespaceRule() {
-		return getNamespaceAccess().getRule();
-	}
-	
+	/////////////////////
+	////ARTIFACT AND NODE
+	/////////////////////
 	//Artifact returns Artifact:
 	//    {Artifact}
 	//        name=RosNames':'
 	//        BEGIN
 	//        (node=Node)?
-	//        END
-	//    ;
+	//        END;
 	public RosGrammarAccess.ArtifactElements getArtifactAccess() {
 		return gaRos.getArtifactAccess();
 	}
 	
 	public ParserRule getArtifactRule() {
 		return getArtifactAccess().getRule();
-	}
-	
-	//EString returns ecore::EString:
-	//    STRING | ID;
-	public RosGrammarAccess.EStringElements getEStringAccess() {
-		return gaRos.getEStringAccess();
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
-	}
-	
-	//RosNames returns ecore::EString:
-	//    ROS_CONVENTION_A | ID | 'node'
-	//;
-	public RosGrammarAccess.RosNamesElements getRosNamesAccess() {
-		return gaRos.getRosNamesAccess();
-	}
-	
-	public ParserRule getRosNamesRule() {
-		return getRosNamesAccess().getRule();
-	}
-	
-	//RosParamNames returns ecore::EString:
-	//    ROS_CONVENTION_PARAM | ID
-	//;
-	public RosGrammarAccess.RosParamNamesElements getRosParamNamesAccess() {
-		return gaRos.getRosParamNamesAccess();
-	}
-	
-	public ParserRule getRosParamNamesRule() {
-		return getRosParamNamesAccess().getRule();
-	}
-	
-	//terminal ROS_CONVENTION_A:
-	//    ( ('/' ID ) | ( ID '/' ) )* ;
-	public TerminalRule getROS_CONVENTION_ARule() {
-		return gaRos.getROS_CONVENTION_ARule();
-	}
-	
-	//terminal ROS_CONVENTION_PARAM:
-	//    ( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
-	public TerminalRule getROS_CONVENTION_PARAMRule() {
-		return gaRos.getROS_CONVENTION_PARAMRule();
-	}
-	
-	//TopicSpec returns TopicSpec:
-	//    {TopicSpec}
-	//    'msg:'name=(EString|'Header'|'String')
-	//    BEGIN
-	//        ('message:' BEGIN message=MessageDefinition END)?
-	//    END;
-	public RosGrammarAccess.TopicSpecElements getTopicSpecAccess() {
-		return gaRos.getTopicSpecAccess();
-	}
-	
-	public ParserRule getTopicSpecRule() {
-		return getTopicSpecAccess().getRule();
-	}
-	
-	//ServiceSpec returns ServiceSpec:
-	//    {ServiceSpec}
-	//    'srv:'name=EString
-	//    BEGIN
-	//        ('request:' BEGIN request=MessageDefinition END)?
-	//        ('response:' BEGIN response=MessageDefinition END)?
-	//    END;
-	public RosGrammarAccess.ServiceSpecElements getServiceSpecAccess() {
-		return gaRos.getServiceSpecAccess();
-	}
-	
-	public ParserRule getServiceSpecRule() {
-		return getServiceSpecAccess().getRule();
-	}
-	
-	//ActionSpec returns ActionSpec:
-	//    {ActionSpec}
-	//    'action:'name=EString
-	//    BEGIN
-	//        ('goal:' BEGIN goal=MessageDefinition END)?
-	//        ('result:' BEGIN result=MessageDefinition END)?
-	//        ('feedback:' BEGIN feedback=MessageDefinition END)?
-	//    END;
-	public RosGrammarAccess.ActionSpecElements getActionSpecAccess() {
-		return gaRos.getActionSpecAccess();
-	}
-	
-	public ParserRule getActionSpecRule() {
-		return getActionSpecAccess().getRule();
-	}
-	
-	//MessageDefinition returns MessageDefinition:
-	//    {MessageDefinition}
-	//        MessagePart+=MessagePart*;
-	public RosGrammarAccess.MessageDefinitionElements getMessageDefinitionAccess() {
-		return gaRos.getMessageDefinitionAccess();
-	}
-	
-	public ParserRule getMessageDefinitionRule() {
-		return getMessageDefinitionAccess().getRule();
 	}
 	
 	//Node returns Node:
@@ -516,6 +434,79 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getNodeAccess().getRule();
 	}
 	
+	/////////////////////
+	////OBJECTS/SPECIFICATIONS
+	/////////////////////
+	//SpecBase returns SpecBase:
+	//    TopicSpec | ServiceSpec | ActionSpec;
+	public RosGrammarAccess.SpecBaseElements getSpecBaseAccess() {
+		return gaRos.getSpecBaseAccess();
+	}
+	
+	public ParserRule getSpecBaseRule() {
+		return getSpecBaseAccess().getRule();
+	}
+	
+	//TopicSpec returns TopicSpec:
+	//    {TopicSpec}
+	//    'msg:'name=(EString|'Header'|'String')
+	//    BEGIN
+	//        'message:' (BEGIN message=MessageDefinition END)?
+	//    END
+	//    ;
+	public RosGrammarAccess.TopicSpecElements getTopicSpecAccess() {
+		return gaRos.getTopicSpecAccess();
+	}
+	
+	public ParserRule getTopicSpecRule() {
+		return getTopicSpecAccess().getRule();
+	}
+	
+	//ServiceSpec returns ServiceSpec:
+	//    {ServiceSpec}
+	//    'srv:'name=EString
+	//    BEGIN
+	//        'request:' (BEGIN request=MessageDefinition END)?
+	//        'response:' (BEGIN response=MessageDefinition END)?
+	//    END;
+	public RosGrammarAccess.ServiceSpecElements getServiceSpecAccess() {
+		return gaRos.getServiceSpecAccess();
+	}
+	
+	public ParserRule getServiceSpecRule() {
+		return getServiceSpecAccess().getRule();
+	}
+	
+	//ActionSpec returns ActionSpec:
+	//    {ActionSpec}
+	//    'action:'name=EString
+	//    BEGIN
+	//        'goal:' (BEGIN goal=MessageDefinition END)?
+	//        'result:' (BEGIN result=MessageDefinition END)?
+	//        'feedback:' (BEGIN feedback=MessageDefinition END)?
+	//    END;
+	public RosGrammarAccess.ActionSpecElements getActionSpecAccess() {
+		return gaRos.getActionSpecAccess();
+	}
+	
+	public ParserRule getActionSpecRule() {
+		return getActionSpecAccess().getRule();
+	}
+	
+	//MessageDefinition returns MessageDefinition:
+	//    {MessageDefinition}
+	//        MessagePart+=MessagePart*;
+	public RosGrammarAccess.MessageDefinitionElements getMessageDefinitionAccess() {
+		return gaRos.getMessageDefinitionAccess();
+	}
+	
+	public ParserRule getMessageDefinitionRule() {
+		return getMessageDefinitionAccess().getRule();
+	}
+	
+	/////////////////////
+	////INTERFACES
+	/////////////////////
 	//Publisher returns Publisher:
 	//    {Publisher}
 	//        name=EString':'
@@ -612,19 +603,21 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getActionClientAccess().getRule();
 	}
 	
-	//GraphName returns GraphName:
-	//    'GraphName' ;
-	public RosGrammarAccess.GraphNameElements getGraphNameAccess() {
-		return gaRos.getGraphNameAccess();
+	/////////////////////
+	////DEPENDENCIES
+	/////////////////////
+	//Dependency returns Dependency:
+	//    PackageDependency | ExternalDependency;
+	public RosGrammarAccess.DependencyElements getDependencyAccess() {
+		return gaRos.getDependencyAccess();
 	}
 	
-	public ParserRule getGraphNameRule() {
-		return getGraphNameAccess().getRule();
+	public ParserRule getDependencyRule() {
+		return getDependencyAccess().getRule();
 	}
 	
 	//PackageDependency returns PackageDependency:
-	//    package=[Package|EString]
-	//;
+	//    package=[Package|EString];
 	public RosGrammarAccess.PackageDependencyElements getPackageDependencyAccess() {
 		return gaRos.getPackageDependencyAccess();
 	}
@@ -643,6 +636,29 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getExternalDependencyRule() {
 		return getExternalDependencyAccess().getRule();
+	}
+	
+	/////////////////////
+	////NAMESPACES
+	/////////////////////
+	//Namespace returns Namespace:
+	//    GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+	public RosGrammarAccess.NamespaceElements getNamespaceAccess() {
+		return gaRos.getNamespaceAccess();
+	}
+	
+	public ParserRule getNamespaceRule() {
+		return getNamespaceAccess().getRule();
+	}
+	
+	//GraphName returns GraphName:
+	//    'GraphName' ;
+	public RosGrammarAccess.GraphNameElements getGraphNameAccess() {
+		return gaRos.getGraphNameAccess();
+	}
+	
+	public ParserRule getGraphNameRule() {
+		return getGraphNameAccess().getRule();
 	}
 	
 	//GlobalNamespace returns GlobalNamespace:
@@ -681,7 +697,20 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getPrivateNamespaceAccess().getRule();
 	}
 	
+	/////////////////////
 	////PARAMETERS DEFINITION
+	/////////////////////
+	//RosParamNames returns ecore::EString:
+	//    ROS_CONVENTION_PARAM | ID
+	//;
+	public RosGrammarAccess.RosParamNamesElements getRosParamNamesAccess() {
+		return gaRos.getRosParamNamesAccess();
+	}
+	
+	public ParserRule getRosParamNamesRule() {
+		return getRosParamNamesAccess().getRule();
+	}
+	
 	//Parameter returns Parameter:
 	//    {Parameter}
 	//        name=EString':'
@@ -975,7 +1004,9 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getParameterStructTypeMemberAccess().getRule();
 	}
 	
+	/////////////////////
 	////PARAMETERS PRIMITIVES TYPES
+	/////////////////////
 	//terminal DIGIT: '0'..'9';
 	public TerminalRule getDIGITRule() {
 		return gaRos.getDIGITRule();
@@ -1082,7 +1113,9 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getDateTime0Access().getRule();
 	}
 	
+	/////////////////////
 	////MESSAGE PRIMITIVES DEFINITION
+	/////////////////////
 	//MessagePart returns primitives::MessagePart:
 	//    Type = AbstractType
 	//    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)

@@ -821,19 +821,19 @@ ruleTopicSpec returns [EObject current=null]
 		{
 			newLeafNode(this_BEGIN_3, grammarAccess.getTopicSpecAccess().getBEGINTerminalRuleCall_3());
 		}
+		otherlv_4=Message_1
+		{
+			newLeafNode(otherlv_4, grammarAccess.getTopicSpecAccess().getMessageKeyword_4());
+		}
 		(
-			otherlv_4=Message_1
-			{
-				newLeafNode(otherlv_4, grammarAccess.getTopicSpecAccess().getMessageKeyword_4_0());
-			}
 			this_BEGIN_5=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_5, grammarAccess.getTopicSpecAccess().getBEGINTerminalRuleCall_4_1());
+				newLeafNode(this_BEGIN_5, grammarAccess.getTopicSpecAccess().getBEGINTerminalRuleCall_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTopicSpecAccess().getMessageMessageDefinitionParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getTopicSpecAccess().getMessageMessageDefinitionParserRuleCall_5_1_0());
 					}
 					lv_message_6_0=ruleMessageDefinition
 					{
@@ -851,12 +851,12 @@ ruleTopicSpec returns [EObject current=null]
 			)
 			this_END_7=RULE_END
 			{
-				newLeafNode(this_END_7, grammarAccess.getTopicSpecAccess().getENDTerminalRuleCall_4_3());
+				newLeafNode(this_END_7, grammarAccess.getTopicSpecAccess().getENDTerminalRuleCall_5_2());
 			}
 		)?
 		this_END_8=RULE_END
 		{
-			newLeafNode(this_END_8, grammarAccess.getTopicSpecAccess().getENDTerminalRuleCall_5());
+			newLeafNode(this_END_8, grammarAccess.getTopicSpecAccess().getENDTerminalRuleCall_6());
 		}
 	)
 ;
@@ -911,19 +911,19 @@ ruleServiceSpec returns [EObject current=null]
 		{
 			newLeafNode(this_BEGIN_3, grammarAccess.getServiceSpecAccess().getBEGINTerminalRuleCall_3());
 		}
+		otherlv_4=Request
+		{
+			newLeafNode(otherlv_4, grammarAccess.getServiceSpecAccess().getRequestKeyword_4());
+		}
 		(
-			otherlv_4=Request
-			{
-				newLeafNode(otherlv_4, grammarAccess.getServiceSpecAccess().getRequestKeyword_4_0());
-			}
 			this_BEGIN_5=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_5, grammarAccess.getServiceSpecAccess().getBEGINTerminalRuleCall_4_1());
+				newLeafNode(this_BEGIN_5, grammarAccess.getServiceSpecAccess().getBEGINTerminalRuleCall_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getServiceSpecAccess().getRequestMessageDefinitionParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getServiceSpecAccess().getRequestMessageDefinitionParserRuleCall_5_1_0());
 					}
 					lv_request_6_0=ruleMessageDefinition
 					{
@@ -941,22 +941,22 @@ ruleServiceSpec returns [EObject current=null]
 			)
 			this_END_7=RULE_END
 			{
-				newLeafNode(this_END_7, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_4_3());
+				newLeafNode(this_END_7, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_5_2());
 			}
 		)?
+		otherlv_8=Response
+		{
+			newLeafNode(otherlv_8, grammarAccess.getServiceSpecAccess().getResponseKeyword_6());
+		}
 		(
-			otherlv_8=Response
-			{
-				newLeafNode(otherlv_8, grammarAccess.getServiceSpecAccess().getResponseKeyword_5_0());
-			}
 			this_BEGIN_9=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_9, grammarAccess.getServiceSpecAccess().getBEGINTerminalRuleCall_5_1());
+				newLeafNode(this_BEGIN_9, grammarAccess.getServiceSpecAccess().getBEGINTerminalRuleCall_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getServiceSpecAccess().getResponseMessageDefinitionParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getServiceSpecAccess().getResponseMessageDefinitionParserRuleCall_7_1_0());
 					}
 					lv_response_10_0=ruleMessageDefinition
 					{
@@ -974,12 +974,12 @@ ruleServiceSpec returns [EObject current=null]
 			)
 			this_END_11=RULE_END
 			{
-				newLeafNode(this_END_11, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_5_3());
+				newLeafNode(this_END_11, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_7_2());
 			}
 		)?
 		this_END_12=RULE_END
 		{
-			newLeafNode(this_END_12, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_6());
+			newLeafNode(this_END_12, grammarAccess.getServiceSpecAccess().getENDTerminalRuleCall_8());
 		}
 	)
 ;
@@ -1034,19 +1034,19 @@ ruleActionSpec returns [EObject current=null]
 		{
 			newLeafNode(this_BEGIN_3, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_3());
 		}
+		otherlv_4=Goal_1
+		{
+			newLeafNode(otherlv_4, grammarAccess.getActionSpecAccess().getGoalKeyword_4());
+		}
 		(
-			otherlv_4=Goal_1
-			{
-				newLeafNode(otherlv_4, grammarAccess.getActionSpecAccess().getGoalKeyword_4_0());
-			}
 			this_BEGIN_5=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_5, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_4_1());
+				newLeafNode(this_BEGIN_5, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActionSpecAccess().getGoalMessageDefinitionParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getActionSpecAccess().getGoalMessageDefinitionParserRuleCall_5_1_0());
 					}
 					lv_goal_6_0=ruleMessageDefinition
 					{
@@ -1064,22 +1064,22 @@ ruleActionSpec returns [EObject current=null]
 			)
 			this_END_7=RULE_END
 			{
-				newLeafNode(this_END_7, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_4_3());
+				newLeafNode(this_END_7, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_5_2());
 			}
 		)?
+		otherlv_8=Result_1
+		{
+			newLeafNode(otherlv_8, grammarAccess.getActionSpecAccess().getResultKeyword_6());
+		}
 		(
-			otherlv_8=Result_1
-			{
-				newLeafNode(otherlv_8, grammarAccess.getActionSpecAccess().getResultKeyword_5_0());
-			}
 			this_BEGIN_9=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_9, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_5_1());
+				newLeafNode(this_BEGIN_9, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActionSpecAccess().getResultMessageDefinitionParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getActionSpecAccess().getResultMessageDefinitionParserRuleCall_7_1_0());
 					}
 					lv_result_10_0=ruleMessageDefinition
 					{
@@ -1097,22 +1097,22 @@ ruleActionSpec returns [EObject current=null]
 			)
 			this_END_11=RULE_END
 			{
-				newLeafNode(this_END_11, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_5_3());
+				newLeafNode(this_END_11, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_7_2());
 			}
 		)?
+		otherlv_12=Feedback_1
+		{
+			newLeafNode(otherlv_12, grammarAccess.getActionSpecAccess().getFeedbackKeyword_8());
+		}
 		(
-			otherlv_12=Feedback_1
-			{
-				newLeafNode(otherlv_12, grammarAccess.getActionSpecAccess().getFeedbackKeyword_6_0());
-			}
 			this_BEGIN_13=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_6_1());
+				newLeafNode(this_BEGIN_13, grammarAccess.getActionSpecAccess().getBEGINTerminalRuleCall_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActionSpecAccess().getFeedbackMessageDefinitionParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getActionSpecAccess().getFeedbackMessageDefinitionParserRuleCall_9_1_0());
 					}
 					lv_feedback_14_0=ruleMessageDefinition
 					{
@@ -1130,12 +1130,12 @@ ruleActionSpec returns [EObject current=null]
 			)
 			this_END_15=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_6_3());
+				newLeafNode(this_END_15, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_9_2());
 			}
 		)?
 		this_END_16=RULE_END
 		{
-			newLeafNode(this_END_16, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_7());
+			newLeafNode(this_END_16, grammarAccess.getActionSpecAccess().getENDTerminalRuleCall_10());
 		}
 	)
 ;

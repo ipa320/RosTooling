@@ -144,25 +144,26 @@ SpecBase returns SpecBase:
 TopicSpec returns TopicSpec:
 	{TopicSpec}
 	'msg:'name=(EString|'Header'|'String')
-	BEGIN
-		('message:' BEGIN message=MessageDefinition END)?
-	END;
+	BEGIN 
+		'message:' (BEGIN message=MessageDefinition END)?
+	END
+	;
 
 ServiceSpec returns ServiceSpec:
 	{ServiceSpec}
 	'srv:'name=EString
 	BEGIN
-		('request:' BEGIN request=MessageDefinition END)?
-		('response:' BEGIN response=MessageDefinition END)?
+		'request:' (BEGIN request=MessageDefinition END)?
+		'response:' (BEGIN response=MessageDefinition END)?
 	END;
 	
 ActionSpec returns ActionSpec:
 	{ActionSpec}
 	'action:'name=EString
 	BEGIN
-		('goal:' BEGIN goal=MessageDefinition END)?
-		('result:' BEGIN result=MessageDefinition END)?
-		('feedback:' BEGIN feedback=MessageDefinition END)?
+		'goal:' (BEGIN goal=MessageDefinition END)?
+		'result:' (BEGIN result=MessageDefinition END)?
+		'feedback:' (BEGIN feedback=MessageDefinition END)?
 	END;
 
 
