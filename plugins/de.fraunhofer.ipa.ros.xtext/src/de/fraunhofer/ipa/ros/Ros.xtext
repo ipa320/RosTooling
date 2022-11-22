@@ -10,20 +10,53 @@ PackageSet returns PackageSet:
 	{PackageSet}
 	package+=Package_Impl*
 	;
-	
+
+///////////////////
 // YAML format
+///////////////////
 terminal BEGIN: 'synthetic:BEGIN';
 terminal END: 'synthetic:END';
 
 @Override 
 terminal SL_COMMENT: '#' !('\n'|'\r')*;
-//
 
+///////////////////
+// CONVENTIONS AND NAMES
+///////////////////
+EString returns ecore::EString:
+	STRING | ID;
+	
+RosNames returns ecore::EString:
+	ROS_CONVENTION_A | ID | 'node'
+;
+
+terminal ROS_CONVENTION_A:
+	( ('/' ID ) | ( ID '/' ) )* ;
+
+terminal ROS_CONVENTION_PARAM:
+	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
+
+///////////////////
+//PACKAGES
+///////////////////
 Package returns Package:
 	Package_Impl //|
 	//CatkinPackage | 
 	//AmentPackage
 	;
+
+Package_Impl returns Package:
+	{Package}
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('specs:' 
+			BEGIN
+			spec+=SpecBase*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
 
 CatkinPackage returns CatkinPackage:
 	{CatkinPackage}
@@ -37,89 +70,30 @@ CatkinPackage returns CatkinPackage:
 		)?
 		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
 	END;
-	
-Package_Impl returns Package:
-	{Package}
+
+AmentPackage returns AmentPackage:
+	{AmentPackage}
+	'AmentPackage'
 	name=RosNames':'
 	BEGIN
 		('fromGitRepo:' fromGitRepo=EString)?
-		('specs:' 
-			BEGIN
-			spec+=SpecBase*
+		('artifacts:' 
+			BEGIN 
+			artifact+=Artifact*
 			END
 		)?
 		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
 	END;
-	
-AmentPackage returns AmentPackage:
-	{AmentPackage}
-	'AmentPackage'
-	name=RosNames
-;
 
-SpecBase returns SpecBase:
-	TopicSpec | ServiceSpec | ActionSpec;
-
-Dependency returns Dependency:
-	PackageDependency | ExternalDependency;
-
-Namespace returns Namespace:
-	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
-
+///////////////////
+//ARTIFACT AND NODE
+///////////////////
 Artifact returns Artifact:
 	{Artifact}
 		name=RosNames':'
 		BEGIN
 		(node=Node)?
-		END
-	;
-
-EString returns ecore::EString:
-	STRING | ID;
-	
-RosNames returns ecore::EString:
-	ROS_CONVENTION_A | ID | 'node'
-;
-
-RosParamNames returns ecore::EString:
-	ROS_CONVENTION_PARAM | ID 
-;
-
-terminal ROS_CONVENTION_A:
-	( ('/' ID ) | ( ID '/' ) )* ;
-
-terminal ROS_CONVENTION_PARAM:
-	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
-
-TopicSpec returns TopicSpec:
-	{TopicSpec}
-	'msg:'name=(EString|'Header'|'String')
-	BEGIN
-		('message:' BEGIN message=MessageDefinition END)?
-	END;
-
-ServiceSpec returns ServiceSpec:
-	{ServiceSpec}
-	'srv:'name=EString
-	BEGIN
-		('request:' BEGIN request=MessageDefinition END)?
-		('response:' BEGIN response=MessageDefinition END)?
-	END;
-	
-ActionSpec returns ActionSpec:
-	{ActionSpec}
-	'action:'name=EString
-	BEGIN
-		('goal:' BEGIN goal=MessageDefinition END)?
-		('result:' BEGIN result=MessageDefinition END)?
-		('feedback:' BEGIN feedback=MessageDefinition END)?
-	END;
-
-
-MessageDefinition returns MessageDefinition:
-	{MessageDefinition}
-		MessagePart+=MessagePart*;
-
+		END;
 
 Node returns Node:
 	'node:' name=RosNames
@@ -161,6 +135,44 @@ Node returns Node:
 		)?
 	END;
 
+///////////////////
+//OBJECTS/SPECIFICATIONS
+///////////////////
+SpecBase returns SpecBase:
+	TopicSpec | ServiceSpec | ActionSpec;
+
+TopicSpec returns TopicSpec:
+	{TopicSpec}
+	'msg:'name=(EString|'Header'|'String')
+	BEGIN
+		('message:' BEGIN message=MessageDefinition END)?
+	END;
+
+ServiceSpec returns ServiceSpec:
+	{ServiceSpec}
+	'srv:'name=EString
+	BEGIN
+		('request:' BEGIN request=MessageDefinition END)?
+		('response:' BEGIN response=MessageDefinition END)?
+	END;
+	
+ActionSpec returns ActionSpec:
+	{ActionSpec}
+	'action:'name=EString
+	BEGIN
+		('goal:' BEGIN goal=MessageDefinition END)?
+		('result:' BEGIN result=MessageDefinition END)?
+		('feedback:' BEGIN feedback=MessageDefinition END)?
+	END;
+
+
+MessageDefinition returns MessageDefinition:
+	{MessageDefinition}
+		MessagePart+=MessagePart*;
+
+///////////////////
+//INTERFACES
+///////////////////
 Publisher returns Publisher:
 	{Publisher}
 		name=EString':'
@@ -215,18 +227,28 @@ ActionClient returns ActionClient:
 		END
 	;
 
-GraphName returns GraphName:
-	'GraphName' ;
-
+///////////////////
+//DEPENDENCIES
+///////////////////
+Dependency returns Dependency:
+	PackageDependency | ExternalDependency;
 
 PackageDependency returns PackageDependency:
-	package=[Package|EString]
-;
+	package=[Package|EString];
 
 ExternalDependency returns ExternalDependency:
 	{ExternalDependency}
 	'ExternalDependency'
 	name=EString;
+
+///////////////////
+//NAMESPACES
+///////////////////
+Namespace returns Namespace:
+	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+
+GraphName returns GraphName:
+	'GraphName' ;
 
 GlobalNamespace returns GlobalNamespace:
 	{GlobalNamespace}
@@ -243,7 +265,13 @@ PrivateNamespace returns PrivateNamespace:
 	'PrivateNamespace'
 		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
+///////////////////
 //PARAMETERS DEFINITION
+///////////////////
+RosParamNames returns ecore::EString:
+	ROS_CONVENTION_PARAM | ID 
+;
+
 Parameter returns Parameter:
 	{Parameter}
 		name=EString':'
@@ -370,8 +398,9 @@ ParameterStructTypeMember returns ParameterStructTypeMember:
 		type=ParameterType
 	;
 
-
+///////////////////
 //PARAMETERS PRIMITIVES TYPES
+///////////////////
 terminal DIGIT: '0'..'9';
 
 terminal BINARY: ('0b'|'0B')('0'|'1')+;
@@ -401,8 +430,9 @@ Integer0 returns type::Int:
 DateTime0 returns type::DateTime:
 	DATE_TIME;
 	
+///////////////////
 //MESSAGE PRIMITIVES DEFINITION
-
+///////////////////
 MessagePart returns primitives::MessagePart:
 	Type = AbstractType
 	Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
