@@ -3,6 +3,9 @@
  */
 package de.fraunhofer.ipa.ros2;
 
+import org.eclipse.xtext.resource.XtextResourceSet;
+
+import com.google.inject.Injector;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -10,6 +13,7 @@ package de.fraunhofer.ipa.ros2;
 public class Ros2StandaloneSetup extends Ros2StandaloneSetupGenerated {
 
 	public static void doSetup() {
-		new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration();
+		Injector injector = new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration();
+	     XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 	}
 }

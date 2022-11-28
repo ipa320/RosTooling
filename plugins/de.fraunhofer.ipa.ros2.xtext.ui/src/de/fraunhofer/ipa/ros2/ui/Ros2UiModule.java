@@ -4,6 +4,9 @@
 package de.fraunhofer.ipa.ros2.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.contentassist.XtextContentAssistProcessor;
+
+import com.google.inject.Binder;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -13,4 +16,13 @@ public class Ros2UiModule extends AbstractRos2UiModule {
 	public Ros2UiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+    @Override
+    public void configure(Binder binder) {
+        super.configure(binder);
+    	binder.bind(String.class)
+			.annotatedWith(com.google.inject.name.Names.named(
+			(XtextContentAssistProcessor.COMPLETION_AUTO_ACTIVATION_CHARS)))
+			.toInstance(".,:");
+    }
 }
