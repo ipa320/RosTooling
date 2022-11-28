@@ -1,19 +1,19 @@
 /**
  */
-package ros.tests;
+package primitives.tests;
 
 import junit.textui.TestRunner;
 
-import ros.RosFactory;
-import ros.ServiceClient;
+import primitives.ArrayTopicSpecRef;
+import primitives.PrimitivesFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Service Client</b></em>'.
+ * A test case for the model object '<em><b>Array Topic Spec Ref</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceClientTest extends InterfaceTypeTest {
+public class ArrayTopicSpecRefTest extends AbstractTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ServiceClientTest.class);
+		TestRunner.run(ArrayTopicSpecRefTest.class);
 	}
 
 	/**
-	 * Constructs a new Service Client test case with the given name.
+	 * Constructs a new Array Topic Spec Ref test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClientTest(String name) {
+	public ArrayTopicSpecRefTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Service Client test case.
+	 * Returns the fixture for this Array Topic Spec Ref test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected ServiceClient getFixture() {
-		return (ServiceClient)fixture;
+	protected ArrayTopicSpecRef getFixture() {
+		return (ArrayTopicSpecRef)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createServiceClient());
+		setFixture(PrimitivesFactory.eINSTANCE.createArrayTopicSpecRef());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ServiceClientTest extends InterfaceTypeTest {
 		setFixture(null);
 	}
 
-} //ServiceClientTest
+} //ArrayTopicSpecRefTest

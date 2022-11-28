@@ -4,16 +4,16 @@ package ros.tests;
 
 import junit.textui.TestRunner;
 
+import ros.AmentPackage;
 import ros.RosFactory;
-import ros.ServiceClient;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Service Client</b></em>'.
+ * A test case for the model object '<em><b>Ament Package</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceClientTest extends InterfaceTypeTest {
+public class AmentPackageTest extends PackageTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ServiceClientTest.class);
+		TestRunner.run(AmentPackageTest.class);
 	}
 
 	/**
-	 * Constructs a new Service Client test case with the given name.
+	 * Constructs a new Ament Package test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClientTest(String name) {
+	public AmentPackageTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Service Client test case.
+	 * Returns the fixture for this Ament Package test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected ServiceClient getFixture() {
-		return (ServiceClient)fixture;
+	protected AmentPackage getFixture() {
+		return (AmentPackage)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createServiceClient());
+		setFixture(RosFactory.eINSTANCE.createAmentPackage());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ServiceClientTest extends InterfaceTypeTest {
 		setFixture(null);
 	}
 
-} //ServiceClientTest
+} //AmentPackageTest

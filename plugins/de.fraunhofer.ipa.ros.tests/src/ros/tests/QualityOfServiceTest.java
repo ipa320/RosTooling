@@ -5,25 +5,24 @@ package ros.tests;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
-
-import ros.NamespacedElement;
+import ros.QualityOfService;
 import ros.RosFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Namespaced Element</b></em>'.
+ * A test case for the model object '<em><b>Quality Of Service</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class NamespacedElementTest extends TestCase {
+public class QualityOfServiceTest extends TestCase {
 
 	/**
-	 * The fixture for this Namespaced Element test case.
+	 * The fixture for this Quality Of Service test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamespacedElement fixture = null;
+	protected QualityOfService fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +30,36 @@ public class NamespacedElementTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(NamespacedElementTest.class);
+		TestRunner.run(QualityOfServiceTest.class);
 	}
 
 	/**
-	 * Constructs a new Namespaced Element test case with the given name.
+	 * Constructs a new Quality Of Service test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamespacedElementTest(String name) {
+	public QualityOfServiceTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Namespaced Element test case.
+	 * Sets the fixture for this Quality Of Service test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(NamespacedElement fixture) {
+	protected void setFixture(QualityOfService fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Namespaced Element test case.
+	 * Returns the fixture for this Quality Of Service test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamespacedElement getFixture() {
+	protected QualityOfService getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +71,7 @@ public class NamespacedElementTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createNamespacedElement());
+		setFixture(RosFactory.eINSTANCE.createQualityOfService());
 	}
 
 	/**
@@ -86,4 +85,4 @@ public class NamespacedElementTest extends TestCase {
 		setFixture(null);
 	}
 
-} //NamespacedElementTest
+} //QualityOfServiceTest

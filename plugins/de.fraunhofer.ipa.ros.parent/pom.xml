@@ -33,7 +33,7 @@
 		<module>../de.fraunhofer.ipa.ros.model.spec.check</module>
 		<module>../de.fraunhofer.ipa.roscode.generator</module>		
 		<module>../de.fraunhofer.ipa.ros.observer.generator</module>
-		<!--module>../de.fraunhofer.ipa.ros.xtext.tests</module-->
+		<module>../de.fraunhofer.ipa.ros.xtext.tests</module>
 		
 
 		<module>../de.fraunhofer.ipa.componentInterface</module>

@@ -1,19 +1,19 @@
 /**
  */
-package ros.tests;
+package primitives.tests;
 
 import junit.textui.TestRunner;
 
-import ros.RosFactory;
-import ros.ServiceClient;
+import primitives.PrimitivesFactory;
+import primitives.int8Array;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Service Client</b></em>'.
+ * A test case for the model object '<em><b>int8 Array</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceClientTest extends InterfaceTypeTest {
+public class int8ArrayTest extends AbstractTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ServiceClientTest.class);
+		TestRunner.run(int8ArrayTest.class);
 	}
 
 	/**
-	 * Constructs a new Service Client test case with the given name.
+	 * Constructs a new int8 Array test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceClientTest(String name) {
+	public int8ArrayTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Service Client test case.
+	 * Returns the fixture for this int8 Array test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected ServiceClient getFixture() {
-		return (ServiceClient)fixture;
+	protected int8Array getFixture() {
+		return (int8Array)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ServiceClientTest extends InterfaceTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createServiceClient());
+		setFixture(PrimitivesFactory.eINSTANCE.createint8Array());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ServiceClientTest extends InterfaceTypeTest {
 		setFixture(null);
 	}
 
-} //ServiceClientTest
+} //int8ArrayTest

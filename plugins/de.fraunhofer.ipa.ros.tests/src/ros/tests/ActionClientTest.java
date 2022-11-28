@@ -13,7 +13,7 @@ import ros.RosFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionClientTest extends NamespacedElementTest {
+public class ActionClientTest extends InterfaceTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
