@@ -389,43 +389,45 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//Node returns Node:
 	//    'node:' name=RosNames
-	//    BEGIN
+	//     BEGIN
+	//        (
 	//        ('publishers:'
 	//            BEGIN
 	//            publisher+=Publisher*
 	//            END
-	//        )?
+	//        )|
 	//        ('subscribers:'
 	//            BEGIN
 	//            subscriber+=Subscriber*
 	//            END
-	//        )?
+	//        )|
 	//        ('serviceserver:'
 	//            BEGIN
 	//            serviceserver+=ServiceServer*
 	//            END
-	//        )?
+	//        )|
 	//        ('serviceclient:'
 	//            BEGIN
 	//            serviceclient+=ServiceClient*
 	//            END
-	//        )?
+	//        )|
 	//        ('actionserver:'
 	//            BEGIN
 	//            actionserver+=ActionServer*
 	//            END
-	//        )?
+	//        )|
 	//        ('actionclient:'
 	//            BEGIN
 	//            actionclient+=ActionClient*
 	//            END
-	//        )?
+	//        )|
 	//        ('parameters:'
 	//            BEGIN
 	//            parameter+=Parameter*
 	//            END
-	//        )?
-	//    END;
+	//        )
+	//        )*END
+	//    ;
 	public RosGrammarAccess.NodeElements getNodeAccess() {
 		return gaRos.getNodeAccess();
 	}
