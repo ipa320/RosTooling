@@ -275,184 +275,243 @@ ruleQualityOfService returns [EObject current=null]
 			}
 		)
 		(
-			otherlv_1=Profile
-			{
-				newLeafNode(otherlv_1, grammarAccess.getQualityOfServiceAccess().getProfileKeyword_1_0());
-			}
 			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+				}
 				(
 					(
-						lv_QoSProfile_2_1=Default_qos
-						{
-							newLeafNode(lv_QoSProfile_2_1, grammarAccess.getQualityOfServiceAccess().getQoSProfileDefault_qosKeyword_1_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_2_1, null);
-						}
-						    |
-						lv_QoSProfile_2_2=Services_qos
-						{
-							newLeafNode(lv_QoSProfile_2_2, grammarAccess.getQualityOfServiceAccess().getQoSProfileServices_qosKeyword_1_1_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_2_2, null);
-						}
-						    |
-						lv_QoSProfile_2_3=Sensor_qos
-						{
-							newLeafNode(lv_QoSProfile_2_3, grammarAccess.getQualityOfServiceAccess().getQoSProfileSensor_qosKeyword_1_1_0_2());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_2_3, null);
-						}
-						    |
-						lv_QoSProfile_2_4=Parameter_qos
-						{
-							newLeafNode(lv_QoSProfile_2_4, grammarAccess.getQualityOfServiceAccess().getQoSProfileParameter_qosKeyword_1_1_0_3());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_2_4, null);
-						}
-					)
-				)
-			)
-		)?
-		(
-			otherlv_3=History
-			{
-				newLeafNode(otherlv_3, grammarAccess.getQualityOfServiceAccess().getHistoryKeyword_2_0());
-			}
 			(
-				(
-					(
-						lv_History_4_1=Keep_last
-						{
-							newLeafNode(lv_History_4_1, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_lastKeyword_2_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "History", lv_History_4_1, null);
-						}
-						    |
-						lv_History_4_2=Keep_all
-						{
-							newLeafNode(lv_History_4_2, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_allKeyword_2_1_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "History", lv_History_4_2, null);
-						}
-					)
-				)
-			)
-		)?
-		(
-			otherlv_5=Depth
-			{
-				newLeafNode(otherlv_5, grammarAccess.getQualityOfServiceAccess().getDepthKeyword_3_0());
-			}
-			(
-				(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 0)}?=>(
 					{
-						newCompositeNode(grammarAccess.getQualityOfServiceAccess().getDepthInteger0ParserRuleCall_3_1_0());
+						getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 0);
 					}
-					lv_Depth_6_0=ruleInteger0
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQualityOfServiceRule());
-						}
-						set(
-							$current,
-							"Depth",
-							lv_Depth_6_0,
-							"de.fraunhofer.ipa.ros.Ros.Integer0");
-						afterParserOrEnumRuleCall();
+								({true}?=>(otherlv_2=Profile
+								{
+									newLeafNode(otherlv_2, grammarAccess.getQualityOfServiceAccess().getProfileKeyword_1_0_0());
+								}
+								(
+									(
+										(
+											lv_QoSProfile_3_1=Default_qos
+											{
+												newLeafNode(lv_QoSProfile_3_1, grammarAccess.getQualityOfServiceAccess().getQoSProfileDefault_qosKeyword_1_0_1_0_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_1, null);
+											}
+											    |
+											lv_QoSProfile_3_2=Services_qos
+											{
+												newLeafNode(lv_QoSProfile_3_2, grammarAccess.getQualityOfServiceAccess().getQoSProfileServices_qosKeyword_1_0_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_2, null);
+											}
+											    |
+											lv_QoSProfile_3_3=Sensor_qos
+											{
+												newLeafNode(lv_QoSProfile_3_3, grammarAccess.getQualityOfServiceAccess().getQoSProfileSensor_qosKeyword_1_0_1_0_2());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_3, null);
+											}
+											    |
+											lv_QoSProfile_3_4=Parameter_qos
+											{
+												newLeafNode(lv_QoSProfile_3_4, grammarAccess.getQualityOfServiceAccess().getQoSProfileParameter_qosKeyword_1_0_1_0_3());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_4, null);
+											}
+										)
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
 					}
 				)
-			)
-		)?
-		(
-			otherlv_7=Reliability
-			{
-				newLeafNode(otherlv_7, grammarAccess.getQualityOfServiceAccess().getReliabilityKeyword_4_0());
-			}
+			)|
 			(
-				(
-					(
-						lv_Reliability_8_1=Best_effort
-						{
-							newLeafNode(lv_Reliability_8_1, grammarAccess.getQualityOfServiceAccess().getReliabilityBest_effortKeyword_4_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "Reliability", lv_Reliability_8_1, null);
-						}
-						    |
-						lv_Reliability_8_2=Reliable
-						{
-							newLeafNode(lv_Reliability_8_2, grammarAccess.getQualityOfServiceAccess().getReliabilityReliableKeyword_4_1_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "Reliability", lv_Reliability_8_2, null);
-						}
-					)
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 1);
+					}
+								({true}?=>(otherlv_4=History
+								{
+									newLeafNode(otherlv_4, grammarAccess.getQualityOfServiceAccess().getHistoryKeyword_1_1_0());
+								}
+								(
+									(
+										(
+											lv_History_5_1=Keep_last
+											{
+												newLeafNode(lv_History_5_1, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_lastKeyword_1_1_1_0_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "History", lv_History_5_1, null);
+											}
+											    |
+											lv_History_5_2=Keep_all
+											{
+												newLeafNode(lv_History_5_2, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_allKeyword_1_1_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "History", lv_History_5_2, null);
+											}
+										)
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 2);
+					}
+								({true}?=>(otherlv_6=Depth
+								{
+									newLeafNode(otherlv_6, grammarAccess.getQualityOfServiceAccess().getDepthKeyword_1_2_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getQualityOfServiceAccess().getDepthInteger0ParserRuleCall_1_2_1_0());
+										}
+										lv_Depth_7_0=ruleInteger0
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getQualityOfServiceRule());
+											}
+											set(
+												$current,
+												"Depth",
+												lv_Depth_7_0,
+												"de.fraunhofer.ipa.ros.Ros.Integer0");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 3);
+					}
+								({true}?=>(otherlv_8=Reliability
+								{
+									newLeafNode(otherlv_8, grammarAccess.getQualityOfServiceAccess().getReliabilityKeyword_1_3_0());
+								}
+								(
+									(
+										(
+											lv_Reliability_9_1=Best_effort
+											{
+												newLeafNode(lv_Reliability_9_1, grammarAccess.getQualityOfServiceAccess().getReliabilityBest_effortKeyword_1_3_1_0_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "Reliability", lv_Reliability_9_1, null);
+											}
+											    |
+											lv_Reliability_9_2=Reliable
+											{
+												newLeafNode(lv_Reliability_9_2, grammarAccess.getQualityOfServiceAccess().getReliabilityReliableKeyword_1_3_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "Reliability", lv_Reliability_9_2, null);
+											}
+										)
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 4);
+					}
+								({true}?=>(otherlv_10=Durability
+								{
+									newLeafNode(otherlv_10, grammarAccess.getQualityOfServiceAccess().getDurabilityKeyword_1_4_0());
+								}
+								(
+									(
+										(
+											lv_Durability_11_1=Transient_local
+											{
+												newLeafNode(lv_Durability_11_1, grammarAccess.getQualityOfServiceAccess().getDurabilityTransient_localKeyword_1_4_1_0_0());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "Durability", lv_Durability_11_1, null);
+											}
+											    |
+											lv_Durability_11_2=Volatile
+											{
+												newLeafNode(lv_Durability_11_2, grammarAccess.getQualityOfServiceAccess().getDurabilityVolatileKeyword_1_4_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getQualityOfServiceRule());
+												}
+												setWithLastConsumed($current, "Durability", lv_Durability_11_2, null);
+											}
+										)
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+					}
 				)
 			)
-		)?
-		(
-			otherlv_9=Durability
-			{
-				newLeafNode(otherlv_9, grammarAccess.getQualityOfServiceAccess().getDurabilityKeyword_5_0());
-			}
-			(
-				(
-					(
-						lv_Durability_10_1=Transient_local
-						{
-							newLeafNode(lv_Durability_10_1, grammarAccess.getQualityOfServiceAccess().getDurabilityTransient_localKeyword_5_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "Durability", lv_Durability_10_1, null);
-						}
-						    |
-						lv_Durability_10_2=Volatile
-						{
-							newLeafNode(lv_Durability_10_2, grammarAccess.getQualityOfServiceAccess().getDurabilityVolatileKeyword_5_1_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getQualityOfServiceRule());
-							}
-							setWithLastConsumed($current, "Durability", lv_Durability_10_2, null);
-						}
-					)
+					)*
 				)
 			)
-		)?
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+				}
+		)
 	)
 ;
 

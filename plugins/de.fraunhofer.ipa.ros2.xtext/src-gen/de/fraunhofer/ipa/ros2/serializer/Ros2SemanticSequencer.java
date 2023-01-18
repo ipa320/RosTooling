@@ -406,12 +406,18 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         (QoSProfile='default_qos' | QoSProfile='services_qos' | QoSProfile='sensor_qos' | QoSProfile='parameter_qos')? 
-	 *         (History='keep_last' | History='keep_all')? 
-	 *         Depth=Integer0? 
-	 *         (Reliability='best_effort' | Reliability='reliable')? 
-	 *         (Durability='transient_local' | Durability='volatile')?
-	 *     )
+	 *         QoSProfile='default_qos' | 
+	 *         QoSProfile='services_qos' | 
+	 *         QoSProfile='sensor_qos' | 
+	 *         QoSProfile='parameter_qos' | 
+	 *         History='keep_last' | 
+	 *         History='keep_all' | 
+	 *         Depth=Integer0 | 
+	 *         Reliability='best_effort' | 
+	 *         Reliability='reliable' | 
+	 *         Durability='transient_local' | 
+	 *         Durability='volatile'
+	 *     )*
 	 */
 	protected void sequence_QualityOfService(ISerializationContext context, QualityOfService semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -30,11 +30,11 @@ AmentPackage returns AmentPackage:
 
 QualityOfService returns QualityOfService:
 	{QualityOfService}
-		('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))?
-		('history:' History=('keep_last'|'keep_all'))?
-		('depth:' Depth=Integer0)?
-		('reliability:' Reliability=('best_effort'|'reliable'))?
-		('durability:' Durability=('transient_local'|'volatile'))?
+		(('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
+		('history:' History=('keep_last'|'keep_all'))? &
+		('depth:' Depth=Integer0)? &
+		('reliability:' Reliability=('best_effort'|'reliable'))? &
+		('durability:' Durability=('transient_local'|'volatile'))?)
 	;
 
 ///////////////////
