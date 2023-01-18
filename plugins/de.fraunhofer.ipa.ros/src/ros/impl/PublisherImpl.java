@@ -26,7 +26,7 @@ import ros.TopicSpec;
  *
  * @generated
  */
-public class PublisherImpl extends NamespacedElementImpl implements Publisher {
+public class PublisherImpl extends InterfaceTypeImpl implements Publisher {
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference.
 	 * <!-- begin-user-doc -->

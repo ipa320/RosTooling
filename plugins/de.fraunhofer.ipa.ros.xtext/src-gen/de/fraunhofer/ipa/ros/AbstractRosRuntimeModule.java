@@ -10,7 +10,7 @@ import de.fraunhofer.ipa.ros.formatting2.RosFormatter;
 import de.fraunhofer.ipa.ros.generator.RosGenerator;
 import de.fraunhofer.ipa.ros.parser.antlr.RosAntlrTokenFileProvider;
 import de.fraunhofer.ipa.ros.parser.antlr.RosParser;
-import de.fraunhofer.ipa.ros.parser.antlr.internal.InternalRosLexer;
+import de.fraunhofer.ipa.ros.parser.antlr.lexer.InternalRosLexer;
 import de.fraunhofer.ipa.ros.scoping.RosScopeProvider;
 import de.fraunhofer.ipa.ros.serializer.RosSemanticSequencer;
 import de.fraunhofer.ipa.ros.serializer.RosSyntacticSequencer;

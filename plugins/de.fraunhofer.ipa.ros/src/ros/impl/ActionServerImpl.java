@@ -26,7 +26,7 @@ import ros.RosPackage;
  *
  * @generated
  */
-public class ActionServerImpl extends NamespacedElementImpl implements ActionServer {
+public class ActionServerImpl extends InterfaceTypeImpl implements ActionServer {
 	/**
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
 	 * <!-- begin-user-doc -->

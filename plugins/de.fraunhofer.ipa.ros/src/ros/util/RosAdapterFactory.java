@@ -17,9 +17,9 @@ import ros.CatkinPackage;
 import ros.Dependency;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
+import ros.InterfaceType;
 import ros.MessageDefinition;
 import ros.Namespace;
-import ros.NamespacedElement;
 import ros.Node;
 import ros.PackageDependency;
 import ros.PackageSet;
@@ -49,6 +49,7 @@ import ros.ParameterType;
 import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
+import ros.QualityOfService;
 import ros.RelativeNamespace;
 import ros.RosPackage;
 import ros.ServiceClient;
@@ -207,8 +208,8 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 				return createPrivateNamespaceAdapter();
 			}
 			@Override
-			public Adapter caseNamespacedElement(NamespacedElement object) {
-				return createNamespacedElementAdapter();
+			public Adapter caseInterfaceType(InterfaceType object) {
+				return createInterfaceTypeAdapter();
 			}
 			@Override
 			public Adapter caseParameterType(ParameterType object) {
@@ -309,6 +310,10 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAmentPackage(AmentPackage object) {
 				return createAmentPackageAdapter();
+			}
+			@Override
+			public Adapter caseQualityOfService(QualityOfService object) {
+				return createQualityOfServiceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -653,16 +658,16 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ros.NamespacedElement <em>Namespaced Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link ros.InterfaceType <em>Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ros.NamespacedElement
+	 * @see ros.InterfaceType
 	 * @generated
 	 */
-	public Adapter createNamespacedElementAdapter() {
+	public Adapter createInterfaceTypeAdapter() {
 		return null;
 	}
 
@@ -1013,6 +1018,20 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAmentPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.QualityOfService <em>Quality Of Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.QualityOfService
+	 * @generated
+	 */
+	public Adapter createQualityOfServiceAdapter() {
 		return null;
 	}
 

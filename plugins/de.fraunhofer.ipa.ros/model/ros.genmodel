@@ -83,9 +83,10 @@
     <genClasses ecoreClass="ros.ecore#//GlobalNamespace"/>
     <genClasses ecoreClass="ros.ecore#//RelativeNamespace"/>
     <genClasses ecoreClass="ros.ecore#//PrivateNamespace"/>
-    <genClasses ecoreClass="ros.ecore#//NamespacedElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//NamespacedElement/namespace"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//NamespacedElement/name"/>
+    <genClasses ecoreClass="ros.ecore#//InterfaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//InterfaceType/namespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//InterfaceType/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//InterfaceType/qos"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ros.ecore#//ParameterType"/>
     <genClasses ecoreClass="ros.ecore#//ParameterListType">
@@ -162,6 +163,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//ParameterDate/value"/>
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//AmentPackage"/>
+    <genClasses image="false" ecoreClass="ros.ecore#//QualityOfService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/QoSProfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/History"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/Depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/Reliability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/Durability"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Primitives" ecorePackage="PrimitivesTypes.ecore#/">
     <genClasses image="false" ecoreClass="PrimitivesTypes.ecore#//AbstractType"/>

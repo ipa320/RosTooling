@@ -202,13 +202,13 @@ public interface RosFactory extends EFactory {
 	PrivateNamespace createPrivateNamespace();
 
 	/**
-	 * Returns a new object of class '<em>Namespaced Element</em>'.
+	 * Returns a new object of class '<em>Interface Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Namespaced Element</em>'.
+	 * @return a new object of class '<em>Interface Type</em>'.
 	 * @generated
 	 */
-	NamespacedElement createNamespacedElement();
+	InterfaceType createInterfaceType();
 
 	/**
 	 * Returns a new object of class '<em>Parameter List Type</em>'.
@@ -416,6 +416,15 @@ public interface RosFactory extends EFactory {
 	 * @generated
 	 */
 	AmentPackage createAmentPackage();
+
+	/**
+	 * Returns a new object of class '<em>Quality Of Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Quality Of Service</em>'.
+	 * @generated
+	 */
+	QualityOfService createQualityOfService();
 
 	/**
 	 * Returns the package supported by this factory.

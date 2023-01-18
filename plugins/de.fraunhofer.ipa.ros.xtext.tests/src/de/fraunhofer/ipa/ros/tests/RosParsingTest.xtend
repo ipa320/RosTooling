@@ -19,11 +19,11 @@ import ros.PackageSet
 class RosParsingTest {
 	@Inject
 	ParseHelper<PackageSet> parseHelper
-	String RESOURCES_BASE_DIR = 'resources'
+	String RESOURCES_BASE_DIR = 'resources/basic_msgs'
 
 	@Test
 	def void loadModel() {
-		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'common_msgs.ros')))
 		val result = parseHelper.parse(fileContent)
 		Assert.assertNotNull(result)
 		val errors = result.eResource.errors
@@ -32,13 +32,12 @@ class RosParsingTest {
 
 	@Test 
     def void parseDomainmodel() {
-    	val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+    	val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros_core.ros')))
 		val model = parseHelper.parse(fileContent)
-        val packageName = model.package.get(0).name
-        val nodeName = model.package.get(0).artifact.get(0).node.name
-        Assert.assertEquals(packageName, "test_pkg")
-        Assert.assertEquals(nodeName, "test_node")
-        
+        val packageName1 = model.package.get(0).name
+        Assert.assertEquals(packageName1, "std_msgs")
+        val packageName2 = model.package.get(1).name
+        Assert.assertEquals(packageName2, "std_srvs")
     }
 
 }

@@ -19,7 +19,7 @@ package ros;
  * @model
  * @generated
  */
-public interface Subscriber extends NamespacedElement {
+public interface Subscriber extends InterfaceType {
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
