@@ -7,6 +7,22 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import rossystem.ActionConnection;
+import rossystem.Connections;
+import rossystem.RosActionClient;
+import rossystem.RosActionServer;
+import rossystem.RosInterface;
+import rossystem.RosInterfaces;
+import rossystem.RosNode;
+import rossystem.RosParameter;
+import rossystem.RosPublisher;
+import rossystem.RosServiceClient;
+import rossystem.RosServiceServer;
+import rossystem.RosSubscriber;
+import rossystem.RosSystem;
+import rossystem.RossystemPackage;
+import rossystem.ServiceConnection;
+import rossystem.TopicConnection;
 import rossystem.*;
 
 /**
@@ -72,33 +88,103 @@ public class RossystemSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RossystemPackage.COMPONENT_STACK: {
-				ComponentStack componentStack = (ComponentStack)theEObject;
-				T result = caseComponentStack(componentStack);
+			case RossystemPackage.ROS_NODE: {
+				RosNode rosNode = (RosNode)theEObject;
+				T result = caseRosNode(rosNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RossystemPackage.QUALITY_ATTRIBUTE: {
-				QualityAttribute qualityAttribute = (QualityAttribute)theEObject;
-				T result = caseQualityAttribute(qualityAttribute);
+			case RossystemPackage.ROS_INTERFACES: {
+				RosInterfaces rosInterfaces = (RosInterfaces)theEObject;
+				T result = caseRosInterfaces(rosInterfaces);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_INTERFACE: {
+				RosInterface rosInterface = (RosInterface)theEObject;
+				T result = caseRosInterface(rosInterface);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_PUBLISHER: {
+				RosPublisher rosPublisher = (RosPublisher)theEObject;
+				T result = caseRosPublisher(rosPublisher);
+				if (result == null) result = caseRosInterface(rosPublisher);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_SUBSCRIBER: {
+				RosSubscriber rosSubscriber = (RosSubscriber)theEObject;
+				T result = caseRosSubscriber(rosSubscriber);
+				if (result == null) result = caseRosInterface(rosSubscriber);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_SERVICE_SERVER: {
+				RosServiceServer rosServiceServer = (RosServiceServer)theEObject;
+				T result = caseRosServiceServer(rosServiceServer);
+				if (result == null) result = caseRosInterface(rosServiceServer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_SERVICE_CLIENT: {
+				RosServiceClient rosServiceClient = (RosServiceClient)theEObject;
+				T result = caseRosServiceClient(rosServiceClient);
+				if (result == null) result = caseRosInterface(rosServiceClient);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_ACTION_SERVER: {
+				RosActionServer rosActionServer = (RosActionServer)theEObject;
+				T result = caseRosActionServer(rosActionServer);
+				if (result == null) result = caseRosInterface(rosActionServer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_ACTION_CLIENT: {
+				RosActionClient rosActionClient = (RosActionClient)theEObject;
+				T result = caseRosActionClient(rosActionClient);
+				if (result == null) result = caseRosInterface(rosActionClient);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.ROS_PARAMETER: {
+				RosParameter rosParameter = (RosParameter)theEObject;
+				T result = caseRosParameter(rosParameter);
+				if (result == null) result = caseRosInterface(rosParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.PROCESS: {
+				rossystem.Process process = (rossystem.Process)theEObject;
+				T result = caseProcess(process);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RossystemPackage.TOPIC_CONNECTION: {
 				TopicConnection topicConnection = (TopicConnection)theEObject;
 				T result = caseTopicConnection(topicConnection);
+				if (result == null) result = caseRosInterface(topicConnection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RossystemPackage.SERVICE_CONNECTION: {
 				ServiceConnection serviceConnection = (ServiceConnection)theEObject;
 				T result = caseServiceConnection(serviceConnection);
+				if (result == null) result = caseRosInterface(serviceConnection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RossystemPackage.ACTION_CONNECTION: {
 				ActionConnection actionConnection = (ActionConnection)theEObject;
 				T result = caseActionConnection(actionConnection);
+				if (result == null) result = caseRosInterface(actionConnection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RossystemPackage.CONNECTIONS: {
+				Connections connections = (Connections)theEObject;
+				T result = caseConnections(connections);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,32 +208,167 @@ public class RossystemSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Stack</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Stack</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentStack(ComponentStack object) {
+	public T caseRosNode(RosNode object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Quality Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Interfaces</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Quality Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Interfaces</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseQualityAttribute(QualityAttribute object) {
+	public T caseRosInterfaces(RosInterfaces object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Interface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosInterface(RosInterface object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Publisher</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Publisher</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosPublisher(RosPublisher object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Subscriber</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Subscriber</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosSubscriber(RosSubscriber object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Service Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Service Server</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosServiceServer(RosServiceServer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Service Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Service Client</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosServiceClient(RosServiceClient object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Action Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Action Server</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosActionServer(RosActionServer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Action Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Action Client</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosActionClient(RosActionClient object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ros Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ros Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRosParameter(RosParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcess(rossystem.Process object) {
 		return null;
 	}
 
@@ -193,6 +414,21 @@ public class RossystemSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActionConnection(ActionConnection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connections</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connections</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnections(Connections object) {
 		return null;
 	}
 

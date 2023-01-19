@@ -3,8 +3,6 @@
 package rossystem.provider;
 
 
-import componentInterface.ComponentInterfaceFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -15,28 +13,26 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import rossystem.ComponentStack;
+import rossystem.Connections;
 import rossystem.RossystemFactory;
 import rossystem.RossystemPackage;
 
 /**
- * This is the item provider adapter for a {@link rossystem.ComponentStack} object.
+ * This is the item provider adapter for a {@link rossystem.Connections} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentStackItemProvider 
+public class ConnectionsItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -50,7 +46,7 @@ public class ComponentStackItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStackItemProvider(AdapterFactory adapterFactory) {
+	public ConnectionsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,31 +61,8 @@ public class ComponentStackItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentStack_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStack_Name_feature", "_UI_ComponentStack_type"),
-				 RossystemPackage.Literals.COMPONENT_STACK__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -104,8 +77,9 @@ public class ComponentStackItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.COMPONENT_STACK__ROS_COMPONENT);
-			childrenFeatures.add(RossystemPackage.Literals.COMPONENT_STACK__QUALITY_ATTRIBUTE);
+			childrenFeatures.add(RossystemPackage.Literals.CONNECTIONS__ROS_TOPIC_CONNECTIONS);
+			childrenFeatures.add(RossystemPackage.Literals.CONNECTIONS__ROS_SERVICE_CONNECTIONS);
+			childrenFeatures.add(RossystemPackage.Literals.CONNECTIONS__ROS_ACTION_CONNECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -124,14 +98,14 @@ public class ComponentStackItemProvider
 	}
 
 	/**
-	 * This returns ComponentStack.gif.
+	 * This returns Connections.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentStack"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Connections"));
 	}
 
 	/**
@@ -142,10 +116,7 @@ public class ComponentStackItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentStack)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentStack_type") :
-			getString("_UI_ComponentStack_type") + " " + label;
+		return getString("_UI_Connections_type");
 	}
 
 
@@ -160,12 +131,10 @@ public class ComponentStackItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentStack.class)) {
-			case RossystemPackage.COMPONENT_STACK__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RossystemPackage.COMPONENT_STACK__ROS_COMPONENT:
-			case RossystemPackage.COMPONENT_STACK__QUALITY_ATTRIBUTE:
+		switch (notification.getFeatureID(Connections.class)) {
+			case RossystemPackage.CONNECTIONS__ROS_TOPIC_CONNECTIONS:
+			case RossystemPackage.CONNECTIONS__ROS_SERVICE_CONNECTIONS:
+			case RossystemPackage.CONNECTIONS__ROS_ACTION_CONNECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -185,13 +154,18 @@ public class ComponentStackItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.COMPONENT_STACK__ROS_COMPONENT,
-				 ComponentInterfaceFactory.eINSTANCE.createComponentInterface()));
+				(RossystemPackage.Literals.CONNECTIONS__ROS_TOPIC_CONNECTIONS,
+				 RossystemFactory.eINSTANCE.createTopicConnection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.COMPONENT_STACK__QUALITY_ATTRIBUTE,
-				 RossystemFactory.eINSTANCE.createQualityAttribute()));
+				(RossystemPackage.Literals.CONNECTIONS__ROS_SERVICE_CONNECTIONS,
+				 RossystemFactory.eINSTANCE.createServiceConnection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.CONNECTIONS__ROS_ACTION_CONNECTIONS,
+				 RossystemFactory.eINSTANCE.createActionConnection()));
 	}
 
 	/**

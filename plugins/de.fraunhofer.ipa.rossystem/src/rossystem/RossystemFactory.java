@@ -31,22 +31,94 @@ public interface RossystemFactory extends EFactory {
 	RosSystem createRosSystem();
 
 	/**
-	 * Returns a new object of class '<em>Component Stack</em>'.
+	 * Returns a new object of class '<em>Ros Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Stack</em>'.
+	 * @return a new object of class '<em>Ros Node</em>'.
 	 * @generated
 	 */
-	ComponentStack createComponentStack();
+	RosNode createRosNode();
 
 	/**
-	 * Returns a new object of class '<em>Quality Attribute</em>'.
+	 * Returns a new object of class '<em>Ros Interfaces</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Quality Attribute</em>'.
+	 * @return a new object of class '<em>Ros Interfaces</em>'.
 	 * @generated
 	 */
-	QualityAttribute createQualityAttribute();
+	RosInterfaces createRosInterfaces();
+
+	/**
+	 * Returns a new object of class '<em>Ros Publisher</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Publisher</em>'.
+	 * @generated
+	 */
+	RosPublisher createRosPublisher();
+
+	/**
+	 * Returns a new object of class '<em>Ros Subscriber</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Subscriber</em>'.
+	 * @generated
+	 */
+	RosSubscriber createRosSubscriber();
+
+	/**
+	 * Returns a new object of class '<em>Ros Service Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Service Server</em>'.
+	 * @generated
+	 */
+	RosServiceServer createRosServiceServer();
+
+	/**
+	 * Returns a new object of class '<em>Ros Service Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Service Client</em>'.
+	 * @generated
+	 */
+	RosServiceClient createRosServiceClient();
+
+	/**
+	 * Returns a new object of class '<em>Ros Action Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Action Server</em>'.
+	 * @generated
+	 */
+	RosActionServer createRosActionServer();
+
+	/**
+	 * Returns a new object of class '<em>Ros Action Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Action Client</em>'.
+	 * @generated
+	 */
+	RosActionClient createRosActionClient();
+
+	/**
+	 * Returns a new object of class '<em>Ros Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Parameter</em>'.
+	 * @generated
+	 */
+	RosParameter createRosParameter();
+
+	/**
+	 * Returns a new object of class '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Process</em>'.
+	 * @generated
+	 */
+	Process createProcess();
 
 	/**
 	 * Returns a new object of class '<em>Topic Connection</em>'.
@@ -74,6 +146,15 @@ public interface RossystemFactory extends EFactory {
 	 * @generated
 	 */
 	ActionConnection createActionConnection();
+
+	/**
+	 * Returns a new object of class '<em>Connections</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connections</em>'.
+	 * @generated
+	 */
+	Connections createConnections();
 
 	/**
 	 * Returns the package supported by this factory.

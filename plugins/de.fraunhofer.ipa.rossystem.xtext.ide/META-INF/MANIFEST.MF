@@ -12,4 +12,5 @@ Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.internal,
- de.fraunhofer.ipa.rossystem.ide.contentassist.antlr
+ de.fraunhofer.ipa.rossystem.ide.contentassist.antlr,
+ de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.lexer

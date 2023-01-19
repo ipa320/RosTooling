@@ -9,19 +9,9 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import org.eclipse.emf.edit.provider.ViewerNotification;
 import rossystem.RossystemPackage;
 import rossystem.TopicConnection;
 
@@ -31,14 +21,7 @@ import rossystem.TopicConnection;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TopicConnectionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class TopicConnectionItemProvider extends RosInterfaceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,7 +45,6 @@ public class TopicConnectionItemProvider
 
 			addFromPropertyDescriptor(object);
 			addToPropertyDescriptor(object);
-			addTopicNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,28 +94,6 @@ public class TopicConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopicNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TopicConnection_TopicName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicConnection_TopicName_feature", "_UI_TopicConnection_type"),
-				 RossystemPackage.Literals.TOPIC_CONNECTION__TOPIC_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns TopicConnection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,12 +112,12 @@ public class TopicConnectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TopicConnection)object).getTopicName();
+		String label = ((TopicConnection)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TopicConnection_type") :
 			getString("_UI_TopicConnection_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -169,12 +129,6 @@ public class TopicConnectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(TopicConnection.class)) {
-			case RossystemPackage.TOPIC_CONNECTION__TOPIC_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -188,17 +142,6 @@ public class TopicConnectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return RossystemEditPlugin.INSTANCE;
 	}
 
 }

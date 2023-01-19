@@ -22,5 +22,6 @@ Export-Package: de.fraunhofer.ipa.rossystem.scoping,
  de.fraunhofer.ipa.rossystem.parser.antlr,
  de.fraunhofer.ipa.rossystem.validation,
  de.fraunhofer.ipa.rossystem.parser.antlr.internal,
- de.fraunhofer.ipa.rossystem
+ de.fraunhofer.ipa.rossystem,
+ de.fraunhofer.ipa.rossystem.parser.antlr.lexer
 Import-Package: org.apache.log4j

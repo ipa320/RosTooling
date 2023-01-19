@@ -2,18 +2,11 @@
  */
 package rossystem.impl;
 
-import componentInterface.RosServiceClient;
-import componentInterface.RosServiceServer;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
 
@@ -27,21 +20,20 @@ import rossystem.ServiceConnection;
  * <ul>
  *   <li>{@link rossystem.impl.ServiceConnectionImpl#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.impl.ServiceConnectionImpl#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.impl.ServiceConnectionImpl#getServiceName <em>Service Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implements ServiceConnection {
+public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceConnection {
 	/**
-	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference list.
+	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RosServiceServer> from;
+	protected rossystem.RosServiceServer from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -51,27 +43,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected RosServiceClient to;
-
-	/**
-	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SERVICE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServiceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String serviceName = SERVICE_NAME_EDEFAULT;
+	protected rossystem.RosServiceClient to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +70,14 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public EList<RosServiceServer> getFrom() {
-		if (from == null) {
-			from = new EObjectResolvingEList<RosServiceServer>(RosServiceServer.class, this, RossystemPackage.SERVICE_CONNECTION__FROM);
+	public rossystem.RosServiceServer getFrom() {
+		if (from != null && from.eIsProxy()) {
+			InternalEObject oldFrom = (InternalEObject)from;
+			from = (rossystem.RosServiceServer)eResolveProxy(oldFrom);
+			if (from != oldFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
+			}
 		}
 		return from;
 	}
@@ -110,11 +87,33 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public rossystem.RosServiceServer basicGetFrom() {
+		return from;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
-	public RosServiceClient getTo() {
+	public void setFrom(rossystem.RosServiceServer newFrom) {
+		rossystem.RosServiceServer oldFrom = from;
+		from = newFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public rossystem.RosServiceClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (RosServiceClient)eResolveProxy(oldTo);
+			to = (rossystem.RosServiceClient)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -128,7 +127,7 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosServiceClient basicGetTo() {
+	public rossystem.RosServiceClient basicGetTo() {
 		return to;
 	}
 
@@ -138,8 +137,8 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public void setTo(RosServiceClient newTo) {
-		RosServiceClient oldTo = to;
+	public void setTo(rossystem.RosServiceClient newTo) {
+		rossystem.RosServiceClient oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -151,38 +150,14 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public String getServiceName() {
-		return serviceName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setServiceName(String newServiceName) {
-		String oldServiceName = serviceName;
-		serviceName = newServiceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME, oldServiceName, serviceName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				return getFrom();
+				if (resolve) return getFrom();
+				return basicGetFrom();
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				return getServiceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,14 +172,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				getFrom().clear();
-				getFrom().addAll((Collection<? extends RosServiceServer>)newValue);
+				setFrom((rossystem.RosServiceServer)newValue);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((RosServiceClient)newValue);
-				return;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				setServiceName((String)newValue);
+				setTo((rossystem.RosServiceClient)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,13 +190,10 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				getFrom().clear();
+				setFrom((rossystem.RosServiceServer)null);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((RosServiceClient)null);
-				return;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				setServiceName(SERVICE_NAME_EDEFAULT);
+				setTo((rossystem.RosServiceClient)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -240,29 +208,11 @@ public class ServiceConnectionImpl extends MinimalEObjectImpl.Container implemen
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				return from != null && !from.isEmpty();
+				return from != null;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
 				return to != null;
-			case RossystemPackage.SERVICE_CONNECTION__SERVICE_NAME:
-				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (ServiceName: ");
-		result.append(serviceName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServiceConnectionImpl

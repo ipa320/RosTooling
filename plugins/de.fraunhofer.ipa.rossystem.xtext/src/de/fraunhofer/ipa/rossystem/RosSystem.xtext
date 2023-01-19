@@ -3,151 +3,61 @@ grammar de.fraunhofer.ipa.rossystem.RosSystem with org.eclipse.xtext.common.Term
 
 import "http://www.ipa.fraunhofer.de/rossystem" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "http://www.ipa.fraunhofer.de/componentInterface" as componentInterface
 import "http://www.ipa.fraunhofer.de/ros" as ros
 import "http://www.eclipse.org/emf/2003/XMLType" as type
 
 
 RosSystem returns RosSystem:
 	{RosSystem}
-	'RosSystem'
-	'{'
-		'Name' Name=EString
-		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
-		('RosComponentStacks' '(' (ComponentStack+=ComponentStack ( "," ComponentStack+=ComponentStack)*)? ')' )?
-		('TopicConnections' '{' (TopicConnections+=TopicConnection ( "," TopicConnections+=TopicConnection)*)? '}' )?
-		('ServiceConnections' '{' (ServiceConnections+=ServiceConnection ( "," ServiceConnections+=ServiceConnection)*)? '}' )?
-		('ActionConnections' '{' (ActionConnections+=ActionConnection ( "," ActionConnections+=ActionConnection)*)? '}' )?
-		('Parameters' '{' (Parameter+=Parameter ( "," Parameter+=Parameter)*)? '}' )?
-		
+	Name=EString':'
+	BEGIN
+		rosnode+=RosNode
+		//('Parameters' '{' (Parameter+=Parameter ( "," Parameter+=Parameter)*)? '}' )?
+	END;
+	
+///////////////////
+// YAML format
+///////////////////
+terminal BEGIN: 'synthetic:BEGIN';
+terminal END: 'synthetic:END';
 
-	'}';
+@Override 
+terminal SL_COMMENT: '#' !('\n'|'\r')*;
 
-TopicConnection returns TopicConnection:
-	'TopicConnection'
-	TopicName=EString
-	'{'
-		'From' '(' From+=[componentInterface::RosPublisher|EString] (',' From+=[componentInterface::RosPublisher|EString])* ')'
-		'To' '(' To+=[componentInterface::RosSubscriber|EString] ( ',' To+=[componentInterface::RosSubscriber|EString])* ')'
-	'}';
+RosNode returns RosNode:
+	Name=EString':'
+	BEGIN
+	'from:'From=[ros::Node|EString]
+	END
+;
 
-ServiceConnection returns ServiceConnection:
-	'ServiceConnection'
-	ServiceName=EString
-	'{'
-		'From' '(' From+=[componentInterface::RosServiceServer|EString] (',' From+=[componentInterface::RosServiceServer|EString])* ')'
-		'To' To=[componentInterface::RosServiceClient|EString] 
-	'}';
-
-ActionConnection returns ActionConnection:
-	'ActionConnection'
-	ActionName=EString
-	'{'
-		'From' From=[componentInterface::RosActionServer|EString]
-		'To'  To=[componentInterface::RosActionClient|EString] 
-	'}';
+//TopicConnection returns TopicConnection:
+//	'TopicConnection'
+//	TopicName=EString
+//	'{'
+//		'From' '(' From+=[componentInterface::RosPublisher|EString] (',' From+=[componentInterface::RosPublisher|EString])* ')'
+//		'To' '(' To+=[componentInterface::RosSubscriber|EString] ( ',' To+=[componentInterface::RosSubscriber|EString])* ')'
+//	'}';
+//
+//ServiceConnection returns ServiceConnection:
+//	'ServiceConnection'
+//	ServiceName=EString
+//	'{'
+//		'From' '(' From+=[componentInterface::RosServiceServer|EString] (',' From+=[componentInterface::RosServiceServer|EString])* ')'
+//		'To' To=[componentInterface::RosServiceClient|EString] 
+//	'}';
+//
+//ActionConnection returns ActionConnection:
+//	'ActionConnection'
+//	ActionName=EString
+//	'{'
+//		'From' From=[componentInterface::RosActionServer|EString]
+//		'To'  To=[componentInterface::RosActionClient|EString] 
+//	'}';
 
 
 EString returns ecore::EString:
 	STRING | ID;
-
-ComponentStack returns ComponentStack:
-	'ComponentStack'
-	'{'
-		'name' Name=EString
-		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
-		('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
-		
-	'}';
-	
-QualityAttribute returns QualityAttribute:
-	'QualityAttribute'
-		Name=EString
-		('type' Type=ParameterType)?
-		('value' Value=ParameterValue)?;
-	
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-ComponentInterface returns componentInterface::ComponentInterface:
-	'ComponentInterface'
-	'{'
-		'name' name=EString
-		('NameSpace' NameSpace=EString)?
-		('FromRosNode' FromRosNode=[ros::Node|EString])?
-		('RosPublishers' '{' rospublisher+=RosPublisher ( "," rospublisher+=RosPublisher)* '}' )?
-		('RosSubscribers' '{' rossubscriber+=RosSubscriber ( "," rossubscriber+=RosSubscriber)* '}' )?
-		('RosSrvServers' '{' rosserviceserver+=RosServiceServer ( "," rosserviceserver+=RosServiceServer)* '}' )?
-		('RosSrvClients' '{' rosserviceclient+=RosServiceClient ( "," rosserviceclient+=RosServiceClient)* '}' )?
-		('RosActionServers' '{' rosactionserver+=RosActionServer ( "," rosactionserver+=RosActionServer)* '}' )?
-		('RosActionClients' '{' rosactionclient+=RosActionClient ( "," rosactionclient+=RosActionClient)* '}' )?
-		('RosParameters' '{' rosparameter+=RosParameter ( "," rosparameter+=RosParameter)* '}' )?
-		
-	'}';
-
-
-RosPublisher returns componentInterface::RosPublisher:
-	{componentInterface::RosPublisher}
-	'RosPublisher'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefPublisher' publisher=[ros::Publisher|EString]
-	'}';
-
-RosSubscriber returns componentInterface::RosSubscriber:
-	{componentInterface::RosSubscriber}
-	'RosSubscriber'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefSubscriber' subscriber=[ros::Subscriber|EString]
-	'}';
-
-RosServiceServer returns componentInterface::RosServiceServer:
-	{componentInterface::RosServiceServer}
-	'RosServiceServer'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefServer' srvserver=[ros::ServiceServer|EString]
-	'}';
-
-RosServiceClient returns componentInterface::RosServiceClient:
-	{componentInterface::RosServiceClient}
-	'RosServiceClient'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefClient' srvclient=[ros::ServiceClient|EString]
-	'}';
-
-RosActionServer returns componentInterface::RosActionServer:
-	{componentInterface::RosActionServer}
-	'RosActionServer'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefServer' actserver=[ros::ActionServer|EString]
-	'}';
-
-RosActionClient returns componentInterface::RosActionClient:
-	{componentInterface::RosActionClient}
-	'RosActionClient'
-	(name=EString)?
-	'{'
-		('ns' ns=EString)?
-		'RefClient' actclient=[ros::ActionClient|EString]
-	'}';
-	
-RosParameter returns componentInterface::RosParameter:
-{componentInterface::RosParameter}
-'RosParameter'
-(name=EString)?
-'{'
-	('ns' ns=EString)?
-	'RefParameter' parameter=[ros::Parameter|EString]
-	('value' value=ParameterValue)?
-'}';
 
 
 //PARAMETERS

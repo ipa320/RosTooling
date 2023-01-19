@@ -2,10 +2,6 @@
  */
 package rossystem;
 
-import componentInterface.RosActionClient;
-import componentInterface.RosActionServer;
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Action Connection</b></em>'.
@@ -17,14 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link rossystem.ActionConnection#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.ActionConnection#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getActionConnection()
  * @model
  * @generated
  */
-public interface ActionConnection extends EObject {
+public interface ActionConnection extends RosInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -34,12 +29,12 @@ public interface ActionConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(RosActionServer)
+	 * @see #setFrom(rossystem.RosActionServer)
 	 * @see rossystem.RossystemPackage#getActionConnection_From()
 	 * @model required="true"
 	 * @generated
 	 */
-	RosActionServer getFrom();
+	rossystem.RosActionServer getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ActionConnection#getFrom <em>From</em>}' reference.
@@ -49,7 +44,7 @@ public interface ActionConnection extends EObject {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(RosActionServer value);
+	void setFrom(rossystem.RosActionServer value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -60,12 +55,12 @@ public interface ActionConnection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(RosActionClient)
+	 * @see #setTo(rossystem.RosActionClient)
 	 * @see rossystem.RossystemPackage#getActionConnection_To()
 	 * @model required="true"
 	 * @generated
 	 */
-	RosActionClient getTo();
+	rossystem.RosActionClient getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ActionConnection#getTo <em>To</em>}' reference.
@@ -75,32 +70,6 @@ public interface ActionConnection extends EObject {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(RosActionClient value);
-
-	/**
-	 * Returns the value of the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Action Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Name</em>' attribute.
-	 * @see #setActionName(String)
-	 * @see rossystem.RossystemPackage#getActionConnection_ActionName()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getActionName();
-
-	/**
-	 * Sets the value of the '{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Name</em>' attribute.
-	 * @see #getActionName()
-	 * @generated
-	 */
-	void setActionName(String value);
+	void setTo(rossystem.RosActionClient value);
 
 } // ActionConnection

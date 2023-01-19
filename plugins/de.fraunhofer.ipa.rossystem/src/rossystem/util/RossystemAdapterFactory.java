@@ -9,6 +9,22 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import rossystem.ActionConnection;
+import rossystem.Connections;
+import rossystem.RosActionClient;
+import rossystem.RosActionServer;
+import rossystem.RosInterface;
+import rossystem.RosInterfaces;
+import rossystem.RosNode;
+import rossystem.RosParameter;
+import rossystem.RosPublisher;
+import rossystem.RosServiceClient;
+import rossystem.RosServiceServer;
+import rossystem.RosSubscriber;
+import rossystem.RosSystem;
+import rossystem.RossystemPackage;
+import rossystem.ServiceConnection;
+import rossystem.TopicConnection;
 import rossystem.*;
 
 /**
@@ -72,12 +88,48 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 				return createRosSystemAdapter();
 			}
 			@Override
-			public Adapter caseComponentStack(ComponentStack object) {
-				return createComponentStackAdapter();
+			public Adapter caseRosNode(RosNode object) {
+				return createRosNodeAdapter();
 			}
 			@Override
-			public Adapter caseQualityAttribute(QualityAttribute object) {
-				return createQualityAttributeAdapter();
+			public Adapter caseRosInterfaces(RosInterfaces object) {
+				return createRosInterfacesAdapter();
+			}
+			@Override
+			public Adapter caseRosInterface(RosInterface object) {
+				return createRosInterfaceAdapter();
+			}
+			@Override
+			public Adapter caseRosPublisher(RosPublisher object) {
+				return createRosPublisherAdapter();
+			}
+			@Override
+			public Adapter caseRosSubscriber(RosSubscriber object) {
+				return createRosSubscriberAdapter();
+			}
+			@Override
+			public Adapter caseRosServiceServer(RosServiceServer object) {
+				return createRosServiceServerAdapter();
+			}
+			@Override
+			public Adapter caseRosServiceClient(RosServiceClient object) {
+				return createRosServiceClientAdapter();
+			}
+			@Override
+			public Adapter caseRosActionServer(RosActionServer object) {
+				return createRosActionServerAdapter();
+			}
+			@Override
+			public Adapter caseRosActionClient(RosActionClient object) {
+				return createRosActionClientAdapter();
+			}
+			@Override
+			public Adapter caseRosParameter(RosParameter object) {
+				return createRosParameterAdapter();
+			}
+			@Override
+			public Adapter caseProcess(rossystem.Process object) {
+				return createProcessAdapter();
 			}
 			@Override
 			public Adapter caseTopicConnection(TopicConnection object) {
@@ -90,6 +142,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActionConnection(ActionConnection object) {
 				return createActionConnectionAdapter();
+			}
+			@Override
+			public Adapter caseConnections(Connections object) {
+				return createConnectionsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -126,30 +182,156 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link rossystem.ComponentStack <em>Component Stack</em>}'.
+	 * Creates a new adapter for an object of class '{@link rossystem.RosNode <em>Ros Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see rossystem.ComponentStack
+	 * @see rossystem.RosNode
 	 * @generated
 	 */
-	public Adapter createComponentStackAdapter() {
+	public Adapter createRosNodeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link rossystem.QualityAttribute <em>Quality Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link rossystem.RosInterfaces <em>Ros Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see rossystem.QualityAttribute
+	 * @see rossystem.RosInterfaces
 	 * @generated
 	 */
-	public Adapter createQualityAttributeAdapter() {
+	public Adapter createRosInterfacesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosInterface <em>Ros Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosInterface
+	 * @generated
+	 */
+	public Adapter createRosInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosPublisher <em>Ros Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosPublisher
+	 * @generated
+	 */
+	public Adapter createRosPublisherAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosSubscriber <em>Ros Subscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosSubscriber
+	 * @generated
+	 */
+	public Adapter createRosSubscriberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosServiceServer <em>Ros Service Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosServiceServer
+	 * @generated
+	 */
+	public Adapter createRosServiceServerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosServiceClient <em>Ros Service Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosServiceClient
+	 * @generated
+	 */
+	public Adapter createRosServiceClientAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosActionServer <em>Ros Action Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosActionServer
+	 * @generated
+	 */
+	public Adapter createRosActionServerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosActionClient <em>Ros Action Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosActionClient
+	 * @generated
+	 */
+	public Adapter createRosActionClientAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.RosParameter <em>Ros Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.RosParameter
+	 * @generated
+	 */
+	public Adapter createRosParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.Process
+	 * @generated
+	 */
+	public Adapter createProcessAdapter() {
 		return null;
 	}
 
@@ -192,6 +374,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rossystem.Connections <em>Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rossystem.Connections
+	 * @generated
+	 */
+	public Adapter createConnectionsAdapter() {
 		return null;
 	}
 

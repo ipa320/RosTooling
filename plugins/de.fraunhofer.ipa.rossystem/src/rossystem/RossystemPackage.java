@@ -67,49 +67,13 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Topic Connections</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_SYSTEM__TOPIC_CONNECTIONS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Service Connections</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_SYSTEM__SERVICE_CONNECTIONS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Action Connections</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_SYSTEM__ACTION_CONNECTIONS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Component Stack</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_SYSTEM__COMPONENT_STACK = 4;
+	int ROS_SYSTEM__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -118,16 +82,34 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__PARAMETER = 5;
+	int ROS_SYSTEM__PARAMETER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rosnode</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__ROS_COMPONENT = 6;
+	int ROS_SYSTEM__ROSNODE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SYSTEM__CONNECTIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SYSTEM__PROCESSES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Ros System</em>' class.
@@ -136,7 +118,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM_FEATURE_COUNT = 7;
+	int ROS_SYSTEM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Ros System</em>' class.
@@ -148,14 +130,14 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link rossystem.impl.ComponentStackImpl <em>Component Stack</em>}' class.
+	 * The meta object id for the '{@link rossystem.impl.RosNodeImpl <em>Ros Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see rossystem.impl.ComponentStackImpl
-	 * @see rossystem.impl.RossystemPackageImpl#getComponentStack()
+	 * @see rossystem.impl.RosNodeImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosNode()
 	 * @generated
 	 */
-	int COMPONENT_STACK = 1;
+	int ROS_NODE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -164,53 +146,144 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK__NAME = 0;
+	int ROS_NODE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ros Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK__ROS_COMPONENT = 1;
+	int ROS_NODE__FROM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Quality Attribute</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rosinterfaces</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK__QUALITY_ATTRIBUTE = 2;
+	int ROS_NODE__ROSINTERFACES = 2;
 
 	/**
-	 * The number of structural features of the '<em>Component Stack</em>' class.
+	 * The number of structural features of the '<em>Ros Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK_FEATURE_COUNT = 3;
+	int ROS_NODE_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Component Stack</em>' class.
+	 * The number of operations of the '<em>Ros Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STACK_OPERATION_COUNT = 0;
+	int ROS_NODE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link rossystem.impl.QualityAttributeImpl <em>Quality Attribute</em>}' class.
+	 * The meta object id for the '{@link rossystem.impl.RosInterfacesImpl <em>Ros Interfaces</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see rossystem.impl.QualityAttributeImpl
-	 * @see rossystem.impl.RossystemPackageImpl#getQualityAttribute()
+	 * @see rossystem.impl.RosInterfacesImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosInterfaces()
 	 * @generated
 	 */
-	int QUALITY_ATTRIBUTE = 2;
+	int ROS_INTERFACES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Rosactionclient</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSACTIONCLIENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Rospublisher</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSPUBLISHER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Rosserviceserver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSSERVICESERVER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Rossubscriber</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSSUBSCRIBER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Rosserviceclient</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSSERVICECLIENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Rosactionserver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSACTIONSERVER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Rosparameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES__ROSPARAMETER = 6;
+
+	/**
+	 * The number of structural features of the '<em>Ros Interfaces</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Ros Interfaces</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosInterfaceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+	 * @generated
+	 */
+	int ROS_INTERFACE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -219,16 +292,329 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_ATTRIBUTE__NAME = 0;
+	int ROS_INTERFACE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * The number of structural features of the '<em>Ros Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_ATTRIBUTE__TYPE = 1;
+	int ROS_INTERFACE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosPublisherImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosPublisher()
+	 * @generated
+	 */
+	int ROS_PUBLISHER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Publisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Publisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosSubscriberImpl <em>Ros Subscriber</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosSubscriberImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosSubscriber()
+	 * @generated
+	 */
+	int ROS_SUBSCRIBER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Subscriber</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Subscriber</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosServiceServerImpl <em>Ros Service Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosServiceServerImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosServiceServer()
+	 * @generated
+	 */
+	int ROS_SERVICE_SERVER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_SERVER__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_SERVER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Service Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_SERVER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Service Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_SERVER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosServiceClientImpl <em>Ros Service Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosServiceClientImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosServiceClient()
+	 * @generated
+	 */
+	int ROS_SERVICE_CLIENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_CLIENT__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_CLIENT__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Service Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_CLIENT_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Service Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SERVICE_CLIENT_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosActionServerImpl <em>Ros Action Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosActionServerImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosActionServer()
+	 * @generated
+	 */
+	int ROS_ACTION_SERVER = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Action Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Action Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_SERVER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosActionClientImpl <em>Ros Action Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosActionClientImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosActionClient()
+	 * @generated
+	 */
+	int ROS_ACTION_CLIENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Action Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Action Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_ACTION_CLIENT_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosParameterImpl <em>Ros Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosParameterImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosParameter()
+	 * @generated
+	 */
+	int ROS_PARAMETER = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PARAMETER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -237,25 +623,71 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_ATTRIBUTE__VALUE = 2;
+	int ROS_PARAMETER__VALUE = ROS_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Quality Attribute</em>' class.
+	 * The number of structural features of the '<em>Ros Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_ATTRIBUTE_FEATURE_COUNT = 3;
+	int ROS_PARAMETER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Quality Attribute</em>' class.
+	 * The number of operations of the '<em>Ros Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_ATTRIBUTE_OPERATION_COUNT = 0;
+	int ROS_PARAMETER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.ProcessImpl <em>Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.ProcessImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getProcess()
+	 * @generated
+	 */
+	int PROCESS = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Threads</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__THREADS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.TopicConnectionImpl <em>Topic Connection</em>}' class.
@@ -265,34 +697,34 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getTopicConnection()
 	 * @generated
 	 */
-	int TOPIC_CONNECTION = 3;
+	int TOPIC_CONNECTION = 12;
 
 	/**
-	 * The feature id for the '<em><b>From</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__FROM = 0;
+	int TOPIC_CONNECTION__NAME = ROS_INTERFACE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>To</b></em>' reference list.
+	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__TO = 1;
+	int TOPIC_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Topic Name</b></em>' attribute.
+	 * The feature id for the '<em><b>To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__TOPIC_NAME = 2;
+	int TOPIC_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Topic Connection</em>' class.
@@ -301,7 +733,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION_FEATURE_COUNT = 3;
+	int TOPIC_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Topic Connection</em>' class.
@@ -310,7 +742,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION_OPERATION_COUNT = 0;
+	int TOPIC_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ServiceConnectionImpl <em>Service Connection</em>}' class.
@@ -320,16 +752,25 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getServiceConnection()
 	 * @generated
 	 */
-	int SERVICE_CONNECTION = 4;
+	int SERVICE_CONNECTION = 13;
 
 	/**
-	 * The feature id for the '<em><b>From</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__FROM = 0;
+	int SERVICE_CONNECTION__NAME = ROS_INTERFACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -338,16 +779,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__TO = 1;
-
-	/**
-	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONNECTION__SERVICE_NAME = 2;
+	int SERVICE_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Connection</em>' class.
@@ -356,7 +788,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION_FEATURE_COUNT = 3;
+	int SERVICE_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Service Connection</em>' class.
@@ -365,8 +797,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION_OPERATION_COUNT = 0;
-
+	int SERVICE_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ActionConnectionImpl <em>Action Connection</em>}' class.
@@ -376,7 +807,16 @@ public interface RossystemPackage extends EPackage {
 	 * @see rossystem.impl.RossystemPackageImpl#getActionConnection()
 	 * @generated
 	 */
-	int ACTION_CONNECTION = 5;
+	int ACTION_CONNECTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CONNECTION__NAME = ROS_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -385,7 +825,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION__FROM = 0;
+	int ACTION_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -394,16 +834,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION__TO = 1;
-
-	/**
-	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_CONNECTION__ACTION_NAME = 2;
+	int ACTION_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Action Connection</em>' class.
@@ -412,7 +843,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION_FEATURE_COUNT = 3;
+	int ACTION_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Action Connection</em>' class.
@@ -421,8 +852,62 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION_OPERATION_COUNT = 0;
+	int ACTION_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link rossystem.impl.ConnectionsImpl <em>Connections</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.ConnectionsImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getConnections()
+	 * @generated
+	 */
+	int CONNECTIONS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Ros Topic Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTIONS__ROS_TOPIC_CONNECTIONS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ros Service Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTIONS__ROS_SERVICE_CONNECTIONS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Ros Action Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTIONS__ROS_ACTION_CONNECTIONS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Connections</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTIONS_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Connections</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTIONS_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.RosSystem <em>Ros System</em>}'.
@@ -433,28 +918,6 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRosSystem();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getTopicConnections <em>Topic Connections</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Topic Connections</em>'.
-	 * @see rossystem.RosSystem#getTopicConnections()
-	 * @see #getRosSystem()
-	 * @generated
-	 */
-	EReference getRosSystem_TopicConnections();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getServiceConnections <em>Service Connections</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Service Connections</em>'.
-	 * @see rossystem.RosSystem#getServiceConnections()
-	 * @see #getRosSystem()
-	 * @generated
-	 */
-	EReference getRosSystem_ServiceConnections();
 
 	/**
 	 * Returns the meta object for the attribute '{@link rossystem.RosSystem#getName <em>Name</em>}'.
@@ -468,114 +931,6 @@ public interface RossystemPackage extends EPackage {
 	EAttribute getRosSystem_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getComponentStack <em>Component Stack</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Component Stack</em>'.
-	 * @see rossystem.RosSystem#getComponentStack()
-	 * @see #getRosSystem()
-	 * @generated
-	 */
-	EReference getRosSystem_ComponentStack();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ros Component</em>'.
-	 * @see rossystem.RosSystem#getRosComponent()
-	 * @see #getRosSystem()
-	 * @generated
-	 */
-	EReference getRosSystem_RosComponent();
-
-	/**
-	 * Returns the meta object for class '{@link rossystem.ComponentStack <em>Component Stack</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Stack</em>'.
-	 * @see rossystem.ComponentStack
-	 * @generated
-	 */
-	EClass getComponentStack();
-
-	/**
-	 * Returns the meta object for the attribute '{@link rossystem.ComponentStack#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see rossystem.ComponentStack#getName()
-	 * @see #getComponentStack()
-	 * @generated
-	 */
-	EAttribute getComponentStack_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.ComponentStack#getRosComponent <em>Ros Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ros Component</em>'.
-	 * @see rossystem.ComponentStack#getRosComponent()
-	 * @see #getComponentStack()
-	 * @generated
-	 */
-	EReference getComponentStack_RosComponent();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.ComponentStack#getQualityAttribute <em>Quality Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Quality Attribute</em>'.
-	 * @see rossystem.ComponentStack#getQualityAttribute()
-	 * @see #getComponentStack()
-	 * @generated
-	 */
-	EReference getComponentStack_QualityAttribute();
-
-	/**
-	 * Returns the meta object for class '{@link rossystem.QualityAttribute <em>Quality Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Quality Attribute</em>'.
-	 * @see rossystem.QualityAttribute
-	 * @generated
-	 */
-	EClass getQualityAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link rossystem.QualityAttribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see rossystem.QualityAttribute#getName()
-	 * @see #getQualityAttribute()
-	 * @generated
-	 */
-	EAttribute getQualityAttribute_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link rossystem.QualityAttribute#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see rossystem.QualityAttribute#getType()
-	 * @see #getQualityAttribute()
-	 * @generated
-	 */
-	EReference getQualityAttribute_Type();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link rossystem.QualityAttribute#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see rossystem.QualityAttribute#getValue()
-	 * @see #getQualityAttribute()
-	 * @generated
-	 */
-	EReference getQualityAttribute_Value();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -587,15 +942,378 @@ public interface RossystemPackage extends EPackage {
 	EReference getRosSystem_Parameter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}'.
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getRosnode <em>Rosnode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action Connections</em>'.
-	 * @see rossystem.RosSystem#getActionConnections()
+	 * @return the meta object for the containment reference list '<em>Rosnode</em>'.
+	 * @see rossystem.RosSystem#getRosnode()
 	 * @see #getRosSystem()
 	 * @generated
 	 */
-	EReference getRosSystem_ActionConnections();
+	EReference getRosSystem_Rosnode();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getConnections <em>Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connections</em>'.
+	 * @see rossystem.RosSystem#getConnections()
+	 * @see #getRosSystem()
+	 * @generated
+	 */
+	EReference getRosSystem_Connections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getProcesses <em>Processes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Processes</em>'.
+	 * @see rossystem.RosSystem#getProcesses()
+	 * @see #getRosSystem()
+	 * @generated
+	 */
+	EReference getRosSystem_Processes();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosNode <em>Ros Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Node</em>'.
+	 * @see rossystem.RosNode
+	 * @generated
+	 */
+	EClass getRosNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.RosNode#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.RosNode#getName()
+	 * @see #getRosNode()
+	 * @generated
+	 */
+	EAttribute getRosNode_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosNode#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosNode#getFrom()
+	 * @see #getRosNode()
+	 * @generated
+	 */
+	EReference getRosNode_From();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link rossystem.RosNode#getRosinterfaces <em>Rosinterfaces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Rosinterfaces</em>'.
+	 * @see rossystem.RosNode#getRosinterfaces()
+	 * @see #getRosNode()
+	 * @generated
+	 */
+	EReference getRosNode_Rosinterfaces();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosInterfaces <em>Ros Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Interfaces</em>'.
+	 * @see rossystem.RosInterfaces
+	 * @generated
+	 */
+	EClass getRosInterfaces();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRosactionclient <em>Rosactionclient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosactionclient</em>'.
+	 * @see rossystem.RosInterfaces#getRosactionclient()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rosactionclient();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRospublisher <em>Rospublisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rospublisher</em>'.
+	 * @see rossystem.RosInterfaces#getRospublisher()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rospublisher();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRosserviceserver <em>Rosserviceserver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosserviceserver</em>'.
+	 * @see rossystem.RosInterfaces#getRosserviceserver()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rosserviceserver();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRossubscriber <em>Rossubscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rossubscriber</em>'.
+	 * @see rossystem.RosInterfaces#getRossubscriber()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rossubscriber();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRosserviceclient <em>Rosserviceclient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosserviceclient</em>'.
+	 * @see rossystem.RosInterfaces#getRosserviceclient()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rosserviceclient();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRosactionserver <em>Rosactionserver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosactionserver</em>'.
+	 * @see rossystem.RosInterfaces#getRosactionserver()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rosactionserver();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosInterfaces#getRosparameter <em>Rosparameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rosparameter</em>'.
+	 * @see rossystem.RosInterfaces#getRosparameter()
+	 * @see #getRosInterfaces()
+	 * @generated
+	 */
+	EReference getRosInterfaces_Rosparameter();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosInterface <em>Ros Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Interface</em>'.
+	 * @see rossystem.RosInterface
+	 * @generated
+	 */
+	EClass getRosInterface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.RosInterface#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.RosInterface#getName()
+	 * @see #getRosInterface()
+	 * @generated
+	 */
+	EAttribute getRosInterface_Name();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosPublisher <em>Ros Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Publisher</em>'.
+	 * @see rossystem.RosPublisher
+	 * @generated
+	 */
+	EClass getRosPublisher();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosPublisher#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosPublisher#getFrom()
+	 * @see #getRosPublisher()
+	 * @generated
+	 */
+	EReference getRosPublisher_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosSubscriber <em>Ros Subscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Subscriber</em>'.
+	 * @see rossystem.RosSubscriber
+	 * @generated
+	 */
+	EClass getRosSubscriber();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosSubscriber#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosSubscriber#getFrom()
+	 * @see #getRosSubscriber()
+	 * @generated
+	 */
+	EReference getRosSubscriber_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosServiceServer <em>Ros Service Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Service Server</em>'.
+	 * @see rossystem.RosServiceServer
+	 * @generated
+	 */
+	EClass getRosServiceServer();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosServiceServer#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosServiceServer#getFrom()
+	 * @see #getRosServiceServer()
+	 * @generated
+	 */
+	EReference getRosServiceServer_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosServiceClient <em>Ros Service Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Service Client</em>'.
+	 * @see rossystem.RosServiceClient
+	 * @generated
+	 */
+	EClass getRosServiceClient();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosServiceClient#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosServiceClient#getFrom()
+	 * @see #getRosServiceClient()
+	 * @generated
+	 */
+	EReference getRosServiceClient_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosActionServer <em>Ros Action Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Action Server</em>'.
+	 * @see rossystem.RosActionServer
+	 * @generated
+	 */
+	EClass getRosActionServer();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosActionServer#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosActionServer#getFrom()
+	 * @see #getRosActionServer()
+	 * @generated
+	 */
+	EReference getRosActionServer_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosActionClient <em>Ros Action Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Action Client</em>'.
+	 * @see rossystem.RosActionClient
+	 * @generated
+	 */
+	EClass getRosActionClient();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosActionClient#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosActionClient#getFrom()
+	 * @see #getRosActionClient()
+	 * @generated
+	 */
+	EReference getRosActionClient_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosParameter <em>Ros Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Parameter</em>'.
+	 * @see rossystem.RosParameter
+	 * @generated
+	 */
+	EClass getRosParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosParameter#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosParameter#getFrom()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EReference getRosParameter_From();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link rossystem.RosParameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see rossystem.RosParameter#getValue()
+	 * @see #getRosParameter()
+	 * @generated
+	 */
+	EReference getRosParameter_Value();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Process</em>'.
+	 * @see rossystem.Process
+	 * @generated
+	 */
+	EClass getProcess();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.Process#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.Process#getName()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EAttribute getProcess_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.Process#getThreads <em>Threads</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Threads</em>'.
+	 * @see rossystem.Process#getThreads()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EAttribute getProcess_Threads();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.TopicConnection <em>Topic Connection</em>}'.
@@ -608,10 +1326,10 @@ public interface RossystemPackage extends EPackage {
 	EClass getTopicConnection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link rossystem.TopicConnection#getFrom <em>From</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getFrom <em>From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From</em>'.
+	 * @return the meta object for the reference '<em>From</em>'.
 	 * @see rossystem.TopicConnection#getFrom()
 	 * @see #getTopicConnection()
 	 * @generated
@@ -619,26 +1337,15 @@ public interface RossystemPackage extends EPackage {
 	EReference getTopicConnection_From();
 
 	/**
-	 * Returns the meta object for the reference list '{@link rossystem.TopicConnection#getTo <em>To</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.TopicConnection#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>To</em>'.
+	 * @return the meta object for the reference '<em>To</em>'.
 	 * @see rossystem.TopicConnection#getTo()
 	 * @see #getTopicConnection()
 	 * @generated
 	 */
 	EReference getTopicConnection_To();
-
-	/**
-	 * Returns the meta object for the attribute '{@link rossystem.TopicConnection#getTopicName <em>Topic Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Topic Name</em>'.
-	 * @see rossystem.TopicConnection#getTopicName()
-	 * @see #getTopicConnection()
-	 * @generated
-	 */
-	EAttribute getTopicConnection_TopicName();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.ServiceConnection <em>Service Connection</em>}'.
@@ -651,10 +1358,10 @@ public interface RossystemPackage extends EPackage {
 	EClass getServiceConnection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link rossystem.ServiceConnection#getFrom <em>From</em>}'.
+	 * Returns the meta object for the reference '{@link rossystem.ServiceConnection#getFrom <em>From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From</em>'.
+	 * @return the meta object for the reference '<em>From</em>'.
 	 * @see rossystem.ServiceConnection#getFrom()
 	 * @see #getServiceConnection()
 	 * @generated
@@ -671,17 +1378,6 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServiceConnection_To();
-
-	/**
-	 * Returns the meta object for the attribute '{@link rossystem.ServiceConnection#getServiceName <em>Service Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Service Name</em>'.
-	 * @see rossystem.ServiceConnection#getServiceName()
-	 * @see #getServiceConnection()
-	 * @generated
-	 */
-	EAttribute getServiceConnection_ServiceName();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.ActionConnection <em>Action Connection</em>}'.
@@ -716,15 +1412,47 @@ public interface RossystemPackage extends EPackage {
 	EReference getActionConnection_To();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}'.
+	 * Returns the meta object for class '{@link rossystem.Connections <em>Connections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action Name</em>'.
-	 * @see rossystem.ActionConnection#getActionName()
-	 * @see #getActionConnection()
+	 * @return the meta object for class '<em>Connections</em>'.
+	 * @see rossystem.Connections
 	 * @generated
 	 */
-	EAttribute getActionConnection_ActionName();
+	EClass getConnections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.Connections#getRosTopicConnections <em>Ros Topic Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ros Topic Connections</em>'.
+	 * @see rossystem.Connections#getRosTopicConnections()
+	 * @see #getConnections()
+	 * @generated
+	 */
+	EReference getConnections_RosTopicConnections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.Connections#getRosServiceConnections <em>Ros Service Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ros Service Connections</em>'.
+	 * @see rossystem.Connections#getRosServiceConnections()
+	 * @see #getConnections()
+	 * @generated
+	 */
+	EReference getConnections_RosServiceConnections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link rossystem.Connections#getRosActionConnections <em>Ros Action Connections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ros Action Connections</em>'.
+	 * @see rossystem.Connections#getRosActionConnections()
+	 * @see #getConnections()
+	 * @generated
+	 */
+	EReference getConnections_RosActionConnections();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -760,112 +1488,12 @@ public interface RossystemPackage extends EPackage {
 		EClass ROS_SYSTEM = eINSTANCE.getRosSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Topic Connections</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_SYSTEM__TOPIC_CONNECTIONS = eINSTANCE.getRosSystem_TopicConnections();
-
-		/**
-		 * The meta object literal for the '<em><b>Service Connections</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_SYSTEM__SERVICE_CONNECTIONS = eINSTANCE.getRosSystem_ServiceConnections();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ROS_SYSTEM__NAME = eINSTANCE.getRosSystem_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Component Stack</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_SYSTEM__COMPONENT_STACK = eINSTANCE.getRosSystem_ComponentStack();
-
-		/**
-		 * The meta object literal for the '<em><b>Ros Component</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROS_SYSTEM__ROS_COMPONENT = eINSTANCE.getRosSystem_RosComponent();
-
-		/**
-		 * The meta object literal for the '{@link rossystem.impl.ComponentStackImpl <em>Component Stack</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see rossystem.impl.ComponentStackImpl
-		 * @see rossystem.impl.RossystemPackageImpl#getComponentStack()
-		 * @generated
-		 */
-		EClass COMPONENT_STACK = eINSTANCE.getComponentStack();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_STACK__NAME = eINSTANCE.getComponentStack_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Ros Component</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_STACK__ROS_COMPONENT = eINSTANCE.getComponentStack_RosComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Quality Attribute</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_STACK__QUALITY_ATTRIBUTE = eINSTANCE.getComponentStack_QualityAttribute();
-
-		/**
-		 * The meta object literal for the '{@link rossystem.impl.QualityAttributeImpl <em>Quality Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see rossystem.impl.QualityAttributeImpl
-		 * @see rossystem.impl.RossystemPackageImpl#getQualityAttribute()
-		 * @generated
-		 */
-		EClass QUALITY_ATTRIBUTE = eINSTANCE.getQualityAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute QUALITY_ATTRIBUTE__NAME = eINSTANCE.getQualityAttribute_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QUALITY_ATTRIBUTE__TYPE = eINSTANCE.getQualityAttribute_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QUALITY_ATTRIBUTE__VALUE = eINSTANCE.getQualityAttribute_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
@@ -876,12 +1504,306 @@ public interface RossystemPackage extends EPackage {
 		EReference ROS_SYSTEM__PARAMETER = eINSTANCE.getRosSystem_Parameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Action Connections</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Rosnode</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_SYSTEM__ACTION_CONNECTIONS = eINSTANCE.getRosSystem_ActionConnections();
+		EReference ROS_SYSTEM__ROSNODE = eINSTANCE.getRosSystem_Rosnode();
+
+		/**
+		 * The meta object literal for the '<em><b>Connections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SYSTEM__CONNECTIONS = eINSTANCE.getRosSystem_Connections();
+
+		/**
+		 * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SYSTEM__PROCESSES = eINSTANCE.getRosSystem_Processes();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosNodeImpl <em>Ros Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosNodeImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosNode()
+		 * @generated
+		 */
+		EClass ROS_NODE = eINSTANCE.getRosNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_NODE__NAME = eINSTANCE.getRosNode_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_NODE__FROM = eINSTANCE.getRosNode_From();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosinterfaces</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_NODE__ROSINTERFACES = eINSTANCE.getRosNode_Rosinterfaces();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosInterfacesImpl <em>Ros Interfaces</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosInterfacesImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosInterfaces()
+		 * @generated
+		 */
+		EClass ROS_INTERFACES = eINSTANCE.getRosInterfaces();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosactionclient</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSACTIONCLIENT = eINSTANCE.getRosInterfaces_Rosactionclient();
+
+		/**
+		 * The meta object literal for the '<em><b>Rospublisher</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSPUBLISHER = eINSTANCE.getRosInterfaces_Rospublisher();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosserviceserver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSSERVICESERVER = eINSTANCE.getRosInterfaces_Rosserviceserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Rossubscriber</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSSUBSCRIBER = eINSTANCE.getRosInterfaces_Rossubscriber();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosserviceclient</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSSERVICECLIENT = eINSTANCE.getRosInterfaces_Rosserviceclient();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosactionserver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSACTIONSERVER = eINSTANCE.getRosInterfaces_Rosactionserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Rosparameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACES__ROSPARAMETER = eINSTANCE.getRosInterfaces_Rosparameter();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosInterfaceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+		 * @generated
+		 */
+		EClass ROS_INTERFACE = eINSTANCE.getRosInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_INTERFACE__NAME = eINSTANCE.getRosInterface_Name();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosPublisherImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosPublisher()
+		 * @generated
+		 */
+		EClass ROS_PUBLISHER = eINSTANCE.getRosPublisher();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PUBLISHER__FROM = eINSTANCE.getRosPublisher_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosSubscriberImpl <em>Ros Subscriber</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosSubscriberImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosSubscriber()
+		 * @generated
+		 */
+		EClass ROS_SUBSCRIBER = eINSTANCE.getRosSubscriber();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SUBSCRIBER__FROM = eINSTANCE.getRosSubscriber_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosServiceServerImpl <em>Ros Service Server</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosServiceServerImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosServiceServer()
+		 * @generated
+		 */
+		EClass ROS_SERVICE_SERVER = eINSTANCE.getRosServiceServer();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SERVICE_SERVER__FROM = eINSTANCE.getRosServiceServer_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosServiceClientImpl <em>Ros Service Client</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosServiceClientImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosServiceClient()
+		 * @generated
+		 */
+		EClass ROS_SERVICE_CLIENT = eINSTANCE.getRosServiceClient();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SERVICE_CLIENT__FROM = eINSTANCE.getRosServiceClient_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosActionServerImpl <em>Ros Action Server</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosActionServerImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosActionServer()
+		 * @generated
+		 */
+		EClass ROS_ACTION_SERVER = eINSTANCE.getRosActionServer();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_ACTION_SERVER__FROM = eINSTANCE.getRosActionServer_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosActionClientImpl <em>Ros Action Client</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosActionClientImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosActionClient()
+		 * @generated
+		 */
+		EClass ROS_ACTION_CLIENT = eINSTANCE.getRosActionClient();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_ACTION_CLIENT__FROM = eINSTANCE.getRosActionClient_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosParameterImpl <em>Ros Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosParameterImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosParameter()
+		 * @generated
+		 */
+		EClass ROS_PARAMETER = eINSTANCE.getRosParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PARAMETER__FROM = eINSTANCE.getRosParameter_From();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PARAMETER__VALUE = eINSTANCE.getRosParameter_Value();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.ProcessImpl <em>Process</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.ProcessImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getProcess()
+		 * @generated
+		 */
+		EClass PROCESS = eINSTANCE.getProcess();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCESS__NAME = eINSTANCE.getProcess_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Threads</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCESS__THREADS = eINSTANCE.getProcess_Threads();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.TopicConnectionImpl <em>Topic Connection</em>}' class.
@@ -894,7 +1816,7 @@ public interface RossystemPackage extends EPackage {
 		EClass TOPIC_CONNECTION = eINSTANCE.getTopicConnection();
 
 		/**
-		 * The meta object literal for the '<em><b>From</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -902,20 +1824,12 @@ public interface RossystemPackage extends EPackage {
 		EReference TOPIC_CONNECTION__FROM = eINSTANCE.getTopicConnection_From();
 
 		/**
-		 * The meta object literal for the '<em><b>To</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TOPIC_CONNECTION__TO = eINSTANCE.getTopicConnection_To();
-
-		/**
-		 * The meta object literal for the '<em><b>Topic Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TOPIC_CONNECTION__TOPIC_NAME = eINSTANCE.getTopicConnection_TopicName();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.ServiceConnectionImpl <em>Service Connection</em>}' class.
@@ -928,7 +1842,7 @@ public interface RossystemPackage extends EPackage {
 		EClass SERVICE_CONNECTION = eINSTANCE.getServiceConnection();
 
 		/**
-		 * The meta object literal for the '<em><b>From</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -942,14 +1856,6 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE_CONNECTION__TO = eINSTANCE.getServiceConnection_To();
-
-		/**
-		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_CONNECTION__SERVICE_NAME = eINSTANCE.getServiceConnection_ServiceName();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.ActionConnectionImpl <em>Action Connection</em>}' class.
@@ -978,12 +1884,38 @@ public interface RossystemPackage extends EPackage {
 		EReference ACTION_CONNECTION__TO = eINSTANCE.getActionConnection_To();
 
 		/**
-		 * The meta object literal for the '<em><b>Action Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link rossystem.impl.ConnectionsImpl <em>Connections</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.ConnectionsImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getConnections()
+		 * @generated
+		 */
+		EClass CONNECTIONS = eINSTANCE.getConnections();
+
+		/**
+		 * The meta object literal for the '<em><b>Ros Topic Connections</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION_CONNECTION__ACTION_NAME = eINSTANCE.getActionConnection_ActionName();
+		EReference CONNECTIONS__ROS_TOPIC_CONNECTIONS = eINSTANCE.getConnections_RosTopicConnections();
+
+		/**
+		 * The meta object literal for the '<em><b>Ros Service Connections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTIONS__ROS_SERVICE_CONNECTIONS = eINSTANCE.getConnections_RosServiceConnections();
+
+		/**
+		 * The meta object literal for the '<em><b>Ros Action Connections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTIONS__ROS_ACTION_CONNECTIONS = eINSTANCE.getConnections_RosActionConnections();
 
 	}
 

@@ -3,7 +3,6 @@
 package rossystem.provider;
 
 
-import componentInterface.ComponentInterfaceFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -104,12 +103,10 @@ public class RosSystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROSNODE);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__CONNECTIONS);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PROCESSES);
 		}
 		return childrenFeatures;
 	}
@@ -168,12 +165,10 @@ public class RosSystemItemProvider
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RossystemPackage.ROS_SYSTEM__TOPIC_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__SERVICE_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__ACTION_CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__COMPONENT_STACK:
 			case RossystemPackage.ROS_SYSTEM__PARAMETER:
-			case RossystemPackage.ROS_SYSTEM__ROS_COMPONENT:
+			case RossystemPackage.ROS_SYSTEM__ROSNODE:
+			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
+			case RossystemPackage.ROS_SYSTEM__PROCESSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,33 +188,23 @@ public class RosSystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__TOPIC_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createTopicConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__SERVICE_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createServiceConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ACTION_CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createActionConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__COMPONENT_STACK,
-				 RossystemFactory.eINSTANCE.createComponentStack()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER,
 				 RosFactory.eINSTANCE.createParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__ROS_COMPONENT,
-				 ComponentInterfaceFactory.eINSTANCE.createComponentInterface()));
+				(RossystemPackage.Literals.ROS_SYSTEM__ROSNODE,
+				 RossystemFactory.eINSTANCE.createRosNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.ROS_SYSTEM__CONNECTIONS,
+				 RossystemFactory.eINSTANCE.createConnections()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.ROS_SYSTEM__PROCESSES,
+				 RossystemFactory.eINSTANCE.createProcess()));
 	}
 
 	/**

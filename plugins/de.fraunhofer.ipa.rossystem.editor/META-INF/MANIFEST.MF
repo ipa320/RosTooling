@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- de.fraunhofer.ipa.componentInterface.edit;visibility:=reexport,
  de.fraunhofer.ipa.ros.edit;visibility:=reexport,
  org.eclipse.equinox.registry
 Bundle-ActivationPolicy: lazy

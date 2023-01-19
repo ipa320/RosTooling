@@ -9,47 +9,31 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import ros.RosFactory;
 
-import rossystem.QualityAttribute;
+import rossystem.RosParameter;
 import rossystem.RossystemPackage;
 
 /**
- * This is the item provider adapter for a {@link rossystem.QualityAttribute} object.
+ * This is the item provider adapter for a {@link rossystem.RosParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QualityAttributeItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class RosParameterItemProvider extends RosInterfaceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QualityAttributeItemProvider(AdapterFactory adapterFactory) {
+	public RosParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,48 +48,25 @@ public class QualityAttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addFromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the From feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addFromPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_QualityAttribute_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QualityAttribute_Name_feature", "_UI_QualityAttribute_type"),
-				 RossystemPackage.Literals.QUALITY_ATTRIBUTE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QualityAttribute_Value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QualityAttribute_Value_feature", "_UI_QualityAttribute_type"),
-				 RossystemPackage.Literals.QUALITY_ATTRIBUTE__VALUE,
+				 getString("_UI_RosParameter_From_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RosParameter_From_feature", "_UI_RosParameter_type"),
+				 RossystemPackage.Literals.ROS_PARAMETER__FROM,
 				 true,
 				 false,
 				 true,
@@ -126,7 +87,7 @@ public class QualityAttributeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_PARAMETER__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -145,14 +106,14 @@ public class QualityAttributeItemProvider
 	}
 
 	/**
-	 * This returns QualityAttribute.gif.
+	 * This returns RosParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/QualityAttribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RosParameter"));
 	}
 
 	/**
@@ -163,10 +124,10 @@ public class QualityAttributeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QualityAttribute)object).getName();
+		String label = ((RosParameter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_QualityAttribute_type") :
-			getString("_UI_QualityAttribute_type") + " " + label;
+			getString("_UI_RosParameter_type") :
+			getString("_UI_RosParameter_type") + " " + label;
 	}
 
 
@@ -181,11 +142,8 @@ public class QualityAttributeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QualityAttribute.class)) {
-			case RossystemPackage.QUALITY_ATTRIBUTE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RossystemPackage.QUALITY_ATTRIBUTE__TYPE:
+		switch (notification.getFeatureID(RosParameter.class)) {
+			case RossystemPackage.ROS_PARAMETER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -205,64 +163,48 @@ public class QualityAttributeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterListType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterAny()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterStructType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterString()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterIntegerType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterBase64()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterStringType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterInteger()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterDoubleType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterDouble()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterDateType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterBoolean()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterBooleanType()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterSequence()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterBase64Type()));
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterStruct()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterAnyType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RossystemPackage.Literals.QUALITY_ATTRIBUTE__TYPE,
-				 RosFactory.eINSTANCE.createParameterArrayType()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return RossystemEditPlugin.INSTANCE;
+				(RossystemPackage.Literals.ROS_PARAMETER__VALUE,
+				 RosFactory.eINSTANCE.createParameterDate()));
 	}
 
 }

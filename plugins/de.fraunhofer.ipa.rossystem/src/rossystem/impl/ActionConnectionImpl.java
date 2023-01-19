@@ -2,14 +2,11 @@
  */
 package rossystem.impl;
 
-import componentInterface.RosActionClient;
-import componentInterface.RosActionServer;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import rossystem.ActionConnection;
 import rossystem.RossystemPackage;
 
@@ -23,12 +20,11 @@ import rossystem.RossystemPackage;
  * <ul>
  *   <li>{@link rossystem.impl.ActionConnectionImpl#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.impl.ActionConnectionImpl#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.impl.ActionConnectionImpl#getActionName <em>Action Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActionConnectionImpl extends MinimalEObjectImpl.Container implements ActionConnection {
+public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConnection {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -37,7 +33,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected RosActionServer from;
+	protected rossystem.RosActionServer from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -47,27 +43,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected RosActionClient to;
-
-	/**
-	 * The default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActionName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTION_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActionName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String actionName = ACTION_NAME_EDEFAULT;
+	protected rossystem.RosActionClient to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,10 +70,10 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public RosActionServer getFrom() {
+	public rossystem.RosActionServer getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (RosActionServer)eResolveProxy(oldFrom);
+			from = (rossystem.RosActionServer)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.ACTION_CONNECTION__FROM, oldFrom, from));
@@ -111,7 +87,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosActionServer basicGetFrom() {
+	public rossystem.RosActionServer basicGetFrom() {
 		return from;
 	}
 
@@ -121,8 +97,8 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public void setFrom(RosActionServer newFrom) {
-		RosActionServer oldFrom = from;
+	public void setFrom(rossystem.RosActionServer newFrom) {
+		rossystem.RosActionServer oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ACTION_CONNECTION__FROM, oldFrom, from));
@@ -134,10 +110,10 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public RosActionClient getTo() {
+	public rossystem.RosActionClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (RosActionClient)eResolveProxy(oldTo);
+			to = (rossystem.RosActionClient)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.ACTION_CONNECTION__TO, oldTo, to));
@@ -151,7 +127,7 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RosActionClient basicGetTo() {
+	public rossystem.RosActionClient basicGetTo() {
 		return to;
 	}
 
@@ -161,34 +137,11 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public void setTo(RosActionClient newTo) {
-		RosActionClient oldTo = to;
+	public void setTo(rossystem.RosActionClient newTo) {
+		rossystem.RosActionClient oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ACTION_CONNECTION__TO, oldTo, to));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getActionName() {
-		return actionName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setActionName(String newActionName) {
-		String oldActionName = actionName;
-		actionName = newActionName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ACTION_CONNECTION__ACTION_NAME, oldActionName, actionName));
 	}
 
 	/**
@@ -205,8 +158,6 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 			case RossystemPackage.ACTION_CONNECTION__TO:
 				if (resolve) return getTo();
 				return basicGetTo();
-			case RossystemPackage.ACTION_CONNECTION__ACTION_NAME:
-				return getActionName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,13 +172,10 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.ACTION_CONNECTION__FROM:
-				setFrom((RosActionServer)newValue);
+				setFrom((rossystem.RosActionServer)newValue);
 				return;
 			case RossystemPackage.ACTION_CONNECTION__TO:
-				setTo((RosActionClient)newValue);
-				return;
-			case RossystemPackage.ACTION_CONNECTION__ACTION_NAME:
-				setActionName((String)newValue);
+				setTo((rossystem.RosActionClient)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -242,13 +190,10 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.ACTION_CONNECTION__FROM:
-				setFrom((RosActionServer)null);
+				setFrom((rossystem.RosActionServer)null);
 				return;
 			case RossystemPackage.ACTION_CONNECTION__TO:
-				setTo((RosActionClient)null);
-				return;
-			case RossystemPackage.ACTION_CONNECTION__ACTION_NAME:
-				setActionName(ACTION_NAME_EDEFAULT);
+				setTo((rossystem.RosActionClient)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -266,26 +211,8 @@ public class ActionConnectionImpl extends MinimalEObjectImpl.Container implement
 				return from != null;
 			case RossystemPackage.ACTION_CONNECTION__TO:
 				return to != null;
-			case RossystemPackage.ACTION_CONNECTION__ACTION_NAME:
-				return ACTION_NAME_EDEFAULT == null ? actionName != null : !ACTION_NAME_EDEFAULT.equals(actionName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (ActionName: ");
-		result.append(actionName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ActionConnectionImpl
