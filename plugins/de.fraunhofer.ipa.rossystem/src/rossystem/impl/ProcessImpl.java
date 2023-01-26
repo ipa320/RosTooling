@@ -2,13 +2,17 @@
  */
 package rossystem.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import rossystem.RosNode;
 import rossystem.RossystemPackage;
 
 /**
@@ -21,6 +25,7 @@ import rossystem.RossystemPackage;
  * <ul>
  *   <li>{@link rossystem.impl.ProcessImpl#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.impl.ProcessImpl#getThreads <em>Threads</em>}</li>
+ *   <li>{@link rossystem.impl.ProcessImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +70,16 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 	 * @ordered
 	 */
 	protected int threads = THREADS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RosNode> nodes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,12 +152,27 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 	 * @generated
 	 */
 	@Override
+	public EList<RosNode> getNodes() {
+		if (nodes == null) {
+			nodes = new EObjectResolvingEList<RosNode>(RosNode.class, this, RossystemPackage.PROCESS__NODES);
+		}
+		return nodes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RossystemPackage.PROCESS__NAME:
 				return getName();
 			case RossystemPackage.PROCESS__THREADS:
 				return getThreads();
+			case RossystemPackage.PROCESS__NODES:
+				return getNodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,6 +182,7 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -160,6 +191,10 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 				return;
 			case RossystemPackage.PROCESS__THREADS:
 				setThreads((Integer)newValue);
+				return;
+			case RossystemPackage.PROCESS__NODES:
+				getNodes().clear();
+				getNodes().addAll((Collection<? extends RosNode>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,6 +214,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 			case RossystemPackage.PROCESS__THREADS:
 				setThreads(THREADS_EDEFAULT);
 				return;
+			case RossystemPackage.PROCESS__NODES:
+				getNodes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,6 +233,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements rossyst
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RossystemPackage.PROCESS__THREADS:
 				return threads != THREADS_EDEFAULT;
+			case RossystemPackage.PROCESS__NODES:
+				return nodes != null && !nodes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

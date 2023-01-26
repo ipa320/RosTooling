@@ -12,21 +12,25 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import rossystem.ActionConnection;
 import rossystem.Connections;
+import rossystem.InterfaceReference;
 import rossystem.RosActionClient;
 import rossystem.RosActionServer;
+import rossystem.RosConnection;
+import rossystem.RosInterface;
 import rossystem.RosInterfaces;
 import rossystem.RosNode;
 import rossystem.RosParameter;
 import rossystem.RosPublisher;
+import rossystem.RosPublisherReference;
 import rossystem.RosServiceClient;
 import rossystem.RosServiceServer;
 import rossystem.RosSubscriber;
+import rossystem.RosSubscriberReference;
 import rossystem.RosSystem;
 import rossystem.RossystemFactory;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
 import rossystem.TopicConnection;
-import rossystem.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +91,11 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 			case RossystemPackage.SERVICE_CONNECTION: return createServiceConnection();
 			case RossystemPackage.ACTION_CONNECTION: return createActionConnection();
 			case RossystemPackage.CONNECTIONS: return createConnections();
+			case RossystemPackage.ROS_INTERFACE: return createRosInterface();
+			case RossystemPackage.INTERFACE_REFERENCE: return createInterfaceReference();
+			case RossystemPackage.ROS_PUBLISHER_REFERENCE: return createRosPublisherReference();
+			case RossystemPackage.ROS_SUBSCRIBER_REFERENCE: return createRosSubscriberReference();
+			case RossystemPackage.ROS_CONNECTION: return createRosConnection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -255,6 +264,61 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	public Connections createConnections() {
 		ConnectionsImpl connections = new ConnectionsImpl();
 		return connections;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosInterface createRosInterface() {
+		RosInterfaceImpl rosInterface = new RosInterfaceImpl();
+		return rosInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public InterfaceReference createInterfaceReference() {
+		InterfaceReferenceImpl interfaceReference = new InterfaceReferenceImpl();
+		return interfaceReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosPublisherReference createRosPublisherReference() {
+		RosPublisherReferenceImpl rosPublisherReference = new RosPublisherReferenceImpl();
+		return rosPublisherReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosSubscriberReference createRosSubscriberReference() {
+		RosSubscriberReferenceImpl rosSubscriberReference = new RosSubscriberReferenceImpl();
+		return rosSubscriberReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosConnection createRosConnection() {
+		RosConnectionImpl rosConnection = new RosConnectionImpl();
+		return rosConnection;
 	}
 
 	/**

@@ -21,7 +21,7 @@ import rossystem.RossystemPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RosActionServerItemProvider extends RosInterfaceItemProvider {
+public class RosActionServerItemProvider extends NamedInterfaceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

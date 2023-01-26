@@ -9,15 +9,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Rosnode" upperBound="-1"
         eType="#//RosNode" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Connections" upperBound="-1"
-        eType="#//Connections" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Processes" upperBound="-1"
+        eType="#//RosConnection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Process" upperBound="-1"
         eType="#//Process" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rosinterfaces" eType="#//RosInterfaces"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosinterfaces" upperBound="-1"
+        eType="#//RosInterface" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosInterfaces">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rosactionclient" upperBound="-1"
@@ -35,28 +35,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rosparameter" upperBound="-1"
         eType="#//RosParameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosInterface" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedInterface" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosPublisher" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosPublisher" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosSubscriber" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosSubscriber" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosServiceServer" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceServer" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosServiceClient" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceClient" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosActionServer" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosActionServer" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionServer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosActionClient" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosActionClient" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionClient"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosParameter" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="RosParameter" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ParameterValue"
         containment="true"/>
@@ -64,16 +64,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Threads" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Nodes" upperBound="-1"
+        eType="#//RosNode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicConnection" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="TopicConnection" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="#//RosPublisher"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="To" lowerBound="1" eType="#//RosSubscriber"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceConnection" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceConnection" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="#//RosServiceServer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="To" lowerBound="1" eType="#//RosServiceClient"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionConnection" eSuperTypes="#//RosInterface">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionConnection" eSuperTypes="#//NamedInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="#//RosActionServer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="To" lowerBound="1" eType="#//RosActionClient"/>
   </eClassifiers>
@@ -84,5 +86,21 @@
         upperBound="-1" eType="#//ServiceConnection" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RosActionConnections" upperBound="-1"
         eType="#//ActionConnection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosInterface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
+        eType="#//InterfaceReference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RosPublisherReference" eSuperTypes="#//InterfaceReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosSubscriberReference" eSuperTypes="#//InterfaceReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="From" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RosInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//RosInterface"/>
   </eClassifiers>
 </ecore:EPackage>

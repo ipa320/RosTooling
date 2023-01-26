@@ -30,7 +30,7 @@ import rossystem.RossystemPackage;
  *
  * @generated
  */
-public class RosParameterImpl extends RosInterfaceImpl implements RosParameter {
+public class RosParameterImpl extends NamedInterfaceImpl implements RosParameter {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->

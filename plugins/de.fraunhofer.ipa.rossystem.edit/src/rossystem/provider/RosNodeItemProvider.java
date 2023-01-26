@@ -205,7 +205,7 @@ public class RosNodeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RossystemPackage.Literals.ROS_NODE__ROSINTERFACES,
-				 RossystemFactory.eINSTANCE.createRosInterfaces()));
+				 RossystemFactory.eINSTANCE.createRosInterface()));
 	}
 
 	/**

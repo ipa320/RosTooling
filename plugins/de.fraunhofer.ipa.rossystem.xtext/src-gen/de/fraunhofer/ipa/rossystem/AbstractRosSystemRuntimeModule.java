@@ -6,6 +6,7 @@ package de.fraunhofer.ipa.rossystem;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
+import de.fraunhofer.ipa.rossystem.formatting2.RosSystemFormatter;
 import de.fraunhofer.ipa.rossystem.generator.RosSystemGenerator;
 import de.fraunhofer.ipa.rossystem.parser.antlr.RosSystemAntlrTokenFileProvider;
 import de.fraunhofer.ipa.rossystem.parser.antlr.RosSystemParser;
@@ -14,6 +15,7 @@ import de.fraunhofer.ipa.rossystem.scoping.RosSystemScopeProvider;
 import de.fraunhofer.ipa.rossystem.serializer.RosSystemSemanticSequencer;
 import de.fraunhofer.ipa.rossystem.serializer.RosSystemSyntacticSequencer;
 import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess;
+import de.fraunhofer.ipa.rossystem.validation.RosSystemConfigurableIssueCodesProvider;
 import de.fraunhofer.ipa.rossystem.validation.RosSystemValidator;
 import java.util.Properties;
 import org.eclipse.xtext.Constants;
@@ -55,6 +57,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer;
 import org.eclipse.xtext.service.DefaultRuntimeModule;
 import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.validation.ConfigurableIssueCodesProvider;
 
 /**
  * Manual modifications go to {@link RosSystemRuntimeModule}.
@@ -147,6 +150,11 @@ public abstract class AbstractRosSystemRuntimeModule extends DefaultRuntimeModul
 		return RosSystemValidator.class;
 	}
 	
+	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
+	public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
+		return RosSystemConfigurableIssueCodesProvider.class;
+	}
+	
 	// contributed by org.eclipse.xtext.xtext.generator.scoping.ImportNamespacesScopingFragment2
 	public Class<? extends IScopeProvider> bindIScopeProvider() {
 		return RosSystemScopeProvider.class;
@@ -196,7 +204,11 @@ public abstract class AbstractRosSystemRuntimeModule extends DefaultRuntimeModul
 	public Class<? extends IGenerator2> bindIGenerator2() {
 		return RosSystemGenerator.class;
 	}
-
+	
+	// contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
+	public Class<? extends IFormatter2> bindIFormatter2() {
+		return RosSystemFormatter.class;
+	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
 	public void configureFormatterPreferences(Binder binder) {

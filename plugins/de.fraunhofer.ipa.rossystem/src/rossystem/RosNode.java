@@ -2,6 +2,7 @@
  */
 package rossystem;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import ros.Node;
@@ -70,25 +71,15 @@ public interface RosNode extends EObject {
 	void setFrom(Node value);
 
 	/**
-	 * Returns the value of the '<em><b>Rosinterfaces</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rosinterfaces</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.RosInterface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rosinterfaces</em>' containment reference.
-	 * @see #setRosinterfaces(RosInterfaces)
+	 * @return the value of the '<em>Rosinterfaces</em>' containment reference list.
 	 * @see rossystem.RossystemPackage#getRosNode_Rosinterfaces()
 	 * @model containment="true"
 	 * @generated
 	 */
-	RosInterfaces getRosinterfaces();
-
-	/**
-	 * Sets the value of the '{@link rossystem.RosNode#getRosinterfaces <em>Rosinterfaces</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rosinterfaces</em>' containment reference.
-	 * @see #getRosinterfaces()
-	 * @generated
-	 */
-	void setRosinterfaces(RosInterfaces value);
+	EList<RosInterface> getRosinterfaces();
 
 } // RosNode

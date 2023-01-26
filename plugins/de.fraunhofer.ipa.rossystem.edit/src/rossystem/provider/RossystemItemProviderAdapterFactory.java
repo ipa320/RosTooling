@@ -417,6 +417,121 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.RosInterface} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosInterfaceItemProvider rosInterfaceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.RosInterface}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosInterfaceAdapter() {
+		if (rosInterfaceItemProvider == null) {
+			rosInterfaceItemProvider = new RosInterfaceItemProvider(this);
+		}
+
+		return rosInterfaceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.InterfaceReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InterfaceReferenceItemProvider interfaceReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.InterfaceReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInterfaceReferenceAdapter() {
+		if (interfaceReferenceItemProvider == null) {
+			interfaceReferenceItemProvider = new InterfaceReferenceItemProvider(this);
+		}
+
+		return interfaceReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.RosPublisherReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosPublisherReferenceItemProvider rosPublisherReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.RosPublisherReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosPublisherReferenceAdapter() {
+		if (rosPublisherReferenceItemProvider == null) {
+			rosPublisherReferenceItemProvider = new RosPublisherReferenceItemProvider(this);
+		}
+
+		return rosPublisherReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.RosSubscriberReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosSubscriberReferenceItemProvider rosSubscriberReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.RosSubscriberReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosSubscriberReferenceAdapter() {
+		if (rosSubscriberReferenceItemProvider == null) {
+			rosSubscriberReferenceItemProvider = new RosSubscriberReferenceItemProvider(this);
+		}
+
+		return rosSubscriberReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link rossystem.RosConnection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RosConnectionItemProvider rosConnectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rossystem.RosConnection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRosConnectionAdapter() {
+		if (rosConnectionItemProvider == null) {
+			rosConnectionItemProvider = new RosConnectionItemProvider(this);
+		}
+
+		return rosConnectionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -536,6 +651,11 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
 		if (serviceConnectionItemProvider != null) serviceConnectionItemProvider.dispose();
 		if (actionConnectionItemProvider != null) actionConnectionItemProvider.dispose();
 		if (connectionsItemProvider != null) connectionsItemProvider.dispose();
+		if (rosInterfaceItemProvider != null) rosInterfaceItemProvider.dispose();
+		if (interfaceReferenceItemProvider != null) interfaceReferenceItemProvider.dispose();
+		if (rosPublisherReferenceItemProvider != null) rosPublisherReferenceItemProvider.dispose();
+		if (rosSubscriberReferenceItemProvider != null) rosSubscriberReferenceItemProvider.dispose();
+		if (rosConnectionItemProvider != null) rosConnectionItemProvider.dispose();
 	}
 
 }

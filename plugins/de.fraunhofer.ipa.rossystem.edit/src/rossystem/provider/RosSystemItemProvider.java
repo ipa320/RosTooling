@@ -106,7 +106,7 @@ public class RosSystemItemProvider
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROSNODE);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PROCESSES);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PROCESS);
 		}
 		return childrenFeatures;
 	}
@@ -168,7 +168,7 @@ public class RosSystemItemProvider
 			case RossystemPackage.ROS_SYSTEM__PARAMETER:
 			case RossystemPackage.ROS_SYSTEM__ROSNODE:
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,11 +199,11 @@ public class RosSystemItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RossystemPackage.Literals.ROS_SYSTEM__CONNECTIONS,
-				 RossystemFactory.eINSTANCE.createConnections()));
+				 RossystemFactory.eINSTANCE.createRosConnection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__PROCESSES,
+				(RossystemPackage.Literals.ROS_SYSTEM__PROCESS,
 				 RossystemFactory.eINSTANCE.createProcess()));
 	}
 

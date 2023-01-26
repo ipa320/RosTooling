@@ -103,13 +103,13 @@ public interface RossystemPackage extends EPackage {
 	int ROS_SYSTEM__CONNECTIONS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Process</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SYSTEM__PROCESSES = 4;
+	int ROS_SYSTEM__PROCESS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Ros System</em>' class.
@@ -158,7 +158,7 @@ public interface RossystemPackage extends EPackage {
 	int ROS_NODE__FROM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Rosinterfaces</b></em>' containment reference.
+	 * The feature id for the '<em><b>Rosinterfaces</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -276,14 +276,14 @@ public interface RossystemPackage extends EPackage {
 	int ROS_INTERFACES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+	 * The meta object id for the '{@link rossystem.impl.NamedInterfaceImpl <em>Named Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see rossystem.impl.RosInterfaceImpl
-	 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+	 * @see rossystem.impl.NamedInterfaceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getNamedInterface()
 	 * @generated
 	 */
-	int ROS_INTERFACE = 3;
+	int NAMED_INTERFACE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -292,25 +292,25 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_INTERFACE__NAME = 0;
+	int NAMED_INTERFACE__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Ros Interface</em>' class.
+	 * The number of structural features of the '<em>Named Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_INTERFACE_FEATURE_COUNT = 1;
+	int NAMED_INTERFACE_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Ros Interface</em>' class.
+	 * The number of operations of the '<em>Named Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_INTERFACE_OPERATION_COUNT = 0;
+	int NAMED_INTERFACE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
@@ -329,7 +329,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER__NAME = ROS_INTERFACE__NAME;
+	int ROS_PUBLISHER__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -338,7 +338,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_PUBLISHER__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Publisher</em>' class.
@@ -347,7 +347,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_PUBLISHER_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Publisher</em>' class.
@@ -356,7 +356,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PUBLISHER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_PUBLISHER_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosSubscriberImpl <em>Ros Subscriber</em>}' class.
@@ -375,7 +375,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER__NAME = ROS_INTERFACE__NAME;
+	int ROS_SUBSCRIBER__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -384,7 +384,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_SUBSCRIBER__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Subscriber</em>' class.
@@ -393,7 +393,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_SUBSCRIBER_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Subscriber</em>' class.
@@ -402,7 +402,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SUBSCRIBER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_SUBSCRIBER_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosServiceServerImpl <em>Ros Service Server</em>}' class.
@@ -421,7 +421,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER__NAME = ROS_INTERFACE__NAME;
+	int ROS_SERVICE_SERVER__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -430,7 +430,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_SERVICE_SERVER__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Service Server</em>' class.
@@ -439,7 +439,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_SERVICE_SERVER_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Service Server</em>' class.
@@ -448,7 +448,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_SERVER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_SERVICE_SERVER_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosServiceClientImpl <em>Ros Service Client</em>}' class.
@@ -467,7 +467,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT__NAME = ROS_INTERFACE__NAME;
+	int ROS_SERVICE_CLIENT__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -476,7 +476,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_SERVICE_CLIENT__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Service Client</em>' class.
@@ -485,7 +485,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_SERVICE_CLIENT_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Service Client</em>' class.
@@ -494,7 +494,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_SERVICE_CLIENT_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_SERVICE_CLIENT_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosActionServerImpl <em>Ros Action Server</em>}' class.
@@ -513,7 +513,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_SERVER__NAME = ROS_INTERFACE__NAME;
+	int ROS_ACTION_SERVER__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -522,7 +522,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_SERVER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_ACTION_SERVER__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Action Server</em>' class.
@@ -531,7 +531,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_SERVER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_ACTION_SERVER_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Action Server</em>' class.
@@ -540,7 +540,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_SERVER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_ACTION_SERVER_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosActionClientImpl <em>Ros Action Client</em>}' class.
@@ -559,7 +559,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_CLIENT__NAME = ROS_INTERFACE__NAME;
+	int ROS_ACTION_CLIENT__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -568,7 +568,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_CLIENT__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_ACTION_CLIENT__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ros Action Client</em>' class.
@@ -577,7 +577,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_CLIENT_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_ACTION_CLIENT_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Ros Action Client</em>' class.
@@ -586,7 +586,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_ACTION_CLIENT_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_ACTION_CLIENT_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.RosParameterImpl <em>Ros Parameter</em>}' class.
@@ -605,7 +605,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER__NAME = ROS_INTERFACE__NAME;
+	int ROS_PARAMETER__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -614,7 +614,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ROS_PARAMETER__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -623,7 +623,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER__VALUE = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ROS_PARAMETER__VALUE = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Ros Parameter</em>' class.
@@ -632,7 +632,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
+	int ROS_PARAMETER_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Ros Parameter</em>' class.
@@ -641,7 +641,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_PARAMETER_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ROS_PARAMETER_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ProcessImpl <em>Process</em>}' class.
@@ -672,13 +672,22 @@ public interface RossystemPackage extends EPackage {
 	int PROCESS__THREADS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Nodes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__NODES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_FEATURE_COUNT = 2;
+	int PROCESS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Process</em>' class.
@@ -706,7 +715,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__NAME = ROS_INTERFACE__NAME;
+	int TOPIC_CONNECTION__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -715,7 +724,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int TOPIC_CONNECTION__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -724,7 +733,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int TOPIC_CONNECTION__TO = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Topic Connection</em>' class.
@@ -733,7 +742,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
+	int TOPIC_CONNECTION_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Topic Connection</em>' class.
@@ -742,7 +751,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOPIC_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int TOPIC_CONNECTION_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ServiceConnectionImpl <em>Service Connection</em>}' class.
@@ -761,7 +770,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__NAME = ROS_INTERFACE__NAME;
+	int SERVICE_CONNECTION__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -770,7 +779,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int SERVICE_CONNECTION__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -779,7 +788,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int SERVICE_CONNECTION__TO = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Connection</em>' class.
@@ -788,7 +797,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
+	int SERVICE_CONNECTION_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Service Connection</em>' class.
@@ -797,7 +806,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int SERVICE_CONNECTION_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ActionConnectionImpl <em>Action Connection</em>}' class.
@@ -816,7 +825,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION__NAME = ROS_INTERFACE__NAME;
+	int ACTION_CONNECTION__NAME = NAMED_INTERFACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -825,7 +834,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION__FROM = ROS_INTERFACE_FEATURE_COUNT + 0;
+	int ACTION_CONNECTION__FROM = NAMED_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -834,7 +843,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION__TO = ROS_INTERFACE_FEATURE_COUNT + 1;
+	int ACTION_CONNECTION__TO = NAMED_INTERFACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Action Connection</em>' class.
@@ -843,7 +852,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION_FEATURE_COUNT = ROS_INTERFACE_FEATURE_COUNT + 2;
+	int ACTION_CONNECTION_FEATURE_COUNT = NAMED_INTERFACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Action Connection</em>' class.
@@ -852,7 +861,7 @@ public interface RossystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CONNECTION_OPERATION_COUNT = ROS_INTERFACE_OPERATION_COUNT + 0;
+	int ACTION_CONNECTION_OPERATION_COUNT = NAMED_INTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rossystem.impl.ConnectionsImpl <em>Connections</em>}' class.
@@ -910,6 +919,200 @@ public interface RossystemPackage extends EPackage {
 	int CONNECTIONS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosInterfaceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+	 * @generated
+	 */
+	int ROS_INTERFACE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACE__REFERENCE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Ros Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Ros Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_INTERFACE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.InterfaceReferenceImpl <em>Interface Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.InterfaceReferenceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getInterfaceReference()
+	 * @generated
+	 */
+	int INTERFACE_REFERENCE = 17;
+
+	/**
+	 * The number of structural features of the '<em>Interface Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_REFERENCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Interface Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_REFERENCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosPublisherReferenceImpl <em>Ros Publisher Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosPublisherReferenceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosPublisherReference()
+	 * @generated
+	 */
+	int ROS_PUBLISHER_REFERENCE = 18;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER_REFERENCE__FROM = INTERFACE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Publisher Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER_REFERENCE_FEATURE_COUNT = INTERFACE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Publisher Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_PUBLISHER_REFERENCE_OPERATION_COUNT = INTERFACE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosSubscriberReferenceImpl <em>Ros Subscriber Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosSubscriberReferenceImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosSubscriberReference()
+	 * @generated
+	 */
+	int ROS_SUBSCRIBER_REFERENCE = 19;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER_REFERENCE__FROM = INTERFACE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ros Subscriber Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER_REFERENCE_FEATURE_COUNT = INTERFACE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ros Subscriber Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_SUBSCRIBER_REFERENCE_OPERATION_COUNT = INTERFACE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link rossystem.impl.RosConnectionImpl <em>Ros Connection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rossystem.impl.RosConnectionImpl
+	 * @see rossystem.impl.RossystemPackageImpl#getRosConnection()
+	 * @generated
+	 */
+	int ROS_CONNECTION = 20;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_CONNECTION__FROM = 0;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_CONNECTION__TO = 1;
+
+	/**
+	 * The number of structural features of the '<em>Ros Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_CONNECTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Ros Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_CONNECTION_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link rossystem.RosSystem <em>Ros System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -964,15 +1167,15 @@ public interface RossystemPackage extends EPackage {
 	EReference getRosSystem_Connections();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getProcesses <em>Processes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosSystem#getProcess <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Processes</em>'.
-	 * @see rossystem.RosSystem#getProcesses()
+	 * @return the meta object for the containment reference list '<em>Process</em>'.
+	 * @see rossystem.RosSystem#getProcess()
 	 * @see #getRosSystem()
 	 * @generated
 	 */
-	EReference getRosSystem_Processes();
+	EReference getRosSystem_Process();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.RosNode <em>Ros Node</em>}'.
@@ -1007,10 +1210,10 @@ public interface RossystemPackage extends EPackage {
 	EReference getRosNode_From();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link rossystem.RosNode#getRosinterfaces <em>Rosinterfaces</em>}'.
+	 * Returns the meta object for the containment reference list '{@link rossystem.RosNode#getRosinterfaces <em>Rosinterfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Rosinterfaces</em>'.
+	 * @return the meta object for the containment reference list '<em>Rosinterfaces</em>'.
 	 * @see rossystem.RosNode#getRosinterfaces()
 	 * @see #getRosNode()
 	 * @generated
@@ -1105,25 +1308,25 @@ public interface RossystemPackage extends EPackage {
 	EReference getRosInterfaces_Rosparameter();
 
 	/**
-	 * Returns the meta object for class '{@link rossystem.RosInterface <em>Ros Interface</em>}'.
+	 * Returns the meta object for class '{@link rossystem.NamedInterface <em>Named Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ros Interface</em>'.
-	 * @see rossystem.RosInterface
+	 * @return the meta object for class '<em>Named Interface</em>'.
+	 * @see rossystem.NamedInterface
 	 * @generated
 	 */
-	EClass getRosInterface();
+	EClass getNamedInterface();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rossystem.RosInterface#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link rossystem.NamedInterface#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see rossystem.RosInterface#getName()
-	 * @see #getRosInterface()
+	 * @see rossystem.NamedInterface#getName()
+	 * @see #getNamedInterface()
 	 * @generated
 	 */
-	EAttribute getRosInterface_Name();
+	EAttribute getNamedInterface_Name();
 
 	/**
 	 * Returns the meta object for class '{@link rossystem.RosPublisher <em>Ros Publisher</em>}'.
@@ -1316,6 +1519,17 @@ public interface RossystemPackage extends EPackage {
 	EAttribute getProcess_Threads();
 
 	/**
+	 * Returns the meta object for the reference list '{@link rossystem.Process#getNodes <em>Nodes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Nodes</em>'.
+	 * @see rossystem.Process#getNodes()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EReference getProcess_Nodes();
+
+	/**
 	 * Returns the meta object for class '{@link rossystem.TopicConnection <em>Topic Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1455,6 +1669,122 @@ public interface RossystemPackage extends EPackage {
 	EReference getConnections_RosActionConnections();
 
 	/**
+	 * Returns the meta object for class '{@link rossystem.RosInterface <em>Ros Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Interface</em>'.
+	 * @see rossystem.RosInterface
+	 * @generated
+	 */
+	EClass getRosInterface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link rossystem.RosInterface#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see rossystem.RosInterface#getName()
+	 * @see #getRosInterface()
+	 * @generated
+	 */
+	EAttribute getRosInterface_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link rossystem.RosInterface#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reference</em>'.
+	 * @see rossystem.RosInterface#getReference()
+	 * @see #getRosInterface()
+	 * @generated
+	 */
+	EReference getRosInterface_Reference();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.InterfaceReference <em>Interface Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interface Reference</em>'.
+	 * @see rossystem.InterfaceReference
+	 * @generated
+	 */
+	EClass getInterfaceReference();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosPublisherReference <em>Ros Publisher Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Publisher Reference</em>'.
+	 * @see rossystem.RosPublisherReference
+	 * @generated
+	 */
+	EClass getRosPublisherReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosPublisherReference#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosPublisherReference#getFrom()
+	 * @see #getRosPublisherReference()
+	 * @generated
+	 */
+	EReference getRosPublisherReference_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosSubscriberReference <em>Ros Subscriber Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Subscriber Reference</em>'.
+	 * @see rossystem.RosSubscriberReference
+	 * @generated
+	 */
+	EClass getRosSubscriberReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosSubscriberReference#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosSubscriberReference#getFrom()
+	 * @see #getRosSubscriberReference()
+	 * @generated
+	 */
+	EReference getRosSubscriberReference_From();
+
+	/**
+	 * Returns the meta object for class '{@link rossystem.RosConnection <em>Ros Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ros Connection</em>'.
+	 * @see rossystem.RosConnection
+	 * @generated
+	 */
+	EClass getRosConnection();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosConnection#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see rossystem.RosConnection#getFrom()
+	 * @see #getRosConnection()
+	 * @generated
+	 */
+	EReference getRosConnection_From();
+
+	/**
+	 * Returns the meta object for the reference '{@link rossystem.RosConnection#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To</em>'.
+	 * @see rossystem.RosConnection#getTo()
+	 * @see #getRosConnection()
+	 * @generated
+	 */
+	EReference getRosConnection_To();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1520,12 +1850,12 @@ public interface RossystemPackage extends EPackage {
 		EReference ROS_SYSTEM__CONNECTIONS = eINSTANCE.getRosSystem_Connections();
 
 		/**
-		 * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Process</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_SYSTEM__PROCESSES = eINSTANCE.getRosSystem_Processes();
+		EReference ROS_SYSTEM__PROCESS = eINSTANCE.getRosSystem_Process();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.RosNodeImpl <em>Ros Node</em>}' class.
@@ -1554,7 +1884,7 @@ public interface RossystemPackage extends EPackage {
 		EReference ROS_NODE__FROM = eINSTANCE.getRosNode_From();
 
 		/**
-		 * The meta object literal for the '<em><b>Rosinterfaces</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Rosinterfaces</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1628,14 +1958,14 @@ public interface RossystemPackage extends EPackage {
 		EReference ROS_INTERFACES__ROSPARAMETER = eINSTANCE.getRosInterfaces_Rosparameter();
 
 		/**
-		 * The meta object literal for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+		 * The meta object literal for the '{@link rossystem.impl.NamedInterfaceImpl <em>Named Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see rossystem.impl.RosInterfaceImpl
-		 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+		 * @see rossystem.impl.NamedInterfaceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getNamedInterface()
 		 * @generated
 		 */
-		EClass ROS_INTERFACE = eINSTANCE.getRosInterface();
+		EClass NAMED_INTERFACE = eINSTANCE.getNamedInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1643,7 +1973,7 @@ public interface RossystemPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROS_INTERFACE__NAME = eINSTANCE.getRosInterface_Name();
+		EAttribute NAMED_INTERFACE__NAME = eINSTANCE.getNamedInterface_Name();
 
 		/**
 		 * The meta object literal for the '{@link rossystem.impl.RosPublisherImpl <em>Ros Publisher</em>}' class.
@@ -1806,6 +2136,14 @@ public interface RossystemPackage extends EPackage {
 		EAttribute PROCESS__THREADS = eINSTANCE.getProcess_Threads();
 
 		/**
+		 * The meta object literal for the '<em><b>Nodes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESS__NODES = eINSTANCE.getProcess_Nodes();
+
+		/**
 		 * The meta object literal for the '{@link rossystem.impl.TopicConnectionImpl <em>Topic Connection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1916,6 +2254,104 @@ public interface RossystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTIONS__ROS_ACTION_CONNECTIONS = eINSTANCE.getConnections_RosActionConnections();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosInterfaceImpl <em>Ros Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosInterfaceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosInterface()
+		 * @generated
+		 */
+		EClass ROS_INTERFACE = eINSTANCE.getRosInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_INTERFACE__NAME = eINSTANCE.getRosInterface_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_INTERFACE__REFERENCE = eINSTANCE.getRosInterface_Reference();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.InterfaceReferenceImpl <em>Interface Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.InterfaceReferenceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getInterfaceReference()
+		 * @generated
+		 */
+		EClass INTERFACE_REFERENCE = eINSTANCE.getInterfaceReference();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosPublisherReferenceImpl <em>Ros Publisher Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosPublisherReferenceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosPublisherReference()
+		 * @generated
+		 */
+		EClass ROS_PUBLISHER_REFERENCE = eINSTANCE.getRosPublisherReference();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_PUBLISHER_REFERENCE__FROM = eINSTANCE.getRosPublisherReference_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosSubscriberReferenceImpl <em>Ros Subscriber Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosSubscriberReferenceImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosSubscriberReference()
+		 * @generated
+		 */
+		EClass ROS_SUBSCRIBER_REFERENCE = eINSTANCE.getRosSubscriberReference();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_SUBSCRIBER_REFERENCE__FROM = eINSTANCE.getRosSubscriberReference_From();
+
+		/**
+		 * The meta object literal for the '{@link rossystem.impl.RosConnectionImpl <em>Ros Connection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rossystem.impl.RosConnectionImpl
+		 * @see rossystem.impl.RossystemPackageImpl#getRosConnection()
+		 * @generated
+		 */
+		EClass ROS_CONNECTION = eINSTANCE.getRosConnection();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_CONNECTION__FROM = eINSTANCE.getRosConnection_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_CONNECTION__TO = eINSTANCE.getRosConnection_To();
 
 	}
 

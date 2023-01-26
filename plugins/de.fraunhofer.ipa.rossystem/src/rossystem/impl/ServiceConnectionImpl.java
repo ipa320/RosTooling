@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import rossystem.RosServiceClient;
+import rossystem.RosServiceServer;
 import rossystem.RossystemPackage;
 import rossystem.ServiceConnection;
 
@@ -24,7 +26,7 @@ import rossystem.ServiceConnection;
  *
  * @generated
  */
-public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceConnection {
+public class ServiceConnectionImpl extends NamedInterfaceImpl implements ServiceConnection {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -33,7 +35,7 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosServiceServer from;
+	protected RosServiceServer from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -43,7 +45,7 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosServiceClient to;
+	protected RosServiceClient to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,10 +72,10 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosServiceServer getFrom() {
+	public RosServiceServer getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (rossystem.RosServiceServer)eResolveProxy(oldFrom);
+			from = (RosServiceServer)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
@@ -87,7 +89,7 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosServiceServer basicGetFrom() {
+	public RosServiceServer basicGetFrom() {
 		return from;
 	}
 
@@ -97,8 +99,8 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 */
 	@Override
-	public void setFrom(rossystem.RosServiceServer newFrom) {
-		rossystem.RosServiceServer oldFrom = from;
+	public void setFrom(RosServiceServer newFrom) {
+		RosServiceServer oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__FROM, oldFrom, from));
@@ -110,10 +112,10 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosServiceClient getTo() {
+	public RosServiceClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (rossystem.RosServiceClient)eResolveProxy(oldTo);
+			to = (RosServiceClient)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -127,7 +129,7 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosServiceClient basicGetTo() {
+	public RosServiceClient basicGetTo() {
 		return to;
 	}
 
@@ -137,8 +139,8 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	 * @generated
 	 */
 	@Override
-	public void setTo(rossystem.RosServiceClient newTo) {
-		rossystem.RosServiceClient oldTo = to;
+	public void setTo(RosServiceClient newTo) {
+		RosServiceClient oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SERVICE_CONNECTION__TO, oldTo, to));
@@ -172,10 +174,10 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((rossystem.RosServiceServer)newValue);
+				setFrom((RosServiceServer)newValue);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((rossystem.RosServiceClient)newValue);
+				setTo((RosServiceClient)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,10 +192,10 @@ public class ServiceConnectionImpl extends RosInterfaceImpl implements ServiceCo
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.SERVICE_CONNECTION__FROM:
-				setFrom((rossystem.RosServiceServer)null);
+				setFrom((RosServiceServer)null);
 				return;
 			case RossystemPackage.SERVICE_CONNECTION__TO:
-				setTo((rossystem.RosServiceClient)null);
+				setTo((RosServiceClient)null);
 				return;
 		}
 		super.eUnset(featureID);

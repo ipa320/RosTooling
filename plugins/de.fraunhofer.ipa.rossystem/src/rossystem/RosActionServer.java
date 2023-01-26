@@ -20,7 +20,7 @@ import ros.ActionServer;
  * @model
  * @generated
  */
-public interface RosActionServer extends RosInterface {
+public interface RosActionServer extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->

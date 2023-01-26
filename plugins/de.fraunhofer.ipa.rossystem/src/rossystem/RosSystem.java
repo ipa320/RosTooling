@@ -19,7 +19,7 @@ import ros.Parameter;
  *   <li>{@link rossystem.RosSystem#getParameter <em>Parameter</em>}</li>
  *   <li>{@link rossystem.RosSystem#getRosnode <em>Rosnode</em>}</li>
  *   <li>{@link rossystem.RosSystem#getConnections <em>Connections</em>}</li>
- *   <li>{@link rossystem.RosSystem#getProcesses <em>Processes</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getProcess <em>Process</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()
@@ -79,7 +79,7 @@ public interface RosSystem extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.Connections}.
+	 * The list contents are of type {@link rossystem.RosConnection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connections</em>' containment reference list.
@@ -87,19 +87,19 @@ public interface RosSystem extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Connections> getConnections();
+	EList<RosConnection> getConnections();
 
 	/**
-	 * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Process</b></em>' containment reference list.
 	 * The list contents are of type {@link rossystem.Process}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Processes</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_Processes()
+	 * @return the value of the '<em>Process</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_Process()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<rossystem.Process> getProcesses();
+	EList<rossystem.Process> getProcess();
 
 
 } // RosSystem

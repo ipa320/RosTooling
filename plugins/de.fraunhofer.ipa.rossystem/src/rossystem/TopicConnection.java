@@ -19,7 +19,7 @@ package rossystem;
  * @model
  * @generated
  */
-public interface TopicConnection extends RosInterface {
+public interface TopicConnection extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -29,12 +29,12 @@ public interface TopicConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(rossystem.RosPublisher)
+	 * @see #setFrom(RosPublisher)
 	 * @see rossystem.RossystemPackage#getTopicConnection_From()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosPublisher getFrom();
+	RosPublisher getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getFrom <em>From</em>}' reference.
@@ -44,7 +44,7 @@ public interface TopicConnection extends RosInterface {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(rossystem.RosPublisher value);
+	void setFrom(RosPublisher value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -55,12 +55,12 @@ public interface TopicConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(rossystem.RosSubscriber)
+	 * @see #setTo(RosSubscriber)
 	 * @see rossystem.RossystemPackage#getTopicConnection_To()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosSubscriber getTo();
+	RosSubscriber getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.TopicConnection#getTo <em>To</em>}' reference.
@@ -70,6 +70,6 @@ public interface TopicConnection extends RosInterface {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(rossystem.RosSubscriber value);
+	void setTo(RosSubscriber value);
 
 } // TopicConnection

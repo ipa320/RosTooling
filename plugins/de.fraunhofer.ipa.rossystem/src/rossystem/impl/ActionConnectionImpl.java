@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import rossystem.ActionConnection;
+import rossystem.RosActionClient;
+import rossystem.RosActionServer;
 import rossystem.RossystemPackage;
 
 /**
@@ -24,7 +26,7 @@ import rossystem.RossystemPackage;
  *
  * @generated
  */
-public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConnection {
+public class ActionConnectionImpl extends NamedInterfaceImpl implements ActionConnection {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -33,7 +35,7 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosActionServer from;
+	protected RosActionServer from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -43,7 +45,7 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosActionClient to;
+	protected RosActionClient to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,10 +72,10 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosActionServer getFrom() {
+	public RosActionServer getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (rossystem.RosActionServer)eResolveProxy(oldFrom);
+			from = (RosActionServer)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.ACTION_CONNECTION__FROM, oldFrom, from));
@@ -87,7 +89,7 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosActionServer basicGetFrom() {
+	public RosActionServer basicGetFrom() {
 		return from;
 	}
 
@@ -97,8 +99,8 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 */
 	@Override
-	public void setFrom(rossystem.RosActionServer newFrom) {
-		rossystem.RosActionServer oldFrom = from;
+	public void setFrom(RosActionServer newFrom) {
+		RosActionServer oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ACTION_CONNECTION__FROM, oldFrom, from));
@@ -110,10 +112,10 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosActionClient getTo() {
+	public RosActionClient getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (rossystem.RosActionClient)eResolveProxy(oldTo);
+			to = (RosActionClient)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.ACTION_CONNECTION__TO, oldTo, to));
@@ -127,7 +129,7 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosActionClient basicGetTo() {
+	public RosActionClient basicGetTo() {
 		return to;
 	}
 
@@ -137,8 +139,8 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	 * @generated
 	 */
 	@Override
-	public void setTo(rossystem.RosActionClient newTo) {
-		rossystem.RosActionClient oldTo = to;
+	public void setTo(RosActionClient newTo) {
+		RosActionClient oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ACTION_CONNECTION__TO, oldTo, to));
@@ -172,10 +174,10 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.ACTION_CONNECTION__FROM:
-				setFrom((rossystem.RosActionServer)newValue);
+				setFrom((RosActionServer)newValue);
 				return;
 			case RossystemPackage.ACTION_CONNECTION__TO:
-				setTo((rossystem.RosActionClient)newValue);
+				setTo((RosActionClient)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,10 +192,10 @@ public class ActionConnectionImpl extends RosInterfaceImpl implements ActionConn
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.ACTION_CONNECTION__FROM:
-				setFrom((rossystem.RosActionServer)null);
+				setFrom((RosActionServer)null);
 				return;
 			case RossystemPackage.ACTION_CONNECTION__TO:
-				setTo((rossystem.RosActionClient)null);
+				setTo((RosActionClient)null);
 				return;
 		}
 		super.eUnset(featureID);

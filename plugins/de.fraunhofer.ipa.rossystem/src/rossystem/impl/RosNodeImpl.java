@@ -2,16 +2,20 @@
  */
 package rossystem.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import ros.Node;
 
-import rossystem.RosInterfaces;
+import rossystem.RosInterface;
 import rossystem.RosNode;
 import rossystem.RossystemPackage;
 
@@ -62,14 +66,14 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 	protected Node from;
 
 	/**
-	 * The cached value of the '{@link #getRosinterfaces() <em>Rosinterfaces</em>}' containment reference.
+	 * The cached value of the '{@link #getRosinterfaces() <em>Rosinterfaces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRosinterfaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected RosInterfaces rosinterfaces;
+	protected EList<RosInterface> rosinterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,43 +163,11 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 	 * @generated
 	 */
 	@Override
-	public RosInterfaces getRosinterfaces() {
+	public EList<RosInterface> getRosinterfaces() {
+		if (rosinterfaces == null) {
+			rosinterfaces = new EObjectContainmentEList<RosInterface>(RosInterface.class, this, RossystemPackage.ROS_NODE__ROSINTERFACES);
+		}
 		return rosinterfaces;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRosinterfaces(RosInterfaces newRosinterfaces, NotificationChain msgs) {
-		RosInterfaces oldRosinterfaces = rosinterfaces;
-		rosinterfaces = newRosinterfaces;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RossystemPackage.ROS_NODE__ROSINTERFACES, oldRosinterfaces, newRosinterfaces);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRosinterfaces(RosInterfaces newRosinterfaces) {
-		if (newRosinterfaces != rosinterfaces) {
-			NotificationChain msgs = null;
-			if (rosinterfaces != null)
-				msgs = ((InternalEObject)rosinterfaces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RossystemPackage.ROS_NODE__ROSINTERFACES, null, msgs);
-			if (newRosinterfaces != null)
-				msgs = ((InternalEObject)newRosinterfaces).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RossystemPackage.ROS_NODE__ROSINTERFACES, null, msgs);
-			msgs = basicSetRosinterfaces(newRosinterfaces, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ROS_NODE__ROSINTERFACES, newRosinterfaces, newRosinterfaces));
 	}
 
 	/**
@@ -207,7 +179,7 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RossystemPackage.ROS_NODE__ROSINTERFACES:
-				return basicSetRosinterfaces(null, msgs);
+				return ((InternalEList<?>)getRosinterfaces()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -247,7 +219,8 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 				setFrom((Node)newValue);
 				return;
 			case RossystemPackage.ROS_NODE__ROSINTERFACES:
-				setRosinterfaces((RosInterfaces)newValue);
+				getRosinterfaces().clear();
+				getRosinterfaces().addAll((Collection<? extends RosInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -268,7 +241,7 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 				setFrom((Node)null);
 				return;
 			case RossystemPackage.ROS_NODE__ROSINTERFACES:
-				setRosinterfaces((RosInterfaces)null);
+				getRosinterfaces().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -287,7 +260,7 @@ public class RosNodeImpl extends MinimalEObjectImpl.Container implements RosNode
 			case RossystemPackage.ROS_NODE__FROM:
 				return from != null;
 			case RossystemPackage.ROS_NODE__ROSINTERFACES:
-				return rosinterfaces != null;
+				return rosinterfaces != null && !rosinterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
