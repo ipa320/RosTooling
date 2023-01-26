@@ -19,7 +19,7 @@ package rossystem;
  * @model
  * @generated
  */
-public interface ActionConnection extends RosInterface {
+public interface ActionConnection extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -29,12 +29,12 @@ public interface ActionConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(rossystem.RosActionServer)
+	 * @see #setFrom(RosActionServer)
 	 * @see rossystem.RossystemPackage#getActionConnection_From()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosActionServer getFrom();
+	RosActionServer getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ActionConnection#getFrom <em>From</em>}' reference.
@@ -44,7 +44,7 @@ public interface ActionConnection extends RosInterface {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(rossystem.RosActionServer value);
+	void setFrom(RosActionServer value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -55,12 +55,12 @@ public interface ActionConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(rossystem.RosActionClient)
+	 * @see #setTo(RosActionClient)
 	 * @see rossystem.RossystemPackage#getActionConnection_To()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosActionClient getTo();
+	RosActionClient getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ActionConnection#getTo <em>To</em>}' reference.
@@ -70,6 +70,6 @@ public interface ActionConnection extends RosInterface {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(rossystem.RosActionClient value);
+	void setTo(RosActionClient value);
 
 } // ActionConnection

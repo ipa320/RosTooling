@@ -21,7 +21,7 @@ import rossystem.ServiceConnection;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceConnectionItemProvider extends RosInterfaceItemProvider {
+public class ServiceConnectionItemProvider extends NamedInterfaceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

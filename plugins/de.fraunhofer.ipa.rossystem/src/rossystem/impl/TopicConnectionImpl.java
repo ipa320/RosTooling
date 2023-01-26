@@ -6,6 +6,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import rossystem.RosPublisher;
+import rossystem.RosSubscriber;
 import rossystem.RossystemPackage;
 import rossystem.TopicConnection;
 
@@ -23,7 +25,7 @@ import rossystem.TopicConnection;
  *
  * @generated
  */
-public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnection {
+public class TopicConnectionImpl extends NamedInterfaceImpl implements TopicConnection {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -32,7 +34,7 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosPublisher from;
+	protected RosPublisher from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -42,7 +44,7 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 * @ordered
 	 */
-	protected rossystem.RosSubscriber to;
+	protected RosSubscriber to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,10 +71,10 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosPublisher getFrom() {
+	public RosPublisher getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (rossystem.RosPublisher)eResolveProxy(oldFrom);
+			from = (RosPublisher)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -86,7 +88,7 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosPublisher basicGetFrom() {
+	public RosPublisher basicGetFrom() {
 		return from;
 	}
 
@@ -96,8 +98,8 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 */
 	@Override
-	public void setFrom(rossystem.RosPublisher newFrom) {
-		rossystem.RosPublisher oldFrom = from;
+	public void setFrom(RosPublisher newFrom) {
+		RosPublisher oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__FROM, oldFrom, from));
@@ -109,10 +111,10 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 */
 	@Override
-	public rossystem.RosSubscriber getTo() {
+	public RosSubscriber getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (rossystem.RosSubscriber)eResolveProxy(oldTo);
+			to = (RosSubscriber)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -126,7 +128,7 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public rossystem.RosSubscriber basicGetTo() {
+	public RosSubscriber basicGetTo() {
 		return to;
 	}
 
@@ -136,8 +138,8 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	 * @generated
 	 */
 	@Override
-	public void setTo(rossystem.RosSubscriber newTo) {
-		rossystem.RosSubscriber oldTo = to;
+	public void setTo(RosSubscriber newTo) {
+		RosSubscriber oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.TOPIC_CONNECTION__TO, oldTo, to));
@@ -171,10 +173,10 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((rossystem.RosPublisher)newValue);
+				setFrom((RosPublisher)newValue);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((rossystem.RosSubscriber)newValue);
+				setTo((RosSubscriber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,10 +191,10 @@ public class TopicConnectionImpl extends RosInterfaceImpl implements TopicConnec
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RossystemPackage.TOPIC_CONNECTION__FROM:
-				setFrom((rossystem.RosPublisher)null);
+				setFrom((RosPublisher)null);
 				return;
 			case RossystemPackage.TOPIC_CONNECTION__TO:
-				setTo((rossystem.RosSubscriber)null);
+				setTo((RosSubscriber)null);
 				return;
 		}
 		super.eUnset(featureID);

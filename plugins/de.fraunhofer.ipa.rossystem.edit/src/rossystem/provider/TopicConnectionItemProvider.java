@@ -21,7 +21,7 @@ import rossystem.TopicConnection;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TopicConnectionItemProvider extends RosInterfaceItemProvider {
+public class TopicConnectionItemProvider extends NamedInterfaceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -22,7 +22,7 @@ import ros.ParameterValue;
  * @model
  * @generated
  */
-public interface RosParameter extends RosInterface {
+public interface RosParameter extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->

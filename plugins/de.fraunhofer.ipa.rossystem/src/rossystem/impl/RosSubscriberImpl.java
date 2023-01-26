@@ -27,7 +27,7 @@ import rossystem.RossystemPackage;
  *
  * @generated
  */
-public class RosSubscriberImpl extends RosInterfaceImpl implements RosSubscriber {
+public class RosSubscriberImpl extends NamedInterfaceImpl implements RosSubscriber {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->

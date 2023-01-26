@@ -14,10 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link rossystem.RosInterface#getName <em>Name</em>}</li>
+ *   <li>{@link rossystem.RosInterface#getReference <em>Reference</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosInterface()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface RosInterface extends EObject {
@@ -42,5 +43,27 @@ public interface RosInterface extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reference</em>' containment reference.
+	 * @see #setReference(InterfaceReference)
+	 * @see rossystem.RossystemPackage#getRosInterface_Reference()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	InterfaceReference getReference();
+
+	/**
+	 * Sets the value of the '{@link rossystem.RosInterface#getReference <em>Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reference</em>' containment reference.
+	 * @see #getReference()
+	 * @generated
+	 */
+	void setReference(InterfaceReference value);
 
 } // RosInterface

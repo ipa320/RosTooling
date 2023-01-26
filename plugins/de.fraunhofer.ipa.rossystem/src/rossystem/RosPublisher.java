@@ -20,7 +20,7 @@ import ros.Publisher;
  * @model
  * @generated
  */
-public interface RosPublisher extends RosInterface {
+public interface RosPublisher extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->

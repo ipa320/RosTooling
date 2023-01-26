@@ -157,6 +157,51 @@ public interface RossystemFactory extends EFactory {
 	Connections createConnections();
 
 	/**
+	 * Returns a new object of class '<em>Ros Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Interface</em>'.
+	 * @generated
+	 */
+	RosInterface createRosInterface();
+
+	/**
+	 * Returns a new object of class '<em>Interface Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interface Reference</em>'.
+	 * @generated
+	 */
+	InterfaceReference createInterfaceReference();
+
+	/**
+	 * Returns a new object of class '<em>Ros Publisher Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Publisher Reference</em>'.
+	 * @generated
+	 */
+	RosPublisherReference createRosPublisherReference();
+
+	/**
+	 * Returns a new object of class '<em>Ros Subscriber Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Subscriber Reference</em>'.
+	 * @generated
+	 */
+	RosSubscriberReference createRosSubscriberReference();
+
+	/**
+	 * Returns a new object of class '<em>Ros Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ros Connection</em>'.
+	 * @generated
+	 */
+	RosConnection createRosConnection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

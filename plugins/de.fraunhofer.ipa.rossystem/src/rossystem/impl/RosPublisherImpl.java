@@ -27,7 +27,7 @@ import rossystem.RossystemPackage;
  *
  * @generated
  */
-public class RosPublisherImpl extends RosInterfaceImpl implements RosPublisher {
+public class RosPublisherImpl extends NamedInterfaceImpl implements RosPublisher {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->

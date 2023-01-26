@@ -20,7 +20,7 @@ import ros.ServiceServer;
  * @model
  * @generated
  */
-public interface RosServiceServer extends RosInterface {
+public interface RosServiceServer extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->

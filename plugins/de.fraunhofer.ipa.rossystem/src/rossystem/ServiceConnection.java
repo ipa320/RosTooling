@@ -19,7 +19,7 @@ package rossystem;
  * @model
  * @generated
  */
-public interface ServiceConnection extends RosInterface {
+public interface ServiceConnection extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -29,12 +29,12 @@ public interface ServiceConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(rossystem.RosServiceServer)
+	 * @see #setFrom(RosServiceServer)
 	 * @see rossystem.RossystemPackage#getServiceConnection_From()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosServiceServer getFrom();
+	RosServiceServer getFrom();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getFrom <em>From</em>}' reference.
@@ -44,7 +44,7 @@ public interface ServiceConnection extends RosInterface {
 	 * @see #getFrom()
 	 * @generated
 	 */
-	void setFrom(rossystem.RosServiceServer value);
+	void setFrom(RosServiceServer value);
 
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
@@ -55,12 +55,12 @@ public interface ServiceConnection extends RosInterface {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(rossystem.RosServiceClient)
+	 * @see #setTo(RosServiceClient)
 	 * @see rossystem.RossystemPackage#getServiceConnection_To()
 	 * @model required="true"
 	 * @generated
 	 */
-	rossystem.RosServiceClient getTo();
+	RosServiceClient getTo();
 
 	/**
 	 * Sets the value of the '{@link rossystem.ServiceConnection#getTo <em>To</em>}' reference.
@@ -70,6 +70,6 @@ public interface ServiceConnection extends RosInterface {
 	 * @see #getTo()
 	 * @generated
 	 */
-	void setTo(rossystem.RosServiceClient value);
+	void setTo(RosServiceClient value);
 
 } // ServiceConnection

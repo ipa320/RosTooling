@@ -20,7 +20,7 @@ import ros.Subscriber;
  * @model
  * @generated
  */
-public interface RosSubscriber extends RosInterface {
+public interface RosSubscriber extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ros.Parameter;
-import rossystem.Connections;
+import rossystem.RosConnection;
 import rossystem.RosNode;
 import rossystem.RosSystem;
 import rossystem.RossystemPackage;
@@ -36,7 +36,7 @@ import rossystem.RossystemPackage;
  *   <li>{@link rossystem.impl.RosSystemImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getRosnode <em>Rosnode</em>}</li>
  *   <li>{@link rossystem.impl.RosSystemImpl#getConnections <em>Connections</em>}</li>
- *   <li>{@link rossystem.impl.RosSystemImpl#getProcesses <em>Processes</em>}</li>
+ *   <li>{@link rossystem.impl.RosSystemImpl#getProcess <em>Process</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,17 +90,17 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Connections> connections;
+	protected EList<RosConnection> connections;
 
 	/**
-	 * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
+	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProcesses()
+	 * @see #getProcess()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<rossystem.Process> processes;
+	protected EList<rossystem.Process> process;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,9 +176,9 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * @generated
 	 */
 	@Override
-	public EList<Connections> getConnections() {
+	public EList<RosConnection> getConnections() {
 		if (connections == null) {
-			connections = new EObjectContainmentEList<Connections>(Connections.class, this, RossystemPackage.ROS_SYSTEM__CONNECTIONS);
+			connections = new EObjectContainmentEList<RosConnection>(RosConnection.class, this, RossystemPackage.ROS_SYSTEM__CONNECTIONS);
 		}
 		return connections;
 	}
@@ -189,11 +189,11 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 	 * @generated
 	 */
 	@Override
-	public EList<rossystem.Process> getProcesses() {
-		if (processes == null) {
-			processes = new EObjectContainmentEList<rossystem.Process>(rossystem.Process.class, this, RossystemPackage.ROS_SYSTEM__PROCESSES);
+	public EList<rossystem.Process> getProcess() {
+		if (process == null) {
+			process = new EObjectContainmentEList<rossystem.Process>(rossystem.Process.class, this, RossystemPackage.ROS_SYSTEM__PROCESS);
 		}
-		return processes;
+		return process;
 	}
 
 	/**
@@ -210,8 +210,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return ((InternalEList<?>)getRosnode()).basicRemove(otherEnd, msgs);
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
 				return ((InternalEList<?>)getConnections()).basicRemove(otherEnd, msgs);
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
-				return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
+				return ((InternalEList<?>)getProcess()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -232,8 +232,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return getRosnode();
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
 				return getConnections();
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
-				return getProcesses();
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
+				return getProcess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,11 +260,11 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return;
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
 				getConnections().clear();
-				getConnections().addAll((Collection<? extends Connections>)newValue);
+				getConnections().addAll((Collection<? extends RosConnection>)newValue);
 				return;
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
-				getProcesses().clear();
-				getProcesses().addAll((Collection<? extends rossystem.Process>)newValue);
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
+				getProcess().clear();
+				getProcess().addAll((Collection<? extends rossystem.Process>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,8 +290,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
 				getConnections().clear();
 				return;
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
-				getProcesses().clear();
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
+				getProcess().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -313,8 +313,8 @@ public class RosSystemImpl extends MinimalEObjectImpl.Container implements RosSy
 				return rosnode != null && !rosnode.isEmpty();
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
 				return connections != null && !connections.isEmpty();
-			case RossystemPackage.ROS_SYSTEM__PROCESSES:
-				return processes != null && !processes.isEmpty();
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
+				return process != null && !process.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
