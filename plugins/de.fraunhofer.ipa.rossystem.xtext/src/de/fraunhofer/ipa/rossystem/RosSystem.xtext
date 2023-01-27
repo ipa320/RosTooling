@@ -57,7 +57,6 @@ RosNode returns RosNode:
 
 	
 RosInterface returns RosInterface:
-	{RosInterface} 
 	Name=EString':'
 	BEGIN
 	Reference=InterfaceReference
@@ -79,6 +78,7 @@ RosSubscriberReference returns RosSubscriberReference:
 RosConnection returns RosConnection:
 	'-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 ;
+
 ///////////////////
 
 

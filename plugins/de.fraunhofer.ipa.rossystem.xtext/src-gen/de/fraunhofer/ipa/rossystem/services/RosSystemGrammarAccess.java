@@ -436,17 +436,15 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class RosInterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosInterface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRosInterfaceAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cReferenceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cReferenceInterfaceReferenceParserRuleCall_4_0 = (RuleCall)cReferenceAssignment_4.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cReferenceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cReferenceInterfaceReferenceParserRuleCall_3_0 = (RuleCall)cReferenceAssignment_3.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//RosInterface returns RosInterface:
-		//    {RosInterface}
 		//    Name=EString':'
 		//    BEGIN
 		//    Reference=InterfaceReference
@@ -454,36 +452,32 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RosInterface}
 		//Name=EString':'
 		//BEGIN
 		//Reference=InterfaceReference
 		//END
 		public Group getGroup() { return cGroup; }
 		
-		//{RosInterface}
-		public Action getRosInterfaceAction_0() { return cRosInterfaceAction_0; }
-		
 		//Name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_3() { return cBEGINTerminalRuleCall_3; }
+		public RuleCall getBEGINTerminalRuleCall_2() { return cBEGINTerminalRuleCall_2; }
 		
 		//Reference=InterfaceReference
-		public Assignment getReferenceAssignment_4() { return cReferenceAssignment_4; }
+		public Assignment getReferenceAssignment_3() { return cReferenceAssignment_3; }
 		
 		//InterfaceReference
-		public RuleCall getReferenceInterfaceReferenceParserRuleCall_4_0() { return cReferenceInterfaceReferenceParserRuleCall_4_0; }
+		public RuleCall getReferenceInterfaceReferenceParserRuleCall_3_0() { return cReferenceInterfaceReferenceParserRuleCall_3_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_5() { return cENDTerminalRuleCall_5; }
+		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
 	}
 	public class InterfaceReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.InterfaceReference");
@@ -743,7 +737,6 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosInterface returns RosInterface:
-	//    {RosInterface}
 	//    Name=EString':'
 	//    BEGIN
 	//    Reference=InterfaceReference
