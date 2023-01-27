@@ -503,18 +503,11 @@ ruleRosInterface returns [EObject current=null]
 }:
 	(
 		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getRosInterfaceAccess().getRosInterfaceAction_0(),
-					$current);
-			}
-		)
-		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRosInterfaceAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRosInterfaceAccess().getNameEStringParserRuleCall_0_0());
 				}
-				lv_Name_1_0=ruleEString
+				lv_Name_0_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRosInterfaceRule());
@@ -522,26 +515,26 @@ ruleRosInterface returns [EObject current=null]
 					set(
 						$current,
 						"Name",
-						lv_Name_1_0,
+						lv_Name_0_0,
 						"de.fraunhofer.ipa.ros.Ros.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=Colon
+		otherlv_1=Colon
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRosInterfaceAccess().getColonKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getRosInterfaceAccess().getColonKeyword_1());
 		}
-		this_BEGIN_3=RULE_BEGIN
+		this_BEGIN_2=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_3, grammarAccess.getRosInterfaceAccess().getBEGINTerminalRuleCall_3());
+			newLeafNode(this_BEGIN_2, grammarAccess.getRosInterfaceAccess().getBEGINTerminalRuleCall_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRosInterfaceAccess().getReferenceInterfaceReferenceParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getRosInterfaceAccess().getReferenceInterfaceReferenceParserRuleCall_3_0());
 				}
-				lv_Reference_4_0=ruleInterfaceReference
+				lv_Reference_3_0=ruleInterfaceReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRosInterfaceRule());
@@ -549,15 +542,15 @@ ruleRosInterface returns [EObject current=null]
 					set(
 						$current,
 						"Reference",
-						lv_Reference_4_0,
+						lv_Reference_3_0,
 						"de.fraunhofer.ipa.rossystem.RosSystem.InterfaceReference");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		this_END_5=RULE_END
+		this_END_4=RULE_END
 		{
-			newLeafNode(this_END_5, grammarAccess.getRosInterfaceAccess().getENDTerminalRuleCall_5());
+			newLeafNode(this_END_4, grammarAccess.getRosInterfaceAccess().getENDTerminalRuleCall_4());
 		}
 	)
 ;

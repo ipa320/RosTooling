@@ -3,6 +3,9 @@
  */
 package de.fraunhofer.ipa.rossystem.scoping;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +15,11 @@ package de.fraunhofer.ipa.rossystem.scoping;
  */
 public class RosSystemScopeProvider extends AbstractRosSystemScopeProvider {
 
+	
+	@Override
+	public IScope getScope(EObject context, EReference reference) {
+		// TODO Auto-generated method stub
+		return super.getScope(context, reference);
+	}
+	
 }

@@ -194,8 +194,8 @@ public class RosSystemParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRosNodeAccess().getNameAssignment_1(), "rule__RosNode__NameAssignment_1");
 			builder.put(grammarAccess.getRosNodeAccess().getFromAssignment_5(), "rule__RosNode__FromAssignment_5");
 			builder.put(grammarAccess.getRosNodeAccess().getRosinterfacesAssignment_8(), "rule__RosNode__RosinterfacesAssignment_8");
-			builder.put(grammarAccess.getRosInterfaceAccess().getNameAssignment_1(), "rule__RosInterface__NameAssignment_1");
-			builder.put(grammarAccess.getRosInterfaceAccess().getReferenceAssignment_4(), "rule__RosInterface__ReferenceAssignment_4");
+			builder.put(grammarAccess.getRosInterfaceAccess().getNameAssignment_0(), "rule__RosInterface__NameAssignment_0");
+			builder.put(grammarAccess.getRosInterfaceAccess().getReferenceAssignment_3(), "rule__RosInterface__ReferenceAssignment_3");
 			builder.put(grammarAccess.getRosPublisherReferenceAccess().getFromAssignment_1(), "rule__RosPublisherReference__FromAssignment_1");
 			builder.put(grammarAccess.getRosSubscriberReferenceAccess().getFromAssignment_1(), "rule__RosSubscriberReference__FromAssignment_1");
 			builder.put(grammarAccess.getRosConnectionAccess().getFromAssignment_1(), "rule__RosConnection__FromAssignment_1");
