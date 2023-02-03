@@ -13,55 +13,27 @@ import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 ParameterStructMember : 'ParameterStructMember';
 
-ExternalDependency : 'ExternalDependency';
-
 RelativeNamespace : 'RelativeNamespace';
 
 PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
-Serviceclient : 'serviceclient:';
-
-Serviceserver : 'serviceserver:';
-
-Actionclient : 'actionclient:';
-
-Actionserver : 'actionserver:';
-
-Dependencies : 'dependencies:';
-
-AmentPackage : 'AmentPackage';
-
 ParameterAny : 'ParameterAny';
 
 Connections : 'connections:';
 
-FromGitRepo : 'fromGitRepo:';
-
-Subscribers : 'subscribers:';
-
 Interfaces : 'interfaces:';
 
-Parameters_1 : 'parameters:';
-
-Publishers : 'publishers:';
-
-Parameters : 'Parameters';
-
-Artifacts : 'artifacts:';
+Parameters : 'parameters:';
 
 Processes : 'processes:';
 
 GraphName : 'GraphName';
 
-Feedback_1 : 'feedback:';
-
 Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
-
-Response : 'response:';
 
 Duration : 'duration';
 
@@ -70,10 +42,6 @@ Feedback : 'feedback';
 FromPub : 'fromPub:';
 
 FromSub : 'fromSub:';
-
-Message_1 : 'message:';
-
-Request : 'request:';
 
 String_2 : 'string[]';
 
@@ -89,13 +57,19 @@ Boolean : 'Boolean';
 
 Integer : 'Integer';
 
-Action_1 : 'action:';
-
 Default : 'default';
 
 Float32 : 'float32';
 
 Float64 : 'float64';
+
+FromAC : 'fromAC:';
+
+FromAS : 'fromAS:';
+
+FromSC : 'fromSC:';
+
+FromSS : 'fromSS:';
 
 Int16_1 : 'int16[]';
 
@@ -104,8 +78,6 @@ Int32_1 : 'int32[]';
 Int64_1 : 'int64[]';
 
 Message : 'message';
-
-Result_1 : 'result:';
 
 Service : 'service';
 
@@ -135,8 +107,6 @@ Nodes : 'nodes:';
 
 Result : 'result';
 
-Specs : 'specs:';
-
 String_1 : 'string';
 
 Uint16 : 'uint16';
@@ -145,17 +115,15 @@ Uint32 : 'uint32';
 
 Uint64 : 'uint64';
 
-From : 'from:';
+Value_1 : 'value:';
 
-Goal_1 : 'goal:';
+From : 'from:';
 
 Int16 : 'int16';
 
 Int32 : 'int32';
 
 Int64 : 'int64';
-
-Node_1 : 'node:';
 
 Type_1 : 'type:';
 
@@ -175,13 +143,9 @@ Goal : 'goal';
 
 Int8 : 'int8';
 
-Msg : 'msg:';
-
 Name : 'name';
 
 Node : 'node';
-
-Srv : 'srv:';
 
 Time : 'time';
 
@@ -202,20 +166,6 @@ Colon : ':';
 LeftSquareBracket : '[';
 
 RightSquareBracket : ']';
-
-LeftCurlyBracket : '{';
-
-RightCurlyBracket : '}';
-
-fragment RULE_BEGIN : ;
-
-fragment RULE_END : ;
-
-RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
-
-RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
-
-RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
 
 fragment RULE_DIGIT : '0'..'9';
 
@@ -240,6 +190,16 @@ fragment RULE_MIN_SEC : '0'..'5' '0'..'9';
 RULE_DATE_TIME : RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC;
 
 RULE_MESSAGE_ASIGMENT : (RULE_ID|RULE_STRING) '=' (RULE_ID|RULE_STRING|RULE_INT|'-' RULE_INT);
+
+fragment RULE_BEGIN : ;
+
+fragment RULE_END : ;
+
+RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
+
+RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
+
+RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

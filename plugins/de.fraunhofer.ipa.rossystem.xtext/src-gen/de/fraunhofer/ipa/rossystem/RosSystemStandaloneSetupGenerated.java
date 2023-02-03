@@ -5,7 +5,7 @@ package de.fraunhofer.ipa.rossystem;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import de.fraunhofer.ipa.ros.RosStandaloneSetup;
+import de.fraunhofer.ipa.ros.BasicsStandaloneSetup;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
 import org.eclipse.xtext.resource.IResourceFactory;
@@ -16,7 +16,7 @@ public class RosSystemStandaloneSetupGenerated implements ISetup {
 
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
-		RosStandaloneSetup.doSetup();
+		BasicsStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);

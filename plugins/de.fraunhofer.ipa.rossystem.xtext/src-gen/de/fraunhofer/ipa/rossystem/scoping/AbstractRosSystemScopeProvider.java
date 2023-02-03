@@ -3,7 +3,7 @@
  */
 package de.fraunhofer.ipa.rossystem.scoping;
 
-import de.fraunhofer.ipa.ros.scoping.RosScopeProvider;
+import de.fraunhofer.ipa.ros.scoping.BasicsScopeProvider;
 
-public abstract class AbstractRosSystemScopeProvider extends RosScopeProvider {
+public abstract class AbstractRosSystemScopeProvider extends BasicsScopeProvider {
 }

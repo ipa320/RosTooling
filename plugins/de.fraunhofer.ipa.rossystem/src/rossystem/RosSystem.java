@@ -16,10 +16,10 @@ import ros.Parameter;
  * </p>
  * <ul>
  *   <li>{@link rossystem.RosSystem#getName <em>Name</em>}</li>
- *   <li>{@link rossystem.RosSystem#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getProcess <em>Process</em>}</li>
  *   <li>{@link rossystem.RosSystem#getRosnode <em>Rosnode</em>}</li>
  *   <li>{@link rossystem.RosSystem#getConnections <em>Connections</em>}</li>
- *   <li>{@link rossystem.RosSystem#getProcess <em>Process</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()

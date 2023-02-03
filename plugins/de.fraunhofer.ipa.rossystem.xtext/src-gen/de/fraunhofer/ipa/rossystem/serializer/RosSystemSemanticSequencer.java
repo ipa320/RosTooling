@@ -4,7 +4,7 @@
 package de.fraunhofer.ipa.rossystem.serializer;
 
 import com.google.inject.Inject;
-import de.fraunhofer.ipa.ros.serializer.RosSemanticSequencer;
+import de.fraunhofer.ipa.ros.serializer.BasicsSemanticSequencer;
 import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -47,18 +47,7 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
-import ros.ActionClient;
-import ros.ActionServer;
-import ros.ActionSpec;
-import ros.AmentPackage;
-import ros.Artifact;
-import ros.CatkinPackage;
-import ros.ExternalDependency;
 import ros.GlobalNamespace;
-import ros.MessageDefinition;
-import ros.Node;
-import ros.PackageDependency;
-import ros.PackageSet;
 import ros.ParameterAny;
 import ros.ParameterAnyType;
 import ros.ParameterArrayType;
@@ -81,24 +70,23 @@ import ros.ParameterStructMember;
 import ros.ParameterStructType;
 import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
-import ros.Publisher;
 import ros.RelativeNamespace;
 import ros.RosPackage;
-import ros.ServiceClient;
-import ros.ServiceServer;
-import ros.ServiceSpec;
-import ros.Subscriber;
-import ros.TopicSpec;
-import rossystem.RosConnection;
-import rossystem.RosInterface;
-import rossystem.RosNode;
-import rossystem.RosPublisherReference;
-import rossystem.RosSubscriberReference;
-import rossystem.RosSystem;
-import rossystem.RossystemPackage;
+import system.InterfaceReference;
+import system.RosActionClientReference;
+import system.RosActionServerReference;
+import system.RosConnection;
+import system.RosInterface;
+import system.RosNode;
+import system.RosParameter;
+import system.RosPublisherReference;
+import system.RosServerClientReference;
+import system.RosServiceServerReference;
+import system.RosSubscriberReference;
+import system.RossystemPackage;
 
 @SuppressWarnings("all")
-public class RosSystemSemanticSequencer extends RosSemanticSequencer {
+public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 	@Inject
 	private RosSystemGrammarAccess grammarAccess;
@@ -210,44 +198,8 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 			}
 		else if (epackage == RosPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RosPackage.ACTION_CLIENT:
-				sequence_ActionClient(context, (ActionClient) semanticObject); 
-				return; 
-			case RosPackage.ACTION_SERVER:
-				sequence_ActionServer(context, (ActionServer) semanticObject); 
-				return; 
-			case RosPackage.ACTION_SPEC:
-				sequence_ActionSpec(context, (ActionSpec) semanticObject); 
-				return; 
-			case RosPackage.AMENT_PACKAGE:
-				sequence_AmentPackage(context, (AmentPackage) semanticObject); 
-				return; 
-			case RosPackage.ARTIFACT:
-				sequence_Artifact(context, (Artifact) semanticObject); 
-				return; 
-			case RosPackage.CATKIN_PACKAGE:
-				sequence_CatkinPackage(context, (CatkinPackage) semanticObject); 
-				return; 
-			case RosPackage.EXTERNAL_DEPENDENCY:
-				sequence_ExternalDependency(context, (ExternalDependency) semanticObject); 
-				return; 
 			case RosPackage.GLOBAL_NAMESPACE:
 				sequence_GlobalNamespace(context, (GlobalNamespace) semanticObject); 
-				return; 
-			case RosPackage.MESSAGE_DEFINITION:
-				sequence_MessageDefinition(context, (MessageDefinition) semanticObject); 
-				return; 
-			case RosPackage.NODE:
-				sequence_Node(context, (Node) semanticObject); 
-				return; 
-			case RosPackage.PACKAGE:
-				sequence_Package_Impl(context, (ros.Package) semanticObject); 
-				return; 
-			case RosPackage.PACKAGE_DEPENDENCY:
-				sequence_PackageDependency(context, (PackageDependency) semanticObject); 
-				return; 
-			case RosPackage.PACKAGE_SET:
-				sequence_PackageSet(context, (PackageSet) semanticObject); 
 				return; 
 			case RosPackage.PARAMETER:
 				sequence_Parameter(context, (ros.Parameter) semanticObject); 
@@ -318,32 +270,23 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 			case RosPackage.PRIVATE_NAMESPACE:
 				sequence_PrivateNamespace(context, (PrivateNamespace) semanticObject); 
 				return; 
-			case RosPackage.PUBLISHER:
-				sequence_Publisher(context, (Publisher) semanticObject); 
-				return; 
 			case RosPackage.RELATIVE_NAMESPACE:
 				sequence_RelativeNamespace_Impl(context, (RelativeNamespace) semanticObject); 
-				return; 
-			case RosPackage.SERVICE_CLIENT:
-				sequence_ServiceClient(context, (ServiceClient) semanticObject); 
-				return; 
-			case RosPackage.SERVICE_SERVER:
-				sequence_ServiceServer(context, (ServiceServer) semanticObject); 
-				return; 
-			case RosPackage.SERVICE_SPEC:
-				sequence_ServiceSpec(context, (ServiceSpec) semanticObject); 
-				return; 
-			case RosPackage.SUBSCRIBER:
-				sequence_Subscriber(context, (Subscriber) semanticObject); 
-				return; 
-			case RosPackage.TOPIC_SPEC:
-				sequence_TopicSpec(context, (TopicSpec) semanticObject); 
 				return; 
 			}
 		else if (epackage == RossystemPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RossystemPackage.INTERFACE_REFERENCE:
+				sequence_InterfaceReference_Impl(context, (InterfaceReference) semanticObject); 
+				return; 
 			case RossystemPackage.PROCESS:
-				sequence_Process(context, (rossystem.Process) semanticObject); 
+				sequence_Process(context, (system.Process) semanticObject); 
+				return; 
+			case RossystemPackage.ROS_ACTION_CLIENT_REFERENCE:
+				sequence_RosActionClientReference(context, (RosActionClientReference) semanticObject); 
+				return; 
+			case RossystemPackage.ROS_ACTION_SERVER_REFERENCE:
+				sequence_RosActionServerReference(context, (RosActionServerReference) semanticObject); 
 				return; 
 			case RossystemPackage.ROS_CONNECTION:
 				sequence_RosConnection(context, (RosConnection) semanticObject); 
@@ -354,14 +297,23 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 			case RossystemPackage.ROS_NODE:
 				sequence_RosNode(context, (RosNode) semanticObject); 
 				return; 
+			case RossystemPackage.ROS_PARAMETER:
+				sequence_RosParameter(context, (RosParameter) semanticObject); 
+				return; 
 			case RossystemPackage.ROS_PUBLISHER_REFERENCE:
 				sequence_RosPublisherReference(context, (RosPublisherReference) semanticObject); 
+				return; 
+			case RossystemPackage.ROS_SERVER_CLIENT_REFERENCE:
+				sequence_RosServerClientReference(context, (RosServerClientReference) semanticObject); 
+				return; 
+			case RossystemPackage.ROS_SERVICE_SERVER_REFERENCE:
+				sequence_RosServiceServerReference(context, (RosServiceServerReference) semanticObject); 
 				return; 
 			case RossystemPackage.ROS_SUBSCRIBER_REFERENCE:
 				sequence_RosSubscriberReference(context, (RosSubscriberReference) semanticObject); 
 				return; 
-			case RossystemPackage.ROS_SYSTEM:
-				sequence_RosSystem(context, (RosSystem) semanticObject); 
+			case RossystemPackage.SYSTEM:
+				sequence_RosSystem(context, (system.System) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -370,13 +322,64 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     InterfaceReference returns InterfaceReference
+	 *     InterfaceReference_Impl returns InterfaceReference
+	 *
+	 * Constraint:
+	 *     {InterfaceReference}
+	 */
+	protected void sequence_InterfaceReference_Impl(ISerializationContext context, InterfaceReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Process returns Process
 	 *
 	 * Constraint:
 	 *     (Name=EString Nodes+=[RosNode|EString]? Threads=INT)
 	 */
-	protected void sequence_Process(ISerializationContext context, rossystem.Process semanticObject) {
+	protected void sequence_Process(ISerializationContext context, system.Process semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InterfaceReference returns RosActionClientReference
+	 *     RosActionClientReference returns RosActionClientReference
+	 *
+	 * Constraint:
+	 *     From=[ActionClient|EString]
+	 */
+	protected void sequence_RosActionClientReference(ISerializationContext context, RosActionClientReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_ACTION_CLIENT_REFERENCE__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_ACTION_CLIENT_REFERENCE__FROM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRosActionClientReferenceAccess().getFromActionClientEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_CLIENT_REFERENCE__FROM, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InterfaceReference returns RosActionServerReference
+	 *     RosActionServerReference returns RosActionServerReference
+	 *
+	 * Constraint:
+	 *     From=[ActionServer|EString]
+	 */
+	protected void sequence_RosActionServerReference(ISerializationContext context, RosActionServerReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_ACTION_SERVER_REFERENCE__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_ACTION_SERVER_REFERENCE__FROM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRosActionServerReferenceAccess().getFromActionServerEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_SERVER_REFERENCE__FROM, false));
+		feeder.finish();
 	}
 	
 	
@@ -427,10 +430,34 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 	 *     RosNode returns RosNode
 	 *
 	 * Constraint:
-	 *     (Name=EString From=[Node|EString] rosinterfaces+=RosInterface*)
+	 *     (Name=EString From=[Node|EString] rosinterfaces+=RosInterface* rosparameters+=RosParameter*)
 	 */
 	protected void sequence_RosNode(ISerializationContext context, RosNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RosParameter returns RosParameter
+	 *
+	 * Constraint:
+	 *     (Name=EString From=[Parameter|EString] value=ParameterValue)
+	 */
+	protected void sequence_RosParameter(ISerializationContext context, RosParameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__NAME));
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__FROM));
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRosParameterAccess().getFromParameterEStringParserRuleCall_4_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_PARAMETER__FROM, false));
+		feeder.accept(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_6_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -449,6 +476,44 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRosPublisherReferenceAccess().getFromPublisherEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_PUBLISHER_REFERENCE__FROM, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InterfaceReference returns RosServerClientReference
+	 *     RosServerClientReference returns RosServerClientReference
+	 *
+	 * Constraint:
+	 *     From=[ServiceClient|EString]
+	 */
+	protected void sequence_RosServerClientReference(ISerializationContext context, RosServerClientReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_SERVER_CLIENT_REFERENCE__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_SERVER_CLIENT_REFERENCE__FROM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRosServerClientReferenceAccess().getFromServiceClientEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVER_CLIENT_REFERENCE__FROM, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InterfaceReference returns RosServiceServerReference
+	 *     RosServiceServerReference returns RosServiceServerReference
+	 *
+	 * Constraint:
+	 *     From=[ServiceServer|EString]
+	 */
+	protected void sequence_RosServiceServerReference(ISerializationContext context, RosServiceServerReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RossystemPackage.Literals.ROS_SERVICE_SERVER_REFERENCE__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_SERVICE_SERVER_REFERENCE__FROM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRosServiceServerReferenceAccess().getFromServiceServerEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVICE_SERVER_REFERENCE__FROM, false));
 		feeder.finish();
 	}
 	
@@ -474,12 +539,12 @@ public class RosSystemSemanticSequencer extends RosSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     RosSystem returns RosSystem
+	 *     RosSystem returns System
 	 *
 	 * Constraint:
-	 *     (Name=EString ((Process+=Process | Rosnode+=RosNode | Connections+=RosConnection)? (Parameter+=Parameter Parameter+=Parameter*)?)+)
+	 *     (Name=EString (Processes+=Process | Components+=RosNode | Parameter+=Parameter | Connections+=RosConnection)*)
 	 */
-	protected void sequence_RosSystem(ISerializationContext context, RosSystem semanticObject) {
+	protected void sequence_RosSystem(ISerializationContext context, system.System semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

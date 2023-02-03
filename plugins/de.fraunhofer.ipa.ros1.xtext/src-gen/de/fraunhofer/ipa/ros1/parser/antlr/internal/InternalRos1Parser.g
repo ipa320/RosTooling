@@ -115,7 +115,7 @@ ruleCatkinPackage returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.RosNames");
+						"de.fraunhofer.ipa.ros.Basics.RosNames");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -147,7 +147,7 @@ ruleCatkinPackage returns [EObject current=null]
 							$current,
 							"fromGitRepo",
 							lv_fromGitRepo_5_0,
-							"de.fraunhofer.ipa.ros.Ros.EString");
+							"de.fraunhofer.ipa.ros.Basics.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -251,80 +251,6 @@ ruleCatkinPackage returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEStringRule()); }
-	iv_ruleEString=ruleEString
-	{ $current=$iv_ruleEString.current.getText(); }
-	EOF;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-		}
-		    |
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-		}
-	)
-;
-
-// Entry rule entryRuleRosNames
-entryRuleRosNames returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getRosNamesRule()); }
-	iv_ruleRosNames=ruleRosNames
-	{ $current=$iv_ruleRosNames.current.getText(); }
-	EOF;
-
-// Rule RosNames
-ruleRosNames returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_ROS_CONVENTION_A_0=RULE_ROS_CONVENTION_A
-		{
-			$current.merge(this_ROS_CONVENTION_A_0);
-		}
-		{
-			newLeafNode(this_ROS_CONVENTION_A_0, grammarAccess.getRosNamesAccess().getROS_CONVENTION_ATerminalRuleCall_0());
-		}
-		    |
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1());
-		}
-		    |
-		kw=Node
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getRosNamesAccess().getNodeKeyword_2());
-		}
-	)
-;
-
 // Entry rule entryRulePackage_Impl
 entryRulePackage_Impl returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getPackage_ImplRule()); }
@@ -362,7 +288,7 @@ rulePackage_Impl returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.RosNames");
+						"de.fraunhofer.ipa.ros.Basics.RosNames");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -394,7 +320,7 @@ rulePackage_Impl returns [EObject current=null]
 							$current,
 							"fromGitRepo",
 							lv_fromGitRepo_5_0,
-							"de.fraunhofer.ipa.ros.Ros.EString");
+							"de.fraunhofer.ipa.ros.Basics.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -535,7 +461,7 @@ ruleArtifact returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.RosNames");
+						"de.fraunhofer.ipa.ros.Basics.RosNames");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -608,7 +534,7 @@ ruleNode returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.RosNames");
+						"de.fraunhofer.ipa.ros.Basics.RosNames");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -845,7 +771,7 @@ ruleNode returns [EObject current=null]
 								$current,
 								"parameter",
 								lv_parameter_29_0,
-								"de.fraunhofer.ipa.ros.Ros.Parameter");
+								"de.fraunhofer.ipa.ros.Basics.Parameter");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -950,7 +876,7 @@ ruleTopicSpec returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_2_1,
-							"de.fraunhofer.ipa.ros.Ros.EString");
+							"de.fraunhofer.ipa.ros.Basics.EString");
 						afterParserOrEnumRuleCall();
 					}
 					    |
@@ -1063,7 +989,7 @@ ruleServiceSpec returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_2_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1186,7 +1112,7 @@ ruleActionSpec returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_2_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1338,7 +1264,7 @@ ruleMessageDefinition returns [EObject current=null]
 						$current,
 						"MessagePart",
 						lv_MessagePart_1_0,
-						"de.fraunhofer.ipa.ros.Ros.MessagePart");
+						"de.fraunhofer.ipa.ros.Basics.MessagePart");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1383,7 +1309,7 @@ rulePublisher returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1435,7 +1361,7 @@ rulePublisher returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1485,7 +1411,7 @@ ruleSubscriber returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1537,7 +1463,7 @@ ruleSubscriber returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1587,7 +1513,7 @@ ruleServiceServer returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1639,7 +1565,7 @@ ruleServiceServer returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1689,7 +1615,7 @@ ruleServiceClient returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1741,7 +1667,7 @@ ruleServiceClient returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1791,7 +1717,7 @@ ruleActionServer returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1843,7 +1769,7 @@ ruleActionServer returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1893,7 +1819,7 @@ ruleActionClient returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1945,7 +1871,7 @@ ruleActionClient returns [EObject current=null]
 							$current,
 							"namespace",
 							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2068,7 +1994,7 @@ ruleExternalDependency returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_2_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2189,7 +2115,7 @@ ruleGlobalNamespace returns [EObject current=null]
 							$current,
 							"parts",
 							lv_parts_3_0,
-							"de.fraunhofer.ipa.ros.Ros.GraphName");
+							"de.fraunhofer.ipa.ros.Basics.GraphName");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2213,7 +2139,7 @@ ruleGlobalNamespace returns [EObject current=null]
 								$current,
 								"parts",
 								lv_parts_5_0,
-								"de.fraunhofer.ipa.ros.Ros.GraphName");
+								"de.fraunhofer.ipa.ros.Basics.GraphName");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -2273,7 +2199,7 @@ ruleRelativeNamespace_Impl returns [EObject current=null]
 							$current,
 							"parts",
 							lv_parts_3_0,
-							"de.fraunhofer.ipa.ros.Ros.GraphName");
+							"de.fraunhofer.ipa.ros.Basics.GraphName");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2297,7 +2223,7 @@ ruleRelativeNamespace_Impl returns [EObject current=null]
 								$current,
 								"parts",
 								lv_parts_5_0,
-								"de.fraunhofer.ipa.ros.Ros.GraphName");
+								"de.fraunhofer.ipa.ros.Basics.GraphName");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -2357,7 +2283,7 @@ rulePrivateNamespace returns [EObject current=null]
 							$current,
 							"parts",
 							lv_parts_3_0,
-							"de.fraunhofer.ipa.ros.Ros.GraphName");
+							"de.fraunhofer.ipa.ros.Basics.GraphName");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2381,7 +2307,7 @@ rulePrivateNamespace returns [EObject current=null]
 								$current,
 								"parts",
 								lv_parts_5_0,
-								"de.fraunhofer.ipa.ros.Ros.GraphName");
+								"de.fraunhofer.ipa.ros.Basics.GraphName");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -2432,7 +2358,7 @@ ruleParameter returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2445,40 +2371,17 @@ ruleParameter returns [EObject current=null]
 		{
 			newLeafNode(this_BEGIN_3, grammarAccess.getParameterAccess().getBEGINTerminalRuleCall_3());
 		}
-		otherlv_4=Type
-		{
-			newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getTypeKeyword_4());
-		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_5_0());
-				}
-				lv_type_5_0=ruleParameterType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterRule());
-					}
-					set(
-						$current,
-						"type",
-						lv_type_5_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterType");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_6=Ns
+			otherlv_4=Ns
 			{
-				newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getNsKeyword_6_0());
+				newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getNsKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0());
 					}
-					lv_namespace_7_0=ruleNamespace
+					lv_namespace_5_0=ruleNamespace
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterRule());
@@ -2486,20 +2389,64 @@ ruleParameter returns [EObject current=null]
 						set(
 							$current,
 							"namespace",
-							lv_namespace_7_0,
-							"de.fraunhofer.ipa.ros.Ros.Namespace");
+							lv_namespace_5_0,
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		this_END_8=RULE_END
+		otherlv_6=Type_1
 		{
-			newLeafNode(this_END_8, grammarAccess.getParameterAccess().getENDTerminalRuleCall_7());
+			newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getTypeKeyword_5());
 		}
-		otherlv_9=RightCurlyBracket
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0());
+				}
+				lv_type_7_0=ruleParameterType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParameterRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_7_0,
+						"de.fraunhofer.ipa.ros.Basics.ParameterType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_8=Value_1
+			{
+				newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getValueKeyword_7_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParameterAccess().getValueParameterValueParserRuleCall_7_1_0());
+					}
+					lv_value_9_0=ruleParameterValue
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParameterRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_9_0,
+							"de.fraunhofer.ipa.ros.Basics.ParameterValue");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		this_END_10=RULE_END
 		{
-			newLeafNode(otherlv_9, grammarAccess.getParameterAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(this_END_10, grammarAccess.getParameterAccess().getENDTerminalRuleCall_8());
 		}
 	)
 ;
@@ -2720,7 +2667,7 @@ ruleParameterListType returns [EObject current=null]
 						$current,
 						"sequence",
 						lv_sequence_3_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterType");
+						"de.fraunhofer.ipa.ros.Basics.ParameterType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2744,7 +2691,7 @@ ruleParameterListType returns [EObject current=null]
 							$current,
 							"sequence",
 							lv_sequence_5_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterType");
+							"de.fraunhofer.ipa.ros.Basics.ParameterType");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2802,7 +2749,7 @@ ruleParameterStructType returns [EObject current=null]
 						$current,
 						"parameterstructypetmember",
 						lv_parameterstructypetmember_3_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterStructTypeMember");
+						"de.fraunhofer.ipa.ros.Basics.ParameterStructTypeMember");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2826,7 +2773,7 @@ ruleParameterStructType returns [EObject current=null]
 							$current,
 							"parameterstructypetmember",
 							lv_parameterstructypetmember_5_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterStructTypeMember");
+							"de.fraunhofer.ipa.ros.Basics.ParameterStructTypeMember");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2885,7 +2832,7 @@ ruleParameterIntegerType returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_3_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterInteger");
+							"de.fraunhofer.ipa.ros.Basics.ParameterInteger");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2940,7 +2887,7 @@ ruleParameterStringType returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_3_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterString");
+							"de.fraunhofer.ipa.ros.Basics.ParameterString");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -2995,7 +2942,7 @@ ruleParameterDoubleType returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_3_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterDouble");
+							"de.fraunhofer.ipa.ros.Basics.ParameterDouble");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3050,7 +2997,7 @@ ruleParameterBooleanType returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_3_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterBoolean");
+							"de.fraunhofer.ipa.ros.Basics.ParameterBoolean");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3105,7 +3052,7 @@ ruleParameterBase64Type returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_3_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterBase64");
+							"de.fraunhofer.ipa.ros.Basics.ParameterBase64");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3156,7 +3103,7 @@ ruleParameterArrayType returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_3_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterType");
+						"de.fraunhofer.ipa.ros.Basics.ParameterType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3180,7 +3127,7 @@ ruleParameterArrayType returns [EObject current=null]
 							$current,
 							"default",
 							lv_default_5_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterList");
+							"de.fraunhofer.ipa.ros.Basics.ParameterList");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3234,7 +3181,7 @@ ruleParameterList returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterValue");
+						"de.fraunhofer.ipa.ros.Basics.ParameterValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3258,7 +3205,7 @@ ruleParameterList returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_4_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterValue");
+							"de.fraunhofer.ipa.ros.Basics.ParameterValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3317,7 +3264,7 @@ ruleParameterAny returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_3_0,
-							"de.fraunhofer.ipa.ros.Ros.EString");
+							"de.fraunhofer.ipa.ros.Basics.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3355,7 +3302,7 @@ ruleParameterString returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.EString");
+					"de.fraunhofer.ipa.ros.Basics.EString");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3391,7 +3338,7 @@ ruleParameterBase64 returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.Base64Binary");
+					"de.fraunhofer.ipa.ros.Basics.Base64Binary");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3427,7 +3374,7 @@ ruleParameterInteger returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.Integer0");
+					"de.fraunhofer.ipa.ros.Basics.Integer0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3463,7 +3410,7 @@ ruleParameterDouble returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.Double0");
+					"de.fraunhofer.ipa.ros.Basics.Double0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3499,7 +3446,7 @@ ruleParameterBoolean returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.boolean0");
+					"de.fraunhofer.ipa.ros.Basics.boolean0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3548,7 +3495,7 @@ ruleParameterStruct returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_0,
-							"de.fraunhofer.ipa.ros.Ros.ParameterStructMember");
+							"de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -3576,7 +3523,7 @@ ruleParameterStruct returns [EObject current=null]
 								$current,
 								"value",
 								lv_value_5_0,
-								"de.fraunhofer.ipa.ros.Ros.ParameterStructMember");
+								"de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -3623,7 +3570,7 @@ ruleParameterDate returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"de.fraunhofer.ipa.ros.Ros.DateTime0");
+					"de.fraunhofer.ipa.ros.Basics.DateTime0");
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -3664,7 +3611,7 @@ ruleParameterStructMember returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3691,7 +3638,7 @@ ruleParameterStructMember returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_4_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterValue");
+						"de.fraunhofer.ipa.ros.Basics.ParameterValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3733,7 +3680,7 @@ ruleParameterStructTypeMember returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_0_0,
-						"de.fraunhofer.ipa.ros.Ros.EString");
+						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3752,7 +3699,7 @@ ruleParameterStructTypeMember returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_1_0,
-						"de.fraunhofer.ipa.ros.Ros.ParameterType");
+						"de.fraunhofer.ipa.ros.Basics.ParameterType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3910,7 +3857,7 @@ ruleMessagePart returns [EObject current=null]
 						$current,
 						"Type",
 						lv_Type_0_0,
-						"de.fraunhofer.ipa.ros.Ros.AbstractType");
+						"de.fraunhofer.ipa.ros.Basics.AbstractType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3930,7 +3877,7 @@ ruleMessagePart returns [EObject current=null]
 							$current,
 							"Data",
 							lv_Data_1_1,
-							"de.fraunhofer.ipa.ros.Ros.KEYWORD");
+							"de.fraunhofer.ipa.ros.Basics.KEYWORD");
 						afterParserOrEnumRuleCall();
 					}
 					    |
@@ -3946,7 +3893,7 @@ ruleMessagePart returns [EObject current=null]
 							$current,
 							"Data",
 							lv_Data_1_2,
-							"de.fraunhofer.ipa.ros.Ros.MESSAGE_ASIGMENT");
+							"de.fraunhofer.ipa.ros.Basics.MESSAGE_ASIGMENT");
 					}
 					    |
 					{
@@ -3961,7 +3908,7 @@ ruleMessagePart returns [EObject current=null]
 							$current,
 							"Data",
 							lv_Data_1_3,
-							"de.fraunhofer.ipa.ros.Ros.EString");
+							"de.fraunhofer.ipa.ros.Basics.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -5289,6 +5236,80 @@ ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getKEYWORDAccess().getTimeKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleEString
+entryRuleEString returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEStringRule()); }
+	iv_ruleEString=ruleEString
+	{ $current=$iv_ruleEString.current.getText(); }
+	EOF;
+
+// Rule EString
+ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_STRING_0=RULE_STRING
+		{
+			$current.merge(this_STRING_0);
+		}
+		{
+			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+		}
+		    |
+		this_ID_1=RULE_ID
+		{
+			$current.merge(this_ID_1);
+		}
+		{
+			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleRosNames
+entryRuleRosNames returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getRosNamesRule()); }
+	iv_ruleRosNames=ruleRosNames
+	{ $current=$iv_ruleRosNames.current.getText(); }
+	EOF;
+
+// Rule RosNames
+ruleRosNames returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ROS_CONVENTION_A_0=RULE_ROS_CONVENTION_A
+		{
+			$current.merge(this_ROS_CONVENTION_A_0);
+		}
+		{
+			newLeafNode(this_ROS_CONVENTION_A_0, grammarAccess.getRosNamesAccess().getROS_CONVENTION_ATerminalRuleCall_0());
+		}
+		    |
+		this_ID_1=RULE_ID
+		{
+			$current.merge(this_ID_1);
+		}
+		{
+			newLeafNode(this_ID_1, grammarAccess.getRosNamesAccess().getIDTerminalRuleCall_1());
+		}
+		    |
+		kw=Node
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRosNamesAccess().getNodeKeyword_2());
 		}
 	)
 ;

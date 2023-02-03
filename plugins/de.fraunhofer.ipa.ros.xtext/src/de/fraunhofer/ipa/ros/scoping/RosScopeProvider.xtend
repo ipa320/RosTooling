@@ -11,5 +11,4 @@ package de.fraunhofer.ipa.ros.scoping
  * on how and when to use it.
  */
 class RosScopeProvider extends AbstractRosScopeProvider {
-
 }

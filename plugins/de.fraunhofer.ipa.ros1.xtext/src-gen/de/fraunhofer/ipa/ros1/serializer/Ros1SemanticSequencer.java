@@ -48,7 +48,6 @@ import primitives.uint8Array;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
-import ros.AmentPackage;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -209,9 +208,6 @@ public class Ros1SemanticSequencer extends RosSemanticSequencer {
 				return; 
 			case RosPackage.ACTION_SPEC:
 				sequence_ActionSpec(context, (ActionSpec) semanticObject); 
-				return; 
-			case RosPackage.AMENT_PACKAGE:
-				sequence_AmentPackage(context, (AmentPackage) semanticObject); 
 				return; 
 			case RosPackage.ARTIFACT:
 				sequence_Artifact(context, (Artifact) semanticObject); 

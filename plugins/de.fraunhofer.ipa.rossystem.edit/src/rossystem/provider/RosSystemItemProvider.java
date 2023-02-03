@@ -103,10 +103,10 @@ public class RosSystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PROCESS);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__ROSNODE);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__CONNECTIONS);
-			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PROCESS);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -165,10 +165,10 @@ public class RosSystemItemProvider
 			case RossystemPackage.ROS_SYSTEM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RossystemPackage.ROS_SYSTEM__PARAMETER:
+			case RossystemPackage.ROS_SYSTEM__PROCESS:
 			case RossystemPackage.ROS_SYSTEM__ROSNODE:
 			case RossystemPackage.ROS_SYSTEM__CONNECTIONS:
-			case RossystemPackage.ROS_SYSTEM__PROCESS:
+			case RossystemPackage.ROS_SYSTEM__PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -188,8 +188,8 @@ public class RosSystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER,
-				 RosFactory.eINSTANCE.createParameter()));
+				(RossystemPackage.Literals.ROS_SYSTEM__PROCESS,
+				 RossystemFactory.eINSTANCE.createProcess()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -203,8 +203,8 @@ public class RosSystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RossystemPackage.Literals.ROS_SYSTEM__PROCESS,
-				 RossystemFactory.eINSTANCE.createProcess()));
+				(RossystemPackage.Literals.ROS_SYSTEM__PARAMETER,
+				 RosFactory.eINSTANCE.createParameter()));
 	}
 
 	/**
