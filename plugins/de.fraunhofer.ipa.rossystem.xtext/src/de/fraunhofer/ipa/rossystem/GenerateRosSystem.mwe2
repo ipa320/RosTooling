@@ -33,7 +33,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "de.fraunhofer.ipa.rossystem.RosSystem"
 			fileExtensions = "rossystem"
-			referencedResource = "platform:/resource/de.fraunhofer.ipa.rossystem/model/rossystem.genmodel"
+			referencedResource = "platform:/resource/de.fraunhofer.ipa.rossystem/model/rossystem.genmodel"			
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

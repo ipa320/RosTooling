@@ -126,6 +126,7 @@ public class RosNodeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RossystemPackage.Literals.ROS_NODE__ROSINTERFACES);
+			childrenFeatures.add(RossystemPackage.Literals.ROS_NODE__ROSPARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -185,6 +186,7 @@ public class RosNodeItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RossystemPackage.ROS_NODE__ROSINTERFACES:
+			case RossystemPackage.ROS_NODE__ROSPARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,6 +208,11 @@ public class RosNodeItemProvider
 			(createChildParameter
 				(RossystemPackage.Literals.ROS_NODE__ROSINTERFACES,
 				 RossystemFactory.eINSTANCE.createRosInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RossystemPackage.Literals.ROS_NODE__ROSPARAMETERS,
+				 RossystemFactory.eINSTANCE.createRosParameter()));
 	}
 
 	/**

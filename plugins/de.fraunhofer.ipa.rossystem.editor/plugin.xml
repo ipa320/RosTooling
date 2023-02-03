@@ -6,34 +6,6 @@
 
 <plugin>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated rossystem -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="rossystem.presentation.RossystemModelWizardID"
-            name="%_UI_RossystemModelWizard_label"
-            class="rossystem.presentation.RossystemModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/RossystemModelFile.gif">
-         <description>%_UI_RossystemModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated rossystem -->
-      <editor
-            id="rossystem.presentation.RossystemEditorID"
-            name="%_UI_RossystemEditor_label"
-            icon="icons/full/obj16/RossystemModelFile.gif"
-            extensions="rossystem"
-            class="rossystem.presentation.RossystemEditor"
-            contributorClass="rossystem.presentation.RossystemActionBarContributor">
-      </editor>
-   </extension>
-   
 	<extension point="org.eclipse.ui.handlers">
       <handler
          class="rossystem.presentation.AddRosSystemHandler"
@@ -122,4 +94,31 @@
    </extension>
 
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rossystem -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="system.presentation.RossystemModelWizardID"
+            name="%_UI_RossystemModelWizard_label"
+            class="system.presentation.RossystemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RossystemModelFile.gif">
+         <description>%_UI_RossystemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rossystem -->
+      <editor
+            id="system.presentation.RossystemEditorID"
+            name="%_UI_RossystemEditor_label"
+            icon="icons/full/obj16/RossystemModelFile.gif"
+            extensions="rossystem"
+            class="system.presentation.RossystemEditor"
+            contributorClass="system.presentation.RossystemActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

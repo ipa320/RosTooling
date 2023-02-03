@@ -50,7 +50,6 @@ import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
 import ros.Artifact;
-import ros.CatkinPackage;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
 import ros.MessageDefinition;
@@ -216,9 +215,6 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 				return; 
 			case RosPackage.ARTIFACT:
 				sequence_Artifact(context, (Artifact) semanticObject); 
-				return; 
-			case RosPackage.CATKIN_PACKAGE:
-				sequence_CatkinPackage(context, (CatkinPackage) semanticObject); 
 				return; 
 			case RosPackage.EXTERNAL_DEPENDENCY:
 				sequence_ExternalDependency(context, (ExternalDependency) semanticObject); 

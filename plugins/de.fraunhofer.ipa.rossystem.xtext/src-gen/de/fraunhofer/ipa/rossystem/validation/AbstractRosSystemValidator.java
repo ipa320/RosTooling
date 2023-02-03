@@ -3,12 +3,12 @@
  */
 package de.fraunhofer.ipa.rossystem.validation;
 
-import de.fraunhofer.ipa.ros.validation.RosValidator;
+import de.fraunhofer.ipa.ros.validation.BasicsValidator;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 
-public abstract class AbstractRosSystemValidator extends RosValidator {
+public abstract class AbstractRosSystemValidator extends BasicsValidator {
 	
 	@Override
 	protected List<EPackage> getEPackages() {

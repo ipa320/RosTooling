@@ -14,11 +14,12 @@ public class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
         RosNode n = (RosNode) i.eContainer();
         return QualifiedName.create(n.getName(), i.getName());
     }
-    
-    QualifiedName qualifiedName(Node n) {
-        Package p = (Package) n.eContainer().eContainer();
-        QualifiedName qn = QualifiedName.create(p.getName(), n.getName());
-        return qn;
-    }
+//    
+//    QualifiedName qualifiedName(Node n) {
+//        Package p = (Package) n.eContainer().eContainer();
+//        QualifiedName qn = QualifiedName.create(p.getName(), n.getName());
+//        System.out.println(qn.toString());
+//        return qn;
+//    }
  
 }

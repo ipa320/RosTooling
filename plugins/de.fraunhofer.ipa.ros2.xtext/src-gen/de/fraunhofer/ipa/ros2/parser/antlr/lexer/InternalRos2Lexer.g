@@ -215,16 +215,6 @@ RightSquareBracket : ']';
 
 RightCurlyBracket : '}';
 
-fragment RULE_BEGIN : ;
-
-fragment RULE_END : ;
-
-RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
-
-RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
-
-RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
-
 fragment RULE_DIGIT : '0'..'9';
 
 RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
@@ -248,6 +238,16 @@ fragment RULE_MIN_SEC : '0'..'5' '0'..'9';
 RULE_DATE_TIME : RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC;
 
 RULE_MESSAGE_ASIGMENT : (RULE_ID|RULE_STRING) '=' (RULE_ID|RULE_STRING|RULE_INT|'-' RULE_INT);
+
+fragment RULE_BEGIN : ;
+
+fragment RULE_END : ;
+
+RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
+
+RULE_ROS_CONVENTION_A : ('/' RULE_ID|RULE_ID '/')*;
+
+RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -19,6 +19,7 @@ import ros.Node;
  *   <li>{@link rossystem.RosNode#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.RosNode#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.RosNode#getRosinterfaces <em>Rosinterfaces</em>}</li>
+ *   <li>{@link rossystem.RosNode#getRosparameters <em>Rosparameters</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosNode()
@@ -81,5 +82,17 @@ public interface RosNode extends EObject {
 	 * @generated
 	 */
 	EList<RosInterface> getRosinterfaces();
+
+	/**
+	 * Returns the value of the '<em><b>Rosparameters</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.RosParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rosparameters</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosNode_Rosparameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RosParameter> getRosparameters();
 
 } // RosNode
