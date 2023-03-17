@@ -8,10 +8,12 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import primitives.AbstractType;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
+import ros.ArrayTopicSpecRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -58,6 +60,7 @@ import ros.ServiceSpec;
 import ros.SpecBase;
 import ros.Subscriber;
 import ros.TopicSpec;
+import ros.TopicSpecRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -314,6 +317,18 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseQualityOfService(QualityOfService object) {
 				return createQualityOfServiceAdapter();
+			}
+			@Override
+			public Adapter caseTopicSpecRef(TopicSpecRef object) {
+				return createTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+				return createArrayTopicSpecRefAdapter();
+			}
+			@Override
+			public Adapter caseAbstractType(AbstractType object) {
+				return createAbstractTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1032,6 +1047,48 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQualityOfServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.TopicSpecRef <em>Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.TopicSpecRef
+	 * @generated
+	 */
+	public Adapter createTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ros.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ros.ArrayTopicSpecRef
+	 * @generated
+	 */
+	public Adapter createArrayTopicSpecRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link primitives.AbstractType <em>Abstract Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see primitives.AbstractType
+	 * @generated
+	 */
+	public Adapter createAbstractTypeAdapter() {
 		return null;
 	}
 

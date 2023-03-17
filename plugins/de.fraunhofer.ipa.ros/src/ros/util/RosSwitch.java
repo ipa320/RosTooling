@@ -6,10 +6,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import primitives.AbstractType;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
+import ros.ArrayTopicSpecRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -56,6 +58,7 @@ import ros.ServiceSpec;
 import ros.SpecBase;
 import ros.Subscriber;
 import ros.TopicSpec;
+import ros.TopicSpecRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -448,6 +451,20 @@ public class RosSwitch<T> extends Switch<T> {
 			case RosPackage.QUALITY_OF_SERVICE: {
 				QualityOfService qualityOfService = (QualityOfService)theEObject;
 				T result = caseQualityOfService(qualityOfService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.TOPIC_SPEC_REF: {
+				TopicSpecRef topicSpecRef = (TopicSpecRef)theEObject;
+				T result = caseTopicSpecRef(topicSpecRef);
+				if (result == null) result = caseAbstractType(topicSpecRef);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RosPackage.ARRAY_TOPIC_SPEC_REF: {
+				ArrayTopicSpecRef arrayTopicSpecRef = (ArrayTopicSpecRef)theEObject;
+				T result = caseArrayTopicSpecRef(arrayTopicSpecRef);
+				if (result == null) result = caseAbstractType(arrayTopicSpecRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1202,6 +1219,51 @@ public class RosSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQualityOfService(QualityOfService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Topic Spec Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTopicSpecRef(TopicSpecRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Topic Spec Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractType(AbstractType object) {
 		return null;
 	}
 

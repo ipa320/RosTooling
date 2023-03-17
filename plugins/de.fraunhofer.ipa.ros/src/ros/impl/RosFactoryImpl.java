@@ -15,6 +15,7 @@ import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
+import ros.ArrayTopicSpecRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -57,6 +58,7 @@ import ros.ServiceServer;
 import ros.ServiceSpec;
 import ros.Subscriber;
 import ros.TopicSpec;
+import ros.TopicSpecRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,6 +149,8 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.PARAMETER_DATE: return createParameterDate();
 			case RosPackage.AMENT_PACKAGE: return createAmentPackage();
 			case RosPackage.QUALITY_OF_SERVICE: return createQualityOfService();
+			case RosPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
+			case RosPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -675,6 +679,28 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public QualityOfService createQualityOfService() {
 		QualityOfServiceImpl qualityOfService = new QualityOfServiceImpl();
 		return qualityOfService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TopicSpecRef createTopicSpecRef() {
+		TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
+		return topicSpecRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ArrayTopicSpecRef createArrayTopicSpecRef() {
+		ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
+		return arrayTopicSpecRef;
 	}
 
 	/**
