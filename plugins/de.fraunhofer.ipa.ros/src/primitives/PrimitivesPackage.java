@@ -861,80 +861,6 @@ public interface PrimitivesPackage extends EPackage {
 	int STRING_ARRAY_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link primitives.impl.TopicSpecRefImpl <em>Topic Spec Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see primitives.impl.TopicSpecRefImpl
-	 * @see primitives.impl.PrimitivesPackageImpl#getTopicSpecRef()
-	 * @generated
-	 */
-	int TOPIC_SPEC_REF = 28;
-
-	/**
-	 * The feature id for the '<em><b>Topic Spec</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC_REF__TOPIC_SPEC = ABSTRACT_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Topic Spec Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC_REF_FEATURE_COUNT = ABSTRACT_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Topic Spec Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOPIC_SPEC_REF_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link primitives.impl.ArrayTopicSpecRefImpl <em>Array Topic Spec Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see primitives.impl.ArrayTopicSpecRefImpl
-	 * @see primitives.impl.PrimitivesPackageImpl#getArrayTopicSpecRef()
-	 * @generated
-	 */
-	int ARRAY_TOPIC_SPEC_REF = 29;
-
-	/**
-	 * The feature id for the '<em><b>Topic Spec</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC = ABSTRACT_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Array Topic Spec Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_TOPIC_SPEC_REF_FEATURE_COUNT = ABSTRACT_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Array Topic Spec Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_TOPIC_SPEC_REF_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link primitives.impl.HeaderImpl <em>Header</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -942,7 +868,7 @@ public interface PrimitivesPackage extends EPackage {
 	 * @see primitives.impl.PrimitivesPackageImpl#getHeader()
 	 * @generated
 	 */
-	int HEADER = 30;
+	int HEADER = 28;
 
 	/**
 	 * The number of structural features of the '<em>Header</em>' class.
@@ -970,7 +896,7 @@ public interface PrimitivesPackage extends EPackage {
 	 * @see primitives.impl.PrimitivesPackageImpl#getByte()
 	 * @generated
 	 */
-	int BYTE = 31;
+	int BYTE = 29;
 
 	/**
 	 * The number of structural features of the '<em>Byte</em>' class.
@@ -998,7 +924,7 @@ public interface PrimitivesPackage extends EPackage {
 	 * @see primitives.impl.PrimitivesPackageImpl#getByteArray()
 	 * @generated
 	 */
-	int BYTE_ARRAY = 32;
+	int BYTE_ARRAY = 30;
 
 	/**
 	 * The number of structural features of the '<em>Byte Array</em>' class.
@@ -1287,48 +1213,6 @@ public interface PrimitivesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getstringArray();
-
-	/**
-	 * Returns the meta object for class '{@link primitives.TopicSpecRef <em>Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Topic Spec Ref</em>'.
-	 * @see primitives.TopicSpecRef
-	 * @generated
-	 */
-	EClass getTopicSpecRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link primitives.TopicSpecRef#getTopicSpec <em>Topic Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Topic Spec</em>'.
-	 * @see primitives.TopicSpecRef#getTopicSpec()
-	 * @see #getTopicSpecRef()
-	 * @generated
-	 */
-	EReference getTopicSpecRef_TopicSpec();
-
-	/**
-	 * Returns the meta object for class '{@link primitives.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Array Topic Spec Ref</em>'.
-	 * @see primitives.ArrayTopicSpecRef
-	 * @generated
-	 */
-	EClass getArrayTopicSpecRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link primitives.ArrayTopicSpecRef#getTopicSpec <em>Topic Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Topic Spec</em>'.
-	 * @see primitives.ArrayTopicSpecRef#getTopicSpec()
-	 * @see #getArrayTopicSpecRef()
-	 * @generated
-	 */
-	EReference getArrayTopicSpecRef_TopicSpec();
 
 	/**
 	 * Returns the meta object for class '{@link primitives.Header <em>Header</em>}'.
@@ -1684,42 +1568,6 @@ public interface PrimitivesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRING_ARRAY = eINSTANCE.getstringArray();
-
-		/**
-		 * The meta object literal for the '{@link primitives.impl.TopicSpecRefImpl <em>Topic Spec Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see primitives.impl.TopicSpecRefImpl
-		 * @see primitives.impl.PrimitivesPackageImpl#getTopicSpecRef()
-		 * @generated
-		 */
-		EClass TOPIC_SPEC_REF = eINSTANCE.getTopicSpecRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Topic Spec</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOPIC_SPEC_REF__TOPIC_SPEC = eINSTANCE.getTopicSpecRef_TopicSpec();
-
-		/**
-		 * The meta object literal for the '{@link primitives.impl.ArrayTopicSpecRefImpl <em>Array Topic Spec Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see primitives.impl.ArrayTopicSpecRefImpl
-		 * @see primitives.impl.PrimitivesPackageImpl#getArrayTopicSpecRef()
-		 * @generated
-		 */
-		EClass ARRAY_TOPIC_SPEC_REF = eINSTANCE.getArrayTopicSpecRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Topic Spec</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC = eINSTANCE.getArrayTopicSpecRef_TopicSpec();
 
 		/**
 		 * The meta object literal for the '{@link primitives.impl.HeaderImpl <em>Header</em>}' class.

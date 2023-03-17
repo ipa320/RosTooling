@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import primitives.PrimitivesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -2484,6 +2485,80 @@ public interface RosPackage extends EPackage {
 	int QUALITY_OF_SERVICE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link ros.impl.TopicSpecRefImpl <em>Topic Spec Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.TopicSpecRefImpl
+	 * @see ros.impl.RosPackageImpl#getTopicSpecRef()
+	 * @generated
+	 */
+	int TOPIC_SPEC_REF = 50;
+
+	/**
+	 * The feature id for the '<em><b>Topic Spec</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOPIC_SPEC_REF__TOPIC_SPEC = PrimitivesPackage.ABSTRACT_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Topic Spec Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOPIC_SPEC_REF_FEATURE_COUNT = PrimitivesPackage.ABSTRACT_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Topic Spec Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOPIC_SPEC_REF_OPERATION_COUNT = PrimitivesPackage.ABSTRACT_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ros.impl.ArrayTopicSpecRefImpl <em>Array Topic Spec Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.ArrayTopicSpecRefImpl
+	 * @see ros.impl.RosPackageImpl#getArrayTopicSpecRef()
+	 * @generated
+	 */
+	int ARRAY_TOPIC_SPEC_REF = 51;
+
+	/**
+	 * The feature id for the '<em><b>Topic Spec</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC = PrimitivesPackage.ABSTRACT_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Array Topic Spec Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TOPIC_SPEC_REF_FEATURE_COUNT = PrimitivesPackage.ABSTRACT_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Array Topic Spec Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TOPIC_SPEC_REF_OPERATION_COUNT = PrimitivesPackage.ABSTRACT_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Graph Name</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2491,7 +2566,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
-	int GRAPH_NAME = 50;
+	int GRAPH_NAME = 52;
 
 
 	/**
@@ -3776,6 +3851,48 @@ public interface RosPackage extends EPackage {
 	EAttribute getQualityOfService_Durability();
 
 	/**
+	 * Returns the meta object for class '{@link ros.TopicSpecRef <em>Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Topic Spec Ref</em>'.
+	 * @see ros.TopicSpecRef
+	 * @generated
+	 */
+	EClass getTopicSpecRef();
+
+	/**
+	 * Returns the meta object for the reference '{@link ros.TopicSpecRef#getTopicSpec <em>Topic Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Topic Spec</em>'.
+	 * @see ros.TopicSpecRef#getTopicSpec()
+	 * @see #getTopicSpecRef()
+	 * @generated
+	 */
+	EReference getTopicSpecRef_TopicSpec();
+
+	/**
+	 * Returns the meta object for class '{@link ros.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Array Topic Spec Ref</em>'.
+	 * @see ros.ArrayTopicSpecRef
+	 * @generated
+	 */
+	EClass getArrayTopicSpecRef();
+
+	/**
+	 * Returns the meta object for the reference '{@link ros.ArrayTopicSpecRef#getTopicSpec <em>Topic Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Topic Spec</em>'.
+	 * @see ros.ArrayTopicSpecRef#getTopicSpec()
+	 * @see #getArrayTopicSpecRef()
+	 * @generated
+	 */
+	EReference getArrayTopicSpecRef_TopicSpec();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Graph Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4876,6 +4993,42 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QUALITY_OF_SERVICE__DURABILITY = eINSTANCE.getQualityOfService_Durability();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.TopicSpecRefImpl <em>Topic Spec Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.TopicSpecRefImpl
+		 * @see ros.impl.RosPackageImpl#getTopicSpecRef()
+		 * @generated
+		 */
+		EClass TOPIC_SPEC_REF = eINSTANCE.getTopicSpecRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Topic Spec</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOPIC_SPEC_REF__TOPIC_SPEC = eINSTANCE.getTopicSpecRef_TopicSpec();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.ArrayTopicSpecRefImpl <em>Array Topic Spec Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.ArrayTopicSpecRefImpl
+		 * @see ros.impl.RosPackageImpl#getArrayTopicSpecRef()
+		 * @generated
+		 */
+		EClass ARRAY_TOPIC_SPEC_REF = eINSTANCE.getArrayTopicSpecRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Topic Spec</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC = eINSTANCE.getArrayTopicSpecRef_TopicSpec();
 
 		/**
 		 * The meta object literal for the '<em>Graph Name</em>' data type.
