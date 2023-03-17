@@ -7,11 +7,8 @@ Bundle-Version: 2.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: rossystem,
- rossystem.impl,
- rossystem.util,
- system,
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: system,
  system.impl,
  system.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,

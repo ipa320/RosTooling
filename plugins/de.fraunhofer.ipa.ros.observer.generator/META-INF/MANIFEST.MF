@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.observer.generator
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.observer.generator;singleton:=true
 Bundle-Version: 2.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: javax.inject;version="1.0.0",
  org.eclipse.ui.handlers,
  org.eclipse.xtext.ui.resource

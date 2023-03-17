@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: ros.presentation.RosEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: primitives.presentation,
  ros.presentation
 Require-Bundle: org.eclipse.core.runtime,
@@ -16,10 +16,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.ros.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.sirius.ui,
- org.eclipse.sirius,
- org.eclipse.emf.transaction,
- org.eclipse.jgit
+ org.eclipse.ui.ide;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.sirius.diagram.description
