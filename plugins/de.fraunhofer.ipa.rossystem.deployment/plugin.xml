@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<extension
+    <extension
         point="org.eclipse.ui.handlers">
         <handler
               class="de.fraunhofer.ipa.rossystem.deployment.DeploymentArtifactsGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.rossystem.deployment.GenerationHandler"
               commandId="de.fraunhofer.ipa.rossystem.deployment.command">
-     	</handler>
+        </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command
@@ -45,6 +45,6 @@
       </menuContribution>
    </extension>
 
- 
- 
+
+
 </plugin>

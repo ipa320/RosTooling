@@ -13,4 +13,3 @@ The next menu will ask you to give to your component a name and a namespace (opt
 Your component will be automatically created, in case you want to modify the default remaps of the interfaces you can edit the file using the EMF editor
 
 ![](images/modify_component.png)
-

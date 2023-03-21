@@ -15,56 +15,56 @@ import primitives.uint8Array;
  */
 public class uint8ArrayTest extends AbstractTypeTest {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(uint8ArrayTest.class);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static void main(String[] args) {
+        TestRunner.run(uint8ArrayTest.class);
+    }
 
-	/**
-	 * Constructs a new uint8 Array test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public uint8ArrayTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new uint8 Array test case with the given name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public uint8ArrayTest(String name) {
+        super(name);
+    }
 
-	/**
-	 * Returns the fixture for this uint8 Array test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected uint8Array getFixture() {
-		return (uint8Array)fixture;
-	}
+    /**
+     * Returns the fixture for this uint8 Array test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected uint8Array getFixture() {
+        return (uint8Array)fixture;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(PrimitivesFactory.eINSTANCE.createuint8Array());
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#setUp()
+     * @generated
+     */
+    @Override
+    protected void setUp() throws Exception {
+        setFixture(PrimitivesFactory.eINSTANCE.createuint8Array());
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#tearDown()
+     * @generated
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        setFixture(null);
+    }
 
 } //uint8ArrayTest

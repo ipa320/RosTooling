@@ -9,12 +9,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
 public abstract class AbstractBasicsValidator extends AbstractDeclarativeValidator {
-	
-	@Override
-	protected List<EPackage> getEPackages() {
-		List<EPackage> result = new ArrayList<EPackage>();
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ros"));
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/primitives"));
-		return result;
-	}
+
+    @Override
+    protected List<EPackage> getEPackages() {
+        List<EPackage> result = new ArrayList<EPackage>();
+        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ros"));
+        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/primitives"));
+        return result;
+    }
 }

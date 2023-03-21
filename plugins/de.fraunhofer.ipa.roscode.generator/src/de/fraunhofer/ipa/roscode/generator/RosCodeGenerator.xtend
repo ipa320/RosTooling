@@ -19,59 +19,59 @@ import ros.Subscriber
 import ros.impl.ParameterStructTypeImpl
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
-	public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
-	
+    public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT"
 
-	override Set<OutputConfiguration> getOutputConfigurations() {
-		var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
-		default_config.setDescription("DEFAULT_OUTPUT");
-		default_config.setOutputDirectory("./src-gen/");
-		default_config.setOverrideExistingResources(true);
-		default_config.setCreateOutputDirectory(true);
-		default_config.setCleanUpDerivedResources(true);
-		default_config.setSetDerivedProperty(true);
-		return newHashSet(default_config)
-	}
+
+    override Set<OutputConfiguration> getOutputConfigurations() {
+        var OutputConfiguration default_config = new OutputConfiguration(DEFAULT_OUTPUT)
+        default_config.setDescription("DEFAULT_OUTPUT");
+        default_config.setOutputDirectory("./src-gen/");
+        default_config.setOverrideExistingResources(true);
+        default_config.setCreateOutputDirectory(true);
+        default_config.setCleanUpDerivedResources(true);
+        default_config.setSetDerivedProperty(true);
+        return newHashSet(default_config)
+    }
 }
 
 /**
  * Generates code from your model files on save.
- * 
+ *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class RosCodeGenerator extends AbstractGenerator {
 
- 
-	String resourcepath
-	Node node
-	List<String> PkgsList
-	Set<String> set
-	ParameterGeneratorHelpers parameter_helper = new ParameterGeneratorHelpers() {
 
-		override get_param_declaration_str(String param_type, String param_name, String delim, Boolean has_value) {
-			var struct_str = "";
- 			struct_str += param_type + " " + param_name.replace(delim, "_") + "_;\n";
-			struct_str += "n.param(\"" + param_name.replace(delim, "/") + "\", " + param_name.replace(delim, "_") + "_);\n\n";
+    String resourcepath
+    Node node
+    List<String> PkgsList
+    Set<String> set
+    ParameterGeneratorHelpers parameter_helper = new ParameterGeneratorHelpers() {
 
- 			return struct_str;
-		}
+        override get_param_declaration_str(String param_type, String param_name, String delim, Boolean has_value) {
+            var struct_str = "";
+            struct_str += param_type + " " + param_name.replace(delim, "_") + "_;\n";
+            struct_str += "n.param(\"" + param_name.replace(delim, "/") + "\", " + param_name.replace(delim, "_") + "_);\n\n";
 
-	};
+            return struct_str;
+        }
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		resourcepath = resource.URI.toString();
-		if (! resourcepath.contains("/ros-input")) {
-			for (pkg : resource.allContents.toIterable.filter(Package)){
-				fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
-				fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
-				 for (art : pkg.artifact){
-				 	node = art.node
-					fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
+    };
 
-				 	}
-				 }
-				}
-		}
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        resourcepath = resource.URI.toString();
+        if (! resourcepath.contains("/ros-input")) {
+            for (pkg : resource.allContents.toIterable.filter(Package)){
+                fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
+                fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
+                 for (art : pkg.artifact){
+                    node = art.node
+                    fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
+
+                    }
+                 }
+                }
+        }
 
 def compile_package_xml(Package pkg)'''
 <?xml version="1.0"?>
@@ -87,7 +87,7 @@ def compile_package_xml(Package pkg)'''
   <license>Apache 2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
   <depend>boost</depend>
   <depend>roscpp</depend>
   «FOR depend_pkg:pkg.getPkgDependencies»
@@ -152,18 +152,18 @@ void  «sub.name»_cb (const «sub.message.package.name»::«sub.message.name» 
 
 int main(int argc, char **argv)
 {
-	ros::init(argc, argv, "«node.name»");
-	ros::NodeHandle n;
-	«FOR param : node.parameter»
-	«IF (param.type instanceof ParameterStructTypeImpl)»
-	«parameter_helper.compile_struct(param.type as ParameterStructTypeImpl, param.name).getKey()»
-	«ELSE»
-	«var param_pair = parameter_helper.get_param_type(param.type)»
-	«IF !(param_pair.getKey().empty)»
-	«param_pair.getKey()» «param.name»_;
-	n.param«IF!(param_pair.getValue().empty)»<«param_pair.getKey()»>«ENDIF»("«param.name»", «param.name»_«param_pair.getValue()»);
-	«ENDIF»
-	«ENDIF»
+    ros::init(argc, argv, "«node.name»");
+    ros::NodeHandle n;
+    «FOR param : node.parameter»
+    «IF (param.type instanceof ParameterStructTypeImpl)»
+    «parameter_helper.compile_struct(param.type as ParameterStructTypeImpl, param.name).getKey()»
+    «ELSE»
+    «var param_pair = parameter_helper.get_param_type(param.type)»
+    «IF !(param_pair.getKey().empty)»
+    «param_pair.getKey()» «param.name»_;
+    n.param«IF!(param_pair.getValue().empty)»<«param_pair.getKey()»>«ENDIF»("«param.name»", «param.name»_«param_pair.getValue()»);
+    «ENDIF»
+    «ENDIF»
 «ENDFOR»
 «FOR pub : node.publisher»
 «pub.compile»
@@ -178,34 +178,34 @@ int main(int argc, char **argv)
 «srvclient.compile»
 «ENDFOR»
 
-	ros::spin();
+    ros::spin();
 
-  	return 0;
+    return 0;
 }
             '''
-            
-def compile(Publisher pub)       
-'''	ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
-def compile(Subscriber sub)       
-'''	ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
-def compile(ServiceServer srvserver)       
-'''	ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
-def compile(ServiceClient srvclient)       
-'''	ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
+
+def compile(Publisher pub)
+''' ros::Publisher «pub.name»_pub = n.advertise<«pub.message.package.name»::«pub.message.name»>("«pub.name»", 10);'''
+def compile(Subscriber sub)
+''' ros::Subscriber «sub.name» = n.subscribe("«sub.name»", 10, «sub.name»_cb);'''
+def compile(ServiceServer srvserver)
+''' ros::ServiceServer «srvserver.name» = n.advertiseService("«srvserver.name»", «srvserver.name»_cb);'''
+def compile(ServiceClient srvclient)
+''' ros::ServiceClient «srvclient.name» = n.serviceClient<«srvclient.service.package.name»::«srvclient.service.name»>("«srvclient.name»");'''
 
 
  def List<String> getPkgDependencies(Package pkg){
- 	set=new HashSet<String>()
-	PkgsList = new ArrayList()
-	for (art:pkg.artifact){
-		node=art.node
-		for (pub:node.publisher){set.add(pub.message.package.name)}
-		for (sub:node.subscriber){set.add(sub.message.package.name)}
-		for (srvserver:node.serviceserver){set.add(srvserver.service.package.name)}
-		for (srvclient:node.serviceclient){set.add(srvclient.service.package.name)}
-	}
-	PkgsList.addAll(set)
-	return PkgsList
+    set=new HashSet<String>()
+    PkgsList = new ArrayList()
+    for (art:pkg.artifact){
+        node=art.node
+        for (pub:node.publisher){set.add(pub.message.package.name)}
+        for (sub:node.subscriber){set.add(sub.message.package.name)}
+        for (srvserver:node.serviceserver){set.add(srvserver.service.package.name)}
+        for (srvclient:node.serviceclient){set.add(srvclient.service.package.name)}
+    }
+    PkgsList.addAll(set)
+    return PkgsList
  }
- 
+
 }

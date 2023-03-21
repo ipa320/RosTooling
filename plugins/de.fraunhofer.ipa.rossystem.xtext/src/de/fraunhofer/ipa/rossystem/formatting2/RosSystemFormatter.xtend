@@ -11,40 +11,40 @@ import ros.Node
 import rossystem.RosSystem
 
 class RosSystemFormatter extends AbstractFormatter2 {
-	
-	@Inject extension RosSystemGrammarAccess
 
-	def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (rosNode : rosSystem.rosnode) {
-			rosNode.format
-		}
-	}
+    @Inject extension RosSystemGrammarAccess
 
-	def dispatch void format(Node node, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (serviceServer : node.serviceserver) {
-			serviceServer.format
-		}
-		for (publisher : node.publisher) {
-			publisher.format
-		}
-		for (subscriber : node.subscriber) {
-			subscriber.format
-		}
-		for (serviceClient : node.serviceclient) {
-			serviceClient.format
-		}
-		for (actionServer : node.actionserver) {
-			actionServer.format
-		}
-		for (actionClient : node.actionclient) {
-			actionClient.format
-		}
-		for (parameter : node.parameter) {
-			parameter.format
-		}
-	}
-	
-	// TODO: implement for ServiceServer, Publisher, Subscriber, ServiceClient, ActionServer, ActionClient, Parameter, ServiceSpec, MessageDefinition, MessagePart, TopicSpec, ActionSpec, ParameterListType, ParameterStructType, ParameterIntegerType, ParameterStringType, ParameterDoubleType, ParameterDateType, ParameterBooleanType, ParameterBase64Type, ParameterAnyType, ParameterArrayType, ParameterSequence, ParameterStructTypeMember, ParameterStruct, ParameterStructMember
+    def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (rosNode : rosSystem.rosnode) {
+            rosNode.format
+        }
+    }
+
+    def dispatch void format(Node node, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (serviceServer : node.serviceserver) {
+            serviceServer.format
+        }
+        for (publisher : node.publisher) {
+            publisher.format
+        }
+        for (subscriber : node.subscriber) {
+            subscriber.format
+        }
+        for (serviceClient : node.serviceclient) {
+            serviceClient.format
+        }
+        for (actionServer : node.actionserver) {
+            actionServer.format
+        }
+        for (actionClient : node.actionclient) {
+            actionClient.format
+        }
+        for (parameter : node.parameter) {
+            parameter.format
+        }
+    }
+
+    // TODO: implement for ServiceServer, Publisher, Subscriber, ServiceClient, ActionServer, ActionClient, Parameter, ServiceSpec, MessageDefinition, MessagePart, TopicSpec, ActionSpec, ParameterListType, ParameterStructType, ParameterIntegerType, ParameterStringType, ParameterDoubleType, ParameterDateType, ParameterBooleanType, ParameterBase64Type, ParameterAnyType, ParameterArrayType, ParameterSequence, ParameterStructTypeMember, ParameterStruct, ParameterStructMember
 }

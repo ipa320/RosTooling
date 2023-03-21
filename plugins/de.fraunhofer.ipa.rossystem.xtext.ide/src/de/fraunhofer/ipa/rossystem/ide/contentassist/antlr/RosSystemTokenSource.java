@@ -10,30 +10,30 @@ import org.eclipse.xtext.parser.antlr.AbstractIndentationTokenSource;
 
 public class RosSystemTokenSource extends AbstractIndentationTokenSource {
 
-	public RosSystemTokenSource(TokenSource delegate) {
-		super(delegate);
-	}
+    public RosSystemTokenSource(TokenSource delegate) {
+        super(delegate);
+    }
 
-	@Override
-	protected boolean shouldSplitTokenImpl(Token token) {
-		// TODO Review assumption
-		return token.getType() == InternalRosSystemParser.RULE_WS;
-	}
+    @Override
+    protected boolean shouldSplitTokenImpl(Token token) {
+        // TODO Review assumption
+        return token.getType() == InternalRosSystemParser.RULE_WS;
+    }
 
-	@Override
-	protected int getBeginTokenType() {
-		// TODO Review assumption
-		return InternalRosSystemParser.RULE_BEGIN;
-	}
+    @Override
+    protected int getBeginTokenType() {
+        // TODO Review assumption
+        return InternalRosSystemParser.RULE_BEGIN;
+    }
 
-	@Override
-	protected int getEndTokenType() {
-		// TODO Review assumption
-		return InternalRosSystemParser.RULE_END;
-	}
+    @Override
+    protected int getEndTokenType() {
+        // TODO Review assumption
+        return InternalRosSystemParser.RULE_END;
+    }
 
-	@Override
-	protected boolean shouldEmitPendingEndTokens() {
-		return false;
-	}
+    @Override
+    protected boolean shouldEmitPendingEndTokens() {
+        return false;
+    }
 }

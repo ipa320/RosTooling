@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.ros
  */
 class BasicsStandaloneSetup extends BasicsStandaloneSetupGenerated {
 
-	def static void doSetup() {
-		new BasicsStandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+    def static void doSetup() {
+        new BasicsStandaloneSetup().createInjectorAndDoEMFRegistration()
+    }
 }

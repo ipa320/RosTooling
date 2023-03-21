@@ -28,5 +28,3 @@ The resulted folders and files have to be copied to the *updatesite/latest* fold
 ### 4. Add a new release on GitHub
 
 Tag the current point of the history with the release number previously given (X.Y.0). Optionally upgrade the [exported files](#3-export-the-updated-feature) as a zip.
-
-

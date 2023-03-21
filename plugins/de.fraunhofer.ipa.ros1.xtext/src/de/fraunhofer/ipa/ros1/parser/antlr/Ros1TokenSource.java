@@ -10,26 +10,26 @@ import org.eclipse.xtext.parser.antlr.AbstractIndentationTokenSource;
 
 public class Ros1TokenSource extends AbstractIndentationTokenSource {
 
-	public Ros1TokenSource(TokenSource delegate) {
-		super(delegate);
-	}
+    public Ros1TokenSource(TokenSource delegate) {
+        super(delegate);
+    }
 
-	@Override
-	protected boolean shouldSplitTokenImpl(Token token) {
-		// TODO Review assumption
-		return token.getType() == InternalRos1Parser.RULE_WS;
-	}
+    @Override
+    protected boolean shouldSplitTokenImpl(Token token) {
+        // TODO Review assumption
+        return token.getType() == InternalRos1Parser.RULE_WS;
+    }
 
-	@Override
-	protected int getBeginTokenType() {
-		// TODO Review assumption
-		return InternalRos1Parser.RULE_BEGIN;
-	}
+    @Override
+    protected int getBeginTokenType() {
+        // TODO Review assumption
+        return InternalRos1Parser.RULE_BEGIN;
+    }
 
-	@Override
-	protected int getEndTokenType() {
-		// TODO Review assumption
-		return InternalRos1Parser.RULE_END;
-	}
+    @Override
+    protected int getEndTokenType() {
+        // TODO Review assumption
+        return InternalRos1Parser.RULE_END;
+    }
 
 }

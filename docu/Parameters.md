@@ -3,15 +3,15 @@
 The types of parameters supported by the ROS tooling are the following:
 
 * Boolean (true or false)
-* Integer 
+* Integer
 * Double
 * String
 * Base64
-* List 
+* List
 * Array
 * Struc
 
-and their description is allowed at ROS and ROSSystem model level. 
+and their description is allowed at ROS and ROSSystem model level.
 
 The definition of a parameter at ROS model level means that the ROS original node get or set a new parameter, this case is partially supported by the graphical editor, which allows only the definition of parameters of primitive types: String, Double, Integer and Boolean without a default value.
 
@@ -30,7 +30,7 @@ PackageSet {
   CatkinPackage test_parameters{
     Artifact  test_parameters {
       Node  { name test
-         Parameters { 
+         Parameters {
            Parameter { name string_test type String },
            Parameter { name bool_tets type Boolean },
            Parameter { name array_tets type Array {type String}},
@@ -38,7 +38,7 @@ PackageSet {
            Parameter { name double_test type Double},
            Parameter {name int_test type Integer},
            Parameter {name list_test type List {Integer,Integer,String}},
-           Parameter {name struc_test type Struc 
+           Parameter {name struc_test type Struc
                {first_element Integer ,
                second_element List { Integer, String},
                third_element String ,
@@ -53,12 +53,12 @@ These parameters can be re-set at Rossystem level (that means for ROS developers
 Continuing the previous example, the parameters redefinition looks:
 
 ```
-RosSystem { Name 'test_parameters_system' 
-  RosComponents ( 
+RosSystem { Name 'test_parameters_system'
+  RosComponents (
     ComponentInterface {
       name test_param_component
         RosParameters {
-          RosParameter { 
+          RosParameter {
             RefParameter "test_parameters.test_parameters.test.string_test" value test},
           RosParameter {
             RefParameter "test_parameters.test_parameters.test.bool_tets" value true },
@@ -73,9 +73,9 @@ RosSystem { Name 'test_parameters_system'
           RosParameter {
             RefParameter "test_parameters.test_parameters.test.struc_test" value {
               { second_element {value{1,dsad}}},
-              { last_element { value { 
+              { last_element { value {
                  { hello {value 3} },
-                 { what {value sd} } 
+                 { what {value sd} }
 }}}}}}})
 }
 ```

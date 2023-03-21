@@ -92,541 +92,541 @@ import org.eclipse.ui.PartInitException;
  * @generated
  */
 public class RossystemModelWizard extends Wizard implements INewWizard {
-	/**
-	 * The supported extensions for created files.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameExtensions").split("\\s*,\\s*")));
+    /**
+     * The supported extensions for created files.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static final List<String> FILE_EXTENSIONS =
+        Collections.unmodifiableList(Arrays.asList(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameExtensions").split("\\s*,\\s*")));
 
-	/**
-	 * A formatted list of supported file extensions, suitable for display.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String FORMATTED_FILE_EXTENSIONS =
-		RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+    /**
+     * A formatted list of supported file extensions, suitable for display.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static final String FORMATTED_FILE_EXTENSIONS =
+        RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
-	/**
-	 * This caches an instance of the model package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RossystemPackage rossystemPackage = RossystemPackage.eINSTANCE;
+    /**
+     * This caches an instance of the model package.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RossystemPackage rossystemPackage = RossystemPackage.eINSTANCE;
 
-	/**
-	 * This caches an instance of the model factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RossystemFactory rossystemFactory = rossystemPackage.getRossystemFactory();
+    /**
+     * This caches an instance of the model factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RossystemFactory rossystemFactory = rossystemPackage.getRossystemFactory();
 
-	/**
-	 * This is the file creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RossystemModelWizardNewFileCreationPage newFileCreationPage;
+    /**
+     * This is the file creation page.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RossystemModelWizardNewFileCreationPage newFileCreationPage;
 
-	/**
-	 * This is the initial object creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RossystemModelWizardInitialObjectCreationPage initialObjectCreationPage;
+    /**
+     * This is the initial object creation page.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RossystemModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-	/**
-	 * Remember the selection during initialization for populating the default container.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IStructuredSelection selection;
+    /**
+     * Remember the selection during initialization for populating the default container.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IStructuredSelection selection;
 
-	/**
-	 * Remember the workbench during initialization.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IWorkbench workbench;
+    /**
+     * Remember the workbench during initialization.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IWorkbench workbench;
 
-	/**
-	 * Caches the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected List<String> initialObjectNames;
+    /**
+     * Caches the names of the types that can be created as the root object.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected List<String> initialObjectNames;
 
-	/**
-	 * This just records the information.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		this.workbench = workbench;
-		this.selection = selection;
-		setWindowTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RossystemEditorPlugin.INSTANCE.getImage("full/wizban/NewRossystem")));
-	}
+    /**
+     * This just records the information.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void init(IWorkbench workbench, IStructuredSelection selection) {
+        this.workbench = workbench;
+        this.selection = selection;
+        setWindowTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RossystemEditorPlugin.INSTANCE.getImage("full/wizban/NewRossystem")));
+    }
 
-	/**
-	 * Returns the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<String> getInitialObjectNames() {
-		if (initialObjectNames == null) {
-			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : rossystemPackage.getEClassifiers()) {
-				if (eClassifier instanceof EClass) {
-					EClass eClass = (EClass)eClassifier;
-					if (!eClass.isAbstract()) {
-						initialObjectNames.add(eClass.getName());
-					}
-				}
-			}
-			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
-		}
-		return initialObjectNames;
-	}
+    /**
+     * Returns the names of the types that can be created as the root object.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Collection<String> getInitialObjectNames() {
+        if (initialObjectNames == null) {
+            initialObjectNames = new ArrayList<String>();
+            for (EClassifier eClassifier : rossystemPackage.getEClassifiers()) {
+                if (eClassifier instanceof EClass) {
+                    EClass eClass = (EClass)eClassifier;
+                    if (!eClass.isAbstract()) {
+                        initialObjectNames.add(eClass.getName());
+                    }
+                }
+            }
+            Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
+        }
+        return initialObjectNames;
+    }
 
-	/**
-	 * Create a new model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EObject createInitialModel() {
-		EClass eClass = (EClass)rossystemPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = rossystemFactory.create(eClass);
-		return rootObject;
-	}
+    /**
+     * Create a new model.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected EObject createInitialModel() {
+        EClass eClass = (EClass)rossystemPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+        EObject rootObject = rossystemFactory.create(eClass);
+        return rootObject;
+    }
 
-	/**
-	 * Do the work after everything is specified.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean performFinish() {
-		try {
-			// Remember the file.
-			//
-			final IFile modelFile = getModelFile();
+    /**
+     * Do the work after everything is specified.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean performFinish() {
+        try {
+            // Remember the file.
+            //
+            final IFile modelFile = getModelFile();
 
-			// Do the work within an operation.
-			//
-			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation() {
-					@Override
-					protected void execute(IProgressMonitor progressMonitor) {
-						try {
-							// Create a resource set
-							//
-							ResourceSet resourceSet = new ResourceSetImpl();
+            // Do the work within an operation.
+            //
+            WorkspaceModifyOperation operation =
+                new WorkspaceModifyOperation() {
+                    @Override
+                    protected void execute(IProgressMonitor progressMonitor) {
+                        try {
+                            // Create a resource set
+                            //
+                            ResourceSet resourceSet = new ResourceSetImpl();
 
-							// Get the URI of the model file.
-							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+                            // Get the URI of the model file.
+                            //
+                            URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-							// Create a resource for this file.
-							//
-							Resource resource = resourceSet.createResource(fileURI);
+                            // Create a resource for this file.
+                            //
+                            Resource resource = resourceSet.createResource(fileURI);
 
-							// Add the initial model object to the contents.
-							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
-								resource.getContents().add(rootObject);
-							}
+                            // Add the initial model object to the contents.
+                            //
+                            EObject rootObject = createInitialModel();
+                            if (rootObject != null) {
+                                resource.getContents().add(rootObject);
+                            }
 
-							// Save the contents of the resource to the file system.
-							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
-						}
-						catch (Exception exception) {
-							RossystemEditorPlugin.INSTANCE.log(exception);
-						}
-						finally {
-							progressMonitor.done();
-						}
-					}
-				};
+                            // Save the contents of the resource to the file system.
+                            //
+                            Map<Object, Object> options = new HashMap<Object, Object>();
+                            options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+                            resource.save(options);
+                        }
+                        catch (Exception exception) {
+                            RossystemEditorPlugin.INSTANCE.log(exception);
+                        }
+                        finally {
+                            progressMonitor.done();
+                        }
+                    }
+                };
 
-			getContainer().run(false, false, operation);
+            getContainer().run(false, false, operation);
 
-			// Select the new file resource in the current view.
-			//
-			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-			IWorkbenchPage page = workbenchWindow.getActivePage();
-			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget) {
-				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec
-					(new Runnable() {
-						 @Override
-						 public void run() {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
-			}
+            // Select the new file resource in the current view.
+            //
+            IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+            IWorkbenchPage page = workbenchWindow.getActivePage();
+            final IWorkbenchPart activePart = page.getActivePart();
+            if (activePart instanceof ISetSelectionTarget) {
+                final ISelection targetSelection = new StructuredSelection(modelFile);
+                getShell().getDisplay().asyncExec
+                    (new Runnable() {
+                         @Override
+                         public void run() {
+                             ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+                         }
+                     });
+            }
 
-			// Open an editor on the new file.
-			//
-			try {
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), RossystemEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
-				return false;
-			}
+            // Open an editor on the new file.
+            //
+            try {
+                page.openEditor
+                    (new FileEditorInput(modelFile),
+                     workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+            }
+            catch (PartInitException exception) {
+                MessageDialog.openError(workbenchWindow.getShell(), RossystemEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+                return false;
+            }
 
-			return true;
-		}
-		catch (Exception exception) {
-			RossystemEditorPlugin.INSTANCE.log(exception);
-			return false;
-		}
-	}
+            return true;
+        }
+        catch (Exception exception) {
+            RossystemEditorPlugin.INSTANCE.log(exception);
+            return false;
+        }
+    }
 
-	/**
-	 * This is the one page of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class RossystemModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-		/**
-		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public RossystemModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
-			super(pageId, selection);
-		}
+    /**
+     * This is the one page of the wizard.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public class RossystemModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+        /**
+         * Pass in the selection.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public RossystemModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+            super(pageId, selection);
+        }
 
-		/**
-		 * The framework calls this to see if the file is correct.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		@Override
-		protected boolean validatePage() {
-			if (super.validatePage()) {
-				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
-					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(RossystemEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
-					return false;
-				}
-				return true;
-			}
-			return false;
-		}
+        /**
+         * The framework calls this to see if the file is correct.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        protected boolean validatePage() {
+            if (super.validatePage()) {
+                String extension = new Path(getFileName()).getFileExtension();
+                if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+                    String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+                    setErrorMessage(RossystemEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public IFile getModelFile() {
-			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
-		}
-	}
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public IFile getModelFile() {
+            return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
+        }
+    }
 
-	/**
-	 * This is the page where the type of object to create is selected.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class RossystemModelWizardInitialObjectCreationPage extends WizardPage {
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo initialObjectField;
+    /**
+     * This is the page where the type of object to create is selected.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public class RossystemModelWizardInitialObjectCreationPage extends WizardPage {
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected Combo initialObjectField;
 
-		/**
-		 * @generated
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected List<String> encodings;
+        /**
+         * @generated
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         */
+        protected List<String> encodings;
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Combo encodingField;
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected Combo encodingField;
 
-		/**
-		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public RossystemModelWizardInitialObjectCreationPage(String pageId) {
-			super(pageId);
-		}
+        /**
+         * Pass in the selection.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public RossystemModelWizardInitialObjectCreationPage(String pageId) {
+            super(pageId);
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		@Override
-		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
-				GridLayout layout = new GridLayout();
-				layout.numColumns = 1;
-				layout.verticalSpacing = 12;
-				composite.setLayout(layout);
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public void createControl(Composite parent) {
+            Composite composite = new Composite(parent, SWT.NONE);
+            {
+                GridLayout layout = new GridLayout();
+                layout.numColumns = 1;
+                layout.verticalSpacing = 12;
+                composite.setLayout(layout);
 
-				GridData data = new GridData();
-				data.verticalAlignment = GridData.FILL;
-				data.grabExcessVerticalSpace = true;
-				data.horizontalAlignment = GridData.FILL;
-				composite.setLayoutData(data);
-			}
+                GridData data = new GridData();
+                data.verticalAlignment = GridData.FILL;
+                data.grabExcessVerticalSpace = true;
+                data.horizontalAlignment = GridData.FILL;
+                composite.setLayoutData(data);
+            }
 
-			Label containerLabel = new Label(composite, SWT.LEFT);
-			{
-				containerLabel.setText(RossystemEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+            Label containerLabel = new Label(composite, SWT.LEFT);
+            {
+                containerLabel.setText(RossystemEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				containerLabel.setLayoutData(data);
-			}
+                GridData data = new GridData();
+                data.horizontalAlignment = GridData.FILL;
+                containerLabel.setLayoutData(data);
+            }
 
-			initialObjectField = new Combo(composite, SWT.BORDER);
-			{
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				data.grabExcessHorizontalSpace = true;
-				initialObjectField.setLayoutData(data);
-			}
+            initialObjectField = new Combo(composite, SWT.BORDER);
+            {
+                GridData data = new GridData();
+                data.horizontalAlignment = GridData.FILL;
+                data.grabExcessHorizontalSpace = true;
+                initialObjectField.setLayoutData(data);
+            }
 
-			for (String objectName : getInitialObjectNames()) {
-				initialObjectField.add(getLabel(objectName));
-			}
+            for (String objectName : getInitialObjectNames()) {
+                initialObjectField.add(getLabel(objectName));
+            }
 
-			if (initialObjectField.getItemCount() == 1) {
-				initialObjectField.select(0);
-			}
-			initialObjectField.addModifyListener(validator);
+            if (initialObjectField.getItemCount() == 1) {
+                initialObjectField.select(0);
+            }
+            initialObjectField.addModifyListener(validator);
 
-			Label encodingLabel = new Label(composite, SWT.LEFT);
-			{
-				encodingLabel.setText(RossystemEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+            Label encodingLabel = new Label(composite, SWT.LEFT);
+            {
+                encodingLabel.setText(RossystemEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				encodingLabel.setLayoutData(data);
-			}
-			encodingField = new Combo(composite, SWT.BORDER);
-			{
-				GridData data = new GridData();
-				data.horizontalAlignment = GridData.FILL;
-				data.grabExcessHorizontalSpace = true;
-				encodingField.setLayoutData(data);
-			}
+                GridData data = new GridData();
+                data.horizontalAlignment = GridData.FILL;
+                encodingLabel.setLayoutData(data);
+            }
+            encodingField = new Combo(composite, SWT.BORDER);
+            {
+                GridData data = new GridData();
+                data.horizontalAlignment = GridData.FILL;
+                data.grabExcessHorizontalSpace = true;
+                encodingField.setLayoutData(data);
+            }
 
-			for (String encoding : getEncodings()) {
-				encodingField.add(encoding);
-			}
+            for (String encoding : getEncodings()) {
+                encodingField.add(encoding);
+            }
 
-			encodingField.select(0);
-			encodingField.addModifyListener(validator);
+            encodingField.select(0);
+            encodingField.addModifyListener(validator);
 
-			setPageComplete(validatePage());
-			setControl(composite);
-		}
+            setPageComplete(validatePage());
+            setControl(composite);
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected ModifyListener validator =
-			new ModifyListener() {
-				@Override
-				public void modifyText(ModifyEvent e) {
-					setPageComplete(validatePage());
-				}
-			};
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected ModifyListener validator =
+            new ModifyListener() {
+                @Override
+                public void modifyText(ModifyEvent e) {
+                    setPageComplete(validatePage());
+                }
+            };
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected boolean validatePage() {
-			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
-		}
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected boolean validatePage() {
+            return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		@Override
-		public void setVisible(boolean visible) {
-			super.setVisible(visible);
-			if (visible) {
-				if (initialObjectField.getItemCount() == 1) {
-					initialObjectField.clearSelection();
-					encodingField.setFocus();
-				}
-				else {
-					encodingField.clearSelection();
-					initialObjectField.setFocus();
-				}
-			}
-		}
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        @Override
+        public void setVisible(boolean visible) {
+            super.setVisible(visible);
+            if (visible) {
+                if (initialObjectField.getItemCount() == 1) {
+                    initialObjectField.clearSelection();
+                    encodingField.setFocus();
+                }
+                else {
+                    encodingField.clearSelection();
+                    initialObjectField.setFocus();
+                }
+            }
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public String getInitialObjectName() {
-			String label = initialObjectField.getText();
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public String getInitialObjectName() {
+            String label = initialObjectField.getText();
 
-			for (String name : getInitialObjectNames()) {
-				if (getLabel(name).equals(label)) {
-					return name;
-				}
-			}
-			return null;
-		}
+            for (String name : getInitialObjectNames()) {
+                if (getLabel(name).equals(label)) {
+                    return name;
+                }
+            }
+            return null;
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public String getEncoding() {
-			return encodingField.getText();
-		}
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        public String getEncoding() {
+            return encodingField.getText();
+        }
 
-		/**
-		 * Returns the label for the specified type name.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected String getLabel(String typeName) {
-			try {
-				return RossystemEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-			}
-			catch(MissingResourceException mre) {
-				RossystemEditorPlugin.INSTANCE.log(mre);
-			}
-			return typeName;
-		}
+        /**
+         * Returns the label for the specified type name.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected String getLabel(String typeName) {
+            try {
+                return RossystemEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+            }
+            catch(MissingResourceException mre) {
+                RossystemEditorPlugin.INSTANCE.log(mre);
+            }
+            return typeName;
+        }
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected Collection<String> getEncodings() {
-			if (encodings == null) {
-				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(RossystemEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
-					encodings.add(stringTokenizer.nextToken());
-				}
-			}
-			return encodings;
-		}
-	}
+        /**
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        protected Collection<String> getEncodings() {
+            if (encodings == null) {
+                encodings = new ArrayList<String>();
+                for (StringTokenizer stringTokenizer = new StringTokenizer(RossystemEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+                    encodings.add(stringTokenizer.nextToken());
+                }
+            }
+            return encodings;
+        }
+    }
 
-	/**
-	 * The framework calls this to create the contents of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-		@Override
-	public void addPages() {
-		// Create a page, set the title, and the initial model file name.
-		//
-		newFileCreationPage = new RossystemModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_label"));
-		newFileCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_description"));
-		newFileCreationPage.setFileName(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
-		addPage(newFileCreationPage);
+    /**
+     * The framework calls this to create the contents of the wizard.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+        @Override
+    public void addPages() {
+        // Create a page, set the title, and the initial model file name.
+        //
+        newFileCreationPage = new RossystemModelWizardNewFileCreationPage("Whatever", selection);
+        newFileCreationPage.setTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_label"));
+        newFileCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_description"));
+        newFileCreationPage.setFileName(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+        addPage(newFileCreationPage);
 
-		// Try and get the resource selection to determine a current directory for the file dialog.
-		//
-		if (selection != null && !selection.isEmpty()) {
-			// Get the resource...
-			//
-			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource) {
-				// Get the resource parent, if its a file.
-				//
-				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE) {
-					selectedResource = selectedResource.getParent();
-				}
+        // Try and get the resource selection to determine a current directory for the file dialog.
+        //
+        if (selection != null && !selection.isEmpty()) {
+            // Get the resource...
+            //
+            Object selectedElement = selection.iterator().next();
+            if (selectedElement instanceof IResource) {
+                // Get the resource parent, if its a file.
+                //
+                IResource selectedResource = (IResource)selectedElement;
+                if (selectedResource.getType() == IResource.FILE) {
+                    selectedResource = selectedResource.getParent();
+                }
 
-				// This gives us a directory...
-				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
-					// Set this for the container.
-					//
-					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
+                // This gives us a directory...
+                //
+                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+                    // Set this for the container.
+                    //
+                    newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
-					// Make up a unique new name here.
-					//
-					String defaultModelBaseFilename = RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameDefaultBase");
-					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
-					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
-						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
-					}
-					newFileCreationPage.setFileName(modelFilename);
-				}
-			}
-		}
-		initialObjectCreationPage = new RossystemModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_label"));
-		initialObjectCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
-	}
+                    // Make up a unique new name here.
+                    //
+                    String defaultModelBaseFilename = RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemEditorFilenameDefaultBase");
+                    String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
+                    String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
+                    for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+                        modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
+                    }
+                    newFileCreationPage.setFileName(modelFilename);
+                }
+            }
+        }
+        initialObjectCreationPage = new RossystemModelWizardInitialObjectCreationPage("Whatever2");
+        initialObjectCreationPage.setTitle(RossystemEditorPlugin.INSTANCE.getString("_UI_RossystemModelWizard_label"));
+        initialObjectCreationPage.setDescription(RossystemEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+        addPage(initialObjectCreationPage);
+    }
 
-	/**
-	 * Get the file from the page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IFile getModelFile() {
-		return newFileCreationPage.getModelFile();
-	}
+    /**
+     * Get the file from the page.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public IFile getModelFile() {
+        return newFileCreationPage.getModelFile();
+    }
 
 }

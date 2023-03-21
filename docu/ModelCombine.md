@@ -23,7 +23,7 @@ The idea if the first strategy is to sum components and interfaces into a single
 
 ```
 RosSystem { Name 'cob4-25'
-    RosComponents ( 
+    RosComponents (
         ComponentInterface { name '/base_laser_front/driver'},
         ComponentInterface { name '/torso_cam3d_down/realsense2_camera'},
         ComponentInterface { name '/arm_right/driver'},

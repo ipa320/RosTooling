@@ -10,7 +10,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class Ros1UiModule extends AbstractRos1UiModule {
 
-	public Ros1UiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    public Ros1UiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
 }

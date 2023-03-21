@@ -1,8 +1,8 @@
 # Ros Model
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Build](https://travis-ci.org/ipa320/ros-model.svg?branch=master)](https://travis-ci.org/ipa320/ros-model) 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Build](https://travis-ci.org/ipa320/ros-model.svg?branch=master)](https://travis-ci.org/ipa320/ros-model)
 
-The main purpose of this effort is to combine the advantages of [ROS](http://wiki.ros.org/) and Model-Driven-Engineering techniques. This repository holds a family of metamodels defined as ecore models that together with its java and Xtext and Xtend grammar implementations facilitates the use of a set of tools and graphical plug-ins to create models from ROS code, compose and validate the composition of models, autogenerate deployment artifacts and check the use of standard specifications. 
+The main purpose of this effort is to combine the advantages of [ROS](http://wiki.ros.org/) and Model-Driven-Engineering techniques. This repository holds a family of metamodels defined as ecore models that together with its java and Xtext and Xtend grammar implementations facilitates the use of a set of tools and graphical plug-ins to create models from ROS code, compose and validate the composition of models, autogenerate deployment artifacts and check the use of standard specifications.
 
 Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
 

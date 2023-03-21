@@ -87,214 +87,214 @@ import org.eclipse.xtext.ui.shared.Access;
 @SuppressWarnings("all")
 public abstract class AbstractBasicsUiModule extends DefaultUiModule {
 
-	public AbstractBasicsUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ImplicitFragment
-	public Provider<? extends IAllContainersState> provideIAllContainersState() {
-		return Access.getJavaProjectsState();
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends IProposalConflictHelper> bindIProposalConflictHelper() {
-		return AntlrProposalConflictHelper.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureContentAssistLexer(Binder binder) {
-		binder.bind(Lexer.class)
-			.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
-			.to(InternalBasicsLexer.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureHighlightingLexer(Binder binder) {
-		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
-			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(de.fraunhofer.ipa.ros.parser.antlr.lexer.InternalBasicsLexer.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureHighlightingTokenDefProvider(Binder binder) {
-		binder.bind(ITokenDefProvider.class)
-			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(AntlrTokenDefProvider.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends ContentAssistContext.Factory> bindContentAssistContext$Factory() {
-		return DelegatingContentAssistContextFactory.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
-		return BasicsParser.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureContentAssistLexerProvider(Binder binder) {
-		binder.bind(InternalBasicsLexer.class).toProvider(LexerProvider.create(InternalBasicsLexer.class));
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
-		return IndentationAwareCompletionPrefixProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2
-	public Class<? extends PrefixMatcher> bindPrefixMatcher() {
-		return FQNPrefixMatcher.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2
-	public Class<? extends IDependentElementsCalculator> bindIDependentElementsCalculator() {
-		return DefaultDependentElementsCalculator.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
-	public void configureIResourceDescriptionsBuilderScope(Binder binder) {
-		binder.bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).to(CurrentDescriptions.ResourceSetAware.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
-	public Class<? extends IXtextEditorCallback> bindIXtextEditorCallback() {
-		return NatureAddingEditorCallback.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
-	public Class<? extends IContextualOutputConfigurationProvider> bindIContextualOutputConfigurationProvider() {
-		return EclipseOutputConfigurationProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
-	public void configureIResourceDescriptionsPersisted(Binder binder) {
-		binder.bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(IBuilderState.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
-	public Class<? extends DocumentBasedDirtyResource> bindDocumentBasedDirtyResource() {
-		return PersistentDataAwareDirtyResource.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
-	public Class<? extends IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
-		return BuilderParticipant.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
-	public IWorkspaceRoot bindIWorkspaceRootToInstance() {
-		return ResourcesPlugin.getWorkspace().getRoot();
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
-	public void configureBuilderPreferenceStoreInitializer(Binder binder) {
-		binder.bind(IPreferenceStoreInitializer.class)
-			.annotatedWith(Names.named("builderPreferenceInitializer"))
-			.to(BuilderPreferenceAccess.Initializer.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
-	public Class<? extends IContentFormatterFactory> bindIContentFormatterFactory() {
-		return ContentFormatterFactory.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
-	public Class<? extends ILabelProvider> bindILabelProvider() {
-		return BasicsLabelProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
-	public void configureResourceUIServiceLabelProvider(Binder binder) {
-		binder.bind(ILabelProvider.class).annotatedWith(ResourceServiceDescriptionLabelProvider.class).to(BasicsDescriptionLabelProvider.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
-	public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return BasicsOutlineTreeProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
-	public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return BasicsOutlineTreeProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.quickfix.QuickfixProviderFragment2
-	public Class<? extends IssueResolutionProvider> bindIssueResolutionProvider() {
-		return BasicsQuickfixProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.contentAssist.ContentAssistFragment2
-	public Class<? extends IContentProposalProvider> bindIContentProposalProvider() {
-		return BasicsProposalProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public void configureIPreferenceStoreInitializer(Binder binder) {
-		binder.bind(IPreferenceStoreInitializer.class)
-			.annotatedWith(Names.named("RefactoringPreferences"))
-			.to(RefactoringPreferences.Initializer.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public Class<? extends IRenameStrategy> bindIRenameStrategy() {
-		return DefaultRenameStrategy.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public Class<? extends IReferenceUpdater> bindIReferenceUpdater() {
-		return DefaultReferenceUpdater.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public Class<? extends IRenameRefactoringProvider> bindIRenameRefactoringProvider() {
-		return DefaultRenameRefactoringProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public Class<? extends IRenameSupport.Factory> bindIRenameSupport$Factory() {
-		return DefaultRenameSupport.Factory.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	public Provider<? extends TemplatesLanguageConfiguration> provideTemplatesLanguageConfiguration() {
-		return AccessibleCodetemplatesActivator.getTemplatesLanguageConfigurationProvider();
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	public Provider<? extends LanguageRegistry> provideLanguageRegistry() {
-		return AccessibleCodetemplatesActivator.getLanguageRegistry();
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	@SingletonBinding(eager=true)
-	public Class<? extends LanguageRegistrar> bindLanguageRegistrar() {
-		return LanguageRegistrar.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	public Class<? extends XtextTemplatePreferencePage> bindXtextTemplatePreferencePage() {
-		return AdvancedTemplatesPreferencePage.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	public Class<? extends IPartialEditingContentAssistParser> bindIPartialEditingContentAssistParser() {
-		return PartialBasicsContentAssistParser.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
-	public Class<? extends IPartialEditingContentAssistContextFactory> bindIPartialEditingContentAssistContextFactory() {
-		return PartialEditingContentAssistContextFactory.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
-	public Class<? extends IViewerCreator> bindIViewerCreator() {
-		return DefaultViewerCreator.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
-	public void configureCompareViewerTitle(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Basics Compare");
-	}
-	
+    public AbstractBasicsUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ImplicitFragment
+    public Provider<? extends IAllContainersState> provideIAllContainersState() {
+        return Access.getJavaProjectsState();
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public Class<? extends IProposalConflictHelper> bindIProposalConflictHelper() {
+        return AntlrProposalConflictHelper.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public void configureContentAssistLexer(Binder binder) {
+        binder.bind(Lexer.class)
+            .annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
+            .to(InternalBasicsLexer.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public void configureHighlightingLexer(Binder binder) {
+        binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
+            .annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
+            .to(de.fraunhofer.ipa.ros.parser.antlr.lexer.InternalBasicsLexer.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public void configureHighlightingTokenDefProvider(Binder binder) {
+        binder.bind(ITokenDefProvider.class)
+            .annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
+            .to(AntlrTokenDefProvider.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public Class<? extends ContentAssistContext.Factory> bindContentAssistContext$Factory() {
+        return DelegatingContentAssistContextFactory.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public Class<? extends IContentAssistParser> bindIContentAssistParser() {
+        return BasicsParser.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public void configureContentAssistLexerProvider(Binder binder) {
+        binder.bind(InternalBasicsLexer.class).toProvider(LexerProvider.create(InternalBasicsLexer.class));
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+    public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
+        return IndentationAwareCompletionPrefixProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2
+    public Class<? extends PrefixMatcher> bindPrefixMatcher() {
+        return FQNPrefixMatcher.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2
+    public Class<? extends IDependentElementsCalculator> bindIDependentElementsCalculator() {
+        return DefaultDependentElementsCalculator.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
+    public void configureIResourceDescriptionsBuilderScope(Binder binder) {
+        binder.bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).to(CurrentDescriptions.ResourceSetAware.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
+    public Class<? extends IXtextEditorCallback> bindIXtextEditorCallback() {
+        return NatureAddingEditorCallback.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
+    public Class<? extends IContextualOutputConfigurationProvider> bindIContextualOutputConfigurationProvider() {
+        return EclipseOutputConfigurationProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
+    public void configureIResourceDescriptionsPersisted(Binder binder) {
+        binder.bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(IBuilderState.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
+    public Class<? extends DocumentBasedDirtyResource> bindDocumentBasedDirtyResource() {
+        return PersistentDataAwareDirtyResource.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
+    public Class<? extends IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
+        return BuilderParticipant.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
+    public IWorkspaceRoot bindIWorkspaceRootToInstance() {
+        return ResourcesPlugin.getWorkspace().getRoot();
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
+    public void configureBuilderPreferenceStoreInitializer(Binder binder) {
+        binder.bind(IPreferenceStoreInitializer.class)
+            .annotatedWith(Names.named("builderPreferenceInitializer"))
+            .to(BuilderPreferenceAccess.Initializer.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
+    public Class<? extends IContentFormatterFactory> bindIContentFormatterFactory() {
+        return ContentFormatterFactory.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
+    public Class<? extends ILabelProvider> bindILabelProvider() {
+        return BasicsLabelProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
+    public void configureResourceUIServiceLabelProvider(Binder binder) {
+        binder.bind(ILabelProvider.class).annotatedWith(ResourceServiceDescriptionLabelProvider.class).to(BasicsDescriptionLabelProvider.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
+    public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
+        return BasicsOutlineTreeProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
+    public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
+        return BasicsOutlineTreeProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.quickfix.QuickfixProviderFragment2
+    public Class<? extends IssueResolutionProvider> bindIssueResolutionProvider() {
+        return BasicsQuickfixProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.contentAssist.ContentAssistFragment2
+    public Class<? extends IContentProposalProvider> bindIContentProposalProvider() {
+        return BasicsProposalProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
+    public void configureIPreferenceStoreInitializer(Binder binder) {
+        binder.bind(IPreferenceStoreInitializer.class)
+            .annotatedWith(Names.named("RefactoringPreferences"))
+            .to(RefactoringPreferences.Initializer.class);
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
+    public Class<? extends IRenameStrategy> bindIRenameStrategy() {
+        return DefaultRenameStrategy.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
+    public Class<? extends IReferenceUpdater> bindIReferenceUpdater() {
+        return DefaultReferenceUpdater.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
+    public Class<? extends IRenameRefactoringProvider> bindIRenameRefactoringProvider() {
+        return DefaultRenameRefactoringProvider.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
+    public Class<? extends IRenameSupport.Factory> bindIRenameSupport$Factory() {
+        return DefaultRenameSupport.Factory.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    public Provider<? extends TemplatesLanguageConfiguration> provideTemplatesLanguageConfiguration() {
+        return AccessibleCodetemplatesActivator.getTemplatesLanguageConfigurationProvider();
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    public Provider<? extends LanguageRegistry> provideLanguageRegistry() {
+        return AccessibleCodetemplatesActivator.getLanguageRegistry();
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    @SingletonBinding(eager=true)
+    public Class<? extends LanguageRegistrar> bindLanguageRegistrar() {
+        return LanguageRegistrar.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    public Class<? extends XtextTemplatePreferencePage> bindXtextTemplatePreferencePage() {
+        return AdvancedTemplatesPreferencePage.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    public Class<? extends IPartialEditingContentAssistParser> bindIPartialEditingContentAssistParser() {
+        return PartialBasicsContentAssistParser.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
+    public Class<? extends IPartialEditingContentAssistContextFactory> bindIPartialEditingContentAssistContextFactory() {
+        return PartialEditingContentAssistContextFactory.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
+    public Class<? extends IViewerCreator> bindIViewerCreator() {
+        return DefaultViewerCreator.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
+    public void configureCompareViewerTitle(Binder binder) {
+        binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Basics Compare");
+    }
+
 }

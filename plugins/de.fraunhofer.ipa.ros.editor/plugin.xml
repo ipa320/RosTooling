@@ -20,7 +20,7 @@
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
-   
+
    <extension point="org.eclipse.ui.newWizards">
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -188,7 +188,7 @@
             icon="icons/full/ImportCommObjects_icon.jpg"
             id="ImportCommObjects"
             style="push">
-				<visibleWhen
+                <visibleWhen
                      checkEnabled="false">
                   <or>
                      <with variable="activeWorkbenchWindow.activePerspective">
@@ -202,7 +202,7 @@
       </toolbar>
       </menuContribution>
    </extension>
- 
+
 
 
    <!--extension point="org.eclipse.ui.handlers">

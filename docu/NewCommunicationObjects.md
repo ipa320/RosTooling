@@ -24,26 +24,26 @@ To modify the ROS models (.ros) manually the ROS tooling provides a customized e
 This editor contains an autocomplete function (by pressing Ctrl+Space) and will report any error made by editing. The first step is define a PackageSet (that correspond to a metapackage for ROS, this definition is optional and its name can be kept empty). Then, the ROS package which contains the msgs have to be defined and within it the option "spec" have to be selected to write down the objects. In the practice that means that the initial *.ros file that describes ROS objects looks:
 
 ```
-PackageSet { package {  CatkinPackage ros_package_name { 
-	spec {}
+PackageSet { package {  CatkinPackage ros_package_name {
+    spec {}
 }}}
 ```
 
 The grammar supports 3 types of communication objects TopicSpec (to describe ROS msgs), ServiceSpec (to describe ROS srvs) and ActionSpec (to describe ROS actions), and consequentially each of these 3 types support different specifications types:
 
-- ROS msgs 
+- ROS msgs
 
-  **TopicSpec** SpecName { **message** { ElementType ElementName ... } } 
+  **TopicSpec** SpecName { **message** { ElementType ElementName ... } }
 
   ​     -> Example ```TopicSpec Point{ message { float64 x float64 y float64 z }}```
 
-- ROS srvs 
+- ROS srvs
 
   **ServiceSpec** SpecName { **request** { ElementType ElementName ..} **response** { ElementType ElementName .. } }
 
   ​     -> Example  ```ServiceSpec SetBool{ request { bool data } response { bool success string message } }```
 
-- ROS actions 
+- ROS actions
 
   **ActionSpec** SpecName { **goal** { ElementType ElementName .. } **result** { ElementType ElementName ..} **feedback** { ElementType ElementName .. }}
 
@@ -81,7 +81,7 @@ The following extract shows the ROS model description correspondent to the [nav_
 
 ```
 PackageSet {
-    Package nav_msgs{ Specs { 
+    Package nav_msgs{ Specs {
       TopicSpec GetMapAction{ message { GetMapActionGoal action_goal GetMapActionResult action_result GetMapActionFeedback action_feedback }},
       TopicSpec GetMapActionFeedback{ message { Header header "actionlib_msgs.GoalStatus" status GetMapFeedback feedback }},
       TopicSpec GetMapActionGoal{ message { Header header "actionlib_msgs.GoalID" goal_id GetMapGoal goal }},
@@ -104,7 +104,7 @@ PackageSet {
 
 ```
 PackageSet {
-    Package my_msgs { Specs { 
+    Package my_msgs { Specs {
       TopicSpec hello { message { String data }},
       ServiceSpec hello { request {  } response { String data }},
     }}
@@ -113,4 +113,3 @@ PackageSet {
 The reason is that when one of these objects have to be referenced during the definition of a node it will be imposible for the model to distinguish which is the correct one (both are defined as my_msgs.Hello and whitin the dame model file). For these cases we recommend to split the objects into two different model files.
 
 The repository [RosCommonObjects](https://github.com/ipa320/RosCommonObjects) holds further examples.
-

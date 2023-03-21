@@ -15,23 +15,23 @@ import primitives.stringArray;
  * @generated
  */
 public class stringArrayImpl extends AbstractTypeImpl implements stringArray {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected stringArrayImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected stringArrayImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return PrimitivesPackage.Literals.STRING_ARRAY;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return PrimitivesPackage.Literals.STRING_ARRAY;
+    }
 
 } //stringArrayImpl

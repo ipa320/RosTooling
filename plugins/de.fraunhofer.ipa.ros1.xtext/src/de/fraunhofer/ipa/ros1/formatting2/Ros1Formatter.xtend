@@ -11,22 +11,22 @@ import ros.Artifact
 import ros.CatkinPackage
 
 class Ros1Formatter extends AbstractFormatter2 {
-	
-	@Inject extension Ros1GrammarAccess
 
-	def dispatch void format(CatkinPackage catkinPackage, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (artifact : catkinPackage.artifact) {
-			artifact.format
-		}
-		for (dependency : catkinPackage.dependency) {
-			dependency.format
-		}
-	}
+    @Inject extension Ros1GrammarAccess
 
-	def dispatch void format(Artifact artifact, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		artifact.node.format
-	}
-	
+    def dispatch void format(CatkinPackage catkinPackage, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (artifact : catkinPackage.artifact) {
+            artifact.format
+        }
+        for (dependency : catkinPackage.dependency) {
+            dependency.format
+        }
+    }
+
+    def dispatch void format(Artifact artifact, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        artifact.node.format
+    }
+
 }

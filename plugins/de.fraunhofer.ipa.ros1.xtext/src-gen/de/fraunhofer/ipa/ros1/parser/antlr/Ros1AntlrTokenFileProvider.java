@@ -8,9 +8,9 @@ import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class Ros1AntlrTokenFileProvider implements IAntlrTokenFileProvider {
 
-	@Override
-	public InputStream getAntlrTokenFile() {
-		ClassLoader classLoader = getClass().getClassLoader();
-		return classLoader.getResourceAsStream("de/fraunhofer/ipa/ros1/parser/antlr/internal/InternalRos1Parser.tokens");
-	}
+    @Override
+    public InputStream getAntlrTokenFile() {
+        ClassLoader classLoader = getClass().getClassLoader();
+        return classLoader.getResourceAsStream("de/fraunhofer/ipa/ros1/parser/antlr/internal/InternalRos1Parser.tokens");
+    }
 }

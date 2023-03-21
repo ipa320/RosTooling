@@ -136,10 +136,10 @@ nav_msgs:
          Header header "actionlib_msgs.GoalStatus" status GetMapResult result
      msg: GetMapFeedback
        message:
-         
+
      msg: GetMapGoal
        message:
-         
+
      msg: GetMapResult
        message:
          "nav_msgs.OccupancyGrid" map

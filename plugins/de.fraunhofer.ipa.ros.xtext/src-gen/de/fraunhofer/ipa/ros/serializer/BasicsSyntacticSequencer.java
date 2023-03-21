@@ -17,42 +17,42 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 @SuppressWarnings("all")
 public class BasicsSyntacticSequencer extends AbstractSyntacticSequencer {
 
-	protected BasicsGrammarAccess grammarAccess;
-	
-	@Inject
-	protected void init(IGrammarAccess access) {
-		grammarAccess = (BasicsGrammarAccess) access;
-	}
-	
-	@Override
-	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBEGINRule())
-			return getBEGINToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getENDRule())
-			return getENDToken(semanticObject, ruleCall, node);
-		return "";
-	}
-	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	@Override
-	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
-		List<INode> transitionNodes = collectNodes(fromNode, toNode);
-		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
-			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
-		}
-	}
+    protected BasicsGrammarAccess grammarAccess;
+
+    @Inject
+    protected void init(IGrammarAccess access) {
+        grammarAccess = (BasicsGrammarAccess) access;
+    }
+
+    @Override
+    protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+        if (ruleCall.getRule() == grammarAccess.getBEGINRule())
+            return getBEGINToken(semanticObject, ruleCall, node);
+        else if (ruleCall.getRule() == grammarAccess.getENDRule())
+            return getENDToken(semanticObject, ruleCall, node);
+        return "";
+    }
+
+    /**
+     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+     * Defaults to the empty string.
+     */
+    protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+
+    /**
+     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+     * Defaults to the empty string.
+     */
+    protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+
+    @Override
+    protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+        if (transition.getAmbiguousSyntaxes().isEmpty()) return;
+        List<INode> transitionNodes = collectNodes(fromNode, toNode);
+        for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
+            List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
+            acceptNodes(getLastNavigableState(), syntaxNodes);
+        }
+    }
 
 }

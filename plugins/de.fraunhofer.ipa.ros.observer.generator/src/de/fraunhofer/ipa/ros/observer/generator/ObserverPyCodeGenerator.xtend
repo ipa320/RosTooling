@@ -10,38 +10,38 @@ import java.util.Set
 import ros.Node
 
 class CustomOutputProvider implements IOutputConfigurationProvider {
-	public final static String OBSERVER_OUTPUT = "OBSERVER_OUTPUT"
-	
-	override Set<OutputConfiguration> getOutputConfigurations() {
-		var OutputConfiguration observer_config = new OutputConfiguration(OBSERVER_OUTPUT)
-		observer_config.setDescription("OBSERVER_OUTPUT");
-		observer_config.setOutputDirectory("./src-gen/observers/");
-		observer_config.setOverrideExistingResources(true);
-		observer_config.setCreateOutputDirectory(true);
-		observer_config.setCleanUpDerivedResources(true);
-		observer_config.setSetDerivedProperty(true);
-		return newHashSet(observer_config)
-	}
+    public final static String OBSERVER_OUTPUT = "OBSERVER_OUTPUT"
+
+    override Set<OutputConfiguration> getOutputConfigurations() {
+        var OutputConfiguration observer_config = new OutputConfiguration(OBSERVER_OUTPUT)
+        observer_config.setDescription("OBSERVER_OUTPUT");
+        observer_config.setOutputDirectory("./src-gen/observers/");
+        observer_config.setOverrideExistingResources(true);
+        observer_config.setCreateOutputDirectory(true);
+        observer_config.setCleanUpDerivedResources(true);
+        observer_config.setSetDerivedProperty(true);
+        return newHashSet(observer_config)
+    }
 }
 
 
 class ObserverPyCodeGenerator extends AbstractGenerator {
 
-	int count_sub
-	
-	def void createXtextGenerationFolder (IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile("lock",CustomOutputProvider::OBSERVER_OUTPUT,'''''');
-		fsa.deleteFile("lock",CustomOutputProvider::OBSERVER_OUTPUT);
-	}
+    int count_sub
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-			for (node : resource.allContents.toIterable.filter(Node)){
-				fsa.generateFile(node.getName()+".py",CustomOutputProvider::OBSERVER_OUTPUT,node.compile)
-				}
-			}
+    def void createXtextGenerationFolder (IFileSystemAccess2 fsa, IGeneratorContext context) {
+        fsa.generateFile("lock",CustomOutputProvider::OBSERVER_OUTPUT,'''''');
+        fsa.deleteFile("lock",CustomOutputProvider::OBSERVER_OUTPUT);
+    }
+
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+            for (node : resource.allContents.toIterable.filter(Node)){
+                fsa.generateFile(node.getName()+".py",CustomOutputProvider::OBSERVER_OUTPUT,node.compile)
+                }
+            }
 
 def compile(Node node) {
-	count_sub = node.subscriber.size
+    count_sub = node.subscriber.size
 '''
 from rosgraph_monitor.observer import TopicObserver
 «FOR sub:node.subscriber»
@@ -52,7 +52,7 @@ from diagnostic_msgs.msg import DiagnosticStatus, KeyValue
 
 class «node.name.replace("_","").replace("/","").toFirstUpper»(TopicObserver):
     def __init__(self, name):
-    	
+
         topics = [
 «FOR sub:node.subscriber»«val count_sub=count_sub--»
         ("«sub.name»", «sub.message.name»)«IF count_sub > 1 »,«ENDIF»«ENDFOR»
@@ -63,12 +63,12 @@ class «node.name.replace("_","").replace("/","").toFirstUpper»(TopicObserver):
 
     def calculate_attr(self, msgs):
         status_msg = DiagnosticStatus()
-        
+
         #Write here your code (or uncomment the following lines)
         #if len(msgs) < 2:
         #    print("Incorrect number of messages")
         #    return status_msg
-        
+
         #...
 
         #attr = msgs[0].data + msgs[1].data

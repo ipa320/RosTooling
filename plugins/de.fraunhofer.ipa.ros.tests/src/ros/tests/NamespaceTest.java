@@ -14,42 +14,42 @@ import ros.Namespace;
  */
 public abstract class NamespaceTest extends TestCase {
 
-	/**
-	 * The fixture for this Namespace test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Namespace fixture = null;
+    /**
+     * The fixture for this Namespace test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Namespace fixture = null;
 
-	/**
-	 * Constructs a new Namespace test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NamespaceTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new Namespace test case with the given name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NamespaceTest(String name) {
+        super(name);
+    }
 
-	/**
-	 * Sets the fixture for this Namespace test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Namespace fixture) {
-		this.fixture = fixture;
-	}
+    /**
+     * Sets the fixture for this Namespace test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void setFixture(Namespace fixture) {
+        this.fixture = fixture;
+    }
 
-	/**
-	 * Returns the fixture for this Namespace test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Namespace getFixture() {
-		return fixture;
-	}
+    /**
+     * Returns the fixture for this Namespace test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Namespace getFixture() {
+        return fixture;
+    }
 
 } //NamespaceTest

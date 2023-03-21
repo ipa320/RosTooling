@@ -15,4 +15,3 @@ jobs:
       run: |
         pushd ros-model
         mvn clean verify -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
-

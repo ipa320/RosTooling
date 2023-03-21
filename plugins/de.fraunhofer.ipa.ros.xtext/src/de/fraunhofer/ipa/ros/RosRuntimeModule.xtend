@@ -12,10 +12,10 @@ import org.eclipse.xtext.generator.IOutputConfigurationProvider
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class RosRuntimeModule extends AbstractRosRuntimeModule {
-	
-		override void configure(Binder binder) {
-		super.configure(binder)
-		binder.bind(IOutputConfigurationProvider).to(CICustomOutputProvider).asEagerSingleton()
-	}
-		
+
+        override void configure(Binder binder) {
+        super.configure(binder)
+        binder.bind(IOutputConfigurationProvider).to(CICustomOutputProvider).asEagerSingleton()
+    }
+
 }

@@ -15,56 +15,56 @@ import ros.RosFactory;
  */
 public class ParameterListTypeTest extends ParameterTypeTest {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ParameterListTypeTest.class);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static void main(String[] args) {
+        TestRunner.run(ParameterListTypeTest.class);
+    }
 
-	/**
-	 * Constructs a new Parameter List Type test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterListTypeTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new Parameter List Type test case with the given name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ParameterListTypeTest(String name) {
+        super(name);
+    }
 
-	/**
-	 * Returns the fixture for this Parameter List Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected ParameterListType getFixture() {
-		return (ParameterListType)fixture;
-	}
+    /**
+     * Returns the fixture for this Parameter List Type test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected ParameterListType getFixture() {
+        return (ParameterListType)fixture;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createParameterListType());
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#setUp()
+     * @generated
+     */
+    @Override
+    protected void setUp() throws Exception {
+        setFixture(RosFactory.eINSTANCE.createParameterListType());
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#tearDown()
+     * @generated
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        setFixture(null);
+    }
 
 } //ParameterListTypeTest

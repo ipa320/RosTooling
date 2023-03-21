@@ -21,26 +21,26 @@ import ros.ServiceClient;
  * @generated
  */
 public interface RosServiceClient extends NamedInterface {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(ServiceClient)
-	 * @see rossystem.RossystemPackage#getRosServiceClient_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	ServiceClient getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(ServiceClient)
+     * @see rossystem.RossystemPackage#getRosServiceClient_From()
+     * @model required="true"
+     * @generated
+     */
+    ServiceClient getFrom();
 
-	/**
-	 * Sets the value of the '{@link rossystem.RosServiceClient#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(ServiceClient value);
+    /**
+     * Sets the value of the '{@link rossystem.RosServiceClient#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(ServiceClient value);
 
 } // RosServiceClient

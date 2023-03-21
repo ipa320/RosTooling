@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.rossystem;
  */
 public class RosSystemStandaloneSetup extends RosSystemStandaloneSetupGenerated {
 
-	public static void doSetup() {
-		new RosSystemStandaloneSetup().createInjectorAndDoEMFRegistration();
-	}
+    public static void doSetup() {
+        new RosSystemStandaloneSetup().createInjectorAndDoEMFRegistration();
+    }
 }

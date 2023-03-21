@@ -13,14 +13,14 @@ public class AddRosSystemHandler extends AbstractHandler {
 
     @Override
     public Object execute(ExecutionEvent event) {
-    	Shell activeShell = HandlerUtil.getActiveShell(event);
-    	RossystemModelWizard wizard = new RossystemModelWizard();
-    	wizard.init(PlatformUI.getWorkbench(), new StructuredSelection());
-    	WizardDialog dialog = new WizardDialog(activeShell,wizard);
-    	dialog.create();
-    	dialog.getShell().setText(wizard.getWindowTitle());
-    	int result = dialog.open();
-    	System.out.println(result);
+        Shell activeShell = HandlerUtil.getActiveShell(event);
+        RossystemModelWizard wizard = new RossystemModelWizard();
+        wizard.init(PlatformUI.getWorkbench(), new StructuredSelection());
+        WizardDialog dialog = new WizardDialog(activeShell,wizard);
+        dialog.create();
+        dialog.getShell().setText(wizard.getWindowTitle());
+        int result = dialog.open();
+        System.out.println(result);
         return null;
     }
 

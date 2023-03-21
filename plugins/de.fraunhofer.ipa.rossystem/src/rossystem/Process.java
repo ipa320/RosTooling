@@ -24,60 +24,60 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Process extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see rossystem.RossystemPackage#getProcess_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see rossystem.RossystemPackage#getProcess_Name()
+     * @model required="true"
+     * @generated
+     */
+    String getName();
 
-	/**
-	 * Sets the value of the '{@link rossystem.Process#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
+    /**
+     * Sets the value of the '{@link rossystem.Process#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
-	/**
-	 * Returns the value of the '<em><b>Threads</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threads</em>' attribute.
-	 * @see #setThreads(int)
-	 * @see rossystem.RossystemPackage#getProcess_Threads()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
-	 * @generated
-	 */
-	int getThreads();
+    /**
+     * Returns the value of the '<em><b>Threads</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Threads</em>' attribute.
+     * @see #setThreads(int)
+     * @see rossystem.RossystemPackage#getProcess_Threads()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
+     * @generated
+     */
+    int getThreads();
 
-	/**
-	 * Sets the value of the '{@link rossystem.Process#getThreads <em>Threads</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Threads</em>' attribute.
-	 * @see #getThreads()
-	 * @generated
-	 */
-	void setThreads(int value);
+    /**
+     * Sets the value of the '{@link rossystem.Process#getThreads <em>Threads</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Threads</em>' attribute.
+     * @see #getThreads()
+     * @generated
+     */
+    void setThreads(int value);
 
-	/**
-	 * Returns the value of the '<em><b>Nodes</b></em>' reference list.
-	 * The list contents are of type {@link rossystem.RosNode}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nodes</em>' reference list.
-	 * @see rossystem.RossystemPackage#getProcess_Nodes()
-	 * @model
-	 * @generated
-	 */
-	EList<RosNode> getNodes();
+    /**
+     * Returns the value of the '<em><b>Nodes</b></em>' reference list.
+     * The list contents are of type {@link rossystem.RosNode}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Nodes</em>' reference list.
+     * @see rossystem.RossystemPackage#getProcess_Nodes()
+     * @model
+     * @generated
+     */
+    EList<RosNode> getNodes();
 
 } // Process

@@ -8,109 +8,109 @@ import "http://www.ipa.fraunhofer.de/primitives" as primitives
 
 
 RosSystem returns System:
-	Name=EString':'
-	BEGIN
-		(
-		('processes:' 
-			BEGIN 
-			Processes+=Process*
-			END
-		) |
-		('nodes:' 
-			BEGIN 
-			Components+=RosNode*
-			END
-		) |
-		('parameters:'
-			BEGIN
-			Parameter+=Parameter*
-			END
-		) |
-		('connections:'
-			BEGIN
-			Connections+=RosConnection*
-			END
-		) 
-		)*
-	END;
+    Name=EString':'
+    BEGIN
+        (
+        ('processes:'
+            BEGIN
+            Processes+=Process*
+            END
+        ) |
+        ('nodes:'
+            BEGIN
+            Components+=RosNode*
+            END
+        ) |
+        ('parameters:'
+            BEGIN
+            Parameter+=Parameter*
+            END
+        ) |
+        ('connections:'
+            BEGIN
+            Connections+=RosConnection*
+            END
+        )
+        )*
+    END;
 
 
 Process returns Process:
-	{Process}
-		Name=EString':'
-		BEGIN
-		('nodes:' '['
-			Nodes+=[RosNode|EString]
-			']')?
-		('threads:'Threads=INT)
-	    END
+    {Process}
+        Name=EString':'
+        BEGIN
+        ('nodes:' '['
+            Nodes+=[RosNode|EString]
+            ']')?
+        ('threads:'Threads=INT)
+        END
 ;
 
 RosNode returns RosNode:
-	{RosNode}
-	Name=EString':'
-	BEGIN
-	'from:'From=[ros::Node|EString]
-	('interfaces:'
-		BEGIN
-			rosinterfaces+=RosInterface*
-		END)?
-	('parameters:'
-		BEGIN
-			rosparameters+=RosParameter*
-		END)?
-	END
+    {RosNode}
+    Name=EString':'
+    BEGIN
+    'from:'From=[ros::Node|EString]
+    ('interfaces:'
+        BEGIN
+            rosinterfaces+=RosInterface*
+        END)?
+    ('parameters:'
+        BEGIN
+            rosparameters+=RosParameter*
+        END)?
+    END
 ;
-	
+
 RosInterface returns RosInterface:
-	Name=EString':'
-	BEGIN
-	Reference=InterfaceReference
-	END
+    Name=EString':'
+    BEGIN
+    Reference=InterfaceReference
+    END
 ;
 
 InterfaceReference returns InterfaceReference:
-	InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference;
+    InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference;
 
 InterfaceReference_Impl returns InterfaceReference:
-	{InterfaceReference}
-	;
+    {InterfaceReference}
+    ;
 
 RosPublisherReference returns RosPublisherReference:
-	'fromPub:'From=[ros::Publisher|EString]
+    'fromPub:'From=[ros::Publisher|EString]
 ;
 
 RosSubscriberReference returns RosSubscriberReference:
-	'fromSub:'From=[ros::Subscriber|EString]
+    'fromSub:'From=[ros::Subscriber|EString]
 ;
 
 RosServiceServerReference returns RosServiceServerReference:
-	'fromSS:'From=[ros::ServiceServer|EString]
+    'fromSS:'From=[ros::ServiceServer|EString]
 ;
 
 RosServerClientReference returns RosServerClientReference:
-	'fromSC:'From=[ros::ServiceClient|EString]
+    'fromSC:'From=[ros::ServiceClient|EString]
 ;
 
 RosActionServerReference returns RosActionServerReference:
-	'fromAS:'From=[ros::ActionServer|EString]
+    'fromAS:'From=[ros::ActionServer|EString]
 ;
 
 RosActionClientReference returns RosActionClientReference:
-	'fromAC:'From=[ros::ActionClient|EString]
+    'fromAC:'From=[ros::ActionClient|EString]
 ;
 
 RosParameter returns RosParameter:
-	Name=EString':'
-	BEGIN
-	'from:'From=[ros::Parameter|EString]
-	'value:'value=ParameterValue
-	END
+    Name=EString':'
+    BEGIN
+    'from:'From=[ros::Parameter|EString]
+    'value:'value=ParameterValue
+    END
 ;
 
 
 RosConnection returns RosConnection:
-	'-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
+    '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 ;
 
 ///////////////////
@@ -120,60 +120,60 @@ RosConnection returns RosConnection:
 //ROSINTERFACES
 ///////////////////
 //RosInterfaces returns RosInterfaces:
-//		{RosInterfaces} (
-//		(rospublisher+=RosPublisher) |
-//		(rossubscriber+=RosSubscriber) |
-//		(rosserviceserver+=RosServiceServer) |
-//		(rosserviceclient+=RosServiceClient) |
-//		(rosactionserver+=RosActionServer) |
-//		(rosactionclient+=RosActionClient)
-//		)*
+//      {RosInterfaces} (
+//      (rospublisher+=RosPublisher) |
+//      (rossubscriber+=RosSubscriber) |
+//      (rosserviceserver+=RosServiceServer) |
+//      (rosserviceclient+=RosServiceClient) |
+//      (rosactionserver+=RosActionServer) |
+//      (rosactionclient+=RosActionClient)
+//      )*
 //;
 //
 //RosPublisher returns RosPublisher:
-//	{RosPublisher}
-//		'Publisher:'Name=EString
-//		BEGIN
-//			'from:'From=[ros::Publisher|EString]
-//		END
-//	;
+//  {RosPublisher}
+//      'Publisher:'Name=EString
+//      BEGIN
+//          'from:'From=[ros::Publisher|EString]
+//      END
+//  ;
 //
 //RosSubscriber returns RosSubscriber:
-//	{RosSubscriber}
-//		'Subscriber:'Name=EString
-//		BEGIN
-//			'from:'From=[ros::Subscriber|EString]
-//		END
-//	;
+//  {RosSubscriber}
+//      'Subscriber:'Name=EString
+//      BEGIN
+//          'from:'From=[ros::Subscriber|EString]
+//      END
+//  ;
 //
 //RosServiceServer returns RosServiceServer:
-//	{RosServiceServer}
-//		'ServiceServer:'Name=EString
-//		BEGIN
-//			'from='From=[ros::ServiceServer|EString]
-//		END
-//	;
+//  {RosServiceServer}
+//      'ServiceServer:'Name=EString
+//      BEGIN
+//          'from='From=[ros::ServiceServer|EString]
+//      END
+//  ;
 //
 //RosServiceClient returns RosServiceClient:
-//	{RosServiceClient}
-//		'ServiceClient:'Name=EString
-//		BEGIN
-//			'from='From=[ros::ServiceClient|EString]
-//		END
-//	;
+//  {RosServiceClient}
+//      'ServiceClient:'Name=EString
+//      BEGIN
+//          'from='From=[ros::ServiceClient|EString]
+//      END
+//  ;
 //
 //RosActionServer returns RosActionServer:
-//	{RosActionServer}
-//		'ActionServer:'Name=EString
-//		BEGIN
-//			'from='From=[ros::ActionServer|EString]
-//		END
-//	;
+//  {RosActionServer}
+//      'ActionServer:'Name=EString
+//      BEGIN
+//          'from='From=[ros::ActionServer|EString]
+//      END
+//  ;
 //
 //RosActionClient returns RosActionClient:
-//	{RosActionClient}
-//		'ActionClient:'Name=EString
-//		BEGIN
-//			'from='From=[ros::ActionClient|EString]
-//		END
-//	;
+//  {RosActionClient}
+//      'ActionClient:'Name=EString
+//      BEGIN
+//          'from='From=[ros::ActionClient|EString]
+//      END
+//  ;

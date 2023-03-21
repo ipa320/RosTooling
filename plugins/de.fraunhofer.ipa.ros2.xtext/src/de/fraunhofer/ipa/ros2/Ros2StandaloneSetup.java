@@ -12,8 +12,8 @@ import com.google.inject.Injector;
  */
 public class Ros2StandaloneSetup extends Ros2StandaloneSetupGenerated {
 
-	public static void doSetup() {
-		Injector injector = new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration();
-	     XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-	}
+    public static void doSetup() {
+        Injector injector = new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration();
+         XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+    }
 }

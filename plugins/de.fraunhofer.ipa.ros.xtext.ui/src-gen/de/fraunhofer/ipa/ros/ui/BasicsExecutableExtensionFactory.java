@@ -11,19 +11,19 @@ import org.osgi.framework.FrameworkUtil;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class BasicsExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
-	@Override
-	protected Bundle getBundle() {
-		return FrameworkUtil.getBundle(XtextActivator.class);
-	}
-	
-	@Override
-	protected Injector getInjector() {
-		XtextActivator activator = XtextActivator.getInstance();
-		return activator != null ? activator.getInjector(XtextActivator.DE_FRAUNHOFER_IPA_ROS_BASICS) : null;
-	}
+    @Override
+    protected Bundle getBundle() {
+        return FrameworkUtil.getBundle(XtextActivator.class);
+    }
+
+    @Override
+    protected Injector getInjector() {
+        XtextActivator activator = XtextActivator.getInstance();
+        return activator != null ? activator.getInjector(XtextActivator.DE_FRAUNHOFER_IPA_ROS_BASICS) : null;
+    }
 
 }

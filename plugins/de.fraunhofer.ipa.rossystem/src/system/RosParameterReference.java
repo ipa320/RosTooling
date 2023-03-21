@@ -21,26 +21,26 @@ import ros.Parameter;
  * @generated
  */
 public interface RosParameterReference extends InterfaceReference {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(Parameter)
-	 * @see system.RossystemPackage#getRosParameterReference_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	Parameter getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(Parameter)
+     * @see system.RossystemPackage#getRosParameterReference_From()
+     * @model required="true"
+     * @generated
+     */
+    Parameter getFrom();
 
-	/**
-	 * Sets the value of the '{@link system.RosParameterReference#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(Parameter value);
+    /**
+     * Sets the value of the '{@link system.RosParameterReference#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(Parameter value);
 
 } // RosParameterReference

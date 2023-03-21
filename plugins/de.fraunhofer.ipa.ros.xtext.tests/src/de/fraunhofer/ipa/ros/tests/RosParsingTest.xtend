@@ -17,23 +17,23 @@ import ros.PackageSet
 @RunWith(XtextRunner)
 @InjectWith(RosInjectorProvider)
 class RosParsingTest {
-	@Inject
-	ParseHelper<PackageSet> parseHelper
-	String RESOURCES_BASE_DIR = 'resources/basic_msgs'
+    @Inject
+    ParseHelper<PackageSet> parseHelper
+    String RESOURCES_BASE_DIR = 'resources/basic_msgs'
 
-	@Test
-	def void loadModel() {
-		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'common_msgs.ros')))
-		val result = parseHelper.parse(fileContent)
-		Assert.assertNotNull(result)
-		val errors = result.eResource.errors
-		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
-	}
+    @Test
+    def void loadModel() {
+        val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'common_msgs.ros')))
+        val result = parseHelper.parse(fileContent)
+        Assert.assertNotNull(result)
+        val errors = result.eResource.errors
+        Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
+    }
 
-	@Test 
+    @Test
     def void parseDomainmodel() {
-    	val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros_core.ros')))
-		val model = parseHelper.parse(fileContent)
+        val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'ros_core.ros')))
+        val model = parseHelper.parse(fileContent)
         val packageName1 = model.package.get(0).name
         Assert.assertEquals(packageName1, "std_msgs")
         val packageName2 = model.package.get(1).name

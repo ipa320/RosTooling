@@ -21,26 +21,26 @@ import ros.ActionClient;
  * @generated
  */
 public interface RosActionClientReference extends InterfaceReference {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(ActionClient)
-	 * @see system.RossystemPackage#getRosActionClientReference_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	ActionClient getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(ActionClient)
+     * @see system.RossystemPackage#getRosActionClientReference_From()
+     * @model required="true"
+     * @generated
+     */
+    ActionClient getFrom();
 
-	/**
-	 * Sets the value of the '{@link system.RosActionClientReference#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(ActionClient value);
+    /**
+     * Sets the value of the '{@link system.RosActionClientReference#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(ActionClient value);
 
 } // RosActionClientReference

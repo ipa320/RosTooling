@@ -30,7 +30,7 @@ This example requires the common ROS interfaces, by clicking the button *Import 
 
 ![alt text](images/01-ImportCommnObjects.png)
 
-And you can import now the project to be transformed, for example [cob_light](https://github.com/ipa-nhg/ros-model-examples/tree/master/RosComponents/cob_light) from the ros-model-examples repository (previously cloned). 
+And you can import now the project to be transformed, for example [cob_light](https://github.com/ipa-nhg/ros-model-examples/tree/master/RosComponents/cob_light) from the ros-model-examples repository (previously cloned).
 
 ![alt text](images/ROSSeRoNet_import_cob_light.gif)
 
@@ -38,7 +38,7 @@ By openning the representation file you can see the following model visualizatio
 
 ![alt text](images/ROSSeRoNet_cob_light_representation.gif)
 
-Or you can create a [new project from an empty model](https://github.com/ipa320/ros-model/blob/master/docu/NewProject.md). In case you have an existing ROS package that contains the C++ code of your component we recommend to use the [extractor](https://github.com/ipa320/ros-model/blob/master/docu/NewRosModel.md) instead of start from scratch the model definition. 
+Or you can create a [new project from an empty model](https://github.com/ipa320/ros-model/blob/master/docu/NewProject.md). In case you have an existing ROS package that contains the C++ code of your component we recommend to use the [extractor](https://github.com/ipa320/ros-model/blob/master/docu/NewRosModel.md) instead of start from scratch the model definition.
 
 NOTE: all the msgs, srvs or actions used by your node (package dependencies) have to be also described, we made available a model of the most [common ROS interfaces](https://github.com/ipa320/ros-model/tree/master/ROSCommonObjects/de.fraunhofer.ipa.ros.communication.objects/basic_msgs). In case one of your package dependencies is not included in this list you have to create the models usin the following [script](https://github.com/ipa320/ros-model/blob/master/docu/NewCommunicationObjects.md)
 
@@ -54,7 +54,7 @@ Complementarily and to make easier the relay of interfaces we incorporated an ex
 
 ![alt text](images/ROSSeRoNet_generatedFilesSeRoNet.gif)
 
-These two files can be used to create a [new SeRoNet component](https://wiki.servicerobotik-ulm.de/tutorials:develop-your-first-component:start). First the presperctive have to be changed to the "Component Supplier" one. This perspective will add the option to create a new Component Project by giving a name and a localization. The previosly generated SeRoNetComponent files can simply be copied to the model folder of the new project. 
+These two files can be used to create a [new SeRoNet component](https://wiki.servicerobotik-ulm.de/tutorials:develop-your-first-component:start). First the presperctive have to be changed to the "Component Supplier" one. This perspective will add the option to create a new Component Project by giving a name and a localization. The previosly generated SeRoNetComponent files can simply be copied to the model folder of the new project.
 
 ![alt text](images/ROSSeRoNet_SeRoNetComponent.gif)
 
@@ -77,7 +77,7 @@ This will generate the file services and the file types under the folder *src-ge
 
 ![alt text](images/cob_light_obtects_to_SeRoNet3.gif)
 
-For further information please see: https://github.com/ipa-nhg/SeRoNet-Tooling-ROS-Mixed-Port/tree/M2MCommunicationObjectsReadme/de.seronet_projekt.ros.componentGateway.generator#automatic-transformation-of-communication-objects 
+For further information please see: https://github.com/ipa-nhg/SeRoNet-Tooling-ROS-Mixed-Port/tree/M2MCommunicationObjectsReadme/de.seronet_projekt.ros.componentGateway.generator#automatic-transformation-of-communication-objects
 
 These files are the input for a SeRoNet Domain Model. By creating a [new Domain Project](https://wiki.servicerobotik-ulm.de/tutorials:develop-your-first-domain-model:start) you can just copy these two files and the models will be automatically added to the interpreter.
 

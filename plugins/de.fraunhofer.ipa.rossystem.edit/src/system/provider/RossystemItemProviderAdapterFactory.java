@@ -33,485 +33,485 @@ import system.util.RossystemAdapterFactory;
  * @generated
  */
 public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+    /**
+     * This keeps track of the root adapter factory that delegates to this adapter factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ComposedAdapterFactory parentAdapterFactory;
 
-	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+    /**
+     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
-	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+    /**
+     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
-	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RossystemItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+    /**
+     * This constructs an instance.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RossystemItemProviderAdapterFactory() {
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.System} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SystemItemProvider systemItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.System} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SystemItemProvider systemItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.System}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSystemAdapter() {
-		if (systemItemProvider == null) {
-			systemItemProvider = new SystemItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.System}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSystemAdapter() {
+        if (systemItemProvider == null) {
+            systemItemProvider = new SystemItemProvider(this);
+        }
 
-		return systemItemProvider;
-	}
+        return systemItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.Process} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ProcessItemProvider processItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.Process} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ProcessItemProvider processItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.Process}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createProcessAdapter() {
-		if (processItemProvider == null) {
-			processItemProvider = new ProcessItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.Process}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createProcessAdapter() {
+        if (processItemProvider == null) {
+            processItemProvider = new ProcessItemProvider(this);
+        }
 
-		return processItemProvider;
-	}
+        return processItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosNode} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosNodeItemProvider rosNodeItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosNode} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosNodeItemProvider rosNodeItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosNode}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosNodeAdapter() {
-		if (rosNodeItemProvider == null) {
-			rosNodeItemProvider = new RosNodeItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosNode}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosNodeAdapter() {
+        if (rosNodeItemProvider == null) {
+            rosNodeItemProvider = new RosNodeItemProvider(this);
+        }
 
-		return rosNodeItemProvider;
-	}
+        return rosNodeItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosInterface} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosInterfaceItemProvider rosInterfaceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosInterface} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosInterfaceItemProvider rosInterfaceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosInterface}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosInterfaceAdapter() {
-		if (rosInterfaceItemProvider == null) {
-			rosInterfaceItemProvider = new RosInterfaceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosInterface}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosInterfaceAdapter() {
+        if (rosInterfaceItemProvider == null) {
+            rosInterfaceItemProvider = new RosInterfaceItemProvider(this);
+        }
 
-		return rosInterfaceItemProvider;
-	}
+        return rosInterfaceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.InterfaceReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InterfaceReferenceItemProvider interfaceReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.InterfaceReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected InterfaceReferenceItemProvider interfaceReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.InterfaceReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInterfaceReferenceAdapter() {
-		if (interfaceReferenceItemProvider == null) {
-			interfaceReferenceItemProvider = new InterfaceReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.InterfaceReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createInterfaceReferenceAdapter() {
+        if (interfaceReferenceItemProvider == null) {
+            interfaceReferenceItemProvider = new InterfaceReferenceItemProvider(this);
+        }
 
-		return interfaceReferenceItemProvider;
-	}
+        return interfaceReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosPublisherReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosPublisherReferenceItemProvider rosPublisherReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosPublisherReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosPublisherReferenceItemProvider rosPublisherReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosPublisherReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosPublisherReferenceAdapter() {
-		if (rosPublisherReferenceItemProvider == null) {
-			rosPublisherReferenceItemProvider = new RosPublisherReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosPublisherReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosPublisherReferenceAdapter() {
+        if (rosPublisherReferenceItemProvider == null) {
+            rosPublisherReferenceItemProvider = new RosPublisherReferenceItemProvider(this);
+        }
 
-		return rosPublisherReferenceItemProvider;
-	}
+        return rosPublisherReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosSubscriberReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosSubscriberReferenceItemProvider rosSubscriberReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosSubscriberReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosSubscriberReferenceItemProvider rosSubscriberReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosSubscriberReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosSubscriberReferenceAdapter() {
-		if (rosSubscriberReferenceItemProvider == null) {
-			rosSubscriberReferenceItemProvider = new RosSubscriberReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosSubscriberReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosSubscriberReferenceAdapter() {
+        if (rosSubscriberReferenceItemProvider == null) {
+            rosSubscriberReferenceItemProvider = new RosSubscriberReferenceItemProvider(this);
+        }
 
-		return rosSubscriberReferenceItemProvider;
-	}
+        return rosSubscriberReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosServiceServerReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosServiceServerReferenceItemProvider rosServiceServerReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosServiceServerReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosServiceServerReferenceItemProvider rosServiceServerReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosServiceServerReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosServiceServerReferenceAdapter() {
-		if (rosServiceServerReferenceItemProvider == null) {
-			rosServiceServerReferenceItemProvider = new RosServiceServerReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosServiceServerReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosServiceServerReferenceAdapter() {
+        if (rosServiceServerReferenceItemProvider == null) {
+            rosServiceServerReferenceItemProvider = new RosServiceServerReferenceItemProvider(this);
+        }
 
-		return rosServiceServerReferenceItemProvider;
-	}
+        return rosServiceServerReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosServerClientReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosServerClientReferenceItemProvider rosServerClientReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosServerClientReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosServerClientReferenceItemProvider rosServerClientReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosServerClientReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosServerClientReferenceAdapter() {
-		if (rosServerClientReferenceItemProvider == null) {
-			rosServerClientReferenceItemProvider = new RosServerClientReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosServerClientReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosServerClientReferenceAdapter() {
+        if (rosServerClientReferenceItemProvider == null) {
+            rosServerClientReferenceItemProvider = new RosServerClientReferenceItemProvider(this);
+        }
 
-		return rosServerClientReferenceItemProvider;
-	}
+        return rosServerClientReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosActionServerReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosActionServerReferenceItemProvider rosActionServerReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosActionServerReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosActionServerReferenceItemProvider rosActionServerReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosActionServerReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosActionServerReferenceAdapter() {
-		if (rosActionServerReferenceItemProvider == null) {
-			rosActionServerReferenceItemProvider = new RosActionServerReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosActionServerReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosActionServerReferenceAdapter() {
+        if (rosActionServerReferenceItemProvider == null) {
+            rosActionServerReferenceItemProvider = new RosActionServerReferenceItemProvider(this);
+        }
 
-		return rosActionServerReferenceItemProvider;
-	}
+        return rosActionServerReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosActionClientReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosActionClientReferenceItemProvider rosActionClientReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosActionClientReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosActionClientReferenceItemProvider rosActionClientReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosActionClientReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosActionClientReferenceAdapter() {
-		if (rosActionClientReferenceItemProvider == null) {
-			rosActionClientReferenceItemProvider = new RosActionClientReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosActionClientReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosActionClientReferenceAdapter() {
+        if (rosActionClientReferenceItemProvider == null) {
+            rosActionClientReferenceItemProvider = new RosActionClientReferenceItemProvider(this);
+        }
 
-		return rosActionClientReferenceItemProvider;
-	}
+        return rosActionClientReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosParameterReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosParameterReferenceItemProvider rosParameterReferenceItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosParameterReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosParameterReferenceItemProvider rosParameterReferenceItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosParameterReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosParameterReferenceAdapter() {
-		if (rosParameterReferenceItemProvider == null) {
-			rosParameterReferenceItemProvider = new RosParameterReferenceItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosParameterReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosParameterReferenceAdapter() {
+        if (rosParameterReferenceItemProvider == null) {
+            rosParameterReferenceItemProvider = new RosParameterReferenceItemProvider(this);
+        }
 
-		return rosParameterReferenceItemProvider;
-	}
+        return rosParameterReferenceItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosParameterItemProvider rosParameterItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosParameter} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosParameterItemProvider rosParameterItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosParameterAdapter() {
-		if (rosParameterItemProvider == null) {
-			rosParameterItemProvider = new RosParameterItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosParameter}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosParameterAdapter() {
+        if (rosParameterItemProvider == null) {
+            rosParameterItemProvider = new RosParameterItemProvider(this);
+        }
 
-		return rosParameterItemProvider;
-	}
+        return rosParameterItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link system.RosConnection} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RosConnectionItemProvider rosConnectionItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link system.RosConnection} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosConnectionItemProvider rosConnectionItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link system.RosConnection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRosConnectionAdapter() {
-		if (rosConnectionItemProvider == null) {
-			rosConnectionItemProvider = new RosConnectionItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link system.RosConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosConnectionAdapter() {
+        if (rosConnectionItemProvider == null) {
+            rosConnectionItemProvider = new RosConnectionItemProvider(this);
+        }
 
-		return rosConnectionItemProvider;
-	}
+        return rosConnectionItemProvider;
+    }
 
-	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-	}
+    /**
+     * This returns the root adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ComposeableAdapterFactory getRootAdapterFactory() {
+        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+    }
 
-	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+    /**
+     * This sets the composed adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isFactoryForType(Object type) {
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
-	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+    /**
+     * This implementation substitutes the factory itself as the key for the adapter.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter adapt(Notifier notifier, Object type) {
+        return super.adapt(notifier, this);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object adapt(Object object, Object type) {
+        if (isFactoryForType(type)) {
+            Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+    /**
+     * This adds a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void addListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
-	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+    /**
+     * This removes a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void removeListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
-	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    /**
+     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void fireNotifyChanged(Notification notification) {
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void dispose() {
-		if (systemItemProvider != null) systemItemProvider.dispose();
-		if (processItemProvider != null) processItemProvider.dispose();
-		if (rosNodeItemProvider != null) rosNodeItemProvider.dispose();
-		if (rosInterfaceItemProvider != null) rosInterfaceItemProvider.dispose();
-		if (interfaceReferenceItemProvider != null) interfaceReferenceItemProvider.dispose();
-		if (rosPublisherReferenceItemProvider != null) rosPublisherReferenceItemProvider.dispose();
-		if (rosSubscriberReferenceItemProvider != null) rosSubscriberReferenceItemProvider.dispose();
-		if (rosServiceServerReferenceItemProvider != null) rosServiceServerReferenceItemProvider.dispose();
-		if (rosServerClientReferenceItemProvider != null) rosServerClientReferenceItemProvider.dispose();
-		if (rosActionServerReferenceItemProvider != null) rosActionServerReferenceItemProvider.dispose();
-		if (rosActionClientReferenceItemProvider != null) rosActionClientReferenceItemProvider.dispose();
-		if (rosParameterReferenceItemProvider != null) rosParameterReferenceItemProvider.dispose();
-		if (rosParameterItemProvider != null) rosParameterItemProvider.dispose();
-		if (rosConnectionItemProvider != null) rosConnectionItemProvider.dispose();
-	}
+    /**
+     * This disposes all of the item providers created by this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void dispose() {
+        if (systemItemProvider != null) systemItemProvider.dispose();
+        if (processItemProvider != null) processItemProvider.dispose();
+        if (rosNodeItemProvider != null) rosNodeItemProvider.dispose();
+        if (rosInterfaceItemProvider != null) rosInterfaceItemProvider.dispose();
+        if (interfaceReferenceItemProvider != null) interfaceReferenceItemProvider.dispose();
+        if (rosPublisherReferenceItemProvider != null) rosPublisherReferenceItemProvider.dispose();
+        if (rosSubscriberReferenceItemProvider != null) rosSubscriberReferenceItemProvider.dispose();
+        if (rosServiceServerReferenceItemProvider != null) rosServiceServerReferenceItemProvider.dispose();
+        if (rosServerClientReferenceItemProvider != null) rosServerClientReferenceItemProvider.dispose();
+        if (rosActionServerReferenceItemProvider != null) rosActionServerReferenceItemProvider.dispose();
+        if (rosActionClientReferenceItemProvider != null) rosActionClientReferenceItemProvider.dispose();
+        if (rosParameterReferenceItemProvider != null) rosParameterReferenceItemProvider.dispose();
+        if (rosParameterItemProvider != null) rosParameterItemProvider.dispose();
+        if (rosConnectionItemProvider != null) rosConnectionItemProvider.dispose();
+    }
 
 }

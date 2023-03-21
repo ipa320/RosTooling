@@ -15,56 +15,56 @@ import ros.RosFactory;
  */
 public class PrivateNamespaceTest extends RelativeNamespaceTest {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(PrivateNamespaceTest.class);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static void main(String[] args) {
+        TestRunner.run(PrivateNamespaceTest.class);
+    }
 
-	/**
-	 * Constructs a new Private Namespace test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PrivateNamespaceTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new Private Namespace test case with the given name.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PrivateNamespaceTest(String name) {
+        super(name);
+    }
 
-	/**
-	 * Returns the fixture for this Private Namespace test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected PrivateNamespace getFixture() {
-		return (PrivateNamespace)fixture;
-	}
+    /**
+     * Returns the fixture for this Private Namespace test case.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected PrivateNamespace getFixture() {
+        return (PrivateNamespace)fixture;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(RosFactory.eINSTANCE.createPrivateNamespace());
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#setUp()
+     * @generated
+     */
+    @Override
+    protected void setUp() throws Exception {
+        setFixture(RosFactory.eINSTANCE.createPrivateNamespace());
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see junit.framework.TestCase#tearDown()
+     * @generated
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        setFixture(null);
+    }
 
 } //PrivateNamespaceTest

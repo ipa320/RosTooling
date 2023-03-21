@@ -42,7 +42,7 @@ RosModel: rosnodes/sick_s300.ros
 
 ```
 Name: scan_unifier
-NameSpace: 
+NameSpace:
 RosModel: rosnodes/scan_unifier.ros
 ```
 
@@ -58,17 +58,17 @@ The resulted launch file contains the defined namespaces and remap the topics of
 <?xml version="1.0"?>
 <launch>
 
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
-		<remap from="scan3" to="base_laser_front/scan" />
-		<remap from="scan1" to="base_laser_right/scan" />
-		<remap from="scan2" to="base_laser_left/scan" />
-	</node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
+        <remap from="scan3" to="base_laser_front/scan" />
+        <remap from="scan1" to="base_laser_right/scan" />
+        <remap from="scan2" to="base_laser_left/scan" />
+    </node>
 
 </launch>
 ```
@@ -83,21 +83,21 @@ These changes should change the roslaunch file to:
 <?xml version="1.0"?>
 <launch>
 
-	<remap from="base_laser_front/diagnostics" to="diagnostics" />
-	<remap from="base_laser_right/diagnostics" to="diagnostics" />
-	<remap from="base_laser_left/diagnostics" to="diagnostics" />
+    <remap from="base_laser_front/diagnostics" to="diagnostics" />
+    <remap from="base_laser_right/diagnostics" to="diagnostics" />
+    <remap from="base_laser_left/diagnostics" to="diagnostics" />
 
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
-	</node>
-	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
-		<remap from="scan3" to="base_laser_front/scan" />
-		<remap from="scan1" to="base_laser_right/scan" />
-		<remap from="scan2" to="base_laser_left/scan" />
-	</node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_front" ns="base_laser_front" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_right" ns="base_laser_right" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_sick_s300" type="cob_sick_s300" name="base_laser_left" ns="base_laser_left" cwd="node" respawn="false" output="screen">
+    </node>
+    <node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" cwd="node" respawn="false" output="screen">
+        <remap from="scan3" to="base_laser_front/scan" />
+        <remap from="scan1" to="base_laser_right/scan" />
+        <remap from="scan2" to="base_laser_left/scan" />
+    </node>
 
 </launch>
 ```
@@ -110,7 +110,7 @@ To create a new system you have to press the button "Add new Ros System" and a d
 
 To modify easily the model you can use a Sirius representation. Open the file representation.aird with the Aird editor and in the menu representations choose the "RosSystem" option and press "New.." then choose the Ros System entity of your "*.rossystem" model and press finish.
 
-A new window will appear where you can choose and add elements by selecting them on the side toolbar and the properties view. 
+A new window will appear where you can choose and add elements by selecting them on the side toolbar and the properties view.
 
 ![alt text](images/diagnostics_system.gif)
 
@@ -118,7 +118,7 @@ The new system already contains the previous system model as a single block and 
 
 ```
 Name: diagnostics
-NameSpace: 
+NameSpace:
 RosModel: rosnodes/diagnostic_aggregator.ros
 ```
 And join the diagnostics interfaces with a connection. The resulted launch file will include the previous generated launch file and the new imported node.

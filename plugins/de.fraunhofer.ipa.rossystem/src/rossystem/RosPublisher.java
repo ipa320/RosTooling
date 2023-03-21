@@ -21,26 +21,26 @@ import ros.Publisher;
  * @generated
  */
 public interface RosPublisher extends NamedInterface {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(Publisher)
-	 * @see rossystem.RossystemPackage#getRosPublisher_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	Publisher getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(Publisher)
+     * @see rossystem.RossystemPackage#getRosPublisher_From()
+     * @model required="true"
+     * @generated
+     */
+    Publisher getFrom();
 
-	/**
-	 * Sets the value of the '{@link rossystem.RosPublisher#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(Publisher value);
+    /**
+     * Sets the value of the '{@link rossystem.RosPublisher#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(Publisher value);
 
 } // RosPublisher

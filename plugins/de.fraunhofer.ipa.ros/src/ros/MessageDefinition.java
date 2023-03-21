@@ -24,19 +24,19 @@ import primitives.MessagePart;
  */
 public interface MessageDefinition extends EObject {
 
-	/**
-	 * Returns the value of the '<em><b>Message Part</b></em>' containment reference list.
-	 * The list contents are of type {@link primitives.MessagePart}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Message Part</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Part</em>' containment reference list.
-	 * @see ros.RosPackage#getMessageDefinition_MessagePart()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MessagePart> getMessagePart();
+    /**
+     * Returns the value of the '<em><b>Message Part</b></em>' containment reference list.
+     * The list contents are of type {@link primitives.MessagePart}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Message Part</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Message Part</em>' containment reference list.
+     * @see ros.RosPackage#getMessageDefinition_MessagePart()
+     * @model containment="true"
+     * @generated
+     */
+    EList<MessagePart> getMessagePart();
 } // MessageDefinition

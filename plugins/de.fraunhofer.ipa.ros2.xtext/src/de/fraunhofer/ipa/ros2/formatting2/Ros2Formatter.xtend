@@ -10,17 +10,17 @@ import org.eclipse.xtext.formatting2.IFormattableDocument
 import ros.AmentPackage
 
 class Ros2Formatter extends RosFormatter {
-	
-	@Inject extension Ros2GrammarAccess
 
-	def dispatch void format(AmentPackage amentPackage, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (artifact : amentPackage.artifact) {
-			artifact.format
-		}
-		for (dependency : amentPackage.dependency) {
-			dependency.format
-		}
-	}
-	
+    @Inject extension Ros2GrammarAccess
+
+    def dispatch void format(AmentPackage amentPackage, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (artifact : amentPackage.artifact) {
+            artifact.format
+        }
+        for (dependency : amentPackage.dependency) {
+            dependency.format
+        }
+    }
+
 }

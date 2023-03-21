@@ -4,7 +4,7 @@
   <extension point="org.eclipse.sirius.componentization">
     <component class="de.fraunhofer.ipa.ros.sirius.Activator"
                id="de.fraunhofer.ipa.ros.sirius"
-	       name="ros">
+           name="ros">
     </component>
   </extension>
   <extension
@@ -50,5 +50,5 @@
            id="de.fraunhofer.ipa.ros.sirius.javaActionsRemoveComponentsWithConnections">
      </javaActions>
   </extension>
-  
+
 </plugin>

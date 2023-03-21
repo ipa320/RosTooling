@@ -15,23 +15,23 @@ import primitives.uint32Array;
  * @generated
  */
 public class uint32ArrayImpl extends AbstractTypeImpl implements uint32Array {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected uint32ArrayImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected uint32ArrayImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return PrimitivesPackage.Literals.UINT32_ARRAY;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return PrimitivesPackage.Literals.UINT32_ARRAY;
+    }
 
 } //uint32ArrayImpl

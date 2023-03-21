@@ -18,7 +18,7 @@ public class Activator extends AbstractUIPlugin {
     // The shared instance
     private static Activator plugin;
 
-    private static Set<Viewpoint> viewpoints; 
+    private static Set<Viewpoint> viewpoints;
 
     /**
      * The constructor
@@ -28,39 +28,39 @@ public class Activator extends AbstractUIPlugin {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
      */
     public void start(BundleContext context) throws Exception {
       super.start(context);
-	  plugin = this;
-	  viewpoints = new HashSet<Viewpoint>();
-	  viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/ros.odesign")); 
+      plugin = this;
+      viewpoints = new HashSet<Viewpoint>();
+      viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/ros.odesign"));
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
      */
     public void stop(BundleContext context) throws Exception {
-	plugin = null;
-	if (viewpoints != null) {
-	    for (final Viewpoint viewpoint: viewpoints) {
-		ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
-	    }
-	    viewpoints.clear();
-	    viewpoints = null; 
-	}
-	super.stop(context);
+    plugin = null;
+    if (viewpoints != null) {
+        for (final Viewpoint viewpoint: viewpoints) {
+        ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
+        }
+        viewpoints.clear();
+        viewpoints = null;
+    }
+    super.stop(context);
     }
 
     /**
      * Returns the shared instance
-     * 
+     *
      * @return the shared instance
      */
     public static Activator getDefault() {
-	return plugin;
+    return plugin;
     }
 }

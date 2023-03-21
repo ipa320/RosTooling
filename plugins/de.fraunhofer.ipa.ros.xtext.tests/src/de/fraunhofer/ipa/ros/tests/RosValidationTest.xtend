@@ -18,44 +18,44 @@
 //@RunWith(XtextRunner)
 //@InjectWith(RosInjectorProvider)
 //class RosValidationTest {
-//	
-//	@Inject
-//	ParseHelper<PackageSet> parseHelper
-//	
-//	@Inject 
-//	ValidationTestHelper validationTester
-//	
-//	@Inject
-//	RosTestingUtils rosTestingUtils
-//	
-//	String RESOURCES_BASE_DIR = 'resources'
-//	
-////	@Test
-////	def void successfulValidationTest(){
-////		val resourceSet = rosTestingUtils.getMessagesResourceSet
-////		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
-////		val model = parseHelper.parse(fileContent, resourceSet)
-////		Assert.assertNotNull(model) 
-////		validationTester.assertNoErrors(model)
-////	}
-////	
-////	@Test
-////	def void validationErrorsTest(){
-////		//val resourceSet = rosTestingUtils.getMessagesResourceSet
-////		val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test_error.ros')))
-////		val model = parseHelper.parse(fileContent)//, resourceSet)
+//
+//  @Inject
+//  ParseHelper<PackageSet> parseHelper
+//
+//  @Inject
+//  ValidationTestHelper validationTester
+//
+//  @Inject
+//  RosTestingUtils rosTestingUtils
+//
+//  String RESOURCES_BASE_DIR = 'resources'
+//
+////    @Test
+////    def void successfulValidationTest(){
+////        val resourceSet = rosTestingUtils.getMessagesResourceSet
+////        val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros')))
+////        val model = parseHelper.parse(fileContent, resourceSet)
+////        Assert.assertNotNull(model)
+////        validationTester.assertNoErrors(model)
+////    }
 ////
-////		Assert.assertNotNull(model)
-////		
-////		// Assert that the validation fails if the needed messages are not present
-////		validationTester.assertWarning(model, RosPackage.Literals.ARTIFACT, RosValidator::INVALID_NAME)
-////		validationTester.assertWarning(model, RosPackage.Literals.NODE, RosValidator::INVALID_NAME)
-////		
-////		// Assert that the custom validation rules are applied
-////		validationTester.assertError(model, RosPackage.Literals.PUBLISHER, Diagnostic.LINKING_DIAGNOSTIC)
-////		validationTester.assertError(model, RosPackage.Literals.SERVICE_SERVER, Diagnostic.LINKING_DIAGNOSTIC)
-////	}
-//	
-//	
-//	
+////    @Test
+////    def void validationErrorsTest(){
+////        //val resourceSet = rosTestingUtils.getMessagesResourceSet
+////        val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test_error.ros')))
+////        val model = parseHelper.parse(fileContent)//, resourceSet)
+////
+////        Assert.assertNotNull(model)
+////
+////        // Assert that the validation fails if the needed messages are not present
+////        validationTester.assertWarning(model, RosPackage.Literals.ARTIFACT, RosValidator::INVALID_NAME)
+////        validationTester.assertWarning(model, RosPackage.Literals.NODE, RosValidator::INVALID_NAME)
+////
+////        // Assert that the custom validation rules are applied
+////        validationTester.assertError(model, RosPackage.Literals.PUBLISHER, Diagnostic.LINKING_DIAGNOSTIC)
+////        validationTester.assertError(model, RosPackage.Literals.SERVICE_SERVER, Diagnostic.LINKING_DIAGNOSTIC)
+////    }
+//
+//
+//
 //}

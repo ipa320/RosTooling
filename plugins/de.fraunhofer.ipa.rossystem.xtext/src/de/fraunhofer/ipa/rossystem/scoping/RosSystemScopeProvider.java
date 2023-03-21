@@ -9,17 +9,17 @@ import org.eclipse.xtext.scoping.IScope;
 
 /**
  * This class contains custom scoping description.
- * 
+ *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
 public class RosSystemScopeProvider extends AbstractRosSystemScopeProvider {
 
-	
-	@Override
-	public IScope getScope(EObject context, EReference reference) {
-		// TODO Auto-generated method stub
-		return super.getScope(context, reference);
-	}
-	
+
+    @Override
+    public IScope getScope(EObject context, EReference reference) {
+        // TODO Auto-generated method stub
+        return super.getScope(context, reference);
+    }
+
 }

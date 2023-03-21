@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<extension
+    <extension
         point="org.eclipse.ui.handlers">
-		<!-- de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory: -->
+        <!-- de.fraunhofer.ipa.componentInterface.ui.ComponentInterfaceExecutableExtensionFactory: -->
         <handler
               class="de.fraunhofer.ipa.ros.observer.ObserverExecutableExtensionFactory:de.fraunhofer.ipa.ros.observer.GenerationHandler"
               commandId="de.fraunhofer.ipa.ros.observer.generator.command">
-     	</handler>
+        </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command
@@ -47,5 +47,5 @@
       </menuContribution>
    </extension>
 
- 
+
 </plugin>

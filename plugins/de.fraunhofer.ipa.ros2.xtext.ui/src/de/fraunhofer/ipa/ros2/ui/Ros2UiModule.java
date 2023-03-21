@@ -13,16 +13,16 @@ import com.google.inject.Binder;
  */
 public class Ros2UiModule extends AbstractRos2UiModule {
 
-	public Ros2UiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
-	
+    public Ros2UiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
+
     @Override
     public void configure(Binder binder) {
         super.configure(binder);
-    	binder.bind(String.class)
-			.annotatedWith(com.google.inject.name.Names.named(
-			(XtextContentAssistProcessor.COMPLETION_AUTO_ACTIVATION_CHARS)))
-			.toInstance(".,:");
+        binder.bind(String.class)
+            .annotatedWith(com.google.inject.name.Names.named(
+            (XtextContentAssistProcessor.COMPLETION_AUTO_ACTIVATION_CHARS)))
+            .toInstance(".,:");
     }
 }

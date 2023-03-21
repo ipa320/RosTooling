@@ -1,6 +1,6 @@
 grammar de.fraunhofer.ipa.ros.Basics with org.eclipse.xtext.common.Terminals
 
-import "http://www.ipa.fraunhofer.de/ros" 
+import "http://www.ipa.fraunhofer.de/ros"
 import "http://www.ipa.fraunhofer.de/primitives" as primitives
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/emf/2003/XMLType" as type
@@ -9,159 +9,159 @@ import "http://www.eclipse.org/emf/2003/XMLType" as type
 //NAMESPACES
 ///////////////////
 Namespace returns Namespace:
-	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+    GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
 
 GraphName returns GraphName:
-	'GraphName' ;
+    'GraphName' ;
 
 GlobalNamespace returns GlobalNamespace:
-	{GlobalNamespace}
-	'GlobalNamespace'
-		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
+    {GlobalNamespace}
+    'GlobalNamespace'
+        ('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 RelativeNamespace_Impl returns RelativeNamespace:
-	{RelativeNamespace}
-	'RelativeNamespace'
-		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
+    {RelativeNamespace}
+    'RelativeNamespace'
+        ('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 PrivateNamespace returns PrivateNamespace:
-	{PrivateNamespace}
-	'PrivateNamespace'
-		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
+    {PrivateNamespace}
+    'PrivateNamespace'
+        ('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 ///////////////////
 //PARAMETERS DEFINITION
 ///////////////////
 RosParamNames returns ecore::EString:
-	ROS_CONVENTION_PARAM | ID 
+    ROS_CONVENTION_PARAM | ID
 ;
 
 Parameter returns Parameter:
-	{Parameter}
-		name=EString':'
-		BEGIN
-		('ns:' namespace=Namespace)?
-		'type:' type=ParameterType
-		('value:' value=ParameterValue)?		
-		END
-	;
-	
+    {Parameter}
+        name=EString':'
+        BEGIN
+        ('ns:' namespace=Namespace)?
+        'type:' type=ParameterType
+        ('value:' value=ParameterValue)?
+        END
+    ;
+
 ParameterType returns ParameterType:
-	ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterBooleanType | ParameterBase64Type | ParameterArrayType; // | ParameterDateType;
+    ParameterListType | ParameterStructType | ParameterIntegerType | ParameterStringType | ParameterDoubleType | ParameterBooleanType | ParameterBase64Type | ParameterArrayType; // | ParameterDateType;
 
 ParameterValue returns ParameterValue:
-	ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList | ParameterStruct; // | ParameterDate;
+    ParameterString | ParameterBase64 | ParameterInteger | ParameterDouble | ParameterBoolean | ParameterList | ParameterStruct; // | ParameterDate;
 
 
 ParameterListType returns ParameterListType:
-	{ParameterListType}
-	'List'
-	'['	
-		sequence+=ParameterType ( ',' sequence+=ParameterType )*
-	']';
+    {ParameterListType}
+    'List'
+    '['
+        sequence+=ParameterType ( ',' sequence+=ParameterType )*
+    ']';
 
 ParameterStructType returns ParameterStructType:
-	{ParameterStructType}
-	'Struct'
-	'['
-		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
-	']';
+    {ParameterStructType}
+    'Struct'
+    '['
+        parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
+    ']';
 
 ParameterIntegerType returns ParameterIntegerType:
-	{ParameterIntegerType}
-	'Integer'
-	('default' default=ParameterInteger)?;
+    {ParameterIntegerType}
+    'Integer'
+    ('default' default=ParameterInteger)?;
 
 ParameterStringType returns ParameterStringType:
-	{ParameterStringType}
-	'String'
-	('default' default=ParameterString)?;
+    {ParameterStringType}
+    'String'
+    ('default' default=ParameterString)?;
 
 ParameterDoubleType returns ParameterDoubleType:
-	{ParameterDoubleType}
-	'Double'
-	('default' default=ParameterDouble)?;
+    {ParameterDoubleType}
+    'Double'
+    ('default' default=ParameterDouble)?;
 
 ParameterDateType returns ParameterDateType:
-	{ParameterDateType}
-	'Date'
-	('default' default=ParameterDate)?;
+    {ParameterDateType}
+    'Date'
+    ('default' default=ParameterDate)?;
 
 ParameterBooleanType returns ParameterBooleanType:
-	{ParameterBooleanType}
-	'Boolean'
-	('default' default=ParameterBoolean)?;
+    {ParameterBooleanType}
+    'Boolean'
+    ('default' default=ParameterBoolean)?;
 
 ParameterBase64Type returns ParameterBase64Type:
-	{ParameterBase64Type}
-	'Base64'
-	('default' default=ParameterBase64)?;
+    {ParameterBase64Type}
+    'Base64'
+    ('default' default=ParameterBase64)?;
 
 ParameterAnyType returns ParameterAnyType:
-	{ParameterAnyType}
-	'Any'
-	('default' default=ParameterAny)?;
+    {ParameterAnyType}
+    'Any'
+    ('default' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
-	'Array:'
-	BEGIN
-		'type' type=ParameterType
-		('default' default=ParameterList)?
-	END;
+    'Array:'
+    BEGIN
+        'type' type=ParameterType
+        ('default' default=ParameterList)?
+    END;
 
 ParameterList returns ParameterSequence:
-	{ParameterSequence}
-		'['	value+=ParameterValue ( ',' value+=ParameterValue )* ']'
+    {ParameterSequence}
+        '[' value+=ParameterValue ( ',' value+=ParameterValue )* ']'
 ;
 
 ParameterAny returns ParameterAny:
-	{ParameterAny}
-	'ParameterAny'
-		('value' value=EString)?
-	;
+    {ParameterAny}
+    'ParameterAny'
+        ('value' value=EString)?
+    ;
 
 ParameterString returns ParameterString:
-	value=EString
+    value=EString
 ;
 
 ParameterBase64 returns ParameterBase64:
-	value=Base64Binary
+    value=Base64Binary
 ;
 
 ParameterInteger returns ParameterInteger:
-	value=Integer0
+    value=Integer0
 ;
 
 ParameterDouble returns ParameterDouble:
-	value=Double0
+    value=Double0
 ;
 
 ParameterBoolean returns ParameterBoolean:
-	value=boolean0
+    value=boolean0
 ;
 
 ParameterStruct returns ParameterStruct:
-	{ParameterStruct}
-		('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+    {ParameterStruct}
+        ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
 ;
 
 ParameterDate returns ParameterDate:
-	value=DateTime0
-	;
+    value=DateTime0
+    ;
 
 
 ParameterStructMember returns ParameterStructMember:
-	'ParameterStructMember'
-	name=EString':'
-	BEGIN
-		value=ParameterValue
-	END;
+    'ParameterStructMember'
+    name=EString':'
+    BEGIN
+        value=ParameterValue
+    END;
 
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
-		name=EString
-		type=ParameterType
-	;
+        name=EString
+        type=ParameterType
+    ;
 
 ///////////////////
 //PARAMETERS PRIMITIVES TYPES
@@ -181,188 +181,188 @@ terminal MIN_SEC:('0'..'5')('0'..'9');
 terminal DATE_TIME: YEAR'-'MONTH'-'DAY'T'HOUR':'MIN_SEC':'MIN_SEC;
 
 Base64Binary returns type::Base64Binary:
-	BINARY ;
+    BINARY ;
 
 boolean0 returns type::Boolean:
-	BOOLEAN;
+    BOOLEAN;
 
 Double0 returns type::Double:
-	DOUBLE;
+    DOUBLE;
 
 Integer0 returns type::Int:
-	DECINT;
+    DECINT;
 
 DateTime0 returns type::DateTime:
-	DATE_TIME;
-	
+    DATE_TIME;
+
 ///////////////////
 //MESSAGE PRIMITIVES DEFINITION
 ///////////////////
 MessagePart returns primitives::MessagePart:
-	Type = AbstractType
-	Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
+    Type = AbstractType
+    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
 ;
 
 terminal MESSAGE_ASIGMENT:
-	((ID|STRING)'='(ID|STRING|INT|'-'INT))
+    ((ID|STRING)'='(ID|STRING|INT|'-'INT))
 ;
 
 AbstractType returns primitives::AbstractType:
-	bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
-	boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray | 
-	TopicSpecRef | ArrayTopicSpecRef ;
+    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
+    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
+    TopicSpecRef | ArrayTopicSpecRef ;
 
 
 bool returns primitives::bool:
-	{primitives::bool}
-	'bool'
-	;
+    {primitives::bool}
+    'bool'
+    ;
 
 int8 returns primitives::int8:
-	{primitives::int8}
-	'int8'
-	;
+    {primitives::int8}
+    'int8'
+    ;
 
 uint8 returns primitives::uint8:
-	{primitives::uint8}
-	'uint8'
-	;
+    {primitives::uint8}
+    'uint8'
+    ;
 
 int16 returns primitives::int16:
-	{primitives::int16}
-	'int16'
-	;
+    {primitives::int16}
+    'int16'
+    ;
 
 uint16 returns primitives::uint16:
-	{primitives::uint16}
-	'uint16'
-	;
+    {primitives::uint16}
+    'uint16'
+    ;
 
 int32 returns primitives::int32:
-	{primitives::int32}
-	'int32'
-	;
+    {primitives::int32}
+    'int32'
+    ;
 
 uint32 returns primitives::uint32:
-	{primitives::uint32}
-	'uint32'
-	;
+    {primitives::uint32}
+    'uint32'
+    ;
 
 int64 returns primitives::int64:
-	{primitives::int64}
-	'int64'
-	;
+    {primitives::int64}
+    'int64'
+    ;
 
 uint64 returns primitives::uint64:
-	{primitives::uint64}
-	'uint64'
-	;
+    {primitives::uint64}
+    'uint64'
+    ;
 
 float32 returns primitives::float32:
-	{primitives::float32}
-	'float32'
-	;
+    {primitives::float32}
+    'float32'
+    ;
 
 float64 returns primitives::float64:
-	{primitives::float64}
-	'float64'
-	;
+    {primitives::float64}
+    'float64'
+    ;
 
 string0 returns primitives::string:
-	{primitives::string}
-	'string'
-	;
-	
+    {primitives::string}
+    'string'
+    ;
+
 byte returns primitives::Byte:
-	{primitives::Byte}
-	'byte'
-	;
+    {primitives::Byte}
+    'byte'
+    ;
 
 time returns primitives::time:
-	{primitives::time}
-	'time'
-	;
+    {primitives::time}
+    'time'
+    ;
 
 duration returns primitives::duration:
-	{primitives::duration}
-	'duration'
-	;
+    {primitives::duration}
+    'duration'
+    ;
 
 boolArray returns primitives::boolArray:
-	{primitives::boolArray}
-	'bool[]'
-	;
+    {primitives::boolArray}
+    'bool[]'
+    ;
 
 int8Array returns primitives::int8Array:
-	{primitives::int8Array}
-	'int8[]'
-	;
+    {primitives::int8Array}
+    'int8[]'
+    ;
 
 uint8Array returns primitives::uint8Array:
-	{primitives::uint8Array}
-	'uint8[]'
-	;
+    {primitives::uint8Array}
+    'uint8[]'
+    ;
 
 int16Array returns primitives::int16Array:
-	{primitives::int16Array}
-	'int16[]'
-	;
+    {primitives::int16Array}
+    'int16[]'
+    ;
 
 uint16Array returns primitives::uint16Array:
-	{primitives::uint16Array}
-	'uint16[]'
-	;
+    {primitives::uint16Array}
+    'uint16[]'
+    ;
 
 int32Array returns primitives::int32Array:
-	{primitives::int32Array}
-	'int32[]'
-	;
+    {primitives::int32Array}
+    'int32[]'
+    ;
 
 uint32Array returns primitives::uint32Array:
-	{primitives::uint32Array}
-	'uint32[]'
-	;
+    {primitives::uint32Array}
+    'uint32[]'
+    ;
 
 int64Array returns primitives::int64Array:
-	{primitives::int64Array}
-	'int64[]'
-	;
+    {primitives::int64Array}
+    'int64[]'
+    ;
 
 uint64Array returns primitives::uint64Array:
-	{primitives::uint64Array}
-	'uint64[]'
-	;
+    {primitives::uint64Array}
+    'uint64[]'
+    ;
 
 float32Array returns primitives::float32Array:
-	{primitives::float32Array}
-	'float32[]'
-	;
+    {primitives::float32Array}
+    'float32[]'
+    ;
 
 float64Array returns primitives::float64Array:
-	{primitives::float64Array}
-	'float64[]'
-	;
+    {primitives::float64Array}
+    'float64[]'
+    ;
 
 string0Array returns primitives::stringArray:
-	{primitives::stringArray}
-	'string[]'
-	;
+    {primitives::stringArray}
+    'string[]'
+    ;
 byteArray returns primitives::ByteArray:
-	{primitives::ByteArray}
-	'byte[]'
-	;
-	
+    {primitives::ByteArray}
+    'byte[]'
+    ;
+
 Header returns primitives::Header:
-	{primitives::Header}
-	'Header'
+    {primitives::Header}
+    'Header'
 ;
 
 TopicSpecRef returns TopicSpecRef:
-	TopicSpec=[TopicSpec|EString]
+    TopicSpec=[TopicSpec|EString]
 ;
 
 ArrayTopicSpecRef returns ArrayTopicSpecRef:
-	TopicSpec=[TopicSpec|EString]'[]'
+    TopicSpec=[TopicSpec|EString]'[]'
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
@@ -373,21 +373,21 @@ KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'servic
 terminal BEGIN: 'synthetic:BEGIN';
 terminal END: 'synthetic:END';
 
-@Override 
+@Override
 terminal SL_COMMENT: '#' !('\n'|'\r')*;
 
 ///////////////////
 // CONVENTIONS AND NAMES
 ///////////////////
 EString returns ecore::EString:
-	STRING | ID;
-	
+    STRING | ID;
+
 RosNames returns ecore::EString:
-	ROS_CONVENTION_A | ID | 'node'
+    ROS_CONVENTION_A | ID | 'node'
 ;
 
 terminal ROS_CONVENTION_A:
-	( ('/' ID ) | ( ID '/' ) )* ;
+    ( ('/' ID ) | ( ID '/' ) )* ;
 
 terminal ROS_CONVENTION_PARAM:
-	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
+    ( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;

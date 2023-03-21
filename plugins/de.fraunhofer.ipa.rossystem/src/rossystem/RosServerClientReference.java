@@ -21,26 +21,26 @@ import ros.ServiceClient;
  * @generated
  */
 public interface RosServerClientReference extends InterfaceReference {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(ServiceClient)
-	 * @see rossystem.RossystemPackage#getRosServerClientReference_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	ServiceClient getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(ServiceClient)
+     * @see rossystem.RossystemPackage#getRosServerClientReference_From()
+     * @model required="true"
+     * @generated
+     */
+    ServiceClient getFrom();
 
-	/**
-	 * Sets the value of the '{@link rossystem.RosServerClientReference#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(ServiceClient value);
+    /**
+     * Sets the value of the '{@link rossystem.RosServerClientReference#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(ServiceClient value);
 
 } // RosServerClientReference

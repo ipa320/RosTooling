@@ -13,43 +13,43 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 
 public class RosParser extends AbstractAntlrParser {
 
-	@Inject
-	private RosGrammarAccess grammarAccess;
+    @Inject
+    private RosGrammarAccess grammarAccess;
 
-	@Override
-	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
-	}
-	
-	@Override
-	protected TokenSource createLexer(CharStream stream) {
-		return new RosTokenSource(super.createLexer(stream));
-	}
-	
-	/**
-	 * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
-	 * Override and return {@code true} if your terminal splitting is stateless.
-	 */
-	@Override
-	protected boolean isReparseSupported() {
-		return false;
-	}
+    @Override
+    protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
+        tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+    }
 
-	@Override
-	protected InternalRosParser createParser(XtextTokenStream stream) {
-		return new InternalRosParser(stream, getGrammarAccess());
-	}
+    @Override
+    protected TokenSource createLexer(CharStream stream) {
+        return new RosTokenSource(super.createLexer(stream));
+    }
 
-	@Override 
-	protected String getDefaultRuleName() {
-		return "PackageSet";
-	}
+    /**
+     * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+     * Override and return {@code true} if your terminal splitting is stateless.
+     */
+    @Override
+    protected boolean isReparseSupported() {
+        return false;
+    }
 
-	public RosGrammarAccess getGrammarAccess() {
-		return this.grammarAccess;
-	}
+    @Override
+    protected InternalRosParser createParser(XtextTokenStream stream) {
+        return new InternalRosParser(stream, getGrammarAccess());
+    }
 
-	public void setGrammarAccess(RosGrammarAccess grammarAccess) {
-		this.grammarAccess = grammarAccess;
-	}
+    @Override
+    protected String getDefaultRuleName() {
+        return "PackageSet";
+    }
+
+    public RosGrammarAccess getGrammarAccess() {
+        return this.grammarAccess;
+    }
+
+    public void setGrammarAccess(RosGrammarAccess grammarAccess) {
+        this.grammarAccess = grammarAccess;
+    }
 }

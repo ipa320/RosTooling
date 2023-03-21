@@ -6,7 +6,7 @@ lexer grammar InternalRos2Lexer;
 @header {
 package de.fraunhofer.ipa.ros2.parser.antlr.lexer;
 
-// Hack: Use our own Lexer superclass by means of import. 
+// Hack: Use our own Lexer superclass by means of import.
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.parser.antlr.Lexer;
 }

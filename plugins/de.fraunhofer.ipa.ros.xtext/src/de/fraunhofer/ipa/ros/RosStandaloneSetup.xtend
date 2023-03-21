@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.ros
  */
 class RosStandaloneSetup extends RosStandaloneSetupGenerated {
 
-	def static void doSetup() {
-		new RosStandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+    def static void doSetup() {
+        new RosStandaloneSetup().createInjectorAndDoEMFRegistration()
+    }
 }

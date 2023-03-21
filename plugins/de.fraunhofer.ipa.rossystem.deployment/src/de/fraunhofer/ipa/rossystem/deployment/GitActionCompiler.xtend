@@ -4,9 +4,9 @@ import rossystem.RosSystem
 import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 
 class GitActionCompiler {
-	
-	DeploymentHelpers generator_helper = new DeploymentHelpers()
- 
+
+    DeploymentHelpers generator_helper = new DeploymentHelpers()
+
  def default_part(String layer, String context_path, String needed_layer, String tag)'''
 «layer»:
   runs-on: ubuntu-latest
@@ -72,30 +72,30 @@ class GitActionCompiler {
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
  '''
  def build_layer()'''
-	«default_part("builder", "./builder", null, "type=raw,value=${{ env.BUILDER_SUFFIX }}")» 
+    «default_part("builder", "./builder", null, "type=raw,value=${{ env.BUILDER_SUFFIX }}")»
 '''
  def extra_layer(String sys_name, String ros_distro)
 '''
-	«default_part("extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+    «default_part("extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
 '''
  def extra_layer(String sys_name, String stack_name,String ros_distro)
 '''
-	«default_part(String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), String.join("_", sys_name, stack_name),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
-''' 
+    «default_part(String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), String.join("_", sys_name, stack_name),"extra_layer"), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+'''
  def system_layer(String sys_name, Boolean need_extra, String ros_distro)'''
-	«IF need_extra» 
-	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), "extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
-	«ELSE»
-	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
-	«ENDIF»
-	''' 	
+    «IF need_extra»
+    «default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), "extra_layer_"+ generator_helper.get_uniqe_name(sys_name, ros_distro), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+    «ELSE»
+    «default_part(generator_helper.get_uniqe_name(sys_name, ros_distro), "./"+ generator_helper.get_folder_name(sys_name, ros_distro), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+    «ENDIF»
+    '''
  def stack_layer(String sys_name, String stack_name, String ros_distro, Boolean need_extra)'''
-	«IF need_extra» 
-	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
-	«ELSE»
-	«default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
-	«ENDIF»
-''' 	
+    «IF need_extra»
+    «default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), String.join("_", "extra_layer", generator_helper.get_uniqe_name(sys_name, ros_distro), stack_name), "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+    «ELSE»
+    «default_part(generator_helper.get_uniqe_name(sys_name, ros_distro)+"_"+stack_name, String.join("/", ".",generator_helper.get_folder_name(sys_name, ros_distro), sys_name+"_"+stack_name), null, "type=raw,value=${{ steps.extract_branch.outputs.branch }}")»
+    «ENDIF»
+'''
  def compile_toGitAction(RosSystem system, Integer ros_version, String ros_distro) '''«generator_helper.init_pkg()»
 name: «generator_helper.get_uniqe_name(system.name.toLowerCase, ros_distro)»
 on:
@@ -112,7 +112,7 @@ jobs:
   «IF !generator_helper.listOfRepos(system).isEmpty()»
   «extra_layer(system.name.toLowerCase, ros_distro)»
   «system_layer(system.name.toLowerCase, true, ros_distro)»
-	«ELSE»
+    «ELSE»
   «system_layer(system.name.toLowerCase, false, ros_distro)»
 «ENDIF»
 «ELSE»«FOR stack : system.getComponentStack()»«IF !generator_helper.listOfRepos(stack).isEmpty()»
@@ -122,6 +122,6 @@ jobs:
   «stack_layer(system.name.toLowerCase, stack.name.toLowerCase, ros_distro, false)»
 «ENDIF»
  «ENDFOR»
-«ENDIF»           
+«ENDIF»
 '''
 }

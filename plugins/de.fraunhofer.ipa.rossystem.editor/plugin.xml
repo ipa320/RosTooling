@@ -6,7 +6,7 @@
 
 <plugin>
 
-	<extension point="org.eclipse.ui.handlers">
+    <extension point="org.eclipse.ui.handlers">
       <handler
          class="rossystem.presentation.AddRosSystemHandler"
          commandId="de.fraunhofer.ipa.ros.newRosSystem">
@@ -32,7 +32,7 @@
             icon="icons/full/ros_system_icon.jpg"
             id="NewSystem"
             style="push">
-				<visibleWhen
+                <visibleWhen
                      checkEnabled="false">
                   <or>
                      <with variable="activeWorkbenchWindow.activePerspective">
@@ -47,15 +47,15 @@
       </menuContribution>
    </extension>
 
-	<!--Right click to re-load the ros models-->
-	<extension
+    <!--Right click to re-load the ros models-->
+    <extension
         point="org.eclipse.ui.handlers">
         <handler
               class="rossystem.presentation.ReloadHandler"
               commandId="de.fraunhofer.ipa.rossystem.ReloadNodes">
-     	</handler>
+        </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command

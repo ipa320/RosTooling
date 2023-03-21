@@ -14,24 +14,24 @@ import org.eclipse.xtext.resource.IResourceServiceProvider;
 @SuppressWarnings("all")
 public class Ros2StandaloneSetupGenerated implements ISetup {
 
-	@Override
-	public Injector createInjectorAndDoEMFRegistration() {
-		RosStandaloneSetup.doSetup();
+    @Override
+    public Injector createInjectorAndDoEMFRegistration() {
+        RosStandaloneSetup.doSetup();
 
-		Injector injector = createInjector();
-		register(injector);
-		return injector;
-	}
-	
-	public Injector createInjector() {
-		return Guice.createInjector(new Ros2RuntimeModule());
-	}
-	
-	public void register(Injector injector) {
-		IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
-		IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);
-		
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ros2", resourceFactory);
-		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("ros2", serviceProvider);
-	}
+        Injector injector = createInjector();
+        register(injector);
+        return injector;
+    }
+
+    public Injector createInjector() {
+        return Guice.createInjector(new Ros2RuntimeModule());
+    }
+
+    public void register(Injector injector) {
+        IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
+        IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);
+
+        Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ros2", resourceFactory);
+        IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("ros2", serviceProvider);
+    }
 }

@@ -12,13 +12,13 @@ public class CombineModelHandler extends AbstractHandler {
 
     @Override
     public Object execute(ExecutionEvent event) {
-    	Shell activeShell = HandlerUtil.getActiveShell(event);
-    	CombineModelsWizard wizard = new CombineModelsWizard();
-    	wizard.init(PlatformUI.getWorkbench(), new StructuredSelection());
-    	WizardDialog dialog = new WizardDialog(activeShell,wizard);
-    	dialog.create();
-    	dialog.getShell().setText("Combine ROS System Models");
-    	int result = dialog.open();
+        Shell activeShell = HandlerUtil.getActiveShell(event);
+        CombineModelsWizard wizard = new CombineModelsWizard();
+        wizard.init(PlatformUI.getWorkbench(), new StructuredSelection());
+        WizardDialog dialog = new WizardDialog(activeShell,wizard);
+        dialog.create();
+        dialog.getShell().setText("Combine ROS System Models");
+        int result = dialog.open();
         return null;
     }
 

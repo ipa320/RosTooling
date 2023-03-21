@@ -11,21 +11,21 @@ import ros.Parameter
 import ros.ParameterListType
 
 class BasicsFormatter extends AbstractFormatter2 {
-	
-	@Inject extension BasicsGrammarAccess
 
-	def dispatch void format(Parameter parameter, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		parameter.type.format
-		parameter.namespace.format
-	}
+    @Inject extension BasicsGrammarAccess
 
-	def dispatch void format(ParameterListType parameterListType, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (parameterType : parameterListType.sequence) {
-			parameterType.format
-		}
-	}
-	
-	// TODO: implement for ParameterStructType, ParameterIntegerType, ParameterStringType, ParameterDoubleType, ParameterDateType, ParameterBooleanType, ParameterBase64Type, ParameterAnyType, ParameterArrayType, ParameterSequence, ParameterStruct, ParameterStructMember, ParameterStructTypeMember, MessagePart
+    def dispatch void format(Parameter parameter, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        parameter.type.format
+        parameter.namespace.format
+    }
+
+    def dispatch void format(ParameterListType parameterListType, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (parameterType : parameterListType.sequence) {
+            parameterType.format
+        }
+    }
+
+    // TODO: implement for ParameterStructType, ParameterIntegerType, ParameterStringType, ParameterDoubleType, ParameterDateType, ParameterBooleanType, ParameterBase64Type, ParameterAnyType, ParameterArrayType, ParameterSequence, ParameterStruct, ParameterStructMember, ParameterStructTypeMember, MessagePart
 }

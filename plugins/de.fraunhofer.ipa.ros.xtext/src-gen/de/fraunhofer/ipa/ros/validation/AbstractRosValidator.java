@@ -8,12 +8,12 @@ import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 
 public abstract class AbstractRosValidator extends BasicsValidator {
-	
-	@Override
-	protected List<EPackage> getEPackages() {
-		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ros"));
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/primitives"));
-		return result;
-	}
+
+    @Override
+    protected List<EPackage> getEPackages() {
+        List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
+        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ros"));
+        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/primitives"));
+        return result;
+    }
 }

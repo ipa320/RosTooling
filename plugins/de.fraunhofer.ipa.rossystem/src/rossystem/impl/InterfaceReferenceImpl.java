@@ -17,23 +17,23 @@ import rossystem.RossystemPackage;
  * @generated
  */
 public class InterfaceReferenceImpl extends MinimalEObjectImpl.Container implements InterfaceReference {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InterfaceReferenceImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected InterfaceReferenceImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return RossystemPackage.Literals.INTERFACE_REFERENCE;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return RossystemPackage.Literals.INTERFACE_REFERENCE;
+    }
 
 } //InterfaceReferenceImpl
