@@ -2,7 +2,6 @@
  */
 package rossystem.impl;
 
-import componentInterface.ComponentInterfacePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -10,17 +9,24 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import primitives.PrimitivesPackage;
 import ros.RosPackage;
-
-import rossystem.ActionConnection;
-import rossystem.ComponentStack;
-import rossystem.QualityAttribute;
+import rossystem.InterfaceReference;
+import rossystem.RosActionClientReference;
+import rossystem.RosActionServerReference;
+import rossystem.RosConnection;
+import rossystem.RosInterface;
+import rossystem.RosNode;
+import rossystem.RosParameter;
+import rossystem.RosParameterReference;
+import rossystem.RosPublisherReference;
+import rossystem.RosServerClientReference;
+import rossystem.RosServiceServerReference;
+import rossystem.RosSubscriberReference;
 import rossystem.RosSystem;
 import rossystem.RossystemFactory;
 import rossystem.RossystemPackage;
-import rossystem.ServiceConnection;
-import rossystem.TopicConnection;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,35 +47,91 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentStackEClass = null;
+	private EClass rosNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass qualityAttributeEClass = null;
+	private EClass rosParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass topicConnectionEClass = null;
+	private EClass processEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceConnectionEClass = null;
+	private EClass rosInterfaceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass actionConnectionEClass = null;
+	private EClass interfaceReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosPublisherReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosSubscriberReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosServiceServerReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosServerClientReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosActionServerReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosActionClientReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosConnectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosParameterReferenceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -119,9 +181,9 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentInterfacePackage.eINSTANCE.eClass();
 		RosPackage.eINSTANCE.eClass();
 		PrimitivesPackage.eINSTANCE.eClass();
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRossystemPackage.createPackageContents();
@@ -153,128 +215,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRosSystem_TopicConnections() {
-		return (EReference)rosSystemEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRosSystem_ServiceConnections() {
-		return (EReference)rosSystemEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getRosSystem_Name() {
-		return (EAttribute)rosSystemEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRosSystem_ComponentStack() {
-		return (EReference)rosSystemEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRosSystem_RosComponent() {
-		return (EReference)rosSystemEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getComponentStack() {
-		return componentStackEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComponentStack_Name() {
-		return (EAttribute)componentStackEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComponentStack_RosComponent() {
-		return (EReference)componentStackEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComponentStack_QualityAttribute() {
-		return (EReference)componentStackEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getQualityAttribute() {
-		return qualityAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getQualityAttribute_Name() {
-		return (EAttribute)qualityAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getQualityAttribute_Type() {
-		return (EReference)qualityAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getQualityAttribute_Value() {
-		return (EReference)qualityAttributeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)rosSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -284,7 +226,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 */
 	@Override
 	public EReference getRosSystem_Parameter() {
-		return (EReference)rosSystemEClass.getEStructuralFeatures().get(5);
+		return (EReference)rosSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -293,7 +235,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRosSystem_ActionConnections() {
+	public EReference getRosSystem_Rosnode() {
 		return (EReference)rosSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -303,8 +245,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getTopicConnection() {
-		return topicConnectionEClass;
+	public EReference getRosSystem_Connections() {
+		return (EReference)rosSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -313,8 +255,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTopicConnection_From() {
-		return (EReference)topicConnectionEClass.getEStructuralFeatures().get(0);
+	public EReference getRosSystem_Process() {
+		return (EReference)rosSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -323,8 +265,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTopicConnection_To() {
-		return (EReference)topicConnectionEClass.getEStructuralFeatures().get(1);
+	public EClass getRosNode() {
+		return rosNodeEClass;
 	}
 
 	/**
@@ -333,8 +275,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTopicConnection_TopicName() {
-		return (EAttribute)topicConnectionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRosNode_Name() {
+		return (EAttribute)rosNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -343,8 +285,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceConnection() {
-		return serviceConnectionEClass;
+	public EReference getRosNode_From() {
+		return (EReference)rosNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -353,8 +295,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getServiceConnection_From() {
-		return (EReference)serviceConnectionEClass.getEStructuralFeatures().get(0);
+	public EReference getRosNode_Rosinterfaces() {
+		return (EReference)rosNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -363,8 +305,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getServiceConnection_To() {
-		return (EReference)serviceConnectionEClass.getEStructuralFeatures().get(1);
+	public EReference getRosNode_Rosparameters() {
+		return (EReference)rosNodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -373,8 +315,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceConnection_ServiceName() {
-		return (EAttribute)serviceConnectionEClass.getEStructuralFeatures().get(2);
+	public EClass getRosParameter() {
+		return rosParameterEClass;
 	}
 
 	/**
@@ -383,8 +325,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getActionConnection() {
-		return actionConnectionEClass;
+	public EAttribute getRosParameter_Name() {
+		return (EAttribute)rosParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -393,8 +335,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getActionConnection_From() {
-		return (EReference)actionConnectionEClass.getEStructuralFeatures().get(0);
+	public EReference getRosParameter_Value() {
+		return (EReference)rosParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -403,8 +345,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getActionConnection_To() {
-		return (EReference)actionConnectionEClass.getEStructuralFeatures().get(1);
+	public EReference getRosParameter_From() {
+		return (EReference)rosParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -413,8 +355,248 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getActionConnection_ActionName() {
-		return (EAttribute)actionConnectionEClass.getEStructuralFeatures().get(2);
+	public EClass getProcess() {
+		return processEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProcess_Name() {
+		return (EAttribute)processEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProcess_Threads() {
+		return (EAttribute)processEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProcess_Nodes() {
+		return (EReference)processEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosInterface() {
+		return rosInterfaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRosInterface_Name() {
+		return (EAttribute)rosInterfaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosInterface_Reference() {
+		return (EReference)rosInterfaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getInterfaceReference() {
+		return interfaceReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosPublisherReference() {
+		return rosPublisherReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosPublisherReference_From() {
+		return (EReference)rosPublisherReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosSubscriberReference() {
+		return rosSubscriberReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosSubscriberReference_From() {
+		return (EReference)rosSubscriberReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosServiceServerReference() {
+		return rosServiceServerReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosServiceServerReference_From() {
+		return (EReference)rosServiceServerReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosServerClientReference() {
+		return rosServerClientReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosServerClientReference_From() {
+		return (EReference)rosServerClientReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosActionServerReference() {
+		return rosActionServerReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosActionServerReference_From() {
+		return (EReference)rosActionServerReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosActionClientReference() {
+		return rosActionClientReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosActionClientReference_From() {
+		return (EReference)rosActionClientReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosConnection() {
+		return rosConnectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosConnection_From() {
+		return (EReference)rosConnectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosConnection_To() {
+		return (EReference)rosConnectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRosParameterReference() {
+		return rosParameterReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRosParameterReference_From() {
+		return (EReference)rosParameterReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -447,38 +629,58 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 
 		// Create classes and their features
 		rosSystemEClass = createEClass(ROS_SYSTEM);
-		createEReference(rosSystemEClass, ROS_SYSTEM__TOPIC_CONNECTIONS);
-		createEReference(rosSystemEClass, ROS_SYSTEM__SERVICE_CONNECTIONS);
-		createEReference(rosSystemEClass, ROS_SYSTEM__ACTION_CONNECTIONS);
 		createEAttribute(rosSystemEClass, ROS_SYSTEM__NAME);
-		createEReference(rosSystemEClass, ROS_SYSTEM__COMPONENT_STACK);
+		createEReference(rosSystemEClass, ROS_SYSTEM__PROCESS);
+		createEReference(rosSystemEClass, ROS_SYSTEM__ROSNODE);
+		createEReference(rosSystemEClass, ROS_SYSTEM__CONNECTIONS);
 		createEReference(rosSystemEClass, ROS_SYSTEM__PARAMETER);
-		createEReference(rosSystemEClass, ROS_SYSTEM__ROS_COMPONENT);
 
-		componentStackEClass = createEClass(COMPONENT_STACK);
-		createEAttribute(componentStackEClass, COMPONENT_STACK__NAME);
-		createEReference(componentStackEClass, COMPONENT_STACK__ROS_COMPONENT);
-		createEReference(componentStackEClass, COMPONENT_STACK__QUALITY_ATTRIBUTE);
+		processEClass = createEClass(PROCESS);
+		createEAttribute(processEClass, PROCESS__NAME);
+		createEAttribute(processEClass, PROCESS__THREADS);
+		createEReference(processEClass, PROCESS__NODES);
 
-		qualityAttributeEClass = createEClass(QUALITY_ATTRIBUTE);
-		createEAttribute(qualityAttributeEClass, QUALITY_ATTRIBUTE__NAME);
-		createEReference(qualityAttributeEClass, QUALITY_ATTRIBUTE__TYPE);
-		createEReference(qualityAttributeEClass, QUALITY_ATTRIBUTE__VALUE);
+		rosNodeEClass = createEClass(ROS_NODE);
+		createEAttribute(rosNodeEClass, ROS_NODE__NAME);
+		createEReference(rosNodeEClass, ROS_NODE__FROM);
+		createEReference(rosNodeEClass, ROS_NODE__ROSINTERFACES);
+		createEReference(rosNodeEClass, ROS_NODE__ROSPARAMETERS);
 
-		topicConnectionEClass = createEClass(TOPIC_CONNECTION);
-		createEReference(topicConnectionEClass, TOPIC_CONNECTION__FROM);
-		createEReference(topicConnectionEClass, TOPIC_CONNECTION__TO);
-		createEAttribute(topicConnectionEClass, TOPIC_CONNECTION__TOPIC_NAME);
+		rosInterfaceEClass = createEClass(ROS_INTERFACE);
+		createEAttribute(rosInterfaceEClass, ROS_INTERFACE__NAME);
+		createEReference(rosInterfaceEClass, ROS_INTERFACE__REFERENCE);
 
-		serviceConnectionEClass = createEClass(SERVICE_CONNECTION);
-		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__FROM);
-		createEReference(serviceConnectionEClass, SERVICE_CONNECTION__TO);
-		createEAttribute(serviceConnectionEClass, SERVICE_CONNECTION__SERVICE_NAME);
+		interfaceReferenceEClass = createEClass(INTERFACE_REFERENCE);
 
-		actionConnectionEClass = createEClass(ACTION_CONNECTION);
-		createEReference(actionConnectionEClass, ACTION_CONNECTION__FROM);
-		createEReference(actionConnectionEClass, ACTION_CONNECTION__TO);
-		createEAttribute(actionConnectionEClass, ACTION_CONNECTION__ACTION_NAME);
+		rosPublisherReferenceEClass = createEClass(ROS_PUBLISHER_REFERENCE);
+		createEReference(rosPublisherReferenceEClass, ROS_PUBLISHER_REFERENCE__FROM);
+
+		rosSubscriberReferenceEClass = createEClass(ROS_SUBSCRIBER_REFERENCE);
+		createEReference(rosSubscriberReferenceEClass, ROS_SUBSCRIBER_REFERENCE__FROM);
+
+		rosServiceServerReferenceEClass = createEClass(ROS_SERVICE_SERVER_REFERENCE);
+		createEReference(rosServiceServerReferenceEClass, ROS_SERVICE_SERVER_REFERENCE__FROM);
+
+		rosServerClientReferenceEClass = createEClass(ROS_SERVER_CLIENT_REFERENCE);
+		createEReference(rosServerClientReferenceEClass, ROS_SERVER_CLIENT_REFERENCE__FROM);
+
+		rosActionServerReferenceEClass = createEClass(ROS_ACTION_SERVER_REFERENCE);
+		createEReference(rosActionServerReferenceEClass, ROS_ACTION_SERVER_REFERENCE__FROM);
+
+		rosActionClientReferenceEClass = createEClass(ROS_ACTION_CLIENT_REFERENCE);
+		createEReference(rosActionClientReferenceEClass, ROS_ACTION_CLIENT_REFERENCE__FROM);
+
+		rosParameterReferenceEClass = createEClass(ROS_PARAMETER_REFERENCE);
+		createEReference(rosParameterReferenceEClass, ROS_PARAMETER_REFERENCE__FROM);
+
+		rosParameterEClass = createEClass(ROS_PARAMETER);
+		createEAttribute(rosParameterEClass, ROS_PARAMETER__NAME);
+		createEReference(rosParameterEClass, ROS_PARAMETER__VALUE);
+		createEReference(rosParameterEClass, ROS_PARAMETER__FROM);
+
+		rosConnectionEClass = createEClass(ROS_CONNECTION);
+		createEReference(rosConnectionEClass, ROS_CONNECTION__FROM);
+		createEReference(rosConnectionEClass, ROS_CONNECTION__TO);
 	}
 
 	/**
@@ -506,48 +708,75 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 
 		// Obtain other dependent packages
 		RosPackage theRosPackage = (RosPackage)EPackage.Registry.INSTANCE.getEPackage(RosPackage.eNS_URI);
-		ComponentInterfacePackage theComponentInterfacePackage = (ComponentInterfacePackage)EPackage.Registry.INSTANCE.getEPackage(ComponentInterfacePackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		rosPublisherReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosSubscriberReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosServiceServerReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosServerClientReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosActionServerReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosActionClientReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+		rosParameterReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(rosSystemEClass, RosSystem.class, "RosSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRosSystem_TopicConnections(), this.getTopicConnection(), null, "TopicConnections", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSystem_ServiceConnections(), this.getServiceConnection(), null, "ServiceConnections", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSystem_ActionConnections(), this.getActionConnection(), null, "ActionConnections", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRosSystem_Name(), ecorePackage.getEString(), "Name", null, 0, 1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSystem_ComponentStack(), this.getComponentStack(), null, "ComponentStack", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRosSystem_Name(), ecorePackage.getEString(), "Name", null, 1, 1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosSystem_Process(), this.getProcess(), null, "Process", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosSystem_Rosnode(), this.getRosNode(), null, "Rosnode", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosSystem_Connections(), this.getRosConnection(), null, "Connections", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRosSystem_Parameter(), theRosPackage.getParameter(), null, "Parameter", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getRosSystem_RosComponent(), theComponentInterfacePackage.getComponentInterface(), null, "RosComponent", null, 0, -1, RosSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentStackEClass, ComponentStack.class, "ComponentStack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentStack_Name(), ecorePackage.getEString(), "Name", null, 1, 1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentStack_RosComponent(), theComponentInterfacePackage.getComponentInterface(), null, "RosComponent", null, 0, -1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentStack_QualityAttribute(), this.getQualityAttribute(), null, "QualityAttribute", null, 0, -1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEClass(processEClass, rossystem.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProcess_Name(), ecorePackage.getEString(), "Name", null, 1, 1, rossystem.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_Threads(), theXMLTypePackage.getInt(), "Threads", null, 0, 1, rossystem.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Nodes(), this.getRosNode(), null, "Nodes", null, 0, -1, rossystem.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(qualityAttributeEClass, QualityAttribute.class, "QualityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getQualityAttribute_Name(), ecorePackage.getEString(), "Name", null, 1, 1, QualityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQualityAttribute_Type(), theRosPackage.getParameterType(), null, "Type", null, 0, 1, QualityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQualityAttribute_Value(), theRosPackage.getParameterValue(), null, "Value", null, 0, 1, QualityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(rosNodeEClass, RosNode.class, "RosNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRosNode_Name(), ecorePackage.getEString(), "Name", null, 1, 1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosNode_From(), theRosPackage.getNode(), null, "From", null, 1, 1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosNode_Rosinterfaces(), this.getRosInterface(), null, "rosinterfaces", null, 0, -1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosNode_Rosparameters(), this.getRosParameter(), null, "rosparameters", null, 0, -1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(topicConnectionEClass, TopicConnection.class, "TopicConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTopicConnection_From(), theComponentInterfacePackage.getRosPublisher(), null, "From", null, 1, -1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTopicConnection_To(), theComponentInterfacePackage.getRosSubscriber(), null, "To", null, 1, -1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTopicConnection_TopicName(), ecorePackage.getEString(), "TopicName", null, 1, 1, TopicConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(rosInterfaceEClass, RosInterface.class, "RosInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRosInterface_Name(), ecorePackage.getEString(), "Name", null, 1, 1, RosInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosInterface_Reference(), this.getInterfaceReference(), null, "Reference", null, 1, 1, RosInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceConnectionEClass, ServiceConnection.class, "ServiceConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceConnection_From(), theComponentInterfacePackage.getRosServiceServer(), null, "From", null, 1, -1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceConnection_To(), theComponentInterfacePackage.getRosServiceClient(), null, "To", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceConnection_ServiceName(), ecorePackage.getEString(), "ServiceName", null, 1, 1, ServiceConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(interfaceReferenceEClass, InterfaceReference.class, "InterfaceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(actionConnectionEClass, ActionConnection.class, "ActionConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionConnection_From(), theComponentInterfacePackage.getRosActionServer(), null, "From", null, 1, 1, ActionConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionConnection_To(), theComponentInterfacePackage.getRosActionClient(), null, "To", null, 1, 1, ActionConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActionConnection_ActionName(), ecorePackage.getEString(), "ActionName", null, 1, 1, ActionConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(rosPublisherReferenceEClass, RosPublisherReference.class, "RosPublisherReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosPublisherReference_From(), theRosPackage.getPublisher(), null, "From", null, 1, 1, RosPublisherReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosSubscriberReferenceEClass, RosSubscriberReference.class, "RosSubscriberReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosSubscriberReference_From(), theRosPackage.getSubscriber(), null, "From", null, 1, 1, RosSubscriberReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosServiceServerReferenceEClass, RosServiceServerReference.class, "RosServiceServerReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosServiceServerReference_From(), theRosPackage.getServiceServer(), null, "From", null, 1, 1, RosServiceServerReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosServerClientReferenceEClass, RosServerClientReference.class, "RosServerClientReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosServerClientReference_From(), theRosPackage.getServiceClient(), null, "From", null, 1, 1, RosServerClientReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosActionServerReferenceEClass, RosActionServerReference.class, "RosActionServerReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosActionServerReference_From(), theRosPackage.getActionServer(), null, "From", null, 1, 1, RosActionServerReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosActionClientReferenceEClass, RosActionClientReference.class, "RosActionClientReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosActionClientReference_From(), theRosPackage.getActionClient(), null, "From", null, 1, 1, RosActionClientReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosParameterReferenceEClass, RosParameterReference.class, "RosParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosParameterReference_From(), theRosPackage.getParameter(), null, "From", null, 1, 1, RosParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosParameterEClass, RosParameter.class, "RosParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRosParameter_Name(), ecorePackage.getEString(), "Name", null, 1, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosParameter_Value(), theRosPackage.getParameterValue(), null, "value", null, 0, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosParameter_From(), theRosPackage.getParameter(), null, "From", null, 1, 1, RosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosConnectionEClass, RosConnection.class, "RosConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRosConnection_From(), this.getRosInterface(), null, "from", null, 1, 1, RosConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRosConnection_To(), this.getRosInterface(), null, "to", null, 1, 1, RosConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,10 +2,6 @@
  */
 package rossystem;
 
-import componentInterface.RosActionClient;
-import componentInterface.RosActionServer;
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Action Connection</b></em>'.
@@ -17,14 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link rossystem.ActionConnection#getFrom <em>From</em>}</li>
  *   <li>{@link rossystem.ActionConnection#getTo <em>To</em>}</li>
- *   <li>{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getActionConnection()
  * @model
  * @generated
  */
-public interface ActionConnection extends EObject {
+public interface ActionConnection extends NamedInterface {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -76,31 +71,5 @@ public interface ActionConnection extends EObject {
 	 * @generated
 	 */
 	void setTo(RosActionClient value);
-
-	/**
-	 * Returns the value of the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Action Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Name</em>' attribute.
-	 * @see #setActionName(String)
-	 * @see rossystem.RossystemPackage#getActionConnection_ActionName()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getActionName();
-
-	/**
-	 * Sets the value of the '{@link rossystem.ActionConnection#getActionName <em>Action Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Name</em>' attribute.
-	 * @see #getActionName()
-	 * @generated
-	 */
-	void setActionName(String value);
 
 } // ActionConnection

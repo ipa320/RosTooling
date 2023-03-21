@@ -2,7 +2,6 @@
  */
 package rossystem;
 
-import componentInterface.ComponentInterface;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import ros.Parameter;
@@ -16,13 +15,11 @@ import ros.Parameter;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rossystem.RosSystem#getTopicConnections <em>Topic Connections</em>}</li>
- *   <li>{@link rossystem.RosSystem#getServiceConnections <em>Service Connections</em>}</li>
- *   <li>{@link rossystem.RosSystem#getActionConnections <em>Action Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getName <em>Name</em>}</li>
- *   <li>{@link rossystem.RosSystem#getComponentStack <em>Component Stack</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getProcess <em>Process</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getRosnode <em>Rosnode</em>}</li>
+ *   <li>{@link rossystem.RosSystem#getConnections <em>Connections</em>}</li>
  *   <li>{@link rossystem.RosSystem#getParameter <em>Parameter</em>}</li>
- *   <li>{@link rossystem.RosSystem#getRosComponent <em>Ros Component</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getRosSystem()
@@ -30,38 +27,6 @@ import ros.Parameter;
  * @generated
  */
 public interface RosSystem extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Topic Connections</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.TopicConnection}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Topic Connections</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Topic Connections</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_TopicConnections()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<TopicConnection> getTopicConnections();
-
-	/**
-	 * Returns the value of the '<em><b>Service Connections</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.ServiceConnection}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Service Connections</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service Connections</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_ServiceConnections()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ServiceConnection> getServiceConnections();
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,7 +38,7 @@ public interface RosSystem extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see rossystem.RossystemPackage#getRosSystem_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -89,34 +54,6 @@ public interface RosSystem extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Component Stack</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.ComponentStack}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Stack</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_ComponentStack()
-	 * @model containment="true" derived="true"
-	 * @generated
-	 */
-	EList<ComponentStack> getComponentStack();
-
-	/**
-	 * Returns the value of the '<em><b>Ros Component</b></em>' containment reference list.
-	 * The list contents are of type {@link componentInterface.ComponentInterface}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Ros Component</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ros Component</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_RosComponent()
-	 * @model containment="true" derived="true"
-	 * @generated
-	 */
-	EList<ComponentInterface> getRosComponent();
-
-	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
 	 * The list contents are of type {@link ros.Parameter}.
 	 * <!-- begin-user-doc -->
@@ -129,20 +66,40 @@ public interface RosSystem extends EObject {
 	EList<Parameter> getParameter();
 
 	/**
-	 * Returns the value of the '<em><b>Action Connections</b></em>' containment reference list.
-	 * The list contents are of type {@link rossystem.ActionConnection}.
+	 * Returns the value of the '<em><b>Rosnode</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.RosNode}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Action Connections</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Connections</em>' containment reference list.
-	 * @see rossystem.RossystemPackage#getRosSystem_ActionConnections()
+	 * @return the value of the '<em>Rosnode</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_Rosnode()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ActionConnection> getActionConnections();
+	EList<RosNode> getRosnode();
+
+	/**
+	 * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.RosConnection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connections</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_Connections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RosConnection> getConnections();
+
+	/**
+	 * Returns the value of the '<em><b>Process</b></em>' containment reference list.
+	 * The list contents are of type {@link rossystem.Process}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Process</em>' containment reference list.
+	 * @see rossystem.RossystemPackage#getRosSystem_Process()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<rossystem.Process> getProcess();
 
 
 } // RosSystem

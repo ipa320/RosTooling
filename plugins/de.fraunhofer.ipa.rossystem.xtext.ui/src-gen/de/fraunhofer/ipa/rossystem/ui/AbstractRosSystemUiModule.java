@@ -8,12 +8,13 @@ import com.google.inject.Provider;
 import com.google.inject.name.Names;
 import de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.PartialRosSystemContentAssistParser;
 import de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.RosSystemParser;
-import de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.internal.InternalRosSystemLexer;
+import de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.lexer.InternalRosSystemLexer;
 import de.fraunhofer.ipa.rossystem.ui.contentassist.RosSystemProposalProvider;
 import de.fraunhofer.ipa.rossystem.ui.labeling.RosSystemDescriptionLabelProvider;
 import de.fraunhofer.ipa.rossystem.ui.labeling.RosSystemLabelProvider;
 import de.fraunhofer.ipa.rossystem.ui.outline.RosSystemOutlineTreeProvider;
 import de.fraunhofer.ipa.rossystem.ui.quickfix.RosSystemQuickfixProvider;
+import de.fraunhofer.ipa.rossystem.validation.RosSystemValidatorConfigurationBlock;
 import org.eclipse.compare.IViewerCreator;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -29,6 +30,8 @@ import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess;
 import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider;
 import org.eclipse.xtext.ide.LexerIdeBindings;
+import org.eclipse.xtext.ide.editor.contentassist.CompletionPrefixProvider;
+import org.eclipse.xtext.ide.editor.contentassist.IndentationAwareCompletionPrefixProvider;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.ide.editor.partialEditing.IPartialEditingContentAssistParser;
@@ -78,6 +81,7 @@ import org.eclipse.xtext.ui.refactoring.ui.IRenameSupport;
 import org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences;
 import org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider;
 import org.eclipse.xtext.ui.shared.Access;
+import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
 
 /**
  * Manual modifications go to {@link RosSystemUiModule}.
@@ -110,7 +114,7 @@ public abstract class AbstractRosSystemUiModule extends DefaultUiModule {
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(de.fraunhofer.ipa.rossystem.parser.antlr.internal.InternalRosSystemLexer.class);
+			.to(de.fraunhofer.ipa.rossystem.parser.antlr.lexer.InternalRosSystemLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
@@ -133,6 +137,16 @@ public abstract class AbstractRosSystemUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexerProvider(Binder binder) {
 		binder.bind(InternalRosSystemLexer.class).toProvider(LexerProvider.create(InternalRosSystemLexer.class));
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
+		return IndentationAwareCompletionPrefixProvider.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
+	public Class<? extends AbstractValidatorConfigurationBlock> bindAbstractValidatorConfigurationBlock() {
+		return RosSystemValidatorConfigurationBlock.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2

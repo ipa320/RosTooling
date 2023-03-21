@@ -2,8 +2,6 @@
  */
 package rossystem.presentation;
 
-import componentInterface.provider.ComponentInterfaceEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
@@ -44,7 +42,6 @@ public final class RossystemEditorPlugin extends EMFPlugin {
 	public RossystemEditorPlugin() {
 		super
 			(new ResourceLocator [] {
-				ComponentInterfaceEditPlugin.INSTANCE,
 				RosEditPlugin.INSTANCE,
 			});
 	}

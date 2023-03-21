@@ -3,7 +3,7 @@
  */
 package de.fraunhofer.ipa.rossystem.scoping;
 
-import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
+import de.fraunhofer.ipa.ros.scoping.BasicsScopeProvider;
 
-public abstract class AbstractRosSystemScopeProvider extends DelegatingScopeProvider {
+public abstract class AbstractRosSystemScopeProvider extends BasicsScopeProvider {
 }

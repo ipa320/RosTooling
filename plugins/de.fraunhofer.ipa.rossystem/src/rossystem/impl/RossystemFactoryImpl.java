@@ -9,8 +9,21 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import rossystem.*;
+import rossystem.InterfaceReference;
+import rossystem.RosActionClientReference;
+import rossystem.RosActionServerReference;
+import rossystem.RosConnection;
+import rossystem.RosInterface;
+import rossystem.RosNode;
+import rossystem.RosParameter;
+import rossystem.RosParameterReference;
+import rossystem.RosPublisherReference;
+import rossystem.RosServerClientReference;
+import rossystem.RosServiceServerReference;
+import rossystem.RosSubscriberReference;
+import rossystem.RosSystem;
+import rossystem.RossystemFactory;
+import rossystem.RossystemPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,11 +70,19 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RossystemPackage.ROS_SYSTEM: return createRosSystem();
-			case RossystemPackage.COMPONENT_STACK: return createComponentStack();
-			case RossystemPackage.QUALITY_ATTRIBUTE: return createQualityAttribute();
-			case RossystemPackage.TOPIC_CONNECTION: return createTopicConnection();
-			case RossystemPackage.SERVICE_CONNECTION: return createServiceConnection();
-			case RossystemPackage.ACTION_CONNECTION: return createActionConnection();
+			case RossystemPackage.PROCESS: return createProcess();
+			case RossystemPackage.ROS_NODE: return createRosNode();
+			case RossystemPackage.ROS_INTERFACE: return createRosInterface();
+			case RossystemPackage.INTERFACE_REFERENCE: return createInterfaceReference();
+			case RossystemPackage.ROS_PUBLISHER_REFERENCE: return createRosPublisherReference();
+			case RossystemPackage.ROS_SUBSCRIBER_REFERENCE: return createRosSubscriberReference();
+			case RossystemPackage.ROS_SERVICE_SERVER_REFERENCE: return createRosServiceServerReference();
+			case RossystemPackage.ROS_SERVER_CLIENT_REFERENCE: return createRosServerClientReference();
+			case RossystemPackage.ROS_ACTION_SERVER_REFERENCE: return createRosActionServerReference();
+			case RossystemPackage.ROS_ACTION_CLIENT_REFERENCE: return createRosActionClientReference();
+			case RossystemPackage.ROS_PARAMETER_REFERENCE: return createRosParameterReference();
+			case RossystemPackage.ROS_PARAMETER: return createRosParameter();
+			case RossystemPackage.ROS_CONNECTION: return createRosConnection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,9 +105,9 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * @generated
 	 */
 	@Override
-	public ComponentStack createComponentStack() {
-		ComponentStackImpl componentStack = new ComponentStackImpl();
-		return componentStack;
+	public RosNode createRosNode() {
+		RosNodeImpl rosNode = new RosNodeImpl();
+		return rosNode;
 	}
 
 	/**
@@ -95,9 +116,9 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * @generated
 	 */
 	@Override
-	public QualityAttribute createQualityAttribute() {
-		QualityAttributeImpl qualityAttribute = new QualityAttributeImpl();
-		return qualityAttribute;
+	public RosParameter createRosParameter() {
+		RosParameterImpl rosParameter = new RosParameterImpl();
+		return rosParameter;
 	}
 
 	/**
@@ -106,9 +127,9 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * @generated
 	 */
 	@Override
-	public TopicConnection createTopicConnection() {
-		TopicConnectionImpl topicConnection = new TopicConnectionImpl();
-		return topicConnection;
+	public rossystem.Process createProcess() {
+		ProcessImpl process = new ProcessImpl();
+		return process;
 	}
 
 	/**
@@ -117,9 +138,9 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * @generated
 	 */
 	@Override
-	public ServiceConnection createServiceConnection() {
-		ServiceConnectionImpl serviceConnection = new ServiceConnectionImpl();
-		return serviceConnection;
+	public RosInterface createRosInterface() {
+		RosInterfaceImpl rosInterface = new RosInterfaceImpl();
+		return rosInterface;
 	}
 
 	/**
@@ -128,9 +149,97 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
 	 * @generated
 	 */
 	@Override
-	public ActionConnection createActionConnection() {
-		ActionConnectionImpl actionConnection = new ActionConnectionImpl();
-		return actionConnection;
+	public InterfaceReference createInterfaceReference() {
+		InterfaceReferenceImpl interfaceReference = new InterfaceReferenceImpl();
+		return interfaceReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosPublisherReference createRosPublisherReference() {
+		RosPublisherReferenceImpl rosPublisherReference = new RosPublisherReferenceImpl();
+		return rosPublisherReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosSubscriberReference createRosSubscriberReference() {
+		RosSubscriberReferenceImpl rosSubscriberReference = new RosSubscriberReferenceImpl();
+		return rosSubscriberReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosServiceServerReference createRosServiceServerReference() {
+		RosServiceServerReferenceImpl rosServiceServerReference = new RosServiceServerReferenceImpl();
+		return rosServiceServerReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosServerClientReference createRosServerClientReference() {
+		RosServerClientReferenceImpl rosServerClientReference = new RosServerClientReferenceImpl();
+		return rosServerClientReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosActionServerReference createRosActionServerReference() {
+		RosActionServerReferenceImpl rosActionServerReference = new RosActionServerReferenceImpl();
+		return rosActionServerReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosActionClientReference createRosActionClientReference() {
+		RosActionClientReferenceImpl rosActionClientReference = new RosActionClientReferenceImpl();
+		return rosActionClientReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosConnection createRosConnection() {
+		RosConnectionImpl rosConnection = new RosConnectionImpl();
+		return rosConnection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RosParameterReference createRosParameterReference() {
+		RosParameterReferenceImpl rosParameterReference = new RosParameterReferenceImpl();
+		return rosParameterReference;
 	}
 
 	/**

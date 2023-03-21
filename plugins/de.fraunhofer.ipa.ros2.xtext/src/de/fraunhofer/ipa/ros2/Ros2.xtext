@@ -10,7 +10,6 @@ Package returns Package:
 	AmentPackage
 	;
 
-@Override
 AmentPackage returns AmentPackage:
 	{AmentPackage}
 	name=RosNames':'
