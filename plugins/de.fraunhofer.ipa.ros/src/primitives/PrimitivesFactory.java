@@ -256,24 +256,6 @@ public interface PrimitivesFactory extends EFactory {
 	stringArray createstringArray();
 
 	/**
-	 * Returns a new object of class '<em>Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Topic Spec Ref</em>'.
-	 * @generated
-	 */
-	TopicSpecRef createTopicSpecRef();
-
-	/**
-	 * Returns a new object of class '<em>Array Topic Spec Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Array Topic Spec Ref</em>'.
-	 * @generated
-	 */
-	ArrayTopicSpecRef createArrayTopicSpecRef();
-
-	/**
 	 * Returns a new object of class '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

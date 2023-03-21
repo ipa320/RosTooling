@@ -10,12 +10,10 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import primitives.AbstractType;
-import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
-import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
 import primitives.duration;
@@ -210,14 +208,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casestringArray(stringArray object) {
 				return createstringArrayAdapter();
-			}
-			@Override
-			public Adapter caseTopicSpecRef(TopicSpecRef object) {
-				return createTopicSpecRefAdapter();
-			}
-			@Override
-			public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
-				return createArrayTopicSpecRefAdapter();
 			}
 			@Override
 			public Adapter caseHeader(Header object) {
@@ -626,34 +616,6 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createstringArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link primitives.TopicSpecRef <em>Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see primitives.TopicSpecRef
-	 * @generated
-	 */
-	public Adapter createTopicSpecRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link primitives.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see primitives.ArrayTopicSpecRef
-	 * @generated
-	 */
-	public Adapter createArrayTopicSpecRefAdapter() {
 		return null;
 	}
 

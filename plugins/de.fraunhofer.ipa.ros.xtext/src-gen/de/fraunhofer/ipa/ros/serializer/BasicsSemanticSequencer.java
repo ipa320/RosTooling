@@ -15,12 +15,10 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
-import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
 import primitives.duration;
@@ -47,6 +45,7 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
+import ros.ArrayTopicSpecRef;
 import ros.GlobalNamespace;
 import ros.ParameterAny;
 import ros.ParameterAnyType;
@@ -72,6 +71,7 @@ import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
 import ros.RelativeNamespace;
 import ros.RosPackage;
+import ros.TopicSpecRef;
 
 @SuppressWarnings("all")
 public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -87,9 +87,6 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == PrimitivesPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF:
-				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
-				return; 
 			case PrimitivesPackage.BYTE:
 				sequence_byte(context, (primitives.Byte) semanticObject); 
 				return; 
@@ -101,9 +98,6 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PrimitivesPackage.MESSAGE_PART:
 				sequence_MessagePart(context, (MessagePart) semanticObject); 
-				return; 
-			case PrimitivesPackage.TOPIC_SPEC_REF:
-				sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject); 
 				return; 
 			case PrimitivesPackage.BOOL:
 				sequence_bool(context, (bool) semanticObject); 
@@ -186,6 +180,9 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			}
 		else if (epackage == RosPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RosPackage.ARRAY_TOPIC_SPEC_REF:
+				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
+				return; 
 			case RosPackage.GLOBAL_NAMESPACE:
 				sequence_GlobalNamespace(context, (GlobalNamespace) semanticObject); 
 				return; 
@@ -261,37 +258,44 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case RosPackage.RELATIVE_NAMESPACE:
 				sequence_RelativeNamespace_Impl(context, (RelativeNamespace) semanticObject); 
 				return; 
+			case RosPackage.TOPIC_SPEC_REF:
+				sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns ArrayTopicSpecRef
 	 *     ArrayTopicSpecRef returns ArrayTopicSpecRef
 	 *
 	 * Constraint:
 	 *     TopicSpec=[TopicSpec|EString]
+	 * </pre>
 	 */
 	protected void sequence_ArrayTopicSpecRef(ISerializationContext context, ArrayTopicSpecRef semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC));
+			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1(), semanticObject.eGet(PrimitivesPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
+		feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1(), semanticObject.eGet(RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Namespace returns GlobalNamespace
 	 *     GlobalNamespace returns GlobalNamespace
 	 *
 	 * Constraint:
 	 *     (parts+=GraphName parts+=GraphName*)?
+	 * </pre>
 	 */
 	protected void sequence_GlobalNamespace(ISerializationContext context, GlobalNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -299,12 +303,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns Header
 	 *     Header returns Header
 	 *
 	 * Constraint:
 	 *     {Header}
+	 * </pre>
 	 */
 	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -312,11 +318,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     MessagePart returns MessagePart
 	 *
 	 * Constraint:
 	 *     (Type=AbstractType (Data=KEYWORD | Data=MESSAGE_ASIGMENT | Data=EString))
+	 * </pre>
 	 */
 	protected void sequence_MessagePart(ISerializationContext context, MessagePart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -324,11 +332,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterAnyType returns ParameterAnyType
 	 *
 	 * Constraint:
 	 *     default=ParameterAny?
+	 * </pre>
 	 */
 	protected void sequence_ParameterAnyType(ISerializationContext context, ParameterAnyType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -336,11 +346,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterAny returns ParameterAny
 	 *
 	 * Constraint:
 	 *     value=EString?
+	 * </pre>
 	 */
 	protected void sequence_ParameterAny(ISerializationContext context, ParameterAny semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -348,12 +360,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterArrayType
 	 *     ParameterArrayType returns ParameterArrayType
 	 *
 	 * Constraint:
 	 *     (type=ParameterType default=ParameterList?)
+	 * </pre>
 	 */
 	protected void sequence_ParameterArrayType(ISerializationContext context, ParameterArrayType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -361,12 +375,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterBase64Type
 	 *     ParameterBase64Type returns ParameterBase64Type
 	 *
 	 * Constraint:
 	 *     default=ParameterBase64?
+	 * </pre>
 	 */
 	protected void sequence_ParameterBase64Type(ISerializationContext context, ParameterBase64Type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -374,12 +390,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterBase64
 	 *     ParameterBase64 returns ParameterBase64
 	 *
 	 * Constraint:
 	 *     value=Base64Binary
+	 * </pre>
 	 */
 	protected void sequence_ParameterBase64(ISerializationContext context, ParameterBase64 semanticObject) {
 		if (errorAcceptor != null) {
@@ -393,12 +411,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterBooleanType
 	 *     ParameterBooleanType returns ParameterBooleanType
 	 *
 	 * Constraint:
 	 *     default=ParameterBoolean?
+	 * </pre>
 	 */
 	protected void sequence_ParameterBooleanType(ISerializationContext context, ParameterBooleanType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -406,12 +426,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterBoolean
 	 *     ParameterBoolean returns ParameterBoolean
 	 *
 	 * Constraint:
 	 *     value=boolean0
+	 * </pre>
 	 */
 	protected void sequence_ParameterBoolean(ISerializationContext context, ParameterBoolean semanticObject) {
 		if (errorAcceptor != null) {
@@ -425,11 +447,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterDateType returns ParameterDateType
 	 *
 	 * Constraint:
 	 *     default=ParameterDate?
+	 * </pre>
 	 */
 	protected void sequence_ParameterDateType(ISerializationContext context, ParameterDateType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -437,11 +461,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterDate returns ParameterDate
 	 *
 	 * Constraint:
 	 *     value=DateTime0
+	 * </pre>
 	 */
 	protected void sequence_ParameterDate(ISerializationContext context, ParameterDate semanticObject) {
 		if (errorAcceptor != null) {
@@ -455,12 +481,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterDoubleType
 	 *     ParameterDoubleType returns ParameterDoubleType
 	 *
 	 * Constraint:
 	 *     default=ParameterDouble?
+	 * </pre>
 	 */
 	protected void sequence_ParameterDoubleType(ISerializationContext context, ParameterDoubleType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -468,12 +496,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterDouble
 	 *     ParameterDouble returns ParameterDouble
 	 *
 	 * Constraint:
 	 *     value=Double0
+	 * </pre>
 	 */
 	protected void sequence_ParameterDouble(ISerializationContext context, ParameterDouble semanticObject) {
 		if (errorAcceptor != null) {
@@ -487,12 +517,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterIntegerType
 	 *     ParameterIntegerType returns ParameterIntegerType
 	 *
 	 * Constraint:
 	 *     default=ParameterInteger?
+	 * </pre>
 	 */
 	protected void sequence_ParameterIntegerType(ISerializationContext context, ParameterIntegerType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -500,12 +532,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterInteger
 	 *     ParameterInteger returns ParameterInteger
 	 *
 	 * Constraint:
 	 *     value=Integer0
+	 * </pre>
 	 */
 	protected void sequence_ParameterInteger(ISerializationContext context, ParameterInteger semanticObject) {
 		if (errorAcceptor != null) {
@@ -519,12 +553,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterListType
 	 *     ParameterListType returns ParameterListType
 	 *
 	 * Constraint:
 	 *     (sequence+=ParameterType sequence+=ParameterType*)
+	 * </pre>
 	 */
 	protected void sequence_ParameterListType(ISerializationContext context, ParameterListType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -532,12 +568,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterSequence
 	 *     ParameterList returns ParameterSequence
 	 *
 	 * Constraint:
 	 *     (value+=ParameterValue value+=ParameterValue*)
+	 * </pre>
 	 */
 	protected void sequence_ParameterList(ISerializationContext context, ParameterSequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -545,12 +583,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterStringType
 	 *     ParameterStringType returns ParameterStringType
 	 *
 	 * Constraint:
 	 *     default=ParameterString?
+	 * </pre>
 	 */
 	protected void sequence_ParameterStringType(ISerializationContext context, ParameterStringType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -558,12 +598,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterString
 	 *     ParameterString returns ParameterString
 	 *
 	 * Constraint:
 	 *     value=EString
+	 * </pre>
 	 */
 	protected void sequence_ParameterString(ISerializationContext context, ParameterString semanticObject) {
 		if (errorAcceptor != null) {
@@ -577,11 +619,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterStructMember returns ParameterStructMember
 	 *
 	 * Constraint:
 	 *     (name=EString value=ParameterValue)
+	 * </pre>
 	 */
 	protected void sequence_ParameterStructMember(ISerializationContext context, ParameterStructMember semanticObject) {
 		if (errorAcceptor != null) {
@@ -598,11 +642,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterStructTypeMember returns ParameterStructTypeMember
 	 *
 	 * Constraint:
 	 *     (name=EString type=ParameterType)
+	 * </pre>
 	 */
 	protected void sequence_ParameterStructTypeMember(ISerializationContext context, ParameterStructTypeMember semanticObject) {
 		if (errorAcceptor != null) {
@@ -619,12 +665,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterType returns ParameterStructType
 	 *     ParameterStructType returns ParameterStructType
 	 *
 	 * Constraint:
 	 *     (parameterstructypetmember+=ParameterStructTypeMember parameterstructypetmember+=ParameterStructTypeMember*)
+	 * </pre>
 	 */
 	protected void sequence_ParameterStructType(ISerializationContext context, ParameterStructType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -632,12 +680,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ParameterValue returns ParameterStruct
 	 *     ParameterStruct returns ParameterStruct
 	 *
 	 * Constraint:
 	 *     (value+=ParameterStructMember value+=ParameterStructMember*)?
+	 * </pre>
 	 */
 	protected void sequence_ParameterStruct(ISerializationContext context, ParameterStruct semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -645,11 +695,13 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
 	 *     (name=EString namespace=Namespace? type=ParameterType value=ParameterValue?)
+	 * </pre>
 	 */
 	protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -657,12 +709,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Namespace returns PrivateNamespace
 	 *     PrivateNamespace returns PrivateNamespace
 	 *
 	 * Constraint:
 	 *     (parts+=GraphName parts+=GraphName*)?
+	 * </pre>
 	 */
 	protected void sequence_PrivateNamespace(ISerializationContext context, PrivateNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -670,12 +724,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Namespace returns RelativeNamespace
 	 *     RelativeNamespace_Impl returns RelativeNamespace
 	 *
 	 * Constraint:
 	 *     (parts+=GraphName parts+=GraphName*)?
+	 * </pre>
 	 */
 	protected void sequence_RelativeNamespace_Impl(ISerializationContext context, RelativeNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -683,31 +739,35 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns TopicSpecRef
 	 *     TopicSpecRef returns TopicSpecRef
 	 *
 	 * Constraint:
 	 *     TopicSpec=[TopicSpec|EString]
+	 * </pre>
 	 */
 	protected void sequence_TopicSpecRef(ISerializationContext context, TopicSpecRef semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC));
+			if (transientValues.isValueTransient(semanticObject, RosPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_1(), semanticObject.eGet(PrimitivesPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC, false));
+		feeder.accept(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_1(), semanticObject.eGet(RosPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC, false));
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns boolArray
 	 *     boolArray returns boolArray
 	 *
 	 * Constraint:
 	 *     {boolArray}
+	 * </pre>
 	 */
 	protected void sequence_boolArray(ISerializationContext context, boolArray semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -715,12 +775,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns bool
 	 *     bool returns bool
 	 *
 	 * Constraint:
 	 *     {bool}
+	 * </pre>
 	 */
 	protected void sequence_bool(ISerializationContext context, bool semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -728,12 +790,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns ByteArray
 	 *     byteArray returns ByteArray
 	 *
 	 * Constraint:
 	 *     {ByteArray}
+	 * </pre>
 	 */
 	protected void sequence_byteArray(ISerializationContext context, ByteArray semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -741,12 +805,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns Byte
 	 *     byte returns Byte
 	 *
 	 * Constraint:
 	 *     {Byte}
+	 * </pre>
 	 */
 	protected void sequence_byte(ISerializationContext context, primitives.Byte semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -754,12 +820,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns duration
 	 *     duration returns duration
 	 *
 	 * Constraint:
 	 *     {duration}
+	 * </pre>
 	 */
 	protected void sequence_duration(ISerializationContext context, duration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -767,12 +835,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns float32Array
 	 *     float32Array returns float32Array
 	 *
 	 * Constraint:
 	 *     {float32Array}
+	 * </pre>
 	 */
 	protected void sequence_float32Array(ISerializationContext context, float32Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -780,12 +850,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns float32
 	 *     float32 returns float32
 	 *
 	 * Constraint:
 	 *     {float32}
+	 * </pre>
 	 */
 	protected void sequence_float32(ISerializationContext context, float32 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -793,12 +865,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns float64Array
 	 *     float64Array returns float64Array
 	 *
 	 * Constraint:
 	 *     {float64Array}
+	 * </pre>
 	 */
 	protected void sequence_float64Array(ISerializationContext context, float64Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -806,12 +880,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns float64
 	 *     float64 returns float64
 	 *
 	 * Constraint:
 	 *     {float64}
+	 * </pre>
 	 */
 	protected void sequence_float64(ISerializationContext context, float64 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -819,12 +895,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int16Array
 	 *     int16Array returns int16Array
 	 *
 	 * Constraint:
 	 *     {int16Array}
+	 * </pre>
 	 */
 	protected void sequence_int16Array(ISerializationContext context, int16Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -832,12 +910,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int16
 	 *     int16 returns int16
 	 *
 	 * Constraint:
 	 *     {int16}
+	 * </pre>
 	 */
 	protected void sequence_int16(ISerializationContext context, int16 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -845,12 +925,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int32Array
 	 *     int32Array returns int32Array
 	 *
 	 * Constraint:
 	 *     {int32Array}
+	 * </pre>
 	 */
 	protected void sequence_int32Array(ISerializationContext context, int32Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -858,12 +940,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int32
 	 *     int32 returns int32
 	 *
 	 * Constraint:
 	 *     {int32}
+	 * </pre>
 	 */
 	protected void sequence_int32(ISerializationContext context, int32 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -871,12 +955,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int64Array
 	 *     int64Array returns int64Array
 	 *
 	 * Constraint:
 	 *     {int64Array}
+	 * </pre>
 	 */
 	protected void sequence_int64Array(ISerializationContext context, int64Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -884,12 +970,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int64
 	 *     int64 returns int64
 	 *
 	 * Constraint:
 	 *     {int64}
+	 * </pre>
 	 */
 	protected void sequence_int64(ISerializationContext context, int64 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -897,12 +985,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int8Array
 	 *     int8Array returns int8Array
 	 *
 	 * Constraint:
 	 *     {int8Array}
+	 * </pre>
 	 */
 	protected void sequence_int8Array(ISerializationContext context, int8Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -910,12 +1000,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns int8
 	 *     int8 returns int8
 	 *
 	 * Constraint:
 	 *     {int8}
+	 * </pre>
 	 */
 	protected void sequence_int8(ISerializationContext context, int8 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -923,12 +1015,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns stringArray
 	 *     string0Array returns stringArray
 	 *
 	 * Constraint:
 	 *     {stringArray}
+	 * </pre>
 	 */
 	protected void sequence_string0Array(ISerializationContext context, stringArray semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -936,12 +1030,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns string
 	 *     string0 returns string
 	 *
 	 * Constraint:
 	 *     {string}
+	 * </pre>
 	 */
 	protected void sequence_string0(ISerializationContext context, string semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -949,12 +1045,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns time
 	 *     time returns time
 	 *
 	 * Constraint:
 	 *     {time}
+	 * </pre>
 	 */
 	protected void sequence_time(ISerializationContext context, time semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -962,12 +1060,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint16Array
 	 *     uint16Array returns uint16Array
 	 *
 	 * Constraint:
 	 *     {uint16Array}
+	 * </pre>
 	 */
 	protected void sequence_uint16Array(ISerializationContext context, uint16Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -975,12 +1075,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint16
 	 *     uint16 returns uint16
 	 *
 	 * Constraint:
 	 *     {uint16}
+	 * </pre>
 	 */
 	protected void sequence_uint16(ISerializationContext context, uint16 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -988,12 +1090,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint32Array
 	 *     uint32Array returns uint32Array
 	 *
 	 * Constraint:
 	 *     {uint32Array}
+	 * </pre>
 	 */
 	protected void sequence_uint32Array(ISerializationContext context, uint32Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1001,12 +1105,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint32
 	 *     uint32 returns uint32
 	 *
 	 * Constraint:
 	 *     {uint32}
+	 * </pre>
 	 */
 	protected void sequence_uint32(ISerializationContext context, uint32 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1014,12 +1120,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint64Array
 	 *     uint64Array returns uint64Array
 	 *
 	 * Constraint:
 	 *     {uint64Array}
+	 * </pre>
 	 */
 	protected void sequence_uint64Array(ISerializationContext context, uint64Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1027,12 +1135,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint64
 	 *     uint64 returns uint64
 	 *
 	 * Constraint:
 	 *     {uint64}
+	 * </pre>
 	 */
 	protected void sequence_uint64(ISerializationContext context, uint64 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1040,12 +1150,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint8Array
 	 *     uint8Array returns uint8Array
 	 *
 	 * Constraint:
 	 *     {uint8Array}
+	 * </pre>
 	 */
 	protected void sequence_uint8Array(ISerializationContext context, uint8Array semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1053,12 +1165,14 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     AbstractType returns uint8
 	 *     uint8 returns uint8
 	 *
 	 * Constraint:
 	 *     {uint8}
+	 * </pre>
 	 */
 	protected void sequence_uint8(ISerializationContext context, uint8 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

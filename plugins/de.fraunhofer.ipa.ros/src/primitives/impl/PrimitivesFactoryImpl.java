@@ -9,14 +9,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
-import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
 import primitives.duration;
@@ -115,8 +112,6 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 			case PrimitivesPackage.FLOAT32_ARRAY: return createfloat32Array();
 			case PrimitivesPackage.FLOAT64_ARRAY: return createfloat64Array();
 			case PrimitivesPackage.STRING_ARRAY: return createstringArray();
-			case PrimitivesPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
-			case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
 			case PrimitivesPackage.HEADER: return createHeader();
 			case PrimitivesPackage.BYTE: return createByte();
 			case PrimitivesPackage.BYTE_ARRAY: return createByteArray();
@@ -409,28 +404,6 @@ public class PrimitivesFactoryImpl extends EFactoryImpl implements PrimitivesFac
 	public stringArray createstringArray() {
 		stringArrayImpl stringArray = new stringArrayImpl();
 		return stringArray;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TopicSpecRef createTopicSpecRef() {
-		TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
-		return topicSpecRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ArrayTopicSpecRef createArrayTopicSpecRef() {
-		ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
-		return arrayTopicSpecRef;
 	}
 
 	/**

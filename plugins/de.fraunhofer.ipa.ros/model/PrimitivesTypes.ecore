@@ -34,14 +34,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="float32Array" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="float64Array" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="stringArray" eSuperTypes="#//AbstractType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecRef" eSuperTypes="#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="ecore:EClass ros.ecore#//TopicSpec"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Byte" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ByteArray" eSuperTypes="#//AbstractType"/>
