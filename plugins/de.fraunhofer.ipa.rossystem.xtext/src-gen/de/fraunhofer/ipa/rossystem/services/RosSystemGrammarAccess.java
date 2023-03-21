@@ -1367,7 +1367,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 
     //ParameterList returns ParameterSequence:
     //    {ParameterSequence}
-    //        '['    value+=ParameterValue ( ',' value+=ParameterValue )* ']'
+    //        '[' value+=ParameterValue ( ',' value+=ParameterValue )* ']'
     //;
     public BasicsGrammarAccess.ParameterListElements getParameterListAccess() {
         return gaBasics.getParameterListAccess();
@@ -1985,7 +1985,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
         return getHeaderAccess().getRule();
     }
 
-    //TopicSpecRef returns primitives::TopicSpecRef:
+    //TopicSpecRef returns TopicSpecRef:
     //    TopicSpec=[TopicSpec|EString]
     //;
     public BasicsGrammarAccess.TopicSpecRefElements getTopicSpecRefAccess() {
@@ -1996,7 +1996,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
         return getTopicSpecRefAccess().getRule();
     }
 
-    //ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+    //ArrayTopicSpecRef returns ArrayTopicSpecRef:
     //    TopicSpec=[TopicSpec|EString]'[]'
     //;
     public BasicsGrammarAccess.ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {

@@ -216,439 +216,556 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('interfaces:' BEGIN END)?
      *
      * This ambiguous syntax occurs at:
      *     From=[Node|EString] (ambiguity) 'parameters:' BEGIN rosparameters+=RosParameter
      *     From=[Node|EString] (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+
+     * </pre>
      */
     protected void emit_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('parameters:' BEGIN END)?
      *
      * This ambiguous syntax occurs at:
      *     From=[Node|EString] ('interfaces:' BEGIN END)? (ambiguity) END (rule end)
      *     rosinterfaces+=RosInterface END (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('connections:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*)*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Name=EString ':' BEGIN (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN (ambiguity) Processes+=Process
      *     Processes+=Process (ambiguity) Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode (ambiguity) Components+=RosNode
      *     Name=EString ':' BEGIN (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN (ambiguity) Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN (ambiguity) Parameter+=Parameter
      *     Parameter+=Parameter (ambiguity) Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection (ambiguity) Connections+=RosConnection
      *     Name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN (ambiguity) Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN)*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('nodes:' BEGIN END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('parameters:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*)*
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ('processes:' BEGIN END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
      *
      * This ambiguous syntax occurs at:
      *     Name=EString ':' BEGIN (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* Processes+=Process
      *     Processes+=Process END (ambiguity) ('processes:' BEGIN END (ambiguity))* END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
      *
      * This ambiguous syntax occurs at:
      *     Name=EString ':' BEGIN (ambiguity) END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*
      *
      * This ambiguous syntax occurs at:
      *     Name=EString ':' BEGIN (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* Parameter+=Parameter
      *     Parameter+=Parameter END (ambiguity) ('parameters:' BEGIN END (ambiguity))* END (rule end)
+
+     * </pre>
      */
     protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END (ambiguity) ('nodes:' BEGIN END (ambiguity))* END (rule end)
      *     Name=EString ':' BEGIN (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END (ambiguity) ('connections:' BEGIN END (ambiguity))* END (rule end)
      *     Name=EString ':' BEGIN (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* Processes+=Process
+
+     * </pre>
      */
     protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Processes+=Process END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* Parameter+=Parameter
+
+     * </pre>
      */
     protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Parameter+=Parameter END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Connections+=RosConnection END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* Components+=RosNode
+
+     * </pre>
      */
     protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);
     }
 
     /**
+     * <pre>
      * Ambiguous syntax:
      *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+
      *
      * This ambiguous syntax occurs at:
      *     Components+=RosNode END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* Connections+=RosConnection
+
+     * </pre>
      */
     protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
         acceptNodes(transition, nodes);

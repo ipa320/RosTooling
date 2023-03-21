@@ -8,7 +8,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: system,
+Export-Package: rossystem,
+ rossystem.util,
+ system,
  system.impl,
  system.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
