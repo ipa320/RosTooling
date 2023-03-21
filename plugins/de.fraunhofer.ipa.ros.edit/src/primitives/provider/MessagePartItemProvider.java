@@ -27,6 +27,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import primitives.MessagePart;
 import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
+
+import ros.RosFactory;
+
 import ros.provider.RosEditPlugin;
 
 /**
@@ -302,16 +305,6 @@ public class MessagePartItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-                 PrimitivesFactory.eINSTANCE.createTopicSpecRef()));
-
-        newChildDescriptors.add
-            (createChildParameter
-                (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-                 PrimitivesFactory.eINSTANCE.createArrayTopicSpecRef()));
-
-        newChildDescriptors.add
-            (createChildParameter
-                (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
                  PrimitivesFactory.eINSTANCE.createHeader()));
 
         newChildDescriptors.add
@@ -323,6 +316,16 @@ public class MessagePartItemProvider
             (createChildParameter
                 (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
                  PrimitivesFactory.eINSTANCE.createByteArray()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
+                 RosFactory.eINSTANCE.createTopicSpecRef()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
+                 RosFactory.eINSTANCE.createArrayTopicSpecRef()));
     }
 
     /**

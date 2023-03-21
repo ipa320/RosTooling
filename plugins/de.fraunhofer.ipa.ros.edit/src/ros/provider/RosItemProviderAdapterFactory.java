@@ -1107,6 +1107,52 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link ros.TopicSpecRef} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected TopicSpecRefItemProvider topicSpecRefItemProvider;
+
+                /**
+     * This creates an adapter for a {@link ros.TopicSpecRef}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createTopicSpecRefAdapter() {
+        if (topicSpecRefItemProvider == null) {
+            topicSpecRefItemProvider = new TopicSpecRefItemProvider(this);
+        }
+
+        return topicSpecRefItemProvider;
+    }
+
+                /**
+     * This keeps track of the one adapter used for all {@link ros.ArrayTopicSpecRef} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ArrayTopicSpecRefItemProvider arrayTopicSpecRefItemProvider;
+
+                /**
+     * This creates an adapter for a {@link ros.ArrayTopicSpecRef}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createArrayTopicSpecRefAdapter() {
+        if (arrayTopicSpecRefItemProvider == null) {
+            arrayTopicSpecRefItemProvider = new ArrayTopicSpecRefItemProvider(this);
+        }
+
+        return arrayTopicSpecRefItemProvider;
+    }
+
+                /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1256,6 +1302,8 @@ public class RosItemProviderAdapterFactory extends RosAdapterFactory implements 
         if (parameterDateItemProvider != null) parameterDateItemProvider.dispose();
         if (amentPackageItemProvider != null) amentPackageItemProvider.dispose();
         if (qualityOfServiceItemProvider != null) qualityOfServiceItemProvider.dispose();
+        if (topicSpecRefItemProvider != null) topicSpecRefItemProvider.dispose();
+        if (arrayTopicSpecRefItemProvider != null) arrayTopicSpecRefItemProvider.dispose();
     }
 
 }

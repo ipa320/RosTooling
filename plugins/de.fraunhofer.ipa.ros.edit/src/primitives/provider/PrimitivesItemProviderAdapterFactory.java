@@ -71,6 +71,29 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link primitives.MessagePart} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MessagePartItemProvider messagePartItemProvider;
+
+    /**
+     * This creates an adapter for a {@link primitives.MessagePart}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createMessagePartAdapter() {
+        if (messagePartItemProvider == null) {
+            messagePartItemProvider = new MessagePartItemProvider(this);
+        }
+
+        return messagePartItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link primitives.bool} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -669,52 +692,6 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
     }
 
     /**
-     * This keeps track of the one adapter used for all {@link primitives.TopicSpecRef} instances.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected TopicSpecRefItemProvider topicSpecRefItemProvider;
-
-    /**
-     * This creates an adapter for a {@link primitives.TopicSpecRef}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Adapter createTopicSpecRefAdapter() {
-        if (topicSpecRefItemProvider == null) {
-            topicSpecRefItemProvider = new TopicSpecRefItemProvider(this);
-        }
-
-        return topicSpecRefItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all {@link primitives.ArrayTopicSpecRef} instances.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected ArrayTopicSpecRefItemProvider arrayTopicSpecRefItemProvider;
-
-    /**
-     * This creates an adapter for a {@link primitives.ArrayTopicSpecRef}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Adapter createArrayTopicSpecRefAdapter() {
-        if (arrayTopicSpecRefItemProvider == null) {
-            arrayTopicSpecRefItemProvider = new ArrayTopicSpecRefItemProvider(this);
-        }
-
-        return arrayTopicSpecRefItemProvider;
-    }
-
-    /**
      * This keeps track of the one adapter used for all {@link primitives.Header} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -781,29 +758,6 @@ public class PrimitivesItemProviderAdapterFactory extends PrimitivesAdapterFacto
         }
 
         return byteArrayItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all {@link primitives.MessagePart} instances.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected MessagePartItemProvider messagePartItemProvider;
-
-    /**
-     * This creates an adapter for a {@link primitives.MessagePart}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Adapter createMessagePartAdapter() {
-        if (messagePartItemProvider == null) {
-            messagePartItemProvider = new MessagePartItemProvider(this);
-        }
-
-        return messagePartItemProvider;
     }
 
     /**
