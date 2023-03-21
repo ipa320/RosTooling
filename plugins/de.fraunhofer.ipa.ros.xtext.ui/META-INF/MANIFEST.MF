@@ -19,7 +19,7 @@ Require-Bundle: de.fraunhofer.ipa.ros.xtext,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.ros.ui.contentassist,
  de.fraunhofer.ipa.ros.ui.quickfix,
  de.fraunhofer.ipa.ros.xtext.ui.internal

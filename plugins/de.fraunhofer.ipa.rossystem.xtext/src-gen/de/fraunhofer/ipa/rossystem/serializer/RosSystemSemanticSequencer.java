@@ -15,12 +15,10 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import primitives.ArrayTopicSpecRef;
 import primitives.ByteArray;
 import primitives.Header;
 import primitives.MessagePart;
 import primitives.PrimitivesPackage;
-import primitives.TopicSpecRef;
 import primitives.bool;
 import primitives.boolArray;
 import primitives.duration;
@@ -47,6 +45,7 @@ import primitives.uint64;
 import primitives.uint64Array;
 import primitives.uint8;
 import primitives.uint8Array;
+import ros.ArrayTopicSpecRef;
 import ros.GlobalNamespace;
 import ros.ParameterAny;
 import ros.ParameterAnyType;
@@ -72,6 +71,7 @@ import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
 import ros.RelativeNamespace;
 import ros.RosPackage;
+import ros.TopicSpecRef;
 import system.InterfaceReference;
 import system.RosActionClientReference;
 import system.RosActionServerReference;
@@ -99,9 +99,6 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
         Set<Parameter> parameters = context.getEnabledBooleanParameters();
         if (epackage == PrimitivesPackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
-            case PrimitivesPackage.ARRAY_TOPIC_SPEC_REF:
-                sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject);
-                return;
             case PrimitivesPackage.BYTE:
                 sequence_byte(context, (primitives.Byte) semanticObject);
                 return;
@@ -113,9 +110,6 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
                 return;
             case PrimitivesPackage.MESSAGE_PART:
                 sequence_MessagePart(context, (MessagePart) semanticObject);
-                return;
-            case PrimitivesPackage.TOPIC_SPEC_REF:
-                sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject);
                 return;
             case PrimitivesPackage.BOOL:
                 sequence_bool(context, (bool) semanticObject);
@@ -198,6 +192,9 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
             }
         else if (epackage == RosPackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
+            case RosPackage.ARRAY_TOPIC_SPEC_REF:
+                sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject);
+                return;
             case RosPackage.GLOBAL_NAMESPACE:
                 sequence_GlobalNamespace(context, (GlobalNamespace) semanticObject);
                 return;
@@ -273,6 +270,9 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
             case RosPackage.RELATIVE_NAMESPACE:
                 sequence_RelativeNamespace_Impl(context, (RelativeNamespace) semanticObject);
                 return;
+            case RosPackage.TOPIC_SPEC_REF:
+                sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject);
+                return;
             }
         else if (epackage == RossystemPackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
@@ -321,12 +321,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
     }
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns InterfaceReference
      *     InterfaceReference_Impl returns InterfaceReference
      *
      * Constraint:
      *     {InterfaceReference}
+     * </pre>
      */
     protected void sequence_InterfaceReference_Impl(ISerializationContext context, InterfaceReference semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
@@ -334,11 +336,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     Process returns Process
      *
      * Constraint:
      *     (Name=EString Nodes+=[RosNode|EString]? Threads=INT)
+     * </pre>
      */
     protected void sequence_Process(ISerializationContext context, system.Process semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
@@ -346,12 +350,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosActionClientReference
      *     RosActionClientReference returns RosActionClientReference
      *
      * Constraint:
      *     From=[ActionClient|EString]
+     * </pre>
      */
     protected void sequence_RosActionClientReference(ISerializationContext context, RosActionClientReference semanticObject) {
         if (errorAcceptor != null) {
@@ -365,12 +371,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosActionServerReference
      *     RosActionServerReference returns RosActionServerReference
      *
      * Constraint:
      *     From=[ActionServer|EString]
+     * </pre>
      */
     protected void sequence_RosActionServerReference(ISerializationContext context, RosActionServerReference semanticObject) {
         if (errorAcceptor != null) {
@@ -384,11 +392,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     RosConnection returns RosConnection
      *
      * Constraint:
      *     (from=[RosInterface|EString] to=[RosInterface|EString])
+     * </pre>
      */
     protected void sequence_RosConnection(ISerializationContext context, RosConnection semanticObject) {
         if (errorAcceptor != null) {
@@ -405,11 +415,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     RosInterface returns RosInterface
      *
      * Constraint:
      *     (Name=EString Reference=InterfaceReference)
+     * </pre>
      */
     protected void sequence_RosInterface(ISerializationContext context, RosInterface semanticObject) {
         if (errorAcceptor != null) {
@@ -426,11 +438,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     RosNode returns RosNode
      *
      * Constraint:
      *     (Name=EString From=[Node|EString] rosinterfaces+=RosInterface* rosparameters+=RosParameter*)
+     * </pre>
      */
     protected void sequence_RosNode(ISerializationContext context, RosNode semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
@@ -438,11 +452,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     RosParameter returns RosParameter
      *
      * Constraint:
      *     (Name=EString From=[Parameter|EString] value=ParameterValue)
+     * </pre>
      */
     protected void sequence_RosParameter(ISerializationContext context, RosParameter semanticObject) {
         if (errorAcceptor != null) {
@@ -462,12 +478,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosPublisherReference
      *     RosPublisherReference returns RosPublisherReference
      *
      * Constraint:
      *     From=[Publisher|EString]
+     * </pre>
      */
     protected void sequence_RosPublisherReference(ISerializationContext context, RosPublisherReference semanticObject) {
         if (errorAcceptor != null) {
@@ -481,12 +499,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosServerClientReference
      *     RosServerClientReference returns RosServerClientReference
      *
      * Constraint:
      *     From=[ServiceClient|EString]
+     * </pre>
      */
     protected void sequence_RosServerClientReference(ISerializationContext context, RosServerClientReference semanticObject) {
         if (errorAcceptor != null) {
@@ -500,12 +520,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosServiceServerReference
      *     RosServiceServerReference returns RosServiceServerReference
      *
      * Constraint:
      *     From=[ServiceServer|EString]
+     * </pre>
      */
     protected void sequence_RosServiceServerReference(ISerializationContext context, RosServiceServerReference semanticObject) {
         if (errorAcceptor != null) {
@@ -519,12 +541,14 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     InterfaceReference returns RosSubscriberReference
      *     RosSubscriberReference returns RosSubscriberReference
      *
      * Constraint:
      *     From=[Subscriber|EString]
+     * </pre>
      */
     protected void sequence_RosSubscriberReference(ISerializationContext context, RosSubscriberReference semanticObject) {
         if (errorAcceptor != null) {
@@ -538,11 +562,13 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 
 
     /**
+     * <pre>
      * Contexts:
      *     RosSystem returns System
      *
      * Constraint:
      *     (Name=EString (Processes+=Process | Components+=RosNode | Parameter+=Parameter | Connections+=RosConnection)*)
+     * </pre>
      */
     protected void sequence_RosSystem(ISerializationContext context, system.System semanticObject) {
         genericSequencer.createSequence(context, semanticObject);

@@ -3,14 +3,14 @@ Automatic-Module-Name: de.fraunhofer.ipa.rossystem.xtext.ide
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.rossystem.xtext.ide
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.xtext.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  de.fraunhofer.ipa.rossystem,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.ros.xtext;bundle-version="2.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.lexer,

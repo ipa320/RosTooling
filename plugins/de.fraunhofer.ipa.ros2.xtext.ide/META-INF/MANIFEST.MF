@@ -10,7 +10,7 @@ Require-Bundle: de.fraunhofer.ipa.ros2.xtext,
  de.fraunhofer.ipa.ros,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.ros.xtext;bundle-version="2.0.0",
  de.fraunhofer.ipa.ros.xtext.ui;bundle-version="2.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11

@@ -9,11 +9,11 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.equinox.common;bundle-version="3.17.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.30.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.eclipse.xtend.lib;bundle-version="2.14.0"
+ org.antlr.runtime;bundle-version="4.7.2",
+ org.eclipse.xtend.lib;bundle-version="2.30.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.ros.validation,
  de.fraunhofer.ipa.ros.parser.antlr.lexer,

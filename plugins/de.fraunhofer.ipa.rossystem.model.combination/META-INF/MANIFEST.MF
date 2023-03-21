@@ -4,9 +4,8 @@ Bundle-Name: Check
 Bundle-SymbolicName: de.fraunhofer.ipa.rossystem.model.combination;singleton:=true
 Bundle-Version: 2.0.0.qualifier
 Automatic-Module-Name: de.fraunhofer.ipa.rossystem.model.combination
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: componentInterface.presentation,
- org.eclipse.core.commands,
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.eclipse.core.commands,
  org.eclipse.core.resources,
  org.eclipse.core.runtime;version="3.5.0",
  org.eclipse.emf.common.ui.dialogs,
