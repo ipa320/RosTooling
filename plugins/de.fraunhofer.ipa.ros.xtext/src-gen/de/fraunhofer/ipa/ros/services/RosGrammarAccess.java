@@ -2805,7 +2805,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getHeaderAccess().getRule();
 	}
 	
-	//TopicSpecRef returns primitives::TopicSpecRef:
+	//TopicSpecRef returns TopicSpecRef:
 	//    TopicSpec=[TopicSpec|EString]
 	//;
 	public BasicsGrammarAccess.TopicSpecRefElements getTopicSpecRefAccess() {
@@ -2816,7 +2816,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getTopicSpecRefAccess().getRule();
 	}
 	
-	//ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+	//ArrayTopicSpecRef returns ArrayTopicSpecRef:
 	//    TopicSpec=[TopicSpec|EString]'[]'
 	//;
 	public BasicsGrammarAccess.ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {

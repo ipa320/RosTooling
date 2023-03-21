@@ -133,6 +133,11 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RosGrammarAccess) access;
+		init0();
+		init1();
+	}
+	
+	private void init0() {
 		match_Node___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3_____ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3()))));
 		match_Node___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3()))));
 		match_Node___ENDTerminalRuleCall_3_0_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()));
@@ -193,6 +198,9 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
+	}
+	
+	private void init1() {
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserverKeyword_3_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
 		match_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientKeyword_3_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserverKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3())));
@@ -488,6 +496,7 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'actionclient:' 
@@ -512,12 +521,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3_____ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'actionserver:' 
@@ -542,12 +554,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -574,12 +589,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         publisher+=Publisher
 	 *     )
 	 *     publisher+=Publisher (ambiguity) publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -601,12 +619,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -628,12 +649,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -655,12 +679,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -682,12 +709,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -709,12 +739,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -736,12 +769,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         publisher+=Publisher
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_0_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -768,12 +804,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         subscriber+=Subscriber
 	 *     )
 	 *     subscriber+=Subscriber (ambiguity) subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -795,12 +834,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -822,12 +864,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -849,12 +894,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -876,12 +924,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -903,12 +954,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -930,12 +984,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         subscriber+=Subscriber
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_1_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -962,12 +1019,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         serviceserver+=ServiceServer
 	 *     )
 	 *     serviceserver+=ServiceServer (ambiguity) serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -989,12 +1049,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1016,12 +1079,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1043,12 +1109,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1070,12 +1139,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1097,12 +1169,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1124,12 +1199,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceserver+=ServiceServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_2_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1156,12 +1234,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         serviceclient+=ServiceClient
 	 *     )
 	 *     serviceclient+=ServiceClient (ambiguity) serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1183,12 +1264,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1210,12 +1294,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1237,12 +1324,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1264,12 +1354,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1291,12 +1384,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1318,12 +1414,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         serviceclient+=ServiceClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_3_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1350,12 +1449,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         actionserver+=ActionServer
 	 *     )
 	 *     actionserver+=ActionServer (ambiguity) actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1377,12 +1479,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1404,12 +1509,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1431,12 +1539,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1458,12 +1569,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1485,12 +1599,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1512,12 +1629,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionserver+=ActionServer
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_4_3_______ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1544,12 +1664,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         actionclient+=ActionClient
 	 *     )
 	 *     actionclient+=ActionClient (ambiguity) actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_____ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1571,12 +1694,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1598,12 +1724,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1625,12 +1754,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1652,12 +1784,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1679,12 +1814,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1706,12 +1844,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         actionclient+=ActionClient
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_5_3_______ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1738,12 +1879,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         parameter+=Parameter
 	 *     )
 	 *     parameter+=Parameter (ambiguity) parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1765,12 +1909,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1792,12 +1939,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1819,12 +1969,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1846,12 +1999,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1873,12 +2029,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         END 
@@ -1900,12 +2059,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         (ambiguity) 
 	 *         parameter+=Parameter
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ENDTerminalRuleCall_3_6_3_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p_ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'parameters:' 
@@ -1930,12 +2092,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'publishers:' 
@@ -1960,12 +2125,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'serviceclient:' 
@@ -1990,12 +2158,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'serviceserver:' 
@@ -2020,12 +2191,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         'subscribers:' 
@@ -2050,12 +2224,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *         END 
 	 *         (rule end)
 	 *     )
+	 
+	 * </pre>
 	 */
 	protected void emit_Node___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2069,12 +2246,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
 	 *     subscriber+=Subscriber END (ambiguity) ('subscribers:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2088,12 +2268,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2107,12 +2290,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
 	 *     serviceserver+=ServiceServer END (ambiguity) ('serviceserver:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2126,12 +2312,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
 	 *     serviceclient+=ServiceClient END (ambiguity) ('serviceclient:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('subscribers:' BEGIN END) | 
@@ -2145,12 +2334,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
 	 *     publisher+=Publisher END (ambiguity) ('publishers:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2164,12 +2356,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     name=RosNames BEGIN (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
 	 *     parameter+=Parameter END (ambiguity) ('parameters:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2183,12 +2378,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) ('actionserver:' BEGIN END (ambiguity))* END (rule end)
 	 *     name=RosNames BEGIN (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         ('publishers:' BEGIN END) | 
@@ -2202,12 +2400,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) ('actionclient:' BEGIN END (ambiguity))* END (rule end)
 	 *     name=RosNames BEGIN (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_____ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2216,12 +2417,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2230,12 +2434,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2244,12 +2451,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2258,12 +2468,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2272,12 +2485,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2286,12 +2502,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2300,12 +2519,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2314,12 +2536,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2328,12 +2553,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2342,12 +2570,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2356,12 +2587,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2370,12 +2604,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2384,12 +2621,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2398,12 +2638,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2412,12 +2655,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2426,12 +2672,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2440,12 +2689,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2454,12 +2706,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2468,12 +2723,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2482,12 +2740,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2496,12 +2757,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2510,12 +2774,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2524,12 +2791,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2538,12 +2808,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2552,12 +2825,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2566,12 +2842,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2580,12 +2859,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2594,12 +2876,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2608,12 +2893,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionclient:' BEGIN END))? 
@@ -2622,12 +2910,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2636,12 +2927,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'subscribers:' BEGIN (END (ambiguity) 'subscribers:' BEGIN)* subscriber+=Subscriber
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2650,12 +2944,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subscriber+=Subscriber END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2664,12 +2961,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'serviceserver:' BEGIN (END (ambiguity) 'serviceserver:' BEGIN)* serviceserver+=ServiceServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2678,12 +2978,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceserver+=ServiceServer END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2692,12 +2995,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'serviceclient:' BEGIN (END (ambiguity) 'serviceclient:' BEGIN)* serviceclient+=ServiceClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2706,12 +3012,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     serviceclient+=ServiceClient END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2720,12 +3029,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'publishers:' BEGIN (END (ambiguity) 'publishers:' BEGIN)* publisher+=Publisher
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2734,12 +3046,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     publisher+=Publisher END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END))? 
@@ -2748,12 +3063,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=Parameter
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('actionserver:' BEGIN END))? 
@@ -2762,12 +3080,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     parameter+=Parameter END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2776,12 +3097,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionclient+=ActionClient END (ambiguity) 'actionserver:' BEGIN (END (ambiguity) 'actionserver:' BEGIN)* actionserver+=ActionServer
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionclientKeyword_3_5_0_BEGINTerminalRuleCall_3_5_1_ENDTerminalRuleCall_3_5_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     (
 	  *         (('publishers:' BEGIN END) | ('subscribers:' BEGIN END) | ('serviceserver:' BEGIN END) | ('serviceclient:' BEGIN END) | ('parameters:' BEGIN END))? 
@@ -2790,12 +3114,15 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     actionserver+=ActionServer END (ambiguity) 'actionclient:' BEGIN (END (ambiguity) 'actionclient:' BEGIN)* actionclient+=ActionClient
+	 
+	 * </pre>
 	 */
 	protected void emit_Node_______ParametersKeyword_3_6_0_BEGINTerminalRuleCall_3_6_1_ENDTerminalRuleCall_3_6_3___or___PublishersKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3___or___ServiceclientKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ServiceserverKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___SubscribersKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ActionserverKeyword_3_4_0_BEGINTerminalRuleCall_3_4_1_ENDTerminalRuleCall_3_4_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('specs:' BEGIN END)?
 	 *
@@ -2804,6 +3131,8 @@ public class RosSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     fromGitRepo=EString (ambiguity) END (rule end)
 	 *     name=RosNames ':' BEGIN (ambiguity) 'dependencies:' '[' dependency+=Dependency
 	 *     name=RosNames ':' BEGIN (ambiguity) END (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

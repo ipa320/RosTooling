@@ -2099,7 +2099,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final CrossReference cTopicSpecTopicSpecCrossReference_0 = (CrossReference)cTopicSpecAssignment.eContents().get(0);
 		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0.eContents().get(1);
 		
-		//TopicSpecRef returns primitives::TopicSpecRef:
+		//TopicSpecRef returns TopicSpecRef:
 		//    TopicSpec=[TopicSpec|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -2121,7 +2121,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+		//ArrayTopicSpecRef returns ArrayTopicSpecRef:
 		//    TopicSpec=[TopicSpec|EString]'[]'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -3316,7 +3316,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getHeaderAccess().getRule();
 	}
 	
-	//TopicSpecRef returns primitives::TopicSpecRef:
+	//TopicSpecRef returns TopicSpecRef:
 	//    TopicSpec=[TopicSpec|EString]
 	//;
 	public TopicSpecRefElements getTopicSpecRefAccess() {
@@ -3327,7 +3327,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getTopicSpecRefAccess().getRule();
 	}
 	
-	//ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+	//ArrayTopicSpecRef returns ArrayTopicSpecRef:
 	//    TopicSpec=[TopicSpec|EString]'[]'
 	//;
 	public ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {
