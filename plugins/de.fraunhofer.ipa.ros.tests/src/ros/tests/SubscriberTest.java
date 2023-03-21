@@ -13,7 +13,7 @@ import ros.Subscriber;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SubscriberTest extends NamespacedElementTest {
+public class SubscriberTest extends InterfaceTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

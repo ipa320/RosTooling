@@ -26,7 +26,7 @@ import ros.ServiceSpec;
  *
  * @generated
  */
-public class ServiceClientImpl extends NamespacedElementImpl implements ServiceClient {
+public class ServiceClientImpl extends InterfaceTypeImpl implements ServiceClient {
 	/**
 	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->

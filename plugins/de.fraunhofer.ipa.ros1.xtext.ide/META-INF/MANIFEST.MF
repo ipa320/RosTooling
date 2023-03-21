@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.fraunhofer.ipa.ros1.xtext.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: de.fraunhofer.ipa.ros1.xtext.ide
+Bundle-Vendor: Fraunhofer IPA
+Bundle-Version: 2.0.0.qualifier
+Bundle-SymbolicName: de.fraunhofer.ipa.ros1.xtext.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.fraunhofer.ipa.ros1.xtext,
+ de.fraunhofer.ipa.ros,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ de.fraunhofer.ipa.ros.xtext,
+ de.fraunhofer.ipa.ros.xtext.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: de.fraunhofer.ipa.ros1.ide.contentassist.antlr.internal,
+ de.fraunhofer.ipa.ros1.ide.contentassist.antlr.lexer,
+ de.fraunhofer.ipa.ros1.ide.contentassist.antlr

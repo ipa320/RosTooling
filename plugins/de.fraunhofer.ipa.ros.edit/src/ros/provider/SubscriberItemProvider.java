@@ -21,7 +21,7 @@ import ros.Subscriber;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SubscriberItemProvider extends NamespacedElementItemProvider {
+public class SubscriberItemProvider extends InterfaceTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

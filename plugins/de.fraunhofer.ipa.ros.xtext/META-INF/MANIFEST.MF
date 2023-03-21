@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: de.fraunhofer.ipa.ros.xtext
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.xtext
 Bundle-Vendor: Fraunhofer IPA
@@ -8,19 +9,20 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtend.lib;bundle-version="2.14.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.fraunhofer.ipa.ros.formatting2,
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: de.fraunhofer.ipa.ros.validation,
+ de.fraunhofer.ipa.ros.parser.antlr.lexer,
+ de.fraunhofer.ipa.ros.formatting2,
  de.fraunhofer.ipa.ros,
  de.fraunhofer.ipa.ros.scoping,
  de.fraunhofer.ipa.ros.parser.antlr.internal,
  de.fraunhofer.ipa.ros.serializer,
  de.fraunhofer.ipa.ros.services,
- de.fraunhofer.ipa.ros.parser.antlr,
- de.fraunhofer.ipa.ros.validation,
- de.fraunhofer.ipa.ros.generator
+ de.fraunhofer.ipa.ros.generator,
+ de.fraunhofer.ipa.ros.parser.antlr
 Import-Package: org.apache.log4j

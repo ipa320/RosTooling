@@ -13,7 +13,7 @@ import ros.ServiceServer;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceServerTest extends NamespacedElementTest {
+public class ServiceServerTest extends InterfaceTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

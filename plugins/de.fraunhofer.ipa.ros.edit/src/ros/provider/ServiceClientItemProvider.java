@@ -21,7 +21,7 @@ import ros.ServiceClient;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceClientItemProvider extends NamespacedElementItemProvider {
+public class ServiceClientItemProvider extends InterfaceTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

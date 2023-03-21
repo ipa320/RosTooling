@@ -11,6 +11,6 @@ public class RosAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-		return classLoader.getResourceAsStream("de/fraunhofer/ipa/ros/parser/antlr/internal/InternalRos.tokens");
+		return classLoader.getResourceAsStream("de/fraunhofer/ipa/ros/parser/antlr/internal/InternalRosParser.tokens");
 	}
 }

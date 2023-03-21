@@ -6,38 +6,23 @@ import "http://www.ipa.fraunhofer.de/primitives" as primitives
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/emf/2003/XMLType" as type
 
-
-
 PackageSet returns PackageSet:
 	{PackageSet}
-	'PackageSet'
-	'{'
-		(package+=Package ( "," package+=Package)* )?
-	'}';
+	package+=Package_Impl*
+	;
 
-Package returns Package:
-	Package_Impl | CatkinPackage | AmentPackage;
+///////////////////
+// YAML format
+///////////////////
+terminal BEGIN: 'synthetic:BEGIN';
+terminal END: 'synthetic:END';
 
-SpecBase returns SpecBase:
-	ServiceSpec | TopicSpec | ActionSpec;
+@Override 
+terminal SL_COMMENT: '#' !('\n'|'\r')*;
 
-Dependency returns Dependency:
-	PackageDependency | ExternalDependency;
-
-
-Namespace returns Namespace:
-	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
-
-Package_Impl returns Package:
-	{Package}
-	'Package'
-	name=EString
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
-
+///////////////////
+// CONVENTIONS AND NAMES
+///////////////////
 EString returns ecore::EString:
 	STRING | ID;
 	
@@ -45,182 +30,258 @@ RosNames returns ecore::EString:
 	ROS_CONVENTION_A | ID | 'node'
 ;
 
-RosParamNames returns ecore::EString:
-	ROS_CONVENTION_PARAM | ID 
-;
-
 terminal ROS_CONVENTION_A:
 	( ('/' ID ) | ( ID '/' ) )* ;
 
 terminal ROS_CONVENTION_PARAM:
 	( ('/' STRING ) | ( STRING '/' ) | ('~' STRING ) )* ;
-	
-Artifact returns Artifact:
-	{Artifact}
-	'Artifact'
-	name=RosNames
-	'{'
-		(node=Node)?
-	'}';
+
+///////////////////
+//PACKAGES
+///////////////////
+Package returns Package:
+	Package_Impl //|
+	//CatkinPackage | 
+	//AmentPackage
+	;
+
+Package_Impl returns Package:
+	{Package}
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('specs:' 
+			BEGIN
+			spec+=SpecBase*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
 
 CatkinPackage returns CatkinPackage:
 	{CatkinPackage}
-	'CatkinPackage'
-	name=RosNames
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
-	
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('artifacts:' 
+			BEGIN 
+			artifact+=Artifact*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
+
 AmentPackage returns AmentPackage:
 	{AmentPackage}
 	'AmentPackage'
-	name=RosNames
-	'{'
-		('FromGitRepo' fromGitRepo=EString)?
-		('Dependencies' '{' dependency+=Dependency ( "," dependency+=Dependency)* '}' )?		
-		('Specs'  '{' spec+=SpecBase ( "," spec+=SpecBase)* '}')?
-		(artifact+=Artifact ( "," artifact+=Artifact)*)?
-	'}';
+	name=RosNames':'
+	BEGIN
+		('fromGitRepo:' fromGitRepo=EString)?
+		('artifacts:' 
+			BEGIN 
+			artifact+=Artifact*
+			END
+		)?
+		('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	END;
 
-ServiceSpec returns ServiceSpec:
-	{ServiceSpec}
-	'ServiceSpec'
-	name=EString
-	'{'
-		('request' request=MessageDefinition)?
-		('response' response=MessageDefinition)?
-	'}';
+///////////////////
+//ARTIFACT AND NODE
+///////////////////
+Artifact returns Artifact:
+	{Artifact}
+		name=RosNames':'
+		BEGIN
+		(node=Node)?
+		END;
+
+Node returns Node:
+	'node:' name=RosNames
+	 BEGIN
+		(
+		('publishers:' 
+			BEGIN 
+			publisher+=Publisher*
+			END
+		)|
+		('subscribers:' 
+			BEGIN 
+			subscriber+=Subscriber*
+			END
+		)|
+		('serviceserver:' 
+			BEGIN 
+			serviceserver+=ServiceServer*
+			END
+		)|
+		('serviceclient:' 
+			BEGIN 
+			serviceclient+=ServiceClient*
+			END
+		)|
+		('actionserver:' 
+			BEGIN 
+			actionserver+=ActionServer*
+			END
+		)|
+		('actionclient:' 
+			BEGIN 
+			actionclient+=ActionClient*
+			END
+		)|
+		('parameters:'
+			BEGIN
+			parameter+=Parameter*
+			END
+		)
+		)*END
+	;
+
+///////////////////
+//OBJECTS/SPECIFICATIONS
+///////////////////
+SpecBase returns SpecBase:
+	TopicSpec | ServiceSpec | ActionSpec;
 
 TopicSpec returns TopicSpec:
 	{TopicSpec}
-	'TopicSpec'
-	name=(EString|'Header'|'String')
-	'{'
-		('message' message=MessageDefinition)?
-	'}';
+	'msg:'name=(EString|'Header'|'String')
+	BEGIN 
+		'message:' (BEGIN message=MessageDefinition END)?
+	END
+	;
 
+ServiceSpec returns ServiceSpec:
+	{ServiceSpec}
+	'srv:'name=EString
+	BEGIN
+		'request:' (BEGIN request=MessageDefinition END)?
+		'response:' (BEGIN response=MessageDefinition END)?
+	END;
+	
 ActionSpec returns ActionSpec:
 	{ActionSpec}
-	'ActionSpec'
-	name=EString
-	'{'
-		('goal' goal=MessageDefinition)?
-		('result' result=MessageDefinition)?
-		('feedback' feedback=MessageDefinition)?
-	'}';
+	'action:'name=EString
+	BEGIN
+		'goal:' (BEGIN goal=MessageDefinition END)?
+		'result:' (BEGIN result=MessageDefinition END)?
+		'feedback:' (BEGIN feedback=MessageDefinition END)?
+	END;
 
 
 MessageDefinition returns MessageDefinition:
 	{MessageDefinition}
-	'{'
-		( MessagePart+=MessagePart ( MessagePart+=MessagePart)* )?
-	'}';
+		MessagePart+=MessagePart*;
 
-Node returns Node:
-	'Node'
-	'{'
-		'name' name=RosNames
-		('ServiceServers' '{' serviceserver+=ServiceServer ( "," serviceserver+=ServiceServer)* '}')?
-		('Publishers' '{' publisher+=Publisher ( "," publisher+=Publisher)* '}')?
-		('Subscribers' '{' subscriber+=Subscriber ( "," subscriber+=Subscriber)* '}')?
-		('ServiceClients' '{' serviceclient+=ServiceClient ( "," serviceclient+=ServiceClient)* '}')?
-		('ActionServers' '{' actionserver+=ActionServer ( "," actionserver+=ActionServer)* '}')?
-		('ActionClients' '{' actionclient+=ActionClient ( "," actionclient+=ActionClient)* '}' )?
-		('Parameters' '{' parameter+=Parameter ( "," parameter+=Parameter)* '}' )?
-	'}';
-
-ServiceServer returns ServiceServer:
-	'ServiceServer'
-	'{'
-		'name' name=EString
-		'service' service=[ServiceSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
-
+///////////////////
+//INTERFACES
+///////////////////
 Publisher returns Publisher:
-	'Publisher'
-	'{'
-		'name' name=EString
-		'message' message=[TopicSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{Publisher}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 Subscriber returns Subscriber:
-	'Subscriber'
-	'{'
-		'name' name=EString
-		'message' message=[TopicSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{Subscriber}
+		name=EString':'
+		BEGIN
+			'type:' message=[TopicSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
+
+ServiceServer returns ServiceServer:
+	{ServiceServer}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ServiceClient returns ServiceClient:
-	'ServiceClient'
-	'{'
-		'name' name=EString
-		'service' service=[ServiceSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ServiceClient}
+		name=EString':'
+		BEGIN
+			'type:' service=[ServiceSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ActionServer returns ActionServer:
-	'ActionServer'
-	'{'
-		'name' name=EString
-		'action' action=[ActionSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ActionServer}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
 ActionClient returns ActionClient:
-	'ActionClient'
-	'{'
-		'name' name=EString
-		'action' action=[ActionSpec|EString]
-		('namespace' namespace=Namespace)?
-	'}';
+	{ActionClient}
+		name=EString':'
+		BEGIN
+			'type:' action=[ActionSpec|EString]
+			('ns:' namespace=Namespace)?
+		END
+	;
 
-GraphName returns GraphName:
-	'GraphName' ;
-
+///////////////////
+//DEPENDENCIES
+///////////////////
+Dependency returns Dependency:
+	PackageDependency | ExternalDependency;
 
 PackageDependency returns PackageDependency:
-	package=[Package|EString]
-;
+	package=[Package|EString];
 
 ExternalDependency returns ExternalDependency:
 	{ExternalDependency}
 	'ExternalDependency'
 	name=EString;
 
+///////////////////
+//NAMESPACES
+///////////////////
+Namespace returns Namespace:
+	GlobalNamespace | RelativeNamespace_Impl | PrivateNamespace;
+
+GraphName returns GraphName:
+	'GraphName' ;
+
 GlobalNamespace returns GlobalNamespace:
 	{GlobalNamespace}
 	'GlobalNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 RelativeNamespace_Impl returns RelativeNamespace:
 	{RelativeNamespace}
 	'RelativeNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
 PrivateNamespace returns PrivateNamespace:
 	{PrivateNamespace}
 	'PrivateNamespace'
-	'{'
-		('parts' '{' parts+=GraphName ( "," parts+=GraphName)* '}' )?
-	'}';
+		('[' parts+=GraphName ( "," parts+=GraphName)* ']' )?;
 
+///////////////////
 //PARAMETERS DEFINITION
+///////////////////
+RosParamNames returns ecore::EString:
+	ROS_CONVENTION_PARAM | ID 
+;
+
 Parameter returns Parameter:
-	'Parameter'
-	'{'
-		'name' name=EString
-		('namespace' namespace=Namespace)?
+	{Parameter}
+		name=EString':'
+		BEGIN
 		'type' type=ParameterType
+		('ns:' namespace=Namespace)?
+		END
 	'}';
 	
 ParameterType returns ParameterType:
@@ -233,16 +294,16 @@ ParameterValue returns ParameterValue:
 ParameterListType returns ParameterListType:
 	{ParameterListType}
 	'List'
-	'{'	
+	'['	
 		sequence+=ParameterType ( ',' sequence+=ParameterType )*
-	'}';
+	']';
 
 ParameterStructType returns ParameterStructType:
 	{ParameterStructType}
 	'Struct'
-	'{'
+	'['
 		parameterstructypetmember+=ParameterStructTypeMember ( "," parameterstructypetmember+=ParameterStructTypeMember)*
-	'}';
+	']';
 
 ParameterIntegerType returns ParameterIntegerType:
 	{ParameterIntegerType}
@@ -280,23 +341,22 @@ ParameterAnyType returns ParameterAnyType:
 	('default' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
-	'Array'
-	'{'
+	'Array:'
+	BEGIN
 		'type' type=ParameterType
 		('default' default=ParameterList)?
-	'}';
+	END;
 
 ParameterList returns ParameterSequence:
 	{ParameterSequence}
-		'{'	value+=ParameterValue ( ',' value+=ParameterValue )* '}'
+		'['	value+=ParameterValue ( ',' value+=ParameterValue )* ']'
 ;
 
 ParameterAny returns ParameterAny:
 	{ParameterAny}
 	'ParameterAny'
-	'{'
 		('value' value=EString)?
-	'}';
+	;
 
 ParameterString returns ParameterString:
 	value=EString
@@ -320,7 +380,7 @@ ParameterBoolean returns ParameterBoolean:
 
 ParameterStruct returns ParameterStruct:
 	{ParameterStruct}
-		('{' value+=ParameterStructMember  ( "," '{' value+=ParameterStructMember '}')*  '}' )?
+		('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
 ;
 
 ParameterDate returns ParameterDate:
@@ -330,10 +390,10 @@ ParameterDate returns ParameterDate:
 
 ParameterStructMember returns ParameterStructMember:
 	'ParameterStructMember'
-	name=EString
-	'{'
-		'value' value=ParameterValue
-	'}';
+	name=EString':'
+	BEGIN
+		value=ParameterValue
+	END;
 
 
 ParameterStructTypeMember returns ParameterStructTypeMember:
@@ -341,14 +401,15 @@ ParameterStructTypeMember returns ParameterStructTypeMember:
 		type=ParameterType
 	;
 
-
+///////////////////
 //PARAMETERS PRIMITIVES TYPES
-terminal fragment DIGIT: '0'..'9';
+///////////////////
+terminal DIGIT: '0'..'9';
 
 terminal BINARY: ('0b'|'0B')('0'|'1')+;
 
 terminal BOOLEAN: 'true'|'false';
-terminal DOUBLE returns ecore::EDouble: DECINT (('.' DIGIT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DECINT));  // Use terminal to avoid 'e' turning into a keyword
+terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));  // Use terminal to avoid 'e' turning into a keyword
 terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
 terminal DAY:'1'..'9' | '1'..'3' '0'..'9';
 terminal MONTH:'1'..'9' | '1' '0'..'2';
@@ -372,8 +433,9 @@ Integer0 returns type::Int:
 DateTime0 returns type::DateTime:
 	DATE_TIME;
 	
+///////////////////
 //MESSAGE PRIMITIVES DEFINITION
-
+///////////////////
 MessagePart returns primitives::MessagePart:
 	Type = AbstractType
 	Data =(KEYWORD | MESSAGE_ASIGMENT | EString)

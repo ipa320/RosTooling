@@ -23,9 +23,9 @@ import ros.CatkinPackage;
 import ros.Dependency;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
+import ros.InterfaceType;
 import ros.MessageDefinition;
 import ros.Namespace;
-import ros.NamespacedElement;
 import ros.Node;
 import ros.PackageDependency;
 import ros.PackageSet;
@@ -55,6 +55,7 @@ import ros.ParameterType;
 import ros.ParameterValue;
 import ros.PrivateNamespace;
 import ros.Publisher;
+import ros.QualityOfService;
 import ros.RelativeNamespace;
 import ros.RosFactory;
 import ros.RosPackage;
@@ -238,7 +239,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass namespacedElementEClass = null;
+	private EClass interfaceTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -414,6 +415,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	private EClass amentPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qualityOfServiceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1078,8 +1086,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNamespacedElement() {
-		return namespacedElementEClass;
+	public EClass getInterfaceType() {
+		return interfaceTypeEClass;
 	}
 
 	/**
@@ -1088,8 +1096,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamespacedElement_Namespace() {
-		return (EReference)namespacedElementEClass.getEStructuralFeatures().get(0);
+	public EReference getInterfaceType_Namespace() {
+		return (EReference)interfaceTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1098,8 +1106,18 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNamespacedElement_Name() {
-		return (EAttribute)namespacedElementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getInterfaceType_Name() {
+		return (EAttribute)interfaceTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getInterfaceType_Qos() {
+		return (EReference)interfaceTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1638,6 +1656,66 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getQualityOfService() {
+		return qualityOfServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQualityOfService_QoSProfile() {
+		return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQualityOfService_History() {
+		return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQualityOfService_Depth() {
+		return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQualityOfService_Reliability() {
+		return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQualityOfService_Durability() {
+		return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getGraphName() {
 		return graphNameEDataType;
 	}
@@ -1752,9 +1830,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		privateNamespaceEClass = createEClass(PRIVATE_NAMESPACE);
 
-		namespacedElementEClass = createEClass(NAMESPACED_ELEMENT);
-		createEReference(namespacedElementEClass, NAMESPACED_ELEMENT__NAMESPACE);
-		createEAttribute(namespacedElementEClass, NAMESPACED_ELEMENT__NAME);
+		interfaceTypeEClass = createEClass(INTERFACE_TYPE);
+		createEReference(interfaceTypeEClass, INTERFACE_TYPE__NAMESPACE);
+		createEAttribute(interfaceTypeEClass, INTERFACE_TYPE__NAME);
+		createEReference(interfaceTypeEClass, INTERFACE_TYPE__QOS);
 
 		parameterTypeEClass = createEClass(PARAMETER_TYPE);
 
@@ -1834,6 +1913,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		amentPackageEClass = createEClass(AMENT_PACKAGE);
 
+		qualityOfServiceEClass = createEClass(QUALITY_OF_SERVICE);
+		createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__QO_SPROFILE);
+		createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__HISTORY);
+		createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DEPTH);
+		createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__RELIABILITY);
+		createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DURABILITY);
+
 		// Create data types
 		graphNameEDataType = createEDataType(GRAPH_NAME);
 	}
@@ -1871,17 +1957,17 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		// Add supertypes to classes
 		serviceSpecEClass.getESuperTypes().add(this.getSpecBase());
-		serviceServerEClass.getESuperTypes().add(this.getNamespacedElement());
+		serviceServerEClass.getESuperTypes().add(this.getInterfaceType());
 		topicSpecEClass.getESuperTypes().add(this.getSpecBase());
 		packageDependencyEClass.getESuperTypes().add(this.getDependency());
 		externalDependencyEClass.getESuperTypes().add(this.getDependency());
 		catkinPackageEClass.getESuperTypes().add(this.getPackage());
-		publisherEClass.getESuperTypes().add(this.getNamespacedElement());
-		subscriberEClass.getESuperTypes().add(this.getNamespacedElement());
-		serviceClientEClass.getESuperTypes().add(this.getNamespacedElement());
+		publisherEClass.getESuperTypes().add(this.getInterfaceType());
+		subscriberEClass.getESuperTypes().add(this.getInterfaceType());
+		serviceClientEClass.getESuperTypes().add(this.getInterfaceType());
 		actionSpecEClass.getESuperTypes().add(this.getSpecBase());
-		actionServerEClass.getESuperTypes().add(this.getNamespacedElement());
-		actionClientEClass.getESuperTypes().add(this.getNamespacedElement());
+		actionServerEClass.getESuperTypes().add(this.getInterfaceType());
+		actionClientEClass.getESuperTypes().add(this.getInterfaceType());
 		globalNamespaceEClass.getESuperTypes().add(this.getNamespace());
 		relativeNamespaceEClass.getESuperTypes().add(this.getNamespace());
 		privateNamespaceEClass.getESuperTypes().add(this.getRelativeNamespace());
@@ -1890,7 +1976,7 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		parameterIntegerTypeEClass.getESuperTypes().add(this.getParameterType());
 		parameterStringTypeEClass.getESuperTypes().add(this.getParameterType());
 		parameterDoubleTypeEClass.getESuperTypes().add(this.getParameterType());
-		parameterEClass.getESuperTypes().add(this.getNamespacedElement());
+		parameterEClass.getESuperTypes().add(this.getInterfaceType());
 		parameterDateTypeEClass.getESuperTypes().add(this.getParameterType());
 		parameterBooleanTypeEClass.getESuperTypes().add(this.getParameterType());
 		parameterBase64TypeEClass.getESuperTypes().add(this.getParameterType());
@@ -1989,9 +2075,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 
 		initEClass(privateNamespaceEClass, PrivateNamespace.class, "PrivateNamespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(namespacedElementEClass, NamespacedElement.class, "NamespacedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNamespacedElement_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1, NamespacedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNamespacedElement_Name(), this.getGraphName(), "name", null, 1, 1, NamespacedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(interfaceTypeEClass, InterfaceType.class, "InterfaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInterfaceType_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1, InterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterfaceType_Name(), this.getGraphName(), "name", null, 1, 1, InterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceType_Qos(), this.getQualityOfService(), null, "qos", null, 0, 1, InterfaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterTypeEClass, ParameterType.class, "ParameterType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2070,6 +2157,13 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
 		initEAttribute(getParameterDate_Value(), theXMLTypePackage.getDateTime(), "value", null, 1, 1, ParameterDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(amentPackageEClass, AmentPackage.class, "AmentPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(qualityOfServiceEClass, QualityOfService.class, "QualityOfService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getQualityOfService_QoSProfile(), ecorePackage.getEString(), "QoSProfile", "default_qos", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityOfService_History(), ecorePackage.getEString(), "History", "keep_all", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityOfService_Depth(), theXMLTypePackage.getInt(), "Depth", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityOfService_Reliability(), ecorePackage.getEString(), "Reliability", "reliable", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityOfService_Durability(), ecorePackage.getEString(), "Durability", "transient_local", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(graphNameEDataType, String.class, "GraphName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

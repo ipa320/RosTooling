@@ -25,7 +25,7 @@ import ros.RosPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterItemProvider extends NamespacedElementItemProvider {
+public class ParameterItemProvider extends InterfaceTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

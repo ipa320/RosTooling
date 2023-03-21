@@ -387,14 +387,14 @@ public interface RosPackage extends EPackage {
 	int SERVICE_SPEC_OPERATION_COUNT = SPEC_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ros.impl.NamespacedElementImpl <em>Namespaced Element</em>}' class.
+	 * The meta object id for the '{@link ros.impl.InterfaceTypeImpl <em>Interface Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ros.impl.NamespacedElementImpl
-	 * @see ros.impl.RosPackageImpl#getNamespacedElement()
+	 * @see ros.impl.InterfaceTypeImpl
+	 * @see ros.impl.RosPackageImpl#getInterfaceType()
 	 * @generated
 	 */
-	int NAMESPACED_ELEMENT = 23;
+	int INTERFACE_TYPE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -403,7 +403,43 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACED_ELEMENT__NAMESPACE = 0;
+	int INTERFACE_TYPE__NAMESPACE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_TYPE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_TYPE__QOS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Interface Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_TYPE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Interface Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.ServiceServerImpl <em>Service Server</em>}' class.
@@ -576,40 +612,13 @@ public interface RosPackage extends EPackage {
 	int PRIVATE_NAMESPACE = 22;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMESPACED_ELEMENT__NAME = 1;
-
-	/**
-	 * The number of structural features of the '<em>Namespaced Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMESPACED_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Namespaced Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMESPACED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_SERVER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int SERVICE_SERVER__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -618,7 +627,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_SERVER__NAME = NAMESPACED_ELEMENT__NAME;
+	int SERVICE_SERVER__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVER__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -627,7 +645,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_SERVER__SERVICE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE_SERVER__SERVICE = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Service Server</em>' class.
@@ -636,7 +654,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_SERVER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_SERVER_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Service Server</em>' class.
@@ -645,7 +663,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_SERVER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int SERVICE_SERVER_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -825,7 +843,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int PUBLISHER__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -834,7 +852,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHER__NAME = NAMESPACED_ELEMENT__NAME;
+	int PUBLISHER__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLISHER__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' reference.
@@ -843,7 +870,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHER__MESSAGE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int PUBLISHER__MESSAGE = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Publisher</em>' class.
@@ -852,7 +879,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int PUBLISHER_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Publisher</em>' class.
@@ -861,7 +888,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int PUBLISHER_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -906,7 +933,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIBER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int SUBSCRIBER__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -915,7 +942,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIBER__NAME = NAMESPACED_ELEMENT__NAME;
+	int SUBSCRIBER__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSCRIBER__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' reference.
@@ -924,7 +960,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIBER__MESSAGE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int SUBSCRIBER__MESSAGE = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Subscriber</em>' class.
@@ -933,7 +969,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIBER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int SUBSCRIBER_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Subscriber</em>' class.
@@ -942,7 +978,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSCRIBER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int SUBSCRIBER_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -951,7 +987,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CLIENT__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int SERVICE_CLIENT__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -960,7 +996,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CLIENT__NAME = NAMESPACED_ELEMENT__NAME;
+	int SERVICE_CLIENT__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CLIENT__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -969,7 +1014,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CLIENT__SERVICE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE_CLIENT__SERVICE = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Service Client</em>' class.
@@ -978,7 +1023,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CLIENT_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_CLIENT_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Service Client</em>' class.
@@ -987,7 +1032,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_CLIENT_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int SERVICE_CLIENT_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.PackageSetImpl <em>Package Set</em>}' class.
@@ -1105,7 +1150,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_SERVER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int ACTION_SERVER__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1114,7 +1159,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_SERVER__NAME = NAMESPACED_ELEMENT__NAME;
+	int ACTION_SERVER__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_SERVER__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -1123,7 +1177,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_SERVER__ACTION = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int ACTION_SERVER__ACTION = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Action Server</em>' class.
@@ -1132,7 +1186,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_SERVER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int ACTION_SERVER_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Action Server</em>' class.
@@ -1141,7 +1195,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_SERVER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int ACTION_SERVER_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' containment reference.
@@ -1150,7 +1204,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CLIENT__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int ACTION_CLIENT__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1159,7 +1213,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CLIENT__NAME = NAMESPACED_ELEMENT__NAME;
+	int ACTION_CLIENT__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_CLIENT__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -1168,7 +1231,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CLIENT__ACTION = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int ACTION_CLIENT__ACTION = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Action Client</em>' class.
@@ -1177,7 +1240,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CLIENT_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int ACTION_CLIENT_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Action Client</em>' class.
@@ -1186,7 +1249,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_CLIENT_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int ACTION_CLIENT_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Part</b></em>' containment reference list.
@@ -1562,7 +1625,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAMESPACE = NAMESPACED_ELEMENT__NAMESPACE;
+	int PARAMETER__NAMESPACE = INTERFACE_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1571,7 +1634,16 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = NAMESPACED_ELEMENT__NAME;
+	int PARAMETER__NAME = INTERFACE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qos</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__QOS = INTERFACE_TYPE__QOS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1580,7 +1652,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__TYPE = NAMESPACED_ELEMENT_FEATURE_COUNT + 0;
+	int PARAMETER__TYPE = INTERFACE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1589,7 +1661,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__VALUE = NAMESPACED_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER__VALUE = INTERFACE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -1598,7 +1670,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = NAMESPACED_ELEMENT_FEATURE_COUNT + 2;
+	int PARAMETER_FEATURE_COUNT = INTERFACE_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -1607,7 +1679,7 @@ public interface RosPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = NAMESPACED_ELEMENT_OPERATION_COUNT + 0;
+	int PARAMETER_OPERATION_COUNT = INTERFACE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ros.impl.ParameterDateTypeImpl <em>Parameter Date Type</em>}' class.
@@ -2339,6 +2411,79 @@ public interface RosPackage extends EPackage {
 	int AMENT_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ros.impl.QualityOfServiceImpl <em>Quality Of Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ros.impl.QualityOfServiceImpl
+	 * @see ros.impl.RosPackageImpl#getQualityOfService()
+	 * @generated
+	 */
+	int QUALITY_OF_SERVICE = 49;
+
+	/**
+	 * The feature id for the '<em><b>Qo SProfile</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE__QO_SPROFILE = 0;
+
+	/**
+	 * The feature id for the '<em><b>History</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE__HISTORY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE__DEPTH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Reliability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE__RELIABILITY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Durability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE__DURABILITY = 4;
+
+	/**
+	 * The number of structural features of the '<em>Quality Of Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Quality Of Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITY_OF_SERVICE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Graph Name</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2346,7 +2491,7 @@ public interface RosPackage extends EPackage {
 	 * @see ros.impl.RosPackageImpl#getGraphName()
 	 * @generated
 	 */
-	int GRAPH_NAME = 49;
+	int GRAPH_NAME = 50;
 
 
 	/**
@@ -2965,36 +3110,47 @@ public interface RosPackage extends EPackage {
 	EClass getPrivateNamespace();
 
 	/**
-	 * Returns the meta object for class '{@link ros.NamespacedElement <em>Namespaced Element</em>}'.
+	 * Returns the meta object for class '{@link ros.InterfaceType <em>Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Namespaced Element</em>'.
-	 * @see ros.NamespacedElement
+	 * @return the meta object for class '<em>Interface Type</em>'.
+	 * @see ros.InterfaceType
 	 * @generated
 	 */
-	EClass getNamespacedElement();
+	EClass getInterfaceType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link ros.NamespacedElement#getNamespace <em>Namespace</em>}'.
+	 * Returns the meta object for the containment reference '{@link ros.InterfaceType#getNamespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Namespace</em>'.
-	 * @see ros.NamespacedElement#getNamespace()
-	 * @see #getNamespacedElement()
+	 * @see ros.InterfaceType#getNamespace()
+	 * @see #getInterfaceType()
 	 * @generated
 	 */
-	EReference getNamespacedElement_Namespace();
+	EReference getInterfaceType_Namespace();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ros.NamespacedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ros.InterfaceType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ros.NamespacedElement#getName()
-	 * @see #getNamespacedElement()
+	 * @see ros.InterfaceType#getName()
+	 * @see #getInterfaceType()
 	 * @generated
 	 */
-	EAttribute getNamespacedElement_Name();
+	EAttribute getInterfaceType_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link ros.InterfaceType#getQos <em>Qos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Qos</em>'.
+	 * @see ros.InterfaceType#getQos()
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	EReference getInterfaceType_Qos();
 
 	/**
 	 * Returns the meta object for class '{@link ros.ParameterType <em>Parameter Type</em>}'.
@@ -3555,6 +3711,71 @@ public interface RosPackage extends EPackage {
 	EClass getAmentPackage();
 
 	/**
+	 * Returns the meta object for class '{@link ros.QualityOfService <em>Quality Of Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Quality Of Service</em>'.
+	 * @see ros.QualityOfService
+	 * @generated
+	 */
+	EClass getQualityOfService();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.QualityOfService#getQoSProfile <em>Qo SProfile</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Qo SProfile</em>'.
+	 * @see ros.QualityOfService#getQoSProfile()
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	EAttribute getQualityOfService_QoSProfile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.QualityOfService#getHistory <em>History</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>History</em>'.
+	 * @see ros.QualityOfService#getHistory()
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	EAttribute getQualityOfService_History();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.QualityOfService#getDepth <em>Depth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Depth</em>'.
+	 * @see ros.QualityOfService#getDepth()
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	EAttribute getQualityOfService_Depth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.QualityOfService#getReliability <em>Reliability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reliability</em>'.
+	 * @see ros.QualityOfService#getReliability()
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	EAttribute getQualityOfService_Reliability();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ros.QualityOfService#getDurability <em>Durability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Durability</em>'.
+	 * @see ros.QualityOfService#getDurability()
+	 * @see #getQualityOfService()
+	 * @generated
+	 */
+	EAttribute getQualityOfService_Durability();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Graph Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4099,14 +4320,14 @@ public interface RosPackage extends EPackage {
 		EClass PRIVATE_NAMESPACE = eINSTANCE.getPrivateNamespace();
 
 		/**
-		 * The meta object literal for the '{@link ros.impl.NamespacedElementImpl <em>Namespaced Element</em>}' class.
+		 * The meta object literal for the '{@link ros.impl.InterfaceTypeImpl <em>Interface Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ros.impl.NamespacedElementImpl
-		 * @see ros.impl.RosPackageImpl#getNamespacedElement()
+		 * @see ros.impl.InterfaceTypeImpl
+		 * @see ros.impl.RosPackageImpl#getInterfaceType()
 		 * @generated
 		 */
-		EClass NAMESPACED_ELEMENT = eINSTANCE.getNamespacedElement();
+		EClass INTERFACE_TYPE = eINSTANCE.getInterfaceType();
 
 		/**
 		 * The meta object literal for the '<em><b>Namespace</b></em>' containment reference feature.
@@ -4114,7 +4335,7 @@ public interface RosPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NAMESPACED_ELEMENT__NAMESPACE = eINSTANCE.getNamespacedElement_Namespace();
+		EReference INTERFACE_TYPE__NAMESPACE = eINSTANCE.getInterfaceType_Namespace();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4122,7 +4343,15 @@ public interface RosPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NAMESPACED_ELEMENT__NAME = eINSTANCE.getNamespacedElement_Name();
+		EAttribute INTERFACE_TYPE__NAME = eINSTANCE.getInterfaceType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Qos</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERFACE_TYPE__QOS = eINSTANCE.getInterfaceType_Qos();
 
 		/**
 		 * The meta object literal for the '{@link ros.impl.ParameterTypeImpl <em>Parameter Type</em>}' class.
@@ -4597,6 +4826,56 @@ public interface RosPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AMENT_PACKAGE = eINSTANCE.getAmentPackage();
+
+		/**
+		 * The meta object literal for the '{@link ros.impl.QualityOfServiceImpl <em>Quality Of Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ros.impl.QualityOfServiceImpl
+		 * @see ros.impl.RosPackageImpl#getQualityOfService()
+		 * @generated
+		 */
+		EClass QUALITY_OF_SERVICE = eINSTANCE.getQualityOfService();
+
+		/**
+		 * The meta object literal for the '<em><b>Qo SProfile</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_OF_SERVICE__QO_SPROFILE = eINSTANCE.getQualityOfService_QoSProfile();
+
+		/**
+		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_OF_SERVICE__HISTORY = eINSTANCE.getQualityOfService_History();
+
+		/**
+		 * The meta object literal for the '<em><b>Depth</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_OF_SERVICE__DEPTH = eINSTANCE.getQualityOfService_Depth();
+
+		/**
+		 * The meta object literal for the '<em><b>Reliability</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_OF_SERVICE__RELIABILITY = eINSTANCE.getQualityOfService_Reliability();
+
+		/**
+		 * The meta object literal for the '<em><b>Durability</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALITY_OF_SERVICE__DURABILITY = eINSTANCE.getQualityOfService_Durability();
 
 		/**
 		 * The meta object literal for the '<em>Graph Name</em>' data type.

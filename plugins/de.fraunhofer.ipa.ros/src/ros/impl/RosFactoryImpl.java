@@ -19,8 +19,8 @@ import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
+import ros.InterfaceType;
 import ros.MessageDefinition;
-import ros.NamespacedElement;
 import ros.Node;
 import ros.PackageDependency;
 import ros.PackageSet;
@@ -48,6 +48,7 @@ import ros.ParameterStructType;
 import ros.ParameterStructTypeMember;
 import ros.PrivateNamespace;
 import ros.Publisher;
+import ros.QualityOfService;
 import ros.RelativeNamespace;
 import ros.RosFactory;
 import ros.RosPackage;
@@ -121,7 +122,7 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.GLOBAL_NAMESPACE: return createGlobalNamespace();
 			case RosPackage.RELATIVE_NAMESPACE: return createRelativeNamespace();
 			case RosPackage.PRIVATE_NAMESPACE: return createPrivateNamespace();
-			case RosPackage.NAMESPACED_ELEMENT: return createNamespacedElement();
+			case RosPackage.INTERFACE_TYPE: return createInterfaceType();
 			case RosPackage.PARAMETER_LIST_TYPE: return createParameterListType();
 			case RosPackage.PARAMETER_STRUCT_TYPE: return createParameterStructType();
 			case RosPackage.PARAMETER_INTEGER_TYPE: return createParameterIntegerType();
@@ -145,6 +146,7 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 			case RosPackage.PARAMETER_STRUCT_MEMBER: return createParameterStructMember();
 			case RosPackage.PARAMETER_DATE: return createParameterDate();
 			case RosPackage.AMENT_PACKAGE: return createAmentPackage();
+			case RosPackage.QUALITY_OF_SERVICE: return createQualityOfService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -406,9 +408,9 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	 * @generated
 	 */
 	@Override
-	public NamespacedElement createNamespacedElement() {
-		NamespacedElementImpl namespacedElement = new NamespacedElementImpl();
-		return namespacedElement;
+	public InterfaceType createInterfaceType() {
+		InterfaceTypeImpl interfaceType = new InterfaceTypeImpl();
+		return interfaceType;
 	}
 
 	/**
@@ -662,6 +664,17 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
 	public AmentPackage createAmentPackage() {
 		AmentPackageImpl amentPackage = new AmentPackageImpl();
 		return amentPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QualityOfService createQualityOfService() {
+		QualityOfServiceImpl qualityOfService = new QualityOfServiceImpl();
+		return qualityOfService;
 	}
 
 	/**

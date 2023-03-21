@@ -19,7 +19,7 @@ package ros;
  * @model
  * @generated
  */
-public interface ActionClient extends NamespacedElement {
+public interface ActionClient extends InterfaceType {
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
