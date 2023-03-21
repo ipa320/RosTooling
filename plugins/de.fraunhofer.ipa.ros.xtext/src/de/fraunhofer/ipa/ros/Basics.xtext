@@ -357,11 +357,11 @@ Header returns primitives::Header:
 	'Header'
 ;
 
-TopicSpecRef returns primitives::TopicSpecRef:
+TopicSpecRef returns TopicSpecRef:
 	TopicSpec=[TopicSpec|EString]
 ;
 
-ArrayTopicSpecRef returns primitives::ArrayTopicSpecRef:
+ArrayTopicSpecRef returns ArrayTopicSpecRef:
 	TopicSpec=[TopicSpec|EString]'[]'
 ;
 
