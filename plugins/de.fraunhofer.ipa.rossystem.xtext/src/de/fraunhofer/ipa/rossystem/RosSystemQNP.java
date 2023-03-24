@@ -2,8 +2,8 @@ package de.fraunhofer.ipa.rossystem;
 
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
-import rossystem.RosInterface;
-import rossystem.RosNode;
+import system.RosInterface;
+import system.RosNode;
 import ros.Node;
 import ros.Package;
 
