@@ -55,7 +55,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
    <requires>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="de.fraunhofer.ipa.componentInterface"/>
       <import plugin="de.fraunhofer.ipa.ros"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="de.fraunhofer.ipa.rossystem.xtext"/>
@@ -73,7 +72,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.ui.ide" version="3.13.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.sirius.common"/>
       <import plugin="org.eclipse.sirius.diagram.ui"/>
-      <import plugin="de.fraunhofer.ipa.componentInterface.editor"/>
       <import plugin="de.fraunhofer.ipa.ros.xtext"/>
       <import plugin="de.fraunhofer.ipa.ros.xtext.ide"/>
       <import plugin="org.eclipse.xtext.ui"/>
@@ -85,7 +83,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.xbase.lib" version="2.14.0" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j"/>
-      <import plugin="de.fraunhofer.ipa.componentInterface.edit"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.xbase"/>
       <import plugin="org.eclipse.equinox.common" match="greaterOrEqual"/>
@@ -93,8 +90,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.xtend.lib" version="2.14.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.debug.ui"/>
-      <import plugin="de.fraunhofer.ipa.componentInterface.xtext"/>
-      <import plugin="de.fraunhofer.ipa.componentInterface.xtext.ide"/>
       <import plugin="de.fraunhofer.ipa.rossystem.edit"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
@@ -110,7 +105,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.swt"/>
       <import plugin="javax.inject"/>
       <import plugin="org.eclipse.sirius.diagram"/>
-      <import feature="org.eclipse.sirius.specifier"/>
    </requires>
 
    <plugin
@@ -129,20 +123,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="de.fraunhofer.ipa.ros.edit"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.componentInterface.edit"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.ros.sirius"
          download-size="0"
          install-size="0"
          version="2.0.0.qualifier"
@@ -177,28 +157,7 @@ POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="de.fraunhofer.ipa.componentInterface.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="de.fraunhofer.ipa.ros"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.componentInterface"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.componentInterface.xtext"
          download-size="0"
          install-size="0"
          version="2.0.0.qualifier"
@@ -212,21 +171,7 @@ POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="de.fraunhofer.ipa.componentInterface.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="de.fraunhofer.ipa.rossystem.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="2.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.componentInterface.editor"
          download-size="0"
          install-size="0"
          version="2.0.0.qualifier"
@@ -292,42 +237,42 @@ POSSIBILITY OF SUCH DAMAGE.
          id="de.fraunhofer.ipa.ros1.xtext"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ide"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ide"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
 </feature>
