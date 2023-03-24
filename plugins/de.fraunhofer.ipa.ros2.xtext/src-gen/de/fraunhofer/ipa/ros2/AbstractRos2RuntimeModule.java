@@ -15,7 +15,6 @@ import de.fraunhofer.ipa.ros2.scoping.Ros2ScopeProvider;
 import de.fraunhofer.ipa.ros2.serializer.Ros2SemanticSequencer;
 import de.fraunhofer.ipa.ros2.serializer.Ros2SyntacticSequencer;
 import de.fraunhofer.ipa.ros2.services.Ros2GrammarAccess;
-import de.fraunhofer.ipa.ros2.validation.Ros2ConfigurableIssueCodesProvider;
 import de.fraunhofer.ipa.ros2.validation.Ros2Validator;
 import java.util.Properties;
 import org.eclipse.xtext.Constants;
@@ -59,7 +58,6 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer;
 import org.eclipse.xtext.service.DefaultRuntimeModule;
 import org.eclipse.xtext.service.SingletonBinding;
-import org.eclipse.xtext.validation.ConfigurableIssueCodesProvider;
 
 /**
  * Manual modifications go to {@link Ros2RuntimeModule}.
@@ -155,11 +153,6 @@ public abstract class AbstractRos2RuntimeModule extends DefaultRuntimeModule {
     @SingletonBinding(eager=true)
     public Class<? extends Ros2Validator> bindRos2Validator() {
         return Ros2Validator.class;
-    }
-
-    // contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
-    public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
-        return Ros2ConfigurableIssueCodesProvider.class;
     }
 
     // contributed by org.eclipse.xtext.xtext.generator.scoping.ImportNamespacesScopingFragment2

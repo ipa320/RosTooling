@@ -6,6 +6,7 @@ package de.fraunhofer.ipa.ros1;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
+import de.fraunhofer.ipa.ros1.formatting2.Ros1Formatter;
 import de.fraunhofer.ipa.ros1.generator.Ros1Generator;
 import de.fraunhofer.ipa.ros1.parser.antlr.Ros1AntlrTokenFileProvider;
 import de.fraunhofer.ipa.ros1.parser.antlr.Ros1Parser;
@@ -14,13 +15,15 @@ import de.fraunhofer.ipa.ros1.scoping.Ros1ScopeProvider;
 import de.fraunhofer.ipa.ros1.serializer.Ros1SemanticSequencer;
 import de.fraunhofer.ipa.ros1.serializer.Ros1SyntacticSequencer;
 import de.fraunhofer.ipa.ros1.services.Ros1GrammarAccess;
-import de.fraunhofer.ipa.ros1.validation.Ros1ConfigurableIssueCodesProvider;
 import de.fraunhofer.ipa.ros1.validation.Ros1Validator;
 import java.util.Properties;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.common.services.Ecore2XtextTerminalConverters;
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.formatting2.FormatterPreferenceValuesProvider;
+import org.eclipse.xtext.formatting2.FormatterPreferences;
+import org.eclipse.xtext.formatting2.IFormatter2;
 import org.eclipse.xtext.generator.IGenerator2;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
@@ -33,6 +36,7 @@ import org.eclipse.xtext.parser.antlr.ITokenDefProvider;
 import org.eclipse.xtext.parser.antlr.Lexer;
 import org.eclipse.xtext.parser.antlr.LexerBindings;
 import org.eclipse.xtext.parser.antlr.LexerProvider;
+import org.eclipse.xtext.preferences.IPreferenceValuesProvider;
 import org.eclipse.xtext.resource.IContainer;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.containers.IAllContainersState;
@@ -52,7 +56,6 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer;
 import org.eclipse.xtext.service.DefaultRuntimeModule;
 import org.eclipse.xtext.service.SingletonBinding;
-import org.eclipse.xtext.validation.ConfigurableIssueCodesProvider;
 
 /**
  * Manual modifications go to {@link Ros1RuntimeModule}.
@@ -145,11 +148,6 @@ public abstract class AbstractRos1RuntimeModule extends DefaultRuntimeModule {
         return Ros1Validator.class;
     }
 
-    // contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
-    public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
-        return Ros1ConfigurableIssueCodesProvider.class;
-    }
-
     // contributed by org.eclipse.xtext.xtext.generator.scoping.ImportNamespacesScopingFragment2
     public Class<? extends IScopeProvider> bindIScopeProvider() {
         return Ros1ScopeProvider.class;
@@ -198,6 +196,16 @@ public abstract class AbstractRos1RuntimeModule extends DefaultRuntimeModule {
     // contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
     public Class<? extends IGenerator2> bindIGenerator2() {
         return Ros1Generator.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
+    public Class<? extends IFormatter2> bindIFormatter2() {
+        return Ros1Formatter.class;
+    }
+
+    // contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
+    public void configureFormatterPreferences(Binder binder) {
+        binder.bind(IPreferenceValuesProvider.class).annotatedWith(FormatterPreferences.class).to(FormatterPreferenceValuesProvider.class);
     }
 
     // contributed by org.eclipse.xtext.xtext.generator.ecore2xtext.Ecore2XtextValueConverterServiceFragment2
