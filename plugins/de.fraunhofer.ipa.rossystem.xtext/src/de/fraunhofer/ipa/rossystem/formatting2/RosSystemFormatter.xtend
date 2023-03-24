@@ -8,15 +8,15 @@ import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import ros.Node
-import rossystem.RosSystem
+import system.System
 
 class RosSystemFormatter extends AbstractFormatter2 {
 
     @Inject extension RosSystemGrammarAccess
 
-    def dispatch void format(RosSystem rosSystem, extension IFormattableDocument document) {
+    def dispatch void format(System rosSystem, extension IFormattableDocument document) {
         // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
-        for (rosNode : rosSystem.rosnode) {
+        for (rosNode : rosSystem.components) {
             rosNode.format
         }
     }
