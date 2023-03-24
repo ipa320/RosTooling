@@ -63,37 +63,6 @@
             name="Reload ROS nodes">
       </command>
    </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-             allPopups="false"
-             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-      <command
-               commandId="de.fraunhofer.ipa.rossystem.ReloadNodes"
-               >
-             <visibleWhen
-                   checkEnabled="false">
-                <and>
-                   <with
-                         variable="selection">
-                      <count
-                            value="1">
-                      </count>
-                   </with>
-                   <iterate
-                         ifEmpty="false">
-                           <test
-                                 property="org.eclipse.core.resources.extension"
-                                 value="rossystem">
-                           </test>
-                   </iterate>
-                </and>
-             </visibleWhen>
-         </command>
-      </menuContribution>
-   </extension>
-
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated rossystem -->
       <category
