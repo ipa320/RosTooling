@@ -282,7 +282,7 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC));
         }
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-        feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1(), semanticObject.eGet(RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
+        feeder.accept(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_1_0_1(), semanticObject.eGet(RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC, false));
         feeder.finish();
     }
 
@@ -323,7 +323,7 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
      *     MessagePart returns MessagePart
      *
      * Constraint:
-     *     (Type=AbstractType (Data=KEYWORD | Data=MESSAGE_ASIGMENT | Data=EString))
+     *     ((Data=KEYWORD | Data=MESSAGE_ASIGMENT | Data=EString) Type=AbstractType)
      * </pre>
      */
     protected void sequence_MessagePart(ISerializationContext context, MessagePart semanticObject) {
@@ -635,8 +635,8 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE));
         }
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-        feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-        feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0(), semanticObject.getValue());
+        feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+        feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0(), semanticObject.getValue());
         feeder.finish();
     }
 
