@@ -31,6 +31,15 @@ public interface RossystemFactory extends EFactory {
     System createSystem();
 
     /**
+     * Returns a new object of class '<em>Rossystem</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Rossystem</em>'.
+     * @generated
+     */
+    Rossystem createRossystem();
+
+                /**
      * Returns a new object of class '<em>Process</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface RossystemFactory extends EFactory {
     RosConnection createRosConnection();
 
     /**
+     * Returns a new object of class '<em>Component Ref</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Component Ref</em>'.
+     * @generated
+     */
+    ComponentRef createComponentRef();
+
+                                                                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

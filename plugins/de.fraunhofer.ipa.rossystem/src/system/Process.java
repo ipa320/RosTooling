@@ -70,15 +70,15 @@ public interface Process extends EObject {
     void setThreads(int value);
 
     /**
-     * Returns the value of the '<em><b>Nodes</b></em>' reference list.
-     * The list contents are of type {@link system.RosNode}.
+     * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
+     * The list contents are of type {@link system.Component}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Nodes</em>' reference list.
+     * @return the value of the '<em>Nodes</em>' containment reference list.
      * @see system.RossystemPackage#getProcess_Nodes()
-     * @model
+     * @model containment="true"
      * @generated
      */
-    EList<RosNode> getNodes();
+    EList<Component> getNodes();
 
 } // Process

@@ -412,7 +412,7 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
      *     MessageDefinition returns MessageDefinition
      *
      * Constraint:
-     *     MessagePart+=MessagePart*
+     *     MessagePart+=MessagePart+
      * </pre>
      */
     protected void sequence_MessageDefinition(ISerializationContext context, MessageDefinition semanticObject) {
@@ -487,7 +487,7 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
      *     Package_Impl returns Package
      *
      * Constraint:
-     *     (name=RosNames fromGitRepo=EString? spec+=SpecBase* (dependency+=Dependency dependency+=Dependency*)?)
+     *     (name=RosNames fromGitRepo=EString? (spec+=SpecBase spec+=SpecBase*)? (dependency+=Dependency dependency+=Dependency*)?)
      * </pre>
      */
     protected void sequence_Package_Impl(ISerializationContext context, ros.Package semanticObject) {

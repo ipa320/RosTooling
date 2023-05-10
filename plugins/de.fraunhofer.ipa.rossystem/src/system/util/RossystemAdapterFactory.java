@@ -8,8 +8,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
 import system.Component;
+import system.ComponentRef;
 import system.Connection;
 import system.InterfaceReference;
 import system.RosActionClientReference;
@@ -23,6 +23,7 @@ import system.RosPublisherReference;
 import system.RosServerClientReference;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.Rossystem;
 import system.RossystemPackage;
 
 /**
@@ -86,6 +87,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
                 return createSystemAdapter();
             }
             @Override
+            public Adapter caseRossystem(Rossystem object) {
+                return createRossystemAdapter();
+            }
+            @Override
             public Adapter caseProcess(system.Process object) {
                 return createProcessAdapter();
             }
@@ -146,6 +151,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
                 return createRosConnectionAdapter();
             }
             @Override
+            public Adapter caseComponentRef(ComponentRef object) {
+                return createComponentRefAdapter();
+            }
+            @Override
             public Adapter defaultCase(EObject object) {
                 return createEObjectAdapter();
             }
@@ -180,6 +189,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link system.Rossystem <em>Rossystem</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see system.Rossystem
+     * @generated
+     */
+    public Adapter createRossystemAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for an object of class '{@link system.Process <em>Process</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -390,6 +413,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link system.ComponentRef <em>Component Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see system.ComponentRef
+     * @generated
+     */
+    public Adapter createComponentRefAdapter() {
+        return null;
+    }
+
+                                                                /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

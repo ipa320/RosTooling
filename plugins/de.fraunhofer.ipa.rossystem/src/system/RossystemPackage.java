@@ -130,6 +130,79 @@ public interface RossystemPackage extends EPackage {
     int SYSTEM_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link system.impl.RossystemImpl <em>Rossystem</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.RossystemImpl
+     * @see system.impl.RossystemPackageImpl#getRossystem()
+     * @generated
+     */
+    int ROSSYSTEM = 1;
+
+                /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__NAME = SYSTEM__NAME;
+
+                /**
+     * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__PROCESSES = SYSTEM__PROCESSES;
+
+                /**
+     * The feature id for the '<em><b>Components</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__COMPONENTS = SYSTEM__COMPONENTS;
+
+                /**
+     * The feature id for the '<em><b>Connections</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__CONNECTIONS = SYSTEM__CONNECTIONS;
+
+                /**
+     * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__PARAMETER = SYSTEM__PARAMETER;
+
+                /**
+     * The number of structural features of the '<em>Rossystem</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM_FEATURE_COUNT = SYSTEM_FEATURE_COUNT + 0;
+
+                /**
+     * The number of operations of the '<em>Rossystem</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM_OPERATION_COUNT = SYSTEM_OPERATION_COUNT + 0;
+
+                /**
      * The meta object id for the '{@link system.impl.ProcessImpl <em>Process</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -137,7 +210,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getProcess()
      * @generated
      */
-    int PROCESS = 1;
+    int PROCESS = 2;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,7 +231,7 @@ public interface RossystemPackage extends EPackage {
     int PROCESS__THREADS = 1;
 
     /**
-     * The feature id for the '<em><b>Nodes</b></em>' reference list.
+     * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -192,7 +265,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getComponent()
      * @generated
      */
-    int COMPONENT = 2;
+    int COMPONENT = 3;
 
     /**
      * The number of structural features of the '<em>Component</em>' class.
@@ -220,7 +293,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getConnection()
      * @generated
      */
-    int CONNECTION = 3;
+    int CONNECTION = 4;
 
     /**
      * The number of structural features of the '<em>Connection</em>' class.
@@ -248,7 +321,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosNode()
      * @generated
      */
-    int ROS_NODE = 4;
+    int ROS_NODE = 5;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -312,7 +385,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosInterface()
      * @generated
      */
-    int ROS_INTERFACE = 5;
+    int ROS_INTERFACE = 6;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -358,7 +431,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getInterfaceReference()
      * @generated
      */
-    int INTERFACE_REFERENCE = 6;
+    int INTERFACE_REFERENCE = 7;
 
     /**
      * The number of structural features of the '<em>Interface Reference</em>' class.
@@ -386,7 +459,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosPublisherReference()
      * @generated
      */
-    int ROS_PUBLISHER_REFERENCE = 7;
+    int ROS_PUBLISHER_REFERENCE = 8;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -423,7 +496,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosSubscriberReference()
      * @generated
      */
-    int ROS_SUBSCRIBER_REFERENCE = 8;
+    int ROS_SUBSCRIBER_REFERENCE = 9;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -460,7 +533,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosServiceServerReference()
      * @generated
      */
-    int ROS_SERVICE_SERVER_REFERENCE = 9;
+    int ROS_SERVICE_SERVER_REFERENCE = 10;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -497,7 +570,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosServerClientReference()
      * @generated
      */
-    int ROS_SERVER_CLIENT_REFERENCE = 10;
+    int ROS_SERVER_CLIENT_REFERENCE = 11;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -534,7 +607,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosActionServerReference()
      * @generated
      */
-    int ROS_ACTION_SERVER_REFERENCE = 11;
+    int ROS_ACTION_SERVER_REFERENCE = 12;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -571,7 +644,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosActionClientReference()
      * @generated
      */
-    int ROS_ACTION_CLIENT_REFERENCE = 12;
+    int ROS_ACTION_CLIENT_REFERENCE = 13;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -608,7 +681,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosParameterReference()
      * @generated
      */
-    int ROS_PARAMETER_REFERENCE = 13;
+    int ROS_PARAMETER_REFERENCE = 14;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -645,7 +718,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosParameter()
      * @generated
      */
-    int ROS_PARAMETER = 14;
+    int ROS_PARAMETER = 15;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -700,7 +773,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosConnection()
      * @generated
      */
-    int ROS_CONNECTION = 15;
+    int ROS_CONNECTION = 16;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -740,6 +813,43 @@ public interface RossystemPackage extends EPackage {
 
 
     /**
+     * The meta object id for the '{@link system.impl.ComponentRefImpl <em>Component Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.ComponentRefImpl
+     * @see system.impl.RossystemPackageImpl#getComponentRef()
+     * @generated
+     */
+    int COMPONENT_REF = 17;
+
+                                                                /**
+     * The feature id for the '<em><b>Component Ref</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPONENT_REF__COMPONENT_REF = COMPONENT_FEATURE_COUNT + 0;
+
+                                                                /**
+     * The number of structural features of the '<em>Component Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPONENT_REF_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+
+                                                                /**
+     * The number of operations of the '<em>Component Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPONENT_REF_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+
+                                                                /**
      * Returns the meta object for class '{@link system.System <em>System</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -805,6 +915,16 @@ public interface RossystemPackage extends EPackage {
     EReference getSystem_Parameter();
 
     /**
+     * Returns the meta object for class '{@link system.Rossystem <em>Rossystem</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Rossystem</em>'.
+     * @see system.Rossystem
+     * @generated
+     */
+    EClass getRossystem();
+
+                /**
      * Returns the meta object for class '{@link system.Process <em>Process</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -837,10 +957,10 @@ public interface RossystemPackage extends EPackage {
     EAttribute getProcess_Threads();
 
     /**
-     * Returns the meta object for the reference list '{@link system.Process#getNodes <em>Nodes</em>}'.
+     * Returns the meta object for the containment reference list '{@link system.Process#getNodes <em>Nodes</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Nodes</em>'.
+     * @return the meta object for the containment reference list '<em>Nodes</em>'.
      * @see system.Process#getNodes()
      * @see #getProcess()
      * @generated
@@ -1186,6 +1306,27 @@ public interface RossystemPackage extends EPackage {
     EReference getRosConnection_To();
 
     /**
+     * Returns the meta object for class '{@link system.ComponentRef <em>Component Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Component Ref</em>'.
+     * @see system.ComponentRef
+     * @generated
+     */
+    EClass getComponentRef();
+
+                                                                /**
+     * Returns the meta object for the reference '{@link system.ComponentRef#getComponentRef <em>Component Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Component Ref</em>'.
+     * @see system.ComponentRef#getComponentRef()
+     * @see #getComponentRef()
+     * @generated
+     */
+    EReference getComponentRef_ComponentRef();
+
+                                                                /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1259,6 +1400,16 @@ public interface RossystemPackage extends EPackage {
         EReference SYSTEM__PARAMETER = eINSTANCE.getSystem_Parameter();
 
         /**
+         * The meta object literal for the '{@link system.impl.RossystemImpl <em>Rossystem</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.RossystemImpl
+         * @see system.impl.RossystemPackageImpl#getRossystem()
+         * @generated
+         */
+        EClass ROSSYSTEM = eINSTANCE.getRossystem();
+
+                                /**
          * The meta object literal for the '{@link system.impl.ProcessImpl <em>Process</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1285,7 +1436,7 @@ public interface RossystemPackage extends EPackage {
         EAttribute PROCESS__THREADS = eINSTANCE.getProcess_Threads();
 
         /**
-         * The meta object literal for the '<em><b>Nodes</b></em>' reference list feature.
+         * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -1575,6 +1726,24 @@ public interface RossystemPackage extends EPackage {
          * @generated
          */
         EReference ROS_CONNECTION__TO = eINSTANCE.getRosConnection_To();
+
+                                /**
+         * The meta object literal for the '{@link system.impl.ComponentRefImpl <em>Component Ref</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.ComponentRefImpl
+         * @see system.impl.RossystemPackageImpl#getComponentRef()
+         * @generated
+         */
+        EClass COMPONENT_REF = eINSTANCE.getComponentRef();
+
+                                                                                                                                /**
+         * The meta object literal for the '<em><b>Component Ref</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference COMPONENT_REF__COMPONENT_REF = eINSTANCE.getComponentRef_ComponentRef();
 
     }
 

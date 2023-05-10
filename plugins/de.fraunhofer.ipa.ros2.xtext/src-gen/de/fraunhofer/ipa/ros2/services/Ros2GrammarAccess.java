@@ -948,29 +948,33 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final Keyword cQosKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
         private final Assignment cQosAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
         private final RuleCall cQosQualityOfServiceParserRuleCall_7_1_0 = (RuleCall)cQosAssignment_7_1.eContents().get(0);
-        private final RuleCall cENDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-        private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+        private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+        private final Keyword cDefaultKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+        private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+        private final RuleCall cValueParameterValueParserRuleCall_8_1_0 = (RuleCall)cValueAssignment_8_1.eContents().get(0);
+        private final RuleCall cENDTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 
         //@Override
         //Parameter returns Parameter:
         //    {Parameter}
         //        name=EString':'
         //        BEGIN
-        //        'type' type=ParameterType
+        //        'type:' type=ParameterType
         //        ('ns:' namespace=Namespace)?
         //        ('qos:' qos=QualityOfService)?
+        //        ('default:' value=ParameterValue)?
         //        END
-        //    '}';
+        //    ;
         @Override public ParserRule getRule() { return rule; }
 
         //{Parameter}
         //    name=EString':'
         //    BEGIN
-        //    'type' type=ParameterType
+        //    'type:' type=ParameterType
         //    ('ns:' namespace=Namespace)?
         //    ('qos:' qos=QualityOfService)?
+        //    ('default:' value=ParameterValue)?
         //    END
-        //'}'
         public Group getGroup() { return cGroup; }
 
         //{Parameter}
@@ -988,7 +992,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //BEGIN
         public RuleCall getBEGINTerminalRuleCall_3() { return cBEGINTerminalRuleCall_3; }
 
-        //'type'
+        //'type:'
         public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
 
         //type=ParameterType
@@ -1021,11 +1025,20 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //QualityOfService
         public RuleCall getQosQualityOfServiceParserRuleCall_7_1_0() { return cQosQualityOfServiceParserRuleCall_7_1_0; }
 
-        //END
-        public RuleCall getENDTerminalRuleCall_8() { return cENDTerminalRuleCall_8; }
+        //('default:' value=ParameterValue)?
+        public Group getGroup_8() { return cGroup_8; }
 
-        //'}'
-        public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+        //'default:'
+        public Keyword getDefaultKeyword_8_0() { return cDefaultKeyword_8_0; }
+
+        //value=ParameterValue
+        public Assignment getValueAssignment_8_1() { return cValueAssignment_8_1; }
+
+        //ParameterValue
+        public RuleCall getValueParameterValueParserRuleCall_8_1_0() { return cValueParameterValueParserRuleCall_8_1_0; }
+
+        //END
+        public RuleCall getENDTerminalRuleCall_9() { return cENDTerminalRuleCall_9; }
     }
 
 
@@ -1271,11 +1284,12 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //    {Parameter}
     //        name=EString':'
     //        BEGIN
-    //        'type' type=ParameterType
+    //        'type:' type=ParameterType
     //        ('ns:' namespace=Namespace)?
     //        ('qos:' qos=QualityOfService)?
+    //        ('default:' value=ParameterValue)?
     //        END
-    //    '}';
+    //    ;
     public ParameterElements getParameterAccess() {
         return pParameter;
     }
@@ -1303,7 +1317,8 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        ('fromGitRepo:' fromGitRepo=EString)?
     //        ('specs:'
     //            BEGIN
-    //            spec+=SpecBase*
+    //            PreListElement spec+=SpecBase
+    //            (PreListElement spec+=SpecBase)*
     //            END
     //        )?
     //        ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
@@ -1361,44 +1376,43 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //Node returns Node:
     //    'node:' name=RosNames
-    //     BEGIN
-    //        (
-    //        ('publishers:'
-    //            BEGIN
-    //            publisher+=Publisher*
-    //            END
-    //        )|
-    //        ('subscribers:'
-    //            BEGIN
-    //            subscriber+=Subscriber*
-    //            END
-    //        )|
-    //        ('serviceserver:'
-    //            BEGIN
-    //            serviceserver+=ServiceServer*
-    //            END
-    //        )|
-    //        ('serviceclient:'
-    //            BEGIN
-    //            serviceclient+=ServiceClient*
-    //            END
-    //        )|
-    //        ('actionserver:'
-    //            BEGIN
-    //            actionserver+=ActionServer*
-    //            END
-    //        )|
-    //        ('actionclient:'
-    //            BEGIN
-    //            actionclient+=ActionClient*
-    //            END
-    //        )|
-    //        ('parameters:'
-    //            BEGIN
-    //            parameter+=Parameter*
-    //            END
-    //        )
-    //        )*END
+    //    (
+    //    ('publishers:'
+    //        BEGIN
+    //        publisher+=Publisher*
+    //        END
+    //    )|
+    //    ('subscribers:'
+    //        BEGIN
+    //        subscriber+=Subscriber*
+    //        END
+    //    )|
+    //    ('serviceServers:'
+    //        BEGIN
+    //        serviceserver+=ServiceServer*
+    //        END
+    //    )|
+    //    ('serviceClients:'
+    //        BEGIN
+    //        serviceclient+=ServiceClient*
+    //        END
+    //    )|
+    //    ('actionServers:'
+    //        BEGIN
+    //        actionserver+=ActionServer*
+    //        END
+    //    )|
+    //    ('actionClients:'
+    //        BEGIN
+    //        actionclient+=ActionClient*
+    //        END
+    //    )|
+    //    ('parameters:'
+    //        BEGIN
+    //        parameter+=Parameter*
+    //        END
+    //    )
+    //    )*
     //    ;
     public RosGrammarAccess.NodeElements getNodeAccess() {
         return gaRos.getNodeAccess();
@@ -1469,7 +1483,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //MessageDefinition returns MessageDefinition:
     //    {MessageDefinition}
-    //        MessagePart+=MessagePart*;
+    //        MessagePart+=MessagePart+;
     public RosGrammarAccess.MessageDefinitionElements getMessageDefinitionAccess() {
         return gaRos.getMessageDefinitionAccess();
     }
@@ -1639,7 +1653,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterIntegerType returns ParameterIntegerType:
     //    {ParameterIntegerType}
     //    'Integer'
-    //    ('default' default=ParameterInteger)?;
+    //    ('default:' default=ParameterInteger)?;
     public BasicsGrammarAccess.ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
         return gaBasics.getParameterIntegerTypeAccess();
     }
@@ -1651,7 +1665,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterStringType returns ParameterStringType:
     //    {ParameterStringType}
     //    'String'
-    //    ('default' default=ParameterString)?;
+    //    ('default:' default=ParameterString)?;
     public BasicsGrammarAccess.ParameterStringTypeElements getParameterStringTypeAccess() {
         return gaBasics.getParameterStringTypeAccess();
     }
@@ -1663,7 +1677,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterDoubleType returns ParameterDoubleType:
     //    {ParameterDoubleType}
     //    'Double'
-    //    ('default' default=ParameterDouble)?;
+    //    ('default:' default=ParameterDouble)?;
     public BasicsGrammarAccess.ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
         return gaBasics.getParameterDoubleTypeAccess();
     }
@@ -1675,7 +1689,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterDateType returns ParameterDateType:
     //    {ParameterDateType}
     //    'Date'
-    //    ('default' default=ParameterDate)?;
+    //    ('default:' default=ParameterDate)?;
     public BasicsGrammarAccess.ParameterDateTypeElements getParameterDateTypeAccess() {
         return gaBasics.getParameterDateTypeAccess();
     }
@@ -1687,7 +1701,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterBooleanType returns ParameterBooleanType:
     //    {ParameterBooleanType}
     //    'Boolean'
-    //    ('default' default=ParameterBoolean)?;
+    //    ('default:' default=ParameterBoolean)?;
     public BasicsGrammarAccess.ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
         return gaBasics.getParameterBooleanTypeAccess();
     }
@@ -1699,7 +1713,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterBase64Type returns ParameterBase64Type:
     //    {ParameterBase64Type}
     //    'Base64'
-    //    ('default' default=ParameterBase64)?;
+    //    ('default:' default=ParameterBase64)?;
     public BasicsGrammarAccess.ParameterBase64TypeElements getParameterBase64TypeAccess() {
         return gaBasics.getParameterBase64TypeAccess();
     }
@@ -1711,7 +1725,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterAnyType returns ParameterAnyType:
     //    {ParameterAnyType}
     //    'Any'
-    //    ('default' default=ParameterAny)?;
+    //    ('default:' default=ParameterAny)?;
     public BasicsGrammarAccess.ParameterAnyTypeElements getParameterAnyTypeAccess() {
         return gaBasics.getParameterAnyTypeAccess();
     }
@@ -1721,11 +1735,10 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ParameterArrayType returns ParameterArrayType:
-    //    'Array:'
     //    BEGIN
-    //        'type' type=ParameterType
-    //        ('default' default=ParameterList)?
-    //    END;
+    //    'Array:' type=ParameterType
+    //    ('default:' default=ParameterList)?
+    //  END;
     public BasicsGrammarAccess.ParameterArrayTypeElements getParameterArrayTypeAccess() {
         return gaBasics.getParameterArrayTypeAccess();
     }
@@ -1838,7 +1851,6 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ParameterStructMember returns ParameterStructMember:
-    //    'ParameterStructMember'
     //    name=EString':'
     //    BEGIN
     //        value=ParameterValue
@@ -1881,7 +1893,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         return gaBasics.getBOOLEANRule();
     }
 
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+    //terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
     public TerminalRule getDOUBLERule() {
         return gaBasics.getDOUBLERule();
     }
@@ -1976,8 +1988,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     ////MESSAGE PRIMITIVES DEFINITION
     /////////////////////
     //MessagePart returns primitives::MessagePart:
-    //    Type = AbstractType
-    //    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
+    //    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)':' Type = AbstractType
     //;
     public BasicsGrammarAccess.MessagePartElements getMessagePartAccess() {
         return gaBasics.getMessagePartAccess();
@@ -2188,7 +2199,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //boolArray returns primitives::boolArray:
     //    {primitives::boolArray}
-    //    'bool[]'
+    //    '[bool]'
     //    ;
     public BasicsGrammarAccess.BoolArrayElements getBoolArrayAccess() {
         return gaBasics.getBoolArrayAccess();
@@ -2200,7 +2211,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //int8Array returns primitives::int8Array:
     //    {primitives::int8Array}
-    //    'int8[]'
+    //    '[int8]'
     //    ;
     public BasicsGrammarAccess.Int8ArrayElements getInt8ArrayAccess() {
         return gaBasics.getInt8ArrayAccess();
@@ -2212,7 +2223,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //uint8Array returns primitives::uint8Array:
     //    {primitives::uint8Array}
-    //    'uint8[]'
+    //    '[uint8]'
     //    ;
     public BasicsGrammarAccess.Uint8ArrayElements getUint8ArrayAccess() {
         return gaBasics.getUint8ArrayAccess();
@@ -2224,7 +2235,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //int16Array returns primitives::int16Array:
     //    {primitives::int16Array}
-    //    'int16[]'
+    //    '[int16]'
     //    ;
     public BasicsGrammarAccess.Int16ArrayElements getInt16ArrayAccess() {
         return gaBasics.getInt16ArrayAccess();
@@ -2236,7 +2247,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //uint16Array returns primitives::uint16Array:
     //    {primitives::uint16Array}
-    //    'uint16[]'
+    //    '[uint16]'
     //    ;
     public BasicsGrammarAccess.Uint16ArrayElements getUint16ArrayAccess() {
         return gaBasics.getUint16ArrayAccess();
@@ -2248,7 +2259,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //int32Array returns primitives::int32Array:
     //    {primitives::int32Array}
-    //    'int32[]'
+    //    '[int32]'
     //    ;
     public BasicsGrammarAccess.Int32ArrayElements getInt32ArrayAccess() {
         return gaBasics.getInt32ArrayAccess();
@@ -2260,7 +2271,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //uint32Array returns primitives::uint32Array:
     //    {primitives::uint32Array}
-    //    'uint32[]'
+    //    '[uint32]'
     //    ;
     public BasicsGrammarAccess.Uint32ArrayElements getUint32ArrayAccess() {
         return gaBasics.getUint32ArrayAccess();
@@ -2272,7 +2283,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //int64Array returns primitives::int64Array:
     //    {primitives::int64Array}
-    //    'int64[]'
+    //    '[int64]'
     //    ;
     public BasicsGrammarAccess.Int64ArrayElements getInt64ArrayAccess() {
         return gaBasics.getInt64ArrayAccess();
@@ -2284,7 +2295,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //uint64Array returns primitives::uint64Array:
     //    {primitives::uint64Array}
-    //    'uint64[]'
+    //    '[uint64]'
     //    ;
     public BasicsGrammarAccess.Uint64ArrayElements getUint64ArrayAccess() {
         return gaBasics.getUint64ArrayAccess();
@@ -2296,7 +2307,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //float32Array returns primitives::float32Array:
     //    {primitives::float32Array}
-    //    'float32[]'
+    //    '[float32]'
     //    ;
     public BasicsGrammarAccess.Float32ArrayElements getFloat32ArrayAccess() {
         return gaBasics.getFloat32ArrayAccess();
@@ -2308,7 +2319,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //float64Array returns primitives::float64Array:
     //    {primitives::float64Array}
-    //    'float64[]'
+    //    '[float64]'
     //    ;
     public BasicsGrammarAccess.Float64ArrayElements getFloat64ArrayAccess() {
         return gaBasics.getFloat64ArrayAccess();
@@ -2320,7 +2331,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //string0Array returns primitives::stringArray:
     //    {primitives::stringArray}
-    //    'string[]'
+    //    '[string]'
     //    ;
     public BasicsGrammarAccess.String0ArrayElements getString0ArrayAccess() {
         return gaBasics.getString0ArrayAccess();
@@ -2332,7 +2343,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //byteArray returns primitives::ByteArray:
     //    {primitives::ByteArray}
-    //    'byte[]'
+    //    '[byte]'
     //    ;
     public BasicsGrammarAccess.ByteArrayElements getByteArrayAccess() {
         return gaBasics.getByteArrayAccess();
@@ -2366,7 +2377,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ArrayTopicSpecRef returns ArrayTopicSpecRef:
-    //    TopicSpec=[TopicSpec|EString]'[]'
+    //    '['TopicSpec=[TopicSpec|EString]']'
     //;
     public BasicsGrammarAccess.ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {
         return gaBasics.getArrayTopicSpecRefAccess();
@@ -2426,6 +2437,16 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     public ParserRule getRosNamesRule() {
         return getRosNamesAccess().getRule();
+    }
+
+    //PreListElement hidden(SL_COMMENT):
+    //  '-';
+    public BasicsGrammarAccess.PreListElementElements getPreListElementAccess() {
+        return gaBasics.getPreListElementAccess();
+    }
+
+    public ParserRule getPreListElementRule() {
+        return getPreListElementAccess().getRule();
     }
 
     //terminal ROS_CONVENTION_A:
