@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.ros2
  */
 class Ros2StandaloneSetup extends Ros2StandaloneSetupGenerated {
 
-	def static void doSetup() {
-		new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+    def static void doSetup() {
+        new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration()
+    }
 }

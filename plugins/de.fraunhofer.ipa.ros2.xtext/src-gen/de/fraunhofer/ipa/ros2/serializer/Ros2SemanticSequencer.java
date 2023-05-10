@@ -384,7 +384,7 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
      *     Parameter returns Parameter
      *
      * Constraint:
-     *     (name=EString type=ParameterType namespace=Namespace? qos=QualityOfService?)
+     *     (name=EString type=ParameterType namespace=Namespace? qos=QualityOfService? value=ParameterValue?)
      * </pre>
      */
     protected void sequence_Parameter(ISerializationContext context, ros.Parameter semanticObject) {

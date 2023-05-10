@@ -11,8 +11,6 @@ package de.fraunhofer.ipa.ros2.ide.contentassist.antlr.lexer;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 }
 
-ParameterStructMember : 'ParameterStructMember';
-
 ExternalDependency : 'ExternalDependency';
 
 RelativeNamespace : 'RelativeNamespace';
@@ -21,15 +19,15 @@ PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
+ServiceClients : 'serviceClients:';
+
+ServiceServers : 'serviceServers:';
+
 Transient_local : 'transient_local';
 
-Serviceclient : 'serviceclient:';
+ActionClients : 'actionClients:';
 
-Serviceserver : 'serviceserver:';
-
-Actionclient : 'actionclient:';
-
-Actionserver : 'actionserver:';
+ActionServers : 'actionServers:';
 
 Dependencies : 'dependencies:';
 
@@ -61,15 +59,25 @@ Sensor_qos : 'sensor_qos';
 
 GraphName : 'GraphName';
 
+Float32_1 : '[float32]';
+
+Float64_1 : '[float64]';
+
 Feedback_1 : 'feedback:';
-
-Float32_1 : 'float32[]';
-
-Float64_1 : 'float64[]';
 
 Keep_last : 'keep_last';
 
 Response : 'response:';
+
+String_2 : '[string]';
+
+Uint16_1 : '[uint16]';
+
+Uint32_1 : '[uint32]';
+
+Uint64_1 : '[uint64]';
+
+Default : 'default:';
 
 Duration : 'duration';
 
@@ -87,41 +95,31 @@ Reliable : 'reliable';
 
 Request : 'request:';
 
-String_2 : 'string[]';
-
-Uint16_1 : 'uint16[]';
-
-Uint32_1 : 'uint32[]';
-
-Uint64_1 : 'uint64[]';
-
 Volatile : 'volatile';
 
 Boolean : 'Boolean';
 
 Integer : 'Integer';
 
-Action_1 : 'action:';
+Int16_1 : '[int16]';
 
-Default : 'default';
+Int32_1 : '[int32]';
+
+Int64_1 : '[int64]';
+
+Uint8_1 : '[uint8]';
+
+Action_1 : 'action:';
 
 Float32 : 'float32';
 
 Float64 : 'float64';
-
-Int16_1 : 'int16[]';
-
-Int32_1 : 'int32[]';
-
-Int64_1 : 'int64[]';
 
 Message : 'message';
 
 Result_1 : 'result:';
 
 Service : 'service';
-
-Uint8_1 : 'uint8[]';
 
 Array : 'Array:';
 
@@ -135,15 +133,15 @@ String : 'String';
 
 Struct : 'Struct';
 
+Bool_1 : '[bool]';
+
+Byte_1 : '[byte]';
+
+Int8_1 : '[int8]';
+
 Action : 'action';
 
-Bool_1 : 'bool[]';
-
-Byte_1 : 'byte[]';
-
 Depth : 'depth:';
-
-Int8_1 : 'int8[]';
 
 Result : 'result';
 
@@ -203,9 +201,9 @@ Any : 'Any';
 
 Ns : 'ns:';
 
-LeftSquareBracketRightSquareBracket : '[]';
-
 Comma : ',';
+
+HyphenMinus : '-';
 
 Colon : ':';
 
@@ -213,15 +211,13 @@ LeftSquareBracket : '[';
 
 RightSquareBracket : ']';
 
-RightCurlyBracket : '}';
-
 fragment RULE_DIGIT : '0'..'9';
 
 RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 
