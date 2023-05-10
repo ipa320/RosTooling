@@ -70,44 +70,43 @@ ParameterStructType returns ParameterStructType:
 ParameterIntegerType returns ParameterIntegerType:
     {ParameterIntegerType}
     'Integer'
-    ('default' default=ParameterInteger)?;
+    ('default:' default=ParameterInteger)?;
 
 ParameterStringType returns ParameterStringType:
     {ParameterStringType}
     'String'
-    ('default' default=ParameterString)?;
+    ('default:' default=ParameterString)?;
 
 ParameterDoubleType returns ParameterDoubleType:
     {ParameterDoubleType}
     'Double'
-    ('default' default=ParameterDouble)?;
+    ('default:' default=ParameterDouble)?;
 
 ParameterDateType returns ParameterDateType:
     {ParameterDateType}
     'Date'
-    ('default' default=ParameterDate)?;
+    ('default:' default=ParameterDate)?;
 
 ParameterBooleanType returns ParameterBooleanType:
     {ParameterBooleanType}
     'Boolean'
-    ('default' default=ParameterBoolean)?;
+    ('default:' default=ParameterBoolean)?;
 
 ParameterBase64Type returns ParameterBase64Type:
     {ParameterBase64Type}
     'Base64'
-    ('default' default=ParameterBase64)?;
+    ('default:' default=ParameterBase64)?;
 
 ParameterAnyType returns ParameterAnyType:
     {ParameterAnyType}
     'Any'
-    ('default' default=ParameterAny)?;
+    ('default:' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
-    'Array:'
     BEGIN
-        'type' type=ParameterType
-        ('default' default=ParameterList)?
-    END;
+    'Array:' type=ParameterType
+    ('default:' default=ParameterList)?
+  END;
 
 ParameterList returns ParameterSequence:
     {ParameterSequence}
@@ -151,7 +150,6 @@ ParameterDate returns ParameterDate:
 
 
 ParameterStructMember returns ParameterStructMember:
-    'ParameterStructMember'
     name=EString':'
     BEGIN
         value=ParameterValue
@@ -171,7 +169,7 @@ terminal DIGIT: '0'..'9';
 terminal BINARY: ('0b'|'0B')('0'|'1')+;
 
 terminal BOOLEAN: 'true'|'false';
-terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));  // Use terminal to avoid 'e' turning into a keyword
+terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));  // Use terminal to avoid 'e' turning into a keyword
 terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
 terminal DAY:'1'..'9' | '1'..'3' '0'..'9';
 terminal MONTH:'1'..'9' | '1' '0'..'2';
