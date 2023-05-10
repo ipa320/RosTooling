@@ -197,8 +197,7 @@ DateTime0 returns type::DateTime:
 //MESSAGE PRIMITIVES DEFINITION
 ///////////////////
 MessagePart returns primitives::MessagePart:
-    Type = AbstractType
-    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)
+    Data =(KEYWORD | MESSAGE_ASIGMENT | EString)':' Type = AbstractType
 ;
 
 terminal MESSAGE_ASIGMENT:
@@ -288,66 +287,66 @@ duration returns primitives::duration:
 
 boolArray returns primitives::boolArray:
     {primitives::boolArray}
-    'bool[]'
+    '[bool]'
     ;
 
 int8Array returns primitives::int8Array:
     {primitives::int8Array}
-    'int8[]'
+    '[int8]'
     ;
 
 uint8Array returns primitives::uint8Array:
     {primitives::uint8Array}
-    'uint8[]'
+    '[uint8]'
     ;
 
 int16Array returns primitives::int16Array:
     {primitives::int16Array}
-    'int16[]'
+    '[int16]'
     ;
 
 uint16Array returns primitives::uint16Array:
     {primitives::uint16Array}
-    'uint16[]'
+    '[uint16]'
     ;
 
 int32Array returns primitives::int32Array:
     {primitives::int32Array}
-    'int32[]'
+    '[int32]'
     ;
 
 uint32Array returns primitives::uint32Array:
     {primitives::uint32Array}
-    'uint32[]'
+    '[uint32]'
     ;
 
 int64Array returns primitives::int64Array:
     {primitives::int64Array}
-    'int64[]'
+    '[int64]'
     ;
 
 uint64Array returns primitives::uint64Array:
     {primitives::uint64Array}
-    'uint64[]'
+    '[uint64]'
     ;
 
 float32Array returns primitives::float32Array:
     {primitives::float32Array}
-    'float32[]'
+    '[float32]'
     ;
 
 float64Array returns primitives::float64Array:
     {primitives::float64Array}
-    'float64[]'
+    '[float64]'
     ;
 
 string0Array returns primitives::stringArray:
     {primitives::stringArray}
-    'string[]'
+    '[string]'
     ;
 byteArray returns primitives::ByteArray:
     {primitives::ByteArray}
-    'byte[]'
+    '[byte]'
     ;
 
 Header returns primitives::Header:
@@ -360,7 +359,7 @@ TopicSpecRef returns TopicSpecRef:
 ;
 
 ArrayTopicSpecRef returns ArrayTopicSpecRef:
-    TopicSpec=[TopicSpec|EString]'[]'
+    '['TopicSpec=[TopicSpec|EString]']'
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
@@ -383,6 +382,9 @@ EString returns ecore::EString:
 RosNames returns ecore::EString:
     ROS_CONVENTION_A | ID | 'node'
 ;
+
+PreListElement hidden(SL_COMMENT):
+  '-';
 
 terminal ROS_CONVENTION_A:
     ( ('/' ID ) | ( ID '/' ) )* ;
