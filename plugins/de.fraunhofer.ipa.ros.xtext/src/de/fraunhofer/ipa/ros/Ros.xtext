@@ -84,22 +84,22 @@ Node returns Node:
             subscriber+=Subscriber*
             END
         )|
-        ('serviceserver:'
+        ('serviceservers:'
             BEGIN
             serviceserver+=ServiceServer*
             END
         )|
-        ('serviceclient:'
+        ('serviceclients:'
             BEGIN
             serviceclient+=ServiceClient*
             END
         )|
-        ('actionserver:'
+        ('actionservers:'
             BEGIN
             actionserver+=ActionServer*
             END
         )|
-        ('actionclient:'
+        ('actionclients:'
             BEGIN
             actionclient+=ActionClient*
             END
