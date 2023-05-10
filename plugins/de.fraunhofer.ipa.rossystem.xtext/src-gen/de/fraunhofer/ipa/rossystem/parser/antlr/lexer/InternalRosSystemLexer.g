@@ -11,8 +11,6 @@ package de.fraunhofer.ipa.rossystem.parser.antlr.lexer;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
-ParameterStructMember : 'ParameterStructMember';
-
 RelativeNamespace : 'RelativeNamespace';
 
 PrivateNamespace : 'PrivateNamespace';
@@ -31,9 +29,19 @@ Processes : 'processes:';
 
 GraphName : 'GraphName';
 
-Float32_1 : 'float32[]';
+Float32_1 : '[float32]';
 
-Float64_1 : 'float64[]';
+Float64_1 : '[float64]';
+
+String_2 : '[string]';
+
+Uint16_1 : '[uint16]';
+
+Uint32_1 : '[uint32]';
+
+Uint64_1 : '[uint64]';
+
+Default : 'default:';
 
 Duration : 'duration';
 
@@ -43,21 +51,19 @@ FromPub : 'fromPub:';
 
 FromSub : 'fromSub:';
 
-String_2 : 'string[]';
-
 Threads : 'threads:';
-
-Uint16_1 : 'uint16[]';
-
-Uint32_1 : 'uint32[]';
-
-Uint64_1 : 'uint64[]';
 
 Boolean : 'Boolean';
 
 Integer : 'Integer';
 
-Default : 'default';
+Int16_1 : '[int16]';
+
+Int32_1 : '[int32]';
+
+Int64_1 : '[int64]';
+
+Uint8_1 : '[uint8]';
 
 Float32 : 'float32';
 
@@ -71,17 +77,9 @@ FromSC : 'fromSC:';
 
 FromSS : 'fromSS:';
 
-Int16_1 : 'int16[]';
-
-Int32_1 : 'int32[]';
-
-Int64_1 : 'int64[]';
-
 Message : 'message';
 
 Service : 'service';
-
-Uint8_1 : 'uint8[]';
 
 Array : 'Array:';
 
@@ -95,13 +93,13 @@ String : 'String';
 
 Struct : 'Struct';
 
+Bool_1 : '[bool]';
+
+Byte_1 : '[byte]';
+
+Int8_1 : '[int8]';
+
 Action : 'action';
-
-Bool_1 : 'bool[]';
-
-Byte_1 : 'byte[]';
-
-Int8_1 : 'int8[]';
 
 Nodes : 'nodes:';
 
@@ -155,11 +153,9 @@ Any : 'Any';
 
 Ns : 'ns:';
 
-HyphenMinusLeftSquareBracket : '-[';
-
-LeftSquareBracketRightSquareBracket : '[]';
-
 Comma : ',';
+
+HyphenMinus : '-';
 
 Colon : ':';
 
@@ -173,7 +169,7 @@ RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 
@@ -203,7 +199,7 @@ RULE_ROS_CONVENTION_PARAM : ('/' RULE_STRING|RULE_STRING '/'|'~' RULE_STRING)*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-RULE_INT : ('0'..'9')+;
+fragment RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
