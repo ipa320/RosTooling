@@ -6,16 +6,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import system.RosNode;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import system.Component;
 import system.RossystemPackage;
 
 /**
@@ -75,14 +77,14 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
     protected int threads = THREADS_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getNodes() <em>Nodes</em>}' reference list.
+     * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getNodes()
      * @generated
      * @ordered
      */
-    protected EList<RosNode> nodes;
+    protected EList<Component> nodes;
 
     /**
      * <!-- begin-user-doc -->
@@ -155,14 +157,28 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
      * @generated
      */
     @Override
-    public EList<RosNode> getNodes() {
+    public EList<Component> getNodes() {
         if (nodes == null) {
-            nodes = new EObjectResolvingEList<RosNode>(RosNode.class, this, RossystemPackage.PROCESS__NODES);
+            nodes = new EObjectContainmentEList<Component>(Component.class, this, RossystemPackage.PROCESS__NODES);
         }
         return nodes;
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case RossystemPackage.PROCESS__NODES:
+                return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -197,7 +213,7 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
                 return;
             case RossystemPackage.PROCESS__NODES:
                 getNodes().clear();
-                getNodes().addAll((Collection<? extends RosNode>)newValue);
+                getNodes().addAll((Collection<? extends Component>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -252,9 +268,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (Name: ");
+        result.append(" (name: ");
         result.append(name);
-        result.append(", Threads: ");
+        result.append(", threads: ");
         result.append(threads);
         result.append(')');
         return result.toString();

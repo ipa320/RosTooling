@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import ros.Parameter;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>System</b></em>'.
@@ -89,7 +87,7 @@ public interface System extends EObject {
 
     /**
      * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
-     * The list contents are of type {@link ros.Parameter}.
+     * The list contents are of type {@link system.RosParameter}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parameter</em>' containment reference list.
@@ -97,6 +95,6 @@ public interface System extends EObject {
      * @model containment="true" derived="true"
      * @generated
      */
-    EList<Parameter> getParameter();
+    EList<RosParameter> getParameter();
 
 } // System

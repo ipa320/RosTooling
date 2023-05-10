@@ -317,7 +317,7 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (Name: ");
+        result.append(" (name: ");
         result.append(name);
         result.append(')');
         return result.toString();

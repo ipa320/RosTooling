@@ -66,10 +66,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RosInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//RosInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="systemRef" lowerBound="1"
-        eType="#//System"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRef" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentRef" lowerBound="1"
         eType="#//Component"/>

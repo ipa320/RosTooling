@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import system.ComponentRef;
 import system.InterfaceReference;
 import system.RosActionClientReference;
 import system.RosActionServerReference;
@@ -22,6 +23,7 @@ import system.RosPublisherReference;
 import system.RosServerClientReference;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.Rossystem;
 import system.RossystemFactory;
 import system.RossystemPackage;
 
@@ -70,6 +72,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
             case RossystemPackage.SYSTEM: return createSystem();
+            case RossystemPackage.ROSSYSTEM: return createRossystem();
             case RossystemPackage.PROCESS: return createProcess();
             case RossystemPackage.ROS_NODE: return createRosNode();
             case RossystemPackage.ROS_INTERFACE: return createRosInterface();
@@ -83,6 +86,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
             case RossystemPackage.ROS_PARAMETER_REFERENCE: return createRosParameterReference();
             case RossystemPackage.ROS_PARAMETER: return createRosParameter();
             case RossystemPackage.ROS_CONNECTION: return createRosConnection();
+            case RossystemPackage.COMPONENT_REF: return createComponentRef();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -100,6 +104,17 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Rossystem createRossystem() {
+        RossystemImpl rossystem = new RossystemImpl();
+        return rossystem;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -243,6 +258,17 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ComponentRef createComponentRef() {
+        ComponentRefImpl componentRef = new ComponentRefImpl();
+        return componentRef;
+    }
+
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
