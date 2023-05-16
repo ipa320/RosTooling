@@ -27,7 +27,8 @@ Package_Impl returns Package:
         ('fromGitRepo:' fromGitRepo=EString)?
         ('specs:'
             BEGIN
-            spec+=SpecBase*
+            PreListElement spec+=SpecBase
+            (PreListElement spec+=SpecBase)*
             END
         )?
         ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
@@ -72,44 +73,43 @@ Artifact returns Artifact:
 
 Node returns Node:
     'node:' name=RosNames
-     BEGIN
-        (
-        ('publishers:'
-            BEGIN
-            publisher+=Publisher*
-            END
-        )|
-        ('subscribers:'
-            BEGIN
-            subscriber+=Subscriber*
-            END
-        )|
-        ('serviceservers:'
-            BEGIN
-            serviceserver+=ServiceServer*
-            END
-        )|
-        ('serviceclients:'
-            BEGIN
-            serviceclient+=ServiceClient*
-            END
-        )|
-        ('actionservers:'
-            BEGIN
-            actionserver+=ActionServer*
-            END
-        )|
-        ('actionclients:'
-            BEGIN
-            actionclient+=ActionClient*
-            END
-        )|
-        ('parameters:'
-            BEGIN
-            parameter+=Parameter*
-            END
-        )
-        )*END
+    (
+    ('publishers:'
+        BEGIN
+        publisher+=Publisher*
+        END
+    )|
+    ('subscribers:'
+        BEGIN
+        subscriber+=Subscriber*
+        END
+    )|
+    ('serviceServers:'
+        BEGIN
+        serviceserver+=ServiceServer*
+        END
+    )|
+    ('serviceClients:'
+        BEGIN
+        serviceclient+=ServiceClient*
+        END
+    )|
+    ('actionServers:'
+        BEGIN
+        actionserver+=ActionServer*
+        END
+    )|
+    ('actionClients:'
+        BEGIN
+        actionclient+=ActionClient*
+        END
+    )|
+    ('parameters:'
+        BEGIN
+        parameter+=Parameter*
+        END
+    )
+    )*
     ;
 
 ///////////////////
@@ -146,7 +146,7 @@ ActionSpec returns ActionSpec:
 
 MessageDefinition returns MessageDefinition:
     {MessageDefinition}
-        MessagePart+=MessagePart*;
+        MessagePart+=MessagePart+;
 
 ///////////////////
 //INTERFACES
