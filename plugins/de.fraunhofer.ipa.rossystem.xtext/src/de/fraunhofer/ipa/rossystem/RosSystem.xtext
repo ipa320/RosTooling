@@ -6,29 +6,32 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.ipa.fraunhofer.de/ros" as ros
 import "http://www.ipa.fraunhofer.de/primitives" as primitives
 
+System returns System:
+    RosSystem
+;
 
 RosSystem returns System:
-    Name=EString':'
+    name=EString':'
     BEGIN
         (
         ('processes:'
             BEGIN
-            Processes+=Process*
+            processes+=Process*
             END
         ) |
         ('nodes:'
             BEGIN
-            Components+=RosNode*
+            components+=RosNode*
             END
         ) |
         ('parameters:'
             BEGIN
-            Parameter+=Parameter*
+            parameter+=RosParameter*
             END
         ) |
         ('connections:'
             BEGIN
-            Connections+=RosConnection*
+            connections+=RosConnection*
             END
         )
         )*
@@ -37,20 +40,18 @@ RosSystem returns System:
 
 Process returns Process:
     {Process}
-        Name=EString':'
-        BEGIN
-        ('nodes:' '['
-            Nodes+=[RosNode|EString]
-            ']')?
-        ('threads:'Threads=INT)
-        END
+      name=EString':'
+      BEGIN
+      ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
+      ('threads:'threads=Integer0)
+      END
 ;
 
 RosNode returns RosNode:
     {RosNode}
-    Name=EString':'
+    name=EString':'
     BEGIN
-    'from:'From=[ros::Node|EString]
+    'from:'from=[ros::Node|EString]
     ('interfaces:'
         BEGIN
             rosinterfaces+=RosInterface*
@@ -63,9 +64,9 @@ RosNode returns RosNode:
 ;
 
 RosInterface returns RosInterface:
-    Name=EString':'
+    name=EString':'
     BEGIN
-    Reference=InterfaceReference
+    reference=InterfaceReference
     END
 ;
 
@@ -77,33 +78,32 @@ InterfaceReference_Impl returns InterfaceReference:
     ;
 
 RosPublisherReference returns RosPublisherReference:
-    'fromPub:'From=[ros::Publisher|EString]
+    'fromPub:'from=[ros::Publisher|EString]
 ;
 
 RosSubscriberReference returns RosSubscriberReference:
-    'fromSub:'From=[ros::Subscriber|EString]
+    'fromSub:'from=[ros::Subscriber|EString]
 ;
 
 RosServiceServerReference returns RosServiceServerReference:
-    'fromSS:'From=[ros::ServiceServer|EString]
+    'fromSS:'from=[ros::ServiceServer|EString]
 ;
 
 RosServerClientReference returns RosServerClientReference:
-    'fromSC:'From=[ros::ServiceClient|EString]
+    'fromSC:'from=[ros::ServiceClient|EString]
 ;
 
 RosActionServerReference returns RosActionServerReference:
-    'fromAS:'From=[ros::ActionServer|EString]
+    'fromAS:'from=[ros::ActionServer|EString]
 ;
 
 RosActionClientReference returns RosActionClientReference:
-    'fromAC:'From=[ros::ActionClient|EString]
+    'fromAC:'from=[ros::ActionClient|EString]
 ;
 
 RosParameter returns RosParameter:
-    Name=EString':'
+    name=EString':' from=[ros::Parameter|EString]
     BEGIN
-    'from:'From=[ros::Parameter|EString]
     'value:'value=ParameterValue
     END
 ;

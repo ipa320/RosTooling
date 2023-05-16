@@ -21,6 +21,7 @@ import system.RosPublisherReference;
 import system.RosServerClientReference;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.Rossystem;
 import system.RossystemPackage;
 
 /**
@@ -83,6 +84,13 @@ public class RossystemSwitch<T> extends Switch<T> {
             case RossystemPackage.SYSTEM: {
                 system.System system = (system.System)theEObject;
                 T result = caseSystem(system);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case RossystemPackage.ROSSYSTEM: {
+                Rossystem rossystem = (Rossystem)theEObject;
+                T result = caseRossystem(rossystem);
+                if (result == null) result = caseSystem(rossystem);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -205,6 +213,21 @@ public class RossystemSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Rossystem</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Rossystem</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRossystem(Rossystem object) {
+        return null;
+    }
+
+                /**
      * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

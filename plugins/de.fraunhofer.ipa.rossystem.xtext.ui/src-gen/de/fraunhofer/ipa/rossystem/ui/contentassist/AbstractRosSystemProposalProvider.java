@@ -36,7 +36,7 @@ public abstract class AbstractRosSystemProposalProvider extends BasicsProposalPr
     public void completeProcess_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeProcess_Nodes(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void completeProcess_Components(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
     }
     public void completeProcess_Threads(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -94,6 +94,9 @@ public abstract class AbstractRosSystemProposalProvider extends BasicsProposalPr
         lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
     }
 
+    public void complete_System(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
     public void complete_RosSystem(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }

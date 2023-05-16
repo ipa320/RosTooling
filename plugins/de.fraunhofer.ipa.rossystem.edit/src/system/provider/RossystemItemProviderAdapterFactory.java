@@ -95,6 +95,29 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link system.Rossystem} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RossystemItemProvider rossystemItemProvider;
+
+                /**
+     * This creates an adapter for a {@link system.Rossystem}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRossystemAdapter() {
+        if (rossystemItemProvider == null) {
+            rossystemItemProvider = new RossystemItemProvider(this);
+        }
+
+        return rossystemItemProvider;
+    }
+
+                /**
      * This keeps track of the one adapter used for all {@link system.Process} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -499,6 +522,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     @Override
     public void dispose() {
         if (systemItemProvider != null) systemItemProvider.dispose();
+        if (rossystemItemProvider != null) rossystemItemProvider.dispose();
         if (processItemProvider != null) processItemProvider.dispose();
         if (rosNodeItemProvider != null) rosNodeItemProvider.dispose();
         if (rosInterfaceItemProvider != null) rosInterfaceItemProvider.dispose();

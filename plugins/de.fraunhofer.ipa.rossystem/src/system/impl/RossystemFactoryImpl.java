@@ -22,6 +22,7 @@ import system.RosPublisherReference;
 import system.RosServerClientReference;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.Rossystem;
 import system.RossystemFactory;
 import system.RossystemPackage;
 
@@ -70,6 +71,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
             case RossystemPackage.SYSTEM: return createSystem();
+            case RossystemPackage.ROSSYSTEM: return createRossystem();
             case RossystemPackage.PROCESS: return createProcess();
             case RossystemPackage.ROS_NODE: return createRosNode();
             case RossystemPackage.ROS_INTERFACE: return createRosInterface();
@@ -100,6 +102,17 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Rossystem createRossystem() {
+        RossystemImpl rossystem = new RossystemImpl();
+        return rossystem;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

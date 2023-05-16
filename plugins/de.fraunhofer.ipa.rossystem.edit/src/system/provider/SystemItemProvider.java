@@ -23,9 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import ros.RosFactory;
-
 import system.RossystemFactory;
 import system.RossystemPackage;
 
@@ -80,8 +77,8 @@ public class SystemItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_System_Name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_System_Name_feature", "_UI_System_type"),
+                 getString("_UI_System_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_System_name_feature", "_UI_System_type"),
                  RossystemPackage.Literals.SYSTEM__NAME,
                  true,
                  false,
@@ -204,7 +201,7 @@ public class SystemItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__PARAMETER,
-                 RosFactory.eINSTANCE.createParameter()));
+                 RossystemFactory.eINSTANCE.createRosParameter()));
     }
 
     /**

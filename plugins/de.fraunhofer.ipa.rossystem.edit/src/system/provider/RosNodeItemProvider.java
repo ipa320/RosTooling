@@ -65,8 +65,8 @@ public class RosNodeItemProvider extends ComponentItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosNode_Name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosNode_Name_feature", "_UI_RosNode_type"),
+                 getString("_UI_RosNode_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosNode_name_feature", "_UI_RosNode_type"),
                  RossystemPackage.Literals.ROS_NODE__NAME,
                  true,
                  false,
@@ -87,8 +87,8 @@ public class RosNodeItemProvider extends ComponentItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosNode_From_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosNode_From_feature", "_UI_RosNode_type"),
+                 getString("_UI_RosNode_from_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosNode_from_feature", "_UI_RosNode_type"),
                  RossystemPackage.Literals.ROS_NODE__FROM,
                  true,
                  false,

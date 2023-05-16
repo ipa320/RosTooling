@@ -17,11 +17,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import ros.Parameter;
-
 import system.Component;
 import system.Connection;
+import system.RosParameter;
 import system.RossystemPackage;
 
 /**
@@ -100,7 +98,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
      * @generated
      * @ordered
      */
-    protected EList<Parameter> parameter;
+    protected EList<RosParameter> parameter;
 
     /**
      * <!-- begin-user-doc -->
@@ -189,9 +187,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
      * @generated
      */
     @Override
-    public EList<Parameter> getParameter() {
+    public EList<RosParameter> getParameter() {
         if (parameter == null) {
-            parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this, RossystemPackage.SYSTEM__PARAMETER);
+            parameter = new EObjectContainmentEList<RosParameter>(RosParameter.class, this, RossystemPackage.SYSTEM__PARAMETER);
         }
         return parameter;
     }
@@ -264,7 +262,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
                 return;
             case RossystemPackage.SYSTEM__PARAMETER:
                 getParameter().clear();
-                getParameter().addAll((Collection<? extends Parameter>)newValue);
+                getParameter().addAll((Collection<? extends RosParameter>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -329,7 +327,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (Name: ");
+        result.append(" (name: ");
         result.append(name);
         result.append(')');
         return result.toString();
