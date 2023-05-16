@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link system.Process#getName <em>Name</em>}</li>
  *   <li>{@link system.Process#getThreads <em>Threads</em>}</li>
- *   <li>{@link system.Process#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link system.Process#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @see system.RossystemPackage#getProcess()
@@ -70,15 +70,15 @@ public interface Process extends EObject {
     void setThreads(int value);
 
     /**
-     * Returns the value of the '<em><b>Nodes</b></em>' reference list.
-     * The list contents are of type {@link system.RosNode}.
+     * Returns the value of the '<em><b>Components</b></em>' reference list.
+     * The list contents are of type {@link system.Component}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Nodes</em>' reference list.
-     * @see system.RossystemPackage#getProcess_Nodes()
+     * @return the value of the '<em>Components</em>' reference list.
+     * @see system.RossystemPackage#getProcess_Components()
      * @model
      * @generated
      */
-    EList<RosNode> getNodes();
+    EList<Component> getComponents();
 
 } // Process

@@ -58,8 +58,8 @@ public class RosServiceServerReferenceItemProvider extends InterfaceReferenceIte
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosServiceServerReference_From_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceServerReference_From_feature", "_UI_RosServiceServerReference_type"),
+                 getString("_UI_RosServiceServerReference_from_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosServiceServerReference_from_feature", "_UI_RosServiceServerReference_type"),
                  RossystemPackage.Literals.ROS_SERVICE_SERVER_REFERENCE__FROM,
                  true,
                  false,

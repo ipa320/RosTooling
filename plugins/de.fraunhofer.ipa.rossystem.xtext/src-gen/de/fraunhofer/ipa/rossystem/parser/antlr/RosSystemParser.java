@@ -42,7 +42,7 @@ public class RosSystemParser extends AbstractAntlrParser {
 
     @Override
     protected String getDefaultRuleName() {
-        return "RosSystem";
+        return "System";
     }
 
     public RosSystemGrammarAccess getGrammarAccess() {

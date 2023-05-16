@@ -16,8 +16,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threads" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true"/>
@@ -65,13 +65,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="RosConnection" eSuperTypes="#//Connection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RosInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//RosInterface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="systemRef" lowerBound="1"
-        eType="#//System"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentRef" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentRef" lowerBound="1"
-        eType="#//Component"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -42,14 +42,9 @@ Process returns Process:
     {Process}
       name=EString':'
       BEGIN
-      ('nodes:' '['nodes+=ComponentRef (',' nodes+=ComponentRef)+']')?
+      ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
       ('threads:'threads=Integer0)
       END
-;
-
-ComponentRef returns ComponentRef:
-    {ComponentRef}
-    componentRef = [RosNode| EString]
 ;
 
 RosNode returns RosNode:
@@ -107,7 +102,7 @@ RosActionClientReference returns RosActionClientReference:
 ;
 
 RosParameter returns RosParameter:
-    PreListElement name=EString':' from=[ros::Parameter|EString]
+    name=EString':' from=[ros::Parameter|EString]
     BEGIN
     'value:'value=ParameterValue
     END
@@ -115,7 +110,7 @@ RosParameter returns RosParameter:
 
 
 RosConnection returns RosConnection:
-    PreListElement '['from=[RosInterface|EString]','to=[RosInterface|EString]']'
+    '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 ;
 
 ///////////////////

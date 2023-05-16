@@ -61,7 +61,6 @@ public class ProcessItemProvider
 
             addNamePropertyDescriptor(object);
             addThreadsPropertyDescriptor(object);
-            addNodesPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -77,8 +76,8 @@ public class ProcessItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Process_Name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Process_Name_feature", "_UI_Process_type"),
+                 getString("_UI_Process_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Process_name_feature", "_UI_Process_type"),
                  RossystemPackage.Literals.PROCESS__NAME,
                  true,
                  false,
@@ -99,35 +98,13 @@ public class ProcessItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Process_Threads_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Process_Threads_feature", "_UI_Process_type"),
+                 getString("_UI_Process_threads_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Process_threads_feature", "_UI_Process_type"),
                  RossystemPackage.Literals.PROCESS__THREADS,
                  true,
                  false,
                  false,
                  ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Nodes feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addNodesPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Process_Nodes_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Process_Nodes_feature", "_UI_Process_type"),
-                 RossystemPackage.Literals.PROCESS__NODES,
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }

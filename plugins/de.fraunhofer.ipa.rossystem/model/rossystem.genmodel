@@ -18,7 +18,7 @@
     <genClasses ecoreClass="rossystem.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//Process/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//Process/threads"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//Process/nodes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rossystem.ecore#//Process/components"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rossystem.ecore#//Component"/>
     <genClasses image="false" ecoreClass="rossystem.ecore#//Connection"/>
@@ -62,12 +62,6 @@
     <genClasses ecoreClass="rossystem.ecore#//RosConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosConnection/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosConnection/to"/>
-    </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//SystemRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//SystemRef/systemRef"/>
-    </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//ComponentRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentRef/componentRef"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

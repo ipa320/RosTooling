@@ -81,8 +81,8 @@ public class RosParameterItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosParameter_Name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosParameter_Name_feature", "_UI_RosParameter_type"),
+                 getString("_UI_RosParameter_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosParameter_name_feature", "_UI_RosParameter_type"),
                  RossystemPackage.Literals.ROS_PARAMETER__NAME,
                  true,
                  false,
@@ -103,8 +103,8 @@ public class RosParameterItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosParameter_From_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosParameter_From_feature", "_UI_RosParameter_type"),
+                 getString("_UI_RosParameter_from_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosParameter_from_feature", "_UI_RosParameter_type"),
                  RossystemPackage.Literals.ROS_PARAMETER__FROM,
                  true,
                  false,

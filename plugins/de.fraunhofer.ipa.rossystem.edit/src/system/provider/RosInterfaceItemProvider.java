@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import system.RosInterface;
+import system.RossystemFactory;
 import system.RossystemPackage;
 
 /**
@@ -61,7 +63,6 @@ public class RosInterfaceItemProvider
             super.getPropertyDescriptors(object);
 
             addNamePropertyDescriptor(object);
-            addReferencePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -77,8 +78,8 @@ public class RosInterfaceItemProvider
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_RosInterface_Name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosInterface_Name_feature", "_UI_RosInterface_type"),
+                 getString("_UI_RosInterface_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosInterface_name_feature", "_UI_RosInterface_type"),
                  RossystemPackage.Literals.ROS_INTERFACE__NAME,
                  true,
                  false,
@@ -89,28 +90,36 @@ public class RosInterfaceItemProvider
     }
 
     /**
-     * This adds a property descriptor for the Reference feature.
+     * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+     * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+     * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferencePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_RosInterface_Reference_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_RosInterface_Reference_feature", "_UI_RosInterface_type"),
-                 RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    @Override
+    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+        if (childrenFeatures == null) {
+            super.getChildrenFeatures(object);
+            childrenFeatures.add(RossystemPackage.Literals.ROS_INTERFACE__REFERENCE);
+        }
+        return childrenFeatures;
     }
 
-    /**
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EStructuralFeature getChildFeature(Object object, Object child) {
+        // Check the type of the specified child object and return the proper feature to use for
+        // adding (see {@link AddCommand}) it as a child.
+
+        return super.getChildFeature(object, child);
+    }
+
+                /**
      * This returns RosInterface.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -151,6 +160,9 @@ public class RosInterfaceItemProvider
             case RossystemPackage.ROS_INTERFACE__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
+            case RossystemPackage.ROS_INTERFACE__REFERENCE:
+                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+                return;
         }
         super.notifyChanged(notification);
     }
@@ -165,6 +177,46 @@ public class RosInterfaceItemProvider
     @Override
     protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createInterfaceReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosPublisherReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosSubscriberReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosServiceServerReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosServerClientReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosActionServerReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosActionClientReference()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
+                 RossystemFactory.eINSTANCE.createRosParameterReference()));
     }
 
     /**

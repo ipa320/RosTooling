@@ -23,6 +23,7 @@ import system.RosPublisherReference;
 import system.RosServerClientReference;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.Rossystem;
 import system.RossystemPackage;
 
 /**
@@ -84,6 +85,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseSystem(system.System object) {
                 return createSystemAdapter();
+            }
+            @Override
+            public Adapter caseRossystem(Rossystem object) {
+                return createRossystemAdapter();
             }
             @Override
             public Adapter caseProcess(system.Process object) {
@@ -180,6 +185,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link system.Rossystem <em>Rossystem</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see system.Rossystem
+     * @generated
+     */
+    public Adapter createRossystemAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for an object of class '{@link system.Process <em>Process</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

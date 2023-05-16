@@ -5,17 +5,13 @@ package system.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import system.RosNode;
+import system.Component;
 import system.RossystemPackage;
 
 /**
@@ -28,7 +24,7 @@ import system.RossystemPackage;
  * <ul>
  *   <li>{@link system.impl.ProcessImpl#getName <em>Name</em>}</li>
  *   <li>{@link system.impl.ProcessImpl#getThreads <em>Threads</em>}</li>
- *   <li>{@link system.impl.ProcessImpl#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link system.impl.ProcessImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,16 +71,16 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
     protected int threads = THREADS_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getNodes() <em>Nodes</em>}' reference list.
+     * The cached value of the '{@link #getComponents() <em>Components</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getNodes()
+     * @see #getComponents()
      * @generated
      * @ordered
      */
-    protected EList<RosNode> nodes;
+    protected EList<Component> components;
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -155,14 +151,14 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
      * @generated
      */
     @Override
-    public EList<RosNode> getNodes() {
-        if (nodes == null) {
-            nodes = new EObjectResolvingEList<RosNode>(RosNode.class, this, RossystemPackage.PROCESS__NODES);
+    public EList<Component> getComponents() {
+        if (components == null) {
+            components = new EObjectResolvingEList<Component>(Component.class, this, RossystemPackage.PROCESS__COMPONENTS);
         }
-        return nodes;
+        return components;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -174,8 +170,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
                 return getName();
             case RossystemPackage.PROCESS__THREADS:
                 return getThreads();
-            case RossystemPackage.PROCESS__NODES:
-                return getNodes();
+            case RossystemPackage.PROCESS__COMPONENTS:
+                return getComponents();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -195,9 +191,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
             case RossystemPackage.PROCESS__THREADS:
                 setThreads((Integer)newValue);
                 return;
-            case RossystemPackage.PROCESS__NODES:
-                getNodes().clear();
-                getNodes().addAll((Collection<? extends RosNode>)newValue);
+            case RossystemPackage.PROCESS__COMPONENTS:
+                getComponents().clear();
+                getComponents().addAll((Collection<? extends Component>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -217,8 +213,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
             case RossystemPackage.PROCESS__THREADS:
                 setThreads(THREADS_EDEFAULT);
                 return;
-            case RossystemPackage.PROCESS__NODES:
-                getNodes().clear();
+            case RossystemPackage.PROCESS__COMPONENTS:
+                getComponents().clear();
                 return;
         }
         super.eUnset(featureID);
@@ -236,8 +232,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
             case RossystemPackage.PROCESS__THREADS:
                 return threads != THREADS_EDEFAULT;
-            case RossystemPackage.PROCESS__NODES:
-                return nodes != null && !nodes.isEmpty();
+            case RossystemPackage.PROCESS__COMPONENTS:
+                return components != null && !components.isEmpty();
         }
         return super.eIsSet(featureID);
     }
@@ -252,9 +248,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements system.
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (Name: ");
+        result.append(" (name: ");
         result.append(name);
-        result.append(", Threads: ");
+        result.append(", threads: ");
         result.append(threads);
         result.append(')');
         return result.toString();
