@@ -307,25 +307,25 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         private final RuleCall cSubscriberSubscriberParserRuleCall_3_1_2_0 = (RuleCall)cSubscriberAssignment_3_1_2.eContents().get(0);
         private final RuleCall cENDTerminalRuleCall_3_1_3 = (RuleCall)cGroup_3_1.eContents().get(3);
         private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-        private final Keyword cServiceserverKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+        private final Keyword cServiceserversKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
         private final RuleCall cBEGINTerminalRuleCall_3_2_1 = (RuleCall)cGroup_3_2.eContents().get(1);
         private final Assignment cServiceserverAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
         private final RuleCall cServiceserverServiceServerParserRuleCall_3_2_2_0 = (RuleCall)cServiceserverAssignment_3_2_2.eContents().get(0);
         private final RuleCall cENDTerminalRuleCall_3_2_3 = (RuleCall)cGroup_3_2.eContents().get(3);
         private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
-        private final Keyword cServiceclientKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+        private final Keyword cServiceclientsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
         private final RuleCall cBEGINTerminalRuleCall_3_3_1 = (RuleCall)cGroup_3_3.eContents().get(1);
         private final Assignment cServiceclientAssignment_3_3_2 = (Assignment)cGroup_3_3.eContents().get(2);
         private final RuleCall cServiceclientServiceClientParserRuleCall_3_3_2_0 = (RuleCall)cServiceclientAssignment_3_3_2.eContents().get(0);
         private final RuleCall cENDTerminalRuleCall_3_3_3 = (RuleCall)cGroup_3_3.eContents().get(3);
         private final Group cGroup_3_4 = (Group)cAlternatives_3.eContents().get(4);
-        private final Keyword cActionserverKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
+        private final Keyword cActionserversKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
         private final RuleCall cBEGINTerminalRuleCall_3_4_1 = (RuleCall)cGroup_3_4.eContents().get(1);
         private final Assignment cActionserverAssignment_3_4_2 = (Assignment)cGroup_3_4.eContents().get(2);
         private final RuleCall cActionserverActionServerParserRuleCall_3_4_2_0 = (RuleCall)cActionserverAssignment_3_4_2.eContents().get(0);
         private final RuleCall cENDTerminalRuleCall_3_4_3 = (RuleCall)cGroup_3_4.eContents().get(3);
         private final Group cGroup_3_5 = (Group)cAlternatives_3.eContents().get(5);
-        private final Keyword cActionclientKeyword_3_5_0 = (Keyword)cGroup_3_5.eContents().get(0);
+        private final Keyword cActionclientsKeyword_3_5_0 = (Keyword)cGroup_3_5.eContents().get(0);
         private final RuleCall cBEGINTerminalRuleCall_3_5_1 = (RuleCall)cGroup_3_5.eContents().get(1);
         private final Assignment cActionclientAssignment_3_5_2 = (Assignment)cGroup_3_5.eContents().get(2);
         private final RuleCall cActionclientActionClientParserRuleCall_3_5_2_0 = (RuleCall)cActionclientAssignment_3_5_2.eContents().get(0);
@@ -352,22 +352,22 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //            subscriber+=Subscriber*
         //            END
         //        )|
-        //        ('serviceserver:'
+        //        ('serviceservers:'
         //            BEGIN
         //            serviceserver+=ServiceServer*
         //            END
         //        )|
-        //        ('serviceclient:'
+        //        ('serviceclients:'
         //            BEGIN
         //            serviceclient+=ServiceClient*
         //            END
         //        )|
-        //        ('actionserver:'
+        //        ('actionservers:'
         //            BEGIN
         //            actionserver+=ActionServer*
         //            END
         //        )|
-        //        ('actionclient:'
+        //        ('actionclients:'
         //            BEGIN
         //            actionclient+=ActionClient*
         //            END
@@ -394,22 +394,22 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //        subscriber+=Subscriber*
         //        END
         //    )|
-        //    ('serviceserver:'
+        //    ('serviceservers:'
         //        BEGIN
         //        serviceserver+=ServiceServer*
         //        END
         //    )|
-        //    ('serviceclient:'
+        //    ('serviceclients:'
         //        BEGIN
         //        serviceclient+=ServiceClient*
         //        END
         //    )|
-        //    ('actionserver:'
+        //    ('actionservers:'
         //        BEGIN
         //        actionserver+=ActionServer*
         //        END
         //    )|
-        //    ('actionclient:'
+        //    ('actionclients:'
         //        BEGIN
         //        actionclient+=ActionClient*
         //        END
@@ -445,22 +445,22 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //    subscriber+=Subscriber*
         //    END
         //)|
-        //('serviceserver:'
+        //('serviceservers:'
         //    BEGIN
         //    serviceserver+=ServiceServer*
         //    END
         //)|
-        //('serviceclient:'
+        //('serviceclients:'
         //    BEGIN
         //    serviceclient+=ServiceClient*
         //    END
         //)|
-        //('actionserver:'
+        //('actionservers:'
         //    BEGIN
         //    actionserver+=ActionServer*
         //    END
         //)|
-        //('actionclient:'
+        //('actionclients:'
         //    BEGIN
         //    actionclient+=ActionClient*
         //    END
@@ -517,15 +517,15 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //END
         public RuleCall getENDTerminalRuleCall_3_1_3() { return cENDTerminalRuleCall_3_1_3; }
 
-        //('serviceserver:'
+        //('serviceservers:'
         //    BEGIN
         //    serviceserver+=ServiceServer*
         //    END
         //)
         public Group getGroup_3_2() { return cGroup_3_2; }
 
-        //'serviceserver:'
-        public Keyword getServiceserverKeyword_3_2_0() { return cServiceserverKeyword_3_2_0; }
+        //'serviceservers:'
+        public Keyword getServiceserversKeyword_3_2_0() { return cServiceserversKeyword_3_2_0; }
 
         //BEGIN
         public RuleCall getBEGINTerminalRuleCall_3_2_1() { return cBEGINTerminalRuleCall_3_2_1; }
@@ -539,15 +539,15 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //END
         public RuleCall getENDTerminalRuleCall_3_2_3() { return cENDTerminalRuleCall_3_2_3; }
 
-        //('serviceclient:'
+        //('serviceclients:'
         //    BEGIN
         //    serviceclient+=ServiceClient*
         //    END
         //)
         public Group getGroup_3_3() { return cGroup_3_3; }
 
-        //'serviceclient:'
-        public Keyword getServiceclientKeyword_3_3_0() { return cServiceclientKeyword_3_3_0; }
+        //'serviceclients:'
+        public Keyword getServiceclientsKeyword_3_3_0() { return cServiceclientsKeyword_3_3_0; }
 
         //BEGIN
         public RuleCall getBEGINTerminalRuleCall_3_3_1() { return cBEGINTerminalRuleCall_3_3_1; }
@@ -561,15 +561,15 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //END
         public RuleCall getENDTerminalRuleCall_3_3_3() { return cENDTerminalRuleCall_3_3_3; }
 
-        //('actionserver:'
+        //('actionservers:'
         //    BEGIN
         //    actionserver+=ActionServer*
         //    END
         //)
         public Group getGroup_3_4() { return cGroup_3_4; }
 
-        //'actionserver:'
-        public Keyword getActionserverKeyword_3_4_0() { return cActionserverKeyword_3_4_0; }
+        //'actionservers:'
+        public Keyword getActionserversKeyword_3_4_0() { return cActionserversKeyword_3_4_0; }
 
         //BEGIN
         public RuleCall getBEGINTerminalRuleCall_3_4_1() { return cBEGINTerminalRuleCall_3_4_1; }
@@ -583,15 +583,15 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         //END
         public RuleCall getENDTerminalRuleCall_3_4_3() { return cENDTerminalRuleCall_3_4_3; }
 
-        //('actionclient:'
+        //('actionclients:'
         //    BEGIN
         //    actionclient+=ActionClient*
         //    END
         //)
         public Group getGroup_3_5() { return cGroup_3_5; }
 
-        //'actionclient:'
-        public Keyword getActionclientKeyword_3_5_0() { return cActionclientKeyword_3_5_0; }
+        //'actionclients:'
+        public Keyword getActionclientsKeyword_3_5_0() { return cActionclientsKeyword_3_5_0; }
 
         //BEGIN
         public RuleCall getBEGINTerminalRuleCall_3_5_1() { return cBEGINTerminalRuleCall_3_5_1; }
@@ -1708,22 +1708,22 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //            subscriber+=Subscriber*
     //            END
     //        )|
-    //        ('serviceserver:'
+    //        ('serviceservers:'
     //            BEGIN
     //            serviceserver+=ServiceServer*
     //            END
     //        )|
-    //        ('serviceclient:'
+    //        ('serviceclients:'
     //            BEGIN
     //            serviceclient+=ServiceClient*
     //            END
     //        )|
-    //        ('actionserver:'
+    //        ('actionservers:'
     //            BEGIN
     //            actionserver+=ActionServer*
     //            END
     //        )|
-    //        ('actionclient:'
+    //        ('actionclients:'
     //            BEGIN
     //            actionclient+=ActionClient*
     //            END
@@ -2090,7 +2090,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterIntegerType returns ParameterIntegerType:
     //    {ParameterIntegerType}
     //    'Integer'
-    //    ('default' default=ParameterInteger)?;
+    //    ('default:' default=ParameterInteger)?;
     public BasicsGrammarAccess.ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
         return gaBasics.getParameterIntegerTypeAccess();
     }
@@ -2102,7 +2102,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterStringType returns ParameterStringType:
     //    {ParameterStringType}
     //    'String'
-    //    ('default' default=ParameterString)?;
+    //    ('default:' default=ParameterString)?;
     public BasicsGrammarAccess.ParameterStringTypeElements getParameterStringTypeAccess() {
         return gaBasics.getParameterStringTypeAccess();
     }
@@ -2114,7 +2114,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterDoubleType returns ParameterDoubleType:
     //    {ParameterDoubleType}
     //    'Double'
-    //    ('default' default=ParameterDouble)?;
+    //    ('default:' default=ParameterDouble)?;
     public BasicsGrammarAccess.ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
         return gaBasics.getParameterDoubleTypeAccess();
     }
@@ -2126,7 +2126,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterDateType returns ParameterDateType:
     //    {ParameterDateType}
     //    'Date'
-    //    ('default' default=ParameterDate)?;
+    //    ('default:' default=ParameterDate)?;
     public BasicsGrammarAccess.ParameterDateTypeElements getParameterDateTypeAccess() {
         return gaBasics.getParameterDateTypeAccess();
     }
@@ -2138,7 +2138,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterBooleanType returns ParameterBooleanType:
     //    {ParameterBooleanType}
     //    'Boolean'
-    //    ('default' default=ParameterBoolean)?;
+    //    ('default:' default=ParameterBoolean)?;
     public BasicsGrammarAccess.ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
         return gaBasics.getParameterBooleanTypeAccess();
     }
@@ -2150,7 +2150,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterBase64Type returns ParameterBase64Type:
     //    {ParameterBase64Type}
     //    'Base64'
-    //    ('default' default=ParameterBase64)?;
+    //    ('default:' default=ParameterBase64)?;
     public BasicsGrammarAccess.ParameterBase64TypeElements getParameterBase64TypeAccess() {
         return gaBasics.getParameterBase64TypeAccess();
     }
@@ -2162,7 +2162,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     //ParameterAnyType returns ParameterAnyType:
     //    {ParameterAnyType}
     //    'Any'
-    //    ('default' default=ParameterAny)?;
+    //    ('default:' default=ParameterAny)?;
     public BasicsGrammarAccess.ParameterAnyTypeElements getParameterAnyTypeAccess() {
         return gaBasics.getParameterAnyTypeAccess();
     }
@@ -2172,11 +2172,10 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     }
 
     //ParameterArrayType returns ParameterArrayType:
-    //    'Array:'
     //    BEGIN
-    //        'type' type=ParameterType
-    //        ('default' default=ParameterList)?
-    //    END;
+    //    'Array:' type=ParameterType
+    //    ('default:' default=ParameterList)?
+    //  END;
     public BasicsGrammarAccess.ParameterArrayTypeElements getParameterArrayTypeAccess() {
         return gaBasics.getParameterArrayTypeAccess();
     }
@@ -2289,7 +2288,6 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
     }
 
     //ParameterStructMember returns ParameterStructMember:
-    //    'ParameterStructMember'
     //    name=EString':'
     //    BEGIN
     //        value=ParameterValue
@@ -2332,7 +2330,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
         return gaBasics.getBOOLEANRule();
     }
 
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+    //terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
     public TerminalRule getDOUBLERule() {
         return gaBasics.getDOUBLERule();
     }

@@ -1270,7 +1270,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterIntegerType returns ParameterIntegerType:
     //    {ParameterIntegerType}
     //    'Integer'
-    //    ('default' default=ParameterInteger)?;
+    //    ('default:' default=ParameterInteger)?;
     public BasicsGrammarAccess.ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
         return gaBasics.getParameterIntegerTypeAccess();
     }
@@ -1282,7 +1282,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterStringType returns ParameterStringType:
     //    {ParameterStringType}
     //    'String'
-    //    ('default' default=ParameterString)?;
+    //    ('default:' default=ParameterString)?;
     public BasicsGrammarAccess.ParameterStringTypeElements getParameterStringTypeAccess() {
         return gaBasics.getParameterStringTypeAccess();
     }
@@ -1294,7 +1294,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterDoubleType returns ParameterDoubleType:
     //    {ParameterDoubleType}
     //    'Double'
-    //    ('default' default=ParameterDouble)?;
+    //    ('default:' default=ParameterDouble)?;
     public BasicsGrammarAccess.ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
         return gaBasics.getParameterDoubleTypeAccess();
     }
@@ -1306,7 +1306,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterDateType returns ParameterDateType:
     //    {ParameterDateType}
     //    'Date'
-    //    ('default' default=ParameterDate)?;
+    //    ('default:' default=ParameterDate)?;
     public BasicsGrammarAccess.ParameterDateTypeElements getParameterDateTypeAccess() {
         return gaBasics.getParameterDateTypeAccess();
     }
@@ -1318,7 +1318,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterBooleanType returns ParameterBooleanType:
     //    {ParameterBooleanType}
     //    'Boolean'
-    //    ('default' default=ParameterBoolean)?;
+    //    ('default:' default=ParameterBoolean)?;
     public BasicsGrammarAccess.ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
         return gaBasics.getParameterBooleanTypeAccess();
     }
@@ -1330,7 +1330,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterBase64Type returns ParameterBase64Type:
     //    {ParameterBase64Type}
     //    'Base64'
-    //    ('default' default=ParameterBase64)?;
+    //    ('default:' default=ParameterBase64)?;
     public BasicsGrammarAccess.ParameterBase64TypeElements getParameterBase64TypeAccess() {
         return gaBasics.getParameterBase64TypeAccess();
     }
@@ -1342,7 +1342,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     //ParameterAnyType returns ParameterAnyType:
     //    {ParameterAnyType}
     //    'Any'
-    //    ('default' default=ParameterAny)?;
+    //    ('default:' default=ParameterAny)?;
     public BasicsGrammarAccess.ParameterAnyTypeElements getParameterAnyTypeAccess() {
         return gaBasics.getParameterAnyTypeAccess();
     }
@@ -1352,11 +1352,10 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     }
 
     //ParameterArrayType returns ParameterArrayType:
-    //    'Array:'
     //    BEGIN
-    //        'type' type=ParameterType
-    //        ('default' default=ParameterList)?
-    //    END;
+    //    'Array:' type=ParameterType
+    //    ('default:' default=ParameterList)?
+    //  END;
     public BasicsGrammarAccess.ParameterArrayTypeElements getParameterArrayTypeAccess() {
         return gaBasics.getParameterArrayTypeAccess();
     }
@@ -1469,7 +1468,6 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
     }
 
     //ParameterStructMember returns ParameterStructMember:
-    //    'ParameterStructMember'
     //    name=EString':'
     //    BEGIN
     //        value=ParameterValue
@@ -1512,7 +1510,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
         return gaBasics.getBOOLEANRule();
     }
 
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+    //terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
     public TerminalRule getDOUBLERule() {
         return gaBasics.getDOUBLERule();
     }

@@ -11,8 +11,6 @@ package de.fraunhofer.ipa.ros.ide.contentassist.antlr.lexer;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 }
 
-ParameterStructMember : 'ParameterStructMember';
-
 ExternalDependency : 'ExternalDependency';
 
 RelativeNamespace : 'RelativeNamespace';
@@ -21,13 +19,13 @@ PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
-Serviceclient : 'serviceclient:';
+Serviceclients : 'serviceclients:';
 
-Serviceserver : 'serviceserver:';
+Serviceservers : 'serviceservers:';
 
-Actionclient : 'actionclient:';
+Actionclients : 'actionclients:';
 
-Actionserver : 'actionserver:';
+Actionservers : 'actionservers:';
 
 Dependencies : 'dependencies:';
 
@@ -51,6 +49,8 @@ Float64_1 : 'float64[]';
 
 Response : 'response:';
 
+Default : 'default:';
+
 Duration : 'duration';
 
 Feedback : 'feedback';
@@ -72,8 +72,6 @@ Boolean : 'Boolean';
 Integer : 'Integer';
 
 Action_1 : 'action:';
-
-Default : 'default';
 
 Float32 : 'float32';
 
@@ -187,7 +185,7 @@ RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 

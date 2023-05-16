@@ -635,8 +635,8 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RosPackage.Literals.PARAMETER_STRUCT_MEMBER__VALUE));
         }
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-        feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-        feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_4_0(), semanticObject.getValue());
+        feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+        feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0(), semanticObject.getValue());
         feeder.finish();
     }
 

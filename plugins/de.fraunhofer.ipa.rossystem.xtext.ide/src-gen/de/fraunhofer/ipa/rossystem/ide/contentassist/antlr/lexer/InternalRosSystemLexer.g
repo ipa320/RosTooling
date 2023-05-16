@@ -11,8 +11,6 @@ package de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.lexer;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 }
 
-ParameterStructMember : 'ParameterStructMember';
-
 RelativeNamespace : 'RelativeNamespace';
 
 PrivateNamespace : 'PrivateNamespace';
@@ -35,6 +33,8 @@ Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
 
+Default : 'default:';
+
 Duration : 'duration';
 
 Feedback : 'feedback';
@@ -56,8 +56,6 @@ Uint64_1 : 'uint64[]';
 Boolean : 'Boolean';
 
 Integer : 'Integer';
-
-Default : 'default';
 
 Float32 : 'float32';
 
@@ -173,7 +171,7 @@ RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 
