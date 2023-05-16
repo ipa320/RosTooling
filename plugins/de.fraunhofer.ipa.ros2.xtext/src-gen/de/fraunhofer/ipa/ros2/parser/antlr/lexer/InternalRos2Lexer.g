@@ -11,8 +11,6 @@ package de.fraunhofer.ipa.ros2.parser.antlr.lexer;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
-ParameterStructMember : 'ParameterStructMember';
-
 ExternalDependency : 'ExternalDependency';
 
 RelativeNamespace : 'RelativeNamespace';
@@ -21,15 +19,15 @@ PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
+Serviceclients : 'serviceclients:';
+
+Serviceservers : 'serviceservers:';
+
 Transient_local : 'transient_local';
 
-Serviceclient : 'serviceclient:';
+Actionclients : 'actionclients:';
 
-Serviceserver : 'serviceserver:';
-
-Actionclient : 'actionclient:';
-
-Actionserver : 'actionserver:';
+Actionservers : 'actionservers:';
 
 Dependencies : 'dependencies:';
 
@@ -71,6 +69,8 @@ Keep_last : 'keep_last';
 
 Response : 'response:';
 
+Default : 'default:';
+
 Duration : 'duration';
 
 Feedback : 'feedback';
@@ -102,8 +102,6 @@ Boolean : 'Boolean';
 Integer : 'Integer';
 
 Action_1 : 'action:';
-
-Default : 'default';
 
 Float32 : 'float32';
 
@@ -213,15 +211,13 @@ LeftSquareBracket : '[';
 
 RightSquareBracket : ']';
 
-RightCurlyBracket : '}';
-
 fragment RULE_DIGIT : '0'..'9';
 
 RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 

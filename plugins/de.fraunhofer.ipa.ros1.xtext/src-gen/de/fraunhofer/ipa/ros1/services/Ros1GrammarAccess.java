@@ -358,22 +358,22 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            subscriber+=Subscriber*
     //            END
     //        )|
-    //        ('serviceserver:'
+    //        ('serviceservers:'
     //            BEGIN
     //            serviceserver+=ServiceServer*
     //            END
     //        )|
-    //        ('serviceclient:'
+    //        ('serviceclients:'
     //            BEGIN
     //            serviceclient+=ServiceClient*
     //            END
     //        )|
-    //        ('actionserver:'
+    //        ('actionservers:'
     //            BEGIN
     //            actionserver+=ActionServer*
     //            END
     //        )|
-    //        ('actionclient:'
+    //        ('actionclients:'
     //            BEGIN
     //            actionclient+=ActionClient*
     //            END
@@ -740,7 +740,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterIntegerType returns ParameterIntegerType:
     //    {ParameterIntegerType}
     //    'Integer'
-    //    ('default' default=ParameterInteger)?;
+    //    ('default:' default=ParameterInteger)?;
     public BasicsGrammarAccess.ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
         return gaBasics.getParameterIntegerTypeAccess();
     }
@@ -752,7 +752,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterStringType returns ParameterStringType:
     //    {ParameterStringType}
     //    'String'
-    //    ('default' default=ParameterString)?;
+    //    ('default:' default=ParameterString)?;
     public BasicsGrammarAccess.ParameterStringTypeElements getParameterStringTypeAccess() {
         return gaBasics.getParameterStringTypeAccess();
     }
@@ -764,7 +764,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterDoubleType returns ParameterDoubleType:
     //    {ParameterDoubleType}
     //    'Double'
-    //    ('default' default=ParameterDouble)?;
+    //    ('default:' default=ParameterDouble)?;
     public BasicsGrammarAccess.ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
         return gaBasics.getParameterDoubleTypeAccess();
     }
@@ -776,7 +776,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterDateType returns ParameterDateType:
     //    {ParameterDateType}
     //    'Date'
-    //    ('default' default=ParameterDate)?;
+    //    ('default:' default=ParameterDate)?;
     public BasicsGrammarAccess.ParameterDateTypeElements getParameterDateTypeAccess() {
         return gaBasics.getParameterDateTypeAccess();
     }
@@ -788,7 +788,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterBooleanType returns ParameterBooleanType:
     //    {ParameterBooleanType}
     //    'Boolean'
-    //    ('default' default=ParameterBoolean)?;
+    //    ('default:' default=ParameterBoolean)?;
     public BasicsGrammarAccess.ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
         return gaBasics.getParameterBooleanTypeAccess();
     }
@@ -800,7 +800,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterBase64Type returns ParameterBase64Type:
     //    {ParameterBase64Type}
     //    'Base64'
-    //    ('default' default=ParameterBase64)?;
+    //    ('default:' default=ParameterBase64)?;
     public BasicsGrammarAccess.ParameterBase64TypeElements getParameterBase64TypeAccess() {
         return gaBasics.getParameterBase64TypeAccess();
     }
@@ -812,7 +812,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //ParameterAnyType returns ParameterAnyType:
     //    {ParameterAnyType}
     //    'Any'
-    //    ('default' default=ParameterAny)?;
+    //    ('default:' default=ParameterAny)?;
     public BasicsGrammarAccess.ParameterAnyTypeElements getParameterAnyTypeAccess() {
         return gaBasics.getParameterAnyTypeAccess();
     }
@@ -822,11 +822,10 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ParameterArrayType returns ParameterArrayType:
-    //    'Array:'
     //    BEGIN
-    //        'type' type=ParameterType
-    //        ('default' default=ParameterList)?
-    //    END;
+    //    'Array:' type=ParameterType
+    //    ('default:' default=ParameterList)?
+    //  END;
     public BasicsGrammarAccess.ParameterArrayTypeElements getParameterArrayTypeAccess() {
         return gaBasics.getParameterArrayTypeAccess();
     }
@@ -939,7 +938,6 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ParameterStructMember returns ParameterStructMember:
-    //    'ParameterStructMember'
     //    name=EString':'
     //    BEGIN
     //        value=ParameterValue
@@ -982,7 +980,7 @@ public class Ros1GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         return gaBasics.getBOOLEANRule();
     }
 
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+    //terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
     public TerminalRule getDOUBLERule() {
         return gaBasics.getDOUBLERule();
     }

@@ -568,12 +568,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterIntegerType returns ParameterIntegerType:
         //    {ParameterIntegerType}
         //    'Integer'
-        //    ('default' default=ParameterInteger)?;
+        //    ('default:' default=ParameterInteger)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterIntegerType}
         //'Integer'
-        //('default' default=ParameterInteger)?
+        //('default:' default=ParameterInteger)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterIntegerType}
@@ -582,10 +582,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Integer'
         public Keyword getIntegerKeyword_1() { return cIntegerKeyword_1; }
 
-        //('default' default=ParameterInteger)?
+        //('default:' default=ParameterInteger)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterInteger
@@ -607,12 +607,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterStringType returns ParameterStringType:
         //    {ParameterStringType}
         //    'String'
-        //    ('default' default=ParameterString)?;
+        //    ('default:' default=ParameterString)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterStringType}
         //'String'
-        //('default' default=ParameterString)?
+        //('default:' default=ParameterString)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterStringType}
@@ -621,10 +621,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'String'
         public Keyword getStringKeyword_1() { return cStringKeyword_1; }
 
-        //('default' default=ParameterString)?
+        //('default:' default=ParameterString)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterString
@@ -646,12 +646,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterDoubleType returns ParameterDoubleType:
         //    {ParameterDoubleType}
         //    'Double'
-        //    ('default' default=ParameterDouble)?;
+        //    ('default:' default=ParameterDouble)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterDoubleType}
         //'Double'
-        //('default' default=ParameterDouble)?
+        //('default:' default=ParameterDouble)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterDoubleType}
@@ -660,10 +660,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Double'
         public Keyword getDoubleKeyword_1() { return cDoubleKeyword_1; }
 
-        //('default' default=ParameterDouble)?
+        //('default:' default=ParameterDouble)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterDouble
@@ -685,12 +685,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterDateType returns ParameterDateType:
         //    {ParameterDateType}
         //    'Date'
-        //    ('default' default=ParameterDate)?;
+        //    ('default:' default=ParameterDate)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterDateType}
         //'Date'
-        //('default' default=ParameterDate)?
+        //('default:' default=ParameterDate)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterDateType}
@@ -699,10 +699,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Date'
         public Keyword getDateKeyword_1() { return cDateKeyword_1; }
 
-        //('default' default=ParameterDate)?
+        //('default:' default=ParameterDate)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterDate
@@ -724,12 +724,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterBooleanType returns ParameterBooleanType:
         //    {ParameterBooleanType}
         //    'Boolean'
-        //    ('default' default=ParameterBoolean)?;
+        //    ('default:' default=ParameterBoolean)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterBooleanType}
         //'Boolean'
-        //('default' default=ParameterBoolean)?
+        //('default:' default=ParameterBoolean)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterBooleanType}
@@ -738,10 +738,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Boolean'
         public Keyword getBooleanKeyword_1() { return cBooleanKeyword_1; }
 
-        //('default' default=ParameterBoolean)?
+        //('default:' default=ParameterBoolean)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterBoolean
@@ -763,12 +763,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterBase64Type returns ParameterBase64Type:
         //    {ParameterBase64Type}
         //    'Base64'
-        //    ('default' default=ParameterBase64)?;
+        //    ('default:' default=ParameterBase64)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterBase64Type}
         //'Base64'
-        //('default' default=ParameterBase64)?
+        //('default:' default=ParameterBase64)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterBase64Type}
@@ -777,10 +777,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Base64'
         public Keyword getBase64Keyword_1() { return cBase64Keyword_1; }
 
-        //('default' default=ParameterBase64)?
+        //('default:' default=ParameterBase64)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterBase64
@@ -802,12 +802,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //ParameterAnyType returns ParameterAnyType:
         //    {ParameterAnyType}
         //    'Any'
-        //    ('default' default=ParameterAny)?;
+        //    ('default:' default=ParameterAny)?;
         @Override public ParserRule getRule() { return rule; }
 
         //{ParameterAnyType}
         //'Any'
-        //('default' default=ParameterAny)?
+        //('default:' default=ParameterAny)?
         public Group getGroup() { return cGroup; }
 
         //{ParameterAnyType}
@@ -816,10 +816,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //'Any'
         public Keyword getAnyKeyword_1() { return cAnyKeyword_1; }
 
-        //('default' default=ParameterAny)?
+        //('default:' default=ParameterAny)?
         public Group getGroup_2() { return cGroup_2; }
 
-        //'default'
+        //'default:'
         public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 
         //default=ParameterAny
@@ -831,61 +831,55 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     public class ParameterArrayTypeElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterArrayType");
         private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Keyword cArrayKeyword_0 = (Keyword)cGroup.eContents().get(0);
-        private final RuleCall cBEGINTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-        private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
-        private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-        private final RuleCall cTypeParameterTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
-        private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-        private final Keyword cDefaultKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-        private final Assignment cDefaultAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-        private final RuleCall cDefaultParameterListParserRuleCall_4_1_0 = (RuleCall)cDefaultAssignment_4_1.eContents().get(0);
-        private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+        private final RuleCall cBEGINTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+        private final Keyword cArrayKeyword_1 = (Keyword)cGroup.eContents().get(1);
+        private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+        private final RuleCall cTypeParameterTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+        private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+        private final Keyword cDefaultKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+        private final Assignment cDefaultAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+        private final RuleCall cDefaultParameterListParserRuleCall_3_1_0 = (RuleCall)cDefaultAssignment_3_1.eContents().get(0);
+        private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 
         //ParameterArrayType returns ParameterArrayType:
-        //    'Array:'
         //    BEGIN
-        //        'type' type=ParameterType
-        //        ('default' default=ParameterList)?
-        //    END;
+        //    'Array:' type=ParameterType
+        //    ('default:' default=ParameterList)?
+        //  END;
         @Override public ParserRule getRule() { return rule; }
 
-        //'Array:'
-        //BEGIN
-        //    'type' type=ParameterType
-        //    ('default' default=ParameterList)?
+        //  BEGIN
+        //  'Array:' type=ParameterType
+        //  ('default:' default=ParameterList)?
         //END
         public Group getGroup() { return cGroup; }
 
-        //'Array:'
-        public Keyword getArrayKeyword_0() { return cArrayKeyword_0; }
-
         //BEGIN
-        public RuleCall getBEGINTerminalRuleCall_1() { return cBEGINTerminalRuleCall_1; }
+        public RuleCall getBEGINTerminalRuleCall_0() { return cBEGINTerminalRuleCall_0; }
 
-        //'type'
-        public Keyword getTypeKeyword_2() { return cTypeKeyword_2; }
+        //'Array:'
+        public Keyword getArrayKeyword_1() { return cArrayKeyword_1; }
 
         //type=ParameterType
-        public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+        public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
         //ParameterType
-        public RuleCall getTypeParameterTypeParserRuleCall_3_0() { return cTypeParameterTypeParserRuleCall_3_0; }
+        public RuleCall getTypeParameterTypeParserRuleCall_2_0() { return cTypeParameterTypeParserRuleCall_2_0; }
 
-        //('default' default=ParameterList)?
-        public Group getGroup_4() { return cGroup_4; }
+        //('default:' default=ParameterList)?
+        public Group getGroup_3() { return cGroup_3; }
 
-        //'default'
-        public Keyword getDefaultKeyword_4_0() { return cDefaultKeyword_4_0; }
+        //'default:'
+        public Keyword getDefaultKeyword_3_0() { return cDefaultKeyword_3_0; }
 
         //default=ParameterList
-        public Assignment getDefaultAssignment_4_1() { return cDefaultAssignment_4_1; }
+        public Assignment getDefaultAssignment_3_1() { return cDefaultAssignment_3_1; }
 
         //ParameterList
-        public RuleCall getDefaultParameterListParserRuleCall_4_1_0() { return cDefaultParameterListParserRuleCall_4_1_0; }
+        public RuleCall getDefaultParameterListParserRuleCall_3_1_0() { return cDefaultParameterListParserRuleCall_3_1_0; }
 
         //END
-        public RuleCall getENDTerminalRuleCall_5() { return cENDTerminalRuleCall_5; }
+        public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
     }
     public class ParameterListElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterList");
@@ -1138,53 +1132,47 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     public class ParameterStructMemberElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
         private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Keyword cParameterStructMemberKeyword_0 = (Keyword)cGroup.eContents().get(0);
-        private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-        private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-        private final RuleCall cBEGINTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-        private final RuleCall cValueParameterValueParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
-        private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+        private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+        private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+        private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+        private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+        private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+        private final RuleCall cValueParameterValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+        private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 
         //ParameterStructMember returns ParameterStructMember:
-        //    'ParameterStructMember'
         //    name=EString':'
         //    BEGIN
         //        value=ParameterValue
         //    END;
         @Override public ParserRule getRule() { return rule; }
 
-        //'ParameterStructMember'
         //name=EString':'
         //BEGIN
         //    value=ParameterValue
         //END
         public Group getGroup() { return cGroup; }
 
-        //'ParameterStructMember'
-        public Keyword getParameterStructMemberKeyword_0() { return cParameterStructMemberKeyword_0; }
-
         //name=EString
-        public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+        public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
         //EString
-        public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+        public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
 
         //':'
-        public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+        public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
         //BEGIN
-        public RuleCall getBEGINTerminalRuleCall_3() { return cBEGINTerminalRuleCall_3; }
+        public RuleCall getBEGINTerminalRuleCall_2() { return cBEGINTerminalRuleCall_2; }
 
         //value=ParameterValue
-        public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+        public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
         //ParameterValue
-        public RuleCall getValueParameterValueParserRuleCall_4_0() { return cValueParameterValueParserRuleCall_4_0; }
+        public RuleCall getValueParameterValueParserRuleCall_3_0() { return cValueParameterValueParserRuleCall_3_0; }
 
         //END
-        public RuleCall getENDTerminalRuleCall_5() { return cENDTerminalRuleCall_5; }
+        public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
     }
     public class ParameterStructTypeMemberElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterStructTypeMember");
@@ -2601,7 +2589,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterIntegerType returns ParameterIntegerType:
     //    {ParameterIntegerType}
     //    'Integer'
-    //    ('default' default=ParameterInteger)?;
+    //    ('default:' default=ParameterInteger)?;
     public ParameterIntegerTypeElements getParameterIntegerTypeAccess() {
         return pParameterIntegerType;
     }
@@ -2613,7 +2601,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterStringType returns ParameterStringType:
     //    {ParameterStringType}
     //    'String'
-    //    ('default' default=ParameterString)?;
+    //    ('default:' default=ParameterString)?;
     public ParameterStringTypeElements getParameterStringTypeAccess() {
         return pParameterStringType;
     }
@@ -2625,7 +2613,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterDoubleType returns ParameterDoubleType:
     //    {ParameterDoubleType}
     //    'Double'
-    //    ('default' default=ParameterDouble)?;
+    //    ('default:' default=ParameterDouble)?;
     public ParameterDoubleTypeElements getParameterDoubleTypeAccess() {
         return pParameterDoubleType;
     }
@@ -2637,7 +2625,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterDateType returns ParameterDateType:
     //    {ParameterDateType}
     //    'Date'
-    //    ('default' default=ParameterDate)?;
+    //    ('default:' default=ParameterDate)?;
     public ParameterDateTypeElements getParameterDateTypeAccess() {
         return pParameterDateType;
     }
@@ -2649,7 +2637,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterBooleanType returns ParameterBooleanType:
     //    {ParameterBooleanType}
     //    'Boolean'
-    //    ('default' default=ParameterBoolean)?;
+    //    ('default:' default=ParameterBoolean)?;
     public ParameterBooleanTypeElements getParameterBooleanTypeAccess() {
         return pParameterBooleanType;
     }
@@ -2661,7 +2649,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterBase64Type returns ParameterBase64Type:
     //    {ParameterBase64Type}
     //    'Base64'
-    //    ('default' default=ParameterBase64)?;
+    //    ('default:' default=ParameterBase64)?;
     public ParameterBase64TypeElements getParameterBase64TypeAccess() {
         return pParameterBase64Type;
     }
@@ -2673,7 +2661,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //ParameterAnyType returns ParameterAnyType:
     //    {ParameterAnyType}
     //    'Any'
-    //    ('default' default=ParameterAny)?;
+    //    ('default:' default=ParameterAny)?;
     public ParameterAnyTypeElements getParameterAnyTypeAccess() {
         return pParameterAnyType;
     }
@@ -2683,11 +2671,10 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     }
 
     //ParameterArrayType returns ParameterArrayType:
-    //    'Array:'
     //    BEGIN
-    //        'type' type=ParameterType
-    //        ('default' default=ParameterList)?
-    //    END;
+    //    'Array:' type=ParameterType
+    //    ('default:' default=ParameterList)?
+    //  END;
     public ParameterArrayTypeElements getParameterArrayTypeAccess() {
         return pParameterArrayType;
     }
@@ -2800,7 +2787,6 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     }
 
     //ParameterStructMember returns ParameterStructMember:
-    //    'ParameterStructMember'
     //    name=EString':'
     //    BEGIN
     //        value=ParameterValue
@@ -2843,7 +2829,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         return tBOOLEAN;
     }
 
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+    //terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
     public TerminalRule getDOUBLERule() {
         return tDOUBLE;
     }

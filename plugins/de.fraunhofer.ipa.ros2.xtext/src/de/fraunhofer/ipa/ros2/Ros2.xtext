@@ -110,8 +110,9 @@ Parameter returns Parameter:
     {Parameter}
         name=EString':'
         BEGIN
-        'type' type=ParameterType
+        'type:' type=ParameterType
         ('ns:' namespace=Namespace)?
         ('qos:' qos=QualityOfService)?
+        ('default:' value=ParameterValue)?
         END
-    '}';
+    ;
