@@ -274,134 +274,138 @@ ruleQualityOfService returns [EObject current=null]
                     $current);
             }
         )
+        this_BEGIN_1=RULE_BEGIN
+        {
+            newLeafNode(this_BEGIN_1, grammarAccess.getQualityOfServiceAccess().getBEGINTerminalRuleCall_1());
+        }
         (
             (
                 {
-                  getUnorderedGroupHelper().enter(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                  getUnorderedGroupHelper().enter(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                 }
                 (
                     (
             (
-                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 0)}?=>(
+                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 0)}?=>(
                     {
-                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 0);
+                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 0);
                     }
-                                ({true}?=>(otherlv_2=Profile
+                                ({true}?=>(otherlv_3=Profile
                                 {
-                                    newLeafNode(otherlv_2, grammarAccess.getQualityOfServiceAccess().getProfileKeyword_1_0_0());
+                                    newLeafNode(otherlv_3, grammarAccess.getQualityOfServiceAccess().getProfileKeyword_2_0_0());
                                 }
                                 (
                                     (
                                         (
-                                            lv_QoSProfile_3_1=Default_qos
+                                            lv_QoSProfile_4_1=Default_qos
                                             {
-                                                newLeafNode(lv_QoSProfile_3_1, grammarAccess.getQualityOfServiceAccess().getQoSProfileDefault_qosKeyword_1_0_1_0_0());
+                                                newLeafNode(lv_QoSProfile_4_1, grammarAccess.getQualityOfServiceAccess().getQoSProfileDefault_qosKeyword_2_0_1_0_0());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_1, null);
+                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_4_1, null);
                                             }
                                                 |
-                                            lv_QoSProfile_3_2=Services_qos
+                                            lv_QoSProfile_4_2=Services_qos
                                             {
-                                                newLeafNode(lv_QoSProfile_3_2, grammarAccess.getQualityOfServiceAccess().getQoSProfileServices_qosKeyword_1_0_1_0_1());
+                                                newLeafNode(lv_QoSProfile_4_2, grammarAccess.getQualityOfServiceAccess().getQoSProfileServices_qosKeyword_2_0_1_0_1());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_2, null);
+                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_4_2, null);
                                             }
                                                 |
-                                            lv_QoSProfile_3_3=Sensor_qos
+                                            lv_QoSProfile_4_3=Sensor_qos
                                             {
-                                                newLeafNode(lv_QoSProfile_3_3, grammarAccess.getQualityOfServiceAccess().getQoSProfileSensor_qosKeyword_1_0_1_0_2());
+                                                newLeafNode(lv_QoSProfile_4_3, grammarAccess.getQualityOfServiceAccess().getQoSProfileSensor_qosKeyword_2_0_1_0_2());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_3, null);
+                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_4_3, null);
                                             }
                                                 |
-                                            lv_QoSProfile_3_4=Parameter_qos
+                                            lv_QoSProfile_4_4=Parameter_qos
                                             {
-                                                newLeafNode(lv_QoSProfile_3_4, grammarAccess.getQualityOfServiceAccess().getQoSProfileParameter_qosKeyword_1_0_1_0_3());
+                                                newLeafNode(lv_QoSProfile_4_4, grammarAccess.getQualityOfServiceAccess().getQoSProfileParameter_qosKeyword_2_0_1_0_3());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_3_4, null);
+                                                setWithLastConsumed($current, "QoSProfile", lv_QoSProfile_4_4, null);
                                             }
                                         )
                                     )
                                 )
                                 ))
                     {
-                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                     }
                 )
             )|
             (
-                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 1)}?=>(
+                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 1)}?=>(
                     {
-                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 1);
+                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 1);
                     }
-                                ({true}?=>(otherlv_4=History
+                                ({true}?=>(otherlv_5=History
                                 {
-                                    newLeafNode(otherlv_4, grammarAccess.getQualityOfServiceAccess().getHistoryKeyword_1_1_0());
+                                    newLeafNode(otherlv_5, grammarAccess.getQualityOfServiceAccess().getHistoryKeyword_2_1_0());
                                 }
                                 (
                                     (
                                         (
-                                            lv_History_5_1=Keep_last
+                                            lv_History_6_1=Keep_last
                                             {
-                                                newLeafNode(lv_History_5_1, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_lastKeyword_1_1_1_0_0());
+                                                newLeafNode(lv_History_6_1, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_lastKeyword_2_1_1_0_0());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "History", lv_History_5_1, null);
+                                                setWithLastConsumed($current, "History", lv_History_6_1, null);
                                             }
                                                 |
-                                            lv_History_5_2=Keep_all
+                                            lv_History_6_2=Keep_all
                                             {
-                                                newLeafNode(lv_History_5_2, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_allKeyword_1_1_1_0_1());
+                                                newLeafNode(lv_History_6_2, grammarAccess.getQualityOfServiceAccess().getHistoryKeep_allKeyword_2_1_1_0_1());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "History", lv_History_5_2, null);
+                                                setWithLastConsumed($current, "History", lv_History_6_2, null);
                                             }
                                         )
                                     )
                                 )
                                 ))
                     {
-                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                     }
                 )
             )|
             (
-                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 2)}?=>(
+                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 2)}?=>(
                     {
-                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 2);
+                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 2);
                     }
-                                ({true}?=>(otherlv_6=Depth
+                                ({true}?=>(otherlv_7=Depth
                                 {
-                                    newLeafNode(otherlv_6, grammarAccess.getQualityOfServiceAccess().getDepthKeyword_1_2_0());
+                                    newLeafNode(otherlv_7, grammarAccess.getQualityOfServiceAccess().getDepthKeyword_2_2_0());
                                 }
                                 (
                                     (
                                         {
-                                            newCompositeNode(grammarAccess.getQualityOfServiceAccess().getDepthInteger0ParserRuleCall_1_2_1_0());
+                                            newCompositeNode(grammarAccess.getQualityOfServiceAccess().getDepthInteger0ParserRuleCall_2_2_1_0());
                                         }
-                                        lv_Depth_7_0=ruleInteger0
+                                        lv_Depth_8_0=ruleInteger0
                                         {
                                             if ($current==null) {
                                                 $current = createModelElementForParent(grammarAccess.getQualityOfServiceRule());
@@ -409,7 +413,7 @@ ruleQualityOfService returns [EObject current=null]
                                             set(
                                                 $current,
                                                 "Depth",
-                                                lv_Depth_7_0,
+                                                lv_Depth_8_0,
                                                 "de.fraunhofer.ipa.ros.Basics.Integer0");
                                             afterParserOrEnumRuleCall();
                                         }
@@ -417,91 +421,91 @@ ruleQualityOfService returns [EObject current=null]
                                 )
                                 ))
                     {
-                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                     }
                 )
             )|
             (
-                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 3)}?=>(
+                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 3)}?=>(
                     {
-                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 3);
+                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 3);
                     }
-                                ({true}?=>(otherlv_8=Reliability
+                                ({true}?=>(otherlv_9=Reliability
                                 {
-                                    newLeafNode(otherlv_8, grammarAccess.getQualityOfServiceAccess().getReliabilityKeyword_1_3_0());
+                                    newLeafNode(otherlv_9, grammarAccess.getQualityOfServiceAccess().getReliabilityKeyword_2_3_0());
                                 }
                                 (
                                     (
                                         (
-                                            lv_Reliability_9_1=Best_effort
+                                            lv_Reliability_10_1=Best_effort
                                             {
-                                                newLeafNode(lv_Reliability_9_1, grammarAccess.getQualityOfServiceAccess().getReliabilityBest_effortKeyword_1_3_1_0_0());
+                                                newLeafNode(lv_Reliability_10_1, grammarAccess.getQualityOfServiceAccess().getReliabilityBest_effortKeyword_2_3_1_0_0());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "Reliability", lv_Reliability_9_1, null);
+                                                setWithLastConsumed($current, "Reliability", lv_Reliability_10_1, null);
                                             }
                                                 |
-                                            lv_Reliability_9_2=Reliable
+                                            lv_Reliability_10_2=Reliable
                                             {
-                                                newLeafNode(lv_Reliability_9_2, grammarAccess.getQualityOfServiceAccess().getReliabilityReliableKeyword_1_3_1_0_1());
+                                                newLeafNode(lv_Reliability_10_2, grammarAccess.getQualityOfServiceAccess().getReliabilityReliableKeyword_2_3_1_0_1());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "Reliability", lv_Reliability_9_2, null);
+                                                setWithLastConsumed($current, "Reliability", lv_Reliability_10_2, null);
                                             }
                                         )
                                     )
                                 )
                                 ))
                     {
-                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                     }
                 )
             )|
             (
-                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 4)}?=>(
+                {getUnorderedGroupHelper().canSelect(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 4)}?=>(
                     {
-                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1(), 4);
+                        getUnorderedGroupHelper().select(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2(), 4);
                     }
-                                ({true}?=>(otherlv_10=Durability
+                                ({true}?=>(otherlv_11=Durability
                                 {
-                                    newLeafNode(otherlv_10, grammarAccess.getQualityOfServiceAccess().getDurabilityKeyword_1_4_0());
+                                    newLeafNode(otherlv_11, grammarAccess.getQualityOfServiceAccess().getDurabilityKeyword_2_4_0());
                                 }
                                 (
                                     (
                                         (
-                                            lv_Durability_11_1=Transient_local
+                                            lv_Durability_12_1=Transient_local
                                             {
-                                                newLeafNode(lv_Durability_11_1, grammarAccess.getQualityOfServiceAccess().getDurabilityTransient_localKeyword_1_4_1_0_0());
+                                                newLeafNode(lv_Durability_12_1, grammarAccess.getQualityOfServiceAccess().getDurabilityTransient_localKeyword_2_4_1_0_0());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "Durability", lv_Durability_11_1, null);
+                                                setWithLastConsumed($current, "Durability", lv_Durability_12_1, null);
                                             }
                                                 |
-                                            lv_Durability_11_2=Volatile
+                                            lv_Durability_12_2=Volatile
                                             {
-                                                newLeafNode(lv_Durability_11_2, grammarAccess.getQualityOfServiceAccess().getDurabilityVolatileKeyword_1_4_1_0_1());
+                                                newLeafNode(lv_Durability_12_2, grammarAccess.getQualityOfServiceAccess().getDurabilityVolatileKeyword_2_4_1_0_1());
                                             }
                                             {
                                                 if ($current==null) {
                                                     $current = createModelElement(grammarAccess.getQualityOfServiceRule());
                                                 }
-                                                setWithLastConsumed($current, "Durability", lv_Durability_11_2, null);
+                                                setWithLastConsumed($current, "Durability", lv_Durability_12_2, null);
                                             }
                                         )
                                     )
                                 )
                                 ))
                     {
-                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                        getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                     }
                 )
             )
@@ -509,9 +513,13 @@ ruleQualityOfService returns [EObject current=null]
                 )
             )
                 {
-                  getUnorderedGroupHelper().leave(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_1());
+                  getUnorderedGroupHelper().leave(grammarAccess.getQualityOfServiceAccess().getUnorderedGroup_2());
                 }
         )
+        this_END_13=RULE_END
+        {
+            newLeafNode(this_END_13, grammarAccess.getQualityOfServiceAccess().getENDTerminalRuleCall_3());
+        }
     )
 ;
 
@@ -615,16 +623,12 @@ rulePublisher returns [EObject current=null]
             {
                 newLeafNode(otherlv_8, grammarAccess.getPublisherAccess().getQosKeyword_7_0());
             }
-            this_BEGIN_9=RULE_BEGIN
-            {
-                newLeafNode(this_BEGIN_9, grammarAccess.getPublisherAccess().getBEGINTerminalRuleCall_7_1());
-            }
             (
                 (
                     {
-                        newCompositeNode(grammarAccess.getPublisherAccess().getQosQualityOfServiceParserRuleCall_7_2_0());
+                        newCompositeNode(grammarAccess.getPublisherAccess().getQosQualityOfServiceParserRuleCall_7_1_0());
                     }
-                    lv_qos_10_0=ruleQualityOfService
+                    lv_qos_9_0=ruleQualityOfService
                     {
                         if ($current==null) {
                             $current = createModelElementForParent(grammarAccess.getPublisherRule());
@@ -632,20 +636,16 @@ rulePublisher returns [EObject current=null]
                         set(
                             $current,
                             "qos",
-                            lv_qos_10_0,
+                            lv_qos_9_0,
                             "de.fraunhofer.ipa.ros2.Ros2.QualityOfService");
                         afterParserOrEnumRuleCall();
                     }
                 )
             )
-            this_END_11=RULE_END
-            {
-                newLeafNode(this_END_11, grammarAccess.getPublisherAccess().getENDTerminalRuleCall_7_3());
-            }
         )?
-        this_END_12=RULE_END
+        this_END_10=RULE_END
         {
-            newLeafNode(this_END_12, grammarAccess.getPublisherAccess().getENDTerminalRuleCall_8());
+            newLeafNode(this_END_10, grammarAccess.getPublisherAccess().getENDTerminalRuleCall_8());
         }
     )
 ;
@@ -1728,26 +1728,22 @@ ruleNode returns [EObject current=null]
                 }
             )
         )
-        this_BEGIN_2=RULE_BEGIN
-        {
-            newLeafNode(this_BEGIN_2, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2());
-        }
         (
             (
-                otherlv_3=Publishers
+                otherlv_2=Publishers
                 {
-                    newLeafNode(otherlv_3, grammarAccess.getNodeAccess().getPublishersKeyword_3_0_0());
+                    newLeafNode(otherlv_2, grammarAccess.getNodeAccess().getPublishersKeyword_2_0_0());
                 }
-                this_BEGIN_4=RULE_BEGIN
+                this_BEGIN_3=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_4, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_0_1());
+                    newLeafNode(this_BEGIN_3, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_0_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_3_0_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getPublisherPublisherParserRuleCall_2_0_2_0());
                         }
-                        lv_publisher_5_0=rulePublisher
+                        lv_publisher_4_0=rulePublisher
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1755,33 +1751,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "publisher",
-                                lv_publisher_5_0,
+                                lv_publisher_4_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.Publisher");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_6=RULE_END
+                this_END_5=RULE_END
                 {
-                    newLeafNode(this_END_6, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_0_3());
+                    newLeafNode(this_END_5, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_0_3());
                 }
             )
                 |
             (
-                otherlv_7=Subscribers
+                otherlv_6=Subscribers
                 {
-                    newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getSubscribersKeyword_3_1_0());
+                    newLeafNode(otherlv_6, grammarAccess.getNodeAccess().getSubscribersKeyword_2_1_0());
                 }
-                this_BEGIN_8=RULE_BEGIN
+                this_BEGIN_7=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_8, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_1_1());
+                    newLeafNode(this_BEGIN_7, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_1_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_3_1_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getSubscriberSubscriberParserRuleCall_2_1_2_0());
                         }
-                        lv_subscriber_9_0=ruleSubscriber
+                        lv_subscriber_8_0=ruleSubscriber
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1789,33 +1785,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "subscriber",
-                                lv_subscriber_9_0,
+                                lv_subscriber_8_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.Subscriber");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_10=RULE_END
+                this_END_9=RULE_END
                 {
-                    newLeafNode(this_END_10, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_1_3());
+                    newLeafNode(this_END_9, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_1_3());
                 }
             )
                 |
             (
-                otherlv_11=Serviceservers
+                otherlv_10=Serviceservers
                 {
-                    newLeafNode(otherlv_11, grammarAccess.getNodeAccess().getServiceserversKeyword_3_2_0());
+                    newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getServiceserversKeyword_2_2_0());
                 }
-                this_BEGIN_12=RULE_BEGIN
+                this_BEGIN_11=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_12, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_2_1());
+                    newLeafNode(this_BEGIN_11, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_2_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_3_2_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getServiceserverServiceServerParserRuleCall_2_2_2_0());
                         }
-                        lv_serviceserver_13_0=ruleServiceServer
+                        lv_serviceserver_12_0=ruleServiceServer
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1823,33 +1819,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "serviceserver",
-                                lv_serviceserver_13_0,
+                                lv_serviceserver_12_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.ServiceServer");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_14=RULE_END
+                this_END_13=RULE_END
                 {
-                    newLeafNode(this_END_14, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_2_3());
+                    newLeafNode(this_END_13, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_2_3());
                 }
             )
                 |
             (
-                otherlv_15=Serviceclients
+                otherlv_14=Serviceclients
                 {
-                    newLeafNode(otherlv_15, grammarAccess.getNodeAccess().getServiceclientsKeyword_3_3_0());
+                    newLeafNode(otherlv_14, grammarAccess.getNodeAccess().getServiceclientsKeyword_2_3_0());
                 }
-                this_BEGIN_16=RULE_BEGIN
+                this_BEGIN_15=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_16, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_3_1());
+                    newLeafNode(this_BEGIN_15, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_3_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_3_3_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getServiceclientServiceClientParserRuleCall_2_3_2_0());
                         }
-                        lv_serviceclient_17_0=ruleServiceClient
+                        lv_serviceclient_16_0=ruleServiceClient
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1857,33 +1853,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "serviceclient",
-                                lv_serviceclient_17_0,
+                                lv_serviceclient_16_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.ServiceClient");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_18=RULE_END
+                this_END_17=RULE_END
                 {
-                    newLeafNode(this_END_18, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_3_3());
+                    newLeafNode(this_END_17, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_3_3());
                 }
             )
                 |
             (
-                otherlv_19=Actionservers
+                otherlv_18=Actionservers
                 {
-                    newLeafNode(otherlv_19, grammarAccess.getNodeAccess().getActionserversKeyword_3_4_0());
+                    newLeafNode(otherlv_18, grammarAccess.getNodeAccess().getActionserversKeyword_2_4_0());
                 }
-                this_BEGIN_20=RULE_BEGIN
+                this_BEGIN_19=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_20, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_4_1());
+                    newLeafNode(this_BEGIN_19, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_4_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_3_4_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getActionserverActionServerParserRuleCall_2_4_2_0());
                         }
-                        lv_actionserver_21_0=ruleActionServer
+                        lv_actionserver_20_0=ruleActionServer
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1891,33 +1887,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "actionserver",
-                                lv_actionserver_21_0,
+                                lv_actionserver_20_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.ActionServer");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_22=RULE_END
+                this_END_21=RULE_END
                 {
-                    newLeafNode(this_END_22, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_4_3());
+                    newLeafNode(this_END_21, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_4_3());
                 }
             )
                 |
             (
-                otherlv_23=Actionclients
+                otherlv_22=Actionclients
                 {
-                    newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getActionclientsKeyword_3_5_0());
+                    newLeafNode(otherlv_22, grammarAccess.getNodeAccess().getActionclientsKeyword_2_5_0());
                 }
-                this_BEGIN_24=RULE_BEGIN
+                this_BEGIN_23=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_24, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_5_1());
+                    newLeafNode(this_BEGIN_23, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_5_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_3_5_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getActionclientActionClientParserRuleCall_2_5_2_0());
                         }
-                        lv_actionclient_25_0=ruleActionClient
+                        lv_actionclient_24_0=ruleActionClient
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1925,33 +1921,33 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "actionclient",
-                                lv_actionclient_25_0,
+                                lv_actionclient_24_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.ActionClient");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_26=RULE_END
+                this_END_25=RULE_END
                 {
-                    newLeafNode(this_END_26, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_5_3());
+                    newLeafNode(this_END_25, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_5_3());
                 }
             )
                 |
             (
-                otherlv_27=Parameters
+                otherlv_26=Parameters
                 {
-                    newLeafNode(otherlv_27, grammarAccess.getNodeAccess().getParametersKeyword_3_6_0());
+                    newLeafNode(otherlv_26, grammarAccess.getNodeAccess().getParametersKeyword_2_6_0());
                 }
-                this_BEGIN_28=RULE_BEGIN
+                this_BEGIN_27=RULE_BEGIN
                 {
-                    newLeafNode(this_BEGIN_28, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_3_6_1());
+                    newLeafNode(this_BEGIN_27, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_6_1());
                 }
                 (
                     (
                         {
-                            newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_3_6_2_0());
+                            newCompositeNode(grammarAccess.getNodeAccess().getParameterParameterParserRuleCall_2_6_2_0());
                         }
-                        lv_parameter_29_0=ruleParameter
+                        lv_parameter_28_0=ruleParameter
                         {
                             if ($current==null) {
                                 $current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -1959,22 +1955,18 @@ ruleNode returns [EObject current=null]
                             add(
                                 $current,
                                 "parameter",
-                                lv_parameter_29_0,
+                                lv_parameter_28_0,
                                 "de.fraunhofer.ipa.ros2.Ros2.Parameter");
                             afterParserOrEnumRuleCall();
                         }
                     )
                 )*
-                this_END_30=RULE_END
+                this_END_29=RULE_END
                 {
-                    newLeafNode(this_END_30, grammarAccess.getNodeAccess().getENDTerminalRuleCall_3_6_3());
+                    newLeafNode(this_END_29, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_6_3());
                 }
             )
         )*
-        this_END_31=RULE_END
-        {
-            newLeafNode(this_END_31, grammarAccess.getNodeAccess().getENDTerminalRuleCall_4());
-        }
     )
 ;
 

@@ -29,11 +29,13 @@ AmentPackage returns AmentPackage:
 
 QualityOfService returns QualityOfService:
     {QualityOfService}
+        BEGIN
         (('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
         ('history:' History=('keep_last'|'keep_all'))? &
         ('depth:' Depth=Integer0)? &
         ('reliability:' Reliability=('best_effort'|'reliable'))? &
         ('durability:' Durability=('transient_local'|'volatile'))?)
+        END
     ;
 
 ///////////////////
@@ -46,7 +48,7 @@ Publisher returns Publisher:
         BEGIN
             'type:' message=[TopicSpec|EString]
             ('ns:' namespace=Namespace)?
-            ('qos:' BEGIN qos=QualityOfService END)?
+            ('qos:' qos=QualityOfService)?
         END
     ;
 

@@ -183,158 +183,170 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros2.Ros2.QualityOfService");
         private final Group cGroup = (Group)rule.eContents().get(1);
         private final Action cQualityOfServiceAction_0 = (Action)cGroup.eContents().get(0);
-        private final UnorderedGroup cUnorderedGroup_1 = (UnorderedGroup)cGroup.eContents().get(1);
-        private final Group cGroup_1_0 = (Group)cUnorderedGroup_1.eContents().get(0);
-        private final Keyword cProfileKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
-        private final Assignment cQoSProfileAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-        private final Alternatives cQoSProfileAlternatives_1_0_1_0 = (Alternatives)cQoSProfileAssignment_1_0_1.eContents().get(0);
-        private final Keyword cQoSProfileDefault_qosKeyword_1_0_1_0_0 = (Keyword)cQoSProfileAlternatives_1_0_1_0.eContents().get(0);
-        private final Keyword cQoSProfileServices_qosKeyword_1_0_1_0_1 = (Keyword)cQoSProfileAlternatives_1_0_1_0.eContents().get(1);
-        private final Keyword cQoSProfileSensor_qosKeyword_1_0_1_0_2 = (Keyword)cQoSProfileAlternatives_1_0_1_0.eContents().get(2);
-        private final Keyword cQoSProfileParameter_qosKeyword_1_0_1_0_3 = (Keyword)cQoSProfileAlternatives_1_0_1_0.eContents().get(3);
-        private final Group cGroup_1_1 = (Group)cUnorderedGroup_1.eContents().get(1);
-        private final Keyword cHistoryKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-        private final Assignment cHistoryAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-        private final Alternatives cHistoryAlternatives_1_1_1_0 = (Alternatives)cHistoryAssignment_1_1_1.eContents().get(0);
-        private final Keyword cHistoryKeep_lastKeyword_1_1_1_0_0 = (Keyword)cHistoryAlternatives_1_1_1_0.eContents().get(0);
-        private final Keyword cHistoryKeep_allKeyword_1_1_1_0_1 = (Keyword)cHistoryAlternatives_1_1_1_0.eContents().get(1);
-        private final Group cGroup_1_2 = (Group)cUnorderedGroup_1.eContents().get(2);
-        private final Keyword cDepthKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-        private final Assignment cDepthAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-        private final RuleCall cDepthInteger0ParserRuleCall_1_2_1_0 = (RuleCall)cDepthAssignment_1_2_1.eContents().get(0);
-        private final Group cGroup_1_3 = (Group)cUnorderedGroup_1.eContents().get(3);
-        private final Keyword cReliabilityKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-        private final Assignment cReliabilityAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
-        private final Alternatives cReliabilityAlternatives_1_3_1_0 = (Alternatives)cReliabilityAssignment_1_3_1.eContents().get(0);
-        private final Keyword cReliabilityBest_effortKeyword_1_3_1_0_0 = (Keyword)cReliabilityAlternatives_1_3_1_0.eContents().get(0);
-        private final Keyword cReliabilityReliableKeyword_1_3_1_0_1 = (Keyword)cReliabilityAlternatives_1_3_1_0.eContents().get(1);
-        private final Group cGroup_1_4 = (Group)cUnorderedGroup_1.eContents().get(4);
-        private final Keyword cDurabilityKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
-        private final Assignment cDurabilityAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
-        private final Alternatives cDurabilityAlternatives_1_4_1_0 = (Alternatives)cDurabilityAssignment_1_4_1.eContents().get(0);
-        private final Keyword cDurabilityTransient_localKeyword_1_4_1_0_0 = (Keyword)cDurabilityAlternatives_1_4_1_0.eContents().get(0);
-        private final Keyword cDurabilityVolatileKeyword_1_4_1_0_1 = (Keyword)cDurabilityAlternatives_1_4_1_0.eContents().get(1);
+        private final RuleCall cBEGINTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+        private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
+        private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
+        private final Keyword cProfileKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+        private final Assignment cQoSProfileAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+        private final Alternatives cQoSProfileAlternatives_2_0_1_0 = (Alternatives)cQoSProfileAssignment_2_0_1.eContents().get(0);
+        private final Keyword cQoSProfileDefault_qosKeyword_2_0_1_0_0 = (Keyword)cQoSProfileAlternatives_2_0_1_0.eContents().get(0);
+        private final Keyword cQoSProfileServices_qosKeyword_2_0_1_0_1 = (Keyword)cQoSProfileAlternatives_2_0_1_0.eContents().get(1);
+        private final Keyword cQoSProfileSensor_qosKeyword_2_0_1_0_2 = (Keyword)cQoSProfileAlternatives_2_0_1_0.eContents().get(2);
+        private final Keyword cQoSProfileParameter_qosKeyword_2_0_1_0_3 = (Keyword)cQoSProfileAlternatives_2_0_1_0.eContents().get(3);
+        private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
+        private final Keyword cHistoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+        private final Assignment cHistoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+        private final Alternatives cHistoryAlternatives_2_1_1_0 = (Alternatives)cHistoryAssignment_2_1_1.eContents().get(0);
+        private final Keyword cHistoryKeep_lastKeyword_2_1_1_0_0 = (Keyword)cHistoryAlternatives_2_1_1_0.eContents().get(0);
+        private final Keyword cHistoryKeep_allKeyword_2_1_1_0_1 = (Keyword)cHistoryAlternatives_2_1_1_0.eContents().get(1);
+        private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
+        private final Keyword cDepthKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+        private final Assignment cDepthAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+        private final RuleCall cDepthInteger0ParserRuleCall_2_2_1_0 = (RuleCall)cDepthAssignment_2_2_1.eContents().get(0);
+        private final Group cGroup_2_3 = (Group)cUnorderedGroup_2.eContents().get(3);
+        private final Keyword cReliabilityKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
+        private final Assignment cReliabilityAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
+        private final Alternatives cReliabilityAlternatives_2_3_1_0 = (Alternatives)cReliabilityAssignment_2_3_1.eContents().get(0);
+        private final Keyword cReliabilityBest_effortKeyword_2_3_1_0_0 = (Keyword)cReliabilityAlternatives_2_3_1_0.eContents().get(0);
+        private final Keyword cReliabilityReliableKeyword_2_3_1_0_1 = (Keyword)cReliabilityAlternatives_2_3_1_0.eContents().get(1);
+        private final Group cGroup_2_4 = (Group)cUnorderedGroup_2.eContents().get(4);
+        private final Keyword cDurabilityKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+        private final Assignment cDurabilityAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+        private final Alternatives cDurabilityAlternatives_2_4_1_0 = (Alternatives)cDurabilityAssignment_2_4_1.eContents().get(0);
+        private final Keyword cDurabilityTransient_localKeyword_2_4_1_0_0 = (Keyword)cDurabilityAlternatives_2_4_1_0.eContents().get(0);
+        private final Keyword cDurabilityVolatileKeyword_2_4_1_0_1 = (Keyword)cDurabilityAlternatives_2_4_1_0.eContents().get(1);
+        private final RuleCall cENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 
         /////////////////////
         //// Quality of Service
         /////////////////////
         //QualityOfService returns QualityOfService:
         //    {QualityOfService}
+        //        BEGIN
         //        (('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
         //        ('history:' History=('keep_last'|'keep_all'))? &
         //        ('depth:' Depth=Integer0)? &
         //        ('reliability:' Reliability=('best_effort'|'reliable'))? &
         //        ('durability:' Durability=('transient_local'|'volatile'))?)
+        //        END
         //    ;
         @Override public ParserRule getRule() { return rule; }
 
         //{QualityOfService}
+        //    BEGIN
         //    (('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
         //    ('history:' History=('keep_last'|'keep_all'))? &
         //    ('depth:' Depth=Integer0)? &
         //    ('reliability:' Reliability=('best_effort'|'reliable'))? &
         //    ('durability:' Durability=('transient_local'|'volatile'))?)
+        //    END
         public Group getGroup() { return cGroup; }
 
         //{QualityOfService}
         public Action getQualityOfServiceAction_0() { return cQualityOfServiceAction_0; }
+
+        //BEGIN
+        public RuleCall getBEGINTerminalRuleCall_1() { return cBEGINTerminalRuleCall_1; }
 
         //(('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
         //('history:' History=('keep_last'|'keep_all'))? &
         //('depth:' Depth=Integer0)? &
         //('reliability:' Reliability=('best_effort'|'reliable'))? &
         //('durability:' Durability=('transient_local'|'volatile'))?)
-        public UnorderedGroup getUnorderedGroup_1() { return cUnorderedGroup_1; }
+        public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 
         //('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))?
-        public Group getGroup_1_0() { return cGroup_1_0; }
+        public Group getGroup_2_0() { return cGroup_2_0; }
 
         //'profile:'
-        public Keyword getProfileKeyword_1_0_0() { return cProfileKeyword_1_0_0; }
+        public Keyword getProfileKeyword_2_0_0() { return cProfileKeyword_2_0_0; }
 
         //QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos')
-        public Assignment getQoSProfileAssignment_1_0_1() { return cQoSProfileAssignment_1_0_1; }
+        public Assignment getQoSProfileAssignment_2_0_1() { return cQoSProfileAssignment_2_0_1; }
 
         //('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos')
-        public Alternatives getQoSProfileAlternatives_1_0_1_0() { return cQoSProfileAlternatives_1_0_1_0; }
+        public Alternatives getQoSProfileAlternatives_2_0_1_0() { return cQoSProfileAlternatives_2_0_1_0; }
 
         //'default_qos'
-        public Keyword getQoSProfileDefault_qosKeyword_1_0_1_0_0() { return cQoSProfileDefault_qosKeyword_1_0_1_0_0; }
+        public Keyword getQoSProfileDefault_qosKeyword_2_0_1_0_0() { return cQoSProfileDefault_qosKeyword_2_0_1_0_0; }
 
         //'services_qos'
-        public Keyword getQoSProfileServices_qosKeyword_1_0_1_0_1() { return cQoSProfileServices_qosKeyword_1_0_1_0_1; }
+        public Keyword getQoSProfileServices_qosKeyword_2_0_1_0_1() { return cQoSProfileServices_qosKeyword_2_0_1_0_1; }
 
         //'sensor_qos'
-        public Keyword getQoSProfileSensor_qosKeyword_1_0_1_0_2() { return cQoSProfileSensor_qosKeyword_1_0_1_0_2; }
+        public Keyword getQoSProfileSensor_qosKeyword_2_0_1_0_2() { return cQoSProfileSensor_qosKeyword_2_0_1_0_2; }
 
         //'parameter_qos'
-        public Keyword getQoSProfileParameter_qosKeyword_1_0_1_0_3() { return cQoSProfileParameter_qosKeyword_1_0_1_0_3; }
+        public Keyword getQoSProfileParameter_qosKeyword_2_0_1_0_3() { return cQoSProfileParameter_qosKeyword_2_0_1_0_3; }
 
         //('history:' History=('keep_last'|'keep_all'))?
-        public Group getGroup_1_1() { return cGroup_1_1; }
+        public Group getGroup_2_1() { return cGroup_2_1; }
 
         //'history:'
-        public Keyword getHistoryKeyword_1_1_0() { return cHistoryKeyword_1_1_0; }
+        public Keyword getHistoryKeyword_2_1_0() { return cHistoryKeyword_2_1_0; }
 
         //History=('keep_last'|'keep_all')
-        public Assignment getHistoryAssignment_1_1_1() { return cHistoryAssignment_1_1_1; }
+        public Assignment getHistoryAssignment_2_1_1() { return cHistoryAssignment_2_1_1; }
 
         //('keep_last'|'keep_all')
-        public Alternatives getHistoryAlternatives_1_1_1_0() { return cHistoryAlternatives_1_1_1_0; }
+        public Alternatives getHistoryAlternatives_2_1_1_0() { return cHistoryAlternatives_2_1_1_0; }
 
         //'keep_last'
-        public Keyword getHistoryKeep_lastKeyword_1_1_1_0_0() { return cHistoryKeep_lastKeyword_1_1_1_0_0; }
+        public Keyword getHistoryKeep_lastKeyword_2_1_1_0_0() { return cHistoryKeep_lastKeyword_2_1_1_0_0; }
 
         //'keep_all'
-        public Keyword getHistoryKeep_allKeyword_1_1_1_0_1() { return cHistoryKeep_allKeyword_1_1_1_0_1; }
+        public Keyword getHistoryKeep_allKeyword_2_1_1_0_1() { return cHistoryKeep_allKeyword_2_1_1_0_1; }
 
         //('depth:' Depth=Integer0)?
-        public Group getGroup_1_2() { return cGroup_1_2; }
+        public Group getGroup_2_2() { return cGroup_2_2; }
 
         //'depth:'
-        public Keyword getDepthKeyword_1_2_0() { return cDepthKeyword_1_2_0; }
+        public Keyword getDepthKeyword_2_2_0() { return cDepthKeyword_2_2_0; }
 
         //Depth=Integer0
-        public Assignment getDepthAssignment_1_2_1() { return cDepthAssignment_1_2_1; }
+        public Assignment getDepthAssignment_2_2_1() { return cDepthAssignment_2_2_1; }
 
         //Integer0
-        public RuleCall getDepthInteger0ParserRuleCall_1_2_1_0() { return cDepthInteger0ParserRuleCall_1_2_1_0; }
+        public RuleCall getDepthInteger0ParserRuleCall_2_2_1_0() { return cDepthInteger0ParserRuleCall_2_2_1_0; }
 
         //('reliability:' Reliability=('best_effort'|'reliable'))?
-        public Group getGroup_1_3() { return cGroup_1_3; }
+        public Group getGroup_2_3() { return cGroup_2_3; }
 
         //'reliability:'
-        public Keyword getReliabilityKeyword_1_3_0() { return cReliabilityKeyword_1_3_0; }
+        public Keyword getReliabilityKeyword_2_3_0() { return cReliabilityKeyword_2_3_0; }
 
         //Reliability=('best_effort'|'reliable')
-        public Assignment getReliabilityAssignment_1_3_1() { return cReliabilityAssignment_1_3_1; }
+        public Assignment getReliabilityAssignment_2_3_1() { return cReliabilityAssignment_2_3_1; }
 
         //('best_effort'|'reliable')
-        public Alternatives getReliabilityAlternatives_1_3_1_0() { return cReliabilityAlternatives_1_3_1_0; }
+        public Alternatives getReliabilityAlternatives_2_3_1_0() { return cReliabilityAlternatives_2_3_1_0; }
 
         //'best_effort'
-        public Keyword getReliabilityBest_effortKeyword_1_3_1_0_0() { return cReliabilityBest_effortKeyword_1_3_1_0_0; }
+        public Keyword getReliabilityBest_effortKeyword_2_3_1_0_0() { return cReliabilityBest_effortKeyword_2_3_1_0_0; }
 
         //'reliable'
-        public Keyword getReliabilityReliableKeyword_1_3_1_0_1() { return cReliabilityReliableKeyword_1_3_1_0_1; }
+        public Keyword getReliabilityReliableKeyword_2_3_1_0_1() { return cReliabilityReliableKeyword_2_3_1_0_1; }
 
         //('durability:' Durability=('transient_local'|'volatile'))?
-        public Group getGroup_1_4() { return cGroup_1_4; }
+        public Group getGroup_2_4() { return cGroup_2_4; }
 
         //'durability:'
-        public Keyword getDurabilityKeyword_1_4_0() { return cDurabilityKeyword_1_4_0; }
+        public Keyword getDurabilityKeyword_2_4_0() { return cDurabilityKeyword_2_4_0; }
 
         //Durability=('transient_local'|'volatile')
-        public Assignment getDurabilityAssignment_1_4_1() { return cDurabilityAssignment_1_4_1; }
+        public Assignment getDurabilityAssignment_2_4_1() { return cDurabilityAssignment_2_4_1; }
 
         //('transient_local'|'volatile')
-        public Alternatives getDurabilityAlternatives_1_4_1_0() { return cDurabilityAlternatives_1_4_1_0; }
+        public Alternatives getDurabilityAlternatives_2_4_1_0() { return cDurabilityAlternatives_2_4_1_0; }
 
         //'transient_local'
-        public Keyword getDurabilityTransient_localKeyword_1_4_1_0_0() { return cDurabilityTransient_localKeyword_1_4_1_0_0; }
+        public Keyword getDurabilityTransient_localKeyword_2_4_1_0_0() { return cDurabilityTransient_localKeyword_2_4_1_0_0; }
 
         //'volatile'
-        public Keyword getDurabilityVolatileKeyword_1_4_1_0_1() { return cDurabilityVolatileKeyword_1_4_1_0_1; }
+        public Keyword getDurabilityVolatileKeyword_2_4_1_0_1() { return cDurabilityVolatileKeyword_2_4_1_0_1; }
+
+        //END
+        public RuleCall getENDTerminalRuleCall_3() { return cENDTerminalRuleCall_3; }
     }
     public class PublisherElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros2.Ros2.Publisher");
@@ -354,10 +366,8 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final RuleCall cNamespaceNamespaceParserRuleCall_6_1_0 = (RuleCall)cNamespaceAssignment_6_1.eContents().get(0);
         private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
         private final Keyword cQosKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final RuleCall cBEGINTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-        private final Assignment cQosAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-        private final RuleCall cQosQualityOfServiceParserRuleCall_7_2_0 = (RuleCall)cQosAssignment_7_2.eContents().get(0);
-        private final RuleCall cENDTerminalRuleCall_7_3 = (RuleCall)cGroup_7.eContents().get(3);
+        private final Assignment cQosAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+        private final RuleCall cQosQualityOfServiceParserRuleCall_7_1_0 = (RuleCall)cQosAssignment_7_1.eContents().get(0);
         private final RuleCall cENDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
         /////////////////////
@@ -370,7 +380,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //        BEGIN
         //            'type:' message=[TopicSpec|EString]
         //            ('ns:' namespace=Namespace)?
-        //            ('qos:' BEGIN qos=QualityOfService END)?
+        //            ('qos:' qos=QualityOfService)?
         //        END
         //    ;
         @Override public ParserRule getRule() { return rule; }
@@ -380,7 +390,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //    BEGIN
         //        'type:' message=[TopicSpec|EString]
         //        ('ns:' namespace=Namespace)?
-        //        ('qos:' BEGIN qos=QualityOfService END)?
+        //        ('qos:' qos=QualityOfService)?
         //    END
         public Group getGroup() { return cGroup; }
 
@@ -423,23 +433,17 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //Namespace
         public RuleCall getNamespaceNamespaceParserRuleCall_6_1_0() { return cNamespaceNamespaceParserRuleCall_6_1_0; }
 
-        //('qos:' BEGIN qos=QualityOfService END)?
+        //('qos:' qos=QualityOfService)?
         public Group getGroup_7() { return cGroup_7; }
 
         //'qos:'
         public Keyword getQosKeyword_7_0() { return cQosKeyword_7_0; }
 
-        //BEGIN
-        public RuleCall getBEGINTerminalRuleCall_7_1() { return cBEGINTerminalRuleCall_7_1; }
-
         //qos=QualityOfService
-        public Assignment getQosAssignment_7_2() { return cQosAssignment_7_2; }
+        public Assignment getQosAssignment_7_1() { return cQosAssignment_7_1; }
 
         //QualityOfService
-        public RuleCall getQosQualityOfServiceParserRuleCall_7_2_0() { return cQosQualityOfServiceParserRuleCall_7_2_0; }
-
-        //END
-        public RuleCall getENDTerminalRuleCall_7_3() { return cENDTerminalRuleCall_7_3; }
+        public RuleCall getQosQualityOfServiceParserRuleCall_7_1_0() { return cQosQualityOfServiceParserRuleCall_7_1_0; }
 
         //END
         public RuleCall getENDTerminalRuleCall_8() { return cENDTerminalRuleCall_8; }
@@ -1154,11 +1158,13 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     /////////////////////
     //QualityOfService returns QualityOfService:
     //    {QualityOfService}
+    //        BEGIN
     //        (('profile:' QoSProfile=('default_qos'|'services_qos'|'sensor_qos'|'parameter_qos'))? &
     //        ('history:' History=('keep_last'|'keep_all'))? &
     //        ('depth:' Depth=Integer0)? &
     //        ('reliability:' Reliability=('best_effort'|'reliable'))? &
     //        ('durability:' Durability=('transient_local'|'volatile'))?)
+    //        END
     //    ;
     public QualityOfServiceElements getQualityOfServiceAccess() {
         return pQualityOfService;
@@ -1178,7 +1184,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        BEGIN
     //            'type:' message=[TopicSpec|EString]
     //            ('ns:' namespace=Namespace)?
-    //            ('qos:' BEGIN qos=QualityOfService END)?
+    //            ('qos:' qos=QualityOfService)?
     //        END
     //    ;
     public PublisherElements getPublisherAccess() {
@@ -1375,44 +1381,43 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
     //Node returns Node:
     //    'node:' name=RosNames
-    //     BEGIN
-    //        (
-    //        ('publishers:'
-    //            BEGIN
-    //            publisher+=Publisher*
-    //            END
-    //        )|
-    //        ('subscribers:'
-    //            BEGIN
-    //            subscriber+=Subscriber*
-    //            END
-    //        )|
-    //        ('serviceservers:'
-    //            BEGIN
-    //            serviceserver+=ServiceServer*
-    //            END
-    //        )|
-    //        ('serviceclients:'
-    //            BEGIN
-    //            serviceclient+=ServiceClient*
-    //            END
-    //        )|
-    //        ('actionservers:'
-    //            BEGIN
-    //            actionserver+=ActionServer*
-    //            END
-    //        )|
-    //        ('actionclients:'
-    //            BEGIN
-    //            actionclient+=ActionClient*
-    //            END
-    //        )|
-    //        ('parameters:'
-    //            BEGIN
-    //            parameter+=Parameter*
-    //            END
-    //        )
-    //        )*END
+    //    (
+    //    ('publishers:'
+    //        BEGIN
+    //        publisher+=Publisher*
+    //        END
+    //    )|
+    //    ('subscribers:'
+    //        BEGIN
+    //        subscriber+=Subscriber*
+    //        END
+    //    )|
+    //    ('serviceservers:'
+    //        BEGIN
+    //        serviceserver+=ServiceServer*
+    //        END
+    //    )|
+    //    ('serviceclients:'
+    //        BEGIN
+    //        serviceclient+=ServiceClient*
+    //        END
+    //    )|
+    //    ('actionservers:'
+    //        BEGIN
+    //        actionserver+=ActionServer*
+    //        END
+    //    )|
+    //    ('actionclients:'
+    //        BEGIN
+    //        actionclient+=ActionClient*
+    //        END
+    //    )|
+    //    ('parameters:'
+    //        BEGIN
+    //        parameter+=Parameter*
+    //        END
+    //    )
+    //    )*
     //    ;
     public RosGrammarAccess.NodeElements getNodeAccess() {
         return gaRos.getNodeAccess();

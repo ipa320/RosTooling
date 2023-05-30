@@ -33,7 +33,7 @@ public class Ros1Parser extends AbstractContentAssistParser {
         }
 
         private static void init(ImmutableMap.Builder<AbstractElement, String> builder, Ros1GrammarAccess grammarAccess) {
-            builder.put(grammarAccess.getNodeAccess().getAlternatives_3(), "rule__Node__Alternatives_3");
+            builder.put(grammarAccess.getNodeAccess().getAlternatives_2(), "rule__Node__Alternatives_2");
             builder.put(grammarAccess.getSpecBaseAccess().getAlternatives(), "rule__SpecBase__Alternatives");
             builder.put(grammarAccess.getTopicSpecAccess().getNameAlternatives_2_0(), "rule__TopicSpec__NameAlternatives_2_0");
             builder.put(grammarAccess.getDependencyAccess().getAlternatives(), "rule__Dependency__Alternatives");
@@ -59,13 +59,13 @@ public class Ros1Parser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getPackage_ImplAccess().getGroup_6_3(), "rule__Package_Impl__Group_6_3__0");
             builder.put(grammarAccess.getArtifactAccess().getGroup(), "rule__Artifact__Group__0");
             builder.put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_0(), "rule__Node__Group_3_0__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_1(), "rule__Node__Group_3_1__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_2(), "rule__Node__Group_3_2__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_3(), "rule__Node__Group_3_3__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_4(), "rule__Node__Group_3_4__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_5(), "rule__Node__Group_3_5__0");
-            builder.put(grammarAccess.getNodeAccess().getGroup_3_6(), "rule__Node__Group_3_6__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_0(), "rule__Node__Group_2_0__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_1(), "rule__Node__Group_2_1__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_2(), "rule__Node__Group_2_2__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_3(), "rule__Node__Group_2_3__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_4(), "rule__Node__Group_2_4__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_5(), "rule__Node__Group_2_5__0");
+            builder.put(grammarAccess.getNodeAccess().getGroup_2_6(), "rule__Node__Group_2_6__0");
             builder.put(grammarAccess.getTopicSpecAccess().getGroup(), "rule__TopicSpec__Group__0");
             builder.put(grammarAccess.getTopicSpecAccess().getGroup_5(), "rule__TopicSpec__Group_5__0");
             builder.put(grammarAccess.getServiceSpecAccess().getGroup(), "rule__ServiceSpec__Group__0");
@@ -175,13 +175,13 @@ public class Ros1Parser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getArtifactAccess().getNameAssignment_1(), "rule__Artifact__NameAssignment_1");
             builder.put(grammarAccess.getArtifactAccess().getNodeAssignment_4(), "rule__Artifact__NodeAssignment_4");
             builder.put(grammarAccess.getNodeAccess().getNameAssignment_1(), "rule__Node__NameAssignment_1");
-            builder.put(grammarAccess.getNodeAccess().getPublisherAssignment_3_0_2(), "rule__Node__PublisherAssignment_3_0_2");
-            builder.put(grammarAccess.getNodeAccess().getSubscriberAssignment_3_1_2(), "rule__Node__SubscriberAssignment_3_1_2");
-            builder.put(grammarAccess.getNodeAccess().getServiceserverAssignment_3_2_2(), "rule__Node__ServiceserverAssignment_3_2_2");
-            builder.put(grammarAccess.getNodeAccess().getServiceclientAssignment_3_3_2(), "rule__Node__ServiceclientAssignment_3_3_2");
-            builder.put(grammarAccess.getNodeAccess().getActionserverAssignment_3_4_2(), "rule__Node__ActionserverAssignment_3_4_2");
-            builder.put(grammarAccess.getNodeAccess().getActionclientAssignment_3_5_2(), "rule__Node__ActionclientAssignment_3_5_2");
-            builder.put(grammarAccess.getNodeAccess().getParameterAssignment_3_6_2(), "rule__Node__ParameterAssignment_3_6_2");
+            builder.put(grammarAccess.getNodeAccess().getPublisherAssignment_2_0_2(), "rule__Node__PublisherAssignment_2_0_2");
+            builder.put(grammarAccess.getNodeAccess().getSubscriberAssignment_2_1_2(), "rule__Node__SubscriberAssignment_2_1_2");
+            builder.put(grammarAccess.getNodeAccess().getServiceserverAssignment_2_2_2(), "rule__Node__ServiceserverAssignment_2_2_2");
+            builder.put(grammarAccess.getNodeAccess().getServiceclientAssignment_2_3_2(), "rule__Node__ServiceclientAssignment_2_3_2");
+            builder.put(grammarAccess.getNodeAccess().getActionserverAssignment_2_4_2(), "rule__Node__ActionserverAssignment_2_4_2");
+            builder.put(grammarAccess.getNodeAccess().getActionclientAssignment_2_5_2(), "rule__Node__ActionclientAssignment_2_5_2");
+            builder.put(grammarAccess.getNodeAccess().getParameterAssignment_2_6_2(), "rule__Node__ParameterAssignment_2_6_2");
             builder.put(grammarAccess.getTopicSpecAccess().getNameAssignment_2(), "rule__TopicSpec__NameAssignment_2");
             builder.put(grammarAccess.getTopicSpecAccess().getMessageAssignment_5_1(), "rule__TopicSpec__MessageAssignment_5_1");
             builder.put(grammarAccess.getServiceSpecAccess().getNameAssignment_2(), "rule__ServiceSpec__NameAssignment_2");
