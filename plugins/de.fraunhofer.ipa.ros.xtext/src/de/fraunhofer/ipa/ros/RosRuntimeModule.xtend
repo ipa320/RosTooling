@@ -5,8 +5,10 @@ package de.fraunhofer.ipa.ros
 
 import com.google.inject.Binder
 import de.fraunhofer.ipa.ros.generator.CICustomOutputProvider
-import org.eclipse.xtext.conversion.IValueConverterService
 import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.scoping.IScopeProvider
+import de.fraunhofer.ipa.ros.scoping.RosSP
+import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -16,6 +18,14 @@ class RosRuntimeModule extends AbstractRosRuntimeModule {
         override void configure(Binder binder) {
         super.configure(binder)
         binder.bind(IOutputConfigurationProvider).to(CICustomOutputProvider).asEagerSingleton()
+    }
+
+   override Class<? extends IScopeProvider> bindIScopeProvider() {
+        return RosSP
+    }
+
+    override Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+        return RosQNP
     }
 
 }
