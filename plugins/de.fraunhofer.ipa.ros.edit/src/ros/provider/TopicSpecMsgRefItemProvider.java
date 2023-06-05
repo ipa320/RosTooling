@@ -13,25 +13,23 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import primitives.provider.AbstractTypeItemProvider;
-
 import ros.RosPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.TopicSpecRef} object.
+ * This is the item provider adapter for a {@link ros.TopicSpecMsgRef} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TopicSpecRefItemProvider extends AbstractTypeItemProvider {
+public class TopicSpecMsgRefItemProvider extends AbstractTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopicSpecRefItemProvider(AdapterFactory adapterFactory) {
+	public TopicSpecMsgRefItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,25 +44,25 @@ public class TopicSpecRefItemProvider extends AbstractTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTopicSpecPropertyDescriptor(object);
+			addReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Spec feature.
+	 * This adds a property descriptor for the Reference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTopicSpecPropertyDescriptor(Object object) {
+	protected void addReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TopicSpecRef_TopicSpec_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TopicSpecRef_TopicSpec_feature", "_UI_TopicSpecRef_type"),
-				 RosPackage.Literals.TOPIC_SPEC_REF__TOPIC_SPEC,
+				 getString("_UI_TopicSpecMsgRef_Reference_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TopicSpecMsgRef_Reference_feature", "_UI_TopicSpecMsgRef_type"),
+				 RosPackage.Literals.TOPIC_SPEC_MSG_REF__REFERENCE,
 				 true,
 				 false,
 				 true,
@@ -74,14 +72,14 @@ public class TopicSpecRefItemProvider extends AbstractTypeItemProvider {
 	}
 
 	/**
-	 * This returns TopicSpecRef.gif.
+	 * This returns TopicSpecMsgRef.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TopicSpecRef"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TopicSpecMsgRef"));
 	}
 
 	/**
@@ -92,7 +90,7 @@ public class TopicSpecRefItemProvider extends AbstractTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_TopicSpecRef_type");
+		return getString("_UI_TopicSpecMsgRef_type");
 	}
 
 

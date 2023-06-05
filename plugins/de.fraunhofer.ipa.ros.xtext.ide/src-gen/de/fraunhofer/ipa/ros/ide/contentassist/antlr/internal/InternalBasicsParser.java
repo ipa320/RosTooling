@@ -4856,20 +4856,20 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleHeader"
 
 
-    // $ANTLR start "entryRuleTopicSpecRef"
-    // InternalBasicsParser.g:1643:1: entryRuleTopicSpecRef : ruleTopicSpecRef EOF ;
-    public final void entryRuleTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "entryRuleSpecBaseRef"
+    // InternalBasicsParser.g:1643:1: entryRuleSpecBaseRef : ruleSpecBaseRef EOF ;
+    public final void entryRuleSpecBaseRef() throws RecognitionException {
         try {
-            // InternalBasicsParser.g:1644:1: ( ruleTopicSpecRef EOF )
-            // InternalBasicsParser.g:1645:1: ruleTopicSpecRef EOF
+            // InternalBasicsParser.g:1644:1: ( ruleSpecBaseRef EOF )
+            // InternalBasicsParser.g:1645:1: ruleSpecBaseRef EOF
             {
-             before(grammarAccess.getTopicSpecRefRule()); 
+             before(grammarAccess.getSpecBaseRefRule()); 
             pushFollow(FOLLOW_1);
-            ruleTopicSpecRef();
+            ruleSpecBaseRef();
 
             state._fsp--;
 
-             after(grammarAccess.getTopicSpecRefRule()); 
+             after(grammarAccess.getSpecBaseRefRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -4883,35 +4883,35 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleTopicSpecRef"
+    // $ANTLR end "entryRuleSpecBaseRef"
 
 
-    // $ANTLR start "ruleTopicSpecRef"
-    // InternalBasicsParser.g:1652:1: ruleTopicSpecRef : ( ( rule__TopicSpecRef__TopicSpecAssignment ) ) ;
-    public final void ruleTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "ruleSpecBaseRef"
+    // InternalBasicsParser.g:1652:1: ruleSpecBaseRef : ( ( rule__SpecBaseRef__ReferenceAssignment ) ) ;
+    public final void ruleSpecBaseRef() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:1656:2: ( ( ( rule__TopicSpecRef__TopicSpecAssignment ) ) )
-            // InternalBasicsParser.g:1657:2: ( ( rule__TopicSpecRef__TopicSpecAssignment ) )
+            // InternalBasicsParser.g:1656:2: ( ( ( rule__SpecBaseRef__ReferenceAssignment ) ) )
+            // InternalBasicsParser.g:1657:2: ( ( rule__SpecBaseRef__ReferenceAssignment ) )
             {
-            // InternalBasicsParser.g:1657:2: ( ( rule__TopicSpecRef__TopicSpecAssignment ) )
-            // InternalBasicsParser.g:1658:3: ( rule__TopicSpecRef__TopicSpecAssignment )
+            // InternalBasicsParser.g:1657:2: ( ( rule__SpecBaseRef__ReferenceAssignment ) )
+            // InternalBasicsParser.g:1658:3: ( rule__SpecBaseRef__ReferenceAssignment )
             {
-             before(grammarAccess.getTopicSpecRefAccess().getTopicSpecAssignment()); 
-            // InternalBasicsParser.g:1659:3: ( rule__TopicSpecRef__TopicSpecAssignment )
-            // InternalBasicsParser.g:1659:4: rule__TopicSpecRef__TopicSpecAssignment
+             before(grammarAccess.getSpecBaseRefAccess().getReferenceAssignment()); 
+            // InternalBasicsParser.g:1659:3: ( rule__SpecBaseRef__ReferenceAssignment )
+            // InternalBasicsParser.g:1659:4: rule__SpecBaseRef__ReferenceAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__TopicSpecRef__TopicSpecAssignment();
+            rule__SpecBaseRef__ReferenceAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTopicSpecRefAccess().getTopicSpecAssignment()); 
+             after(grammarAccess.getSpecBaseRefAccess().getReferenceAssignment()); 
 
             }
 
@@ -4930,23 +4930,23 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleTopicSpecRef"
+    // $ANTLR end "ruleSpecBaseRef"
 
 
-    // $ANTLR start "entryRuleArrayTopicSpecRef"
-    // InternalBasicsParser.g:1668:1: entryRuleArrayTopicSpecRef : ruleArrayTopicSpecRef EOF ;
-    public final void entryRuleArrayTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "entryRuleArraySpecRef"
+    // InternalBasicsParser.g:1668:1: entryRuleArraySpecRef : ruleArraySpecRef EOF ;
+    public final void entryRuleArraySpecRef() throws RecognitionException {
         try {
-            // InternalBasicsParser.g:1669:1: ( ruleArrayTopicSpecRef EOF )
-            // InternalBasicsParser.g:1670:1: ruleArrayTopicSpecRef EOF
+            // InternalBasicsParser.g:1669:1: ( ruleArraySpecRef EOF )
+            // InternalBasicsParser.g:1670:1: ruleArraySpecRef EOF
             {
-             before(grammarAccess.getArrayTopicSpecRefRule()); 
+             before(grammarAccess.getArraySpecRefRule()); 
             pushFollow(FOLLOW_1);
-            ruleArrayTopicSpecRef();
+            ruleArraySpecRef();
 
             state._fsp--;
 
-             after(grammarAccess.getArrayTopicSpecRefRule()); 
+             after(grammarAccess.getArraySpecRefRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -4960,35 +4960,35 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleArrayTopicSpecRef"
+    // $ANTLR end "entryRuleArraySpecRef"
 
 
-    // $ANTLR start "ruleArrayTopicSpecRef"
-    // InternalBasicsParser.g:1677:1: ruleArrayTopicSpecRef : ( ( rule__ArrayTopicSpecRef__Group__0 ) ) ;
-    public final void ruleArrayTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "ruleArraySpecRef"
+    // InternalBasicsParser.g:1677:1: ruleArraySpecRef : ( ( rule__ArraySpecRef__Group__0 ) ) ;
+    public final void ruleArraySpecRef() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:1681:2: ( ( ( rule__ArrayTopicSpecRef__Group__0 ) ) )
-            // InternalBasicsParser.g:1682:2: ( ( rule__ArrayTopicSpecRef__Group__0 ) )
+            // InternalBasicsParser.g:1681:2: ( ( ( rule__ArraySpecRef__Group__0 ) ) )
+            // InternalBasicsParser.g:1682:2: ( ( rule__ArraySpecRef__Group__0 ) )
             {
-            // InternalBasicsParser.g:1682:2: ( ( rule__ArrayTopicSpecRef__Group__0 ) )
-            // InternalBasicsParser.g:1683:3: ( rule__ArrayTopicSpecRef__Group__0 )
+            // InternalBasicsParser.g:1682:2: ( ( rule__ArraySpecRef__Group__0 ) )
+            // InternalBasicsParser.g:1683:3: ( rule__ArraySpecRef__Group__0 )
             {
-             before(grammarAccess.getArrayTopicSpecRefAccess().getGroup()); 
-            // InternalBasicsParser.g:1684:3: ( rule__ArrayTopicSpecRef__Group__0 )
-            // InternalBasicsParser.g:1684:4: rule__ArrayTopicSpecRef__Group__0
+             before(grammarAccess.getArraySpecRefAccess().getGroup()); 
+            // InternalBasicsParser.g:1684:3: ( rule__ArraySpecRef__Group__0 )
+            // InternalBasicsParser.g:1684:4: rule__ArraySpecRef__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__ArrayTopicSpecRef__Group__0();
+            rule__ArraySpecRef__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getArrayTopicSpecRefAccess().getGroup()); 
+             after(grammarAccess.getArraySpecRefAccess().getGroup()); 
 
             }
 
@@ -5007,7 +5007,7 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleArrayTopicSpecRef"
+    // $ANTLR end "ruleArraySpecRef"
 
 
     // $ANTLR start "entryRuleKEYWORD"
@@ -5660,13 +5660,13 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AbstractType__Alternatives"
-    // InternalBasicsParser.g:1877:1: rule__AbstractType__Alternatives : ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleTopicSpecRef ) | ( ruleArrayTopicSpecRef ) );
+    // InternalBasicsParser.g:1877:1: rule__AbstractType__Alternatives : ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleSpecBaseRef ) | ( ruleArraySpecRef ) );
     public final void rule__AbstractType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:1881:1: ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleTopicSpecRef ) | ( ruleArrayTopicSpecRef ) )
+            // InternalBasicsParser.g:1881:1: ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleSpecBaseRef ) | ( ruleArraySpecRef ) )
             int alt4=31;
             alt4 = dfa4.predict(input);
             switch (alt4) {
@@ -6222,18 +6222,18 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 30 :
-                    // InternalBasicsParser.g:2056:2: ( ruleTopicSpecRef )
+                    // InternalBasicsParser.g:2056:2: ( ruleSpecBaseRef )
                     {
-                    // InternalBasicsParser.g:2056:2: ( ruleTopicSpecRef )
-                    // InternalBasicsParser.g:2057:3: ruleTopicSpecRef
+                    // InternalBasicsParser.g:2056:2: ( ruleSpecBaseRef )
+                    // InternalBasicsParser.g:2057:3: ruleSpecBaseRef
                     {
-                     before(grammarAccess.getAbstractTypeAccess().getTopicSpecRefParserRuleCall_29()); 
+                     before(grammarAccess.getAbstractTypeAccess().getSpecBaseRefParserRuleCall_29()); 
                     pushFollow(FOLLOW_2);
-                    ruleTopicSpecRef();
+                    ruleSpecBaseRef();
 
                     state._fsp--;
 
-                     after(grammarAccess.getAbstractTypeAccess().getTopicSpecRefParserRuleCall_29()); 
+                     after(grammarAccess.getAbstractTypeAccess().getSpecBaseRefParserRuleCall_29()); 
 
                     }
 
@@ -6241,18 +6241,18 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 31 :
-                    // InternalBasicsParser.g:2062:2: ( ruleArrayTopicSpecRef )
+                    // InternalBasicsParser.g:2062:2: ( ruleArraySpecRef )
                     {
-                    // InternalBasicsParser.g:2062:2: ( ruleArrayTopicSpecRef )
-                    // InternalBasicsParser.g:2063:3: ruleArrayTopicSpecRef
+                    // InternalBasicsParser.g:2062:2: ( ruleArraySpecRef )
+                    // InternalBasicsParser.g:2063:3: ruleArraySpecRef
                     {
-                     before(grammarAccess.getAbstractTypeAccess().getArrayTopicSpecRefParserRuleCall_30()); 
+                     before(grammarAccess.getAbstractTypeAccess().getArraySpecRefParserRuleCall_30()); 
                     pushFollow(FOLLOW_2);
-                    ruleArrayTopicSpecRef();
+                    ruleArraySpecRef();
 
                     state._fsp--;
 
-                     after(grammarAccess.getAbstractTypeAccess().getArrayTopicSpecRefParserRuleCall_30()); 
+                     after(grammarAccess.getAbstractTypeAccess().getArraySpecRefParserRuleCall_30()); 
 
                     }
 
@@ -19144,23 +19144,23 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Header__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ArrayTopicSpecRef__Group__0"
-    // InternalBasicsParser.g:6542:1: rule__ArrayTopicSpecRef__Group__0 : rule__ArrayTopicSpecRef__Group__0__Impl rule__ArrayTopicSpecRef__Group__1 ;
-    public final void rule__ArrayTopicSpecRef__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ArraySpecRef__Group__0"
+    // InternalBasicsParser.g:6542:1: rule__ArraySpecRef__Group__0 : rule__ArraySpecRef__Group__0__Impl rule__ArraySpecRef__Group__1 ;
+    public final void rule__ArraySpecRef__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:6546:1: ( rule__ArrayTopicSpecRef__Group__0__Impl rule__ArrayTopicSpecRef__Group__1 )
-            // InternalBasicsParser.g:6547:2: rule__ArrayTopicSpecRef__Group__0__Impl rule__ArrayTopicSpecRef__Group__1
+            // InternalBasicsParser.g:6546:1: ( rule__ArraySpecRef__Group__0__Impl rule__ArraySpecRef__Group__1 )
+            // InternalBasicsParser.g:6547:2: rule__ArraySpecRef__Group__0__Impl rule__ArraySpecRef__Group__1
             {
             pushFollow(FOLLOW_62);
-            rule__ArrayTopicSpecRef__Group__0__Impl();
+            rule__ArraySpecRef__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ArrayTopicSpecRef__Group__1();
+            rule__ArraySpecRef__Group__1();
 
             state._fsp--;
 
@@ -19179,35 +19179,35 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ArrayTopicSpecRef__Group__0"
+    // $ANTLR end "rule__ArraySpecRef__Group__0"
 
 
-    // $ANTLR start "rule__ArrayTopicSpecRef__Group__0__Impl"
-    // InternalBasicsParser.g:6554:1: rule__ArrayTopicSpecRef__Group__0__Impl : ( ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 ) ) ;
-    public final void rule__ArrayTopicSpecRef__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ArraySpecRef__Group__0__Impl"
+    // InternalBasicsParser.g:6554:1: rule__ArraySpecRef__Group__0__Impl : ( ( rule__ArraySpecRef__ReferenceAssignment_0 ) ) ;
+    public final void rule__ArraySpecRef__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:6558:1: ( ( ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 ) ) )
-            // InternalBasicsParser.g:6559:1: ( ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 ) )
+            // InternalBasicsParser.g:6558:1: ( ( ( rule__ArraySpecRef__ReferenceAssignment_0 ) ) )
+            // InternalBasicsParser.g:6559:1: ( ( rule__ArraySpecRef__ReferenceAssignment_0 ) )
             {
-            // InternalBasicsParser.g:6559:1: ( ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 ) )
-            // InternalBasicsParser.g:6560:2: ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 )
+            // InternalBasicsParser.g:6559:1: ( ( rule__ArraySpecRef__ReferenceAssignment_0 ) )
+            // InternalBasicsParser.g:6560:2: ( rule__ArraySpecRef__ReferenceAssignment_0 )
             {
-             before(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecAssignment_0()); 
-            // InternalBasicsParser.g:6561:2: ( rule__ArrayTopicSpecRef__TopicSpecAssignment_0 )
-            // InternalBasicsParser.g:6561:3: rule__ArrayTopicSpecRef__TopicSpecAssignment_0
+             before(grammarAccess.getArraySpecRefAccess().getReferenceAssignment_0()); 
+            // InternalBasicsParser.g:6561:2: ( rule__ArraySpecRef__ReferenceAssignment_0 )
+            // InternalBasicsParser.g:6561:3: rule__ArraySpecRef__ReferenceAssignment_0
             {
             pushFollow(FOLLOW_2);
-            rule__ArrayTopicSpecRef__TopicSpecAssignment_0();
+            rule__ArraySpecRef__ReferenceAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecAssignment_0()); 
+             after(grammarAccess.getArraySpecRefAccess().getReferenceAssignment_0()); 
 
             }
 
@@ -19226,21 +19226,21 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ArrayTopicSpecRef__Group__0__Impl"
+    // $ANTLR end "rule__ArraySpecRef__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ArrayTopicSpecRef__Group__1"
-    // InternalBasicsParser.g:6569:1: rule__ArrayTopicSpecRef__Group__1 : rule__ArrayTopicSpecRef__Group__1__Impl ;
-    public final void rule__ArrayTopicSpecRef__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ArraySpecRef__Group__1"
+    // InternalBasicsParser.g:6569:1: rule__ArraySpecRef__Group__1 : rule__ArraySpecRef__Group__1__Impl ;
+    public final void rule__ArraySpecRef__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBasicsParser.g:6573:1: ( rule__ArrayTopicSpecRef__Group__1__Impl )
-            // InternalBasicsParser.g:6574:2: rule__ArrayTopicSpecRef__Group__1__Impl
+            // InternalBasicsParser.g:6573:1: ( rule__ArraySpecRef__Group__1__Impl )
+            // InternalBasicsParser.g:6574:2: rule__ArraySpecRef__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ArrayTopicSpecRef__Group__1__Impl();
+            rule__ArraySpecRef__Group__1__Impl();
 
             state._fsp--;
 
@@ -19259,12 +19259,12 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ArrayTopicSpecRef__Group__1"
+    // $ANTLR end "rule__ArraySpecRef__Group__1"
 
 
-    // $ANTLR start "rule__ArrayTopicSpecRef__Group__1__Impl"
-    // InternalBasicsParser.g:6580:1: rule__ArrayTopicSpecRef__Group__1__Impl : ( LeftSquareBracketRightSquareBracket ) ;
-    public final void rule__ArrayTopicSpecRef__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ArraySpecRef__Group__1__Impl"
+    // InternalBasicsParser.g:6580:1: rule__ArraySpecRef__Group__1__Impl : ( LeftSquareBracketRightSquareBracket ) ;
+    public final void rule__ArraySpecRef__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -19275,9 +19275,9 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
             // InternalBasicsParser.g:6585:1: ( LeftSquareBracketRightSquareBracket )
             // InternalBasicsParser.g:6586:2: LeftSquareBracketRightSquareBracket
             {
-             before(grammarAccess.getArrayTopicSpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1()); 
+             before(grammarAccess.getArraySpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1()); 
             match(input,LeftSquareBracketRightSquareBracket,FOLLOW_2); 
-             after(grammarAccess.getArrayTopicSpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1()); 
+             after(grammarAccess.getArraySpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1()); 
 
             }
 
@@ -19296,7 +19296,7 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ArrayTopicSpecRef__Group__1__Impl"
+    // $ANTLR end "rule__ArraySpecRef__Group__1__Impl"
 
 
     // $ANTLR start "rule__GlobalNamespace__PartsAssignment_2_1"
@@ -20611,9 +20611,9 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ParameterStructTypeMember__TypeAssignment_1"
 
 
-    // $ANTLR start "rule__TopicSpecRef__TopicSpecAssignment"
-    // InternalBasicsParser.g:7076:1: rule__TopicSpecRef__TopicSpecAssignment : ( ( ruleEString ) ) ;
-    public final void rule__TopicSpecRef__TopicSpecAssignment() throws RecognitionException {
+    // $ANTLR start "rule__SpecBaseRef__ReferenceAssignment"
+    // InternalBasicsParser.g:7076:1: rule__SpecBaseRef__ReferenceAssignment : ( ( ruleEString ) ) ;
+    public final void rule__SpecBaseRef__ReferenceAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -20624,21 +20624,21 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
             // InternalBasicsParser.g:7081:2: ( ( ruleEString ) )
             // InternalBasicsParser.g:7082:3: ( ruleEString )
             {
-             before(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0()); 
+             before(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecCrossReference_0()); 
             // InternalBasicsParser.g:7083:3: ( ruleEString )
             // InternalBasicsParser.g:7084:4: ruleEString
             {
-             before(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_1()); 
+             before(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecEStringParserRuleCall_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_1()); 
+             after(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecEStringParserRuleCall_0_1()); 
 
             }
 
-             after(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0()); 
+             after(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecCrossReference_0()); 
 
             }
 
@@ -20657,12 +20657,12 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TopicSpecRef__TopicSpecAssignment"
+    // $ANTLR end "rule__SpecBaseRef__ReferenceAssignment"
 
 
-    // $ANTLR start "rule__ArrayTopicSpecRef__TopicSpecAssignment_0"
-    // InternalBasicsParser.g:7095:1: rule__ArrayTopicSpecRef__TopicSpecAssignment_0 : ( ( ruleEString ) ) ;
-    public final void rule__ArrayTopicSpecRef__TopicSpecAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__ArraySpecRef__ReferenceAssignment_0"
+    // InternalBasicsParser.g:7095:1: rule__ArraySpecRef__ReferenceAssignment_0 : ( ( ruleEString ) ) ;
+    public final void rule__ArraySpecRef__ReferenceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -20673,21 +20673,21 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
             // InternalBasicsParser.g:7100:2: ( ( ruleEString ) )
             // InternalBasicsParser.g:7101:3: ( ruleEString )
             {
-             before(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0_0()); 
+             before(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecCrossReference_0_0()); 
             // InternalBasicsParser.g:7102:3: ( ruleEString )
             // InternalBasicsParser.g:7103:4: ruleEString
             {
-             before(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1()); 
+             before(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecEStringParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecEStringParserRuleCall_0_0_1()); 
+             after(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecEStringParserRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0_0()); 
+             after(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecCrossReference_0_0()); 
 
             }
 
@@ -20706,7 +20706,7 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ArrayTopicSpecRef__TopicSpecAssignment_0"
+    // $ANTLR end "rule__ArraySpecRef__ReferenceAssignment_0"
 
     // Delegated rules
 
@@ -20823,7 +20823,7 @@ public class InternalBasicsParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_14;
         }
         public String getDescription() {
-            return "1877:1: rule__AbstractType__Alternatives : ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleTopicSpecRef ) | ( ruleArrayTopicSpecRef ) );";
+            return "1877:1: rule__AbstractType__Alternatives : ( ( rulebool ) | ( ruleint8 ) | ( ruleuint8 ) | ( ruleint16 ) | ( ruleuint16 ) | ( ruleint32 ) | ( ruleuint32 ) | ( ruleint64 ) | ( ruleuint64 ) | ( rulefloat32 ) | ( rulefloat64 ) | ( rulestring0 ) | ( rulebyte ) | ( ruletime ) | ( ruleduration ) | ( ruleHeader ) | ( ruleboolArray ) | ( ruleint8Array ) | ( ruleuint8Array ) | ( ruleint16Array ) | ( ruleuint16Array ) | ( ruleint32Array ) | ( ruleuint32Array ) | ( ruleint64Array ) | ( ruleuint64Array ) | ( rulefloat32Array ) | ( rulefloat64Array ) | ( rulestring0Array ) | ( rulebyteArray ) | ( ruleSpecBaseRef ) | ( ruleArraySpecRef ) );";
         }
     }
  

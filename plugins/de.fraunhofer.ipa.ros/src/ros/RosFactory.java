@@ -427,24 +427,24 @@ public interface RosFactory extends EFactory {
     QualityOfService createQualityOfService();
 
     /**
-     * Returns a new object of class '<em>Topic Spec Ref</em>'.
+     * Returns a new object of class '<em>Topic Spec Msg Ref</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Topic Spec Ref</em>'.
+     * @return a new object of class '<em>Topic Spec Msg Ref</em>'.
      * @generated
      */
-    TopicSpecRef createTopicSpecRef();
+    TopicSpecMsgRef createTopicSpecMsgRef();
 
-    /**
-     * Returns a new object of class '<em>Array Topic Spec Ref</em>'.
+                /**
+     * Returns a new object of class '<em>Array Topic Spec Msg Ref</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Array Topic Spec Ref</em>'.
+     * @return a new object of class '<em>Array Topic Spec Msg Ref</em>'.
      * @generated
      */
-    ArrayTopicSpecRef createArrayTopicSpecRef();
+    ArrayTopicSpecMsgRef createArrayTopicSpecMsgRef();
 
-    /**
+                                                                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

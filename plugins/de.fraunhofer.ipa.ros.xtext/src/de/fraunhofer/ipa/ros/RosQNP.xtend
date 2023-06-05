@@ -7,7 +7,7 @@ import ros.ServiceSpec
 import ros.ActionSpec
 
 class RosQNP extends DefaultDeclarativeQualifiedNameProvider{
-    	 	 
+
   override getFullyQualifiedName(EObject obj) {
     if (obj instanceof TopicSpec) {
       val topic_spec_name = obj.name

@@ -1336,18 +1336,18 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cFloat64ArrayParserRuleCall_26 = (RuleCall)cAlternatives.eContents().get(26);
 		private final RuleCall cString0ArrayParserRuleCall_27 = (RuleCall)cAlternatives.eContents().get(27);
 		private final RuleCall cByteArrayParserRuleCall_28 = (RuleCall)cAlternatives.eContents().get(28);
-		private final RuleCall cTopicSpecRefParserRuleCall_29 = (RuleCall)cAlternatives.eContents().get(29);
-		private final RuleCall cArrayTopicSpecRefParserRuleCall_30 = (RuleCall)cAlternatives.eContents().get(30);
+		private final RuleCall cSpecBaseRefParserRuleCall_29 = (RuleCall)cAlternatives.eContents().get(29);
+		private final RuleCall cArraySpecRefParserRuleCall_30 = (RuleCall)cAlternatives.eContents().get(30);
 		
 		//AbstractType returns primitives::AbstractType:
 		//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 		//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-		//    TopicSpecRef | ArrayTopicSpecRef ;
+		//    SpecBaseRef | ArraySpecRef ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 		//boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-		//TopicSpecRef | ArrayTopicSpecRef
+		//SpecBaseRef | ArraySpecRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//bool
@@ -1437,11 +1437,11 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//byteArray
 		public RuleCall getByteArrayParserRuleCall_28() { return cByteArrayParserRuleCall_28; }
 		
-		//TopicSpecRef
-		public RuleCall getTopicSpecRefParserRuleCall_29() { return cTopicSpecRefParserRuleCall_29; }
+		//SpecBaseRef
+		public RuleCall getSpecBaseRefParserRuleCall_29() { return cSpecBaseRefParserRuleCall_29; }
 		
-		//ArrayTopicSpecRef
-		public RuleCall getArrayTopicSpecRefParserRuleCall_30() { return cArrayTopicSpecRefParserRuleCall_30; }
+		//ArraySpecRef
+		public RuleCall getArraySpecRefParserRuleCall_30() { return cArraySpecRefParserRuleCall_30; }
 	}
 	public class BoolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.bool");
@@ -2081,50 +2081,50 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'Header'
 		public Keyword getHeaderKeyword_1() { return cHeaderKeyword_1; }
 	}
-	public class TopicSpecRefElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.TopicSpecRef");
-		private final Assignment cTopicSpecAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cTopicSpecTopicSpecCrossReference_0 = (CrossReference)cTopicSpecAssignment.eContents().get(0);
-		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0.eContents().get(1);
+	public class SpecBaseRefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.SpecBaseRef");
+		private final Assignment cReferenceAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cReferenceTopicSpecCrossReference_0 = (CrossReference)cReferenceAssignment.eContents().get(0);
+		private final RuleCall cReferenceTopicSpecEStringParserRuleCall_0_1 = (RuleCall)cReferenceTopicSpecCrossReference_0.eContents().get(1);
 		
-		//TopicSpecRef returns TopicSpecRef:
-		//    TopicSpec=[TopicSpec|EString]
+		//SpecBaseRef returns TopicSpecMsgRef:
+		//    Reference=[TopicSpec|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TopicSpec=[TopicSpec|EString]
-		public Assignment getTopicSpecAssignment() { return cTopicSpecAssignment; }
+		//Reference=[TopicSpec|EString]
+		public Assignment getReferenceAssignment() { return cReferenceAssignment; }
 		
 		//[TopicSpec|EString]
-		public CrossReference getTopicSpecTopicSpecCrossReference_0() { return cTopicSpecTopicSpecCrossReference_0; }
+		public CrossReference getReferenceTopicSpecCrossReference_0() { return cReferenceTopicSpecCrossReference_0; }
 		
 		//EString
-		public RuleCall getTopicSpecTopicSpecEStringParserRuleCall_0_1() { return cTopicSpecTopicSpecEStringParserRuleCall_0_1; }
+		public RuleCall getReferenceTopicSpecEStringParserRuleCall_0_1() { return cReferenceTopicSpecEStringParserRuleCall_0_1; }
 	}
-	public class ArrayTopicSpecRefElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ArrayTopicSpecRef");
+	public class ArraySpecRefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ArraySpecRef");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTopicSpecAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cTopicSpecTopicSpecCrossReference_0_0 = (CrossReference)cTopicSpecAssignment_0.eContents().get(0);
-		private final RuleCall cTopicSpecTopicSpecEStringParserRuleCall_0_0_1 = (RuleCall)cTopicSpecTopicSpecCrossReference_0_0.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cReferenceTopicSpecCrossReference_0_0 = (CrossReference)cReferenceAssignment_0.eContents().get(0);
+		private final RuleCall cReferenceTopicSpecEStringParserRuleCall_0_0_1 = (RuleCall)cReferenceTopicSpecCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//ArrayTopicSpecRef returns ArrayTopicSpecRef:
-		//    TopicSpec=[TopicSpec|EString]'[]'
+		//ArraySpecRef returns ArrayTopicSpecMsgRef:
+		//    Reference=[TopicSpec|EString]'[]'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TopicSpec=[TopicSpec|EString]'[]'
+		//Reference=[TopicSpec|EString]'[]'
 		public Group getGroup() { return cGroup; }
 		
-		//TopicSpec=[TopicSpec|EString]
-		public Assignment getTopicSpecAssignment_0() { return cTopicSpecAssignment_0; }
+		//Reference=[TopicSpec|EString]
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
 		
 		//[TopicSpec|EString]
-		public CrossReference getTopicSpecTopicSpecCrossReference_0_0() { return cTopicSpecTopicSpecCrossReference_0_0; }
+		public CrossReference getReferenceTopicSpecCrossReference_0_0() { return cReferenceTopicSpecCrossReference_0_0; }
 		
 		//EString
-		public RuleCall getTopicSpecTopicSpecEStringParserRuleCall_0_0_1() { return cTopicSpecTopicSpecEStringParserRuleCall_0_0_1; }
+		public RuleCall getReferenceTopicSpecEStringParserRuleCall_0_0_1() { return cReferenceTopicSpecEStringParserRuleCall_0_0_1; }
 		
 		//'[]'
 		public Keyword getLeftSquareBracketRightSquareBracketKeyword_1() { return cLeftSquareBracketRightSquareBracketKeyword_1; }
@@ -2309,8 +2309,8 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final String0ArrayElements pString0Array;
 	private final ByteArrayElements pByteArray;
 	private final HeaderElements pHeader;
-	private final TopicSpecRefElements pTopicSpecRef;
-	private final ArrayTopicSpecRefElements pArrayTopicSpecRef;
+	private final SpecBaseRefElements pSpecBaseRef;
+	private final ArraySpecRefElements pArraySpecRef;
 	private final KEYWORDElements pKEYWORD;
 	private final TerminalRule tBEGIN;
 	private final TerminalRule tEND;
@@ -2407,8 +2407,8 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pString0Array = new String0ArrayElements();
 		this.pByteArray = new ByteArrayElements();
 		this.pHeader = new HeaderElements();
-		this.pTopicSpecRef = new TopicSpecRefElements();
-		this.pArrayTopicSpecRef = new ArrayTopicSpecRefElements();
+		this.pSpecBaseRef = new SpecBaseRefElements();
+		this.pArraySpecRef = new ArraySpecRefElements();
 		this.pKEYWORD = new KEYWORDElements();
 		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.BEGIN");
 		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.END");
@@ -2945,7 +2945,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//AbstractType returns primitives::AbstractType:
 	//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 	//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-	//    TopicSpecRef | ArrayTopicSpecRef ;
+	//    SpecBaseRef | ArraySpecRef ;
 	public AbstractTypeElements getAbstractTypeAccess() {
 		return pAbstractType;
 	}
@@ -3302,26 +3302,26 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getHeaderAccess().getRule();
 	}
 	
-	//TopicSpecRef returns TopicSpecRef:
-	//    TopicSpec=[TopicSpec|EString]
+	//SpecBaseRef returns TopicSpecMsgRef:
+	//    Reference=[TopicSpec|EString]
 	//;
-	public TopicSpecRefElements getTopicSpecRefAccess() {
-		return pTopicSpecRef;
+	public SpecBaseRefElements getSpecBaseRefAccess() {
+		return pSpecBaseRef;
 	}
 	
-	public ParserRule getTopicSpecRefRule() {
-		return getTopicSpecRefAccess().getRule();
+	public ParserRule getSpecBaseRefRule() {
+		return getSpecBaseRefAccess().getRule();
 	}
 	
-	//ArrayTopicSpecRef returns ArrayTopicSpecRef:
-	//    TopicSpec=[TopicSpec|EString]'[]'
+	//ArraySpecRef returns ArrayTopicSpecMsgRef:
+	//    Reference=[TopicSpec|EString]'[]'
 	//;
-	public ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {
-		return pArrayTopicSpecRef;
+	public ArraySpecRefElements getArraySpecRefAccess() {
+		return pArraySpecRef;
 	}
 	
-	public ParserRule getArrayTopicSpecRefRule() {
-		return getArrayTopicSpecRefAccess().getRule();
+	public ParserRule getArraySpecRefRule() {
+		return getArraySpecRefAccess().getRule();
 	}
 	
 	//KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;

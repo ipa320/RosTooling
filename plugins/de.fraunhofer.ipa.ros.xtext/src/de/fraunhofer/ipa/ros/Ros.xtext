@@ -24,13 +24,24 @@ Package_Impl returns Package:
     {Package}
     name=RosNames':'
     BEGIN
-        ('fromGitRepo:' fromGitRepo=EString)?
-        ('specs:'
-            BEGIN
-            spec+=SpecBase*
-            END
-        )?
-        ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+     ('fromGitRepo:' fromGitRepo=EString)?
+     ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+     (('msgs:'
+        BEGIN
+        spec+=TopicSpec*
+        END
+     )|
+    ('srvs:'
+        BEGIN
+        spec+=ServiceSpec*
+        END
+    )|
+    ('actions:'
+        BEGIN
+        spec+=ActionSpec*
+        END
+    ))*
+        //spec+=(TopicSpec | ServiceSpec | ActionSpec)*
     END;
 
 //CatkinPackage returns CatkinPackage:
@@ -59,6 +70,41 @@ Package_Impl returns Package:
 //      )?
 //      ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
 //  END;
+
+
+///////////////////
+//OBJECTS/SPECIFICATIONS
+///////////////////
+
+TopicSpec returns TopicSpec:
+    {TopicSpec}
+    name=(EString|'Header'|'String')
+    BEGIN
+        'message' (BEGIN message=MessageDefinition END)?
+    END
+    ;
+
+ServiceSpec returns ServiceSpec:
+    {ServiceSpec}
+    name=EString
+    BEGIN
+        'request' (BEGIN request=MessageDefinition END)?
+        'response' (BEGIN response=MessageDefinition END)?
+    END;
+
+ActionSpec returns ActionSpec:
+    {ActionSpec}
+    name=EString
+    BEGIN
+        'goal' (BEGIN goal=MessageDefinition END)?
+        'result' (BEGIN result=MessageDefinition END)?
+        'feedback' (BEGIN feedback=MessageDefinition END)?
+    END;
+
+
+MessageDefinition returns MessageDefinition:
+    {MessageDefinition}
+        MessagePart+=MessagePart*;
 
 ///////////////////
 //ARTIFACT AND NODE
@@ -110,42 +156,6 @@ Node returns Node:
     )
     )*
     ;
-
-///////////////////
-//OBJECTS/SPECIFICATIONS
-///////////////////
-SpecBase returns SpecBase:
-    TopicSpec | ServiceSpec | ActionSpec;
-
-TopicSpec returns TopicSpec:
-    {TopicSpec}
-    'msg:'name=(EString|'Header'|'String')
-    BEGIN
-        'message:' (BEGIN message=MessageDefinition END)?
-    END
-    ;
-
-ServiceSpec returns ServiceSpec:
-    {ServiceSpec}
-    'srv:'name=EString
-    BEGIN
-        'request:' (BEGIN request=MessageDefinition END)?
-        'response:' (BEGIN response=MessageDefinition END)?
-    END;
-
-ActionSpec returns ActionSpec:
-    {ActionSpec}
-    'action:'name=EString
-    BEGIN
-        'goal:' (BEGIN goal=MessageDefinition END)?
-        'result:' (BEGIN result=MessageDefinition END)?
-        'feedback:' (BEGIN feedback=MessageDefinition END)?
-    END;
-
-
-MessageDefinition returns MessageDefinition:
-    {MessageDefinition}
-        MessagePart+=MessagePart*;
 
 ///////////////////
 //INTERFACES

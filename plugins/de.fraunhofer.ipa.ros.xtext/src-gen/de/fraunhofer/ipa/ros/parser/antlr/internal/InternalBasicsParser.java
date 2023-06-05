@@ -4696,7 +4696,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractType"
-    // InternalBasicsParser.g:1751:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) ;
+    // InternalBasicsParser.g:1751:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef ) ;
     public final EObject ruleAbstractType() throws RecognitionException {
         EObject current = null;
 
@@ -4758,19 +4758,19 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
         EObject this_byteArray_28 = null;
 
-        EObject this_TopicSpecRef_29 = null;
+        EObject this_SpecBaseRef_29 = null;
 
-        EObject this_ArrayTopicSpecRef_30 = null;
+        EObject this_ArraySpecRef_30 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1757:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef ) )
-            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
+            // InternalBasicsParser.g:1757:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef ) )
+            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef )
             {
-            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )
+            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef )
             int alt22=31;
             alt22 = dfa22.predict(input);
             switch (alt22) {
@@ -5297,36 +5297,36 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalBasicsParser.g:2020:3: this_TopicSpecRef_29= ruleTopicSpecRef
+                    // InternalBasicsParser.g:2020:3: this_SpecBaseRef_29= ruleSpecBaseRef
                     {
 
-                    			newCompositeNode(grammarAccess.getAbstractTypeAccess().getTopicSpecRefParserRuleCall_29());
+                    			newCompositeNode(grammarAccess.getAbstractTypeAccess().getSpecBaseRefParserRuleCall_29());
                     		
                     pushFollow(FOLLOW_2);
-                    this_TopicSpecRef_29=ruleTopicSpecRef();
+                    this_SpecBaseRef_29=ruleSpecBaseRef();
 
                     state._fsp--;
 
 
-                    			current = this_TopicSpecRef_29;
+                    			current = this_SpecBaseRef_29;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 31 :
-                    // InternalBasicsParser.g:2029:3: this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef
+                    // InternalBasicsParser.g:2029:3: this_ArraySpecRef_30= ruleArraySpecRef
                     {
 
-                    			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArrayTopicSpecRefParserRuleCall_30());
+                    			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArraySpecRefParserRuleCall_30());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ArrayTopicSpecRef_30=ruleArrayTopicSpecRef();
+                    this_ArraySpecRef_30=ruleArraySpecRef();
 
                     state._fsp--;
 
 
-                    			current = this_ArrayTopicSpecRef_30;
+                    			current = this_ArraySpecRef_30;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -7964,25 +7964,25 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleHeader"
 
 
-    // $ANTLR start "entryRuleTopicSpecRef"
-    // InternalBasicsParser.g:2911:1: entryRuleTopicSpecRef returns [EObject current=null] : iv_ruleTopicSpecRef= ruleTopicSpecRef EOF ;
-    public final EObject entryRuleTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "entryRuleSpecBaseRef"
+    // InternalBasicsParser.g:2911:1: entryRuleSpecBaseRef returns [EObject current=null] : iv_ruleSpecBaseRef= ruleSpecBaseRef EOF ;
+    public final EObject entryRuleSpecBaseRef() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleTopicSpecRef = null;
+        EObject iv_ruleSpecBaseRef = null;
 
 
         try {
-            // InternalBasicsParser.g:2911:53: (iv_ruleTopicSpecRef= ruleTopicSpecRef EOF )
-            // InternalBasicsParser.g:2912:2: iv_ruleTopicSpecRef= ruleTopicSpecRef EOF
+            // InternalBasicsParser.g:2911:52: (iv_ruleSpecBaseRef= ruleSpecBaseRef EOF )
+            // InternalBasicsParser.g:2912:2: iv_ruleSpecBaseRef= ruleSpecBaseRef EOF
             {
-             newCompositeNode(grammarAccess.getTopicSpecRefRule()); 
+             newCompositeNode(grammarAccess.getSpecBaseRefRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleTopicSpecRef=ruleTopicSpecRef();
+            iv_ruleSpecBaseRef=ruleSpecBaseRef();
 
             state._fsp--;
 
-             current =iv_ruleTopicSpecRef; 
+             current =iv_ruleSpecBaseRef; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -7997,12 +7997,12 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleTopicSpecRef"
+    // $ANTLR end "entryRuleSpecBaseRef"
 
 
-    // $ANTLR start "ruleTopicSpecRef"
-    // InternalBasicsParser.g:2918:1: ruleTopicSpecRef returns [EObject current=null] : ( ( ruleEString ) ) ;
-    public final EObject ruleTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "ruleSpecBaseRef"
+    // InternalBasicsParser.g:2918:1: ruleSpecBaseRef returns [EObject current=null] : ( ( ruleEString ) ) ;
+    public final EObject ruleSpecBaseRef() throws RecognitionException {
         EObject current = null;
 
 
@@ -8020,11 +8020,11 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             {
 
             				if (current==null) {
-            					current = createModelElement(grammarAccess.getTopicSpecRefRule());
+            					current = createModelElement(grammarAccess.getSpecBaseRefRule());
             				}
             			
 
-            				newCompositeNode(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0());
+            				newCompositeNode(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecCrossReference_0());
             			
             pushFollow(FOLLOW_2);
             ruleEString();
@@ -8056,28 +8056,28 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleTopicSpecRef"
+    // $ANTLR end "ruleSpecBaseRef"
 
 
-    // $ANTLR start "entryRuleArrayTopicSpecRef"
-    // InternalBasicsParser.g:2944:1: entryRuleArrayTopicSpecRef returns [EObject current=null] : iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF ;
-    public final EObject entryRuleArrayTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "entryRuleArraySpecRef"
+    // InternalBasicsParser.g:2944:1: entryRuleArraySpecRef returns [EObject current=null] : iv_ruleArraySpecRef= ruleArraySpecRef EOF ;
+    public final EObject entryRuleArraySpecRef() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleArrayTopicSpecRef = null;
+        EObject iv_ruleArraySpecRef = null;
 
 
         try {
-            // InternalBasicsParser.g:2944:58: (iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF )
-            // InternalBasicsParser.g:2945:2: iv_ruleArrayTopicSpecRef= ruleArrayTopicSpecRef EOF
+            // InternalBasicsParser.g:2944:53: (iv_ruleArraySpecRef= ruleArraySpecRef EOF )
+            // InternalBasicsParser.g:2945:2: iv_ruleArraySpecRef= ruleArraySpecRef EOF
             {
-             newCompositeNode(grammarAccess.getArrayTopicSpecRefRule()); 
+             newCompositeNode(grammarAccess.getArraySpecRefRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleArrayTopicSpecRef=ruleArrayTopicSpecRef();
+            iv_ruleArraySpecRef=ruleArraySpecRef();
 
             state._fsp--;
 
-             current =iv_ruleArrayTopicSpecRef; 
+             current =iv_ruleArraySpecRef; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -8092,12 +8092,12 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleArrayTopicSpecRef"
+    // $ANTLR end "entryRuleArraySpecRef"
 
 
-    // $ANTLR start "ruleArrayTopicSpecRef"
-    // InternalBasicsParser.g:2951:1: ruleArrayTopicSpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) ;
-    public final EObject ruleArrayTopicSpecRef() throws RecognitionException {
+    // $ANTLR start "ruleArraySpecRef"
+    // InternalBasicsParser.g:2951:1: ruleArraySpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) ;
+    public final EObject ruleArraySpecRef() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -8120,11 +8120,11 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getArrayTopicSpecRefRule());
+            						current = createModelElement(grammarAccess.getArraySpecRefRule());
             					}
             				
 
-            					newCompositeNode(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0_0());
+            					newCompositeNode(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecCrossReference_0_0());
             				
             pushFollow(FOLLOW_22);
             ruleEString();
@@ -8142,7 +8142,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,LeftSquareBracketRightSquareBracket,FOLLOW_2); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getArrayTopicSpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getArraySpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
             		
 
             }
@@ -8163,7 +8163,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleArrayTopicSpecRef"
+    // $ANTLR end "ruleArraySpecRef"
 
 
     // $ANTLR start "entryRuleKEYWORD"
@@ -8655,7 +8655,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             this.transition = dfa_14;
         }
         public String getDescription() {
-            return "1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_TopicSpecRef_29= ruleTopicSpecRef | this_ArrayTopicSpecRef_30= ruleArrayTopicSpecRef )";
+            return "1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef )";
         }
     }
  

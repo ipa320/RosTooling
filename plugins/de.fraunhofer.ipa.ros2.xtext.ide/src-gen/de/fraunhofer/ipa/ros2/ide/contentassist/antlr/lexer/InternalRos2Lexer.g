@@ -59,15 +59,13 @@ Sensor_qos : 'sensor_qos';
 
 GraphName : 'GraphName';
 
-Feedback_1 : 'feedback:';
-
 Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
 
 Keep_last : 'keep_last';
 
-Response : 'response:';
+Actions : 'actions:';
 
 Default : 'default:';
 
@@ -79,13 +77,11 @@ History : 'history:';
 
 Keep_all : 'keep_all';
 
-Message_1 : 'message:';
-
 Profile : 'profile:';
 
 Reliable : 'reliable';
 
-Request : 'request:';
+Response : 'response';
 
 String_2 : 'string[]';
 
@@ -101,8 +97,6 @@ Boolean : 'Boolean';
 
 Integer : 'Integer';
 
-Action_1 : 'action:';
-
 Float32 : 'float32';
 
 Float64 : 'float64';
@@ -115,7 +109,7 @@ Int64_1 : 'int64[]';
 
 Message : 'message';
 
-Result_1 : 'result:';
+Request : 'request';
 
 Service : 'service';
 
@@ -145,8 +139,6 @@ Int8_1 : 'int8[]';
 
 Result : 'result';
 
-Specs : 'specs:';
-
 String_1 : 'string';
 
 Uint16 : 'uint16';
@@ -155,15 +147,17 @@ Uint32 : 'uint32';
 
 Uint64 : 'uint64';
 
-Goal_1 : 'goal:';
-
 Int16 : 'int16';
 
 Int32 : 'int32';
 
 Int64 : 'int64';
 
+Msgs : 'msgs:';
+
 Node_1 : 'node:';
+
+Srvs : 'srvs:';
 
 Type_1 : 'type:';
 
@@ -183,15 +177,11 @@ Goal : 'goal';
 
 Int8 : 'int8';
 
-Msg : 'msg:';
-
 Name : 'name';
 
 Node : 'node';
 
 Qos : 'qos:';
-
-Srv : 'srv:';
 
 Time : 'time';
 

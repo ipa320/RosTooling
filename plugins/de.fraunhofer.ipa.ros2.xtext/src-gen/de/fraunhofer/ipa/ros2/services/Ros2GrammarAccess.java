@@ -1320,13 +1320,24 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//    {Package}
 	//    name=RosNames':'
 	//    BEGIN
-	//        ('fromGitRepo:' fromGitRepo=EString)?
-	//        ('specs:'
-	//            BEGIN
-	//            spec+=SpecBase*
-	//            END
-	//        )?
-	//        ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	//     ('fromGitRepo:' fromGitRepo=EString)?
+	//     ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
+	//     (('msgs:'
+	//        BEGIN
+	//        spec+=TopicSpec*
+	//        END
+	//     )|
+	//    ('srvs:'
+	//        BEGIN
+	//        spec+=ServiceSpec*
+	//        END
+	//    )|
+	//    ('actions:'
+	//        BEGIN
+	//        spec+=ActionSpec*
+	//        END
+	//    ))*
+	//        //spec+=(TopicSpec | ServiceSpec | ActionSpec)*
 	//    END;
 	public RosGrammarAccess.Package_ImplElements getPackage_ImplAccess() {
 		return gaRos.getPackage_ImplAccess();
@@ -1362,6 +1373,66 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	////      )?
 	////      ('dependencies:' '[' dependency+=Dependency (',' dependency+=Dependency)* ']' )?
 	////  END;
+	/////////////////////
+	////OBJECTS/SPECIFICATIONS
+	/////////////////////
+	//TopicSpec returns TopicSpec:
+	//    {TopicSpec}
+	//    name=(EString|'Header'|'String')
+	//    BEGIN
+	//        'message' (BEGIN message=MessageDefinition END)?
+	//    END
+	//    ;
+	public RosGrammarAccess.TopicSpecElements getTopicSpecAccess() {
+		return gaRos.getTopicSpecAccess();
+	}
+	
+	public ParserRule getTopicSpecRule() {
+		return getTopicSpecAccess().getRule();
+	}
+	
+	//ServiceSpec returns ServiceSpec:
+	//    {ServiceSpec}
+	//    name=EString
+	//    BEGIN
+	//        'request' (BEGIN request=MessageDefinition END)?
+	//        'response' (BEGIN response=MessageDefinition END)?
+	//    END;
+	public RosGrammarAccess.ServiceSpecElements getServiceSpecAccess() {
+		return gaRos.getServiceSpecAccess();
+	}
+	
+	public ParserRule getServiceSpecRule() {
+		return getServiceSpecAccess().getRule();
+	}
+	
+	//ActionSpec returns ActionSpec:
+	//    {ActionSpec}
+	//    name=EString
+	//    BEGIN
+	//        'goal' (BEGIN goal=MessageDefinition END)?
+	//        'result' (BEGIN result=MessageDefinition END)?
+	//        'feedback' (BEGIN feedback=MessageDefinition END)?
+	//    END;
+	public RosGrammarAccess.ActionSpecElements getActionSpecAccess() {
+		return gaRos.getActionSpecAccess();
+	}
+	
+	public ParserRule getActionSpecRule() {
+		return getActionSpecAccess().getRule();
+	}
+	
+	//MessageDefinition returns MessageDefinition:
+	//    {MessageDefinition}
+	//        MessagePart+=MessagePart*;
+	public RosGrammarAccess.MessageDefinitionElements getMessageDefinitionAccess() {
+		return gaRos.getMessageDefinitionAccess();
+	}
+	
+	public ParserRule getMessageDefinitionRule() {
+		return getMessageDefinitionAccess().getRule();
+	}
+	
 	/////////////////////
 	////ARTIFACT AND NODE
 	/////////////////////
@@ -1425,76 +1496,6 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getNodeRule() {
 		return getNodeAccess().getRule();
-	}
-	
-	/////////////////////
-	////OBJECTS/SPECIFICATIONS
-	/////////////////////
-	//SpecBase returns SpecBase:
-	//    TopicSpec | ServiceSpec | ActionSpec;
-	public RosGrammarAccess.SpecBaseElements getSpecBaseAccess() {
-		return gaRos.getSpecBaseAccess();
-	}
-	
-	public ParserRule getSpecBaseRule() {
-		return getSpecBaseAccess().getRule();
-	}
-	
-	//TopicSpec returns TopicSpec:
-	//    {TopicSpec}
-	//    'msg:'name=(EString|'Header'|'String')
-	//    BEGIN
-	//        'message:' (BEGIN message=MessageDefinition END)?
-	//    END
-	//    ;
-	public RosGrammarAccess.TopicSpecElements getTopicSpecAccess() {
-		return gaRos.getTopicSpecAccess();
-	}
-	
-	public ParserRule getTopicSpecRule() {
-		return getTopicSpecAccess().getRule();
-	}
-	
-	//ServiceSpec returns ServiceSpec:
-	//    {ServiceSpec}
-	//    'srv:'name=EString
-	//    BEGIN
-	//        'request:' (BEGIN request=MessageDefinition END)?
-	//        'response:' (BEGIN response=MessageDefinition END)?
-	//    END;
-	public RosGrammarAccess.ServiceSpecElements getServiceSpecAccess() {
-		return gaRos.getServiceSpecAccess();
-	}
-	
-	public ParserRule getServiceSpecRule() {
-		return getServiceSpecAccess().getRule();
-	}
-	
-	//ActionSpec returns ActionSpec:
-	//    {ActionSpec}
-	//    'action:'name=EString
-	//    BEGIN
-	//        'goal:' (BEGIN goal=MessageDefinition END)?
-	//        'result:' (BEGIN result=MessageDefinition END)?
-	//        'feedback:' (BEGIN feedback=MessageDefinition END)?
-	//    END;
-	public RosGrammarAccess.ActionSpecElements getActionSpecAccess() {
-		return gaRos.getActionSpecAccess();
-	}
-	
-	public ParserRule getActionSpecRule() {
-		return getActionSpecAccess().getRule();
-	}
-	
-	//MessageDefinition returns MessageDefinition:
-	//    {MessageDefinition}
-	//        MessagePart+=MessagePart*;
-	public RosGrammarAccess.MessageDefinitionElements getMessageDefinitionAccess() {
-		return gaRos.getMessageDefinitionAccess();
-	}
-	
-	public ParserRule getMessageDefinitionRule() {
-		return getMessageDefinitionAccess().getRule();
 	}
 	
 	/////////////////////
@@ -2014,7 +2015,7 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//AbstractType returns primitives::AbstractType:
 	//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 	//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-	//    TopicSpecRef | ArrayTopicSpecRef ;
+	//    SpecBaseRef | ArraySpecRef ;
 	public BasicsGrammarAccess.AbstractTypeElements getAbstractTypeAccess() {
 		return gaBasics.getAbstractTypeAccess();
 	}
@@ -2371,26 +2372,26 @@ public class Ros2GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getHeaderAccess().getRule();
 	}
 	
-	//TopicSpecRef returns TopicSpecRef:
-	//    TopicSpec=[TopicSpec|EString]
+	//SpecBaseRef returns TopicSpecMsgRef:
+	//    Reference=[TopicSpec|EString]
 	//;
-	public BasicsGrammarAccess.TopicSpecRefElements getTopicSpecRefAccess() {
-		return gaBasics.getTopicSpecRefAccess();
+	public BasicsGrammarAccess.SpecBaseRefElements getSpecBaseRefAccess() {
+		return gaBasics.getSpecBaseRefAccess();
 	}
 	
-	public ParserRule getTopicSpecRefRule() {
-		return getTopicSpecRefAccess().getRule();
+	public ParserRule getSpecBaseRefRule() {
+		return getSpecBaseRefAccess().getRule();
 	}
 	
-	//ArrayTopicSpecRef returns ArrayTopicSpecRef:
-	//    TopicSpec=[TopicSpec|EString]'[]'
+	//ArraySpecRef returns ArrayTopicSpecMsgRef:
+	//    Reference=[TopicSpec|EString]'[]'
 	//;
-	public BasicsGrammarAccess.ArrayTopicSpecRefElements getArrayTopicSpecRefAccess() {
-		return gaBasics.getArrayTopicSpecRefAccess();
+	public BasicsGrammarAccess.ArraySpecRefElements getArraySpecRefAccess() {
+		return gaBasics.getArraySpecRefAccess();
 	}
 	
-	public ParserRule getArrayTopicSpecRefRule() {
-		return getArrayTopicSpecRefAccess().getRule();
+	public ParserRule getArraySpecRefRule() {
+		return getArraySpecRefAccess().getRule();
 	}
 	
 	//KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;

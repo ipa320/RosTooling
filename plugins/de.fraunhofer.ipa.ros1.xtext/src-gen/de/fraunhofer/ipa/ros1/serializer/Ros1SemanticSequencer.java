@@ -46,7 +46,7 @@ import primitives.uint8Array;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
-import ros.ArrayTopicSpecRef;
+import ros.ArrayTopicSpecMsgRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -85,7 +85,7 @@ import ros.ServiceServer;
 import ros.ServiceSpec;
 import ros.Subscriber;
 import ros.TopicSpec;
-import ros.TopicSpecRef;
+import ros.TopicSpecMsgRef;
 
 @SuppressWarnings("all")
 public class Ros1SemanticSequencer extends RosSemanticSequencer {
@@ -203,8 +203,8 @@ public class Ros1SemanticSequencer extends RosSemanticSequencer {
 			case RosPackage.ACTION_SPEC:
 				sequence_ActionSpec(context, (ActionSpec) semanticObject); 
 				return; 
-			case RosPackage.ARRAY_TOPIC_SPEC_REF:
-				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
+			case RosPackage.ARRAY_TOPIC_SPEC_MSG_REF:
+				sequence_ArraySpecRef(context, (ArrayTopicSpecMsgRef) semanticObject); 
 				return; 
 			case RosPackage.ARTIFACT:
 				sequence_Artifact(context, (Artifact) semanticObject); 
@@ -323,8 +323,8 @@ public class Ros1SemanticSequencer extends RosSemanticSequencer {
 			case RosPackage.TOPIC_SPEC:
 				sequence_TopicSpec(context, (TopicSpec) semanticObject); 
 				return; 
-			case RosPackage.TOPIC_SPEC_REF:
-				sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject); 
+			case RosPackage.TOPIC_SPEC_MSG_REF:
+				sequence_SpecBaseRef(context, (TopicSpecMsgRef) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)

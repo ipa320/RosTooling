@@ -208,7 +208,7 @@ terminal MESSAGE_ASIGMENT:
 AbstractType returns primitives::AbstractType:
     bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
     boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-    TopicSpecRef | ArrayTopicSpecRef ;
+    SpecBaseRef | ArraySpecRef ;
 
 
 bool returns primitives::bool:
@@ -355,12 +355,12 @@ Header returns primitives::Header:
     'Header'
 ;
 
-TopicSpecRef returns TopicSpecRef:
-    TopicSpec=[TopicSpec|EString]
+SpecBaseRef returns TopicSpecMsgRef:
+    Reference=[TopicSpec|EString]
 ;
 
-ArrayTopicSpecRef returns ArrayTopicSpecRef:
-    TopicSpec=[TopicSpec|EString]'[]'
+ArraySpecRef returns ArrayTopicSpecMsgRef:
+    Reference=[TopicSpec|EString]'[]'
 ;
 
 KEYWORD: 'goal' | 'message' | 'result' | 'feedback' | 'name' | 'value' | 'service' | 'type' | 'action' | 'duration' | 'time'  ;
