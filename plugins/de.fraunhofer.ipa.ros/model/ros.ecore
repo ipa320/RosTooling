@@ -222,12 +222,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Durability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="transient_local"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
+  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecMsgRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
         eType="#//TopicSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TopicSpec" lowerBound="1"
-        eType="#//TopicSpec"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecMsgRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
+        eType="#//SpecBase"/>
   </eClassifiers>
 </ecore:EPackage>

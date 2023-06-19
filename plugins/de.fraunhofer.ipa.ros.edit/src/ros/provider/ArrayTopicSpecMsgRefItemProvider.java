@@ -19,19 +19,19 @@ import primitives.provider.AbstractTypeItemProvider;
 import ros.RosPackage;
 
 /**
- * This is the item provider adapter for a {@link ros.ArrayTopicSpecRef} object.
+ * This is the item provider adapter for a {@link ros.ArrayTopicSpecMsgRef} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArrayTopicSpecRefItemProvider extends AbstractTypeItemProvider {
+public class ArrayTopicSpecMsgRefItemProvider extends AbstractTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArrayTopicSpecRefItemProvider(AdapterFactory adapterFactory) {
+	public ArrayTopicSpecMsgRefItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,25 +46,25 @@ public class ArrayTopicSpecRefItemProvider extends AbstractTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTopicSpecPropertyDescriptor(object);
+			addReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Topic Spec feature.
+	 * This adds a property descriptor for the Reference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTopicSpecPropertyDescriptor(Object object) {
+	protected void addReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ArrayTopicSpecRef_TopicSpec_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayTopicSpecRef_TopicSpec_feature", "_UI_ArrayTopicSpecRef_type"),
-				 RosPackage.Literals.ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC,
+				 getString("_UI_ArrayTopicSpecMsgRef_Reference_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayTopicSpecMsgRef_Reference_feature", "_UI_ArrayTopicSpecMsgRef_type"),
+				 RosPackage.Literals.ARRAY_TOPIC_SPEC_MSG_REF__REFERENCE,
 				 true,
 				 false,
 				 true,
@@ -74,14 +74,14 @@ public class ArrayTopicSpecRefItemProvider extends AbstractTypeItemProvider {
 	}
 
 	/**
-	 * This returns ArrayTopicSpecRef.gif.
+	 * This returns ArrayTopicSpecMsgRef.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArrayTopicSpecRef"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArrayTopicSpecMsgRef"));
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ArrayTopicSpecRefItemProvider extends AbstractTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ArrayTopicSpecRef_type");
+		return getString("_UI_ArrayTopicSpecMsgRef_type");
 	}
 
 

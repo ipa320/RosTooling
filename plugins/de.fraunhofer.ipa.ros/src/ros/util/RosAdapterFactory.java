@@ -13,7 +13,7 @@ import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
-import ros.ArrayTopicSpecRef;
+import ros.ArrayTopicSpecMsgRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -60,7 +60,7 @@ import ros.ServiceSpec;
 import ros.SpecBase;
 import ros.Subscriber;
 import ros.TopicSpec;
-import ros.TopicSpecRef;
+import ros.TopicSpecMsgRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -319,12 +319,12 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
                 return createQualityOfServiceAdapter();
             }
             @Override
-            public Adapter caseTopicSpecRef(TopicSpecRef object) {
-                return createTopicSpecRefAdapter();
+            public Adapter caseTopicSpecMsgRef(TopicSpecMsgRef object) {
+                return createTopicSpecMsgRefAdapter();
             }
             @Override
-            public Adapter caseArrayTopicSpecRef(ArrayTopicSpecRef object) {
-                return createArrayTopicSpecRefAdapter();
+            public Adapter caseArrayTopicSpecMsgRef(ArrayTopicSpecMsgRef object) {
+                return createArrayTopicSpecMsgRefAdapter();
             }
             @Override
             public Adapter caseAbstractType(AbstractType object) {
@@ -1051,34 +1051,34 @@ public class RosAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link ros.TopicSpecRef <em>Topic Spec Ref</em>}'.
+     * Creates a new adapter for an object of class '{@link ros.TopicSpecMsgRef <em>Topic Spec Msg Ref</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see ros.TopicSpecRef
+     * @see ros.TopicSpecMsgRef
      * @generated
      */
-    public Adapter createTopicSpecRefAdapter() {
+    public Adapter createTopicSpecMsgRefAdapter() {
         return null;
     }
 
-    /**
-     * Creates a new adapter for an object of class '{@link ros.ArrayTopicSpecRef <em>Array Topic Spec Ref</em>}'.
+                /**
+     * Creates a new adapter for an object of class '{@link ros.ArrayTopicSpecMsgRef <em>Array Topic Spec Msg Ref</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see ros.ArrayTopicSpecRef
+     * @see ros.ArrayTopicSpecMsgRef
      * @generated
      */
-    public Adapter createArrayTopicSpecRefAdapter() {
+    public Adapter createArrayTopicSpecMsgRefAdapter() {
         return null;
     }
 
-    /**
+                                                                /**
      * Creates a new adapter for an object of class '{@link primitives.AbstractType <em>Abstract Type</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

@@ -170,11 +170,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/Reliability"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//QualityOfService/Durability"/>
     </genClasses>
-    <genClasses ecoreClass="ros.ecore#//TopicSpecRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//TopicSpecRef/TopicSpec"/>
+    <genClasses ecoreClass="ros.ecore#//TopicSpecMsgRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//TopicSpecMsgRef/Reference"/>
     </genClasses>
-    <genClasses ecoreClass="ros.ecore#//ArrayTopicSpecRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ArrayTopicSpecRef/TopicSpec"/>
+    <genClasses ecoreClass="ros.ecore#//ArrayTopicSpecMsgRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//ArrayTopicSpecMsgRef/Reference"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Primitives" ecorePackage="PrimitivesTypes.ecore#/">

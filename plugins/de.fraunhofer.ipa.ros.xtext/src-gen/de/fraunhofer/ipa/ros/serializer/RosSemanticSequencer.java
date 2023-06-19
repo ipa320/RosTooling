@@ -47,7 +47,7 @@ import primitives.uint8Array;
 import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
-import ros.ArrayTopicSpecRef;
+import ros.ArrayTopicSpecMsgRef;
 import ros.Artifact;
 import ros.ExternalDependency;
 import ros.GlobalNamespace;
@@ -85,7 +85,7 @@ import ros.ServiceServer;
 import ros.ServiceSpec;
 import ros.Subscriber;
 import ros.TopicSpec;
-import ros.TopicSpecRef;
+import ros.TopicSpecMsgRef;
 
 @SuppressWarnings("all")
 public class RosSemanticSequencer extends BasicsSemanticSequencer {
@@ -203,8 +203,8 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 			case RosPackage.ACTION_SPEC:
 				sequence_ActionSpec(context, (ActionSpec) semanticObject); 
 				return; 
-			case RosPackage.ARRAY_TOPIC_SPEC_REF:
-				sequence_ArrayTopicSpecRef(context, (ArrayTopicSpecRef) semanticObject); 
+			case RosPackage.ARRAY_TOPIC_SPEC_MSG_REF:
+				sequence_ArraySpecRef(context, (ArrayTopicSpecMsgRef) semanticObject); 
 				return; 
 			case RosPackage.ARTIFACT:
 				sequence_Artifact(context, (Artifact) semanticObject); 
@@ -320,8 +320,8 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 			case RosPackage.TOPIC_SPEC:
 				sequence_TopicSpec(context, (TopicSpec) semanticObject); 
 				return; 
-			case RosPackage.TOPIC_SPEC_REF:
-				sequence_TopicSpecRef(context, (TopicSpecRef) semanticObject); 
+			case RosPackage.TOPIC_SPEC_MSG_REF:
+				sequence_SpecBaseRef(context, (TopicSpecMsgRef) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -359,7 +359,6 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SpecBase returns ActionSpec
 	 *     ActionSpec returns ActionSpec
 	 *
 	 * Constraint:
@@ -487,7 +486,7 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 	 *     Package_Impl returns Package
 	 *
 	 * Constraint:
-	 *     (name=RosNames fromGitRepo=EString? spec+=SpecBase* (dependency+=Dependency dependency+=Dependency*)?)
+	 *     (name=RosNames fromGitRepo=EString? (dependency+=Dependency dependency+=Dependency*)? (spec+=TopicSpec | spec+=ServiceSpec | spec+=ActionSpec)*)
 	 * </pre>
 	 */
 	protected void sequence_Package_Impl(ISerializationContext context, ros.Package semanticObject) {
@@ -540,7 +539,6 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SpecBase returns ServiceSpec
 	 *     ServiceSpec returns ServiceSpec
 	 *
 	 * Constraint:
@@ -569,7 +567,6 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SpecBase returns TopicSpec
 	 *     TopicSpec returns TopicSpec
 	 *
 	 * Constraint:

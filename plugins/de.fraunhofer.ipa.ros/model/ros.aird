@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_JAxPIGh8EeiMJqoOQV1LOg" selectedViews="_K8EeMGh8EeiMJqoOQV1LOg _K8RSgGh8EeiMJqoOQV1LOg" version="15.0.0.202201261500">
+  <viewpoint:DAnalysis uid="_JAxPIGh8EeiMJqoOQV1LOg" selectedViews="_K8EeMGh8EeiMJqoOQV1LOg _K8RSgGh8EeiMJqoOQV1LOg" version="15.2.0.202303281325">
     <semanticResources>ros.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
     <semanticResources>platform:/resource/de.fraunhofer.ipa.ros.seronetgw/model/rosgw.ecore</semanticResources>
     <semanticResources>PrimitivesTypes.ecore</semanticResources>
+    <semanticResources>ros.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_K8EeMGh8EeiMJqoOQV1LOg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Va3_YGh8EeiMJqoOQV1LOg" name="ros class diagram" repPath="#_Va1jIGh8EeiMJqoOQV1LOg" changeId="49acd599-0982-45cd-a481-93eb3357b8fb">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Va3_YGh8EeiMJqoOQV1LOg" name="ros class diagram" repPath="#_Va1jIGh8EeiMJqoOQV1LOg" changeId="1687165957214">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="ros.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ao9eIF9vEemWDKiydEO8wA" name="primitives class diagram" repPath="#_ao7o8F9vEemWDKiydEO8wA" changeId="43713235-9714-4459-a786-baf41e3c5117">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ao9eIF9vEemWDKiydEO8wA" name="primitives class diagram" repPath="#_ao7o8F9vEemWDKiydEO8wA" changeId="1687165957214">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="PrimitivesTypes.ecore#/"/>
       </ownedRepresentationDescriptors>

@@ -21,754 +21,754 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 @SuppressWarnings("all")
 public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
-    protected RosSystemGrammarAccess grammarAccess;
-    protected AbstractElementAlias match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q;
-    protected AbstractElementAlias match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q;
-    protected AbstractElementAlias match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
-    protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
-    protected AbstractElementAlias match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
-    protected AbstractElementAlias match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
-    protected AbstractElementAlias match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a;
-    protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a;
-    protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
-    protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
-    protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
-    protected AbstractElementAlias match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
-    protected AbstractElementAlias match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
-
-    @Inject
-    protected void init(IGrammarAccess access) {
-        grammarAccess = (RosSystemGrammarAccess) access;
-        match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getInterfacesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_6_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_6_3()));
-        match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getParametersKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_7_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_7_3()));
-        match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
-        match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
-        match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
-        match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
-        match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
-        match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))));
-        match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
-        match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
-        match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
-        match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
-        match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
-        match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
-        match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
-        match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
-        match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
-    }
-
-    @Override
-    protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-        if (ruleCall.getRule() == grammarAccess.getBEGINRule())
-            return getBEGINToken(semanticObject, ruleCall, node);
-        else if (ruleCall.getRule() == grammarAccess.getENDRule())
-            return getENDToken(semanticObject, ruleCall, node);
-        return "";
-    }
-
-    /**
-     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-     * Defaults to the empty string.
-     */
-    protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-
-    /**
-     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-     * Defaults to the empty string.
-     */
-    protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-
-    @Override
-    protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-        if (transition.getAmbiguousSyntaxes().isEmpty()) return;
-        List<INode> transitionNodes = collectNodes(fromNode, toNode);
-        for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
-            List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-            if (match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q.equals(syntax))
-                emit_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q.equals(syntax))
-                emit_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
-                emit_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
-                emit_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
-                emit_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
-                emit_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a.equals(syntax))
-                emit_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a.equals(syntax))
-                emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
-                emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
-                emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
-                emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
-                emit_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
-                emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
-                emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
-                emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
-                emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
-                emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
-                emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else if (match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
-                emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-            else acceptNodes(getLastNavigableState(), syntaxNodes);
-        }
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('interfaces:' BEGIN END)?
-     *
-     * This ambiguous syntax occurs at:
-     *     from=[Node|EString] (ambiguity) 'parameters:' BEGIN rosparameters+=RosParameter
-     *     from=[Node|EString] (ambiguity) ('parameters:' BEGIN END)? END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('parameters:' BEGIN END)?
-     *
-     * This ambiguous syntax occurs at:
-     *     from=[Node|EString] ('interfaces:' BEGIN END)? (ambiguity) END (rule end)
-     *     rosinterfaces+=RosInterface END (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('connections:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*)*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     name=EString ':' BEGIN (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN (ambiguity) processes+=Process
-     *     processes+=Process (ambiguity) processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode (ambiguity) components+=RosNode
-     *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN (ambiguity) components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
-     *     parameter+=RosParameter (ambiguity) parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection (ambiguity) connections+=RosConnection
-     *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN (ambiguity) connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN)*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('nodes:' BEGIN END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('parameters:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*)*
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ('processes:' BEGIN END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
-     *
-     * This ambiguous syntax occurs at:
-     *     name=EString ':' BEGIN (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
-     *     processes+=Process END (ambiguity) ('processes:' BEGIN END (ambiguity))* END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
-     *
-     * This ambiguous syntax occurs at:
-     *     name=EString ':' BEGIN (ambiguity) END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*
-     *
-     * This ambiguous syntax occurs at:
-     *     name=EString ':' BEGIN (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
-     *     parameter+=RosParameter END (ambiguity) ('parameters:' BEGIN END (ambiguity))* END (rule end)
-
-     * </pre>
-     */
-    protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END (ambiguity) ('nodes:' BEGIN END (ambiguity))* END (rule end)
-     *     name=EString ':' BEGIN (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END (ambiguity) ('connections:' BEGIN END (ambiguity))* END (rule end)
-     *     name=EString ':' BEGIN (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     processes+=Process END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     parameter+=RosParameter END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     connections+=RosConnection END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
-    /**
-     * <pre>
-     * Ambiguous syntax:
-     *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+
-     *
-     * This ambiguous syntax occurs at:
-     *     components+=RosNode END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
-
-     * </pre>
-     */
-    protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-        acceptNodes(transition, nodes);
-    }
-
+	protected RosSystemGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q;
+	protected AbstractElementAlias match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q;
+	protected AbstractElementAlias match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
+	protected AbstractElementAlias match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a;
+	protected AbstractElementAlias match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
+	protected AbstractElementAlias match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a;
+	protected AbstractElementAlias match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a;
+	protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a;
+	protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
+	protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
+	protected AbstractElementAlias match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
+	protected AbstractElementAlias match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p;
+	protected AbstractElementAlias match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p;
+	
+	@Inject
+	protected void init(IGrammarAccess access) {
+		grammarAccess = (RosSystemGrammarAccess) access;
+		match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getInterfacesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_6_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_6_3()));
+		match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getParametersKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_7_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_7_3()));
+		match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
+		match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
+		match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3()), new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()));
+		match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
+		match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))));
+		match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))));
+		match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
+		match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
+		match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
+		match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
+		match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3())));
+		match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
+		match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())));
+		match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_3_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_3_3())));
+		match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_0_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_3_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_3_1_3())));
+	}
+	
+	@Override
+	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getBEGINRule())
+			return getBEGINToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getENDRule())
+			return getENDToken(semanticObject, ruleCall, node);
+		return "";
+	}
+	
+	/**
+	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+	 * Defaults to the empty string.
+	 */
+	protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+	
+	/**
+	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+	 * Defaults to the empty string.
+	 */
+	protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+	
+	@Override
+	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
+		List<INode> transitionNodes = collectNodes(fromNode, toNode);
+		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
+			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
+			if (match_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q.equals(syntax))
+				emit_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q.equals(syntax))
+				emit_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
+				emit_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a.equals(syntax))
+				emit_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
+				emit_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a.equals(syntax))
+				emit_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a.equals(syntax))
+				emit_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a.equals(syntax))
+				emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
+				emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
+				emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
+				emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a.equals(syntax))
+				emit_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
+				emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
+				emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p.equals(syntax))
+				emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
+				emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p.equals(syntax))
+				emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p.equals(syntax))
+				emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p.equals(syntax))
+				emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
+		}
+	}
+
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('interfaces:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     from=[Node|EString] (ambiguity) 'parameters:' BEGIN rosparameters+=RosParameter
+	 *     from=[Node|EString] (ambiguity) ('parameters:' BEGIN END)? END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosNode___InterfacesKeyword_6_0_BEGINTerminalRuleCall_6_1_ENDTerminalRuleCall_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('parameters:' BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     from=[Node|EString] ('interfaces:' BEGIN END)? (ambiguity) END (rule end)
+	 *     rosinterfaces+=RosInterface END (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosNode___ParametersKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('connections:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString ':' BEGIN (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'processes:' BEGIN (ambiguity) processes+=Process
+	 *     processes+=Process (ambiguity) processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'processes:' BEGIN (ambiguity) processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_0_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode (ambiguity) components+=RosNode
+	 *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* 'nodes:' BEGIN (ambiguity) components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+ 'nodes:' BEGIN (ambiguity) components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_1_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
+	 *     parameter+=RosParameter (ambiguity) parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+ 'parameters:' BEGIN (ambiguity) parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_2_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p_ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection (ambiguity) connections+=RosConnection
+	 *     name=EString ':' BEGIN (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))* 'connections:' BEGIN (ambiguity) connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+ 'connections:' BEGIN (ambiguity) connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ENDTerminalRuleCall_3_3_3_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p_ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('nodes:' BEGIN END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('parameters:' BEGIN END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('processes:' BEGIN END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString ':' BEGIN (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
+	 *     processes+=Process END (ambiguity) ('processes:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString ':' BEGIN (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('connections:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString ':' BEGIN (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
+	 *     parameter+=RosParameter END (ambiguity) ('parameters:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('processes:' BEGIN END) | ('parameters:' BEGIN END) | ('connections:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END (ambiguity) ('nodes:' BEGIN END (ambiguity))* END (rule end)
+	 *     name=EString ':' BEGIN (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_____ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('processes:' BEGIN END) | ('nodes:' BEGIN END) | ('parameters:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END (ambiguity) ('connections:' BEGIN END (ambiguity))* END (rule end)
+	 *     name=EString ':' BEGIN (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_____NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('nodes:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('parameters:' BEGIN END) | ('connections:' BEGIN END))? ('processes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('nodes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('connections:' BEGIN END))? ('parameters:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END (ambiguity) 'processes:' BEGIN (END (ambiguity) 'processes:' BEGIN)* processes+=Process
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('nodes:' BEGIN END) | ('parameters:' BEGIN END))? ('processes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     processes+=Process END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3____q___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('connections:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END (ambiguity) 'parameters:' BEGIN (END (ambiguity) 'parameters:' BEGIN)* parameter+=RosParameter
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('nodes:' BEGIN END))? ('parameters:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameter+=RosParameter END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('connections:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     connections+=RosConnection END (ambiguity) 'nodes:' BEGIN (END (ambiguity) 'nodes:' BEGIN)* components+=RosNode
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___ConnectionsKeyword_3_3_0_BEGINTerminalRuleCall_3_3_1_ENDTerminalRuleCall_3_3_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((('processes:' BEGIN END) | ('parameters:' BEGIN END))? ('nodes:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=RosNode END (ambiguity) 'connections:' BEGIN (END (ambiguity) 'connections:' BEGIN)* connections+=RosConnection
+	 
+	 * </pre>
+	 */
+	protected void emit_RosSystem_______ParametersKeyword_3_2_0_BEGINTerminalRuleCall_3_2_1_ENDTerminalRuleCall_3_2_3___or___ProcessesKeyword_3_0_0_BEGINTerminalRuleCall_3_0_1_ENDTerminalRuleCall_3_0_3____q___NodesKeyword_3_1_0_BEGINTerminalRuleCall_3_1_1_ENDTerminalRuleCall_3_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

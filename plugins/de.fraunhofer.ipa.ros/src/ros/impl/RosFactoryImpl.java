@@ -15,7 +15,7 @@ import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
-import ros.ArrayTopicSpecRef;
+import ros.ArrayTopicSpecMsgRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.ExternalDependency;
@@ -58,7 +58,7 @@ import ros.ServiceServer;
 import ros.ServiceSpec;
 import ros.Subscriber;
 import ros.TopicSpec;
-import ros.TopicSpecRef;
+import ros.TopicSpecMsgRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,8 +149,8 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
             case RosPackage.PARAMETER_DATE: return createParameterDate();
             case RosPackage.AMENT_PACKAGE: return createAmentPackage();
             case RosPackage.QUALITY_OF_SERVICE: return createQualityOfService();
-            case RosPackage.TOPIC_SPEC_REF: return createTopicSpecRef();
-            case RosPackage.ARRAY_TOPIC_SPEC_REF: return createArrayTopicSpecRef();
+            case RosPackage.TOPIC_SPEC_MSG_REF: return createTopicSpecMsgRef();
+            case RosPackage.ARRAY_TOPIC_SPEC_MSG_REF: return createArrayTopicSpecMsgRef();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -687,23 +687,23 @@ public class RosFactoryImpl extends EFactoryImpl implements RosFactory {
      * @generated
      */
     @Override
-    public TopicSpecRef createTopicSpecRef() {
-        TopicSpecRefImpl topicSpecRef = new TopicSpecRefImpl();
-        return topicSpecRef;
+    public TopicSpecMsgRef createTopicSpecMsgRef() {
+        TopicSpecMsgRefImpl topicSpecMsgRef = new TopicSpecMsgRefImpl();
+        return topicSpecMsgRef;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public ArrayTopicSpecRef createArrayTopicSpecRef() {
-        ArrayTopicSpecRefImpl arrayTopicSpecRef = new ArrayTopicSpecRefImpl();
-        return arrayTopicSpecRef;
+    public ArrayTopicSpecMsgRef createArrayTopicSpecMsgRef() {
+        ArrayTopicSpecMsgRefImpl arrayTopicSpecMsgRef = new ArrayTopicSpecMsgRefImpl();
+        return arrayTopicSpecMsgRef;
     }
 
-    /**
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -129,13 +129,35 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Node_______ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3__q__p;
 	protected AbstractElementAlias match_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionclientsKeyword_2_5_0_BEGINTerminalRuleCall_2_5_1_ENDTerminalRuleCall_2_5_3__q__p;
 	protected AbstractElementAlias match_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3__q__p;
-	protected AbstractElementAlias match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q;
+	protected AbstractElementAlias match_Package_Impl___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_0_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_1_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a;
+	protected AbstractElementAlias match_Package_Impl___ENDTerminalRuleCall_6_2_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a;
+	protected AbstractElementAlias match_Package_Impl___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a;
+	protected AbstractElementAlias match_Package_Impl___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a__a;
+	protected AbstractElementAlias match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a;
+	protected AbstractElementAlias match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a;
+	protected AbstractElementAlias match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a;
+	protected AbstractElementAlias match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p;
+	protected AbstractElementAlias match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p;
+	protected AbstractElementAlias match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a;
+	protected AbstractElementAlias match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p;
+	protected AbstractElementAlias match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p;
+	protected AbstractElementAlias match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p;
+	protected AbstractElementAlias match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (Ros1GrammarAccess) access;
 		init0();
 		init1();
+		init2();
 	}
 	
 	private void init0() {
@@ -249,7 +271,31 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Node_______ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserversKeyword_2_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientsKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserversKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_6_3())));
 		match_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionclientsKeyword_2_5_0_BEGINTerminalRuleCall_2_5_1_ENDTerminalRuleCall_2_5_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientsKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserversKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionclientsKeyword_2_5_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_5_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_5_3())));
 		match_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3__q__p = new GroupAlias(true, false, new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getParametersKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_6_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_6_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getPublishersKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_0_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceclientsKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_3_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getServiceserversKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_2_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNodeAccess().getSubscribersKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_1_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_1_3()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getActionserversKeyword_2_4_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_4_1()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_4_3())));
-		match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSpecsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_5_3()));
+		match_Package_Impl___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))));
+		match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_0_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_1_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()));
+		match_Package_Impl___ENDTerminalRuleCall_6_2_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3()), new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()))), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()));
+		match_Package_Impl___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()))));
+		match_Package_Impl___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3()))));
+		match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())));
+	}
+	
+	private void init2() {
+		match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
+		match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
+		match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())));
+		match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
+		match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a = new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
+		match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())));
+		match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
+		match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())));
+		match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())));
 	}
 	
 	@Override
@@ -493,8 +539,50 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionclientsKeyword_2_5_0_BEGINTerminalRuleCall_2_5_1_ENDTerminalRuleCall_2_5_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3__q__p.equals(syntax))
 				emit_Node_______ParametersKeyword_2_6_0_BEGINTerminalRuleCall_2_6_1_ENDTerminalRuleCall_2_6_3___or___PublishersKeyword_2_0_0_BEGINTerminalRuleCall_2_0_1_ENDTerminalRuleCall_2_0_3___or___ServiceclientsKeyword_2_3_0_BEGINTerminalRuleCall_2_3_1_ENDTerminalRuleCall_2_3_3___or___ServiceserversKeyword_2_2_0_BEGINTerminalRuleCall_2_2_1_ENDTerminalRuleCall_2_2_3___or___SubscribersKeyword_2_1_0_BEGINTerminalRuleCall_2_1_1_ENDTerminalRuleCall_2_1_3____q___ActionserversKeyword_2_4_0_BEGINTerminalRuleCall_2_4_1_ENDTerminalRuleCall_2_4_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q.equals(syntax))
-				emit_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a.equals(syntax))
+				emit_Package_Impl___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_0_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_1_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___ENDTerminalRuleCall_6_2_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a.equals(syntax))
+				emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a.equals(syntax))
+				emit_Package_Impl___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a__a.equals(syntax))
+				emit_Package_Impl___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a.equals(syntax))
+				emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a.equals(syntax))
+				emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a.equals(syntax))
+				emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p.equals(syntax))
+				emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p.equals(syntax))
+				emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a.equals(syntax))
+				emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p.equals(syntax))
+				emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p.equals(syntax))
+				emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p.equals(syntax))
+				emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p.equals(syntax))
+				emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -3131,17 +3219,328 @@ public class Ros1SyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('specs:' BEGIN END)?
+	 *     ('actions:' BEGIN END (('msgs:' BEGIN END) | ('srvs:' BEGIN END))*)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     fromGitRepo=EString (ambiguity) 'dependencies:' '[' dependency+=Dependency
+	 *     spec+=ActionSpec END (('msgs:' BEGIN END) | ('srvs:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('srvs:' BEGIN END) | ('actions:' BEGIN END))* 'msgs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (('srvs:' BEGIN END) | ('actions:' BEGIN END))* 'msgs:' BEGIN (ambiguity) spec+=TopicSpec
+	 *     fromGitRepo=EString (('srvs:' BEGIN END) | ('actions:' BEGIN END))* 'msgs:' BEGIN (ambiguity) spec+=TopicSpec
+	 *     name=RosNames ':' BEGIN (('srvs:' BEGIN END) | ('actions:' BEGIN END))* 'msgs:' BEGIN (ambiguity) spec+=TopicSpec
+	 *     spec+=TopicSpec (ambiguity) spec+=TopicSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('actions:' BEGIN END)? ('srvs:' BEGIN END)?)+ 'msgs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ServiceSpec END (('actions:' BEGIN END)? ('srvs:' BEGIN END)?)+ 'msgs:' BEGIN (ambiguity) spec+=TopicSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('srvs:' BEGIN END)? ('actions:' BEGIN END)?)+ 'msgs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ActionSpec END (('srvs:' BEGIN END)? ('actions:' BEGIN END)?)+ 'msgs:' BEGIN (ambiguity) spec+=TopicSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_0_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('msgs:' BEGIN END) | ('actions:' BEGIN END))* 'srvs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (('msgs:' BEGIN END) | ('actions:' BEGIN END))* 'srvs:' BEGIN (ambiguity) spec+=ServiceSpec
+	 *     fromGitRepo=EString (('msgs:' BEGIN END) | ('actions:' BEGIN END))* 'srvs:' BEGIN (ambiguity) spec+=ServiceSpec
+	 *     name=RosNames ':' BEGIN (('msgs:' BEGIN END) | ('actions:' BEGIN END))* 'srvs:' BEGIN (ambiguity) spec+=ServiceSpec
+	 *     spec+=ServiceSpec (ambiguity) spec+=ServiceSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('actions:' BEGIN END)? ('msgs:' BEGIN END)?)+ 'srvs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=TopicSpec END (('actions:' BEGIN END)? ('msgs:' BEGIN END)?)+ 'srvs:' BEGIN (ambiguity) spec+=ServiceSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('msgs:' BEGIN END)? ('actions:' BEGIN END)?)+ 'srvs:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ActionSpec END (('msgs:' BEGIN END)? ('actions:' BEGIN END)?)+ 'srvs:' BEGIN (ambiguity) spec+=ServiceSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_1_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p_SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('msgs:' BEGIN END) | ('srvs:' BEGIN END))* 'actions:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (('msgs:' BEGIN END) | ('srvs:' BEGIN END))* 'actions:' BEGIN (ambiguity) spec+=ActionSpec
+	 *     fromGitRepo=EString (('msgs:' BEGIN END) | ('srvs:' BEGIN END))* 'actions:' BEGIN (ambiguity) spec+=ActionSpec
+	 *     name=RosNames ':' BEGIN (('msgs:' BEGIN END) | ('srvs:' BEGIN END))* 'actions:' BEGIN (ambiguity) spec+=ActionSpec
+	 *     spec+=ActionSpec (ambiguity) spec+=ActionSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('msgs:' BEGIN END)? ('srvs:' BEGIN END)?)+ 'actions:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ServiceSpec END (('msgs:' BEGIN END)? ('srvs:' BEGIN END)?)+ 'actions:' BEGIN (ambiguity) spec+=ActionSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END (('srvs:' BEGIN END)? ('msgs:' BEGIN END)?)+ 'actions:' BEGIN)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=TopicSpec END (('srvs:' BEGIN END)? ('msgs:' BEGIN END)?)+ 'actions:' BEGIN (ambiguity) spec+=ActionSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___ENDTerminalRuleCall_6_2_3_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p_ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('msgs:' BEGIN END (('srvs:' BEGIN END) | ('actions:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=TopicSpec END (('srvs:' BEGIN END) | ('actions:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('srvs:' BEGIN END (('msgs:' BEGIN END) | ('actions:' BEGIN END))*)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ServiceSpec END (('msgs:' BEGIN END) | ('actions:' BEGIN END))* (ambiguity) END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('msgs:' BEGIN END) | ('actions:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (ambiguity) 'srvs:' BEGIN (END (ambiguity) 'srvs:' BEGIN)* spec+=ServiceSpec
+	 *     fromGitRepo=EString (ambiguity) 'srvs:' BEGIN (END (ambiguity) 'srvs:' BEGIN)* spec+=ServiceSpec
+	 *     name=RosNames ':' BEGIN (ambiguity) 'srvs:' BEGIN (END (ambiguity) 'srvs:' BEGIN)* spec+=ServiceSpec
+	 *     spec+=ServiceSpec END (ambiguity) ('srvs:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('msgs:' BEGIN END) | ('srvs:' BEGIN END) | ('actions:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (ambiguity) END (rule end)
 	 *     fromGitRepo=EString (ambiguity) END (rule end)
-	 *     name=RosNames ':' BEGIN (ambiguity) 'dependencies:' '[' dependency+=Dependency
 	 *     name=RosNames ':' BEGIN (ambiguity) END (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_Package_Impl___SpecsKeyword_5_0_BEGINTerminalRuleCall_5_1_ENDTerminalRuleCall_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('srvs:' BEGIN END) | ('actions:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (ambiguity) 'msgs:' BEGIN (END (ambiguity) 'msgs:' BEGIN)* spec+=TopicSpec
+	 *     fromGitRepo=EString (ambiguity) 'msgs:' BEGIN (END (ambiguity) 'msgs:' BEGIN)* spec+=TopicSpec
+	 *     name=RosNames ':' BEGIN (ambiguity) 'msgs:' BEGIN (END (ambiguity) 'msgs:' BEGIN)* spec+=TopicSpec
+	 *     spec+=TopicSpec END (ambiguity) ('msgs:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('actions:' BEGIN END)? ('msgs:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=TopicSpec END (ambiguity) 'srvs:' BEGIN (END (ambiguity) 'srvs:' BEGIN)* spec+=ServiceSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('actions:' BEGIN END)? ('srvs:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ServiceSpec END (ambiguity) 'msgs:' BEGIN (END (ambiguity) 'msgs:' BEGIN)* spec+=TopicSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('msgs:' BEGIN END) | ('srvs:' BEGIN END))*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dependency+=Dependency ']' (ambiguity) 'actions:' BEGIN (END (ambiguity) 'actions:' BEGIN)* spec+=ActionSpec
+	 *     fromGitRepo=EString (ambiguity) 'actions:' BEGIN (END (ambiguity) 'actions:' BEGIN)* spec+=ActionSpec
+	 *     name=RosNames ':' BEGIN (ambiguity) 'actions:' BEGIN (END (ambiguity) 'actions:' BEGIN)* spec+=ActionSpec
+	 *     spec+=ActionSpec END (ambiguity) ('actions:' BEGIN END (ambiguity))* END (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3___or___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3____a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('msgs:' BEGIN END)? ('actions:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ActionSpec END (ambiguity) 'srvs:' BEGIN (END (ambiguity) 'srvs:' BEGIN)* spec+=ServiceSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('msgs:' BEGIN END)? ('srvs:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ServiceSpec END (ambiguity) 'actions:' BEGIN (END (ambiguity) 'actions:' BEGIN)* spec+=ActionSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('srvs:' BEGIN END)? ('actions:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=ActionSpec END (ambiguity) 'msgs:' BEGIN (END (ambiguity) 'msgs:' BEGIN)* spec+=TopicSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (('srvs:' BEGIN END)? ('msgs:' BEGIN END)?)+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     spec+=TopicSpec END (ambiguity) 'actions:' BEGIN (END (ambiguity) 'actions:' BEGIN)* spec+=ActionSpec
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

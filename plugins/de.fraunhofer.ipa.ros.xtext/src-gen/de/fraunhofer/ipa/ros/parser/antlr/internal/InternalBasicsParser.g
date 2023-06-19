@@ -2018,20 +2018,20 @@ ruleAbstractType returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractTypeAccess().getTopicSpecRefParserRuleCall_29());
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getSpecBaseRefParserRuleCall_29());
 		}
-		this_TopicSpecRef_29=ruleTopicSpecRef
+		this_SpecBaseRef_29=ruleSpecBaseRef
 		{
-			$current = $this_TopicSpecRef_29.current;
+			$current = $this_SpecBaseRef_29.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArrayTopicSpecRefParserRuleCall_30());
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArraySpecRefParserRuleCall_30());
 		}
-		this_ArrayTopicSpecRef_30=ruleArrayTopicSpecRef
+		this_ArraySpecRef_30=ruleArraySpecRef
 		{
-			$current = $this_ArrayTopicSpecRef_30.current;
+			$current = $this_ArraySpecRef_30.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2907,15 +2907,15 @@ ruleHeader returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleTopicSpecRef
-entryRuleTopicSpecRef returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTopicSpecRefRule()); }
-	iv_ruleTopicSpecRef=ruleTopicSpecRef
-	{ $current=$iv_ruleTopicSpecRef.current; }
+// Entry rule entryRuleSpecBaseRef
+entryRuleSpecBaseRef returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpecBaseRefRule()); }
+	iv_ruleSpecBaseRef=ruleSpecBaseRef
+	{ $current=$iv_ruleSpecBaseRef.current; }
 	EOF;
 
-// Rule TopicSpecRef
-ruleTopicSpecRef returns [EObject current=null]
+// Rule SpecBaseRef
+ruleSpecBaseRef returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2926,11 +2926,11 @@ ruleTopicSpecRef returns [EObject current=null]
 		(
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getTopicSpecRefRule());
+					$current = createModelElement(grammarAccess.getSpecBaseRefRule());
 				}
 			}
 			{
-				newCompositeNode(grammarAccess.getTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0());
+				newCompositeNode(grammarAccess.getSpecBaseRefAccess().getReferenceTopicSpecCrossReference_0());
 			}
 			ruleEString
 			{
@@ -2940,15 +2940,15 @@ ruleTopicSpecRef returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleArrayTopicSpecRef
-entryRuleArrayTopicSpecRef returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getArrayTopicSpecRefRule()); }
-	iv_ruleArrayTopicSpecRef=ruleArrayTopicSpecRef
-	{ $current=$iv_ruleArrayTopicSpecRef.current; }
+// Entry rule entryRuleArraySpecRef
+entryRuleArraySpecRef returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getArraySpecRefRule()); }
+	iv_ruleArraySpecRef=ruleArraySpecRef
+	{ $current=$iv_ruleArraySpecRef.current; }
 	EOF;
 
-// Rule ArrayTopicSpecRef
-ruleArrayTopicSpecRef returns [EObject current=null]
+// Rule ArraySpecRef
+ruleArraySpecRef returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2960,11 +2960,11 @@ ruleArrayTopicSpecRef returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArrayTopicSpecRefRule());
+						$current = createModelElement(grammarAccess.getArraySpecRefRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getArrayTopicSpecRefAccess().getTopicSpecTopicSpecCrossReference_0_0());
+					newCompositeNode(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecCrossReference_0_0());
 				}
 				ruleEString
 				{
@@ -2974,7 +2974,7 @@ ruleArrayTopicSpecRef returns [EObject current=null]
 		)
 		otherlv_1=LeftSquareBracketRightSquareBracket
 		{
-			newLeafNode(otherlv_1, grammarAccess.getArrayTopicSpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getArraySpecRefAccess().getLeftSquareBracketRightSquareBracketKeyword_1());
 		}
 	)
 ;

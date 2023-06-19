@@ -320,12 +320,12 @@ public class MessagePartItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-                 RosFactory.eINSTANCE.createTopicSpecRef()));
+                 RosFactory.eINSTANCE.createTopicSpecMsgRef()));
 
         newChildDescriptors.add
             (createChildParameter
                 (PrimitivesPackage.Literals.MESSAGE_PART__TYPE,
-                 RosFactory.eINSTANCE.createArrayTopicSpecRef()));
+                 RosFactory.eINSTANCE.createArrayTopicSpecMsgRef()));
     }
 
     /**

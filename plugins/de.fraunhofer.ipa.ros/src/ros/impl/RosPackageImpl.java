@@ -18,7 +18,7 @@ import ros.ActionClient;
 import ros.ActionServer;
 import ros.ActionSpec;
 import ros.AmentPackage;
-import ros.ArrayTopicSpecRef;
+import ros.ArrayTopicSpecMsgRef;
 import ros.Artifact;
 import ros.CatkinPackage;
 import ros.Dependency;
@@ -66,7 +66,7 @@ import ros.ServiceSpec;
 import ros.SpecBase;
 import ros.Subscriber;
 import ros.TopicSpec;
-import ros.TopicSpecRef;
+import ros.TopicSpecMsgRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -430,16 +430,16 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass topicSpecRefEClass = null;
+    private EClass topicSpecMsgRefEClass = null;
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass arrayTopicSpecRefEClass = null;
+    private EClass arrayTopicSpecMsgRefEClass = null;
 
-    /**
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1732,41 +1732,41 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
      * @generated
      */
     @Override
-    public EClass getTopicSpecRef() {
-        return topicSpecRefEClass;
+    public EClass getTopicSpecMsgRef() {
+        return topicSpecMsgRefEClass;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EReference getTopicSpecRef_TopicSpec() {
-        return (EReference)topicSpecRefEClass.getEStructuralFeatures().get(0);
+    public EReference getTopicSpecMsgRef_Reference() {
+        return (EReference)topicSpecMsgRefEClass.getEStructuralFeatures().get(0);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EClass getArrayTopicSpecRef() {
-        return arrayTopicSpecRefEClass;
+    public EClass getArrayTopicSpecMsgRef() {
+        return arrayTopicSpecMsgRefEClass;
     }
 
-    /**
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EReference getArrayTopicSpecRef_TopicSpec() {
-        return (EReference)arrayTopicSpecRefEClass.getEStructuralFeatures().get(0);
+    public EReference getArrayTopicSpecMsgRef_Reference() {
+        return (EReference)arrayTopicSpecMsgRefEClass.getEStructuralFeatures().get(0);
     }
 
-    /**
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1976,11 +1976,11 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
         createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__RELIABILITY);
         createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DURABILITY);
 
-        topicSpecRefEClass = createEClass(TOPIC_SPEC_REF);
-        createEReference(topicSpecRefEClass, TOPIC_SPEC_REF__TOPIC_SPEC);
+        topicSpecMsgRefEClass = createEClass(TOPIC_SPEC_MSG_REF);
+        createEReference(topicSpecMsgRefEClass, TOPIC_SPEC_MSG_REF__REFERENCE);
 
-        arrayTopicSpecRefEClass = createEClass(ARRAY_TOPIC_SPEC_REF);
-        createEReference(arrayTopicSpecRefEClass, ARRAY_TOPIC_SPEC_REF__TOPIC_SPEC);
+        arrayTopicSpecMsgRefEClass = createEClass(ARRAY_TOPIC_SPEC_MSG_REF);
+        createEReference(arrayTopicSpecMsgRefEClass, ARRAY_TOPIC_SPEC_MSG_REF__REFERENCE);
 
         // Create data types
         graphNameEDataType = createEDataType(GRAPH_NAME);
@@ -2054,8 +2054,8 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
         parameterStructEClass.getESuperTypes().add(this.getParameterValue());
         parameterDateEClass.getESuperTypes().add(this.getParameterValue());
         amentPackageEClass.getESuperTypes().add(this.getPackage());
-        topicSpecRefEClass.getESuperTypes().add(thePrimitivesPackage.getAbstractType());
-        arrayTopicSpecRefEClass.getESuperTypes().add(thePrimitivesPackage.getAbstractType());
+        topicSpecMsgRefEClass.getESuperTypes().add(thePrimitivesPackage.getAbstractType());
+        arrayTopicSpecMsgRefEClass.getESuperTypes().add(thePrimitivesPackage.getAbstractType());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2229,11 +2229,11 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
         initEAttribute(getQualityOfService_Reliability(), ecorePackage.getEString(), "Reliability", "reliable", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getQualityOfService_Durability(), ecorePackage.getEString(), "Durability", "transient_local", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(topicSpecRefEClass, TopicSpecRef.class, "TopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getTopicSpecRef_TopicSpec(), this.getTopicSpec(), null, "TopicSpec", null, 1, 1, TopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(topicSpecMsgRefEClass, TopicSpecMsgRef.class, "TopicSpecMsgRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getTopicSpecMsgRef_Reference(), this.getTopicSpec(), null, "Reference", null, 1, 1, TopicSpecMsgRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(arrayTopicSpecRefEClass, ArrayTopicSpecRef.class, "ArrayTopicSpecRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getArrayTopicSpecRef_TopicSpec(), this.getTopicSpec(), null, "TopicSpec", null, 1, 1, ArrayTopicSpecRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(arrayTopicSpecMsgRefEClass, ArrayTopicSpecMsgRef.class, "ArrayTopicSpecMsgRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getArrayTopicSpecMsgRef_Reference(), this.getSpecBase(), null, "Reference", null, 1, 1, ArrayTopicSpecMsgRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
         initEDataType(graphNameEDataType, String.class, "GraphName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
