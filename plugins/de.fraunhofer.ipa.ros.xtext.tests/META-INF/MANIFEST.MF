@@ -11,7 +11,12 @@ Require-Bundle: de.fraunhofer.ipa.ros.xtext,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
- de.fraunhofer.ipa.roscode.generator
+ org.junit,
+ org.hamcrest.core,
+ org.opentest4j,
+ de.fraunhofer.ipa.ros1.xtext;bundle-version="2.0.0",
+ de.fraunhofer.ipa.ros2.xtext;bundle-version="2.0.0",
+ de.fraunhofer.ipa.rossystem;bundle-version="2.0.0"
 Import-Package: org.apache.log4j,
  org.junit;version="4.5.0",
  org.junit.runner;version="4.5.0",
@@ -19,6 +24,16 @@ Import-Package: org.apache.log4j,
  org.junit.runner.notification;version="4.5.0",
  org.junit.runners;version="4.5.0",
  org.junit.runners.model;version="4.5.0",
- org.hamcrest.core
+ org.hamcrest.core,
+ org.junit.jupiter.api;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.condition;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.function;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.io;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.parallel;version="[5.1.0,6.0.0)",
+ org.junit.platform.commons.support;version="[1.0.0,2.0.0)";resolution:=optional,
+ org.junit.platform.engine;version="[1.0.0,2.0.0)",
+ org.junit.platform.runner;version="[1.0.0,2.0.0)",
+ org.junit.platform.suite.api;version="[1.0.0,2.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.ros.tests;x-internal=true
