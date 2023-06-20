@@ -32,9 +32,9 @@
         <module>../de.fraunhofer.ipa.ros.editor</module>
         <!--module>../de.fraunhofer.ipa.rossystem.model.combination</module-->
         <!--module>../de.fraunhofer.ipa.ros.model.spec.check</module-->
-        <module>../de.fraunhofer.ipa.roscode.generator</module>
+        <!--module>../de.fraunhofer.ipa.roscode.generator</module-->
         <!--module>../de.fraunhofer.ipa.ros.observer.generator</module-->
-        <module>../de.fraunhofer.ipa.ros.xtext.tests</module>
+        <!--module>../de.fraunhofer.ipa.ros.xtext.tests</module-->
 
         <module>../de.fraunhofer.ipa.rossystem</module>
         <module>../de.fraunhofer.ipa.rossystem.xtext</module>

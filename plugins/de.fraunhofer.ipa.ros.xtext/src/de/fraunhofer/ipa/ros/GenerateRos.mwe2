@@ -1,5 +1,6 @@
 module de.fraunhofer.ipa.ros.GenerateRos
 
+import Basics.xtext
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
@@ -31,6 +32,7 @@ Workflow {
         language = StandardLanguage {
             name = "de.fraunhofer.ipa.ros.Ros"
             fileExtensions = "ros"
+            referencedResource = "platform:/resource/de.fraunhofer.ipa.ros.xtext/src/de/fraunhofer/ipa/ros/Basics.xtext"
             referencedResource = "platform:/resource/de.fraunhofer.ipa.ros/model/ros.genmodel"
 
             fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
