@@ -1,7 +1,9 @@
 grammar de.fraunhofer.ipa.ros.Basics with org.eclipse.xtext.common.Terminals
 
-import "http://www.ipa.fraunhofer.de/ros"
-import "http://www.ipa.fraunhofer.de/primitives" as primitives
+import "platform:/resource/de.fraunhofer.ipa.ros/model/ros.ecore"
+import "platform:/resource/de.fraunhofer.ipa.ros/model/PrimitivesTypes.ecore" as primitives
+//import "http://www.ipa.fraunhofer.de/ros"
+//import "http://www.ipa.fraunhofer.de/primitives" as primitives
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/emf/2003/XMLType" as type
 
