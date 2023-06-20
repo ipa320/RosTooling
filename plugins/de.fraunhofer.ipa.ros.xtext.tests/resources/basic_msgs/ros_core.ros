@@ -1,112 +1,106 @@
 std_msgs:
-  specs:
-     msg: Bool
-       message:
-         bool data
-     msg: Byte
-       message:
-         byte data
-     msg: ByteMultiArray
-       message:
-         MultiArrayLayout layout byte[] data
-     msg: ColorRGBA
-       message:
-         float32 r float32 g float32 b float32 a
-     msg: Duration
-       message:
-         duration data
-     msg: Empty
-       message:
-
-     msg: Float32
-       message:
-         float32 data
-     msg: Float32MultiArray
-       message:
-         MultiArrayLayout layout float32[] data
-     msg: Float64
-       message:
-         float64 data
-     msg: Float64MultiArray
-       message:
-         MultiArrayLayout layout float64[] data
-     msg: Header
-       message:
-         uint32 seq time stamp string frame_id
-     msg: Int16
-       message:
-         int16 data
-     msg: Int16MultiArray
-       message:
-         MultiArrayLayout layout int16[] data
-     msg: Int32
-       message:
-         int32 data
-     msg: Int32MultiArray
-       message:
-         MultiArrayLayout layout int32[] data
-     msg: Int64
-       message:
-         int64 data
-     msg: Int64MultiArray
-       message:
-         MultiArrayLayout layout int64[] data
-     msg: Int8
-       message:
-         int8 data
-     msg: Int8MultiArray
-       message:
-         MultiArrayLayout layout int8[] data
-     msg: MultiArrayDimension
-       message:
-         string label uint32 size uint32 stride
-     msg: MultiArrayLayout
-       message:
-         MultiArrayDimension[] dim uint32 data_offset
-     msg: String
-       message:
-         string data
-     msg: Time
-       message:
-         time data
-     msg: UInt16
-       message:
-         uint16 data
-     msg: UInt16MultiArray
-       message:
-         MultiArrayLayout layout uint16[] data
-     msg: UInt32
-       message:
-         uint32 data
-     msg: UInt32MultiArray
-       message:
-         MultiArrayLayout layout uint32[] data
-     msg: UInt64
-       message:
-         uint64 data
-     msg: UInt64MultiArray
-       message:
-         MultiArrayLayout layout uint64[] data
-     msg: UInt8
-       message:
-         uint8 data
-     msg: UInt8MultiArray
-       message:
-         MultiArrayLayout layout uint8[] data
-std_srvs:
-  specs:
-     srv: Empty
-       request:
-
-       response:
-     srv: SetBool
-       request:
-         bool data
-
-       response:
-         bool success string message
-     srv: Trigger
-       request:
-
-       response:
-         bool success string message
+  msgs:
+    ColorRGBA
+      message
+        float32 r
+        float32 g
+        float32 b
+        float32 a
+    Float64MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        float64[] data
+    Int64MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        int64[] data
+    Byte
+      message
+        byte data
+    Int32MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        int32[] data
+    Header
+      message
+        'builtin_interfaces/msg/Time'[] stamp
+        string frame_id
+    Int32
+      message
+        int32 data
+    Float32MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        float32[] data
+    Int64
+      message
+        int64 data
+    String
+      message
+        string data
+    Int16MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        int16[] data
+    Int8MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        int8[] data
+    MultiArrayLayout
+      message
+        'std_msgs/msg/MultiArrayDimension'[] dim
+        uint32 data_offset
+    UInt16MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        uint16[] data
+    ByteMultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        byte[] data
+    Float32
+      message
+        float32 data
+    UInt32MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        uint32[] data
+    UInt64MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        uint64[] data
+    MultiArrayDimension
+      message
+        string label
+        uint32 size
+        uint32 stride
+    UInt32
+      message
+        uint32 data
+    Empty
+      message
+    Bool
+      message
+        bool data
+    UInt64
+      message
+        uint64 data
+    Float64
+      message
+        float64 data
+    UInt8
+      message
+        uint8 data
+    Int8
+      message
+        int8 data
+    UInt8MultiArray
+      message
+        'std_msgs/msg/MultiArrayLayout'[] layout
+        uint8[] data
+    Int16
+      message
+        int16 data
+    UInt16
+      message
+        uint16 data
