@@ -196,7 +196,27 @@ public class SystemItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
+                 RossystemFactory.eINSTANCE.createRosSystemConnection()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
                  RossystemFactory.eINSTANCE.createRosConnection()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
+                 RossystemFactory.eINSTANCE.createRosTopicConnection()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
+                 RossystemFactory.eINSTANCE.createRosServiceConnection()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
+                 RossystemFactory.eINSTANCE.createRosActionConnection()));
 
         newChildDescriptors.add
             (createChildParameter

@@ -62,8 +62,21 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Parameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosConnection" eSuperTypes="#//Connection">
+  <eClassifiers xsi:type="ecore:EClass" name="RosSystemConnection" eSuperTypes="#//Connection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RosInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//RosInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RosTopicConnection" eSuperTypes="#//RosConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Subscriber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceConnection" eSuperTypes="#//RosConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RosActionConnection" eSuperTypes="#//RosConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionServer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionClient"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -148,6 +148,15 @@ public interface RossystemFactory extends EFactory {
     RosParameter createRosParameter();
 
     /**
+     * Returns a new object of class '<em>Ros System Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ros System Connection</em>'.
+     * @generated
+     */
+    RosSystemConnection createRosSystemConnection();
+
+                /**
      * Returns a new object of class '<em>Ros Connection</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -157,6 +166,33 @@ public interface RossystemFactory extends EFactory {
     RosConnection createRosConnection();
 
     /**
+     * Returns a new object of class '<em>Ros Topic Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ros Topic Connection</em>'.
+     * @generated
+     */
+    RosTopicConnection createRosTopicConnection();
+
+                /**
+     * Returns a new object of class '<em>Ros Service Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ros Service Connection</em>'.
+     * @generated
+     */
+    RosServiceConnection createRosServiceConnection();
+
+                /**
+     * Returns a new object of class '<em>Ros Action Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ros Action Connection</em>'.
+     * @generated
+     */
+    RosActionConnection createRosActionConnection();
+
+                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

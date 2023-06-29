@@ -39,10 +39,6 @@ Duration : 'duration';
 
 Feedback : 'feedback';
 
-FromPub : 'fromPub:';
-
-FromSub : 'fromSub:';
-
 String_2 : 'string[]';
 
 Threads : 'threads:';
@@ -60,14 +56,6 @@ Integer : 'Integer';
 Float32 : 'float32';
 
 Float64 : 'float64';
-
-FromAC : 'fromAC:';
-
-FromAS : 'fromAS:';
-
-FromSC : 'fromSC:';
-
-FromSS : 'fromSS:';
 
 Int16_1 : 'int16[]';
 
@@ -123,6 +111,10 @@ Int32 : 'int32';
 
 Int64 : 'int64';
 
+Pub : 'pub->';
+
+Sub : 'sub->';
+
 Type_1 : 'type:';
 
 Uint8 : 'uint8';
@@ -132,6 +124,10 @@ Value : 'value';
 Date : 'Date';
 
 List : 'List';
+
+Ac : 'ac->';
+
+As : 'as->';
 
 Bool : 'bool';
 
@@ -144,6 +140,10 @@ Int8 : 'int8';
 Name : 'name';
 
 Node : 'node';
+
+Sc : 'sc->';
+
+Ss : 'ss->';
 
 Time : 'time';
 
@@ -158,6 +158,8 @@ HyphenMinusLeftSquareBracket : '-[';
 LeftSquareBracketRightSquareBracket : '[]';
 
 Comma : ',';
+
+HyphenMinus : '-';
 
 Colon : ':';
 

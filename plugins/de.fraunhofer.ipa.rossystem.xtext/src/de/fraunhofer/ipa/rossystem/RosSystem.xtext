@@ -31,19 +31,20 @@ RosSystem returns System:
         ) |
         ('connections:'
             BEGIN
-            connections+=RosConnection*
+            connections+=Connection*
             END
         )
         )*
     END;
 
 
+
 Process returns Process:
     {Process}
       name=EString':'
       BEGIN
-      ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
-      ('threads:'threads=Integer0)
+      ('nodes:' '['components+=[RosNode|EString] (',' components+=[RosNode|EString])*']')?
+      ('threads:'threads=Integer0)?
       END
 ;
 
@@ -64,41 +65,40 @@ RosNode returns RosNode:
 ;
 
 RosInterface returns RosInterface:
-    name=EString':'
-    BEGIN
-    reference=InterfaceReference
-    END
+    '-'name=EString':' (reference=InterfaceReference)
 ;
 
 InterfaceReference returns InterfaceReference:
-    InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference;
+    RosPublisherReference |
+    RosSubscriberReference |
+    RosServiceServerReference |
+    RosServerClientReference |
+    RosActionServerReference |
+    RosActionClientReference;
 
-InterfaceReference_Impl returns InterfaceReference:
-    {InterfaceReference}
-    ;
 
 RosPublisherReference returns RosPublisherReference:
-    'fromPub:'from=[ros::Publisher|EString]
+    "pub->" {RosPublisherReference} from=[ros::Publisher|EString]
 ;
 
 RosSubscriberReference returns RosSubscriberReference:
-    'fromSub:'from=[ros::Subscriber|EString]
+    "sub->" {RosSubscriberReference} from=[ros::Subscriber|EString]
 ;
 
 RosServiceServerReference returns RosServiceServerReference:
-    'fromSS:'from=[ros::ServiceServer|EString]
+    "ss->" {RosServiceServerReference} from=[ros::ServiceServer|EString]
 ;
 
 RosServerClientReference returns RosServerClientReference:
-    'fromSC:'from=[ros::ServiceClient|EString]
+    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
 ;
 
 RosActionServerReference returns RosActionServerReference:
-    'fromAS:'from=[ros::ActionServer|EString]
+    "as->" {RosActionServerReference} from=[ros::ActionServer|EString]
 ;
 
 RosActionClientReference returns RosActionClientReference:
-    'fromAC:'from=[ros::ActionClient|EString]
+    "ac->" {RosActionClientReference} from=[ros::ActionClient|EString]
 ;
 
 RosParameter returns RosParameter:
@@ -108,10 +108,32 @@ RosParameter returns RosParameter:
     END
 ;
 
+//By default the grammar will parser RosSystemConnection, i.e., connections of ports 
+// explicitly referenced within the system model. RosConnections are also implemented but not used for now.
+Connection returns Connection:
+    ( => RosSystemConnection) | RosConnection
+;
 
-RosConnection returns RosConnection:
+RosSystemConnection returns RosSystemConnection:
     '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 ;
+
+RosConnection returns RosConnection:
+    ( => RosTopicConnection) | ( => RosServiceConnection) | RosActionConnection
+;
+
+RosTopicConnection returns RosTopicConnection:
+    '-['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
+;
+
+RosServiceConnection returns RosServiceConnection:
+    '-['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
+;
+
+RosActionConnection returns RosActionConnection:
+    '-['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
+;
+
 
 ///////////////////
 

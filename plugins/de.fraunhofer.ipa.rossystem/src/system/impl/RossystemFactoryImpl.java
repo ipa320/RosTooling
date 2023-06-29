@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import system.InterfaceReference;
 import system.RosActionClientReference;
+import system.RosActionConnection;
 import system.RosActionServerReference;
 import system.RosConnection;
 import system.RosInterface;
@@ -20,8 +21,11 @@ import system.RosParameter;
 import system.RosParameterReference;
 import system.RosPublisherReference;
 import system.RosServerClientReference;
+import system.RosServiceConnection;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
+import system.RosSystemConnection;
+import system.RosTopicConnection;
 import system.Rossystem;
 import system.RossystemFactory;
 import system.RossystemPackage;
@@ -84,7 +88,11 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
             case RossystemPackage.ROS_ACTION_CLIENT_REFERENCE: return createRosActionClientReference();
             case RossystemPackage.ROS_PARAMETER_REFERENCE: return createRosParameterReference();
             case RossystemPackage.ROS_PARAMETER: return createRosParameter();
+            case RossystemPackage.ROS_SYSTEM_CONNECTION: return createRosSystemConnection();
             case RossystemPackage.ROS_CONNECTION: return createRosConnection();
+            case RossystemPackage.ROS_TOPIC_CONNECTION: return createRosTopicConnection();
+            case RossystemPackage.ROS_SERVICE_CONNECTION: return createRosServiceConnection();
+            case RossystemPackage.ROS_ACTION_CONNECTION: return createRosActionConnection();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -250,12 +258,56 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
      * @generated
      */
     @Override
+    public RosSystemConnection createRosSystemConnection() {
+        RosSystemConnectionImpl rosSystemConnection = new RosSystemConnectionImpl();
+        return rosSystemConnection;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public RosConnection createRosConnection() {
         RosConnectionImpl rosConnection = new RosConnectionImpl();
         return rosConnection;
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public RosTopicConnection createRosTopicConnection() {
+        RosTopicConnectionImpl rosTopicConnection = new RosTopicConnectionImpl();
+        return rosTopicConnection;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public RosServiceConnection createRosServiceConnection() {
+        RosServiceConnectionImpl rosServiceConnection = new RosServiceConnectionImpl();
+        return rosServiceConnection;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public RosActionConnection createRosActionConnection() {
+        RosActionConnectionImpl rosActionConnection = new RosActionConnectionImpl();
+        return rosActionConnection;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

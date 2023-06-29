@@ -394,6 +394,29 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link system.RosSystemConnection} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosSystemConnectionItemProvider rosSystemConnectionItemProvider;
+
+                /**
+     * This creates an adapter for a {@link system.RosSystemConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosSystemConnectionAdapter() {
+        if (rosSystemConnectionItemProvider == null) {
+            rosSystemConnectionItemProvider = new RosSystemConnectionItemProvider(this);
+        }
+
+        return rosSystemConnectionItemProvider;
+    }
+
+                /**
      * This keeps track of the one adapter used for all {@link system.RosConnection} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -417,6 +440,75 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link system.RosTopicConnection} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosTopicConnectionItemProvider rosTopicConnectionItemProvider;
+
+                /**
+     * This creates an adapter for a {@link system.RosTopicConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosTopicConnectionAdapter() {
+        if (rosTopicConnectionItemProvider == null) {
+            rosTopicConnectionItemProvider = new RosTopicConnectionItemProvider(this);
+        }
+
+        return rosTopicConnectionItemProvider;
+    }
+
+                /**
+     * This keeps track of the one adapter used for all {@link system.RosServiceConnection} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosServiceConnectionItemProvider rosServiceConnectionItemProvider;
+
+                /**
+     * This creates an adapter for a {@link system.RosServiceConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosServiceConnectionAdapter() {
+        if (rosServiceConnectionItemProvider == null) {
+            rosServiceConnectionItemProvider = new RosServiceConnectionItemProvider(this);
+        }
+
+        return rosServiceConnectionItemProvider;
+    }
+
+                /**
+     * This keeps track of the one adapter used for all {@link system.RosActionConnection} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected RosActionConnectionItemProvider rosActionConnectionItemProvider;
+
+                /**
+     * This creates an adapter for a {@link system.RosActionConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createRosActionConnectionAdapter() {
+        if (rosActionConnectionItemProvider == null) {
+            rosActionConnectionItemProvider = new RosActionConnectionItemProvider(this);
+        }
+
+        return rosActionConnectionItemProvider;
+    }
+
+                /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -535,7 +627,11 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
         if (rosActionClientReferenceItemProvider != null) rosActionClientReferenceItemProvider.dispose();
         if (rosParameterReferenceItemProvider != null) rosParameterReferenceItemProvider.dispose();
         if (rosParameterItemProvider != null) rosParameterItemProvider.dispose();
+        if (rosSystemConnectionItemProvider != null) rosSystemConnectionItemProvider.dispose();
         if (rosConnectionItemProvider != null) rosConnectionItemProvider.dispose();
+        if (rosTopicConnectionItemProvider != null) rosTopicConnectionItemProvider.dispose();
+        if (rosServiceConnectionItemProvider != null) rosServiceConnectionItemProvider.dispose();
+        if (rosActionConnectionItemProvider != null) rosActionConnectionItemProvider.dispose();
     }
 
 }

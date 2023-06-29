@@ -766,6 +766,52 @@ public interface RossystemPackage extends EPackage {
     int ROS_PARAMETER_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link system.impl.RosSystemConnectionImpl <em>Ros System Connection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.RosSystemConnectionImpl
+     * @see system.impl.RossystemPackageImpl#getRosSystemConnection()
+     * @generated
+     */
+    int ROS_SYSTEM_CONNECTION = 16;
+
+                /**
+     * The feature id for the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SYSTEM_CONNECTION__FROM = CONNECTION_FEATURE_COUNT + 0;
+
+                /**
+     * The feature id for the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SYSTEM_CONNECTION__TO = CONNECTION_FEATURE_COUNT + 1;
+
+                /**
+     * The number of structural features of the '<em>Ros System Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SYSTEM_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 2;
+
+                /**
+     * The number of operations of the '<em>Ros System Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SYSTEM_CONNECTION_OPERATION_COUNT = CONNECTION_OPERATION_COUNT + 0;
+
+                /**
      * The meta object id for the '{@link system.impl.RosConnectionImpl <em>Ros Connection</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -773,25 +819,7 @@ public interface RossystemPackage extends EPackage {
      * @see system.impl.RossystemPackageImpl#getRosConnection()
      * @generated
      */
-    int ROS_CONNECTION = 16;
-
-    /**
-     * The feature id for the '<em><b>From</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ROS_CONNECTION__FROM = CONNECTION_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>To</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ROS_CONNECTION__TO = CONNECTION_FEATURE_COUNT + 1;
+    int ROS_CONNECTION = 17;
 
     /**
      * The number of structural features of the '<em>Ros Connection</em>' class.
@@ -800,7 +828,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ROS_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 2;
+    int ROS_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Ros Connection</em>' class.
@@ -813,6 +841,145 @@ public interface RossystemPackage extends EPackage {
 
 
     /**
+     * The meta object id for the '{@link system.impl.RosTopicConnectionImpl <em>Ros Topic Connection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.RosTopicConnectionImpl
+     * @see system.impl.RossystemPackageImpl#getRosTopicConnection()
+     * @generated
+     */
+    int ROS_TOPIC_CONNECTION = 18;
+
+                /**
+     * The feature id for the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_TOPIC_CONNECTION__FROM = ROS_CONNECTION_FEATURE_COUNT + 0;
+
+                /**
+     * The feature id for the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_TOPIC_CONNECTION__TO = ROS_CONNECTION_FEATURE_COUNT + 1;
+
+                /**
+     * The number of structural features of the '<em>Ros Topic Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_TOPIC_CONNECTION_FEATURE_COUNT = ROS_CONNECTION_FEATURE_COUNT + 2;
+
+                /**
+     * The number of operations of the '<em>Ros Topic Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_TOPIC_CONNECTION_OPERATION_COUNT = ROS_CONNECTION_OPERATION_COUNT + 0;
+
+                /**
+     * The meta object id for the '{@link system.impl.RosServiceConnectionImpl <em>Ros Service Connection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.RosServiceConnectionImpl
+     * @see system.impl.RossystemPackageImpl#getRosServiceConnection()
+     * @generated
+     */
+    int ROS_SERVICE_CONNECTION = 19;
+
+                /**
+     * The feature id for the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SERVICE_CONNECTION__FROM = ROS_CONNECTION_FEATURE_COUNT + 0;
+
+                /**
+     * The feature id for the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SERVICE_CONNECTION__TO = ROS_CONNECTION_FEATURE_COUNT + 1;
+
+                /**
+     * The number of structural features of the '<em>Ros Service Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SERVICE_CONNECTION_FEATURE_COUNT = ROS_CONNECTION_FEATURE_COUNT + 2;
+
+                /**
+     * The number of operations of the '<em>Ros Service Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_SERVICE_CONNECTION_OPERATION_COUNT = ROS_CONNECTION_OPERATION_COUNT + 0;
+
+                /**
+     * The meta object id for the '{@link system.impl.RosActionConnectionImpl <em>Ros Action Connection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.RosActionConnectionImpl
+     * @see system.impl.RossystemPackageImpl#getRosActionConnection()
+     * @generated
+     */
+    int ROS_ACTION_CONNECTION = 20;
+
+                /**
+     * The feature id for the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_ACTION_CONNECTION__FROM = ROS_CONNECTION_FEATURE_COUNT + 0;
+
+                /**
+     * The feature id for the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_ACTION_CONNECTION__TO = ROS_CONNECTION_FEATURE_COUNT + 1;
+
+                /**
+     * The number of structural features of the '<em>Ros Action Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_ACTION_CONNECTION_FEATURE_COUNT = ROS_CONNECTION_FEATURE_COUNT + 2;
+
+                /**
+     * The number of operations of the '<em>Ros Action Connection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_ACTION_CONNECTION_OPERATION_COUNT = ROS_CONNECTION_OPERATION_COUNT + 0;
+
+
+                /**
      * Returns the meta object for class '{@link system.System <em>System</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1237,6 +1404,38 @@ public interface RossystemPackage extends EPackage {
     EReference getRosParameter_From();
 
     /**
+     * Returns the meta object for class '{@link system.RosSystemConnection <em>Ros System Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ros System Connection</em>'.
+     * @see system.RosSystemConnection
+     * @generated
+     */
+    EClass getRosSystemConnection();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosSystemConnection#getFrom <em>From</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>From</em>'.
+     * @see system.RosSystemConnection#getFrom()
+     * @see #getRosSystemConnection()
+     * @generated
+     */
+    EReference getRosSystemConnection_From();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosSystemConnection#getTo <em>To</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>To</em>'.
+     * @see system.RosSystemConnection#getTo()
+     * @see #getRosSystemConnection()
+     * @generated
+     */
+    EReference getRosSystemConnection_To();
+
+                /**
      * Returns the meta object for class '{@link system.RosConnection <em>Ros Connection</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1247,28 +1446,102 @@ public interface RossystemPackage extends EPackage {
     EClass getRosConnection();
 
     /**
-     * Returns the meta object for the reference '{@link system.RosConnection#getFrom <em>From</em>}'.
+     * Returns the meta object for class '{@link system.RosTopicConnection <em>Ros Topic Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ros Topic Connection</em>'.
+     * @see system.RosTopicConnection
+     * @generated
+     */
+    EClass getRosTopicConnection();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosTopicConnection#getFrom <em>From</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the reference '<em>From</em>'.
-     * @see system.RosConnection#getFrom()
-     * @see #getRosConnection()
+     * @see system.RosTopicConnection#getFrom()
+     * @see #getRosTopicConnection()
      * @generated
      */
-    EReference getRosConnection_From();
+    EReference getRosTopicConnection_From();
 
-    /**
-     * Returns the meta object for the reference '{@link system.RosConnection#getTo <em>To</em>}'.
+                /**
+     * Returns the meta object for the reference '{@link system.RosTopicConnection#getTo <em>To</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the reference '<em>To</em>'.
-     * @see system.RosConnection#getTo()
-     * @see #getRosConnection()
+     * @see system.RosTopicConnection#getTo()
+     * @see #getRosTopicConnection()
      * @generated
      */
-    EReference getRosConnection_To();
+    EReference getRosTopicConnection_To();
 
-    /**
+                /**
+     * Returns the meta object for class '{@link system.RosServiceConnection <em>Ros Service Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ros Service Connection</em>'.
+     * @see system.RosServiceConnection
+     * @generated
+     */
+    EClass getRosServiceConnection();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosServiceConnection#getFrom <em>From</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>From</em>'.
+     * @see system.RosServiceConnection#getFrom()
+     * @see #getRosServiceConnection()
+     * @generated
+     */
+    EReference getRosServiceConnection_From();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosServiceConnection#getTo <em>To</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>To</em>'.
+     * @see system.RosServiceConnection#getTo()
+     * @see #getRosServiceConnection()
+     * @generated
+     */
+    EReference getRosServiceConnection_To();
+
+                /**
+     * Returns the meta object for class '{@link system.RosActionConnection <em>Ros Action Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ros Action Connection</em>'.
+     * @see system.RosActionConnection
+     * @generated
+     */
+    EClass getRosActionConnection();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosActionConnection#getFrom <em>From</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>From</em>'.
+     * @see system.RosActionConnection#getFrom()
+     * @see #getRosActionConnection()
+     * @generated
+     */
+    EReference getRosActionConnection_From();
+
+                /**
+     * Returns the meta object for the reference '{@link system.RosActionConnection#getTo <em>To</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>To</em>'.
+     * @see system.RosActionConnection#getTo()
+     * @see #getRosActionConnection()
+     * @generated
+     */
+    EReference getRosActionConnection_To();
+
+                /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1644,6 +1917,32 @@ public interface RossystemPackage extends EPackage {
         EReference ROS_PARAMETER__FROM = eINSTANCE.getRosParameter_From();
 
         /**
+         * The meta object literal for the '{@link system.impl.RosSystemConnectionImpl <em>Ros System Connection</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.RosSystemConnectionImpl
+         * @see system.impl.RossystemPackageImpl#getRosSystemConnection()
+         * @generated
+         */
+        EClass ROS_SYSTEM_CONNECTION = eINSTANCE.getRosSystemConnection();
+
+                                /**
+         * The meta object literal for the '<em><b>From</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_SYSTEM_CONNECTION__FROM = eINSTANCE.getRosSystemConnection_From();
+
+                                /**
+         * The meta object literal for the '<em><b>To</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_SYSTEM_CONNECTION__TO = eINSTANCE.getRosSystemConnection_To();
+
+                                /**
          * The meta object literal for the '{@link system.impl.RosConnectionImpl <em>Ros Connection</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1654,20 +1953,82 @@ public interface RossystemPackage extends EPackage {
         EClass ROS_CONNECTION = eINSTANCE.getRosConnection();
 
         /**
+         * The meta object literal for the '{@link system.impl.RosTopicConnectionImpl <em>Ros Topic Connection</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.RosTopicConnectionImpl
+         * @see system.impl.RossystemPackageImpl#getRosTopicConnection()
+         * @generated
+         */
+        EClass ROS_TOPIC_CONNECTION = eINSTANCE.getRosTopicConnection();
+
+                                /**
          * The meta object literal for the '<em><b>From</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ROS_CONNECTION__FROM = eINSTANCE.getRosConnection_From();
+        EReference ROS_TOPIC_CONNECTION__FROM = eINSTANCE.getRosTopicConnection_From();
 
-        /**
+                                /**
          * The meta object literal for the '<em><b>To</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ROS_CONNECTION__TO = eINSTANCE.getRosConnection_To();
+        EReference ROS_TOPIC_CONNECTION__TO = eINSTANCE.getRosTopicConnection_To();
+
+                                /**
+         * The meta object literal for the '{@link system.impl.RosServiceConnectionImpl <em>Ros Service Connection</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.RosServiceConnectionImpl
+         * @see system.impl.RossystemPackageImpl#getRosServiceConnection()
+         * @generated
+         */
+        EClass ROS_SERVICE_CONNECTION = eINSTANCE.getRosServiceConnection();
+
+                                /**
+         * The meta object literal for the '<em><b>From</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_SERVICE_CONNECTION__FROM = eINSTANCE.getRosServiceConnection_From();
+
+                                /**
+         * The meta object literal for the '<em><b>To</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_SERVICE_CONNECTION__TO = eINSTANCE.getRosServiceConnection_To();
+
+                                /**
+         * The meta object literal for the '{@link system.impl.RosActionConnectionImpl <em>Ros Action Connection</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.RosActionConnectionImpl
+         * @see system.impl.RossystemPackageImpl#getRosActionConnection()
+         * @generated
+         */
+        EClass ROS_ACTION_CONNECTION = eINSTANCE.getRosActionConnection();
+
+                                /**
+         * The meta object literal for the '<em><b>From</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_ACTION_CONNECTION__FROM = eINSTANCE.getRosActionConnection_From();
+
+                                /**
+         * The meta object literal for the '<em><b>To</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROS_ACTION_CONNECTION__TO = eINSTANCE.getRosActionConnection_To();
 
     }
 

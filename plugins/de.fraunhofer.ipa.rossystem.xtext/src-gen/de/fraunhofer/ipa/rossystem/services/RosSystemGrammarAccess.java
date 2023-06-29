@@ -67,7 +67,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cConnectionsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_3_3_1 = (RuleCall)cGroup_3_3.eContents().get(1);
 		private final Assignment cConnectionsAssignment_3_3_2 = (Assignment)cGroup_3_3.eContents().get(2);
-		private final RuleCall cConnectionsRosConnectionParserRuleCall_3_3_2_0 = (RuleCall)cConnectionsAssignment_3_3_2.eContents().get(0);
+		private final RuleCall cConnectionsConnectionParserRuleCall_3_3_2_0 = (RuleCall)cConnectionsAssignment_3_3_2.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_3_3_3 = (RuleCall)cGroup_3_3.eContents().get(3);
 		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
@@ -92,7 +92,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        ) |
 		//        ('connections:'
 		//            BEGIN
-		//            connections+=RosConnection*
+		//            connections+=Connection*
 		//            END
 		//        )
 		//        )*
@@ -119,7 +119,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    ) |
 		//    ('connections:'
 		//        BEGIN
-		//        connections+=RosConnection*
+		//        connections+=Connection*
 		//        END
 		//    )
 		//    )*
@@ -156,7 +156,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//) |
 		//('connections:'
 		//    BEGIN
-		//    connections+=RosConnection*
+		//    connections+=Connection*
 		//    END
 		//)
 		//)*
@@ -230,7 +230,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//('connections:'
 		//    BEGIN
-		//    connections+=RosConnection*
+		//    connections+=Connection*
 		//    END
 		//)
 		public Group getGroup_3_3() { return cGroup_3_3; }
@@ -241,11 +241,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//BEGIN
 		public RuleCall getBEGINTerminalRuleCall_3_3_1() { return cBEGINTerminalRuleCall_3_3_1; }
 		
-		//connections+=RosConnection*
+		//connections+=Connection*
 		public Assignment getConnectionsAssignment_3_3_2() { return cConnectionsAssignment_3_3_2; }
 		
-		//RosConnection
-		public RuleCall getConnectionsRosConnectionParserRuleCall_3_3_2_0() { return cConnectionsRosConnectionParserRuleCall_3_3_2_0; }
+		//Connection
+		public RuleCall getConnectionsConnectionParserRuleCall_3_3_2_0() { return cConnectionsConnectionParserRuleCall_3_3_2_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_3_3_3() { return cENDTerminalRuleCall_3_3_3; }
@@ -265,13 +265,13 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cNodesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cComponentsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cComponentsComponentCrossReference_4_2_0 = (CrossReference)cComponentsAssignment_4_2.eContents().get(0);
-		private final RuleCall cComponentsComponentEStringParserRuleCall_4_2_0_1 = (RuleCall)cComponentsComponentCrossReference_4_2_0.eContents().get(1);
+		private final CrossReference cComponentsRosNodeCrossReference_4_2_0 = (CrossReference)cComponentsAssignment_4_2.eContents().get(0);
+		private final RuleCall cComponentsRosNodeEStringParserRuleCall_4_2_0_1 = (RuleCall)cComponentsRosNodeCrossReference_4_2_0.eContents().get(1);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
 		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
 		private final Assignment cComponentsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final CrossReference cComponentsComponentCrossReference_4_3_1_0 = (CrossReference)cComponentsAssignment_4_3_1.eContents().get(0);
-		private final RuleCall cComponentsComponentEStringParserRuleCall_4_3_1_0_1 = (RuleCall)cComponentsComponentCrossReference_4_3_1_0.eContents().get(1);
+		private final CrossReference cComponentsRosNodeCrossReference_4_3_1_0 = (CrossReference)cComponentsAssignment_4_3_1.eContents().get(0);
+		private final RuleCall cComponentsRosNodeEStringParserRuleCall_4_3_1_0_1 = (RuleCall)cComponentsRosNodeCrossReference_4_3_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cThreadsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
@@ -283,8 +283,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    {Process}
 		//      name=EString':'
 		//      BEGIN
-		//      ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
-		//      ('threads:'threads=Integer0)
+		//      ('nodes:' '['components+=[RosNode|EString] (',' components+=[RosNode|EString])*']')?
+		//      ('threads:'threads=Integer0)?
 		//      END
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -292,8 +292,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//{Process}
 		//  name=EString':'
 		//  BEGIN
-		//  ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
-		//  ('threads:'threads=Integer0)
+		//  ('nodes:' '['components+=[RosNode|EString] (',' components+=[RosNode|EString])*']')?
+		//  ('threads:'threads=Integer0)?
 		//  END
 		public Group getGroup() { return cGroup; }
 		
@@ -312,7 +312,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//BEGIN
 		public RuleCall getBEGINTerminalRuleCall_3() { return cBEGINTerminalRuleCall_3; }
 		
-		//('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
+		//('nodes:' '['components+=[RosNode|EString] (',' components+=[RosNode|EString])*']')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'nodes:'
@@ -321,34 +321,34 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'['
 		public Keyword getLeftSquareBracketKeyword_4_1() { return cLeftSquareBracketKeyword_4_1; }
 		
-		//components+=[Component|EString]
+		//components+=[RosNode|EString]
 		public Assignment getComponentsAssignment_4_2() { return cComponentsAssignment_4_2; }
 		
-		//[Component|EString]
-		public CrossReference getComponentsComponentCrossReference_4_2_0() { return cComponentsComponentCrossReference_4_2_0; }
+		//[RosNode|EString]
+		public CrossReference getComponentsRosNodeCrossReference_4_2_0() { return cComponentsRosNodeCrossReference_4_2_0; }
 		
 		//EString
-		public RuleCall getComponentsComponentEStringParserRuleCall_4_2_0_1() { return cComponentsComponentEStringParserRuleCall_4_2_0_1; }
+		public RuleCall getComponentsRosNodeEStringParserRuleCall_4_2_0_1() { return cComponentsRosNodeEStringParserRuleCall_4_2_0_1; }
 		
-		//(',' components+=[Component|EString])*
+		//(',' components+=[RosNode|EString])*
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//','
 		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
 		
-		//components+=[Component|EString]
+		//components+=[RosNode|EString]
 		public Assignment getComponentsAssignment_4_3_1() { return cComponentsAssignment_4_3_1; }
 		
-		//[Component|EString]
-		public CrossReference getComponentsComponentCrossReference_4_3_1_0() { return cComponentsComponentCrossReference_4_3_1_0; }
+		//[RosNode|EString]
+		public CrossReference getComponentsRosNodeCrossReference_4_3_1_0() { return cComponentsRosNodeCrossReference_4_3_1_0; }
 		
 		//EString
-		public RuleCall getComponentsComponentEStringParserRuleCall_4_3_1_0_1() { return cComponentsComponentEStringParserRuleCall_4_3_1_0_1; }
+		public RuleCall getComponentsRosNodeEStringParserRuleCall_4_3_1_0_1() { return cComponentsRosNodeEStringParserRuleCall_4_3_1_0_1; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_4_4() { return cRightSquareBracketKeyword_4_4; }
 		
-		//('threads:'threads=Integer0)
+		//('threads:'threads=Integer0)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'threads:'
@@ -496,267 +496,275 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class RosInterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosInterface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cReferenceAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cReferenceInterfaceReferenceParserRuleCall_3_0 = (RuleCall)cReferenceAssignment_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//RosInterface returns RosInterface:
-		//    name=EString':'
-		//    BEGIN
-		//    reference=InterfaceReference
-		//    END
+		//    '-'name=EString':' (reference=InterfaceReference)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString':'
-		//BEGIN
-		//reference=InterfaceReference
-		//END
+		//'-'name=EString':' (reference=InterfaceReference)
 		public Group getGroup() { return cGroup; }
 		
+		//'-'
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+		
 		//name=EString
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2() { return cBEGINTerminalRuleCall_2; }
-		
-		//reference=InterfaceReference
+		//(reference=InterfaceReference)
 		public Assignment getReferenceAssignment_3() { return cReferenceAssignment_3; }
 		
 		//InterfaceReference
 		public RuleCall getReferenceInterfaceReferenceParserRuleCall_3_0() { return cReferenceInterfaceReferenceParserRuleCall_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
 	}
 	public class InterfaceReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.InterfaceReference");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cInterfaceReference_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cRosPublisherReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cRosSubscriberReferenceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cRosServiceServerReferenceParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cRosServerClientReferenceParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cRosActionServerReferenceParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cRosActionClientReferenceParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cRosPublisherReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRosSubscriberReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cRosServiceServerReferenceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cRosServerClientReferenceParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRosActionServerReferenceParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cRosActionClientReferenceParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//InterfaceReference returns InterfaceReference:
-		//    InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference;
+		//    RosPublisherReference |
+		//    RosSubscriberReference |
+		//    RosServiceServerReference |
+		//    RosServerClientReference |
+		//    RosActionServerReference |
+		//    RosActionClientReference;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference
+		//RosPublisherReference |
+		//RosSubscriberReference |
+		//RosServiceServerReference |
+		//RosServerClientReference |
+		//RosActionServerReference |
+		//RosActionClientReference
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//InterfaceReference_Impl
-		public RuleCall getInterfaceReference_ImplParserRuleCall_0() { return cInterfaceReference_ImplParserRuleCall_0; }
-		
 		//RosPublisherReference
-		public RuleCall getRosPublisherReferenceParserRuleCall_1() { return cRosPublisherReferenceParserRuleCall_1; }
+		public RuleCall getRosPublisherReferenceParserRuleCall_0() { return cRosPublisherReferenceParserRuleCall_0; }
 		
 		//RosSubscriberReference
-		public RuleCall getRosSubscriberReferenceParserRuleCall_2() { return cRosSubscriberReferenceParserRuleCall_2; }
+		public RuleCall getRosSubscriberReferenceParserRuleCall_1() { return cRosSubscriberReferenceParserRuleCall_1; }
 		
 		//RosServiceServerReference
-		public RuleCall getRosServiceServerReferenceParserRuleCall_3() { return cRosServiceServerReferenceParserRuleCall_3; }
+		public RuleCall getRosServiceServerReferenceParserRuleCall_2() { return cRosServiceServerReferenceParserRuleCall_2; }
 		
 		//RosServerClientReference
-		public RuleCall getRosServerClientReferenceParserRuleCall_4() { return cRosServerClientReferenceParserRuleCall_4; }
+		public RuleCall getRosServerClientReferenceParserRuleCall_3() { return cRosServerClientReferenceParserRuleCall_3; }
 		
 		//RosActionServerReference
-		public RuleCall getRosActionServerReferenceParserRuleCall_5() { return cRosActionServerReferenceParserRuleCall_5; }
+		public RuleCall getRosActionServerReferenceParserRuleCall_4() { return cRosActionServerReferenceParserRuleCall_4; }
 		
 		//RosActionClientReference
-		public RuleCall getRosActionClientReferenceParserRuleCall_6() { return cRosActionClientReferenceParserRuleCall_6; }
-	}
-	public class InterfaceReference_ImplElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.InterfaceReference_Impl");
-		private final Action cInterfaceReferenceAction = (Action)rule.eContents().get(1);
-		
-		//InterfaceReference_Impl returns InterfaceReference:
-		//    {InterfaceReference}
-		//    ;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{InterfaceReference}
-		public Action getInterfaceReferenceAction() { return cInterfaceReferenceAction; }
+		public RuleCall getRosActionClientReferenceParserRuleCall_5() { return cRosActionClientReferenceParserRuleCall_5; }
 	}
 	public class RosPublisherReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosPublisherReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromPubKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromPublisherCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromPublisherEStringParserRuleCall_1_0_1 = (RuleCall)cFromPublisherCrossReference_1_0.eContents().get(1);
+		private final Keyword cPubKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosPublisherReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromPublisherCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromPublisherEStringParserRuleCall_2_0_1 = (RuleCall)cFromPublisherCrossReference_2_0.eContents().get(1);
 		
 		//RosPublisherReference returns RosPublisherReference:
-		//    'fromPub:'from=[ros::Publisher|EString]
+		//    "pub->" {RosPublisherReference} from=[ros::Publisher|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromPub:'from=[ros::Publisher|EString]
+		//"pub->" {RosPublisherReference} from=[ros::Publisher|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromPub:'
-		public Keyword getFromPubKeyword_0() { return cFromPubKeyword_0; }
+		//"pub->"
+		public Keyword getPubKeyword_0() { return cPubKeyword_0; }
+		
+		//{RosPublisherReference}
+		public Action getRosPublisherReferenceAction_1() { return cRosPublisherReferenceAction_1; }
 		
 		//from=[ros::Publisher|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::Publisher|EString]
-		public CrossReference getFromPublisherCrossReference_1_0() { return cFromPublisherCrossReference_1_0; }
+		public CrossReference getFromPublisherCrossReference_2_0() { return cFromPublisherCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromPublisherEStringParserRuleCall_1_0_1() { return cFromPublisherEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromPublisherEStringParserRuleCall_2_0_1() { return cFromPublisherEStringParserRuleCall_2_0_1; }
 	}
 	public class RosSubscriberReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosSubscriberReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromSubKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromSubscriberCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromSubscriberEStringParserRuleCall_1_0_1 = (RuleCall)cFromSubscriberCrossReference_1_0.eContents().get(1);
+		private final Keyword cSubKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosSubscriberReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromSubscriberCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromSubscriberEStringParserRuleCall_2_0_1 = (RuleCall)cFromSubscriberCrossReference_2_0.eContents().get(1);
 		
 		//RosSubscriberReference returns RosSubscriberReference:
-		//    'fromSub:'from=[ros::Subscriber|EString]
+		//    "sub->" {RosSubscriberReference} from=[ros::Subscriber|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromSub:'from=[ros::Subscriber|EString]
+		//"sub->" {RosSubscriberReference} from=[ros::Subscriber|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromSub:'
-		public Keyword getFromSubKeyword_0() { return cFromSubKeyword_0; }
+		//"sub->"
+		public Keyword getSubKeyword_0() { return cSubKeyword_0; }
+		
+		//{RosSubscriberReference}
+		public Action getRosSubscriberReferenceAction_1() { return cRosSubscriberReferenceAction_1; }
 		
 		//from=[ros::Subscriber|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::Subscriber|EString]
-		public CrossReference getFromSubscriberCrossReference_1_0() { return cFromSubscriberCrossReference_1_0; }
+		public CrossReference getFromSubscriberCrossReference_2_0() { return cFromSubscriberCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromSubscriberEStringParserRuleCall_1_0_1() { return cFromSubscriberEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromSubscriberEStringParserRuleCall_2_0_1() { return cFromSubscriberEStringParserRuleCall_2_0_1; }
 	}
 	public class RosServiceServerReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosServiceServerReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromSSKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromServiceServerCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromServiceServerEStringParserRuleCall_1_0_1 = (RuleCall)cFromServiceServerCrossReference_1_0.eContents().get(1);
+		private final Keyword cSsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosServiceServerReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromServiceServerCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromServiceServerEStringParserRuleCall_2_0_1 = (RuleCall)cFromServiceServerCrossReference_2_0.eContents().get(1);
 		
 		//RosServiceServerReference returns RosServiceServerReference:
-		//    'fromSS:'from=[ros::ServiceServer|EString]
+		//    "ss->" {RosServiceServerReference} from=[ros::ServiceServer|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromSS:'from=[ros::ServiceServer|EString]
+		//"ss->" {RosServiceServerReference} from=[ros::ServiceServer|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromSS:'
-		public Keyword getFromSSKeyword_0() { return cFromSSKeyword_0; }
+		//"ss->"
+		public Keyword getSsKeyword_0() { return cSsKeyword_0; }
+		
+		//{RosServiceServerReference}
+		public Action getRosServiceServerReferenceAction_1() { return cRosServiceServerReferenceAction_1; }
 		
 		//from=[ros::ServiceServer|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::ServiceServer|EString]
-		public CrossReference getFromServiceServerCrossReference_1_0() { return cFromServiceServerCrossReference_1_0; }
+		public CrossReference getFromServiceServerCrossReference_2_0() { return cFromServiceServerCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromServiceServerEStringParserRuleCall_1_0_1() { return cFromServiceServerEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromServiceServerEStringParserRuleCall_2_0_1() { return cFromServiceServerEStringParserRuleCall_2_0_1; }
 	}
 	public class RosServerClientReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosServerClientReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromSCKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromServiceClientCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromServiceClientEStringParserRuleCall_1_0_1 = (RuleCall)cFromServiceClientCrossReference_1_0.eContents().get(1);
+		private final Keyword cScKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosServerClientReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromServiceClientCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromServiceClientEStringParserRuleCall_2_0_1 = (RuleCall)cFromServiceClientCrossReference_2_0.eContents().get(1);
 		
 		//RosServerClientReference returns RosServerClientReference:
-		//    'fromSC:'from=[ros::ServiceClient|EString]
+		//    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromSC:'from=[ros::ServiceClient|EString]
+		//"sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromSC:'
-		public Keyword getFromSCKeyword_0() { return cFromSCKeyword_0; }
+		//"sc->"
+		public Keyword getScKeyword_0() { return cScKeyword_0; }
+		
+		//{RosServerClientReference}
+		public Action getRosServerClientReferenceAction_1() { return cRosServerClientReferenceAction_1; }
 		
 		//from=[ros::ServiceClient|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::ServiceClient|EString]
-		public CrossReference getFromServiceClientCrossReference_1_0() { return cFromServiceClientCrossReference_1_0; }
+		public CrossReference getFromServiceClientCrossReference_2_0() { return cFromServiceClientCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromServiceClientEStringParserRuleCall_1_0_1() { return cFromServiceClientEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromServiceClientEStringParserRuleCall_2_0_1() { return cFromServiceClientEStringParserRuleCall_2_0_1; }
 	}
 	public class RosActionServerReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosActionServerReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromASKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromActionServerCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromActionServerEStringParserRuleCall_1_0_1 = (RuleCall)cFromActionServerCrossReference_1_0.eContents().get(1);
+		private final Keyword cAsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosActionServerReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromActionServerCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromActionServerEStringParserRuleCall_2_0_1 = (RuleCall)cFromActionServerCrossReference_2_0.eContents().get(1);
 		
 		//RosActionServerReference returns RosActionServerReference:
-		//    'fromAS:'from=[ros::ActionServer|EString]
+		//    "as->" {RosActionServerReference} from=[ros::ActionServer|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromAS:'from=[ros::ActionServer|EString]
+		//"as->" {RosActionServerReference} from=[ros::ActionServer|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromAS:'
-		public Keyword getFromASKeyword_0() { return cFromASKeyword_0; }
+		//"as->"
+		public Keyword getAsKeyword_0() { return cAsKeyword_0; }
+		
+		//{RosActionServerReference}
+		public Action getRosActionServerReferenceAction_1() { return cRosActionServerReferenceAction_1; }
 		
 		//from=[ros::ActionServer|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::ActionServer|EString]
-		public CrossReference getFromActionServerCrossReference_1_0() { return cFromActionServerCrossReference_1_0; }
+		public CrossReference getFromActionServerCrossReference_2_0() { return cFromActionServerCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromActionServerEStringParserRuleCall_1_0_1() { return cFromActionServerEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromActionServerEStringParserRuleCall_2_0_1() { return cFromActionServerEStringParserRuleCall_2_0_1; }
 	}
 	public class RosActionClientReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosActionClientReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFromACKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromActionClientCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromActionClientEStringParserRuleCall_1_0_1 = (RuleCall)cFromActionClientCrossReference_1_0.eContents().get(1);
+		private final Keyword cAcKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cRosActionClientReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromActionClientCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromActionClientEStringParserRuleCall_2_0_1 = (RuleCall)cFromActionClientCrossReference_2_0.eContents().get(1);
 		
 		//RosActionClientReference returns RosActionClientReference:
-		//    'fromAC:'from=[ros::ActionClient|EString]
+		//    "ac->" {RosActionClientReference} from=[ros::ActionClient|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fromAC:'from=[ros::ActionClient|EString]
+		//"ac->" {RosActionClientReference} from=[ros::ActionClient|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'fromAC:'
-		public Keyword getFromACKeyword_0() { return cFromACKeyword_0; }
+		//"ac->"
+		public Keyword getAcKeyword_0() { return cAcKeyword_0; }
+		
+		//{RosActionClientReference}
+		public Action getRosActionClientReferenceAction_1() { return cRosActionClientReferenceAction_1; }
 		
 		//from=[ros::ActionClient|EString]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 		
 		//[ros::ActionClient|EString]
-		public CrossReference getFromActionClientCrossReference_1_0() { return cFromActionClientCrossReference_1_0; }
+		public CrossReference getFromActionClientCrossReference_2_0() { return cFromActionClientCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getFromActionClientEStringParserRuleCall_1_0_1() { return cFromActionClientEStringParserRuleCall_1_0_1; }
+		public RuleCall getFromActionClientEStringParserRuleCall_2_0_1() { return cFromActionClientEStringParserRuleCall_2_0_1; }
 	}
 	public class RosParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosParameter");
@@ -820,8 +828,28 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//END
 		public RuleCall getENDTerminalRuleCall_6() { return cENDTerminalRuleCall_6; }
 	}
-	public class RosConnectionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosConnection");
+	public class ConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.Connection");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRosSystemConnectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRosConnectionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Connection returns Connection:
+		//    ( => RosSystemConnection) | RosConnection
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//( => RosSystemConnection) | RosConnection
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//( => RosSystemConnection)
+		public RuleCall getRosSystemConnectionParserRuleCall_0() { return cRosSystemConnectionParserRuleCall_0; }
+		
+		//RosConnection
+		public RuleCall getRosConnectionParserRuleCall_1() { return cRosConnectionParserRuleCall_1; }
+	}
+	public class RosSystemConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosSystemConnection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -833,7 +861,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cToRosInterfaceEStringParserRuleCall_3_0_1 = (RuleCall)cToRosInterfaceCrossReference_3_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//RosConnection returns RosConnection:
+		//RosSystemConnection returns RosSystemConnection:
 		//    '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -868,6 +896,174 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//']'
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
 	}
+	public class RosConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosConnection");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRosTopicConnectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRosServiceConnectionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cRosActionConnectionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//RosConnection returns RosConnection:
+		//    ( => RosTopicConnection) | ( => RosServiceConnection) | RosActionConnection
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//( => RosTopicConnection) | ( => RosServiceConnection) | RosActionConnection
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//( => RosTopicConnection)
+		public RuleCall getRosTopicConnectionParserRuleCall_0() { return cRosTopicConnectionParserRuleCall_0; }
+		
+		//( => RosServiceConnection)
+		public RuleCall getRosServiceConnectionParserRuleCall_1() { return cRosServiceConnectionParserRuleCall_1; }
+		
+		//RosActionConnection
+		public RuleCall getRosActionConnectionParserRuleCall_2() { return cRosActionConnectionParserRuleCall_2; }
+	}
+	public class RosTopicConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosTopicConnection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cFromPublisherCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
+		private final RuleCall cFromPublisherEStringParserRuleCall_1_0_1 = (RuleCall)cFromPublisherCrossReference_1_0.eContents().get(1);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cToSubscriberCrossReference_3_0 = (CrossReference)cToAssignment_3.eContents().get(0);
+		private final RuleCall cToSubscriberEStringParserRuleCall_3_0_1 = (RuleCall)cToSubscriberCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//RosTopicConnection returns RosTopicConnection:
+		//    '-['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'-['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
+		public Group getGroup() { return cGroup; }
+		
+		//'-['
+		public Keyword getHyphenMinusLeftSquareBracketKeyword_0() { return cHyphenMinusLeftSquareBracketKeyword_0; }
+		
+		//from=[ros::Publisher|EString]
+		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		
+		//[ros::Publisher|EString]
+		public CrossReference getFromPublisherCrossReference_1_0() { return cFromPublisherCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getFromPublisherEStringParserRuleCall_1_0_1() { return cFromPublisherEStringParserRuleCall_1_0_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//to=[ros::Subscriber|EString]
+		public Assignment getToAssignment_3() { return cToAssignment_3; }
+		
+		//[ros::Subscriber|EString]
+		public CrossReference getToSubscriberCrossReference_3_0() { return cToSubscriberCrossReference_3_0; }
+		
+		//EString
+		public RuleCall getToSubscriberEStringParserRuleCall_3_0_1() { return cToSubscriberEStringParserRuleCall_3_0_1; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+	public class RosServiceConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosServiceConnection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cFromServiceServerCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
+		private final RuleCall cFromServiceServerEStringParserRuleCall_1_0_1 = (RuleCall)cFromServiceServerCrossReference_1_0.eContents().get(1);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cToServiceClientCrossReference_3_0 = (CrossReference)cToAssignment_3.eContents().get(0);
+		private final RuleCall cToServiceClientEStringParserRuleCall_3_0_1 = (RuleCall)cToServiceClientCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//RosServiceConnection returns RosServiceConnection:
+		//    '-['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'-['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
+		public Group getGroup() { return cGroup; }
+		
+		//'-['
+		public Keyword getHyphenMinusLeftSquareBracketKeyword_0() { return cHyphenMinusLeftSquareBracketKeyword_0; }
+		
+		//from=[ros::ServiceServer|EString]
+		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		
+		//[ros::ServiceServer|EString]
+		public CrossReference getFromServiceServerCrossReference_1_0() { return cFromServiceServerCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getFromServiceServerEStringParserRuleCall_1_0_1() { return cFromServiceServerEStringParserRuleCall_1_0_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//to=[ros::ServiceClient|EString]
+		public Assignment getToAssignment_3() { return cToAssignment_3; }
+		
+		//[ros::ServiceClient|EString]
+		public CrossReference getToServiceClientCrossReference_3_0() { return cToServiceClientCrossReference_3_0; }
+		
+		//EString
+		public RuleCall getToServiceClientEStringParserRuleCall_3_0_1() { return cToServiceClientEStringParserRuleCall_3_0_1; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+	public class RosActionConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosActionConnection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cFromActionServerCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
+		private final RuleCall cFromActionServerEStringParserRuleCall_1_0_1 = (RuleCall)cFromActionServerCrossReference_1_0.eContents().get(1);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cToActionClientCrossReference_3_0 = (CrossReference)cToAssignment_3.eContents().get(0);
+		private final RuleCall cToActionClientEStringParserRuleCall_3_0_1 = (RuleCall)cToActionClientCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//RosActionConnection returns RosActionConnection:
+		//    '-['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'-['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
+		public Group getGroup() { return cGroup; }
+		
+		//'-['
+		public Keyword getHyphenMinusLeftSquareBracketKeyword_0() { return cHyphenMinusLeftSquareBracketKeyword_0; }
+		
+		//from=[ros::ActionServer|EString]
+		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		
+		//[ros::ActionServer|EString]
+		public CrossReference getFromActionServerCrossReference_1_0() { return cFromActionServerCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getFromActionServerEStringParserRuleCall_1_0_1() { return cFromActionServerEStringParserRuleCall_1_0_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//to=[ros::ActionClient|EString]
+		public Assignment getToAssignment_3() { return cToAssignment_3; }
+		
+		//[ros::ActionClient|EString]
+		public CrossReference getToActionClientCrossReference_3_0() { return cToActionClientCrossReference_3_0; }
+		
+		//EString
+		public RuleCall getToActionClientEStringParserRuleCall_3_0_1() { return cToActionClientEStringParserRuleCall_3_0_1; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
 	
 	
 	private final SystemElements pSystem;
@@ -876,7 +1072,6 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final RosNodeElements pRosNode;
 	private final RosInterfaceElements pRosInterface;
 	private final InterfaceReferenceElements pInterfaceReference;
-	private final InterfaceReference_ImplElements pInterfaceReference_Impl;
 	private final RosPublisherReferenceElements pRosPublisherReference;
 	private final RosSubscriberReferenceElements pRosSubscriberReference;
 	private final RosServiceServerReferenceElements pRosServiceServerReference;
@@ -884,7 +1079,12 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final RosActionServerReferenceElements pRosActionServerReference;
 	private final RosActionClientReferenceElements pRosActionClientReference;
 	private final RosParameterElements pRosParameter;
+	private final ConnectionElements pConnection;
+	private final RosSystemConnectionElements pRosSystemConnection;
 	private final RosConnectionElements pRosConnection;
+	private final RosTopicConnectionElements pRosTopicConnection;
+	private final RosServiceConnectionElements pRosServiceConnection;
+	private final RosActionConnectionElements pRosActionConnection;
 	
 	private final Grammar grammar;
 	
@@ -905,7 +1105,6 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pRosNode = new RosNodeElements();
 		this.pRosInterface = new RosInterfaceElements();
 		this.pInterfaceReference = new InterfaceReferenceElements();
-		this.pInterfaceReference_Impl = new InterfaceReference_ImplElements();
 		this.pRosPublisherReference = new RosPublisherReferenceElements();
 		this.pRosSubscriberReference = new RosSubscriberReferenceElements();
 		this.pRosServiceServerReference = new RosServiceServerReferenceElements();
@@ -913,7 +1112,12 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pRosActionServerReference = new RosActionServerReferenceElements();
 		this.pRosActionClientReference = new RosActionClientReferenceElements();
 		this.pRosParameter = new RosParameterElements();
+		this.pConnection = new ConnectionElements();
+		this.pRosSystemConnection = new RosSystemConnectionElements();
 		this.pRosConnection = new RosConnectionElements();
+		this.pRosTopicConnection = new RosTopicConnectionElements();
+		this.pRosServiceConnection = new RosServiceConnectionElements();
+		this.pRosActionConnection = new RosActionConnectionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -979,7 +1183,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        ) |
 	//        ('connections:'
 	//            BEGIN
-	//            connections+=RosConnection*
+	//            connections+=Connection*
 	//            END
 	//        )
 	//        )*
@@ -996,8 +1200,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    {Process}
 	//      name=EString':'
 	//      BEGIN
-	//      ('nodes:' '['components+=[Component|EString] (',' components+=[Component|EString])*']')?
-	//      ('threads:'threads=Integer0)
+	//      ('nodes:' '['components+=[RosNode|EString] (',' components+=[RosNode|EString])*']')?
+	//      ('threads:'threads=Integer0)?
 	//      END
 	//;
 	public ProcessElements getProcessAccess() {
@@ -1032,10 +1236,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosInterface returns RosInterface:
-	//    name=EString':'
-	//    BEGIN
-	//    reference=InterfaceReference
-	//    END
+	//    '-'name=EString':' (reference=InterfaceReference)
 	//;
 	public RosInterfaceElements getRosInterfaceAccess() {
 		return pRosInterface;
@@ -1046,7 +1247,12 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//InterfaceReference returns InterfaceReference:
-	//    InterfaceReference_Impl | RosPublisherReference | RosSubscriberReference | RosServiceServerReference | RosServerClientReference | RosActionServerReference | RosActionClientReference;
+	//    RosPublisherReference |
+	//    RosSubscriberReference |
+	//    RosServiceServerReference |
+	//    RosServerClientReference |
+	//    RosActionServerReference |
+	//    RosActionClientReference;
 	public InterfaceReferenceElements getInterfaceReferenceAccess() {
 		return pInterfaceReference;
 	}
@@ -1055,19 +1261,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getInterfaceReferenceAccess().getRule();
 	}
 	
-	//InterfaceReference_Impl returns InterfaceReference:
-	//    {InterfaceReference}
-	//    ;
-	public InterfaceReference_ImplElements getInterfaceReference_ImplAccess() {
-		return pInterfaceReference_Impl;
-	}
-	
-	public ParserRule getInterfaceReference_ImplRule() {
-		return getInterfaceReference_ImplAccess().getRule();
-	}
-	
 	//RosPublisherReference returns RosPublisherReference:
-	//    'fromPub:'from=[ros::Publisher|EString]
+	//    "pub->" {RosPublisherReference} from=[ros::Publisher|EString]
 	//;
 	public RosPublisherReferenceElements getRosPublisherReferenceAccess() {
 		return pRosPublisherReference;
@@ -1078,7 +1273,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosSubscriberReference returns RosSubscriberReference:
-	//    'fromSub:'from=[ros::Subscriber|EString]
+	//    "sub->" {RosSubscriberReference} from=[ros::Subscriber|EString]
 	//;
 	public RosSubscriberReferenceElements getRosSubscriberReferenceAccess() {
 		return pRosSubscriberReference;
@@ -1089,7 +1284,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosServiceServerReference returns RosServiceServerReference:
-	//    'fromSS:'from=[ros::ServiceServer|EString]
+	//    "ss->" {RosServiceServerReference} from=[ros::ServiceServer|EString]
 	//;
 	public RosServiceServerReferenceElements getRosServiceServerReferenceAccess() {
 		return pRosServiceServerReference;
@@ -1100,7 +1295,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosServerClientReference returns RosServerClientReference:
-	//    'fromSC:'from=[ros::ServiceClient|EString]
+	//    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
 	//;
 	public RosServerClientReferenceElements getRosServerClientReferenceAccess() {
 		return pRosServerClientReference;
@@ -1111,7 +1306,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosActionServerReference returns RosActionServerReference:
-	//    'fromAS:'from=[ros::ActionServer|EString]
+	//    "as->" {RosActionServerReference} from=[ros::ActionServer|EString]
 	//;
 	public RosActionServerReferenceElements getRosActionServerReferenceAccess() {
 		return pRosActionServerReference;
@@ -1122,7 +1317,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//RosActionClientReference returns RosActionClientReference:
-	//    'fromAC:'from=[ros::ActionClient|EString]
+	//    "ac->" {RosActionClientReference} from=[ros::ActionClient|EString]
 	//;
 	public RosActionClientReferenceElements getRosActionClientReferenceAccess() {
 		return pRosActionClientReference;
@@ -1146,8 +1341,30 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getRosParameterAccess().getRule();
 	}
 	
-	//RosConnection returns RosConnection:
+	//Connection returns Connection:
+	//    ( => RosSystemConnection) | RosConnection
+	//;
+	public ConnectionElements getConnectionAccess() {
+		return pConnection;
+	}
+	
+	public ParserRule getConnectionRule() {
+		return getConnectionAccess().getRule();
+	}
+	
+	//RosSystemConnection returns RosSystemConnection:
 	//    '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
+	//;
+	public RosSystemConnectionElements getRosSystemConnectionAccess() {
+		return pRosSystemConnection;
+	}
+	
+	public ParserRule getRosSystemConnectionRule() {
+		return getRosSystemConnectionAccess().getRule();
+	}
+	
+	//RosConnection returns RosConnection:
+	//    ( => RosTopicConnection) | ( => RosServiceConnection) | RosActionConnection
 	//;
 	public RosConnectionElements getRosConnectionAccess() {
 		return pRosConnection;
@@ -1155,6 +1372,39 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getRosConnectionRule() {
 		return getRosConnectionAccess().getRule();
+	}
+	
+	//RosTopicConnection returns RosTopicConnection:
+	//    '-['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
+	//;
+	public RosTopicConnectionElements getRosTopicConnectionAccess() {
+		return pRosTopicConnection;
+	}
+	
+	public ParserRule getRosTopicConnectionRule() {
+		return getRosTopicConnectionAccess().getRule();
+	}
+	
+	//RosServiceConnection returns RosServiceConnection:
+	//    '-['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
+	//;
+	public RosServiceConnectionElements getRosServiceConnectionAccess() {
+		return pRosServiceConnection;
+	}
+	
+	public ParserRule getRosServiceConnectionRule() {
+		return getRosServiceConnectionAccess().getRule();
+	}
+	
+	//RosActionConnection returns RosActionConnection:
+	//    '-['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
+	//;
+	public RosActionConnectionElements getRosActionConnectionAccess() {
+		return pRosActionConnection;
+	}
+	
+	public ParserRule getRosActionConnectionRule() {
+		return getRosActionConnectionAccess().getRule();
 	}
 	
 	/////////////////////
