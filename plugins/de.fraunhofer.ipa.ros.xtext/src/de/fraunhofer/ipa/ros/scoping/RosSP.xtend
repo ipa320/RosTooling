@@ -7,6 +7,7 @@ import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import ros.RosPackage
 import ros.SpecBase
+import ros.Node
 
 class RosSP extends AbstractDeclarativeScopeProvider {
     
@@ -17,6 +18,12 @@ class RosSP extends AbstractDeclarativeScopeProvider {
                 return Scopes.scopeFor(candidates)
             }
         }
+//        if (context instanceof Node) {
+//            if (reference == RosPackage.Literals.NODE) {
+//                val candidates = EcoreUtil2.getAllContentsOfType(context, Node);
+//                return Scopes.scopeFor(candidates)
+//            }
+//        }
         return super.getScope(context, reference);
     }
 
