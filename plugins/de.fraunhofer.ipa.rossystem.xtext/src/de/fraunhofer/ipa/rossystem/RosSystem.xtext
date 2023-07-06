@@ -89,8 +89,8 @@ RosServiceServerReference returns RosServiceServerReference:
     "ss->" {RosServiceServerReference} from=[ros::ServiceServer|EString]
 ;
 
-RosServerClientReference returns RosServerClientReference:
-    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
+RosServerClientReference returns RosServiceClientReference:
+    "sc->" {RosServiceClientReference} from=[ros::ServiceClient|EString]
 ;
 
 RosActionServerReference returns RosActionServerReference:

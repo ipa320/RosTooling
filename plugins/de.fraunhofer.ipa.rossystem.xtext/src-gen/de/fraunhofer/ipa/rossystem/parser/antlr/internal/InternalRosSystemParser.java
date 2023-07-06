@@ -2412,7 +2412,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               				current = forceCreateModelElement(
-              					grammarAccess.getRosServerClientReferenceAccess().getRosServerClientReferenceAction_1(),
+              					grammarAccess.getRosServerClientReferenceAccess().getRosServiceClientReferenceAction_1(),
               					current);
               			
             }

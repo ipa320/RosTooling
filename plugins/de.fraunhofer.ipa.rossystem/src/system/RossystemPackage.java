@@ -563,14 +563,14 @@ public interface RossystemPackage extends EPackage {
     int ROS_SERVICE_SERVER_REFERENCE_OPERATION_COUNT = INTERFACE_REFERENCE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link system.impl.RosServerClientReferenceImpl <em>Ros Server Client Reference</em>}' class.
+     * The meta object id for the '{@link system.impl.RosServiceClientReferenceImpl <em>Ros Service Client Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see system.impl.RosServerClientReferenceImpl
-     * @see system.impl.RossystemPackageImpl#getRosServerClientReference()
+     * @see system.impl.RosServiceClientReferenceImpl
+     * @see system.impl.RossystemPackageImpl#getRosServiceClientReference()
      * @generated
      */
-    int ROS_SERVER_CLIENT_REFERENCE = 11;
+    int ROS_SERVICE_CLIENT_REFERENCE = 11;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -579,7 +579,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ROS_SERVER_CLIENT_REFERENCE__FROM = INTERFACE_REFERENCE_FEATURE_COUNT + 0;
+    int ROS_SERVICE_CLIENT_REFERENCE__FROM = INTERFACE_REFERENCE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Ros Server Client Reference</em>' class.
@@ -588,18 +588,18 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ROS_SERVER_CLIENT_REFERENCE_FEATURE_COUNT = INTERFACE_REFERENCE_FEATURE_COUNT + 1;
+    int ROS_SERVICE_CLIENT_REFERENCE_FEATURE_COUNT = INTERFACE_REFERENCE_FEATURE_COUNT + 1;
 
-    /**
-     * The number of operations of the '<em>Ros Server Client Reference</em>' class.
+                /**
+     * The number of operations of the '<em>Ros Service Client Reference</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROS_SERVER_CLIENT_REFERENCE_OPERATION_COUNT = INTERFACE_REFERENCE_OPERATION_COUNT + 0;
+    int ROS_SERVICE_CLIENT_REFERENCE_OPERATION_COUNT = INTERFACE_REFERENCE_OPERATION_COUNT + 0;
 
-    /**
+                /**
      * The meta object id for the '{@link system.impl.RosActionServerReferenceImpl <em>Ros Action Server Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1277,27 +1277,27 @@ public interface RossystemPackage extends EPackage {
     EReference getRosServiceServerReference_From();
 
     /**
-     * Returns the meta object for class '{@link system.RosServerClientReference <em>Ros Server Client Reference</em>}'.
+     * Returns the meta object for class '{@link system.RosServiceClientReference <em>Ros Service Client Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Ros Server Client Reference</em>'.
-     * @see system.RosServerClientReference
+     * @return the meta object for class '<em>Ros Service Client Reference</em>'.
+     * @see system.RosServiceClientReference
      * @generated
      */
-    EClass getRosServerClientReference();
+    EClass getRosServiceClientReference();
 
-    /**
-     * Returns the meta object for the reference '{@link system.RosServerClientReference#getFrom <em>From</em>}'.
+                /**
+     * Returns the meta object for the reference '{@link system.RosServiceClientReference#getFrom <em>From</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the reference '<em>From</em>'.
-     * @see system.RosServerClientReference#getFrom()
-     * @see #getRosServerClientReference()
+     * @see system.RosServiceClientReference#getFrom()
+     * @see #getRosServiceClientReference()
      * @generated
      */
-    EReference getRosServerClientReference_From();
+    EReference getRosServiceClientReference_From();
 
-    /**
+                /**
      * Returns the meta object for class '{@link system.RosActionServerReference <em>Ros Action Server Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1811,24 +1811,24 @@ public interface RossystemPackage extends EPackage {
         EReference ROS_SERVICE_SERVER_REFERENCE__FROM = eINSTANCE.getRosServiceServerReference_From();
 
         /**
-         * The meta object literal for the '{@link system.impl.RosServerClientReferenceImpl <em>Ros Server Client Reference</em>}' class.
+         * The meta object literal for the '{@link system.impl.RosServiceClientReferenceImpl <em>Ros Service Client Reference</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see system.impl.RosServerClientReferenceImpl
-         * @see system.impl.RossystemPackageImpl#getRosServerClientReference()
+         * @see system.impl.RosServiceClientReferenceImpl
+         * @see system.impl.RossystemPackageImpl#getRosServiceClientReference()
          * @generated
          */
-        EClass ROS_SERVER_CLIENT_REFERENCE = eINSTANCE.getRosServerClientReference();
+        EClass ROS_SERVICE_CLIENT_REFERENCE = eINSTANCE.getRosServiceClientReference();
 
-        /**
+                                /**
          * The meta object literal for the '<em><b>From</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ROS_SERVER_CLIENT_REFERENCE__FROM = eINSTANCE.getRosServerClientReference_From();
+        EReference ROS_SERVICE_CLIENT_REFERENCE__FROM = eINSTANCE.getRosServiceClientReference_From();
 
-        /**
+                                /**
          * The meta object literal for the '{@link system.impl.RosActionServerReferenceImpl <em>Ros Action Server Reference</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

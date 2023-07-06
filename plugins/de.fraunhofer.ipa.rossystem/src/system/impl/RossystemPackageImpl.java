@@ -27,7 +27,7 @@ import system.RosNode;
 import system.RosParameter;
 import system.RosParameterReference;
 import system.RosPublisherReference;
-import system.RosServerClientReference;
+import system.RosServiceClientReference;
 import system.RosServiceConnection;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
@@ -126,9 +126,9 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass rosServerClientReferenceEClass = null;
+    private EClass rosServiceClientReferenceEClass = null;
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -542,21 +542,21 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EClass getRosServerClientReference() {
-        return rosServerClientReferenceEClass;
+    public EClass getRosServiceClientReference() {
+        return rosServiceClientReferenceEClass;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EReference getRosServerClientReference_From() {
-        return (EReference)rosServerClientReferenceEClass.getEStructuralFeatures().get(0);
+    public EReference getRosServiceClientReference_From() {
+        return (EReference)rosServiceClientReferenceEClass.getEStructuralFeatures().get(0);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -854,8 +854,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         rosServiceServerReferenceEClass = createEClass(ROS_SERVICE_SERVER_REFERENCE);
         createEReference(rosServiceServerReferenceEClass, ROS_SERVICE_SERVER_REFERENCE__FROM);
 
-        rosServerClientReferenceEClass = createEClass(ROS_SERVER_CLIENT_REFERENCE);
-        createEReference(rosServerClientReferenceEClass, ROS_SERVER_CLIENT_REFERENCE__FROM);
+        rosServiceClientReferenceEClass = createEClass(ROS_SERVICE_CLIENT_REFERENCE);
+        createEReference(rosServiceClientReferenceEClass, ROS_SERVICE_CLIENT_REFERENCE__FROM);
 
         rosActionServerReferenceEClass = createEClass(ROS_ACTION_SERVER_REFERENCE);
         createEReference(rosActionServerReferenceEClass, ROS_ACTION_SERVER_REFERENCE__FROM);
@@ -927,7 +927,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         rosPublisherReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
         rosSubscriberReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
         rosServiceServerReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
-        rosServerClientReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
+        rosServiceClientReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
         rosActionServerReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
         rosActionClientReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
         rosParameterReferenceEClass.getESuperTypes().add(this.getInterfaceReference());
@@ -977,8 +977,8 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         initEClass(rosServiceServerReferenceEClass, RosServiceServerReference.class, "RosServiceServerReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getRosServiceServerReference_From(), theRosPackage.getServiceServer(), null, "from", null, 1, 1, RosServiceServerReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(rosServerClientReferenceEClass, RosServerClientReference.class, "RosServerClientReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getRosServerClientReference_From(), theRosPackage.getServiceClient(), null, "from", null, 1, 1, RosServerClientReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(rosServiceClientReferenceEClass, RosServiceClientReference.class, "RosServiceClientReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getRosServiceClientReference_From(), theRosPackage.getServiceClient(), null, "from", null, 1, 1, RosServiceClientReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(rosActionServerReferenceEClass, RosActionServerReference.class, "RosActionServerReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getRosActionServerReference_From(), theRosPackage.getActionServer(), null, "from", null, 1, 1, RosActionServerReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

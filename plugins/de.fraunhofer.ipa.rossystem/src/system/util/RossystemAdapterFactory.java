@@ -21,7 +21,7 @@ import system.RosNode;
 import system.RosParameter;
 import system.RosParameterReference;
 import system.RosPublisherReference;
-import system.RosServerClientReference;
+import system.RosServiceClientReference;
 import system.RosServiceConnection;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
@@ -131,8 +131,8 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
                 return createRosServiceServerReferenceAdapter();
             }
             @Override
-            public Adapter caseRosServerClientReference(RosServerClientReference object) {
-                return createRosServerClientReferenceAdapter();
+            public Adapter caseRosServiceClientReference(RosServiceClientReference object) {
+                return createRosServiceClientReferenceAdapter();
             }
             @Override
             public Adapter caseRosActionServerReference(RosActionServerReference object) {
@@ -345,20 +345,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link system.RosServerClientReference <em>Ros Server Client Reference</em>}'.
+     * Creates a new adapter for an object of class '{@link system.RosServiceClientReference <em>Ros Service Client Reference</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see system.RosServerClientReference
+     * @see system.RosServiceClientReference
      * @generated
      */
-    public Adapter createRosServerClientReferenceAdapter() {
+    public Adapter createRosServiceClientReferenceAdapter() {
         return null;
     }
 
-    /**
+                /**
      * Creates a new adapter for an object of class '{@link system.RosActionServerReference <em>Ros Action Server Reference</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

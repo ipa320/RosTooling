@@ -44,7 +44,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RosServiceServerReference" eSuperTypes="#//InterfaceReference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceServer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosServerClientReference" eSuperTypes="#//InterfaceReference">
+  <eClassifiers xsi:type="ecore:EClass" name="RosServiceClientReference" eSuperTypes="#//InterfaceReference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ServiceClient"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosActionServerReference" eSuperTypes="#//InterfaceReference">

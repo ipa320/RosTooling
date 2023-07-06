@@ -4636,9 +4636,9 @@ rule__RosServerClientReference__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosServerClientReferenceAccess().getRosServerClientReferenceAction_1()); }
+	{ before(grammarAccess.getRosServerClientReferenceAccess().getRosServiceClientReferenceAction_1()); }
 	()
-	{ after(grammarAccess.getRosServerClientReferenceAccess().getRosServerClientReferenceAction_1()); }
+	{ after(grammarAccess.getRosServerClientReferenceAccess().getRosServiceClientReferenceAction_1()); }
 )
 ;
 finally {

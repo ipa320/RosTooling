@@ -279,29 +279,29 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     }
 
     /**
-     * This keeps track of the one adapter used for all {@link system.RosServerClientReference} instances.
+     * This keeps track of the one adapter used for all {@link system.RosServiceClientReference} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected RosServerClientReferenceItemProvider rosServerClientReferenceItemProvider;
+    protected RosServiceClientReferenceItemProvider rosServiceClientReferenceItemProvider;
 
-    /**
-     * This creates an adapter for a {@link system.RosServerClientReference}.
+                /**
+     * This creates an adapter for a {@link system.RosServiceClientReference}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public Adapter createRosServerClientReferenceAdapter() {
-        if (rosServerClientReferenceItemProvider == null) {
-            rosServerClientReferenceItemProvider = new RosServerClientReferenceItemProvider(this);
+    public Adapter createRosServiceClientReferenceAdapter() {
+        if (rosServiceClientReferenceItemProvider == null) {
+            rosServiceClientReferenceItemProvider = new RosServiceClientReferenceItemProvider(this);
         }
 
-        return rosServerClientReferenceItemProvider;
+        return rosServiceClientReferenceItemProvider;
     }
 
-    /**
+                /**
      * This keeps track of the one adapter used for all {@link system.RosActionServerReference} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -622,7 +622,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
         if (rosPublisherReferenceItemProvider != null) rosPublisherReferenceItemProvider.dispose();
         if (rosSubscriberReferenceItemProvider != null) rosSubscriberReferenceItemProvider.dispose();
         if (rosServiceServerReferenceItemProvider != null) rosServiceServerReferenceItemProvider.dispose();
-        if (rosServerClientReferenceItemProvider != null) rosServerClientReferenceItemProvider.dispose();
+        if (rosServiceClientReferenceItemProvider != null) rosServiceClientReferenceItemProvider.dispose();
         if (rosActionServerReferenceItemProvider != null) rosActionServerReferenceItemProvider.dispose();
         if (rosActionClientReferenceItemProvider != null) rosActionClientReferenceItemProvider.dispose();
         if (rosParameterReferenceItemProvider != null) rosParameterReferenceItemProvider.dispose();

@@ -19,7 +19,7 @@ import system.RosNode;
 import system.RosParameter;
 import system.RosParameterReference;
 import system.RosPublisherReference;
-import system.RosServerClientReference;
+import system.RosServiceClientReference;
 import system.RosServiceConnection;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
@@ -156,10 +156,10 @@ public class RossystemSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case RossystemPackage.ROS_SERVER_CLIENT_REFERENCE: {
-                RosServerClientReference rosServerClientReference = (RosServerClientReference)theEObject;
-                T result = caseRosServerClientReference(rosServerClientReference);
-                if (result == null) result = caseInterfaceReference(rosServerClientReference);
+            case RossystemPackage.ROS_SERVICE_CLIENT_REFERENCE: {
+                RosServiceClientReference rosServiceClientReference = (RosServiceClientReference)theEObject;
+                T result = caseRosServiceClientReference(rosServiceClientReference);
+                if (result == null) result = caseInterfaceReference(rosServiceClientReference);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -398,21 +398,21 @@ public class RossystemSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Ros Server Client Reference</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Ros Service Client Reference</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Ros Server Client Reference</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Ros Service Client Reference</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRosServerClientReference(RosServerClientReference object) {
+    public T caseRosServiceClientReference(RosServiceClientReference object) {
         return null;
     }
 
-    /**
+                /**
      * Returns the result of interpreting the object as an instance of '<em>Ros Action Server Reference</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

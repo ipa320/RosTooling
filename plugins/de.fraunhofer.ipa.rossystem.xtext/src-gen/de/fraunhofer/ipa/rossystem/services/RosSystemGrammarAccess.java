@@ -674,24 +674,24 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.RosServerClientReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Action cRosServerClientReferenceAction_1 = (Action)cGroup.eContents().get(1);
+		private final Action cRosServiceClientReferenceAction_1 = (Action)cGroup.eContents().get(1);
 		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cFromServiceClientCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
 		private final RuleCall cFromServiceClientEStringParserRuleCall_2_0_1 = (RuleCall)cFromServiceClientCrossReference_2_0.eContents().get(1);
 		
-		//RosServerClientReference returns RosServerClientReference:
-		//    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
+		//RosServerClientReference returns RosServiceClientReference:
+		//    "sc->" {RosServiceClientReference} from=[ros::ServiceClient|EString]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
+		//"sc->" {RosServiceClientReference} from=[ros::ServiceClient|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//"sc->"
 		public Keyword getScKeyword_0() { return cScKeyword_0; }
 		
-		//{RosServerClientReference}
-		public Action getRosServerClientReferenceAction_1() { return cRosServerClientReferenceAction_1; }
+		//{RosServiceClientReference}
+		public Action getRosServiceClientReferenceAction_1() { return cRosServiceClientReferenceAction_1; }
 		
 		//from=[ros::ServiceClient|EString]
 		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
@@ -834,6 +834,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cRosSystemConnectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cRosConnectionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		////By default the grammar will parser RosSystemConnection, i.e., connections of ports
+		//// explicitly referenced within the system model. RosConnections are also implemented but not used for now.
 		//Connection returns Connection:
 		//    ( => RosSystemConnection) | RosConnection
 		//;
@@ -1294,8 +1296,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getRosServiceServerReferenceAccess().getRule();
 	}
 	
-	//RosServerClientReference returns RosServerClientReference:
-	//    "sc->" {RosServerClientReference} from=[ros::ServiceClient|EString]
+	//RosServerClientReference returns RosServiceClientReference:
+	//    "sc->" {RosServiceClientReference} from=[ros::ServiceClient|EString]
 	//;
 	public RosServerClientReferenceElements getRosServerClientReferenceAccess() {
 		return pRosServerClientReference;
@@ -1341,6 +1343,8 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getRosParameterAccess().getRule();
 	}
 	
+	////By default the grammar will parser RosSystemConnection, i.e., connections of ports
+	//// explicitly referenced within the system model. RosConnections are also implemented but not used for now.
 	//Connection returns Connection:
 	//    ( => RosSystemConnection) | RosConnection
 	//;

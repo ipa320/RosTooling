@@ -20,7 +20,7 @@ import system.RosNode;
 import system.RosParameter;
 import system.RosParameterReference;
 import system.RosPublisherReference;
-import system.RosServerClientReference;
+import system.RosServiceClientReference;
 import system.RosServiceConnection;
 import system.RosServiceServerReference;
 import system.RosSubscriberReference;
@@ -83,7 +83,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
             case RossystemPackage.ROS_PUBLISHER_REFERENCE: return createRosPublisherReference();
             case RossystemPackage.ROS_SUBSCRIBER_REFERENCE: return createRosSubscriberReference();
             case RossystemPackage.ROS_SERVICE_SERVER_REFERENCE: return createRosServiceServerReference();
-            case RossystemPackage.ROS_SERVER_CLIENT_REFERENCE: return createRosServerClientReference();
+            case RossystemPackage.ROS_SERVICE_CLIENT_REFERENCE: return createRosServiceClientReference();
             case RossystemPackage.ROS_ACTION_SERVER_REFERENCE: return createRosActionServerReference();
             case RossystemPackage.ROS_ACTION_CLIENT_REFERENCE: return createRosActionClientReference();
             case RossystemPackage.ROS_PARAMETER_REFERENCE: return createRosParameterReference();
@@ -203,9 +203,9 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
      * @generated
      */
     @Override
-    public RosServerClientReference createRosServerClientReference() {
-        RosServerClientReferenceImpl rosServerClientReference = new RosServerClientReferenceImpl();
-        return rosServerClientReference;
+    public RosServiceClientReference createRosServiceClientReference() {
+        RosServiceClientReferenceImpl rosServiceClientReference = new RosServiceClientReferenceImpl();
+        return rosServiceClientReference;
     }
 
     /**

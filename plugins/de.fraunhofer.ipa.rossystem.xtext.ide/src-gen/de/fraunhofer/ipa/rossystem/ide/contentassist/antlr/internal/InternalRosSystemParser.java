@@ -15351,7 +15351,7 @@ public class InternalRosSystemParser extends AbstractInternalContentAssistParser
             // InternalRosSystemParser.g:4639:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getRosServerClientReferenceAccess().getRosServerClientReferenceAction_1()); 
+               before(grammarAccess.getRosServerClientReferenceAccess().getRosServiceClientReferenceAction_1()); 
             }
             // InternalRosSystemParser.g:4640:2: ()
             // InternalRosSystemParser.g:4640:3: 
@@ -15359,7 +15359,7 @@ public class InternalRosSystemParser extends AbstractInternalContentAssistParser
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getRosServerClientReferenceAccess().getRosServerClientReferenceAction_1()); 
+               after(grammarAccess.getRosServerClientReferenceAccess().getRosServiceClientReferenceAction_1()); 
             }
 
             }

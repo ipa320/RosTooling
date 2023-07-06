@@ -42,8 +42,8 @@
     <genClasses ecoreClass="rossystem.ecore#//RosServiceServerReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceServerReference/from"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//RosServerClientReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServerClientReference/from"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosServiceClientReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceClientReference/from"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//RosActionServerReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionServerReference/from"/>

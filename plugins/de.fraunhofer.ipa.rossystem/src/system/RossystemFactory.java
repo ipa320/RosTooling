@@ -103,13 +103,13 @@ public interface RossystemFactory extends EFactory {
     RosServiceServerReference createRosServiceServerReference();
 
     /**
-     * Returns a new object of class '<em>Ros Server Client Reference</em>'.
+     * Returns a new object of class '<em>Ros Service Client Reference</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Ros Server Client Reference</em>'.
+     * @return a new object of class '<em>Ros Service Client Reference</em>'.
      * @generated
      */
-    RosServerClientReference createRosServerClientReference();
+    RosServiceClientReference createRosServiceClientReference();
 
     /**
      * Returns a new object of class '<em>Ros Action Server Reference</em>'.

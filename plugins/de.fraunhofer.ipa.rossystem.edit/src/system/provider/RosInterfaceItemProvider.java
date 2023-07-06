@@ -201,7 +201,7 @@ public class RosInterfaceItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.ROS_INTERFACE__REFERENCE,
-                 RossystemFactory.eINSTANCE.createRosServerClientReference()));
+                 RossystemFactory.eINSTANCE.createRosServiceClientReference()));
 
         newChildDescriptors.add
             (createChildParameter
