@@ -612,7 +612,11 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 	 *     RosSystem returns System
 	 *
 	 * Constraint:
-	 *     (name=EString (processes+=Process | components+=RosNode | parameter+=RosParameter | connections+=Connection)*)
+	 *     (
+	 *         name=EString 
+	 *         fromFile=EString? 
+	 *         (processes+=Process | components+=RosNode | components+=RosSystem | parameter+=RosParameter | connections+=Connection)*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_RosSystem(ISerializationContext context, system.System semanticObject) {

@@ -27,11 +27,15 @@ Parameters : 'parameters:';
 
 Processes : 'processes:';
 
+SubSystem : 'subSystem:';
+
 GraphName : 'GraphName';
 
 Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
+
+FromFile : 'fromFile:';
 
 Default : 'default:';
 

@@ -45,8 +45,18 @@ class RosSystemValidator extends AbstractRosSystemValidator {
   public static val NOT_IN_THE_SYSTEM = "The element is not part of the system"
   public static val NOT_VALID_PATTERN = "The element has not a valid type"
   public static val TYPE_NOT_MATCH = "The ports have different types"
+  public static val INFO_LAUNCH_FILE = "Information to build the launch file path"
   Object from_type
   Object to_type
+  
+  
+  @Check
+  def InfoToValidFile(System system){
+      if (!system.fromFile.empty){
+        info('This attribute expects the path of the launch file from the package, for example: PackageName/launch/fileName.launch.py'
+                  ,null,INFO_LAUNCH_FILE)
+      }
+  }
 
   @Check
   def checkIfNodeInSystem(Process process) {
@@ -72,9 +82,11 @@ class RosSystemValidator extends AbstractRosSystemValidator {
       var List<RosInterface> AllInterfaces = newArrayList
 
       for (Component node : system.components){
-          var rosnode = node as RosNode
-          for(RosInterface interface : rosnode.rosinterfaces){
-            AllInterfaces.add(interface)
+          if (node.eClass.name=='RosNode') {
+              var rosnode = node as RosNode
+              for(RosInterface interface : rosnode.rosinterfaces){
+                AllInterfaces.add(interface)
+              }
           }
       }
       if (!AllInterfaces.contains(from_connection)){
