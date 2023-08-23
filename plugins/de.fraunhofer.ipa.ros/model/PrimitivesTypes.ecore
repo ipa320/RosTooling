@@ -37,4 +37,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Byte" eSuperTypes="#//AbstractType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ByteArray" eSuperTypes="#//AbstractType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="char0" eSuperTypes="#//AbstractType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="charArray" eSuperTypes="#//AbstractType"/>
 </ecore:EPackage>
