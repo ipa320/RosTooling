@@ -210,7 +210,7 @@ terminal MESSAGE_ASIGMENT:
 AbstractType returns primitives::AbstractType:
     bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
     boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-    SpecBaseRef | ArraySpecRef ;
+    SpecBaseRef | ArraySpecRef | char | charArray;
 
 
 bool returns primitives::bool:
@@ -271,6 +271,11 @@ float64 returns primitives::float64:
 string0 returns primitives::string:
     {primitives::string}
     'string'
+    ;
+
+char returns primitives::char0:
+    {primitives::char0}
+    'char'
     ;
 
 byte returns primitives::Byte:
@@ -350,6 +355,10 @@ string0Array returns primitives::stringArray:
 byteArray returns primitives::ByteArray:
     {primitives::ByteArray}
     'byte[]'
+    ;
+charArray returns primitives::charArray:
+    {primitives::charArray}
+    'char[]'
     ;
 
 Header returns primitives::Header:

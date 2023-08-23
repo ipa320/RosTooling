@@ -212,5 +212,7 @@
     <genClasses ecoreClass="PrimitivesTypes.ecore#//Header"/>
     <genClasses ecoreClass="PrimitivesTypes.ecore#//Byte"/>
     <genClasses ecoreClass="PrimitivesTypes.ecore#//ByteArray"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//char0"/>
+    <genClasses ecoreClass="PrimitivesTypes.ecore#//charArray"/>
   </genPackages>
 </genmodel:GenModel>
