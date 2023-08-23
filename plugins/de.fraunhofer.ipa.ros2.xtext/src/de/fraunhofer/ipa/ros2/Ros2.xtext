@@ -114,7 +114,7 @@ Parameter returns Parameter:
         BEGIN
         'type:' type=ParameterType
         ('ns:' namespace=Namespace)?
+        ('value:' value=ParameterValue)?
         ('qos:' qos=QualityOfService)?
-        ('default:' value=ParameterValue)?
         END
-    ;
+        ;
