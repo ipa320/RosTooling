@@ -9,7 +9,7 @@ import ros.Node
 import ros.RosPackage
 
 class RosSystemSP extends AbstractDeclarativeScopeProvider {
-    
+
         override getScope(EObject context, EReference reference) {
         if (context instanceof Node) {
             if (reference == RosPackage.Literals.NODE) {

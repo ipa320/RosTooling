@@ -26,16 +26,16 @@ class Ros2ParsingTest {
         val errors = result.eResource.errors
         Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
     }
-    
-    @Test 
+
+    @Test
     def void parseDomainmodel() {
         val fileContent = new String(Files.readAllBytes(Paths.get(RESOURCES_BASE_DIR, 'test.ros2')))
         val model = parseHelper.parse(fileContent)
-        
+
         val artifacts = model.artifact
         Assert.assertEquals("image_filter", model.artifact.get(0).name)
         Assert.assertEquals("consumer", model.artifact.get(1).name)
-        
+
         //From artifact image_filter
         val node_name = artifacts.get(0).node.name
         Assert.assertEquals("image_filter", node_name)

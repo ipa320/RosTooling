@@ -140,6 +140,7 @@ public class RosParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFloat32Access().getGroup(), "rule__Float32__Group__0");
 			builder.put(grammarAccess.getFloat64Access().getGroup(), "rule__Float64__Group__0");
 			builder.put(grammarAccess.getString0Access().getGroup(), "rule__String0__Group__0");
+			builder.put(grammarAccess.getCharAccess().getGroup(), "rule__Char__Group__0");
 			builder.put(grammarAccess.getByteAccess().getGroup(), "rule__Byte__Group__0");
 			builder.put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
 			builder.put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
@@ -156,6 +157,7 @@ public class RosParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFloat64ArrayAccess().getGroup(), "rule__Float64Array__Group__0");
 			builder.put(grammarAccess.getString0ArrayAccess().getGroup(), "rule__String0Array__Group__0");
 			builder.put(grammarAccess.getByteArrayAccess().getGroup(), "rule__ByteArray__Group__0");
+			builder.put(grammarAccess.getCharArrayAccess().getGroup(), "rule__CharArray__Group__0");
 			builder.put(grammarAccess.getHeaderAccess().getGroup(), "rule__Header__Group__0");
 			builder.put(grammarAccess.getArraySpecRefAccess().getGroup(), "rule__ArraySpecRef__Group__0");
 			builder.put(grammarAccess.getPackageSetAccess().getPackageAssignment_1(), "rule__PackageSet__PackageAssignment_1");

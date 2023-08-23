@@ -1338,16 +1338,18 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cByteArrayParserRuleCall_28 = (RuleCall)cAlternatives.eContents().get(28);
 		private final RuleCall cSpecBaseRefParserRuleCall_29 = (RuleCall)cAlternatives.eContents().get(29);
 		private final RuleCall cArraySpecRefParserRuleCall_30 = (RuleCall)cAlternatives.eContents().get(30);
+		private final RuleCall cCharParserRuleCall_31 = (RuleCall)cAlternatives.eContents().get(31);
+		private final RuleCall cCharArrayParserRuleCall_32 = (RuleCall)cAlternatives.eContents().get(32);
 		
 		//AbstractType returns primitives::AbstractType:
 		//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 		//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-		//    SpecBaseRef | ArraySpecRef ;
+		//    SpecBaseRef | ArraySpecRef | char | charArray;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 		//boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-		//SpecBaseRef | ArraySpecRef
+		//SpecBaseRef | ArraySpecRef | char | charArray
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//bool
@@ -1442,6 +1444,12 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//ArraySpecRef
 		public RuleCall getArraySpecRefParserRuleCall_30() { return cArraySpecRefParserRuleCall_30; }
+		
+		//char
+		public RuleCall getCharParserRuleCall_31() { return cCharParserRuleCall_31; }
+		
+		//charArray
+		public RuleCall getCharArrayParserRuleCall_32() { return cCharArrayParserRuleCall_32; }
 	}
 	public class BoolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.bool");
@@ -1706,6 +1714,28 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//'string'
 		public Keyword getStringKeyword_1() { return cStringKeyword_1; }
+	}
+	public class CharElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.char");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cChar0Action_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCharKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//char returns primitives::char0:
+		//    {primitives::char0}
+		//    'char'
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{primitives::char0}
+		//'char'
+		public Group getGroup() { return cGroup; }
+		
+		//{primitives::char0}
+		public Action getChar0Action_0() { return cChar0Action_0; }
+		
+		//'char'
+		public Keyword getCharKeyword_1() { return cCharKeyword_1; }
 	}
 	public class ByteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.byte");
@@ -2059,6 +2089,28 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'byte[]'
 		public Keyword getByteKeyword_1() { return cByteKeyword_1; }
 	}
+	public class CharArrayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.charArray");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCharArrayAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCharKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//charArray returns primitives::charArray:
+		//    {primitives::charArray}
+		//    'char[]'
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{primitives::charArray}
+		//'char[]'
+		public Group getGroup() { return cGroup; }
+		
+		//{primitives::charArray}
+		public Action getCharArrayAction_0() { return cCharArrayAction_0; }
+		
+		//'char[]'
+		public Keyword getCharKeyword_1() { return cCharKeyword_1; }
+	}
 	public class HeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.Header");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2292,6 +2344,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final Float32Elements pFloat32;
 	private final Float64Elements pFloat64;
 	private final String0Elements pString0;
+	private final CharElements pChar;
 	private final ByteElements pByte;
 	private final TimeElements pTime;
 	private final DurationElements pDuration;
@@ -2308,6 +2361,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final Float64ArrayElements pFloat64Array;
 	private final String0ArrayElements pString0Array;
 	private final ByteArrayElements pByteArray;
+	private final CharArrayElements pCharArray;
 	private final HeaderElements pHeader;
 	private final SpecBaseRefElements pSpecBaseRef;
 	private final ArraySpecRefElements pArraySpecRef;
@@ -2390,6 +2444,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pFloat32 = new Float32Elements();
 		this.pFloat64 = new Float64Elements();
 		this.pString0 = new String0Elements();
+		this.pChar = new CharElements();
 		this.pByte = new ByteElements();
 		this.pTime = new TimeElements();
 		this.pDuration = new DurationElements();
@@ -2406,6 +2461,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pFloat64Array = new Float64ArrayElements();
 		this.pString0Array = new String0ArrayElements();
 		this.pByteArray = new ByteArrayElements();
+		this.pCharArray = new CharArrayElements();
 		this.pHeader = new HeaderElements();
 		this.pSpecBaseRef = new SpecBaseRefElements();
 		this.pArraySpecRef = new ArraySpecRefElements();
@@ -2829,7 +2885,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return tBOOLEAN;
 	}
 	
-	//terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+	//terminal DOUBLE returns ecore::EDouble: (DIGIT* | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT*));
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	}
@@ -2945,7 +3001,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//AbstractType returns primitives::AbstractType:
 	//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 	//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-	//    SpecBaseRef | ArraySpecRef ;
+	//    SpecBaseRef | ArraySpecRef | char | charArray;
 	public AbstractTypeElements getAbstractTypeAccess() {
 		return pAbstractType;
 	}
@@ -3096,6 +3152,18 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	public ParserRule getString0Rule() {
 		return getString0Access().getRule();
+	}
+	
+	//char returns primitives::char0:
+	//    {primitives::char0}
+	//    'char'
+	//    ;
+	public CharElements getCharAccess() {
+		return pChar;
+	}
+	
+	public ParserRule getCharRule() {
+		return getCharAccess().getRule();
 	}
 	
 	//byte returns primitives::Byte:
@@ -3288,6 +3356,18 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	public ParserRule getByteArrayRule() {
 		return getByteArrayAccess().getRule();
+	}
+	
+	//charArray returns primitives::charArray:
+	//    {primitives::charArray}
+	//    'char[]'
+	//    ;
+	public CharArrayElements getCharArrayAccess() {
+		return pCharArray;
+	}
+	
+	public ParserRule getCharArrayRule() {
+		return getCharArrayAccess().getRule();
 	}
 	
 	//Header returns primitives::Header:
