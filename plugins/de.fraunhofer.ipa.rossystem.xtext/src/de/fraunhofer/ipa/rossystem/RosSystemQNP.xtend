@@ -6,8 +6,8 @@ import system.RosNode;
 import org.eclipse.emf.ecore.EObject
 
 class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
-    
-    
+
+
   override getFullyQualifiedName(EObject obj) {
 
     if (obj instanceof RosNode) {
@@ -18,7 +18,7 @@ class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
       val interface_name = obj.name
       return getConverter().toQualifiedName(interface_name);
     }
-    
+
     }
 
 }

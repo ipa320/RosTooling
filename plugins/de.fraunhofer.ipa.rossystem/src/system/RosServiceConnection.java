@@ -23,48 +23,48 @@ import ros.ServiceServer;
  * @generated
  */
 public interface RosServiceConnection extends RosConnection {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(ServiceServer)
-	 * @see system.RossystemPackage#getRosServiceConnection_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	ServiceServer getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(ServiceServer)
+     * @see system.RossystemPackage#getRosServiceConnection_From()
+     * @model required="true"
+     * @generated
+     */
+    ServiceServer getFrom();
 
-	/**
-	 * Sets the value of the '{@link system.RosServiceConnection#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(ServiceServer value);
+    /**
+     * Sets the value of the '{@link system.RosServiceConnection#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(ServiceServer value);
 
-	/**
-	 * Returns the value of the '<em><b>To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(ServiceClient)
-	 * @see system.RossystemPackage#getRosServiceConnection_To()
-	 * @model required="true"
-	 * @generated
-	 */
-	ServiceClient getTo();
+    /**
+     * Returns the value of the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>To</em>' reference.
+     * @see #setTo(ServiceClient)
+     * @see system.RossystemPackage#getRosServiceConnection_To()
+     * @model required="true"
+     * @generated
+     */
+    ServiceClient getTo();
 
-	/**
-	 * Sets the value of the '{@link system.RosServiceConnection#getTo <em>To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' reference.
-	 * @see #getTo()
-	 * @generated
-	 */
-	void setTo(ServiceClient value);
+    /**
+     * Sets the value of the '{@link system.RosServiceConnection#getTo <em>To</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>To</em>' reference.
+     * @see #getTo()
+     * @generated
+     */
+    void setTo(ServiceClient value);
 
 } // RosServiceConnection

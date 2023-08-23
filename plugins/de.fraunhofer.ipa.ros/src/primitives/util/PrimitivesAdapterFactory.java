@@ -16,6 +16,8 @@ import primitives.MessagePart;
 import primitives.PrimitivesPackage;
 import primitives.bool;
 import primitives.boolArray;
+import primitives.char0;
+import primitives.charArray;
 import primitives.duration;
 import primitives.float32;
 import primitives.float32Array;
@@ -220,6 +222,14 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseByteArray(ByteArray object) {
                 return createByteArrayAdapter();
+            }
+            @Override
+            public Adapter casechar0(char0 object) {
+                return createchar0Adapter();
+            }
+            @Override
+            public Adapter casecharArray(charArray object) {
+                return createcharArrayAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -662,6 +672,34 @@ public class PrimitivesAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link primitives.char0 <em>char0</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see primitives.char0
+     * @generated
+     */
+    public Adapter createchar0Adapter() {
+        return null;
+    }
+
+                /**
+     * Creates a new adapter for an object of class '{@link primitives.charArray <em>char Array</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see primitives.charArray
+     * @generated
+     */
+    public Adapter createcharArrayAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for an object of class '{@link primitives.MessagePart <em>Message Part</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

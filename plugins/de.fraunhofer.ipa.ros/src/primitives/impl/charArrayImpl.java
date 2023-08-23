@@ -1,26 +1,26 @@
 /**
  */
-package system.impl;
+package primitives.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import system.Rossystem;
-import system.RossystemPackage;
+import primitives.PrimitivesPackage;
+import primitives.charArray;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rossystem</b></em>'.
+ * An implementation of the model object '<em><b>char Array</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class RossystemImpl extends SystemImpl implements Rossystem {
+public class charArrayImpl extends AbstractTypeImpl implements charArray {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected RossystemImpl() {
+    protected charArrayImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class RossystemImpl extends SystemImpl implements Rossystem {
      */
     @Override
     protected EClass eStaticClass() {
-        return RossystemPackage.Literals.ROSSYSTEM;
+        return PrimitivesPackage.Literals.CHAR_ARRAY;
     }
 
-} //RossystemImpl
+} //charArrayImpl

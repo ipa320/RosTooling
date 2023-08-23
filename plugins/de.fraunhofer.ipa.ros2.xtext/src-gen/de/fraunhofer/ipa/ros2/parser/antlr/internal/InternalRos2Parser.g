@@ -1384,41 +1384,16 @@ ruleParameter returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Qos
+			otherlv_8=Value_1
 			{
-				newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getQosKeyword_7_0());
+				newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getValueKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterAccess().getQosQualityOfServiceParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getParameterAccess().getValueParameterValueParserRuleCall_7_1_0());
 					}
-					lv_qos_9_0=ruleQualityOfService
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getParameterRule());
-						}
-						set(
-							$current,
-							"qos",
-							lv_qos_9_0,
-							"de.fraunhofer.ipa.ros2.Ros2.QualityOfService");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10=Default
-			{
-				newLeafNode(otherlv_10, grammarAccess.getParameterAccess().getDefaultKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getParameterAccess().getValueParameterValueParserRuleCall_8_1_0());
-					}
-					lv_value_11_0=ruleParameterValue
+					lv_value_9_0=ruleParameterValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterRule());
@@ -1426,8 +1401,33 @@ ruleParameter returns [EObject current=null]
 						set(
 							$current,
 							"value",
-							lv_value_11_0,
+							lv_value_9_0,
 							"de.fraunhofer.ipa.ros.Basics.ParameterValue");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_10=Qos
+			{
+				newLeafNode(otherlv_10, grammarAccess.getParameterAccess().getQosKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParameterAccess().getQosQualityOfServiceParserRuleCall_8_1_0());
+					}
+					lv_qos_11_0=ruleQualityOfService
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParameterRule());
+						}
+						set(
+							$current,
+							"qos",
+							lv_qos_11_0,
+							"de.fraunhofer.ipa.ros2.Ros2.QualityOfService");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -4655,6 +4655,24 @@ ruleAbstractType returns [EObject current=null]
 			$current = $this_ArraySpecRef_30.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharParserRuleCall_31());
+		}
+		this_char_31=rulechar
+		{
+			$current = $this_char_31.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharArrayParserRuleCall_32());
+		}
+		this_charArray_32=rulecharArray
+		{
+			$current = $this_charArray_32.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -5014,6 +5032,36 @@ rulestring0 returns [EObject current=null]
 		otherlv_1=String_1
 		{
 			newLeafNode(otherlv_1, grammarAccess.getString0Access().getStringKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRulechar
+entryRulechar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCharRule()); }
+	iv_rulechar=rulechar
+	{ $current=$iv_rulechar.current; }
+	EOF;
+
+// Rule char
+rulechar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCharAccess().getChar0Action_0(),
+					$current);
+			}
+		)
+		otherlv_1=Char
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCharAccess().getCharKeyword_1());
 		}
 	)
 ;
@@ -5494,6 +5542,36 @@ rulebyteArray returns [EObject current=null]
 		otherlv_1=Byte_1
 		{
 			newLeafNode(otherlv_1, grammarAccess.getByteArrayAccess().getByteKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRulecharArray
+entryRulecharArray returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCharArrayRule()); }
+	iv_rulecharArray=rulecharArray
+	{ $current=$iv_rulecharArray.current; }
+	EOF;
+
+// Rule charArray
+rulecharArray returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCharArrayAccess().getCharArrayAction_0(),
+					$current);
+			}
+		)
+		otherlv_1=Char_1
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCharArrayAccess().getCharKeyword_1());
 		}
 	)
 ;

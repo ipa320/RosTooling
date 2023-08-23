@@ -15,6 +15,7 @@ import de.fraunhofer.ipa.ros.scoping.RosScopeProvider;
 import de.fraunhofer.ipa.ros.serializer.RosSemanticSequencer;
 import de.fraunhofer.ipa.ros.serializer.RosSyntacticSequencer;
 import de.fraunhofer.ipa.ros.services.RosGrammarAccess;
+import de.fraunhofer.ipa.ros.validation.RosConfigurableIssueCodesProvider;
 import de.fraunhofer.ipa.ros.validation.RosValidator;
 import java.util.Properties;
 import org.eclipse.xtext.Constants;
@@ -56,6 +57,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer;
 import org.eclipse.xtext.service.DefaultRuntimeModule;
 import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.validation.ConfigurableIssueCodesProvider;
 
 /**
  * Manual modifications go to {@link RosRuntimeModule}.
@@ -146,6 +148,11 @@ public abstract class AbstractRosRuntimeModule extends DefaultRuntimeModule {
 	@SingletonBinding(eager=true)
 	public Class<? extends RosValidator> bindRosValidator() {
 		return RosValidator.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
+	public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
+		return RosConfigurableIssueCodesProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.scoping.ImportNamespacesScopingFragment2

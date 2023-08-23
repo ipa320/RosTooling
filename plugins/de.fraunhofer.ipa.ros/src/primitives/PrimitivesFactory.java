@@ -283,6 +283,24 @@ public interface PrimitivesFactory extends EFactory {
     ByteArray createByteArray();
 
     /**
+     * Returns a new object of class '<em>char0</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>char0</em>'.
+     * @generated
+     */
+    char0 createchar0();
+
+                /**
+     * Returns a new object of class '<em>char Array</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>char Array</em>'.
+     * @generated
+     */
+    charArray createcharArray();
+
+                /**
      * Returns a new object of class '<em>Message Part</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

@@ -14,6 +14,7 @@ import de.fraunhofer.ipa.ros.ui.labeling.RosDescriptionLabelProvider;
 import de.fraunhofer.ipa.ros.ui.labeling.RosLabelProvider;
 import de.fraunhofer.ipa.ros.ui.outline.RosOutlineTreeProvider;
 import de.fraunhofer.ipa.ros.ui.quickfix.RosQuickfixProvider;
+import de.fraunhofer.ipa.ros.validation.RosValidatorConfigurationBlock;
 import org.eclipse.compare.IViewerCreator;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -80,6 +81,7 @@ import org.eclipse.xtext.ui.refactoring.ui.IRenameSupport;
 import org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences;
 import org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider;
 import org.eclipse.xtext.ui.shared.Access;
+import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
 
 /**
  * Manual modifications go to {@link RosUiModule}.
@@ -140,6 +142,11 @@ public abstract class AbstractRosUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
 		return IndentationAwareCompletionPrefixProvider.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
+	public Class<? extends AbstractValidatorConfigurationBlock> bindAbstractValidatorConfigurationBlock() {
+		return RosValidatorConfigurationBlock.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2

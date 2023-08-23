@@ -1,26 +1,26 @@
 /**
  */
-package system.impl;
+package primitives.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import system.Rossystem;
-import system.RossystemPackage;
+import primitives.PrimitivesPackage;
+import primitives.char0;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rossystem</b></em>'.
+ * An implementation of the model object '<em><b>char0</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class RossystemImpl extends SystemImpl implements Rossystem {
+public class char0Impl extends AbstractTypeImpl implements char0 {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected RossystemImpl() {
+    protected char0Impl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class RossystemImpl extends SystemImpl implements Rossystem {
      */
     @Override
     protected EClass eStaticClass() {
-        return RossystemPackage.Literals.ROSSYSTEM;
+        return PrimitivesPackage.Literals.CHAR0;
     }
 
-} //RossystemImpl
+} //char0Impl

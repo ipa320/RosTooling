@@ -162,6 +162,7 @@ public class Ros2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFloat32Access().getGroup(), "rule__Float32__Group__0");
 			builder.put(grammarAccess.getFloat64Access().getGroup(), "rule__Float64__Group__0");
 			builder.put(grammarAccess.getString0Access().getGroup(), "rule__String0__Group__0");
+			builder.put(grammarAccess.getCharAccess().getGroup(), "rule__Char__Group__0");
 			builder.put(grammarAccess.getByteAccess().getGroup(), "rule__Byte__Group__0");
 			builder.put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
 			builder.put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
@@ -178,6 +179,7 @@ public class Ros2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFloat64ArrayAccess().getGroup(), "rule__Float64Array__Group__0");
 			builder.put(grammarAccess.getString0ArrayAccess().getGroup(), "rule__String0Array__Group__0");
 			builder.put(grammarAccess.getByteArrayAccess().getGroup(), "rule__ByteArray__Group__0");
+			builder.put(grammarAccess.getCharArrayAccess().getGroup(), "rule__CharArray__Group__0");
 			builder.put(grammarAccess.getHeaderAccess().getGroup(), "rule__Header__Group__0");
 			builder.put(grammarAccess.getArraySpecRefAccess().getGroup(), "rule__ArraySpecRef__Group__0");
 			builder.put(grammarAccess.getAmentPackageAccess().getNameAssignment_1(), "rule__AmentPackage__NameAssignment_1");
@@ -217,8 +219,8 @@ public class Ros2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParameterAccess().getNameAssignment_1(), "rule__Parameter__NameAssignment_1");
 			builder.put(grammarAccess.getParameterAccess().getTypeAssignment_5(), "rule__Parameter__TypeAssignment_5");
 			builder.put(grammarAccess.getParameterAccess().getNamespaceAssignment_6_1(), "rule__Parameter__NamespaceAssignment_6_1");
-			builder.put(grammarAccess.getParameterAccess().getQosAssignment_7_1(), "rule__Parameter__QosAssignment_7_1");
-			builder.put(grammarAccess.getParameterAccess().getValueAssignment_8_1(), "rule__Parameter__ValueAssignment_8_1");
+			builder.put(grammarAccess.getParameterAccess().getValueAssignment_7_1(), "rule__Parameter__ValueAssignment_7_1");
+			builder.put(grammarAccess.getParameterAccess().getQosAssignment_8_1(), "rule__Parameter__QosAssignment_8_1");
 			builder.put(grammarAccess.getPackageSetAccess().getPackageAssignment_1(), "rule__PackageSet__PackageAssignment_1");
 			builder.put(grammarAccess.getPackage_ImplAccess().getNameAssignment_1(), "rule__Package_Impl__NameAssignment_1");
 			builder.put(grammarAccess.getPackage_ImplAccess().getFromGitRepoAssignment_4_1(), "rule__Package_Impl__FromGitRepoAssignment_4_1");
