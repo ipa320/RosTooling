@@ -15,6 +15,7 @@ import ros.ServiceClient
 import ros.ActionServer
 import ros.ActionClient
 import ros.NamespacedElement
+import ros.Parameter
 
 class RosQNP extends DefaultDeclarativeQualifiedNameProvider{
 
@@ -72,6 +73,12 @@ class RosQNP extends DefaultDeclarativeQualifiedNameProvider{
 
     if (obj instanceof ActionClient) {
       val interface = obj as ActionClient
+      val art = obj.eContainer.eContainer as Artifact
+      return getConverter().toQualifiedName(art.name + "::" + interface.name);
+    }
+
+    if (obj instanceof Parameter) {
+      val interface = obj as Parameter
       val art = obj.eContainer.eContainer as Artifact
       return getConverter().toQualifiedName(art.name + "::" + interface.name);
     }
