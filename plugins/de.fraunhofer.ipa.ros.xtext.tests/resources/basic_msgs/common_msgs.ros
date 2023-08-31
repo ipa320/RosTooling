@@ -136,10 +136,10 @@ nav_msgs:
        Header header "actionlib_msgs/msg/GoalStatus" status 'nav_msgs/msg/GetMapResult' result
     GetMapFeedback
      message
-       
+
     GetMapGoal
      message
-       
+
     GetMapResult
      message
        "nav_msgs/msg/OccupancyGrid" map

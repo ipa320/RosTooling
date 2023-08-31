@@ -10,7 +10,7 @@ import ros.SpecBase
 import ros.Node
 
 class RosSP extends AbstractDeclarativeScopeProvider {
-    
+
     override getScope(EObject context, EReference reference) {
         if (context instanceof SpecBase) {
             if (reference == RosPackage.Literals.SPEC_BASE) {

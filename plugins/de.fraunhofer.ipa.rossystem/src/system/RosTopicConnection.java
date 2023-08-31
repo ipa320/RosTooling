@@ -23,48 +23,48 @@ import ros.Subscriber;
  * @generated
  */
 public interface RosTopicConnection extends RosConnection {
-	/**
-	 * Returns the value of the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' reference.
-	 * @see #setFrom(Publisher)
-	 * @see system.RossystemPackage#getRosTopicConnection_From()
-	 * @model required="true"
-	 * @generated
-	 */
-	Publisher getFrom();
+    /**
+     * Returns the value of the '<em><b>From</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From</em>' reference.
+     * @see #setFrom(Publisher)
+     * @see system.RossystemPackage#getRosTopicConnection_From()
+     * @model required="true"
+     * @generated
+     */
+    Publisher getFrom();
 
-	/**
-	 * Sets the value of the '{@link system.RosTopicConnection#getFrom <em>From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' reference.
-	 * @see #getFrom()
-	 * @generated
-	 */
-	void setFrom(Publisher value);
+    /**
+     * Sets the value of the '{@link system.RosTopicConnection#getFrom <em>From</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From</em>' reference.
+     * @see #getFrom()
+     * @generated
+     */
+    void setFrom(Publisher value);
 
-	/**
-	 * Returns the value of the '<em><b>To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' reference.
-	 * @see #setTo(Subscriber)
-	 * @see system.RossystemPackage#getRosTopicConnection_To()
-	 * @model required="true"
-	 * @generated
-	 */
-	Subscriber getTo();
+    /**
+     * Returns the value of the '<em><b>To</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>To</em>' reference.
+     * @see #setTo(Subscriber)
+     * @see system.RossystemPackage#getRosTopicConnection_To()
+     * @model required="true"
+     * @generated
+     */
+    Subscriber getTo();
 
-	/**
-	 * Sets the value of the '{@link system.RosTopicConnection#getTo <em>To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' reference.
-	 * @see #getTo()
-	 * @generated
-	 */
-	void setTo(Subscriber value);
+    /**
+     * Sets the value of the '{@link system.RosTopicConnection#getTo <em>To</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>To</em>' reference.
+     * @see #getTo()
+     * @generated
+     */
+    void setTo(Subscriber value);
 
 } // RosTopicConnection

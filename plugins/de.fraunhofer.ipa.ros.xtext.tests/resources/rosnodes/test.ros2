@@ -17,12 +17,12 @@ rossdl_test:
       subscribers:
         image_in:
           type: "sensor_msgs/msg/Image"
-          qos: 
+          qos:
             profile: sensor_qos
             depth: 100
         laser_in:
           type: "sensor_msgs/msg/LaserScan"
-          qos: 
+          qos:
             profile: sensor_qos
             reliability: reliable
       parameters:
@@ -34,8 +34,8 @@ rossdl_test:
       subscribers:
         image_in:
           type: "sensor_msgs/msg/Image"
-          qos: 
-            profile: sensor_qos 
+          qos:
+            profile: sensor_qos
             reliability: reliable
         description_in:
           type: "std_msgs/msg/String"

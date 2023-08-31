@@ -14,6 +14,8 @@ import primitives.MessagePart;
 import primitives.PrimitivesPackage;
 import primitives.bool;
 import primitives.boolArray;
+import primitives.char0;
+import primitives.charArray;
 import primitives.duration;
 import primitives.float32;
 import primitives.float32Array;
@@ -308,6 +310,20 @@ public class PrimitivesSwitch<T> extends Switch<T> {
                 ByteArray byteArray = (ByteArray)theEObject;
                 T result = caseByteArray(byteArray);
                 if (result == null) result = caseAbstractType(byteArray);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case PrimitivesPackage.CHAR0: {
+                char0 char0 = (char0)theEObject;
+                T result = casechar0(char0);
+                if (result == null) result = caseAbstractType(char0);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case PrimitivesPackage.CHAR_ARRAY: {
+                charArray charArray = (charArray)theEObject;
+                T result = casecharArray(charArray);
+                if (result == null) result = caseAbstractType(charArray);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -766,6 +782,36 @@ public class PrimitivesSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>char0</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>char0</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casechar0(char0 object) {
+        return null;
+    }
+
+                /**
+     * Returns the result of interpreting the object as an instance of '<em>char Array</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>char Array</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casecharArray(charArray object) {
+        return null;
+    }
+
+                /**
      * Returns the result of interpreting the object as an instance of '<em>Message Part</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

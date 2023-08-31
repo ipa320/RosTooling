@@ -20,6 +20,8 @@ import primitives.MessagePart;
 import primitives.PrimitivesPackage;
 import primitives.bool;
 import primitives.boolArray;
+import primitives.char0;
+import primitives.charArray;
 import primitives.duration;
 import primitives.float32;
 import primitives.float32Array;
@@ -118,6 +120,12 @@ public class RosSemanticSequencer extends BasicsSemanticSequencer {
 				return; 
 			case PrimitivesPackage.BOOL_ARRAY:
 				sequence_boolArray(context, (boolArray) semanticObject); 
+				return; 
+			case PrimitivesPackage.CHAR0:
+				sequence_char(context, (char0) semanticObject); 
+				return; 
+			case PrimitivesPackage.CHAR_ARRAY:
+				sequence_charArray(context, (charArray) semanticObject); 
 				return; 
 			case PrimitivesPackage.DURATION:
 				sequence_duration(context, (duration) semanticObject); 

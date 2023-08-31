@@ -17,6 +17,8 @@ import primitives.PrimitivesFactory;
 import primitives.PrimitivesPackage;
 import primitives.bool;
 import primitives.boolArray;
+import primitives.char0;
+import primitives.charArray;
 import primitives.duration;
 import primitives.float32;
 import primitives.float32Array;
@@ -263,6 +265,20 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
     private EClass byteArrayEClass = null;
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass char0EClass = null;
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass charArrayEClass = null;
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -642,6 +658,26 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
      * @generated
      */
     @Override
+    public EClass getchar0() {
+        return char0EClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getcharArray() {
+        return charArrayEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getMessagePart() {
         return messagePartEClass;
     }
@@ -758,6 +794,10 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
         byteEClass = createEClass(BYTE);
 
         byteArrayEClass = createEClass(BYTE_ARRAY);
+
+        char0EClass = createEClass(CHAR0);
+
+        charArrayEClass = createEClass(CHAR_ARRAY);
     }
 
     /**
@@ -817,6 +857,8 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
         headerEClass.getESuperTypes().add(this.getAbstractType());
         byteEClass.getESuperTypes().add(this.getAbstractType());
         byteArrayEClass.getESuperTypes().add(this.getAbstractType());
+        char0EClass.getESuperTypes().add(this.getAbstractType());
+        charArrayEClass.getESuperTypes().add(this.getAbstractType());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(abstractTypeEClass, AbstractType.class, "AbstractType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -882,6 +924,10 @@ public class PrimitivesPackageImpl extends EPackageImpl implements PrimitivesPac
         initEClass(byteEClass, primitives.Byte.class, "Byte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(byteArrayEClass, ByteArray.class, "ByteArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(char0EClass, char0.class, "char0", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(charArrayEClass, charArray.class, "charArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         createResource(eNS_URI);

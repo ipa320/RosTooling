@@ -3367,6 +3367,24 @@ ruleAbstractType returns [EObject current=null]
 			$current = $this_ArraySpecRef_30.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharParserRuleCall_31());
+		}
+		this_char_31=rulechar
+		{
+			$current = $this_char_31.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharArrayParserRuleCall_32());
+		}
+		this_charArray_32=rulecharArray
+		{
+			$current = $this_charArray_32.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -3726,6 +3744,36 @@ rulestring0 returns [EObject current=null]
 		otherlv_1=String_1
 		{
 			newLeafNode(otherlv_1, grammarAccess.getString0Access().getStringKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRulechar
+entryRulechar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCharRule()); }
+	iv_rulechar=rulechar
+	{ $current=$iv_rulechar.current; }
+	EOF;
+
+// Rule char
+rulechar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCharAccess().getChar0Action_0(),
+					$current);
+			}
+		)
+		otherlv_1=Char
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCharAccess().getCharKeyword_1());
 		}
 	)
 ;
@@ -4206,6 +4254,36 @@ rulebyteArray returns [EObject current=null]
 		otherlv_1=Byte_1
 		{
 			newLeafNode(otherlv_1, grammarAccess.getByteArrayAccess().getByteKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRulecharArray
+entryRulecharArray returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCharArrayRule()); }
+	iv_rulecharArray=rulecharArray
+	{ $current=$iv_rulecharArray.current; }
+	EOF;
+
+// Rule charArray
+rulecharArray returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCharArrayAccess().getCharArrayAction_0(),
+					$current);
+			}
+		)
+		otherlv_1=Char_1
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCharArrayAccess().getCharKeyword_1());
 		}
 	)
 ;

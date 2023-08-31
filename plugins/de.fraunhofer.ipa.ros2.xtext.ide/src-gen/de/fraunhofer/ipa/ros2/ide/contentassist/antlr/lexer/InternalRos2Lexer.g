@@ -133,6 +133,8 @@ Bool_1 : 'bool[]';
 
 Byte_1 : 'byte[]';
 
+Char_1 : 'char[]';
+
 Depth : 'depth:';
 
 Int8_1 : 'int8[]';
@@ -146,6 +148,8 @@ Uint16 : 'uint16';
 Uint32 : 'uint32';
 
 Uint64 : 'uint64';
+
+Value_1 : 'value:';
 
 Int16 : 'int16';
 
@@ -172,6 +176,8 @@ List : 'List';
 Bool : 'bool';
 
 Byte : 'byte';
+
+Char : 'char';
 
 Goal : 'goal';
 
@@ -207,7 +213,7 @@ RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT*|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT*);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 

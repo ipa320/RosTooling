@@ -945,6 +945,62 @@ public interface PrimitivesPackage extends EPackage {
     int BYTE_ARRAY_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link primitives.impl.char0Impl <em>char0</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see primitives.impl.char0Impl
+     * @see primitives.impl.PrimitivesPackageImpl#getchar0()
+     * @generated
+     */
+    int CHAR0 = 31;
+
+                /**
+     * The number of structural features of the '<em>char0</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR0_FEATURE_COUNT = ABSTRACT_TYPE_FEATURE_COUNT + 0;
+
+                /**
+     * The number of operations of the '<em>char0</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR0_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
+
+                /**
+     * The meta object id for the '{@link primitives.impl.charArrayImpl <em>char Array</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see primitives.impl.charArrayImpl
+     * @see primitives.impl.PrimitivesPackageImpl#getcharArray()
+     * @generated
+     */
+    int CHAR_ARRAY = 32;
+
+                /**
+     * The number of structural features of the '<em>char Array</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR_ARRAY_FEATURE_COUNT = ABSTRACT_TYPE_FEATURE_COUNT + 0;
+
+                /**
+     * The number of operations of the '<em>char Array</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR_ARRAY_OPERATION_COUNT = ABSTRACT_TYPE_OPERATION_COUNT + 0;
+
+                /**
      * Returns the meta object for class '{@link primitives.bool <em>bool</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1245,6 +1301,26 @@ public interface PrimitivesPackage extends EPackage {
     EClass getByteArray();
 
     /**
+     * Returns the meta object for class '{@link primitives.char0 <em>char0</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>char0</em>'.
+     * @see primitives.char0
+     * @generated
+     */
+    EClass getchar0();
+
+                /**
+     * Returns the meta object for class '{@link primitives.charArray <em>char Array</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>char Array</em>'.
+     * @see primitives.charArray
+     * @generated
+     */
+    EClass getcharArray();
+
+                /**
      * Returns the meta object for class '{@link primitives.MessagePart <em>Message Part</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1600,6 +1676,26 @@ public interface PrimitivesPackage extends EPackage {
         EClass BYTE_ARRAY = eINSTANCE.getByteArray();
 
         /**
+         * The meta object literal for the '{@link primitives.impl.char0Impl <em>char0</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see primitives.impl.char0Impl
+         * @see primitives.impl.PrimitivesPackageImpl#getchar0()
+         * @generated
+         */
+        EClass CHAR0 = eINSTANCE.getchar0();
+
+                                /**
+         * The meta object literal for the '{@link primitives.impl.charArrayImpl <em>char Array</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see primitives.impl.charArrayImpl
+         * @see primitives.impl.PrimitivesPackageImpl#getcharArray()
+         * @generated
+         */
+        EClass CHAR_ARRAY = eINSTANCE.getcharArray();
+
+                                /**
          * The meta object literal for the '{@link primitives.impl.MessagePartImpl <em>Message Part</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

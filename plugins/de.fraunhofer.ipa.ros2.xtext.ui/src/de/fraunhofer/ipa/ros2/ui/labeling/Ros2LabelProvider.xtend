@@ -9,23 +9,23 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 
 /**
  * Provides labels for EObjects.
- * 
+ *
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#label-provider
  */
 class Ros2LabelProvider extends DefaultEObjectLabelProvider {
 
-	@Inject
-	new(AdapterFactoryLabelProvider delegate) {
-		super(delegate);
-	}
+    @Inject
+    new(AdapterFactoryLabelProvider delegate) {
+        super(delegate);
+    }
 
-	// Labels and icons can be computed like this:
-	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
+    // Labels and icons can be computed like this:
+
+//  def text(Greeting ele) {
+//      'A greeting to ' + ele.name
+//  }
 //
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+//  def image(Greeting ele) {
+//      'Greeting.gif'
+//  }
 }

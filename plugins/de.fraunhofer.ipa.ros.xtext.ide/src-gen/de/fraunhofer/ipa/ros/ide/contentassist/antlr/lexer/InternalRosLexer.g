@@ -103,6 +103,8 @@ Bool_1 : 'bool[]';
 
 Byte_1 : 'byte[]';
 
+Char_1 : 'char[]';
+
 Int8_1 : 'int8[]';
 
 Result : 'result';
@@ -143,6 +145,8 @@ Bool : 'bool';
 
 Byte : 'byte';
 
+Char : 'char';
+
 Goal : 'goal';
 
 Int8 : 'int8';
@@ -175,7 +179,7 @@ RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : (RULE_DIGIT|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
+RULE_DOUBLE : (RULE_DIGIT*|'-' RULE_DIGIT*) ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT*);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
 

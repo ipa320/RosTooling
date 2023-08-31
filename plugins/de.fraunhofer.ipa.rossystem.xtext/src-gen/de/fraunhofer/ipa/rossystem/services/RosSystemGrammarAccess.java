@@ -1794,7 +1794,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return gaBasics.getBOOLEANRule();
 	}
 	
-	//terminal DOUBLE returns ecore::EDouble: (DIGIT | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
+	//terminal DOUBLE returns ecore::EDouble: (DIGIT* | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT*));
 	public TerminalRule getDOUBLERule() {
 		return gaBasics.getDOUBLERule();
 	}
@@ -1910,7 +1910,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//AbstractType returns primitives::AbstractType:
 	//    bool | int8 | uint8 | int16 | uint16 | int32 | uint32 | int64 | uint64 | float32 | float64 | string0 | byte | time | duration | Header |
 	//    boolArray | int8Array | uint8Array | int16Array | uint16Array | int32Array | uint32Array | int64Array | uint64Array | float32Array | float64Array | string0Array | byteArray |
-	//    SpecBaseRef | ArraySpecRef ;
+	//    SpecBaseRef | ArraySpecRef | char | charArray;
 	public BasicsGrammarAccess.AbstractTypeElements getAbstractTypeAccess() {
 		return gaBasics.getAbstractTypeAccess();
 	}
@@ -2061,6 +2061,18 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getString0Rule() {
 		return getString0Access().getRule();
+	}
+	
+	//char returns primitives::char0:
+	//    {primitives::char0}
+	//    'char'
+	//    ;
+	public BasicsGrammarAccess.CharElements getCharAccess() {
+		return gaBasics.getCharAccess();
+	}
+	
+	public ParserRule getCharRule() {
+		return getCharAccess().getRule();
 	}
 	
 	//byte returns primitives::Byte:
@@ -2253,6 +2265,18 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getByteArrayRule() {
 		return getByteArrayAccess().getRule();
+	}
+	
+	//charArray returns primitives::charArray:
+	//    {primitives::charArray}
+	//    'char[]'
+	//    ;
+	public BasicsGrammarAccess.CharArrayElements getCharArrayAccess() {
+		return gaBasics.getCharArrayAccess();
+	}
+	
+	public ParserRule getCharArrayRule() {
+		return getCharArrayAccess().getRule();
 	}
 	
 	//Header returns primitives::Header:
