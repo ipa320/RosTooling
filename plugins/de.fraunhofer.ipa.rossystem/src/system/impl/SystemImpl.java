@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import ros.Parameter;
 import system.Component;
 import system.Connection;
-import system.RosParameter;
 import system.RossystemPackage;
 
 /**
@@ -98,7 +98,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
      * @generated
      * @ordered
      */
-    protected EList<RosParameter> parameter;
+    protected EList<Parameter> parameter;
 
     /**
      * <!-- begin-user-doc -->
@@ -187,9 +187,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
      * @generated
      */
     @Override
-    public EList<RosParameter> getParameter() {
+    public EList<Parameter> getParameter() {
         if (parameter == null) {
-            parameter = new EObjectContainmentEList<RosParameter>(RosParameter.class, this, RossystemPackage.SYSTEM__PARAMETER);
+            parameter = new EObjectContainmentEList<Parameter>(Parameter.class, this, RossystemPackage.SYSTEM__PARAMETER);
         }
         return parameter;
     }
@@ -262,7 +262,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements system.S
                 return;
             case RossystemPackage.SYSTEM__PARAMETER:
                 getParameter().clear();
-                getParameter().addAll((Collection<? extends RosParameter>)newValue);
+                getParameter().addAll((Collection<? extends Parameter>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);

@@ -61,7 +61,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cParametersKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_3_2_1 = (RuleCall)cGroup_3_2.eContents().get(1);
 		private final Assignment cParameterAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
-		private final RuleCall cParameterRosParameterParserRuleCall_3_2_2_0 = (RuleCall)cParameterAssignment_3_2_2.eContents().get(0);
+		private final RuleCall cParameterParameterParserRuleCall_3_2_2_0 = (RuleCall)cParameterAssignment_3_2_2.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_3_2_3 = (RuleCall)cGroup_3_2.eContents().get(3);
 		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
 		private final Keyword cConnectionsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
@@ -87,7 +87,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        ) |
 		//        ('parameters:'
 		//            BEGIN
-		//            parameter+=RosParameter*
+		//            parameter+=Parameter*
 		//            END
 		//        ) |
 		//        ('connections:'
@@ -114,7 +114,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    ) |
 		//    ('parameters:'
 		//        BEGIN
-		//        parameter+=RosParameter*
+		//        parameter+=Parameter*
 		//        END
 		//    ) |
 		//    ('connections:'
@@ -151,7 +151,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//) |
 		//('parameters:'
 		//    BEGIN
-		//    parameter+=RosParameter*
+		//    parameter+=Parameter*
 		//    END
 		//) |
 		//('connections:'
@@ -208,7 +208,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//('parameters:'
 		//    BEGIN
-		//    parameter+=RosParameter*
+		//    parameter+=Parameter*
 		//    END
 		//)
 		public Group getGroup_3_2() { return cGroup_3_2; }
@@ -219,11 +219,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//BEGIN
 		public RuleCall getBEGINTerminalRuleCall_3_2_1() { return cBEGINTerminalRuleCall_3_2_1; }
 		
-		//parameter+=RosParameter*
+		//parameter+=Parameter*
 		public Assignment getParameterAssignment_3_2_2() { return cParameterAssignment_3_2_2; }
 		
-		//RosParameter
-		public RuleCall getParameterRosParameterParserRuleCall_3_2_2_0() { return cParameterRosParameterParserRuleCall_3_2_2_0; }
+		//Parameter
+		public RuleCall getParameterParameterParserRuleCall_3_2_2_0() { return cParameterParameterParserRuleCall_3_2_2_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_3_2_3() { return cENDTerminalRuleCall_3_2_3; }
@@ -1184,7 +1184,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        ) |
 	//        ('parameters:'
 	//            BEGIN
-	//            parameter+=RosParameter*
+	//            parameter+=Parameter*
 	//            END
 	//        ) |
 	//        ('connections:'
