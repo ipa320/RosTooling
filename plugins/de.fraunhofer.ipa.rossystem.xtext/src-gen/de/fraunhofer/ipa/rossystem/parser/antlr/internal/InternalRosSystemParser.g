@@ -202,9 +202,9 @@ ruleRosSystem returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getRosSystemAccess().getParameterRosParameterParserRuleCall_3_2_2_0());
+							newCompositeNode(grammarAccess.getRosSystemAccess().getParameterParameterParserRuleCall_3_2_2_0());
 						}
-						lv_parameter_13_0=ruleRosParameter
+						lv_parameter_13_0=ruleParameter
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getRosSystemRule());
@@ -213,7 +213,7 @@ ruleRosSystem returns [EObject current=null]
 								$current,
 								"parameter",
 								lv_parameter_13_0,
-								"de.fraunhofer.ipa.rossystem.RosSystem.RosParameter");
+								"de.fraunhofer.ipa.ros.Basics.Parameter");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -971,12 +971,16 @@ ruleRosParameter returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0=HyphenMinus
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRosParameterAccess().getHyphenMinusKeyword_0());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_1_0());
 				}
-				lv_name_0_0=ruleEString
+				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRosParameterRule());
@@ -984,15 +988,15 @@ ruleRosParameter returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_0_0,
+						lv_name_1_0,
 						"de.fraunhofer.ipa.ros.Basics.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_1=Colon
+		otherlv_2=Colon
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRosParameterAccess().getColonKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getRosParameterAccess().getColonKeyword_2());
 		}
 		(
 			(
@@ -1002,7 +1006,7 @@ ruleRosParameter returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosParameterAccess().getFromParameterCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRosParameterAccess().getFromParameterCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -1010,20 +1014,20 @@ ruleRosParameter returns [EObject current=null]
 				}
 			)
 		)
-		this_BEGIN_3=RULE_BEGIN
+		this_BEGIN_4=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_3, grammarAccess.getRosParameterAccess().getBEGINTerminalRuleCall_3());
+			newLeafNode(this_BEGIN_4, grammarAccess.getRosParameterAccess().getBEGINTerminalRuleCall_4());
 		}
-		otherlv_4=Value_1
+		otherlv_5=Value_1
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRosParameterAccess().getValueKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRosParameterAccess().getValueKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_6_0());
 				}
-				lv_value_5_0=ruleParameterValue
+				lv_value_6_0=ruleParameterValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRosParameterRule());
@@ -1031,15 +1035,15 @@ ruleRosParameter returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_5_0,
+						lv_value_6_0,
 						"de.fraunhofer.ipa.ros.Basics.ParameterValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		this_END_6=RULE_END
+		this_END_7=RULE_END
 		{
-			newLeafNode(this_END_6, grammarAccess.getRosParameterAccess().getENDTerminalRuleCall_6());
+			newLeafNode(this_END_7, grammarAccess.getRosParameterAccess().getENDTerminalRuleCall_7());
 		}
 	)
 ;
@@ -1702,6 +1706,136 @@ rulePrivateNamespace returns [EObject current=null]
 				newLeafNode(otherlv_6, grammarAccess.getPrivateNamespaceAccess().getRightSquareBracketKeyword_2_3());
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleParameter
+entryRuleParameter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParameterRule()); }
+	iv_ruleParameter=ruleParameter
+	{ $current=$iv_ruleParameter.current; }
+	EOF;
+
+// Rule Parameter
+ruleParameter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getParameterAccess().getParameterAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParameterRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.fraunhofer.ipa.ros.Basics.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=Colon
+		{
+			newLeafNode(otherlv_2, grammarAccess.getParameterAccess().getColonKeyword_2());
+		}
+		this_BEGIN_3=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_3, grammarAccess.getParameterAccess().getBEGINTerminalRuleCall_3());
+		}
+		(
+			otherlv_4=Ns
+			{
+				newLeafNode(otherlv_4, grammarAccess.getParameterAccess().getNsKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParameterAccess().getNamespaceNamespaceParserRuleCall_4_1_0());
+					}
+					lv_namespace_5_0=ruleNamespace
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParameterRule());
+						}
+						set(
+							$current,
+							"namespace",
+							lv_namespace_5_0,
+							"de.fraunhofer.ipa.ros.Basics.Namespace");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_6=Type_1
+		{
+			newLeafNode(otherlv_6, grammarAccess.getParameterAccess().getTypeKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeParserRuleCall_6_0());
+				}
+				lv_type_7_0=ruleParameterType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParameterRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_7_0,
+						"de.fraunhofer.ipa.ros.Basics.ParameterType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_8=Value_1
+			{
+				newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getValueKeyword_7_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParameterAccess().getValueParameterValueParserRuleCall_7_1_0());
+					}
+					lv_value_9_0=ruleParameterValue
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParameterRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_9_0,
+							"de.fraunhofer.ipa.ros.Basics.ParameterValue");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		this_END_10=RULE_END
+		{
+			newLeafNode(this_END_10, grammarAccess.getParameterAccess().getENDTerminalRuleCall_8());
+		}
 	)
 ;
 

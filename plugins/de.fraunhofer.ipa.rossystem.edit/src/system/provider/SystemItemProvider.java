@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import ros.RosFactory;
 import system.RossystemFactory;
 import system.RossystemPackage;
 
@@ -221,7 +222,7 @@ public class SystemItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__PARAMETER,
-                 RossystemFactory.eINSTANCE.createRosParameter()));
+                 RosFactory.eINSTANCE.createParameter()));
     }
 
     /**

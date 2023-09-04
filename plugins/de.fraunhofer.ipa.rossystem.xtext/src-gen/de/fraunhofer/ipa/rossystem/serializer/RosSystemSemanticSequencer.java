@@ -473,9 +473,9 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_PARAMETER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getRosParameterAccess().getFromParameterEStringParserRuleCall_2_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_PARAMETER__FROM, false));
-		feeder.accept(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getRosParameterAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRosParameterAccess().getFromParameterEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_PARAMETER__FROM, false));
+		feeder.accept(grammarAccess.getRosParameterAccess().getValueParameterValueParserRuleCall_6_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -620,7 +620,7 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 	 *     RosSystem returns System
 	 *
 	 * Constraint:
-	 *     (name=EString (processes+=Process | components+=RosNode | parameter+=RosParameter | connections+=Connection)*)
+	 *     (name=EString (processes+=Process | components+=RosNode | parameter+=Parameter | connections+=Connection)*)
 	 * </pre>
 	 */
 	protected void sequence_RosSystem(ISerializationContext context, system.System semanticObject) {

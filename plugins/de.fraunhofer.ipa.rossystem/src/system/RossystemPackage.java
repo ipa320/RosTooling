@@ -582,7 +582,7 @@ public interface RossystemPackage extends EPackage {
     int ROS_SERVICE_CLIENT_REFERENCE__FROM = INTERFACE_REFERENCE_FEATURE_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>Ros Server Client Reference</em>' class.
+     * The number of structural features of the '<em>Ros Service Client Reference</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
