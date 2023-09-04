@@ -88,6 +88,7 @@ public class RossystemSwitch<T> extends Switch<T> {
             case RossystemPackage.SYSTEM: {
                 system.System system = (system.System)theEObject;
                 T result = caseSystem(system);
+                if (result == null) result = caseComponent(system);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -95,6 +96,7 @@ public class RossystemSwitch<T> extends Switch<T> {
                 Rossystem rossystem = (Rossystem)theEObject;
                 T result = caseRossystem(rossystem);
                 if (result == null) result = caseSystem(rossystem);
+                if (result == null) result = caseComponent(rossystem);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }

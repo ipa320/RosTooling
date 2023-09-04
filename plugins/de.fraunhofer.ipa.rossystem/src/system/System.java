@@ -3,8 +3,6 @@
 package system;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 import ros.Parameter;
 
 /**
@@ -27,7 +25,7 @@ import ros.Parameter;
  * @model
  * @generated
  */
-public interface System extends EObject {
+public interface System extends Component {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->

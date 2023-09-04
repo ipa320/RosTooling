@@ -58,17 +58,23 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cComponentsRosNodeParserRuleCall_3_1_2_0 = (RuleCall)cComponentsAssignment_3_1_2.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_3_1_3 = (RuleCall)cGroup_3_1.eContents().get(3);
 		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
-		private final Keyword cParametersKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Keyword cSubSystemKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_3_2_1 = (RuleCall)cGroup_3_2.eContents().get(1);
-		private final Assignment cParameterAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
-		private final RuleCall cParameterParameterParserRuleCall_3_2_2_0 = (RuleCall)cParameterAssignment_3_2_2.eContents().get(0);
+		private final Assignment cComponentsAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
+		private final RuleCall cComponentsRosSystemParserRuleCall_3_2_2_0 = (RuleCall)cComponentsAssignment_3_2_2.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_3_2_3 = (RuleCall)cGroup_3_2.eContents().get(3);
 		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
-		private final Keyword cConnectionsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Keyword cParametersKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_3_3_1 = (RuleCall)cGroup_3_3.eContents().get(1);
-		private final Assignment cConnectionsAssignment_3_3_2 = (Assignment)cGroup_3_3.eContents().get(2);
-		private final RuleCall cConnectionsConnectionParserRuleCall_3_3_2_0 = (RuleCall)cConnectionsAssignment_3_3_2.eContents().get(0);
+		private final Assignment cParameterAssignment_3_3_2 = (Assignment)cGroup_3_3.eContents().get(2);
+		private final RuleCall cParameterParameterParserRuleCall_3_3_2_0 = (RuleCall)cParameterAssignment_3_3_2.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_3_3_3 = (RuleCall)cGroup_3_3.eContents().get(3);
+		private final Group cGroup_3_4 = (Group)cAlternatives_3.eContents().get(4);
+		private final Keyword cConnectionsKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
+		private final RuleCall cBEGINTerminalRuleCall_3_4_1 = (RuleCall)cGroup_3_4.eContents().get(1);
+		private final Assignment cConnectionsAssignment_3_4_2 = (Assignment)cGroup_3_4.eContents().get(2);
+		private final RuleCall cConnectionsConnectionParserRuleCall_3_4_2_0 = (RuleCall)cConnectionsAssignment_3_4_2.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_3_4_3 = (RuleCall)cGroup_3_4.eContents().get(3);
 		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//RosSystem returns System:
@@ -83,6 +89,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        ('nodes:'
 		//            BEGIN
 		//            components+=RosNode*
+		//            END
+		//        ) |
+		//        ('subSystem:'
+		//            BEGIN
+		//            components+=RosSystem*
 		//            END
 		//        ) |
 		//        ('parameters:'
@@ -110,6 +121,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    ('nodes:'
 		//        BEGIN
 		//        components+=RosNode*
+		//        END
+		//    ) |
+		//    ('subSystem:'
+		//        BEGIN
+		//        components+=RosSystem*
 		//        END
 		//    ) |
 		//    ('parameters:'
@@ -147,6 +163,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//('nodes:'
 		//    BEGIN
 		//    components+=RosNode*
+		//    END
+		//) |
+		//('subSystem:'
+		//    BEGIN
+		//    components+=RosSystem*
 		//    END
 		//) |
 		//('parameters:'
@@ -206,49 +227,71 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//END
 		public RuleCall getENDTerminalRuleCall_3_1_3() { return cENDTerminalRuleCall_3_1_3; }
 		
+		//('subSystem:'
+		//    BEGIN
+		//    components+=RosSystem*
+		//    END
+		//)
+		public Group getGroup_3_2() { return cGroup_3_2; }
+		
+		//'subSystem:'
+		public Keyword getSubSystemKeyword_3_2_0() { return cSubSystemKeyword_3_2_0; }
+		
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_3_2_1() { return cBEGINTerminalRuleCall_3_2_1; }
+		
+		//components+=RosSystem*
+		public Assignment getComponentsAssignment_3_2_2() { return cComponentsAssignment_3_2_2; }
+		
+		//RosSystem
+		public RuleCall getComponentsRosSystemParserRuleCall_3_2_2_0() { return cComponentsRosSystemParserRuleCall_3_2_2_0; }
+		
+		//END
+		public RuleCall getENDTerminalRuleCall_3_2_3() { return cENDTerminalRuleCall_3_2_3; }
+		
 		//('parameters:'
 		//    BEGIN
 		//    parameter+=Parameter*
 		//    END
 		//)
-		public Group getGroup_3_2() { return cGroup_3_2; }
+		public Group getGroup_3_3() { return cGroup_3_3; }
 		
 		//'parameters:'
-		public Keyword getParametersKeyword_3_2_0() { return cParametersKeyword_3_2_0; }
+		public Keyword getParametersKeyword_3_3_0() { return cParametersKeyword_3_3_0; }
 		
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_3_2_1() { return cBEGINTerminalRuleCall_3_2_1; }
+		public RuleCall getBEGINTerminalRuleCall_3_3_1() { return cBEGINTerminalRuleCall_3_3_1; }
 		
 		//parameter+=Parameter*
-		public Assignment getParameterAssignment_3_2_2() { return cParameterAssignment_3_2_2; }
+		public Assignment getParameterAssignment_3_3_2() { return cParameterAssignment_3_3_2; }
 		
 		//Parameter
-		public RuleCall getParameterParameterParserRuleCall_3_2_2_0() { return cParameterParameterParserRuleCall_3_2_2_0; }
+		public RuleCall getParameterParameterParserRuleCall_3_3_2_0() { return cParameterParameterParserRuleCall_3_3_2_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_3_2_3() { return cENDTerminalRuleCall_3_2_3; }
+		public RuleCall getENDTerminalRuleCall_3_3_3() { return cENDTerminalRuleCall_3_3_3; }
 		
 		//('connections:'
 		//    BEGIN
 		//    connections+=Connection*
 		//    END
 		//)
-		public Group getGroup_3_3() { return cGroup_3_3; }
+		public Group getGroup_3_4() { return cGroup_3_4; }
 		
 		//'connections:'
-		public Keyword getConnectionsKeyword_3_3_0() { return cConnectionsKeyword_3_3_0; }
+		public Keyword getConnectionsKeyword_3_4_0() { return cConnectionsKeyword_3_4_0; }
 		
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_3_3_1() { return cBEGINTerminalRuleCall_3_3_1; }
+		public RuleCall getBEGINTerminalRuleCall_3_4_1() { return cBEGINTerminalRuleCall_3_4_1; }
 		
 		//connections+=Connection*
-		public Assignment getConnectionsAssignment_3_3_2() { return cConnectionsAssignment_3_3_2; }
+		public Assignment getConnectionsAssignment_3_4_2() { return cConnectionsAssignment_3_4_2; }
 		
 		//Connection
-		public RuleCall getConnectionsConnectionParserRuleCall_3_3_2_0() { return cConnectionsConnectionParserRuleCall_3_3_2_0; }
+		public RuleCall getConnectionsConnectionParserRuleCall_3_4_2_0() { return cConnectionsConnectionParserRuleCall_3_4_2_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_3_3_3() { return cENDTerminalRuleCall_3_3_3; }
+		public RuleCall getENDTerminalRuleCall_3_4_3() { return cENDTerminalRuleCall_3_4_3; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
@@ -1180,6 +1223,11 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        ('nodes:'
 	//            BEGIN
 	//            components+=RosNode*
+	//            END
+	//        ) |
+	//        ('subSystem:'
+	//            BEGIN
+	//            components+=RosSystem*
 	//            END
 	//        ) |
 	//        ('parameters:'

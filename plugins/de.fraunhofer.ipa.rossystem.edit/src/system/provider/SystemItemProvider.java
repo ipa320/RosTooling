@@ -8,20 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import ros.RosFactory;
 import system.RossystemFactory;
@@ -34,13 +25,7 @@ import system.RossystemPackage;
  * @generated
  */
 public class SystemItemProvider
-    extends ItemProviderAdapter
-    implements
-        IEditingDomainItemProvider,
-        IStructuredItemContentProvider,
-        ITreeItemContentProvider,
-        IItemLabelProvider,
-        IItemPropertySource {
+    extends ComponentItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -192,6 +177,16 @@ public class SystemItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createSystem()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createRossystem()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
                  RossystemFactory.eINSTANCE.createRosNode()));
 
         newChildDescriptors.add
@@ -223,17 +218,6 @@ public class SystemItemProvider
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__PARAMETER,
                  RosFactory.eINSTANCE.createParameter()));
-    }
-
-    /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return RossystemEditPlugin.INSTANCE;
     }
 
 }

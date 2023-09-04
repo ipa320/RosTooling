@@ -922,6 +922,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         // Set bounds for type parameters
 
         // Add supertypes to classes
+        systemEClass.getESuperTypes().add(this.getComponent());
         rossystemEClass.getESuperTypes().add(this.getSystem());
         rosNodeEClass.getESuperTypes().add(this.getComponent());
         rosPublisherReferenceEClass.getESuperTypes().add(this.getInterfaceReference());

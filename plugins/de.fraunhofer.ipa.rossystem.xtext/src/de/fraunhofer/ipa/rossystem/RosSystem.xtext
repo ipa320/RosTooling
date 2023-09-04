@@ -24,6 +24,11 @@ RosSystem returns System:
             components+=RosNode*
             END
         ) |
+        ('subSystem:'
+            BEGIN
+            components+=RosSystem*
+            END
+        ) |
         ('parameters:'
             BEGIN
             parameter+=Parameter*
