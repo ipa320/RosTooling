@@ -29,6 +29,7 @@ import system.RossystemPackage;
  * </p>
  * <ul>
  *   <li>{@link system.impl.SystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link system.impl.SystemImpl#getFromFile <em>From File</em>}</li>
  *   <li>{@link system.impl.SystemImpl#getProcesses <em>Processes</em>}</li>
  *   <li>{@link system.impl.SystemImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link system.impl.SystemImpl#getConnections <em>Connections</em>}</li>
@@ -59,6 +60,26 @@ public class SystemImpl extends ComponentImpl implements system.System {
     protected String name = NAME_EDEFAULT;
 
     /**
+     * The default value of the '{@link #getFromFile() <em>From File</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFromFile()
+     * @generated
+     * @ordered
+     */
+    protected static final String FROM_FILE_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getFromFile() <em>From File</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFromFile()
+     * @generated
+     * @ordered
+     */
+    protected String fromFile = FROM_FILE_EDEFAULT;
+
+                /**
      * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -146,6 +167,29 @@ public class SystemImpl extends ComponentImpl implements system.System {
      * @generated
      */
     @Override
+    public String getFromFile() {
+        return fromFile;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setFromFile(String newFromFile) {
+        String oldFromFile = fromFile;
+        fromFile = newFromFile;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.SYSTEM__FROM_FILE, oldFromFile, fromFile));
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EList<system.Process> getProcesses() {
         if (processes == null) {
             processes = new EObjectContainmentEList<system.Process>(system.Process.class, this, RossystemPackage.SYSTEM__PROCESSES);
@@ -222,6 +266,8 @@ public class SystemImpl extends ComponentImpl implements system.System {
         switch (featureID) {
             case RossystemPackage.SYSTEM__NAME:
                 return getName();
+            case RossystemPackage.SYSTEM__FROM_FILE:
+                return getFromFile();
             case RossystemPackage.SYSTEM__PROCESSES:
                 return getProcesses();
             case RossystemPackage.SYSTEM__COMPONENTS:
@@ -245,6 +291,9 @@ public class SystemImpl extends ComponentImpl implements system.System {
         switch (featureID) {
             case RossystemPackage.SYSTEM__NAME:
                 setName((String)newValue);
+                return;
+            case RossystemPackage.SYSTEM__FROM_FILE:
+                setFromFile((String)newValue);
                 return;
             case RossystemPackage.SYSTEM__PROCESSES:
                 getProcesses().clear();
@@ -277,6 +326,9 @@ public class SystemImpl extends ComponentImpl implements system.System {
             case RossystemPackage.SYSTEM__NAME:
                 setName(NAME_EDEFAULT);
                 return;
+            case RossystemPackage.SYSTEM__FROM_FILE:
+                setFromFile(FROM_FILE_EDEFAULT);
+                return;
             case RossystemPackage.SYSTEM__PROCESSES:
                 getProcesses().clear();
                 return;
@@ -303,6 +355,8 @@ public class SystemImpl extends ComponentImpl implements system.System {
         switch (featureID) {
             case RossystemPackage.SYSTEM__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            case RossystemPackage.SYSTEM__FROM_FILE:
+                return FROM_FILE_EDEFAULT == null ? fromFile != null : !FROM_FILE_EDEFAULT.equals(fromFile);
             case RossystemPackage.SYSTEM__PROCESSES:
                 return processes != null && !processes.isEmpty();
             case RossystemPackage.SYSTEM__COMPONENTS:
@@ -327,6 +381,8 @@ public class SystemImpl extends ComponentImpl implements system.System {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
+        result.append(", fromFile: ");
+        result.append(fromFile);
         result.append(')');
         return result.toString();
     }

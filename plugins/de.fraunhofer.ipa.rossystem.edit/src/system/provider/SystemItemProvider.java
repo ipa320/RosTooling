@@ -48,6 +48,7 @@ public class SystemItemProvider
             super.getPropertyDescriptors(object);
 
             addNamePropertyDescriptor(object);
+            addFromFilePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -75,6 +76,28 @@ public class SystemItemProvider
     }
 
     /**
+     * This adds a property descriptor for the From File feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addFromFilePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_System_fromFile_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_System_fromFile_feature", "_UI_System_type"),
+                 RossystemPackage.Literals.SYSTEM__FROM_FILE,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+                /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -146,6 +169,7 @@ public class SystemItemProvider
 
         switch (notification.getFeatureID(system.System.class)) {
             case RossystemPackage.SYSTEM__NAME:
+            case RossystemPackage.SYSTEM__FROM_FILE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case RossystemPackage.SYSTEM__PROCESSES:

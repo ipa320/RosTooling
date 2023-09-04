@@ -282,17 +282,17 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EReference getSystem_Processes() {
-        return (EReference)systemEClass.getEStructuralFeatures().get(1);
+    public EAttribute getSystem_FromFile() {
+        return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EReference getSystem_Components() {
+    public EReference getSystem_Processes() {
         return (EReference)systemEClass.getEStructuralFeatures().get(2);
     }
 
@@ -302,7 +302,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EReference getSystem_Connections() {
+    public EReference getSystem_Components() {
         return (EReference)systemEClass.getEStructuralFeatures().get(3);
     }
 
@@ -312,8 +312,18 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EReference getSystem_Parameter() {
+    public EReference getSystem_Connections() {
         return (EReference)systemEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSystem_Parameter() {
+        return (EReference)systemEClass.getEStructuralFeatures().get(5);
     }
 
     /**
@@ -817,6 +827,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         // Create classes and their features
         systemEClass = createEClass(SYSTEM);
         createEAttribute(systemEClass, SYSTEM__NAME);
+        createEAttribute(systemEClass, SYSTEM__FROM_FILE);
         createEReference(systemEClass, SYSTEM__PROCESSES);
         createEReference(systemEClass, SYSTEM__COMPONENTS);
         createEReference(systemEClass, SYSTEM__CONNECTIONS);
@@ -941,6 +952,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
         // Initialize classes, features, and operations; add parameters
         initEClass(systemEClass, system.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 1, 1, system.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getSystem_FromFile(), ecorePackage.getEString(), "fromFile", null, 0, 1, system.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getSystem_Processes(), this.getProcess(), null, "processes", null, 0, -1, system.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getSystem_Components(), this.getComponent(), null, "components", null, 0, -1, system.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getSystem_Connections(), this.getConnection(), null, "connections", null, 0, -1, system.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

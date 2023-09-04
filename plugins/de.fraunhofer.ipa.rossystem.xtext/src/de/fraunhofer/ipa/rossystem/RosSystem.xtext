@@ -13,6 +13,7 @@ System returns System:
 RosSystem returns System:
     name=EString':'
     BEGIN
+        ('fromFile:' fromFile=EString)?
         (
         ('processes:'
             BEGIN

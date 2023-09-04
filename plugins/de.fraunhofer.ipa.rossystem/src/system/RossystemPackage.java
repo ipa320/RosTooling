@@ -124,13 +124,22 @@ public interface RossystemPackage extends EPackage {
     int SYSTEM__NAME = COMPONENT_FEATURE_COUNT + 0;
 
                 /**
+     * The feature id for the '<em><b>From File</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SYSTEM__FROM_FILE = COMPONENT_FEATURE_COUNT + 1;
+
+                                                                /**
      * The feature id for the '<em><b>Processes</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SYSTEM__PROCESSES = COMPONENT_FEATURE_COUNT + 1;
+    int SYSTEM__PROCESSES = COMPONENT_FEATURE_COUNT + 2;
 
                 /**
      * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -139,7 +148,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SYSTEM__COMPONENTS = COMPONENT_FEATURE_COUNT + 2;
+    int SYSTEM__COMPONENTS = COMPONENT_FEATURE_COUNT + 3;
 
                 /**
      * The feature id for the '<em><b>Connections</b></em>' containment reference list.
@@ -148,7 +157,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SYSTEM__CONNECTIONS = COMPONENT_FEATURE_COUNT + 3;
+    int SYSTEM__CONNECTIONS = COMPONENT_FEATURE_COUNT + 4;
 
                 /**
      * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -157,7 +166,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SYSTEM__PARAMETER = COMPONENT_FEATURE_COUNT + 4;
+    int SYSTEM__PARAMETER = COMPONENT_FEATURE_COUNT + 5;
 
                 /**
      * The number of structural features of the '<em>System</em>' class.
@@ -166,7 +175,7 @@ public interface RossystemPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SYSTEM_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 5;
+    int SYSTEM_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 6;
 
                 /**
      * The number of operations of the '<em>System</em>' class.
@@ -187,6 +196,15 @@ public interface RossystemPackage extends EPackage {
 int ROSSYSTEM__NAME = SYSTEM__NAME;
 
                 /**
+     * The feature id for the '<em><b>From File</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM__FROM_FILE = SYSTEM__FROM_FILE;
+
+                                                                /**
      * The feature id for the '<em><b>Processes</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1001,6 +1019,17 @@ int PROCESS_FEATURE_COUNT = 3;
     EAttribute getSystem_Name();
 
     /**
+     * Returns the meta object for the attribute '{@link system.System#getFromFile <em>From File</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>From File</em>'.
+     * @see system.System#getFromFile()
+     * @see #getSystem()
+     * @generated
+     */
+    EAttribute getSystem_FromFile();
+
+                /**
      * Returns the meta object for the containment reference list '{@link system.System#getProcesses <em>Processes</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1583,6 +1612,14 @@ int PROCESS_FEATURE_COUNT = 3;
         EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
 
         /**
+         * The meta object literal for the '<em><b>From File</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute SYSTEM__FROM_FILE = eINSTANCE.getSystem_FromFile();
+
+                                /**
          * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

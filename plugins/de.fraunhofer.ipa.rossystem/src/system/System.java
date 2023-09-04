@@ -15,6 +15,7 @@ import ros.Parameter;
  * </p>
  * <ul>
  *   <li>{@link system.System#getName <em>Name</em>}</li>
+ *   <li>{@link system.System#getFromFile <em>From File</em>}</li>
  *   <li>{@link system.System#getProcesses <em>Processes</em>}</li>
  *   <li>{@link system.System#getComponents <em>Components</em>}</li>
  *   <li>{@link system.System#getConnections <em>Connections</em>}</li>
@@ -49,6 +50,28 @@ public interface System extends Component {
     void setName(String value);
 
     /**
+     * Returns the value of the '<em><b>From File</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>From File</em>' attribute.
+     * @see #setFromFile(String)
+     * @see system.RossystemPackage#getSystem_FromFile()
+     * @model
+     * @generated
+     */
+    String getFromFile();
+
+                /**
+     * Sets the value of the '{@link system.System#getFromFile <em>From File</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>From File</em>' attribute.
+     * @see #getFromFile()
+     * @generated
+     */
+    void setFromFile(String value);
+
+                /**
      * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
      * The list contents are of type {@link system.Process}.
      * <!-- begin-user-doc -->

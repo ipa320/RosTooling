@@ -9,6 +9,7 @@
   <genPackages prefix="Rossystem" disposableProviderFactory="true" ecorePackage="rossystem.ecore#/">
     <genClasses ecoreClass="rossystem.ecore#//System">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/fromFile"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/processes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/connections"/>
