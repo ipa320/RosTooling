@@ -25,9 +25,9 @@ Interfaces : 'interfaces:';
 
 Parameters : 'parameters:';
 
-Processes : 'processes:';
+SubSystems : 'subSystems:';
 
-SubSystem : 'subSystem:';
+Processes : 'processes:';
 
 GraphName : 'GraphName';
 

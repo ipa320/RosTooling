@@ -106,9 +106,9 @@ import de.fraunhofer.ipa.rossystem.services.RosSystemGrammarAccess;
 		tokenNameToValue.put("Float64_1", "'float64[]'");
 		tokenNameToValue.put("FromFile", "'fromFile:'");
 		tokenNameToValue.put("Processes", "'processes:'");
-		tokenNameToValue.put("SubSystem", "'subSystem:'");
 		tokenNameToValue.put("Interfaces", "'interfaces:'");
 		tokenNameToValue.put("Parameters", "'parameters:'");
+		tokenNameToValue.put("SubSystems", "'subSystems:'");
 		tokenNameToValue.put("ParameterAny", "'ParameterAny'");
 		tokenNameToValue.put("Connections", "'connections:'");
 		tokenNameToValue.put("GlobalNamespace", "'GlobalNamespace'");
@@ -178,6 +178,31 @@ ruleRosSystem
 		{ before(grammarAccess.getRosSystemAccess().getGroup()); }
 		(rule__RosSystem__Group__0)
 		{ after(grammarAccess.getRosSystemAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleSubSystem
+entryRuleSubSystem
+:
+{ before(grammarAccess.getSubSystemRule()); }
+	 ruleSubSystem
+{ after(grammarAccess.getSubSystemRule()); } 
+	 EOF 
+;
+
+// Rule SubSystem
+ruleSubSystem 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSubSystemAccess().getSystemAssignment()); }
+		(rule__SubSystem__SystemAssignment)
+		{ after(grammarAccess.getSubSystemAccess().getSystemAssignment()); }
 	)
 ;
 finally {
@@ -3113,9 +3138,9 @@ rule__RosSystem__Group_4_0__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getProcessesKeyword_4_0_0()); }
-	Processes
-	{ after(grammarAccess.getRosSystemAccess().getProcessesKeyword_4_0_0()); }
+	{ before(grammarAccess.getRosSystemAccess().getSubSystemsKeyword_4_0_0()); }
+	SubSystems
+	{ after(grammarAccess.getRosSystemAccess().getSubSystemsKeyword_4_0_0()); }
 )
 ;
 finally {
@@ -3167,9 +3192,9 @@ rule__RosSystem__Group_4_0__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getProcessesAssignment_4_0_2()); }
-	(rule__RosSystem__ProcessesAssignment_4_0_2)*
-	{ after(grammarAccess.getRosSystemAccess().getProcessesAssignment_4_0_2()); }
+	{ before(grammarAccess.getRosSystemAccess().getComponentsAssignment_4_0_2()); }
+	(rule__RosSystem__ComponentsAssignment_4_0_2)*
+	{ after(grammarAccess.getRosSystemAccess().getComponentsAssignment_4_0_2()); }
 )
 ;
 finally {
@@ -3221,9 +3246,9 @@ rule__RosSystem__Group_4_1__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getNodesKeyword_4_1_0()); }
-	Nodes
-	{ after(grammarAccess.getRosSystemAccess().getNodesKeyword_4_1_0()); }
+	{ before(grammarAccess.getRosSystemAccess().getProcessesKeyword_4_1_0()); }
+	Processes
+	{ after(grammarAccess.getRosSystemAccess().getProcessesKeyword_4_1_0()); }
 )
 ;
 finally {
@@ -3275,9 +3300,9 @@ rule__RosSystem__Group_4_1__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getComponentsAssignment_4_1_2()); }
-	(rule__RosSystem__ComponentsAssignment_4_1_2)*
-	{ after(grammarAccess.getRosSystemAccess().getComponentsAssignment_4_1_2()); }
+	{ before(grammarAccess.getRosSystemAccess().getProcessesAssignment_4_1_2()); }
+	(rule__RosSystem__ProcessesAssignment_4_1_2)*
+	{ after(grammarAccess.getRosSystemAccess().getProcessesAssignment_4_1_2()); }
 )
 ;
 finally {
@@ -3329,9 +3354,9 @@ rule__RosSystem__Group_4_2__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRosSystemAccess().getSubSystemKeyword_4_2_0()); }
-	SubSystem
-	{ after(grammarAccess.getRosSystemAccess().getSubSystemKeyword_4_2_0()); }
+	{ before(grammarAccess.getRosSystemAccess().getNodesKeyword_4_2_0()); }
+	Nodes
+	{ after(grammarAccess.getRosSystemAccess().getNodesKeyword_4_2_0()); }
 )
 ;
 finally {
@@ -10793,30 +10818,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RosSystem__ProcessesAssignment_4_0_2
+rule__RosSystem__ComponentsAssignment_4_0_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRosSystemAccess().getProcessesProcessParserRuleCall_4_0_2_0()); }
-		ruleProcess
-		{ after(grammarAccess.getRosSystemAccess().getProcessesProcessParserRuleCall_4_0_2_0()); }
+		{ before(grammarAccess.getRosSystemAccess().getComponentsSubSystemParserRuleCall_4_0_2_0()); }
+		ruleSubSystem
+		{ after(grammarAccess.getRosSystemAccess().getComponentsSubSystemParserRuleCall_4_0_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RosSystem__ComponentsAssignment_4_1_2
+rule__RosSystem__ProcessesAssignment_4_1_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRosSystemAccess().getComponentsRosNodeParserRuleCall_4_1_2_0()); }
-		ruleRosNode
-		{ after(grammarAccess.getRosSystemAccess().getComponentsRosNodeParserRuleCall_4_1_2_0()); }
+		{ before(grammarAccess.getRosSystemAccess().getProcessesProcessParserRuleCall_4_1_2_0()); }
+		ruleProcess
+		{ after(grammarAccess.getRosSystemAccess().getProcessesProcessParserRuleCall_4_1_2_0()); }
 	)
 ;
 finally {
@@ -10829,9 +10854,9 @@ rule__RosSystem__ComponentsAssignment_4_2_2
 	}
 :
 	(
-		{ before(grammarAccess.getRosSystemAccess().getComponentsRosSystemParserRuleCall_4_2_2_0()); }
-		ruleRosSystem
-		{ after(grammarAccess.getRosSystemAccess().getComponentsRosSystemParserRuleCall_4_2_2_0()); }
+		{ before(grammarAccess.getRosSystemAccess().getComponentsRosNodeParserRuleCall_4_2_2_0()); }
+		ruleRosNode
+		{ after(grammarAccess.getRosSystemAccess().getComponentsRosNodeParserRuleCall_4_2_2_0()); }
 	)
 ;
 finally {
@@ -10862,6 +10887,25 @@ rule__RosSystem__ConnectionsAssignment_4_4_2
 		{ before(grammarAccess.getRosSystemAccess().getConnectionsConnectionParserRuleCall_4_4_2_0()); }
 		ruleConnection
 		{ after(grammarAccess.getRosSystemAccess().getConnectionsConnectionParserRuleCall_4_4_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SubSystem__SystemAssignment
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSubSystemAccess().getSystemSystemCrossReference_0()); }
+		(
+			{ before(grammarAccess.getSubSystemAccess().getSystemSystemEStringParserRuleCall_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getSubSystemAccess().getSystemSystemEStringParserRuleCall_0_1()); }
+		)
+		{ after(grammarAccess.getSubSystemAccess().getSystemSystemCrossReference_0()); }
 	)
 ;
 finally {

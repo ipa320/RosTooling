@@ -27,6 +27,7 @@ import system.RosSystemConnection;
 import system.RosTopicConnection;
 import system.Rossystem;
 import system.RossystemPackage;
+import system.SubSystem;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,6 +228,13 @@ public class RossystemSwitch<T> extends Switch<T> {
                 T result = caseRosActionConnection(rosActionConnection);
                 if (result == null) result = caseRosConnection(rosActionConnection);
                 if (result == null) result = caseConnection(rosActionConnection);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case RossystemPackage.SUB_SYSTEM: {
+                SubSystem subSystem = (SubSystem)theEObject;
+                T result = caseSubSystem(subSystem);
+                if (result == null) result = caseComponent(subSystem);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -550,6 +558,21 @@ public class RossystemSwitch<T> extends Switch<T> {
     }
 
                 /**
+     * Returns the result of interpreting the object as an instance of '<em>Sub System</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Sub System</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSubSystem(SubSystem object) {
+        return null;
+    }
+
+                                                                /**
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

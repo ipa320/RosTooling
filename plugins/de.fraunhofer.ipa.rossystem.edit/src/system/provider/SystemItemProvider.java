@@ -215,6 +215,11 @@ public class SystemItemProvider
 
         newChildDescriptors.add
             (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createSubSystem()));
+
+        newChildDescriptors.add
+            (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__CONNECTIONS,
                  RossystemFactory.eINSTANCE.createRosSystemConnection()));
 

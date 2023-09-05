@@ -509,6 +509,29 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
     }
 
                 /**
+     * This keeps track of the one adapter used for all {@link system.SubSystem} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SubSystemItemProvider subSystemItemProvider;
+
+                                                                /**
+     * This creates an adapter for a {@link system.SubSystem}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSubSystemAdapter() {
+        if (subSystemItemProvider == null) {
+            subSystemItemProvider = new SubSystemItemProvider(this);
+        }
+
+        return subSystemItemProvider;
+    }
+
+                                                                /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -632,6 +655,7 @@ public class RossystemItemProviderAdapterFactory extends RossystemAdapterFactory
         if (rosTopicConnectionItemProvider != null) rosTopicConnectionItemProvider.dispose();
         if (rosServiceConnectionItemProvider != null) rosServiceConnectionItemProvider.dispose();
         if (rosActionConnectionItemProvider != null) rosActionConnectionItemProvider.dispose();
+        if (subSystemItemProvider != null) subSystemItemProvider.dispose();
     }
 
 }

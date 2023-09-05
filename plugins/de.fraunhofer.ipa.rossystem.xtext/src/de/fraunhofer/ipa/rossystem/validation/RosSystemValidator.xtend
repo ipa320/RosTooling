@@ -71,12 +71,13 @@ class RosSystemValidator extends AbstractRosSystemValidator {
       var system = connection.eContainer as System
       var List<RosInterface> AllInterfaces = newArrayList
 
-      for (Component node : system.components){
-          var rosnode = node as RosNode
-          for(RosInterface interface : rosnode.rosinterfaces){
-            AllInterfaces.add(interface)
-          }
-      }
+      for (Component component : system.components){
+          if(component.class.toString.contains("RosNode")){
+              var rosnode = component as RosNode
+              for(RosInterface interface : rosnode.rosinterfaces){
+                AllInterfaces.add(interface)
+              }
+      }}
       if (!AllInterfaces.contains(from_connection)){
               info('Valid interfaces for this process are '+AllInterfaces
                   ,null,NOT_IN_THE_SYSTEM)

@@ -998,6 +998,44 @@ int PROCESS_FEATURE_COUNT = 3;
 
 
                 /**
+     * The meta object id for the '{@link system.impl.SubSystemImpl <em>Sub System</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see system.impl.SubSystemImpl
+     * @see system.impl.RossystemPackageImpl#getSubSystem()
+     * @generated
+     */
+    int SUB_SYSTEM = 21;
+
+                                                                /**
+     * The feature id for the '<em><b>System</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_SYSTEM__SYSTEM = COMPONENT_FEATURE_COUNT + 0;
+
+                                                                /**
+     * The number of structural features of the '<em>Sub System</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_SYSTEM_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+
+                                                                /**
+     * The number of operations of the '<em>Sub System</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_SYSTEM_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+
+
+                                                                /**
      * Returns the meta object for class '{@link system.System <em>System</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1571,6 +1609,27 @@ int PROCESS_FEATURE_COUNT = 3;
     EReference getRosActionConnection_To();
 
                 /**
+     * Returns the meta object for class '{@link system.SubSystem <em>Sub System</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Sub System</em>'.
+     * @see system.SubSystem
+     * @generated
+     */
+    EClass getSubSystem();
+
+                                                                /**
+     * Returns the meta object for the reference '{@link system.SubSystem#getSystem <em>System</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>System</em>'.
+     * @see system.SubSystem#getSystem()
+     * @see #getSubSystem()
+     * @generated
+     */
+    EReference getSubSystem_System();
+
+                                                                /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2066,6 +2125,24 @@ int PROCESS_FEATURE_COUNT = 3;
          * @generated
          */
         EReference ROS_ACTION_CONNECTION__TO = eINSTANCE.getRosActionConnection_To();
+
+                                                                                                                                /**
+         * The meta object literal for the '{@link system.impl.SubSystemImpl <em>Sub System</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see system.impl.SubSystemImpl
+         * @see system.impl.RossystemPackageImpl#getSubSystem()
+         * @generated
+         */
+        EClass SUB_SYSTEM = eINSTANCE.getSubSystem();
+
+                                                                                                                                /**
+         * The meta object literal for the '<em><b>System</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SUB_SYSTEM__SYSTEM = eINSTANCE.getSubSystem_System();
 
     }
 

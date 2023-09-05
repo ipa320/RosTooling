@@ -81,4 +81,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionServer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionClient"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSystem" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//System"/>
+  </eClassifiers>
 </ecore:EPackage>

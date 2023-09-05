@@ -77,5 +77,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/to"/>
     </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//SubSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//SubSystem/system"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
