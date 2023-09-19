@@ -1,6 +1,6 @@
 # Ros Model
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![ros-model CI](https://github.com/ipa320/ros-model/actions/workflows/build.yml/badge.svg)](https://github.com/ipa320/ros-model/actions/workflows/build.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![ros-model CI](https://github.com/ipa320/ros-model/actions/workflows/build.yml/badge.svg)](https://github.com/ipa320/ros-model/actions/workflows/build.yml)
 
 The main purpose of this effort is to combine the advantages of [ROS](http://wiki.ros.org/) and Model-Driven-Engineering techniques. This repository holds a family of metamodels defined as Ecore models and their corresponding Xtext-based DSLs (Domain Specific Language) implementation. 
 The resulted models allow the description of ROS and ROS2 concepts and properties, like packages, artifacts, nodes, interfaces types, parameters... Moreover a complete system as composition of ROS components can be also modelled.
@@ -19,12 +19,17 @@ Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammou
 - Eclipse Tooling update site: Tbd
 
 Related repositories:
-- Python implementation for the static code analyzers and docker containers setups for different ROS distros: [ros-model-extractors](https://github.com/ipa320/ros-model-extractors)
-- Language server for the RosModels (web-based models editor): [theia-ros-model](https://github.com/ipa-nhg/theia-ros-model)
+- ROS2 embedded code generator: [rossdl](https://github.com/CoreSenseEU/rossdl)
 - Python parsers (packed as a ROS package) for the ROS and ROSsystem models: [ros_model_parser](https://github.com/ipa320/ros_model_parser)
+- Python implementation for the static code analyzers and docker containers setups for different ROS distros: [ros-model-extractors](https://github.com/ipa320/ros-model-extractors)
+- Runtime monitoring pipelines:
+  - ROS1: [rosgraph_monitor](https://github.com/ipa320/rosgraph_monitor)
+  - ROS2: [ros2mode](https://github.com/ipa-cmh/ros2model/)
+  
+OLD:
+- Language server for the RosModels (web-based models editor): [theia-ros-model](https://github.com/ipa-nhg/theia-ros-model)
 - Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
 - Source code for the web interface (extract models for non-public available ROS packages): [ros-model-cloud](https://github.com/ipa320/ros-model-cloud)
-- Runtime monitoring pipeline [rosgraph_monitor](https://github.com/ipa320/rosgraph_monitor)
 
 Publications:
 - Paper: Bootstrapping MDE Development from ROS Manual Code - Part 1: Metamodeling [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
@@ -39,11 +44,27 @@ Publications:
 ## Installation
 
 Tbd
+- [As VS Code plugin](tbd)
+- [(Only for tooling developers) From Source code in eclipse](docu/Installation.md#option-2-using-the-eclipse-installer---source-installation-ros-tooling-developers)
 
 ## Tutorials
 
-Tbd
+- Create component models:
+
+  - (Prerequisite) [Add communication objects](docu/NewCommunicationObjects.md)
+  - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md)
+  - [Create a ROS model from a deployed robot using our introspection at runtime tool](docu/IntrospectionNode.md)
+  - [Create new ROS component description](docu/RosModelDescription.md)
+  - [Generation of code from models](docu/CodeGeneration.md)
+
+- Combine components to form a ROS System
+
+  - [Create manually a new RosSystem description](docu/RosSystemModelDescription.md)
+  - [Create a ROS system model from your source code (static code analyzer)](docu/NewRosSystemModel.md)
+  - [System Model extraction using introspection at runtime](docu/IntrospectionSystem.md)
+
+- [Update Release versions (only for administrators)](docu/Release.md)
 
 ## Model examples
 
-Tbd
+The repository [ros-model-examples](https://github.com/ipa-nhg/ros-model-examples) contains a set components and system examples.
