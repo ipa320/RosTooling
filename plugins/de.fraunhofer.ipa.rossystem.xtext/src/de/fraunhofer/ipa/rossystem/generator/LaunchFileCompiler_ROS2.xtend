@@ -3,30 +3,31 @@ package de.fraunhofer.ipa.rossystem.generator
 import system.RosNode
 import ros.RosPackage
 import ros.Artifact
-import system.Rossystem
+import system.System
+import ros.AmentPackage
+import ros.impl.AmentPackageImpl
 
 class LaunchFileCompiler_ROS2 {
 
 
-    def compile_toROS2launch(Rossystem system) '''
+    def compile_toROS2launch(System system) '''
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
     ld = LaunchDescription()
 
-    «FOR component:system.components»«IF component.eClass=="RosNode"»
+    «FOR component:system.components»
     «(component as RosNode).name» = Node(
-        package="«((component as RosNode).from.eContainer.eContainer as RosPackage).name»",
+        package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
         name="«(component as RosNode).name»"
     )
-    «ENDIF»
+
     «ENDFOR»
 
-    «FOR component:system.components»«IF component.eClass=="RosNode"»
+    «FOR component:system.components»
     ld.add_action(«(component as RosNode).name»)
-    «ENDIF»
     «ENDFOR»
 
     return ld
@@ -34,7 +35,7 @@ def generate_launch_description():
 
 //    def void compile_list_of_ROS2components(RosSystem system, ComponentStack stack) {
 //        components_tmp_.clear;
-//        Ros2components.clear;       
+//        Ros2components.clear;
 //        if (stack === null){
 //            components_tmp_ = system.rosComponent;
 //        } else {
@@ -123,7 +124,7 @@ def generate_launch_description():
 //            } else {
 //                param_str += "{ \"" + rosParameter.parameter.name + "\" : " + get_param_value(rosParameter.value, rosParameter.parameter.name);
 //            }
-//            if (param_count > 1){ 
+//            if (param_count > 1){
 //                param_str +=" },\n"
 //            } else {
 //                param_str +=" }\n";
@@ -145,7 +146,7 @@ def generate_launch_description():
 //                param_str += "{ \"" + name + "/" + member.getName() + "\" : " + param_val;
 //            }
 //            elem_count--;
-//            if (elem_count > 0){ 
+//            if (elem_count > 0){
 //                param_str +=" },\n"
 //            }
 //        }
