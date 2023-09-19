@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import system.System
+import com.google.inject.Inject
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +16,37 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class RosSystemGenerator extends AbstractGenerator {
+    @Inject extension LaunchFileCompiler_ROS2
+    @Inject extension SetupPyCompiler
+    @Inject extension PackageXmlCompiler
+    @Inject extension CMakeListsCompiler
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//      fsa.generateFile('greetings.txt', 'People to greet: ' +
-//          resource.allContents
-//              .filter(Greeting)
-//              .map[name]
-//              .join(', '))
+        for (system : resource.allContents.toIterable.filter(System)){
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",
+                compile_toROS2launch(system).toString().replace("\t","  ")
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/package.xml",
+                compile_package_xml_format3(system)
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/CMakeLists.txt",
+                compile_CMakeLists_ROS2(system)
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/setup.py",
+                compile_setup_py(system)
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase,
+                ""
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py",
+                ""
+            )
     }
+}
 }
