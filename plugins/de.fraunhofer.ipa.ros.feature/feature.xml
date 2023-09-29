@@ -54,57 +54,14 @@ POSSIBILITY OF SUCH DAMAGE.
    </url>
 
    <requires>
-      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="de.fraunhofer.ipa.ros"/>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="de.fraunhofer.ipa.rossystem.xtext"/>
       <import plugin="de.fraunhofer.ipa.rossystem"/>
-      <import plugin="org.eclipse.xtext.ide"/>
-      <import plugin="org.eclipse.xtext.xbase.ide"/>
-      <import plugin="org.antlr.runtime" match="perfect"/>
-      <import plugin="org.eclipse.emf.edit"/>
       <import plugin="de.fraunhofer.ipa.ros.edit"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.sirius"/>
-      <import plugin="org.eclipse.sirius.common.acceleo.aql"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.ui.ide" version="3.13.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.sirius.common"/>
-      <import plugin="org.eclipse.sirius.diagram.ui"/>
       <import plugin="de.fraunhofer.ipa.ros.xtext"/>
       <import plugin="de.fraunhofer.ipa.ros.xtext.ide"/>
-      <import plugin="org.eclipse.xtext.ui"/>
-      <import plugin="org.eclipse.xtext.ui.shared"/>
-      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.compare"/>
-      <import plugin="org.eclipse.xtext.builder"/>
-      <import plugin="org.eclipse.xtext.xbase.lib" version="2.14.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.eclipse.xtext.xbase"/>
-      <import plugin="org.eclipse.equinox.common" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.util"/>
-      <import plugin="org.eclipse.xtend.lib" version="2.14.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.debug.ui"/>
       <import plugin="de.fraunhofer.ipa.rossystem.edit"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.equinox.registry"/>
-      <import plugin="org.eclipse.emf.transaction"/>
-      <import plugin="org.eclipse.sirius.ui"/>
       <import plugin="de.fraunhofer.ipa.rossystem.xtext.ide"/>
-      <import plugin="org.eclipse.emf.common"/>
-      <import plugin="com.google.inject"/>
-      <import plugin="org.eclipse.core.commands"/>
-      <import plugin="org.eclipse.emf.common.ui"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.swt"/>
-      <import plugin="javax.inject"/>
-      <import plugin="org.eclipse.sirius.diagram"/>
    </requires>
 
    <plugin
@@ -199,13 +156,6 @@ POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="de.fraunhofer.ipa.roscode.generator"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="de.fraunhofer.ipa.ros1.xtext"
          download-size="0"
          install-size="0"
@@ -245,13 +195,6 @@ POSSIBILITY OF SUCH DAMAGE.
          download-size="0"
          install-size="0"
          version="3.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="de.fraunhofer.ipa.ros.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
          unpack="false"/>
 
 </feature>
