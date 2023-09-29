@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install java environmetn
+      run: sudo apt-get install -y openjdk-19-jre
+
     - name: Checkout
       uses: actions/checkout@v2
       with:

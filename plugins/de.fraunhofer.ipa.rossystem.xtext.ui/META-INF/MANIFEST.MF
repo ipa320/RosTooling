@@ -22,7 +22,7 @@ Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.rossystem.ui.contentassist,
  de.fraunhofer.ipa.rossystem.xtext.ui.internal,
  de.fraunhofer.ipa.rossystem.ui.quickfix
