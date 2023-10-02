@@ -6,11 +6,11 @@ This feature allows the merge of two different ROS system models.   To combine t
 
 
 
-![CombineModels](images/CombineModels_1.png)
+![CombineModels](../images/CombineModels_1.png)
 
 A pop-up menu will ask you for the two models to combine (have to be on imported project of your workspace) and the path where to save the resulted file (that will be called *result.rossystem*. Finally the user can check the box "Combine to the minimal model (restrictive strategy)"  to switch the strategy.
 
-![CombineModels](images/CombineModels_2.png)
+![CombineModels](../images/CombineModels_2.png)
 
 
 

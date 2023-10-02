@@ -15,7 +15,7 @@ and their description is allowed at ROS and ROSSystem model level.
 
 The definition of a parameter at ROS model level means that the ROS original node get or set a new parameter, this case is partially supported by the graphical editor, which allows only the definition of parameters of primitive types: String, Double, Integer and Boolean without a default value.
 
-![alt text](images/parameter_set.gif)
+![alt text](../images/parameter_set.gif)
 
 For the complete definition of parameters the user has to open the ROS model editor, where the language format is the following:
 

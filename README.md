@@ -1,4 +1,4 @@
-# Ros Model
+# RosTooling
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![ros-model CI](https://github.com/ipa320/ros-model/actions/workflows/build.yml/badge.svg)](https://github.com/ipa320/ros-model/actions/workflows/build.yml)
 
@@ -11,12 +11,9 @@ The models have associated tools, the following are some examples:
 - Code geneators to automatically generate code, documentation, helper scripts...
 - (ToBeDone) Graphical editor
 
-
 Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
 
 ## Projects/Links related to this repository:
-
-- Eclipse Tooling update site: Tbd
 
 Related repositories:
 - ROS2 embedded code generator: [rossdl](https://github.com/CoreSenseEU/rossdl)
@@ -25,11 +22,7 @@ Related repositories:
 - Runtime monitoring pipelines:
   - ROS1: [rosgraph_monitor](https://github.com/ipa320/rosgraph_monitor)
   - ROS2: [ros2mode](https://github.com/ipa-cmh/ros2model/)
-  
-OLD:
-- Language server for the RosModels (web-based models editor): [theia-ros-model](https://github.com/ipa-nhg/theia-ros-model)
-- Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
-- Source code for the web interface (extract models for non-public available ROS packages): [ros-model-cloud](https://github.com/ipa320/ros-model-cloud)
+- Eclipse update site: [RosTooling-update-site](https://github.com/ipa320/RosTooling-update-site)
 
 Publications:
 - Paper: Bootstrapping MDE Development from ROS Manual Code - Part 1: Metamodeling [IRC19 paper](https://ieeexplore.ieee.org/document/8675668)
@@ -39,18 +32,17 @@ Publications:
 
 ---------------------------------------------------------
 
-# ROS TOOLING MANUAL
+# RosTooling Manual
 
 ## Installation
 
-Tbd
-- [As VS Code plugin](tbd)
+- [Eclipse feature](docu/Installation.md#option-1-using-the-release-version-recommended)
 - [(Only for tooling developers) From Source code in eclipse](docu/Installation.md#option-2-using-the-eclipse-installer---source-installation-ros-tooling-developers)
+- VS Code plugin(tbd) - WIP [vscode-RosTooling](https://github.com/ipa320/vscode-RosTooling)
 
 ## Tutorials
 
 - Create component models:
-
   - (Prerequisite) [Add communication objects](docu/NewCommunicationObjects.md)
   - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md)
   - [Create a ROS model from a deployed robot using our introspection at runtime tool](docu/IntrospectionNode.md)
@@ -58,13 +50,22 @@ Tbd
   - [Generation of code from models](docu/CodeGeneration.md)
 
 - Combine components to form a ROS System
-
   - [Create manually a new RosSystem description](docu/RosSystemModelDescription.md)
-  - [Create a ROS system model from your source code (static code analyzer)](docu/NewRosSystemModel.md)
-  - [System Model extraction using introspection at runtime](docu/IntrospectionSystem.md)
+  
+- Examples:
+  - [Simple publisher-subscriber](docu/Example_PubSub.md)
+  - [Turtlesim](docu/Example_Turtlesim.md)
 
 - [Update Release versions (only for administrators)](docu/Release.md)
 
 ## Model examples
 
 The repository [ros-model-examples](https://github.com/ipa-nhg/ros-model-examples) contains a set components and system examples.
+
+---------------------------------------------------------
+# OLD (out-of-date)
+
+Links to related repositories:
+- Language server for the RosModels (web-based models editor): [theia-ros-model](https://github.com/ipa-nhg/theia-ros-model)
+- Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
+- Source code for the web interface (extract models for non-public available ROS packages): [ros-model-cloud](https://github.com/ipa320/ros-model-cloud)
