@@ -20,6 +20,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ComponentStack/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/RosComponent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/QualityAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ComponentStack/SafetyLevel"/>
     </genClasses>
     <genClasses ecoreClass="rossystem.ecore#//QualityAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//QualityAttribute/Name"/>

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link rossystem.ComponentStack#getName <em>Name</em>}</li>
  *   <li>{@link rossystem.ComponentStack#getRosComponent <em>Ros Component</em>}</li>
  *   <li>{@link rossystem.ComponentStack#getQualityAttribute <em>Quality Attribute</em>}</li>
+ *   <li>{@link rossystem.ComponentStack#getSafetyLevel <em>Safety Level</em>}</li>
  * </ul>
  *
  * @see rossystem.RossystemPackage#getComponentStack()
@@ -72,5 +73,27 @@ public interface ComponentStack extends EObject {
 	 * @generated
 	 */
 	EList<QualityAttribute> getQualityAttribute();
+
+	/**
+	 * Returns the value of the '<em><b>Safety Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety Level</em>' attribute.
+	 * @see #setSafetyLevel(String)
+	 * @see rossystem.RossystemPackage#getComponentStack_SafetyLevel()
+	 * @model
+	 * @generated
+	 */
+	String getSafetyLevel();
+
+	/**
+	 * Sets the value of the '{@link rossystem.ComponentStack#getSafetyLevel <em>Safety Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safety Level</em>' attribute.
+	 * @see #getSafetyLevel()
+	 * @generated
+	 */
+	void setSafetyLevel(String value);
 
 } // ComponentStack

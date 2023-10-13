@@ -253,6 +253,7 @@ public class RosSystemSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         Name=EString 
+	 *         (SafetyLevel='Non-critical' | SafetyLevel='Critical' | SafetyLevel='Alarm')? 
 	 *         (RosComponent+=ComponentInterface RosComponent+=ComponentInterface*)? 
 	 *         (QualityAttribute+=QualityAttribute QualityAttribute+=QualityAttribute*)?
 	 *     )
