@@ -40,14 +40,14 @@ Publications:
 - [(Only for tooling developers) From Source code in eclipse](docu/Installation.md#option-2-using-the-eclipse-installer---source-installation-ros-tooling-developers)
 - VS Code plugin(tbd) - WIP [vscode-RosTooling](https://github.com/ipa320/vscode-RosTooling)
 
-## Tutorials
+## Tutorials v3
 
 - Create component models:
   - (Prerequisite) [Add communication objects](docu/NewCommunicationObjects.md)
-  - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md)
+  - [Create manually a new ROS component description](docu/RosModelDescription.md)
+  - [Generation of code from models](https://github.com/CoreSenseEU/rossdl#usage)
   - [Create a ROS model from a deployed robot using our introspection at runtime tool](docu/IntrospectionNode.md)
-  - [Create new ROS component description](docu/RosModelDescription.md)
-  - [Generation of code from models](docu/CodeGeneration.md)
+  - [Create a ROS model from your source code(static code analyzer)](docu/NewRosModel.md))
 
 - Combine components to form a ROS System
   - [Create manually a new RosSystem description](docu/RosSystemModelDescription.md)

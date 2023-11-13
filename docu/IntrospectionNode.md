@@ -1,4 +1,4 @@
-## Create a ROS model from a deployed robot using our introspection at runtime tool
+## Create a ROS model from a deployed robot using our introspection at runtime tool (for ROS 2 systems)
 
 Please be sure that the tool is installed and your workspace setup, see the [installation guide](../README.md) for further details.
 
@@ -7,19 +7,23 @@ The tools documented here were conceived as a simple way to obtain models of sys
 You can install the tools directly on your workspace using the following command:
 
 ```
-mkdir -p my_catkin_ws/src
-cd my_catkin_ws/src
-catkin_init_workspace
-rosinstall . https://raw.githubusercontent.com/ipa320/ros-model/master/docu/introspection.rosinstall
-cd my_catkin_ws
-catkin_make (or catkin build)
+cd YourRos2WS/src
+git clone git@github.com:ipa-nhg/ros2model.git
+cd YourRos2WS
+colcon build
 ```
 
-To start the monitoring software the snapshot node has to be started on the same machine where the software to be analysed is running:
+To ask the monitoring module to capture all the nodes running on the system, please use the following command:
 
 ```
-source my_catkin_ws/devel/setup.bash
-rosrun rosgraph_monitor rossystem_snapshot
+ros2 model running_node -ga -d ~/PathToModelsFolderOutput
 ```
 
-This script will generate automatically a new file (.rossystem) under the folder: 'rosgraph_monitor/results'.
+The folder **PathToModelsFolderOutput** will contain all the model files.
+
+For a single node, the following command can be called:
+```
+ros2 model running_node [-o Outputfile] <node-name>
+```
+
+For further information please check the [ros2model](https://github.com/ipa-cmh/ros2model) repository.
