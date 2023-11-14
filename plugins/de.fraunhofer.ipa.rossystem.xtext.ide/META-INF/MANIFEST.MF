@@ -12,7 +12,7 @@ Require-Bundle: de.fraunhofer.ipa.rossystem.xtext,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.ros.xtext;bundle-version="2.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.lexer,
  de.fraunhofer.ipa.rossystem.ide.contentassist.antlr.internal,
  de.fraunhofer.ipa.rossystem.ide.contentassist.antlr
