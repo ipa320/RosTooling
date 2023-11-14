@@ -21,6 +21,8 @@ def generate_launch_description():
     «(component as RosNode).name» = Node(
         package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
+        prefix = 'xterm -e',
+        output='screen',
         name="«(component as RosNode).name»"
     )
 
