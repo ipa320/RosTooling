@@ -35,5 +35,5 @@ Import-Package: org.apache.log4j,
  org.junit.platform.engine;version="[1.0.0,2.0.0)",
  org.junit.platform.runner;version="[1.0.0,2.0.0)",
  org.junit.platform.suite.api;version="[1.0.0,2.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.ros.tests;x-internal=true

@@ -1,6 +1,6 @@
 # Hands-on example for the Turtlesim node
 
-to learn ROS one of the first tutoials that everyone does is turtlesim.
+To learn ROS one of the first tutoials that everyone does is turtlesim.
 
 Basically it is a small graphical interface where appears a turtle that I can move using the speed commands of any robotic base in ROS. [Official TurtleSim tutorial](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html)
 
@@ -58,7 +58,7 @@ To import this as a project in the RosTooling you can create a new modeling proj
 
 Once the project is created, you can create a new file my File -> New -> Other -> File. We recommend to give as name to the file the name of the package and its must have the extension .ros2, this means the new file should be called **turtlesim.ros2**. By creating a file type .ros2, Eclipse will convert the project to a Xtext project. Then copy the previous content to the new file.
 
-Now that we have already the components we can compose them. For that ww have to create a new .rossystem file. Again go to File -> New -> Other -> File. The new file must have as extension .rossystem.
+Now that we have already the components we can compose them. For that we have to create a new .rossystem file. Again go to File -> New -> Other -> File. The new file must have as extension .rossystem.
 
 In [RosSystem description](RosSystemModelDescription.md) we explain the format of a system and the editor will support you to write the model properly.
 
@@ -77,7 +77,7 @@ turtlesim_system:
       from: "turtlesim.turtle_teleop_key"
 ```
 
-Now, we want to expose the ports to be connected. This means the subcriber of the velocity command of the turtle and the publisher from the keyboard teleop:
+Now, we want to expose the ports to be connected. This means the subscriber of the velocity command of the turtle and the publisher from the keyboard teleop:
 
 ![alt text](images/turtlesim_tutorial2.gif)
 

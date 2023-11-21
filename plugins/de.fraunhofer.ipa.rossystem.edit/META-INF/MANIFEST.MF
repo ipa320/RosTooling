@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: system.provider.RossystemEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: system.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.rossystem;visibility:=reexport,

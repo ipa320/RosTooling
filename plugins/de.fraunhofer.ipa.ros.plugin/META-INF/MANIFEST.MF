@@ -10,6 +10,6 @@ Require-Bundle: org.eclipse.ui,
  de.fraunhofer.ipa.ros.editor
 Automatic-Module-Name: de.fraunhofer.ipa.ros.plugin
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.ros.plugin
 Import-Package: org.eclipse.debug.ui
