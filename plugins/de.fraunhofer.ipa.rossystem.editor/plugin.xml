@@ -21,7 +21,7 @@
       </command>
    </extension>
 
-   <extension point="org.eclipse.ui.menus">
+   <!--extension point="org.eclipse.ui.menus">
       <menuContribution
          locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
       <toolbar
@@ -45,7 +45,7 @@
          </command>
       </toolbar>
       </menuContribution>
-   </extension>
+   </extension-->
 
     <!--Right click to re-load the ros models-->
     <extension
