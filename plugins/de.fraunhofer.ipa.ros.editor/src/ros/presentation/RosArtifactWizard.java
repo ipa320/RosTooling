@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -19,45 +16,26 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
-import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
-import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.tools.api.command.semantic.AddSemanticResourceCommand;
-import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
-import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
-import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallbackWithConfimation;
-import org.eclipse.sirius.ui.business.internal.commands.ChangeViewpointSelectionCommand;
-import org.eclipse.sirius.ui.tools.api.project.ModelingProjectManager;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 
 import ros.Artifact;
-import ros.CatkinPackage;
 import ros.PackageSet;
 import ros.RosFactory;
+import ros.impl.AmentPackageImpl;
 import ros.impl.ArtifactImpl;
-import ros.impl.CatkinPackageImpl;
 import ros.impl.PackageSetImpl;
 
 /**
@@ -129,115 +107,61 @@ public class RosArtifactWizard extends Wizard implements INewWizard {
 
     private void doFinish( String ProjectName, IProgressMonitor monitor)
         throws CoreException, GenerationFailedException {
-        IProject project = ModelingProjectManager.INSTANCE.createNewModelingProject(ProjectName, null, true, monitor);
-        IProjectDescription description = project.getDescription();
-        String[] natures = description.getNatureIds();
-        String[] newNatures = new String[natures.length + 1];
-        System.arraycopy(natures, 0, newNatures, 0, natures.length);
-        newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
-
-        //clone, import and add reference to Communication Objects
+        IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(ProjectName);
         try {
-            ImportCommObjectsHandler.CloneAndImport();
-        } catch (InvocationTargetException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        IProject ObjectsProject = ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects");
-        description.setReferencedProjects(new IProject[] {ObjectsProject});
-        description.setNatureIds(newNatures);
-        project.setDescription(description, monitor);
-
-        IFolder dir = project.getFolder("rosnodes");
-        dir.create(true, true, null);
-        IFolder dir2 = project.getFolder("components");
-        dir2.create(true, true, null);
-        IFile file = project.getFile("rosnodes/"+ProjectName+".ros");
-        System.out.println(file.getFullPath());
-        project.open(IResource.BACKGROUND_REFRESH, monitor);
-
-        ResourceSet resourceSet = new ResourceSetImpl();
-        Resource resource = resourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toOSString(),true));
-        EObject PackageSetRootObject = RosFactory.eINSTANCE.createPackageSet();
-
-        if (PackageSetRootObject != null) {
-            resource.getContents().add(PackageSetRootObject);
-        }
-        PackageSet packageSet_model = (PackageSetImpl) resource.getContents().get(0);
-
-        CatkinPackage pkg = new CatkinPackageImpl();
-        Artifact artifact = new ArtifactImpl();
-        artifact.setName(project.getName());
-        pkg.setName(project.getName());
-        pkg.getArtifact().add(artifact);
-        packageSet_model.getPackage().add(pkg);
-        try {
+            if (!project.exists()) {
+                project.create(monitor);
+            }
+            if (!project.isOpen()) {
+                project.open(IResource.BACKGROUND_REFRESH, monitor);
+            }
+	        //IProject project = ModelingProjectManager.INSTANCE.createNewModelingProject(ProjectName, null, true, monitor);
+	        IProjectDescription description = project.getDescription();
+	        String[] natures = description.getNatureIds();
+	        String[] newNatures = new String[natures.length + 1];
+	        System.arraycopy(natures, 0, newNatures, 0, natures.length);
+	        newNatures[natures.length] = "org.eclipse.xtext.ui.shared.xtextNature";
+	
+	        //clone, import and add reference to Communication Objects
+	        try {
+	            ImportCommObjectsHandler.CloneAndImport();
+	        } catch (InvocationTargetException e) {
+	            // TODO Auto-generated catch block
+	            //e.printStackTrace();
+	        } catch (InterruptedException e) {
+	            // TODO Auto-generated catch block
+	            //e.printStackTrace();
+	        }
+	        IProject ObjectsProject = ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects");
+	        description.setReferencedProjects(new IProject[] {ObjectsProject});
+	        description.setNatureIds(newNatures);
+	        project.setDescription(description, monitor);
+	
+	        IFolder dir = project.getFolder("rosnodes");
+	        dir.create(true, true, null);
+	        IFile file = project.getFile("rosnodes/"+ProjectName+".ros2");
+	        //System.out.println(file.getFullPath());
+	        project.open(IResource.BACKGROUND_REFRESH, monitor);
+	
+	        ResourceSet resourceSet = new ResourceSetImpl();
+	        Resource resource = resourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toOSString(),true));
+	        EObject PackageRootObject = RosFactory.eINSTANCE.createAmentPackage();
+	        //EObject PackageSetRootObject = RosFactory.eINSTANCE.createPackageSet();
+	
+	        if (PackageRootObject != null) {
+	            resource.getContents().add(PackageRootObject);
+	        }
+	        //PackageSet packageSet_model = (PackageSetImpl) resource.getContents().get(0);
+	        AmentPackageImpl pkg = (AmentPackageImpl) resource.getContents().get(0);
+	        //Artifact artifact = new ArtifactImpl();
+	        //artifact.setName(project.getName());
+	        pkg.setName(project.getName());
+	        //pkg.getArtifact().add(artifact);
+	        //packageSet_model.getPackage().add(pkg);
             resource.save(null);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-
-        //byte[] bytes = ("PackageSet { package {\n" +" CatkinPackage " +ProjectName+ "{ artifact {\n" +"       Artifact  "+ProjectName+" {}}}}}").getBytes();
-        //InputStream source = new ByteArrayInputStream(bytes);
-        //file.create(source, IResource.NONE, null);
-
-        //Add viewpoints to the aird file
-        IFile airdFile = project.getFile("representations.aird");
-        URI airdFileURI = URI.createPlatformResourceURI(airdFile.getFullPath().toOSString(), true);
-        URI rosFileURI = URI.createPlatformResourceURI(file.getFullPath().toOSString(), true);
-
-        Session session = SessionManager.INSTANCE.getSession(airdFileURI, monitor);
-        Set<Viewpoint> availableViewPoints = ViewpointSelection.getViewpoints("ros");
-        Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
-        for(Viewpoint p : availableViewPoints)
-            viewpoints.add(SiriusResourceHelper.getCorrespondingViewpoint(session, p));
-        ViewpointSelection.Callback callback = new ViewpointSelectionCallbackWithConfimation();
-
-        //set ros model as root object for the representation
-        @SuppressWarnings("restriction")
-        RecordingCommand command = new ChangeViewpointSelectionCommand( session, callback, viewpoints, new HashSet<Viewpoint>(), true, monitor);
-        TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-        EObject rootObject = RosFactory.eINSTANCE.createArtifact();
-        session.addSemanticResource(rosFileURI, monitor);
-        domain.getCommandStack().execute(command);
-
-
-
-        //Add resource dependencies to communication objects
-        if (ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").exists()) {
-            File[] Objectfiles = new File(ResourcesPlugin.getWorkspace().getRoot().getProject("de.fraunhofer.ipa.ros.communication.objects").getLocation().toString()+"/basic_msgs").listFiles();
-            for (File Ofile:Objectfiles) {
-                if(Ofile.isFile()){
-                    IFile Oifile= ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(Path.fromOSString(Ofile.getAbsolutePath()));
-                    if (Oifile.getFileExtension().contains("ros")) {
-                        AddSemanticResourceCommand addCommandToSession = new AddSemanticResourceCommand(session, URI.createPlatformResourceURI(Oifile.getFullPath().toOSString(), true), monitor );
-                        domain.getCommandStack().execute(addCommandToSession);
-                    }
-                }
-            }
-        }
-        //create representation
-        try {
-            rootObject = session.getSemanticResources().iterator().next().getContents().get(0).eContents().get(0).eContents().get(0);
-            Collection<RepresentationDescription> representationDescriptions = DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(true), rootObject);
-            SessionManager.INSTANCE.notifyRepresentationCreated(session);
-            RepresentationDescription description_ = representationDescriptions.iterator().next();
-            Command createViewCommand = new CreateRepresentationCommand(session, description_, rootObject, ProjectName, monitor);
-            session.getTransactionalEditingDomain().getCommandStack().execute(createViewCommand);
-            DialectManager viewpointDialectManager = DialectManager.INSTANCE;
-            project.open(IResource.BACKGROUND_REFRESH, monitor);
-            Collection<DRepresentation> representations = viewpointDialectManager.getRepresentations(description_, session);
-            DRepresentation myDiagramRepresentation = representations.iterator().next();
-            DialectUIManager dialectUIManager = DialectUIManager.INSTANCE; dialectUIManager.openEditor(session, myDiagramRepresentation, monitor);
-
-        } finally {
-            session.open(monitor);
-            //ResourcesPlugin.getWorkspace().getRoot().getProject(project.getName()).refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-            //project.open(IResource.BACKGROUND_REFRESH, monitor);
         }
 
         monitor.worked(1);

@@ -20,7 +20,7 @@ public class AmentPackageImpl extends PackageImpl implements AmentPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected AmentPackageImpl() {
+    public AmentPackageImpl() {
         super();
     }
 
