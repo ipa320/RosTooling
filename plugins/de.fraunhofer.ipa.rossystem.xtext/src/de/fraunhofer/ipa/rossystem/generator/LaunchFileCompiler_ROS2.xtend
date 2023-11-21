@@ -6,6 +6,20 @@ import ros.Artifact
 import system.System
 import ros.AmentPackage
 import ros.impl.AmentPackageImpl
+import system.Connection
+import org.eclipse.emf.common.util.EList
+import system.RosConnection
+import system.impl.RosConnectionImpl
+import system.impl.RosSystemConnectionImpl
+import java.util.ArrayList
+import system.impl.RosPublisherReferenceImpl
+import system.impl.RosInterfaceImpl
+import system.impl.RosSubscriberReferenceImpl
+import system.RosInterface
+import system.impl.RosServiceServerReferenceImpl
+import system.impl.RosServiceClientReferenceImpl
+import system.impl.RosActionServerReferenceImpl
+import system.impl.RosActionClientReferenceImpl
 
 class LaunchFileCompiler_ROS2 {
 
@@ -23,7 +37,7 @@ def generate_launch_description():
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
         prefix = 'xterm -e',
         output='screen',
-        name="«(component as RosNode).name»"
+        name="«(component as RosNode).name»"«compile_remappings_str(component as RosNode, system.connections)»
     )
 
     «ENDFOR»
@@ -77,10 +91,98 @@ def generate_launch_description():
 //        return component.nameSpace.replaceFirst("/","");
 //    }
 //
-//    def String compile_remappings_str(ComponentInterface component) {
-//        var remap_str = "";
-//        val NS = component.check_ns();
-//        for (rosPublisher : component.rospublisher) {
+    def String compile_remappings_str(RosNode node, EList<Connection> connections ) {
+        var remap_str = ""
+        var from_pub = new Object
+        var from_srv = new Object
+        var from_action = new Object
+        var to_sub = new Object
+        var to_srv = new Object
+        var to_action = new Object
+
+        var rename = ""
+        
+        for (connection : connections){
+            var rosconnection = connection as RosSystemConnectionImpl
+            if (rosconnection.from.reference.eClass.toString.contains("RosPublisherReference")){
+                from_pub = rosconnection.from.reference
+                rename= rosconnection.from.name
+            
+                if (rosconnection.to.reference.eClass.toString.contains("RosSubscriberReference")){
+                    to_sub = rosconnection.to.reference
+                }
+        
+                for ( interface : node.rosinterfaces ){
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosPublisherReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == from_pub){
+                               if ((from_pub as RosPublisherReferenceImpl).from.name != interface.name) {
+                                    remap_str += "\t(\"" + (from_pub as RosPublisherReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosSubscriberReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == to_sub){
+                               if ((to_sub as RosSubscriberReferenceImpl).from.name  != from_pub) {
+                                    remap_str += "\t(\"" + (to_sub as RosSubscriberReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                }
+            }
+            if (rosconnection.from.reference.eClass.toString.contains("RosServiceServerReference")){
+                from_srv = rosconnection.from.reference
+                rename= rosconnection.from.name
+            
+                if (rosconnection.to.reference.eClass.toString.contains("RosServiceClientReference")){
+                    to_srv = rosconnection.to.reference
+                }
+        
+                for ( interface : node.rosinterfaces ){
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosServiceServerReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == from_srv){
+                               if ((from_srv as RosServiceServerReferenceImpl).from.name != interface.name) {
+                                    remap_str += "\t(\"" + (from_srv as RosServiceServerReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosServiceClientReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == to_srv){
+                               if ((to_srv as RosServiceClientReferenceImpl).from.name  != from_srv) {
+                                    remap_str += "\t(\"" + (to_srv as RosServiceClientReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                }
+        }
+        if (rosconnection.from.reference.eClass.toString.contains("RosActionServerReference")){
+                from_action = rosconnection.from.reference
+                rename= rosconnection.from.name
+            
+                if (rosconnection.to.reference.eClass.toString.contains("RosActionClientReference")){
+                    to_action = rosconnection.to.reference
+                }
+        
+                for ( interface : node.rosinterfaces ){
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosActionServerReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == from_action){
+                               if ((from_action as RosActionServerReferenceImpl).from.name != interface.name) {
+                                    remap_str += "\t(\"" + (from_action as RosActionServerReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                    if ( (interface as RosInterfaceImpl).reference.toString.contains("RosActionClientReferenceImpl")){
+                           if ((interface as RosInterfaceImpl).reference == to_action){
+                               if ((to_action as RosActionClientReferenceImpl).from.name  != from_action) {
+                                    remap_str += "\t(\"" + (to_action as RosActionClientReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
+                               }
+                           }
+                        }
+                }
+        }
+//            if ( con_publishers.contains(interface) ){
+//            }
+        }
+//        for (rosPublisher : interfaces.toList) {
 //            if (!((prefix(NS)+rosPublisher.name).equals(compile_topic_name(rosPublisher.publisher, NS)))) {
 //                remap_str += "\t(\"" + rosPublisher.publisher.name + "\", \"" + rosPublisher.name + "\"),\n";
 //            }
@@ -110,11 +212,11 @@ def generate_launch_description():
 //                remap_str += "\t(\"" + rosActionClient.actclient.name + "\", \"" + rosActionClient.name + "\"),\n";
 //            }
 //        }
-//        if (!remap_str.empty) {
-//            remap_str = ",\nremappings=[\n" + remap_str.substring(0,remap_str.length-2) + "]\n";
-//        }
-//        return remap_str;
-//    }
+        if (!remap_str.empty) {
+            remap_str = ",\nremappings=[\n" + remap_str.substring(0,remap_str.length-2) + "]\n";
+        }
+        return remap_str;
+    }
 //
 //    def String compile_parameters_str(EList<RosParameter> rosParameters) {
 //        param_count = rosParameters.length;
