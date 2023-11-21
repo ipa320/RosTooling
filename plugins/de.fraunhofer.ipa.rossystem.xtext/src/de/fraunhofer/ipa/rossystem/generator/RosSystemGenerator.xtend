@@ -20,31 +20,36 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension SetupPyCompiler
     @Inject extension PackageXmlCompiler
     @Inject extension CMakeListsCompiler
+    @Inject extension READMECompiler
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         for (system : resource.allContents.toIterable.filter(System)){
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/launch/"+system.getName()+".launch.py",
+                system.getName().toLowerCase+"/README.md",
+                compile_toREADME(system).toString().replace("\t","  ")
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"/launch/"+system.getName()+".launch.py",
                 compile_toROS2launch(system).toString().replace("\t","  ")
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/package.xml",
+                system.getName().toLowerCase+"/package.xml",
                 compile_package_xml_format3(system)
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/CMakeLists.txt",
+                system.getName().toLowerCase+"/CMakeLists.txt",
                 compile_CMakeLists_ROS2(system)
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/setup.py",
+                system.getName().toLowerCase+"/setup.py",
                 compile_setup_py(system)
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/resource/" + system.getName().toLowerCase,
+                system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase,
                 ""
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"_ros2/" + system.getName().toLowerCase + "/__init__.py",
+                system.getName().toLowerCase+"/" + system.getName().toLowerCase + "/__init__.py",
                 ""
             )
     }
