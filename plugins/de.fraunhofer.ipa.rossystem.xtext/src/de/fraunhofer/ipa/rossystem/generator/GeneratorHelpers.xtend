@@ -20,6 +20,8 @@ import ros.PackageDependency
 import system.Component
 import system.RosNode
 import ros.impl.AmentPackageImpl
+import system.impl.RosNodeImpl
+import system.SubSystem
 
 class GeneratorHelpers {
 	
@@ -29,23 +31,58 @@ class GeneratorHelpers {
 	List<CharSequence> PkgsList
 	String Pkg
 	RosNode node
+	String[] FromFileInfo
+
 
 	def void init_pkg(){
 		PackageSet=false
 	}
 	
-	def <String> getPkgsDependencies (System rossystem){
-		PkgsList = new ArrayList()
-		for (component: rossystem.components){
-            init_pkg()
-            node = component as RosNode 
-            Pkg = node.compile_pkg.toString()
-            if (!PkgsList.contains(Pkg)){
-                PkgsList.add(Pkg)
-            }
-		return PkgsList;
+	def <Components> getNodes (System rossystem) {
+	        val nodeList = new ArrayList<RosNode>
+	        for (component: rossystem.components) {
+	        if (component.class.toString.contains("RosNode")){
+	            nodeList.add(component as RosNode)
+	        }
+	    }
+	    return nodeList
 	}
 	
+	def <Systems> getSubsystems (System rossystem) {
+            val subSystemsList = new ArrayList<System>
+            for (component: rossystem.components) {
+            if (component.class.toString.contains("SubSystem")){
+                subSystemsList.add((component as SubSystem).system)
+            }
+        }
+        return subSystemsList
+    }
+	
+	def <String> getPkgsDependencies (System rossystem){
+		PkgsList = new ArrayList()
+		if (rossystem.fromFile.isNullOrEmpty) {
+            for (component: getNodes(rossystem)){
+                init_pkg()
+                node = component as RosNode 
+                Pkg = node.compile_pkg.toString()
+                if (!PkgsList.contains(Pkg)){
+                    PkgsList.add(Pkg)
+                }
+           }
+           for (component: getSubsystems(rossystem)){
+               if (component.fromFile.isNullOrEmpty){
+                  PkgsList.add(component.name)
+               } else {
+                   PkgsList.add(component.fromFile.split("/",2).get(0))
+               }
+           }
+		} 
+		else {
+		    FromFileInfo = rossystem.fromFile.split("/",2);
+		    PkgsList.add(FromFileInfo.get(0))
+		}
+
+	   return PkgsList;
 	}
 	
 	def compile_pkg(RosNode component)

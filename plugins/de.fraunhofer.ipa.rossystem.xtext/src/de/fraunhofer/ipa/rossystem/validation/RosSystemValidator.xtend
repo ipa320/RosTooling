@@ -45,6 +45,8 @@ class RosSystemValidator extends AbstractRosSystemValidator {
   public static val NOT_IN_THE_SYSTEM = "The element is not part of the system"
   public static val NOT_VALID_PATTERN = "The element has not a valid type"
   public static val TYPE_NOT_MATCH = "The ports have different types"
+  public static val FROM_FILE_PATH = "FromFile"
+  
   Object from_type
   Object to_type
 
@@ -60,6 +62,18 @@ class RosSystemValidator extends AbstractRosSystemValidator {
               info('Valid components for this process are '+system.components
                   ,null,NOT_IN_THE_SYSTEM)
           }
+      }
+  }
+  
+  @Check
+  def fromFileHelper(System system ) {
+      if (!system.fromFile.empty){
+              info('The format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                  ,null,NOT_IN_THE_SYSTEM)
+      }
+      if (!system.fromFile.toString.contains("/")){
+              error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                  ,null,NOT_IN_THE_SYSTEM)
       }
   }
 
