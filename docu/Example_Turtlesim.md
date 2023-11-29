@@ -116,7 +116,7 @@ turtlesim_system:
 
 If you save (Ctrl+S) after the last modifications a new folder "src-gen" will be automatically created. This folder contains a ROS2 package ready to be executed with a launch file to start the designed system.
 
-If you source a valid ROS installation and call the launch command the turtlesim example will be launched:
+For a quick check, if you source a valid ROS installation and call the launch command the turtlesim example will be launched:
 
 ```
 source /opt/ros/ROSDISTRO/setup.bash
@@ -128,3 +128,20 @@ Using the terminal of the keyboard node you can use the arrows to send new comma
 ![alt text](images/turtlesim_tutorial4.gif)
 
 
+To make use of the new created package in ROS, we recommend to create a ros workspace and add there the package. This means:
+
+```
+cd ~
+mkdir -p ros2_ws/src
+cp PATH_TO_GENERATED_PACKAGE_UNDER_SRC-GEN ros2_ws/src/ -r
+cd ros2_ws
+rosdep install --from-path src -i -y
+colcon build
+source install/setup.bash
+```
+
+To launch the system, the traditional ros2 launch command can be called:
+
+```
+ros2 lanunch turtlesim_system turtlesim_system.launch.py
+```
