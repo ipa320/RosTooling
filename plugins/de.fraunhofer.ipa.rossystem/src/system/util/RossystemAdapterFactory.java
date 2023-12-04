@@ -29,6 +29,7 @@ import system.RosSystemConnection;
 import system.RosTopicConnection;
 import system.Rossystem;
 import system.RossystemPackage;
+import system.SubSystem;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,6 +170,10 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseRosActionConnection(RosActionConnection object) {
                 return createRosActionConnectionAdapter();
+            }
+            @Override
+            public Adapter caseSubSystem(SubSystem object) {
+                return createSubSystemAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -485,6 +490,20 @@ public class RossystemAdapterFactory extends AdapterFactoryImpl {
     }
 
                 /**
+     * Creates a new adapter for an object of class '{@link system.SubSystem <em>Sub System</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see system.SubSystem
+     * @generated
+     */
+    public Adapter createSubSystemAdapter() {
+        return null;
+    }
+
+                                                                /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

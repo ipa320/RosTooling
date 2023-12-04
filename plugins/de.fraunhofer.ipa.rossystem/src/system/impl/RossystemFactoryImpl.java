@@ -29,6 +29,7 @@ import system.RosTopicConnection;
 import system.Rossystem;
 import system.RossystemFactory;
 import system.RossystemPackage;
+import system.SubSystem;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,6 +94,7 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
             case RossystemPackage.ROS_TOPIC_CONNECTION: return createRosTopicConnection();
             case RossystemPackage.ROS_SERVICE_CONNECTION: return createRosServiceConnection();
             case RossystemPackage.ROS_ACTION_CONNECTION: return createRosActionConnection();
+            case RossystemPackage.SUB_SYSTEM: return createSubSystem();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -308,6 +310,17 @@ public class RossystemFactoryImpl extends EFactoryImpl implements RossystemFacto
     }
 
                 /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SubSystem createSubSystem() {
+        SubSystemImpl subSystem = new SubSystemImpl();
+        return subSystem;
+    }
+
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

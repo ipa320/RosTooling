@@ -45,6 +45,8 @@ class RosSystemValidator extends AbstractRosSystemValidator {
   public static val NOT_IN_THE_SYSTEM = "The element is not part of the system"
   public static val NOT_VALID_PATTERN = "The element has not a valid type"
   public static val TYPE_NOT_MATCH = "The ports have different types"
+  public static val FROM_FILE_PATH = "FromFile"
+  
   Object from_type
   Object to_type
 
@@ -62,6 +64,18 @@ class RosSystemValidator extends AbstractRosSystemValidator {
           }
       }
   }
+  
+  @Check
+  def fromFileHelper(System system ) {
+      if (!system.fromFile.empty){
+              info('The format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                  ,null,NOT_IN_THE_SYSTEM)
+      }
+      if (!system.fromFile.toString.contains("/")){
+              error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                  ,null,NOT_IN_THE_SYSTEM)
+      }
+  }
 
   @Check
   def checkIfInterfaceInSystem(Connection connection) {
@@ -71,12 +85,13 @@ class RosSystemValidator extends AbstractRosSystemValidator {
       var system = connection.eContainer as System
       var List<RosInterface> AllInterfaces = newArrayList
 
-      for (Component node : system.components){
-          var rosnode = node as RosNode
-          for(RosInterface interface : rosnode.rosinterfaces){
-            AllInterfaces.add(interface)
-          }
-      }
+      for (Component component : system.components){
+          if(component.class.toString.contains("RosNode")){
+              var rosnode = component as RosNode
+              for(RosInterface interface : rosnode.rosinterfaces){
+                AllInterfaces.add(interface)
+              }
+      }}
       if (!AllInterfaces.contains(from_connection)){
               info('Valid interfaces for this process are '+AllInterfaces
                   ,null,NOT_IN_THE_SYSTEM)

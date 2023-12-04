@@ -1,37 +1,36 @@
 package de.fraunhofer.ipa.rossystem.generator
 
 import system.RosNode
-import ros.RosPackage
 import ros.Artifact
 import system.System
-import ros.AmentPackage
 import ros.impl.AmentPackageImpl
 import system.Connection
 import org.eclipse.emf.common.util.EList
-import system.RosConnection
-import system.impl.RosConnectionImpl
 import system.impl.RosSystemConnectionImpl
-import java.util.ArrayList
 import system.impl.RosPublisherReferenceImpl
 import system.impl.RosInterfaceImpl
 import system.impl.RosSubscriberReferenceImpl
-import system.RosInterface
 import system.impl.RosServiceServerReferenceImpl
 import system.impl.RosServiceClientReferenceImpl
 import system.impl.RosActionServerReferenceImpl
 import system.impl.RosActionClientReferenceImpl
+import com.google.inject.Inject
 
 class LaunchFileCompiler_ROS2 {
+
+    @Inject extension GeneratorHelpers
 
 
     def compile_toROS2launch(System system) '''
 from launch import LaunchDescription
 from launch_ros.actions import Node
-
+«IF !getSubsystems(system).empty»from ament_index_python.packages import get_package_share_directory
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource«ENDIF»
 def generate_launch_description():
     ld = LaunchDescription()
 
-    «FOR component:system.components»
+    «FOR component:getNodes(system)»
     «(component as RosNode).name» = Node(
         package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
@@ -41,9 +40,23 @@ def generate_launch_description():
     )
 
     «ENDFOR»
+    
+    «FOR subsystem:getSubsystems(system)»
+    «IF subsystem.fromFile.nullOrEmpty»
+        include_«subsystem.name»= IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([ get_package_share_directory('«subsystem.name»') + '/launch/«subsystem.name».launch.py'])
+        )
+    «ELSE»
+        include_«subsystem.name»= IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([get_package_share_directory('«subsystem.fromFile.split("/",2).get(0)»') + '/«subsystem.fromFile.split("/",2).get(1)»'])
+        )
+    «ENDIF»
+    «ENDFOR»
 
-    «FOR component:system.components»
+    «FOR component:getNodes(system)»
     ld.add_action(«(component as RosNode).name»)
+    «ENDFOR»«FOR subsystem:getSubsystems(system)»
+    ld.add_action(include_«subsystem.name»)
     «ENDFOR»
 
     return ld

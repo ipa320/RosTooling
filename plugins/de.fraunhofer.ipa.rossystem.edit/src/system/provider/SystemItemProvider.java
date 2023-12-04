@@ -8,20 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import ros.RosFactory;
 import system.RossystemFactory;
@@ -34,13 +25,7 @@ import system.RossystemPackage;
  * @generated
  */
 public class SystemItemProvider
-    extends ItemProviderAdapter
-    implements
-        IEditingDomainItemProvider,
-        IStructuredItemContentProvider,
-        ITreeItemContentProvider,
-        IItemLabelProvider,
-        IItemPropertySource {
+    extends ComponentItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -63,6 +48,7 @@ public class SystemItemProvider
             super.getPropertyDescriptors(object);
 
             addNamePropertyDescriptor(object);
+            addFromFilePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -90,6 +76,28 @@ public class SystemItemProvider
     }
 
     /**
+     * This adds a property descriptor for the From File feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addFromFilePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_System_fromFile_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_System_fromFile_feature", "_UI_System_type"),
+                 RossystemPackage.Literals.SYSTEM__FROM_FILE,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+                /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -161,6 +169,7 @@ public class SystemItemProvider
 
         switch (notification.getFeatureID(system.System.class)) {
             case RossystemPackage.SYSTEM__NAME:
+            case RossystemPackage.SYSTEM__FROM_FILE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case RossystemPackage.SYSTEM__PROCESSES:
@@ -192,7 +201,22 @@ public class SystemItemProvider
         newChildDescriptors.add
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createSystem()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createRossystem()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
                  RossystemFactory.eINSTANCE.createRosNode()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (RossystemPackage.Literals.SYSTEM__COMPONENTS,
+                 RossystemFactory.eINSTANCE.createSubSystem()));
 
         newChildDescriptors.add
             (createChildParameter
@@ -223,17 +247,6 @@ public class SystemItemProvider
             (createChildParameter
                 (RossystemPackage.Literals.SYSTEM__PARAMETER,
                  RosFactory.eINSTANCE.createParameter()));
-    }
-
-    /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return RossystemEditPlugin.INSTANCE;
     }
 
 }

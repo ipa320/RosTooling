@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="system" nsURI="http://www.ipa.fraunhofer.de/rossystem" nsPrefix="system">
-  <eClassifiers xsi:type="ecore:EClass" name="System">
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
         eType="#//Process" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -79,5 +80,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="RosActionConnection" eSuperTypes="#//RosConnection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionServer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//ActionClient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSystem" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//System"/>
   </eClassifiers>
 </ecore:EPackage>

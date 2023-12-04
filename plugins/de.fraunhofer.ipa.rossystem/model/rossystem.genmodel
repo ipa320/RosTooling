@@ -9,6 +9,7 @@
   <genPackages prefix="Rossystem" disposableProviderFactory="true" ecorePackage="rossystem.ecore#/">
     <genClasses ecoreClass="rossystem.ecore#//System">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/fromFile"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/processes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/connections"/>
@@ -75,6 +76,9 @@
     <genClasses ecoreClass="rossystem.ecore#//RosActionConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/to"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//SubSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//SubSystem/system"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

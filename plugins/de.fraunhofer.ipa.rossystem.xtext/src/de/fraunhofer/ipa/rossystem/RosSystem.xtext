@@ -13,7 +13,13 @@ System returns System:
 RosSystem returns System:
     name=EString':'
     BEGIN
+        ('fromFile:' fromFile=EString)?
         (
+        ('subSystems:'
+            BEGIN
+            components+=SubSystem*
+            END
+        ) |
         ('processes:'
             BEGIN
             processes+=Process*
@@ -24,6 +30,7 @@ RosSystem returns System:
             components+=RosNode*
             END
         ) |
+
         ('parameters:'
             BEGIN
             parameter+=Parameter*
@@ -37,7 +44,9 @@ RosSystem returns System:
         )*
     END;
 
-
+SubSystem returns SubSystem:
+    system=[System|EString]
+;
 
 Process returns Process:
     {Process}

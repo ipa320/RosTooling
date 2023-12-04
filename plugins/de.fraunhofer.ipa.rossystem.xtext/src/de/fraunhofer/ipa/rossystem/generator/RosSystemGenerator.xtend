@@ -28,30 +28,33 @@ class RosSystemGenerator extends AbstractGenerator {
                 system.getName().toLowerCase+"/README.md",
                 compile_toREADME(system).toString().replace("\t","  ")
             )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/launch/"+system.getName()+".launch.py",
-                compile_toROS2launch(system).toString().replace("\t","  ")
-            )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/package.xml",
-                compile_package_xml_format3(system)
-            )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/CMakeLists.txt",
-                compile_CMakeLists_ROS2(system)
-            )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/setup.py",
-                compile_setup_py(system)
-            )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase,
-                ""
-            )
-            fsa.generateFile(
-                system.getName().toLowerCase+"/" + system.getName().toLowerCase + "/__init__.py",
-                ""
-            )
+            if (system.fromFile.isNullOrEmpty) {
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/launch/"+system.getName()+".launch.py",
+                    compile_toROS2launch(system).toString().replace("\t","  ")
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/package.xml",
+                    compile_package_xml_format3(system)
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/CMakeLists.txt",
+                    compile_CMakeLists_ROS2(system)
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/setup.py",
+                    compile_setup_py(system)
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase,
+                    ""
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/" + system.getName().toLowerCase + "/__init__.py",
+                    ""
+                )
+            }
+        }
     }
 }
-}
+
