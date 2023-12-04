@@ -25,20 +25,33 @@ It holds the launch file to run the following nodes:
 «FOR node:getNodes(system)»
 - «(node as RosNode).name»
 «ENDFOR»
+«FOR subsystem:system.subsystems»
+«FOR node:getNodes(subsystem)»
+- «(node as RosNode).name»
+«ENDFOR»
+«ENDFOR»
 
-The listed nodes offer the following connections:
+«IF(!IsInterfacesEmpty(system))»The listed nodes offer the following connections:
 «FOR node:getNodes(system)»«FOR port:(node as RosNode).rosinterfaces»
 «getPortInfo(port)»
-«ENDFOR»«ENDFOR»
+«ENDFOR»«ENDFOR»«FOR subsystem:system.subsystems»«FOR node:getNodes(subsystem)»«FOR port:(node as RosNode).rosinterfaces»
+«getPortInfo(port)»
+«ENDFOR»«ENDFOR»«ENDFOR»«ENDIF»
 
 ## Usage
 
 «IF system.fromFile.nullOrEmpty»
 
-This package can be copied to a valid ROS 2 workspace. Then the worksapce must be compiled using the common ROS 2 build command:
+This package can be copied to a valid ROS 2 workspace. To be sure that all the related dependencies are intalles the command **rosdep install** can be used.
+Then the workspace must be compiled using the common ROS 2 build command:
 
 ```
+mkdir -p ros2_ws/src
+cd ros2_ws/
+cp PATHtoTHISPackage/«system.name» src/. 
+rosdep install --from-path src/ -i -y
 colcon build
+source install/setup.bash
 ```
 
 To execute the launch file, the following command can be called:
@@ -46,6 +59,13 @@ To execute the launch file, the following command can be called:
 ```
 ros2 launch «system.name» «system.name».launch.py
 ```
+
+The generated launch files requires the xterm package, it can be installed by:
+
+```
+sudo apt install xterm
+```
+
 «ELSE»
 To launch this system there is already an existing package that contains the launch file.
 
@@ -58,13 +78,29 @@ sudo apt install ros-ROSDISTRO-«system.fromFile.split("/",2).get(0).replace("_"
 And the system started by executing:
 
 ```
-ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('-') + 1)»
+ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)»
 ```
 «ENDIF»
 
 
      '''
      
+     def IsInterfacesEmpty(System system){
+         for(node: getNodes(system)){
+             if (!(node as RosNode).rosinterfaces.empty){
+                return false
+             }
+         }
+         for (subsystem: system.subsystems){
+           for(node: getNodes(subsystem)){
+             if (!(node as RosNode).rosinterfaces.empty){
+                return false
+             }
+         }
+         }
+         
+         return true
+     }
      
      def getPortInfo(RosInterface port ){
          if(port.reference.eClass.toString.contains("RosPublisherReference")){
