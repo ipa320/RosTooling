@@ -1,4 +1,4 @@
-name: ros-model CI
+name: RosTooling CI
 
 on: [push,pull_request]
 
@@ -10,8 +10,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        path: ros-model
+        path: RosTooling
+    - name: Install jdk 19
+      run: sudo apt install -y openjdk-19-jre
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '19'
+    - name: Debug
+      run: |
+        uname -a
+        mvn --version
+        java --version
     - name: Build and test with Maven
       run: |
-        pushd ros-model
+        pushd RosTooling
         mvn clean verify -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
