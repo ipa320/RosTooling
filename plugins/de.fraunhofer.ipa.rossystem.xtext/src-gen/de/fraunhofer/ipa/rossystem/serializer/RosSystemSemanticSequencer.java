@@ -394,8 +394,8 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_ACTION_CONNECTION__TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRosActionConnectionAccess().getFromActionServerEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_CONNECTION__FROM, false));
-		feeder.accept(grammarAccess.getRosActionConnectionAccess().getToActionClientEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_CONNECTION__TO, false));
+		feeder.accept(grammarAccess.getRosActionConnectionAccess().getFromActionServerEStringParserRuleCall_2_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_CONNECTION__FROM, false));
+		feeder.accept(grammarAccess.getRosActionConnectionAccess().getToActionClientEStringParserRuleCall_4_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_ACTION_CONNECTION__TO, false));
 		feeder.finish();
 	}
 	
@@ -545,8 +545,8 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_SERVICE_CONNECTION__TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRosServiceConnectionAccess().getFromServiceServerEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVICE_CONNECTION__FROM, false));
-		feeder.accept(grammarAccess.getRosServiceConnectionAccess().getToServiceClientEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVICE_CONNECTION__TO, false));
+		feeder.accept(grammarAccess.getRosServiceConnectionAccess().getFromServiceServerEStringParserRuleCall_2_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVICE_CONNECTION__FROM, false));
+		feeder.accept(grammarAccess.getRosServiceConnectionAccess().getToServiceClientEStringParserRuleCall_4_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SERVICE_CONNECTION__TO, false));
 		feeder.finish();
 	}
 	
@@ -611,8 +611,8 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_SYSTEM_CONNECTION__TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRosSystemConnectionAccess().getFromRosInterfaceEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SYSTEM_CONNECTION__FROM, false));
-		feeder.accept(grammarAccess.getRosSystemConnectionAccess().getToRosInterfaceEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SYSTEM_CONNECTION__TO, false));
+		feeder.accept(grammarAccess.getRosSystemConnectionAccess().getFromRosInterfaceEStringParserRuleCall_2_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SYSTEM_CONNECTION__FROM, false));
+		feeder.accept(grammarAccess.getRosSystemConnectionAccess().getToRosInterfaceEStringParserRuleCall_4_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_SYSTEM_CONNECTION__TO, false));
 		feeder.finish();
 	}
 	
@@ -655,8 +655,8 @@ public class RosSystemSemanticSequencer extends BasicsSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RossystemPackage.Literals.ROS_TOPIC_CONNECTION__TO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRosTopicConnectionAccess().getFromPublisherEStringParserRuleCall_1_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_TOPIC_CONNECTION__FROM, false));
-		feeder.accept(grammarAccess.getRosTopicConnectionAccess().getToSubscriberEStringParserRuleCall_3_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_TOPIC_CONNECTION__TO, false));
+		feeder.accept(grammarAccess.getRosTopicConnectionAccess().getFromPublisherEStringParserRuleCall_2_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_TOPIC_CONNECTION__FROM, false));
+		feeder.accept(grammarAccess.getRosTopicConnectionAccess().getToSubscriberEStringParserRuleCall_4_0_1(), semanticObject.eGet(RossystemPackage.Literals.ROS_TOPIC_CONNECTION__TO, false));
 		feeder.finish();
 	}
 	

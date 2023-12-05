@@ -124,7 +124,7 @@ Connection returns Connection:
 ;
 
 RosSystemConnection returns RosSystemConnection:
-    '-['from=[RosInterface|EString]','to=[RosInterface|EString]']'
+    '-''['from=[RosInterface|EString]','to=[RosInterface|EString]']'
 ;
 
 RosConnection returns RosConnection:
@@ -132,15 +132,15 @@ RosConnection returns RosConnection:
 ;
 
 RosTopicConnection returns RosTopicConnection:
-    '-['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
+    '-''['from=[ros::Publisher|EString]','to=[ros::Subscriber|EString]']'
 ;
 
 RosServiceConnection returns RosServiceConnection:
-    '-['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
+    '-''['from=[ros::ServiceServer|EString]','to=[ros::ServiceClient|EString]']'
 ;
 
 RosActionConnection returns RosActionConnection:
-    '-['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
+    '-''['from=[ros::ActionServer|EString]','to=[ros::ActionClient|EString]']'
 ;
 
 

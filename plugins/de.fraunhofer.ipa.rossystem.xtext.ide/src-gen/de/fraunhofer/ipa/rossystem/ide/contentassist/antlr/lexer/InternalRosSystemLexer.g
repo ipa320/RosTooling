@@ -161,8 +161,6 @@ Any : 'Any';
 
 Ns : 'ns:';
 
-HyphenMinusLeftSquareBracket : '-[';
-
 LeftSquareBracketRightSquareBracket : '[]';
 
 Comma : ',';

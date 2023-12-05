@@ -1195,9 +1195,13 @@ ruleRosSystemConnection returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=HyphenMinusLeftSquareBracket
+		otherlv_0=HyphenMinus
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRosSystemConnectionAccess().getHyphenMinusLeftSquareBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRosSystemConnectionAccess().getHyphenMinusKeyword_0());
+		}
+		otherlv_1=LeftSquareBracket
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRosSystemConnectionAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
@@ -1207,7 +1211,7 @@ ruleRosSystemConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosSystemConnectionAccess().getFromRosInterfaceCrossReference_1_0());
+					newCompositeNode(grammarAccess.getRosSystemConnectionAccess().getFromRosInterfaceCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -1215,9 +1219,9 @@ ruleRosSystemConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=Comma
+		otherlv_3=Comma
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRosSystemConnectionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRosSystemConnectionAccess().getCommaKeyword_3());
 		}
 		(
 			(
@@ -1227,7 +1231,7 @@ ruleRosSystemConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosSystemConnectionAccess().getToRosInterfaceCrossReference_3_0());
+					newCompositeNode(grammarAccess.getRosSystemConnectionAccess().getToRosInterfaceCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1235,9 +1239,9 @@ ruleRosSystemConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=RightSquareBracket
+		otherlv_5=RightSquareBracket
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRosSystemConnectionAccess().getRightSquareBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRosSystemConnectionAccess().getRightSquareBracketKeyword_5());
 		}
 	)
 ;
@@ -1309,9 +1313,13 @@ ruleRosTopicConnection returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=HyphenMinusLeftSquareBracket
+		otherlv_0=HyphenMinus
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRosTopicConnectionAccess().getHyphenMinusLeftSquareBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRosTopicConnectionAccess().getHyphenMinusKeyword_0());
+		}
+		otherlv_1=LeftSquareBracket
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRosTopicConnectionAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
@@ -1321,7 +1329,7 @@ ruleRosTopicConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosTopicConnectionAccess().getFromPublisherCrossReference_1_0());
+					newCompositeNode(grammarAccess.getRosTopicConnectionAccess().getFromPublisherCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -1329,9 +1337,9 @@ ruleRosTopicConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=Comma
+		otherlv_3=Comma
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRosTopicConnectionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRosTopicConnectionAccess().getCommaKeyword_3());
 		}
 		(
 			(
@@ -1341,7 +1349,7 @@ ruleRosTopicConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosTopicConnectionAccess().getToSubscriberCrossReference_3_0());
+					newCompositeNode(grammarAccess.getRosTopicConnectionAccess().getToSubscriberCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1349,9 +1357,9 @@ ruleRosTopicConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=RightSquareBracket
+		otherlv_5=RightSquareBracket
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRosTopicConnectionAccess().getRightSquareBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRosTopicConnectionAccess().getRightSquareBracketKeyword_5());
 		}
 	)
 ;
@@ -1372,9 +1380,13 @@ ruleRosServiceConnection returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=HyphenMinusLeftSquareBracket
+		otherlv_0=HyphenMinus
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRosServiceConnectionAccess().getHyphenMinusLeftSquareBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRosServiceConnectionAccess().getHyphenMinusKeyword_0());
+		}
+		otherlv_1=LeftSquareBracket
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRosServiceConnectionAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
@@ -1384,7 +1396,7 @@ ruleRosServiceConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosServiceConnectionAccess().getFromServiceServerCrossReference_1_0());
+					newCompositeNode(grammarAccess.getRosServiceConnectionAccess().getFromServiceServerCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -1392,9 +1404,9 @@ ruleRosServiceConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=Comma
+		otherlv_3=Comma
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRosServiceConnectionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRosServiceConnectionAccess().getCommaKeyword_3());
 		}
 		(
 			(
@@ -1404,7 +1416,7 @@ ruleRosServiceConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosServiceConnectionAccess().getToServiceClientCrossReference_3_0());
+					newCompositeNode(grammarAccess.getRosServiceConnectionAccess().getToServiceClientCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1412,9 +1424,9 @@ ruleRosServiceConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=RightSquareBracket
+		otherlv_5=RightSquareBracket
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRosServiceConnectionAccess().getRightSquareBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRosServiceConnectionAccess().getRightSquareBracketKeyword_5());
 		}
 	)
 ;
@@ -1435,9 +1447,13 @@ ruleRosActionConnection returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=HyphenMinusLeftSquareBracket
+		otherlv_0=HyphenMinus
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRosActionConnectionAccess().getHyphenMinusLeftSquareBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRosActionConnectionAccess().getHyphenMinusKeyword_0());
+		}
+		otherlv_1=LeftSquareBracket
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRosActionConnectionAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
@@ -1447,7 +1463,7 @@ ruleRosActionConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosActionConnectionAccess().getFromActionServerCrossReference_1_0());
+					newCompositeNode(grammarAccess.getRosActionConnectionAccess().getFromActionServerCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -1455,9 +1471,9 @@ ruleRosActionConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=Comma
+		otherlv_3=Comma
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRosActionConnectionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRosActionConnectionAccess().getCommaKeyword_3());
 		}
 		(
 			(
@@ -1467,7 +1483,7 @@ ruleRosActionConnection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRosActionConnectionAccess().getToActionClientCrossReference_3_0());
+					newCompositeNode(grammarAccess.getRosActionConnectionAccess().getToActionClientCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1475,9 +1491,9 @@ ruleRosActionConnection returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=RightSquareBracket
+		otherlv_5=RightSquareBracket
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRosActionConnectionAccess().getRightSquareBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRosActionConnectionAccess().getRightSquareBracketKeyword_5());
 		}
 	)
 ;
