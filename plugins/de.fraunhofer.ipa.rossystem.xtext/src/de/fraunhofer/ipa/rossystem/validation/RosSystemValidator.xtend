@@ -23,6 +23,7 @@ import system.RosActionServerReference
 import system.RosSubscriberReference
 import system.RosActionClientReference
 import system.InterfaceReference
+import system.SubSystem
 
 /**
  * This class contains custom validation rules.
@@ -49,6 +50,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
   
   Object from_type
   Object to_type
+
 
   @Check
   def checkIfNodeInSystem(Process process) {
@@ -91,7 +93,18 @@ class RosSystemValidator extends AbstractRosSystemValidator {
               for(RosInterface interface : rosnode.rosinterfaces){
                 AllInterfaces.add(interface)
               }
-      }}
+          }
+          if (component.class.toString.contains("SubSystem")) {
+              var subsystem = component as SubSystem
+              for(subcomponent: (subsystem.system as System).components){
+                 var rosnode = subcomponent as RosNode
+                  for(RosInterface interface : rosnode.rosinterfaces){
+                    AllInterfaces.add(interface)
+                  }
+              }
+          }
+      }
+
       if (!AllInterfaces.contains(from_connection)){
               info('Valid interfaces for this process are '+AllInterfaces
                   ,null,NOT_IN_THE_SYSTEM)
