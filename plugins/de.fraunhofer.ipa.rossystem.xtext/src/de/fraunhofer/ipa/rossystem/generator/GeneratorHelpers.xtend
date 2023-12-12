@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject
 import java.util.Set
 import java.util.HashSet
 import ros.Dependency
-import ros.PackageDependency
+import ros.Package
 import system.Component
 import system.RosNode
 import ros.impl.AmentPackageImpl
@@ -29,6 +29,8 @@ class GeneratorHelpers {
 	
 	AmentPackageImpl package_impl
 	List<CharSequence> PkgsList
+	ArrayList<String> RepoList
+	
 	String Pkg
 	RosNode node
 	String[] FromFileInfo
@@ -56,6 +58,28 @@ class GeneratorHelpers {
             }
         }
         return subSystemsList
+    }
+    
+    def  ArrayList<String> getAllRepos(System system) {
+        RepoList = new ArrayList<String>()
+        for (node : getNodes(system)){
+            if (!((node.from.eContainer.eContainer as Package).fromGitRepo.nullOrEmpty)) {
+                val repo=(node.from.eContainer.eContainer as Package).fromGitRepo
+                if (repo.contains(":")){
+                    if (repo.split(":",2).get(1).contains(":")){
+                        RepoList.add(repo.split(":",3).get(0)+":"+repo.split(":",3).get(1)+" -b "+repo.split(":",3).get(2))
+                    } else {
+                        RepoList.add(repo)
+                    }
+                }
+            }
+        }
+        if (!system.subsystems.nullOrEmpty){
+           for (subsystem:system.subsystems) {
+               RepoList.addAll(getAllRepos(subsystem))
+               }
+            }
+        return RepoList;
     }
 	
 	def <String> getPkgsDependencies (System rossystem){
