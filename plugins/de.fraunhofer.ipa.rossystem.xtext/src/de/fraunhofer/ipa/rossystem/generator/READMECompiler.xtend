@@ -38,10 +38,11 @@ It holds the launch file to run the following nodes:
 «getPortInfo(port)»
 «ENDFOR»«ENDFOR»«ENDFOR»«ENDIF»
 
-## Usage
+## Installation
+
+### Using release
 
 «IF system.fromFile.nullOrEmpty»
-
 This package can be copied to a valid ROS 2 workspace. To be sure that all the related dependencies are intalles the command **rosdep install** can be used.
 Then the workspace must be compiled using the common ROS 2 build command:
 
@@ -53,6 +54,22 @@ rosdep install --from-path src/ -i -y
 colcon build
 source install/setup.bash
 ```
+
+«ELSE»
+To launch this system there is already an existing package that contains the launch file.
+
+The package can be easily installed with the following command:
+
+```
+sudo apt install ros-ROSDISTRO-«system.fromFile.split("/",2).get(0).replace("_","-")»
+```
+
+«ENDIF»
+
+
+## Usage
+
+«IF system.fromFile.nullOrEmpty»
 
 To execute the launch file, the following command can be called:
 
@@ -67,15 +84,7 @@ sudo apt install xterm
 ```
 
 «ELSE»
-To launch this system there is already an existing package that contains the launch file.
-
-The package can be easily installed with the following command:
-
-```
-sudo apt install ros-ROSDISTRO-«system.fromFile.split("/",2).get(0).replace("_","-")»
-```
-
-And the system started by executing:
+To launch this system there is already an existing package that contains the launch file. It can be started by:
 
 ```
 ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)»
@@ -103,22 +112,22 @@ ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(
      }
      
      def getPortInfo(RosInterface port ){
-         if(port.reference.eClass.toString.contains("RosPublisherReference")){
+         if(port.reference.eClass.toString.contains("RosPublisherReference") && (port.reference as RosPublisherReferenceImpl).basicGetFrom.message !== null){
              return "- Publisher: "+ port.name+" ["+(port.reference as RosPublisherReferenceImpl).basicGetFrom.message.fullname+"]"
          }
-         if(port.reference.eClass.toString.contains("RosSubscriberReference")){
+         if(port.reference.eClass.toString.contains("RosSubscriberReference") && (port.reference as RosSubscriberReferenceImpl).basicGetFrom.message !== null){
              return "- Subscriber: "+ port.name+" ["+(port.reference as RosSubscriberReferenceImpl).basicGetFrom.message.fullname+"]"
          }
-         if(port.reference.eClass.toString.contains("RosServiceServerReference")){
+         if(port.reference.eClass.toString.contains("RosServiceServerReference") && (port.reference as RosServiceServerReferenceImpl).basicGetFrom.service !== null){
              return "- ServiceServer: "+ port.name+" ["+(port.reference as RosServiceServerReferenceImpl).basicGetFrom.service.fullname+"]"
          }
-         if(port.reference.eClass.toString.contains("RosServiceClientReference")){
+         if(port.reference.eClass.toString.contains("RosServiceClientReference") && (port.reference as RosServiceClientReferenceImpl).basicGetFrom.service !== null){
              return "- ServiceClient: "+ port.name+" ["+(port.reference as RosServiceClientReferenceImpl).basicGetFrom.service.fullname+"]"
          }
-         if(port.reference.eClass.toString.contains("RosActionServerReference")){
+         if(port.reference.eClass.toString.contains("RosActionServerReference") && (port.reference as RosActionServerReferenceImpl).basicGetFrom.action !== null){
              return "- ActionServer: "+ port.name+" ["+(port.reference as RosActionServerReferenceImpl).basicGetFrom.action.fullname+"]"
          }
-         if(port.reference.eClass.toString.contains("RosActionClientReference")){
+         if(port.reference.eClass.toString.contains("RosActionClientReference") && (port.reference as RosActionClientReferenceImpl).basicGetFrom.action !== null){
              return "- ActionClient: "+ port.name+" ["+(port.reference as RosActionClientReferenceImpl).basicGetFrom.action.fullname+"]"
          }
      }
