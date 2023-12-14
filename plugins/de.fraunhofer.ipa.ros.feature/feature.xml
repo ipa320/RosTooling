@@ -197,4 +197,11 @@ POSSIBILITY OF SUCH DAMAGE.
          version="3.0.0.qualifier"
          unpack="false"/>
 
+   <plugin
+         id="de.fraunhofer.ipa.roscode.generator"
+         download-size="0"
+         install-size="0"
+         version="3.0.0.qualifier"
+         unpack="false"/>
+
 </feature>
