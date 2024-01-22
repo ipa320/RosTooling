@@ -15,6 +15,14 @@ import system.impl.RosServiceClientReferenceImpl
 import system.impl.RosActionServerReferenceImpl
 import system.impl.RosActionClientReferenceImpl
 import com.google.inject.Inject
+import ros.ParameterValue
+import ros.impl.ParameterStringImpl
+import ros.impl.ParameterIntegerImpl
+import ros.impl.ParameterDoubleImpl
+import ros.impl.ParameterBooleanImpl
+import ros.impl.ParameterSequenceImpl
+import ros.impl.ParameterStructImpl
+import ros.impl.ParameterStructMemberImpl
 
 class LaunchFileCompiler_ROS2 {
 
@@ -29,6 +37,12 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource«ENDIF»
 def generate_launch_description():
     ld = LaunchDescription()
+    
+    «FOR component:getNodes(system)»«FOR parameter:component.rosparameters»
+        «parameter.name»_arg = DeclareLaunchArgument(
+            "«parameter.name»", default_value=TextSubstitution(text="«get_param_value(parameter.value,parameter.name)»")
+        )
+    «ENDFOR»«ENDFOR»
 
     «FOR component:getNodes(system)»
     «(component as RosNode).name» = Node(
@@ -36,11 +50,11 @@ def generate_launch_description():
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
         prefix = 'xterm -e',
         output='screen',
-        name="«(component as RosNode).name»"«compile_remappings_str(component as RosNode, system.connections)»
+        name="«(component as RosNode).name»"«compile_remappings_str(component as RosNode, system.connections)»«IF !component.rosparameters.nullOrEmpty»,
+        parameters=[{«FOR param:component.rosparameters»
+            "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»
     )
-
     «ENDFOR»
-    
     «FOR subsystem:getSubsystems(system)»
     «IF subsystem.fromFile.nullOrEmpty»
         include_«subsystem.name»= IncludeLaunchDescription(
@@ -250,52 +264,52 @@ def generate_launch_description():
 //        return param_str;
 //    }
 //
-//    def String compile_struct_str(ParameterValue value, String name) {
-//        var param_str = "";
-//        var elem_count = (value as ParameterSequenceImpl).eContents.length;
-//
-//        for (elem : ((value as ParameterSequenceImpl).eContents)) {
-//            var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
-//            val param_val = get_param_value(member.getValue(), name + "/" + member.getName());
-//            if (param_val.startsWith("{")) {
-//                param_str += param_val;
-//            } else {
-//                param_str += "{ \"" + name + "/" + member.getName() + "\" : " + param_val;
-//            }
-//            elem_count--;
-//            if (elem_count > 0){
-//                param_str +=" },\n"
-//            }
-//        }
-//        return param_str;
-//    }
-//
-//    def String get_param_value(ParameterValue value, String name) {
-//        var param_val = "";
-//        if (value instanceof ParameterStringImpl) {
-//            param_val = "\"" + (value as ParameterStringImpl).getValue() + "\"";
-//        } else if (value instanceof ParameterIntegerImpl) {
-//            param_val = (value as ParameterIntegerImpl).getValue().toString;
-//        } else if (value instanceof ParameterDoubleImpl) {
-//            param_val = (value as ParameterDoubleImpl).getValue().toString;
-//        } else if (value instanceof ParameterBooleanImpl) {
-//            param_val = (value as ParameterBooleanImpl).isValue().toString;
-//        } else if (value instanceof ParameterSequenceImpl) {
-//            var elem_count = (value as ParameterSequenceImpl).eContents.length;
-//            if ((value as ParameterSequenceImpl).eContents.get(0) instanceof ParameterStructImpl) {
-//                param_val = compile_struct_str(value, name);
-//            } else {
-//                param_val += "[";
-//                for (elem : (value as ParameterSequenceImpl).eContents) {
-//                    param_val += get_param_value(elem as ParameterValue, name);
-//                    elem_count--;
-//                    if (elem_count > 0){
-//                        param_val +=", "
-//                    }
-//                }
-//                param_val += "]";
-//            }
-//        }
-//        return param_val;
-//     }
+    def String compile_struct_str(ParameterValue value, String name) {
+        var param_str = "";
+        var elem_count = (value as ParameterSequenceImpl).eContents.length;
+
+        for (elem : ((value as ParameterSequenceImpl).eContents)) {
+            var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
+            val param_val = get_param_value(member.getValue(), name + "/" + member.getName());
+            if (param_val.startsWith("{")) {
+                param_str += param_val;
+            } else {
+                param_str += "{ \"" + name + "/" + member.getName() + "\" : " + param_val;
+            }
+            elem_count--;
+            if (elem_count > 0){
+                param_str +=" },\n"
+            }
+        }
+        return param_str;
+    }
+
+    def String get_param_value(ParameterValue value, String name) {
+        var param_val = "";
+        if (value instanceof ParameterStringImpl) {
+            param_val = (value as ParameterStringImpl).getValue();
+        } else if (value instanceof ParameterIntegerImpl) {
+            param_val = (value as ParameterIntegerImpl).getValue().toString;
+        } else if (value instanceof ParameterDoubleImpl) {
+            param_val = (value as ParameterDoubleImpl).getValue().toString;
+        } else if (value instanceof ParameterBooleanImpl) {
+            param_val = (value as ParameterBooleanImpl).isValue().toString;
+        } else if (value instanceof ParameterSequenceImpl) {
+            var elem_count = (value as ParameterSequenceImpl).eContents.length;
+            if ((value as ParameterSequenceImpl).eContents.get(0) instanceof ParameterStructImpl) {
+                param_val = compile_struct_str(value, name);
+            } else {
+                param_val += "[";
+                for (elem : (value as ParameterSequenceImpl).eContents) {
+                    param_val += get_param_value(elem as ParameterValue, name);
+                    elem_count--;
+                    if (elem_count > 0){
+                        param_val +=", "
+                    }
+                }
+                param_val += "]";
+            }
+        }
+        return param_val;
+     }
 }

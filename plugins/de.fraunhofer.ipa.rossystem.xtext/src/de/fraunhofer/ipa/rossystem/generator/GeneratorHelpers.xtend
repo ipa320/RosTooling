@@ -41,12 +41,13 @@ class GeneratorHelpers {
 	}
 	
 	def <Components> getNodes (System rossystem) {
-	        val nodeList = new ArrayList<RosNode>
-	        for (component: rossystem.components) {
-	        if (component.class.toString.contains("RosNode")){
-	            nodeList.add(component as RosNode)
-	        }
-	    }
+	    val nodeList = new ArrayList<RosNode>
+	    if (!rossystem.components.nullOrEmpty){
+    	    for (component: rossystem.components) {
+    	        if (component.class.toString.contains("RosNode")){
+    	            nodeList.add(component as RosNode)
+    	        }
+	    }}
 	    return nodeList
 	}
 	
