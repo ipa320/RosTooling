@@ -62,6 +62,7 @@ RosNode returns RosNode:
     name=EString':'
     BEGIN
     'from:'from=[ros::Node|EString]
+    ('namespace:' namespace=EString)?
     ('interfaces:'
         BEGIN
             rosinterfaces+=RosInterface*

@@ -16,6 +16,7 @@ import ros.Node;
  * </p>
  * <ul>
  *   <li>{@link system.RosNode#getName <em>Name</em>}</li>
+ *   <li>{@link system.RosNode#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link system.RosNode#getFrom <em>From</em>}</li>
  *   <li>{@link system.RosNode#getRosinterfaces <em>Rosinterfaces</em>}</li>
  *   <li>{@link system.RosNode#getRosparameters <em>Rosparameters</em>}</li>
@@ -49,6 +50,28 @@ public interface RosNode extends Component {
     void setName(String value);
 
     /**
+     * Returns the value of the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Namespace</em>' attribute.
+     * @see #setNamespace(String)
+     * @see system.RossystemPackage#getRosNode_Namespace()
+     * @model
+     * @generated
+     */
+    String getNamespace();
+
+                /**
+     * Sets the value of the '{@link system.RosNode#getNamespace <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Namespace</em>' attribute.
+     * @see #getNamespace()
+     * @generated
+     */
+    void setNamespace(String value);
+
+                /**
      * Returns the value of the '<em><b>From</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
