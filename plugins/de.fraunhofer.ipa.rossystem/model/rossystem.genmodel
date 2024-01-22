@@ -25,6 +25,7 @@
     <genClasses image="false" ecoreClass="rossystem.ecore#//Connection"/>
     <genClasses ecoreClass="rossystem.ecore#//RosNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosNode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosNode/namespace"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/from"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/rosinterfaces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/rosparameters"/>

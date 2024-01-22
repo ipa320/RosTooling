@@ -25,6 +25,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RosNode" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rosinterfaces" upperBound="-1"
         eType="#//RosInterface" containment="true"/>

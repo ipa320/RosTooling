@@ -351,13 +351,22 @@ int PROCESS_FEATURE_COUNT = 3;
     int ROS_NODE__NAME = COMPONENT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_NODE__NAMESPACE = COMPONENT_FEATURE_COUNT + 1;
+
+                /**
      * The feature id for the '<em><b>From</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROS_NODE__FROM = COMPONENT_FEATURE_COUNT + 1;
+    int ROS_NODE__FROM = COMPONENT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Rosinterfaces</b></em>' containment reference list.
@@ -366,7 +375,7 @@ int PROCESS_FEATURE_COUNT = 3;
      * @generated
      * @ordered
      */
-    int ROS_NODE__ROSINTERFACES = COMPONENT_FEATURE_COUNT + 2;
+    int ROS_NODE__ROSINTERFACES = COMPONENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Rosparameters</b></em>' containment reference list.
@@ -375,7 +384,7 @@ int PROCESS_FEATURE_COUNT = 3;
      * @generated
      * @ordered
      */
-    int ROS_NODE__ROSPARAMETERS = COMPONENT_FEATURE_COUNT + 3;
+    int ROS_NODE__ROSPARAMETERS = COMPONENT_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Ros Node</em>' class.
@@ -384,7 +393,7 @@ int PROCESS_FEATURE_COUNT = 3;
      * @generated
      * @ordered
      */
-    int ROS_NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
+    int ROS_NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 5;
 
     /**
      * The number of operations of the '<em>Ros Node</em>' class.
@@ -1206,6 +1215,17 @@ int PROCESS_FEATURE_COUNT = 3;
     EAttribute getRosNode_Name();
 
     /**
+     * Returns the meta object for the attribute '{@link system.RosNode#getNamespace <em>Namespace</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Namespace</em>'.
+     * @see system.RosNode#getNamespace()
+     * @see #getRosNode()
+     * @generated
+     */
+    EAttribute getRosNode_Namespace();
+
+                /**
      * Returns the meta object for the reference '{@link system.RosNode#getFrom <em>From</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1793,6 +1813,14 @@ int PROCESS_FEATURE_COUNT = 3;
         EAttribute ROS_NODE__NAME = eINSTANCE.getRosNode_Name();
 
         /**
+         * The meta object literal for the '<em><b>Namespace</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ROS_NODE__NAMESPACE = eINSTANCE.getRosNode_Namespace();
+
+                                /**
          * The meta object literal for the '<em><b>From</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

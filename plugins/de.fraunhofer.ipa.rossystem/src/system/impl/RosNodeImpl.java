@@ -33,6 +33,7 @@ import system.RossystemPackage;
  * </p>
  * <ul>
  *   <li>{@link system.impl.RosNodeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link system.impl.RosNodeImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link system.impl.RosNodeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link system.impl.RosNodeImpl#getRosinterfaces <em>Rosinterfaces</em>}</li>
  *   <li>{@link system.impl.RosNodeImpl#getRosparameters <em>Rosparameters</em>}</li>
@@ -62,6 +63,26 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
     protected String name = NAME_EDEFAULT;
 
     /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected String namespace = NAMESPACE_EDEFAULT;
+
+                /**
      * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -134,6 +155,29 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getNamespace() {
+        return namespace;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setNamespace(String newNamespace) {
+        String oldNamespace = namespace;
+        namespace = newNamespace;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RossystemPackage.ROS_NODE__NAMESPACE, oldNamespace, namespace));
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -225,6 +269,8 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
         switch (featureID) {
             case RossystemPackage.ROS_NODE__NAME:
                 return getName();
+            case RossystemPackage.ROS_NODE__NAMESPACE:
+                return getNamespace();
             case RossystemPackage.ROS_NODE__FROM:
                 if (resolve) return getFrom();
                 return basicGetFrom();
@@ -247,6 +293,9 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
         switch (featureID) {
             case RossystemPackage.ROS_NODE__NAME:
                 setName((String)newValue);
+                return;
+            case RossystemPackage.ROS_NODE__NAMESPACE:
+                setNamespace((String)newValue);
                 return;
             case RossystemPackage.ROS_NODE__FROM:
                 setFrom((Node)newValue);
@@ -274,6 +323,9 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
             case RossystemPackage.ROS_NODE__NAME:
                 setName(NAME_EDEFAULT);
                 return;
+            case RossystemPackage.ROS_NODE__NAMESPACE:
+                setNamespace(NAMESPACE_EDEFAULT);
+                return;
             case RossystemPackage.ROS_NODE__FROM:
                 setFrom((Node)null);
                 return;
@@ -297,6 +349,8 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
         switch (featureID) {
             case RossystemPackage.ROS_NODE__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            case RossystemPackage.ROS_NODE__NAMESPACE:
+                return NAMESPACE_EDEFAULT == null ? namespace != null : !NAMESPACE_EDEFAULT.equals(namespace);
             case RossystemPackage.ROS_NODE__FROM:
                 return from != null;
             case RossystemPackage.ROS_NODE__ROSINTERFACES:
@@ -319,6 +373,8 @@ public class RosNodeImpl extends ComponentImpl implements RosNode {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
+        result.append(", namespace: ");
+        result.append(namespace);
         result.append(')');
         return result.toString();
     }

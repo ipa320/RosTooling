@@ -32,7 +32,8 @@ def generate_launch_description():
 
     «FOR component:getNodes(system)»
     «(component as RosNode).name» = Node(
-        package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",
+        package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",«IF !component.namespace.nullOrEmpty»
+        namespace="«component.namespace»",«ENDIF»
         executable="«((component as RosNode).from.eContainer as Artifact).name»",
         prefix = 'xterm -e',
         output='screen',
@@ -114,17 +115,17 @@ def generate_launch_description():
         var to_action = new Object
 
         var rename = ""
-        
+
         for (connection : connections){
             var rosconnection = connection as RosSystemConnectionImpl
             if (rosconnection.from.reference.eClass.toString.contains("RosPublisherReference")){
                 from_pub = rosconnection.from.reference
                 rename= rosconnection.from.name
-            
+
                 if (rosconnection.to.reference.eClass.toString.contains("RosSubscriberReference")){
                     to_sub = rosconnection.to.reference
                 }
-        
+
                 for ( interface : node.rosinterfaces ){
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosPublisherReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_pub){
@@ -145,11 +146,11 @@ def generate_launch_description():
             if (rosconnection.from.reference.eClass.toString.contains("RosServiceServerReference")){
                 from_srv = rosconnection.from.reference
                 rename= rosconnection.from.name
-            
+
                 if (rosconnection.to.reference.eClass.toString.contains("RosServiceClientReference")){
                     to_srv = rosconnection.to.reference
                 }
-        
+
                 for ( interface : node.rosinterfaces ){
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosServiceServerReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_srv){
@@ -170,11 +171,11 @@ def generate_launch_description():
         if (rosconnection.from.reference.eClass.toString.contains("RosActionServerReference")){
                 from_action = rosconnection.from.reference
                 rename= rosconnection.from.name
-            
+
                 if (rosconnection.to.reference.eClass.toString.contains("RosActionClientReference")){
                     to_action = rosconnection.to.reference
                 }
-        
+
                 for ( interface : node.rosinterfaces ){
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosActionServerReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_action){

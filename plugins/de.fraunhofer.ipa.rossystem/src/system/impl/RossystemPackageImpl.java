@@ -430,17 +430,17 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EReference getRosNode_From() {
-        return (EReference)rosNodeEClass.getEStructuralFeatures().get(1);
+    public EAttribute getRosNode_Namespace() {
+        return (EAttribute)rosNodeEClass.getEStructuralFeatures().get(1);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public EReference getRosNode_Rosinterfaces() {
+    public EReference getRosNode_From() {
         return (EReference)rosNodeEClass.getEStructuralFeatures().get(2);
     }
 
@@ -450,8 +450,18 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
      * @generated
      */
     @Override
-    public EReference getRosNode_Rosparameters() {
+    public EReference getRosNode_Rosinterfaces() {
         return (EReference)rosNodeEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getRosNode_Rosparameters() {
+        return (EReference)rosNodeEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -874,6 +884,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 
         rosNodeEClass = createEClass(ROS_NODE);
         createEAttribute(rosNodeEClass, ROS_NODE__NAME);
+        createEAttribute(rosNodeEClass, ROS_NODE__NAMESPACE);
         createEReference(rosNodeEClass, ROS_NODE__FROM);
         createEReference(rosNodeEClass, ROS_NODE__ROSINTERFACES);
         createEReference(rosNodeEClass, ROS_NODE__ROSPARAMETERS);
@@ -1003,6 +1014,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 
         initEClass(rosNodeEClass, RosNode.class, "RosNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getRosNode_Name(), ecorePackage.getEString(), "name", null, 1, 1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getRosNode_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getRosNode_From(), theRosPackage.getNode(), null, "from", null, 1, 1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getRosNode_Rosinterfaces(), this.getRosInterface(), null, "rosinterfaces", null, 0, -1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getRosNode_Rosparameters(), this.getRosParameter(), null, "rosparameters", null, 0, -1, RosNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

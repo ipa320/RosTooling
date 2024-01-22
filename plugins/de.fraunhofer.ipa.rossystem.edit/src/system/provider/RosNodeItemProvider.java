@@ -49,6 +49,7 @@ public class RosNodeItemProvider extends ComponentItemProvider {
             super.getPropertyDescriptors(object);
 
             addNamePropertyDescriptor(object);
+            addNamespacePropertyDescriptor(object);
             addFromPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
@@ -77,6 +78,28 @@ public class RosNodeItemProvider extends ComponentItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_RosNode_namespace_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_RosNode_namespace_feature", "_UI_RosNode_type"),
+                 RossystemPackage.Literals.ROS_NODE__NAMESPACE,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+                /**
      * This adds a property descriptor for the From feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -168,6 +191,7 @@ public class RosNodeItemProvider extends ComponentItemProvider {
 
         switch (notification.getFeatureID(RosNode.class)) {
             case RossystemPackage.ROS_NODE__NAME:
+            case RossystemPackage.ROS_NODE__NAMESPACE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case RossystemPackage.ROS_NODE__ROSINTERFACES:
