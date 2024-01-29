@@ -831,55 +831,44 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	public class ParameterArrayTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterArrayType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cArrayKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeParameterTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDefaultKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDefaultAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDefaultParameterListParserRuleCall_3_1_0 = (RuleCall)cDefaultAssignment_3_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cArrayKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeParameterTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cDefaultKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDefaultAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDefaultParameterListParserRuleCall_2_1_0 = (RuleCall)cDefaultAssignment_2_1.eContents().get(0);
 		
 		//ParameterArrayType returns ParameterArrayType:
-		//    BEGIN
-		//    'Array:' type=ParameterType
+		//    'Array' type=ParameterType
 		//    ('default:' default=ParameterList)?
-		//  END;
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  BEGIN
-		//  'Array:' type=ParameterType
-		//  ('default:' default=ParameterList)?
-		//END
+		//'Array' type=ParameterType
+		//('default:' default=ParameterList)?
 		public Group getGroup() { return cGroup; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_0() { return cBEGINTerminalRuleCall_0; }
-		
-		//'Array:'
-		public Keyword getArrayKeyword_1() { return cArrayKeyword_1; }
+		//'Array'
+		public Keyword getArrayKeyword_0() { return cArrayKeyword_0; }
 		
 		//type=ParameterType
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
 		//ParameterType
-		public RuleCall getTypeParameterTypeParserRuleCall_2_0() { return cTypeParameterTypeParserRuleCall_2_0; }
+		public RuleCall getTypeParameterTypeParserRuleCall_1_0() { return cTypeParameterTypeParserRuleCall_1_0; }
 		
 		//('default:' default=ParameterList)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'default:'
-		public Keyword getDefaultKeyword_3_0() { return cDefaultKeyword_3_0; }
+		public Keyword getDefaultKeyword_2_0() { return cDefaultKeyword_2_0; }
 		
 		//default=ParameterList
-		public Assignment getDefaultAssignment_3_1() { return cDefaultAssignment_3_1; }
+		public Assignment getDefaultAssignment_2_1() { return cDefaultAssignment_2_1; }
 		
 		//ParameterList
-		public RuleCall getDefaultParameterListParserRuleCall_3_1_0() { return cDefaultParameterListParserRuleCall_3_1_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
+		public RuleCall getDefaultParameterListParserRuleCall_2_1_0() { return cDefaultParameterListParserRuleCall_2_1_0; }
 	}
 	public class ParameterListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterList");
@@ -1067,7 +1056,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//    {ParameterStruct}
 		//        ('['
 		//        BEGIN
-		//        (value+=ParameterStructMember)*  ']'
+		//        (value+=ParameterStructMember)* ']'
 		//        END
 		//        )?
 		//;
@@ -1076,7 +1065,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//{ParameterStruct}
 		//    ('['
 		//    BEGIN
-		//    (value+=ParameterStructMember)*  ']'
+		//    (value+=ParameterStructMember)* ']'
 		//    END
 		//    )?
 		public Group getGroup() { return cGroup; }
@@ -1086,7 +1075,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//('['
 		//BEGIN
-		//(value+=ParameterStructMember)*  ']'
+		//(value+=ParameterStructMember)* ']'
 		//END
 		//)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -2709,10 +2698,9 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//ParameterArrayType returns ParameterArrayType:
-	//    BEGIN
-	//    'Array:' type=ParameterType
+	//    'Array' type=ParameterType
 	//    ('default:' default=ParameterList)?
-	//  END;
+	//;
 	public ParameterArrayTypeElements getParameterArrayTypeAccess() {
 		return pParameterArrayType;
 	}
@@ -2805,7 +2793,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//    {ParameterStruct}
 	//        ('['
 	//        BEGIN
-	//        (value+=ParameterStructMember)*  ']'
+	//        (value+=ParameterStructMember)* ']'
 	//        END
 	//        )?
 	//;

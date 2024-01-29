@@ -49,6 +49,7 @@ import de.fraunhofer.ipa.ros1.services.Ros1GrammarAccess;
 		tokenNameToValue.put("Node", "'node'");
 		tokenNameToValue.put("Time", "'time'");
 		tokenNameToValue.put("Type", "'type'");
+		tokenNameToValue.put("Array", "'Array'");
 		tokenNameToValue.put("Int16", "'int16'");
 		tokenNameToValue.put("Int32", "'int32'");
 		tokenNameToValue.put("Int64", "'int64'");
@@ -58,7 +59,6 @@ import de.fraunhofer.ipa.ros1.services.Ros1GrammarAccess;
 		tokenNameToValue.put("Type_1", "'type:'");
 		tokenNameToValue.put("Uint8", "'uint8'");
 		tokenNameToValue.put("Value", "'value'");
-		tokenNameToValue.put("Array", "'Array:'");
 		tokenNameToValue.put("Base64", "'Base64'");
 		tokenNameToValue.put("Double", "'Double'");
 		tokenNameToValue.put("Header", "'Header'");
@@ -10394,9 +10394,9 @@ rule__ParameterArrayType__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0()); }
-	RULE_BEGIN
-	{ after(grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0()); }
+	{ before(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0()); }
+	Array
+	{ after(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0()); }
 )
 ;
 finally {
@@ -10421,9 +10421,9 @@ rule__ParameterArrayType__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1()); }
-	Array
-	{ after(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1()); }
+	{ before(grammarAccess.getParameterArrayTypeAccess().getTypeAssignment_1()); }
+	(rule__ParameterArrayType__TypeAssignment_1)
+	{ after(grammarAccess.getParameterArrayTypeAccess().getTypeAssignment_1()); }
 )
 ;
 finally {
@@ -10436,7 +10436,6 @@ rule__ParameterArrayType__Group__2
 	}
 :
 	rule__ParameterArrayType__Group__2__Impl
-	rule__ParameterArrayType__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -10448,62 +10447,9 @@ rule__ParameterArrayType__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterArrayTypeAccess().getTypeAssignment_2()); }
-	(rule__ParameterArrayType__TypeAssignment_2)
-	{ after(grammarAccess.getParameterArrayTypeAccess().getTypeAssignment_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ParameterArrayType__Group__3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ParameterArrayType__Group__3__Impl
-	rule__ParameterArrayType__Group__4
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ParameterArrayType__Group__3__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getParameterArrayTypeAccess().getGroup_3()); }
-	(rule__ParameterArrayType__Group_3__0)?
-	{ after(grammarAccess.getParameterArrayTypeAccess().getGroup_3()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ParameterArrayType__Group__4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ParameterArrayType__Group__4__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ParameterArrayType__Group__4__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4()); }
-	RULE_END
-	{ after(grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4()); }
+	{ before(grammarAccess.getParameterArrayTypeAccess().getGroup_2()); }
+	(rule__ParameterArrayType__Group_2__0)?
+	{ after(grammarAccess.getParameterArrayTypeAccess().getGroup_2()); }
 )
 ;
 finally {
@@ -10511,53 +10457,53 @@ finally {
 }
 
 
-rule__ParameterArrayType__Group_3__0
+rule__ParameterArrayType__Group_2__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__ParameterArrayType__Group_3__0__Impl
-	rule__ParameterArrayType__Group_3__1
+	rule__ParameterArrayType__Group_2__0__Impl
+	rule__ParameterArrayType__Group_2__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ParameterArrayType__Group_3__0__Impl
+rule__ParameterArrayType__Group_2__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0()); }
+	{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_2_0()); }
 	Default
-	{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0()); }
+	{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_2_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ParameterArrayType__Group_3__1
+rule__ParameterArrayType__Group_2__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__ParameterArrayType__Group_3__1__Impl
+	rule__ParameterArrayType__Group_2__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ParameterArrayType__Group_3__1__Impl
+rule__ParameterArrayType__Group_2__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_3_1()); }
-	(rule__ParameterArrayType__DefaultAssignment_3_1)
-	{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_3_1()); }
+	{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_2_1()); }
+	(rule__ParameterArrayType__DefaultAssignment_2_1)
+	{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_2_1()); }
 )
 ;
 finally {
@@ -14088,30 +14034,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ParameterArrayType__TypeAssignment_2
+rule__ParameterArrayType__TypeAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_2_0()); }
+		{ before(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_1_0()); }
 		ruleParameterType
-		{ after(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_2_0()); }
+		{ after(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ParameterArrayType__DefaultAssignment_3_1
+rule__ParameterArrayType__DefaultAssignment_2_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0()); }
+		{ before(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_2_1_0()); }
 		ruleParameterList
-		{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0()); }
+		{ after(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_2_1_0()); }
 	)
 ;
 finally {

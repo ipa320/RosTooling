@@ -291,8 +291,9 @@ class RosSystemValidator extends AbstractRosSystemValidator {
                     for (j=0;j<expected_sub_types.length;j++){
                         if (expected_sub_types.get(j).toString.contains("name")){   
                         if ( ((getName(expected_sub_types.get(j).toString))==name_given_element) ){
-                            if (expected_sub_types.get(j).eContents.get(0).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){                             
-                                CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
+                            if (expected_sub_types.get(j).eContents.get(0).eClass.name.matches("ParameterStructType|ParameterListType|ParameterSequence")){ 
+                                CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0)));
+                                //CheckParameterValue((expected_sub_types.get(j).eContents.get(0)),(value_sub_type.get(i).eContents.get(0).eContents.get(0)));
                             }
                             try{
                                 expected_sub_type = expected_sub_types.get(j);

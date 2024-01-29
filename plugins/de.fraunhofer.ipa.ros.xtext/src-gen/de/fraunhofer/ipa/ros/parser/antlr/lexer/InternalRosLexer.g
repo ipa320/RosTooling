@@ -85,8 +85,6 @@ Service : 'service';
 
 Uint8_1 : 'uint8[]';
 
-Array : 'Array:';
-
 Base64 : 'Base64';
 
 Double : 'Double';
@@ -118,6 +116,8 @@ Uint32 : 'uint32';
 Uint64 : 'uint64';
 
 Value_1 : 'value:';
+
+Array : 'Array';
 
 Int16 : 'int16';
 

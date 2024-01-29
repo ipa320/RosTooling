@@ -1775,10 +1775,9 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//ParameterArrayType returns ParameterArrayType:
-	//    BEGIN
-	//    'Array:' type=ParameterType
+	//    'Array' type=ParameterType
 	//    ('default:' default=ParameterList)?
-	//  END;
+	//;
 	public BasicsGrammarAccess.ParameterArrayTypeElements getParameterArrayTypeAccess() {
 		return gaBasics.getParameterArrayTypeAccess();
 	}
@@ -1871,7 +1870,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    {ParameterStruct}
 	//        ('['
 	//        BEGIN
-	//        (value+=ParameterStructMember)*  ']'
+	//        (value+=ParameterStructMember)* ']'
 	//        END
 	//        )?
 	//;
