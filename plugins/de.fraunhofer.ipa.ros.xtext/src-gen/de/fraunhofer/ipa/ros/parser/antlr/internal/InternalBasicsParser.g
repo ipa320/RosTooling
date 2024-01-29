@@ -998,13 +998,13 @@ ruleParameterArrayType returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_BEGIN_0=RULE_BEGIN
+		otherlv_0=Array
 		{
-			newLeafNode(this_BEGIN_0, grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0());
+			newLeafNode(otherlv_0, grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0());
 		}
-		otherlv_1=Array
+		otherlv_1=LeftSquareBracket
 		{
-			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
@@ -1025,17 +1025,21 @@ ruleParameterArrayType returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_3=RightSquareBracket
+		{
+			newLeafNode(otherlv_3, grammarAccess.getParameterArrayTypeAccess().getRightSquareBracketKeyword_3());
+		}
 		(
-			otherlv_3=Default
+			otherlv_4=Default
 			{
-				newLeafNode(otherlv_3, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_4_1_0());
 					}
-					lv_default_4_0=ruleParameterList
+					lv_default_5_0=ruleParameterList
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParameterArrayTypeRule());
@@ -1043,17 +1047,13 @@ ruleParameterArrayType returns [EObject current=null]
 						set(
 							$current,
 							"default",
-							lv_default_4_0,
+							lv_default_5_0,
 							"de.fraunhofer.ipa.ros.Basics.ParameterList");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		this_END_5=RULE_END
-		{
-			newLeafNode(this_END_5, grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4());
-		}
 	)
 ;
 

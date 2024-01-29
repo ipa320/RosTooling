@@ -22,21 +22,21 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RelativeNamespace", "PrivateNamespace", "GlobalNamespace", "ParameterAny", "Connections", "Interfaces", "Parameters", "SubSystems", "Namespace", "Processes", "GraphName", "Float32_1", "Float64_1", "FromFile", "Default", "Duration", "Feedback", "String_2", "Threads", "Uint16_1", "Uint32_1", "Uint64_1", "Boolean", "Integer", "Float32", "Float64", "Int16_1", "Int32_1", "Int64_1", "Message", "Service", "Uint8_1", "Array", "Base64", "Double", "Header", "String", "Struct", "Action", "Bool_1", "Byte_1", "Char_1", "Int8_1", "Nodes", "Result", "String_1", "Uint16", "Uint32", "Uint64", "Value_1", "From", "Int16", "Int32", "Int64", "Pub", "Sub", "Type_1", "Uint8", "Value", "Date", "List", "Ac", "As", "Bool", "Byte", "Char", "Goal", "Int8", "Name", "Node", "Sc", "Ss", "Time", "Type", "Any", "Ns", "LeftSquareBracketRightSquareBracket", "Comma", "HyphenMinus", "Colon", "LeftSquareBracket", "RightSquareBracket", "RULE_DIGIT", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DECINT", "RULE_DOUBLE", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_DATE_TIME", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_MESSAGE_ASIGMENT", "RULE_BEGIN", "RULE_END", "RULE_SL_COMMENT", "RULE_ROS_CONVENTION_A", "RULE_ROS_CONVENTION_PARAM", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RelativeNamespace", "PrivateNamespace", "GlobalNamespace", "ParameterAny", "Connections", "Interfaces", "Parameters", "SubSystems", "Namespace", "Processes", "GraphName", "Float32_1", "Float64_1", "FromFile", "Default", "Duration", "Feedback", "String_2", "Threads", "Uint16_1", "Uint32_1", "Uint64_1", "Boolean", "Integer", "Float32", "Float64", "Int16_1", "Int32_1", "Int64_1", "Message", "Service", "Uint8_1", "Base64", "Double", "Header", "String", "Struct", "Action", "Bool_1", "Byte_1", "Char_1", "Int8_1", "Nodes", "Result", "String_1", "Uint16", "Uint32", "Uint64", "Value_1", "Array", "From", "Int16", "Int32", "Int64", "Pub", "Sub", "Type_1", "Uint8", "Value", "Date", "List", "Ac", "As", "Bool", "Byte", "Char", "Goal", "Int8", "Name", "Node", "Sc", "Ss", "Time", "Type", "Any", "Ns", "LeftSquareBracketRightSquareBracket", "Comma", "HyphenMinus", "Colon", "LeftSquareBracket", "RightSquareBracket", "RULE_DIGIT", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DECINT", "RULE_DOUBLE", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_DATE_TIME", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_MESSAGE_ASIGMENT", "RULE_BEGIN", "RULE_END", "RULE_SL_COMMENT", "RULE_ROS_CONVENTION_A", "RULE_ROS_CONVENTION_PARAM", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int Connections=8;
     public static final int Float32_1=15;
     public static final int Node=73;
     public static final int RULE_DATE_TIME=96;
     public static final int Uint64_1=25;
-    public static final int String=40;
+    public static final int String=39;
     public static final int Processes=13;
     public static final int Int16=55;
     public static final int SubSystems=11;
     public static final int Float32=28;
     public static final int Goal=70;
     public static final int Bool=67;
-    public static final int Uint16=50;
+    public static final int Uint16=49;
     public static final int Boolean=26;
     public static final int Sub=59;
     public static final int Uint8=61;
@@ -46,13 +46,13 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final int GlobalNamespace=6;
     public static final int Namespace=12;
     public static final int Int16_1=30;
-    public static final int Header=39;
+    public static final int Header=38;
     public static final int RULE_INT=99;
     public static final int Byte=68;
     public static final int RULE_ML_COMMENT=106;
     public static final int LeftSquareBracket=84;
     public static final int Ac=65;
-    public static final int Base64=37;
+    public static final int Base64=36;
     public static final int Comma=81;
     public static final int As=66;
     public static final int HyphenMinus=82;
@@ -61,18 +61,18 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final int Int32=56;
     public static final int Char=69;
     public static final int RULE_DECINT=89;
-    public static final int Uint32=51;
+    public static final int Uint32=50;
     public static final int RULE_HOUR=94;
     public static final int Int8=71;
     public static final int Default=18;
-    public static final int Int8_1=46;
+    public static final int Int8_1=45;
     public static final int Uint16_1=23;
     public static final int Sc=74;
     public static final int Type=77;
     public static final int Float64=29;
     public static final int Int32_1=31;
     public static final int RULE_BINARY=87;
-    public static final int String_1=49;
+    public static final int String_1=48;
     public static final int String_2=21;
     public static final int Ss=75;
     public static final int RULE_DAY=91;
@@ -80,33 +80,33 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final int RULE_BOOLEAN=88;
     public static final int RelativeNamespace=4;
     public static final int RULE_YEAR=93;
-    public static final int Result=48;
+    public static final int Result=47;
     public static final int Name=72;
     public static final int RULE_MIN_SEC=95;
-    public static final int Char_1=45;
+    public static final int Char_1=44;
     public static final int ParameterAny=7;
     public static final int List=64;
     public static final int RightSquareBracket=85;
     public static final int PrivateNamespace=5;
     public static final int GraphName=14;
-    public static final int Byte_1=44;
+    public static final int Byte_1=43;
     public static final int Float64_1=16;
     public static final int Duration=19;
     public static final int Uint32_1=24;
-    public static final int Double=38;
+    public static final int Double=37;
     public static final int Type_1=60;
     public static final int Value=62;
-    public static final int Uint64=52;
+    public static final int Uint64=51;
     public static final int FromFile=17;
-    public static final int Action=42;
+    public static final int Action=41;
     public static final int RULE_END=102;
     public static final int Message=33;
-    public static final int Value_1=53;
+    public static final int Value_1=52;
     public static final int Time=76;
     public static final int RULE_STRING=98;
-    public static final int Bool_1=43;
+    public static final int Bool_1=42;
     public static final int Any=78;
-    public static final int Struct=41;
+    public static final int Struct=40;
     public static final int RULE_SL_COMMENT=103;
     public static final int Uint8_1=35;
     public static final int RULE_DOUBLE=90;
@@ -122,12 +122,12 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final int Service=34;
     public static final int From=54;
     public static final int RULE_ANY_OTHER=108;
-    public static final int Nodes=47;
+    public static final int Nodes=46;
     public static final int Date=63;
     public static final int Interfaces=9;
     public static final int Threads=22;
     public static final int Integer=27;
-    public static final int Array=36;
+    public static final int Array=53;
     public static final int Int64=57;
     public static final int RULE_MONTH=92;
 
@@ -5688,7 +5688,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
                 alt28=7;
                 }
                 break;
-            case RULE_BEGIN:
+            case Array:
                 {
                 alt28=8;
                 }
@@ -6673,11 +6673,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             int LA32_0 = input.LA(1);
 
             if ( (LA32_0==Default) ) {
-                int LA32_1 = input.LA(2);
-
-                if ( (LA32_1==RULE_DECINT) ) {
-                    alt32=1;
-                }
+                alt32=1;
             }
             switch (alt32) {
                 case 1 :
@@ -6838,11 +6834,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             int LA33_0 = input.LA(1);
 
             if ( (LA33_0==Default) ) {
-                int LA33_1 = input.LA(2);
-
-                if ( ((LA33_1>=RULE_ID && LA33_1<=RULE_STRING)) ) {
-                    alt33=1;
-                }
+                alt33=1;
             }
             switch (alt33) {
                 case 1 :
@@ -7003,11 +6995,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             int LA34_0 = input.LA(1);
 
             if ( (LA34_0==Default) ) {
-                int LA34_1 = input.LA(2);
-
-                if ( (LA34_1==RULE_DOUBLE) ) {
-                    alt34=1;
-                }
+                alt34=1;
             }
             switch (alt34) {
                 case 1 :
@@ -7168,11 +7156,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             int LA35_0 = input.LA(1);
 
             if ( (LA35_0==Default) ) {
-                int LA35_1 = input.LA(2);
-
-                if ( (LA35_1==RULE_BOOLEAN) ) {
-                    alt35=1;
-                }
+                alt35=1;
             }
             switch (alt35) {
                 case 1 :
@@ -7333,11 +7317,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             int LA36_0 = input.LA(1);
 
             if ( (LA36_0==Default) ) {
-                int LA36_1 = input.LA(2);
-
-                if ( (LA36_1==RULE_BINARY) ) {
-                    alt36=1;
-                }
+                alt36=1;
             }
             switch (alt36) {
                 case 1 :
@@ -7455,39 +7435,39 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterArrayType"
-    // InternalRosSystemParser.g:2593:1: ruleParameterArrayType returns [EObject current=null] : (this_BEGIN_0= RULE_BEGIN otherlv_1= Array ( (lv_type_2_0= ruleParameterType ) ) (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )? this_END_5= RULE_END ) ;
+    // InternalRosSystemParser.g:2593:1: ruleParameterArrayType returns [EObject current=null] : (otherlv_0= Array otherlv_1= LeftSquareBracket ( (lv_type_2_0= ruleParameterType ) ) otherlv_3= RightSquareBracket (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )? ) ;
     public final EObject ruleParameterArrayType() throws RecognitionException {
         EObject current = null;
 
-        Token this_BEGIN_0=null;
+        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token this_END_5=null;
+        Token otherlv_4=null;
         EObject lv_type_2_0 = null;
 
-        EObject lv_default_4_0 = null;
+        EObject lv_default_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRosSystemParser.g:2599:2: ( (this_BEGIN_0= RULE_BEGIN otherlv_1= Array ( (lv_type_2_0= ruleParameterType ) ) (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )? this_END_5= RULE_END ) )
-            // InternalRosSystemParser.g:2600:2: (this_BEGIN_0= RULE_BEGIN otherlv_1= Array ( (lv_type_2_0= ruleParameterType ) ) (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )? this_END_5= RULE_END )
+            // InternalRosSystemParser.g:2599:2: ( (otherlv_0= Array otherlv_1= LeftSquareBracket ( (lv_type_2_0= ruleParameterType ) ) otherlv_3= RightSquareBracket (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )? ) )
+            // InternalRosSystemParser.g:2600:2: (otherlv_0= Array otherlv_1= LeftSquareBracket ( (lv_type_2_0= ruleParameterType ) ) otherlv_3= RightSquareBracket (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )? )
             {
-            // InternalRosSystemParser.g:2600:2: (this_BEGIN_0= RULE_BEGIN otherlv_1= Array ( (lv_type_2_0= ruleParameterType ) ) (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )? this_END_5= RULE_END )
-            // InternalRosSystemParser.g:2601:3: this_BEGIN_0= RULE_BEGIN otherlv_1= Array ( (lv_type_2_0= ruleParameterType ) ) (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )? this_END_5= RULE_END
+            // InternalRosSystemParser.g:2600:2: (otherlv_0= Array otherlv_1= LeftSquareBracket ( (lv_type_2_0= ruleParameterType ) ) otherlv_3= RightSquareBracket (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )? )
+            // InternalRosSystemParser.g:2601:3: otherlv_0= Array otherlv_1= LeftSquareBracket ( (lv_type_2_0= ruleParameterType ) ) otherlv_3= RightSquareBracket (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )?
             {
-            this_BEGIN_0=(Token)match(input,RULE_BEGIN,FOLLOW_36); if (state.failed) return current;
+            otherlv_0=(Token)match(input,Array,FOLLOW_11); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(this_BEGIN_0, grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0());
+              			newLeafNode(otherlv_0, grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0());
               		
             }
-            otherlv_1=(Token)match(input,Array,FOLLOW_30); if (state.failed) return current;
+            otherlv_1=(Token)match(input,LeftSquareBracket,FOLLOW_30); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1());
+              			newLeafNode(otherlv_1, grammarAccess.getParameterArrayTypeAccess().getLeftSquareBracketKeyword_1());
               		
             }
             // InternalRosSystemParser.g:2609:3: ( (lv_type_2_0= ruleParameterType ) )
@@ -7501,7 +7481,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getTypeParameterTypeParserRuleCall_2_0());
               				
             }
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_24);
             lv_type_2_0=ruleParameterType();
 
             state._fsp--;
@@ -7525,7 +7505,13 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRosSystemParser.g:2628:3: (otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) ) )?
+            otherlv_3=(Token)match(input,RightSquareBracket,FOLLOW_32); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_3, grammarAccess.getParameterArrayTypeAccess().getRightSquareBracketKeyword_3());
+              		
+            }
+            // InternalRosSystemParser.g:2632:3: (otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) ) )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -7534,27 +7520,27 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
             }
             switch (alt37) {
                 case 1 :
-                    // InternalRosSystemParser.g:2629:4: otherlv_3= Default ( (lv_default_4_0= ruleParameterList ) )
+                    // InternalRosSystemParser.g:2633:4: otherlv_4= Default ( (lv_default_5_0= ruleParameterList ) )
                     {
-                    otherlv_3=(Token)match(input,Default,FOLLOW_11); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,Default,FOLLOW_11); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_3, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0());
+                      				newLeafNode(otherlv_4, grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0());
                       			
                     }
-                    // InternalRosSystemParser.g:2633:4: ( (lv_default_4_0= ruleParameterList ) )
-                    // InternalRosSystemParser.g:2634:5: (lv_default_4_0= ruleParameterList )
+                    // InternalRosSystemParser.g:2637:4: ( (lv_default_5_0= ruleParameterList ) )
+                    // InternalRosSystemParser.g:2638:5: (lv_default_5_0= ruleParameterList )
                     {
-                    // InternalRosSystemParser.g:2634:5: (lv_default_4_0= ruleParameterList )
-                    // InternalRosSystemParser.g:2635:6: lv_default_4_0= ruleParameterList
+                    // InternalRosSystemParser.g:2638:5: (lv_default_5_0= ruleParameterList )
+                    // InternalRosSystemParser.g:2639:6: lv_default_5_0= ruleParameterList
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0());
+                      						newCompositeNode(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_4_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_15);
-                    lv_default_4_0=ruleParameterList();
+                    pushFollow(FOLLOW_2);
+                    lv_default_5_0=ruleParameterList();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -7566,7 +7552,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"default",
-                      							lv_default_4_0,
+                      							lv_default_5_0,
                       							"de.fraunhofer.ipa.ros.Basics.ParameterList");
                       						afterParserOrEnumRuleCall();
                       					
@@ -7583,12 +7569,6 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_END_5=(Token)match(input,RULE_END,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(this_END_5, grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4());
-              		
-            }
 
             }
 
@@ -7898,7 +7878,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,ParameterAny,FOLLOW_38); if (state.failed) return current;
+            otherlv_1=(Token)match(input,ParameterAny,FOLLOW_36); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getParameterAnyAccess().getParameterAnyKeyword_1());
@@ -8633,7 +8613,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_1, grammarAccess.getParameterStructAccess().getLeftSquareBracketKeyword_1_0());
                       			
                     }
-                    this_BEGIN_2=(Token)match(input,RULE_BEGIN,FOLLOW_39); if (state.failed) return current;
+                    this_BEGIN_2=(Token)match(input,RULE_BEGIN,FOLLOW_37); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(this_BEGIN_2, grammarAccess.getParameterStructAccess().getBEGINTerminalRuleCall_1_1());
@@ -8662,7 +8642,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
                     	      						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_0());
                     	      					
                     	    }
-                    	    pushFollow(FOLLOW_39);
+                    	    pushFollow(FOLLOW_37);
                     	    lv_value_3_0=ruleParameterStructMember();
 
                     	    state._fsp--;
@@ -13745,7 +13725,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getArraySpecRefAccess().getReferenceTopicSpecCrossReference_0_0());
               				
             }
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_38);
             ruleEString();
 
             state._fsp--;
@@ -14494,7 +14474,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     static final String dfa_23s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\2\uffff\1\40\1\41\1\37\1\36";
     static final String dfa_24s = "\44\uffff}>";
     static final String[] dfa_25s = {
-            "\1\32\1\33\2\uffff\1\17\1\uffff\1\34\1\uffff\1\25\1\27\1\31\2\uffff\1\12\1\13\1\24\1\26\1\30\2\uffff\1\23\3\uffff\1\20\3\uffff\1\21\1\35\1\41\1\22\2\uffff\1\14\1\5\1\7\1\11\2\uffff\1\4\1\6\1\10\3\uffff\1\3\5\uffff\1\1\1\15\1\40\1\uffff\1\2\4\uffff\1\16\24\uffff\1\37\1\36",
+            "\1\32\1\33\2\uffff\1\17\1\uffff\1\34\1\uffff\1\25\1\27\1\31\2\uffff\1\12\1\13\1\24\1\26\1\30\2\uffff\1\23\2\uffff\1\20\3\uffff\1\21\1\35\1\41\1\22\2\uffff\1\14\1\5\1\7\1\11\3\uffff\1\4\1\6\1\10\3\uffff\1\3\5\uffff\1\1\1\15\1\40\1\uffff\1\2\4\uffff\1\16\24\uffff\1\37\1\36",
             "",
             "",
             "",
@@ -14563,12 +14543,12 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000800000022D00L,0x0000004000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000400000022D00L,0x0000004000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000000L,0x0000000600000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000800000002D00L,0x0000004000000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000400000002D00L,0x0000004000000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x0000004600000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000004000040000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000800000400000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000400000400000L,0x0000004000000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000000L,0x0000000000220000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L,0x0000004000000000L});
@@ -14579,7 +14559,7 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000600L,0x0000004000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000400L,0x0000004000000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0C00000000000000L,0x0000000000000C06L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000607900000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
@@ -14588,16 +14568,14 @@ public class InternalRosSystemParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x1000000000000000L,0x0000000000008000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000070L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x000003600C000000L,0x0000002000000001L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0020000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x002001B00C000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0010000000000000L,0x0000004000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000040002L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000040000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000600200000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000600200000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
 
 }

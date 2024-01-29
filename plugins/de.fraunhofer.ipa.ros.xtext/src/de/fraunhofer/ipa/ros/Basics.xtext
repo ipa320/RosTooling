@@ -105,10 +105,9 @@ ParameterAnyType returns ParameterAnyType:
     ('default:' default=ParameterAny)?;
 
 ParameterArrayType returns ParameterArrayType:
-    BEGIN
-    'Array:' type=ParameterType
+    'Array' '[' type=ParameterType ']'
     ('default:' default=ParameterList)?
-  END;
+;
 
 ParameterList returns ParameterSequence:
     {ParameterSequence}
@@ -145,7 +144,7 @@ ParameterStruct returns ParameterStruct:
     {ParameterStruct}
         ('[' 
         BEGIN
-        (value+=ParameterStructMember)*  ']'
+        (value+=ParameterStructMember)* ']'
         END
         )?
 ;

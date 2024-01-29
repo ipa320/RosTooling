@@ -140,6 +140,17 @@ The only remarkable difference with the ROS 1 model is that the quality of servi
 - profile: default_qos / sensor_qos / services_qos/ parameter_qos
 - reliability: best_effort / reliable
 
+The type of supported parameters are:
+- Boolean 
+- Double
+- String
+- Integer
+- Base64
+- List [Type, Type]
+- Array [Type]
+- Struct [Name Type, Name Type]
+
+For more details please check the following [examples](ParametersAPI.md).
 
 See the following example for the [arucos_ros](https://github.com/pal-robotics/aruco_ros) driver:
 

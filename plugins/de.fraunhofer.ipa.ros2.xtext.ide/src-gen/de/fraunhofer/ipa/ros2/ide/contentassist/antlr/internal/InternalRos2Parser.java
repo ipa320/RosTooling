@@ -24,14 +24,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExternalDependency", "RelativeNamespace", "PrivateNamespace", "GlobalNamespace", "Serviceclients", "Serviceservers", "Transient_local", "Actionclients", "Actionservers", "Dependencies", "Parameter_qos", "ParameterAny", "FromGitRepo", "Reliability", "Services_qos", "Subscribers", "Best_effort", "Default_qos", "Durability", "Parameters", "Publishers", "Artifacts", "Sensor_qos", "GraphName", "Float32_1", "Float64_1", "Keep_last", "Actions", "Default", "Duration", "Feedback", "History", "Keep_all", "Profile", "Reliable", "Response", "String_2", "Uint16_1", "Uint32_1", "Uint64_1", "Volatile", "Boolean", "Integer", "Float32", "Float64", "Int16_1", "Int32_1", "Int64_1", "Message", "Request", "Service", "Uint8_1", "Array", "Base64", "Double", "Header", "String", "Struct", "Action", "Bool_1", "Byte_1", "Char_1", "Depth", "Int8_1", "Result", "String_1", "Uint16", "Uint32", "Uint64", "Value_1", "Int16", "Int32", "Int64", "Msgs", "Node_1", "Srvs", "Type_1", "Uint8", "Value", "Date", "List", "Bool", "Byte", "Char", "Goal", "Int8", "Name", "Node", "Qos", "Time", "Type", "Any", "Ns", "LeftSquareBracketRightSquareBracket", "Comma", "Colon", "LeftSquareBracket", "RightSquareBracket", "RULE_DIGIT", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DECINT", "RULE_DOUBLE", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_DATE_TIME", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_MESSAGE_ASIGMENT", "RULE_BEGIN", "RULE_END", "RULE_SL_COMMENT", "RULE_ROS_CONVENTION_A", "RULE_ROS_CONVENTION_PARAM", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExternalDependency", "RelativeNamespace", "PrivateNamespace", "GlobalNamespace", "Serviceclients", "Serviceservers", "Transient_local", "Actionclients", "Actionservers", "Dependencies", "Parameter_qos", "ParameterAny", "FromGitRepo", "Reliability", "Services_qos", "Subscribers", "Best_effort", "Default_qos", "Durability", "Parameters", "Publishers", "Artifacts", "Sensor_qos", "GraphName", "Float32_1", "Float64_1", "Keep_last", "Actions", "Default", "Duration", "Feedback", "History", "Keep_all", "Profile", "Reliable", "Response", "String_2", "Uint16_1", "Uint32_1", "Uint64_1", "Volatile", "Boolean", "Integer", "Float32", "Float64", "Int16_1", "Int32_1", "Int64_1", "Message", "Request", "Service", "Uint8_1", "Base64", "Double", "Header", "String", "Struct", "Action", "Bool_1", "Byte_1", "Char_1", "Depth", "Int8_1", "Result", "String_1", "Uint16", "Uint32", "Uint64", "Value_1", "Array", "Int16", "Int32", "Int64", "Msgs", "Node_1", "Srvs", "Type_1", "Uint8", "Value", "Date", "List", "Bool", "Byte", "Char", "Goal", "Int8", "Name", "Node", "Qos", "Time", "Type", "Any", "Ns", "LeftSquareBracketRightSquareBracket", "Comma", "Colon", "LeftSquareBracket", "RightSquareBracket", "RULE_DIGIT", "RULE_BINARY", "RULE_BOOLEAN", "RULE_DECINT", "RULE_DOUBLE", "RULE_DAY", "RULE_MONTH", "RULE_YEAR", "RULE_HOUR", "RULE_MIN_SEC", "RULE_DATE_TIME", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_MESSAGE_ASIGMENT", "RULE_BEGIN", "RULE_END", "RULE_SL_COMMENT", "RULE_ROS_CONVENTION_A", "RULE_ROS_CONVENTION_PARAM", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int Float32_1=28;
     public static final int Node=91;
     public static final int RULE_DATE_TIME=112;
     public static final int Uint64_1=43;
     public static final int Serviceclients=8;
-    public static final int String=60;
+    public static final int String=59;
     public static final int History=35;
     public static final int Int16=74;
     public static final int Float32=47;
@@ -39,7 +39,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final int Actionservers=12;
     public static final int Bool=85;
     public static final int Msgs=77;
-    public static final int Uint16=70;
+    public static final int Uint16=69;
     public static final int Boolean=45;
     public static final int ExternalDependency=4;
     public static final int Uint8=81;
@@ -51,14 +51,14 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final int Artifacts=25;
     public static final int Node_1=78;
     public static final int Int16_1=49;
-    public static final int Header=59;
+    public static final int Header=58;
     public static final int RULE_INT=115;
     public static final int Byte=86;
     public static final int RULE_ML_COMMENT=122;
     public static final int LeftSquareBracket=100;
-    public static final int Base64=57;
+    public static final int Base64=56;
     public static final int Profile=37;
-    public static final int Depth=66;
+    public static final int Depth=65;
     public static final int Comma=98;
     public static final int RULE_MESSAGE_ASIGMENT=116;
     public static final int LeftSquareBracketRightSquareBracket=97;
@@ -69,19 +69,19 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final int Srvs=79;
     public static final int RULE_DECINT=105;
     public static final int Reliable=38;
-    public static final int Uint32=71;
+    public static final int Uint32=70;
     public static final int FromGitRepo=16;
     public static final int RULE_HOUR=110;
     public static final int Int8=89;
     public static final int Default=32;
-    public static final int Int8_1=67;
+    public static final int Int8_1=66;
     public static final int Uint16_1=41;
     public static final int Type=94;
     public static final int Float64=48;
     public static final int Int32_1=50;
     public static final int Keep_all=36;
     public static final int RULE_BINARY=103;
-    public static final int String_1=69;
+    public static final int String_1=68;
     public static final int Subscribers=19;
     public static final int String_2=40;
     public static final int Actionclients=11;
@@ -92,38 +92,38 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final int RelativeNamespace=5;
     public static final int Serviceservers=9;
     public static final int RULE_YEAR=109;
-    public static final int Result=68;
+    public static final int Result=67;
     public static final int Name=90;
     public static final int RULE_MIN_SEC=111;
     public static final int Default_qos=21;
-    public static final int Char_1=65;
+    public static final int Char_1=64;
     public static final int ParameterAny=15;
     public static final int List=84;
     public static final int Dependencies=13;
     public static final int RightSquareBracket=101;
     public static final int PrivateNamespace=6;
     public static final int GraphName=27;
-    public static final int Byte_1=64;
+    public static final int Byte_1=63;
     public static final int Float64_1=29;
     public static final int Durability=22;
     public static final int Duration=33;
     public static final int Uint32_1=42;
-    public static final int Double=58;
+    public static final int Double=57;
     public static final int Keep_last=30;
     public static final int Type_1=80;
     public static final int Value=82;
     public static final int Transient_local=10;
-    public static final int Uint64=72;
-    public static final int Action=62;
+    public static final int Uint64=71;
+    public static final int Action=61;
     public static final int RULE_END=118;
     public static final int Message=52;
-    public static final int Value_1=73;
+    public static final int Value_1=72;
     public static final int Time=93;
     public static final int RULE_STRING=114;
     public static final int Best_effort=20;
-    public static final int Bool_1=63;
+    public static final int Bool_1=62;
     public static final int Any=95;
-    public static final int Struct=61;
+    public static final int Struct=60;
     public static final int RULE_SL_COMMENT=119;
     public static final int Uint8_1=55;
     public static final int RULE_DOUBLE=106;
@@ -143,7 +143,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final int Date=83;
     public static final int Response=39;
     public static final int Integer=46;
-    public static final int Array=56;
+    public static final int Array=73;
     public static final int Qos=92;
     public static final int Int64=76;
     public static final int RULE_MONTH=108;
@@ -189,6 +189,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     		tokenNameToValue.put("Qos", "'qos:'");
     		tokenNameToValue.put("Time", "'time'");
     		tokenNameToValue.put("Type", "'type'");
+    		tokenNameToValue.put("Array", "'Array'");
     		tokenNameToValue.put("Int16", "'int16'");
     		tokenNameToValue.put("Int32", "'int32'");
     		tokenNameToValue.put("Int64", "'int64'");
@@ -198,7 +199,6 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     		tokenNameToValue.put("Type_1", "'type:'");
     		tokenNameToValue.put("Uint8", "'uint8'");
     		tokenNameToValue.put("Value", "'value'");
-    		tokenNameToValue.put("Array", "'Array:'");
     		tokenNameToValue.put("Base64", "'Base64'");
     		tokenNameToValue.put("Double", "'Double'");
     		tokenNameToValue.put("Header", "'Header'");
@@ -8105,7 +8105,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
                 alt10=7;
                 }
                 break;
-            case RULE_BEGIN:
+            case Array:
                 {
                 alt10=8;
                 }
@@ -32718,11 +32718,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             int LA68_0 = input.LA(1);
 
             if ( (LA68_0==Default) ) {
-                int LA68_1 = input.LA(2);
-
-                if ( (LA68_1==RULE_DECINT) ) {
-                    alt68=1;
-                }
+                alt68=1;
             }
             switch (alt68) {
                 case 1 :
@@ -33118,11 +33114,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             int LA69_0 = input.LA(1);
 
             if ( (LA69_0==Default) ) {
-                int LA69_1 = input.LA(2);
-
-                if ( ((LA69_1>=RULE_ID && LA69_1<=RULE_STRING)) ) {
-                    alt69=1;
-                }
+                alt69=1;
             }
             switch (alt69) {
                 case 1 :
@@ -33518,11 +33510,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             int LA70_0 = input.LA(1);
 
             if ( (LA70_0==Default) ) {
-                int LA70_1 = input.LA(2);
-
-                if ( (LA70_1==RULE_DOUBLE) ) {
-                    alt70=1;
-                }
+                alt70=1;
             }
             switch (alt70) {
                 case 1 :
@@ -33918,11 +33906,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             int LA71_0 = input.LA(1);
 
             if ( (LA71_0==Default) ) {
-                int LA71_1 = input.LA(2);
-
-                if ( (LA71_1==RULE_BOOLEAN) ) {
-                    alt71=1;
-                }
+                alt71=1;
             }
             switch (alt71) {
                 case 1 :
@@ -34318,11 +34302,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             int LA72_0 = input.LA(1);
 
             if ( (LA72_0==Default) ) {
-                int LA72_1 = input.LA(2);
-
-                if ( (LA72_1==RULE_BINARY) ) {
-                    alt72=1;
-                }
+                alt72=1;
             }
             switch (alt72) {
                 case 1 :
@@ -34526,7 +34506,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11465:1: ( rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1 )
             // InternalRos2Parser.g:11466:2: rule__ParameterArrayType__Group__0__Impl rule__ParameterArrayType__Group__1
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_10);
             rule__ParameterArrayType__Group__0__Impl();
 
             state._fsp--;
@@ -34555,21 +34535,21 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__0__Impl"
-    // InternalRos2Parser.g:11473:1: rule__ParameterArrayType__Group__0__Impl : ( RULE_BEGIN ) ;
+    // InternalRos2Parser.g:11473:1: rule__ParameterArrayType__Group__0__Impl : ( Array ) ;
     public final void rule__ParameterArrayType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11477:1: ( ( RULE_BEGIN ) )
-            // InternalRos2Parser.g:11478:1: ( RULE_BEGIN )
+            // InternalRos2Parser.g:11477:1: ( ( Array ) )
+            // InternalRos2Parser.g:11478:1: ( Array )
             {
-            // InternalRos2Parser.g:11478:1: ( RULE_BEGIN )
-            // InternalRos2Parser.g:11479:2: RULE_BEGIN
+            // InternalRos2Parser.g:11478:1: ( Array )
+            // InternalRos2Parser.g:11479:2: Array
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0()); 
-            match(input,RULE_BEGIN,FOLLOW_2); 
-             after(grammarAccess.getParameterArrayTypeAccess().getBEGINTerminalRuleCall_0()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0()); 
+            match(input,Array,FOLLOW_2); 
+             after(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_0()); 
 
             }
 
@@ -34630,21 +34610,21 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__1__Impl"
-    // InternalRos2Parser.g:11500:1: rule__ParameterArrayType__Group__1__Impl : ( Array ) ;
+    // InternalRos2Parser.g:11500:1: rule__ParameterArrayType__Group__1__Impl : ( LeftSquareBracket ) ;
     public final void rule__ParameterArrayType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11504:1: ( ( Array ) )
-            // InternalRos2Parser.g:11505:1: ( Array )
+            // InternalRos2Parser.g:11504:1: ( ( LeftSquareBracket ) )
+            // InternalRos2Parser.g:11505:1: ( LeftSquareBracket )
             {
-            // InternalRos2Parser.g:11505:1: ( Array )
-            // InternalRos2Parser.g:11506:2: Array
+            // InternalRos2Parser.g:11505:1: ( LeftSquareBracket )
+            // InternalRos2Parser.g:11506:2: LeftSquareBracket
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1()); 
-            match(input,Array,FOLLOW_2); 
-             after(grammarAccess.getParameterArrayTypeAccess().getArrayKeyword_1()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getLeftSquareBracketKeyword_1()); 
+            match(input,LeftSquareBracket,FOLLOW_2); 
+             after(grammarAccess.getParameterArrayTypeAccess().getLeftSquareBracketKeyword_1()); 
 
             }
 
@@ -34676,7 +34656,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11519:1: ( rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3 )
             // InternalRos2Parser.g:11520:2: rule__ParameterArrayType__Group__2__Impl rule__ParameterArrayType__Group__3
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_60);
             rule__ParameterArrayType__Group__2__Impl();
 
             state._fsp--;
@@ -34761,7 +34741,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11546:1: ( rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4 )
             // InternalRos2Parser.g:11547:2: rule__ParameterArrayType__Group__3__Impl rule__ParameterArrayType__Group__4
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_52);
             rule__ParameterArrayType__Group__3__Impl();
 
             state._fsp--;
@@ -34790,42 +34770,21 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__3__Impl"
-    // InternalRos2Parser.g:11554:1: rule__ParameterArrayType__Group__3__Impl : ( ( rule__ParameterArrayType__Group_3__0 )? ) ;
+    // InternalRos2Parser.g:11554:1: rule__ParameterArrayType__Group__3__Impl : ( RightSquareBracket ) ;
     public final void rule__ParameterArrayType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11558:1: ( ( ( rule__ParameterArrayType__Group_3__0 )? ) )
-            // InternalRos2Parser.g:11559:1: ( ( rule__ParameterArrayType__Group_3__0 )? )
+            // InternalRos2Parser.g:11558:1: ( ( RightSquareBracket ) )
+            // InternalRos2Parser.g:11559:1: ( RightSquareBracket )
             {
-            // InternalRos2Parser.g:11559:1: ( ( rule__ParameterArrayType__Group_3__0 )? )
-            // InternalRos2Parser.g:11560:2: ( rule__ParameterArrayType__Group_3__0 )?
+            // InternalRos2Parser.g:11559:1: ( RightSquareBracket )
+            // InternalRos2Parser.g:11560:2: RightSquareBracket
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getGroup_3()); 
-            // InternalRos2Parser.g:11561:2: ( rule__ParameterArrayType__Group_3__0 )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
-
-            if ( (LA73_0==Default) ) {
-                alt73=1;
-            }
-            switch (alt73) {
-                case 1 :
-                    // InternalRos2Parser.g:11561:3: rule__ParameterArrayType__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ParameterArrayType__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getParameterArrayTypeAccess().getGroup_3()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getRightSquareBracketKeyword_3()); 
+            match(input,RightSquareBracket,FOLLOW_2); 
+             after(grammarAccess.getParameterArrayTypeAccess().getRightSquareBracketKeyword_3()); 
 
             }
 
@@ -34881,21 +34840,42 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterArrayType__Group__4__Impl"
-    // InternalRos2Parser.g:11580:1: rule__ParameterArrayType__Group__4__Impl : ( RULE_END ) ;
+    // InternalRos2Parser.g:11580:1: rule__ParameterArrayType__Group__4__Impl : ( ( rule__ParameterArrayType__Group_4__0 )? ) ;
     public final void rule__ParameterArrayType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11584:1: ( ( RULE_END ) )
-            // InternalRos2Parser.g:11585:1: ( RULE_END )
+            // InternalRos2Parser.g:11584:1: ( ( ( rule__ParameterArrayType__Group_4__0 )? ) )
+            // InternalRos2Parser.g:11585:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
             {
-            // InternalRos2Parser.g:11585:1: ( RULE_END )
-            // InternalRos2Parser.g:11586:2: RULE_END
+            // InternalRos2Parser.g:11585:1: ( ( rule__ParameterArrayType__Group_4__0 )? )
+            // InternalRos2Parser.g:11586:2: ( rule__ParameterArrayType__Group_4__0 )?
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4()); 
-            match(input,RULE_END,FOLLOW_2); 
-             after(grammarAccess.getParameterArrayTypeAccess().getENDTerminalRuleCall_4()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getGroup_4()); 
+            // InternalRos2Parser.g:11587:2: ( rule__ParameterArrayType__Group_4__0 )?
+            int alt73=2;
+            int LA73_0 = input.LA(1);
+
+            if ( (LA73_0==Default) ) {
+                alt73=1;
+            }
+            switch (alt73) {
+                case 1 :
+                    // InternalRos2Parser.g:11587:3: rule__ParameterArrayType__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ParameterArrayType__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getParameterArrayTypeAccess().getGroup_4()); 
 
             }
 
@@ -34917,23 +34897,23 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ParameterArrayType__Group__4__Impl"
 
 
-    // $ANTLR start "rule__ParameterArrayType__Group_3__0"
-    // InternalRos2Parser.g:11596:1: rule__ParameterArrayType__Group_3__0 : rule__ParameterArrayType__Group_3__0__Impl rule__ParameterArrayType__Group_3__1 ;
-    public final void rule__ParameterArrayType__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__ParameterArrayType__Group_4__0"
+    // InternalRos2Parser.g:11596:1: rule__ParameterArrayType__Group_4__0 : rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 ;
+    public final void rule__ParameterArrayType__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11600:1: ( rule__ParameterArrayType__Group_3__0__Impl rule__ParameterArrayType__Group_3__1 )
-            // InternalRos2Parser.g:11601:2: rule__ParameterArrayType__Group_3__0__Impl rule__ParameterArrayType__Group_3__1
+            // InternalRos2Parser.g:11600:1: ( rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1 )
+            // InternalRos2Parser.g:11601:2: rule__ParameterArrayType__Group_4__0__Impl rule__ParameterArrayType__Group_4__1
             {
             pushFollow(FOLLOW_10);
-            rule__ParameterArrayType__Group_3__0__Impl();
+            rule__ParameterArrayType__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ParameterArrayType__Group_3__1();
+            rule__ParameterArrayType__Group_4__1();
 
             state._fsp--;
 
@@ -34952,12 +34932,12 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ParameterArrayType__Group_3__0"
+    // $ANTLR end "rule__ParameterArrayType__Group_4__0"
 
 
-    // $ANTLR start "rule__ParameterArrayType__Group_3__0__Impl"
-    // InternalRos2Parser.g:11608:1: rule__ParameterArrayType__Group_3__0__Impl : ( Default ) ;
-    public final void rule__ParameterArrayType__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ParameterArrayType__Group_4__0__Impl"
+    // InternalRos2Parser.g:11608:1: rule__ParameterArrayType__Group_4__0__Impl : ( Default ) ;
+    public final void rule__ParameterArrayType__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -34968,9 +34948,9 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11613:1: ( Default )
             // InternalRos2Parser.g:11614:2: Default
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0()); 
             match(input,Default,FOLLOW_2); 
-             after(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_3_0()); 
+             after(grammarAccess.getParameterArrayTypeAccess().getDefaultKeyword_4_0()); 
 
             }
 
@@ -34989,21 +34969,21 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ParameterArrayType__Group_3__0__Impl"
+    // $ANTLR end "rule__ParameterArrayType__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__ParameterArrayType__Group_3__1"
-    // InternalRos2Parser.g:11623:1: rule__ParameterArrayType__Group_3__1 : rule__ParameterArrayType__Group_3__1__Impl ;
-    public final void rule__ParameterArrayType__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__ParameterArrayType__Group_4__1"
+    // InternalRos2Parser.g:11623:1: rule__ParameterArrayType__Group_4__1 : rule__ParameterArrayType__Group_4__1__Impl ;
+    public final void rule__ParameterArrayType__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11627:1: ( rule__ParameterArrayType__Group_3__1__Impl )
-            // InternalRos2Parser.g:11628:2: rule__ParameterArrayType__Group_3__1__Impl
+            // InternalRos2Parser.g:11627:1: ( rule__ParameterArrayType__Group_4__1__Impl )
+            // InternalRos2Parser.g:11628:2: rule__ParameterArrayType__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ParameterArrayType__Group_3__1__Impl();
+            rule__ParameterArrayType__Group_4__1__Impl();
 
             state._fsp--;
 
@@ -35022,35 +35002,35 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ParameterArrayType__Group_3__1"
+    // $ANTLR end "rule__ParameterArrayType__Group_4__1"
 
 
-    // $ANTLR start "rule__ParameterArrayType__Group_3__1__Impl"
-    // InternalRos2Parser.g:11634:1: rule__ParameterArrayType__Group_3__1__Impl : ( ( rule__ParameterArrayType__DefaultAssignment_3_1 ) ) ;
-    public final void rule__ParameterArrayType__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ParameterArrayType__Group_4__1__Impl"
+    // InternalRos2Parser.g:11634:1: rule__ParameterArrayType__Group_4__1__Impl : ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) ;
+    public final void rule__ParameterArrayType__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRos2Parser.g:11638:1: ( ( ( rule__ParameterArrayType__DefaultAssignment_3_1 ) ) )
-            // InternalRos2Parser.g:11639:1: ( ( rule__ParameterArrayType__DefaultAssignment_3_1 ) )
+            // InternalRos2Parser.g:11638:1: ( ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) ) )
+            // InternalRos2Parser.g:11639:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
             {
-            // InternalRos2Parser.g:11639:1: ( ( rule__ParameterArrayType__DefaultAssignment_3_1 ) )
-            // InternalRos2Parser.g:11640:2: ( rule__ParameterArrayType__DefaultAssignment_3_1 )
+            // InternalRos2Parser.g:11639:1: ( ( rule__ParameterArrayType__DefaultAssignment_4_1 ) )
+            // InternalRos2Parser.g:11640:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_3_1()); 
-            // InternalRos2Parser.g:11641:2: ( rule__ParameterArrayType__DefaultAssignment_3_1 )
-            // InternalRos2Parser.g:11641:3: rule__ParameterArrayType__DefaultAssignment_3_1
+             before(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_4_1()); 
+            // InternalRos2Parser.g:11641:2: ( rule__ParameterArrayType__DefaultAssignment_4_1 )
+            // InternalRos2Parser.g:11641:3: rule__ParameterArrayType__DefaultAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__ParameterArrayType__DefaultAssignment_3_1();
+            rule__ParameterArrayType__DefaultAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_3_1()); 
+             after(grammarAccess.getParameterArrayTypeAccess().getDefaultAssignment_4_1()); 
 
             }
 
@@ -35069,7 +35049,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ParameterArrayType__Group_3__1__Impl"
+    // $ANTLR end "rule__ParameterArrayType__Group_4__1__Impl"
 
 
     // $ANTLR start "rule__ParameterList__Group__0"
@@ -35645,7 +35625,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11843:1: ( rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1 )
             // InternalRos2Parser.g:11844:2: rule__ParameterAny__Group__0__Impl rule__ParameterAny__Group__1
             {
-            pushFollow(FOLLOW_62);
+            pushFollow(FOLLOW_61);
             rule__ParameterAny__Group__0__Impl();
 
             state._fsp--;
@@ -35720,7 +35700,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:11870:1: ( rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2 )
             // InternalRos2Parser.g:11871:2: rule__ParameterAny__Group__1__Impl rule__ParameterAny__Group__2
             {
-            pushFollow(FOLLOW_63);
+            pushFollow(FOLLOW_62);
             rule__ParameterAny__Group__1__Impl();
 
             state._fsp--;
@@ -36282,7 +36262,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12059:1: ( rule__ParameterStruct__Group_1__1__Impl rule__ParameterStruct__Group_1__2 )
             // InternalRos2Parser.g:12060:2: rule__ParameterStruct__Group_1__1__Impl rule__ParameterStruct__Group_1__2
             {
-            pushFollow(FOLLOW_64);
+            pushFollow(FOLLOW_63);
             rule__ParameterStruct__Group_1__1__Impl();
 
             state._fsp--;
@@ -36357,7 +36337,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12086:1: ( rule__ParameterStruct__Group_1__2__Impl rule__ParameterStruct__Group_1__3 )
             // InternalRos2Parser.g:12087:2: rule__ParameterStruct__Group_1__2__Impl rule__ParameterStruct__Group_1__3
             {
-            pushFollow(FOLLOW_64);
+            pushFollow(FOLLOW_63);
             rule__ParameterStruct__Group_1__2__Impl();
 
             state._fsp--;
@@ -37010,7 +36990,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12302:1: ( rule__MessagePart__Group__0__Impl rule__MessagePart__Group__1 )
             // InternalRos2Parser.g:12303:2: rule__MessagePart__Group__0__Impl rule__MessagePart__Group__1
             {
-            pushFollow(FOLLOW_65);
+            pushFollow(FOLLOW_64);
             rule__MessagePart__Group__0__Impl();
 
             state._fsp--;
@@ -37175,7 +37155,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12356:1: ( rule__Bool__Group__0__Impl rule__Bool__Group__1 )
             // InternalRos2Parser.g:12357:2: rule__Bool__Group__0__Impl rule__Bool__Group__1
             {
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_65);
             rule__Bool__Group__0__Impl();
 
             state._fsp--;
@@ -37320,7 +37300,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12410:1: ( rule__Int8__Group__0__Impl rule__Int8__Group__1 )
             // InternalRos2Parser.g:12411:2: rule__Int8__Group__0__Impl rule__Int8__Group__1
             {
-            pushFollow(FOLLOW_67);
+            pushFollow(FOLLOW_66);
             rule__Int8__Group__0__Impl();
 
             state._fsp--;
@@ -37465,7 +37445,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12464:1: ( rule__Uint8__Group__0__Impl rule__Uint8__Group__1 )
             // InternalRos2Parser.g:12465:2: rule__Uint8__Group__0__Impl rule__Uint8__Group__1
             {
-            pushFollow(FOLLOW_68);
+            pushFollow(FOLLOW_67);
             rule__Uint8__Group__0__Impl();
 
             state._fsp--;
@@ -37610,7 +37590,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12518:1: ( rule__Int16__Group__0__Impl rule__Int16__Group__1 )
             // InternalRos2Parser.g:12519:2: rule__Int16__Group__0__Impl rule__Int16__Group__1
             {
-            pushFollow(FOLLOW_69);
+            pushFollow(FOLLOW_68);
             rule__Int16__Group__0__Impl();
 
             state._fsp--;
@@ -37755,7 +37735,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12572:1: ( rule__Uint16__Group__0__Impl rule__Uint16__Group__1 )
             // InternalRos2Parser.g:12573:2: rule__Uint16__Group__0__Impl rule__Uint16__Group__1
             {
-            pushFollow(FOLLOW_70);
+            pushFollow(FOLLOW_69);
             rule__Uint16__Group__0__Impl();
 
             state._fsp--;
@@ -37900,7 +37880,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12626:1: ( rule__Int32__Group__0__Impl rule__Int32__Group__1 )
             // InternalRos2Parser.g:12627:2: rule__Int32__Group__0__Impl rule__Int32__Group__1
             {
-            pushFollow(FOLLOW_71);
+            pushFollow(FOLLOW_70);
             rule__Int32__Group__0__Impl();
 
             state._fsp--;
@@ -38045,7 +38025,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12680:1: ( rule__Uint32__Group__0__Impl rule__Uint32__Group__1 )
             // InternalRos2Parser.g:12681:2: rule__Uint32__Group__0__Impl rule__Uint32__Group__1
             {
-            pushFollow(FOLLOW_72);
+            pushFollow(FOLLOW_71);
             rule__Uint32__Group__0__Impl();
 
             state._fsp--;
@@ -38190,7 +38170,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12734:1: ( rule__Int64__Group__0__Impl rule__Int64__Group__1 )
             // InternalRos2Parser.g:12735:2: rule__Int64__Group__0__Impl rule__Int64__Group__1
             {
-            pushFollow(FOLLOW_73);
+            pushFollow(FOLLOW_72);
             rule__Int64__Group__0__Impl();
 
             state._fsp--;
@@ -38335,7 +38315,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12788:1: ( rule__Uint64__Group__0__Impl rule__Uint64__Group__1 )
             // InternalRos2Parser.g:12789:2: rule__Uint64__Group__0__Impl rule__Uint64__Group__1
             {
-            pushFollow(FOLLOW_74);
+            pushFollow(FOLLOW_73);
             rule__Uint64__Group__0__Impl();
 
             state._fsp--;
@@ -38480,7 +38460,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12842:1: ( rule__Float32__Group__0__Impl rule__Float32__Group__1 )
             // InternalRos2Parser.g:12843:2: rule__Float32__Group__0__Impl rule__Float32__Group__1
             {
-            pushFollow(FOLLOW_75);
+            pushFollow(FOLLOW_74);
             rule__Float32__Group__0__Impl();
 
             state._fsp--;
@@ -38625,7 +38605,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12896:1: ( rule__Float64__Group__0__Impl rule__Float64__Group__1 )
             // InternalRos2Parser.g:12897:2: rule__Float64__Group__0__Impl rule__Float64__Group__1
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             rule__Float64__Group__0__Impl();
 
             state._fsp--;
@@ -38770,7 +38750,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:12950:1: ( rule__String0__Group__0__Impl rule__String0__Group__1 )
             // InternalRos2Parser.g:12951:2: rule__String0__Group__0__Impl rule__String0__Group__1
             {
-            pushFollow(FOLLOW_77);
+            pushFollow(FOLLOW_76);
             rule__String0__Group__0__Impl();
 
             state._fsp--;
@@ -38915,7 +38895,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13004:1: ( rule__Char__Group__0__Impl rule__Char__Group__1 )
             // InternalRos2Parser.g:13005:2: rule__Char__Group__0__Impl rule__Char__Group__1
             {
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_77);
             rule__Char__Group__0__Impl();
 
             state._fsp--;
@@ -39060,7 +39040,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13058:1: ( rule__Byte__Group__0__Impl rule__Byte__Group__1 )
             // InternalRos2Parser.g:13059:2: rule__Byte__Group__0__Impl rule__Byte__Group__1
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_78);
             rule__Byte__Group__0__Impl();
 
             state._fsp--;
@@ -39205,7 +39185,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13112:1: ( rule__Time__Group__0__Impl rule__Time__Group__1 )
             // InternalRos2Parser.g:13113:2: rule__Time__Group__0__Impl rule__Time__Group__1
             {
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_79);
             rule__Time__Group__0__Impl();
 
             state._fsp--;
@@ -39350,7 +39330,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13166:1: ( rule__Duration__Group__0__Impl rule__Duration__Group__1 )
             // InternalRos2Parser.g:13167:2: rule__Duration__Group__0__Impl rule__Duration__Group__1
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_80);
             rule__Duration__Group__0__Impl();
 
             state._fsp--;
@@ -39495,7 +39475,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13220:1: ( rule__BoolArray__Group__0__Impl rule__BoolArray__Group__1 )
             // InternalRos2Parser.g:13221:2: rule__BoolArray__Group__0__Impl rule__BoolArray__Group__1
             {
-            pushFollow(FOLLOW_82);
+            pushFollow(FOLLOW_81);
             rule__BoolArray__Group__0__Impl();
 
             state._fsp--;
@@ -39640,7 +39620,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13274:1: ( rule__Int8Array__Group__0__Impl rule__Int8Array__Group__1 )
             // InternalRos2Parser.g:13275:2: rule__Int8Array__Group__0__Impl rule__Int8Array__Group__1
             {
-            pushFollow(FOLLOW_83);
+            pushFollow(FOLLOW_82);
             rule__Int8Array__Group__0__Impl();
 
             state._fsp--;
@@ -39785,7 +39765,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13328:1: ( rule__Uint8Array__Group__0__Impl rule__Uint8Array__Group__1 )
             // InternalRos2Parser.g:13329:2: rule__Uint8Array__Group__0__Impl rule__Uint8Array__Group__1
             {
-            pushFollow(FOLLOW_84);
+            pushFollow(FOLLOW_83);
             rule__Uint8Array__Group__0__Impl();
 
             state._fsp--;
@@ -39930,7 +39910,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13382:1: ( rule__Int16Array__Group__0__Impl rule__Int16Array__Group__1 )
             // InternalRos2Parser.g:13383:2: rule__Int16Array__Group__0__Impl rule__Int16Array__Group__1
             {
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_84);
             rule__Int16Array__Group__0__Impl();
 
             state._fsp--;
@@ -40075,7 +40055,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13436:1: ( rule__Uint16Array__Group__0__Impl rule__Uint16Array__Group__1 )
             // InternalRos2Parser.g:13437:2: rule__Uint16Array__Group__0__Impl rule__Uint16Array__Group__1
             {
-            pushFollow(FOLLOW_86);
+            pushFollow(FOLLOW_85);
             rule__Uint16Array__Group__0__Impl();
 
             state._fsp--;
@@ -40220,7 +40200,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13490:1: ( rule__Int32Array__Group__0__Impl rule__Int32Array__Group__1 )
             // InternalRos2Parser.g:13491:2: rule__Int32Array__Group__0__Impl rule__Int32Array__Group__1
             {
-            pushFollow(FOLLOW_87);
+            pushFollow(FOLLOW_86);
             rule__Int32Array__Group__0__Impl();
 
             state._fsp--;
@@ -40365,7 +40345,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13544:1: ( rule__Uint32Array__Group__0__Impl rule__Uint32Array__Group__1 )
             // InternalRos2Parser.g:13545:2: rule__Uint32Array__Group__0__Impl rule__Uint32Array__Group__1
             {
-            pushFollow(FOLLOW_88);
+            pushFollow(FOLLOW_87);
             rule__Uint32Array__Group__0__Impl();
 
             state._fsp--;
@@ -40510,7 +40490,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13598:1: ( rule__Int64Array__Group__0__Impl rule__Int64Array__Group__1 )
             // InternalRos2Parser.g:13599:2: rule__Int64Array__Group__0__Impl rule__Int64Array__Group__1
             {
-            pushFollow(FOLLOW_89);
+            pushFollow(FOLLOW_88);
             rule__Int64Array__Group__0__Impl();
 
             state._fsp--;
@@ -40655,7 +40635,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13652:1: ( rule__Uint64Array__Group__0__Impl rule__Uint64Array__Group__1 )
             // InternalRos2Parser.g:13653:2: rule__Uint64Array__Group__0__Impl rule__Uint64Array__Group__1
             {
-            pushFollow(FOLLOW_90);
+            pushFollow(FOLLOW_89);
             rule__Uint64Array__Group__0__Impl();
 
             state._fsp--;
@@ -40800,7 +40780,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13706:1: ( rule__Float32Array__Group__0__Impl rule__Float32Array__Group__1 )
             // InternalRos2Parser.g:13707:2: rule__Float32Array__Group__0__Impl rule__Float32Array__Group__1
             {
-            pushFollow(FOLLOW_91);
+            pushFollow(FOLLOW_90);
             rule__Float32Array__Group__0__Impl();
 
             state._fsp--;
@@ -40945,7 +40925,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13760:1: ( rule__Float64Array__Group__0__Impl rule__Float64Array__Group__1 )
             // InternalRos2Parser.g:13761:2: rule__Float64Array__Group__0__Impl rule__Float64Array__Group__1
             {
-            pushFollow(FOLLOW_92);
+            pushFollow(FOLLOW_91);
             rule__Float64Array__Group__0__Impl();
 
             state._fsp--;
@@ -41090,7 +41070,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13814:1: ( rule__String0Array__Group__0__Impl rule__String0Array__Group__1 )
             // InternalRos2Parser.g:13815:2: rule__String0Array__Group__0__Impl rule__String0Array__Group__1
             {
-            pushFollow(FOLLOW_93);
+            pushFollow(FOLLOW_92);
             rule__String0Array__Group__0__Impl();
 
             state._fsp--;
@@ -41235,7 +41215,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13868:1: ( rule__ByteArray__Group__0__Impl rule__ByteArray__Group__1 )
             // InternalRos2Parser.g:13869:2: rule__ByteArray__Group__0__Impl rule__ByteArray__Group__1
             {
-            pushFollow(FOLLOW_94);
+            pushFollow(FOLLOW_93);
             rule__ByteArray__Group__0__Impl();
 
             state._fsp--;
@@ -41525,7 +41505,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:13976:1: ( rule__Header__Group__0__Impl rule__Header__Group__1 )
             // InternalRos2Parser.g:13977:2: rule__Header__Group__0__Impl rule__Header__Group__1
             {
-            pushFollow(FOLLOW_95);
+            pushFollow(FOLLOW_94);
             rule__Header__Group__0__Impl();
 
             state._fsp--;
@@ -41670,7 +41650,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:14030:1: ( rule__ArraySpecRef__Group__0__Impl rule__ArraySpecRef__Group__1 )
             // InternalRos2Parser.g:14031:2: rule__ArraySpecRef__Group__0__Impl rule__ArraySpecRef__Group__1
             {
-            pushFollow(FOLLOW_96);
+            pushFollow(FOLLOW_95);
             rule__ArraySpecRef__Group__0__Impl();
 
             state._fsp--;
@@ -42179,7 +42159,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:14188:1: ( rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__1 )? )
             // InternalRos2Parser.g:14189:2: rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__1 )?
             {
-            pushFollow(FOLLOW_97);
+            pushFollow(FOLLOW_96);
             rule__QualityOfService__UnorderedGroup_2__Impl();
 
             state._fsp--;
@@ -42246,7 +42226,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:14200:1: ( rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__2 )? )
             // InternalRos2Parser.g:14201:2: rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__2 )?
             {
-            pushFollow(FOLLOW_97);
+            pushFollow(FOLLOW_96);
             rule__QualityOfService__UnorderedGroup_2__Impl();
 
             state._fsp--;
@@ -42313,7 +42293,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:14212:1: ( rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__3 )? )
             // InternalRos2Parser.g:14213:2: rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__3 )?
             {
-            pushFollow(FOLLOW_97);
+            pushFollow(FOLLOW_96);
             rule__QualityOfService__UnorderedGroup_2__Impl();
 
             state._fsp--;
@@ -42380,7 +42360,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:14224:1: ( rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__4 )? )
             // InternalRos2Parser.g:14225:2: rule__QualityOfService__UnorderedGroup_2__Impl ( rule__QualityOfService__UnorderedGroup_2__4 )?
             {
-            pushFollow(FOLLOW_97);
+            pushFollow(FOLLOW_96);
             rule__QualityOfService__UnorderedGroup_2__Impl();
 
             state._fsp--;
@@ -46000,9 +45980,9 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ParameterArrayType__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__ParameterArrayType__DefaultAssignment_3_1"
-    // InternalRos2Parser.g:15532:1: rule__ParameterArrayType__DefaultAssignment_3_1 : ( ruleParameterList ) ;
-    public final void rule__ParameterArrayType__DefaultAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__ParameterArrayType__DefaultAssignment_4_1"
+    // InternalRos2Parser.g:15532:1: rule__ParameterArrayType__DefaultAssignment_4_1 : ( ruleParameterList ) ;
+    public final void rule__ParameterArrayType__DefaultAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -46013,13 +45993,13 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             // InternalRos2Parser.g:15537:2: ( ruleParameterList )
             // InternalRos2Parser.g:15538:3: ruleParameterList
             {
-             before(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0()); 
+             before(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleParameterList();
 
             state._fsp--;
 
-             after(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_3_1_0()); 
+             after(grammarAccess.getParameterArrayTypeAccess().getDefaultParameterListParserRuleCall_4_1_0()); 
 
             }
 
@@ -46038,7 +46018,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ParameterArrayType__DefaultAssignment_3_1"
+    // $ANTLR end "rule__ParameterArrayType__DefaultAssignment_4_1"
 
 
     // $ANTLR start "rule__ParameterList__ValueAssignment_2"
@@ -46857,7 +46837,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     static final String dfa_12s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\2\uffff\1\40\1\41\1\36\1\37";
     static final String dfa_13s = "\44\uffff}>";
     static final String[] dfa_14s = {
-            "\1\32\1\33\3\uffff\1\17\6\uffff\1\34\1\25\1\27\1\31\3\uffff\1\12\1\13\1\24\1\26\1\30\3\uffff\1\23\3\uffff\1\20\3\uffff\1\21\1\35\1\41\1\uffff\1\22\1\uffff\1\14\1\5\1\7\1\11\1\uffff\1\4\1\6\1\10\4\uffff\1\3\3\uffff\1\1\1\15\1\40\1\uffff\1\2\3\uffff\1\16\23\uffff\1\37\1\36",
+            "\1\32\1\33\3\uffff\1\17\6\uffff\1\34\1\25\1\27\1\31\3\uffff\1\12\1\13\1\24\1\26\1\30\3\uffff\1\23\2\uffff\1\20\3\uffff\1\21\1\35\1\41\1\uffff\1\22\1\uffff\1\14\1\5\1\7\1\11\2\uffff\1\4\1\6\1\10\4\uffff\1\3\3\uffff\1\1\1\15\1\40\1\uffff\1\2\3\uffff\1\16\23\uffff\1\37\1\36",
             "",
             "",
             "",
@@ -46887,8 +46867,8 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
             "",
             "",
             "",
-            "\2\42\21\uffff\1\42\1\uffff\1\42\7\uffff\1\42\5\uffff\1\42\15\uffff\1\42\5\uffff\1\42\1\uffff\1\42\2\uffff\2\42\2\uffff\1\43\17\uffff\2\42\1\uffff\1\42",
-            "\2\42\21\uffff\1\42\1\uffff\1\42\7\uffff\1\42\5\uffff\1\42\15\uffff\1\42\5\uffff\1\42\1\uffff\1\42\2\uffff\2\42\2\uffff\1\43\17\uffff\2\42\1\uffff\1\42",
+            "\2\42\21\uffff\1\42\1\uffff\1\42\6\uffff\1\42\5\uffff\1\42\16\uffff\1\42\5\uffff\1\42\1\uffff\1\42\2\uffff\2\42\2\uffff\1\43\17\uffff\2\42\1\uffff\1\42",
+            "\2\42\21\uffff\1\42\1\uffff\1\42\6\uffff\1\42\5\uffff\1\42\16\uffff\1\42\5\uffff\1\42\1\uffff\1\42\2\uffff\2\42\2\uffff\1\43\17\uffff\2\42\1\uffff\1\42",
             "",
             "",
             "",
@@ -46935,7 +46915,7 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000010L,0x0006000000000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000000L,0x0000002400000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000002L,0x0000000400000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000002800420000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000002800420000L,0x0000000000000002L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004244000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000001040000000L});
@@ -46945,25 +46925,25 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0040000110000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x3600600000000000L,0x0020000000100000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0040000110000200L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x1B00600000000000L,0x0000000000100200L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0040000110000100L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0006079000000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000080012000L,0x004000000000A000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000080000002L,0x000000000000A000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x1800000000000000L,0x0046000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1800000000000002L,0x0006000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0C00000000000000L,0x0046000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0C00000000000002L,0x0006000000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0046000000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000002L,0x0006000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x1800000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0C00000000000000L,0x0006000000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0060000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x888F8F0230000000L,0x0006000022E21DEBL});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0xC48F8F0230000000L,0x0006000022E21CF5L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000008000000000L,0x0020000000000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0020000000000010L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0020000000000008L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000400000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x888F8F0230000002L,0x0006000022E21DEBL});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0xC48F8F0230000002L,0x0006000022E21CF5L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0040000000004000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000001881B00L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000001881B02L});
@@ -46971,53 +46951,52 @@ public class InternalRos2Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0200000000000000L});
     public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
     public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0100000000000000L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000100000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0006002000000000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x4050000600000000L,0x0016000065040010L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000002800420002L,0x0000000000000004L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0006002000000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x2050000600000000L,0x0016000065040008L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000002800420002L,0x0000000000000002L});
 
 }
