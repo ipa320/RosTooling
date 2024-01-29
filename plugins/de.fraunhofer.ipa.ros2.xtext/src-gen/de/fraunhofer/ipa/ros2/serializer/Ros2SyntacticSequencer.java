@@ -151,6 +151,7 @@ public class Ros2SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p;
 	protected AbstractElementAlias match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p;
 	protected AbstractElementAlias match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p;
+	protected AbstractElementAlias match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -296,6 +297,7 @@ public class Ros2SyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Package_Impl_____MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q___SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())));
 		match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getActionsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_2_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_2_3())));
 		match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p = new GroupAlias(true, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getSrvsKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_1_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_1_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getMsgsKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getBEGINTerminalRuleCall_6_0_1()), new TokenAlias(false, false, grammarAccess.getPackage_ImplAccess().getENDTerminalRuleCall_6_0_3())));
+		match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getLeftSquareBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getBEGINTerminalRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getRightSquareBracketKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getENDTerminalRuleCall_1_4()));
 	}
 	
 	@Override
@@ -583,6 +585,8 @@ public class Ros2SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___ActionsKeyword_6_2_0_BEGINTerminalRuleCall_6_2_1_ENDTerminalRuleCall_6_2_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p.equals(syntax))
 				emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q.equals(syntax))
+				emit_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -3541,6 +3545,20 @@ public class Ros2SyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Package_Impl_____SrvsKeyword_6_1_0_BEGINTerminalRuleCall_6_1_1_ENDTerminalRuleCall_6_1_3__q___MsgsKeyword_6_0_0_BEGINTerminalRuleCall_6_0_1_ENDTerminalRuleCall_6_0_3__q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('[' BEGIN ']' END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 
+	 * </pre>
+	 */
+	protected void emit_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

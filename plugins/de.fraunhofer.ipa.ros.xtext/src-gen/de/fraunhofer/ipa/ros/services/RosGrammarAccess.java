@@ -2316,7 +2316,11 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//ParameterStruct returns ParameterStruct:
 	//    {ParameterStruct}
-	//        ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+	//        ('['
+	//        BEGIN
+	//        (value+=ParameterStructMember)*  ']'
+	//        END
+	//        )?
 	//;
 	public BasicsGrammarAccess.ParameterStructElements getParameterStructAccess() {
 		return gaBasics.getParameterStructAccess();
@@ -2338,10 +2342,7 @@ public class RosGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//ParameterStructMember returns ParameterStructMember:
-	//    name=EString':'
-	//    BEGIN
-	//        value=ParameterValue
-	//    END;
+	//    name=EString':'value=ParameterValue;
 	public BasicsGrammarAccess.ParameterStructMemberElements getParameterStructMemberAccess() {
 		return gaBasics.getParameterStructMemberAccess();
 	}

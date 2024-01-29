@@ -143,7 +143,11 @@ ParameterBoolean returns ParameterBoolean:
 
 ParameterStruct returns ParameterStruct:
     {ParameterStruct}
-        ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+        ('[' 
+        BEGIN
+        (value+=ParameterStructMember)*  ']'
+        END
+        )?
 ;
 
 ParameterDate returns ParameterDate:
@@ -152,10 +156,7 @@ ParameterDate returns ParameterDate:
 
 
 ParameterStructMember returns ParameterStructMember:
-    name=EString':'
-    BEGIN
-        value=ParameterValue
-    END;
+    name=EString':'value=ParameterValue;
 
 
 ParameterStructTypeMember returns ParameterStructTypeMember:

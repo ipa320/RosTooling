@@ -3705,29 +3705,26 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStruct"
-    // InternalBasicsParser.g:1381:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )? ) ;
+    // InternalBasicsParser.g:1381:1: ruleParameterStruct returns [EObject current=null] : ( () (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )? ) ;
     public final EObject ruleParameterStruct() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_3=null;
+        Token this_BEGIN_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
-        EObject lv_value_2_0 = null;
-
-        EObject lv_value_5_0 = null;
+        Token this_END_5=null;
+        EObject lv_value_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1387:2: ( ( () (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )? ) )
-            // InternalBasicsParser.g:1388:2: ( () (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )? )
+            // InternalBasicsParser.g:1387:2: ( ( () (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )? ) )
+            // InternalBasicsParser.g:1388:2: ( () (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )? )
             {
-            // InternalBasicsParser.g:1388:2: ( () (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )? )
-            // InternalBasicsParser.g:1389:3: () (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )?
+            // InternalBasicsParser.g:1388:2: ( () (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )? )
+            // InternalBasicsParser.g:1389:3: () (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )?
             {
             // InternalBasicsParser.g:1389:3: ()
             // InternalBasicsParser.g:1390:4: 
@@ -3740,7 +3737,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBasicsParser.g:1396:3: (otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket )?
+            // InternalBasicsParser.g:1396:3: (otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -3749,101 +3746,56 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalBasicsParser.g:1397:4: otherlv_1= LeftSquareBracket ( (lv_value_2_0= ruleParameterStructMember ) ) (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )* otherlv_7= RightSquareBracket
+                    // InternalBasicsParser.g:1397:4: otherlv_1= LeftSquareBracket this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterStructMember ) )* otherlv_4= RightSquareBracket this_END_5= RULE_END
                     {
-                    otherlv_1=(Token)match(input,LeftSquareBracket,FOLLOW_8); 
+                    otherlv_1=(Token)match(input,LeftSquareBracket,FOLLOW_19); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getParameterStructAccess().getLeftSquareBracketKeyword_1_0());
                     			
-                    // InternalBasicsParser.g:1401:4: ( (lv_value_2_0= ruleParameterStructMember ) )
-                    // InternalBasicsParser.g:1402:5: (lv_value_2_0= ruleParameterStructMember )
-                    {
-                    // InternalBasicsParser.g:1402:5: (lv_value_2_0= ruleParameterStructMember )
-                    // InternalBasicsParser.g:1403:6: lv_value_2_0= ruleParameterStructMember
-                    {
+                    this_BEGIN_2=(Token)match(input,RULE_BEGIN,FOLLOW_20); 
 
-                    						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_1_0());
-                    					
-                    pushFollow(FOLLOW_5);
-                    lv_value_2_0=ruleParameterStructMember();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getParameterStructRule());
-                    						}
-                    						add(
-                    							current,
-                    							"value",
-                    							lv_value_2_0,
-                    							"de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalBasicsParser.g:1420:4: (otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket )*
+                    				newLeafNode(this_BEGIN_2, grammarAccess.getParameterStructAccess().getBEGINTerminalRuleCall_1_1());
+                    			
+                    // InternalBasicsParser.g:1405:4: ( (lv_value_3_0= ruleParameterStructMember ) )*
                     loop20:
                     do {
                         int alt20=2;
                         int LA20_0 = input.LA(1);
 
-                        if ( (LA20_0==Comma) ) {
+                        if ( ((LA20_0>=RULE_ID && LA20_0<=RULE_STRING)) ) {
                             alt20=1;
                         }
 
 
                         switch (alt20) {
                     	case 1 :
-                    	    // InternalBasicsParser.g:1421:5: otherlv_3= Comma otherlv_4= LeftSquareBracket ( (lv_value_5_0= ruleParameterStructMember ) ) otherlv_6= RightSquareBracket
+                    	    // InternalBasicsParser.g:1406:5: (lv_value_3_0= ruleParameterStructMember )
                     	    {
-                    	    otherlv_3=(Token)match(input,Comma,FOLLOW_6); 
-
-                    	    					newLeafNode(otherlv_3, grammarAccess.getParameterStructAccess().getCommaKeyword_1_2_0());
-                    	    				
-                    	    otherlv_4=(Token)match(input,LeftSquareBracket,FOLLOW_8); 
-
-                    	    					newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getLeftSquareBracketKeyword_1_2_1());
-                    	    				
-                    	    // InternalBasicsParser.g:1429:5: ( (lv_value_5_0= ruleParameterStructMember ) )
-                    	    // InternalBasicsParser.g:1430:6: (lv_value_5_0= ruleParameterStructMember )
-                    	    {
-                    	    // InternalBasicsParser.g:1430:6: (lv_value_5_0= ruleParameterStructMember )
-                    	    // InternalBasicsParser.g:1431:7: lv_value_5_0= ruleParameterStructMember
+                    	    // InternalBasicsParser.g:1406:5: (lv_value_3_0= ruleParameterStructMember )
+                    	    // InternalBasicsParser.g:1407:6: lv_value_3_0= ruleParameterStructMember
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_2_0());
-                    	    						
-                    	    pushFollow(FOLLOW_19);
-                    	    lv_value_5_0=ruleParameterStructMember();
+                    	    						newCompositeNode(grammarAccess.getParameterStructAccess().getValueParameterStructMemberParserRuleCall_1_2_0());
+                    	    					
+                    	    pushFollow(FOLLOW_20);
+                    	    lv_value_3_0=ruleParameterStructMember();
 
                     	    state._fsp--;
 
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getParameterStructRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"value",
-                    	    								lv_value_5_0,
-                    	    								"de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
+                    	    						if (current==null) {
+                    	    							current = createModelElementForParent(grammarAccess.getParameterStructRule());
+                    	    						}
+                    	    						add(
+                    	    							current,
+                    	    							"value",
+                    	    							lv_value_3_0,
+                    	    							"de.fraunhofer.ipa.ros.Basics.ParameterStructMember");
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
 
                     	    }
 
-
-                    	    }
-
-                    	    otherlv_6=(Token)match(input,RightSquareBracket,FOLLOW_5); 
-
-                    	    					newLeafNode(otherlv_6, grammarAccess.getParameterStructAccess().getRightSquareBracketKeyword_1_2_3());
-                    	    				
 
                     	    }
                     	    break;
@@ -3853,9 +3805,13 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,RightSquareBracket,FOLLOW_2); 
+                    otherlv_4=(Token)match(input,RightSquareBracket,FOLLOW_16); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getParameterStructAccess().getRightSquareBracketKeyword_1_3());
+                    				newLeafNode(otherlv_4, grammarAccess.getParameterStructAccess().getRightSquareBracketKeyword_1_3());
+                    			
+                    this_END_5=(Token)match(input,RULE_END,FOLLOW_2); 
+
+                    				newLeafNode(this_END_5, grammarAccess.getParameterStructAccess().getENDTerminalRuleCall_1_4());
                     			
 
                     }
@@ -3886,7 +3842,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDate"
-    // InternalBasicsParser.g:1462:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
+    // InternalBasicsParser.g:1437:1: entryRuleParameterDate returns [EObject current=null] : iv_ruleParameterDate= ruleParameterDate EOF ;
     public final EObject entryRuleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -3894,8 +3850,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1462:54: (iv_ruleParameterDate= ruleParameterDate EOF )
-            // InternalBasicsParser.g:1463:2: iv_ruleParameterDate= ruleParameterDate EOF
+            // InternalBasicsParser.g:1437:54: (iv_ruleParameterDate= ruleParameterDate EOF )
+            // InternalBasicsParser.g:1438:2: iv_ruleParameterDate= ruleParameterDate EOF
             {
              newCompositeNode(grammarAccess.getParameterDateRule()); 
             pushFollow(FOLLOW_1);
@@ -3922,7 +3878,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDate"
-    // InternalBasicsParser.g:1469:1: ruleParameterDate returns [EObject current=null] : ( (lv_value_0_0= ruleDateTime0 ) ) ;
+    // InternalBasicsParser.g:1444:1: ruleParameterDate returns [EObject current=null] : ( (lv_value_0_0= ruleDateTime0 ) ) ;
     public final EObject ruleParameterDate() throws RecognitionException {
         EObject current = null;
 
@@ -3933,14 +3889,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1475:2: ( ( (lv_value_0_0= ruleDateTime0 ) ) )
-            // InternalBasicsParser.g:1476:2: ( (lv_value_0_0= ruleDateTime0 ) )
+            // InternalBasicsParser.g:1450:2: ( ( (lv_value_0_0= ruleDateTime0 ) ) )
+            // InternalBasicsParser.g:1451:2: ( (lv_value_0_0= ruleDateTime0 ) )
             {
-            // InternalBasicsParser.g:1476:2: ( (lv_value_0_0= ruleDateTime0 ) )
-            // InternalBasicsParser.g:1477:3: (lv_value_0_0= ruleDateTime0 )
+            // InternalBasicsParser.g:1451:2: ( (lv_value_0_0= ruleDateTime0 ) )
+            // InternalBasicsParser.g:1452:3: (lv_value_0_0= ruleDateTime0 )
             {
-            // InternalBasicsParser.g:1477:3: (lv_value_0_0= ruleDateTime0 )
-            // InternalBasicsParser.g:1478:4: lv_value_0_0= ruleDateTime0
+            // InternalBasicsParser.g:1452:3: (lv_value_0_0= ruleDateTime0 )
+            // InternalBasicsParser.g:1453:4: lv_value_0_0= ruleDateTime0
             {
 
             				newCompositeNode(grammarAccess.getParameterDateAccess().getValueDateTime0ParserRuleCall_0());
@@ -3987,7 +3943,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructMember"
-    // InternalBasicsParser.g:1498:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
+    // InternalBasicsParser.g:1473:1: entryRuleParameterStructMember returns [EObject current=null] : iv_ruleParameterStructMember= ruleParameterStructMember EOF ;
     public final EObject entryRuleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
@@ -3995,8 +3951,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1498:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
-            // InternalBasicsParser.g:1499:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
+            // InternalBasicsParser.g:1473:62: (iv_ruleParameterStructMember= ruleParameterStructMember EOF )
+            // InternalBasicsParser.g:1474:2: iv_ruleParameterStructMember= ruleParameterStructMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -4023,38 +3979,36 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructMember"
-    // InternalBasicsParser.g:1505:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterValue ) ) this_END_4= RULE_END ) ;
+    // InternalBasicsParser.g:1480:1: ruleParameterStructMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon ( (lv_value_2_0= ruleParameterValue ) ) ) ;
     public final EObject ruleParameterStructMember() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token this_BEGIN_2=null;
-        Token this_END_4=null;
         AntlrDatatypeRuleToken lv_name_0_0 = null;
 
-        EObject lv_value_3_0 = null;
+        EObject lv_value_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1511:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterValue ) ) this_END_4= RULE_END ) )
-            // InternalBasicsParser.g:1512:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterValue ) ) this_END_4= RULE_END )
+            // InternalBasicsParser.g:1486:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon ( (lv_value_2_0= ruleParameterValue ) ) ) )
+            // InternalBasicsParser.g:1487:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon ( (lv_value_2_0= ruleParameterValue ) ) )
             {
-            // InternalBasicsParser.g:1512:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterValue ) ) this_END_4= RULE_END )
-            // InternalBasicsParser.g:1513:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon this_BEGIN_2= RULE_BEGIN ( (lv_value_3_0= ruleParameterValue ) ) this_END_4= RULE_END
+            // InternalBasicsParser.g:1487:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon ( (lv_value_2_0= ruleParameterValue ) ) )
+            // InternalBasicsParser.g:1488:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= Colon ( (lv_value_2_0= ruleParameterValue ) )
             {
-            // InternalBasicsParser.g:1513:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalBasicsParser.g:1514:4: (lv_name_0_0= ruleEString )
+            // InternalBasicsParser.g:1488:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalBasicsParser.g:1489:4: (lv_name_0_0= ruleEString )
             {
-            // InternalBasicsParser.g:1514:4: (lv_name_0_0= ruleEString )
-            // InternalBasicsParser.g:1515:5: lv_name_0_0= ruleEString
+            // InternalBasicsParser.g:1489:4: (lv_name_0_0= ruleEString )
+            // InternalBasicsParser.g:1490:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             lv_name_0_0=ruleEString();
 
             state._fsp--;
@@ -4076,25 +4030,21 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,Colon,FOLLOW_21); 
+            otherlv_1=(Token)match(input,Colon,FOLLOW_17); 
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterStructMemberAccess().getColonKeyword_1());
             		
-            this_BEGIN_2=(Token)match(input,RULE_BEGIN,FOLLOW_17); 
-
-            			newLeafNode(this_BEGIN_2, grammarAccess.getParameterStructMemberAccess().getBEGINTerminalRuleCall_2());
-            		
-            // InternalBasicsParser.g:1540:3: ( (lv_value_3_0= ruleParameterValue ) )
-            // InternalBasicsParser.g:1541:4: (lv_value_3_0= ruleParameterValue )
+            // InternalBasicsParser.g:1511:3: ( (lv_value_2_0= ruleParameterValue ) )
+            // InternalBasicsParser.g:1512:4: (lv_value_2_0= ruleParameterValue )
             {
-            // InternalBasicsParser.g:1541:4: (lv_value_3_0= ruleParameterValue )
-            // InternalBasicsParser.g:1542:5: lv_value_3_0= ruleParameterValue
+            // InternalBasicsParser.g:1512:4: (lv_value_2_0= ruleParameterValue )
+            // InternalBasicsParser.g:1513:5: lv_value_2_0= ruleParameterValue
             {
 
-            					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_16);
-            lv_value_3_0=ruleParameterValue();
+            pushFollow(FOLLOW_2);
+            lv_value_2_0=ruleParameterValue();
 
             state._fsp--;
 
@@ -4105,7 +4055,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"value",
-            						lv_value_3_0,
+            						lv_value_2_0,
             						"de.fraunhofer.ipa.ros.Basics.ParameterValue");
             					afterParserOrEnumRuleCall();
             				
@@ -4115,10 +4065,6 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_END_4=(Token)match(input,RULE_END,FOLLOW_2); 
-
-            			newLeafNode(this_END_4, grammarAccess.getParameterStructMemberAccess().getENDTerminalRuleCall_4());
-            		
 
             }
 
@@ -4142,7 +4088,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterStructTypeMember"
-    // InternalBasicsParser.g:1567:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
+    // InternalBasicsParser.g:1534:1: entryRuleParameterStructTypeMember returns [EObject current=null] : iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF ;
     public final EObject entryRuleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -4150,8 +4096,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1567:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
-            // InternalBasicsParser.g:1568:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
+            // InternalBasicsParser.g:1534:66: (iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF )
+            // InternalBasicsParser.g:1535:2: iv_ruleParameterStructTypeMember= ruleParameterStructTypeMember EOF
             {
              newCompositeNode(grammarAccess.getParameterStructTypeMemberRule()); 
             pushFollow(FOLLOW_1);
@@ -4178,7 +4124,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterStructTypeMember"
-    // InternalBasicsParser.g:1574:1: ruleParameterStructTypeMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) ;
+    // InternalBasicsParser.g:1541:1: ruleParameterStructTypeMember returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) ;
     public final EObject ruleParameterStructTypeMember() throws RecognitionException {
         EObject current = null;
 
@@ -4191,17 +4137,17 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1580:2: ( ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) )
-            // InternalBasicsParser.g:1581:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
+            // InternalBasicsParser.g:1547:2: ( ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) ) )
+            // InternalBasicsParser.g:1548:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
             {
-            // InternalBasicsParser.g:1581:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
-            // InternalBasicsParser.g:1582:3: ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) )
+            // InternalBasicsParser.g:1548:2: ( ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) ) )
+            // InternalBasicsParser.g:1549:3: ( (lv_name_0_0= ruleEString ) ) ( (lv_type_1_0= ruleParameterType ) )
             {
-            // InternalBasicsParser.g:1582:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalBasicsParser.g:1583:4: (lv_name_0_0= ruleEString )
+            // InternalBasicsParser.g:1549:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalBasicsParser.g:1550:4: (lv_name_0_0= ruleEString )
             {
-            // InternalBasicsParser.g:1583:4: (lv_name_0_0= ruleEString )
-            // InternalBasicsParser.g:1584:5: lv_name_0_0= ruleEString
+            // InternalBasicsParser.g:1550:4: (lv_name_0_0= ruleEString )
+            // InternalBasicsParser.g:1551:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getNameEStringParserRuleCall_0_0());
@@ -4228,11 +4174,11 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBasicsParser.g:1601:3: ( (lv_type_1_0= ruleParameterType ) )
-            // InternalBasicsParser.g:1602:4: (lv_type_1_0= ruleParameterType )
+            // InternalBasicsParser.g:1568:3: ( (lv_type_1_0= ruleParameterType ) )
+            // InternalBasicsParser.g:1569:4: (lv_type_1_0= ruleParameterType )
             {
-            // InternalBasicsParser.g:1602:4: (lv_type_1_0= ruleParameterType )
-            // InternalBasicsParser.g:1603:5: lv_type_1_0= ruleParameterType
+            // InternalBasicsParser.g:1569:4: (lv_type_1_0= ruleParameterType )
+            // InternalBasicsParser.g:1570:5: lv_type_1_0= ruleParameterType
             {
 
             					newCompositeNode(grammarAccess.getParameterStructTypeMemberAccess().getTypeParameterTypeParserRuleCall_1_0());
@@ -4282,7 +4228,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBase64Binary"
-    // InternalBasicsParser.g:1624:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
+    // InternalBasicsParser.g:1591:1: entryRuleBase64Binary returns [String current=null] : iv_ruleBase64Binary= ruleBase64Binary EOF ;
     public final String entryRuleBase64Binary() throws RecognitionException {
         String current = null;
 
@@ -4290,8 +4236,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1624:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
-            // InternalBasicsParser.g:1625:2: iv_ruleBase64Binary= ruleBase64Binary EOF
+            // InternalBasicsParser.g:1591:52: (iv_ruleBase64Binary= ruleBase64Binary EOF )
+            // InternalBasicsParser.g:1592:2: iv_ruleBase64Binary= ruleBase64Binary EOF
             {
              newCompositeNode(grammarAccess.getBase64BinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -4318,7 +4264,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBase64Binary"
-    // InternalBasicsParser.g:1631:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
+    // InternalBasicsParser.g:1598:1: ruleBase64Binary returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BINARY_0= RULE_BINARY ;
     public final AntlrDatatypeRuleToken ruleBase64Binary() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4328,8 +4274,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1637:2: (this_BINARY_0= RULE_BINARY )
-            // InternalBasicsParser.g:1638:2: this_BINARY_0= RULE_BINARY
+            // InternalBasicsParser.g:1604:2: (this_BINARY_0= RULE_BINARY )
+            // InternalBasicsParser.g:1605:2: this_BINARY_0= RULE_BINARY
             {
             this_BINARY_0=(Token)match(input,RULE_BINARY,FOLLOW_2); 
 
@@ -4358,7 +4304,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleboolean0"
-    // InternalBasicsParser.g:1648:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
+    // InternalBasicsParser.g:1615:1: entryRuleboolean0 returns [String current=null] : iv_ruleboolean0= ruleboolean0 EOF ;
     public final String entryRuleboolean0() throws RecognitionException {
         String current = null;
 
@@ -4366,8 +4312,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1648:48: (iv_ruleboolean0= ruleboolean0 EOF )
-            // InternalBasicsParser.g:1649:2: iv_ruleboolean0= ruleboolean0 EOF
+            // InternalBasicsParser.g:1615:48: (iv_ruleboolean0= ruleboolean0 EOF )
+            // InternalBasicsParser.g:1616:2: iv_ruleboolean0= ruleboolean0 EOF
             {
              newCompositeNode(grammarAccess.getBoolean0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4394,7 +4340,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleboolean0"
-    // InternalBasicsParser.g:1655:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
+    // InternalBasicsParser.g:1622:1: ruleboolean0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_BOOLEAN_0= RULE_BOOLEAN ;
     public final AntlrDatatypeRuleToken ruleboolean0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4404,8 +4350,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1661:2: (this_BOOLEAN_0= RULE_BOOLEAN )
-            // InternalBasicsParser.g:1662:2: this_BOOLEAN_0= RULE_BOOLEAN
+            // InternalBasicsParser.g:1628:2: (this_BOOLEAN_0= RULE_BOOLEAN )
+            // InternalBasicsParser.g:1629:2: this_BOOLEAN_0= RULE_BOOLEAN
             {
             this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); 
 
@@ -4434,7 +4380,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalBasicsParser.g:1672:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalBasicsParser.g:1639:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -4442,8 +4388,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1672:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalBasicsParser.g:1673:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalBasicsParser.g:1639:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalBasicsParser.g:1640:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4470,7 +4416,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalBasicsParser.g:1679:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalBasicsParser.g:1646:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4480,8 +4426,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1685:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalBasicsParser.g:1686:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalBasicsParser.g:1652:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalBasicsParser.g:1653:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
 
@@ -4510,7 +4456,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalBasicsParser.g:1696:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalBasicsParser.g:1663:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -4518,8 +4464,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1696:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalBasicsParser.g:1697:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalBasicsParser.g:1663:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalBasicsParser.g:1664:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4546,7 +4492,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalBasicsParser.g:1703:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalBasicsParser.g:1670:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4556,8 +4502,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1709:2: (this_DECINT_0= RULE_DECINT )
-            // InternalBasicsParser.g:1710:2: this_DECINT_0= RULE_DECINT
+            // InternalBasicsParser.g:1676:2: (this_DECINT_0= RULE_DECINT )
+            // InternalBasicsParser.g:1677:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
 
@@ -4586,7 +4532,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDateTime0"
-    // InternalBasicsParser.g:1720:1: entryRuleDateTime0 returns [String current=null] : iv_ruleDateTime0= ruleDateTime0 EOF ;
+    // InternalBasicsParser.g:1687:1: entryRuleDateTime0 returns [String current=null] : iv_ruleDateTime0= ruleDateTime0 EOF ;
     public final String entryRuleDateTime0() throws RecognitionException {
         String current = null;
 
@@ -4594,8 +4540,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1720:49: (iv_ruleDateTime0= ruleDateTime0 EOF )
-            // InternalBasicsParser.g:1721:2: iv_ruleDateTime0= ruleDateTime0 EOF
+            // InternalBasicsParser.g:1687:49: (iv_ruleDateTime0= ruleDateTime0 EOF )
+            // InternalBasicsParser.g:1688:2: iv_ruleDateTime0= ruleDateTime0 EOF
             {
              newCompositeNode(grammarAccess.getDateTime0Rule()); 
             pushFollow(FOLLOW_1);
@@ -4622,7 +4568,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDateTime0"
-    // InternalBasicsParser.g:1727:1: ruleDateTime0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DATE_TIME_0= RULE_DATE_TIME ;
+    // InternalBasicsParser.g:1694:1: ruleDateTime0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DATE_TIME_0= RULE_DATE_TIME ;
     public final AntlrDatatypeRuleToken ruleDateTime0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4632,8 +4578,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1733:2: (this_DATE_TIME_0= RULE_DATE_TIME )
-            // InternalBasicsParser.g:1734:2: this_DATE_TIME_0= RULE_DATE_TIME
+            // InternalBasicsParser.g:1700:2: (this_DATE_TIME_0= RULE_DATE_TIME )
+            // InternalBasicsParser.g:1701:2: this_DATE_TIME_0= RULE_DATE_TIME
             {
             this_DATE_TIME_0=(Token)match(input,RULE_DATE_TIME,FOLLOW_2); 
 
@@ -4662,7 +4608,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractType"
-    // InternalBasicsParser.g:1744:1: entryRuleAbstractType returns [EObject current=null] : iv_ruleAbstractType= ruleAbstractType EOF ;
+    // InternalBasicsParser.g:1711:1: entryRuleAbstractType returns [EObject current=null] : iv_ruleAbstractType= ruleAbstractType EOF ;
     public final EObject entryRuleAbstractType() throws RecognitionException {
         EObject current = null;
 
@@ -4670,8 +4616,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:1744:53: (iv_ruleAbstractType= ruleAbstractType EOF )
-            // InternalBasicsParser.g:1745:2: iv_ruleAbstractType= ruleAbstractType EOF
+            // InternalBasicsParser.g:1711:53: (iv_ruleAbstractType= ruleAbstractType EOF )
+            // InternalBasicsParser.g:1712:2: iv_ruleAbstractType= ruleAbstractType EOF
             {
              newCompositeNode(grammarAccess.getAbstractTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -4698,7 +4644,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractType"
-    // InternalBasicsParser.g:1751:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray ) ;
+    // InternalBasicsParser.g:1718:1: ruleAbstractType returns [EObject current=null] : (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray ) ;
     public final EObject ruleAbstractType() throws RecognitionException {
         EObject current = null;
 
@@ -4773,15 +4719,15 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:1757:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray ) )
-            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )
+            // InternalBasicsParser.g:1724:2: ( (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray ) )
+            // InternalBasicsParser.g:1725:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )
             {
-            // InternalBasicsParser.g:1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )
+            // InternalBasicsParser.g:1725:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )
             int alt22=33;
             alt22 = dfa22.predict(input);
             switch (alt22) {
                 case 1 :
-                    // InternalBasicsParser.g:1759:3: this_bool_0= rulebool
+                    // InternalBasicsParser.g:1726:3: this_bool_0= rulebool
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getBoolParserRuleCall_0());
@@ -4799,7 +4745,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBasicsParser.g:1768:3: this_int8_1= ruleint8
+                    // InternalBasicsParser.g:1735:3: this_int8_1= ruleint8
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt8ParserRuleCall_1());
@@ -4817,7 +4763,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalBasicsParser.g:1777:3: this_uint8_2= ruleuint8
+                    // InternalBasicsParser.g:1744:3: this_uint8_2= ruleuint8
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint8ParserRuleCall_2());
@@ -4835,7 +4781,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalBasicsParser.g:1786:3: this_int16_3= ruleint16
+                    // InternalBasicsParser.g:1753:3: this_int16_3= ruleint16
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt16ParserRuleCall_3());
@@ -4853,7 +4799,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalBasicsParser.g:1795:3: this_uint16_4= ruleuint16
+                    // InternalBasicsParser.g:1762:3: this_uint16_4= ruleuint16
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint16ParserRuleCall_4());
@@ -4871,7 +4817,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalBasicsParser.g:1804:3: this_int32_5= ruleint32
+                    // InternalBasicsParser.g:1771:3: this_int32_5= ruleint32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt32ParserRuleCall_5());
@@ -4889,7 +4835,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalBasicsParser.g:1813:3: this_uint32_6= ruleuint32
+                    // InternalBasicsParser.g:1780:3: this_uint32_6= ruleuint32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint32ParserRuleCall_6());
@@ -4907,7 +4853,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalBasicsParser.g:1822:3: this_int64_7= ruleint64
+                    // InternalBasicsParser.g:1789:3: this_int64_7= ruleint64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt64ParserRuleCall_7());
@@ -4925,7 +4871,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalBasicsParser.g:1831:3: this_uint64_8= ruleuint64
+                    // InternalBasicsParser.g:1798:3: this_uint64_8= ruleuint64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint64ParserRuleCall_8());
@@ -4943,7 +4889,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalBasicsParser.g:1840:3: this_float32_9= rulefloat32
+                    // InternalBasicsParser.g:1807:3: this_float32_9= rulefloat32
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat32ParserRuleCall_9());
@@ -4961,7 +4907,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalBasicsParser.g:1849:3: this_float64_10= rulefloat64
+                    // InternalBasicsParser.g:1816:3: this_float64_10= rulefloat64
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat64ParserRuleCall_10());
@@ -4979,7 +4925,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalBasicsParser.g:1858:3: this_string0_11= rulestring0
+                    // InternalBasicsParser.g:1825:3: this_string0_11= rulestring0
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getString0ParserRuleCall_11());
@@ -4997,7 +4943,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalBasicsParser.g:1867:3: this_byte_12= rulebyte
+                    // InternalBasicsParser.g:1834:3: this_byte_12= rulebyte
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getByteParserRuleCall_12());
@@ -5015,7 +4961,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalBasicsParser.g:1876:3: this_time_13= ruletime
+                    // InternalBasicsParser.g:1843:3: this_time_13= ruletime
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getTimeParserRuleCall_13());
@@ -5033,7 +4979,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalBasicsParser.g:1885:3: this_duration_14= ruleduration
+                    // InternalBasicsParser.g:1852:3: this_duration_14= ruleduration
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getDurationParserRuleCall_14());
@@ -5051,7 +4997,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalBasicsParser.g:1894:3: this_Header_15= ruleHeader
+                    // InternalBasicsParser.g:1861:3: this_Header_15= ruleHeader
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getHeaderParserRuleCall_15());
@@ -5069,7 +5015,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalBasicsParser.g:1903:3: this_boolArray_16= ruleboolArray
+                    // InternalBasicsParser.g:1870:3: this_boolArray_16= ruleboolArray
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getBoolArrayParserRuleCall_16());
@@ -5087,7 +5033,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalBasicsParser.g:1912:3: this_int8Array_17= ruleint8Array
+                    // InternalBasicsParser.g:1879:3: this_int8Array_17= ruleint8Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt8ArrayParserRuleCall_17());
@@ -5105,7 +5051,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalBasicsParser.g:1921:3: this_uint8Array_18= ruleuint8Array
+                    // InternalBasicsParser.g:1888:3: this_uint8Array_18= ruleuint8Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint8ArrayParserRuleCall_18());
@@ -5123,7 +5069,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalBasicsParser.g:1930:3: this_int16Array_19= ruleint16Array
+                    // InternalBasicsParser.g:1897:3: this_int16Array_19= ruleint16Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt16ArrayParserRuleCall_19());
@@ -5141,7 +5087,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalBasicsParser.g:1939:3: this_uint16Array_20= ruleuint16Array
+                    // InternalBasicsParser.g:1906:3: this_uint16Array_20= ruleuint16Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint16ArrayParserRuleCall_20());
@@ -5159,7 +5105,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalBasicsParser.g:1948:3: this_int32Array_21= ruleint32Array
+                    // InternalBasicsParser.g:1915:3: this_int32Array_21= ruleint32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt32ArrayParserRuleCall_21());
@@ -5177,7 +5123,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalBasicsParser.g:1957:3: this_uint32Array_22= ruleuint32Array
+                    // InternalBasicsParser.g:1924:3: this_uint32Array_22= ruleuint32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint32ArrayParserRuleCall_22());
@@ -5195,7 +5141,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalBasicsParser.g:1966:3: this_int64Array_23= ruleint64Array
+                    // InternalBasicsParser.g:1933:3: this_int64Array_23= ruleint64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getInt64ArrayParserRuleCall_23());
@@ -5213,7 +5159,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalBasicsParser.g:1975:3: this_uint64Array_24= ruleuint64Array
+                    // InternalBasicsParser.g:1942:3: this_uint64Array_24= ruleuint64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getUint64ArrayParserRuleCall_24());
@@ -5231,7 +5177,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalBasicsParser.g:1984:3: this_float32Array_25= rulefloat32Array
+                    // InternalBasicsParser.g:1951:3: this_float32Array_25= rulefloat32Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat32ArrayParserRuleCall_25());
@@ -5249,7 +5195,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalBasicsParser.g:1993:3: this_float64Array_26= rulefloat64Array
+                    // InternalBasicsParser.g:1960:3: this_float64Array_26= rulefloat64Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getFloat64ArrayParserRuleCall_26());
@@ -5267,7 +5213,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalBasicsParser.g:2002:3: this_string0Array_27= rulestring0Array
+                    // InternalBasicsParser.g:1969:3: this_string0Array_27= rulestring0Array
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getString0ArrayParserRuleCall_27());
@@ -5285,7 +5231,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalBasicsParser.g:2011:3: this_byteArray_28= rulebyteArray
+                    // InternalBasicsParser.g:1978:3: this_byteArray_28= rulebyteArray
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getByteArrayParserRuleCall_28());
@@ -5303,7 +5249,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalBasicsParser.g:2020:3: this_SpecBaseRef_29= ruleSpecBaseRef
+                    // InternalBasicsParser.g:1987:3: this_SpecBaseRef_29= ruleSpecBaseRef
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getSpecBaseRefParserRuleCall_29());
@@ -5321,7 +5267,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalBasicsParser.g:2029:3: this_ArraySpecRef_30= ruleArraySpecRef
+                    // InternalBasicsParser.g:1996:3: this_ArraySpecRef_30= ruleArraySpecRef
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getArraySpecRefParserRuleCall_30());
@@ -5339,7 +5285,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // InternalBasicsParser.g:2038:3: this_char_31= rulechar
+                    // InternalBasicsParser.g:2005:3: this_char_31= rulechar
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharParserRuleCall_31());
@@ -5357,7 +5303,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // InternalBasicsParser.g:2047:3: this_charArray_32= rulecharArray
+                    // InternalBasicsParser.g:2014:3: this_charArray_32= rulecharArray
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractTypeAccess().getCharArrayParserRuleCall_32());
@@ -5397,7 +5343,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebool"
-    // InternalBasicsParser.g:2059:1: entryRulebool returns [EObject current=null] : iv_rulebool= rulebool EOF ;
+    // InternalBasicsParser.g:2026:1: entryRulebool returns [EObject current=null] : iv_rulebool= rulebool EOF ;
     public final EObject entryRulebool() throws RecognitionException {
         EObject current = null;
 
@@ -5405,8 +5351,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2059:45: (iv_rulebool= rulebool EOF )
-            // InternalBasicsParser.g:2060:2: iv_rulebool= rulebool EOF
+            // InternalBasicsParser.g:2026:45: (iv_rulebool= rulebool EOF )
+            // InternalBasicsParser.g:2027:2: iv_rulebool= rulebool EOF
             {
              newCompositeNode(grammarAccess.getBoolRule()); 
             pushFollow(FOLLOW_1);
@@ -5433,7 +5379,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebool"
-    // InternalBasicsParser.g:2066:1: rulebool returns [EObject current=null] : ( () otherlv_1= Bool ) ;
+    // InternalBasicsParser.g:2033:1: rulebool returns [EObject current=null] : ( () otherlv_1= Bool ) ;
     public final EObject rulebool() throws RecognitionException {
         EObject current = null;
 
@@ -5443,14 +5389,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2072:2: ( ( () otherlv_1= Bool ) )
-            // InternalBasicsParser.g:2073:2: ( () otherlv_1= Bool )
+            // InternalBasicsParser.g:2039:2: ( ( () otherlv_1= Bool ) )
+            // InternalBasicsParser.g:2040:2: ( () otherlv_1= Bool )
             {
-            // InternalBasicsParser.g:2073:2: ( () otherlv_1= Bool )
-            // InternalBasicsParser.g:2074:3: () otherlv_1= Bool
+            // InternalBasicsParser.g:2040:2: ( () otherlv_1= Bool )
+            // InternalBasicsParser.g:2041:3: () otherlv_1= Bool
             {
-            // InternalBasicsParser.g:2074:3: ()
-            // InternalBasicsParser.g:2075:4: 
+            // InternalBasicsParser.g:2041:3: ()
+            // InternalBasicsParser.g:2042:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5487,7 +5433,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint8"
-    // InternalBasicsParser.g:2089:1: entryRuleint8 returns [EObject current=null] : iv_ruleint8= ruleint8 EOF ;
+    // InternalBasicsParser.g:2056:1: entryRuleint8 returns [EObject current=null] : iv_ruleint8= ruleint8 EOF ;
     public final EObject entryRuleint8() throws RecognitionException {
         EObject current = null;
 
@@ -5495,8 +5441,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2089:45: (iv_ruleint8= ruleint8 EOF )
-            // InternalBasicsParser.g:2090:2: iv_ruleint8= ruleint8 EOF
+            // InternalBasicsParser.g:2056:45: (iv_ruleint8= ruleint8 EOF )
+            // InternalBasicsParser.g:2057:2: iv_ruleint8= ruleint8 EOF
             {
              newCompositeNode(grammarAccess.getInt8Rule()); 
             pushFollow(FOLLOW_1);
@@ -5523,7 +5469,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint8"
-    // InternalBasicsParser.g:2096:1: ruleint8 returns [EObject current=null] : ( () otherlv_1= Int8 ) ;
+    // InternalBasicsParser.g:2063:1: ruleint8 returns [EObject current=null] : ( () otherlv_1= Int8 ) ;
     public final EObject ruleint8() throws RecognitionException {
         EObject current = null;
 
@@ -5533,14 +5479,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2102:2: ( ( () otherlv_1= Int8 ) )
-            // InternalBasicsParser.g:2103:2: ( () otherlv_1= Int8 )
+            // InternalBasicsParser.g:2069:2: ( ( () otherlv_1= Int8 ) )
+            // InternalBasicsParser.g:2070:2: ( () otherlv_1= Int8 )
             {
-            // InternalBasicsParser.g:2103:2: ( () otherlv_1= Int8 )
-            // InternalBasicsParser.g:2104:3: () otherlv_1= Int8
+            // InternalBasicsParser.g:2070:2: ( () otherlv_1= Int8 )
+            // InternalBasicsParser.g:2071:3: () otherlv_1= Int8
             {
-            // InternalBasicsParser.g:2104:3: ()
-            // InternalBasicsParser.g:2105:4: 
+            // InternalBasicsParser.g:2071:3: ()
+            // InternalBasicsParser.g:2072:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5577,7 +5523,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint8"
-    // InternalBasicsParser.g:2119:1: entryRuleuint8 returns [EObject current=null] : iv_ruleuint8= ruleuint8 EOF ;
+    // InternalBasicsParser.g:2086:1: entryRuleuint8 returns [EObject current=null] : iv_ruleuint8= ruleuint8 EOF ;
     public final EObject entryRuleuint8() throws RecognitionException {
         EObject current = null;
 
@@ -5585,8 +5531,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2119:46: (iv_ruleuint8= ruleuint8 EOF )
-            // InternalBasicsParser.g:2120:2: iv_ruleuint8= ruleuint8 EOF
+            // InternalBasicsParser.g:2086:46: (iv_ruleuint8= ruleuint8 EOF )
+            // InternalBasicsParser.g:2087:2: iv_ruleuint8= ruleuint8 EOF
             {
              newCompositeNode(grammarAccess.getUint8Rule()); 
             pushFollow(FOLLOW_1);
@@ -5613,7 +5559,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint8"
-    // InternalBasicsParser.g:2126:1: ruleuint8 returns [EObject current=null] : ( () otherlv_1= Uint8 ) ;
+    // InternalBasicsParser.g:2093:1: ruleuint8 returns [EObject current=null] : ( () otherlv_1= Uint8 ) ;
     public final EObject ruleuint8() throws RecognitionException {
         EObject current = null;
 
@@ -5623,14 +5569,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2132:2: ( ( () otherlv_1= Uint8 ) )
-            // InternalBasicsParser.g:2133:2: ( () otherlv_1= Uint8 )
+            // InternalBasicsParser.g:2099:2: ( ( () otherlv_1= Uint8 ) )
+            // InternalBasicsParser.g:2100:2: ( () otherlv_1= Uint8 )
             {
-            // InternalBasicsParser.g:2133:2: ( () otherlv_1= Uint8 )
-            // InternalBasicsParser.g:2134:3: () otherlv_1= Uint8
+            // InternalBasicsParser.g:2100:2: ( () otherlv_1= Uint8 )
+            // InternalBasicsParser.g:2101:3: () otherlv_1= Uint8
             {
-            // InternalBasicsParser.g:2134:3: ()
-            // InternalBasicsParser.g:2135:4: 
+            // InternalBasicsParser.g:2101:3: ()
+            // InternalBasicsParser.g:2102:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5667,7 +5613,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint16"
-    // InternalBasicsParser.g:2149:1: entryRuleint16 returns [EObject current=null] : iv_ruleint16= ruleint16 EOF ;
+    // InternalBasicsParser.g:2116:1: entryRuleint16 returns [EObject current=null] : iv_ruleint16= ruleint16 EOF ;
     public final EObject entryRuleint16() throws RecognitionException {
         EObject current = null;
 
@@ -5675,8 +5621,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2149:46: (iv_ruleint16= ruleint16 EOF )
-            // InternalBasicsParser.g:2150:2: iv_ruleint16= ruleint16 EOF
+            // InternalBasicsParser.g:2116:46: (iv_ruleint16= ruleint16 EOF )
+            // InternalBasicsParser.g:2117:2: iv_ruleint16= ruleint16 EOF
             {
              newCompositeNode(grammarAccess.getInt16Rule()); 
             pushFollow(FOLLOW_1);
@@ -5703,7 +5649,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint16"
-    // InternalBasicsParser.g:2156:1: ruleint16 returns [EObject current=null] : ( () otherlv_1= Int16 ) ;
+    // InternalBasicsParser.g:2123:1: ruleint16 returns [EObject current=null] : ( () otherlv_1= Int16 ) ;
     public final EObject ruleint16() throws RecognitionException {
         EObject current = null;
 
@@ -5713,14 +5659,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2162:2: ( ( () otherlv_1= Int16 ) )
-            // InternalBasicsParser.g:2163:2: ( () otherlv_1= Int16 )
+            // InternalBasicsParser.g:2129:2: ( ( () otherlv_1= Int16 ) )
+            // InternalBasicsParser.g:2130:2: ( () otherlv_1= Int16 )
             {
-            // InternalBasicsParser.g:2163:2: ( () otherlv_1= Int16 )
-            // InternalBasicsParser.g:2164:3: () otherlv_1= Int16
+            // InternalBasicsParser.g:2130:2: ( () otherlv_1= Int16 )
+            // InternalBasicsParser.g:2131:3: () otherlv_1= Int16
             {
-            // InternalBasicsParser.g:2164:3: ()
-            // InternalBasicsParser.g:2165:4: 
+            // InternalBasicsParser.g:2131:3: ()
+            // InternalBasicsParser.g:2132:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5757,7 +5703,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint16"
-    // InternalBasicsParser.g:2179:1: entryRuleuint16 returns [EObject current=null] : iv_ruleuint16= ruleuint16 EOF ;
+    // InternalBasicsParser.g:2146:1: entryRuleuint16 returns [EObject current=null] : iv_ruleuint16= ruleuint16 EOF ;
     public final EObject entryRuleuint16() throws RecognitionException {
         EObject current = null;
 
@@ -5765,8 +5711,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2179:47: (iv_ruleuint16= ruleuint16 EOF )
-            // InternalBasicsParser.g:2180:2: iv_ruleuint16= ruleuint16 EOF
+            // InternalBasicsParser.g:2146:47: (iv_ruleuint16= ruleuint16 EOF )
+            // InternalBasicsParser.g:2147:2: iv_ruleuint16= ruleuint16 EOF
             {
              newCompositeNode(grammarAccess.getUint16Rule()); 
             pushFollow(FOLLOW_1);
@@ -5793,7 +5739,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint16"
-    // InternalBasicsParser.g:2186:1: ruleuint16 returns [EObject current=null] : ( () otherlv_1= Uint16 ) ;
+    // InternalBasicsParser.g:2153:1: ruleuint16 returns [EObject current=null] : ( () otherlv_1= Uint16 ) ;
     public final EObject ruleuint16() throws RecognitionException {
         EObject current = null;
 
@@ -5803,14 +5749,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2192:2: ( ( () otherlv_1= Uint16 ) )
-            // InternalBasicsParser.g:2193:2: ( () otherlv_1= Uint16 )
+            // InternalBasicsParser.g:2159:2: ( ( () otherlv_1= Uint16 ) )
+            // InternalBasicsParser.g:2160:2: ( () otherlv_1= Uint16 )
             {
-            // InternalBasicsParser.g:2193:2: ( () otherlv_1= Uint16 )
-            // InternalBasicsParser.g:2194:3: () otherlv_1= Uint16
+            // InternalBasicsParser.g:2160:2: ( () otherlv_1= Uint16 )
+            // InternalBasicsParser.g:2161:3: () otherlv_1= Uint16
             {
-            // InternalBasicsParser.g:2194:3: ()
-            // InternalBasicsParser.g:2195:4: 
+            // InternalBasicsParser.g:2161:3: ()
+            // InternalBasicsParser.g:2162:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5847,7 +5793,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint32"
-    // InternalBasicsParser.g:2209:1: entryRuleint32 returns [EObject current=null] : iv_ruleint32= ruleint32 EOF ;
+    // InternalBasicsParser.g:2176:1: entryRuleint32 returns [EObject current=null] : iv_ruleint32= ruleint32 EOF ;
     public final EObject entryRuleint32() throws RecognitionException {
         EObject current = null;
 
@@ -5855,8 +5801,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2209:46: (iv_ruleint32= ruleint32 EOF )
-            // InternalBasicsParser.g:2210:2: iv_ruleint32= ruleint32 EOF
+            // InternalBasicsParser.g:2176:46: (iv_ruleint32= ruleint32 EOF )
+            // InternalBasicsParser.g:2177:2: iv_ruleint32= ruleint32 EOF
             {
              newCompositeNode(grammarAccess.getInt32Rule()); 
             pushFollow(FOLLOW_1);
@@ -5883,7 +5829,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint32"
-    // InternalBasicsParser.g:2216:1: ruleint32 returns [EObject current=null] : ( () otherlv_1= Int32 ) ;
+    // InternalBasicsParser.g:2183:1: ruleint32 returns [EObject current=null] : ( () otherlv_1= Int32 ) ;
     public final EObject ruleint32() throws RecognitionException {
         EObject current = null;
 
@@ -5893,14 +5839,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2222:2: ( ( () otherlv_1= Int32 ) )
-            // InternalBasicsParser.g:2223:2: ( () otherlv_1= Int32 )
+            // InternalBasicsParser.g:2189:2: ( ( () otherlv_1= Int32 ) )
+            // InternalBasicsParser.g:2190:2: ( () otherlv_1= Int32 )
             {
-            // InternalBasicsParser.g:2223:2: ( () otherlv_1= Int32 )
-            // InternalBasicsParser.g:2224:3: () otherlv_1= Int32
+            // InternalBasicsParser.g:2190:2: ( () otherlv_1= Int32 )
+            // InternalBasicsParser.g:2191:3: () otherlv_1= Int32
             {
-            // InternalBasicsParser.g:2224:3: ()
-            // InternalBasicsParser.g:2225:4: 
+            // InternalBasicsParser.g:2191:3: ()
+            // InternalBasicsParser.g:2192:4: 
             {
 
             				current = forceCreateModelElement(
@@ -5937,7 +5883,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint32"
-    // InternalBasicsParser.g:2239:1: entryRuleuint32 returns [EObject current=null] : iv_ruleuint32= ruleuint32 EOF ;
+    // InternalBasicsParser.g:2206:1: entryRuleuint32 returns [EObject current=null] : iv_ruleuint32= ruleuint32 EOF ;
     public final EObject entryRuleuint32() throws RecognitionException {
         EObject current = null;
 
@@ -5945,8 +5891,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2239:47: (iv_ruleuint32= ruleuint32 EOF )
-            // InternalBasicsParser.g:2240:2: iv_ruleuint32= ruleuint32 EOF
+            // InternalBasicsParser.g:2206:47: (iv_ruleuint32= ruleuint32 EOF )
+            // InternalBasicsParser.g:2207:2: iv_ruleuint32= ruleuint32 EOF
             {
              newCompositeNode(grammarAccess.getUint32Rule()); 
             pushFollow(FOLLOW_1);
@@ -5973,7 +5919,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint32"
-    // InternalBasicsParser.g:2246:1: ruleuint32 returns [EObject current=null] : ( () otherlv_1= Uint32 ) ;
+    // InternalBasicsParser.g:2213:1: ruleuint32 returns [EObject current=null] : ( () otherlv_1= Uint32 ) ;
     public final EObject ruleuint32() throws RecognitionException {
         EObject current = null;
 
@@ -5983,14 +5929,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2252:2: ( ( () otherlv_1= Uint32 ) )
-            // InternalBasicsParser.g:2253:2: ( () otherlv_1= Uint32 )
+            // InternalBasicsParser.g:2219:2: ( ( () otherlv_1= Uint32 ) )
+            // InternalBasicsParser.g:2220:2: ( () otherlv_1= Uint32 )
             {
-            // InternalBasicsParser.g:2253:2: ( () otherlv_1= Uint32 )
-            // InternalBasicsParser.g:2254:3: () otherlv_1= Uint32
+            // InternalBasicsParser.g:2220:2: ( () otherlv_1= Uint32 )
+            // InternalBasicsParser.g:2221:3: () otherlv_1= Uint32
             {
-            // InternalBasicsParser.g:2254:3: ()
-            // InternalBasicsParser.g:2255:4: 
+            // InternalBasicsParser.g:2221:3: ()
+            // InternalBasicsParser.g:2222:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6027,7 +5973,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint64"
-    // InternalBasicsParser.g:2269:1: entryRuleint64 returns [EObject current=null] : iv_ruleint64= ruleint64 EOF ;
+    // InternalBasicsParser.g:2236:1: entryRuleint64 returns [EObject current=null] : iv_ruleint64= ruleint64 EOF ;
     public final EObject entryRuleint64() throws RecognitionException {
         EObject current = null;
 
@@ -6035,8 +5981,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2269:46: (iv_ruleint64= ruleint64 EOF )
-            // InternalBasicsParser.g:2270:2: iv_ruleint64= ruleint64 EOF
+            // InternalBasicsParser.g:2236:46: (iv_ruleint64= ruleint64 EOF )
+            // InternalBasicsParser.g:2237:2: iv_ruleint64= ruleint64 EOF
             {
              newCompositeNode(grammarAccess.getInt64Rule()); 
             pushFollow(FOLLOW_1);
@@ -6063,7 +6009,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint64"
-    // InternalBasicsParser.g:2276:1: ruleint64 returns [EObject current=null] : ( () otherlv_1= Int64 ) ;
+    // InternalBasicsParser.g:2243:1: ruleint64 returns [EObject current=null] : ( () otherlv_1= Int64 ) ;
     public final EObject ruleint64() throws RecognitionException {
         EObject current = null;
 
@@ -6073,14 +6019,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2282:2: ( ( () otherlv_1= Int64 ) )
-            // InternalBasicsParser.g:2283:2: ( () otherlv_1= Int64 )
+            // InternalBasicsParser.g:2249:2: ( ( () otherlv_1= Int64 ) )
+            // InternalBasicsParser.g:2250:2: ( () otherlv_1= Int64 )
             {
-            // InternalBasicsParser.g:2283:2: ( () otherlv_1= Int64 )
-            // InternalBasicsParser.g:2284:3: () otherlv_1= Int64
+            // InternalBasicsParser.g:2250:2: ( () otherlv_1= Int64 )
+            // InternalBasicsParser.g:2251:3: () otherlv_1= Int64
             {
-            // InternalBasicsParser.g:2284:3: ()
-            // InternalBasicsParser.g:2285:4: 
+            // InternalBasicsParser.g:2251:3: ()
+            // InternalBasicsParser.g:2252:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6117,7 +6063,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint64"
-    // InternalBasicsParser.g:2299:1: entryRuleuint64 returns [EObject current=null] : iv_ruleuint64= ruleuint64 EOF ;
+    // InternalBasicsParser.g:2266:1: entryRuleuint64 returns [EObject current=null] : iv_ruleuint64= ruleuint64 EOF ;
     public final EObject entryRuleuint64() throws RecognitionException {
         EObject current = null;
 
@@ -6125,8 +6071,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2299:47: (iv_ruleuint64= ruleuint64 EOF )
-            // InternalBasicsParser.g:2300:2: iv_ruleuint64= ruleuint64 EOF
+            // InternalBasicsParser.g:2266:47: (iv_ruleuint64= ruleuint64 EOF )
+            // InternalBasicsParser.g:2267:2: iv_ruleuint64= ruleuint64 EOF
             {
              newCompositeNode(grammarAccess.getUint64Rule()); 
             pushFollow(FOLLOW_1);
@@ -6153,7 +6099,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint64"
-    // InternalBasicsParser.g:2306:1: ruleuint64 returns [EObject current=null] : ( () otherlv_1= Uint64 ) ;
+    // InternalBasicsParser.g:2273:1: ruleuint64 returns [EObject current=null] : ( () otherlv_1= Uint64 ) ;
     public final EObject ruleuint64() throws RecognitionException {
         EObject current = null;
 
@@ -6163,14 +6109,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2312:2: ( ( () otherlv_1= Uint64 ) )
-            // InternalBasicsParser.g:2313:2: ( () otherlv_1= Uint64 )
+            // InternalBasicsParser.g:2279:2: ( ( () otherlv_1= Uint64 ) )
+            // InternalBasicsParser.g:2280:2: ( () otherlv_1= Uint64 )
             {
-            // InternalBasicsParser.g:2313:2: ( () otherlv_1= Uint64 )
-            // InternalBasicsParser.g:2314:3: () otherlv_1= Uint64
+            // InternalBasicsParser.g:2280:2: ( () otherlv_1= Uint64 )
+            // InternalBasicsParser.g:2281:3: () otherlv_1= Uint64
             {
-            // InternalBasicsParser.g:2314:3: ()
-            // InternalBasicsParser.g:2315:4: 
+            // InternalBasicsParser.g:2281:3: ()
+            // InternalBasicsParser.g:2282:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6207,7 +6153,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat32"
-    // InternalBasicsParser.g:2329:1: entryRulefloat32 returns [EObject current=null] : iv_rulefloat32= rulefloat32 EOF ;
+    // InternalBasicsParser.g:2296:1: entryRulefloat32 returns [EObject current=null] : iv_rulefloat32= rulefloat32 EOF ;
     public final EObject entryRulefloat32() throws RecognitionException {
         EObject current = null;
 
@@ -6215,8 +6161,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2329:48: (iv_rulefloat32= rulefloat32 EOF )
-            // InternalBasicsParser.g:2330:2: iv_rulefloat32= rulefloat32 EOF
+            // InternalBasicsParser.g:2296:48: (iv_rulefloat32= rulefloat32 EOF )
+            // InternalBasicsParser.g:2297:2: iv_rulefloat32= rulefloat32 EOF
             {
              newCompositeNode(grammarAccess.getFloat32Rule()); 
             pushFollow(FOLLOW_1);
@@ -6243,7 +6189,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat32"
-    // InternalBasicsParser.g:2336:1: rulefloat32 returns [EObject current=null] : ( () otherlv_1= Float32 ) ;
+    // InternalBasicsParser.g:2303:1: rulefloat32 returns [EObject current=null] : ( () otherlv_1= Float32 ) ;
     public final EObject rulefloat32() throws RecognitionException {
         EObject current = null;
 
@@ -6253,14 +6199,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2342:2: ( ( () otherlv_1= Float32 ) )
-            // InternalBasicsParser.g:2343:2: ( () otherlv_1= Float32 )
+            // InternalBasicsParser.g:2309:2: ( ( () otherlv_1= Float32 ) )
+            // InternalBasicsParser.g:2310:2: ( () otherlv_1= Float32 )
             {
-            // InternalBasicsParser.g:2343:2: ( () otherlv_1= Float32 )
-            // InternalBasicsParser.g:2344:3: () otherlv_1= Float32
+            // InternalBasicsParser.g:2310:2: ( () otherlv_1= Float32 )
+            // InternalBasicsParser.g:2311:3: () otherlv_1= Float32
             {
-            // InternalBasicsParser.g:2344:3: ()
-            // InternalBasicsParser.g:2345:4: 
+            // InternalBasicsParser.g:2311:3: ()
+            // InternalBasicsParser.g:2312:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6297,7 +6243,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat64"
-    // InternalBasicsParser.g:2359:1: entryRulefloat64 returns [EObject current=null] : iv_rulefloat64= rulefloat64 EOF ;
+    // InternalBasicsParser.g:2326:1: entryRulefloat64 returns [EObject current=null] : iv_rulefloat64= rulefloat64 EOF ;
     public final EObject entryRulefloat64() throws RecognitionException {
         EObject current = null;
 
@@ -6305,8 +6251,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2359:48: (iv_rulefloat64= rulefloat64 EOF )
-            // InternalBasicsParser.g:2360:2: iv_rulefloat64= rulefloat64 EOF
+            // InternalBasicsParser.g:2326:48: (iv_rulefloat64= rulefloat64 EOF )
+            // InternalBasicsParser.g:2327:2: iv_rulefloat64= rulefloat64 EOF
             {
              newCompositeNode(grammarAccess.getFloat64Rule()); 
             pushFollow(FOLLOW_1);
@@ -6333,7 +6279,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat64"
-    // InternalBasicsParser.g:2366:1: rulefloat64 returns [EObject current=null] : ( () otherlv_1= Float64 ) ;
+    // InternalBasicsParser.g:2333:1: rulefloat64 returns [EObject current=null] : ( () otherlv_1= Float64 ) ;
     public final EObject rulefloat64() throws RecognitionException {
         EObject current = null;
 
@@ -6343,14 +6289,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2372:2: ( ( () otherlv_1= Float64 ) )
-            // InternalBasicsParser.g:2373:2: ( () otherlv_1= Float64 )
+            // InternalBasicsParser.g:2339:2: ( ( () otherlv_1= Float64 ) )
+            // InternalBasicsParser.g:2340:2: ( () otherlv_1= Float64 )
             {
-            // InternalBasicsParser.g:2373:2: ( () otherlv_1= Float64 )
-            // InternalBasicsParser.g:2374:3: () otherlv_1= Float64
+            // InternalBasicsParser.g:2340:2: ( () otherlv_1= Float64 )
+            // InternalBasicsParser.g:2341:3: () otherlv_1= Float64
             {
-            // InternalBasicsParser.g:2374:3: ()
-            // InternalBasicsParser.g:2375:4: 
+            // InternalBasicsParser.g:2341:3: ()
+            // InternalBasicsParser.g:2342:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6387,7 +6333,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestring0"
-    // InternalBasicsParser.g:2389:1: entryRulestring0 returns [EObject current=null] : iv_rulestring0= rulestring0 EOF ;
+    // InternalBasicsParser.g:2356:1: entryRulestring0 returns [EObject current=null] : iv_rulestring0= rulestring0 EOF ;
     public final EObject entryRulestring0() throws RecognitionException {
         EObject current = null;
 
@@ -6395,8 +6341,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2389:48: (iv_rulestring0= rulestring0 EOF )
-            // InternalBasicsParser.g:2390:2: iv_rulestring0= rulestring0 EOF
+            // InternalBasicsParser.g:2356:48: (iv_rulestring0= rulestring0 EOF )
+            // InternalBasicsParser.g:2357:2: iv_rulestring0= rulestring0 EOF
             {
              newCompositeNode(grammarAccess.getString0Rule()); 
             pushFollow(FOLLOW_1);
@@ -6423,7 +6369,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestring0"
-    // InternalBasicsParser.g:2396:1: rulestring0 returns [EObject current=null] : ( () otherlv_1= String_1 ) ;
+    // InternalBasicsParser.g:2363:1: rulestring0 returns [EObject current=null] : ( () otherlv_1= String_1 ) ;
     public final EObject rulestring0() throws RecognitionException {
         EObject current = null;
 
@@ -6433,14 +6379,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2402:2: ( ( () otherlv_1= String_1 ) )
-            // InternalBasicsParser.g:2403:2: ( () otherlv_1= String_1 )
+            // InternalBasicsParser.g:2369:2: ( ( () otherlv_1= String_1 ) )
+            // InternalBasicsParser.g:2370:2: ( () otherlv_1= String_1 )
             {
-            // InternalBasicsParser.g:2403:2: ( () otherlv_1= String_1 )
-            // InternalBasicsParser.g:2404:3: () otherlv_1= String_1
+            // InternalBasicsParser.g:2370:2: ( () otherlv_1= String_1 )
+            // InternalBasicsParser.g:2371:3: () otherlv_1= String_1
             {
-            // InternalBasicsParser.g:2404:3: ()
-            // InternalBasicsParser.g:2405:4: 
+            // InternalBasicsParser.g:2371:3: ()
+            // InternalBasicsParser.g:2372:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6477,7 +6423,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulechar"
-    // InternalBasicsParser.g:2419:1: entryRulechar returns [EObject current=null] : iv_rulechar= rulechar EOF ;
+    // InternalBasicsParser.g:2386:1: entryRulechar returns [EObject current=null] : iv_rulechar= rulechar EOF ;
     public final EObject entryRulechar() throws RecognitionException {
         EObject current = null;
 
@@ -6485,8 +6431,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2419:45: (iv_rulechar= rulechar EOF )
-            // InternalBasicsParser.g:2420:2: iv_rulechar= rulechar EOF
+            // InternalBasicsParser.g:2386:45: (iv_rulechar= rulechar EOF )
+            // InternalBasicsParser.g:2387:2: iv_rulechar= rulechar EOF
             {
              newCompositeNode(grammarAccess.getCharRule()); 
             pushFollow(FOLLOW_1);
@@ -6513,7 +6459,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulechar"
-    // InternalBasicsParser.g:2426:1: rulechar returns [EObject current=null] : ( () otherlv_1= Char ) ;
+    // InternalBasicsParser.g:2393:1: rulechar returns [EObject current=null] : ( () otherlv_1= Char ) ;
     public final EObject rulechar() throws RecognitionException {
         EObject current = null;
 
@@ -6523,14 +6469,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2432:2: ( ( () otherlv_1= Char ) )
-            // InternalBasicsParser.g:2433:2: ( () otherlv_1= Char )
+            // InternalBasicsParser.g:2399:2: ( ( () otherlv_1= Char ) )
+            // InternalBasicsParser.g:2400:2: ( () otherlv_1= Char )
             {
-            // InternalBasicsParser.g:2433:2: ( () otherlv_1= Char )
-            // InternalBasicsParser.g:2434:3: () otherlv_1= Char
+            // InternalBasicsParser.g:2400:2: ( () otherlv_1= Char )
+            // InternalBasicsParser.g:2401:3: () otherlv_1= Char
             {
-            // InternalBasicsParser.g:2434:3: ()
-            // InternalBasicsParser.g:2435:4: 
+            // InternalBasicsParser.g:2401:3: ()
+            // InternalBasicsParser.g:2402:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6567,7 +6513,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebyte"
-    // InternalBasicsParser.g:2449:1: entryRulebyte returns [EObject current=null] : iv_rulebyte= rulebyte EOF ;
+    // InternalBasicsParser.g:2416:1: entryRulebyte returns [EObject current=null] : iv_rulebyte= rulebyte EOF ;
     public final EObject entryRulebyte() throws RecognitionException {
         EObject current = null;
 
@@ -6575,8 +6521,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2449:45: (iv_rulebyte= rulebyte EOF )
-            // InternalBasicsParser.g:2450:2: iv_rulebyte= rulebyte EOF
+            // InternalBasicsParser.g:2416:45: (iv_rulebyte= rulebyte EOF )
+            // InternalBasicsParser.g:2417:2: iv_rulebyte= rulebyte EOF
             {
              newCompositeNode(grammarAccess.getByteRule()); 
             pushFollow(FOLLOW_1);
@@ -6603,7 +6549,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebyte"
-    // InternalBasicsParser.g:2456:1: rulebyte returns [EObject current=null] : ( () otherlv_1= Byte ) ;
+    // InternalBasicsParser.g:2423:1: rulebyte returns [EObject current=null] : ( () otherlv_1= Byte ) ;
     public final EObject rulebyte() throws RecognitionException {
         EObject current = null;
 
@@ -6613,14 +6559,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2462:2: ( ( () otherlv_1= Byte ) )
-            // InternalBasicsParser.g:2463:2: ( () otherlv_1= Byte )
+            // InternalBasicsParser.g:2429:2: ( ( () otherlv_1= Byte ) )
+            // InternalBasicsParser.g:2430:2: ( () otherlv_1= Byte )
             {
-            // InternalBasicsParser.g:2463:2: ( () otherlv_1= Byte )
-            // InternalBasicsParser.g:2464:3: () otherlv_1= Byte
+            // InternalBasicsParser.g:2430:2: ( () otherlv_1= Byte )
+            // InternalBasicsParser.g:2431:3: () otherlv_1= Byte
             {
-            // InternalBasicsParser.g:2464:3: ()
-            // InternalBasicsParser.g:2465:4: 
+            // InternalBasicsParser.g:2431:3: ()
+            // InternalBasicsParser.g:2432:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6657,7 +6603,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletime"
-    // InternalBasicsParser.g:2479:1: entryRuletime returns [EObject current=null] : iv_ruletime= ruletime EOF ;
+    // InternalBasicsParser.g:2446:1: entryRuletime returns [EObject current=null] : iv_ruletime= ruletime EOF ;
     public final EObject entryRuletime() throws RecognitionException {
         EObject current = null;
 
@@ -6665,8 +6611,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2479:45: (iv_ruletime= ruletime EOF )
-            // InternalBasicsParser.g:2480:2: iv_ruletime= ruletime EOF
+            // InternalBasicsParser.g:2446:45: (iv_ruletime= ruletime EOF )
+            // InternalBasicsParser.g:2447:2: iv_ruletime= ruletime EOF
             {
              newCompositeNode(grammarAccess.getTimeRule()); 
             pushFollow(FOLLOW_1);
@@ -6693,7 +6639,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletime"
-    // InternalBasicsParser.g:2486:1: ruletime returns [EObject current=null] : ( () otherlv_1= Time ) ;
+    // InternalBasicsParser.g:2453:1: ruletime returns [EObject current=null] : ( () otherlv_1= Time ) ;
     public final EObject ruletime() throws RecognitionException {
         EObject current = null;
 
@@ -6703,14 +6649,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2492:2: ( ( () otherlv_1= Time ) )
-            // InternalBasicsParser.g:2493:2: ( () otherlv_1= Time )
+            // InternalBasicsParser.g:2459:2: ( ( () otherlv_1= Time ) )
+            // InternalBasicsParser.g:2460:2: ( () otherlv_1= Time )
             {
-            // InternalBasicsParser.g:2493:2: ( () otherlv_1= Time )
-            // InternalBasicsParser.g:2494:3: () otherlv_1= Time
+            // InternalBasicsParser.g:2460:2: ( () otherlv_1= Time )
+            // InternalBasicsParser.g:2461:3: () otherlv_1= Time
             {
-            // InternalBasicsParser.g:2494:3: ()
-            // InternalBasicsParser.g:2495:4: 
+            // InternalBasicsParser.g:2461:3: ()
+            // InternalBasicsParser.g:2462:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6747,7 +6693,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleduration"
-    // InternalBasicsParser.g:2509:1: entryRuleduration returns [EObject current=null] : iv_ruleduration= ruleduration EOF ;
+    // InternalBasicsParser.g:2476:1: entryRuleduration returns [EObject current=null] : iv_ruleduration= ruleduration EOF ;
     public final EObject entryRuleduration() throws RecognitionException {
         EObject current = null;
 
@@ -6755,8 +6701,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2509:49: (iv_ruleduration= ruleduration EOF )
-            // InternalBasicsParser.g:2510:2: iv_ruleduration= ruleduration EOF
+            // InternalBasicsParser.g:2476:49: (iv_ruleduration= ruleduration EOF )
+            // InternalBasicsParser.g:2477:2: iv_ruleduration= ruleduration EOF
             {
              newCompositeNode(grammarAccess.getDurationRule()); 
             pushFollow(FOLLOW_1);
@@ -6783,7 +6729,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleduration"
-    // InternalBasicsParser.g:2516:1: ruleduration returns [EObject current=null] : ( () otherlv_1= Duration ) ;
+    // InternalBasicsParser.g:2483:1: ruleduration returns [EObject current=null] : ( () otherlv_1= Duration ) ;
     public final EObject ruleduration() throws RecognitionException {
         EObject current = null;
 
@@ -6793,14 +6739,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2522:2: ( ( () otherlv_1= Duration ) )
-            // InternalBasicsParser.g:2523:2: ( () otherlv_1= Duration )
+            // InternalBasicsParser.g:2489:2: ( ( () otherlv_1= Duration ) )
+            // InternalBasicsParser.g:2490:2: ( () otherlv_1= Duration )
             {
-            // InternalBasicsParser.g:2523:2: ( () otherlv_1= Duration )
-            // InternalBasicsParser.g:2524:3: () otherlv_1= Duration
+            // InternalBasicsParser.g:2490:2: ( () otherlv_1= Duration )
+            // InternalBasicsParser.g:2491:3: () otherlv_1= Duration
             {
-            // InternalBasicsParser.g:2524:3: ()
-            // InternalBasicsParser.g:2525:4: 
+            // InternalBasicsParser.g:2491:3: ()
+            // InternalBasicsParser.g:2492:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6837,7 +6783,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleboolArray"
-    // InternalBasicsParser.g:2539:1: entryRuleboolArray returns [EObject current=null] : iv_ruleboolArray= ruleboolArray EOF ;
+    // InternalBasicsParser.g:2506:1: entryRuleboolArray returns [EObject current=null] : iv_ruleboolArray= ruleboolArray EOF ;
     public final EObject entryRuleboolArray() throws RecognitionException {
         EObject current = null;
 
@@ -6845,8 +6791,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2539:50: (iv_ruleboolArray= ruleboolArray EOF )
-            // InternalBasicsParser.g:2540:2: iv_ruleboolArray= ruleboolArray EOF
+            // InternalBasicsParser.g:2506:50: (iv_ruleboolArray= ruleboolArray EOF )
+            // InternalBasicsParser.g:2507:2: iv_ruleboolArray= ruleboolArray EOF
             {
              newCompositeNode(grammarAccess.getBoolArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -6873,7 +6819,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleboolArray"
-    // InternalBasicsParser.g:2546:1: ruleboolArray returns [EObject current=null] : ( () otherlv_1= Bool_1 ) ;
+    // InternalBasicsParser.g:2513:1: ruleboolArray returns [EObject current=null] : ( () otherlv_1= Bool_1 ) ;
     public final EObject ruleboolArray() throws RecognitionException {
         EObject current = null;
 
@@ -6883,14 +6829,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2552:2: ( ( () otherlv_1= Bool_1 ) )
-            // InternalBasicsParser.g:2553:2: ( () otherlv_1= Bool_1 )
+            // InternalBasicsParser.g:2519:2: ( ( () otherlv_1= Bool_1 ) )
+            // InternalBasicsParser.g:2520:2: ( () otherlv_1= Bool_1 )
             {
-            // InternalBasicsParser.g:2553:2: ( () otherlv_1= Bool_1 )
-            // InternalBasicsParser.g:2554:3: () otherlv_1= Bool_1
+            // InternalBasicsParser.g:2520:2: ( () otherlv_1= Bool_1 )
+            // InternalBasicsParser.g:2521:3: () otherlv_1= Bool_1
             {
-            // InternalBasicsParser.g:2554:3: ()
-            // InternalBasicsParser.g:2555:4: 
+            // InternalBasicsParser.g:2521:3: ()
+            // InternalBasicsParser.g:2522:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6927,7 +6873,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint8Array"
-    // InternalBasicsParser.g:2569:1: entryRuleint8Array returns [EObject current=null] : iv_ruleint8Array= ruleint8Array EOF ;
+    // InternalBasicsParser.g:2536:1: entryRuleint8Array returns [EObject current=null] : iv_ruleint8Array= ruleint8Array EOF ;
     public final EObject entryRuleint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -6935,8 +6881,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2569:50: (iv_ruleint8Array= ruleint8Array EOF )
-            // InternalBasicsParser.g:2570:2: iv_ruleint8Array= ruleint8Array EOF
+            // InternalBasicsParser.g:2536:50: (iv_ruleint8Array= ruleint8Array EOF )
+            // InternalBasicsParser.g:2537:2: iv_ruleint8Array= ruleint8Array EOF
             {
              newCompositeNode(grammarAccess.getInt8ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -6963,7 +6909,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint8Array"
-    // InternalBasicsParser.g:2576:1: ruleint8Array returns [EObject current=null] : ( () otherlv_1= Int8_1 ) ;
+    // InternalBasicsParser.g:2543:1: ruleint8Array returns [EObject current=null] : ( () otherlv_1= Int8_1 ) ;
     public final EObject ruleint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -6973,14 +6919,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2582:2: ( ( () otherlv_1= Int8_1 ) )
-            // InternalBasicsParser.g:2583:2: ( () otherlv_1= Int8_1 )
+            // InternalBasicsParser.g:2549:2: ( ( () otherlv_1= Int8_1 ) )
+            // InternalBasicsParser.g:2550:2: ( () otherlv_1= Int8_1 )
             {
-            // InternalBasicsParser.g:2583:2: ( () otherlv_1= Int8_1 )
-            // InternalBasicsParser.g:2584:3: () otherlv_1= Int8_1
+            // InternalBasicsParser.g:2550:2: ( () otherlv_1= Int8_1 )
+            // InternalBasicsParser.g:2551:3: () otherlv_1= Int8_1
             {
-            // InternalBasicsParser.g:2584:3: ()
-            // InternalBasicsParser.g:2585:4: 
+            // InternalBasicsParser.g:2551:3: ()
+            // InternalBasicsParser.g:2552:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7017,7 +6963,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint8Array"
-    // InternalBasicsParser.g:2599:1: entryRuleuint8Array returns [EObject current=null] : iv_ruleuint8Array= ruleuint8Array EOF ;
+    // InternalBasicsParser.g:2566:1: entryRuleuint8Array returns [EObject current=null] : iv_ruleuint8Array= ruleuint8Array EOF ;
     public final EObject entryRuleuint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -7025,8 +6971,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2599:51: (iv_ruleuint8Array= ruleuint8Array EOF )
-            // InternalBasicsParser.g:2600:2: iv_ruleuint8Array= ruleuint8Array EOF
+            // InternalBasicsParser.g:2566:51: (iv_ruleuint8Array= ruleuint8Array EOF )
+            // InternalBasicsParser.g:2567:2: iv_ruleuint8Array= ruleuint8Array EOF
             {
              newCompositeNode(grammarAccess.getUint8ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7053,7 +6999,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint8Array"
-    // InternalBasicsParser.g:2606:1: ruleuint8Array returns [EObject current=null] : ( () otherlv_1= Uint8_1 ) ;
+    // InternalBasicsParser.g:2573:1: ruleuint8Array returns [EObject current=null] : ( () otherlv_1= Uint8_1 ) ;
     public final EObject ruleuint8Array() throws RecognitionException {
         EObject current = null;
 
@@ -7063,14 +7009,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2612:2: ( ( () otherlv_1= Uint8_1 ) )
-            // InternalBasicsParser.g:2613:2: ( () otherlv_1= Uint8_1 )
+            // InternalBasicsParser.g:2579:2: ( ( () otherlv_1= Uint8_1 ) )
+            // InternalBasicsParser.g:2580:2: ( () otherlv_1= Uint8_1 )
             {
-            // InternalBasicsParser.g:2613:2: ( () otherlv_1= Uint8_1 )
-            // InternalBasicsParser.g:2614:3: () otherlv_1= Uint8_1
+            // InternalBasicsParser.g:2580:2: ( () otherlv_1= Uint8_1 )
+            // InternalBasicsParser.g:2581:3: () otherlv_1= Uint8_1
             {
-            // InternalBasicsParser.g:2614:3: ()
-            // InternalBasicsParser.g:2615:4: 
+            // InternalBasicsParser.g:2581:3: ()
+            // InternalBasicsParser.g:2582:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7107,7 +7053,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint16Array"
-    // InternalBasicsParser.g:2629:1: entryRuleint16Array returns [EObject current=null] : iv_ruleint16Array= ruleint16Array EOF ;
+    // InternalBasicsParser.g:2596:1: entryRuleint16Array returns [EObject current=null] : iv_ruleint16Array= ruleint16Array EOF ;
     public final EObject entryRuleint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -7115,8 +7061,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2629:51: (iv_ruleint16Array= ruleint16Array EOF )
-            // InternalBasicsParser.g:2630:2: iv_ruleint16Array= ruleint16Array EOF
+            // InternalBasicsParser.g:2596:51: (iv_ruleint16Array= ruleint16Array EOF )
+            // InternalBasicsParser.g:2597:2: iv_ruleint16Array= ruleint16Array EOF
             {
              newCompositeNode(grammarAccess.getInt16ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7143,7 +7089,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint16Array"
-    // InternalBasicsParser.g:2636:1: ruleint16Array returns [EObject current=null] : ( () otherlv_1= Int16_1 ) ;
+    // InternalBasicsParser.g:2603:1: ruleint16Array returns [EObject current=null] : ( () otherlv_1= Int16_1 ) ;
     public final EObject ruleint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -7153,14 +7099,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2642:2: ( ( () otherlv_1= Int16_1 ) )
-            // InternalBasicsParser.g:2643:2: ( () otherlv_1= Int16_1 )
+            // InternalBasicsParser.g:2609:2: ( ( () otherlv_1= Int16_1 ) )
+            // InternalBasicsParser.g:2610:2: ( () otherlv_1= Int16_1 )
             {
-            // InternalBasicsParser.g:2643:2: ( () otherlv_1= Int16_1 )
-            // InternalBasicsParser.g:2644:3: () otherlv_1= Int16_1
+            // InternalBasicsParser.g:2610:2: ( () otherlv_1= Int16_1 )
+            // InternalBasicsParser.g:2611:3: () otherlv_1= Int16_1
             {
-            // InternalBasicsParser.g:2644:3: ()
-            // InternalBasicsParser.g:2645:4: 
+            // InternalBasicsParser.g:2611:3: ()
+            // InternalBasicsParser.g:2612:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7197,7 +7143,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint16Array"
-    // InternalBasicsParser.g:2659:1: entryRuleuint16Array returns [EObject current=null] : iv_ruleuint16Array= ruleuint16Array EOF ;
+    // InternalBasicsParser.g:2626:1: entryRuleuint16Array returns [EObject current=null] : iv_ruleuint16Array= ruleuint16Array EOF ;
     public final EObject entryRuleuint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -7205,8 +7151,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2659:52: (iv_ruleuint16Array= ruleuint16Array EOF )
-            // InternalBasicsParser.g:2660:2: iv_ruleuint16Array= ruleuint16Array EOF
+            // InternalBasicsParser.g:2626:52: (iv_ruleuint16Array= ruleuint16Array EOF )
+            // InternalBasicsParser.g:2627:2: iv_ruleuint16Array= ruleuint16Array EOF
             {
              newCompositeNode(grammarAccess.getUint16ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7233,7 +7179,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint16Array"
-    // InternalBasicsParser.g:2666:1: ruleuint16Array returns [EObject current=null] : ( () otherlv_1= Uint16_1 ) ;
+    // InternalBasicsParser.g:2633:1: ruleuint16Array returns [EObject current=null] : ( () otherlv_1= Uint16_1 ) ;
     public final EObject ruleuint16Array() throws RecognitionException {
         EObject current = null;
 
@@ -7243,14 +7189,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2672:2: ( ( () otherlv_1= Uint16_1 ) )
-            // InternalBasicsParser.g:2673:2: ( () otherlv_1= Uint16_1 )
+            // InternalBasicsParser.g:2639:2: ( ( () otherlv_1= Uint16_1 ) )
+            // InternalBasicsParser.g:2640:2: ( () otherlv_1= Uint16_1 )
             {
-            // InternalBasicsParser.g:2673:2: ( () otherlv_1= Uint16_1 )
-            // InternalBasicsParser.g:2674:3: () otherlv_1= Uint16_1
+            // InternalBasicsParser.g:2640:2: ( () otherlv_1= Uint16_1 )
+            // InternalBasicsParser.g:2641:3: () otherlv_1= Uint16_1
             {
-            // InternalBasicsParser.g:2674:3: ()
-            // InternalBasicsParser.g:2675:4: 
+            // InternalBasicsParser.g:2641:3: ()
+            // InternalBasicsParser.g:2642:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7287,7 +7233,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint32Array"
-    // InternalBasicsParser.g:2689:1: entryRuleint32Array returns [EObject current=null] : iv_ruleint32Array= ruleint32Array EOF ;
+    // InternalBasicsParser.g:2656:1: entryRuleint32Array returns [EObject current=null] : iv_ruleint32Array= ruleint32Array EOF ;
     public final EObject entryRuleint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7295,8 +7241,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2689:51: (iv_ruleint32Array= ruleint32Array EOF )
-            // InternalBasicsParser.g:2690:2: iv_ruleint32Array= ruleint32Array EOF
+            // InternalBasicsParser.g:2656:51: (iv_ruleint32Array= ruleint32Array EOF )
+            // InternalBasicsParser.g:2657:2: iv_ruleint32Array= ruleint32Array EOF
             {
              newCompositeNode(grammarAccess.getInt32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7323,7 +7269,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint32Array"
-    // InternalBasicsParser.g:2696:1: ruleint32Array returns [EObject current=null] : ( () otherlv_1= Int32_1 ) ;
+    // InternalBasicsParser.g:2663:1: ruleint32Array returns [EObject current=null] : ( () otherlv_1= Int32_1 ) ;
     public final EObject ruleint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7333,14 +7279,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2702:2: ( ( () otherlv_1= Int32_1 ) )
-            // InternalBasicsParser.g:2703:2: ( () otherlv_1= Int32_1 )
+            // InternalBasicsParser.g:2669:2: ( ( () otherlv_1= Int32_1 ) )
+            // InternalBasicsParser.g:2670:2: ( () otherlv_1= Int32_1 )
             {
-            // InternalBasicsParser.g:2703:2: ( () otherlv_1= Int32_1 )
-            // InternalBasicsParser.g:2704:3: () otherlv_1= Int32_1
+            // InternalBasicsParser.g:2670:2: ( () otherlv_1= Int32_1 )
+            // InternalBasicsParser.g:2671:3: () otherlv_1= Int32_1
             {
-            // InternalBasicsParser.g:2704:3: ()
-            // InternalBasicsParser.g:2705:4: 
+            // InternalBasicsParser.g:2671:3: ()
+            // InternalBasicsParser.g:2672:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7377,7 +7323,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint32Array"
-    // InternalBasicsParser.g:2719:1: entryRuleuint32Array returns [EObject current=null] : iv_ruleuint32Array= ruleuint32Array EOF ;
+    // InternalBasicsParser.g:2686:1: entryRuleuint32Array returns [EObject current=null] : iv_ruleuint32Array= ruleuint32Array EOF ;
     public final EObject entryRuleuint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7385,8 +7331,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2719:52: (iv_ruleuint32Array= ruleuint32Array EOF )
-            // InternalBasicsParser.g:2720:2: iv_ruleuint32Array= ruleuint32Array EOF
+            // InternalBasicsParser.g:2686:52: (iv_ruleuint32Array= ruleuint32Array EOF )
+            // InternalBasicsParser.g:2687:2: iv_ruleuint32Array= ruleuint32Array EOF
             {
              newCompositeNode(grammarAccess.getUint32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7413,7 +7359,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint32Array"
-    // InternalBasicsParser.g:2726:1: ruleuint32Array returns [EObject current=null] : ( () otherlv_1= Uint32_1 ) ;
+    // InternalBasicsParser.g:2693:1: ruleuint32Array returns [EObject current=null] : ( () otherlv_1= Uint32_1 ) ;
     public final EObject ruleuint32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7423,14 +7369,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2732:2: ( ( () otherlv_1= Uint32_1 ) )
-            // InternalBasicsParser.g:2733:2: ( () otherlv_1= Uint32_1 )
+            // InternalBasicsParser.g:2699:2: ( ( () otherlv_1= Uint32_1 ) )
+            // InternalBasicsParser.g:2700:2: ( () otherlv_1= Uint32_1 )
             {
-            // InternalBasicsParser.g:2733:2: ( () otherlv_1= Uint32_1 )
-            // InternalBasicsParser.g:2734:3: () otherlv_1= Uint32_1
+            // InternalBasicsParser.g:2700:2: ( () otherlv_1= Uint32_1 )
+            // InternalBasicsParser.g:2701:3: () otherlv_1= Uint32_1
             {
-            // InternalBasicsParser.g:2734:3: ()
-            // InternalBasicsParser.g:2735:4: 
+            // InternalBasicsParser.g:2701:3: ()
+            // InternalBasicsParser.g:2702:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7467,7 +7413,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleint64Array"
-    // InternalBasicsParser.g:2749:1: entryRuleint64Array returns [EObject current=null] : iv_ruleint64Array= ruleint64Array EOF ;
+    // InternalBasicsParser.g:2716:1: entryRuleint64Array returns [EObject current=null] : iv_ruleint64Array= ruleint64Array EOF ;
     public final EObject entryRuleint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7475,8 +7421,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2749:51: (iv_ruleint64Array= ruleint64Array EOF )
-            // InternalBasicsParser.g:2750:2: iv_ruleint64Array= ruleint64Array EOF
+            // InternalBasicsParser.g:2716:51: (iv_ruleint64Array= ruleint64Array EOF )
+            // InternalBasicsParser.g:2717:2: iv_ruleint64Array= ruleint64Array EOF
             {
              newCompositeNode(grammarAccess.getInt64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7503,7 +7449,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleint64Array"
-    // InternalBasicsParser.g:2756:1: ruleint64Array returns [EObject current=null] : ( () otherlv_1= Int64_1 ) ;
+    // InternalBasicsParser.g:2723:1: ruleint64Array returns [EObject current=null] : ( () otherlv_1= Int64_1 ) ;
     public final EObject ruleint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7513,14 +7459,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2762:2: ( ( () otherlv_1= Int64_1 ) )
-            // InternalBasicsParser.g:2763:2: ( () otherlv_1= Int64_1 )
+            // InternalBasicsParser.g:2729:2: ( ( () otherlv_1= Int64_1 ) )
+            // InternalBasicsParser.g:2730:2: ( () otherlv_1= Int64_1 )
             {
-            // InternalBasicsParser.g:2763:2: ( () otherlv_1= Int64_1 )
-            // InternalBasicsParser.g:2764:3: () otherlv_1= Int64_1
+            // InternalBasicsParser.g:2730:2: ( () otherlv_1= Int64_1 )
+            // InternalBasicsParser.g:2731:3: () otherlv_1= Int64_1
             {
-            // InternalBasicsParser.g:2764:3: ()
-            // InternalBasicsParser.g:2765:4: 
+            // InternalBasicsParser.g:2731:3: ()
+            // InternalBasicsParser.g:2732:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7557,7 +7503,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleuint64Array"
-    // InternalBasicsParser.g:2779:1: entryRuleuint64Array returns [EObject current=null] : iv_ruleuint64Array= ruleuint64Array EOF ;
+    // InternalBasicsParser.g:2746:1: entryRuleuint64Array returns [EObject current=null] : iv_ruleuint64Array= ruleuint64Array EOF ;
     public final EObject entryRuleuint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7565,8 +7511,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2779:52: (iv_ruleuint64Array= ruleuint64Array EOF )
-            // InternalBasicsParser.g:2780:2: iv_ruleuint64Array= ruleuint64Array EOF
+            // InternalBasicsParser.g:2746:52: (iv_ruleuint64Array= ruleuint64Array EOF )
+            // InternalBasicsParser.g:2747:2: iv_ruleuint64Array= ruleuint64Array EOF
             {
              newCompositeNode(grammarAccess.getUint64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7593,7 +7539,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuint64Array"
-    // InternalBasicsParser.g:2786:1: ruleuint64Array returns [EObject current=null] : ( () otherlv_1= Uint64_1 ) ;
+    // InternalBasicsParser.g:2753:1: ruleuint64Array returns [EObject current=null] : ( () otherlv_1= Uint64_1 ) ;
     public final EObject ruleuint64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7603,14 +7549,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2792:2: ( ( () otherlv_1= Uint64_1 ) )
-            // InternalBasicsParser.g:2793:2: ( () otherlv_1= Uint64_1 )
+            // InternalBasicsParser.g:2759:2: ( ( () otherlv_1= Uint64_1 ) )
+            // InternalBasicsParser.g:2760:2: ( () otherlv_1= Uint64_1 )
             {
-            // InternalBasicsParser.g:2793:2: ( () otherlv_1= Uint64_1 )
-            // InternalBasicsParser.g:2794:3: () otherlv_1= Uint64_1
+            // InternalBasicsParser.g:2760:2: ( () otherlv_1= Uint64_1 )
+            // InternalBasicsParser.g:2761:3: () otherlv_1= Uint64_1
             {
-            // InternalBasicsParser.g:2794:3: ()
-            // InternalBasicsParser.g:2795:4: 
+            // InternalBasicsParser.g:2761:3: ()
+            // InternalBasicsParser.g:2762:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7647,7 +7593,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat32Array"
-    // InternalBasicsParser.g:2809:1: entryRulefloat32Array returns [EObject current=null] : iv_rulefloat32Array= rulefloat32Array EOF ;
+    // InternalBasicsParser.g:2776:1: entryRulefloat32Array returns [EObject current=null] : iv_rulefloat32Array= rulefloat32Array EOF ;
     public final EObject entryRulefloat32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7655,8 +7601,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2809:53: (iv_rulefloat32Array= rulefloat32Array EOF )
-            // InternalBasicsParser.g:2810:2: iv_rulefloat32Array= rulefloat32Array EOF
+            // InternalBasicsParser.g:2776:53: (iv_rulefloat32Array= rulefloat32Array EOF )
+            // InternalBasicsParser.g:2777:2: iv_rulefloat32Array= rulefloat32Array EOF
             {
              newCompositeNode(grammarAccess.getFloat32ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7683,7 +7629,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat32Array"
-    // InternalBasicsParser.g:2816:1: rulefloat32Array returns [EObject current=null] : ( () otherlv_1= Float32_1 ) ;
+    // InternalBasicsParser.g:2783:1: rulefloat32Array returns [EObject current=null] : ( () otherlv_1= Float32_1 ) ;
     public final EObject rulefloat32Array() throws RecognitionException {
         EObject current = null;
 
@@ -7693,14 +7639,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2822:2: ( ( () otherlv_1= Float32_1 ) )
-            // InternalBasicsParser.g:2823:2: ( () otherlv_1= Float32_1 )
+            // InternalBasicsParser.g:2789:2: ( ( () otherlv_1= Float32_1 ) )
+            // InternalBasicsParser.g:2790:2: ( () otherlv_1= Float32_1 )
             {
-            // InternalBasicsParser.g:2823:2: ( () otherlv_1= Float32_1 )
-            // InternalBasicsParser.g:2824:3: () otherlv_1= Float32_1
+            // InternalBasicsParser.g:2790:2: ( () otherlv_1= Float32_1 )
+            // InternalBasicsParser.g:2791:3: () otherlv_1= Float32_1
             {
-            // InternalBasicsParser.g:2824:3: ()
-            // InternalBasicsParser.g:2825:4: 
+            // InternalBasicsParser.g:2791:3: ()
+            // InternalBasicsParser.g:2792:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7737,7 +7683,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefloat64Array"
-    // InternalBasicsParser.g:2839:1: entryRulefloat64Array returns [EObject current=null] : iv_rulefloat64Array= rulefloat64Array EOF ;
+    // InternalBasicsParser.g:2806:1: entryRulefloat64Array returns [EObject current=null] : iv_rulefloat64Array= rulefloat64Array EOF ;
     public final EObject entryRulefloat64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7745,8 +7691,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2839:53: (iv_rulefloat64Array= rulefloat64Array EOF )
-            // InternalBasicsParser.g:2840:2: iv_rulefloat64Array= rulefloat64Array EOF
+            // InternalBasicsParser.g:2806:53: (iv_rulefloat64Array= rulefloat64Array EOF )
+            // InternalBasicsParser.g:2807:2: iv_rulefloat64Array= rulefloat64Array EOF
             {
              newCompositeNode(grammarAccess.getFloat64ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7773,7 +7719,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefloat64Array"
-    // InternalBasicsParser.g:2846:1: rulefloat64Array returns [EObject current=null] : ( () otherlv_1= Float64_1 ) ;
+    // InternalBasicsParser.g:2813:1: rulefloat64Array returns [EObject current=null] : ( () otherlv_1= Float64_1 ) ;
     public final EObject rulefloat64Array() throws RecognitionException {
         EObject current = null;
 
@@ -7783,14 +7729,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2852:2: ( ( () otherlv_1= Float64_1 ) )
-            // InternalBasicsParser.g:2853:2: ( () otherlv_1= Float64_1 )
+            // InternalBasicsParser.g:2819:2: ( ( () otherlv_1= Float64_1 ) )
+            // InternalBasicsParser.g:2820:2: ( () otherlv_1= Float64_1 )
             {
-            // InternalBasicsParser.g:2853:2: ( () otherlv_1= Float64_1 )
-            // InternalBasicsParser.g:2854:3: () otherlv_1= Float64_1
+            // InternalBasicsParser.g:2820:2: ( () otherlv_1= Float64_1 )
+            // InternalBasicsParser.g:2821:3: () otherlv_1= Float64_1
             {
-            // InternalBasicsParser.g:2854:3: ()
-            // InternalBasicsParser.g:2855:4: 
+            // InternalBasicsParser.g:2821:3: ()
+            // InternalBasicsParser.g:2822:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7827,7 +7773,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestring0Array"
-    // InternalBasicsParser.g:2869:1: entryRulestring0Array returns [EObject current=null] : iv_rulestring0Array= rulestring0Array EOF ;
+    // InternalBasicsParser.g:2836:1: entryRulestring0Array returns [EObject current=null] : iv_rulestring0Array= rulestring0Array EOF ;
     public final EObject entryRulestring0Array() throws RecognitionException {
         EObject current = null;
 
@@ -7835,8 +7781,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2869:53: (iv_rulestring0Array= rulestring0Array EOF )
-            // InternalBasicsParser.g:2870:2: iv_rulestring0Array= rulestring0Array EOF
+            // InternalBasicsParser.g:2836:53: (iv_rulestring0Array= rulestring0Array EOF )
+            // InternalBasicsParser.g:2837:2: iv_rulestring0Array= rulestring0Array EOF
             {
              newCompositeNode(grammarAccess.getString0ArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7863,7 +7809,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestring0Array"
-    // InternalBasicsParser.g:2876:1: rulestring0Array returns [EObject current=null] : ( () otherlv_1= String_2 ) ;
+    // InternalBasicsParser.g:2843:1: rulestring0Array returns [EObject current=null] : ( () otherlv_1= String_2 ) ;
     public final EObject rulestring0Array() throws RecognitionException {
         EObject current = null;
 
@@ -7873,14 +7819,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2882:2: ( ( () otherlv_1= String_2 ) )
-            // InternalBasicsParser.g:2883:2: ( () otherlv_1= String_2 )
+            // InternalBasicsParser.g:2849:2: ( ( () otherlv_1= String_2 ) )
+            // InternalBasicsParser.g:2850:2: ( () otherlv_1= String_2 )
             {
-            // InternalBasicsParser.g:2883:2: ( () otherlv_1= String_2 )
-            // InternalBasicsParser.g:2884:3: () otherlv_1= String_2
+            // InternalBasicsParser.g:2850:2: ( () otherlv_1= String_2 )
+            // InternalBasicsParser.g:2851:3: () otherlv_1= String_2
             {
-            // InternalBasicsParser.g:2884:3: ()
-            // InternalBasicsParser.g:2885:4: 
+            // InternalBasicsParser.g:2851:3: ()
+            // InternalBasicsParser.g:2852:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7917,7 +7863,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulebyteArray"
-    // InternalBasicsParser.g:2899:1: entryRulebyteArray returns [EObject current=null] : iv_rulebyteArray= rulebyteArray EOF ;
+    // InternalBasicsParser.g:2866:1: entryRulebyteArray returns [EObject current=null] : iv_rulebyteArray= rulebyteArray EOF ;
     public final EObject entryRulebyteArray() throws RecognitionException {
         EObject current = null;
 
@@ -7925,8 +7871,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2899:50: (iv_rulebyteArray= rulebyteArray EOF )
-            // InternalBasicsParser.g:2900:2: iv_rulebyteArray= rulebyteArray EOF
+            // InternalBasicsParser.g:2866:50: (iv_rulebyteArray= rulebyteArray EOF )
+            // InternalBasicsParser.g:2867:2: iv_rulebyteArray= rulebyteArray EOF
             {
              newCompositeNode(grammarAccess.getByteArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -7953,7 +7899,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulebyteArray"
-    // InternalBasicsParser.g:2906:1: rulebyteArray returns [EObject current=null] : ( () otherlv_1= Byte_1 ) ;
+    // InternalBasicsParser.g:2873:1: rulebyteArray returns [EObject current=null] : ( () otherlv_1= Byte_1 ) ;
     public final EObject rulebyteArray() throws RecognitionException {
         EObject current = null;
 
@@ -7963,14 +7909,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2912:2: ( ( () otherlv_1= Byte_1 ) )
-            // InternalBasicsParser.g:2913:2: ( () otherlv_1= Byte_1 )
+            // InternalBasicsParser.g:2879:2: ( ( () otherlv_1= Byte_1 ) )
+            // InternalBasicsParser.g:2880:2: ( () otherlv_1= Byte_1 )
             {
-            // InternalBasicsParser.g:2913:2: ( () otherlv_1= Byte_1 )
-            // InternalBasicsParser.g:2914:3: () otherlv_1= Byte_1
+            // InternalBasicsParser.g:2880:2: ( () otherlv_1= Byte_1 )
+            // InternalBasicsParser.g:2881:3: () otherlv_1= Byte_1
             {
-            // InternalBasicsParser.g:2914:3: ()
-            // InternalBasicsParser.g:2915:4: 
+            // InternalBasicsParser.g:2881:3: ()
+            // InternalBasicsParser.g:2882:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8007,7 +7953,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulecharArray"
-    // InternalBasicsParser.g:2929:1: entryRulecharArray returns [EObject current=null] : iv_rulecharArray= rulecharArray EOF ;
+    // InternalBasicsParser.g:2896:1: entryRulecharArray returns [EObject current=null] : iv_rulecharArray= rulecharArray EOF ;
     public final EObject entryRulecharArray() throws RecognitionException {
         EObject current = null;
 
@@ -8015,8 +7961,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2929:50: (iv_rulecharArray= rulecharArray EOF )
-            // InternalBasicsParser.g:2930:2: iv_rulecharArray= rulecharArray EOF
+            // InternalBasicsParser.g:2896:50: (iv_rulecharArray= rulecharArray EOF )
+            // InternalBasicsParser.g:2897:2: iv_rulecharArray= rulecharArray EOF
             {
              newCompositeNode(grammarAccess.getCharArrayRule()); 
             pushFollow(FOLLOW_1);
@@ -8043,7 +7989,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulecharArray"
-    // InternalBasicsParser.g:2936:1: rulecharArray returns [EObject current=null] : ( () otherlv_1= Char_1 ) ;
+    // InternalBasicsParser.g:2903:1: rulecharArray returns [EObject current=null] : ( () otherlv_1= Char_1 ) ;
     public final EObject rulecharArray() throws RecognitionException {
         EObject current = null;
 
@@ -8053,14 +7999,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2942:2: ( ( () otherlv_1= Char_1 ) )
-            // InternalBasicsParser.g:2943:2: ( () otherlv_1= Char_1 )
+            // InternalBasicsParser.g:2909:2: ( ( () otherlv_1= Char_1 ) )
+            // InternalBasicsParser.g:2910:2: ( () otherlv_1= Char_1 )
             {
-            // InternalBasicsParser.g:2943:2: ( () otherlv_1= Char_1 )
-            // InternalBasicsParser.g:2944:3: () otherlv_1= Char_1
+            // InternalBasicsParser.g:2910:2: ( () otherlv_1= Char_1 )
+            // InternalBasicsParser.g:2911:3: () otherlv_1= Char_1
             {
-            // InternalBasicsParser.g:2944:3: ()
-            // InternalBasicsParser.g:2945:4: 
+            // InternalBasicsParser.g:2911:3: ()
+            // InternalBasicsParser.g:2912:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8097,7 +8043,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeader"
-    // InternalBasicsParser.g:2959:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
+    // InternalBasicsParser.g:2926:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
     public final EObject entryRuleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -8105,8 +8051,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2959:47: (iv_ruleHeader= ruleHeader EOF )
-            // InternalBasicsParser.g:2960:2: iv_ruleHeader= ruleHeader EOF
+            // InternalBasicsParser.g:2926:47: (iv_ruleHeader= ruleHeader EOF )
+            // InternalBasicsParser.g:2927:2: iv_ruleHeader= ruleHeader EOF
             {
              newCompositeNode(grammarAccess.getHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -8133,7 +8079,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // InternalBasicsParser.g:2966:1: ruleHeader returns [EObject current=null] : ( () otherlv_1= Header ) ;
+    // InternalBasicsParser.g:2933:1: ruleHeader returns [EObject current=null] : ( () otherlv_1= Header ) ;
     public final EObject ruleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -8143,14 +8089,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:2972:2: ( ( () otherlv_1= Header ) )
-            // InternalBasicsParser.g:2973:2: ( () otherlv_1= Header )
+            // InternalBasicsParser.g:2939:2: ( ( () otherlv_1= Header ) )
+            // InternalBasicsParser.g:2940:2: ( () otherlv_1= Header )
             {
-            // InternalBasicsParser.g:2973:2: ( () otherlv_1= Header )
-            // InternalBasicsParser.g:2974:3: () otherlv_1= Header
+            // InternalBasicsParser.g:2940:2: ( () otherlv_1= Header )
+            // InternalBasicsParser.g:2941:3: () otherlv_1= Header
             {
-            // InternalBasicsParser.g:2974:3: ()
-            // InternalBasicsParser.g:2975:4: 
+            // InternalBasicsParser.g:2941:3: ()
+            // InternalBasicsParser.g:2942:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8187,7 +8133,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSpecBaseRef"
-    // InternalBasicsParser.g:2989:1: entryRuleSpecBaseRef returns [EObject current=null] : iv_ruleSpecBaseRef= ruleSpecBaseRef EOF ;
+    // InternalBasicsParser.g:2956:1: entryRuleSpecBaseRef returns [EObject current=null] : iv_ruleSpecBaseRef= ruleSpecBaseRef EOF ;
     public final EObject entryRuleSpecBaseRef() throws RecognitionException {
         EObject current = null;
 
@@ -8195,8 +8141,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:2989:52: (iv_ruleSpecBaseRef= ruleSpecBaseRef EOF )
-            // InternalBasicsParser.g:2990:2: iv_ruleSpecBaseRef= ruleSpecBaseRef EOF
+            // InternalBasicsParser.g:2956:52: (iv_ruleSpecBaseRef= ruleSpecBaseRef EOF )
+            // InternalBasicsParser.g:2957:2: iv_ruleSpecBaseRef= ruleSpecBaseRef EOF
             {
              newCompositeNode(grammarAccess.getSpecBaseRefRule()); 
             pushFollow(FOLLOW_1);
@@ -8223,7 +8169,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSpecBaseRef"
-    // InternalBasicsParser.g:2996:1: ruleSpecBaseRef returns [EObject current=null] : ( ( ruleEString ) ) ;
+    // InternalBasicsParser.g:2963:1: ruleSpecBaseRef returns [EObject current=null] : ( ( ruleEString ) ) ;
     public final EObject ruleSpecBaseRef() throws RecognitionException {
         EObject current = null;
 
@@ -8231,14 +8177,14 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:3002:2: ( ( ( ruleEString ) ) )
-            // InternalBasicsParser.g:3003:2: ( ( ruleEString ) )
+            // InternalBasicsParser.g:2969:2: ( ( ( ruleEString ) ) )
+            // InternalBasicsParser.g:2970:2: ( ( ruleEString ) )
             {
-            // InternalBasicsParser.g:3003:2: ( ( ruleEString ) )
-            // InternalBasicsParser.g:3004:3: ( ruleEString )
+            // InternalBasicsParser.g:2970:2: ( ( ruleEString ) )
+            // InternalBasicsParser.g:2971:3: ( ruleEString )
             {
-            // InternalBasicsParser.g:3004:3: ( ruleEString )
-            // InternalBasicsParser.g:3005:4: ruleEString
+            // InternalBasicsParser.g:2971:3: ( ruleEString )
+            // InternalBasicsParser.g:2972:4: ruleEString
             {
 
             				if (current==null) {
@@ -8282,7 +8228,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArraySpecRef"
-    // InternalBasicsParser.g:3022:1: entryRuleArraySpecRef returns [EObject current=null] : iv_ruleArraySpecRef= ruleArraySpecRef EOF ;
+    // InternalBasicsParser.g:2989:1: entryRuleArraySpecRef returns [EObject current=null] : iv_ruleArraySpecRef= ruleArraySpecRef EOF ;
     public final EObject entryRuleArraySpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -8290,8 +8236,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:3022:53: (iv_ruleArraySpecRef= ruleArraySpecRef EOF )
-            // InternalBasicsParser.g:3023:2: iv_ruleArraySpecRef= ruleArraySpecRef EOF
+            // InternalBasicsParser.g:2989:53: (iv_ruleArraySpecRef= ruleArraySpecRef EOF )
+            // InternalBasicsParser.g:2990:2: iv_ruleArraySpecRef= ruleArraySpecRef EOF
             {
              newCompositeNode(grammarAccess.getArraySpecRefRule()); 
             pushFollow(FOLLOW_1);
@@ -8318,7 +8264,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArraySpecRef"
-    // InternalBasicsParser.g:3029:1: ruleArraySpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) ;
+    // InternalBasicsParser.g:2996:1: ruleArraySpecRef returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) ;
     public final EObject ruleArraySpecRef() throws RecognitionException {
         EObject current = null;
 
@@ -8328,17 +8274,17 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:3035:2: ( ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) )
-            // InternalBasicsParser.g:3036:2: ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket )
+            // InternalBasicsParser.g:3002:2: ( ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket ) )
+            // InternalBasicsParser.g:3003:2: ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket )
             {
-            // InternalBasicsParser.g:3036:2: ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket )
-            // InternalBasicsParser.g:3037:3: ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket
+            // InternalBasicsParser.g:3003:2: ( ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket )
+            // InternalBasicsParser.g:3004:3: ( ( ruleEString ) ) otherlv_1= LeftSquareBracketRightSquareBracket
             {
-            // InternalBasicsParser.g:3037:3: ( ( ruleEString ) )
-            // InternalBasicsParser.g:3038:4: ( ruleEString )
+            // InternalBasicsParser.g:3004:3: ( ( ruleEString ) )
+            // InternalBasicsParser.g:3005:4: ( ruleEString )
             {
-            // InternalBasicsParser.g:3038:4: ( ruleEString )
-            // InternalBasicsParser.g:3039:5: ruleEString
+            // InternalBasicsParser.g:3005:4: ( ruleEString )
+            // InternalBasicsParser.g:3006:5: ruleEString
             {
 
             					if (current==null) {
@@ -8389,7 +8335,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKEYWORD"
-    // InternalBasicsParser.g:3061:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
+    // InternalBasicsParser.g:3028:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
     public final String entryRuleKEYWORD() throws RecognitionException {
         String current = null;
 
@@ -8397,8 +8343,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:3061:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
-            // InternalBasicsParser.g:3062:2: iv_ruleKEYWORD= ruleKEYWORD EOF
+            // InternalBasicsParser.g:3028:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
+            // InternalBasicsParser.g:3029:2: iv_ruleKEYWORD= ruleKEYWORD EOF
             {
              newCompositeNode(grammarAccess.getKEYWORDRule()); 
             pushFollow(FOLLOW_1);
@@ -8425,7 +8371,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKEYWORD"
-    // InternalBasicsParser.g:3068:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time ) ;
+    // InternalBasicsParser.g:3035:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time ) ;
     public final AntlrDatatypeRuleToken ruleKEYWORD() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8435,10 +8381,10 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:3074:2: ( (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time ) )
-            // InternalBasicsParser.g:3075:2: (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time )
+            // InternalBasicsParser.g:3041:2: ( (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time ) )
+            // InternalBasicsParser.g:3042:2: (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time )
             {
-            // InternalBasicsParser.g:3075:2: (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time )
+            // InternalBasicsParser.g:3042:2: (kw= Goal | kw= Message | kw= Result | kw= Feedback | kw= Name | kw= Value | kw= Service | kw= Type | kw= Action | kw= Duration | kw= Time )
             int alt23=11;
             switch ( input.LA(1) ) {
             case Goal:
@@ -8505,7 +8451,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
             switch (alt23) {
                 case 1 :
-                    // InternalBasicsParser.g:3076:3: kw= Goal
+                    // InternalBasicsParser.g:3043:3: kw= Goal
                     {
                     kw=(Token)match(input,Goal,FOLLOW_2); 
 
@@ -8516,7 +8462,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBasicsParser.g:3082:3: kw= Message
+                    // InternalBasicsParser.g:3049:3: kw= Message
                     {
                     kw=(Token)match(input,Message,FOLLOW_2); 
 
@@ -8527,7 +8473,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalBasicsParser.g:3088:3: kw= Result
+                    // InternalBasicsParser.g:3055:3: kw= Result
                     {
                     kw=(Token)match(input,Result,FOLLOW_2); 
 
@@ -8538,7 +8484,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalBasicsParser.g:3094:3: kw= Feedback
+                    // InternalBasicsParser.g:3061:3: kw= Feedback
                     {
                     kw=(Token)match(input,Feedback,FOLLOW_2); 
 
@@ -8549,7 +8495,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalBasicsParser.g:3100:3: kw= Name
+                    // InternalBasicsParser.g:3067:3: kw= Name
                     {
                     kw=(Token)match(input,Name,FOLLOW_2); 
 
@@ -8560,7 +8506,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalBasicsParser.g:3106:3: kw= Value
+                    // InternalBasicsParser.g:3073:3: kw= Value
                     {
                     kw=(Token)match(input,Value,FOLLOW_2); 
 
@@ -8571,7 +8517,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalBasicsParser.g:3112:3: kw= Service
+                    // InternalBasicsParser.g:3079:3: kw= Service
                     {
                     kw=(Token)match(input,Service,FOLLOW_2); 
 
@@ -8582,7 +8528,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalBasicsParser.g:3118:3: kw= Type
+                    // InternalBasicsParser.g:3085:3: kw= Type
                     {
                     kw=(Token)match(input,Type,FOLLOW_2); 
 
@@ -8593,7 +8539,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalBasicsParser.g:3124:3: kw= Action
+                    // InternalBasicsParser.g:3091:3: kw= Action
                     {
                     kw=(Token)match(input,Action,FOLLOW_2); 
 
@@ -8604,7 +8550,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalBasicsParser.g:3130:3: kw= Duration
+                    // InternalBasicsParser.g:3097:3: kw= Duration
                     {
                     kw=(Token)match(input,Duration,FOLLOW_2); 
 
@@ -8615,7 +8561,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalBasicsParser.g:3136:3: kw= Time
+                    // InternalBasicsParser.g:3103:3: kw= Time
                     {
                     kw=(Token)match(input,Time,FOLLOW_2); 
 
@@ -8648,7 +8594,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalBasicsParser.g:3145:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalBasicsParser.g:3112:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -8656,8 +8602,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBasicsParser.g:3145:47: (iv_ruleEString= ruleEString EOF )
-            // InternalBasicsParser.g:3146:2: iv_ruleEString= ruleEString EOF
+            // InternalBasicsParser.g:3112:47: (iv_ruleEString= ruleEString EOF )
+            // InternalBasicsParser.g:3113:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -8684,7 +8630,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalBasicsParser.g:3152:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalBasicsParser.g:3119:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8695,10 +8641,10 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBasicsParser.g:3158:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalBasicsParser.g:3159:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalBasicsParser.g:3125:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalBasicsParser.g:3126:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalBasicsParser.g:3159:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalBasicsParser.g:3126:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -8716,7 +8662,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalBasicsParser.g:3160:3: this_STRING_0= RULE_STRING
+                    // InternalBasicsParser.g:3127:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8729,7 +8675,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBasicsParser.g:3168:3: this_ID_1= RULE_ID
+                    // InternalBasicsParser.g:3135:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -8768,22 +8714,22 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
     protected DFA9 dfa9 = new DFA9(this);
     protected DFA22 dfa22 = new DFA22(this);
     static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\1\7\12\uffff";
-    static final String dfa_3s = "\1\101\5\uffff\1\101\1\uffff\2\101\1\uffff";
-    static final String dfa_4s = "\1\125\5\uffff\1\121\1\uffff\2\104\1\uffff";
-    static final String dfa_5s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\7\2\uffff\1\6";
+    static final String dfa_2s = "\1\10\2\11\10\uffff";
+    static final String dfa_3s = "\3\101\4\uffff\1\101\3\uffff";
+    static final String dfa_4s = "\3\121\4\uffff\1\124\3\uffff";
+    static final String dfa_5s = "\3\uffff\1\2\1\3\1\4\1\5\1\uffff\1\7\1\1\1\6";
     static final String dfa_6s = "\13\uffff}>";
     static final String[] dfa_7s = {
-            "\1\7\1\uffff\1\6\1\7\1\uffff\1\2\1\5\1\3\1\4\6\uffff\2\1\3\uffff\1\7",
+            "\1\10\1\uffff\1\7\1\10\1\uffff\1\3\1\6\1\4\1\5\6\uffff\1\2\1\1",
+            "\1\11\1\10\1\uffff\1\11\13\uffff\2\11",
+            "\1\11\1\10\1\uffff\1\11\13\uffff\2\11",
             "",
             "",
             "",
             "",
+            "\1\12\1\uffff\2\12\1\uffff\4\12\6\uffff\2\12\2\uffff\1\10",
             "",
-            "\1\12\1\uffff\2\12\1\uffff\4\12\6\uffff\1\11\1\10",
             "",
-            "\1\12\1\7\1\uffff\1\12",
-            "\1\12\1\7\1\uffff\1\12",
             ""
     };
 
@@ -8813,10 +8759,10 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_8s = "\44\uffff";
-    static final String dfa_9s = "\36\uffff\2\42\4\uffff";
+    static final String dfa_9s = "\36\uffff\2\43\4\uffff";
     static final String dfa_10s = "\1\11\35\uffff\2\100\4\uffff";
     static final String dfa_11s = "\1\121\35\uffff\2\100\4\uffff";
-    static final String dfa_12s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\2\uffff\1\40\1\41\1\36\1\37";
+    static final String dfa_12s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\2\uffff\1\40\1\41\1\37\1\36";
     static final String dfa_13s = "\44\uffff}>";
     static final String[] dfa_14s = {
             "\1\32\1\33\1\uffff\1\17\1\uffff\1\34\1\25\1\27\1\31\2\uffff\1\12\1\13\1\24\1\26\1\30\2\uffff\1\23\3\uffff\1\20\3\uffff\1\21\1\35\1\41\1\22\1\uffff\1\14\1\5\1\7\1\11\1\uffff\1\4\1\6\1\10\1\uffff\1\3\3\uffff\1\1\1\15\1\40\1\uffff\1\2\2\uffff\1\16\23\uffff\1\37\1\36",
@@ -8849,8 +8795,8 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\43",
-            "\1\43",
+            "\1\42",
+            "\1\42",
             "",
             "",
             "",
@@ -8879,7 +8825,7 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
             this.transition = dfa_14;
         }
         public String getDescription() {
-            return "1758:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )";
+            return "1725:2: (this_bool_0= rulebool | this_int8_1= ruleint8 | this_uint8_2= ruleuint8 | this_int16_3= ruleint16 | this_uint16_4= ruleuint16 | this_int32_5= ruleint32 | this_uint32_6= ruleuint32 | this_int64_7= ruleint64 | this_uint64_8= ruleuint64 | this_float32_9= rulefloat32 | this_float64_10= rulefloat64 | this_string0_11= rulestring0 | this_byte_12= rulebyte | this_time_13= ruletime | this_duration_14= ruleduration | this_Header_15= ruleHeader | this_boolArray_16= ruleboolArray | this_int8Array_17= ruleint8Array | this_uint8Array_18= ruleuint8Array | this_int16Array_19= ruleint16Array | this_uint16Array_20= ruleuint16Array | this_int32Array_21= ruleint32Array | this_uint32Array_22= ruleuint32Array | this_int64Array_23= ruleint64Array | this_uint64Array_24= ruleuint64Array | this_float32Array_25= rulefloat32Array | this_float64Array_26= rulefloat64Array | this_string0Array_27= rulestring0Array | this_byteArray_28= rulebyteArray | this_SpecBaseRef_29= ruleSpecBaseRef | this_ArraySpecRef_30= ruleArraySpecRef | this_char_31= rulechar | this_charArray_32= rulecharArray )";
         }
     }
  
@@ -8902,9 +8848,9 @@ public class InternalBasicsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x00000000000303C8L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000000L,0x0000000000030010L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
 
 }

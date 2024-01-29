@@ -1057,61 +1057,57 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Action cParameterStructAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueParameterStructMemberParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
-		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
-		private final Assignment cValueAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
-		private final RuleCall cValueParameterStructMemberParserRuleCall_1_2_2_0 = (RuleCall)cValueAssignment_1_2_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
+		private final RuleCall cBEGINTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueParameterStructMemberParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
 		
 		//ParameterStruct returns ParameterStruct:
 		//    {ParameterStruct}
-		//        ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+		//        ('['
+		//        BEGIN
+		//        (value+=ParameterStructMember)*  ']'
+		//        END
+		//        )?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ParameterStruct}
-		//    ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+		//    ('['
+		//    BEGIN
+		//    (value+=ParameterStructMember)*  ']'
+		//    END
+		//    )?
 		public Group getGroup() { return cGroup; }
 		
 		//{ParameterStruct}
 		public Action getParameterStructAction_0() { return cParameterStructAction_0; }
 		
-		//('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+		//('['
+		//BEGIN
+		//(value+=ParameterStructMember)*  ']'
+		//END
+		//)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 		
-		//value+=ParameterStructMember
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_1_1() { return cBEGINTerminalRuleCall_1_1; }
+		
+		//(value+=ParameterStructMember)*
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
 		
 		//ParameterStructMember
-		public RuleCall getValueParameterStructMemberParserRuleCall_1_1_0() { return cValueParameterStructMemberParserRuleCall_1_1_0; }
-		
-		//( "," '[' value+=ParameterStructMember ']')*
-		public Group getGroup_1_2() { return cGroup_1_2; }
-		
-		//","
-		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1_2_1() { return cLeftSquareBracketKeyword_1_2_1; }
-		
-		//value+=ParameterStructMember
-		public Assignment getValueAssignment_1_2_2() { return cValueAssignment_1_2_2; }
-		
-		//ParameterStructMember
-		public RuleCall getValueParameterStructMemberParserRuleCall_1_2_2_0() { return cValueParameterStructMemberParserRuleCall_1_2_2_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_1_2_3() { return cRightSquareBracketKeyword_1_2_3; }
+		public RuleCall getValueParameterStructMemberParserRuleCall_1_2_0() { return cValueParameterStructMemberParserRuleCall_1_2_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_3() { return cRightSquareBracketKeyword_1_3; }
+		
+		//END
+		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
 	}
 	public class ParameterDateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterDate");
@@ -1135,22 +1131,14 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueParameterValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueParameterValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//ParameterStructMember returns ParameterStructMember:
-		//    name=EString':'
-		//    BEGIN
-		//        value=ParameterValue
-		//    END;
+		//    name=EString':'value=ParameterValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString':'
-		//BEGIN
-		//    value=ParameterValue
-		//END
+		//name=EString':'value=ParameterValue
 		public Group getGroup() { return cGroup; }
 		
 		//name=EString
@@ -1162,17 +1150,11 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2() { return cBEGINTerminalRuleCall_2; }
-		
 		//value=ParameterValue
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//ParameterValue
-		public RuleCall getValueParameterValueParserRuleCall_3_0() { return cValueParameterValueParserRuleCall_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
+		public RuleCall getValueParameterValueParserRuleCall_2_0() { return cValueParameterValueParserRuleCall_2_0; }
 	}
 	public class ParameterStructTypeMemberElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.ros.Basics.ParameterStructTypeMember");
@@ -2821,7 +2803,11 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//ParameterStruct returns ParameterStruct:
 	//    {ParameterStruct}
-	//        ('[' value+=ParameterStructMember  ( "," '[' value+=ParameterStructMember ']')*  ']' )?
+	//        ('['
+	//        BEGIN
+	//        (value+=ParameterStructMember)*  ']'
+	//        END
+	//        )?
 	//;
 	public ParameterStructElements getParameterStructAccess() {
 		return pParameterStruct;
@@ -2843,10 +2829,7 @@ public class BasicsGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//ParameterStructMember returns ParameterStructMember:
-	//    name=EString':'
-	//    BEGIN
-	//        value=ParameterValue
-	//    END;
+	//    name=EString':'value=ParameterValue;
 	public ParameterStructMemberElements getParameterStructMemberAccess() {
 		return pParameterStructMember;
 	}

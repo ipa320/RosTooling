@@ -22,6 +22,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RosSystemGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q;
 	protected AbstractElementAlias match_RosNode___InterfacesKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q;
 	protected AbstractElementAlias match_RosNode___ParametersKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q;
 	protected AbstractElementAlias match_RosSystem___ConnectionsKeyword_4_4_0_BEGINTerminalRuleCall_4_4_1_ENDTerminalRuleCall_4_4_3_____NodesKeyword_4_2_0_BEGINTerminalRuleCall_4_2_1_ENDTerminalRuleCall_4_2_3___or___ParametersKeyword_4_3_0_BEGINTerminalRuleCall_4_3_1_ENDTerminalRuleCall_4_3_3___or___ProcessesKeyword_4_1_0_BEGINTerminalRuleCall_4_1_1_ENDTerminalRuleCall_4_1_3___or___SubSystemsKeyword_4_0_0_BEGINTerminalRuleCall_4_0_1_ENDTerminalRuleCall_4_0_3____a__a;
@@ -84,6 +85,7 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RosSystemGrammarAccess) access;
+		match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getLeftSquareBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getBEGINTerminalRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getRightSquareBracketKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getParameterStructAccess().getENDTerminalRuleCall_1_4()));
 		match_RosNode___InterfacesKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getInterfacesKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_7_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_7_3()));
 		match_RosNode___ParametersKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getParametersKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getBEGINTerminalRuleCall_8_1()), new TokenAlias(false, false, grammarAccess.getRosNodeAccess().getENDTerminalRuleCall_8_3()));
 		match_RosSystem___ConnectionsKeyword_4_4_0_BEGINTerminalRuleCall_4_4_1_ENDTerminalRuleCall_4_4_3_____NodesKeyword_4_2_0_BEGINTerminalRuleCall_4_2_1_ENDTerminalRuleCall_4_2_3___or___ParametersKeyword_4_3_0_BEGINTerminalRuleCall_4_3_1_ENDTerminalRuleCall_4_3_3___or___ProcessesKeyword_4_1_0_BEGINTerminalRuleCall_4_1_1_ENDTerminalRuleCall_4_1_3___or___SubSystemsKeyword_4_0_0_BEGINTerminalRuleCall_4_0_1_ENDTerminalRuleCall_4_0_3____a__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getConnectionsKeyword_4_4_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_4_4_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_4_4_3()), new AlternativeAlias(true, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getNodesKeyword_4_2_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_4_2_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_4_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_4_3_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_4_3_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_4_3_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getProcessesKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_4_1_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_4_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getSubSystemsKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getBEGINTerminalRuleCall_4_0_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getENDTerminalRuleCall_4_0_3()))));
@@ -171,7 +173,9 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_RosNode___InterfacesKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q.equals(syntax))
+			if (match_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q.equals(syntax))
+				emit_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RosNode___InterfacesKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q.equals(syntax))
 				emit_RosNode___InterfacesKeyword_7_0_BEGINTerminalRuleCall_7_1_ENDTerminalRuleCall_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RosNode___ParametersKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q.equals(syntax))
 				emit_RosNode___ParametersKeyword_8_0_BEGINTerminalRuleCall_8_1_ENDTerminalRuleCall_8_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -291,6 +295,20 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('[' BEGIN ']' END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 
+	 * </pre>
+	 */
+	protected void emit_ParameterStruct___LeftSquareBracketKeyword_1_0_BEGINTerminalRuleCall_1_1_RightSquareBracketKeyword_1_3_ENDTerminalRuleCall_1_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:

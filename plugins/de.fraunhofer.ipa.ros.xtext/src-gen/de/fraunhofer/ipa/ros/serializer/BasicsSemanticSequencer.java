@@ -644,7 +644,7 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getParameterStructMemberAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterStructMemberAccess().getValueParameterValueParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -694,7 +694,7 @@ public class BasicsSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     ParameterStruct returns ParameterStruct
 	 *
 	 * Constraint:
-	 *     (value+=ParameterStructMember value+=ParameterStructMember*)?
+	 *     value+=ParameterStructMember*
 	 * </pre>
 	 */
 	protected void sequence_ParameterStruct(ISerializationContext context, ParameterStruct semanticObject) {
