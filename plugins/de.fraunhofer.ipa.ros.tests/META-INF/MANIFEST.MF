@@ -2,12 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.tests;singleton:=true
+Automatic-Module-Name: de.fraunhofer.ipa.ros.tests
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ros.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-19
+Export-Package: primitives.tests,
+ ros.tests
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.ros;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

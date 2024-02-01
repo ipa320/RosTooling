@@ -22,4 +22,12 @@
             uri="http://www.ipa.fraunhofer.de/RosComponent"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated rossystem -->
+      <package
+            uri="http://www.ipa.fraunhofer.de/rossystem"
+            class="system.RossystemPackage"
+            genModel="model/rossystem.genmodel"/>
+   </extension>
+
 </plugin>

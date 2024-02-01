@@ -2,15 +2,11 @@
 
 ### Autogeneration tools
 
-We facilitate a couple of tools to auto generate the corresponding model (these tools work only for messages and services, the action types, in the majority of the cases, have to be unfortunately implemented manually):
-
-- Use our cloud facilities : [ROS Model Extractor](http://ros-model.seronet-project.de/) and navigate to the tag "Specification Analysis". There, if the package that contains the message types is released for Melodic you just have to give the name of the package and press **Submit**. Otherwise please specify first the name of the Git repository that hold the package
-
-- Use locally the helper script (:bangbang::bangbang: this method requires a local ROS installation):
+For the autogeneration of of model objects we facilitate a bash (:bangbang::bangbang: this method requires a local ROS installation):
 
 ```
 source /your_ROS_workspace
-wget https://raw.githubusercontent.com/ipa320/ros-model-cloud/master/extractor-interface/scripts/generate_messages_model_helper.sh
+wget https://raw.githubusercontent.com/ipa320/RosCommonObjects/YamlFormat/de.fraunhofer.ipa.ros.communication.objects/basic_msgs/generate_messages_model_helper.sh
 chmod +x generate_messages_model_helper.sh
 ./generate_messages_model_helper.sh ROS_PACKAGE_NAME > ROS_PACKAGE_NAME.ros
 ```
@@ -24,30 +20,91 @@ To modify the ROS models (.ros) manually the ROS tooling provides a customized e
 This editor contains an autocomplete function (by pressing Ctrl+Space) and will report any error made by editing. The first step is define a PackageSet (that correspond to a metapackage for ROS, this definition is optional and its name can be kept empty). Then, the ROS package which contains the msgs have to be defined and within it the option "spec" have to be selected to write down the objects. In the practice that means that the initial *.ros file that describes ROS objects looks:
 
 ```
-PackageSet { package {  CatkinPackage ros_package_name { 
-	spec {}
-}}}
+ros_package_name:
+  msgs:
+    msg_name
+      message
+        type name
 ```
 
-The grammar supports 3 types of communication objects TopicSpec (to describe ROS msgs), ServiceSpec (to describe ROS srvs) and ActionSpec (to describe ROS actions), and consequentially each of these 3 types support different specifications types:
+The grammar supports 3 types of communication objects messages, services and actions, and consequentially each of these 3 types support different specifications types:
 
-- ROS msgs 
+- ROS msgs
 
-  **TopicSpec** SpecName { **message** { ElementType ElementName ... } } 
+```
+ros_package_name:
+  **msgs:**
+    msg_name
+      **message**
+        ElementType ElementName
+```
 
-  ​     -> Example ```TopicSpec Point{ message { float64 x float64 y float64 z }}```
+For example:
+```
+std_msgs:
+  msgs:
+    ColorRGBA
+      message
+        float32 r
+        float32 g
+        float32 b
+        float32 a
+```
 
-- ROS srvs 
+- ROS srvs
 
-  **ServiceSpec** SpecName { **request** { ElementType ElementName ..} **response** { ElementType ElementName .. } }
+```
+ros_package_name:
+  **srvs:**
+    srv_name
+      **request**
+        ElementType ElementName
+      **response**
+        ElementType ElementName
+```
 
-  ​     -> Example  ```ServiceSpec SetBool{ request { bool data } response { bool success string message } }```
+For example:
+```
+std_srvs:
+  srvs:
+    SetBool
+      request
+        bool data
+      response
+        bool success
+        string message
+```
 
-- ROS actions 
 
-  **ActionSpec** SpecName { **goal** { ElementType ElementName .. } **result** { ElementType ElementName ..} **feedback** { ElementType ElementName .. }}
+- ROS actions
 
-  ​     -> Example ```ActionSpec Say { goal  { string test } result { bool sucess string message} feedback {} }```
+```
+ros_package_name:
+  **actions:**
+    action_name
+      **goal**
+        ElementType ElementName
+      **result**
+        ElementType ElementName
+      **feedback**
+        ElementType ElementName
+```
+
+For example:
+```
+control_msgs:
+  actions:
+    PointHead
+      goal
+        'geometry_msgs/msg/PointStamped'[] target
+        'geometry_msgs/msg/Vector3'[] pointing_axis
+        string pointing_frame
+        'builtin_interfaces/msg/Duration'[] min_duration
+        float64 max_velocity
+      result
+      feedback
+        float64 pointing_angle_error
+```
 
 Where , quite similar to ROS, the allowed element types are:
 
@@ -69,10 +126,10 @@ Where , quite similar to ROS, the allowed element types are:
 
 - Relative reference to other object:
   - NameOftheObject (if it is described within the same ROS package) -> for example **Point32**
-  - 'ROSPackage_name.NameOftheObject' (if it is described in other ROS package) -> for example **'geometry_msgs.Point32'**
+  - 'ROSPackage_name/NameOftheObject' (if it is described in other ROS package) -> for example **'geometry_msgs/Point32'**
 
 - Arrays of element types:
-  - ElementType[] -> for example **string[]** or **Point32[]** or **'geometry_msgs.Point32'[]**
+  - ElementType[] -> for example **string[]** or **Point32[]** or **'geometry_msgs/Point32'[]**
 
 
 Additionally the definition of constants with its value is also supported and follows a patter very similar to the ROS one: ```constanttype1 CONSTANTNAME1=constantvalue1```, for example ```byte OK=0 byte WARN=1 byte ERROR=2 byte STALE=3```.
@@ -80,37 +137,75 @@ Additionally the definition of constants with its value is also supported and fo
 The following extract shows the ROS model description correspondent to the [nav_msgs](http://wiki.ros.org/nav_msgs) package:
 
 ```
-PackageSet {
-    Package nav_msgs{ Specs { 
-      TopicSpec GetMapAction{ message { GetMapActionGoal action_goal GetMapActionResult action_result GetMapActionFeedback action_feedback }},
-      TopicSpec GetMapActionFeedback{ message { Header header "actionlib_msgs.GoalStatus" status GetMapFeedback feedback }},
-      TopicSpec GetMapActionGoal{ message { Header header "actionlib_msgs.GoalID" goal_id GetMapGoal goal }},
-      TopicSpec GetMapActionResult{ message { Header header "actionlib_msgs.GoalStatus" status GetMapResult result }},
-      TopicSpec GetMapFeedback{ message {  }},
-      TopicSpec GetMapGoal{ message {  }},
-      TopicSpec GetMapResult{ message { "nav_msgs.OccupancyGrid" map }},
-      TopicSpec GridCells{ message { Header header float32 cell_width float32 cell_height "geometry_msgs.Point"[] cells }},
-      TopicSpec MapMetaData{ message { time map_load_time float32 resolution uint32 width uint32 height "geometry_msgs.Pose" origin }},
-      TopicSpec OccupancyGrid{ message { Header header MapMetaData info int8[] data }},
-      TopicSpec Odometry{ message { Header header string child_frame_id "geometry_msgs.PoseWithCovariance" pose "geometry_msgs.TwistWithCovariance" twist }},
-      TopicSpec Path{ message { Header header "geometry_msgs.PoseStamped"[] poses }},
-      ServiceSpec GetMap{ request {  } response { "nav_msgs.OccupancyGrid" map } },
-      ServiceSpec GetPlan{ request { "geometry_msgs.PoseStamped" start "geometry_msgs.PoseStamped" goal float32 tolerance } response { "nav_msgs.Path" plan } },
-      ServiceSpec SetMap{ request { "nav_msgs.OccupancyGrid" map "geometry_msgs.PoseWithCovarianceStamped" initial_pose } response { bool success } }
-    }}
-}}
+nav_msgs:
+  msgs:
+    Path
+      message
+        'std_msgs/msg/Header'[] header
+        'geometry_msgs/msg/PoseStamped'[] poses
+    OccupancyGrid
+      message
+        'std_msgs/msg/Header'[] header
+        'nav_msgs/msg/MapMetaData'[] info
+        int8[] data
+    Odometry
+      message
+        'std_msgs/msg/Header'[] header
+        string child_frame_id
+        'geometry_msgs/msg/PoseWithCovariance'[] pose
+        'geometry_msgs/msg/TwistWithCovariance'[] twist
+    GridCells
+      message
+        'std_msgs/msg/Header'[] header
+        float32 cell_width
+        float32 cell_height
+        'geometry_msgs/msg/Point'[] cells
+    MapMetaData
+      message
+        'builtin_interfaces/msg/Time'[] map_load_time
+        float32 resolution
+        uint32 width
+        uint32 height
+        'geometry_msgs/msg/Pose'[] origin
+  srvs:
+    SetMap
+      request
+        'nav_msgs/msg/OccupancyGrid'[] map
+        'geometry_msgs/msg/PoseWithCovarianceStamped'[] initial_pose
+      response
+        bool success
+    LoadMap
+      request
+        string map_url
+      response
+        'nav_msgs/msg/OccupancyGrid'[] map
+        uint8 result
+    GetPlan
+      request
+        'geometry_msgs/msg/PoseStamped'[] start
+        'geometry_msgs/msg/PoseStamped'[] goal
+        float32 tolerance
+      response
+        'nav_msgs/msg/Path'[] plan
+    GetMap
+      request
+      response
+        'nav_msgs/msg/OccupancyGrid'[] map
 ```
 :bangbang::bangbang: This model doesn't allow the creation of 2 specification with the same name, although they have different types. That means a ROS model like the following one is not allow:
 
 ```
-PackageSet {
-    Package my_msgs { Specs { 
-      TopicSpec hello { message { String data }},
-      ServiceSpec hello { request {  } response { String data }},
-    }}
-}}
+my_msgs:
+  msgs:
+   hello:
+    message
+     String data 
+  srvs:
+   hello
+     request
+     response
+      String data
 ```
-The reason is that when one of these objects have to be referenced during the definition of a node it will be imposible for the model to distinguish which is the correct one (both are defined as my_msgs.Hello and whitin the dame model file). For these cases we recommend to split the objects into two different model files.
+The reason is that when one of these objects have to be referenced during the definition of a node it will be imposible for the model to distinguish which is the correct one (both are defined as my_msgs/Hello and whitin the dame model file). For these cases we recommend to split the objects into two different model files.
 
 The repository [RosCommonObjects](https://github.com/ipa320/RosCommonObjects) holds further examples.
-

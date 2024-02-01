@@ -5,14 +5,14 @@ import rossystem.ComponentStack
 import de.fraunhofer.ipa.rossystem.deployment.DeploymentHelpers
 
 class DockerContainerCompiler {
-	DeploymentHelpers generator_helper = new DeploymentHelpers() 
-	
-	def dockerfile_header(Integer ros_version) '''
+    DeploymentHelpers generator_helper = new DeploymentHelpers()
+
+    def dockerfile_header(Integer ros_version) '''
 # syntax=docker/dockerfile:experimental
 ARG SUFFIX=
 ARG BUILDER_SUFFIX=:ros«ros_version»
 ARG PREFIX=
-	'''
+    '''
     def compile_toDockerContainer(RosSystem system, ComponentStack stack, String ros_distro, Integer ros_version) '''«generator_helper.init_pkg()»
 «dockerfile_header(ros_version)»
 «IF stack===null»

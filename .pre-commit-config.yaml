@@ -1,0 +1,27 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace
+        exclude: (src-gen)
+    -   id: end-of-file-fixer
+        exclude: (src-gen)
+    -   id: check-yaml
+        exclude: (src-gen)
+    -   id: check-added-large-files
+        exclude: (src-gen)
+
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.4.2
+  hooks:
+    - id: forbid-crlf
+      exclude: (src-gen)
+    - id: remove-crlf
+      exclude: (src-gen)
+    - id: forbid-tabs
+      exclude: (src-gen)
+    - id: remove-tabs
+      args: [--whitespaces-count, '4']
+      exclude: (src-gen)

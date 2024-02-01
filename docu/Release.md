@@ -5,7 +5,7 @@
 Run the command:
 
 ```
-mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=X.Y.0-SNAPSHOT -f plugins/de.fraunhofer.ipa.ros.parent/
+mvn versions:set -DnewVersion=X.Y.Z-SNAPSHOT -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
 ```
 
 This will upgrade the *pom.xml* and *MANIFEST.MF* of all the repositories.
@@ -29,4 +29,11 @@ The resulted folders and files have to be copied to the *updatesite/latest* fold
 
 Tag the current point of the history with the release number previously given (X.Y.0). Optionally upgrade the [exported files](#3-export-the-updated-feature) as a zip.
 
+# Create a new .jar file as release
 
+In the folder *plugins/de.fraunhofer.ipa.ros.parent* execute the command:
+```
+mvn package
+```
+
+The generated .jar file will be automatically generated under *plugins/de.fraunhofer.ipa.ros.plugin/target/de.fraunhofer.ipa.ros.plugin-X.Y.Z-SNAPSHOT.jar*.

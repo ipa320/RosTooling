@@ -21,56 +21,56 @@ package ros;
  * @generated
  */
 public interface ParameterArrayType extends ParameterType {
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(ParameterType)
-	 * @see ros.RosPackage#getParameterArrayType_Type()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	ParameterType getType();
+    /**
+     * Returns the value of the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Type</em>' containment reference.
+     * @see #setType(ParameterType)
+     * @see ros.RosPackage#getParameterArrayType_Type()
+     * @model containment="true" required="true"
+     * @generated
+     */
+    ParameterType getType();
 
-	/**
-	 * Sets the value of the '{@link ros.ParameterArrayType#getType <em>Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' containment reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(ParameterType value);
+    /**
+     * Sets the value of the '{@link ros.ParameterArrayType#getType <em>Type</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Type</em>' containment reference.
+     * @see #getType()
+     * @generated
+     */
+    void setType(ParameterType value);
 
-	/**
-	 * Returns the value of the '<em><b>Default</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Default</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default</em>' containment reference.
-	 * @see #setDefault(ParameterSequence)
-	 * @see ros.RosPackage#getParameterArrayType_Default()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ParameterSequence getDefault();
+    /**
+     * Returns the value of the '<em><b>Default</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Default</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Default</em>' containment reference.
+     * @see #setDefault(ParameterSequence)
+     * @see ros.RosPackage#getParameterArrayType_Default()
+     * @model containment="true"
+     * @generated
+     */
+    ParameterSequence getDefault();
 
-	/**
-	 * Sets the value of the '{@link ros.ParameterArrayType#getDefault <em>Default</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default</em>' containment reference.
-	 * @see #getDefault()
-	 * @generated
-	 */
-	void setDefault(ParameterSequence value);
+    /**
+     * Sets the value of the '{@link ros.ParameterArrayType#getDefault <em>Default</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Default</em>' containment reference.
+     * @see #getDefault()
+     * @generated
+     */
+    void setDefault(ParameterSequence value);
 
 } // ParameterArrayType

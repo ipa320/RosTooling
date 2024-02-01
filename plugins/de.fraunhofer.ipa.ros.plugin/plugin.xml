@@ -2,17 +2,17 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-	<extension
+    <extension
        id="Ros developer perspective"
        name="RosDeveloper"
        point="org.eclipse.ui.perspectives">
-	   <perspective
+       <perspective
           class="de.fraunhofer.ipa.ros.plugin.ResourceManagerPerspectiveFactory"
           icon="icons/ros_icon.jpg"
           id="de.fraunhofer.ipa.ros.perspective"
           name="ROS developer">
-	   </perspective>
-	</extension>
-	
+       </perspective>
+    </extension>
+
 
 </plugin>

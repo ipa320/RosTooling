@@ -36,7 +36,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="response" eType="#//MessageDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceServer" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceServer" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
         eType="#//ServiceSpec"/>
   </eClassifiers>
@@ -52,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CatkinPackage" eSuperTypes="#//Package"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Publisher" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//TopicSpec"/>
   </eClassifiers>
@@ -70,11 +70,11 @@
         volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
         iD="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Subscriber" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Subscriber" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//TopicSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceClient" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceClient" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
         eType="#//ServiceSpec"/>
   </eClassifiers>
@@ -90,11 +90,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" eType="#//MessageDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionServer" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionServer" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         eType="#//ActionSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionClient" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionClient" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         eType="#//ActionSpec"/>
   </eClassifiers>
@@ -109,10 +109,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="GlobalNamespace" eSuperTypes="#//Namespace"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelativeNamespace" eSuperTypes="#//Namespace"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrivateNamespace" eSuperTypes="#//RelativeNamespace"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//Namespace"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//GraphName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qos" eType="#//QualityOfService"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GraphName" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true"/>
@@ -138,7 +140,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//ParameterDouble"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamespacedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//InterfaceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ParameterType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ParameterValue"
@@ -209,4 +211,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmentPackage" eSuperTypes="#//Package"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualityOfService">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="QoSProfile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="default_qos"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="History" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="keep_all"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Depth" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Reliability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="reliable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Durability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="transient_local"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopicSpecMsgRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
+        eType="#//TopicSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecMsgRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
+        eType="#//SpecBase"/>
+  </eClassifiers>
 </ecore:EPackage>

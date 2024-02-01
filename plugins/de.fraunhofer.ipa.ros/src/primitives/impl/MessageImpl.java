@@ -31,41 +31,41 @@ import primitives.PrimitivesPackage;
  * @generated
  */
 public abstract class MessageImpl extends MinimalEObjectImpl.Container implements Message {
-	/**
-	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_EDEFAULT = null;
+    /**
+     * The default value of the '{@link #getData() <em>Data</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getData()
+     * @generated
+     * @ordered
+     */
+    protected static final String DATA_EDEFAULT = null;
 
-	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected String data = DATA_EDEFAULT;
+    /**
+     * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getData()
+     * @generated
+     * @ordered
+     */
+    protected String data = DATA_EDEFAULT;
 
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected AbstractType type;
+    /**
+     * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getType()
+     * @generated
+     * @ordered
+     */
+    protected AbstractType type;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MessageImpl() {
-		super();
-	}}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MessageImpl() {
+        super();
+    }}

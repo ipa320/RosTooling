@@ -3,43 +3,83 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.rossystem/src" modelPluginID="de.fraunhofer.ipa.rossystem"
     modelName="Rossystem" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../de.fraunhofer.ipa.componentInterface/model/componentInterface.genmodel#//componentInterface ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//primitives"
+    usedGenPackages="../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//primitives"
     operationReflection="true" importOrganizing="true">
   <foreignModel>rossystem.ecore</foreignModel>
   <genPackages prefix="Rossystem" disposableProviderFactory="true" ecorePackage="rossystem.ecore#/">
-    <genClasses ecoreClass="rossystem.ecore#//RosSystem">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/TopicConnections"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ServiceConnections"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ActionConnections"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosSystem/Name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/ComponentStack"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/Parameter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystem/RosComponent"/>
+    <genClasses ecoreClass="rossystem.ecore#//System">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//System/fromFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/processes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//System/parameter"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//ComponentStack">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ComponentStack/Name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/RosComponent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//ComponentStack/QualityAttribute"/>
+    <genClasses ecoreClass="rossystem.ecore#//Rossystem"/>
+    <genClasses ecoreClass="rossystem.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//Process/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//Process/threads"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rossystem.ecore#//Process/components"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//QualityAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//QualityAttribute/Name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//QualityAttribute/Type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//QualityAttribute/Value"/>
+    <genClasses image="false" ecoreClass="rossystem.ecore#//Component"/>
+    <genClasses image="false" ecoreClass="rossystem.ecore#//Connection"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosNode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosNode/namespace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/rosinterfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosNode/rosparameters"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//TopicConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/From"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//TopicConnection/To"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//TopicConnection/TopicName"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosInterface/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosInterface/reference"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//ServiceConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/From"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ServiceConnection/To"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ServiceConnection/ServiceName"/>
+    <genClasses image="false" ecoreClass="rossystem.ecore#//InterfaceReference"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosPublisherReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosPublisherReference/from"/>
     </genClasses>
-    <genClasses ecoreClass="rossystem.ecore#//ActionConnection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/From"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//ActionConnection/To"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//ActionConnection/ActionName"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosSubscriberReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSubscriberReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosServiceServerReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceServerReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosServiceClientReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceClientReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosActionServerReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionServerReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosActionClientReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionClientReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosParameterReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosParameterReference/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rossystem.ecore#//RosParameter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosParameter/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosParameter/from"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosSystemConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystemConnection/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosSystemConnection/to"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosConnection"/>
+    <genClasses ecoreClass="rossystem.ecore#//RosTopicConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosTopicConnection/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosTopicConnection/to"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosServiceConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceConnection/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosServiceConnection/to"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//RosActionConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//RosActionConnection/to"/>
+    </genClasses>
+    <genClasses ecoreClass="rossystem.ecore#//SubSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rossystem.ecore#//SubSystem/system"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

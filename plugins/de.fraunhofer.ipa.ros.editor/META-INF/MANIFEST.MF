@@ -3,12 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.editor;singleton:=true
 Automatic-Module-Name: de.fraunhofer.ipa.ros.editor
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: ros.presentation.RosEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: primitives.presentation,
  ros.presentation
 Require-Bundle: org.eclipse.core.runtime,
@@ -17,9 +17,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.sirius.ui,
- org.eclipse.sirius,
+ org.eclipse.jgit,
  org.eclipse.emf.transaction,
- org.eclipse.jgit
+ org.eclipse.sirius,
+ org.eclipse.sirius.ui
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.sirius.diagram.description

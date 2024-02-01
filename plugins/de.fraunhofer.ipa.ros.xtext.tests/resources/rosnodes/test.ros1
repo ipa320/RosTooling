@@ -1,0 +1,32 @@
+rossdl_test:
+  fromGitRepo: "https://github.com/jane-doe/project_example.git:branch"
+  artifacts:
+    image_filter:
+      node: image_filter
+      publishers:
+        image_out:
+          type: "sensor_msgs/msg/Image"
+        description_out:
+          type: "std_msgs/msg/String"
+      serviceclients:
+        camera_info:
+          type: "sensor_msgs/srv/SetCameraInfo"
+      subscribers:
+        image_in:
+          type: "sensor_msgs/msg/Image"
+        laser_in:
+          type: "sensor_msgs/msg/LaserScan"
+      parameters:
+        description_label:
+          type: String
+          default: "default image"
+    consumer:
+      node: consumer
+      subscribers:
+        image_in:
+          type: "sensor_msgs/msg/Image"
+        description_in:
+          type: "std_msgs/msg/String"
+      publishers:
+        image_out:
+          type: "sensor_msgs/msg/Image"

@@ -2,7 +2,7 @@
 package_list=$@
 
 
-function parserToRosModel(){    
+function parserToRosModel(){
     msg_desc=""
     for word in $1; do
         word="$(echo $word | sed -e 's/\[[^][]*\]/[]/g' )"
@@ -40,11 +40,11 @@ do
     do
         cout_msg=$((cout_msg-1))
         message=${i/$p\//}
-	MsgsArray+=$message' '
+    MsgsArray+=$message' '
         message_show=$(rosmsg show -r $i | sed '/^#/ d' | awk -F'#' '{print $1}')
         message_show="$(echo $message_show | sed -e 's/\s=\s/=/g')"
         final_desc=$(parserToRosModel "$message_show")
-	    echo -n '      TopicSpec '$message'{ message { '$final_desc' }}'
+        echo -n '      TopicSpec '$message'{ message { '$final_desc' }}'
         if (("$cout_msg" >= "1" || "$cout_srv" >= "1" ))
         then
             echo ','
@@ -59,28 +59,28 @@ do
         request="$(echo $service_show | sed 's/---.*//' | sed -e 's/\s=\s/=/g')"
         response="$(echo $service_show | sed -e 's#.*---\(\)#\1#'| sed -e 's/\s=\s/=/g')"
         final_request=$(parserToRosModel "$request")
-        final_response=$(parserToRosModel "$response")   
-	    echo -n '      ServiceSpec '$service'{ request { '$final_request' } response { '$final_response' } }'
+        final_response=$(parserToRosModel "$response")
+        echo -n '      ServiceSpec '$service'{ request { '$final_request' } response { '$final_response' } }'
         if (("$cout_srv" >= "1"))
         then
             echo ','
         fi
     done
 
-	for i in $MsgsArray
-	do
-		if [[ "$i" =~ "ActionGoal" ]];then
-			ActionName=${i//'ActionGoal'/}
-			if [[ "${MsgsArray[@]}" =~ "${ActionName}ActionResult" ]] && [[ "${MsgsArray[@]}" =~ "${ActionName}ActionFeedback" ]]; then
-				arr_act+=$ActionName' '
-			fi
-		fi	
-	done
-	cout_act=${#arr_act[@]}
+    for i in $MsgsArray
+    do
+        if [[ "$i" =~ "ActionGoal" ]];then
+            ActionName=${i//'ActionGoal'/}
+            if [[ "${MsgsArray[@]}" =~ "${ActionName}ActionResult" ]] && [[ "${MsgsArray[@]}" =~ "${ActionName}ActionFeedback" ]]; then
+                arr_act+=$ActionName' '
+            fi
+        fi
+    done
+    cout_act=${#arr_act[@]}
     for i in $arr_act
     do
         cout_act=$((cout_act-1))
-	    echo -n '      ActionSpec '$i'{ goal { '$i'ActionGoal action_goal} result {'$i'ActionResult action_result} feedback {'$i'ActionFeedback action_feedback}}
+        echo -n '      ActionSpec '$i'{ goal { '$i'ActionGoal action_goal} result {'$i'ActionResult action_result} feedback {'$i'ActionFeedback action_feedback}}
 '
         if (("$cout_act" >= "1"))
         then
@@ -97,4 +97,3 @@ done
 
 echo $'\n  }'
 echo '}'
-

@@ -15,35 +15,35 @@ import junit.textui.TestRunner;
  */
 public class RosTests extends TestSuite {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static void main(String[] args) {
+        TestRunner.run(suite());
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static Test suite() {
-		TestSuite suite = new RosTests("ros Tests");
-		suite.addTestSuite(ServiceSpecTest.class);
-		suite.addTestSuite(TopicSpecTest.class);
-		suite.addTestSuite(ActionSpecTest.class);
-		return suite;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static Test suite() {
+        TestSuite suite = new RosTests("ros Tests");
+        suite.addTestSuite(ServiceSpecTest.class);
+        suite.addTestSuite(TopicSpecTest.class);
+        suite.addTestSuite(ActionSpecTest.class);
+        return suite;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RosTests(String name) {
-		super(name);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RosTests(String name) {
+        super(name);
+    }
 
 } //RosTests

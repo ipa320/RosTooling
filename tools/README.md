@@ -6,7 +6,7 @@
 
 ## Messages, services and actions generator
 
-A new communication object for the ROS tooling can only be generated if the interface already exists in ROS, consequently this tool requires a local ROS installation. 
+A new communication object for the ROS tooling can only be generated if the interface already exists in ROS, consequently this tool requires a local ROS installation.
 
 Source the ROS workspace that contains the packages where the ros messages, services or actions are defined. For example:
 
@@ -65,6 +65,4 @@ Call the ROS model extractor tool:
 ```
 python ros-model/tools/ros_model_extractor.py --package *RosPackageName* --name *RosNodeName* --node
 ```
-A new "RosNodeName.ros" file will be created in your current folder. 
- 
-
+A new "RosNodeName.ros" file will be created in your current folder.
