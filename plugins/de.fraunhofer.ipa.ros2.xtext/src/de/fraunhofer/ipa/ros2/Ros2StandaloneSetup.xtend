@@ -3,6 +3,9 @@
  */
 package de.fraunhofer.ipa.ros2
 
+import com.google.inject.Injector
+import org.eclipse.emf.ecore.EPackage
+import ros.RosPackage
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -11,5 +14,10 @@ class Ros2StandaloneSetup extends Ros2StandaloneSetupGenerated {
 
     def static void doSetup() {
         new Ros2StandaloneSetup().createInjectorAndDoEMFRegistration()
+    }
+    
+    override register(Injector injector) {
+        EPackage.Registry.INSTANCE.put(RosPackage.eNS_URI, RosPackage.eINSTANCE)
+        super.register(injector)
     }
 }
