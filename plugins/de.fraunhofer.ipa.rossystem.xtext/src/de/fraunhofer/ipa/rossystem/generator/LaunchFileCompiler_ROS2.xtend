@@ -32,9 +32,11 @@ class LaunchFileCompiler_ROS2 {
     def compile_toROS2launch(System system) '''
 from launch import LaunchDescription
 from launch_ros.actions import Node
-«IF !getSubsystems(system).empty»from ament_index_python.packages import get_package_share_directory
-from launch.actions import IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource«ENDIF»
+«IF !getSubsystems(system).empty»from ament_index_python.packages import get_package_share_directory«ENDIF»
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PythonExpression, PathJoinSubstitution, TextSubstitution
+
 def generate_launch_description():
     ld = LaunchDescription()
     
@@ -42,6 +44,7 @@ def generate_launch_description():
         «parameter.name»_arg = DeclareLaunchArgument(
             "«parameter.name»", default_value=TextSubstitution(text="«get_param_value(parameter.value,parameter.name)»")
         )
+        ld.add_action(«parameter.name»_arg)
     «ENDFOR»«ENDFOR»
 
     «FOR component:getNodes(system)»
