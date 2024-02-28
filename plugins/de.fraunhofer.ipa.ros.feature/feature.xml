@@ -88,7 +88,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="de.fraunhofer.ipa.componentInterface.edit"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.xbase"/>
-      <import plugin="org.eclipse.equinox.common" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.eclipse.xtend.lib" version="2.14.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.navigator"/>
@@ -98,7 +97,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="de.fraunhofer.ipa.rossystem.edit"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.equinox.registry"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.sirius.ui"/>
       <import plugin="de.fraunhofer.ipa.rossystem.xtext.ide"/>
@@ -108,7 +106,6 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.swt"/>
-      <import plugin="javax.inject"/>
       <import plugin="org.eclipse.sirius.diagram"/>
       <import feature="org.eclipse.sirius.specifier"/>
    </requires>

@@ -43,6 +43,7 @@ public class ImportCommObjectsHandler extends AbstractHandler {
 						Git.cloneRepository()
 						.setURI("https://github.com/ipa320/RosCommonObjects.git")
 						.setDirectory(git_file)
+						.setBranch("2.0.0")
 						.call();
 					} catch (InvalidRemoteException e) {
 						e.printStackTrace();
