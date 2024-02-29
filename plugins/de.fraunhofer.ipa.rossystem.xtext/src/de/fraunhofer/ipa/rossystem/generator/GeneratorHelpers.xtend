@@ -22,6 +22,14 @@ import system.RosNode
 import ros.impl.AmentPackageImpl
 import system.impl.RosNodeImpl
 import system.SubSystem
+import ros.ParameterValue
+import ros.impl.ParameterSequenceImpl
+import ros.impl.ParameterStructMemberImpl
+import ros.impl.ParameterStructImpl
+import ros.impl.ParameterStringImpl
+import ros.impl.ParameterIntegerImpl
+import ros.impl.ParameterDoubleImpl
+import ros.impl.ParameterBooleanImpl
 
 class GeneratorHelpers {
 	
@@ -109,6 +117,55 @@ class GeneratorHelpers {
 
 	   return PkgsList;
 	}
+	
+    def String compile_struct_str(ParameterValue value, String name) {
+        var param_str = "";
+        var elem_count = (value as ParameterSequenceImpl).eContents.length;
+
+        for (elem : ((value as ParameterSequenceImpl).eContents)) {
+            var member = ((elem as ParameterStructImpl).eContents.get(0) as ParameterStructMemberImpl);
+            val param_val = get_param_value(member.getValue(), name + "/" + member.getName());
+            if (param_val.startsWith("{")) {
+                param_str += param_val;
+            } else {
+                param_str += "{ \"" + name + "/" + member.getName() + "\" : " + param_val;
+            }
+            elem_count--;
+            if (elem_count > 0){
+                param_str +=" },\n"
+            }
+        }
+        return param_str;
+    }
+
+    def String get_param_value(ParameterValue value, String name) {
+        var param_val = "";
+        if (value instanceof ParameterStringImpl) {
+            param_val = (value as ParameterStringImpl).getValue();
+        } else if (value instanceof ParameterIntegerImpl) {
+            param_val = (value as ParameterIntegerImpl).getValue().toString;
+        } else if (value instanceof ParameterDoubleImpl) {
+            param_val = (value as ParameterDoubleImpl).getValue().toString;
+        } else if (value instanceof ParameterBooleanImpl) {
+            param_val = (value as ParameterBooleanImpl).isValue().toString;
+        } else if (value instanceof ParameterSequenceImpl) {
+            var elem_count = (value as ParameterSequenceImpl).eContents.length;
+            if ((value as ParameterSequenceImpl).eContents.get(0) instanceof ParameterStructImpl) {
+                param_val = compile_struct_str(value, name);
+            } else {
+                param_val += "[";
+                for (elem : (value as ParameterSequenceImpl).eContents) {
+                    param_val += get_param_value(elem as ParameterValue, name);
+                    elem_count--;
+                    if (elem_count > 0){
+                        param_val +=", "
+                    }
+                }
+                param_val += "]";
+            }
+        }
+        return param_val;
+     }
 	
 	def compile_pkg(RosNode component)
 '''«IF !(component.from===null)»«component.from.getPackage_node.name»«ENDIF»'''

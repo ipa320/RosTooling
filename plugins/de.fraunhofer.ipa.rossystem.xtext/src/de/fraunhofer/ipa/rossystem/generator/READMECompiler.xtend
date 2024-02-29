@@ -85,7 +85,7 @@ source install/setup.bash
 To execute the launch file, the following command can be called:
 
 ```
-ros2 launch «system.name» «system.name».launch.py
+ros2 launch «system.name» «system.name».launch.py «FOR param:system.parameter»«param.name»:=«get_param_value(param.value,param.name)» «ENDFOR»
 ```
 
 The generated launch files requires the xterm package, it can be installed by:
@@ -98,7 +98,7 @@ sudo apt install xterm
 To launch this system there is already an existing package that contains the launch file. It can be started by:
 
 ```
-ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)»
+ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)» «FOR param:system.parameter»«param.name»:=«get_param_value(param.value,param.name)» «ENDFOR»
 ```
 «ENDIF»
 
@@ -142,6 +142,7 @@ ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(
              return "- ActionClient: "+ port.name+" ["+(port.reference as RosActionClientReferenceImpl).basicGetFrom.action.fullname+"]"
          }
      }
+
     }
     
     
