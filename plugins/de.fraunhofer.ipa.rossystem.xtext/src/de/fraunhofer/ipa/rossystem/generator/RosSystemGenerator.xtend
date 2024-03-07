@@ -21,12 +21,17 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension PackageXmlCompiler
     @Inject extension CMakeListsCompiler
     @Inject extension READMECompiler
+    @Inject extension PlantUMLCompiler
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         for (system : resource.allContents.toIterable.filter(System)){
             fsa.generateFile(
                 system.getName().toLowerCase+"/README.md",
                 compile_toREADME(system).toString().replace("\t","  ")
+            )
+            fsa.generateFile(
+                system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase + ".puml",
+                compile_plantuml(system)
             )
             if (system.fromFile.isNullOrEmpty) {
                 fsa.generateFile(
