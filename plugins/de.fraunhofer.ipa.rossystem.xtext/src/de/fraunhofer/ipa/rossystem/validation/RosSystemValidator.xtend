@@ -211,7 +211,6 @@ class RosSystemValidator extends AbstractRosSystemValidator {
     }
     
     def void CheckParameterValue (EObject expected_parameter, EObject given_parameter){
-
         if (expected_parameter.eClass.name=="Parameter"){
             expected_type = (expected_parameter as Parameter).type.eClass.name;
             expected_sub_types = expected_parameter.eContents.get(0).eContents.toList
@@ -256,11 +255,15 @@ class RosSystemValidator extends AbstractRosSystemValidator {
             if (given_parameter.class.toString.contains("ParameterSequence")){
                 value_sub_type = given_parameter.eContents.toList
                 expected_type=expected_sub_types.get(0).eClass.name
-                for (i=0;i<value_sub_type.length;i++){
-                    if(!check_matched_type(expected_type,value_sub_type.get(i).eClass.name)){
-                        error( "Element "+i+" , expected type: "+expected_type+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+                if(expected_type.contains("ParameterArrayType")){
+                    CheckParameterValue((expected_sub_types.get(0).eContents.get(0)),(value_sub_type.get(0).eContents.get(0)))
+                } else {
+                    for (i=0;i<value_sub_type.length;i++){
+                        if (!check_matched_type(expected_type,value_sub_type.get(i).eClass.name)){
+                            error( "Element "+i+" , expected type: "+expected_type+" given type "+value_sub_type.get(i).eClass.name, null, INVALID_TYPE)
+                        }
+                      }
                     }
-                }
                 } 
             else {
                 error( "Expect a list of elements; format { , , }", null, INVALID_LENGHT)
@@ -287,7 +290,6 @@ class RosSystemValidator extends AbstractRosSystemValidator {
                     error("Element expected names: "+expected_sub_names+ "  instead of: "+name_given_element,null, INVALID_NAME)
                     info("Struct format: value { {first_element {value value_fisrt element}}, {second_element {value value_second element}}}",null, INVALID_NAME)
                 } else {
-
                     for (j=0;j<expected_sub_types.length;j++){
                         if (expected_sub_types.get(j).toString.contains("name")){   
                         if ( ((getName(expected_sub_types.get(j).toString))==name_given_element) ){
