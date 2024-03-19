@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import system.System
 import com.google.inject.Inject
+import system.RosNode
 
 /**
  * Generates code from your model files on save.
@@ -17,12 +18,14 @@ import com.google.inject.Inject
  */
 class RosSystemGenerator extends AbstractGenerator {
     @Inject extension LaunchFileCompiler_ROS2
+    @Inject extension YamlFileCompiler_ROS2
     @Inject extension SetupPyCompiler
     @Inject extension PackageXmlCompiler
     @Inject extension CMakeListsCompiler
     @Inject extension READMECompiler
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        var yaml_gen = false
         for (system : resource.allContents.toIterable.filter(System)){
             fsa.generateFile(
                 system.getName().toLowerCase+"/README.md",
@@ -33,17 +36,27 @@ class RosSystemGenerator extends AbstractGenerator {
                     system.getName().toLowerCase+"/launch/"+system.getName()+".launch.py",
                     compile_toROS2launch(system).toString().replace("\t","  ")
                 )
+                for (component: system.components){
+                    if(component.eClass.name == "RosNode"){
+                        if(!(component as RosNode).rosparameters.nullOrEmpty){
+                            yaml_gen=true
+                            fsa.generateFile(
+                                system.getName().toLowerCase+"/config/"+(component as RosNode).getName()+".yaml",
+                                compile_toROS2yaml(component as RosNode).toString().replace("\t","  ")
+                            )
+                    }}
+                }
                 fsa.generateFile(
                     system.getName().toLowerCase+"/package.xml",
                     compile_package_xml_format3(system)
                 )
                 fsa.generateFile(
                     system.getName().toLowerCase+"/CMakeLists.txt",
-                    compile_CMakeLists_ROS2(system)
+                    compile_CMakeLists_ROS2(system,yaml_gen)
                 )
                 fsa.generateFile(
                     system.getName().toLowerCase+"/setup.py",
-                    compile_setup_py(system)
+                    compile_setup_py(system,yaml_gen)
                 )
                 fsa.generateFile(
                     system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase,
