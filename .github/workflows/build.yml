@@ -12,7 +12,7 @@ jobs:
       with:
         path: RosTooling
     - name: Install jdk 19
-      run: sudo apt install -y openjdk-19-jre
+      run: sudo apt install -y openjdk-19-jre default-jre default-jdk
     - name: Install maven
       run: sudo apt install -y maven
     - name: Set up Java
