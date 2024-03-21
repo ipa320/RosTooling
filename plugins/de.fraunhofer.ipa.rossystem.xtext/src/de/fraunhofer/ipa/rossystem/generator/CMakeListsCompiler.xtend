@@ -22,7 +22,7 @@ class CMakeListsCompiler {
 //  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 //)'''
 
-	def compile_CMakeLists_ROS2(System system) '''«init_pkg()»
+	def compile_CMakeLists_ROS2(System system, boolean gen_yaml) '''«init_pkg()»
 cmake_minimum_required(VERSION 3.5)
 project(«system.name.toLowerCase»)
 
@@ -38,7 +38,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 ### INSTALL ###
-install(DIRECTORY launch
+install(DIRECTORY launch «IF gen_yaml»config«ENDIF»
   DESTINATION share/${PROJECT_NAME}
 )
 

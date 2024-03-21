@@ -39,13 +39,22 @@ from launch.substitutions import LaunchConfiguration, PythonExpression, PathJoin
 
 def generate_launch_description():
     ld = LaunchDescription()
-    
-    «FOR component:getNodes(system)»«FOR parameter:component.rosparameters»
+
+    «FOR component:getNodes(system)»«IF generate_yaml(component)»
+        «component.name»_config = os.path.join(
+            get_package_share_directory('«system.getName().toLowerCase»'),
+            'config',
+            '«component.name».yaml'
+            )
+    «ELSE»
+    «FOR parameter:component.rosparameters»
         «parameter.name»_arg = DeclareLaunchArgument(
             "«parameter.name»", default_value=TextSubstitution(text="«get_param_value(parameter.value,parameter.name)»")
         )
         ld.add_action(«parameter.name»_arg)
-    «ENDFOR»«ENDFOR»
+    «ENDFOR»
+    «ENDIF»
+    «ENDFOR»
 
     «FOR component:getNodes(system)»
     «(component as RosNode).name» = Node(
@@ -55,8 +64,10 @@ def generate_launch_description():
         prefix = 'xterm -e',
         output='screen',
         name="«(component as RosNode).name»"«compile_remappings_str(component as RosNode, system.connections)»«IF !component.rosparameters.nullOrEmpty»,
-        parameters=[{«FOR param:component.rosparameters»
-            "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»
+        «IF generate_yaml(component)»
+         parameters = [«component.name»_config]
+        «ELSE»parameters=[{«FOR param:component.rosparameters»
+            "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»«ENDIF»
     )
     «ENDFOR»
     «FOR subsystem:getSubsystems(system)»
@@ -79,6 +90,19 @@ def generate_launch_description():
 
     return ld
     '''
+
+    def Boolean generate_yaml(RosNode component){
+        var yaml_gen=false
+        for(param:component.rosparameters){
+            if(param.eContents.get(0).eClass.name.contains("ParameterStruct")){
+                yaml_gen=true
+            }
+        }
+        if(component.rosparameters.length>5){
+            yaml_gen=true
+        }
+        return  yaml_gen
+    }
 
 //    def void compile_list_of_ROS2components(RosSystem system, ComponentStack stack) {
 //        components_tmp_.clear;
