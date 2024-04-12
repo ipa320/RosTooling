@@ -19,8 +19,8 @@ class PlantUMLCompiler{
 component «subsystem.name» {
 «FOR component:getNodes(subsystem)»
 «compile_ports(component)»
-«ENDFOR»
 «ENDFOR» }
+«ENDFOR»
 
 «FOR component:getNodes(system)»
 «compile_ports(component)»
@@ -47,17 +47,17 @@ component «subsystem.name» {
     «ENDFOR»
     
     /' PORTS FROM THE ORIGINAL NODE '/
-    «FOR sub:(component as RosNode).from.subscriber»    portin «get_valid_name(component.name, sub.name)» as "«sub.name»" #line:blue
-    «ENDFOR»
-    «FOR ss:(component as RosNode).from.serviceserver»    portin «get_valid_name(component.name, ss.name)» as "«ss.name»" #line:orange
-    «ENDFOR»
-    «FOR acts:(component as RosNode).from.actionserver»    portin «get_valid_name(component.name, acts.name)» as "«acts.name»" #line:green
-    «ENDFOR»
-    «FOR pub:(component as RosNode).from.publisher»    portout «get_valid_name(component.name, pub.name)» as "«pub.name»" #line:blue
-    «ENDFOR»
-    «FOR sc:(component as RosNode).from.serviceclient»    portout «get_valid_name(component.name, sc.name)» as "«sc.name»" #line:orange
-    «ENDFOR»
-    «FOR actc:(component as RosNode).from.actionclient»    portout «get_valid_name(component.name, actc.name)» as "«actc.name»" #line:green«ENDFOR»
+«««    «FOR sub:(component as RosNode).from.subscriber»    portin «get_valid_name(component.name, sub.name)» as "«sub.name»" #line:blue
+«««    «ENDFOR»
+«««    «FOR ss:(component as RosNode).from.serviceserver»    portin «get_valid_name(component.name, ss.name)» as "«ss.name»" #line:orange
+«««    «ENDFOR»
+«««    «FOR acts:(component as RosNode).from.actionserver»    portin «get_valid_name(component.name, acts.name)» as "«acts.name»" #line:green
+«««    «ENDFOR»
+«««    «FOR pub:(component as RosNode).from.publisher»    portout «get_valid_name(component.name, pub.name)» as "«pub.name»" #line:blue
+«««    «ENDFOR»
+«««    «FOR sc:(component as RosNode).from.serviceclient»    portout «get_valid_name(component.name, sc.name)» as "«sc.name»" #line:orange
+«««    «ENDFOR»
+«««    «FOR actc:(component as RosNode).from.actionclient»    portout «get_valid_name(component.name, actc.name)» as "«actc.name»" #line:green«ENDFOR»
       }
 
     '''
