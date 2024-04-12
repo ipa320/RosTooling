@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="System" version="12.0.0.2017041100">
+  <ownedViewpoints name="System" modelFileExtension="rossystem">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RosSystem" domainClass="system::System">
+      <metamodel href="../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#/"/>
+      <metamodel href="../../de.fraunhofer.ipa.ros/model/ros.ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="TopicConnection" sourceMapping="//@ownedViewpoints[name='System']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='Component']/@borderedNodeMappings[name='Publisher']" targetMapping="//@ownedViewpoints[name='System']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='Component']/@borderedNodeMappings[name='Subscriber']" targetFinderExpression="feature:to" sourceFinderExpression="feature:from" domainClass="system::RosTopicConnection" useDomainElement="true" pathNodeMapping="//@ownedViewpoints[name='System']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='Component']/@borderedNodeMappings[name='Publisher'] //@ownedViewpoints[name='System']/@ownedRepresentations[name='RosSystem']/@defaultLayer/@containerMappings[name='Component']/@borderedNodeMappings[name='Subscriber']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Component" semanticCandidatesExpression="feature:components" domainClass="system::RosNode">
+          <borderedNodeMappings name="Publisher" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosPublisherReference">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="LEFT" sizeComputationExpression="2" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="Subscriber" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosSubscriberReference">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="RIGHT" sizeComputationExpression="2" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" tooltipExpression="feature:namespace">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools"/>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="de.fraunhofer.ipa.rossystem.sirius.Services"/>
+  </ownedViewpoints>
+</description:Group>
