@@ -8,7 +8,7 @@ class SetupPyCompiler{
 	@Inject extension GeneratorHelpers
 	
 	
-		def compile_setup_py(System system) '''«init_pkg()»
+		def compile_setup_py(System system, boolean gen_yaml) '''«init_pkg()»
 import os
 from glob import glob
 from setuptools import setup
@@ -26,7 +26,8 @@ setup(
         # Include our package.xml file
         (os.path.join('share', PACKAGE_NAME), ['package.xml']),
         # Include all launch files.
-        (os.path.join('share', PACKAGE_NAME, 'launch'), glob(os.path.join('launch', '*.launch.py')))
+        (os.path.join('share', PACKAGE_NAME, 'launch'), glob(os.path.join('launch', '*.launch.py')))«IF gen_yaml»,
+        (os.path.join('share', PACKAGE_NAME, 'config'), glob(os.path.join('config', '*.yaml'))) «ENDIF»
     ],
     install_requires=['setuptools'],
     zip_safe=True

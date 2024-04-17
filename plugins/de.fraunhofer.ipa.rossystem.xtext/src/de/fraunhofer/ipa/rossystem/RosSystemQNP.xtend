@@ -6,6 +6,8 @@ import system.RosNode;
 import org.eclipse.emf.ecore.EObject
 import system.Rossystem
 import system.System
+import ros.Parameter
+import system.RosParameter
 
 class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
 
@@ -28,7 +30,14 @@ class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
       val sys_name = obj.name
       return getConverter().toQualifiedName(sys_name);
     }
-
+    if (obj instanceof Parameter) {
+      val param_name = obj.name
+      return getConverter().toQualifiedName(param_name);
+    }
+    if (obj instanceof RosParameter) {
+      val param_name = obj.name
+      return getConverter().toQualifiedName(param_name);
+    }
     }
 
 }
