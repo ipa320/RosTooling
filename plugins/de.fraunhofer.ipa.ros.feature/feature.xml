@@ -66,135 +66,82 @@ POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="de.fraunhofer.ipa.rossystem"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.edit"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.edit"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.plugin"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.editor"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.editor"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="3.0.0.qualifier"
-         unpack="false"/>
+         version="3.0.0.qualifier"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.ros.sirius"
+         version="3.0.0.qualifier"/>
 
 </feature>
