@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.sirius;singleton:=true
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-Activator: de.fraunhofer.ipa.ros.sirius.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram.ui,
  de.fraunhofer.ipa.rossystem
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-19
+Bundle-Vendor: Fraunhofer IPA
 Automatic-Module-Name: de.fraunhofer.ipa.ros.sirius
 Export-Package: de.fraunhofer.ipa.ros.sirius
