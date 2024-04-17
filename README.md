@@ -51,7 +51,6 @@ Publications:
 
 - Combine components to form a ROS System
   - [Create manually a new RosSystem description](docu/RosSystemModelDescription.md)
-  - [Visualize a system using PlantUML](docu/PlantUML.md)
   
 - Examples:
   - [Simple publisher-subscriber](docu/Example_PubSub.md)
