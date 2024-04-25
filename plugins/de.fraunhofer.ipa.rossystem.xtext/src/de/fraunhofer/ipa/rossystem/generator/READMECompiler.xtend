@@ -49,7 +49,7 @@ Then the workspace must be compiled using the common ROS 2 build command:
 ```
 mkdir -p ros2_ws/src
 cd ros2_ws/
-cp PATHtoTHISPackage/«system.name» src/. 
+cp -r PATHtoTHISPackage/«system.name» src/.
 rosdep install --from-path src/ -i -y
 colcon build
 source install/setup.bash
