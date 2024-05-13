@@ -17,12 +17,12 @@ class PlantUMLCompiler{
 /'SUBSYSTEMS'/
 «FOR subsystem:system.subsystems»
 component «subsystem.name» {
-«FOR component:getNodes(subsystem)»
+«FOR component:getRos2Nodes(subsystem)»
 «compile_ports(component)»
 «ENDFOR» }
 «ENDFOR»
 
-«FOR component:getNodes(system)»
+«FOR component:getRos2Nodes(system)»
 «compile_ports(component)»
 «ENDFOR»
 «FOR connection:system.connections»  «get_connection_port((connection as RosSystemConnectionImpl).from)» --> «get_connection_port((connection as RosSystemConnectionImpl).to)»
