@@ -28,18 +28,36 @@ class GeneratorHelpers {
     String Pkg
     RosNode node
     String[] FromFileInfo
+    Boolean os_import
 
 
     def void init_pkg(){
         PackageSet=false
     }
+    
+    def boolean YamlFileGenerated(System rossystem) {
+        os_import=false
+        for (component: getRos2Nodes(rossystem)){
+            for(param:component.rosparameters){
+                if(param.eContents.get(0).eClass.name.contains("ParameterStruct")){
+                    os_import=true
+                }
+            }
+            if(component.rosparameters.length>5){
+                os_import=true
+            }
+        }
+        return os_import
+    }
 
-    def <Components> getNodes (System rossystem) {
+    def <Components> getRos2Nodes (System rossystem) {
         val nodeList = new ArrayList<RosNode>
         if (!rossystem.components.nullOrEmpty){
             for (component: rossystem.components) {
                 if (component.class.toString.contains("RosNode")){
-                    nodeList.add(component as RosNode)
+                    if((component as RosNode).from.eContainer.eContainer.class.toString.contains("Ament")){
+                        nodeList.add(component as RosNode)
+                    }
                 }
         }}
         return nodeList
@@ -57,7 +75,7 @@ class GeneratorHelpers {
 
     def  ArrayList<String> getAllRepos(System system) {
         RepoList = new ArrayList<String>()
-        for (node : getNodes(system)){
+        for (node : getRos2Nodes(system)){
             if (!((node.from.eContainer.eContainer as Package).fromGitRepo.nullOrEmpty)) {
                 val repo=(node.from.eContainer.eContainer as Package).fromGitRepo
                 if (repo.contains(":")){
@@ -80,7 +98,7 @@ class GeneratorHelpers {
     def <String> getPkgsDependencies (System rossystem){
         PkgsList = new ArrayList()
         if (rossystem.fromFile.isNullOrEmpty) {
-            for (component: getNodes(rossystem)){
+            for (component: getRos2Nodes(rossystem)){
                 init_pkg()
                 node = component as RosNode
                 Pkg = node.compile_pkg.toString()

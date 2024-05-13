@@ -30,6 +30,7 @@ class LaunchFileCompiler_ROS2 {
 
 
     def compile_toROS2launch(System system) '''
+«IF YamlFileGenerated(system)»import os«ENDIF»
 from launch import LaunchDescription
 from launch_ros.actions import Node
 «IF !getSubsystems(system).empty»from ament_index_python.packages import get_package_share_directory«ENDIF»
@@ -40,7 +41,7 @@ from launch.substitutions import LaunchConfiguration, PythonExpression, PathJoin
 def generate_launch_description():
     ld = LaunchDescription()
 
-    «FOR component:getNodes(system)»«IF generate_yaml(component)»
+    «FOR component:getRos2Nodes(system)»«IF generate_yaml(component)»
         «component.name»_config = os.path.join(
             get_package_share_directory('«system.getName().toLowerCase»'),
             'config',
@@ -56,7 +57,7 @@ def generate_launch_description():
     «ENDIF»
     «ENDFOR»
 
-    «FOR component:getNodes(system)»
+    «FOR component:getRos2Nodes(system)»
     «(component as RosNode).name» = Node(
         package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",«IF !component.namespace.nullOrEmpty»
         namespace="«component.namespace»",«ENDIF»
@@ -64,10 +65,9 @@ def generate_launch_description():
         prefix = 'xterm -e',
         output='screen',
         name="«(component as RosNode).name»"«compile_remappings_str(component as RosNode, system.connections)»«IF !component.rosparameters.nullOrEmpty»,
-        «IF generate_yaml(component)»
-         parameters = [«component.name»_config]
-        «ELSE»parameters=[{«FOR param:component.rosparameters»
-            "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»«ENDIF»
+«IF generate_yaml(component)»        parameters = [«component.name»_config]
+«ELSE»        parameters=[{«FOR param:component.rosparameters»
+          "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»«ENDIF»
     )
     «ENDFOR»
     «FOR subsystem:getSubsystems(system)»
@@ -82,7 +82,7 @@ def generate_launch_description():
     «ENDIF»
     «ENDFOR»
 
-    «FOR component:getNodes(system)»
+    «FOR component:getRos2Nodes(system)»
     ld.add_action(«(component as RosNode).name»)
     «ENDFOR»«FOR subsystem:getSubsystems(system)»
     ld.add_action(include_«subsystem.name»)
@@ -156,7 +156,15 @@ def generate_launch_description():
         var to_action = new Object
 
         var rename = ""
-
+        
+        for (interface : node.rosinterfaces){
+            var origin = interface.reference.eCrossReferences.toString
+            var origin_name = origin.substring(origin.indexOf("name: ") + 6, origin.lastIndexOf(")]"))
+            if (interface.name !== origin_name){
+                remap_str += "\t(\"" + origin_name + "\", \"" + interface.name + "\"),\n";
+            }
+        }
+        
         for (connection : connections){
             var rosconnection = connection as RosSystemConnectionImpl
             if (rosconnection.from.reference.eClass.toString.contains("RosPublisherReference")){

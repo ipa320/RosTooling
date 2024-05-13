@@ -22,19 +22,19 @@ This package has be created automatically using the [RosTooling](https://github.
 
 
 It holds the launch file to run the following nodes:
-«FOR node:getNodes(system)»
+«FOR node:getRos2Nodes(system)»
 - «(node as RosNode).name»
 «ENDFOR»
 «FOR subsystem:system.subsystems»
-«FOR node:getNodes(subsystem)»
+«FOR node:getRos2Nodes(subsystem)»
 - «(node as RosNode).name»
 «ENDFOR»
 «ENDFOR»
 
 «IF(!IsInterfacesEmpty(system))»The listed nodes offer the following connections:
-«FOR node:getNodes(system)»«FOR port:(node as RosNode).rosinterfaces»
+«FOR node:getRos2Nodes(system)»«FOR port:(node as RosNode).rosinterfaces»
 «getPortInfo(port)»
-«ENDFOR»«ENDFOR»«FOR subsystem:system.subsystems»«FOR node:getNodes(subsystem)»«FOR port:(node as RosNode).rosinterfaces»
+«ENDFOR»«ENDFOR»«FOR subsystem:system.subsystems»«FOR node:getRos2Nodes(subsystem)»«FOR port:(node as RosNode).rosinterfaces»
 «getPortInfo(port)»
 «ENDFOR»«ENDFOR»«ENDFOR»«ENDIF»
 
@@ -106,13 +106,13 @@ ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(
      '''
      
      def IsInterfacesEmpty(System system){
-         for(node: getNodes(system)){
+         for(node: getRos2Nodes(system)){
              if (!(node as RosNode).rosinterfaces.empty){
                 return false
              }
          }
          for (subsystem: system.subsystems){
-           for(node: getNodes(subsystem)){
+           for(node: getRos2Nodes(subsystem)){
              if (!(node as RosNode).rosinterfaces.empty){
                 return false
              }
