@@ -24,6 +24,8 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension CMakeListsCompiler
     @Inject extension READMECompiler
     @Inject extension PlantUMLCompiler
+    @Inject extension GeneratorHelpers
+    @Inject extension Ros1BridgesYamlFileCompiler
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         var yaml_gen = false
@@ -72,7 +74,14 @@ class RosSystemGenerator extends AbstractGenerator {
                     ""
                 )
             }
+            if (TopicBridgeGenerated(system) || ServiceFromBridgeGenerated(system) || ServiceToBridgeGenerated(system)){
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/config/"+"ros1_bridges.yaml",
+                    compile_ROS1bridges_config(system)
+                )
+            }
         }
     }
+
 }
 

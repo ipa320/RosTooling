@@ -16,6 +16,16 @@ import ros.impl.ParameterStructMemberImpl
 import system.RosNode
 import system.SubSystem
 import system.System
+import system.RosInterface
+import system.RosSystemConnection
+import system.RosPublisherReference
+import system.RosServiceServerReference
+import system.RosActionServerReference
+import system.RosSubscriberReference
+import system.RosServiceClientReference
+import system.RosActionClientReference
+import org.eclipse.emf.ecore.EObject
+import java.util.Arrays
 
 class GeneratorHelpers {
 
@@ -29,23 +39,36 @@ class GeneratorHelpers {
     RosNode node
     String[] FromFileInfo
     Boolean os_import
-
+    
+    String ros1_bridge_name
+    String ros1_bridge_type
+    List<EObject> Ros1Ports
+        
 
     def void init_pkg(){
         PackageSet=false
     }
     
+    def boolean generate_yaml(RosNode component){
+        var yaml_gen=false
+        for(param:component.rosparameters){
+            if(param.eContents.get(0).eClass.name.contains("ParameterStruct")){
+                yaml_gen=true
+            }
+        }
+        if(component.rosparameters.length>5){
+            yaml_gen=true
+        }
+        return  yaml_gen
+    }
+    
     def boolean YamlFileGenerated(System rossystem) {
         os_import=false
         for (component: getRos2Nodes(rossystem)){
-            for(param:component.rosparameters){
-                if(param.eContents.get(0).eClass.name.contains("ParameterStruct")){
-                    os_import=true
-                }
-            }
-            if(component.rosparameters.length>5){
-                os_import=true
-            }
+            os_import=generate_yaml(component)
+        }
+        if (TopicBridgeGenerated(rossystem) || ServiceFromBridgeGenerated(rossystem) || ServiceToBridgeGenerated(rossystem)){
+            os_import=true
         }
         return os_import
     }
@@ -62,6 +85,19 @@ class GeneratorHelpers {
         }}
         return nodeList
     }
+    
+    def <Components> getRos1Nodes (System rossystem) {
+        val nodeList = new ArrayList<RosNode>
+        if (!rossystem.components.nullOrEmpty){
+            for (component: rossystem.components) {
+                if (component.class.toString.contains("RosNode")){
+                    if((component as RosNode).from.eContainer.eContainer.class.toString.contains("Catkin")){
+                        nodeList.add(component as RosNode)
+                    }
+                }
+        }}
+        return nodeList
+    }
 
     def <Systems> getSubsystems (System rossystem) {
             val subSystemsList = new ArrayList<System>
@@ -71,6 +107,92 @@ class GeneratorHelpers {
             }
         }
         return subSystemsList
+    }
+    
+    def boolean TopicBridgeGenerated(System rossystem){
+        for (connection: rossystem.connections){
+            if (!getTopicBridgeInterfaces(connection as RosSystemConnection).get(0).empty){
+                return true
+            }
+        }
+        return false
+    }
+    
+    def boolean ServiceFromBridgeGenerated(System rossystem){
+        for (connection: rossystem.connections){
+            if (!getServiceFromBridgeInterfaces(connection as RosSystemConnection).get(0).empty){
+                return true
+            } 
+        }
+        return false
+    }
+    
+    def boolean ServiceToBridgeGenerated(System rossystem){
+        for (connection: rossystem.connections){
+            if (!getServiceToBridgeInterfaces(connection as RosSystemConnection).get(0).empty){
+                return true
+            } 
+        }
+        return false
+    }
+
+    def List<String> getTopicBridgeInterfaces(RosSystemConnection connection){
+        val from_connection=(connection as RosSystemConnection).from
+        val to_connection=(connection as RosSystemConnection).to
+        ros1_bridge_name=""
+        ros1_bridge_type=""
+        if (from_connection.reference.eClass.name=='RosPublisherReference'){
+            var bridge_interface = (from_connection.reference as RosPublisherReference).from
+            if (bridge_interface.eContainer.eContainer.eContainer.eClass.toString.contains("CatkinPackage")){
+                ros1_bridge_name=bridge_interface.name
+                ros1_bridge_type=bridge_interface.message.fullname.replace("/","/msg/")
+            }
+        }
+        if (to_connection.reference.eClass.name=='RosSubscriberReference'){
+            val bridge_interface = (to_connection.reference as RosSubscriberReference).from
+            if (bridge_interface.eContainer.eContainer.eContainer.eClass.toString.contains("CatkinPackage")){
+                ros1_bridge_name=bridge_interface.name
+                ros1_bridge_type=bridge_interface.message.fullname.replace("/","/msg/")
+            }
+        }
+        return Arrays.asList(ros1_bridge_name, ros1_bridge_type);
+    }
+    
+    def List<String> getServiceFromBridgeInterfaces(RosSystemConnection connection){
+        val from_connection=(connection as RosSystemConnection).from
+        ros1_bridge_name=""
+        ros1_bridge_type=""
+        if (from_connection.reference.eClass.name=='RosServiceServerReference'){
+            val bridge_interface = (from_connection.reference as RosServiceServerReference).from
+            if (bridge_interface.eContainer.eContainer.eContainer.eClass.toString.contains("CatkinPackage")){
+                ros1_bridge_name=bridge_interface.name
+                ros1_bridge_type=bridge_interface.service.fullname
+            }
+        }
+        return Arrays.asList(ros1_bridge_name, ros1_bridge_type);
+    }
+    
+    def List<String> getServiceToBridgeInterfaces(RosSystemConnection connection){
+        val to_connection=(connection as RosSystemConnection).to
+        ros1_bridge_name=""
+        ros1_bridge_type=""
+        if (to_connection.reference.eClass.name=='RosServiceClientReference'){
+            val bridge_interface = (to_connection.reference as RosServiceClientReference).from
+            if (bridge_interface.eContainer.eContainer.eContainer.eClass.toString.contains("CatkinPackage")){
+                ros1_bridge_name=bridge_interface.name
+                ros1_bridge_type=bridge_interface.service.fullname
+            }
+        }
+        return Arrays.asList(ros1_bridge_name, ros1_bridge_type);
+    }
+    
+    
+    def boolean fromRos1Node(EObject bridge_interface){
+        if (bridge_interface.eContainer.eContainer.eContainer.eClass.toString.contains("CatkinPackage")){
+            Ros1Ports.add(bridge_interface)
+            return true
+        }
+        return false
     }
 
     def  ArrayList<String> getAllRepos(System system) {

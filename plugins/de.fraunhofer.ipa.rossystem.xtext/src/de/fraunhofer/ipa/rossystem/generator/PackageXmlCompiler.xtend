@@ -49,8 +49,7 @@ class PackageXmlCompiler{
   <exec_depend>launch</exec_depend>
   «FOR pkg:system.getPkgsDependencies»
   <exec_depend>«pkg»</exec_depend>
-  «ENDFOR»
-
+  «ENDFOR»«IF TopicBridgeGenerated(system) || ServiceFromBridgeGenerated(system) || ServiceToBridgeGenerated(system)»<exec_depend>ros1_bridge</exec_depend>«ENDIF»
   <!--test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
