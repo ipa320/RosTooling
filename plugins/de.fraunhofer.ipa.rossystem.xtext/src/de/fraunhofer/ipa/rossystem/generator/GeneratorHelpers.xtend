@@ -69,9 +69,9 @@ class GeneratorHelpers {
                 os_import=true
             }
         }
-        if (TopicBridgeGenerated(rossystem) || ServiceFromBridgeGenerated(rossystem) || ServiceToBridgeGenerated(rossystem)){
-            os_import=true
-        }
+//        if (TopicBridgeGenerated(rossystem) || ServiceFromBridgeGenerated(rossystem) || ServiceToBridgeGenerated(rossystem)){
+//            os_import=true
+//        }
         return os_import
     }
 
