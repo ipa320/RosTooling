@@ -65,7 +65,9 @@ class GeneratorHelpers {
     def boolean YamlFileGenerated(System rossystem) {
         os_import=false
         for (component: getRos2Nodes(rossystem)){
-            os_import=generate_yaml(component)
+            if (generate_yaml(component)){
+                os_import=true
+            }
         }
         if (TopicBridgeGenerated(rossystem) || ServiceFromBridgeGenerated(rossystem) || ServiceToBridgeGenerated(rossystem)){
             os_import=true
