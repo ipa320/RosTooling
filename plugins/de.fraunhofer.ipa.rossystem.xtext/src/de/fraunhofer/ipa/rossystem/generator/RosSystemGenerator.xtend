@@ -26,6 +26,7 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension PlantUMLCompiler
     @Inject extension GeneratorHelpers
     @Inject extension Ros1BridgesYamlFileCompiler
+    @Inject extension BridgesLaunchFileCompiler_ROS2
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         var yaml_gen = false
@@ -78,6 +79,10 @@ class RosSystemGenerator extends AbstractGenerator {
                 fsa.generateFile(
                     system.getName().toLowerCase+"/config/"+"ros1_bridges.yaml",
                     compile_ROS1bridges_config(system)
+                )
+                fsa.generateFile(
+                    system.getName().toLowerCase+"/launch/"+system.getName()+"_bridges.launch.py",
+                    compile_toROS2launchbridges(system).toString().replace("\t","  ")
                 )
             }
         }
