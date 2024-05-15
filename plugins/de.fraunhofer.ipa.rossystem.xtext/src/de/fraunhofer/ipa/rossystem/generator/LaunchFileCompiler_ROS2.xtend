@@ -96,14 +96,14 @@ def generate_launch_description():
     package='ros1_bridge',
     executable='parameter_bridge',
     name='ros1_topic_bridge_parameter_bridge',
-    namespace='bridge_«system.name»_topic',
+    namespace='bridge_«system.name»_topics',
     output='screen',
     parameters=[
-      {'__ns': 'bridge_«system.name»_topic'},
-      {'__name': 'bridge_«system.name»_topic'}
+      {'__ns': 'bridge_«system.name»_topics'},
+      {'__name': 'bridge_«system.name»_topics'}
     ],
     arguments=[
-      '--ros-args', '-r', '__name:=bridge_«system.name»_topic'
+      '--ros-args', '-r', '__name:=bridge_«system.name»_topics'
     ]
   )«ENDIF»«IF ServiceFromBridgeGenerated(system)»
   ros1_service_from_bridge_parameter_bridge = Node(
