@@ -10,11 +10,13 @@ class BridgesLaunchFileCompiler_ROS2 {
 
     def compile_toROS2launchbridges(System system) '''
 import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, ExecuteProcess, RegisterEventHandler, LogInfo
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression, PathJoinSubstitution, TextSubstitution
+from launch.event_handlers import OnProcessExit, OnExecutionComplete
 
 def generate_launch_description():
   ld = LaunchDescription()
@@ -28,7 +30,7 @@ def generate_launch_description():
   )
 
   load_bridge_params = ExecuteProcess(
-      cmd=['rosparam', load, «system.name»_ros1_bridge_config]
+      cmd=['rosparam', 'load', «system.name»_ros1_bridge_config]
   )
   «ENDIF»
 
@@ -53,8 +55,7 @@ def generate_launch_description():
           LogInfo(msg='Load bridge parameter finished'),
           LogInfo(msg='launching bridge for topics'),
           ros1_topic_bridge_parameter_bridge,
-          LogInfo(msg='Start loading bridge parameters'),
-          load_bridge_params]
+          LogInfo(msg='Start loading bridge parameters')]
       )
     ),«ENDIF»«IF ServiceFromBridgeGenerated(system)»
     RegisterEventHandler(
@@ -64,8 +65,7 @@ def generate_launch_description():
           LogInfo(msg='Load bridge parameter finished'),
           LogInfo(msg='Launching bridge for FROM services'),
           ros1_service_from_bridge_parameter_bridge,
-          LogInfo(msg='Start loading bridge parameters'),
-          load_bridge_params]
+          LogInfo(msg='Start loading bridge parameters')]
       )
     ),«ENDIF»«IF ServiceFromBridgeGenerated(system)»
     RegisterEventHandler(
@@ -75,8 +75,7 @@ def generate_launch_description():
           LogInfo(msg='Load bridge parameter finished'),
           LogInfo(msg='Launching bridge for TO services'),
           ros1_service_to_bridge_parameter_bridge,
-          LogInfo(msg='Start loading bridge parameters'),
-          load_bridge_params]
+          LogInfo(msg='Start loading bridge parameters')]
       )
     ),«ENDIF»
     load_bridge_params
