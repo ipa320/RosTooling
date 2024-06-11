@@ -23,6 +23,7 @@ import ros.impl.ParameterBooleanImpl
 import ros.impl.ParameterSequenceImpl
 import ros.impl.ParameterStructImpl
 import ros.impl.ParameterStructMemberImpl
+import java.util.ArrayList
 
 class LaunchFileCompiler_ROS2 {
 
@@ -145,16 +146,10 @@ def generate_launch_description():
         var to_sub = new Object
         var to_srv = new Object
         var to_action = new Object
+        var remapped_interfaces = new ArrayList
 
         var rename = ""
-        
-        for (interface : node.rosinterfaces){
-            var origin = interface.reference.eCrossReferences.toString
-            var origin_name = origin.substring(origin.indexOf("name: ") + 6, origin.lastIndexOf(")]"))
-            if (interface.name !== origin_name){
-                remap_str += "\t(\"" + origin_name + "\", \"" + interface.name + "\"),\n";
-            }
-        }
+
         
         for (connection : connections){
             var rosconnection = connection as RosSystemConnectionImpl
@@ -170,6 +165,7 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosPublisherReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_pub){
                                if ((from_pub as RosPublisherReferenceImpl).from.name != interface.name) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (from_pub as RosPublisherReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
@@ -177,6 +173,7 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosSubscriberReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == to_sub){
                                if ((to_sub as RosSubscriberReferenceImpl).from.name  != from_pub) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (to_sub as RosSubscriberReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
@@ -195,6 +192,7 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosServiceServerReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_srv){
                                if ((from_srv as RosServiceServerReferenceImpl).from.name != interface.name) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (from_srv as RosServiceServerReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
@@ -202,6 +200,7 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosServiceClientReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == to_srv){
                                if ((to_srv as RosServiceClientReferenceImpl).from.name  != from_srv) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (to_srv as RosServiceClientReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
@@ -220,6 +219,7 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosActionServerReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == from_action){
                                if ((from_action as RosActionServerReferenceImpl).from.name != interface.name) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (from_action as RosActionServerReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
@@ -227,14 +227,24 @@ def generate_launch_description():
                     if ( (interface as RosInterfaceImpl).reference.toString.contains("RosActionClientReferenceImpl")){
                            if ((interface as RosInterfaceImpl).reference == to_action){
                                if ((to_action as RosActionClientReferenceImpl).from.name  != from_action) {
+                                    remapped_interfaces.add(interface)
                                     remap_str += "\t(\"" + (to_action as RosActionClientReferenceImpl).from.name + "\", \"" + rename + "\"),\n";
                                }
                            }
                         }
                 }
         }
-//            if ( con_publishers.contains(interface) ){
-//            }
+
+        }
+                
+        for (interface : node.rosinterfaces){
+            if (!remapped_interfaces.contains(interface)){
+                var origin = interface.reference.eCrossReferences.toString
+                var origin_name = origin.substring(origin.indexOf("name: ") + 6, origin.lastIndexOf(")]"))
+                if (interface.name !== origin_name){
+                    remap_str += "\t(\"" + origin_name + "\", \"" + interface.name + "\"),\n";
+                } 
+            }
         }
 //        for (rosPublisher : interfaces.toList) {
 //            if (!((prefix(NS)+rosPublisher.name).equals(compile_topic_name(rosPublisher.publisher, NS)))) {
