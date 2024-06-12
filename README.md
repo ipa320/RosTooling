@@ -13,7 +13,10 @@ The models have associated tools, the following are some examples:
 
 Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
 
-## Projects/Links related to this repository:
+The **documentation** of the RosTooling is available under [https://ipa320.github.io/RosTooling.github.io/](https://ipa320.github.io/RosTooling.github.io/).
+
+---------------------------------------------------------
+
 
 Related repositories:
 - ROS2 embedded code generator: [rossdl](https://github.com/CoreSenseEU/rossdl)
@@ -30,6 +33,9 @@ Publications:
 - Journal Paper: Bootstrapping MDE development from ROS manual code - Part 2: Model generation and leveraging models at runtime and  [SoSym paper](https://link.springer.com/article/10.1007/s10270-021-00873-2)
 - Paper: Lifting ROS to Model-Driven Development: Lessons Learned from a bottom-up approach [RoSE paper](https://awortmann.github.io/downloads/preprints/2023/Lifting_ROS_to_Model-Driven_Development_-_Lessons_Learned_from_a_bottom-up_approach.pdf)
 
+
+
+<!--
 ---------------------------------------------------------
 
 # RosTooling Manual
@@ -70,3 +76,5 @@ Links to related repositories:
 - Language server for the RosModels (web-based models editor): [theia-ros-model](https://github.com/ipa-nhg/theia-ros-model)
 - Web interface to automatically extract models from public source code: [model extractor](http://ros-model.seronet-project.de/)
 - Source code for the web interface (extract models for non-public available ROS packages): [ros-model-cloud](https://github.com/ipa320/ros-model-cloud)
+
+-->
