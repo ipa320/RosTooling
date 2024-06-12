@@ -46,7 +46,7 @@
         <!--module>../de.fraunhofer.ipa.rossystem.deployment</module-->
 
         <module>../de.fraunhofer.ipa.ros.plugin</module>
-        <!--module>../de.fraunhofer.ipa.ros.sirius</module-->
+        <module>../de.fraunhofer.ipa.ros.sirius</module>
         <module>../de.fraunhofer.ipa.ros.feature</module>
     </modules>
 

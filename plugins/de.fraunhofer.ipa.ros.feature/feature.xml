@@ -62,6 +62,7 @@ POSSIBILITY OF SUCH DAMAGE.
       <import plugin="de.fraunhofer.ipa.ros.xtext.ide"/>
       <import plugin="de.fraunhofer.ipa.rossystem.edit"/>
       <import plugin="de.fraunhofer.ipa.rossystem.xtext.ide"/>
+      <import plugin="de.fraunhofer.ipa.ros.sirius"/>
    </requires>
 
    <plugin
