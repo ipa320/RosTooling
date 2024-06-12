@@ -37,13 +37,13 @@ def generate_launch_description():
   «IF TopicBridgeGenerated(system)»
   ros1_topic_bridge_parameter_bridge = ExecuteProcess(
       cmd=['ros2', 'run', 'ros1_bridge', 'parameter_bridge', '__ns:=bridge_«system.name»_topics', '__name:=ros1_topic_bridge_parameter_bridge']
-  «ENDIF»«IF ServiceFromBridgeGenerated(system)»
+  )«ENDIF»«IF ServiceFromBridgeGenerated(system)»
   ros1_service_from_bridge_parameter_bridge = ExecuteProcess(
       cmd=['ros2', 'run', 'ros1_bridge', 'parameter_bridge', '__ns:=bridge_«system.name»_from_services', '__name:=ros1_service_from_bridge_parameter_bridge']
-«ENDIF»«IF ServiceToBridgeGenerated(system)»
+  )«ENDIF»«IF ServiceToBridgeGenerated(system)»
   ros1_service_to_bridge_parameter_bridge = ExecuteProcess(
       cmd=['ros2', 'run', 'ros1_bridge', 'parameter_bridge', '__ns:=bridge_«system.name»_to_services', '__name:=ros1_service_to_bridge_parameter_bridge']
-«ENDIF»
+  )«ENDIF»
 
 
   return LaunchDescription([
