@@ -145,4 +145,11 @@ POSSIBILITY OF SUCH DAMAGE.
          id="de.fraunhofer.ipa.ros.sirius"
          version="3.0.0.qualifier"/>
 
+   <plugin
+         id="de.fraunhofer.ipa.roscode.generator"
+         download-size="0"
+         install-size="0"
+         version="3.0.0.qualifier"
+         unpack="false"/>
+
 </feature>
