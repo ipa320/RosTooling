@@ -51,41 +51,41 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="RosServiceServer" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosServiceServerReference">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="LEFT" sizeComputationExpression="2" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="RIGHT" sizeComputationExpression="2" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <forbiddenSides>WEST</forbiddenSides>
               <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="RosServiceClient" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosServiceClientReference">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="RIGHT" sizeComputationExpression="2" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <forbiddenSides>SOUTH</forbiddenSides>
-              <forbiddenSides>EAST</forbiddenSides>
-              <forbiddenSides>NORTH</forbiddenSides>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-            </style>
-          </borderedNodeMappings>
-          <borderedNodeMappings name="RosActionServer" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosActionServerReference">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="LEFT" sizeComputationExpression="2" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="RosActionClient" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosActionClientReference">
+          <borderedNodeMappings name="RosActionServer" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosActionServerReference">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="RIGHT" sizeComputationExpression="2" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosActionClient" semanticCandidatesExpression="[rosinterfaces.reference/]" domainClass="system::RosActionClientReference">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[eContainer().toString().substring(eContainer().toString().indexOf('name:') + 5, eContainer().toString().lastIndexOf(')') - 1)/]" labelAlignment="LEFT" sizeComputationExpression="2" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
               <forbiddenSides>NORTH</forbiddenSides>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             </style>
