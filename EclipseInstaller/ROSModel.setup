@@ -117,7 +117,7 @@
         id="ros-model"
         filter=""
         remoteURI="ipa320/ros-model"
-        checkoutBranch="master">
+        checkoutBranch="main">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
         <detail
@@ -163,8 +163,8 @@
       <description>GenerateXtext</description>
     </setupTask>
     <stream
-        name="master"
-        label="Master"/>
+        name="main"
+        label="Main"/>
     <description></description>
   </project>
   <logicalProjectContainer
