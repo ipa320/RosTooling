@@ -12,7 +12,10 @@ Require-Bundle: de.fraunhofer.ipa.ros1.xtext,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.ros.xtext,
- de.fraunhofer.ipa.ros.xtext.ui
+ de.fraunhofer.ipa.ros.xtext.ui,
+ org.eclipse.lsp4j.jsonrpc,
+ org.eclipse.lsp4j,
+ com.google.gson
 Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.ros1.ide.contentassist.antlr.internal,
  de.fraunhofer.ipa.ros1.ide.contentassist.antlr.lexer,
