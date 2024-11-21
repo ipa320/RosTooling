@@ -62,7 +62,7 @@ public class ParameterListTypeImpl extends ParameterTypeImpl implements Paramete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterListTypeImpl() {
+	public ParameterListTypeImpl() {
 		super();
 	}
 

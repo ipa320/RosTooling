@@ -55,7 +55,7 @@ public class ParameterArrayTypeImpl extends ParameterTypeImpl implements Paramet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterArrayTypeImpl() {
+	public ParameterArrayTypeImpl() {
 		super();
 	}
 
