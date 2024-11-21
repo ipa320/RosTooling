@@ -21,8 +21,8 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RosSystemGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
-	protected AbstractElementAlias match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q;
+	protected AbstractElementAlias match_ComponentStack___QualityAttributesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q;
+	protected AbstractElementAlias match_ComponentStack___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
 	protected AbstractElementAlias match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q;
 	protected AbstractElementAlias match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q;
 	protected AbstractElementAlias match_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q;
@@ -33,8 +33,8 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RosSystemGrammarAccess) access;
-		match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getQualityAttributesKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_5_3()));
-		match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRosComponentsKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_4_3()));
+		match_ComponentStack___QualityAttributesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getQualityAttributesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_6_3()));
+		match_ComponentStack___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRosComponentsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getComponentStackAccess().getRightParenthesisKeyword_5_3()));
 		match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getActionConnectionsKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_9_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_9_3()));
 		match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getParametersKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftCurlyBracketKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightCurlyBracketKeyword_10_3()));
 		match_RosSystem___RosComponentStacksKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRosComponentStacksKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getLeftParenthesisKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getRosSystemAccess().getRightParenthesisKeyword_6_3()));
@@ -55,10 +55,10 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
-				emit_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q.equals(syntax))
-				emit_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ComponentStack___QualityAttributesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q.equals(syntax))
+				emit_ComponentStack___QualityAttributesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComponentStack___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
+				emit_ComponentStack___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q.equals(syntax))
 				emit_RosSystem___ActionConnectionsKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RosSystem___ParametersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q.equals(syntax))
@@ -82,8 +82,11 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     Name=EString ('RosComponents' '(' ')')? (ambiguity) '}' (rule end)
 	 *     RosComponent+=ComponentInterface ')' (ambiguity) '}' (rule end)
+	 *     SafetyLevel='Alarm' ('RosComponents' '(' ')')? (ambiguity) '}' (rule end)
+	 *     SafetyLevel='Critical' ('RosComponents' '(' ')')? (ambiguity) '}' (rule end)
+	 *     SafetyLevel='Non-critical' ('RosComponents' '(' ')')? (ambiguity) '}' (rule end)
 	 */
-	protected void emit_ComponentStack___QualityAttributesKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ComponentStack___QualityAttributesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -94,8 +97,14 @@ public class RosSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     Name=EString (ambiguity) 'QualityAttributes' '(' QualityAttribute+=QualityAttribute
 	 *     Name=EString (ambiguity) ('QualityAttributes' '(' ')')? '}' (rule end)
+	 *     SafetyLevel='Alarm' (ambiguity) 'QualityAttributes' '(' QualityAttribute+=QualityAttribute
+	 *     SafetyLevel='Alarm' (ambiguity) ('QualityAttributes' '(' ')')? '}' (rule end)
+	 *     SafetyLevel='Critical' (ambiguity) 'QualityAttributes' '(' QualityAttribute+=QualityAttribute
+	 *     SafetyLevel='Critical' (ambiguity) ('QualityAttributes' '(' ')')? '}' (rule end)
+	 *     SafetyLevel='Non-critical' (ambiguity) 'QualityAttributes' '(' QualityAttribute+=QualityAttribute
+	 *     SafetyLevel='Non-critical' (ambiguity) ('QualityAttributes' '(' ')')? '}' (rule end)
 	 */
-	protected void emit_ComponentStack___RosComponentsKeyword_4_0_LeftParenthesisKeyword_4_1_RightParenthesisKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ComponentStack___RosComponentsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

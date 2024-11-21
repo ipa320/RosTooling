@@ -243,6 +243,16 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getComponentStack_SafetyLevel() {
+		return (EAttribute)componentStackEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getQualityAttribute() {
 		return qualityAttributeEClass;
 	}
@@ -459,6 +469,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 		createEAttribute(componentStackEClass, COMPONENT_STACK__NAME);
 		createEReference(componentStackEClass, COMPONENT_STACK__ROS_COMPONENT);
 		createEReference(componentStackEClass, COMPONENT_STACK__QUALITY_ATTRIBUTE);
+		createEAttribute(componentStackEClass, COMPONENT_STACK__SAFETY_LEVEL);
 
 		qualityAttributeEClass = createEClass(QUALITY_ATTRIBUTE);
 		createEAttribute(qualityAttributeEClass, QUALITY_ATTRIBUTE__NAME);
@@ -528,6 +539,7 @@ public class RossystemPackageImpl extends EPackageImpl implements RossystemPacka
 		initEAttribute(getComponentStack_Name(), ecorePackage.getEString(), "Name", null, 1, 1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentStack_RosComponent(), theComponentInterfacePackage.getComponentInterface(), null, "RosComponent", null, 0, -1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentStack_QualityAttribute(), this.getQualityAttribute(), null, "QualityAttribute", null, 0, -1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStack_SafetyLevel(), ecorePackage.getEString(), "SafetyLevel", null, 0, 1, ComponentStack.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(qualityAttributeEClass, QualityAttribute.class, "QualityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQualityAttribute_Name(), ecorePackage.getEString(), "Name", null, 1, 1, QualityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -55,6 +55,7 @@ ComponentStack returns ComponentStack:
 	'ComponentStack'
 	'{'
 		'name' Name=EString
+		('SafetyLevel' SafetyLevel=('Non-critical'|'Critical'|'Alarm'))? //add separated by '|' new options for safety levels
 		('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 		('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
 		

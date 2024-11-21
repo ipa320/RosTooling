@@ -32,6 +32,7 @@ public class RosSystemParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RosSystemGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getComponentStackAccess().getSafetyLevelAlternatives_4_1_0(), "rule__ComponentStack__SafetyLevelAlternatives_4_1_0");
 			builder.put(grammarAccess.getParameterTypeAccess().getAlternatives(), "rule__ParameterType__Alternatives");
 			builder.put(grammarAccess.getParameterValueAccess().getAlternatives(), "rule__ParameterValue__Alternatives");
 			builder.put(grammarAccess.getNamespaceAccess().getAlternatives(), "rule__Namespace__Alternatives");
@@ -62,11 +63,12 @@ public class RosSystemParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionConnectionAccess().getGroup(), "rule__ActionConnection__Group__0");
 			builder.put(grammarAccess.getComponentStackAccess().getGroup(), "rule__ComponentStack__Group__0");
 			builder.put(grammarAccess.getComponentStackAccess().getGroup_4(), "rule__ComponentStack__Group_4__0");
-			builder.put(grammarAccess.getComponentStackAccess().getGroup_4_2(), "rule__ComponentStack__Group_4_2__0");
-			builder.put(grammarAccess.getComponentStackAccess().getGroup_4_2_1(), "rule__ComponentStack__Group_4_2_1__0");
 			builder.put(grammarAccess.getComponentStackAccess().getGroup_5(), "rule__ComponentStack__Group_5__0");
 			builder.put(grammarAccess.getComponentStackAccess().getGroup_5_2(), "rule__ComponentStack__Group_5_2__0");
 			builder.put(grammarAccess.getComponentStackAccess().getGroup_5_2_1(), "rule__ComponentStack__Group_5_2_1__0");
+			builder.put(grammarAccess.getComponentStackAccess().getGroup_6(), "rule__ComponentStack__Group_6__0");
+			builder.put(grammarAccess.getComponentStackAccess().getGroup_6_2(), "rule__ComponentStack__Group_6_2__0");
+			builder.put(grammarAccess.getComponentStackAccess().getGroup_6_2_1(), "rule__ComponentStack__Group_6_2_1__0");
 			builder.put(grammarAccess.getQualityAttributeAccess().getGroup(), "rule__QualityAttribute__Group__0");
 			builder.put(grammarAccess.getQualityAttributeAccess().getGroup_2(), "rule__QualityAttribute__Group_2__0");
 			builder.put(grammarAccess.getQualityAttributeAccess().getGroup_3(), "rule__QualityAttribute__Group_3__0");
@@ -170,10 +172,11 @@ public class RosSystemParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionConnectionAccess().getFromAssignment_4(), "rule__ActionConnection__FromAssignment_4");
 			builder.put(grammarAccess.getActionConnectionAccess().getToAssignment_6(), "rule__ActionConnection__ToAssignment_6");
 			builder.put(grammarAccess.getComponentStackAccess().getNameAssignment_3(), "rule__ComponentStack__NameAssignment_3");
-			builder.put(grammarAccess.getComponentStackAccess().getRosComponentAssignment_4_2_0(), "rule__ComponentStack__RosComponentAssignment_4_2_0");
-			builder.put(grammarAccess.getComponentStackAccess().getRosComponentAssignment_4_2_1_1(), "rule__ComponentStack__RosComponentAssignment_4_2_1_1");
-			builder.put(grammarAccess.getComponentStackAccess().getQualityAttributeAssignment_5_2_0(), "rule__ComponentStack__QualityAttributeAssignment_5_2_0");
-			builder.put(grammarAccess.getComponentStackAccess().getQualityAttributeAssignment_5_2_1_1(), "rule__ComponentStack__QualityAttributeAssignment_5_2_1_1");
+			builder.put(grammarAccess.getComponentStackAccess().getSafetyLevelAssignment_4_1(), "rule__ComponentStack__SafetyLevelAssignment_4_1");
+			builder.put(grammarAccess.getComponentStackAccess().getRosComponentAssignment_5_2_0(), "rule__ComponentStack__RosComponentAssignment_5_2_0");
+			builder.put(grammarAccess.getComponentStackAccess().getRosComponentAssignment_5_2_1_1(), "rule__ComponentStack__RosComponentAssignment_5_2_1_1");
+			builder.put(grammarAccess.getComponentStackAccess().getQualityAttributeAssignment_6_2_0(), "rule__ComponentStack__QualityAttributeAssignment_6_2_0");
+			builder.put(grammarAccess.getComponentStackAccess().getQualityAttributeAssignment_6_2_1_1(), "rule__ComponentStack__QualityAttributeAssignment_6_2_1_1");
 			builder.put(grammarAccess.getQualityAttributeAccess().getNameAssignment_1(), "rule__QualityAttribute__NameAssignment_1");
 			builder.put(grammarAccess.getQualityAttributeAccess().getTypeAssignment_2_1(), "rule__QualityAttribute__TypeAssignment_2_1");
 			builder.put(grammarAccess.getQualityAttributeAccess().getValueAssignment_3_1(), "rule__QualityAttribute__ValueAssignment_3_1");

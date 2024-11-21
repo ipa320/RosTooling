@@ -678,33 +678,41 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cRosComponentsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
-		private final Assignment cRosComponentAssignment_4_2_0 = (Assignment)cGroup_4_2.eContents().get(0);
-		private final RuleCall cRosComponentComponentInterfaceParserRuleCall_4_2_0_0 = (RuleCall)cRosComponentAssignment_4_2_0.eContents().get(0);
-		private final Group cGroup_4_2_1 = (Group)cGroup_4_2.eContents().get(1);
-		private final Keyword cCommaKeyword_4_2_1_0 = (Keyword)cGroup_4_2_1.eContents().get(0);
-		private final Assignment cRosComponentAssignment_4_2_1_1 = (Assignment)cGroup_4_2_1.eContents().get(1);
-		private final RuleCall cRosComponentComponentInterfaceParserRuleCall_4_2_1_1_0 = (RuleCall)cRosComponentAssignment_4_2_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Keyword cSafetyLevelKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cSafetyLevelAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final Alternatives cSafetyLevelAlternatives_4_1_0 = (Alternatives)cSafetyLevelAssignment_4_1.eContents().get(0);
+		private final Keyword cSafetyLevelNonCriticalKeyword_4_1_0_0 = (Keyword)cSafetyLevelAlternatives_4_1_0.eContents().get(0);
+		private final Keyword cSafetyLevelCriticalKeyword_4_1_0_1 = (Keyword)cSafetyLevelAlternatives_4_1_0.eContents().get(1);
+		private final Keyword cSafetyLevelAlarmKeyword_4_1_0_2 = (Keyword)cSafetyLevelAlternatives_4_1_0.eContents().get(2);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cQualityAttributesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cRosComponentsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
-		private final Assignment cQualityAttributeAssignment_5_2_0 = (Assignment)cGroup_5_2.eContents().get(0);
-		private final RuleCall cQualityAttributeQualityAttributeParserRuleCall_5_2_0_0 = (RuleCall)cQualityAttributeAssignment_5_2_0.eContents().get(0);
+		private final Assignment cRosComponentAssignment_5_2_0 = (Assignment)cGroup_5_2.eContents().get(0);
+		private final RuleCall cRosComponentComponentInterfaceParserRuleCall_5_2_0_0 = (RuleCall)cRosComponentAssignment_5_2_0.eContents().get(0);
 		private final Group cGroup_5_2_1 = (Group)cGroup_5_2.eContents().get(1);
 		private final Keyword cCommaKeyword_5_2_1_0 = (Keyword)cGroup_5_2_1.eContents().get(0);
-		private final Assignment cQualityAttributeAssignment_5_2_1_1 = (Assignment)cGroup_5_2_1.eContents().get(1);
-		private final RuleCall cQualityAttributeQualityAttributeParserRuleCall_5_2_1_1_0 = (RuleCall)cQualityAttributeAssignment_5_2_1_1.eContents().get(0);
+		private final Assignment cRosComponentAssignment_5_2_1_1 = (Assignment)cGroup_5_2_1.eContents().get(1);
+		private final RuleCall cRosComponentComponentInterfaceParserRuleCall_5_2_1_1_0 = (RuleCall)cRosComponentAssignment_5_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cQualityAttributesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_6_2 = (Group)cGroup_6.eContents().get(2);
+		private final Assignment cQualityAttributeAssignment_6_2_0 = (Assignment)cGroup_6_2.eContents().get(0);
+		private final RuleCall cQualityAttributeQualityAttributeParserRuleCall_6_2_0_0 = (RuleCall)cQualityAttributeAssignment_6_2_0.eContents().get(0);
+		private final Group cGroup_6_2_1 = (Group)cGroup_6_2.eContents().get(1);
+		private final Keyword cCommaKeyword_6_2_1_0 = (Keyword)cGroup_6_2_1.eContents().get(0);
+		private final Assignment cQualityAttributeAssignment_6_2_1_1 = (Assignment)cGroup_6_2_1.eContents().get(1);
+		private final RuleCall cQualityAttributeQualityAttributeParserRuleCall_6_2_1_1_0 = (RuleCall)cQualityAttributeAssignment_6_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ComponentStack returns ComponentStack:
 		//    'ComponentStack'
 		//    '{'
 		//        'name' Name=EString
+		//        ('SafetyLevel' SafetyLevel=('Non-critical'|'Critical'|'Alarm'))? //add separated by '|' new options for safety levels
 		//        ('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 		//        ('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
 		//    '}';
@@ -713,6 +721,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'ComponentStack'
 		//'{'
 		//    'name' Name=EString
+		//    ('SafetyLevel' SafetyLevel=('Non-critical'|'Critical'|'Alarm'))? //add separated by '|' new options for safety levels
 		//    ('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 		//    ('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
 		//'}'
@@ -733,74 +742,96 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//EString
 		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
-		//('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
+		//('SafetyLevel' SafetyLevel=('Non-critical'|'Critical'|'Alarm'))?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'RosComponents'
-		public Keyword getRosComponentsKeyword_4_0() { return cRosComponentsKeyword_4_0; }
+		//'SafetyLevel'
+		public Keyword getSafetyLevelKeyword_4_0() { return cSafetyLevelKeyword_4_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_4_1() { return cLeftParenthesisKeyword_4_1; }
+		//SafetyLevel=('Non-critical'|'Critical'|'Alarm')
+		public Assignment getSafetyLevelAssignment_4_1() { return cSafetyLevelAssignment_4_1; }
 		
-		//(RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)?
-		public Group getGroup_4_2() { return cGroup_4_2; }
+		//('Non-critical'|'Critical'|'Alarm')
+		public Alternatives getSafetyLevelAlternatives_4_1_0() { return cSafetyLevelAlternatives_4_1_0; }
 		
-		//RosComponent+=ComponentInterface
-		public Assignment getRosComponentAssignment_4_2_0() { return cRosComponentAssignment_4_2_0; }
+		//'Non-critical'
+		public Keyword getSafetyLevelNonCriticalKeyword_4_1_0_0() { return cSafetyLevelNonCriticalKeyword_4_1_0_0; }
 		
-		//ComponentInterface
-		public RuleCall getRosComponentComponentInterfaceParserRuleCall_4_2_0_0() { return cRosComponentComponentInterfaceParserRuleCall_4_2_0_0; }
+		//'Critical'
+		public Keyword getSafetyLevelCriticalKeyword_4_1_0_1() { return cSafetyLevelCriticalKeyword_4_1_0_1; }
 		
-		//( "," RosComponent+=ComponentInterface)*
-		public Group getGroup_4_2_1() { return cGroup_4_2_1; }
+		//'Alarm'
+		public Keyword getSafetyLevelAlarmKeyword_4_1_0_2() { return cSafetyLevelAlarmKeyword_4_1_0_2; }
 		
-		//","
-		public Keyword getCommaKeyword_4_2_1_0() { return cCommaKeyword_4_2_1_0; }
-		
-		//RosComponent+=ComponentInterface
-		public Assignment getRosComponentAssignment_4_2_1_1() { return cRosComponentAssignment_4_2_1_1; }
-		
-		//ComponentInterface
-		public RuleCall getRosComponentComponentInterfaceParserRuleCall_4_2_1_1_0() { return cRosComponentComponentInterfaceParserRuleCall_4_2_1_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_4_3() { return cRightParenthesisKeyword_4_3; }
-		
-		//('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
+		////add separated by '|' new options for safety levels
+		//       ('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'QualityAttributes'
-		public Keyword getQualityAttributesKeyword_5_0() { return cQualityAttributesKeyword_5_0; }
+		//'RosComponents'
+		public Keyword getRosComponentsKeyword_5_0() { return cRosComponentsKeyword_5_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
 		
-		//(QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)?
+		//(RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)?
 		public Group getGroup_5_2() { return cGroup_5_2; }
 		
-		//QualityAttribute+=QualityAttribute
-		public Assignment getQualityAttributeAssignment_5_2_0() { return cQualityAttributeAssignment_5_2_0; }
+		//RosComponent+=ComponentInterface
+		public Assignment getRosComponentAssignment_5_2_0() { return cRosComponentAssignment_5_2_0; }
 		
-		//QualityAttribute
-		public RuleCall getQualityAttributeQualityAttributeParserRuleCall_5_2_0_0() { return cQualityAttributeQualityAttributeParserRuleCall_5_2_0_0; }
+		//ComponentInterface
+		public RuleCall getRosComponentComponentInterfaceParserRuleCall_5_2_0_0() { return cRosComponentComponentInterfaceParserRuleCall_5_2_0_0; }
 		
-		//( "," QualityAttribute+=QualityAttribute)*
+		//( "," RosComponent+=ComponentInterface)*
 		public Group getGroup_5_2_1() { return cGroup_5_2_1; }
 		
 		//","
 		public Keyword getCommaKeyword_5_2_1_0() { return cCommaKeyword_5_2_1_0; }
 		
-		//QualityAttribute+=QualityAttribute
-		public Assignment getQualityAttributeAssignment_5_2_1_1() { return cQualityAttributeAssignment_5_2_1_1; }
+		//RosComponent+=ComponentInterface
+		public Assignment getRosComponentAssignment_5_2_1_1() { return cRosComponentAssignment_5_2_1_1; }
 		
-		//QualityAttribute
-		public RuleCall getQualityAttributeQualityAttributeParserRuleCall_5_2_1_1_0() { return cQualityAttributeQualityAttributeParserRuleCall_5_2_1_1_0; }
+		//ComponentInterface
+		public RuleCall getRosComponentComponentInterfaceParserRuleCall_5_2_1_1_0() { return cRosComponentComponentInterfaceParserRuleCall_5_2_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
 		
+		//('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'QualityAttributes'
+		public Keyword getQualityAttributesKeyword_6_0() { return cQualityAttributesKeyword_6_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_6_1() { return cLeftParenthesisKeyword_6_1; }
+		
+		//(QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)?
+		public Group getGroup_6_2() { return cGroup_6_2; }
+		
+		//QualityAttribute+=QualityAttribute
+		public Assignment getQualityAttributeAssignment_6_2_0() { return cQualityAttributeAssignment_6_2_0; }
+		
+		//QualityAttribute
+		public RuleCall getQualityAttributeQualityAttributeParserRuleCall_6_2_0_0() { return cQualityAttributeQualityAttributeParserRuleCall_6_2_0_0; }
+		
+		//( "," QualityAttribute+=QualityAttribute)*
+		public Group getGroup_6_2_1() { return cGroup_6_2_1; }
+		
+		//","
+		public Keyword getCommaKeyword_6_2_1_0() { return cCommaKeyword_6_2_1_0; }
+		
+		//QualityAttribute+=QualityAttribute
+		public Assignment getQualityAttributeAssignment_6_2_1_1() { return cQualityAttributeAssignment_6_2_1_1; }
+		
+		//QualityAttribute
+		public RuleCall getQualityAttributeQualityAttributeParserRuleCall_6_2_1_1_0() { return cQualityAttributeQualityAttributeParserRuleCall_6_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_6_3() { return cRightParenthesisKeyword_6_3; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class QualityAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.rossystem.RosSystem.QualityAttribute");
@@ -3329,6 +3360,7 @@ public class RosSystemGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    'ComponentStack'
 	//    '{'
 	//        'name' Name=EString
+	//        ('SafetyLevel' SafetyLevel=('Non-critical'|'Critical'|'Alarm'))? //add separated by '|' new options for safety levels
 	//        ('RosComponents' '(' (RosComponent+=ComponentInterface ( "," RosComponent+=ComponentInterface)*)? ')' )?
 	//        ('QualityAttributes' '(' (QualityAttribute+=QualityAttribute ( "," QualityAttribute+=QualityAttribute)*)? ')' )?
 	//    '}';

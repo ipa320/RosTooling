@@ -25,6 +25,7 @@
         derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="QualityAttribute" upperBound="-1"
         eType="#//QualityAttribute" derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SafetyLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualityAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
