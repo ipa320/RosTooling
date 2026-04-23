@@ -5,7 +5,7 @@ Bundle-SymbolicName: de.fraunhofer.ipa.roscode.generator;singleton:=true
 Bundle-Version: 3.1.0.qualifier
 Bundle-Vendor: %providerName
 Export-Package: de.fraunhofer.ipa.roscode.generator
-Bundle-RequiredExecutionEnvironment: JavaSE-19
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Import-Package: javax.inject;version="1.0.0",
  org.eclipse.ui.handlers,
  org.eclipse.xtext.ui.resource
