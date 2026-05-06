@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram.ui,
  de.fraunhofer.ipa.rossystem
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-19
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-Vendor: Fraunhofer IPA
 Automatic-Module-Name: de.fraunhofer.ipa.ros.sirius
 Export-Package: de.fraunhofer.ipa.ros.sirius

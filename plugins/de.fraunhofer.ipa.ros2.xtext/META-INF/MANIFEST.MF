@@ -14,7 +14,7 @@ Require-Bundle: de.fraunhofer.ipa.ros,
  de.fraunhofer.ipa.ros.xtext.ui;bundle-version="2.0.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.39.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="4.7.2",
+ org.antlr.runtime,
  org.eclipse.xtend.lib;bundle-version="2.39.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.fraunhofer.ipa.ros2.parser.antlr,
