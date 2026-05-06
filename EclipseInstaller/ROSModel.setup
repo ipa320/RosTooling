@@ -16,8 +16,8 @@
     label="ROS Model">
   <setupTask
       xsi:type="jdt:JRETask"
-      version="JavaSE-11"
-      location="${jre.location-1.8}">
+      version="JavaSE-21"
+      location="${jre.location-21}">
     <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -50,7 +50,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      defaultValue="2024-09"
+      defaultValue="2025-12"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
@@ -78,14 +78,27 @@
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <repositoryList
+          name="2025-12">
+        <repository
+            url="https://download.eclipse.org/releases/2025-12"/>
+        <repository
+            url="https://download.eclipse.org/eclipse/updates/4.38"/>
+        <repository
+            url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.42.0/"/>
+        <repository
+            url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+        <repository
+            url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
+      </repositoryList>
+      <repositoryList
           name="2024-09">
         <repository
             url="https://download.eclipse.org/releases/2024-09"/>
         <repository
             url="https://download.eclipse.org/eclipse/updates/4.33"/>
-        <repository 
+        <repository
             url="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
-        <repository 
+        <repository
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
       </repositoryList>
     </targlet>
@@ -151,10 +164,30 @@
         <sourceLocator
             rootFolder="${ros-model.location}/plugins/">
           <excludedPath>.</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.rossystem.deployment</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.rossystem.model.combination</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.ros.model.spec.check</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.ros.observer.generator</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.ros.tests</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.ros.xtext.tests</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.rossystem.xtext.tests</excludedPath>
         </sourceLocator>
-        <repositoryList 
+        <repositoryList
+            name="2025-12">
+          <repository
+            url="https://download.eclipse.org/releases/2025-12"/>
+          <repository
+            url="https://download.eclipse.org/eclipse/updates/4.38"/>
+          <repository
+            url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.42.0/"/>
+          <repository
+            url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+          <repository
+            url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
+        </repositoryList>
+        <repositoryList
             name="2024-09">
-          <repository 
+          <repository
             url="https://download.eclipse.org/releases/2024-09"/>
           <repository
             url="https://download.eclipse.org/eclipse/updates/4.33"/>

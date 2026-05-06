@@ -9,6 +9,10 @@ xtend-gen/
 plugin.xml_gen
 .antlr-generator-3.2.0-patch.jar
 
+# Eclipse IDE
+.settings/
+.serena/
+
 # Maven
 target
 pom.xml.tag

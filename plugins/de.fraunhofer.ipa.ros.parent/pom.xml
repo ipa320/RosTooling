@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <xtextVersion>2.39.0</xtextVersion>
+        <xtextVersion>2.42.0</xtextVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -64,7 +64,7 @@
         <repository>
             <id>eclipse</id>
             <layout>p2</layout>
-            <url>https://download.eclipse.org/releases/2025-06/</url>
+            <url>https://download.eclipse.org/releases/2025-12/</url>
         </repository>
         <repository>
             <id>Xtext Update Site</id>
