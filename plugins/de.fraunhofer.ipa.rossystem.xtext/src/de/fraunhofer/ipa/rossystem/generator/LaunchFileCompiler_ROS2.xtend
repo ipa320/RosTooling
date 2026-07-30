@@ -4,6 +4,7 @@ import com.google.inject.Inject
 import java.util.ArrayList
 import org.eclipse.emf.common.util.EList
 import ros.Artifact
+import ros.Parameter
 import ros.impl.AmentPackageImpl
 import system.Connection
 import system.RosActionServerReference
@@ -36,6 +37,12 @@ def generate_launch_description():
   ld = LaunchDescription()
 
   # *** PARAMETERS ***
+  «FOR parameter:system.parameter»
+  «(parameter as ros.Parameter).name»_arg = DeclareLaunchArgument(
+    "«(parameter as ros.Parameter).name»", default_value=TextSubstitution(text="«get_param_value((parameter as ros.Parameter).value,(parameter as ros.Parameter).name)»")
+  )
+  ld.add_action(«(parameter as ros.Parameter).name»_arg)
+  «ENDFOR»
   «FOR component:getRos2Nodes(system)»«IF generate_yaml(component)»
   «component.name»_config = os.path.join(
     get_package_share_directory('«system.getName().toLowerCase»'),
@@ -71,11 +78,19 @@ def generate_launch_description():
   «FOR subsystem:getSubsystems(system)»
   «IF subsystem.fromFile.nullOrEmpty»
   include_«subsystem.name»= IncludeLaunchDescription(
-    PythonLaunchDescriptionSource([ get_package_share_directory('«subsystem.name»') + '/launch/«subsystem.name».launch.py'])
+    PythonLaunchDescriptionSource([ get_package_share_directory('«subsystem.name»') + '/launch/«subsystem.name».launch.py'])«IF has_matching_parameters(system, subsystem)»,
+    launch_arguments={
+      «FOR param : system.parameter»«IF subsystem_references_parameter(subsystem, (param as ros.Parameter).name)»
+      '«(param as ros.Parameter).name»': LaunchConfiguration('«(param as ros.Parameter).name»'),«ENDIF»«ENDFOR»
+    }.items()«ENDIF»
   )
   «ELSE»
   include_«subsystem.name»= IncludeLaunchDescription(
-    PythonLaunchDescriptionSource([get_package_share_directory('«subsystem.fromFile.split("/",2).get(0)»') + '/«subsystem.fromFile.split("/",2).get(1)»'])
+    PythonLaunchDescriptionSource([get_package_share_directory('«subsystem.fromFile.split("/",2).get(0)»') + '/«subsystem.fromFile.split("/",2).get(1)»'])«IF has_matching_parameters(system, subsystem)»,
+    launch_arguments={
+      «FOR param : system.parameter»«IF subsystem_references_parameter(subsystem, (param as ros.Parameter).name)»
+      '«(param as ros.Parameter).name»': LaunchConfiguration('«(param as ros.Parameter).name»'),«ENDIF»«ENDFOR»
+    }.items()«ENDIF»
   )
   «ENDIF»«ENDFOR»
 
