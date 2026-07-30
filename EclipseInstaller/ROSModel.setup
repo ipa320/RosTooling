@@ -89,6 +89,8 @@
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
         <repository
             url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
+        <repository
+            url="https://download.eclipse.org/lsp4j/updates/releases/1.0.0/"/>
       </repositoryList>
       <repositoryList
           name="2024-09">
@@ -100,6 +102,8 @@
             url="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
         <repository
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+        <repository
+            url="https://download.eclipse.org/lsp4j/updates/releases/1.0.0/"/>
       </repositoryList>
     </targlet>
   </setupTask>
@@ -161,6 +165,8 @@
           activeRepositoryList="${eclipse.target.platform}">
         <requirement
             name="*"/>
+        <requirement
+            name="org.apache.commons.logging"/>
         <sourceLocator
             rootFolder="${ros-model.location}/plugins/">
           <excludedPath>.</excludedPath>
@@ -184,6 +190,8 @@
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
           <repository
             url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
+          <repository
+            url="https://download.eclipse.org/lsp4j/updates/releases/1.0.0/"/>
         </repositoryList>
         <repositoryList
             name="2024-09">
@@ -195,6 +203,8 @@
             url="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
           <repository
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+          <repository
+            url="https://download.eclipse.org/lsp4j/updates/releases/1.0.0/"/>
         </repositoryList>
         <repositoryList name="2021-12">
           <repository
