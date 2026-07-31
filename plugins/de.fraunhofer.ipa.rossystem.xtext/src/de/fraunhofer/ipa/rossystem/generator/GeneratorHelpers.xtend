@@ -4,6 +4,7 @@ import java.util.ArrayList
 import java.util.List
 import ros.Node
 import ros.Package
+import ros.Parameter
 import ros.ParameterValue
 import ros.impl.AmentPackageImpl
 import ros.impl.ParameterBooleanImpl
@@ -109,6 +110,38 @@ class GeneratorHelpers {
             }
         }
         return subSystemsList
+    }
+
+    def boolean subsystem_references_parameter(System subsystem_system, String param_name) {
+        if (subsystem_system !== null && subsystem_system.components !== null) {
+            for (component : subsystem_system.components) {
+                if (component instanceof RosNode) {
+                    if ((component as RosNode).from !== null && (component as RosNode).from.parameter !== null) {
+                        for (param : (component as RosNode).from.parameter) {
+                            if (param.name.equals(param_name)) {
+                                return true
+                            }
+                        }
+                    }
+                } else if (component instanceof SubSystem) {
+                    if (subsystem_references_parameter((component as SubSystem).system, param_name)) {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    def boolean has_matching_parameters(System system, System subsystem_system) {
+        if (system.parameter !== null) {
+            for (param : system.parameter) {
+                if (subsystem_references_parameter(subsystem_system, (param as ros.Parameter).name)) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     def boolean TopicBridgeGenerated(System rossystem){

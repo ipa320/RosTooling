@@ -73,15 +73,29 @@ class RosSystemValidator extends AbstractRosSystemValidator {
 
   @Check
   def fromFileHelper(System system ) {
-      if (!system.fromFile.empty){
-              info('The format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
-                  ,null,NOT_IN_THE_SYSTEM)
-      }
-      if (!system.fromFile.toString.contains("/")){
-              error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
-                  ,null,NOT_IN_THE_SYSTEM)
+      if (!system.fromFile.empty && system.fromFile !== null){
+        if (!system.fromFile.toString.contains("/")){
+                error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                    ,null,FROM_FILE_PATH)
+        }
       }
   }
+  
+  def List<RosInterface> getAllInterfaces(System system) {
+    val List<RosInterface> interfaces = newArrayList
+    if (system === null) {
+        return interfaces
+    }
+    for (Component component : system.components) {
+        if (component instanceof RosNode) {
+            interfaces.addAll(component.rosinterfaces)
+        } else if (component instanceof SubSystem) {
+            interfaces.addAll(getAllInterfaces(component.system))
+        }
+    }
+    return interfaces
+  }
+  
 
   @Check
   def checkIfInterfaceInSystem(Connection connection) {
@@ -89,25 +103,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
       var from_connection = connection_def.from
       var to_connection = connection_def.to
       var system = connection.eContainer as System
-      var List<RosInterface> AllInterfaces = newArrayList
-
-      for (Component component : system.components){
-          if(component.class.toString.contains("RosNode")){
-              var rosnode = component as RosNode
-              for(RosInterface interface : rosnode.rosinterfaces){
-                AllInterfaces.add(interface)
-              }
-          }
-          if (component.class.toString.contains("SubSystem")) {
-              var subsystem = component as SubSystem
-              for(subcomponent: (subsystem.system as System).components){
-                 var rosnode = subcomponent as RosNode
-                  for(RosInterface interface : rosnode.rosinterfaces){
-                    AllInterfaces.add(interface)
-                  }
-              }
-          }
-      }
+      var List<RosInterface> AllInterfaces = getAllInterfaces(system)
 
       if (!AllInterfaces.contains(from_connection)){
               info('Valid interfaces for this process are '+AllInterfaces

@@ -72,6 +72,11 @@
             <url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtextVersion}/</url>
         </repository>
         <repository>
+            <id>LSP4J Update Site</id>
+            <layout>p2</layout>
+            <url>https://download.eclipse.org/lsp4j/updates/releases/1.0.0/</url>
+        </repository>
+        <repository>
             <id>codehaus-snapshots</id>
             <name>disable dead 'Codehaus Snapshots' repository, see
                 https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478
