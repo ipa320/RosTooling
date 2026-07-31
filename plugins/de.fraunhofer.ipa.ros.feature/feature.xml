@@ -2,7 +2,7 @@
 <feature
       id="de.fraunhofer.ipa.ros.feature"
       label="Ros Feature"
-      version="3.1.0.qualifier"
+      version="3.1.1.qualifier"
       provider-name="Fraunhofer IPA">
 
    <description url="https://github.com/ipa320/ros-model">
@@ -67,89 +67,89 @@ POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="de.fraunhofer.ipa.rossystem"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext.ide"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.edit"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext.ui"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.edit"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.plugin"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.editor"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.rossystem.xtext.ui"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext.ide"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.xtext"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.editor"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ide"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros1.xtext.ui"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ide"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros2.xtext.ui"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.ros.sirius"
-         version="3.1.0.qualifier"/>
+         version="3.1.1.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.roscode.generator"
          download-size="0"
          install-size="0"
-         version="3.1.0.qualifier"
+         version="3.1.1.qualifier"
          unpack="false"/>
 
 </feature>
