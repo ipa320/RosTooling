@@ -7,8 +7,8 @@ Bundle-Version: 3.1.1.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.ros,
- org.eclipse.xtext,
- org.eclipse.xtext.xbase,
+ org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;visibility:=reexport,
  org.eclipse.equinox.common;bundle-version="3.17.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.39.0",
  org.eclipse.xtext.util,
