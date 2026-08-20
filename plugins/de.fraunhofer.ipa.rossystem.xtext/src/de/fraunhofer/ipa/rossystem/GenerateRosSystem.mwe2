@@ -15,6 +15,12 @@ Workflow {
                 runtimeTest = {
                     enabled = false
                 }
+                runtime = {
+                	enabled = true
+                }
+                genericIde = {
+                	enabled = true
+                }                
                 eclipsePlugin = {
                     enabled = true
                 }

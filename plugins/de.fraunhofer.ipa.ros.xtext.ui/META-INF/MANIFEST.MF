@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.ros.xtext.ui
 Bundle-Vendor: Fraunhofer IPA
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.1.1.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.ros.xtext.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: de.fraunhofer.ipa.ros.xtext,
+Require-Bundle: de.fraunhofer.ipa.ros.xtext;visibility:=reexport,
  de.fraunhofer.ipa.ros.xtext.ide,
  de.fraunhofer.ipa.ros,
  org.eclipse.xtext.ui,

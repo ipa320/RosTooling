@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.fraunhofer.ipa.ros</groupId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.1.1-SNAPSHOT</version>
     <artifactId>de.fraunhofer.ipa.ros.parent</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <xtextVersion>2.39.0</xtextVersion>
+        <xtextVersion>2.42.0</xtextVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -17,6 +17,15 @@
         <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
         <mwe2Version>2.22.0</mwe2Version>
     </properties>
+    
+	<distributionManagement>
+	   <repository>
+	     <id>github</id>
+	     <name>GitHub ipa-esa Apache Maven Packages</name>
+	     <url>https://maven.pkg.github.com/ipa-esa/RosTooling</url>
+	   </repository>
+	</distributionManagement>
+    
     <modules>
         <module>../de.fraunhofer.ipa.ros</module>
         <module>../de.fraunhofer.ipa.ros.xtext</module>
@@ -55,12 +64,17 @@
         <repository>
             <id>eclipse</id>
             <layout>p2</layout>
-            <url>https://download.eclipse.org/releases/2025-06/</url>
+            <url>https://download.eclipse.org/releases/2025-12/</url>
         </repository>
         <repository>
             <id>Xtext Update Site</id>
             <layout>p2</layout>
             <url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtextVersion}/</url>
+        </repository>
+        <repository>
+            <id>LSP4J Update Site</id>
+            <layout>p2</layout>
+            <url>https://download.eclipse.org/lsp4j/updates/releases/1.0.0/</url>
         </repository>
         <repository>
             <id>codehaus-snapshots</id>

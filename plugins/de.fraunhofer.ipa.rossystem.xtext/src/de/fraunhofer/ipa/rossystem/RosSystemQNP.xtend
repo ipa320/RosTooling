@@ -13,31 +13,45 @@ class RosSystemQNP extends DefaultDeclarativeQualifiedNameProvider{
 
 
   override getFullyQualifiedName(EObject obj) {
-
-    if (obj instanceof RosNode) {
-      val node_name = obj.name
-      return getConverter().toQualifiedName(node_name);
-    }
-    if (obj instanceof RosInterface) {
-      val interface_name = obj.name
-      return getConverter().toQualifiedName(interface_name);
-    }
-    if (obj instanceof Rossystem) {
-      val sys_name = obj.name
-      return getConverter().toQualifiedName(sys_name);
-    }
-    if (obj instanceof System) {
-      val sys_name = obj.name
-      return getConverter().toQualifiedName(sys_name);
-    }
-    if (obj instanceof Parameter) {
-      val param_name = obj.name
-      return getConverter().toQualifiedName(param_name);
-    }
-    if (obj instanceof RosParameter) {
-      val param_name = obj.name
-      return getConverter().toQualifiedName(param_name);
-    }
+  	
+  	val String extractedName = switch obj {
+  		RosNode: obj.name
+  		RosInterface: obj.name
+  		Rossystem: obj.name
+  		System: obj.name
+  		Parameter: obj.name
+  		RosParameter: obj.name
+  		default: null
+  	}
+  	
+  	if (extractedName !== null && !extractedName.isEmpty) {
+  		return getConverter().toQualifiedName(extractedName)
+  	}
+	return null
+//    if (obj instanceof RosNode) {
+//      val node_name = obj.name
+//      return getConverter().toQualifiedName(node_name);
+//    }
+//    if (obj instanceof RosInterface) {
+//      val interface_name = obj.name
+//      return getConverter().toQualifiedName(interface_name);
+//    }
+//    if (obj instanceof Rossystem) {
+//      val sys_name = obj.name
+//      return getConverter().toQualifiedName(sys_name);
+//    }
+//    if (obj instanceof System) {
+//      val sys_name = obj.name
+//      return getConverter().toQualifiedName(sys_name);
+//    }
+//    if (obj instanceof Parameter) {
+//      val param_name = obj.name
+//      return getConverter().toQualifiedName(param_name);
+//    }
+//    if (obj instanceof RosParameter) {
+//      val param_name = obj.name
+//      return getConverter().toQualifiedName(param_name);
+//    }
     }
 
 }

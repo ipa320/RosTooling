@@ -29,6 +29,12 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension BridgesLaunchFileCompiler_ROS2
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+    	val fsaName = fsa.class.simpleName
+    	if (fsaName == "URIBasedFileSystemAccess" || fsaName == "FileSystemAccessImpl") {
+    		println("[LSP SHIELD] Blocked automatic background generation on startup.")
+    		return
+    	}
+    	
         var yaml_gen = false
         for (system : resource.allContents.toIterable.filter(System)){
             fsa.generateFile(
