@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![ros-model CI](https://github.com/ipa320/ros-model/actions/workflows/build.yml/badge.svg)](https://github.com/ipa320/ros-model/actions/workflows/build.yml)
 
+![RosTooling Badge](images/RosTooling_Badge.png)
+
 The main purpose of this effort is to combine the advantages of [ROS](http://wiki.ros.org/) and Model-Driven-Engineering techniques. This repository holds a family of metamodels defined as Ecore models and their corresponding Xtext-based DSLs (Domain Specific Language) implementation.
 The resulted models allow the description of ROS and ROS2 concepts and properties, like packages, artifacts, nodes, interfaces types, parameters... Moreover a complete system as composition of ROS components can be also modelled.
 
