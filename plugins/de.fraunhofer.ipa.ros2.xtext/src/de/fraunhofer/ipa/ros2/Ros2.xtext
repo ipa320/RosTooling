@@ -24,6 +24,59 @@ AmentPackage returns AmentPackage:
     END;
 
 ///////////////////
+//NODE
+///////////////////
+@Override
+Node returns Node:
+    'node:' name=RosNames
+    (
+    ('lifecycle:' isLifecycle=boolean0)|
+    ('publishers:'
+        BEGIN
+        publisher+=Publisher*
+        END
+    )|
+    ('subscribers:'
+        BEGIN
+        subscriber+=Subscriber*
+        END
+    )|
+    ('serviceservers:'
+        BEGIN
+        serviceserver+=ServiceServer*
+        END
+    )|
+    ('serviceclients:'
+        BEGIN
+        serviceclient+=ServiceClient*
+        END
+    )|
+    ('actionservers:'
+        BEGIN
+        actionserver+=ActionServer*
+        END
+    )|
+    ('actionclients:'
+        BEGIN
+        actionclient+=ActionClient*
+        END
+    )|
+    ('parameters:'
+        BEGIN
+        parameter+=Parameter*
+        END
+    )
+    )*
+    ;
+
+enum LifecycleState returns LifecycleState:
+    UNCONFIGURED = 'Unconfigured' |
+    INACTIVE = 'Inactive' |
+    ACTIVE = 'Active' |
+    FINALIZED = 'Finalized'
+;
+
+///////////////////
 // Quality of Service
 ///////////////////
 
@@ -52,6 +105,7 @@ Publisher returns Publisher:
         BEGIN
             'type:' message=[TopicSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;
@@ -63,6 +117,7 @@ Subscriber returns Subscriber:
         BEGIN
             'type:' message=[TopicSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;
@@ -74,6 +129,7 @@ ServiceServer returns ServiceServer:
         BEGIN
             'type:' service=[ServiceSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;
@@ -85,6 +141,7 @@ ServiceClient returns ServiceClient:
         BEGIN
             'type:' service=[ServiceSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;
@@ -96,6 +153,7 @@ ActionServer returns ActionServer:
         BEGIN
             'type:' action=[ActionSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;
@@ -107,6 +165,7 @@ ActionClient returns ActionClient:
         BEGIN
             'type:' action=[ActionSpec|EString]
             ('ns:' namespace=Namespace)?
+            ('active_in:' '[' activeStates+=LifecycleState (',' activeStates+=LifecycleState)* ']')?
             ('qos:' qos=QualityOfService)?
         END
     ;

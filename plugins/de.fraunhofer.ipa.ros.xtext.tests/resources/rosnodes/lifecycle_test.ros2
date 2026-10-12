@@ -1,0 +1,12 @@
+lifecycle_test:
+  artifacts:
+    lifecycle_node:
+      node: lifecycle_node
+      lifecycle: true
+      publishers:
+        image_out:
+          type: "sensor_msgs/msg/Image"
+          active_in: [Active]
+        status_out:
+          type: "std_msgs/msg/String"
+          active_in: [Active, Inactive]

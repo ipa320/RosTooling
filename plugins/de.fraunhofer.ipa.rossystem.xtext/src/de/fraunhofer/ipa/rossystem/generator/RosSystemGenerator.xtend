@@ -9,6 +9,8 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import system.System
 import com.google.inject.Inject
+import java.util.List
+import java.util.ArrayList
 import system.RosNode
 
 /**
@@ -29,68 +31,169 @@ class RosSystemGenerator extends AbstractGenerator {
     @Inject extension BridgesLaunchFileCompiler_ROS2
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        var yaml_gen = false
+    	val fsaName = fsa.class.simpleName
+    	if (fsaName == "URIBasedFileSystemAccess" || fsaName == "FileSystemAccessImpl") {
+    		println("[LSP SHIELD] Blocked automatic background generation on startup.")
+    		return
+    	}
+    	
+        generateSystemTargeted(resource, fsa, null)
+    }
+
+    def void generateSystemTargeted(Resource resource, IFileSystemAccess2 fsa, List<String> existingFiles) {
+        val existingList = if (existingFiles !== null) existingFiles else new ArrayList<String>()
+
         for (system : resource.allContents.toIterable.filter(System)){
+            var yaml_gen = false
+            val pkgName = system.getName().toLowerCase
+            val pkgPrefix = pkgName + "/"
+
+            val hasCMake = existingList.contains(pkgName + "/CMakeLists.txt") || existingList.contains("CMakeLists.txt") || fsa.isFile(pkgName + "/CMakeLists.txt")
+            val hasSetupPy = existingList.contains(pkgName + "/setup.py") || existingList.contains("setup.py") || fsa.isFile(pkgName + "/setup.py")
+            val hasPkgXml = existingList.contains(pkgName + "/package.xml") || existingList.contains("package.xml") || fsa.isFile(pkgName + "/package.xml")
+
+            val hasCppSrc = existingList.exists[f |
+                (f.startsWith(pkgPrefix) || !f.contains("/")) &&
+                (f.contains("Wrapper.cpp") || f.contains("Runner.cpp") || f.contains("Algorithm.hpp") || f.contains("/src/") || f.endsWith(".cpp") || f.endsWith(".hpp"))
+            ]
+            val hasPySrc = existingList.exists[f |
+                (f.startsWith(pkgPrefix) || !f.contains("/")) &&
+                (f.contains("_wrapper.py") || f.contains("_runner.py") || f.contains("_logic.py") || (f.endsWith(".py") && !f.endsWith(".launch.py")))
+            ]
+
+            val isPurePython = (hasPySrc || hasSetupPy) && !hasCppSrc && !hasCMake
+
             fsa.generateFile(
-                system.getName().toLowerCase+"/README.md",
+                pkgName + "/README.md",
                 compile_toREADME(system).toString().replace("\t","  ")
             )
             fsa.generateFile(
-                system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase + ".puml",
+                pkgName + "/resource/" + pkgName + ".puml",
                 compile_plantuml(system)
             )
+
             if (system.fromFile.isNullOrEmpty) {
                 fsa.generateFile(
-                    system.getName().toLowerCase+"/launch/"+system.getName()+".launch.py",
+                    pkgName + "/launch/" + system.getName() + ".launch.py",
                     compile_toROS2launch(system).toString().replace("\t","  ")
                 )
                 for (component: system.components){
                     if(component.eClass.name == "RosNode"){
                         if(!(component as RosNode).rosparameters.nullOrEmpty){
-                            yaml_gen=true
+                            yaml_gen = true
                             if ((component as RosNode).namespace !== null){
                                 fsa.generateFile(
-                                system.getName().toLowerCase+"/config/"+(component as RosNode).namespace+"_"+(component as RosNode).getName()+".yaml",
-                                compile_toROS2yaml(component as RosNode).toString().replace("\t","  ")
+                                    pkgName + "/config/" + (component as RosNode).namespace + "_" + (component as RosNode).getName() + ".yaml",
+                                    compile_toROS2yaml(component as RosNode).toString().replace("\t","  ")
                                 )
                             }
                             else{
                                 fsa.generateFile(
-                                system.getName().toLowerCase+"/config/"+(component as RosNode).getName()+".yaml",
-                                compile_toROS2yaml(component as RosNode).toString().replace("\t","  ")
-                            )
+                                    pkgName + "/config/" + (component as RosNode).getName() + ".yaml",
+                                    compile_toROS2yaml(component as RosNode).toString().replace("\t","  ")
+                                )
                             }
-
-                    }}
+                        }
+                    }
                 }
-                fsa.generateFile(
-                    system.getName().toLowerCase+"/package.xml",
-                    compile_package_xml_format3(system)
-                )
-                fsa.generateFile(
-                    system.getName().toLowerCase+"/CMakeLists.txt",
-                    compile_CMakeLists_ROS2(system,yaml_gen)
-                )
-                fsa.generateFile(
-                    system.getName().toLowerCase+"/setup.py",
-                    compile_setup_py(system,yaml_gen)
-                )
-                fsa.generateFile(
-                    system.getName().toLowerCase+"/resource/" + system.getName().toLowerCase,
-                    ""
-                )
-                fsa.generateFile(
-                    system.getName().toLowerCase+"/" + system.getName().toLowerCase + "/__init__.py",
-                    ""
-                )
+
+                if (isPurePython) {
+                    // Pure Python package: Never emit CMakeLists.txt!
+                    // If setup.py does not exist yet, generate clean setup.py and setup.cfg
+                    if (!hasSetupPy) {
+                        fsa.generateFile(pkgName + "/setup.py", compile_setup_py(system, yaml_gen))
+                        fsa.generateFile(pkgName + "/resource/" + pkgName, "")
+                        fsa.generateFile(pkgName + "/" + pkgName + "/__init__.py", "")
+                    }
+                    if (!hasPkgXml) {
+                        fsa.generateFile(pkgName + "/package.xml", compile_package_xml_python(system))
+                    }
+                    fsa.deleteFile(pkgName + "/CMakeLists.txt")
+                    fsa.deleteFile(pkgName + "/pyproject.toml")
+                } else {
+                    // CMake package (pure C++, hybrid, or standard bringup package)
+                    var boolean cmakeWritten = false
+                    if (fsa.isFile(pkgName + "/CMakeLists.txt")) {
+                        try {
+                            val existingChars = fsa.readTextFile(pkgName + "/CMakeLists.txt")
+                            if (existingChars !== null) {
+                                val cmakeContent = existingChars.toString
+                                val hasLaunchInstall = cmakeContent.contains("install(DIRECTORY launch") || cmakeContent.contains("DIRECTORY launch")
+                                val hasIfExistsLaunch = cmakeContent.contains("if(EXISTS \"${CMAKE_CURRENT_SOURCE_DIR}/launch\")")
+                                val launchInstallSnippet = '''
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+  OPTIONAL
+)
+
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+  OPTIONAL
+)'''
+                                if (hasIfExistsLaunch) {
+                                    val updatedCmake = cmakeContent.replaceAll("(?s)if\\(EXISTS\\s+\"\\$\\{CMAKE_CURRENT_SOURCE_DIR\\}/launch\"\\).*?endif\\(\\)(\\s*if\\(EXISTS\\s+\"\\$\\{CMAKE_CURRENT_SOURCE_DIR\\}/config\"\\).*?endif\\(\\))?", launchInstallSnippet)
+                                    fsa.generateFile(pkgName + "/CMakeLists.txt", updatedCmake)
+                                    cmakeWritten = true
+                                } else if (!hasLaunchInstall && cmakeContent.contains("ament_package()")) {
+                                    val updatedCmake = cmakeContent.replace("ament_package()", launchInstallSnippet + "\n\nament_package()")
+                                    fsa.generateFile(pkgName + "/CMakeLists.txt", updatedCmake)
+                                    cmakeWritten = true
+                                } else {
+                                    cmakeWritten = true
+                                }
+                            }
+                        } catch (Exception e) {
+                            // ignore
+                        }
+                    }
+
+                    if (!cmakeWritten) {
+                        fsa.generateFile(pkgName + "/CMakeLists.txt", compile_CMakeLists_ROS2(system, yaml_gen))
+                    }
+
+                    // Ensure package.xml has launch dependencies
+                    var boolean pkgXmlWritten = false
+                    if (fsa.isFile(pkgName + "/package.xml")) {
+                        try {
+                            val existingChars = fsa.readTextFile(pkgName + "/package.xml")
+                            if (existingChars !== null) {
+                                val pkgXmlContent = existingChars.toString
+                                if (!pkgXmlContent.contains("<exec_depend>launch</exec_depend>") && pkgXmlContent.contains("</package>")) {
+                                    val launchDeps = '''
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+</package>'''
+                                    val updatedPkgXml = pkgXmlContent.replace("</package>", launchDeps)
+                                    fsa.generateFile(pkgName + "/package.xml", updatedPkgXml)
+                                    pkgXmlWritten = true
+                                } else {
+                                    pkgXmlWritten = true
+                                }
+                            }
+                        } catch (Exception e) {
+                            // ignore
+                        }
+                    }
+
+                    if (!pkgXmlWritten && !hasPkgXml) {
+                        fsa.generateFile(pkgName + "/package.xml", compile_package_xml_format3(system))
+                    }
+
+                    // Clean redundant Python build files (preserve .puml!)
+                    fsa.deleteFile(pkgName + "/setup.py")
+                    fsa.deleteFile(pkgName + "/setup.cfg")
+                    fsa.deleteFile(pkgName + "/pyproject.toml")
+                    fsa.deleteFile(pkgName + "/resource/" + pkgName)
+                }
             }
             if (TopicBridgeGenerated(system) || ServiceFromBridgeGenerated(system) || ServiceToBridgeGenerated(system)){
                 fsa.generateFile(
-                    system.getName().toLowerCase+"/config/"+"ros1_bridges.yaml",
+                    pkgName + "/config/ros1_bridges.yaml",
                     compile_ROS1bridges_config(system)
                 )
                 fsa.generateFile(
-                    system.getName().toLowerCase+"/launch/"+system.getName()+"_bridges.launch.py",
+                    pkgName + "/launch/" + system.getName() + "_bridges.launch.py",
                     compile_toROS2launchbridges(system).toString().replace("\t","  ")
                 )
             }

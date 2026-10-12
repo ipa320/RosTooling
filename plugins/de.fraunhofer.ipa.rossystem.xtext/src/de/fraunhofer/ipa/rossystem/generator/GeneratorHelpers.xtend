@@ -2,10 +2,13 @@ package de.fraunhofer.ipa.rossystem.generator
 
 import java.util.ArrayList
 import java.util.List
+import ros.Artifact
 import ros.Node
 import ros.Package
+import ros.Parameter
 import ros.ParameterValue
 import ros.impl.AmentPackageImpl
+import system.Process
 import ros.impl.ParameterBooleanImpl
 import ros.impl.ParameterDoubleImpl
 import ros.impl.ParameterIntegerImpl
@@ -88,6 +91,107 @@ class GeneratorHelpers {
         return nodeList
     }
 
+    def String toCamelCase(String str) {
+        if (str === null || str.empty) return ""
+        val parts = str.split("[_\\-/]")
+        val result = new StringBuilder()
+        for (part : parts) {
+            if (!part.empty) {
+                result.append(Character.toUpperCase(part.charAt(0)))
+                if (part.length > 1) {
+                    result.append(part.substring(1))
+                }
+            }
+        }
+        return result.toString()
+    }
+
+    def String getArtifactName(Node node) {
+        if (node !== null && node.eContainer instanceof Artifact) {
+            val art = node.eContainer as Artifact
+            if (art.name !== null && !art.name.trim.empty) {
+                return art.name.trim
+            }
+        }
+        return if (node !== null && node.name !== null) node.name.trim else ""
+    }
+
+    def String getPluginName(RosNode node) {
+        val pkg = (node.from.eContainer.eContainer as AmentPackageImpl).name.toLowerCase
+        val artCamel = toCamelCase(getArtifactName(node.from))
+        return pkg + "::" + artCamel + "Node"
+    }
+
+    def List<Process> getProcessesWithRos2Nodes(System rossystem) {
+        val procList = new ArrayList<Process>
+        if (rossystem.processes !== null && !rossystem.processes.empty) {
+            for (proc : rossystem.processes) {
+                if (!getProcessRos2Nodes(proc).empty) {
+                    procList.add(proc)
+                }
+            }
+        }
+        return procList
+    }
+
+    def List<RosNode> getProcessRos2Nodes(Process proc) {
+        val nodeList = new ArrayList<RosNode>
+        if (proc.components !== null && !proc.components.empty) {
+            for (component : proc.components) {
+                if (component instanceof RosNode) {
+                    val rosNode = component as RosNode
+                    if (rosNode.from !== null && rosNode.from.eContainer !== null && rosNode.from.eContainer.eContainer !== null) {
+                        if (rosNode.from.eContainer.eContainer.class.toString.contains("Ament")) {
+                            nodeList.add(rosNode)
+                        }
+                    }
+                }
+            }
+        }
+        return nodeList
+    }
+
+    def List<RosNode> getComponentNodes(System rossystem) {
+        val nodeList = new ArrayList<RosNode>
+        for (proc : getProcessesWithRos2Nodes(rossystem)) {
+            for (node : getProcessRos2Nodes(proc)) {
+                if (!nodeList.contains(node)) {
+                    nodeList.add(node)
+                }
+            }
+        }
+        return nodeList
+    }
+
+    def List<RosNode> getStandaloneRos2Nodes(System rossystem) {
+        val standaloneList = new ArrayList<RosNode>
+        val compNodes = getComponentNodes(rossystem)
+        for (node : getRos2Nodes(rossystem)) {
+            if (!compNodes.contains(node)) {
+                standaloneList.add(node)
+            }
+        }
+        return standaloneList
+    }
+
+    def boolean hasComponentContainers(System rossystem) {
+        return !getProcessesWithRos2Nodes(rossystem).empty
+    }
+
+    def boolean hasStandaloneLifecycleNodes(System rossystem) {
+        for (node : getStandaloneRos2Nodes(rossystem)) {
+            if (node.from !== null && isLifecycleNode(node.from)) {
+                return true
+            }
+        }
+        return false
+    }
+
+    def boolean isLifecycleNode(Node node) {
+        if (node === null) return false
+        return node.isIsLifecycle
+    }
+
     def <Components> getRos1Nodes (System rossystem) {
         val nodeList = new ArrayList<RosNode>
         if (!rossystem.components.nullOrEmpty){
@@ -109,6 +213,38 @@ class GeneratorHelpers {
             }
         }
         return subSystemsList
+    }
+
+    def boolean subsystem_references_parameter(System subsystem_system, String param_name) {
+        if (subsystem_system !== null && subsystem_system.components !== null) {
+            for (component : subsystem_system.components) {
+                if (component instanceof RosNode) {
+                    if ((component as RosNode).from !== null && (component as RosNode).from.parameter !== null) {
+                        for (param : (component as RosNode).from.parameter) {
+                            if (param.name.equals(param_name)) {
+                                return true
+                            }
+                        }
+                    }
+                } else if (component instanceof SubSystem) {
+                    if (subsystem_references_parameter((component as SubSystem).system, param_name)) {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    def boolean has_matching_parameters(System system, System subsystem_system) {
+        if (system.parameter !== null) {
+            for (param : system.parameter) {
+                if (subsystem_references_parameter(subsystem_system, (param as ros.Parameter).name)) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     def boolean TopicBridgeGenerated(System rossystem){
