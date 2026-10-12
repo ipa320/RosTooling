@@ -25,6 +25,11 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: GITHUB_ACTOR
         server-password: GITHUB_TOKEN
+
+    - name: Set up Maven 3.9.9
+      uses: stCarolas/setup-maven@v5
+      with:
+        maven-version: '3.9.9'
         
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -B -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
