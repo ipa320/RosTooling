@@ -11,6 +11,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import ros.Package
 import ros.impl.ParameterStructTypeImpl
 import ros.Node
+import de.fraunhofer.ipa.ros2.generator.Ros2Generator
 
 /**
  * Generates code from your model files on save.
@@ -42,23 +43,9 @@ class Ros2PythonCodeGenerator extends AbstractGenerator {
     };
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        resourcepath = resource.URI.toString();
-        if (! resourcepath.contains("/ros-input")) {
-            for (pkg : resource.allContents.toIterable.filter(Package)){
-                fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
-                fsa.generateFile(pkg.getName().toLowerCase+"/"+pkg.getName().toLowerCase+"/__init__.py","")
-                fsa.generateFile(pkg.getName().toLowerCase+"/resource/"+pkg.getName().toLowerCase,"")
-                fsa.generateFile(pkg.getName().toLowerCase+"/setup.cfg",pkg.compile_setup_cfg)
-                fsa.generateFile(pkg.getName().toLowerCase+"/setup.py",pkg.compile_setup_py)
-
-
-                 for (art : pkg.artifact){
-                    node = art.node
-                    fsa.generateFile(pkg.getName().toLowerCase+"/"+pkg.getName().toLowerCase+"/"+node.name+".py",node.compile_node)
-                    }
-                 }
-                }
-            }
+        val gen = Activator.getInstance().getInjector(Activator.DE_FRAUNHOFER_IPA_ROS2_ROS2).getInstance(Ros2Generator)
+        gen.generateTargeted(resource, fsa, null, "python", "auto", null)
+    }
 
 
 def compile_package_xml(Package pkg)'''

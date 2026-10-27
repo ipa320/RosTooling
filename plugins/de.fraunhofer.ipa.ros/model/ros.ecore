@@ -17,6 +17,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//GraphName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLifecycle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Package">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -115,6 +117,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//GraphName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qos" eType="#//QualityOfService"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activeStates" upperBound="-1"
+        eType="#//LifecycleState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GraphName" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true"/>
@@ -233,5 +237,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArrayTopicSpecMsgRef" eSuperTypes="PrimitivesTypes.ecore#//AbstractType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" lowerBound="1"
         eType="#//SpecBase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LifecycleState">
+    <eLiterals name="UNCONFIGURED" literal="Unconfigured"/>
+    <eLiterals name="INACTIVE" value="1" literal="Inactive"/>
+    <eLiterals name="ACTIVE" value="2" literal="Active"/>
+    <eLiterals name="FINALIZED" value="3" literal="Finalized"/>
   </eClassifiers>
 </ecore:EPackage>

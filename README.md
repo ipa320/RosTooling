@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![ros-model CI](https://github.com/ipa320/ros-model/actions/workflows/build.yml/badge.svg)](https://github.com/ipa320/ros-model/actions/workflows/build.yml)
 
+![RosTooling Badge](images/RosTooling_Badge.png)
+
 The main purpose of this effort is to combine the advantages of [ROS](http://wiki.ros.org/) and Model-Driven-Engineering techniques. This repository holds a family of metamodels defined as Ecore models and their corresponding Xtext-based DSLs (Domain Specific Language) implementation.
 The resulted models allow the description of ROS and ROS2 concepts and properties, like packages, artifacts, nodes, interfaces types, parameters... Moreover a complete system as composition of ROS components can be also modelled.
 
@@ -9,12 +11,15 @@ The models have associated tools, the following are some examples:
 - Textual editors with grammar highlight, debug functionalities and auto-complete helpers.
 - Validators to check the corretness and check the use of best practices
 - Code geneators to automatically generate code, documentation, helper scripts...
-- (ToBeDone) Graphical editor
+- [Graphical editor](https://github.com/ipa-esa/RosTooling_Extension.git) (external)
+- [Agentic studio](https://github.com/Mohamedgalil/ipa-rostooling-studio.git) (external)
 
 Technical Maintainer: [**ipa-nhg**](https://github.com/ipa-nhg/) (**Nadia Hammoudeh Garcia**, **Fraunhofer IPA**) - **nadia.hammoudeh.garcia@ipa.fraunhofer.de**
 
 The **documentation** of the RosTooling is available under [https://ipa320.github.io/RosTooling.github.io/](https://ipa320.github.io/RosTooling.github.io/).
 
+
+**Note on source installation:** Source installation documentation is slightly outdated. The ROS xtext plugin is built against newer Eclipse platforms than the one stated in the documentation. Please use Eclipse 2024-09 with maven version 3.9.9.
 ---------------------------------------------------------
 
 

@@ -3,9 +3,15 @@
  */
 package de.fraunhofer.ipa.ros.ide
 
+import org.eclipse.xtext.resource.ILocationInFileProvider
+import de.fraunhofer.ipa.ros.SafeLocationInFileProvider
 
 /**
  * Use this class to register ide components.
  */
-class RosIdeModule extends AbstractRosIdeModule {
+class RosIdeModule extends AbstractRosIdeModule {   
+	
+	def Class<? extends ILocationInFileProvider> bindILocationInFileProvider() {
+        SafeLocationInFileProvider;
+    }
 }

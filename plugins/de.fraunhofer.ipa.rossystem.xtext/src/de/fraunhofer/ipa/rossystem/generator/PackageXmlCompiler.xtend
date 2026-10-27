@@ -36,25 +36,54 @@ class PackageXmlCompiler{
    href="http://download.ros.org/schema/package_format3.xsd"
    schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
- <name>«system.name.toLowerCase»</name>
- <version>0.0.1</version>
- <description>This package provides launch file for operating «system.name»</description>
+  <name>«system.name.toLowerCase»</name>
+  <version>0.0.1</version>
+  <description>This package provides launch file for operating «system.name»</description>
   <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
   <author email="jane.doe@example.com">Jane Doe</author>
-  <license>Apache 2.0</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  «IF hasComponentContainers(system)»<exec_depend>rclcpp_components</exec_depend>«ENDIF»
   «FOR pkg:system.getPkgsDependencies»
+  «IF !pkg.toString.equalsIgnoreCase(system.name)»
   <exec_depend>«pkg»</exec_depend>
+  «ENDIF»
   «ENDFOR»«IF TopicBridgeGenerated(system) || ServiceFromBridgeGenerated(system) || ServiceToBridgeGenerated(system)»<exec_depend>ros1_bridge</exec_depend>«ENDIF»
-  <!--test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>launch</test_depend>
-  <test_depend>python3-pytest</test_depend-->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+        '''
+
+        def compile_package_xml_python(System system) '''«init_pkg()»
+<?xml version="1.0"?>
+<?xml-model
+   href="http://download.ros.org/schema/package_format3.xsd"
+   schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>«system.name.toLowerCase»</name>
+  <version>0.0.1</version>
+  <description>This package provides launch file for operating «system.name»</description>
+  <maintainer email="jane.doe@example.com">Jane Doe</maintainer>
+  <author email="jane.doe@example.com">Jane Doe</author>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  «FOR pkg:system.getPkgsDependencies»
+  «IF !pkg.toString.equalsIgnoreCase(system.name)»
+  <exec_depend>«pkg»</exec_depend>
+  «ENDIF»
+  «ENDFOR»«IF TopicBridgeGenerated(system) || ServiceFromBridgeGenerated(system) || ServiceToBridgeGenerated(system)»<exec_depend>ros1_bridge</exec_depend>«ENDIF»
 
   <export>
     <build_type>ament_python</build_type>
@@ -62,5 +91,4 @@ class PackageXmlCompiler{
 </package>
         '''
 
-
-        }
+}

@@ -4,6 +4,7 @@ import com.google.inject.Inject
 import java.util.ArrayList
 import org.eclipse.emf.common.util.EList
 import ros.Artifact
+import ros.Parameter
 import ros.impl.AmentPackageImpl
 import system.Connection
 import system.RosActionServerReference
@@ -26,7 +27,12 @@ class LaunchFileCompiler_ROS2 {
     def compile_toROS2launch(System system) '''
 «IF YamlFileGenerated(system)»import os«ENDIF»
 from launch import LaunchDescription
-from launch_ros.actions import Node
+«IF !getStandaloneRos2Nodes(system).empty || !hasComponentContainers(system)»from launch_ros.actions import Node«ENDIF»
+«IF hasStandaloneLifecycleNodes(system)»from launch_ros.actions import LifecycleNode«ENDIF»
+«IF hasComponentContainers(system)»
+from launch_ros.actions import ComposableNodeContainer
+from launch_ros.descriptions import ComposableNode
+«ENDIF»
 «IF !getSubsystems(system).empty»from ament_index_python.packages import get_package_share_directory«ENDIF»
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -36,6 +42,12 @@ def generate_launch_description():
   ld = LaunchDescription()
 
   # *** PARAMETERS ***
+  «FOR parameter:system.parameter»
+  «(parameter as ros.Parameter).name»_arg = DeclareLaunchArgument(
+    "«(parameter as ros.Parameter).name»", default_value=TextSubstitution(text="«get_param_value((parameter as ros.Parameter).value,(parameter as ros.Parameter).name)»")
+  )
+  ld.add_action(«(parameter as ros.Parameter).name»_arg)
+  «ENDFOR»
   «FOR component:getRos2Nodes(system)»«IF generate_yaml(component)»
   «component.name»_config = os.path.join(
     get_package_share_directory('«system.getName().toLowerCase»'),
@@ -52,10 +64,37 @@ def generate_launch_description():
   «ENDIF»
   «ENDFOR»
 
-  # *** ROS 2 nodes ***
-  «FOR component:getRos2Nodes(system)»
-  «IF !component.namespace.nullOrEmpty»«GeneratorHelpers.removeLeadingSlash(component.namespace)»_«(component as RosNode).name» = Node(«ELSE»
-  «(component as RosNode).name» = Node(«ENDIF»
+  «IF hasComponentContainers(system)»
+  # *** ROS 2 component containers ***
+  «FOR proc:getProcessesWithRos2Nodes(system)»
+  container_«proc.name» = ComposableNodeContainer(
+    name="«proc.name»",
+    namespace="",
+    package="rclcpp_components",
+    executable="«IF proc.threads > 1»component_container_mt«ELSE»component_container«ENDIF»",
+    composable_node_descriptions=[
+      «FOR component:getProcessRos2Nodes(proc) SEPARATOR ',\n'»
+      ComposableNode(
+        package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",
+        plugin="«getPluginName(component as RosNode)»",
+        name="«(component as RosNode).name»"«IF !(component as RosNode).namespace.nullOrEmpty»,
+        namespace="«(component as RosNode).namespace»"«ENDIF»«compile_remappings_str(component as RosNode, system.connections)»«IF !(component as RosNode).rosparameters.nullOrEmpty»«IF generate_yaml(component as RosNode)»,
+        parameters=[«(component as RosNode).name»_config]«ELSE»,
+        parameters=[{«FOR param:(component as RosNode).rosparameters»
+          "«param.from.name»": LaunchConfiguration("«param.name»"),«ENDFOR»}]«ENDIF»«ENDIF»
+      )«ENDFOR»
+    ],
+    output='screen'
+  )
+  «ENDFOR»
+  «ENDIF»
+
+  # *** ROS 2 standalone nodes ***
+  «FOR component:getStandaloneRos2Nodes(system)»
+  «val isLc = isLifecycleNode((component as RosNode).from)»
+  «val actionClass = if (isLc) "LifecycleNode" else "Node"»
+  «IF !component.namespace.nullOrEmpty»«GeneratorHelpers.removeLeadingSlash(component.namespace)»_«(component as RosNode).name» = «actionClass»(«ELSE»
+  «(component as RosNode).name» = «actionClass»(«ENDIF»
     package="«((component as RosNode).from.eContainer.eContainer as AmentPackageImpl).name»",«IF !component.namespace.nullOrEmpty»
     namespace="«component.namespace»",«ENDIF»
     executable="«((component as RosNode).from.eContainer as Artifact).name»",
@@ -71,16 +110,27 @@ def generate_launch_description():
   «FOR subsystem:getSubsystems(system)»
   «IF subsystem.fromFile.nullOrEmpty»
   include_«subsystem.name»= IncludeLaunchDescription(
-    PythonLaunchDescriptionSource([ get_package_share_directory('«subsystem.name»') + '/launch/«subsystem.name».launch.py'])
+    PythonLaunchDescriptionSource([ get_package_share_directory('«subsystem.name»') + '/launch/«subsystem.name».launch.py'])«IF has_matching_parameters(system, subsystem)»,
+    launch_arguments={
+      «FOR param : system.parameter»«IF subsystem_references_parameter(subsystem, (param as ros.Parameter).name)»
+      '«(param as ros.Parameter).name»': LaunchConfiguration('«(param as ros.Parameter).name»'),«ENDIF»«ENDFOR»
+    }.items()«ENDIF»
   )
   «ELSE»
   include_«subsystem.name»= IncludeLaunchDescription(
-    PythonLaunchDescriptionSource([get_package_share_directory('«subsystem.fromFile.split("/",2).get(0)»') + '/«subsystem.fromFile.split("/",2).get(1)»'])
+    PythonLaunchDescriptionSource([get_package_share_directory('«subsystem.fromFile.split("/",2).get(0)»') + '/«subsystem.fromFile.split("/",2).get(1)»'])«IF has_matching_parameters(system, subsystem)»,
+    launch_arguments={
+      «FOR param : system.parameter»«IF subsystem_references_parameter(subsystem, (param as ros.Parameter).name)»
+      '«(param as ros.Parameter).name»': LaunchConfiguration('«(param as ros.Parameter).name»'),«ENDIF»«ENDFOR»
+    }.items()«ENDIF»
   )
   «ENDIF»«ENDFOR»
 
   # *** Add actions ***
-  «FOR component:getRos2Nodes(system)»
+  «FOR proc:getProcessesWithRos2Nodes(system)»
+  ld.add_action(container_«proc.name»)
+  «ENDFOR»
+  «FOR component:getStandaloneRos2Nodes(system)»
   «IF !component.namespace.nullOrEmpty»
   ld.add_action(«GeneratorHelpers.removeLeadingSlash(component.namespace)»_«(component as RosNode).name»)
   «ELSE»

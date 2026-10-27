@@ -26,6 +26,7 @@ import system.InterfaceReference
 import system.SubSystem
 import org.eclipse.emf.ecore.EObject
 import java.util.ArrayList
+import java.util.HashSet
 import system.RosParameter
 import ros.Parameter
 
@@ -72,16 +73,75 @@ class RosSystemValidator extends AbstractRosSystemValidator {
   }
 
   @Check
-  def fromFileHelper(System system ) {
-      if (!system.fromFile.empty){
-              info('The format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
-                  ,null,NOT_IN_THE_SYSTEM)
-      }
-      if (!system.fromFile.toString.contains("/")){
-              error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
-                  ,null,NOT_IN_THE_SYSTEM)
+  def checkUniqueProcessAssignment(System system) {
+      if (system.processes !== null) {
+          val seenNodes = new HashSet<Component>()
+          for (process : system.processes) {
+              if (process.components !== null) {
+                  for (comp : process.components) {
+                      if (seenNodes.contains(comp)) {
+                          val nodeName = if (comp instanceof RosNode) (comp as RosNode).name else comp.toString
+                          error("Node '" + nodeName + "' is assigned to multiple processes. A node can only be loaded into one component container.",
+                              process, null)
+                      } else {
+                          seenNodes.add(comp)
+                      }
+                  }
+              }
+          }
       }
   }
+
+  @Check
+  def checkProcessNodesRos2(Process process) {
+      if (process.components !== null) {
+          for (comp : process.components) {
+              if (comp instanceof RosNode) {
+                  val rosNode = comp as RosNode
+                  if (rosNode.from !== null && rosNode.from.eContainer !== null && rosNode.from.eContainer.eContainer !== null) {
+                      val pkgClass = rosNode.from.eContainer.eContainer.class.toString
+                      if (pkgClass.contains("Catkin")) {
+                          error("Node '" + rosNode.name + "' is a ROS 1 Catkin node and cannot be loaded into a ROS 2 component container.",
+                              process, null)
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  @Check
+  def checkProcessThreads(Process process) {
+      if (process.threads < 0) {
+          error("Process thread count cannot be negative.", process, null)
+      }
+  }
+
+  @Check
+  def fromFileHelper(System system ) {
+      if (!system.fromFile.empty && system.fromFile !== null){
+        if (!system.fromFile.toString.contains("/")){
+                error('Path not valid, the format for the FromFile attribute is: "NameOfThePackage/Path/to/ExecutableLaunchFile.launch.py"'
+                    ,null,FROM_FILE_PATH)
+        }
+      }
+  }
+  
+  def List<RosInterface> getAllInterfaces(System system) {
+    val List<RosInterface> interfaces = newArrayList
+    if (system === null) {
+        return interfaces
+    }
+    for (Component component : system.components) {
+        if (component instanceof RosNode) {
+            interfaces.addAll(component.rosinterfaces)
+        } else if (component instanceof SubSystem) {
+            interfaces.addAll(getAllInterfaces(component.system))
+        }
+    }
+    return interfaces
+  }
+  
 
   @Check
   def checkIfInterfaceInSystem(Connection connection) {
@@ -89,25 +149,7 @@ class RosSystemValidator extends AbstractRosSystemValidator {
       var from_connection = connection_def.from
       var to_connection = connection_def.to
       var system = connection.eContainer as System
-      var List<RosInterface> AllInterfaces = newArrayList
-
-      for (Component component : system.components){
-          if(component.class.toString.contains("RosNode")){
-              var rosnode = component as RosNode
-              for(RosInterface interface : rosnode.rosinterfaces){
-                AllInterfaces.add(interface)
-              }
-          }
-          if (component.class.toString.contains("SubSystem")) {
-              var subsystem = component as SubSystem
-              for(subcomponent: (subsystem.system as System).components){
-                 var rosnode = subcomponent as RosNode
-                  for(RosInterface interface : rosnode.rosinterfaces){
-                    AllInterfaces.add(interface)
-                  }
-              }
-          }
-      }
+      var List<RosInterface> AllInterfaces = getAllInterfaces(system)
 
       if (!AllInterfaces.contains(from_connection)){
               info('Valid interfaces for this process are '+AllInterfaces

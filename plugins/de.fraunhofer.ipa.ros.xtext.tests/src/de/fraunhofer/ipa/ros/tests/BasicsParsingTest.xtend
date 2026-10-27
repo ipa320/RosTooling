@@ -21,7 +21,7 @@ class BasicsParsingTest {
     @Test
     def void loadModel() {
         val result = parseHelper.parse('''
-            Hello Xtext!
+            GlobalNamespace
         ''')
         Assertions.assertNotNull(result)
         val errors = result.eResource.errors

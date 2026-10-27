@@ -6,6 +6,12 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>ros.ecore</foreignModel>
   <genPackages prefix="Ros" disposableProviderFactory="true" ecorePackage="ros.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ros.ecore#//LifecycleState">
+      <genEnumLiterals ecoreEnumLiteral="ros.ecore#//LifecycleState/UNCONFIGURED"/>
+      <genEnumLiterals ecoreEnumLiteral="ros.ecore#//LifecycleState/INACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ros.ecore#//LifecycleState/ACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ros.ecore#//LifecycleState/FINALIZED"/>
+    </genEnums>
     <genDataTypes ecoreDataType="ros.ecore#//GraphName"/>
     <genClasses ecoreClass="ros.ecore#//Node">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/serviceserver"/>
@@ -16,6 +22,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/actionclient"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Node/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//Node/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Node/isLifecycle"/>
     </genClasses>
     <genClasses ecoreClass="ros.ecore#//Package">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//Package/name"/>
@@ -87,6 +94,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ros.ecore#//InterfaceType/namespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//InterfaceType/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ros.ecore#//InterfaceType/qos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ros.ecore#//InterfaceType/activeStates"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ros.ecore#//ParameterType"/>
     <genClasses ecoreClass="ros.ecore#//ParameterListType">

@@ -3,6 +3,11 @@
  */
 package de.fraunhofer.ipa.ros2.validation
 
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
+import org.eclipse.xtext.validation.Check
+import ros.InterfaceType
+import ros.Node
+import ros.RosPackage
 
 /**
  * This class contains custom validation rules.
@@ -11,15 +16,39 @@ package de.fraunhofer.ipa.ros2.validation
  */
 class Ros2Validator extends AbstractRos2Validator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//  @Check
-//  def checkGreetingStartsWithCapital(Greeting greeting) {
-//      if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//          warning('Name should start with a capital',
-//                  Ros2Package.Literals.GREETING__NAME,
-//                  INVALID_NAME)
-//      }
-//  }
+	public static val ACTIVE_IN_NON_LIFECYCLE = 'activeInNonLifecycle'
+	public static val DUPLICATE_LIFECYCLE_STATE = 'duplicateLifecycleState'
+
+	@Check
+	def checkActiveInOnlyOnLifecycleNode(InterfaceType interfaceType) {
+		if (interfaceType.activeStates !== null && !interfaceType.activeStates.isEmpty) {
+			val node = interfaceType.eContainer
+			if (node instanceof Node) {
+				if (!node.isIsLifecycle) {
+					error(
+						"The 'active_in' property can only be specified if the parent node is configured as a lifecycle node ('lifecycle: true')",
+						RosPackage.Literals.INTERFACE_TYPE__ACTIVE_STATES,
+						ACTIVE_IN_NON_LIFECYCLE
+					)
+				}
+			}
+			val nodes = NodeModelUtils.findNodesForFeature(interfaceType, RosPackage.Literals.INTERFACE_TYPE__ACTIVE_STATES)
+			val seen = newHashSet
+			val duplicates = newLinkedHashSet
+			for (n : nodes) {
+				val text = NodeModelUtils.getTokenText(n).trim
+				if (!seen.add(text)) {
+					duplicates.add(text)
+				}
+			}
+			for (dup : duplicates) {
+				warning(
+					"Duplicate lifecycle state in 'active_in': " + dup,
+					RosPackage.Literals.INTERFACE_TYPE__ACTIVE_STATES,
+					DUPLICATE_LIFECYCLE_STATE
+				)
+			}
+		}
+	}
 
 }

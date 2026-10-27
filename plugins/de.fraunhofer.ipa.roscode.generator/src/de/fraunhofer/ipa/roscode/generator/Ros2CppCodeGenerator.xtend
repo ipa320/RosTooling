@@ -11,6 +11,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import ros.Package
 import ros.impl.ParameterStructTypeImpl
 import ros.Node
+import de.fraunhofer.ipa.ros2.generator.Ros2Generator
 
 /**
  * Generates code from your model files on save.
@@ -42,19 +43,9 @@ class Ros2CppCodeGenerator extends AbstractGenerator {
     };
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        resourcepath = resource.URI.toString();
-        if (! resourcepath.contains("/ros-input")) {
-            for (pkg : resource.allContents.toIterable.filter(Package)){
-                fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
-                fsa.generateFile(pkg.getName().toLowerCase+"/CMakeLists.txt",pkg.compile_CMakeLists)
-                 for (art : pkg.artifact){
-                    node = art.node
-                    fsa.generateFile(pkg.getName().toLowerCase+"/src/"+node.name+".cpp",node.compile_node)
-
-                    }
-                 }
-                }
-            }
+        val gen = Activator.getInstance().getInjector(Activator.DE_FRAUNHOFER_IPA_ROS2_ROS2).getInstance(Ros2Generator)
+        gen.generateTargeted(resource, fsa, null, "cpp", "auto", null)
+    }
 
 
 def compile_package_xml(Package pkg)'''
