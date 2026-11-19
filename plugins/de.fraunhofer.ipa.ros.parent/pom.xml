@@ -16,13 +16,14 @@
         <tycho-version>4.0.12</tycho-version>
         <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
         <mwe2Version>2.22.0</mwe2Version>
+		<!-- CI settings -->
+    	<github.repository>ipa320/RosTooling</github.repository>
     </properties>
-    
 	<distributionManagement>
 	   <repository>
 	     <id>github</id>
-	     <name>GitHub ipa-esa Apache Maven Packages</name>
-	     <url>https://maven.pkg.github.com/ipa-esa/RosTooling</url>
+	     <name>GitHub Apache Maven Packages</name>
+	     <url>https://maven.pkg.github.com/${github.repository}</url>
 	   </repository>
 	</distributionManagement>
     
