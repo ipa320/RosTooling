@@ -32,7 +32,7 @@ jobs:
         maven-version: '3.9.9'
         
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -B -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
+      run: mvn deploy -B -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml -Dgithub.repository=${{ github.repository }}
       env:
         GITHUB_ACTOR: ${{ github.actor }}
         GITHUB_TOKEN: ${{ github.token }}
